@@ -178,9 +178,10 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
       if (typeof window !== 'undefined') {
         (window as any).__PINIT_STORY_TOUR_ACTIVE = false;
       }
+      clearTourAdvanceTimer();
       stopSpeaking(true);
     };
-  }, []);
+  }, [clearTourAdvanceTimer]);
 
   // ── 2. Auto-close / auto-dock floating avatar after 15s of inactivity ────────
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -777,7 +778,8 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
             : (isRightSidebarOpen && !isLeftSidebarOpen ? 'auto' : 18),
           transform: isCentered ? 'translate(-50%, -50%)' : 'none',
           zIndex: 9999,
-          width: tourActive ? 420 : (isEnlarged ? 285 : 210),
+          width: tourActive ? 'min(420px, calc(100vw - 28px))' : (isEnlarged ? 285 : 210),
+          maxWidth: 'calc(100vw - 24px)',
           height: tourActive ? 240 : (isEnlarged ? 360 : 270),
           background: 'var(--bg2)',
           border: '1px solid var(--border)',

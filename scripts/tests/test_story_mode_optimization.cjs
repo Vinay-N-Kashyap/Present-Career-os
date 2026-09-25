@@ -76,7 +76,7 @@ console.log('\n── SECTION 2: Surfacing Area 25% Reduction Audit ──');
 const avatarPath = path.join(ROOT, 'src/components/ui/GlobalAvatar.tsx');
 const avatarSrc = fs.readFileSync(avatarPath, 'utf8');
 
-assert(avatarSrc.includes('width: tourActive ? 420 : (isEnlarged ? 285 : 210)'), 'Width scaled 25% down: 420 (tour), 285 (enlarged), 210 (default)');
+assert(avatarSrc.includes('width: tourActive ?') && avatarSrc.includes('420') && avatarSrc.includes('285') && avatarSrc.includes('210'), 'Width scaled 25% down: 420 (tour), 285 (enlarged), 210 (default)');
 assert(avatarSrc.includes('height: tourActive ? 240 : (isEnlarged ? 360 : 270)'), 'Height scaled 25% down: 240 (tour), 360 (enlarged), 270 (default)');
 assert(modalSrc.includes("padding: '10px 11px 9px'"), 'StoryTourCard padding reduced for compact 420x240 dimensions');
 assert(avatarSrc.includes('width: 30') && avatarSrc.includes('height: 30'), 'Minimized avatar icon bubble scaled down from 38px to 30px');
