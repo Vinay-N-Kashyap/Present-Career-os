@@ -21,7 +21,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/dashboard',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 1/7 · DASHBOARD',
-    text: "Welcome to PinIT! Track your verified skills, consistency streak, and daily AI mentor recommendations in your unified command center.",
+    text: "Track your verified skills, daily streak, and career growth.",
   },
   {
     emoji: '🗺',
@@ -30,7 +30,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/quests',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 2/7 · SOCRATIC LEARNING',
-    text: "Master structured socratic modules. Complete interactive challenges to earn Pins and build verifiable competencies.",
+    text: "Conquer Socratic quests and challenges to earn career Pins.",
   },
   {
     emoji: '⚡',
@@ -39,7 +39,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/missions',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 3/7 · DAILY MISSIONS',
-    text: "Solve targeted micro-challenges generated daily to strengthen your skill gaps and protect your winning streak.",
+    text: "Solve daily targeted micro-challenges to close your skill gaps.",
   },
   {
     emoji: '⚔️',
@@ -48,7 +48,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/arena',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 4/7 · 1V1 ARENA',
-    text: "Step into real-time 1v1 speedruns and timed analytical duels. Outsolve rivals and climb university rankings.",
+    text: "Compete in live one-on-one duels to outsolve rivals.",
   },
   {
     emoji: '🚀',
@@ -57,7 +57,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/projects',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 5/7 · SQUADS & PROJECTS',
-    text: "Build real-world projects with student squads. Every milestone creates verified proof-of-work for recruiters.",
+    text: "Build recruiter-verified proof of work with collaborative squads.",
   },
   {
     emoji: '🏆',
@@ -66,7 +66,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/leaderboard',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 6/7 · LEADERBOARDS',
-    text: "Benchmark your rank campus-wide and worldwide. Earn promotions across weekly sprint tiers from Bronze to Grandmaster.",
+    text: "Climb campus and global leagues all the way to Grandmaster.",
   },
   {
     emoji: '🎙',
@@ -75,7 +75,7 @@ export const TOUR_SLIDES: TourSlide[] = [
     route: '/interview',
     segment: 1,
     segmentLabel: 'FLAGSHIP HUB 7/7 · AI INTERVIEWS',
-    text: "Practice live HR and domain interviews with instant feedback on clarity, structure, and STAR responses.",
+    text: "Practice AI mock interviews with real-time feedback.",
   },
 ];
 

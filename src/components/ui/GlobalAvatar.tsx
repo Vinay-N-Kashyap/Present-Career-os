@@ -25,6 +25,8 @@ export interface GlobalAvatarProps {
   isRightSidebarOpen?: boolean;
   isLeftSidebarOpen?: boolean;
   onTourSlideChange?: (route: string | null, tabKey: string | null) => void;
+}
+
 // ── Auto-scroll utility for parallel page showcase during tour narration ─────
 function startAutoScroll(durationMs: number): () => void {
   if (typeof window === 'undefined') return () => {};
@@ -32,51 +34,37 @@ function startAutoScroll(durationMs: number): () => void {
   let rafId: number | null = null;
   let timerId: ReturnType<typeof setTimeout> | null = null;
 
-  const getScrollContainer = (): { el: HTMLElement | null; isWindow: boolean } => {
-    const pageEl = document.querySelector('.page-content') as HTMLElement | null;
-    if (pageEl && pageEl.scrollHeight > pageEl.clientHeight + 10) {
-      return { el: pageEl, isWindow: false };
-    }
-    const docEl = (document.scrollingElement || document.documentElement) as HTMLElement;
-    return { el: docEl, isWindow: true };
-  };
-
-  // Instant reset to top
-  const { el: initEl, isWindow: initIsWindow } = getScrollContainer();
-  if (initEl) {
-    if (initIsWindow) window.scrollTo({ top: 0, behavior: 'instant' });
-    else initEl.scrollTop = 0;
+  // Immediate reset to top on both .page-content and window
+  const pageEl = document.querySelector('.page-content') as HTMLElement | null;
+  if (pageEl) {
+    pageEl.scrollTop = 0;
   }
+  window.scrollTo({ top: 0, behavior: 'instant' });
 
-  // Smooth ease-in-out downward sweep synchronized with narration
+  // Delay starting downward scroll until route has rendered content (~200ms)
   timerId = setTimeout(() => {
     if (cancelled) return;
-    const { el, isWindow } = getScrollContainer();
-    if (!el) return;
-
     const startTime = performance.now();
-    const runDuration = Math.max(1400, durationMs - 250);
+    const runDuration = Math.max(1400, durationMs - 300);
 
     const step = (now: number) => {
       if (cancelled) return;
       const elapsed = now - startTime;
       const progress = Math.min(1, elapsed / runDuration);
 
-      // Smooth ease-in-out
+      // Smooth ease-in-out curve
       const ease = progress < 0.5
         ? 2 * progress * progress
         : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-      const maxScroll = isWindow
-        ? Math.max(0, document.documentElement.scrollHeight - window.innerHeight)
-        : Math.max(0, el.scrollHeight - el.clientHeight);
-
-      if (maxScroll > 15) {
-        const targetPos = maxScroll * ease;
-        if (isWindow) {
-          window.scrollTo(0, targetPos);
-        } else {
-          el.scrollTop = targetPos;
+      const targetEl = (document.querySelector('.page-content') as HTMLElement | null) || null;
+      if (targetEl && targetEl.scrollHeight > targetEl.clientHeight) {
+        const maxScroll = targetEl.scrollHeight - targetEl.clientHeight;
+        targetEl.scrollTop = maxScroll * ease;
+      } else {
+        const docScroll = (document.scrollingElement || document.documentElement).scrollHeight - window.innerHeight;
+        if (docScroll > 15) {
+          window.scrollTo(0, docScroll * ease);
         }
       }
 
@@ -86,7 +74,7 @@ function startAutoScroll(durationMs: number): () => void {
     };
 
     rafId = requestAnimationFrame(step);
-  }, 160);
+  }, 200);
 
   return () => {
     cancelled = true;
@@ -184,7 +172,15 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
     }
   }, [isTaskOrProcessActive, tourActive, celebEvent]);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+    return () => {
+      if (typeof window !== 'undefined') {
+        (window as any).__PINIT_STORY_TOUR_ACTIVE = false;
+      }
+      stopSpeaking(true);
+    };
+  }, []);
 
   // ── 2. Auto-close / auto-dock floating avatar after 15s of inactivity ────────
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -574,11 +570,15 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
   };
   const prevTourSlide = () => {
     if (tourStep > 0) {
+      clearTourAdvanceTimer();
+      stopSpeaking(true);
       lastSpokenTourStepRef.current = null;
       setTourStep(s => s - 1);
     }
   };
   const nextTourSlide = () => {
+    clearTourAdvanceTimer();
+    stopSpeaking(true);
     if (tourStep >= TOUR_SLIDES.length - 1) {
       openVoiceSegment();
     } else {
@@ -588,12 +588,9 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
   };
   const replayCurrentSlide = () => {
     lastSpokenTourStepRef.current = null;
-    const slide = TOUR_SLIDES[tourStep];
-    if (slide) {
-      const speechText = slide.text.replace(/\*\*/g, '').replace(/🎉|🏠|🛠️|🗺|⚡|🎙|🧬|🔬|🎯|💬|🚀|👋|🌅|✨|💙|⚔️|🏆|📖|🧠|🔔|👤|📚/g, '');
-      stopSpeaking();
-      speakWithAvatar(speechText, teacherId, () => {}, () => {});
-    }
+    clearTourAdvanceTimer();
+    stopSpeaking(true);
+    speakCurrentTourSlide();
   };
 
   const startStoryMode = () => {
