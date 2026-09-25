@@ -107,6 +107,16 @@ assert(mentorWidgetSrc.includes('if (typeof window === \'undefined\' || onlyAvat
 assert(avatarSrc.includes('!voiceListeningActive || tourActive'), 'GlobalAvatar guards speech recognition with tourActive check');
 assert(!avatarSrc.match(/\[teacher\.name,.*cleanPath.*voiceListeningActive/), 'cleanPath removed from speech recognition useEffect dependency array');
 
+// ── SECTION 6: Quality, UX Polish & Accessibility ─────────────────────────────
+console.log('\n── SECTION 6: Quality, UX Polish & Keyboard Accessibility ──');
+assert(avatarSrc.includes("e.key === 'ArrowRight'") && avatarSrc.includes("e.key === 'ArrowLeft'"), 'Keyboard arrow navigation wired (ArrowRight / ArrowLeft)');
+assert(avatarSrc.includes("e.key === 'Escape'") && avatarSrc.includes("dismissTour()"), 'Escape key smoothly dismisses tour');
+assert(avatarSrc.includes("e.key === ' ' || e.code === 'Space'"), 'Spacebar replays current slide voice narration');
+assert(avatarSrc.includes("window.addEventListener('wheel', stopOnUserGesture") && avatarSrc.includes("window.addEventListener('touchmove', stopOnUserGesture"), 'Auto-scroll gracefully yields on manual user scroll/touch');
+assert(avatarSrc.includes("document.addEventListener('visibilitychange', onVisible)"), 'Tour pauses advance if user temporarily switches browser tabs');
+assert(modalSrc.includes('isSpeaking?: boolean') && modalSrc.includes('Mentor Speaking'), 'StoryTourCard renders live voice waveform indicator when mentor speaks');
+assert(avatarSrc.includes('isSpeaking={isSpeaking}'), 'GlobalAvatar passes isSpeaking state into StoryTourCard');
+
 console.log('\n========================================================================');
 console.log(`🏁 VERIFICATION SUITE SUMMARY: ${passed} PASSED, ${failed} FAILED`);
 console.log('========================================================================\n');

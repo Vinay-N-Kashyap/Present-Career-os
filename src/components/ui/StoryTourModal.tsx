@@ -113,6 +113,7 @@ interface StoryTourCardProps {
   onNext: () => void;
   onDismiss: () => void;
   onReplay: () => void;
+  isSpeaking?: boolean;
 }
 
 export const StoryTourCard: React.FC<StoryTourCardProps> = ({
@@ -122,6 +123,7 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
   onNext,
   onDismiss,
   onReplay,
+  isSpeaking = false,
 }) => {
   const currentSlide = TOUR_SLIDES[tourStep];
 
@@ -143,6 +145,13 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             <span style={{ fontSize: 11.5 }}>{currentSlide?.emoji || '✨'}</span>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 800, color: 'var(--text)' }}>{teacher.name}</span>
+            {isSpeaking && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 1.5, marginLeft: 3 }} title="Mentor Speaking">
+                <span style={{ width: 2, height: 6, background: '#38bdf8', borderRadius: 1, opacity: 0.9 }} />
+                <span style={{ width: 2, height: 10, background: '#818cf8', borderRadius: 1, opacity: 1 }} />
+                <span style={{ width: 2, height: 5, background: '#c084fc', borderRadius: 1, opacity: 0.9 }} />
+              </span>
+            )}
           </div>
           <div style={{
             fontFamily: 'var(--font-mono)',
@@ -203,7 +212,7 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
         {tourStep > 0 && (
           <button
             onClick={onPrev}
-            title="Previous Tab"
+            title="Previous Tab (← Left Arrow)"
             style={{
               background: 'rgba(255,255,255,0.08)',
               border: '1px solid rgba(255,255,255,0.15)',
@@ -222,7 +231,7 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
 
         <button
           onClick={onReplay}
-          title="Replay Voice Speech"
+          title="Replay Voice Speech (Spacebar)"
           style={{
             background: 'rgba(255,255,255,0.08)',
             border: '1px solid rgba(255,255,255,0.15)',
@@ -240,6 +249,7 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
 
         <button
           onClick={onNext}
+          title={tourStep === TOUR_SLIDES.length - 1 ? 'Complete Tour & Open Voice Setup (→ Right Arrow)' : 'Next Tab (→ Right Arrow)'}
           style={{
             flex: 1,
             background: 'linear-gradient(90deg, var(--accent) 0%, var(--purple) 100%)',
@@ -260,7 +270,7 @@ export const StoryTourCard: React.FC<StoryTourCardProps> = ({
 
         <button
           onClick={onDismiss}
-          title="Exit Tour"
+          title="Exit Tour (Escape)"
           style={{
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.12)',

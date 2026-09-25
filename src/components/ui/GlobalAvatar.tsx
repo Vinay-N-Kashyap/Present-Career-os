@@ -41,6 +41,24 @@ function startAutoScroll(durationMs: number): () => void {
   }
   window.scrollTo({ top: 0, behavior: 'instant' });
 
+  // Yield gracefully if user manually interacts with page (wheel, touch, pointer)
+  const stopOnUserGesture = () => {
+    cancelled = true;
+    if (timerId) clearTimeout(timerId);
+    if (rafId) cancelAnimationFrame(rafId);
+    cleanupGestureListeners();
+  };
+
+  const cleanupGestureListeners = () => {
+    window.removeEventListener('wheel', stopOnUserGesture);
+    window.removeEventListener('touchmove', stopOnUserGesture);
+    window.removeEventListener('pointerdown', stopOnUserGesture);
+  };
+
+  window.addEventListener('wheel', stopOnUserGesture, { passive: true });
+  window.addEventListener('touchmove', stopOnUserGesture, { passive: true });
+  window.addEventListener('pointerdown', stopOnUserGesture, { passive: true });
+
   // Delay starting downward scroll until route has rendered content (~200ms)
   timerId = setTimeout(() => {
     if (cancelled) return;
@@ -70,6 +88,8 @@ function startAutoScroll(durationMs: number): () => void {
 
       if (progress < 1) {
         rafId = requestAnimationFrame(step);
+      } else {
+        cleanupGestureListeners();
       }
     };
 
@@ -80,6 +100,7 @@ function startAutoScroll(durationMs: number): () => void {
     cancelled = true;
     if (timerId) clearTimeout(timerId);
     if (rafId) cancelAnimationFrame(rafId);
+    cleanupGestureListeners();
   };
 }
 
@@ -512,9 +533,24 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
       }
       clearTourAdvanceTimer();
       console.log('[PinIT Tour] 🎙️ Narration completed for Step ' + (tourStep + 1) + '. Auto-advancing in 400ms...');
-      tourAdvanceTimerRef.current = setTimeout(() => {
-        advanceTourSlide(true);
-      }, 400);
+
+      const scheduleAdvance = () => {
+        tourAdvanceTimerRef.current = setTimeout(() => {
+          advanceTourSlide(true);
+        }, 400);
+      };
+
+      if (typeof document !== 'undefined' && document.hidden) {
+        const onVisible = () => {
+          if (!document.hidden) {
+            document.removeEventListener('visibilitychange', onVisible);
+            scheduleAdvance();
+          }
+        };
+        document.addEventListener('visibilitychange', onVisible);
+      } else {
+        scheduleAdvance();
+      }
     });
   }, [tourActive, tourStep, teacherId, router, clearTourAdvanceTimer, advanceTourSlide]);
 
@@ -608,6 +644,32 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
     setTourStep(0);
     setMinimized(false);
   };
+
+  // ── Keyboard accessibility for story tour (Arrow keys, Space, Escape) ─────
+  useEffect(() => {
+    if (!tourActive) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+        return;
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextTourSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevTourSlide();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        dismissTour();
+      } else if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        replayCurrentSlide();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [tourActive, nextTourSlide, prevTourSlide, dismissTour, replayCurrentSlide]);
 
   const isCentered = onboardingStep === 0;
 
@@ -799,6 +861,7 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
                 onNext={nextTourSlide}
                 onDismiss={dismissTour}
                 onReplay={replayCurrentSlide}
+                isSpeaking={isSpeaking}
               />
               <div style={{
                 flex: '0 0 42%',
