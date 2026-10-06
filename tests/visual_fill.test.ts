@@ -11,6 +11,8 @@ import type {
   CompareSpec,
   CellsSpec,
   CellsVisual,
+  StackQueueSpec,
+  StackQueueVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
@@ -481,4 +483,63 @@ test('9. cells adapter fills real dsa-py Day 8 two-pointers part', async () => {
   assert.deepEqual(filled.steps[1].items, ['1', '3', '4', '6', '8', '11']);
   assert.equal(filled.steps[1].pointers?.[0].index, 2);
   assert.equal(filled.steps[1].pointers?.[1].index, 3);
+});
+
+// Test 10: stack-queue adapter fills real dsa-py Day 4 LIFO stack part
+test('10. stack-queue adapter fills real dsa-py Day 4 LIFO stack part', async () => {
+  assert.ok(TEMPLATE_REGISTRY['stack-queue']?.fill, 'stack-queue template is registered with fill adapter');
+
+  const day4 = DSA_PYTHON_LONG_LESSONS.find((l) => l.day === 4);
+  assert.ok(day4, 'dsa-py Day 4 must exist');
+  const part0 = day4.parts[0];
+  assert.ok(part0, 'Day 4 Part 0 must exist');
+
+  const spec: StackQueueSpec = {
+    template: 'stack-queue',
+    title: 'LIFO editor undo stack',
+    mode: 'stack',
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Two actions appended to stack.',
+        items: { var: 'stack', line: 3 },
+        action: 'push',
+        actionItem: { text: 'type hello' },
+      },
+      {
+        at: 'say2',
+        caption: 'Third action pushed onto the top.',
+        items: { var: 'stack', line: 4 },
+        action: 'push',
+        actionItem: { text: 'make bold' },
+      },
+      {
+        at: 'say3',
+        caption: 'Undo pops make bold off the top.',
+        items: { var: 'stack', line: 6 },
+        action: 'pop',
+        actionItem: { text: 'make bold' },
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part0, { pyodide })) as StackQueueVisual;
+
+  assert.equal(filled.template, 'stack-queue');
+  assert.equal(filled.title, 'LIFO editor undo stack');
+  assert.equal(filled.mode, 'stack');
+  assert.equal(filled.steps.length, 3);
+
+  // Step 1: ['open file', 'type hello']
+  assert.deepEqual(filled.steps[0].items, ["'open file'", "'type hello'"]);
+  assert.equal(filled.steps[0].action, 'push');
+  assert.equal(filled.steps[0].actionItem, 'type hello');
+
+  // Step 2: ['open file', 'type hello', 'make bold']
+  assert.deepEqual(filled.steps[1].items, ["'open file'", "'type hello'", "'make bold'"]);
+  assert.equal(filled.steps[1].action, 'push');
+
+  // Step 3: ['open file', 'type hello'] after pop
+  assert.deepEqual(filled.steps[2].items, ["'open file'", "'type hello'"]);
+  assert.equal(filled.steps[2].action, 'pop');
 });

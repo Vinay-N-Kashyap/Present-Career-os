@@ -6,6 +6,7 @@ export { TableTemplate } from './TableTemplate';
 export { LettersTemplate } from './LettersTemplate';
 export { CompareTemplate } from './CompareTemplate';
 export { CellsTemplate } from './CellsTemplate';
+export { StackQueueTemplate } from './StackQueueTemplate';
 export {
   getToneColor,
   getToneBg,

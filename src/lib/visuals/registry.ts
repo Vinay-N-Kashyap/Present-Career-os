@@ -6,6 +6,7 @@ import {
   lettersSpecSchema,
   compareSpecSchema,
   cellsSpecSchema,
+  stackQueueSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -14,6 +15,7 @@ import { fillTable } from './fill/table';
 import { fillLetters } from './fill/letters';
 import { fillCompare } from './fill/compare';
 import { fillCells } from './fill/cells';
+import { fillStackQueue } from './fill/stack-queue';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -69,6 +71,12 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     description: 'Array cells with indices and up to 3 pointers for lists, binary search, and two pointers',
     specSchema: cellsSpecSchema,
     fill: fillCells,
+  },
+  'stack-queue': {
+    name: 'stack-queue',
+    description: 'Items pushed and popped, stack vertical or queue horizontal',
+    specSchema: stackQueueSpecSchema,
+    fill: fillStackQueue,
   },
 };
 

@@ -7,6 +7,7 @@ import type {
   LettersVisual,
   CompareVisual,
   CellsVisual,
+  StackQueueVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
@@ -14,6 +15,7 @@ import { TableTemplate } from '@/app/quests/lesson/components/visuals/TableTempl
 import { LettersTemplate } from '@/app/quests/lesson/components/visuals/LettersTemplate';
 import { CompareTemplate } from '@/app/quests/lesson/components/visuals/CompareTemplate';
 import { CellsTemplate } from '@/app/quests/lesson/components/visuals/CellsTemplate';
+import { StackQueueTemplate } from '@/app/quests/lesson/components/visuals/StackQueueTemplate';
 
 export const metadata = {
   title: 'Visual Template Gallery - PinIT Dev',
@@ -214,6 +216,38 @@ const sampleCells: CellsVisual = {
         { name: 'right', index: 3, tone: 'ok' },
       ],
       tones: { 2: 'ok', 3: 'ok' },
+    },
+  ],
+};
+
+const sampleStackQueue: StackQueueVisual = {
+  template: 'stack-queue',
+  title: 'Call Stack Execution',
+  mode: 'stack',
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Initial frames pushed: open file, then type hello.',
+      items: ['open file', 'type hello'],
+      action: 'push',
+      actionItem: 'type hello',
+      tones: ['idle', 'data'],
+    },
+    {
+      at: 'say2',
+      caption: 'make bold frame pushed to the top of the stack.',
+      items: ['open file', 'type hello', 'make bold'],
+      action: 'push',
+      actionItem: 'make bold',
+      tones: ['idle', 'idle', 'ok'],
+    },
+    {
+      at: 'say3',
+      caption: 'make bold finishes and is popped from the stack.',
+      items: ['open file', 'type hello'],
+      action: 'pop',
+      actionItem: 'make bold',
+      tones: ['idle', 'data'],
     },
   ],
 };
@@ -459,6 +493,42 @@ export default function VisualGalleryPage(): React.ReactElement {
               <CellsTemplate
                 step={step}
                 showSpaces={sampleCells.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. StackQueue Template */}
+      <section
+        data-testid="gallery-section-stack-queue"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          Stack-Queue Template: {sampleStackQueue.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleStackQueue.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-stack-queue-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <StackQueueTemplate
+                step={step}
+                mode={sampleStackQueue.mode}
+                showSpaces={sampleStackQueue.showSpaces}
               />
             </div>
           ))}
