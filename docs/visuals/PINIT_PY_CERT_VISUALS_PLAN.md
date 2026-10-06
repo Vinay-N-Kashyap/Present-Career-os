@@ -14,13 +14,26 @@
 
 **Builder:** Antigravity. **Reviewer:** Claude. **Approver:** the owner.
 
-**Version:** 1.0, 6 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
+**Version:** 1.1, 6 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
 
 **Files that come with this PDF (already in the repo, do not edit):**
 
-- `docs/visuals/py_cert_generator_prompt.md`: the exact AI prompt. SHA-256 `d1f3618b05aad089802778d448b6fdd512b277abca1037d1e370fc961495469d`.
+- `docs/visuals/py_cert_generator_prompt.md`: the exact AI prompt. SHA-256 `b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a`.
 - `docs/visuals/py_cert_tasks.json`: every task in this PDF in machine-readable form (ID, allowed files, done check).
 - `docs/visuals/py_cert_manifest.json`: all 2,160 lesson-part keys with their status.
+
+### Changes in 1.1 (Claude checked its own v1.0 plan against the code)
+
+| # | Mistake in v1.0 | Fixed in |
+|---|---|---|
+| 1 | Picture steps could only follow spoken lines 1–4, but later courses have up to 14 spoken lines per part | E-01, R4 |
+| 2 | E-21 deleted the pilot file but did not allow the 4 files that import it, so the build would break | E-15, E-21 |
+| 3 | Change & Run ignored that the lesson page runs Python in a worker (`public/python-worker.js`) | E-22 |
+| 4 | The scope guard checked only the last commit of a push | S-03 |
+| 5 | Claude's own spec updates had no task ID and would be blocked | task `X-SPEC` |
+| 6 | The caption-number rule rejected good captions such as "Positions 0 to 3" | R7, prompt rule 4 (new SHA) |
+| 7 | The manifest statuses `todo` and `pilot` were missing from R11 | C3, R11 |
+| 8 | The generator ignored the existing AI helper `askForJson`, which can be tested without a key | E-17 |
 
 ---
 
@@ -171,7 +184,7 @@ Values are shown as Python `repr`, for example `'Tea'`, `20` or `[1, 2, 3]`.
 | Template components | `src/app/quests/lesson/components/visuals/` |
 | Generator, check and status scripts | `scripts/visuals/` |
 | Released courses (the only switch that shows pictures to students) | `src/lib/visuals/enabledCourses.ts` |
-| Progress manifest | `docs/visuals/py_cert_manifest.json` |
+| Progress manifest | `docs/visuals/py_cert_manifest.json`. Statuses: `todo`, `pilot` (python Days 1–3 until E-20), `passed`, `none`, `needs-review` |
 
 ### C4. The generator (what `npm run visuals:generate` does)
 
@@ -195,14 +208,14 @@ For each of the 6 parts of one lesson day:
 | R1 | The file has exactly 6 entries, and each entry's `partTitle` equals the real part title |
 | R2 | The template is `none` or is on the course's allowed list (Part D) |
 | R3 | 2–5 steps, at most 6 shapes |
-| R4 | `at` values are valid for the part and strictly increasing (intro, say1…sayN, example, tryIt) |
+| R4 | `at` values are valid for the part (`sayN` only if the part has at least N say lines) and strictly increasing (say1…sayN, example, tryIt) |
 | R5 | Each caption is one sentence of at most 80 characters, ending in `.`, with no emoji |
 | R6 | Every value is a binding. Re-running the code gives exactly the saved values. Any `text` binding appears verbatim in the part |
-| R7 | Every number in a caption is one of the values bound in that step |
+| R7 | Every number in a caption is one of the values bound in that step, or is written in the part's code |
 | R8 | Every tappable label appears as a whole word in the part's text or code |
 | R9 | Tones are only `data`, `ok`, `error`, `idle` |
 | R10 | At least 3 of the 6 parts in a day have a picture, otherwise the day is marked `needs-review` |
-| R11 | The manifest status matches the file: `passed`, `none` or `needs-review` |
+| R11 | The manifest status matches the file. A key with a day file is `passed`, `none` or `needs-review`; a key without one is `todo` (or `pilot` for python Days 1–3 before E-20) |
 
 ### C6. Change & Run (students can play with the picture)
 
@@ -289,19 +302,22 @@ The generator may only pick templates from that course's row (gate rule R2). `no
   1. Write `scripts/ci/check-task-scope.mjs`. It:
       - reads the head commit message and finds `[task:<ID>]` (missing → fail);
       - loads `docs/visuals/py_cert_tasks.json` and finds that ID (unknown → fail);
-      - lists the files changed by the commit (`git diff --name-only HEAD~1 HEAD`);
-      - fails if any changed file does not match one of the task's `allowedFiles` globs.
+      - checks **every commit in the push**, not only the last one: the range is `github.event.before..github.sha` on push, and `base..head` on pull requests;
+      - for each commit, lists its changed files (`git diff --name-only <commit>~1 <commit>`);
+      - fails if any changed file does not match one of that commit's task `allowedFiles` globs.
   2. Commits without `[task:` are allowed only if they touch no file under `src/lib/data/lessonVisuals/`, `scripts/visuals/`, `src/lib/visuals/`, `docs/visuals/py_cert_*`, `tests/` or `.github/`.
-  3. Add a CI step `Task scope` right after checkout (fetch depth 2).
-  4. In `tests/task_scope.test.ts`, use 6 cases with fake file lists:
+  3. Add a CI step `Task scope` right after checkout, with `fetch-depth: 0` so the whole push range is available.
+  4. In `tests/task_scope.test.ts`, use 7 cases with fake file lists:
       - allowed file passes;
       - other file fails;
       - unknown ID fails;
       - missing tag on a protected path fails;
       - missing tag on a normal path passes;
-      - a glob match passes.
-- **Done when:** CI is green, and the test shows all 6 cases.
+      - a glob match passes;
+      - in a push of 2 commits, a bad first commit fails even when the last commit is fine.
+- **Done when:** CI is green, and the test shows all 7 cases.
 - **Must not:** change `docs/visuals/py_cert_tasks.json` (Claude owns it).
+- **Note:** Claude's own spec updates use the task ID `X-SPEC`, which allows `docs/visuals/**` only.
 - **Send:** the CI run link.
 
 #### S-04. Protected files list
@@ -320,10 +336,11 @@ The generator may only pick templates from that course's row (gate rule R2). `no
 
 - **Allowed files:** `src/lib/types/lessonVisual.ts`.
 - **Steps:**
-  1. Add a `Binding` union exactly as in C2: `var`/`line`/`hit`/`as`, `out`, `query`, `text`.
-  2. Add types for the 6 new templates (C1), each with a `steps` array and fields named as in C1.
-  3. Add `VisualEntry = LessonVisual | { template: 'none'; reason: string }`, and `DayVisualFile = { prefix: string; day: number; entries: { partTitle: string; visual: VisualEntry; filled?: unknown }[] }`.
-  4. Keep all existing types unchanged.
+  1. Change `VisualAt` to `` `say${number}` | 'example' | 'tryIt' `` (later courses have up to 14 say lines per part).
+  2. Add a `Binding` union exactly as in C2: `var`/`line`/`hit`/`as`, `out`, `query`, `text`.
+  3. Add types for the 6 new templates (C1), each with a `steps` array and fields named as in C1.
+  4. Add `VisualEntry = LessonVisual | { template: 'none'; reason: string }`, and `DayVisualFile = { prefix: string; day: number; entries: { partTitle: string; visual: VisualEntry; filled?: unknown }[] }`.
+  5. Keep all other existing types unchanged.
 - **Done when:** `npx tsc --noEmit` is clean, and CI is green.
 - **Must not:** use `any`.
 
@@ -353,7 +370,7 @@ The generator may only pick templates from that course's row (gate rule R2). `no
 
 - **Allowed files:** `src/lib/visuals/trace/runSqlCapture.ts`, `tests/visual_trace.test.ts`.
 - **Steps:**
-  1. Run each statement of a SQL lesson code in a fresh PGlite, the same way the lesson SQL runner does.
+  1. Run each statement of a SQL lesson code in a fresh PGlite. Reuse `splitSqlStatements`, `resetDatabase` and `runSqlLesson` from `src/lib/code/sql/sqlCore.ts`; do not write a new SQL runner.
   2. Return `{statements: [{index, sql, rows (max 6), columns (max 4)}], output}`.
   3. Tests use 2 real `sql-mastery` lesson parts. The captured result must match their `output`.
 - **Done when:** the tests pass, and CI is green.
@@ -410,7 +427,7 @@ There is one task per template:
 
 - **Allowed files:** `tests/lesson_visuals_gate.test.ts`, `src/lib/visuals/gate.ts`.
 - **Steps:**
-  1. Put rules R1 to R11 (C5) in `src/lib/visuals/gate.ts` as one function: `checkDayFile(file) → {passed, errors[]}`.
+  1. Put rules R1 to R11 (C5) in `src/lib/visuals/gate.ts` as one function: `checkDayFile(file) → {passed, errors[]}`. Keep and reuse the existing `src/lib/visuals/visualRules.ts` (underline and space-dot rules); do not change or replace it.
   2. The test runs `checkDayFile` on every file under `src/lib/data/lessonVisuals/` and fails with every error listed.
   3. Add one deliberately broken sample per rule (11 samples), and show each one failing.
 - **Done when:** CI is green, and the 11 broken samples each fail with the right rule number.
@@ -430,13 +447,14 @@ There is one task per template:
 - **Allowed files:** `src/lib/visuals/loadVisuals.ts`, `src/lib/visuals/enabledCourses.ts`, `src/app/quests/lesson/hooks/useLessonEngine.ts`, `tests/visual_loader.test.ts`.
 - **Steps:**
   1. Load `src/lib/data/lessonVisuals/<prefix>/day-<NN>.json` only for prefixes listed in `enabledCourses.ts`. That list starts as `['python']`.
-  2. Until E-20, keep the pilot file `pythonMonth1Visuals.ts` as the source for python Days 1–3.
+  2. Move the visual lookup out of `useLessonEngine.ts` (today it imports `PYTHON_M1_VISUALS` directly, around line 518) into `getVisual(prefix, day, partIndex)` in `loadVisuals.ts`. `useLessonEngine.ts` calls only `getVisual`.
+  3. Until E-21, `getVisual` still returns the pilot file `pythonMonth1Visuals.ts` for python Days 1–3.
 - **Done when:** the tests pass (an enabled course loads, a disabled course gets no visuals, a missing file gets no visual and no crash), and CI is green.
 
 #### E-16. Prompt lock
 
 - **Allowed files:** `tests/visual_prompt_lock.test.ts`.
-- **Steps:** the test reads `docs/visuals/py_cert_generator_prompt.md` and asserts its SHA-256 is `d1f3618b05aad089802778d448b6fdd512b277abca1037d1e370fc961495469d`.
+- **Steps:** the test reads `docs/visuals/py_cert_generator_prompt.md` and asserts its SHA-256 is `b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a`.
 - **Done when:** CI is green.
 - **Must not:** edit the prompt file. Only Claude changes it, with a new version of this PDF.
 
@@ -444,12 +462,17 @@ There is one task per template:
 
 - **Allowed files:** `scripts/visuals/generate.mts`, `scripts/visuals/config.json`, `scripts/visuals/schema.json`, `package.json`.
 - **Steps:**
-  1. Implement C4 exactly: trace, prompt, parse, fill, gate, up to 3 attempts, write the day file, update the manifest.
+  1. Implement C4 exactly: trace, prompt, parse, fill, gate, up to 3 attempts, write the day file, update the manifest. Call the AI only through the existing `askForJson` in `src/lib/server/llmJson.ts`; do not write a new AI client.
   2. The command is `npm run visuals:generate -- --course <prefix> --day <N>`.
   3. It reads the key from `OPENROUTER_API_KEY` and stops with "OPENROUTER_API_KEY is not set" if it is missing.
   4. It writes only `src/lib/data/lessonVisuals/<prefix>/day-<NN>.json` and `docs/visuals/py_cert_manifest.json`.
   5. It logs, per part: attempt number, chosen template and gate result.
-- **Done when:** CI is green. The generator itself is not run in CI, because CI has no reason to spend API calls. The proof is task E-20.
+  6. In `tests/visual_generator.test.ts`, use the existing fake transport (`setLlmJsonTransportForTests`), so no key and no cost. Test:
+      - a valid answer is filled and passes;
+      - an answer that breaks R3 is retried with the gate error;
+      - 3 bad answers give `none` and `needs-review`;
+      - a typed value instead of a binding is rejected.
+- **Done when:** the 4 tests pass, and CI is green. The real generator is not run in CI (no API spend). The real-AI proof is task E-20.
 - **Must not:** let the AI write values (bindings only), or skip the gate.
 
 #### E-18. Check command
@@ -484,13 +507,22 @@ There is one task per template:
 - **Steps:**
   1. Load python Days 1–3 from the JSON files.
   2. Delete the old pilot file.
-  3. In `tests/lesson_visuals.test.ts`, keep only what the gate test does not cover.
+  3. Update the 4 files that import it today, so nothing imports it any more:
+      - `useLessonEngine.ts` (if E-15 left any import);
+      - `tests/lesson_visuals.test.ts`;
+      - `tests/visual_rules.test.ts`;
+      - `tests/visual_templates.test.ts`.
+  4. Make these tests read the JSON day files through `getVisual` instead. In `tests/lesson_visuals.test.ts`, keep only what the gate test does not cover.
+  5. Check: `git grep -n "pythonMonth1Visuals\|PYTHON_M1_VISUALS"` returns nothing.
 - **Done when:** CI is green, including the existing Playwright tests for python Days 1–3.
 
 #### E-22. Change & Run
 
 - **Allowed files:** `src/app/quests/lesson/components/visuals/VisualStage.tsx`, `src/app/quests/lesson/hooks/useLessonEngine.ts`, `src/lib/visuals/trace/runPythonTrace.ts`, `tests/e2e/change-and-run.spec.ts`.
-- **Steps:** implement C6.
+- **Steps:**
+  1. The lesson page runs Python in a Web Worker (`public/python-worker.js`, called by `runPythonInBrowser` in `src/lib/code/python/pythonRunner.ts`).
+  2. Add an optional `trace: true` to `runPythonInBrowser`. It posts the tracer source from E-02 to the worker, which runs it before the student code and returns the events next to stdout.
+  3. Implement C6 on top of that, using the fill adapters from E-05.
 - **Playwright tests:**
   - **python Day 2 Part 1:** change `lunch = 120` to `lunch = 150`, press Run, and the `total` box shows `215`;
   - **renaming `lunch`:** the "Your code changed the names…" line appears;
@@ -576,39 +608,40 @@ The full ordered list of every task follows, in Part G. Each content card lists 
 
 ---
 
-## Part G. Every task, in order (473 tasks)
+## Part G. Every task, in order (474 tasks)
 
 ### G1. Phase 0 and Phase 1
 
 | # | ID | Task |
 |---|---|---|
-| 1 | `S-01` | New API keys (owner) |
-| 2 | `S-02` | Secret scanner in CI |
-| 3 | `S-03` | Task-scope guard |
-| 4 | `S-04` | Protected files list |
-| 5 | `E-01` | Types for bindings and new templates |
-| 6 | `E-02` | Python tracer |
-| 7 | `E-03` | Value formatter |
-| 8 | `E-04` | SQL capture |
-| 9 | `E-05` | Fill adapters for existing templates |
-| 10 | `E-06` | Template gallery page for tests |
-| 11 | `E-07` | New template: cells |
-| 12 | `E-08` | New template: stack-queue |
-| 13 | `E-09` | New template: tree-graph |
-| 14 | `E-10` | New template: bars |
-| 15 | `E-11` | New template: sequence |
-| 16 | `E-12` | New template: states |
-| 17 | `E-13` | Gate v2 |
-| 18 | `E-14` | Manifest check in CI |
-| 19 | `E-15` | Loader and release switch |
-| 20 | `E-16` | Prompt lock |
-| 21 | `E-17` | Generator script |
-| 22 | `E-18` | Check command |
-| 23 | `E-19` | Shot list and random pick |
-| 24 | `E-20` | Pilot through the pipeline |
-| 25 | `E-21` | Switch python Days 1-3 to JSON |
-| 26 | `E-22` | Change & Run |
-| 27 | `E-23` | Engine review by Claude |
+| 1 | `X-SPEC` | Claude spec updates (Claude only) |
+| 2 | `S-01` | New API keys (owner) |
+| 3 | `S-02` | Secret scanner in CI |
+| 4 | `S-03` | Task-scope guard |
+| 5 | `S-04` | Protected files list |
+| 6 | `E-01` | Types for bindings and new templates |
+| 7 | `E-02` | Python tracer |
+| 8 | `E-03` | Value formatter |
+| 9 | `E-04` | SQL capture |
+| 10 | `E-05` | Fill adapters for existing templates |
+| 11 | `E-06` | Template gallery page for tests |
+| 12 | `E-07` | New template: cells |
+| 13 | `E-08` | New template: stack-queue |
+| 14 | `E-09` | New template: tree-graph |
+| 15 | `E-10` | New template: bars |
+| 16 | `E-11` | New template: sequence |
+| 17 | `E-12` | New template: states |
+| 18 | `E-13` | Gate v2 |
+| 19 | `E-14` | Manifest check in CI |
+| 20 | `E-15` | Loader and release switch |
+| 21 | `E-16` | Prompt lock |
+| 22 | `E-17` | Generator script |
+| 23 | `E-18` | Check command |
+| 24 | `E-19` | Shot list and random pick |
+| 25 | `E-20` | Pilot through the pipeline |
+| 26 | `E-21` | Switch python Days 1-3 to JSON |
+| 27 | `E-22` | Change & Run |
+| 28 | `E-23` | Engine review by Claude |
 
 ### G2. Phase 2, course by course
 

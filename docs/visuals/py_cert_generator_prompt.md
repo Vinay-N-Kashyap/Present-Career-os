@@ -16,8 +16,8 @@ Rules:
    - {"out":<n>} = output line n;
    - {"query":<k>} = the result rows of SQL statement k (SQL course only);
    - {"text":"<exact text>"} = text copied exactly from the part's code, say lines, example or tryIt.
-3. Use 2 to 5 steps. Each step has "at": one of say1..sayN, example, tryIt. The steps must follow that order, and no two steps may use the same "at".
-4. Each step has a caption: one plain sentence, at most 80 characters, ending with a full stop. A caption may contain a number only if that number is one of the values bound in the same step.
+3. Use 2 to 5 steps. Each step has "at": one of say1..sayN (N = the number of say lines this part has), example, tryIt. The steps must follow that order, and no two steps may use the same "at".
+4. Each step has a caption: one plain sentence, at most 80 characters, ending with a full stop. A caption may contain a number only if that number is one of the values bound in the same step, or is written in the part's code.
 5. Every shape label must be a word or name that appears in the part's say lines, example, code or tryIt.
 6. At most 6 shapes (boxes, nodes, rows, bars, actors or states). Tones may only be: data, ok, error, idle.
 7. Write for beginners in plain English. No emoji, no jokes, no exclamation marks.

@@ -1,7 +1,15 @@
 {
  "version": 1,
- "promptSha256": "d1f3618b05aad089802778d448b6fdd512b277abca1037d1e370fc961495469d",
+ "promptSha256": "b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a",
  "tasks": [
+  {
+   "id": "X-SPEC",
+   "title": "Claude spec updates (Claude only)",
+   "allowedFiles": [
+    "docs/visuals/**"
+   ],
+   "kind": "spec"
+  },
   {
    "id": "S-01",
    "title": "New API keys (owner)",
@@ -208,7 +216,8 @@
     "scripts/visuals/generate.mts",
     "scripts/visuals/config.json",
     "scripts/visuals/schema.json",
-    "package.json"
+    "package.json",
+    "tests/visual_generator.test.ts"
    ],
    "kind": "engine"
   },
@@ -249,7 +258,10 @@
    "allowedFiles": [
     "src/lib/visuals/loadVisuals.ts",
     "src/lib/data/lessonVisuals/pythonMonth1Visuals.ts",
-    "tests/lesson_visuals.test.ts"
+    "src/app/quests/lesson/hooks/useLessonEngine.ts",
+    "tests/lesson_visuals.test.ts",
+    "tests/visual_rules.test.ts",
+    "tests/visual_templates.test.ts"
    ],
    "kind": "engine"
   },
@@ -260,6 +272,8 @@
     "src/app/quests/lesson/components/visuals/VisualStage.tsx",
     "src/app/quests/lesson/hooks/useLessonEngine.ts",
     "src/lib/visuals/trace/runPythonTrace.ts",
+    "src/lib/code/python/pythonRunner.ts",
+    "public/python-worker.js",
     "tests/e2e/change-and-run.spec.ts"
    ],
    "kind": "engine"
