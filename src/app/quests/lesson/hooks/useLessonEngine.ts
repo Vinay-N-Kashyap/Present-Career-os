@@ -15,7 +15,7 @@ import { withLessonHelpers } from '@/lib/code/sandbox/lessonHelpers';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
-import { PYTHON_M1_VISUALS } from '@/lib/data/lessonVisuals/pythonMonth1Visuals';
+import { getVisual } from '@/lib/visuals/loadVisuals';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
 
 export function getVisualAtOrder(pieceAt: string): number {
@@ -514,8 +514,7 @@ export function useLessonEngine({
     if (longLesson) {
       setSlides(longLesson.parts.map((part, i) => {
         const visualKey = `${coursePrefix}:${dayNum}:${i}`;
-        const visualEntry = PYTHON_M1_VISUALS[visualKey];
-        const visual = visualEntry ? visualEntry.visual : null;
+        const visual = getVisual(coursePrefix, dayNum, i);
 
         const speechPieces: { at: VisualAt; text: string }[] = [
           { at: 'intro' as VisualAt, text: `Part ${i + 1}: ${part.title}.` },
