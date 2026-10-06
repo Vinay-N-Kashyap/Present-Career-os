@@ -17,6 +17,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Task scope
+        run: node scripts/ci/check-task-scope.mjs
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
