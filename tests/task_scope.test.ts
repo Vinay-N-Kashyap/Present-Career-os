@@ -105,3 +105,97 @@ test('7. in a push of 2 commits, a bad first commit fails even when the last com
   assert.equal(result.ok, false, 'Push with a bad first commit must fail');
   assert.match(result.error, /Commit 1 of 2/);
 });
+
+test('8. a protected file listed only through a glob fails', () => {
+  const tasksMap = {
+    'TEST-GLOB': {
+      id: 'TEST-GLOB',
+      title: 'Task with glob for tests',
+      allowedFiles: ['tests/**'],
+    },
+    'SPEC-GLOB': {
+      id: 'SPEC-GLOB',
+      title: 'Spec task with glob',
+      allowedFiles: ['docs/visuals/**'],
+    },
+    'CI-GLOB': {
+      id: 'CI-GLOB',
+      title: 'CI task with glob',
+      allowedFiles: ['.github/**'],
+    },
+  };
+
+  // 1. tests/** glob fails on tests/task_scope.test.ts
+  const res1 = checkCommitScope(
+    '[task:TEST-GLOB] Try modifying test via glob',
+    ['tests/task_scope.test.ts'],
+    tasksMap
+  );
+  assert.equal(res1.ok, false, 'Protected test file listed only through glob must fail');
+  assert.match(res1.error, /does not allow modifying file/);
+
+  // 2. docs/visuals/** glob fails on docs/visuals/py_cert_tasks.json
+  const res2 = checkCommitScope(
+    '[task:SPEC-GLOB] Try modifying py_cert_tasks.json via glob',
+    ['docs/visuals/py_cert_tasks.json'],
+    tasksMap
+  );
+  assert.equal(res2.ok, false, 'Protected py_cert_tasks.json listed only through glob must fail');
+  assert.match(res2.error, /does not allow modifying file/);
+
+  // 3. docs/visuals/** glob fails on docs/visuals/py_cert_generator_prompt.md
+  const res3 = checkCommitScope(
+    '[task:SPEC-GLOB] Try modifying py_cert_generator_prompt.md via glob',
+    ['docs/visuals/py_cert_generator_prompt.md'],
+    tasksMap
+  );
+  assert.equal(res3.ok, false, 'Protected py_cert_generator_prompt.md listed only through glob must fail');
+  assert.match(res3.error, /does not allow modifying file/);
+
+  // 4. .github/** glob fails on .github/workflows/ci-cd.yml
+  const res4 = checkCommitScope(
+    '[task:CI-GLOB] Try modifying workflow via glob',
+    ['.github/workflows/ci-cd.yml'],
+    tasksMap
+  );
+  assert.equal(res4.ok, false, 'Protected workflow file listed only through glob must fail');
+  assert.match(res4.error, /does not allow modifying file/);
+});
+
+test('9. a protected file listed exactly passes', () => {
+  const tasksMap = {
+    'S-04': {
+      id: 'S-04',
+      title: 'Protected files list',
+      allowedFiles: [
+        'scripts/ci/check-task-scope.mjs',
+        'tests/task_scope.test.ts',
+      ],
+    },
+    'E-16': {
+      id: 'E-16',
+      title: 'Prompt lock',
+      allowedFiles: [
+        'docs/visuals/py_cert_generator_prompt.md',
+        'tests/visual_prompt.test.ts',
+      ],
+    },
+  };
+
+  const res1 = checkCommitScope(
+    '[task:S-04] Protected files list',
+    ['scripts/ci/check-task-scope.mjs', 'tests/task_scope.test.ts'],
+    tasksMap
+  );
+  assert.equal(res1.ok, true, 'Protected files listed by exact path must pass');
+  assert.equal(res1.taskId, 'S-04');
+
+  const res2 = checkCommitScope(
+    '[task:E-16] Lock generator prompt',
+    ['docs/visuals/py_cert_generator_prompt.md', 'tests/visual_prompt.test.ts'],
+    tasksMap
+  );
+  assert.equal(res2.ok, true, 'Protected prompt file and test file listed exactly must pass');
+  assert.equal(res2.taskId, 'E-16');
+});
+

@@ -10,16 +10,36 @@ export const PROTECTED_PREFIXES = [
   'docs/visuals/py_cert_',
   'tests/',
   '.github/',
+  'scripts/ci/',
 ];
 
+export const STRICTLY_PROTECTED_PATTERNS = [
+  'tests/**',
+  '.github/**',
+  'scripts/ci/**',
+  'docs/visuals/py_cert_generator_prompt.md',
+  'docs/visuals/py_cert_tasks.json',
+];
+
+export function isStrictlyProtectedPath(filePath) {
+  const norm = filePath.replace(/\\/g, '/').replace(/^\.\//, '');
+  return STRICTLY_PROTECTED_PATTERNS.some((pat) => {
+    if (pat.endsWith('/**')) {
+      const dir = pat.slice(0, -3);
+      return norm === dir || norm.startsWith(dir + '/');
+    }
+    return norm === pat;
+  });
+}
+
 export function isProtectedPath(filePath) {
-  const norm = filePath.replace(/\\/g, '/');
-  return PROTECTED_PREFIXES.some((prefix) => norm.startsWith(prefix));
+  const norm = filePath.replace(/\\/g, '/').replace(/^\.\//, '');
+  return PROTECTED_PREFIXES.some((prefix) => norm.startsWith(prefix)) || isStrictlyProtectedPath(norm);
 }
 
 export function matchGlob(file, glob) {
-  const normFile = file.replace(/\\/g, '/');
-  const normGlob = glob.replace(/\\/g, '/');
+  const normFile = file.replace(/\\/g, '/').replace(/^\.\//, '');
+  const normGlob = glob.replace(/\\/g, '/').replace(/^\.\//, '');
   if (normGlob === normFile) return true;
   if (normGlob.endsWith('/**')) {
     const dir = normGlob.slice(0, -3);
@@ -64,7 +84,19 @@ export function checkCommitScope(commitMessage, changedFiles, tasksMap) {
   const unauthorizedFiles = [];
 
   for (const file of changedFiles) {
-    const isAllowed = allowedPatterns.some((pattern) => matchGlob(file, pattern));
+    const normFile = file.replace(/\\/g, '/').replace(/^\.\//, '');
+    let isAllowed = false;
+
+    if (isStrictlyProtectedPath(normFile)) {
+      // Protected files pass ONLY if listed by exact path (a glob is not enough)
+      isAllowed = allowedPatterns.some((pattern) => {
+        const normPattern = pattern.replace(/\\/g, '/').replace(/^\.\//, '');
+        return normPattern === normFile;
+      });
+    } else {
+      isAllowed = allowedPatterns.some((pattern) => matchGlob(normFile, pattern));
+    }
+
     if (!isAllowed) {
       unauthorizedFiles.push(file);
     }
