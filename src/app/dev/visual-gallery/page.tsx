@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { notFound } from 'next/navigation';
 import type {
@@ -11,6 +13,7 @@ import type {
   TreeGraphVisual,
   BarsVisual,
   SequenceVisual,
+  StatesVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
@@ -22,11 +25,9 @@ import { StackQueueTemplate } from '@/app/quests/lesson/components/visuals/Stack
 import { TreeGraphTemplate } from '@/app/quests/lesson/components/visuals/TreeGraphTemplate';
 import { BarsTemplate } from '@/app/quests/lesson/components/visuals/BarsTemplate';
 import { SequenceTemplate } from '@/app/quests/lesson/components/visuals/SequenceTemplate';
+import { StatesTemplate } from '@/app/quests/lesson/components/visuals/StatesTemplate';
 
-export const metadata = {
-  title: 'Visual Template Gallery - PinIT Dev',
-  robots: 'noindex, nofollow',
-};
+
 
 const sampleFlow: FlowVisual = {
   template: 'flow',
@@ -358,6 +359,46 @@ const sampleSequence: SequenceVisual = {
         { from: 'Server', to: 'Client', label: 'result: 7', tone: 'ok' },
       ],
       activeActor: 'Client',
+    },
+  ],
+};
+
+const sampleStates: StatesVisual = {
+  template: 'states',
+  title: 'Circuit Breaker Lifecycle',
+  states: [
+    { id: 'CLOSED', label: 'CLOSED' },
+    { id: 'OPEN', label: 'OPEN' },
+    { id: 'HALF_OPEN', label: 'HALF_OPEN' },
+  ],
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Circuit is CLOSED under normal operating conditions.',
+      currentState: 'CLOSED',
+      tone: 'ok',
+    },
+    {
+      at: 'say2',
+      caption: 'Consecutive failures exceed threshold: circuit trips OPEN.',
+      currentState: 'OPEN',
+      transition: {
+        from: 'CLOSED',
+        to: 'OPEN',
+        label: 'failures >= 3',
+      },
+      tone: 'error',
+    },
+    {
+      at: 'say3',
+      caption: 'Reset timeout expires: circuit enters HALF_OPEN trial state.',
+      currentState: 'HALF_OPEN',
+      transition: {
+        from: 'OPEN',
+        to: 'HALF_OPEN',
+        label: 'reset timeout',
+      },
+      tone: 'data',
     },
   ],
 };
@@ -747,6 +788,42 @@ export default function VisualGalleryPage(): React.ReactElement {
                 actors={sampleSequence.actors}
                 step={step}
                 showSpaces={sampleSequence.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 11. States Template */}
+      <section
+        data-testid="gallery-section-states"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          States Template: {sampleStates.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleStates.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-states-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <StatesTemplate
+                states={sampleStates.states}
+                step={step}
+                showSpaces={sampleStates.showSpaces}
               />
             </div>
           ))}

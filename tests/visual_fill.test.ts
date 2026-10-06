@@ -19,6 +19,8 @@ import type {
   BarsVisual,
   SequenceSpec,
   SequenceVisual,
+  StatesSpec,
+  StatesVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
@@ -734,4 +736,79 @@ test('13. sequence adapter fills real dist-py Day 3 RPC part', async () => {
   assert.equal(filled.steps[1].messages[1].to, 'Client');
   assert.equal(filled.steps[1].messages[1].label, 'stock: 7');
   assert.equal(filled.steps[1].activeActor, 'Server');
+});
+
+// Test 14: states adapter fills real dist-py Day 20 circuit breaker part
+test('14. states adapter fills real dist-py Day 20 circuit breaker part', async () => {
+  assert.ok(TEMPLATE_REGISTRY.states?.fill, 'states template is registered with fill adapter');
+
+  const day20 = DIST_PYTHON_LONG_LESSONS.find((l) => l.day === 20);
+  assert.ok(day20, 'dist-py Day 20 must exist');
+  const part1 = day20.parts[1];
+  assert.ok(part1, 'Day 20 Part 1 must exist');
+
+  const spec: StatesSpec = {
+    template: 'states',
+    title: 'Circuit breaker state transitions',
+    states: [
+      { id: 'CLOSED', label: 'CLOSED' },
+      { id: 'OPEN', label: 'OPEN' },
+      { id: 'HALF_OPEN', label: 'HALF_OPEN' },
+    ],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Breaker starts CLOSED under healthy conditions.',
+        currentState: 'CLOSED',
+        tone: 'ok',
+      },
+      {
+        at: 'say2',
+        caption: 'Failures exceed threshold: transition to OPEN.',
+        currentState: 'OPEN',
+        transition: {
+          from: 'CLOSED',
+          to: 'OPEN',
+          label: { text: 'failures >= threshold' },
+        },
+        tone: 'error',
+      },
+      {
+        at: 'say3',
+        caption: 'Reset timeout passes: transition to HALF_OPEN.',
+        currentState: 'HALF_OPEN',
+        transition: {
+          from: 'OPEN',
+          to: 'HALF_OPEN',
+          label: { text: 'reset timeout passes' },
+        },
+        tone: 'data',
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part1, { pyodide })) as StatesVisual;
+
+  assert.equal(filled.template, 'states');
+  assert.equal(filled.title, 'Circuit breaker state transitions');
+  assert.equal(filled.states.length, 3);
+  assert.equal(filled.steps.length, 3);
+
+  // Step 1: CLOSED
+  assert.equal(filled.steps[0].currentState, 'CLOSED');
+  assert.equal(filled.steps[0].tone, 'ok');
+
+  // Step 2: OPEN with transition from CLOSED
+  assert.equal(filled.steps[1].currentState, 'OPEN');
+  assert.equal(filled.steps[1].transition?.from, 'CLOSED');
+  assert.equal(filled.steps[1].transition?.to, 'OPEN');
+  assert.equal(filled.steps[1].transition?.label, 'failures >= threshold');
+  assert.equal(filled.steps[1].tone, 'error');
+
+  // Step 3: HALF_OPEN with transition from OPEN
+  assert.equal(filled.steps[2].currentState, 'HALF_OPEN');
+  assert.equal(filled.steps[2].transition?.from, 'OPEN');
+  assert.equal(filled.steps[2].transition?.to, 'HALF_OPEN');
+  assert.equal(filled.steps[2].transition?.label, 'reset timeout passes');
+  assert.equal(filled.steps[2].tone, 'data');
 });

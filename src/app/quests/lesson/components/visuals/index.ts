@@ -10,6 +10,7 @@ export { StackQueueTemplate } from './StackQueueTemplate';
 export { TreeGraphTemplate } from './TreeGraphTemplate';
 export { BarsTemplate } from './BarsTemplate';
 export { SequenceTemplate } from './SequenceTemplate';
+export { StatesTemplate } from './StatesTemplate';
 export {
   getToneColor,
   getToneBg,

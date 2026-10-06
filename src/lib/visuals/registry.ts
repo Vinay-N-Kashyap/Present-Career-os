@@ -10,6 +10,7 @@ import {
   treeGraphSpecSchema,
   barsSpecSchema,
   sequenceSpecSchema,
+  statesSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -22,6 +23,7 @@ import { fillStackQueue } from './fill/stack-queue';
 import { fillTreeGraph } from './fill/tree-graph';
 import { fillBars } from './fill/bars';
 import { fillSequence } from './fill/sequence';
+import { fillStates } from './fill/states';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -101,6 +103,12 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     description: '2–4 actors in columns, with messages going down for RPC, consensus, and retries',
     specSchema: sequenceSpecSchema,
     fill: fillSequence,
+  },
+  states: {
+    name: 'states',
+    description: '2–5 states, with the current one lit for lifecycles, circuit breakers, and locks',
+    specSchema: statesSpecSchema,
+    fill: fillStates,
   },
 };
 
