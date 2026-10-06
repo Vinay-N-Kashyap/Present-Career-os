@@ -9,7 +9,9 @@ import { PYTHON_TRACER_SOURCE } from '../src/lib/visuals/trace/pythonTracer';
 import { runPythonTrace, type TraceEvent } from '../src/lib/visuals/trace/runPythonTrace';
 import { formatValue } from '../src/lib/visuals/trace/formatValue';
 import { findUnstable } from '../src/lib/visuals/trace/stability';
+import { runSqlCapture, getSharedSqlDb } from '../src/lib/visuals/trace/runSqlCapture';
 
+import { SQL_LONG_LESSONS } from '../src/lib/data/sqlLongLessons';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
 import { AI_PYTHON_LONG_LESSONS } from '../src/lib/data/aiPythonLongLessons';
@@ -196,4 +198,39 @@ test('10. findUnstable on python Day 15 Part 2 names roll', async () => {
   }
 
   assert.ok(foundRoll, 'findUnstable identifies roll as unstable across runs');
+});
+
+// Test 11: SQL capture on a part with deliberate error (Day 1 Part 3) returns error
+test('11. SQL capture on a part with deliberate error (Day 1 Part 3) returns error', async () => {
+  const day1 = SQL_LONG_LESSONS.find((l) => l.day === 1);
+  assert.ok(day1, 'SQL Day 1 found');
+  const part3 = day1.parts[2]; // Part 3: Primary keys
+  assert.ok(part3 && part3.code, 'Part 3 code found');
+
+  const res = await runSqlCapture(part3.code);
+  assert.ok(res.error, 'error is returned');
+  assert.ok(
+    res.error.includes('duplicate key value violates unique constraint'),
+    `expected unique constraint error, got: ${res.error}`
+  );
+  assert.equal(res.output, part3.output, 'captured output equals lesson output');
+});
+
+// Test 12: for all 180 sql-mastery parts, captured output equals lesson output
+test('12. for all 180 sql-mastery parts, captured output equals lesson output', async () => {
+  const db = await getSharedSqlDb();
+  let checked = 0;
+  for (const lesson of SQL_LONG_LESSONS) {
+    assert.equal(lesson.parts.length, 6, `SQL Day ${lesson.day} has 6 parts`);
+    for (const [idx, part] of lesson.parts.entries()) {
+      checked++;
+      const res = await runSqlCapture(part.code, db);
+      assert.equal(
+        res.output,
+        part.output,
+        `Mismatch in SQL Day ${lesson.day} Part ${idx + 1} (${part.title})`
+      );
+    }
+  }
+  assert.equal(checked, 180, 'all 180 SQL parts checked');
 });
