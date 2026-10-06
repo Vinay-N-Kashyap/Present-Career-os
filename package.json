@@ -22,6 +22,7 @@
     "pretest": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/copy-esbuild.cjs && node scripts/utils/build-react-runtime.cjs && node scripts/utils/build-web-runtime.cjs",
     "test": "node scripts/utils/run-tests.cjs",
     "test:e2e": "playwright test",
+    "visuals:status": "node --experimental-strip-types scripts/visuals/status.mts",
     "screenshots": "node scripts/take_screenshots.mjs"
   },
   "dependencies": {

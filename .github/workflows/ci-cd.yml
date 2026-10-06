@@ -175,6 +175,9 @@ jobs:
             }
           "
 
+      - name: Visuals Status
+        run: npm run visuals:status
+
   build-and-e2e:
     name: Build & E2E Playwright Tests
     needs: guard
