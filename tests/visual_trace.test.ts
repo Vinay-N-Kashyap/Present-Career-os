@@ -7,6 +7,8 @@ import { loadPyodide, type PyodideInterface } from 'pyodide';
 
 import { PYTHON_TRACER_SOURCE } from '../src/lib/visuals/trace/pythonTracer';
 import { runPythonTrace, type TraceEvent } from '../src/lib/visuals/trace/runPythonTrace';
+import { formatValue } from '../src/lib/visuals/trace/formatValue';
+import { findUnstable } from '../src/lib/visuals/trace/stability';
 
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
@@ -157,4 +159,41 @@ test('8. all 1,980 Python lesson parts print exactly their output under tracing'
   }
 
   assert.equal(totalPartsTested, 1980, 'exactly 1,980 parts verified');
+});
+
+// Test 9: formatValue turns values into Python repr cut at 40 chars with …
+test('9. formatValue turns values into Python repr cut at 40 chars with …', () => {
+  assert.equal(formatValue('Tea'), "'Tea'");
+  assert.equal(formatValue(20), '20');
+  assert.equal(formatValue(4.5), '4.5');
+  assert.equal(formatValue(true), 'True');
+  assert.equal(formatValue([1, 2, 3]), '[1, 2, 3]');
+  assert.equal(formatValue({ a: 1 }), "{'a': 1}");
+  assert.equal(formatValue({ __f__: 'inf' }), 'inf');
+
+  const str100 = 'a'.repeat(100);
+  const formattedStr = formatValue(str100);
+  assert.equal(formattedStr.length, 40, '100-char string cut at 40 chars');
+  assert.ok(formattedStr.endsWith('…'), 'ends with ellipsis');
+});
+
+// Test 10: findUnstable on python Day 15 Part 2 names roll
+test('10. findUnstable on python Day 15 Part 2 names roll', async () => {
+  const day15 = PYTHON_LONG_LESSONS.find((l) => l.day === 15);
+  assert.ok(day15, 'Day 15 found');
+  const part2 = day15.parts[1]; // Part 2: The random module
+  assert.ok(part2 && part2.code, 'Part 2 code found');
+
+  let foundRoll = false;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const runA = await runPythonTrace(part2.code, pyodide);
+    const runB = await runPythonTrace(part2.code, pyodide);
+    const unstable = findUnstable(runA.events, runB.events);
+    if (unstable.includes('roll')) {
+      foundRoll = true;
+      break;
+    }
+  }
+
+  assert.ok(foundRoll, 'findUnstable identifies roll as unstable across runs');
 });
