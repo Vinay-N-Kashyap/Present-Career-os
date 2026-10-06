@@ -112,6 +112,32 @@ export function checkCommitScope(commitMessage, changedFiles, tasksMap) {
   return { ok: true, taskId };
 }
 
+export function isContentOnlyPush(commits) {
+  if (!commits || commits.length === 0) return false;
+
+  for (const commit of commits) {
+    const taskId = extractTaskId(commit.message);
+    if (!taskId) return false;
+
+    // Must be a content task ID: starts with "C-" (e.g. "C-python-D04")
+    if (!taskId.startsWith('C-')) return false;
+
+    // Must change only its own day-NN.json and the manifest
+    if (!commit.files || commit.files.length === 0) return false;
+
+    for (const file of commit.files) {
+      const norm = file.replace(/\\/g, '/').replace(/^\.\//, '');
+      const isManifest = (norm === 'docs/visuals/py_cert_manifest.json');
+      const isDayJson = /^src\/lib\/data\/lessonVisuals\/[a-zA-Z0-9_\-]+\/day-\d+\.json$/.test(norm);
+      if (!isManifest && !isDayJson) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 export function checkPushScope(commits, tasksMap) {
   for (let i = 0; i < commits.length; i++) {
     const commit = commits[i];
@@ -123,7 +149,8 @@ export function checkPushScope(commits, tasksMap) {
       };
     }
   }
-  return { ok: true };
+  const contentOnly = isContentOnlyPush(commits);
+  return { ok: true, contentOnly };
 }
 
 export function loadTasksMap(tasksJsonPath) {
@@ -202,6 +229,11 @@ export function runGitScopeCheck() {
     process.exit(1);
   }
 
+  const contentOnly = result.contentOnly ?? false;
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `content_only=${contentOnly ? 'true' : 'false'}\n`);
+  }
+  console.log(`Content fast path check: content_only=${contentOnly}`);
   console.log(`✅ All ${commits.length} commit(s) passed task-scope guard.`);
 }
 

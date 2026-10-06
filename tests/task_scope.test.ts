@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   checkCommitScope,
   checkPushScope,
+  isContentOnlyPush,
 } from '../scripts/ci/check-task-scope.mjs';
 
 const FAKE_TASKS_MAP = {
@@ -198,4 +199,78 @@ test('9. a protected file listed exactly passes', () => {
   assert.equal(res2.ok, true, 'Protected prompt file and test file listed exactly must pass');
   assert.equal(res2.taskId, 'E-16');
 });
+
+test('10. content_only is true for a pure content commit, and false if the same push also touches any other file', () => {
+  // 1. Pure content commit
+  const pureContentCommits = [
+    {
+      sha: 'commit_content_1',
+      message: '[task:C-python-D04] visuals for python day 4',
+      files: [
+        'src/lib/data/lessonVisuals/python/day-04.json',
+        'docs/visuals/py_cert_manifest.json',
+      ],
+    },
+  ];
+  assert.equal(
+    isContentOnlyPush(pureContentCommits),
+    true,
+    'Pure content commit must have content_only=true'
+  );
+
+  // 2. Content commit touching another file in the same commit
+  const mixedFilesContentCommits = [
+    {
+      sha: 'commit_content_2',
+      message: '[task:C-python-D04] visuals for python day 4 with extra code',
+      files: [
+        'src/lib/data/lessonVisuals/python/day-04.json',
+        'docs/visuals/py_cert_manifest.json',
+        'src/lib/types/lessonVisual.ts',
+      ],
+    },
+  ];
+  assert.equal(
+    isContentOnlyPush(mixedFilesContentCommits),
+    false,
+    'Content commit touching another file must have content_only=false'
+  );
+
+  // 3. Push of 2 commits: one pure content, one code task
+  const multiCommitMixed = [
+    {
+      sha: 'commit_content_3',
+      message: '[task:C-python-D04] visuals for python day 4',
+      files: [
+        'src/lib/data/lessonVisuals/python/day-04.json',
+        'docs/visuals/py_cert_manifest.json',
+      ],
+    },
+    {
+      sha: 'commit_code_1',
+      message: '[task:E-01] Types, Zod schema, registry',
+      files: ['src/lib/types/lessonVisual.ts'],
+    },
+  ];
+  assert.equal(
+    isContentOnlyPush(multiCommitMixed),
+    false,
+    'Push containing any non-content commit must have content_only=false'
+  );
+
+  // 4. Code task commit
+  const codeCommits = [
+    {
+      sha: 'commit_code_2',
+      message: '[task:S-05] CI speed: parallel tests',
+      files: ['.github/workflows/ci-cd.yml'],
+    },
+  ];
+  assert.equal(
+    isContentOnlyPush(codeCommits),
+    false,
+    'Code commit must have content_only=false'
+  );
+});
+
 
