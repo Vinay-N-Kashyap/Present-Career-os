@@ -14,7 +14,7 @@
 
 **Builder:** Antigravity. **Reviewer:** Claude. **Approver:** the owner.
 
-**Version:** 1.2, 6 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
+**Version:** 1.3, 7 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
 
 **Files that come with this PDF (already in the repo, do not edit):**
 
@@ -22,6 +22,12 @@
 - `docs/visuals/py_cert_tasks.json`: every task in this PDF in machine-readable form (ID, allowed files, done check).
 - `docs/visuals/py_cert_manifest.json`: all 2,160 lesson-part keys with their status.
 - `docs/visuals/py_cert_reference_tracer.py`: the proven Python tracer. SHA-256 `9be378bd9bd94a43acbda0fb6ba56372012da39aedeae244cfd49b9dd66ccd6e`.
+
+### Changes in 1.3
+
+| # | Change | Where |
+|---|---|---|
+| 22 | CI took about 26 minutes per task. Tests now run in 4 parallel shards (none skipped), content tasks use a fast path, and builds are cached. Target: 10 minutes or less | new task S-05 |
 
 ### Changes in 1.2 (Claude built a working prototype and ran it on all 2,160 real lesson parts)
 
@@ -99,7 +105,7 @@ GitHub rejects the commit automatically if it touches any other file.
 
 | Phase | Tasks | What happens |
 |---|---|---|
-| 0. Safety | 4 | New API keys, a secret scanner, the task-scope guard |
+| 0. Safety | 5 | New API keys, a secret scanner, the task-scope guard, faster CI |
 | 1. Engine | 23 | Tracer, new picture templates, generator, checks |
 | 2. Content | 357 day tasks + 72 checkpoints + 12 course releases + 5 plan milestones | One lesson day per task |
 
@@ -321,7 +327,7 @@ The generator may only pick templates from that course's row (gate rule R2). `no
 | Must not | Things that get the task rejected |
 | Send | What to send to Claude |
 
-### Phase 0. Safety (4 tasks)
+### Phase 0. Safety (5 tasks)
 
 #### S-01. New API keys (the owner does this)
 
@@ -370,7 +376,7 @@ The generator may only pick templates from that course's row (gate rule R2). `no
       - in a push of 2 commits, a bad first commit fails even when the last commit is fine.
 - **Done when:** CI is green, and the test shows all 7 cases.
 - **Must not:** change `docs/visuals/py_cert_tasks.json` (Claude owns it).
-- **Note:** Claude's own spec updates use the task ID `X-SPEC`, which allows `docs/visuals/**` only.
+- **Note:** Claude's own spec updates use the task ID `X-SPEC`. It allows `docs/visuals/**`, plus `docs/visuals/py_cert_generator_prompt.md` and `docs/visuals/py_cert_tasks.json` by exact path (S-04 requires exact paths for these two).
 - **Send:** the CI run link.
 
 #### S-04. Protected files list
@@ -382,6 +388,44 @@ The generator may only pick templates from that course's row (gate rule R2). `no
   2. Add 2 test cases: a protected file listed only through a glob fails; a protected file listed exactly passes.
 - **Done when:** CI is green.
 - **Send:** the CI run link.
+
+#### S-05. CI speed: parallel tests, content fast path, caches
+
+- **Why:** each run takes about 26 minutes, 14.5 of them in `npm test` on GitHub's 2-core runner. With 474 tasks, that's about 200 hours of waiting. Nothing may be skipped to save time; the time is saved by running work in parallel.
+- **Allowed files:** `.github/workflows/ci-cd.yml`, `scripts/utils/run-tests.cjs`, `scripts/ci/check-task-scope.mjs`, `tests/task_scope.test.ts`, `tests/run_tests_shard.test.ts`.
+- **Steps:**
+  1. **Shards.** In `scripts/utils/run-tests.cjs`, reuse `getTestFiles()`:
+      - sort the list;
+      - if `TEST_SHARD=N/M` is set, run only the files at positions N-1, N-1+M, N-1+2M, …;
+      - with `--list`, print the files that would run and exit.
+
+      With no `TEST_SHARD`, behaviour is exactly as today.
+  2. **Shard jobs.** In CI, replace the single `npm test` step with a job `tests` that uses a matrix `shard: [1, 2, 3, 4]`. Each shard runs `npm ci`, then `TEST_SHARD=<n>/4 npm test`. (`pretest` still runs, because it builds the sandbox runtimes the tests need.) Each shard uploads its `--list` output as an artifact.
+  3. **Completeness job.** A job `tests-complete` (`needs: tests`) downloads the 4 lists. It fails unless together they contain every file from `node scripts/utils/run-tests.cjs --list` exactly once, and it writes "4 shards ran N of N test files" to the job summary.
+  4. **Content fast path.** `check-task-scope.mjs` writes `content_only=true` to `$GITHUB_OUTPUT` only when every commit in the push is a content task (`C-…`) and changed only its own `day-NN.json` and the manifest. Then:
+      - the shard jobs and the full Playwright suite are skipped;
+      - a job `content` runs `npm run visuals:check` for that day, the manifest check, the normal build, and the screenshot test for that day's keys.
+
+      Before E-18 exists, content tasks cannot happen, so this path is unused.
+  5. **Caches.** Use `actions/setup-node` with `cache: npm`. Add `actions/cache` for `.next/cache`, keyed on `package-lock.json` and the source files.
+  6. **Keep everything else:**
+      - task scope and secret scan run first;
+      - `tsc` runs on every push;
+      - both builds stay (the normal build plus the test-mode security check, then the E2E build);
+      - all Playwright tests run on every code commit.
+  7. **Tests:**
+      - `tests/run_tests_shard.test.ts`: 4 shards of a fake list of 10 files cover all 10 exactly once, and no shard is empty;
+      - `tests/task_scope.test.ts`: `content_only` is true for a pure content commit, and false if the same push also touches any other file.
+- **Done when:**
+  - a code commit's CI is green in at most 10 minutes;
+  - the summary shows "4 shards ran N of N test files" with N equal to the full count;
+  - the total number of passing tests across the shards equals the number from a normal `npm test` run (send both numbers).
+- **Must not:**
+  - skip, delete, filter or weaken any test;
+  - add `continue-on-error` or `|| true`;
+  - add any runtime test-mode switch (header, cookie, secret). The login bypass exists only in the separate E2E build;
+  - run fewer than 4 shards to save runner minutes.
+- **Send:** the CI run link, plus the two test counts.
 
 ### Phase 1. Engine (23 tasks)
 
@@ -679,7 +723,7 @@ The full ordered list of every task follows, in Part G. Each content card lists 
 
 ---
 
-## Part G. Every task, in order (474 tasks)
+## Part G. Every task, in order (475 tasks)
 
 ### G1. Phase 0 and Phase 1
 
@@ -690,29 +734,30 @@ The full ordered list of every task follows, in Part G. Each content card lists 
 | 3 | `S-02` | Secret scanner in CI |
 | 4 | `S-03` | Task-scope guard |
 | 5 | `S-04` | Protected files list |
-| 6 | `E-01` | Types, Zod schema, registry, spoken-line bug |
-| 7 | `E-02` | Python tracer (copy the proven reference) |
-| 8 | `E-03` | Value formatter and stability |
-| 9 | `E-04` | SQL capture |
-| 10 | `E-05` | Fill adapters for existing templates |
-| 11 | `E-06` | Template gallery page for tests |
-| 12 | `E-07` | New template: cells |
-| 13 | `E-08` | New template: stack-queue |
-| 14 | `E-09` | New template: tree-graph |
-| 15 | `E-10` | New template: bars |
-| 16 | `E-11` | New template: sequence |
-| 17 | `E-12` | New template: states |
-| 18 | `E-13` | Gate v2 |
-| 19 | `E-14` | Manifest check in CI |
-| 20 | `E-15` | Loader and release switch |
-| 21 | `E-16` | Prompt lock |
-| 22 | `E-17` | Generator script |
-| 23 | `E-18` | Check command |
-| 24 | `E-19` | Shot list and random pick |
-| 25 | `E-20` | Pilot through the pipeline |
-| 26 | `E-21` | Switch python Days 1-3 to JSON |
-| 27 | `E-22` | Change & Run |
-| 28 | `E-23` | Engine review by Claude |
+| 6 | `S-05` | CI speed: parallel tests, content fast path, caches |
+| 7 | `E-01` | Types, Zod schema, registry, spoken-line bug |
+| 8 | `E-02` | Python tracer (copy the proven reference) |
+| 9 | `E-03` | Value formatter and stability |
+| 10 | `E-04` | SQL capture |
+| 11 | `E-05` | Fill adapters for existing templates |
+| 12 | `E-06` | Template gallery page for tests |
+| 13 | `E-07` | New template: cells |
+| 14 | `E-08` | New template: stack-queue |
+| 15 | `E-09` | New template: tree-graph |
+| 16 | `E-10` | New template: bars |
+| 17 | `E-11` | New template: sequence |
+| 18 | `E-12` | New template: states |
+| 19 | `E-13` | Gate v2 |
+| 20 | `E-14` | Manifest check in CI |
+| 21 | `E-15` | Loader and release switch |
+| 22 | `E-16` | Prompt lock |
+| 23 | `E-17` | Generator script |
+| 24 | `E-18` | Check command |
+| 25 | `E-19` | Shot list and random pick |
+| 26 | `E-20` | Pilot through the pipeline |
+| 27 | `E-21` | Switch python Days 1-3 to JSON |
+| 28 | `E-22` | Change & Run |
+| 29 | `E-23` | Engine review by Claude |
 
 ### G2. Phase 2, course by course
 

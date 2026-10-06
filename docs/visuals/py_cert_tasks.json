@@ -7,7 +7,9 @@
    "id": "X-SPEC",
    "title": "Claude spec updates (Claude only)",
    "allowedFiles": [
-    "docs/visuals/**"
+    "docs/visuals/**",
+    "docs/visuals/py_cert_generator_prompt.md",
+    "docs/visuals/py_cert_tasks.json"
    ],
    "kind": "spec"
   },
@@ -42,6 +44,18 @@
    "allowedFiles": [
     "scripts/ci/check-task-scope.mjs",
     "tests/task_scope.test.ts"
+   ],
+   "kind": "safety"
+  },
+  {
+   "id": "S-05",
+   "title": "CI speed: parallel tests, content fast path, caches",
+   "allowedFiles": [
+    ".github/workflows/ci-cd.yml",
+    "scripts/utils/run-tests.cjs",
+    "scripts/ci/check-task-scope.mjs",
+    "tests/task_scope.test.ts",
+    "tests/run_tests_shard.test.ts"
    ],
    "kind": "safety"
   },
