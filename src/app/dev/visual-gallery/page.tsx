@@ -9,6 +9,7 @@ import type {
   CellsVisual,
   StackQueueVisual,
   TreeGraphVisual,
+  BarsVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
@@ -18,6 +19,7 @@ import { CompareTemplate } from '@/app/quests/lesson/components/visuals/CompareT
 import { CellsTemplate } from '@/app/quests/lesson/components/visuals/CellsTemplate';
 import { StackQueueTemplate } from '@/app/quests/lesson/components/visuals/StackQueueTemplate';
 import { TreeGraphTemplate } from '@/app/quests/lesson/components/visuals/TreeGraphTemplate';
+import { BarsTemplate } from '@/app/quests/lesson/components/visuals/BarsTemplate';
 
 export const metadata = {
   title: 'Visual Template Gallery - PinIT Dev',
@@ -290,6 +292,35 @@ const sampleTreeGraph: TreeGraphVisual = {
       activeNodeId: '4',
       activeEdge: ['2', '4'],
       visitedNodeIds: ['1', '2', '4'],
+    },
+  ],
+};
+
+const sampleBars: BarsVisual = {
+  template: 'bars',
+  title: 'Retrieval Recall by Query',
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Initial retrieval recall across query categories.',
+      bars: [
+        { label: 'refund policy', value: 1.0, tone: 'ok' },
+        { label: 'track my order', value: 0.5, tone: 'data' },
+        { label: 'store hours', value: 1.0, tone: 'ok' },
+        { label: 'warranty claim', value: 0.0, tone: 'error' },
+      ],
+      max: 1.0,
+    },
+    {
+      at: 'say2',
+      caption: 'Retraining improves warranty claim recall to 0.75.',
+      bars: [
+        { label: 'refund policy', value: 1.0, tone: 'ok' },
+        { label: 'track my order', value: 0.8, tone: 'ok' },
+        { label: 'store hours', value: 1.0, tone: 'ok' },
+        { label: 'warranty claim', value: 0.75, tone: 'data' },
+      ],
+      max: 1.0,
     },
   ],
 };
@@ -608,6 +639,41 @@ export default function VisualGalleryPage(): React.ReactElement {
                 edges={sampleTreeGraph.edges}
                 step={step}
                 showSpaces={sampleTreeGraph.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 9. Bars Template */}
+      <section
+        data-testid="gallery-section-bars"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          Bars Template: {sampleBars.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleBars.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-bars-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <BarsTemplate
+                step={step}
+                showSpaces={sampleBars.showSpaces}
               />
             </div>
           ))}

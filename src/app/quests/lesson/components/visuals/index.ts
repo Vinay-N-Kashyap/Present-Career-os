@@ -8,6 +8,7 @@ export { CompareTemplate } from './CompareTemplate';
 export { CellsTemplate } from './CellsTemplate';
 export { StackQueueTemplate } from './StackQueueTemplate';
 export { TreeGraphTemplate } from './TreeGraphTemplate';
+export { BarsTemplate } from './BarsTemplate';
 export {
   getToneColor,
   getToneBg,

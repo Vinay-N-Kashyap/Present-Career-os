@@ -8,6 +8,7 @@ import {
   cellsSpecSchema,
   stackQueueSpecSchema,
   treeGraphSpecSchema,
+  barsSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -18,6 +19,7 @@ import { fillCompare } from './fill/compare';
 import { fillCells } from './fill/cells';
 import { fillStackQueue } from './fill/stack-queue';
 import { fillTreeGraph } from './fill/tree-graph';
+import { fillBars } from './fill/bars';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -85,6 +87,12 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     description: 'Up to 6 nodes and their edges with active and visited node highlights',
     specSchema: treeGraphSpecSchema,
     fill: fillTreeGraph,
+  },
+  bars: {
+    name: 'bars',
+    description: 'Up to 6 labelled bars with their numbers for scores, latency, and metrics',
+    specSchema: barsSpecSchema,
+    fill: fillBars,
   },
 };
 

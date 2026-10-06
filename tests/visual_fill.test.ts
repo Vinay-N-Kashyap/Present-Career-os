@@ -15,9 +15,12 @@ import type {
   StackQueueVisual,
   TreeGraphSpec,
   TreeGraphVisual,
+  BarsSpec,
+  BarsVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
+import { VECTOR_PYTHON_LONG_LESSONS } from '../src/lib/data/vectorPythonLongLessons';
 import { TEMPLATE_REGISTRY } from '../src/lib/visuals/registry';
 
 let pyodide: PyodideInterface;
@@ -616,4 +619,60 @@ test('11. tree-graph adapter fills real dsa-py Day 16 binary tree part', async (
   assert.equal(filled.steps[2].activeNodeId, '4');
   assert.deepEqual(filled.steps[2].activeEdge, ['2', '4']);
   assert.deepEqual(filled.steps[2].visitedNodeIds, ['1', '2', '4']);
+});
+
+// Test 12: bars adapter fills real vec-py Day 5 metrics part
+test('12. bars adapter fills real vec-py Day 5 metrics part', async () => {
+  assert.ok(TEMPLATE_REGISTRY.bars?.fill, 'bars template is registered with fill adapter');
+
+  const day5 = VECTOR_PYTHON_LONG_LESSONS.find((l) => l.day === 5);
+  assert.ok(day5, 'vec-py Day 5 must exist');
+  const part4 = day5.parts[4];
+  assert.ok(part4, 'Day 5 Part 4 must exist');
+
+  const spec: BarsSpec = {
+    template: 'bars',
+    title: 'Query retrieval recall scores',
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Recall scores per query category.',
+        bars: [
+          { label: 'refund policy', value: { text: '1.0' }, tone: 'ok' },
+          { label: 'track my order', value: { text: '0.5' }, tone: 'data' },
+          { label: 'store hours', value: { text: '1.0' }, tone: 'ok' },
+          { label: 'warranty claim', value: { text: '0.0' }, tone: 'error' },
+        ],
+        max: 1.0,
+      },
+      {
+        at: 'say2',
+        caption: 'Mean recall across queries.',
+        bars: [
+          { label: 'mean recall', value: { var: 'mean', line: 2 }, tone: 'data' },
+        ],
+        max: 1.0,
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part4, { pyodide })) as BarsVisual;
+
+  assert.equal(filled.template, 'bars');
+  assert.equal(filled.title, 'Query retrieval recall scores');
+  assert.equal(filled.steps.length, 2);
+
+  // Step 1: 4 bars
+  assert.equal(filled.steps[0].bars.length, 4);
+  assert.equal(filled.steps[0].bars[0].label, 'refund policy');
+  assert.equal(filled.steps[0].bars[0].value, 1.0);
+  assert.equal(filled.steps[0].bars[0].tone, 'ok');
+  assert.equal(filled.steps[0].bars[3].value, 0.0);
+  assert.equal(filled.steps[0].bars[3].tone, 'error');
+
+  // Step 2: mean recall 0.625
+  assert.equal(filled.steps[1].bars.length, 1);
+  assert.equal(filled.steps[1].bars[0].label, 'mean recall');
+  assert.equal(filled.steps[1].bars[0].value, 0.625);
+  assert.equal(filled.steps[1].bars[0].tone, 'data');
 });
