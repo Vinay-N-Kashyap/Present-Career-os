@@ -1,6 +1,7 @@
 {
- "version": 1,
- "promptSha256": "b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a",
+ "version": 2,
+ "promptSha256": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+ "tracerSha256": "9be378bd9bd94a43acbda0fb6ba56372012da39aedeae244cfd49b9dd66ccd6e",
  "tasks": [
   {
    "id": "X-SPEC",
@@ -46,15 +47,20 @@
   },
   {
    "id": "E-01",
-   "title": "Types for bindings and new templates",
+   "title": "Types, Zod schema, registry, spoken-line bug",
    "allowedFiles": [
-    "src/lib/types/lessonVisual.ts"
+    "src/lib/types/lessonVisual.ts",
+    "src/lib/visuals/schema.ts",
+    "src/lib/visuals/registry.ts",
+    "src/app/quests/lesson/hooks/useLessonEngine.ts",
+    "src/app/quests/lesson/components/visuals/TableTemplate.tsx",
+    "tests/visual_types.test.ts"
    ],
    "kind": "engine"
   },
   {
    "id": "E-02",
-   "title": "Python tracer",
+   "title": "Python tracer (copy the proven reference)",
    "allowedFiles": [
     "src/lib/visuals/trace/pythonTracer.ts",
     "src/lib/visuals/trace/runPythonTrace.ts",
@@ -64,9 +70,10 @@
   },
   {
    "id": "E-03",
-   "title": "Value formatter",
+   "title": "Value formatter and stability",
    "allowedFiles": [
     "src/lib/visuals/trace/formatValue.ts",
+    "src/lib/visuals/trace/stability.ts",
     "tests/visual_trace.test.ts"
    ],
    "kind": "engine"
@@ -85,6 +92,7 @@
    "title": "Fill adapters for existing templates",
    "allowedFiles": [
     "src/lib/visuals/fill/*.ts",
+    "src/lib/visuals/registry.ts",
     "tests/visual_fill.test.ts"
    ],
    "kind": "engine"
@@ -105,6 +113,8 @@
     "src/app/quests/lesson/components/visuals/CellsTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/cells.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -117,6 +127,8 @@
     "src/app/quests/lesson/components/visuals/StackQueueTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/stack-queue.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -129,6 +141,8 @@
     "src/app/quests/lesson/components/visuals/TreeGraphTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/tree-graph.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -141,6 +155,8 @@
     "src/app/quests/lesson/components/visuals/BarsTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/bars.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -153,6 +169,8 @@
     "src/app/quests/lesson/components/visuals/SequenceTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/sequence.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -165,6 +183,8 @@
     "src/app/quests/lesson/components/visuals/StatesTemplate.tsx",
     "src/app/quests/lesson/components/visuals/index.ts",
     "src/lib/visuals/fill/states.ts",
+    "src/lib/visuals/registry.ts",
+    "src/lib/visuals/schema.ts",
     "src/app/dev/visual-gallery/page.tsx",
     "tests/visual_fill.test.ts"
    ],
@@ -215,7 +235,6 @@
    "allowedFiles": [
     "scripts/visuals/generate.mts",
     "scripts/visuals/config.json",
-    "scripts/visuals/schema.json",
     "package.json",
     "tests/visual_generator.test.ts"
    ],

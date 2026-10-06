@@ -14,13 +14,32 @@
 
 **Builder:** Antigravity. **Reviewer:** Claude. **Approver:** the owner.
 
-**Version:** 1.1, 6 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
+**Version:** 1.2, 6 October 2026. It builds on the approved pilot spec `PINIT_PY_M1_VISUALS_DAYS_1_3.pdf` (v1.1).
 
 **Files that come with this PDF (already in the repo, do not edit):**
 
-- `docs/visuals/py_cert_generator_prompt.md`: the exact AI prompt. SHA-256 `b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a`.
+- `docs/visuals/py_cert_generator_prompt.md`: the exact AI prompt. SHA-256 `40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68`.
 - `docs/visuals/py_cert_tasks.json`: every task in this PDF in machine-readable form (ID, allowed files, done check).
 - `docs/visuals/py_cert_manifest.json`: all 2,160 lesson-part keys with their status.
+- `docs/visuals/py_cert_reference_tracer.py`: the proven Python tracer. SHA-256 `9be378bd9bd94a43acbda0fb6ba56372012da39aedeae244cfd49b9dd66ccd6e`.
+
+### Changes in 1.2 (Claude built a working prototype and ran it on all 2,160 real lesson parts)
+
+| # | Problem found by the prototype | Fixed in |
+|---|---|---|
+| 9 | A naive tracer **changed the printed output of 374 lessons** (Python 3.12 comprehension trap) | C2, reference tracer, E-02 |
+| 10 | One lesson defines a variable `time`, which crashed a tracer sharing its namespace | C2, E-02 |
+| 11 | Shortest-path lessons use `float('inf')`, which plain JSON cannot store | C2, E-02 |
+| 12 | 9 parts have random or set-order values that differ between runs | R14, E-03 |
+| 13 | Values stored as text could not draw arrays, bars or trees; trees were cut at depth 2 | C2 (structured values, depth 4) |
+| 14 | SQL results have up to 5 columns, but the `table` template had exactly 2 | E-01, R3 |
+| 15 | 19 SQL parts and many pilot steps show errors or "Your turn" changes, which v1.1 bindings could not express | `error` binding, `edit` (C2) |
+| 16 | SQL "statement k" did not match what students see. Now: the k-th result table | C2 |
+| 17 | **Live bug:** `AT_ORDER` in `useLessonEngine.ts` knows only `say1`–`say6`, so later courses' pictures would jump back to step 1 | E-01 |
+| 18 | `askForJson` needs a Zod schema, not a JSON file | C3, E-01, E-17 |
+| 19 | Nothing kept pictures "on concept" automatically | R12, Part D teaching hints, prompt rule 5 |
+| 20 | Lesson edits later would silently leave old pictures | `codeHash`, R13 |
+| 21 | No clean way to add templates or courses later | registry (C3), C8 |
 
 ### Changes in 1.1 (Claude checked its own v1.0 plan against the code)
 
@@ -31,7 +50,7 @@
 | 3 | Change & Run ignored that the lesson page runs Python in a worker (`public/python-worker.js`) | E-22 |
 | 4 | The scope guard checked only the last commit of a push | S-03 |
 | 5 | Claude's own spec updates had no task ID and would be blocked | task `X-SPEC` |
-| 6 | The caption-number rule rejected good captions such as "Positions 0 to 3" | R7, prompt rule 4 (new SHA) |
+| 6 | The caption-number rule rejected good captions such as "Positions 0 to 3" | R7, prompt rule 5 |
 | 7 | The manifest statuses `todo` and `pilot` were missing from R11 | C3, R11 |
 | 8 | The generator ignored the existing AI helper `askForJson`, which can be tested without a key | E-17 |
 
@@ -122,7 +141,7 @@ The first 5 already exist from the pilot. The other 6 are new, and each is built
 |---|---|---|
 | `flow` (exists) | 2–5 boxes joined by arrows | data pipelines, request paths |
 | `boxes` (exists) | named boxes, each holding one value | variables, state |
-| `table` (exists) | rows filled one by one | loop traces, query results |
+| `table` (exists; widened to 2–5 columns in E-01) | rows filled one by one | loop traces, query results |
 | `letters` (exists) | one cell per character, with a pointer and a range | strings, indexing, slicing |
 | `compare` (exists) | two panels side by side | before/after, wrong/right |
 | `cells` (new) | one cell per list item, with index numbers and up to 3 named pointers | arrays, two pointers, windows, binary search |
@@ -146,7 +165,7 @@ All templates keep the pilot rules (spec v1.1):
 
 ### C2. Where the values come from (bindings)
 
-A picture file never contains a typed value. It contains **bindings**, and the engine fills in the values by running the code:
+A picture never contains a typed value. The AI writes a **spec** that contains **bindings**. The engine runs the code and turns the spec into the **filled** picture, which has the same shape the pilot templates already draw. The existing template components therefore do not change.
 
 | Binding | Meaning |
 |---|---|
@@ -154,31 +173,41 @@ A picture file never contains a typed value. It contains **bindings**, and the e
 | `{"var":"total","line":4,"hit":3}` | Same, the 3rd time line 4 runs (loops) |
 | `{"var":"x","line":2,"as":"type"}` | The type name of `x` (`int`, `str` …) |
 | `{"out":2}` | Output line 2 |
-| `{"query":3}` | Result rows of SQL statement 3 (SQL course only) |
+| `{"table":2}` / `{"table":2,"row":1,"col":"price"}` | SQL only: the 2nd result table the student sees, or one cell of it |
+| `{"error":true}` | The name of the error the code stops with (`NameError`, a PostgreSQL error …) |
 | `{"text":"balance -= 45"}` | Text copied exactly from the part's code, say lines, example or tryIt |
 
-**Filling:**
+**Changed code ("what if").** A step may carry an `edit`: `{"replaceLine":{"line":2,"text":"lunch = 150"}}` or `{"appendLines":["balance += 1000"]}`. Every new line must appear verbatim in the part's tryIt, say lines or example. That step's bindings read from the run of the changed code. This keeps what the pilot did (13 uses: "Your turn" results and error demonstrations).
 
-- **Python (11 courses):** the code runs in Pyodide with a line tracer (`sys.settrace`).
-- **SQL (course 3):** each statement runs in PGlite and its result rows are captured.
+**How the code is run. Proven on all 1,980 Python parts; see `docs/visuals/py_cert_reference_tracer.py`.**
 
-The filled values are saved next to the bindings, so the page can show them without running anything. The gate re-runs the code and fails if any saved value differs from the real run.
+- **Python (11 courses):**
+  - The code runs in Pyodide (Python 3.12) with the reference tracer, under file name `<lesson>`.
+  - The tracer lives in its **own namespace**, and the lesson gets a clean one. One lesson defines a variable `time`, which crashed a tracer that shared its namespace.
+  - It reads module variables from `f_globals`, and function variables only through `co_varnames`. Reading `f_locals` inside a 3.12 list comprehension writes `None` into variables, and changed the printed output of **374 lessons** in the naive version.
+  - Proven results:
+      - 1,980 of 1,980 outputs are unchanged under tracing;
+      - 50 parts reach the 2,000-event limit (recording stops, the code still finishes);
+      - all runs take about 35 seconds in total.
+- **SQL (course 3):**
+  - Each statement runs in PGlite through `splitSqlStatements` and `resetDatabase` (`src/lib/code/sql/sqlCore.ts`), and the result tables the student sees are captured.
+  - Measured: 170 of 180 parts have a table of at most 6 rows and 5 columns; 19 parts end in a deliberate error.
 
-**Tracer limits** (beyond them the part gets no picture):
+**Values are stored as structured data, not text,** so `cells`, `bars` and `tree-graph` can draw lists, numbers and trees:
 
-- at most 2,000 line events;
-- 5 seconds;
-- 20 tracked variables;
-- each value shown at most 40 characters, cut with `…`.
+- depth at most 4, at most 30 items, loops (`a.next.prev`) marked as references;
+- `inf` and `nan` stored as `{"__f__":"inf"}`, because lessons such as shortest-path algorithms use `float('inf')`, which plain JSON cannot hold;
+- for display, values are shown as Python `repr`, cut at 40 characters with `…`.
 
-Values are shown as Python `repr`, for example `'Tea'`, `20` or `[1, 2, 3]`.
+**Stable values only.** Every part is run **twice, in two fresh interpreters**. A variable whose values differ between the runs (random numbers, set order; measured in 9 parts) is marked `unstable` and may not be bound (rule R14). Printed output is already stable, because the lesson tests require it.
 
 ### C3. File layout
 
 | What | Where |
 |---|---|
-| Picture data | `src/lib/data/lessonVisuals/<prefix>/day-<NN>.json`, one file per lesson day, with exactly 6 entries (parts 0–5). Each entry is a visual or `{"template":"none","reason":"…"}` |
-| Types | `src/lib/types/lessonVisual.ts` |
+| Picture data | `src/lib/data/lessonVisuals/<prefix>/day-<NN>.json`, one file per lesson day |
+| Types and Zod schema | `src/lib/types/lessonVisual.ts` (types), `src/lib/visuals/schema.ts` (Zod schema, used by both the generator and the gate) |
+| Template registry | `src/lib/visuals/registry.ts`: one entry per template (component, fill adapter, Zod schema, gallery sample) |
 | Tracer and SQL capture | `src/lib/visuals/trace/` |
 | Fill adapters | `src/lib/visuals/fill/` |
 | Template components | `src/app/quests/lesson/components/visuals/` |
@@ -186,15 +215,28 @@ Values are shown as Python `repr`, for example `'Tea'`, `20` or `[1, 2, 3]`.
 | Released courses (the only switch that shows pictures to students) | `src/lib/visuals/enabledCourses.ts` |
 | Progress manifest | `docs/visuals/py_cert_manifest.json`. Statuses: `todo`, `pilot` (python Days 1–3 until E-20), `passed`, `none`, `needs-review` |
 
+**A day file looks like this:**
+
+`{ "schemaVersion": 1, "prefix", "day", "promptSha", "model", "entries": [6 × { "partTitle", "codeHash", "spec", "filled" }] }`
+
+- `codeHash` is the SHA-256 of the part's code. If a lesson's code is ever edited, the gate names that day as stale, and only that day is regenerated.
+- `spec` is what the AI wrote (bindings). `filled` is what the page draws.
+
 ### C4. The generator (what `npm run visuals:generate` does)
 
 For each of the 6 parts of one lesson day:
 
-1. Run the part's code with the tracer (or SQL capture). Build a trace summary that shows which variables change on which lines and how often, but hides the values.
-2. Send the AI the fixed prompt (`docs/visuals/py_cert_generator_prompt.md`, SHA-256 checked) plus the part's text, code, output, trace summary, the course's allowed templates (Part D) and the JSON schema.
-3. Parse the answer. Fill every binding from the real run. Run the gate (C5).
-4. If the gate fails, send the failure message back to the AI and try again, at most 3 attempts. If it still fails, write `{"template":"none","reason":"generator: <last gate error>"}` and mark the key `needs-review` in the manifest.
-5. Write the day file and update the manifest.
+1. **Trace.** Run the part's code twice with the tracer (or SQL capture). Build a summary that shows which variables change on which lines and how often, marks unstable variables, and hides the values.
+2. **Ask the AI.** Send the fixed prompt (`docs/visuals/py_cert_generator_prompt.md`, SHA-256 checked), plus:
+    - the part's text, code and output;
+    - the trace summary;
+    - the course's allowed templates and teaching hint (Part D);
+    - the Zod schema as JSON.
+
+    Use `askForJson` from `src/lib/server/llmJson.ts`.
+3. **Fill and check.** Parse the answer, fill every binding from the real run (running `edit` steps on the changed code), and run the gate (C5).
+4. **Retry.** If the gate fails, send the failure message back to the AI and try again, at most 3 attempts. If it still fails, write `{"template":"none","reason":"generator: <last gate error>"}` and mark the key `needs-review`.
+5. **Save.** Write the day file and update the manifest.
 
 **Configuration:**
 
@@ -207,22 +249,25 @@ For each of the 6 parts of one lesson day:
 |---|---|
 | R1 | The file has exactly 6 entries, and each entry's `partTitle` equals the real part title |
 | R2 | The template is `none` or is on the course's allowed list (Part D) |
-| R3 | 2–5 steps, at most 6 shapes |
+| R3 | 2–5 steps, at most 6 shapes. A table has 2–5 columns and at most 6 rows |
 | R4 | `at` values are valid for the part (`sayN` only if the part has at least N say lines) and strictly increasing (say1…sayN, example, tryIt) |
 | R5 | Each caption is one sentence of at most 80 characters, ending in `.`, with no emoji |
-| R6 | Every value is a binding. Re-running the code gives exactly the saved values. Any `text` binding appears verbatim in the part |
+| R6 | Every value is a binding. Filling the spec from a fresh run gives exactly `filled`. Any `text` binding, and every `edit` line, appears verbatim in the part |
 | R7 | Every number in a caption is one of the values bound in that step, or is written in the part's code |
 | R8 | Every tappable label appears as a whole word in the part's text or code |
 | R9 | Tones are only `data`, `ok`, `error`, `idle` |
 | R10 | At least 3 of the 6 parts in a day have a picture, otherwise the day is marked `needs-review` |
 | R11 | The manifest status matches the file. A key with a day file is `passed`, `none` or `needs-review`; a key without one is `todo` (or `pilot` for python Days 1–3 before E-20) |
+| R12 | **On-concept check.** Each caption shares at least one important word (4+ letters, not a common word such as "this" or "with") with the text its step is attached to: its say line, the example or the tryIt. Pictures cannot drift away from what the teacher is saying |
+| R13 | **Fresh check.** Each entry's `codeHash` equals the SHA-256 of the part's current code |
+| R14 | **Stable values.** No binding points to a variable that differs between two fresh runs |
 
 ### C6. Change & Run (students can play with the picture)
 
 When a student edits the code of a part that has a picture and presses Run:
 
-1. The student's code runs in the browser (Pyodide, as today; no server) with the same tracer.
-2. The picture's bindings are filled from the student's run, and the picture redraws.
+1. The student's code runs in the browser (in the existing Python worker; no server) with the same reference tracer.
+2. The picture's spec is filled from the student's run, and the picture redraws.
 3. If a binding can't be filled (for example, the student renamed a variable), the picture keeps the lesson's values and shows the line "Your code changed the names this picture uses, so it shows the lesson's values."
 
 For SQL, the same happens with PGlite in the browser.
@@ -231,26 +276,34 @@ For SQL, the same happens with PGlite in the browser.
 
 `src/lib/visuals/enabledCourses.ts` lists the course prefixes whose pictures students can see. A course is added only by its release task (L-…), after all its checkpoints are approved. Until then its pictures exist in the repo but are hidden.
 
+### C8. Building further (how the system grows without rework)
+
+- **New template:** add one component, one fill adapter, one Zod schema and one gallery sample, plus a `registry.ts` entry. The gate, generator and loader read the registry, so nothing else changes.
+- **New Python course:** add its prefix, allowed templates and teaching hint to Part D (`py_cert_tasks.json` and the generator config). Everything else is the same routine.
+- **Web track later:** the spec, fill, gate, manifest and templates are language-neutral. Only a JavaScript tracer is needed, built the same way as the Python one.
+- **Lesson edited later:** R13 names the stale days in CI, and only those days are regenerated.
+- **Better AI later:** change the model in `scripts/visuals/config.json` and regenerate. The `promptSha` and `model` saved in each day file show which pictures came from which version.
+
 ---
 
 ## Part D. Allowed templates per course
 
 The generator may only pick templates from that course's row (gate rule R2). `none` is always allowed.
 
-| # | Prefix | Course | Allowed templates |
-|---|---|---|---|
-| 1 | `python` | Python Backend | flow, boxes, table, letters, compare, cells |
-| 2 | `dsa-py` | DSA in Python | cells, stack-queue, tree-graph, table, boxes, bars, compare |
-| 3 | `sql-mastery` | Database Engineering (SQL) | table, flow, compare, bars |
-| 4 | `ai-py` | AI & ML in Python | flow, table, bars, sequence, compare, boxes |
-| 5 | `dist-py` | Distributed Python | sequence, flow, states, table, cells, compare |
-| 6 | `cloud-py` | Cloud & MLOps Python | flow, sequence, states, table, bars, compare |
-| 7 | `nlp-py` | NLP in Python | table, cells, bars, flow, compare |
-| 8 | `quant-py` | Quant Systems Python | table, bars, flow, sequence, compare, cells |
-| 9 | `prompt-py` | AI Prompt Engineering | flow, table, compare, bars, sequence |
-| 10 | `train-py` | Model Training Python | bars, table, flow, cells, sequence, compare |
-| 11 | `vec-py` | Vector Search Python | table, bars, tree-graph, cells, flow, compare |
-| 12 | `safe-py` | AI Safety Python | flow, table, bars, compare, states |
+| # | Prefix | Course | Allowed templates | Teaching hint (sent to the AI) |
+|---|---|---|---|---|
+| 1 | `python` | Python Backend | flow, boxes, table, letters, compare, cells | show what each line does to variables and output, one line at a time |
+| 2 | `dsa-py` | DSA in Python | cells, stack-queue, tree-graph, table, boxes, bars, compare | show the data structure itself (array cells, stack, tree, graph) and the pointers or visited nodes moving step by step |
+| 3 | `sql-mastery` | Database Engineering (SQL) | table, flow, compare, bars | show the result table and how the query changes it (which rows are filtered, joined, grouped) |
+| 4 | `ai-py` | AI & ML in Python | flow, table, bars, sequence, compare, boxes | show the pipeline (prompt, retrieval, model, answer) and the scores or tokens that change |
+| 5 | `dist-py` | Distributed Python | sequence, flow, states, table, cells, compare | show messages between services over time, node states, and what happens when one fails |
+| 6 | `cloud-py` | Cloud & MLOps Python | flow, sequence, states, table, bars, compare | show the request path through cloud components and the states or costs that change |
+| 7 | `nlp-py` | NLP in Python | table, cells, bars, flow, compare | show tokens or words in cells, their counts or scores, and how the text is transformed |
+| 8 | `quant-py` | Quant Systems Python | table, bars, flow, sequence, compare, cells | show the order book or price table, and the numbers (prices, risk) that change |
+| 9 | `prompt-py` | AI Prompt Engineering | flow, table, compare, bars, sequence | show prompt in, answer out, and what changes when the prompt changes |
+| 10 | `train-py` | Model Training Python | bars, table, flow, cells, sequence, compare | show memory, loss or throughput numbers as bars, and how data or work is split across devices |
+| 11 | `vec-py` | Vector Search Python | table, bars, tree-graph, cells, flow, compare | show vectors or scores in cells and bars, ranked results, and index structure |
+| 12 | `safe-py` | AI Safety Python | flow, table, bars, compare, states | show the guardrail pipeline, what is blocked or allowed, and the scores that decide |
 
 ---
 
@@ -332,56 +385,74 @@ The generator may only pick templates from that course's row (gate rule R2). `no
 
 ### Phase 1. Engine (23 tasks)
 
-#### E-01. Types for bindings and new templates
+#### E-01. Types, Zod schema, registry, and the spoken-line bug
 
-- **Allowed files:** `src/lib/types/lessonVisual.ts`.
+- **Allowed files:** `src/lib/types/lessonVisual.ts`, `src/lib/visuals/schema.ts`, `src/lib/visuals/registry.ts`, `src/app/quests/lesson/hooks/useLessonEngine.ts`, `src/app/quests/lesson/components/visuals/TableTemplate.tsx`, `tests/visual_types.test.ts`.
 - **Steps:**
-  1. Change `VisualAt` to `` `say${number}` | 'example' | 'tryIt' `` (later courses have up to 14 say lines per part).
-  2. Add a `Binding` union exactly as in C2: `var`/`line`/`hit`/`as`, `out`, `query`, `text`.
-  3. Add types for the 6 new templates (C1), each with a `steps` array and fields named as in C1.
-  4. Add `VisualEntry = LessonVisual | { template: 'none'; reason: string }`, and `DayVisualFile = { prefix: string; day: number; entries: { partTitle: string; visual: VisualEntry; filled?: unknown }[] }`.
-  5. Keep all other existing types unchanged.
-- **Done when:** `npx tsc --noEmit` is clean, and CI is green.
-- **Must not:** use `any`.
+  1. Change `VisualAt` to `` 'intro' | `say${number}` | 'example' | 'tryIt' ``.
+  2. **Fix a live bug** in `useLessonEngine.ts`: `AT_ORDER` (around line 21) lists only `say1`–`say6`, with `example` = 7. A step at `say7`…`say14` gets order 0, so the picture jumps back to step 1. Replace the table with a function: `intro` = 0, `sayN` = N, `example` = 1000, `tryIt` = 1001.
+  3. Add the `Binding` union and the `edit` field exactly as in C2. Add `VisualSpec` (with bindings) next to the existing `LessonVisual` (filled values; unchanged).
+  4. Let `table` have 2–5 columns: change `cells: [string, string]` to `cells: string[]`, and make `TableTemplate.tsx` draw 2–5 columns (stacked cards under 480 px, as now).
+  5. Add the types for the 6 new templates (C1) and the day-file type (C3).
+  6. Write `schema.ts` with the Zod schemas (`zod` is already used by `askForJson`), and `registry.ts` with one entry per existing template.
+  7. Tests:
+      - `getStepIndexForPieceAt` returns the right step for `say9` in a part with 12 say lines;
+      - a 5-column table spec passes the schema;
+      - a spec with a typed number in a value slot fails the schema.
+- **Done when:** `npx tsc --noEmit` is clean, the existing visual tests still pass, and CI is green.
+- **Must not:** use `any`, or change how the 5 existing templates look.
 
-#### E-02. Python tracer
+#### E-02. Python tracer (copy the proven reference)
 
 - **Allowed files:** `src/lib/visuals/trace/pythonTracer.ts`, `src/lib/visuals/trace/runPythonTrace.ts`, `tests/visual_trace.test.ts`.
 - **Steps:**
-  1. `pythonTracer.ts` exports the Python source of a tracer as a string. It uses `sys.settrace`, records `{line, changed: {name: repr}}` after each line of the student module, ignores names starting with `_`, and stops after 2,000 events.
-  2. `runPythonTrace(code)` runs the code in Pyodide with the tracer, using the same Pyodide loading as `tests/python_long_lessons.test.ts`. It returns `{events, output, error, truncated}` with a 5-second limit.
-  3. Tests (exact values):
-      - Day 2 Part 2 code (`balance`) gives `balance` `500`, then `480`, then `435` on lines 1, 3 and 5;
-      - a loop over `[3, 5, 8]` gives line-hit counts of 3;
-      - an infinite loop returns `truncated: true`;
-      - a NameError returns `error` containing `NameError`;
-      - output lines equal the lesson's `output`.
-- **Done when:** the 5 tests pass, and CI is green.
+  1. `pythonTracer.ts` exports the content of `docs/visuals/py_cert_reference_tracer.py` **byte for byte** as a string. Do not edit the Python code.
+  2. `runPythonTrace(code)` follows the usage note at the top of that file:
+      - tracer in its own dict, lesson in a second fresh dict;
+      - returns `{events, output, error, truncated}`;
+      - output is formatted exactly like `runLikeLessonPage` in `tests/python_long_lessons.test.ts` (with `[Error] …` on the last line).
+  3. Tests:
+      - the tracer string's SHA-256 equals the reference file's;
+      - Day 2 Part 2 (`balance`) gives 500, 480 and 435 after lines 1, 3 and 5;
+      - **python Day 9 Part 3** (list comprehensions) prints exactly its lesson output (the 3.12 trap);
+      - **prompt-py Day 18 Part 1** runs without error (the `time` name clash);
+      - a value of `float('inf')` is stored as `{"__f__":"inf"}`;
+      - **dsa-py Day 16 Part 1:** the tree `root` is stored with all 5 nodes;
+      - an infinite loop returns `truncated: true` and the run still ends;
+      - **all 1,980 Python lesson parts** print exactly their `output` under tracing (about 35 s).
+- **Done when:** the 8 tests pass, and CI is green.
 
-#### E-03. Value formatter
+#### E-03. Value formatter and stability
 
-- **Allowed files:** `src/lib/visuals/trace/formatValue.ts`, `tests/visual_trace.test.ts`.
+- **Allowed files:** `src/lib/visuals/trace/formatValue.ts`, `src/lib/visuals/trace/stability.ts`, `tests/visual_trace.test.ts`.
 - **Steps:**
-  1. Format values as Python `repr`, cut at 40 characters with `…`.
-  2. Tests: `'Tea'`, `20`, `4.5`, `True`, `[1, 2, 3]`, a 100-character string cut to 40 characters, and `{'a': 1}`.
+  1. `formatValue` turns a stored value into display text: Python `repr`, cut at 40 characters with `…`; `{"__f__":"inf"}` shows as `inf`.
+  2. `findUnstable(eventsA, eventsB)` returns the variables whose values differ between two runs.
+  3. Tests: `'Tea'`, `20`, `4.5`, `True`, `[1, 2, 3]`, `{'a': 1}`, a 100-character string, `inf`; plus `findUnstable` on python Day 15 Part 2, which must name `roll` (a random dice roll).
 - **Done when:** the tests pass, and CI is green.
 
 #### E-04. SQL capture
 
 - **Allowed files:** `src/lib/visuals/trace/runSqlCapture.ts`, `tests/visual_trace.test.ts`.
 - **Steps:**
-  1. Run each statement of a SQL lesson code in a fresh PGlite. Reuse `splitSqlStatements`, `resetDatabase` and `runSqlLesson` from `src/lib/code/sql/sqlCore.ts`; do not write a new SQL runner.
-  2. Return `{statements: [{index, sql, rows (max 6), columns (max 4)}], output}`.
-  3. Tests use 2 real `sql-mastery` lesson parts. The captured result must match their `output`.
+  1. Run a SQL lesson's code exactly like `runSqlLesson` in `src/lib/code/sql/sqlCore.ts` (reuse `splitSqlStatements` and `resetDatabase`; do not write a new runner).
+  2. Return `{tables: [{columns, rows}], error, output}`, where `tables` are the result tables the student sees, in order.
+  3. Tests:
+      - for all 180 `sql-mastery` parts, the captured `output` equals the lesson `output`;
+      - one part that ends in a deliberate error returns that error.
 - **Done when:** the tests pass, and CI is green.
 
 #### E-05. Fill adapters for the 5 existing templates
 
-- **Allowed files:** `src/lib/visuals/fill/*.ts`, `tests/visual_fill.test.ts`.
+- **Allowed files:** `src/lib/visuals/fill/*.ts`, `src/lib/visuals/registry.ts`, `tests/visual_fill.test.ts`.
 - **Steps:**
-  1. Write `fill(visual, trace)`. It replaces every binding with its value, and throws a clear error naming the step and the binding if a value can't be found.
-  2. Write one adapter per existing template: flow, boxes, table, letters, compare.
-  3. Test: write bindings for pilot pictures 2.1 and 2.2. Filling them must give exactly the approved pilot values (total 185, then 215; balance 500, 480, 435, 1435).
+  1. Write `fill(spec, part)`. It runs the code with E-02 or E-04 (and once more for each `edit` step), and replaces every binding with its value. If a value can't be found, it throws a clear error naming the step and the binding.
+  2. Write one adapter per existing template: flow, boxes, table, letters, compare. Register each in `registry.ts`.
+  3. Test: write specs with bindings for pilot pictures 1.3, 2.1, 2.2 and 3.2. Filling them must give exactly the approved pilot values:
+      - 1.3: `NameError` from an `edit`;
+      - 2.1: total 185, then 215 from an `edit`;
+      - 2.2: balance 500, 480, 435, then 1435 from `appendLines`;
+      - 3.2: `IndexError`.
 - **Done when:** the tests pass, and CI is green.
 
 #### E-06. Template gallery page for tests
@@ -427,10 +498,10 @@ There is one task per template:
 
 - **Allowed files:** `tests/lesson_visuals_gate.test.ts`, `src/lib/visuals/gate.ts`.
 - **Steps:**
-  1. Put rules R1 to R11 (C5) in `src/lib/visuals/gate.ts` as one function: `checkDayFile(file) → {passed, errors[]}`. Keep and reuse the existing `src/lib/visuals/visualRules.ts` (underline and space-dot rules); do not change or replace it.
+  1. Put rules R1 to R14 (C5) in `src/lib/visuals/gate.ts` as one function: `checkDayFile(file) → {passed, errors[]}`. Keep and reuse the existing `src/lib/visuals/visualRules.ts` (underline and space-dot rules); do not change or replace it.
   2. The test runs `checkDayFile` on every file under `src/lib/data/lessonVisuals/` and fails with every error listed.
-  3. Add one deliberately broken sample per rule (11 samples), and show each one failing.
-- **Done when:** CI is green, and the 11 broken samples each fail with the right rule number.
+  3. Add one deliberately broken sample per rule (14 samples), and show each one failing.
+- **Done when:** CI is green, and the 14 broken samples each fail with the right rule number.
 
 #### E-14. Manifest check in CI
 
@@ -454,15 +525,15 @@ There is one task per template:
 #### E-16. Prompt lock
 
 - **Allowed files:** `tests/visual_prompt_lock.test.ts`.
-- **Steps:** the test reads `docs/visuals/py_cert_generator_prompt.md` and asserts its SHA-256 is `b923969af213ea9e840a21cf46af976b8d2bdea2dbbc30eb63d4d81fdf00a40a`.
+- **Steps:** the test reads `docs/visuals/py_cert_generator_prompt.md` and asserts its SHA-256 is `40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68`.
 - **Done when:** CI is green.
 - **Must not:** edit the prompt file. Only Claude changes it, with a new version of this PDF.
 
 #### E-17. Generator script
 
-- **Allowed files:** `scripts/visuals/generate.mts`, `scripts/visuals/config.json`, `scripts/visuals/schema.json`, `package.json`.
+- **Allowed files:** `scripts/visuals/generate.mts`, `scripts/visuals/config.json`, `package.json`, `tests/visual_generator.test.ts`.
 - **Steps:**
-  1. Implement C4 exactly: trace, prompt, parse, fill, gate, up to 3 attempts, write the day file, update the manifest. Call the AI only through the existing `askForJson` in `src/lib/server/llmJson.ts`; do not write a new AI client.
+  1. Implement C4 exactly: trace twice, prompt, parse, fill, gate, up to 3 attempts, write the day file, update the manifest. Call the AI only through the existing `askForJson` in `src/lib/server/llmJson.ts`, with the Zod schema from `src/lib/visuals/schema.ts`; do not write a new AI client or a second schema.
   2. The command is `npm run visuals:generate -- --course <prefix> --day <N>`.
   3. It reads the key from `OPENROUTER_API_KEY` and stops with "OPENROUTER_API_KEY is not set" if it is missing.
   4. It writes only `src/lib/data/lessonVisuals/<prefix>/day-<NN>.json` and `docs/visuals/py_cert_manifest.json`.
@@ -619,9 +690,9 @@ The full ordered list of every task follows, in Part G. Each content card lists 
 | 3 | `S-02` | Secret scanner in CI |
 | 4 | `S-03` | Task-scope guard |
 | 5 | `S-04` | Protected files list |
-| 6 | `E-01` | Types for bindings and new templates |
-| 7 | `E-02` | Python tracer |
-| 8 | `E-03` | Value formatter |
+| 6 | `E-01` | Types, Zod schema, registry, spoken-line bug |
+| 7 | `E-02` | Python tracer (copy the proven reference) |
+| 8 | `E-03` | Value formatter and stability |
 | 9 | `E-04` | SQL capture |
 | 10 | `E-05` | Fill adapters for existing templates |
 | 11 | `E-06` | Template gallery page for tests |
