@@ -3,18 +3,22 @@ import type { TableStep, VisualTone } from '@/lib/types/lessonVisual';
 import { getToneColor, getToneBg, getToneTextColor, RenderWithFaintSpaces } from './visualTokens';
 
 interface TableTemplateProps {
-  columns: [string, string];
+  columns: string[];
   step: TableStep;
   showSpaces?: boolean;
 }
 
 export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps): React.ReactElement {
+  const colCount = Math.max(2, Math.min(5, columns.length || 2));
+  const gridColumnsStyle =
+    colCount === 2 ? 'minmax(0, 1.1fr) minmax(0, 1fr)' : `repeat(${colCount}, minmax(0, 1fr))`;
+
   return (
     <div
       className="visual-table-container"
       style={{
         width: '100%',
-        maxWidth: '560px',
+        maxWidth: colCount > 2 ? '620px' : '560px',
         margin: '0 auto',
         padding: '8px 4px',
         display: 'flex',
@@ -25,7 +29,6 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
       <style>{`
         .visual-table-header {
           display: grid;
-          grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
           gap: 10px;
           padding: 8px 12px;
           border-bottom: 1.5px solid var(--border);
@@ -37,7 +40,6 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
         }
         .visual-table-row {
           display: grid;
-          grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
           gap: 10px;
           padding: 8px 12px;
         }
@@ -51,7 +53,7 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
           display: flex;
           flex-direction: column;
           justify-content: center;
-          min-width: 80px;
+          min-width: 60px;
         }
         .visual-table-cell-label {
           display: none;
@@ -83,14 +85,17 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
       `}</style>
 
       {/* Table Header for >= 480px */}
-      <div className="visual-table-header">
-        <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{columns[0]}</div>
-        <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{columns[1]}</div>
+      <div className="visual-table-header" style={{ gridTemplateColumns: gridColumnsStyle }}>
+        {columns.map((col, idx) => (
+          <div key={idx} style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {col}
+          </div>
+        ))}
       </div>
 
       {/* Table Rows (Cards under 480px) */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        {step.rows.map((row: { cells: [string, string]; tone: VisualTone }, idx: number) => {
+        {step.rows.map((row: { cells: string[]; tone: VisualTone }, idx: number) => {
           const tone = row.tone || 'idle';
           const isIdle = tone === 'idle';
 
@@ -99,6 +104,7 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
               key={idx}
               className="visual-table-row"
               style={{
+                gridTemplateColumns: gridColumnsStyle,
                 borderRadius: '8px',
                 border: `1.5px solid ${getToneColor(tone)}`,
                 background: getToneBg(tone),
@@ -106,29 +112,27 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
                 opacity: 1,
               }}
             >
-              <div
-                className="visual-table-cell"
-                style={{
-                  color: isIdle ? 'var(--t2)' : 'var(--t1)',
-                }}
-              >
-                <span className="visual-table-cell-label">{columns[0]}</span>
-                <div>
-                  <RenderWithFaintSpaces text={row.cells[0]} showSpaces={showSpaces} />
-                </div>
-              </div>
-              <div
-                className="visual-table-cell"
-                style={{
-                  fontWeight: tone === 'ok' || tone === 'data' ? 600 : 400,
-                  color: getToneTextColor(tone),
-                }}
-              >
-                <span className="visual-table-cell-label">{columns[1]}</span>
-                <div>
-                  <RenderWithFaintSpaces text={row.cells[1]} showSpaces={showSpaces} />
-                </div>
-              </div>
+              {row.cells.map((cellText: string, cellIdx: number) => {
+                const isLast = cellIdx === row.cells.length - 1;
+                const isHighlighted = (tone === 'ok' || tone === 'data') && isLast;
+                const colName = columns[cellIdx] ?? `Col ${cellIdx + 1}`;
+
+                return (
+                  <div
+                    key={cellIdx}
+                    className="visual-table-cell"
+                    style={{
+                      color: isHighlighted ? getToneTextColor(tone) : isIdle ? 'var(--t2)' : 'var(--t1)',
+                      fontWeight: isHighlighted ? 600 : 400,
+                    }}
+                  >
+                    <span className="visual-table-cell-label">{colName}</span>
+                    <div>
+                      <RenderWithFaintSpaces text={cellText} showSpaces={showSpaces} />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           );
         })}

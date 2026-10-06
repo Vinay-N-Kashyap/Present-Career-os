@@ -18,23 +18,22 @@ import { compileTs } from '@/lib/code/ts/compileTs';
 import { PYTHON_M1_VISUALS } from '@/lib/data/lessonVisuals/pythonMonth1Visuals';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
 
-const AT_ORDER: Record<string, number> = {
-  intro: 0,
-  say1: 1,
-  say2: 2,
-  say3: 3,
-  say4: 4,
-  say5: 5,
-  say6: 6,
-  example: 7,
-  tryIt: 8,
-};
+export function getVisualAtOrder(pieceAt: string): number {
+  if (pieceAt === 'intro') return 0;
+  if (pieceAt === 'example') return 1000;
+  if (pieceAt === 'tryIt') return 1001;
+  const match = /^say(\d+)$/.exec(pieceAt);
+  if (match) {
+    return parseInt(match[1], 10);
+  }
+  return 0;
+}
 
 export function getStepIndexForPieceAt(visual: LessonVisual, pieceAt: string): number {
-  const targetWeight = AT_ORDER[pieceAt] ?? 0;
+  const targetWeight = getVisualAtOrder(pieceAt);
   let bestIndex = 0;
   for (let i = 0; i < visual.steps.length; i++) {
-    const stepWeight = AT_ORDER[visual.steps[i].at] ?? 0;
+    const stepWeight = getVisualAtOrder(visual.steps[i].at);
     if (stepWeight <= targetWeight) {
       bestIndex = i;
     }
