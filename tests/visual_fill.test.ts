@@ -17,10 +17,13 @@ import type {
   TreeGraphVisual,
   BarsSpec,
   BarsVisual,
+  SequenceSpec,
+  SequenceVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
 import { VECTOR_PYTHON_LONG_LESSONS } from '../src/lib/data/vectorPythonLongLessons';
+import { DIST_PYTHON_LONG_LESSONS } from '../src/lib/data/distPythonLongLessons';
 import { TEMPLATE_REGISTRY } from '../src/lib/visuals/registry';
 
 let pyodide: PyodideInterface;
@@ -675,4 +678,60 @@ test('12. bars adapter fills real vec-py Day 5 metrics part', async () => {
   assert.equal(filled.steps[1].bars[0].label, 'mean recall');
   assert.equal(filled.steps[1].bars[0].value, 0.625);
   assert.equal(filled.steps[1].bars[0].tone, 'data');
+});
+
+// Test 13: sequence adapter fills real dist-py Day 3 RPC part
+test('13. sequence adapter fills real dist-py Day 3 RPC part', async () => {
+  assert.ok(TEMPLATE_REGISTRY.sequence?.fill, 'sequence template is registered with fill adapter');
+
+  const day3 = DIST_PYTHON_LONG_LESSONS.find((l) => l.day === 3);
+  assert.ok(day3, 'dist-py Day 3 must exist');
+  const part0 = day3.parts[0];
+  assert.ok(part0, 'Day 3 Part 0 must exist');
+
+  const spec: SequenceSpec = {
+    template: 'sequence',
+    title: 'Client Server RPC Call',
+    actors: ['Client', 'Server'],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Client sends request message on the wire.',
+        messages: [
+          { from: 'Client', to: 'Server', label: { text: 'get_stock("sku-42")' }, tone: 'data' },
+        ],
+        activeActor: 'Client',
+      },
+      {
+        at: 'say2',
+        caption: 'Server handles request and responds with stock value 7.',
+        messages: [
+          { from: 'Client', to: 'Server', label: { text: 'get_stock("sku-42")' }, tone: 'data' },
+          { from: 'Server', to: 'Client', label: { text: 'stock: 7' }, tone: 'ok' },
+        ],
+        activeActor: 'Server',
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part0, { pyodide })) as SequenceVisual;
+
+  assert.equal(filled.template, 'sequence');
+  assert.equal(filled.title, 'Client Server RPC Call');
+  assert.deepEqual(filled.actors, ['Client', 'Server']);
+  assert.equal(filled.steps.length, 2);
+
+  // Step 1: 1 message
+  assert.equal(filled.steps[0].messages.length, 1);
+  assert.equal(filled.steps[0].messages[0].from, 'Client');
+  assert.equal(filled.steps[0].messages[0].to, 'Server');
+  assert.equal(filled.steps[0].messages[0].label, 'get_stock("sku-42")');
+  assert.equal(filled.steps[0].activeActor, 'Client');
+
+  // Step 2: 2 messages
+  assert.equal(filled.steps[1].messages.length, 2);
+  assert.equal(filled.steps[1].messages[1].from, 'Server');
+  assert.equal(filled.steps[1].messages[1].to, 'Client');
+  assert.equal(filled.steps[1].messages[1].label, 'stock: 7');
+  assert.equal(filled.steps[1].activeActor, 'Server');
 });

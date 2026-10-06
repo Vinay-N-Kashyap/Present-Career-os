@@ -9,6 +9,7 @@ export { CellsTemplate } from './CellsTemplate';
 export { StackQueueTemplate } from './StackQueueTemplate';
 export { TreeGraphTemplate } from './TreeGraphTemplate';
 export { BarsTemplate } from './BarsTemplate';
+export { SequenceTemplate } from './SequenceTemplate';
 export {
   getToneColor,
   getToneBg,

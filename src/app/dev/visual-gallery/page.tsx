@@ -10,6 +10,7 @@ import type {
   StackQueueVisual,
   TreeGraphVisual,
   BarsVisual,
+  SequenceVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
@@ -20,6 +21,7 @@ import { CellsTemplate } from '@/app/quests/lesson/components/visuals/CellsTempl
 import { StackQueueTemplate } from '@/app/quests/lesson/components/visuals/StackQueueTemplate';
 import { TreeGraphTemplate } from '@/app/quests/lesson/components/visuals/TreeGraphTemplate';
 import { BarsTemplate } from '@/app/quests/lesson/components/visuals/BarsTemplate';
+import { SequenceTemplate } from '@/app/quests/lesson/components/visuals/SequenceTemplate';
 
 export const metadata = {
   title: 'Visual Template Gallery - PinIT Dev',
@@ -321,6 +323,41 @@ const sampleBars: BarsVisual = {
         { label: 'warranty claim', value: 0.75, tone: 'data' },
       ],
       max: 1.0,
+    },
+  ],
+};
+
+const sampleSequence: SequenceVisual = {
+  template: 'sequence',
+  title: 'Client Server RPC Call',
+  actors: ['Client', 'Server'],
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Client sends get_stock RPC request across the wire.',
+      messages: [
+        { from: 'Client', to: 'Server', label: 'get_stock("sku-42")', tone: 'data' },
+      ],
+      activeActor: 'Client',
+    },
+    {
+      at: 'say2',
+      caption: 'Server processes request and inspects local inventory.',
+      messages: [
+        { from: 'Client', to: 'Server', label: 'get_stock("sku-42")', tone: 'data' },
+        { from: 'Server', to: 'Server', label: 'inventory lookup', tone: 'idle' },
+      ],
+      activeActor: 'Server',
+    },
+    {
+      at: 'say3',
+      caption: 'Server replies with result payload: stock is 7.',
+      messages: [
+        { from: 'Client', to: 'Server', label: 'get_stock("sku-42")', tone: 'data' },
+        { from: 'Server', to: 'Server', label: 'inventory lookup', tone: 'idle' },
+        { from: 'Server', to: 'Client', label: 'result: 7', tone: 'ok' },
+      ],
+      activeActor: 'Client',
     },
   ],
 };
@@ -674,6 +711,42 @@ export default function VisualGalleryPage(): React.ReactElement {
               <BarsTemplate
                 step={step}
                 showSpaces={sampleBars.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 10. Sequence Template */}
+      <section
+        data-testid="gallery-section-sequence"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          Sequence Template: {sampleSequence.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleSequence.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-sequence-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <SequenceTemplate
+                actors={sampleSequence.actors}
+                step={step}
+                showSpaces={sampleSequence.showSpaces}
               />
             </div>
           ))}
