@@ -5,6 +5,7 @@ import {
   tableSpecSchema,
   lettersSpecSchema,
   compareSpecSchema,
+  cellsSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -12,6 +13,7 @@ import { fillBoxes } from './fill/boxes';
 import { fillTable } from './fill/table';
 import { fillLetters } from './fill/letters';
 import { fillCompare } from './fill/compare';
+import { fillCells } from './fill/cells';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -25,13 +27,13 @@ export type AllTemplateName =
   | 'states';
 
 export interface TemplateRegistryEntry {
-  name: ExistingTemplateName;
+  name: string;
   description: string;
   specSchema: ZodType<unknown>;
   fill: (spec: any, context: FillRunContext) => Promise<any>;
 }
 
-export const TEMPLATE_REGISTRY: Record<ExistingTemplateName, TemplateRegistryEntry> = {
+export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
   flow: {
     name: 'flow',
     description: '2–5 boxes joined by arrows for pipelines and request paths',
@@ -61,6 +63,12 @@ export const TEMPLATE_REGISTRY: Record<ExistingTemplateName, TemplateRegistryEnt
     description: 'Two panels side by side for before/after and wrong/right comparisons',
     specSchema: compareSpecSchema,
     fill: fillCompare,
+  },
+  cells: {
+    name: 'cells',
+    description: 'Array cells with indices and up to 3 pointers for lists, binary search, and two pointers',
+    specSchema: cellsSpecSchema,
+    fill: fillCells,
   },
 };
 

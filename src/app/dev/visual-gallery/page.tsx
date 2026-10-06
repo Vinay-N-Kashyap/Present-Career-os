@@ -6,12 +6,14 @@ import type {
   TableVisual,
   LettersVisual,
   CompareVisual,
+  CellsVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
 import { TableTemplate } from '@/app/quests/lesson/components/visuals/TableTemplate';
 import { LettersTemplate } from '@/app/quests/lesson/components/visuals/LettersTemplate';
 import { CompareTemplate } from '@/app/quests/lesson/components/visuals/CompareTemplate';
+import { CellsTemplate } from '@/app/quests/lesson/components/visuals/CellsTemplate';
 
 export const metadata = {
   title: 'Visual Template Gallery - PinIT Dev',
@@ -177,6 +179,41 @@ const sampleCompare: CompareVisual = {
         tone: 'error',
         checks: ['IndexError'],
       },
+    },
+  ],
+};
+
+const sampleCells: CellsVisual = {
+  template: 'cells',
+  title: 'Two Pointers Search',
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Two pointers start at opposite ends of the sorted array.',
+      items: ['1', '3', '4', '6', '8', '11'],
+      pointers: [
+        { name: 'left', index: 0, tone: 'data' },
+        { name: 'right', index: 5, tone: 'data' },
+      ],
+    },
+    {
+      at: 'say2',
+      caption: 'Sum 1 + 11 = 12 > 10; right pointer moves inward.',
+      items: ['1', '3', '4', '6', '8', '11'],
+      pointers: [
+        { name: 'left', index: 0, tone: 'data' },
+        { name: 'right', index: 4, tone: 'data' },
+      ],
+    },
+    {
+      at: 'say3',
+      caption: 'Target sum found: left at 2 (4) and right at 3 (6) equals 10.',
+      items: ['1', '3', '4', '6', '8', '11'],
+      pointers: [
+        { name: 'left', index: 2, tone: 'ok' },
+        { name: 'right', index: 3, tone: 'ok' },
+      ],
+      tones: { 2: 'ok', 3: 'ok' },
     },
   ],
 };
@@ -387,6 +424,41 @@ export default function VisualGalleryPage(): React.ReactElement {
                 rightLabel={sampleCompare.rightLabel}
                 step={step}
                 showSpaces={sampleCompare.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 6. Cells Template */}
+      <section
+        data-testid="gallery-section-cells"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          Cells Template: {sampleCells.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleCells.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-cells-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <CellsTemplate
+                step={step}
+                showSpaces={sampleCells.showSpaces}
               />
             </div>
           ))}

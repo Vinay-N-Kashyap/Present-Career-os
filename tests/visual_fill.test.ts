@@ -9,8 +9,11 @@ import type {
   LettersSpec,
   FlowSpec,
   CompareSpec,
+  CellsSpec,
+  CellsVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
+import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
 import { TEMPLATE_REGISTRY } from '../src/lib/visuals/registry';
 
 let pyodide: PyodideInterface;
@@ -422,4 +425,60 @@ test('8. throws clear error naming step and binding when value cannot be found',
       return true;
     }
   );
+});
+
+// Test 9: cells adapter fills real dsa-py Day 8 two-pointers part
+test('9. cells adapter fills real dsa-py Day 8 two-pointers part', async () => {
+  assert.ok(TEMPLATE_REGISTRY.cells?.fill, 'cells template is registered with fill adapter');
+
+  const day8 = DSA_PYTHON_LONG_LESSONS.find((l) => l.day === 8);
+  assert.ok(day8, 'dsa-py Day 8 must exist');
+  const part0 = day8.parts[0];
+  assert.ok(part0, 'Day 8 Part 0 must exist');
+
+  const spec: CellsSpec = {
+    template: 'cells',
+    title: 'Two pointers pair with sum',
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Two pointers start at opposite ends of sorted array.',
+        items: { var: 'sorted_nums', line: 4, hit: 1 },
+        pointers: [
+          { name: 'left', index: 0, tone: 'data' },
+          { name: 'right', index: 5, tone: 'data' },
+        ],
+        tones: { 0: 'data', 5: 'data' },
+      },
+      {
+        at: 'say2',
+        caption: 'Pointers meet at index 2 and 3 summing to 10.',
+        items: { var: 'sorted_nums', line: 4, hit: 5 },
+        pointers: [
+          { name: 'left', index: 2, tone: 'ok' },
+          { name: 'right', index: 3, tone: 'ok' },
+        ],
+        tones: { 2: 'ok', 3: 'ok' },
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part0, { pyodide })) as CellsVisual;
+
+  assert.equal(filled.template, 'cells');
+  assert.equal(filled.title, 'Two pointers pair with sum');
+  assert.equal(filled.steps.length, 2);
+
+  // Step 1 assertions
+  assert.deepEqual(filled.steps[0].items, ['1', '3', '4', '6', '8', '11']);
+  assert.equal(filled.steps[0].pointers?.length, 2);
+  assert.equal(filled.steps[0].pointers?.[0].name, 'left');
+  assert.equal(filled.steps[0].pointers?.[0].index, 0);
+  assert.equal(filled.steps[0].pointers?.[1].name, 'right');
+  assert.equal(filled.steps[0].pointers?.[1].index, 5);
+
+  // Step 2 assertions
+  assert.deepEqual(filled.steps[1].items, ['1', '3', '4', '6', '8', '11']);
+  assert.equal(filled.steps[1].pointers?.[0].index, 2);
+  assert.equal(filled.steps[1].pointers?.[1].index, 3);
 });
