@@ -8,6 +8,7 @@ import type {
   CompareVisual,
   CellsVisual,
   StackQueueVisual,
+  TreeGraphVisual,
 } from '@/lib/types/lessonVisual';
 import { FlowTemplate } from '@/app/quests/lesson/components/visuals/FlowTemplate';
 import { BoxesTemplate } from '@/app/quests/lesson/components/visuals/BoxesTemplate';
@@ -16,6 +17,7 @@ import { LettersTemplate } from '@/app/quests/lesson/components/visuals/LettersT
 import { CompareTemplate } from '@/app/quests/lesson/components/visuals/CompareTemplate';
 import { CellsTemplate } from '@/app/quests/lesson/components/visuals/CellsTemplate';
 import { StackQueueTemplate } from '@/app/quests/lesson/components/visuals/StackQueueTemplate';
+import { TreeGraphTemplate } from '@/app/quests/lesson/components/visuals/TreeGraphTemplate';
 
 export const metadata = {
   title: 'Visual Template Gallery - PinIT Dev',
@@ -248,6 +250,46 @@ const sampleStackQueue: StackQueueVisual = {
       action: 'pop',
       actionItem: 'make bold',
       tones: ['idle', 'data'],
+    },
+  ],
+};
+
+const sampleTreeGraph: TreeGraphVisual = {
+  template: 'tree-graph',
+  title: 'Binary Tree Traversal',
+  nodes: [
+    { id: '1', label: '1' },
+    { id: '2', label: '2' },
+    { id: '3', label: '3' },
+    { id: '4', label: '4' },
+    { id: '5', label: '5' },
+  ],
+  edges: [
+    ['1', '2'],
+    ['1', '3'],
+    ['2', '4'],
+    ['2', '5'],
+  ],
+  steps: [
+    {
+      at: 'say1',
+      caption: 'Traversal starts at root node 1.',
+      activeNodeId: '1',
+      visitedNodeIds: ['1'],
+    },
+    {
+      at: 'say2',
+      caption: 'Preorder moves to left child 2.',
+      activeNodeId: '2',
+      activeEdge: ['1', '2'],
+      visitedNodeIds: ['1', '2'],
+    },
+    {
+      at: 'say3',
+      caption: 'Visit leaf node 4.',
+      activeNodeId: '4',
+      activeEdge: ['2', '4'],
+      visitedNodeIds: ['1', '2', '4'],
     },
   ],
 };
@@ -529,6 +571,43 @@ export default function VisualGalleryPage(): React.ReactElement {
                 step={step}
                 mode={sampleStackQueue.mode}
                 showSpaces={sampleStackQueue.showSpaces}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. TreeGraph Template */}
+      <section
+        data-testid="gallery-section-tree-graph"
+        style={{ marginBottom: '40px' }}
+      >
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--t1)' }}>
+          Tree-Graph Template: {sampleTreeGraph.title}
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {sampleTreeGraph.steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-testid={`gallery-step-tree-graph-${idx}`}
+              className="gallery-step-card"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '16px',
+                background: 'var(--bg1)',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--t2)', marginBottom: '8px' }}>
+                Step {idx + 1}: {step.caption}
+              </div>
+              <TreeGraphTemplate
+                nodes={sampleTreeGraph.nodes}
+                edges={sampleTreeGraph.edges}
+                step={step}
+                showSpaces={sampleTreeGraph.showSpaces}
               />
             </div>
           ))}

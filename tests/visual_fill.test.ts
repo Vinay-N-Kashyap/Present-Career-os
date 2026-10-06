@@ -13,6 +13,8 @@ import type {
   CellsVisual,
   StackQueueSpec,
   StackQueueVisual,
+  TreeGraphSpec,
+  TreeGraphVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
@@ -542,4 +544,76 @@ test('10. stack-queue adapter fills real dsa-py Day 4 LIFO stack part', async ()
   // Step 3: ['open file', 'type hello'] after pop
   assert.deepEqual(filled.steps[2].items, ["'open file'", "'type hello'"]);
   assert.equal(filled.steps[2].action, 'pop');
+});
+
+// Test 11: tree-graph adapter fills real dsa-py Day 16 binary tree part
+test('11. tree-graph adapter fills real dsa-py Day 16 binary tree part', async () => {
+  assert.ok(TEMPLATE_REGISTRY['tree-graph']?.fill, 'tree-graph template is registered with fill adapter');
+
+  const day16 = DSA_PYTHON_LONG_LESSONS.find((l) => l.day === 16);
+  assert.ok(day16, 'dsa-py Day 16 must exist');
+  const part0 = day16.parts[0];
+  assert.ok(part0, 'Day 16 Part 0 must exist');
+
+  const spec: TreeGraphSpec = {
+    template: 'tree-graph',
+    title: 'Binary tree 5 nodes',
+    nodes: [
+      { id: '1', label: '1' },
+      { id: '2', label: '2' },
+      { id: '3', label: '3' },
+      { id: '4', label: '4' },
+      { id: '5', label: '5' },
+    ],
+    edges: [
+      ['1', '2'],
+      ['1', '3'],
+      ['2', '4'],
+      ['2', '5'],
+    ],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Root node 1 visited.',
+        activeNodeId: '1',
+        visitedNodeIds: ['1'],
+      },
+      {
+        at: 'say2',
+        caption: 'Left subtree root 2 visited.',
+        activeNodeId: '2',
+        activeEdge: ['1', '2'],
+        visitedNodeIds: ['1', '2'],
+      },
+      {
+        at: 'say3',
+        caption: 'Leaf node 4 visited.',
+        activeNodeId: '4',
+        activeEdge: ['2', '4'],
+        visitedNodeIds: ['1', '2', '4'],
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part0, { pyodide })) as TreeGraphVisual;
+
+  assert.equal(filled.template, 'tree-graph');
+  assert.equal(filled.title, 'Binary tree 5 nodes');
+  assert.equal(filled.nodes.length, 5);
+  assert.equal(filled.edges.length, 4);
+  assert.equal(filled.steps.length, 3);
+
+  // Step 1 assertions
+  assert.equal(filled.steps[0].activeNodeId, '1');
+  assert.deepEqual(filled.steps[0].visitedNodeIds, ['1']);
+
+  // Step 2 assertions
+  assert.equal(filled.steps[1].activeNodeId, '2');
+  assert.deepEqual(filled.steps[1].activeEdge, ['1', '2']);
+  assert.deepEqual(filled.steps[1].visitedNodeIds, ['1', '2']);
+
+  // Step 3 assertions
+  assert.equal(filled.steps[2].activeNodeId, '4');
+  assert.deepEqual(filled.steps[2].activeEdge, ['2', '4']);
+  assert.deepEqual(filled.steps[2].visitedNodeIds, ['1', '2', '4']);
 });

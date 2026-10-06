@@ -7,6 +7,7 @@ import {
   compareSpecSchema,
   cellsSpecSchema,
   stackQueueSpecSchema,
+  treeGraphSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -16,6 +17,7 @@ import { fillLetters } from './fill/letters';
 import { fillCompare } from './fill/compare';
 import { fillCells } from './fill/cells';
 import { fillStackQueue } from './fill/stack-queue';
+import { fillTreeGraph } from './fill/tree-graph';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -77,6 +79,12 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     description: 'Items pushed and popped, stack vertical or queue horizontal',
     specSchema: stackQueueSpecSchema,
     fill: fillStackQueue,
+  },
+  'tree-graph': {
+    name: 'tree-graph',
+    description: 'Up to 6 nodes and their edges with active and visited node highlights',
+    specSchema: treeGraphSpecSchema,
+    fill: fillTreeGraph,
   },
 };
 
