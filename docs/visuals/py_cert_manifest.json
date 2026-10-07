@@ -1324,27 +1324,27 @@
     },
     "dsa-py:26:0": {
       "partTitle": "When greedy choices fail",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:26:1": {
       "partTitle": "Coin change with a DP table",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:26:2": {
       "partTitle": "Counting the ways instead",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:26:3": {
       "partTitle": "The 0/1 knapsack problem",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:26:4": {
       "partTitle": "Which items were taken?",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:26:5": {
       "partTitle": "Milestone 4: an optimisation engine",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:27:0": {
       "partTitle": "Comparing two strings",

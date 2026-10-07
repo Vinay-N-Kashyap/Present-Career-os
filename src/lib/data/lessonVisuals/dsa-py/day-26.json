@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "When greedy choices fail",
+      "codeHash": "1189478b8daf70030a9cc2a3f0809301501d89fe2a5f083d806a95f77d40ad1b",
+      "spec": {
+        "template": "compare",
+        "title": "Greedy heuristic failure versus optimal dynamic programming",
+        "leftLabel": "Greedy Strategy",
+        "rightLabel": "DP Optimal",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The locally best choice led to a worse overall answer.",
+            "left": {
+              "code": "coins [4, 1, 1]",
+              "result": {
+                "text": "three coins"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "coins [3, 3]",
+              "result": {
+                "text": "two coins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "When greedy fails dynamic programming tries every choice systematically.",
+            "left": {
+              "code": "greedy search",
+              "result": {
+                "text": "suboptimal"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DP combinations",
+              "result": {
+                "text": "optimal 3+3"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Greedy heuristic failure versus optimal dynamic programming",
+        "leftLabel": "Greedy Strategy",
+        "rightLabel": "DP Optimal",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The locally best choice led to a worse overall answer.",
+            "left": {
+              "code": "coins [4, 1, 1]",
+              "result": "three coins",
+              "tone": "error",
+              "checks": [
+                "three coins"
+              ]
+            },
+            "right": {
+              "code": "coins [3, 3]",
+              "result": "two coins",
+              "tone": "ok",
+              "checks": [
+                "two coins"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "When greedy fails dynamic programming tries every choice systematically.",
+            "left": {
+              "code": "greedy search",
+              "result": "suboptimal",
+              "tone": "error",
+              "checks": [
+                "suboptimal"
+              ]
+            },
+            "right": {
+              "code": "DP combinations",
+              "result": "optimal 3+3",
+              "tone": "ok",
+              "checks": [
+                "optimal 3+3"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Coin change with a DP table",
+      "codeHash": "8c5fca956f3e128740cad58e9300d1841a83786f24056fd425e15c20f8cfe548",
+      "spec": {
+        "template": "cells",
+        "title": "1D array tracking minimum coins for each subproblem amount",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "best[x] means the fewest coins that make amount x.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "inf"
+              },
+              {
+                "text": "inf"
+              },
+              {
+                "text": "inf"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "base 0",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The recurrence comes from the last coin used across coins.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "best[x]",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "1D array tracking minimum coins for each subproblem amount",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "best[x] means the fewest coins that make amount x.",
+            "items": [
+              "0",
+              "inf",
+              "inf",
+              "inf"
+            ],
+            "pointers": [
+              {
+                "name": "base 0",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The recurrence comes from the last coin used across coins.",
+            "items": [
+              "0",
+              "1",
+              "2",
+              "1"
+            ],
+            "pointers": [
+              {
+                "name": "best[x]",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting the ways instead",
+      "codeHash": "848be9216c5b2063b3946dd529223a2a107bb4e04930934ac00e96ed27c6f848",
+      "spec": {
+        "template": "none",
+        "reason": "Counting combinations vs permutations based on outer loop variable order."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Counting combinations vs permutations based on outer loop variable order."
+      }
+    },
+    {
+      "partTitle": "The 0/1 knapsack problem",
+      "codeHash": "8304c50ce4f6496771029c5d5ddb2fee7852c11ca253a645dde27b841169c801",
+      "spec": {
+        "template": "table",
+        "title": "0/1 Knapsack reverse capacity update",
+        "columns": [
+          "Bag Capacity",
+          "Skip Item",
+          "Take Item (v + best[c-w])",
+          "Updated Best"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "For each item choose between skipping or taking if it fits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Cap 3"
+                  },
+                  {
+                    "text": "val 0"
+                  },
+                  {
+                    "text": "val 10"
+                  },
+                  {
+                    "text": "val 10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Loop capacity from high to low so items cannot be used twice.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Cap 5"
+                  },
+                  {
+                    "text": "val 10"
+                  },
+                  {
+                    "text": "val 22"
+                  },
+                  {
+                    "text": "val 22"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "0/1 Knapsack reverse capacity update",
+        "columns": [
+          "Bag Capacity",
+          "Skip Item",
+          "Take Item (v + best[c-w])",
+          "Updated Best"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "For each item choose between skipping or taking if it fits.",
+            "rows": [
+              {
+                "cells": [
+                  "Cap 3",
+                  "val 0",
+                  "val 10",
+                  "val 10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Loop capacity from high to low so items cannot be used twice.",
+            "rows": [
+              {
+                "cells": [
+                  "Cap 5",
+                  "val 10",
+                  "val 22",
+                  "val 22"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Which items were taken?",
+      "codeHash": "da5914af9133fc9baa4f9b66f2140d4d54897365027198eb5d6523228fa917f2",
+      "spec": {
+        "template": "none",
+        "reason": "Backtracking 2D DP table to recover exact set of packed items."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Backtracking 2D DP table to recover exact set of packed items."
+      }
+    },
+    {
+      "partTitle": "Milestone 4: an optimisation engine",
+      "codeHash": "6f008be9d52eb4cbcec77c33a80e9fe2317dc547b841a8451898ea22c3e6642b",
+      "spec": {
+        "template": "table",
+        "title": "Optimization engine use cases and algorithms",
+        "columns": [
+          "Optimization Problem",
+          "Algorithm Technique",
+          "Real World Domain"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone combines fewest coin change with knapsack packing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Coin Change"
+                  },
+                  {
+                    "text": "1D DP Table"
+                  },
+                  {
+                    "text": "Making Cash Change"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Real systems use these techniques for factory stock and delivery trucks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Coin Change"
+                  },
+                  {
+                    "text": "1D DP Table"
+                  },
+                  {
+                    "text": "Cash Tender"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0/1 Knapsack"
+                  },
+                  {
+                    "text": "Bounded Capacity DP"
+                  },
+                  {
+                    "text": "Cargo Loading"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Optimization engine use cases and algorithms",
+        "columns": [
+          "Optimization Problem",
+          "Algorithm Technique",
+          "Real World Domain"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone combines fewest coin change with knapsack packing.",
+            "rows": [
+              {
+                "cells": [
+                  "Coin Change",
+                  "1D DP Table",
+                  "Making Cash Change"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Real systems use these techniques for factory stock and delivery trucks.",
+            "rows": [
+              {
+                "cells": [
+                  "Coin Change",
+                  "1D DP Table",
+                  "Cash Tender"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "0/1 Knapsack",
+                  "Bounded Capacity DP",
+                  "Cargo Loading"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
