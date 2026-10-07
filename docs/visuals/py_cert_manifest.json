@@ -4900,27 +4900,27 @@
     },
     "nlp-py:25:0": {
       "partTitle": "Extractive question answering",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:25:1": {
       "partTitle": "Start and end scores",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:25:2": {
       "partTitle": "Choosing the best valid span",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:25:3": {
       "partTitle": "Normalising answers",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:25:4": {
       "partTitle": "Exact match and F1",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:25:5": {
       "partTitle": "Practice time: spans and matches",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:26:0": {
       "partTitle": "Sparse and dense retrieval",
