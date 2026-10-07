@@ -1468,27 +1468,27 @@
     },
     "sql-mastery:2:0": {
       "partTitle": "CREATE TABLE: designing the shape of your data",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:2:1": {
       "partTitle": "Choosing data types",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:2:2": {
       "partTitle": "NOT NULL and DEFAULT",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:2:3": {
       "partTitle": "Primary keys and serial ids",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:2:4": {
       "partTitle": "UNIQUE, and removing tables with DROP TABLE",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:2:5": {
       "partTitle": "Putting it together: the expenses table",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:3:0": {
       "partTitle": "INSERT: adding rows",
