@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "FinOps: engineering meets finance",
+      "codeHash": "7d6bcc69434c1abc4071522b2e65acf986174f336906da89129649fadffd6e93",
+      "spec": {
+        "template": "table",
+        "title": "Monthly cloud spend tracking and unit cost efficiency metrics",
+        "columns": [
+          "name",
+          "bill"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FinOps manages cloud cost as a shared responsibility across teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every engineer can spend money with cloud calls.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Aug"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The FinOps cycle phases remove waste and operate budgets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Aug"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sep"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unit cost per order measures efficiency as bill values change.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Aug"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sep"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "bill"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Monthly cloud spend tracking and unit cost efficiency metrics",
+        "columns": [
+          "name",
+          "bill"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FinOps manages cloud cost as a shared responsibility across teams.",
+            "rows": [
+              {
+                "cells": [
+                  "Jul",
+                  "bill"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every engineer can spend money with cloud calls.",
+            "rows": [
+              {
+                "cells": [
+                  "Jul",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Aug",
+                  "bill"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The FinOps cycle phases remove waste and operate budgets.",
+            "rows": [
+              {
+                "cells": [
+                  "Jul",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Aug",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Sep",
+                  "bill"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unit cost per order measures efficiency as bill values change.",
+            "rows": [
+              {
+                "cells": [
+                  "Jul",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Aug",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Sep",
+                  "bill"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "bill"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Savings Plans and commitments",
+      "codeHash": "ed84ebd76017e8e665821ccfbb084ea5dd461212d03dc4f21a1c9022a697a822",
+      "spec": {
+        "template": "table",
+        "title": "Compute Savings Plans hourly commitment vs on-demand rates",
+        "columns": [
+          "plan_rate",
+          "on_demand_rate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compute Savings Plans commit to steady usage discounts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan_rate"
+                  },
+                  {
+                    "text": "on_demand_rate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Usage above commitment is billed at normal on-demand rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan_rate"
+                  },
+                  {
+                    "text": "on_demand_rate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "committed_hours"
+                  },
+                  {
+                    "text": "hours_used"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Choosing the commitment avoids paying for hours you do not use.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan_rate"
+                  },
+                  {
+                    "text": "on_demand_rate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "committed_hours"
+                  },
+                  {
+                    "text": "hours_used"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "committed_hours"
+                  },
+                  {
+                    "text": "plan_rate"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Commit to baseline usage and allow peaks to run on-demand.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan_rate"
+                  },
+                  {
+                    "text": "on_demand_rate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "committed_hours"
+                  },
+                  {
+                    "text": "hours_used"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "committed_hours"
+                  },
+                  {
+                    "text": "plan_rate"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hours_used"
+                  },
+                  {
+                    "text": "on_demand_rate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Compute Savings Plans hourly commitment vs on-demand rates",
+        "columns": [
+          "plan_rate",
+          "on_demand_rate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compute Savings Plans commit to steady usage discounts.",
+            "rows": [
+              {
+                "cells": [
+                  "plan_rate",
+                  "on_demand_rate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Usage above commitment is billed at normal on-demand rates.",
+            "rows": [
+              {
+                "cells": [
+                  "plan_rate",
+                  "on_demand_rate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "committed_hours",
+                  "hours_used"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Choosing the commitment avoids paying for hours you do not use.",
+            "rows": [
+              {
+                "cells": [
+                  "plan_rate",
+                  "on_demand_rate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "committed_hours",
+                  "hours_used"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "committed_hours",
+                  "plan_rate"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Commit to baseline usage and allow peaks to run on-demand.",
+            "rows": [
+              {
+                "cells": [
+                  "plan_rate",
+                  "on_demand_rate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "committed_hours",
+                  "hours_used"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "committed_hours",
+                  "plan_rate"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "hours_used",
+                  "on_demand_rate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding idle and oversized resources",
+      "codeHash": "53a214dc13b6a7ebab991a0da42c2d26f0c8252f6bb423d23d37af4da19f924a",
+      "spec": {
+        "template": "table",
+        "title": "Cloud resource rightsizing inventory and unattached disks",
+        "columns": [
+          "type",
+          "monthly"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unattached EBS disks and idle servers waste monthly budget.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ebs-unattached"
+                  },
+                  {
+                    "text": "vol-old"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Oversized resources with low CPU could often be half the size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ebs-unattached"
+                  },
+                  {
+                    "text": "vol-old"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "m5.2xlarge"
+                  },
+                  {
+                    "text": "i-web-1"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute Optimizer suggests right-sizing while Trusted Advisor flags idle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ebs-unattached"
+                  },
+                  {
+                    "text": "vol-old"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "m5.2xlarge"
+                  },
+                  {
+                    "text": "i-web-1"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "t3.large"
+                  },
+                  {
+                    "text": "i-test-9"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Development environments stop at night cutting cost by two thirds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ebs-unattached"
+                  },
+                  {
+                    "text": "vol-old"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "m5.2xlarge"
+                  },
+                  {
+                    "text": "i-web-1"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "t3.large"
+                  },
+                  {
+                    "text": "i-test-9"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "type"
+                  },
+                  {
+                    "text": "monthly"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cloud resource rightsizing inventory and unattached disks",
+        "columns": [
+          "type",
+          "monthly"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unattached EBS disks and idle servers waste monthly budget.",
+            "rows": [
+              {
+                "cells": [
+                  "ebs-unattached",
+                  "vol-old"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Oversized resources with low CPU could often be half the size.",
+            "rows": [
+              {
+                "cells": [
+                  "ebs-unattached",
+                  "vol-old"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "m5.2xlarge",
+                  "i-web-1"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute Optimizer suggests right-sizing while Trusted Advisor flags idle.",
+            "rows": [
+              {
+                "cells": [
+                  "ebs-unattached",
+                  "vol-old"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "m5.2xlarge",
+                  "i-web-1"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "t3.large",
+                  "i-test-9"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Development environments stop at night cutting cost by two thirds.",
+            "rows": [
+              {
+                "cells": [
+                  "ebs-unattached",
+                  "vol-old"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "m5.2xlarge",
+                  "i-web-1"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "t3.large",
+                  "i-test-9"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "type",
+                  "monthly"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost allocation tags",
+      "codeHash": "2371beca22af046d394ffae2aa0315fc0b64dde348f46c14ed55d9c9f18ccd10",
+      "spec": {
+        "template": "table",
+        "title": "Cost allocation tags for project attribution and spending reports",
+        "columns": [
+          "tags",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tags apply key-value labels to identify resource ownership.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "checkout"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cost allocation tags split the bill by team and environment.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "checkout"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "search"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resources missing required tags contribute to unallocated spend.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "checkout"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "search"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "UNALLOCATED"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform modules and organization policies enforce tagging early.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "checkout"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Project"
+                  },
+                  {
+                    "text": "search"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "UNALLOCATED"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cost allocation tags for project attribution and spending reports",
+        "columns": [
+          "tags",
+          "cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tags apply key-value labels to identify resource ownership.",
+            "rows": [
+              {
+                "cells": [
+                  "Project",
+                  "checkout"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cost allocation tags split the bill by team and environment.",
+            "rows": [
+              {
+                "cells": [
+                  "Project",
+                  "checkout"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Project",
+                  "search"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resources missing required tags contribute to unallocated spend.",
+            "rows": [
+              {
+                "cells": [
+                  "Project",
+                  "checkout"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Project",
+                  "search"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "UNALLOCATED",
+                  "cost"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform modules and organization policies enforce tagging early.",
+            "rows": [
+              {
+                "cells": [
+                  "Project",
+                  "checkout"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Project",
+                  "search"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "UNALLOCATED",
+                  "cost"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "tags",
+                  "cost"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Budgets, alerts and anomaly detection",
+      "codeHash": "d3111359ffd0d6ef6f1d2936c71955eacfe53c75e94924b31e7510bfb03f4278",
+      "spec": {
+        "template": "none",
+        "reason": "Budgets, alerts and anomaly detection."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: bills and tags",
+      "codeHash": "3482d566f087f3fe4313a0a048ac67e96e140a3eb88c8f5d268f4cd6a5da1a38",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: bills and tags."
+      },
+      "filled": {}
+    }
+  ]
+}

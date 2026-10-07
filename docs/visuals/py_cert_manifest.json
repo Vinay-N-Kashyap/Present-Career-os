@@ -4252,27 +4252,27 @@
     },
     "cloud-py:28:0": {
       "partTitle": "FinOps: engineering meets finance",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:28:1": {
       "partTitle": "Savings Plans and commitments",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:28:2": {
       "partTitle": "Finding idle and oversized resources",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:28:3": {
       "partTitle": "Cost allocation tags",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:28:4": {
       "partTitle": "Budgets, alerts and anomaly detection",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:28:5": {
       "partTitle": "Practice time: bills and tags",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:29:0": {
       "partTitle": "RTO and RPO",
