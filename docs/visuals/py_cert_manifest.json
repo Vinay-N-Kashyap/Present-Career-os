@@ -772,27 +772,27 @@
     },
     "dsa-py:3:0": {
       "partTitle": "Nodes that point to the next node",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:3:1": {
       "partTitle": "Walking, counting and finding",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:3:2": {
       "partTitle": "Reversing a list in place",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:3:3": {
       "partTitle": "Fast and slow pointers",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:3:4": {
       "partTitle": "Doubly linked lists and when to use linked lists",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:3:5": {
       "partTitle": "Deleting nodes with a dummy head",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:4:0": {
       "partTitle": "A stack: last in, first out",
