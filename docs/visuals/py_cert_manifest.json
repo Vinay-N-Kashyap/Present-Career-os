@@ -1060,27 +1060,27 @@
     },
     "dsa-py:15:0": {
       "partTitle": "Streams and why sorting every time is too slow",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:15:1": {
       "partTitle": "heapq: a min-heap in Python",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:15:2": {
       "partTitle": "Two heaps split the numbers in half",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:15:3": {
       "partTitle": "Adding a number and rebalancing",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:15:4": {
       "partTitle": "Running medians of a stream",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:15:5": {
       "partTitle": "Milestone review: what you built",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:16:0": {
       "partTitle": "Trees: nodes with children",

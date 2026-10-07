@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Streams and why sorting every time is too slow",
+      "codeHash": "2d1cf4dfcc2395222767b0d1c1e1d4287b9d5c223aec62adc3b8a535bdd3554a",
+      "spec": {
+        "template": "compare",
+        "title": "Stream arrival cost comparison",
+        "leftLabel": "Re-sorting",
+        "rightLabel": "Dual Heaps",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Odd count has one middle value while even count takes average.",
+            "left": {
+              "code": "sort(seen)",
+              "result": {
+                "text": "O(N log N)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "dual heaps",
+              "result": {
+                "text": "O(log N)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Dual heaps add numbers in log time and find median in constant time.",
+            "left": {
+              "code": "1M arrivals",
+              "result": {
+                "text": "minutes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "1M arrivals",
+              "result": {
+                "text": "seconds"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Stream arrival cost comparison",
+        "leftLabel": "Re-sorting",
+        "rightLabel": "Dual Heaps",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Odd count has one middle value while even count takes average.",
+            "left": {
+              "code": "sort(seen)",
+              "result": "O(N log N)",
+              "tone": "error",
+              "checks": [
+                "O(N log N)"
+              ]
+            },
+            "right": {
+              "code": "dual heaps",
+              "result": "O(log N)",
+              "tone": "ok",
+              "checks": [
+                "O(log N)"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Dual heaps add numbers in log time and find median in constant time.",
+            "left": {
+              "code": "1M arrivals",
+              "result": "minutes",
+              "tone": "error",
+              "checks": [
+                "minutes"
+              ]
+            },
+            "right": {
+              "code": "1M arrivals",
+              "result": "seconds",
+              "tone": "ok",
+              "checks": [
+                "seconds"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "heapq: a min-heap in Python",
+      "codeHash": "c0c0e21c853ef51f7b221b3dcdc2fa13b142e4b20e91ef931f9e70c0b002dbef",
+      "spec": {
+        "template": "none",
+        "reason": "heapq min-heap and negated max-heap primitives."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "heapq min-heap and negated max-heap primitives."
+      }
+    },
+    {
+      "partTitle": "Two heaps split the numbers in half",
+      "codeHash": "1f1a114ff45c1a87df507c3d4053da592d9bc2e9581be623cee97bdcd39cb940",
+      "spec": {
+        "template": "compare",
+        "title": "Partitioning stream between low and high heaps",
+        "leftLabel": "Max-Heap (low)",
+        "rightLabel": "Min-Heap (high)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keep smaller half in max-heap and larger half in min-heap.",
+            "left": {
+              "code": "top: 5",
+              "result": {
+                "text": "[1, 3, 5]"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "top: 7",
+              "result": {
+                "text": "[7, 9]"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Median sits between low heap maximum and high heap minimum.",
+            "left": {
+              "code": "max of small",
+              "result": {
+                "text": "low[0] = 5"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "min of big",
+              "result": {
+                "text": "high[0] = 7"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partitioning stream between low and high heaps",
+        "leftLabel": "Max-Heap (low)",
+        "rightLabel": "Min-Heap (high)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keep smaller half in max-heap and larger half in min-heap.",
+            "left": {
+              "code": "top: 5",
+              "result": "[1, 3, 5]",
+              "tone": "ok",
+              "checks": [
+                "[1, 3, 5]"
+              ]
+            },
+            "right": {
+              "code": "top: 7",
+              "result": "[7, 9]",
+              "tone": "ok",
+              "checks": [
+                "[7, 9]"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Median sits between low heap maximum and high heap minimum.",
+            "left": {
+              "code": "max of small",
+              "result": "low[0] = 5",
+              "tone": "ok",
+              "checks": [
+                "low[0] = 5"
+              ]
+            },
+            "right": {
+              "code": "min of big",
+              "result": "high[0] = 7",
+              "tone": "ok",
+              "checks": [
+                "high[0] = 7"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adding a number and rebalancing",
+      "codeHash": "7e373c130d58345034004d442904d57b66d80f96c756c662e555572f9e8ab048",
+      "spec": {
+        "template": "none",
+        "reason": "Rebalancing invariant maintaining low size >= high size."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Rebalancing invariant maintaining low size >= high size."
+      }
+    },
+    {
+      "partTitle": "Running medians of a stream",
+      "codeHash": "6762975b3a74951c859dbc8af65e40a6cdc4097234383d3f9bee85dfd5056689",
+      "spec": {
+        "template": "table",
+        "title": "Running stream median trace",
+        "columns": [
+          "Stream Arrival",
+          "Low Heap (max)",
+          "High Heap (min)",
+          "Running Median"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "MedianFinder updates running median after each number is added.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "[5]"
+                  },
+                  {
+                    "text": "[]"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "[5]"
+                  },
+                  {
+                    "text": "[15]"
+                  },
+                  {
+                    "text": "10.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hand verification confirms exact medians for stream values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "[5]"
+                  },
+                  {
+                    "text": "[]"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "[5]"
+                  },
+                  {
+                    "text": "[15]"
+                  },
+                  {
+                    "text": "10.0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "[5, 1]"
+                  },
+                  {
+                    "text": "[15]"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "[3, 1]"
+                  },
+                  {
+                    "text": "[5, 15]"
+                  },
+                  {
+                    "text": "4.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Running stream median trace",
+        "columns": [
+          "Stream Arrival",
+          "Low Heap (max)",
+          "High Heap (min)",
+          "Running Median"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "MedianFinder updates running median after each number is added.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "[5]",
+                  "[]",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "15",
+                  "[5]",
+                  "[15]",
+                  "10.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hand verification confirms exact medians for stream values.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "[5]",
+                  "[]",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "15",
+                  "[5]",
+                  "[15]",
+                  "10.0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1",
+                  "[5, 1]",
+                  "[15]",
+                  "5"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "[3, 1]",
+                  "[5, 15]",
+                  "4.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone review: what you built",
+      "codeHash": "bdd019955935928fdd47941502db5904870b0c053190ea2b6ca3b24a87d76db4",
+      "spec": {
+        "template": "bars",
+        "title": "Performance scaling for stream median computation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone combines priority queues and heaps balancing.",
+            "bars": [
+              {
+                "label": "Re-sorting",
+                "value": {
+                  "text": "O(N log N)"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Bisection insort",
+                "value": {
+                  "text": "O(N)"
+                },
+                "tone": "data"
+              }
+            ],
+            "max": 100
+          },
+          {
+            "at": "say2",
+            "caption": "Two heaps process stream in fraction of a second.",
+            "bars": [
+              {
+                "label": "Bisection insort",
+                "value": {
+                  "text": "O(N) slow"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Dual heaps",
+                "value": {
+                  "text": "O(log N) fast"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 100
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Performance scaling for stream median computation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone combines priority queues and heaps balancing.",
+            "bars": [
+              {
+                "label": "Re-sorting",
+                "value": "O(N log N)",
+                "tone": "error"
+              },
+              {
+                "label": "Bisection insort",
+                "value": "O(N)",
+                "tone": "data"
+              }
+            ],
+            "max": 100
+          },
+          {
+            "at": "say2",
+            "caption": "Two heaps process stream in fraction of a second.",
+            "bars": [
+              {
+                "label": "Bisection insort",
+                "value": "O(N) slow",
+                "tone": "error"
+              },
+              {
+                "label": "Dual heaps",
+                "value": "O(log N) fast",
+                "tone": "ok"
+              }
+            ],
+            "max": 100
+          }
+        ]
+      }
+    }
+  ]
+}
