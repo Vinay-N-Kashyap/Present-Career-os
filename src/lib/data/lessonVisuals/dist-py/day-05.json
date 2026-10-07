@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The cache-aside pattern",
+      "codeHash": "786cd581bba9bdc08c5171e0640278d5d73bd18786c6bc2edccf9883396d6b54",
+      "spec": {
+        "template": "flow",
+        "title": "Cache-aside pattern read and miss database retrieval workflow",
+        "nodes": [
+          {
+            "id": "cache",
+            "label": "cache"
+          },
+          {
+            "id": "database",
+            "label": "database"
+          },
+          {
+            "id": "value",
+            "label": "value"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cache",
+            "to": "database",
+            "label": "miss"
+          },
+          {
+            "from": "database",
+            "to": "value",
+            "label": "load"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cache-aside checks cache first and loads value from database on miss.",
+            "values": {
+              "cache": {
+                "text": "user:1"
+              },
+              "database": {
+                "text": "Asha"
+              },
+              "value": {
+                "text": "Asha"
+              }
+            },
+            "tones": {
+              "cache": "idle",
+              "database": "data",
+              "value": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Database write updates storage while cache entry is invalidated.",
+            "values": {
+              "cache": {
+                "text": "user:2"
+              },
+              "database": {
+                "text": "Bala"
+              },
+              "value": {
+                "text": "Bala"
+              }
+            },
+            "tones": {
+              "cache": "ok",
+              "database": "ok",
+              "value": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Cache hit rate measures share of reads served without database.",
+            "values": {
+              "cache": {
+                "text": "user:1"
+              },
+              "database": {
+                "text": "Asha"
+              },
+              "value": {
+                "text": "Asha"
+              }
+            },
+            "tones": {
+              "cache": "ok",
+              "database": "idle",
+              "value": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Cache-aside pattern read and miss database retrieval workflow",
+        "nodes": [
+          {
+            "id": "cache",
+            "label": "cache"
+          },
+          {
+            "id": "database",
+            "label": "database"
+          },
+          {
+            "id": "value",
+            "label": "value"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cache-aside checks cache first and loads value from database on miss.",
+            "values": {
+              "cache": "user:1",
+              "database": "Asha",
+              "value": "Asha"
+            },
+            "tones": {
+              "cache": "idle",
+              "database": "data",
+              "value": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Database write updates storage while cache entry is invalidated.",
+            "values": {
+              "cache": "user:2",
+              "database": "Bala",
+              "value": "Bala"
+            },
+            "tones": {
+              "cache": "ok",
+              "database": "ok",
+              "value": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say6",
+            "caption": "Cache hit rate measures share of reads served without database.",
+            "values": {
+              "cache": "user:1",
+              "database": "Asha",
+              "value": "Asha"
+            },
+            "tones": {
+              "cache": "ok",
+              "database": "idle",
+              "value": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expiry with TTL",
+      "codeHash": "76870aab7f4cf4a3de7026d4dc676ee6adeed4676511484800720dd01193ff28",
+      "spec": {
+        "template": "table",
+        "title": "Time to live cache expiration evaluation across timestamps",
+        "columns": [
+          "timestamp",
+          "ttl",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Time to live limits how long cached entry is trusted.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Read checks whether current timestamp is before expiry time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Reading entry after 60 seconds triggers database reload.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "price:sku-42"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Time to live cache expiration evaluation across timestamps",
+        "columns": [
+          "timestamp",
+          "ttl",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Time to live limits how long cached entry is trusted.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Read checks whether current timestamp is before expiry time.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Reading entry after 60 seconds triggers database reload.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "90",
+                  "60",
+                  "price:sku-42"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The thundering herd",
+      "codeHash": "91936a63835ce2fd91d94f66393b88db3696abce9e3e04ac34335334d72260fc",
+      "spec": {
+        "template": "compare",
+        "title": "Thundering herd stampede defense using cached fetch consolidation",
+        "leftLabel": "Uncached Stampede",
+        "rightLabel": "Consolidated Burst",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Popular key expiry triggers simultaneous queries to database.",
+            "left": {
+              "code": "burst requests on expired key",
+              "result": {
+                "text": "hot"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "first request populates cache",
+              "result": {
+                "text": "hot"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Function get_many calls fetch at most once per distinct key.",
+            "left": {
+              "code": "redundant database calls",
+              "result": {
+                "text": "cold"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "single fetch per distinct key",
+              "result": {
+                "text": "cold"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ten requests cause only two database calls across keys.",
+            "left": {
+              "code": "stampede overwhelms database",
+              "result": {
+                "text": "hot"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "subsequent requests hit cache",
+              "result": {
+                "text": "hot"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Thundering herd stampede defense using cached fetch consolidation",
+        "leftLabel": "Uncached Stampede",
+        "rightLabel": "Consolidated Burst",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Popular key expiry triggers simultaneous queries to database.",
+            "left": {
+              "code": "burst requests on expired key",
+              "result": "hot",
+              "tone": "error",
+              "checks": [
+                "hot"
+              ]
+            },
+            "right": {
+              "code": "first request populates cache",
+              "result": "hot",
+              "tone": "ok",
+              "checks": [
+                "hot"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Function get_many calls fetch at most once per distinct key.",
+            "left": {
+              "code": "redundant database calls",
+              "result": "cold",
+              "tone": "error",
+              "checks": [
+                "cold"
+              ]
+            },
+            "right": {
+              "code": "single fetch per distinct key",
+              "result": "cold",
+              "tone": "ok",
+              "checks": [
+                "cold"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ten requests cause only two database calls across keys.",
+            "left": {
+              "code": "stampede overwhelms database",
+              "result": "hot",
+              "tone": "error",
+              "checks": [
+                "hot"
+              ]
+            },
+            "right": {
+              "code": "subsequent requests hit cache",
+              "result": "hot",
+              "tone": "ok",
+              "checks": [
+                "hot"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spreading expiries with jitter",
+      "codeHash": "ba7d7fff599cc69a9c3ac93f13cf9c8746b1f0260abb757b5a4cfbdfc33ea67c",
+      "spec": {
+        "template": "none",
+        "reason": "TTL jitter random window distribution concept."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Invalidation on writes",
+      "codeHash": "3d97d3cc960e7adad5b54f560d11a29c073ebd65fe23cb029e7ff11977b849fa",
+      "spec": {
+        "template": "compare",
+        "title": "Cache invalidation comparison delete on write versus no invalidation",
+        "leftLabel": "No Invalidation (Stale)",
+        "rightLabel": "Invalidation (Delete)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache invalidation deletes cache entry after database update.",
+            "left": {
+              "code": "write without invalidation",
+              "result": {
+                "text": "499"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "write with cache.pop(key)",
+              "result": {
+                "text": "449"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Deleting cache entry is safer than updating during concurrent writes.",
+            "left": {
+              "code": "stale cache entry retained",
+              "result": {
+                "text": "499"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "fresh load from database",
+              "result": {
+                "text": "399"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Deleting cache entry on write fixes stale read problem cleanly.",
+            "left": {
+              "code": "stale read returned 499",
+              "result": {
+                "text": "499"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "fresh read returns 399",
+              "result": {
+                "text": "399"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cache invalidation comparison delete on write versus no invalidation",
+        "leftLabel": "No Invalidation (Stale)",
+        "rightLabel": "Invalidation (Delete)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache invalidation deletes cache entry after database update.",
+            "left": {
+              "code": "write without invalidation",
+              "result": "499",
+              "tone": "error",
+              "checks": [
+                "499"
+              ]
+            },
+            "right": {
+              "code": "write with cache.pop(key)",
+              "result": "449",
+              "tone": "ok",
+              "checks": [
+                "449"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Deleting cache entry is safer than updating during concurrent writes.",
+            "left": {
+              "code": "stale cache entry retained",
+              "result": "499",
+              "tone": "error",
+              "checks": [
+                "499"
+              ]
+            },
+            "right": {
+              "code": "fresh load from database",
+              "result": "399",
+              "tone": "ok",
+              "checks": [
+                "399"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Deleting cache entry on write fixes stale read problem cleanly.",
+            "left": {
+              "code": "stale read returned 499",
+              "result": "499",
+              "tone": "error",
+              "checks": [
+                "499"
+              ]
+            },
+            "right": {
+              "code": "fresh read returns 399",
+              "result": "399",
+              "tone": "ok",
+              "checks": [
+                "399"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1: a bounded, distributed cache",
+      "codeHash": "cdcca954231acd15c7b85ccd0d9740e4f66c8d8468870c8adab6ae9e9807c4c5",
+      "spec": {
+        "template": "none",
+        "reason": "LRU eviction policy and distributed cache milestone architecture."
+      },
+      "filled": {}
+    }
+  ]
+}

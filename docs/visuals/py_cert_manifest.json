@@ -2980,27 +2980,27 @@
     },
     "dist-py:5:0": {
       "partTitle": "The cache-aside pattern",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:5:1": {
       "partTitle": "Expiry with TTL",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:5:2": {
       "partTitle": "The thundering herd",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:5:3": {
       "partTitle": "Spreading expiries with jitter",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:5:4": {
       "partTitle": "Invalidation on writes",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:5:5": {
       "partTitle": "Milestone 1: a bounded, distributed cache",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:6:0": {
       "partTitle": "Why locks across machines",
