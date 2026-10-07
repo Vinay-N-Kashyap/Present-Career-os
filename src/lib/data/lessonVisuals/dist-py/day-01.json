@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Many machines acting as one",
+      "codeHash": "e6645f817d225631101bd5eafc45df1db2b69ea2b43da2ff5494c14e229f3395",
+      "spec": {
+        "template": "none",
+        "reason": "Distributed systems definition scale availability and sharding concept."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The fallacies of distributed computing",
+      "codeHash": "3abaab10935264b2c983eb9638b4a75b5f5125bf5bd02a533f5d8c53a9de88f3",
+      "spec": {
+        "template": "table",
+        "title": "Fallacies of distributed computing and engineering remedies",
+        "columns": [
+          "fallacy",
+          "remedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineers identified false assumptions about distributed networks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "The network is reliable"
+                  },
+                  {
+                    "text": "add retries and idempotency"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Common network myths assume zero latency and infinite bandwidth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "The network is reliable"
+                  },
+                  {
+                    "text": "add retries and idempotency"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Latency is zero"
+                  },
+                  {
+                    "text": "set timeouts and avoid chatty calls"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each fallacy causes bugs that timeouts and retries fix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "The network is reliable"
+                  },
+                  {
+                    "text": "add retries and idempotency"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Latency is zero"
+                  },
+                  {
+                    "text": "set timeouts and avoid chatty calls"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bandwidth is infinite"
+                  },
+                  {
+                    "text": "keep messages small, paginate"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fallacies of distributed computing and engineering remedies",
+        "columns": [
+          "fallacy",
+          "remedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineers identified false assumptions about distributed networks.",
+            "rows": [
+              {
+                "cells": [
+                  "The network is reliable",
+                  "add retries and idempotency"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Common network myths assume zero latency and infinite bandwidth.",
+            "rows": [
+              {
+                "cells": [
+                  "The network is reliable",
+                  "add retries and idempotency"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Latency is zero",
+                  "set timeouts and avoid chatty calls"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each fallacy causes bugs that timeouts and retries fix.",
+            "rows": [
+              {
+                "cells": [
+                  "The network is reliable",
+                  "add retries and idempotency"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Latency is zero",
+                  "set timeouts and avoid chatty calls"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Bandwidth is infinite",
+                  "keep messages small, paginate"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partial failure and timeouts",
+      "codeHash": "adc153a7d58b1c4ac682b43baeb448f6ee3092d9a4d32791428da00f9d74ebdd",
+      "spec": {
+        "template": "compare",
+        "title": "Partial failure modes in distributed calls with timeouts",
+        "leftLabel": "Successful Call",
+        "rightLabel": "Timed Out Call",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed system suffers partial failure while other parts run.",
+            "left": {
+              "code": "latency <= TIMEOUT_MS",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "call_server crashed",
+              "result": {
+                "text": "server crashed"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Caller cannot tell whether server crashed or reply was lost.",
+            "left": {
+              "code": "call returns in 80 ms",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "no reply from server",
+              "result": {
+                "text": "TIMEOUT"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Timeouts protect callers from waiting forever on dead servers.",
+            "left": {
+              "code": "call completes normally",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "call exceeds 300 ms",
+              "result": {
+                "text": "TIMEOUT"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partial failure modes in distributed calls with timeouts",
+        "leftLabel": "Successful Call",
+        "rightLabel": "Timed Out Call",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed system suffers partial failure while other parts run.",
+            "left": {
+              "code": "latency <= TIMEOUT_MS",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "call_server crashed",
+              "result": "server crashed",
+              "tone": "error",
+              "checks": [
+                "server crashed"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Caller cannot tell whether server crashed or reply was lost.",
+            "left": {
+              "code": "call returns in 80 ms",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "no reply from server",
+              "result": "TIMEOUT",
+              "tone": "error",
+              "checks": [
+                "TIMEOUT"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Timeouts protect callers from waiting forever on dead servers.",
+            "left": {
+              "code": "call completes normally",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "call exceeds 300 ms",
+              "result": "TIMEOUT",
+              "tone": "error",
+              "checks": [
+                "TIMEOUT"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retrying with exponential backoff",
+      "codeHash": "39ddde8a448b2c358308111d8d495dbd9b8801e2671db1926756c24420fc55ae",
+      "spec": {
+        "template": "sequence",
+        "title": "Exponential backoff retry timeline on transient failures",
+        "actors": [
+          "client",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temporary network glitch triggers immediate retry attempt.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": {
+                  "text": "reset"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Exponential backoff waits longer after each failure before retrying.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": {
+                  "text": "slow"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Return result as soon as call succeeds.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": {
+                  "text": "payment ok"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Exponential backoff retry timeline on transient failures",
+        "actors": [
+          "client",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temporary network glitch triggers immediate retry attempt.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": "reset",
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Exponential backoff waits longer after each failure before retrying.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": "slow",
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Return result as soon as call succeeds.",
+            "messages": [
+              {
+                "from": "client",
+                "to": "server",
+                "label": "payment ok",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backoff delays, jitter and retry budgets",
+      "codeHash": "571dfe9851c7848c82d45d1e4bd9b120be8504cd79216c94127d72fd38a4b32d",
+      "spec": {
+        "template": "table",
+        "title": "Exponential backoff delay calculations across retry attempts",
+        "columns": [
+          "attempt",
+          "base_delay",
+          "delay_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function backoff_delay returns exponential delay for attempts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cap the maximum delay so outage does not cause absurd waits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Add jitter so thousands of clients do not retry simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "400"
+                  },
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "400"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exponential backoff delay calculations across retry attempts",
+        "columns": [
+          "attempt",
+          "base_delay",
+          "delay_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function backoff_delay returns exponential delay for attempts.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "100",
+                  "100"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cap the maximum delay so outage does not cause absurd waits.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "100",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "200",
+                  "100",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Add jitter so thousands of clients do not retry simultaneously.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "100",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "200",
+                  "100",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "400",
+                  "100",
+                  "400"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency and the long tail",
+      "codeHash": "a24a261a285cf9ac4da82bb27b73d6f70bcea04df3778c82260ff8ca2c61531f",
+      "spec": {
+        "template": "none",
+        "reason": "Fan-out tail latency percentiles and long tail distribution."
+      },
+      "filled": {}
+    }
+  ]
+}

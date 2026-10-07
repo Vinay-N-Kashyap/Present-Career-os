@@ -2884,27 +2884,27 @@
     },
     "dist-py:1:0": {
       "partTitle": "Many machines acting as one",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:1:1": {
       "partTitle": "The fallacies of distributed computing",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:1:2": {
       "partTitle": "Partial failure and timeouts",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:1:3": {
       "partTitle": "Retrying with exponential backoff",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:1:4": {
       "partTitle": "Backoff delays, jitter and retry budgets",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:1:5": {
       "partTitle": "Latency and the long tail",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:2:0": {
       "partTitle": "Why keep copies",
