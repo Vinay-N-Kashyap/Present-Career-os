@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A model that predicts the next word",
+      "codeHash": "28581cfa499fde243888f7eb6e4d53c3395aaf25bbb7ea5b976b8606160ab10b",
+      "spec": {
+        "template": "bars",
+        "title": "Word follower frequency distribution",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Counting frequency determines which word follows an input word.",
+            "bars": [
+              {
+                "label": "morning",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "night",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "all",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Language models score every possible candidate to choose the next piece.",
+            "bars": [
+              {
+                "label": "morning",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "night",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "all",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "team",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Word follower frequency distribution",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Counting frequency determines which word follows an input word.",
+            "bars": [
+              {
+                "label": "morning",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "night",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "all",
+                "value": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Language models score every possible candidate to choose the next piece.",
+            "bars": [
+              {
+                "label": "morning",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "night",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "all",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "team",
+                "value": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From scores to probabilities: softmax",
+      "codeHash": "b1c393d1ee42bd17bcb6238b7697a01a7fd4cf62b35acfa9b020ada879fd713b",
+      "spec": {
+        "template": "compare",
+        "title": "Raw logit scores versus normalized probabilities",
+        "leftLabel": "Raw Logits",
+        "rightLabel": "Softmax Probabilities",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw logits can be negative numbers that are difficult to compare directly.",
+            "left": {
+              "code": "logits = [2.0, 1.0, 0.1]",
+              "result": {
+                "text": "unbounded scales"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "direct comparison",
+              "result": {
+                "text": "hard to interpret"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The softmax function transforms unbounded logits into positive probabilities.",
+            "left": {
+              "code": "exp(x - top)",
+              "result": {
+                "text": "positive weights"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "sum to 1.0",
+              "result": {
+                "text": "[0.659, 0.2424, 0.0985]"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw logit scores versus normalized probabilities",
+        "leftLabel": "Raw Logits",
+        "rightLabel": "Softmax Probabilities",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw logits can be negative numbers that are difficult to compare directly.",
+            "left": {
+              "code": "logits = [2.0, 1.0, 0.1]",
+              "result": "unbounded scales",
+              "tone": "data",
+              "checks": [
+                "unbounded scales"
+              ]
+            },
+            "right": {
+              "code": "direct comparison",
+              "result": "hard to interpret",
+              "tone": "error",
+              "checks": [
+                "hard to interpret"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The softmax function transforms unbounded logits into positive probabilities.",
+            "left": {
+              "code": "exp(x - top)",
+              "result": "positive weights",
+              "tone": "data",
+              "checks": [
+                "positive weights"
+              ]
+            },
+            "right": {
+              "code": "sum to 1.0",
+              "result": "[0.659, 0.2424, 0.0985]",
+              "tone": "ok",
+              "checks": [
+                "[0.659, 0.2424, 0.0985]"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temperature: how adventurous the model is",
+      "codeHash": "9c5b998e88b811116d804876391f19d9b79786ba2145f4d5e6030bf1dfe3daef",
+      "spec": {
+        "template": "bars",
+        "title": "Probability sharpening with lower temperature",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lower temperature exaggerates differences while high temperature flattens them.",
+            "bars": [
+              {
+                "label": "Paris (t=0.2)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Lyon (t=0.2)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Nice (t=0.2)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy sampling yields predictable repeatable output for code and data.",
+            "bars": [
+              {
+                "label": "Paris (t=1.0)",
+                "value": {
+                  "text": "76"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Lyon (t=1.0)",
+                "value": {
+                  "text": "17"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Nice (t=1.0)",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Probability sharpening with lower temperature",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lower temperature exaggerates differences while high temperature flattens them.",
+            "bars": [
+              {
+                "label": "Paris (t=0.2)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Lyon (t=0.2)",
+                "value": 0,
+                "tone": "data"
+              },
+              {
+                "label": "Nice (t=0.2)",
+                "value": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy sampling yields predictable repeatable output for code and data.",
+            "bars": [
+              {
+                "label": "Paris (t=1.0)",
+                "value": 76,
+                "tone": "ok"
+              },
+              {
+                "label": "Lyon (t=1.0)",
+                "value": 17,
+                "tone": "data"
+              },
+              {
+                "label": "Nice (t=1.0)",
+                "value": 7,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attention: which words matter for this one?",
+      "codeHash": "7f3bfb67a3b7f15d73d3631187a399ab0c46c5dd241b7c13391c5ff0796c74ed",
+      "spec": {
+        "template": "table",
+        "title": "Query key dot product compatibility scores",
+        "columns": [
+          "candidate",
+          "key_vector",
+          "dot_score"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The dot product measures match score between query and key vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "[1, 0, 1]"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tokens that match well contribute the largest attention weights to output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "[1, 0, 1]"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tired"
+                  },
+                  {
+                    "text": "[1, 0, 0]"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mat"
+                  },
+                  {
+                    "text": "[0, 1, 0]"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Query key dot product compatibility scores",
+        "columns": [
+          "candidate",
+          "key_vector",
+          "dot_score"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The dot product measures match score between query and key vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "[1, 0, 1]",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tokens that match well contribute the largest attention weights to output.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "[1, 0, 1]",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tired",
+                  "[1, 0, 0]",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "mat",
+                  "[0, 1, 0]",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaled dot-product attention",
+      "codeHash": "2fd9f11b2ae7d18656765dfde2699b47b603929d26e0799046d85c158cfdc7e3",
+      "spec": {
+        "template": "none",
+        "reason": "Mathematical scaling factor division and matrix context blending logic."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Mathematical scaling factor division and matrix context blending logic."
+      }
+    },
+    {
+      "partTitle": "The transformer, in one picture",
+      "codeHash": "6b4b5c8dceea3c378d6bcd94ebabb395091fadfefc231ee709312bde77e3acf7",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-layer self-attention architecture and causal triangular attention masking."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-layer self-attention architecture and causal triangular attention masking."
+      }
+    }
+  ]
+}

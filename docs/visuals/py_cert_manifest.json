@@ -2164,27 +2164,27 @@
     },
     "ai-py:1:0": {
       "partTitle": "A model that predicts the next word",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:1:1": {
       "partTitle": "From scores to probabilities: softmax",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:1:2": {
       "partTitle": "Temperature: how adventurous the model is",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:1:3": {
       "partTitle": "Attention: which words matter for this one?",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:1:4": {
       "partTitle": "Scaled dot-product attention",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:1:5": {
       "partTitle": "The transformer, in one picture",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:2:0": {
       "partTitle": "Tokens are pieces of words",
