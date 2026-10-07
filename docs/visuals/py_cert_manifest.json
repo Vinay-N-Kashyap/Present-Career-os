@@ -508,27 +508,27 @@
     },
     "python:22:0": {
       "partTitle": "What Git is and why every job uses it",
-      "status": "todo"
+      "status": "passed"
     },
     "python:22:1": {
       "partTitle": "The basic cycle: status, add, commit",
-      "status": "todo"
+      "status": "passed"
     },
     "python:22:2": {
       "partTitle": ".gitignore: files Git should skip",
-      "status": "todo"
+      "status": "none"
     },
     "python:22:3": {
       "partTitle": "Branches: working safely on a feature",
-      "status": "todo"
+      "status": "none"
     },
     "python:22:4": {
       "partTitle": "Pushing to GitHub",
-      "status": "todo"
+      "status": "passed"
     },
     "python:22:5": {
       "partTitle": "Putting it together: your project on GitHub",
-      "status": "todo"
+      "status": "none"
     },
     "python:23:0": {
       "partTitle": "Why plan before coding",

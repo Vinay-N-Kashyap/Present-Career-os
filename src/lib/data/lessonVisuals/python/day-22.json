@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 22,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What Git is and why every job uses it",
+      "codeHash": "1d0d2cd3f153310bd45fa30ecff348d0dc83b2bb8f19d2e3f41a2a5227ab07ec",
+      "spec": {
+        "template": "boxes",
+        "title": "Recording commit snapshots in history",
+        "boxes": [
+          {
+            "id": "history",
+            "label": "history"
+          },
+          {
+            "id": "files",
+            "label": "files"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Records history of code with snapshot called commit.",
+            "values": {
+              "history": {
+                "text": "commit"
+              },
+              "files": {
+                "text": "main.py"
+              }
+            },
+            "tones": {
+              "history": "data",
+              "files": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Repositories store commits online where recruiters look.",
+            "values": {
+              "history": {
+                "text": "1"
+              },
+              "files": {
+                "var": "files",
+                "line": 12
+              }
+            },
+            "tones": {
+              "history": "ok",
+              "files": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Recording commit snapshots in history",
+        "boxes": [
+          {
+            "id": "history",
+            "label": "history"
+          },
+          {
+            "id": "files",
+            "label": "files"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Records history of code with snapshot called commit.",
+            "values": {
+              "history": "commit",
+              "files": "main.py"
+            },
+            "tones": {
+              "history": "data",
+              "files": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Repositories store commits online where recruiters look.",
+            "values": {
+              "history": "1",
+              "files": "{'main.py': \"print('v1')\"}"
+            },
+            "tones": {
+              "history": "ok",
+              "files": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The basic cycle: status, add, commit",
+      "codeHash": "dab3cf20d90a2d43258c5b09eb0eabb22fb66f4def4ec27e42ac56423044d69a",
+      "spec": {
+        "template": "boxes",
+        "title": "Evaluating commit messages against standards",
+        "boxes": [
+          {
+            "id": "m",
+            "label": "m"
+          },
+          {
+            "id": "verdict",
+            "label": "verdict"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "git add chooses changes and git commit saves snapshot.",
+            "values": {
+              "m": {
+                "text": "fix"
+              },
+              "verdict": {
+                "text": "good"
+              }
+            },
+            "tones": {
+              "m": "data",
+              "verdict": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Commit small and often per meaningful step like Add category totals.",
+            "values": {
+              "m": {
+                "var": "m",
+                "line": 7
+              },
+              "verdict": {
+                "var": "verdict",
+                "line": 7
+              }
+            },
+            "tones": {
+              "m": "ok",
+              "verdict": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Evaluating commit messages against standards",
+        "boxes": [
+          {
+            "id": "m",
+            "label": "m"
+          },
+          {
+            "id": "verdict",
+            "label": "verdict"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "git add chooses changes and git commit saves snapshot.",
+            "values": {
+              "m": "fix",
+              "verdict": "good"
+            },
+            "tones": {
+              "m": "data",
+              "verdict": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Commit small and often per meaningful step like Add category totals.",
+            "values": {
+              "m": "'fix'",
+              "verdict": "'too short or too long'"
+            },
+            "tones": {
+              "m": "ok",
+              "verdict": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": ".gitignore: files Git should skip",
+      "codeHash": "5c4debd984d634c5535eeae7197da47bdd86d5c2ddcbe0611f0b07d684f9fb8e",
+      "spec": {
+        "template": "none",
+        "reason": "Gitignore glob matching patterns and ignored file sets are demonstrated via scripts."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Branches: working safely on a feature",
+      "codeHash": "3fd700d32809dd90b85aec7080ed7c7a13040be0adc163d5d9d5c66c19cd4ebf",
+      "spec": {
+        "template": "none",
+        "reason": "Branch creation and merge workflows are terminal-based source control operations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Pushing to GitHub",
+      "codeHash": "6fdd4572d612acb29615869859c4aaf7d4d45d51b2c728fcd327d572c54dce32",
+      "spec": {
+        "template": "boxes",
+        "title": "Formatting repository remote URLs",
+        "boxes": [
+          {
+            "id": "url",
+            "label": "url"
+          },
+          {
+            "id": "repo",
+            "label": "repo"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Create repository on github to connect local project.",
+            "values": {
+              "url": {
+                "text": "priya-dev"
+              },
+              "repo": {
+                "text": "expense-tracker"
+              }
+            },
+            "tones": {
+              "url": "data",
+              "repo": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "git remote tells project where online copy lives.",
+            "values": {
+              "url": {
+                "var": "url",
+                "line": 8
+              },
+              "repo": {
+                "text": "expense-tracker"
+              }
+            },
+            "tones": {
+              "url": "ok",
+              "repo": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Formatting repository remote URLs",
+        "boxes": [
+          {
+            "id": "url",
+            "label": "url"
+          },
+          {
+            "id": "repo",
+            "label": "repo"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Create repository on github to connect local project.",
+            "values": {
+              "url": "priya-dev",
+              "repo": "expense-tracker"
+            },
+            "tones": {
+              "url": "data",
+              "repo": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "git remote tells project where online copy lives.",
+            "values": {
+              "url": "'https://github.com/priya-dev/expense-t…",
+              "repo": "expense-tracker"
+            },
+            "tones": {
+              "url": "ok",
+              "repo": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: your project on GitHub",
+      "codeHash": "25113347332e060bc425a4345363095113082fc1b45853ab39a3c60a8e57b39b",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end repository setup and push steps are demonstrated via project command sequence."
+      },
+      "filled": {}
+    }
+  ]
+}
