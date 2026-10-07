@@ -1612,27 +1612,27 @@
     },
     "sql-mastery:8:0": {
       "partTitle": "Aggregate functions: many rows, one answer",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:8:1": {
       "partTitle": "COUNT(*) and COUNT(column)",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:8:2": {
       "partTitle": "SUM and AVG, and how they treat NULL",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:8:3": {
       "partTitle": "MIN and MAX on numbers, text and dates",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:8:4": {
       "partTitle": "Aggregates with WHERE and calculations",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:8:5": {
       "partTitle": "Putting it together: the catalogue in numbers",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:9:0": {
       "partTitle": "GROUP BY: one summary per group",

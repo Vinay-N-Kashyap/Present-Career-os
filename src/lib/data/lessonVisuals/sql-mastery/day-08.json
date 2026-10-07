@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Aggregate functions: many rows, one answer",
+      "codeHash": "efdaab33ac7790a54920597f2ba8b088a92cb48eef8830ca87747f892cb7391e",
+      "spec": {
+        "template": "table",
+        "title": "Aggregate functions summary row",
+        "columns": [
+          "products",
+          "units",
+          "cheapest",
+          "dearest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregate functions look at many rows and give back one answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "660"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "There are common functions like count sum avg min and max for reporting.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "660"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aggregate functions summary row",
+        "columns": [
+          "products",
+          "units",
+          "cheapest",
+          "dearest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregate functions look at many rows and give back one answer.",
+            "rows": [
+              {
+                "cells": [
+                  "4",
+                  "660",
+                  "10.00",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "There are common functions like count sum avg min and max for reporting.",
+            "rows": [
+              {
+                "cells": [
+                  "4",
+                  "660",
+                  "10.00",
+                  "1499.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "COUNT(*) and COUNT(column)",
+      "codeHash": "2bc169aa6a8a0b5ee3f4e3d529f64d78290250be846af1c38b9eaf24fbf673cf",
+      "spec": {
+        "template": "table",
+        "title": "Comparing count variants",
+        "columns": [
+          "customers",
+          "with_city",
+          "different_cities"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The function count counts every row including rows with NULL values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The distinct count ignores duplicates and NULLs when counting cities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparing count variants",
+        "columns": [
+          "customers",
+          "with_city",
+          "different_cities"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The function count counts every row including rows with NULL values.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "4",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The distinct count ignores duplicates and NULLs when counting cities.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "4",
+                  "3"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SUM and AVG, and how they treat NULL",
+      "codeHash": "c62e986d7518f616333892f8e50e9690e5c4c3d5fbbf61d6cf163b8050c1e863",
+      "spec": {
+        "template": "compare",
+        "title": "Aggregate handling of NULL values versus coalesce",
+        "leftLabel": "Default NULL Handling",
+        "rightLabel": "With coalesce Guard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The sum and avg aggregate functions skip NULL values completely.",
+            "left": {
+              "code": "avg(price)",
+              "result": {
+                "text": "skips NULL rows"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "avg(coalesce(price, 0))",
+              "result": {
+                "text": "includes zero"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A report showing an empty total looks broken so wrap it with coalesce.",
+            "left": {
+              "code": "sum(price) on empty",
+              "result": {
+                "text": "returns NULL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "coalesce(sum(price), 0)",
+              "result": {
+                "text": "returns 0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Aggregate handling of NULL values versus coalesce",
+        "leftLabel": "Default NULL Handling",
+        "rightLabel": "With coalesce Guard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The sum and avg aggregate functions skip NULL values completely.",
+            "left": {
+              "code": "avg(price)",
+              "result": "skips NULL rows",
+              "tone": "data",
+              "checks": [
+                "skips NULL rows"
+              ]
+            },
+            "right": {
+              "code": "avg(coalesce(price, 0))",
+              "result": "includes zero",
+              "tone": "ok",
+              "checks": [
+                "includes zero"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A report showing an empty total looks broken so wrap it with coalesce.",
+            "left": {
+              "code": "sum(price) on empty",
+              "result": "returns NULL",
+              "tone": "error",
+              "checks": [
+                "returns NULL"
+              ]
+            },
+            "right": {
+              "code": "coalesce(sum(price), 0)",
+              "result": "returns 0",
+              "tone": "ok",
+              "checks": [
+                "returns 0"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MIN and MAX on numbers, text and dates",
+      "codeHash": "d02af9ba9b0442448629597b8b902012cc9db186cb33d7c3aa05151de9834134",
+      "spec": {
+        "template": "none",
+        "reason": "Extreme value evaluations across heterogeneous data types."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Extreme value evaluations across heterogeneous data types."
+      }
+    },
+    {
+      "partTitle": "Aggregates with WHERE and calculations",
+      "codeHash": "c69df073f7ae254ee6753b34c22eff54c70dc2a8e621d37b350471f96efe3c2f",
+      "spec": {
+        "template": "none",
+        "reason": "Conditional predicate filtering before aggregate accumulation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conditional predicate filtering before aggregate accumulation."
+      }
+    },
+    {
+      "partTitle": "Putting it together: the catalogue in numbers",
+      "codeHash": "31ec603311613abb383136e129287d899a32445a48f701d8ec767e57ffe4acda",
+      "spec": {
+        "template": "table",
+        "title": "Single-row catalogue metric summary",
+        "columns": [
+          "products",
+          "lowest",
+          "highest",
+          "avg_price",
+          "total_stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a summary of the catalogue a manager checks each morning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "1499.00"
+                  },
+                  {
+                    "text": "533.50"
+                  },
+                  {
+                    "text": "790"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every column is one aggregate with some wrapped in round for money.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "1499.00"
+                  },
+                  {
+                    "text": "533.50"
+                  },
+                  {
+                    "text": "790"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Single-row catalogue metric summary",
+        "columns": [
+          "products",
+          "lowest",
+          "highest",
+          "avg_price",
+          "total_stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a summary of the catalogue a manager checks each morning.",
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "10.00",
+                  "1499.00",
+                  "533.50",
+                  "790"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every column is one aggregate with some wrapped in round for money.",
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "10.00",
+                  "1499.00",
+                  "533.50",
+                  "790"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
