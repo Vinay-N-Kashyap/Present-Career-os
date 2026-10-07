@@ -4468,27 +4468,27 @@
     },
     "nlp-py:7:0": {
       "partTitle": "You shall know a word by the company it keeps",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:7:1": {
       "partTitle": "Skip-gram and CBOW",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:7:2": {
       "partTitle": "Similarity in embedding space",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:7:3": {
       "partTitle": "Analogies with vector arithmetic",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:7:4": {
       "partTitle": "Finding the nearest word",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:7:5": {
       "partTitle": "Practice time: analogies",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:8:0": {
       "partTitle": "The out-of-vocabulary problem",
