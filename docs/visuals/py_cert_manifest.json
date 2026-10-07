@@ -4444,27 +4444,27 @@
     },
     "nlp-py:6:0": {
       "partTitle": "Similarity as geometry",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:6:1": {
       "partTitle": "The dot product and vector length",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:6:2": {
       "partTitle": "Writing cosine similarity safely",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:6:3": {
       "partTitle": "Ranking by similarity",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:6:4": {
       "partTitle": "TF-IDF vectors and semantic limits",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:6:5": {
       "partTitle": "Practice time: similarity and ranking",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:7:0": {
       "partTitle": "You shall know a word by the company it keeps",
