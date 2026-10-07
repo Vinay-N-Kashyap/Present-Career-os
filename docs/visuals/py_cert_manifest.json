@@ -3868,27 +3868,27 @@
     },
     "cloud-py:12:0": {
       "partTitle": "API Gateway in front of Lambda",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:12:1": {
       "partTitle": "HTTP APIs and REST APIs",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:12:2": {
       "partTitle": "Lambda authorizers",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:12:3": {
       "partTitle": "Throttling and usage limits",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:12:4": {
       "partTitle": "CORS for browser apps",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:12:5": {
       "partTitle": "Practice time: authorize and share",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:13:0": {
       "partTitle": "Tables, items and keys",

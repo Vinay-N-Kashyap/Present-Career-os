@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "API Gateway in front of Lambda",
+      "codeHash": "11a3bc80a1ab3c01d1eafc5db7c356cfa12ca23139a6325662baa09c8e0513bb",
+      "spec": {
+        "template": "table",
+        "title": "API Gateway HTTP route mapping and backend handler resolution",
+        "columns": [
+          "method",
+          "handler"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon API Gateway acts as a managed front door forwarding calls to Lambda.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "list_orders"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Routes map incoming HTTP methods and paths to designated backend handlers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "list_orders"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "create_order"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example routes incoming calls matching path parameters and dispatch targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "list_orders"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "create_order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DELETE"
+                  },
+                  {
+                    "text": "404"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "API Gateway HTTP route mapping and backend handler resolution",
+        "columns": [
+          "method",
+          "handler"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon API Gateway acts as a managed front door forwarding calls to Lambda.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "list_orders"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Routes map incoming HTTP methods and paths to designated backend handlers.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "list_orders"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "create_order"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example routes incoming calls matching path parameters and dispatch targets.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "list_orders"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "create_order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DELETE",
+                  "404"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP APIs and REST APIs",
+      "codeHash": "57ca8ad38ff46cc6a456276c997f11f4ddfa74cee7084fae05faf250efe0e474",
+      "spec": {
+        "template": "table",
+        "title": "Architectural feature comparison of HTTP API and REST API flavors",
+        "columns": [
+          "flavor",
+          "feature"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs provide a modern lightweight option supporting JWT authorizers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "HTTP API"
+                  },
+                  {
+                    "text": "JWT authorizers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "REST APIs include advanced features such as request validation and usage plans.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "HTTP API"
+                  },
+                  {
+                    "text": "JWT authorizers"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "REST API"
+                  },
+                  {
+                    "text": "usage plans"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Default to HTTP APIs unless specific capabilities like usage plans are required.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "HTTP API"
+                  },
+                  {
+                    "text": "JWT authorizers"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "REST API"
+                  },
+                  {
+                    "text": "usage plans"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Architectural feature comparison of HTTP API and REST API flavors",
+        "columns": [
+          "flavor",
+          "feature"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs provide a modern lightweight option supporting JWT authorizers.",
+            "rows": [
+              {
+                "cells": [
+                  "HTTP API",
+                  "JWT authorizers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "REST APIs include advanced features such as request validation and usage plans.",
+            "rows": [
+              {
+                "cells": [
+                  "HTTP API",
+                  "JWT authorizers"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "REST API",
+                  "usage plans"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Default to HTTP APIs unless specific capabilities like usage plans are required.",
+            "rows": [
+              {
+                "cells": [
+                  "HTTP API",
+                  "JWT authorizers"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "REST API",
+                  "usage plans"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lambda authorizers",
+      "codeHash": "d6cc372f5f7e172f881c93ca2f1bd26a8652717167c15e62ba287d79eca0c39d",
+      "spec": {
+        "template": "table",
+        "title": "Lambda authorizer evaluation returning IAM policy documents",
+        "columns": [
+          "token",
+          "Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "API Gateway queries authorizers before forwarding calls to backend functions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tok-asha"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A Lambda authorizer inspects tokens returning an IAM policy with Allow or Deny.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tok-asha"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tok-stolen"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example validates incoming tokens against user records and builds responses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tok-asha"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tok-stolen"
+                  },
+                  {
+                    "text": "Deny"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lambda authorizer evaluation returning IAM policy documents",
+        "columns": [
+          "token",
+          "Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "API Gateway queries authorizers before forwarding calls to backend functions.",
+            "rows": [
+              {
+                "cells": [
+                  "tok-asha",
+                  "Allow"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A Lambda authorizer inspects tokens returning an IAM policy with Allow or Deny.",
+            "rows": [
+              {
+                "cells": [
+                  "tok-asha",
+                  "Allow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tok-stolen",
+                  "Deny"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example validates incoming tokens against user records and builds responses.",
+            "rows": [
+              {
+                "cells": [
+                  "tok-asha",
+                  "Allow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tok-stolen",
+                  "Deny"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Throttling and usage limits",
+      "codeHash": "bd3ce71c3e4cf650f1e4c6973ce0dfceb62e6c00e51ee9ff82bb53ed19846915",
+      "spec": {
+        "template": "table",
+        "title": "Token bucket rate limiting simulation tracking burst arrivals",
+        "columns": [
+          "sent",
+          "allowed"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "API Gateway throttles traffic using token buckets configured with burst limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "8"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When all tokens are exhausted excess incoming requests receive error responses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "8"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates token bucket consumption under bursty arrival patterns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "8"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token bucket rate limiting simulation tracking burst arrivals",
+        "columns": [
+          "sent",
+          "allowed"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "API Gateway throttles traffic using token buckets configured with burst limits.",
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "8"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When all tokens are exhausted excess incoming requests receive error responses.",
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "8"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12",
+                  "10"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates token bucket consumption under bursty arrival patterns.",
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "8"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "5",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CORS for browser apps",
+      "codeHash": "48e1700ea2ae9184839c62b912817137334374634ae3b6d70829d405cceccfea",
+      "spec": {
+        "template": "none",
+        "reason": "CORS header structure and browser preflight interactions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: authorize and share",
+      "codeHash": "4b2a76f1096eb82dbd427a71b7ad9249290229f12c3df79aea678ae72168b3ce",
+      "spec": {
+        "template": "none",
+        "reason": "Authorizer response schema and CORS validation practice."
+      },
+      "filled": {}
+    }
+  ]
+}
