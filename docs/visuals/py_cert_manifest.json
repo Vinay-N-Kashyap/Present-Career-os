@@ -3316,27 +3316,27 @@
     },
     "dist-py:19:0": {
       "partTitle": "Primary and read replicas",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:19:1": {
       "partTitle": "The read-your-own-writes problem",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:19:2": {
       "partTitle": "Routing queries by session",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:19:3": {
       "partTitle": "Measuring and alerting on lag",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:19:4": {
       "partTitle": "Synchronous, asynchronous and semi-synchronous",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:19:5": {
       "partTitle": "Other session guarantees",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:20:0": {
       "partTitle": "Cascading failures",
