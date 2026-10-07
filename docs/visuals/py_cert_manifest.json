@@ -3028,27 +3028,27 @@
     },
     "dist-py:7:0": {
       "partTitle": "Why have a leader?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:7:1": {
       "partTitle": "Detecting failure with heartbeats",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:7:2": {
       "partTitle": "The Bully algorithm",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:7:3": {
       "partTitle": "Majorities and terms",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:7:4": {
       "partTitle": "Raft elections with randomised timeouts",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:7:5": {
       "partTitle": "Safety: at most one leader per term",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:8:0": {
       "partTitle": "Why not a simple counter?",

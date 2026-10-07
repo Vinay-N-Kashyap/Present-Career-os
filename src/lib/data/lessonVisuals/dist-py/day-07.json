@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why have a leader?",
+      "codeHash": "c9992cfc887ff9c62e5206be569729fcaca163eb9f94ff8e33a89858c121271b",
+      "spec": {
+        "template": "none",
+        "reason": "Centralized coordinator architecture and split-brain hazards."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Detecting failure with heartbeats",
+      "codeHash": "44db6f954ec67f03b3dfd5ae22ef1fe73d58cf014325fe18b59929de8cc6b7a4",
+      "spec": {
+        "template": "table",
+        "title": "Heartbeat failure detection and election timeout transitions",
+        "columns": [
+          "now",
+          "last",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leader sends periodic heartbeat messages to all followers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "350"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Follower suspects leader failed after election timeout.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "350"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "700"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Timeout balances detection speed against false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "350"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "700"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "801"
+                  },
+                  {
+                    "text": "300"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Heartbeat failure detection and election timeout transitions",
+        "columns": [
+          "now",
+          "last",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leader sends periodic heartbeat messages to all followers.",
+            "rows": [
+              {
+                "cells": [
+                  "350",
+                  "300",
+                  "False"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Follower suspects leader failed after election timeout.",
+            "rows": [
+              {
+                "cells": [
+                  "350",
+                  "300",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "700",
+                  "300",
+                  "False"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Timeout balances detection speed against false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  "350",
+                  "300",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "700",
+                  "300",
+                  "False"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "801",
+                  "300",
+                  "True"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bully algorithm",
+      "codeHash": "9729ccc559ff83913780a7cac06c790c61cdfab2a8721a280a5659590f98793d",
+      "spec": {
+        "template": "table",
+        "title": "Bully election algorithm highest ID candidate resolution",
+        "columns": [
+          "remaining",
+          "failed_leader",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bully algorithm elects highest active node ID as leader.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "ELECTED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Highest active node declares itself leader with coordinator message.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "ELECTED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "ELECTED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Empty cluster returns NO_ACTIVE_NODES explicitly without error.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "ELECTED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "ELECTED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "NO_ACTIVE_NODES"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bully election algorithm highest ID candidate resolution",
+        "columns": [
+          "remaining",
+          "failed_leader",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bully algorithm elects highest active node ID as leader.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "7",
+                  "ELECTED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Highest active node declares itself leader with coordinator message.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "7",
+                  "ELECTED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "9",
+                  "4",
+                  "ELECTED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Empty cluster returns NO_ACTIVE_NODES explicitly without error.",
+            "rows": [
+              {
+                "cells": [
+                  "5",
+                  "7",
+                  "ELECTED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "9",
+                  "4",
+                  "ELECTED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "7",
+                  "7",
+                  "NO_ACTIVE_NODES"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Majorities and terms",
+      "codeHash": "dd1807f7b8296a13a04fa29a97551af94e196e42314df4ac311e518d9dd27c2e",
+      "spec": {
+        "template": "table",
+        "title": "Raft term majority vote counting and leader declaration",
+        "columns": [
+          "candidate",
+          "votes",
+          "elected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safe election requires candidate to secure majority votes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n3"
+                  },
+                  {
+                    "text": "votes"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function has_majority returns True when votes exceed half.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n3"
+                  },
+                  {
+                    "text": "votes"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n5"
+                  },
+                  {
+                    "text": "votes"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Terms number elections so nodes vote at most once per term.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n3"
+                  },
+                  {
+                    "text": "votes"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n5"
+                  },
+                  {
+                    "text": "votes"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raft term majority vote counting and leader declaration",
+        "columns": [
+          "candidate",
+          "votes",
+          "elected"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safe election requires candidate to secure majority votes.",
+            "rows": [
+              {
+                "cells": [
+                  "n3",
+                  "votes",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function has_majority returns True when votes exceed half.",
+            "rows": [
+              {
+                "cells": [
+                  "n3",
+                  "votes",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n5",
+                  "votes",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Terms number elections so nodes vote at most once per term.",
+            "rows": [
+              {
+                "cells": [
+                  "n3",
+                  "votes",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n5",
+                  "votes",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft elections with randomised timeouts",
+      "codeHash": "7a619e837a8d10883145194a901123bb94ec4c153b82df6fbb9d9b05d25412e2",
+      "spec": {
+        "template": "compare",
+        "title": "Raft randomized election timeout split-vote resolution",
+        "leftLabel": "Shortest Timeout (Wins)",
+        "rightLabel": "Slower Followers (Yield)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Randomized timeout between 150 and 300 ms avoids split vote.",
+            "left": {
+              "code": "node with 150 ms timeout",
+              "result": {
+                "text": "150"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "node with 300 ms timeout",
+              "result": {
+                "text": "300"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Shortest timeout node starts first winning election cleanly.",
+            "left": {
+              "code": "first candidate initiates vote",
+              "result": {
+                "text": "150"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "follower receives heartbeat",
+              "result": {
+                "text": "300"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Randomness serves as tool breaking election ties.",
+            "left": {
+              "code": "round 1 election resolved",
+              "result": {
+                "text": "1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "round 4 timeout cycle",
+              "result": {
+                "text": "4"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raft randomized election timeout split-vote resolution",
+        "leftLabel": "Shortest Timeout (Wins)",
+        "rightLabel": "Slower Followers (Yield)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Randomized timeout between 150 and 300 ms avoids split vote.",
+            "left": {
+              "code": "node with 150 ms timeout",
+              "result": "150",
+              "tone": "ok",
+              "checks": [
+                "150"
+              ]
+            },
+            "right": {
+              "code": "node with 300 ms timeout",
+              "result": "300",
+              "tone": "idle",
+              "checks": [
+                "300"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Shortest timeout node starts first winning election cleanly.",
+            "left": {
+              "code": "first candidate initiates vote",
+              "result": "150",
+              "tone": "ok",
+              "checks": [
+                "150"
+              ]
+            },
+            "right": {
+              "code": "follower receives heartbeat",
+              "result": "300",
+              "tone": "idle",
+              "checks": [
+                "300"
+              ]
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Randomness serves as tool breaking election ties.",
+            "left": {
+              "code": "round 1 election resolved",
+              "result": "1",
+              "tone": "ok",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "round 4 timeout cycle",
+              "result": "4",
+              "tone": "idle",
+              "checks": [
+                "4"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safety: at most one leader per term",
+      "codeHash": "27436b76aae5162be9233a9b67db2754bfd212c57ad9b452112d321d203908ad",
+      "spec": {
+        "template": "none",
+        "reason": "Raft election safety theorem and network partition split minority."
+      },
+      "filled": {}
+    }
+  ]
+}
