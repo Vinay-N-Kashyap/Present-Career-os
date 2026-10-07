@@ -1948,27 +1948,27 @@
     },
     "sql-mastery:22:0": {
       "partTitle": "Why some changes must happen together",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:22:1": {
       "partTitle": "ROLLBACK: undoing on purpose",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:22:2": {
       "partTitle": "Errors inside a transaction",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:22:3": {
       "partTitle": "ACID in plain words",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:22:4": {
       "partTitle": "When two people change the same row",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:22:5": {
       "partTitle": "Putting it together: placing an order safely",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:23:0": {
       "partTitle": "Why big tables get slow",

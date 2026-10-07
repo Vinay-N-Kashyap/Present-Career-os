@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why some changes must happen together",
+      "codeHash": "17a92875d4d4d2218dbbaaf49866ebd44ec652b57317ab5af10ccba90fb6d07c",
+      "spec": {
+        "template": "table",
+        "title": "Atomic balance transfer across accounts",
+        "columns": [
+          "id",
+          "owner",
+          "balance"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A transaction groups statements into one atomic unit that completes wholly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "500.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Finishing with COMMIT makes all balance adjustments permanent together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "500.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "700.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Atomic balance transfer across accounts",
+        "columns": [
+          "id",
+          "owner",
+          "balance"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A transaction groups statements into one atomic unit that completes wholly.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "500.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Finishing with COMMIT makes all balance adjustments permanent together.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "500.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Ravi",
+                  "700.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ROLLBACK: undoing on purpose",
+      "codeHash": "e2e86ecc90396398f54380663cf576f8d43e0ac43090bae9b90628f6f244b91f",
+      "spec": {
+        "template": "compare",
+        "title": "Undoing speculative updates with ROLLBACK",
+        "leftLabel": "Uncommitted Modification",
+        "rightLabel": "Restored After ROLLBACK",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ROLLBACK command throws away uncommitted modifications completely.",
+            "left": {
+              "code": "price = 0 across table",
+              "result": {
+                "text": "3 free products"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ROLLBACK executed",
+              "result": {
+                "text": "original prices restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A manual ROLLBACK acts as a safety tool when checking an UPDATE result.",
+            "left": {
+              "code": "unintended broad UPDATE",
+              "result": {
+                "text": "caught during inspection"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "safety reversal invoked",
+              "result": {
+                "text": "zero damage to database"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Undoing speculative updates with ROLLBACK",
+        "leftLabel": "Uncommitted Modification",
+        "rightLabel": "Restored After ROLLBACK",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ROLLBACK command throws away uncommitted modifications completely.",
+            "left": {
+              "code": "price = 0 across table",
+              "result": "3 free products",
+              "tone": "error",
+              "checks": [
+                "3 free products"
+              ]
+            },
+            "right": {
+              "code": "ROLLBACK executed",
+              "result": "original prices restored",
+              "tone": "ok",
+              "checks": [
+                "original prices restored"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A manual ROLLBACK acts as a safety tool when checking an UPDATE result.",
+            "left": {
+              "code": "unintended broad UPDATE",
+              "result": "caught during inspection",
+              "tone": "data",
+              "checks": [
+                "caught during inspection"
+              ]
+            },
+            "right": {
+              "code": "safety reversal invoked",
+              "result": "zero damage to database",
+              "tone": "ok",
+              "checks": [
+                "zero damage to database"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Errors inside a transaction",
+      "codeHash": "b0020505f85cf2994b62b67e43eb56a4356cfd337ace55edd79cd35c37df774a",
+      "spec": {
+        "template": "compare",
+        "title": "Aborting transactions on constraint errors",
+        "leftLabel": "Initial Insert Step",
+        "rightLabel": "Constraint Error Reversal",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL marks transaction failed when a constraint violation occurs.",
+            "left": {
+              "code": "INSERT INTO sales (Pen, 8)",
+              "result": {
+                "text": "staged in block"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "UPDATE stock units - 8",
+              "result": {
+                "text": "error: check units >= 0"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Enforcing all or nothing rules prevents leaving underlying data half-changed.",
+            "left": {
+              "code": "half-applied partial state",
+              "result": {
+                "text": "strictly disallowed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "automatic abort cleanup",
+              "result": {
+                "text": "sales row also dropped"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Aborting transactions on constraint errors",
+        "leftLabel": "Initial Insert Step",
+        "rightLabel": "Constraint Error Reversal",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL marks transaction failed when a constraint violation occurs.",
+            "left": {
+              "code": "INSERT INTO sales (Pen, 8)",
+              "result": "staged in block",
+              "tone": "data",
+              "checks": [
+                "staged in block"
+              ]
+            },
+            "right": {
+              "code": "UPDATE stock units - 8",
+              "result": "error: check units >= 0",
+              "tone": "error",
+              "checks": [
+                "error: check units >= 0"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Enforcing all or nothing rules prevents leaving underlying data half-changed.",
+            "left": {
+              "code": "half-applied partial state",
+              "result": "strictly disallowed",
+              "tone": "error",
+              "checks": [
+                "strictly disallowed"
+              ]
+            },
+            "right": {
+              "code": "automatic abort cleanup",
+              "result": "sales row also dropped",
+              "tone": "ok",
+              "checks": [
+                "sales row also dropped"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ACID in plain words",
+      "codeHash": "f9f059318b8a4693205ee2cd30b22d3e6e5c806199de4cdca8286f1b9c6bb46d",
+      "spec": {
+        "template": "table",
+        "title": "Core ACID database transaction guarantees",
+        "columns": [
+          "property",
+          "meaning",
+          "guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Atomic transactions ensure operations cannot be left half done.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Atomic"
+                  },
+                  {
+                    "text": "All or nothing"
+                  },
+                  {
+                    "text": "Zero partial states"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Isolation ensures concurrent users never observe unfinished transfer work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Atomic"
+                  },
+                  {
+                    "text": "All or nothing"
+                  },
+                  {
+                    "text": "Zero partial states"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Consistent"
+                  },
+                  {
+                    "text": "Valid state to valid state"
+                  },
+                  {
+                    "text": "Constraints preserved"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Isolated"
+                  },
+                  {
+                    "text": "Concurrent independence"
+                  },
+                  {
+                    "text": "Hidden until commit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Durable"
+                  },
+                  {
+                    "text": "Committed disk survival"
+                  },
+                  {
+                    "text": "Crash proof log write"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Core ACID database transaction guarantees",
+        "columns": [
+          "property",
+          "meaning",
+          "guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Atomic transactions ensure operations cannot be left half done.",
+            "rows": [
+              {
+                "cells": [
+                  "Atomic",
+                  "All or nothing",
+                  "Zero partial states"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Isolation ensures concurrent users never observe unfinished transfer work.",
+            "rows": [
+              {
+                "cells": [
+                  "Atomic",
+                  "All or nothing",
+                  "Zero partial states"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Consistent",
+                  "Valid state to valid state",
+                  "Constraints preserved"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Isolated",
+                  "Concurrent independence",
+                  "Hidden until commit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Durable",
+                  "Committed disk survival",
+                  "Crash proof log write"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When two people change the same row",
+      "codeHash": "69658266e523a5ad6c2e54f45b72c72addec10c0caa5ab563db8ac0a8289c6ed",
+      "spec": {
+        "template": "none",
+        "reason": "Concurrency locks and row-level mutual exclusion during simultaneous writes."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Concurrency locks and row-level mutual exclusion during simultaneous writes."
+      }
+    },
+    {
+      "partTitle": "Putting it together: placing an order safely",
+      "codeHash": "2f1c1880c88fc16a4ee0325b9cc1075ee27531b347552d940b86d576fa818d11",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-table order transaction script with returning clause and inventory check."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-table order transaction script with returning clause and inventory check."
+      }
+    }
+  ]
+}
