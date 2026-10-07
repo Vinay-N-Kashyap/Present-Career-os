@@ -3940,27 +3940,27 @@
     },
     "cloud-py:15:0": {
       "partTitle": "The architecture",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:15:1": {
       "partTitle": "Reading S3 event records",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:15:2": {
       "partTitle": "Processing every record and isolating failures",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:15:3": {
       "partTitle": "Idempotency: safe to run twice",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:15:4": {
       "partTitle": "Long jobs, costs and limits",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:15:5": {
       "partTitle": "Milestone practice: build the engine",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:16:0": {
       "partTitle": "What a CDN does",
