@@ -3604,27 +3604,27 @@
     },
     "cloud-py:1:0": {
       "partTitle": "What the cloud really is",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:1:1": {
       "partTitle": "IaaS, PaaS and SaaS",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:1:2": {
       "partTitle": "The shared responsibility model",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:1:3": {
       "partTitle": "Paying for what you use",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:1:4": {
       "partTitle": "How you talk to AWS: console, CLI and code",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:1:5": {
       "partTitle": "Practice time: model the cloud in code",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:2:0": {
       "partTitle": "Regions: separate clouds around the world",
