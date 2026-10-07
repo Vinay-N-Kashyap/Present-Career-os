@@ -7,7 +7,8 @@
 // Released courses:
 // - 'python': Python Backend (Month 1) released via [task:L-python]
 // - 'dsa-py': DSA in Python (Month 2) released via [task:L-dsa-py]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py'];
+// - 'sql-mastery': SQL Mastery (Month 3) released via [task:L-sql-mastery]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
