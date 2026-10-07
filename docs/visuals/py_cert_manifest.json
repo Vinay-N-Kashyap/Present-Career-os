@@ -1828,27 +1828,27 @@
     },
     "sql-mastery:17:0": {
       "partTitle": "What a window function is",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:17:1": {
       "partTitle": "ROW_NUMBER, RANK and DENSE_RANK",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:17:2": {
       "partTitle": "PARTITION BY: ranking inside each group",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:17:3": {
       "partTitle": "The top item per group",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:17:4": {
       "partTitle": "Comparing with the previous row: LAG and LEAD",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:17:5": {
       "partTitle": "Putting it together: top products per category",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:18:0": {
       "partTitle": "Running totals with SUM OVER",
