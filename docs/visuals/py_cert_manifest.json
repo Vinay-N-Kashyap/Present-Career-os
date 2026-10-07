@@ -3844,27 +3844,27 @@
     },
     "cloud-py:11:0": {
       "partTitle": "Functions without servers",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:11:1": {
       "partTitle": "How Lambda is priced",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:11:2": {
       "partTitle": "Cold starts and warm starts",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:11:3": {
       "partTitle": "Concurrency",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:11:4": {
       "partTitle": "Fighting cold starts: SnapStart and provisioned concurrency",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:11:5": {
       "partTitle": "Practice time: cost and cold starts",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:12:0": {
       "partTitle": "API Gateway in front of Lambda",
