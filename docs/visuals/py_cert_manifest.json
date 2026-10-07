@@ -556,27 +556,27 @@
     },
     "python:24:0": {
       "partTitle": "Project structure",
-      "status": "todo"
+      "status": "passed"
     },
     "python:24:1": {
       "partTitle": "add_expense with validation",
-      "status": "todo"
+      "status": "passed"
     },
     "python:24:2": {
       "partTitle": "Listing expenses neatly",
-      "status": "todo"
+      "status": "passed"
     },
     "python:24:3": {
       "partTitle": "The menu in main.py",
-      "status": "todo"
+      "status": "none"
     },
     "python:24:4": {
       "partTitle": "Testing what you built",
-      "status": "todo"
+      "status": "none"
     },
     "python:24:5": {
       "partTitle": "Putting it together: today's working program",
-      "status": "todo"
+      "status": "none"
     },
     "python:25:0": {
       "partTitle": "A summary of spending",
