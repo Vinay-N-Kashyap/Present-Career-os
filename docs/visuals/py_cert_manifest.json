@@ -1204,27 +1204,27 @@
     },
     "dsa-py:21:0": {
       "partTitle": "What an auto-complete engine must do",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:21:1": {
       "partTitle": "Storing frequencies in the trie",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:21:2": {
       "partTitle": "Collecting the matches below a prefix",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:21:3": {
       "partTitle": "Picking the top k with a heap",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:21:4": {
       "partTitle": "The complete AutocompleteSystem",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:21:5": {
       "partTitle": "Making suggestions fast at scale",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:22:0": {
       "partTitle": "Weighted graphs",
