@@ -2956,27 +2956,27 @@
     },
     "dist-py:4:0": {
       "partTitle": "The problem with hash mod N",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:4:1": {
       "partTitle": "The hash ring",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:4:2": {
       "partTitle": "Building the ring with virtual nodes",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:4:3": {
       "partTitle": "Why virtual nodes balance load",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:4:4": {
       "partTitle": "How many keys move?",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:4:5": {
       "partTitle": "Replicas on the ring",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:5:0": {
       "partTitle": "The cache-aside pattern",

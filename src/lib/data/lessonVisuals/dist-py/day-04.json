@@ -1,0 +1,710 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The problem with hash mod N",
+      "codeHash": "57d75a425343e6e8f06a6b627c86ab157fcc4a29377836f9406cf5f1f19a505c",
+      "spec": {
+        "template": "none",
+        "reason": "Hash partition instability under node count scaling."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The hash ring",
+      "codeHash": "f2235928584fbf98abb83f9f8231dee465a145377a35885b551b4fe2d7c5a52c",
+      "spec": {
+        "template": "table",
+        "title": "Consistent hash ring clockwise key to server mapping",
+        "columns": [
+          "key_pos",
+          "positions",
+          "owner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consistent hashing places servers and keys on hash ring circle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "server-A"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Keys map to first server clockwise wrapping back to start.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "server-A"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "150"
+                  },
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "server-B"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bisect finds first server position greater than or equal to key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "server-A"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "150"
+                  },
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "server-B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "350"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "server-A"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Consistent hash ring clockwise key to server mapping",
+        "columns": [
+          "key_pos",
+          "positions",
+          "owner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consistent hashing places servers and keys on hash ring circle.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "90",
+                  "server-A"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Keys map to first server clockwise wrapping back to start.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "90",
+                  "server-A"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "150",
+                  "200",
+                  "server-B"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bisect finds first server position greater than or equal to key.",
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "90",
+                  "server-A"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "150",
+                  "200",
+                  "server-B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "350",
+                  "90",
+                  "server-A"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the ring with virtual nodes",
+      "codeHash": "871d37946f7afd4b449e527293a3a85343305b0f42aed27462e0caed9934bae6",
+      "spec": {
+        "template": "flow",
+        "title": "Consistent hash ring virtual nodes and membership changes",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "ring"
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "label": "ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ring manages node membership with add_node and remove_node.",
+            "values": {
+              "A": {
+                "text": "A"
+              },
+              "B": {
+                "text": "B"
+              },
+              "C": {
+                "text": "C"
+              }
+            },
+            "tones": {
+              "A": "ok",
+              "B": "ok",
+              "C": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Each node is placed multiple times using virtual node hashes.",
+            "values": {
+              "A": {
+                "text": "A"
+              },
+              "B": {
+                "text": "B"
+              },
+              "C": {
+                "text": "C"
+              }
+            },
+            "tones": {
+              "A": "data",
+              "B": "data",
+              "C": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Removing node B redistributes only keys previously assigned to B.",
+            "values": {
+              "A": {
+                "text": "A"
+              },
+              "B": {
+                "text": "B"
+              },
+              "C": {
+                "text": "C"
+              }
+            },
+            "tones": {
+              "A": "ok",
+              "B": "error",
+              "C": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Consistent hash ring virtual nodes and membership changes",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ring manages node membership with add_node and remove_node.",
+            "values": {
+              "A": "A",
+              "B": "B",
+              "C": "C"
+            },
+            "tones": {
+              "A": "ok",
+              "B": "ok",
+              "C": "ok"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Each node is placed multiple times using virtual node hashes.",
+            "values": {
+              "A": "A",
+              "B": "B",
+              "C": "C"
+            },
+            "tones": {
+              "A": "data",
+              "B": "data",
+              "C": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Removing node B redistributes only keys previously assigned to B.",
+            "values": {
+              "A": "A",
+              "B": "B",
+              "C": "C"
+            },
+            "tones": {
+              "A": "ok",
+              "B": "error",
+              "C": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why virtual nodes balance load",
+      "codeHash": "21ab815d4013d957cb23cf783b4a8fe1e15913a3cfffb19627200e30c07c4dde",
+      "spec": {
+        "template": "compare",
+        "title": "Load distribution fairness comparing single node versus virtual nodes",
+        "leftLabel": "Single Virtual Node",
+        "rightLabel": "100 Virtual Nodes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Single point per node results in uneven partition sizes by chance.",
+            "left": {
+              "code": "shares(nodes, 1) uneven",
+              "result": {
+                "text": "1"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "shares(nodes, 100) balanced",
+              "result": {
+                "text": "100"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Virtual nodes average out ring arcs making load distribution fair.",
+            "left": {
+              "code": "node A share skewed",
+              "result": {
+                "text": "A"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "node A share balanced",
+              "result": {
+                "text": "A"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Failed node load spreads across neighbours when virtual nodes are used.",
+            "left": {
+              "code": "node B single point",
+              "result": {
+                "text": "B"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "node B replica points",
+              "result": {
+                "text": "B"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Load distribution fairness comparing single node versus virtual nodes",
+        "leftLabel": "Single Virtual Node",
+        "rightLabel": "100 Virtual Nodes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Single point per node results in uneven partition sizes by chance.",
+            "left": {
+              "code": "shares(nodes, 1) uneven",
+              "result": "1",
+              "tone": "error",
+              "checks": [
+                "1"
+              ]
+            },
+            "right": {
+              "code": "shares(nodes, 100) balanced",
+              "result": "100",
+              "tone": "ok",
+              "checks": [
+                "100"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Virtual nodes average out ring arcs making load distribution fair.",
+            "left": {
+              "code": "node A share skewed",
+              "result": "A",
+              "tone": "error",
+              "checks": [
+                "A"
+              ]
+            },
+            "right": {
+              "code": "node A share balanced",
+              "result": "A",
+              "tone": "ok",
+              "checks": [
+                "A"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Failed node load spreads across neighbours when virtual nodes are used.",
+            "left": {
+              "code": "node B single point",
+              "result": "B",
+              "tone": "error",
+              "checks": [
+                "B"
+              ]
+            },
+            "right": {
+              "code": "node B replica points",
+              "result": "B",
+              "tone": "ok",
+              "checks": [
+                "B"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How many keys move?",
+      "codeHash": "d4f68f8cfb3e62ef9fc3bb0611b5464f8a8450b4fb1dbad85b99b10177298d51",
+      "spec": {
+        "template": "table",
+        "title": "Key migration estimations upon adding nodes to hash ring",
+        "columns": [
+          "nodes",
+          "keys_moved",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding node to ring moves small share of keys to new node.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "keys_moved"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function migration_estimate returns number of keys moved.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "keys_moved"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "keys_moved"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Consistent hashing moves far fewer keys than modulo distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "keys_moved"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "keys_moved"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "9"
+                  },
+                  {
+                    "text": "20_000"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Key migration estimations upon adding nodes to hash ring",
+        "columns": [
+          "nodes",
+          "keys_moved",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding node to ring moves small share of keys to new node.",
+            "rows": [
+              {
+                "cells": [
+                  "9",
+                  "keys_moved",
+                  "fraction"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function migration_estimate returns number of keys moved.",
+            "rows": [
+              {
+                "cells": [
+                  "9",
+                  "keys_moved",
+                  "fraction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1",
+                  "keys_moved",
+                  "fraction"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Consistent hashing moves far fewer keys than modulo distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "9",
+                  "keys_moved",
+                  "fraction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1",
+                  "keys_moved",
+                  "fraction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "9",
+                  "20_000",
+                  "fraction"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replicas on the ring",
+      "codeHash": "063503631fcfe3e45156157b5b742c9d68ef958ede8e8f51003fa89dd7a41d7b",
+      "spec": {
+        "template": "none",
+        "reason": "Preference list and rack-aware replication topology."
+      },
+      "filled": {}
+    }
+  ]
+}
