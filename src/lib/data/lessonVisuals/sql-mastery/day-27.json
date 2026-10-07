@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The project and its user stories",
+      "codeHash": "d6d545d65e3d6aba000668e7c33a5bff2354772a64058e55d2354b1202674106",
+      "spec": {
+        "template": "table",
+        "title": "Canteen project user stories and requirements",
+        "columns": [
+          "who",
+          "wants",
+          "so_that"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "User stories define requirements for menu prices and orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "see menu with prices"
+                  },
+                  {
+                    "text": "decide what to order"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Requirements determine database schema rules and table entities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "see menu with prices"
+                  },
+                  {
+                    "text": "decide what to order"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "order several items"
+                  },
+                  {
+                    "text": "pay once for meal"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "manager"
+                  },
+                  {
+                    "text": "see best selling item"
+                  },
+                  {
+                    "text": "plan cooking volume"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Canteen project user stories and requirements",
+        "columns": [
+          "who",
+          "wants",
+          "so_that"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "User stories define requirements for menu prices and orders.",
+            "rows": [
+              {
+                "cells": [
+                  "student",
+                  "see menu with prices",
+                  "decide what to order"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Requirements determine database schema rules and table entities.",
+            "rows": [
+              {
+                "cells": [
+                  "student",
+                  "see menu with prices",
+                  "decide what to order"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "student",
+                  "order several items",
+                  "pay once for meal"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "manager",
+                  "see best selling item",
+                  "plan cooking volume"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From stories to tables",
+      "codeHash": "e8aadc57a014443ec633a0488bd804da576198c119b0a1d0b930d47e8d6c8b23",
+      "spec": {
+        "template": "table",
+        "title": "Relational entity design and relationship mapping",
+        "columns": [
+          "table_name",
+          "one_row_is",
+          "links_to"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The junction table links orders with menu items alongside quantity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "menu_items"
+                  },
+                  {
+                    "text": "one dish on menu"
+                  },
+                  {
+                    "text": "-"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking against normal forms ensures each fact is stored once.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "menu_items"
+                  },
+                  {
+                    "text": "one dish on menu"
+                  },
+                  {
+                    "text": "-"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "canteen_orders"
+                  },
+                  {
+                    "text": "one student order"
+                  },
+                  {
+                    "text": "-"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "canteen_order_items"
+                  },
+                  {
+                    "text": "one item in an order"
+                  },
+                  {
+                    "text": "orders and menu"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Relational entity design and relationship mapping",
+        "columns": [
+          "table_name",
+          "one_row_is",
+          "links_to"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The junction table links orders with menu items alongside quantity.",
+            "rows": [
+              {
+                "cells": [
+                  "menu_items",
+                  "one dish on menu",
+                  "-"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking against normal forms ensures each fact is stored once.",
+            "rows": [
+              {
+                "cells": [
+                  "menu_items",
+                  "one dish on menu",
+                  "-"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "canteen_orders",
+                  "one student order",
+                  "-"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "canteen_order_items",
+                  "one item in an order",
+                  "orders and menu"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing types, keys and rules",
+      "codeHash": "ea942f00234fe2f38b32d9c98f34aa9c474b1e6396746d44530479657274fc47",
+      "spec": {
+        "template": "compare",
+        "title": "Menu item constraint definitions and integrity checks",
+        "leftLabel": "Valid Menu Row",
+        "rightLabel": "Constraint Rejection",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Listing constraint rules ensures each column value satisfies conditions.",
+            "left": {
+              "code": "name = 'Tea', price = 15.00",
+              "result": {
+                "text": "row inserted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "price = 0 or negative",
+              "result": {
+                "text": "error: CHECK price > 0"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Business rules decide whether dishes can be deleted or prices set to zero.",
+            "left": {
+              "code": "name unique constraint",
+              "result": {
+                "text": "prevents duplicate dish"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "invalid dish entry",
+              "result": {
+                "text": "error: duplicate key"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Menu item constraint definitions and integrity checks",
+        "leftLabel": "Valid Menu Row",
+        "rightLabel": "Constraint Rejection",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Listing constraint rules ensures each column value satisfies conditions.",
+            "left": {
+              "code": "name = 'Tea', price = 15.00",
+              "result": "row inserted",
+              "tone": "ok",
+              "checks": [
+                "row inserted"
+              ]
+            },
+            "right": {
+              "code": "price = 0 or negative",
+              "result": "error: CHECK price > 0",
+              "tone": "error",
+              "checks": [
+                "error: CHECK price > 0"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Business rules decide whether dishes can be deleted or prices set to zero.",
+            "left": {
+              "code": "name unique constraint",
+              "result": "prevents duplicate dish",
+              "tone": "ok",
+              "checks": [
+                "prevents duplicate dish"
+              ]
+            },
+            "right": {
+              "code": "invalid dish entry",
+              "result": "error: duplicate key",
+              "tone": "error",
+              "checks": [
+                "error: duplicate key"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the schema",
+      "codeHash": "9eaa2ca57b6c99fb6417d49a2b0a8e6fa3c14c02f007115fafb1f5cab10b7add",
+      "spec": {
+        "template": "compare",
+        "title": "Ordered schema creation and metadata verification",
+        "leftLabel": "Creation Order Sequence",
+        "rightLabel": "Constraint Verification",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Defining tables in order allows child junction tables to reference parents.",
+            "left": {
+              "code": "menu_items & canteen_orders",
+              "result": {
+                "text": "parent tables built first"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "canteen_order_items",
+              "result": {
+                "text": "references parent keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Querying table constraints confirms that primary and foreign keys exist.",
+            "left": {
+              "code": "information_schema inspection",
+              "result": {
+                "text": "3 primary keys confirmed"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "foreign key rules",
+              "result": {
+                "text": "2 foreign keys verified"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ordered schema creation and metadata verification",
+        "leftLabel": "Creation Order Sequence",
+        "rightLabel": "Constraint Verification",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Defining tables in order allows child junction tables to reference parents.",
+            "left": {
+              "code": "menu_items & canteen_orders",
+              "result": "parent tables built first",
+              "tone": "ok",
+              "checks": [
+                "parent tables built first"
+              ]
+            },
+            "right": {
+              "code": "canteen_order_items",
+              "result": "references parent keys",
+              "tone": "ok",
+              "checks": [
+                "references parent keys"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Querying table constraints confirms that primary and foreign keys exist.",
+            "left": {
+              "code": "information_schema inspection",
+              "result": "3 primary keys confirmed",
+              "tone": "ok",
+              "checks": [
+                "3 primary keys confirmed"
+              ]
+            },
+            "right": {
+              "code": "foreign key rules",
+              "result": "2 foreign keys verified",
+              "tone": "ok",
+              "checks": [
+                "2 foreign keys verified"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing the rules",
+      "codeHash": "d2430f6ec8bed8df301b2f7499d435dd0e77c36b76d3bd83903f2fc5fb280a6d",
+      "spec": {
+        "template": "none",
+        "reason": "Negative assertion smoke tests and cascade deletion verification."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Negative assertion smoke tests and cascade deletion verification."
+      }
+    },
+    {
+      "partTitle": "Putting it together: placing a canteen order",
+      "codeHash": "eb1954f7c75aea5bdea4d5aedad8b9bfb6b245375e4615beb5a9819b5277ffcf",
+      "spec": {
+        "template": "none",
+        "reason": "Transactional multi-item order placement script with total calculation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Transactional multi-item order placement script with total calculation."
+      }
+    }
+  ]
+}

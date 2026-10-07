@@ -2068,27 +2068,27 @@
     },
     "sql-mastery:27:0": {
       "partTitle": "The project and its user stories",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:27:1": {
       "partTitle": "From stories to tables",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:27:2": {
       "partTitle": "Choosing types, keys and rules",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:27:3": {
       "partTitle": "Building the schema",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:27:4": {
       "partTitle": "Testing the rules",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:27:5": {
       "partTitle": "Putting it together: placing a canteen order",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:28:0": {
       "partTitle": "From a manager's question to a query",
