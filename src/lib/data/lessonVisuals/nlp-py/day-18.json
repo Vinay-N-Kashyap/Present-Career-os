@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Attention is all you need",
+      "codeHash": "653890bb0d9ce22abe948d3bd61892c919606ad6ad45b2b5142c81af810a98c5",
+      "spec": {
+        "template": "table",
+        "title": "Recurrent versus self-attention sequential computational complexity",
+        "columns": [
+          "rnn_sequential_steps",
+          "transformer_sequential_steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer eliminates recurrent sequential dependency using self attention.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rnn_sequential_steps"
+                  },
+                  {
+                    "text": "transformer_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parallel token processing accelerates hardware training on modern GPUs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rnn_sequential_steps"
+                  },
+                  {
+                    "text": "transformer_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention_pairs"
+                  },
+                  {
+                    "text": "rnn_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Direct attention links connect distant tokens within a single step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rnn_sequential_steps"
+                  },
+                  {
+                    "text": "transformer_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention_pairs"
+                  },
+                  {
+                    "text": "rnn_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "transformer_sequential_steps"
+                  },
+                  {
+                    "text": "attention_pairs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Pairwise comparisons grow quadratically with total sequence length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rnn_sequential_steps"
+                  },
+                  {
+                    "text": "transformer_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention_pairs"
+                  },
+                  {
+                    "text": "rnn_sequential_steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "transformer_sequential_steps"
+                  },
+                  {
+                    "text": "attention_pairs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention_pairs"
+                  },
+                  {
+                    "text": "transformer_sequential_steps"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recurrent versus self-attention sequential computational complexity",
+        "columns": [
+          "rnn_sequential_steps",
+          "transformer_sequential_steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer eliminates recurrent sequential dependency using self attention.",
+            "rows": [
+              {
+                "cells": [
+                  "rnn_sequential_steps",
+                  "transformer_sequential_steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parallel token processing accelerates hardware training on modern GPUs.",
+            "rows": [
+              {
+                "cells": [
+                  "rnn_sequential_steps",
+                  "transformer_sequential_steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention_pairs",
+                  "rnn_sequential_steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Direct attention links connect distant tokens within a single step.",
+            "rows": [
+              {
+                "cells": [
+                  "rnn_sequential_steps",
+                  "transformer_sequential_steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention_pairs",
+                  "rnn_sequential_steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "transformer_sequential_steps",
+                  "attention_pairs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Pairwise comparisons grow quadratically with total sequence length.",
+            "rows": [
+              {
+                "cells": [
+                  "rnn_sequential_steps",
+                  "transformer_sequential_steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention_pairs",
+                  "rnn_sequential_steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "transformer_sequential_steps",
+                  "attention_pairs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "attention_pairs",
+                  "transformer_sequential_steps"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Queries, keys and values",
+      "codeHash": "cab7857a26c108fb26a56b86bd472a49c692945c1f278b15d3a2c5c4e6a0e004",
+      "spec": {
+        "template": "table",
+        "title": "Query key value projections and associative retrieval matching",
+        "columns": [
+          "keys",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Self attention projects tokens into query, key, and value representations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Queries seek targets while keys provide matching identifiers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query_for_sat"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Comparing queries with keys computes attention weights over value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query_for_sat"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Learned linear projections decouple query seeking from key presentation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "keys"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query_for_sat"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "down"
+                  },
+                  {
+                    "text": "keys"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Query key value projections and associative retrieval matching",
+        "columns": [
+          "keys",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Self attention projects tokens into query, key, and value representations.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "score"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Queries seek targets while keys provide matching identifiers.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query_for_sat",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Comparing queries with keys computes attention weights over value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query_for_sat",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Learned linear projections decouple query seeking from key presentation.",
+            "rows": [
+              {
+                "cells": [
+                  "keys",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query_for_sat",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "down",
+                  "keys"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaling by the square root of d_k",
+      "codeHash": "4da013950d7cc57e386bc355414d71468f0ec475a05c6bb81bdd8f90777ced7d",
+      "spec": {
+        "template": "table",
+        "title": "Attention score scaling preventing softmax saturation and vanishing gradients",
+        "columns": [
+          "raw",
+          "scaled"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer divides dot products by the square root of key dimension.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unscaled dot product variance expands with vector dimension magnitude.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Large unscaled inputs saturate softmax and cause vanishing gradients.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sqrt"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing by square root keeps scores in a moderate range.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "scaled"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sqrt"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scaled"
+                  },
+                  {
+                    "text": "softmax"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Attention score scaling preventing softmax saturation and vanishing gradients",
+        "columns": [
+          "raw",
+          "scaled"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer divides dot products by the square root of key dimension.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "scaled"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unscaled dot product variance expands with vector dimension magnitude.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Large unscaled inputs saturate softmax and cause vanishing gradients.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sqrt",
+                  "raw"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dividing by square root keeps scores in a moderate range.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "scaled"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sqrt",
+                  "raw"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "scaled",
+                  "softmax"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaled dot-product attention in full",
+      "codeHash": "0aa0def828aa04ad9f446ffb3ed8be6058f13b29452bedc6565e8e05881fa1c5",
+      "spec": {
+        "template": "table",
+        "title": "Full scaled dot-product attention calculation pipeline",
+        "columns": [
+          "scores",
+          "weights"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scaled dot product attention normalizes scores and sums value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The matrix formulation evaluates all positions concurrently on hardware.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "self_attention"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self attention executes vector math over inputs without loss of precision.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "self_attention"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sqrt"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Output vectors encapsulate context aware blends across all sequence positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "self_attention"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sqrt"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "self_attention"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Full scaled dot-product attention calculation pipeline",
+        "columns": [
+          "scores",
+          "weights"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scaled dot product attention normalizes scores and sums value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The matrix formulation evaluates all positions concurrently on hardware.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "self_attention",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self attention executes vector math over inputs without loss of precision.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "self_attention",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sqrt",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Output vectors encapsulate context aware blends across all sequence positions.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "self_attention",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sqrt",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "weights",
+                  "self_attention"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The encoder block",
+      "codeHash": "d3a1607e4fa4e8e6a85935ac051b9199b4330c70c932d82c8407bab81b06da03",
+      "spec": {
+        "template": "none",
+        "reason": "Transformer encoder block and feed-forward sub-layers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: scores and attention",
+      "codeHash": "eca5eff93716abcbc511b54b47a80bc505c7d82bf83ab039b82dad7e4d5dcb5c",
+      "spec": {
+        "template": "none",
+        "reason": "Scaled scores and self-attention practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -4732,27 +4732,27 @@
     },
     "nlp-py:18:0": {
       "partTitle": "Attention is all you need",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:18:1": {
       "partTitle": "Queries, keys and values",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:18:2": {
       "partTitle": "Scaling by the square root of d_k",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:18:3": {
       "partTitle": "Scaled dot-product attention in full",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:18:4": {
       "partTitle": "The encoder block",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:18:5": {
       "partTitle": "Practice time: scores and attention",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:19:0": {
       "partTitle": "Why more than one head",
