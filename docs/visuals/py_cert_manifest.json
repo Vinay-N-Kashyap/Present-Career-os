@@ -1780,27 +1780,27 @@
     },
     "sql-mastery:15:0": {
       "partTitle": "A subquery that returns one value",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:15:1": {
       "partTitle": "IN with a subquery",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:15:2": {
       "partTitle": "Subqueries in FROM",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:15:3": {
       "partTitle": "EXISTS and correlated subqueries",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:15:4": {
       "partTitle": "Subqueries in SELECT, and when to use a join instead",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:15:5": {
       "partTitle": "Putting it together: finding the most valuable customers",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:16:0": {
       "partTitle": "Why long queries need names",

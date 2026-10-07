@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A subquery that returns one value",
+      "codeHash": "f657588c120a562252d701eacc3eb23c5befec7a031a37b8748c9ce483543a9d",
+      "spec": {
+        "template": "table",
+        "title": "Filtering products above dynamic average price",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Some questions have two steps where a subquery lets you do both steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PostgreSQL runs the inner query first and uses that number for each row.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filtering products above dynamic average price",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Some questions have two steps where a subquery lets you do both steps.",
+            "rows": [
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PostgreSQL runs the inner query first and uses that number for each row.",
+            "rows": [
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IN with a subquery",
+      "codeHash": "a569f6da9338b9a002cad1e2e0d6da804e13a84e0143199e7784c3fa2b73ad8e",
+      "spec": {
+        "template": "none",
+        "reason": "Subquery membership evaluation via dynamic IN list operator."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Subquery membership evaluation via dynamic IN list operator."
+      }
+    },
+    {
+      "partTitle": "Subqueries in FROM",
+      "codeHash": "e42063ef3e5169f55c13e2e1348c3d4d65a42b387f1cb5d2c69a9b753a0d262d",
+      "spec": {
+        "template": "none",
+        "reason": "Derived tables in FROM clauses enabling two-stage aggregation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Derived tables in FROM clauses enabling two-stage aggregation."
+      }
+    },
+    {
+      "partTitle": "EXISTS and correlated subqueries",
+      "codeHash": "7d8caa19b088b81e772567c3aafa3ef0c9e9302fe584b0eba19d36d4e76266e9",
+      "spec": {
+        "template": "compare",
+        "title": "EXISTS versus NOT EXISTS correlated filtering",
+        "leftLabel": "EXISTS Condition",
+        "rightLabel": "NOT EXISTS Condition",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "EXISTS asks a question whether the subquery returns at least one row.",
+            "left": {
+              "code": "EXISTS (SELECT 1)",
+              "result": {
+                "text": "keeps active customers"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "correlated c.id = o.customer_id",
+              "result": {
+                "text": "stops on first match"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "NOT EXISTS is the safest way to find rows with no matching orders.",
+            "left": {
+              "code": "NOT IN (orders)",
+              "result": {
+                "text": "fails if NULL present"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "NOT EXISTS",
+              "result": {
+                "text": "Meera (reliable)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "EXISTS versus NOT EXISTS correlated filtering",
+        "leftLabel": "EXISTS Condition",
+        "rightLabel": "NOT EXISTS Condition",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "EXISTS asks a question whether the subquery returns at least one row.",
+            "left": {
+              "code": "EXISTS (SELECT 1)",
+              "result": "keeps active customers",
+              "tone": "ok",
+              "checks": [
+                "keeps active customers"
+              ]
+            },
+            "right": {
+              "code": "correlated c.id = o.customer_id",
+              "result": "stops on first match",
+              "tone": "data",
+              "checks": [
+                "stops on first match"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "NOT EXISTS is the safest way to find rows with no matching orders.",
+            "left": {
+              "code": "NOT IN (orders)",
+              "result": "fails if NULL present",
+              "tone": "error",
+              "checks": [
+                "fails if NULL present"
+              ]
+            },
+            "right": {
+              "code": "NOT EXISTS",
+              "result": "Meera (reliable)",
+              "tone": "ok",
+              "checks": [
+                "Meera (reliable)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subqueries in SELECT, and when to use a join instead",
+      "codeHash": "3ad7b8f4028c6c6dbbb0001e05881abba692c24c0f48bdb85936a7935f4c11c3",
+      "spec": {
+        "template": "table",
+        "title": "Correlated subqueries in SELECT projection",
+        "columns": [
+          "name",
+          "orders",
+          "last_order"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A correlated subquery can also go in the SELECT list to calculate values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2026-09-10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This naturally gives 0 for customers with no orders without a join trap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2026-09-10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "NULL"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Correlated subqueries in SELECT projection",
+        "columns": [
+          "name",
+          "orders",
+          "last_order"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A correlated subquery can also go in the SELECT list to calculate values.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "2026-09-10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This naturally gives 0 for customers with no orders without a join trap.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "2026-09-10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "0",
+                  "NULL"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: finding the most valuable customers",
+      "codeHash": "a9a2e1facc37aea2fd2313d922daba4c312d84f5c2846db23e2c5ec9aaee502f",
+      "spec": {
+        "template": "table",
+        "title": "Customers spending above average order total",
+        "columns": [
+          "name",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "First the total spent by each customer then comparing against average.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2377.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Subqueries are the tool making layered calculations possible in reports.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2377.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Customers spending above average order total",
+        "columns": [
+          "name",
+          "spent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "First the total spent by each customer then comparing against average.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2377.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Subqueries are the tool making layered calculations possible in reports.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2377.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
