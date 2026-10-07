@@ -4636,27 +4636,27 @@
     },
     "nlp-py:14:0": {
       "partTitle": "Gates: learned valves",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:14:1": {
       "partTitle": "The forget and input gates",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:14:2": {
       "partTitle": "The output gate and hidden state",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:14:3": {
       "partTitle": "The GRU: fewer gates",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:14:4": {
       "partTitle": "Why gates fix vanishing gradients",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:14:5": {
       "partTitle": "Practice time: cells and updates",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:15:0": {
       "partTitle": "The milestone pipeline",

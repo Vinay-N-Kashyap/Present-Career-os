@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Gates: learned valves",
+      "codeHash": "174d0190aca3878f3a4a9f40bf00aa7c15d41129430db2ebb15fe9490d18d949",
+      "spec": {
+        "template": "table",
+        "title": "Sigmoid gating functions and state valve mechanisms",
+        "columns": [
+          "sigmoid",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LSTMs introduce dedicated cell state memory channels across sequences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigmoid"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sigmoid gating valves modulate information passage smoothly between extremes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigmoid"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sigmoid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sigmoid bounds gating while hyperbolic tangent scales the content itself.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigmoid"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sigmoid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The standard LSTM architecture integrates forget, input, and output gates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigmoid"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sigmoid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigmoid"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sigmoid gating functions and state valve mechanisms",
+        "columns": [
+          "sigmoid",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LSTMs introduce dedicated cell state memory channels across sequences.",
+            "rows": [
+              {
+                "cells": [
+                  "sigmoid",
+                  "state"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sigmoid gating valves modulate information passage smoothly between extremes.",
+            "rows": [
+              {
+                "cells": [
+                  "sigmoid",
+                  "state"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sigmoid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sigmoid bounds gating while hyperbolic tangent scales the content itself.",
+            "rows": [
+              {
+                "cells": [
+                  "sigmoid",
+                  "state"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sigmoid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "state",
+                  "math"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The standard LSTM architecture integrates forget, input, and output gates.",
+            "rows": [
+              {
+                "cells": [
+                  "sigmoid",
+                  "state"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sigmoid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "state",
+                  "math"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sigmoid",
+                  "state"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The forget and input gates",
+      "codeHash": "a106d2e74d68692196baafcffd09a0ca35a9f2acb36ab80cbe0e58f6e0c15845",
+      "spec": {
+        "template": "table",
+        "title": "Cell state memory retention and candidate information integration",
+        "columns": [
+          "c_prev",
+          "c_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The forget gate determines what fraction of old cell memory to retain.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The input gate modulates newly generated candidate information.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lstm_cell"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cell state update combines gated prior memory with gated candidate input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lstm_cell"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "lstm_cell"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Direct additive cell paths permit error gradients to propagate without decay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lstm_cell"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "lstm_cell"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cell state memory retention and candidate information integration",
+        "columns": [
+          "c_prev",
+          "c_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The forget gate determines what fraction of old cell memory to retain.",
+            "rows": [
+              {
+                "cells": [
+                  "c_prev",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The input gate modulates newly generated candidate information.",
+            "rows": [
+              {
+                "cells": [
+                  "c_prev",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lstm_cell",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cell state update combines gated prior memory with gated candidate input.",
+            "rows": [
+              {
+                "cells": [
+                  "c_prev",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lstm_cell",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c_prev",
+                  "lstm_cell"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Direct additive cell paths permit error gradients to propagate without decay.",
+            "rows": [
+              {
+                "cells": [
+                  "c_prev",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "lstm_cell",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c_prev",
+                  "lstm_cell"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The output gate and hidden state",
+      "codeHash": "04de8038115c6ab7a4372972c0c22abb83d9ce6f07bdb043809863db96b870fb",
+      "spec": {
+        "template": "table",
+        "title": "Output gate filtering and exposed hidden state projection",
+        "columns": [
+          "lstm_step",
+          "c_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cell state preserves long term memory while hidden state reflects output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lstm_step"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The output gate reveals filtered memory content to downstream layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lstm_step"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Memories stay preserved in cell state until output gates open.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lstm_step"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tanh"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Learned weights compute unique gate activations across differing inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "lstm_step"
+                  },
+                  {
+                    "text": "c_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_prev"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tanh"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c_candidate"
+                  },
+                  {
+                    "text": "c_prev"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Output gate filtering and exposed hidden state projection",
+        "columns": [
+          "lstm_step",
+          "c_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cell state preserves long term memory while hidden state reflects output.",
+            "rows": [
+              {
+                "cells": [
+                  "lstm_step",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The output gate reveals filtered memory content to downstream layers.",
+            "rows": [
+              {
+                "cells": [
+                  "lstm_step",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c_prev",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Memories stay preserved in cell state until output gates open.",
+            "rows": [
+              {
+                "cells": [
+                  "lstm_step",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c_prev",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tanh",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Learned weights compute unique gate activations across differing inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "lstm_step",
+                  "c_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c_prev",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tanh",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "c_candidate",
+                  "c_prev"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The GRU: fewer gates",
+      "codeHash": "8700fae8376dd88c02947021821825c8462bad1f331b1ee99df3bf609115026e",
+      "spec": {
+        "template": "table",
+        "title": "Gated recurrent unit update interpolation and hidden state merge",
+        "columns": [
+          "h_prev",
+          "h_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gated recurrent unit simplifies LSTM gating with fewer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "h_candidate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "GRUs merge memory states into a single unified hidden representation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "h_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gru_update"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The update gate balances retention of prior state versus candidate input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "h_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gru_update"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The reset gate modulates how much historical state influences candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h_prev"
+                  },
+                  {
+                    "text": "h_candidate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gru_update"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "h_candidate"
+                  },
+                  {
+                    "text": "h_prev"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Gated recurrent unit update interpolation and hidden state merge",
+        "columns": [
+          "h_prev",
+          "h_candidate"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gated recurrent unit simplifies LSTM gating with fewer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "h_prev",
+                  "h_candidate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "GRUs merge memory states into a single unified hidden representation.",
+            "rows": [
+              {
+                "cells": [
+                  "h_prev",
+                  "h_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gru_update",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The update gate balances retention of prior state versus candidate input.",
+            "rows": [
+              {
+                "cells": [
+                  "h_prev",
+                  "h_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gru_update",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "zip"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The reset gate modulates how much historical state influences candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "h_prev",
+                  "h_candidate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gru_update",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "zip"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "h_candidate",
+                  "h_prev"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why gates fix vanishing gradients",
+      "codeHash": "35c5b3d09c95bd913f9a098e1afce5a3f908d1eda0235e438921fdad2b355908",
+      "spec": {
+        "template": "none",
+        "reason": "Gradient path analysis and constant error carousel."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: cells and updates",
+      "codeHash": "18109871bfc2ead118baa772aea48cc91dbf0b29ba460f63b9e3d96f141ec23d",
+      "spec": {
+        "template": "none",
+        "reason": "LSTM cell update and GRU interpolation practice."
+      },
+      "filled": {}
+    }
+  ]
+}
