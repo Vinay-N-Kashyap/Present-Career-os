@@ -3076,27 +3076,27 @@
     },
     "dist-py:9:0": {
       "partTitle": "Replicated state machines",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:9:1": {
       "partTitle": "Log entries, terms and AppendEntries",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:9:2": {
       "partTitle": "The follower's consistency check",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:9:3": {
       "partTitle": "When is an entry committed?",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:9:4": {
       "partTitle": "Repairing a lagging follower",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:9:5": {
       "partTitle": "Reads, snapshots and Raft in practice",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:10:0": {
       "partTitle": "All or nothing across services",
