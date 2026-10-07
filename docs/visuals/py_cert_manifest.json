@@ -796,27 +796,27 @@
     },
     "dsa-py:4:0": {
       "partTitle": "A stack: last in, first out",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:4:1": {
       "partTitle": "Matching brackets with a stack",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:4:2": {
       "partTitle": "The next greater element",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:4:3": {
       "partTitle": "What \"monotonic\" means",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:4:4": {
       "partTitle": "A min stack: O(1) minimum",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:4:5": {
       "partTitle": "A calculator built on a stack",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:5:0": {
       "partTitle": "What a cache is and why it needs a limit",

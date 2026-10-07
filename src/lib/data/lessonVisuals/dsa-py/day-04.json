@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A stack: last in, first out",
+      "codeHash": "782ae3b4cef9111c49a250fbfe2531883f1d3940ce5c46267b64d883bcb1ba3c",
+      "spec": {
+        "template": "stack-queue",
+        "title": "LIFO stack operations",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Last item added is first one taken off in LIFO order.",
+            "items": [
+              {
+                "text": "open file"
+              },
+              {
+                "text": "type hello"
+              }
+            ],
+            "action": "push",
+            "actionItem": {
+              "text": "make bold"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Append puts item on top while pop takes top item off.",
+            "items": [
+              {
+                "text": "open file"
+              }
+            ],
+            "action": "pop",
+            "actionItem": {
+              "text": "type hello"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "LIFO stack operations",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Last item added is first one taken off in LIFO order.",
+            "mode": "stack",
+            "items": [
+              "open file",
+              "type hello"
+            ],
+            "action": "push",
+            "actionItem": "make bold"
+          },
+          {
+            "at": "say2",
+            "caption": "Append puts item on top while pop takes top item off.",
+            "mode": "stack",
+            "items": [
+              "open file"
+            ],
+            "action": "pop",
+            "actionItem": "type hello"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Matching brackets with a stack",
+      "codeHash": "961eae5faaaf8c433a8e904524e5c6b7665e4198a90cbd006272b35eae6af459",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Matching brackets with a stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push each opening bracket onto stack.",
+            "items": [
+              {
+                "text": "("
+              }
+            ],
+            "action": "push",
+            "actionItem": {
+              "text": "["
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Closing bracket matches top of stack and gets popped.",
+            "items": [
+              {
+                "text": "("
+              }
+            ],
+            "action": "pop",
+            "actionItem": {
+              "text": "]"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Matching brackets with a stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push each opening bracket onto stack.",
+            "mode": "stack",
+            "items": [
+              "("
+            ],
+            "action": "push",
+            "actionItem": "["
+          },
+          {
+            "at": "say3",
+            "caption": "Closing bracket matches top of stack and gets popped.",
+            "mode": "stack",
+            "items": [
+              "("
+            ],
+            "action": "pop",
+            "actionItem": "]"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The next greater element",
+      "codeHash": "b6cce9533304d16e90e090373a7e5f0a3b61c62e612f10d0bcd4df1c32bd454b",
+      "spec": {
+        "template": "none",
+        "reason": "Waiting indices monotonic stack array traversal."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Waiting indices monotonic stack array traversal."
+      }
+    },
+    {
+      "partTitle": "What \"monotonic\" means",
+      "codeHash": "c06d234cd1dc1a54f49d8e9b80cbfe0656ea29a56b8adcf1be11c4b29cede7e5",
+      "spec": {
+        "template": "none",
+        "reason": "Decreasing monotonic invariant and temperature span."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Decreasing monotonic invariant and temperature span."
+      }
+    },
+    {
+      "partTitle": "A min stack: O(1) minimum",
+      "codeHash": "7b5ca13f5b6d9c8c01ca607b2704e200634b516fd935ff5a0ceb113409d0e484",
+      "spec": {
+        "template": "compare",
+        "title": "Tracking minimum alongside main stack",
+        "leftLabel": "Main Stack",
+        "rightLabel": "Min Stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push smaller of new value and current minimum onto min stack.",
+            "left": {
+              "code": "[5, 3, 7, 2]",
+              "result": {
+                "text": "items"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "[5, 3, 3, 2]",
+              "result": {
+                "text": "mins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Top of min stack gives overall minimum in constant time.",
+            "left": {
+              "code": "items.pop()",
+              "result": {
+                "text": "left"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "mins.pop()",
+              "result": {
+                "text": "min: 3"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Tracking minimum alongside main stack",
+        "leftLabel": "Main Stack",
+        "rightLabel": "Min Stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push smaller of new value and current minimum onto min stack.",
+            "left": {
+              "code": "[5, 3, 7, 2]",
+              "result": "items",
+              "tone": "data",
+              "checks": [
+                "items"
+              ]
+            },
+            "right": {
+              "code": "[5, 3, 3, 2]",
+              "result": "mins",
+              "tone": "ok",
+              "checks": [
+                "mins"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Top of min stack gives overall minimum in constant time.",
+            "left": {
+              "code": "items.pop()",
+              "result": "left",
+              "tone": "data",
+              "checks": [
+                "left"
+              ]
+            },
+            "right": {
+              "code": "mins.pop()",
+              "result": "min: 3",
+              "tone": "ok",
+              "checks": [
+                "min: 3"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A calculator built on a stack",
+      "codeHash": "87b7c95a9ee20d5c57206df2babc943201f81950e5d930c194d8034b35e065ac",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Evaluating postfix arithmetic on a stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Numbers pushed onto stack until operator arrives.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              }
+            ],
+            "action": "idle"
+          },
+          {
+            "at": "say3",
+            "caption": "Order matters when popping second number and first number.",
+            "items": [
+              {
+                "text": "7"
+              }
+            ],
+            "action": "push",
+            "actionItem": {
+              "text": "7"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Evaluating postfix arithmetic on a stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Numbers pushed onto stack until operator arrives.",
+            "mode": "stack",
+            "items": [
+              "3",
+              "4"
+            ],
+            "action": "idle"
+          },
+          {
+            "at": "say3",
+            "caption": "Order matters when popping second number and first number.",
+            "mode": "stack",
+            "items": [
+              "7"
+            ],
+            "action": "push",
+            "actionItem": "7"
+          }
+        ]
+      }
+    }
+  ]
+}
