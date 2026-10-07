@@ -220,27 +220,27 @@
     },
     "python:10:0": {
       "partTitle": "What a dictionary is",
-      "status": "todo"
+      "status": "passed"
     },
     "python:10:1": {
       "partTitle": "Adding and changing keys",
-      "status": "todo"
+      "status": "passed"
     },
     "python:10:2": {
       "partTitle": "Missing keys and get()",
-      "status": "todo"
+      "status": "none"
     },
     "python:10:3": {
       "partTitle": "Looping over a dictionary",
-      "status": "todo"
+      "status": "none"
     },
     "python:10:4": {
       "partTitle": "Counting with a dictionary",
-      "status": "todo"
+      "status": "passed"
     },
     "python:10:5": {
       "partTitle": "Putting it together: one expense as a dictionary",
-      "status": "todo"
+      "status": "none"
     },
     "python:11:0": {
       "partTitle": "The shape of real data",
