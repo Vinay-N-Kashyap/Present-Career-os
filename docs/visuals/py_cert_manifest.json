@@ -148,27 +148,27 @@
     },
     "python:7:0": {
       "partTitle": "What a function is",
-      "status": "todo"
+      "status": "none"
     },
     "python:7:1": {
       "partTitle": "Parameters: giving a function information",
-      "status": "todo"
+      "status": "passed"
     },
     "python:7:2": {
       "partTitle": "return: giving back an answer",
-      "status": "todo"
+      "status": "passed"
     },
     "python:7:3": {
       "partTitle": "Why return is different from print",
-      "status": "todo"
+      "status": "passed"
     },
     "python:7:4": {
       "partTitle": "Default values for parameters",
-      "status": "todo"
+      "status": "none"
     },
     "python:7:5": {
       "partTitle": "Putting it together: tracker functions",
-      "status": "todo"
+      "status": "none"
     },
     "python:8:0": {
       "partTitle": "Creating a list and reading items",

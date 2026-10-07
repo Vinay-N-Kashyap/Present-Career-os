@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 7,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What a function is",
+      "codeHash": "e45233f86fa807beba11a80a8532d2839ec01e5252ff7d4e74e476f4bdd62911",
+      "spec": {
+        "template": "none",
+        "reason": "Basic function definition and calling syntax is self-evident in code."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Parameters: giving a function information",
+      "codeHash": "7e9c13bb36547ce0dfee4b22519537c6e51026b89fbff388b73a54df71bd70f8",
+      "spec": {
+        "template": "boxes",
+        "title": "Function parameters and arguments",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameters are like empty boxes filled when called.",
+            "values": {
+              "item": {
+                "text": "Tea"
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The values you put in brackets are called arguments.",
+            "values": {
+              "item": {
+                "text": "Bus"
+              },
+              "amount": {
+                "text": "45"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Function parameters and arguments",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameters are like empty boxes filled when called.",
+            "values": {
+              "item": "Tea",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The values you put in brackets are called arguments.",
+            "values": {
+              "item": "Bus",
+              "amount": "45"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "return: giving back an answer",
+      "codeHash": "feda6f23ab7f3bb119b2ff747c734dd9b2ce0c1cd7c171a5fccdf6156b7e50f0",
+      "spec": {
+        "template": "boxes",
+        "title": "Returning values from functions",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "lunch",
+            "label": "lunch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Use return to give back an answer to the program.",
+            "values": {
+              "tea": {
+                "var": "tea",
+                "line": 4
+              },
+              "lunch": {
+                "text": "add_gst(120)"
+              }
+            },
+            "tones": {
+              "tea": "ok",
+              "lunch": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Store returned values in a variable or use in calculation.",
+            "values": {
+              "tea": {
+                "var": "tea",
+                "line": 5
+              },
+              "lunch": {
+                "var": "lunch",
+                "line": 5
+              }
+            },
+            "tones": {
+              "tea": "data",
+              "lunch": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Returning values from functions",
+        "boxes": [
+          {
+            "id": "tea",
+            "label": "tea"
+          },
+          {
+            "id": "lunch",
+            "label": "lunch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Use return to give back an answer to the program.",
+            "values": {
+              "tea": "23.6",
+              "lunch": "add_gst(120)"
+            },
+            "tones": {
+              "tea": "ok",
+              "lunch": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Store returned values in a variable or use in calculation.",
+            "values": {
+              "tea": "23.6",
+              "lunch": "141.6"
+            },
+            "tones": {
+              "tea": "data",
+              "lunch": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why return is different from print",
+      "codeHash": "4bcb525b116f89639491d18246a74c914e73789f55efa48a2676aa3b0abded99",
+      "spec": {
+        "template": "boxes",
+        "title": "Comparing return and print",
+        "boxes": [
+          {
+            "id": "x",
+            "label": "x"
+          },
+          {
+            "id": "y",
+            "label": "y"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Print shows on screen while return hands a value back.",
+            "values": {
+              "x": {
+                "var": "x",
+                "line": 7
+              },
+              "y": {
+                "text": "total_with_return(20, 45)"
+              }
+            },
+            "tones": {
+              "x": "error",
+              "y": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A returned value can be stored and added.",
+            "values": {
+              "x": {
+                "var": "x",
+                "line": 8
+              },
+              "y": {
+                "var": "y",
+                "line": 8
+              }
+            },
+            "tones": {
+              "x": "error",
+              "y": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Comparing return and print",
+        "boxes": [
+          {
+            "id": "x",
+            "label": "x"
+          },
+          {
+            "id": "y",
+            "label": "y"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Print shows on screen while return hands a value back.",
+            "values": {
+              "x": "None",
+              "y": "total_with_return(20, 45)"
+            },
+            "tones": {
+              "x": "error",
+              "y": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A returned value can be stored and added.",
+            "values": {
+              "x": "None",
+              "y": "65"
+            },
+            "tones": {
+              "x": "error",
+              "y": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Default values for parameters",
+      "codeHash": "677c7c5b2f82615f86258c14662137f64f7802455ea165f81882dbe421eea057",
+      "spec": {
+        "template": "none",
+        "reason": "Default parameter syntax is clear directly from function signatures in code."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: tracker functions",
+      "codeHash": "626ecc60a39539d69ccc74fbbcf6ead415a46e8fa79f167c954e26dba0d20ca2",
+      "spec": {
+        "template": "none",
+        "reason": "Tracker helper functions are simple compositions clear from linear code flow."
+      },
+      "filled": {}
+    }
+  ]
+}
