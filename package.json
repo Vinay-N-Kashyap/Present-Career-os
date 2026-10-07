@@ -24,6 +24,7 @@
     "test:e2e": "playwright test",
     "visuals:status": "node --experimental-strip-types scripts/visuals/status.mts",
     "visuals:generate": "tsx scripts/visuals/generate.mts",
+    "visuals:check": "tsx scripts/visuals/check.mts",
     "screenshots": "node scripts/take_screenshots.mjs"
   },
   "dependencies": {
