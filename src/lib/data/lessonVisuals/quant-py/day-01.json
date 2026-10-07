@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What an exchange does",
+      "codeHash": "6edac8989790607cb8a29e33d6faef022ef33c6b65cc6dea85da18d916c28d88",
+      "spec": {
+        "template": "table",
+        "title": "Electronic exchange market participants and architecture",
+        "columns": [
+          "day",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Electronic exchanges deploy matching engines to pair buyers and sellers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Brokers route customer orders while market makers offer quotes continuously.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "modules"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantitative engineers develop execution algorithms and risk controls.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "modules"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "modules"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Market concepts combine with engineering to build fast and safe trading systems.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "modules"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "day"
+                  },
+                  {
+                    "text": "modules"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Electronic exchange market participants and architecture",
+        "columns": [
+          "day",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Electronic exchanges deploy matching engines to pair buyers and sellers.",
+            "rows": [
+              {
+                "cells": [
+                  "day",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Brokers route customer orders while market makers offer quotes continuously.",
+            "rows": [
+              {
+                "cells": [
+                  "day",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "modules",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Quantitative engineers develop execution algorithms and risk controls.",
+            "rows": [
+              {
+                "cells": [
+                  "day",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "modules",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "day",
+                  "modules"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Market concepts combine with engineering to build fast and safe trading systems.",
+            "rows": [
+              {
+                "cells": [
+                  "day",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "modules",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "day",
+                  "modules"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bid, ask and spread",
+      "codeHash": "72f6d757c4d062a8fbe0e3373132c8d07372eba5568a6f0d68d6777dbbec1156",
+      "spec": {
+        "template": "table",
+        "title": "Order book bid ask spread and immediacy pricing",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The bid reflects willing buyers while the ask reflects willing sellers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The spread represents the price of immediacy between buyer and seller.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A tight spread indicates liquid markets while a wide spread increases cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quotes"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints the spread for a liquid and an illiquid stock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quotes"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Order book bid ask spread and immediacy pricing",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The bid reflects willing buyers while the ask reflects willing sellers.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The spread represents the price of immediacy between buyer and seller.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A tight spread indicates liquid markets while a wide spread increases cost.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "quotes",
+                  "items"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example prints the spread for a liquid and an illiquid stock.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "quotes",
+                  "items"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The midpoint and basis points",
+      "codeHash": "0cae820804b5f0be2e2a83aeaa5d308ddb9af0066bdba32a1b251351ab429eaa",
+      "spec": {
+        "template": "table",
+        "title": "Fair midpoint estimation and basis point standardization",
+        "columns": [
+          "price",
+          "mid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The midpoint represents the estimated fair price between buyers and sellers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Basis points normalize spread magnitude across varied asset prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the same absolute spread on stocks at different prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "bid"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Basis points serve as the conventional language of financial trading desks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "bid"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fair midpoint estimation and basis point standardization",
+        "columns": [
+          "price",
+          "mid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The midpoint represents the estimated fair price between buyers and sellers.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "mid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Basis points normalize spread magnitude across varied asset prices.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the same absolute spread on stocks at different prices.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "price",
+                  "bid"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Basis points serve as the conventional language of financial trading desks.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "price",
+                  "bid"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "mid",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ticks and the price grid",
+      "codeHash": "9134ca4b52a787987f0e9637c058081ba8d252da1e3a2250aae887239e1184c3",
+      "spec": {
+        "template": "table",
+        "title": "Exchange tick increments and directional price snapping",
+        "columns": [
+          "price",
+          "tick"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchange rules enforce discrete tick increments for all submitted orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Off-grid prices get rejected unless trading systems snap prices to the grid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Directional rounding ensures buy orders and sell orders remain conservative.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "floor"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the floating point trap and the numerical epsilon fix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "floor"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "snap"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exchange tick increments and directional price snapping",
+        "columns": [
+          "price",
+          "tick"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Exchange rules enforce discrete tick increments for all submitted orders.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "tick"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Off-grid prices get rejected unless trading systems snap prices to the grid.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Directional rounding ensures buy orders and sell orders remain conservative.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "floor"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows the floating point trap and the numerical epsilon fix.",
+            "rows": [
+              {
+                "cells": [
+                  "price",
+                  "tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "floor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "snap",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Liquidity and market quality",
+      "codeHash": "9270cd3e29db3b7a516246f1e33b6d7a6b17cd0830d8de440acf8a127589a3ca",
+      "spec": {
+        "template": "none",
+        "reason": "Liquidity and market depth dynamics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: quotes and ticks",
+      "codeHash": "f1a3c5280797967cf826c43fd158cc3c0a195a3284aaa0966df12901a761da54",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: quotes and tick snapping verification."
+      },
+      "filled": {}
+    }
+  ]
+}

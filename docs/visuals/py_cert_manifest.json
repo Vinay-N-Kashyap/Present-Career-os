@@ -5044,27 +5044,27 @@
     },
     "quant-py:1:0": {
       "partTitle": "What an exchange does",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:1:1": {
       "partTitle": "Bid, ask and spread",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:1:2": {
       "partTitle": "The midpoint and basis points",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:1:3": {
       "partTitle": "Ticks and the price grid",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:1:4": {
       "partTitle": "Liquidity and market quality",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:1:5": {
       "partTitle": "Practice time: quotes and ticks",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:2:0": {
       "partTitle": "Limit orders and market orders",
