@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "EC2 instances and families",
+      "codeHash": "a16e236bd8c72c7b3bb7cf638660dac2dc037ddf1f819836a131ebf942ecbcb3",
+      "spec": {
+        "template": "table",
+        "title": "Cheapest instance type selection meeting workload resource requirements",
+        "columns": [
+          "workload",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon Elastic Compute Cloud rents instances with specific hardware sizing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Small web app:"
+                  },
+                  {
+                    "text": "t4g.medium"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Instance families are tuned for jobs such as caches and memory databases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Small web app:"
+                  },
+                  {
+                    "text": "t4g.medium"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Redis cache:"
+                  },
+                  {
+                    "text": "r6g.large"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example picks the cheapest instance type meeting compute and memory needs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Small web app:"
+                  },
+                  {
+                    "text": "t4g.medium"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Redis cache:"
+                  },
+                  {
+                    "text": "r6g.large"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Video encoder:"
+                  },
+                  {
+                    "text": "c6g.xlarge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cheapest instance type selection meeting workload resource requirements",
+        "columns": [
+          "workload",
+          "type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Amazon Elastic Compute Cloud rents instances with specific hardware sizing.",
+            "rows": [
+              {
+                "cells": [
+                  "Small web app:",
+                  "t4g.medium"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Instance families are tuned for jobs such as caches and memory databases.",
+            "rows": [
+              {
+                "cells": [
+                  "Small web app:",
+                  "t4g.medium"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Redis cache:",
+                  "r6g.large"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example picks the cheapest instance type meeting compute and memory needs.",
+            "rows": [
+              {
+                "cells": [
+                  "Small web app:",
+                  "t4g.medium"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Redis cache:",
+                  "r6g.large"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Video encoder:",
+                  "c6g.xlarge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "On-Demand, Reserved, Savings Plans and Spot",
+      "codeHash": "6da1be3f3fc7da78b4931aeda4c543e5762c6e1462bd0a2c988c405b6e7bd195",
+      "spec": {
+        "template": "table",
+        "title": "Comparison of EC2 commitment models and billing discounts",
+        "columns": [
+          "pricing_model",
+          "cadence"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "On-Demand pricing charges the highest price with no commitment.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "On-Demand"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Spot instances use spare capacity for batch jobs and restartable rendering.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "On-Demand"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Spot"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prices monthly fleet costs under each purchase model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "On-Demand"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Savings Plan (1 yr)"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Spot"
+                  },
+                  {
+                    "text": "per server per month"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparison of EC2 commitment models and billing discounts",
+        "columns": [
+          "pricing_model",
+          "cadence"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "On-Demand pricing charges the highest price with no commitment.",
+            "rows": [
+              {
+                "cells": [
+                  "On-Demand",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Spot instances use spare capacity for batch jobs and restartable rendering.",
+            "rows": [
+              {
+                "cells": [
+                  "On-Demand",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prices monthly fleet costs under each purchase model.",
+            "rows": [
+              {
+                "cells": [
+                  "On-Demand",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Savings Plan (1 yr)",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "per server per month"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auto Scaling groups",
+      "codeHash": "88f6874002e7ec7466911da9f017e318275950b4e018fc2a4e4d2dfbe36024dd",
+      "spec": {
+        "template": "table",
+        "title": "Auto Scaling group fleet health tracking and instance recovery",
+        "columns": [
+          "instance",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An Auto Scaling group maintains a desired fleet of identical instances.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-1"
+                  },
+                  {
+                    "text": "healthy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If an instance fails its health check the group replaces it automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-1"
+                  },
+                  {
+                    "text": "healthy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "i-2"
+                  },
+                  {
+                    "text": "unhealthy"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates replacing an unhealthy instance to keep desired count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "i-1"
+                  },
+                  {
+                    "text": "healthy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "i-3"
+                  },
+                  {
+                    "text": "healthy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Auto Scaling group fleet health tracking and instance recovery",
+        "columns": [
+          "instance",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An Auto Scaling group maintains a desired fleet of identical instances.",
+            "rows": [
+              {
+                "cells": [
+                  "i-1",
+                  "healthy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If an instance fails its health check the group replaces it automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "i-1",
+                  "healthy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "i-2",
+                  "unhealthy"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates replacing an unhealthy instance to keep desired count.",
+            "rows": [
+              {
+                "cells": [
+                  "i-1",
+                  "healthy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "i-3",
+                  "healthy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Target tracking: the thermostat of scaling",
+      "codeHash": "2495cd32e5cd6426be76b6aa1052c4f49c4aa446b0120f53721110385b5e9f47",
+      "spec": {
+        "template": "table",
+        "title": "Target tracking capacity evaluation over simulated daily load",
+        "columns": [
+          "hour",
+          "cpu"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Target tracking dynamic scaling adjusts capacity toward a target metric.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "09:00"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Always round up when scaling out to prevent an overloaded server fleet.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "09:00"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12:00"
+                  },
+                  {
+                    "text": "95"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs the formula across changing utilization over a busy day.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "09:00"
+                  },
+                  {
+                    "text": "80"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "12:00"
+                  },
+                  {
+                    "text": "95"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "22:00"
+                  },
+                  {
+                    "text": "12"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Target tracking capacity evaluation over simulated daily load",
+        "columns": [
+          "hour",
+          "cpu"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Target tracking dynamic scaling adjusts capacity toward a target metric.",
+            "rows": [
+              {
+                "cells": [
+                  "09:00",
+                  "80"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Always round up when scaling out to prevent an overloaded server fleet.",
+            "rows": [
+              {
+                "cells": [
+                  "09:00",
+                  "80"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12:00",
+                  "95"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs the formula across changing utilization over a busy day.",
+            "rows": [
+              {
+                "cells": [
+                  "09:00",
+                  "80"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "12:00",
+                  "95"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "22:00",
+                  "12"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Surviving Spot interruptions",
+      "codeHash": "4d667d835ed6cd110e6ec268171adb0af0749d7458683c5eaaded76df268fb88",
+      "spec": {
+        "template": "none",
+        "reason": "Spot interruption notice handling and checkpointing logic."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: scale and survive",
+      "codeHash": "968bebc043d7109395d296baf9313f6b745c5ea7691ebeebf24dd87ffc40a256",
+      "spec": {
+        "template": "none",
+        "reason": "Scaling clamp logic and Spot action state evaluation."
+      },
+      "filled": {}
+    }
+  ]
+}

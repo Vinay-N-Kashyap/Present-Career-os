@@ -3748,27 +3748,27 @@
     },
     "cloud-py:7:0": {
       "partTitle": "EC2 instances and families",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:7:1": {
       "partTitle": "On-Demand, Reserved, Savings Plans and Spot",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:7:2": {
       "partTitle": "Auto Scaling groups",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:7:3": {
       "partTitle": "Target tracking: the thermostat of scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:7:4": {
       "partTitle": "Surviving Spot interruptions",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:7:5": {
       "partTitle": "Practice time: scale and survive",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:8:0": {
       "partTitle": "Why a load balancer",
