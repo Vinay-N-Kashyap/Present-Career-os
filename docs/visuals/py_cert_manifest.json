@@ -3052,27 +3052,27 @@
     },
     "dist-py:8:0": {
       "partTitle": "Why not a simple counter?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:8:1": {
       "partTitle": "The Snowflake layout",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:8:2": {
       "partTitle": "Building the generator",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:8:3": {
       "partTitle": "Decoding an ID",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:8:4": {
       "partTitle": "Time-sortable text IDs",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:8:5": {
       "partTitle": "Choosing an ID scheme",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:9:0": {
       "partTitle": "Replicated state machines",
