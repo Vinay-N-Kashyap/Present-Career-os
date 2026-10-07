@@ -1876,27 +1876,27 @@
     },
     "sql-mastery:19:0": {
       "partTitle": "CASE: if-then-else inside SQL",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:19:1": {
       "partTitle": "Simple CASE and cleaning codes into words",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:19:2": {
       "partTitle": "CASE in ORDER BY: custom sort orders",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:19:3": {
       "partTitle": "Counting by condition",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:19:4": {
       "partTitle": "Pivot-style reports",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:19:5": {
       "partTitle": "Putting it together: a product dashboard",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:20:0": {
       "partTitle": "What goes wrong with repeated data",

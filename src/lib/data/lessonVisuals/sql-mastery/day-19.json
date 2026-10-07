@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "CASE: if-then-else inside SQL",
+      "codeHash": "a0d7e1d09342131518b7af489906b364d342099d594f9e04a42d742daf29d13a",
+      "spec": {
+        "template": "table",
+        "title": "Categorizing products into price bands using CASE",
+        "columns": [
+          "name",
+          "price",
+          "price_band"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each row evaluates price conditions to assign budget mid or premium band.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The evaluation proceeds from top to bottom picking the first true condition.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Stapler"
+                  },
+                  {
+                    "text": "150.00"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "premium"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Categorizing products into price bands using CASE",
+        "columns": [
+          "name",
+          "price",
+          "price_band"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each row evaluates price conditions to assign budget mid or premium band.",
+            "rows": [
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "budget"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The evaluation proceeds from top to bottom picking the first true condition.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00",
+                  "budget"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "budget"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Stapler",
+                  "150.00",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backpack",
+                  "1200.00",
+                  "premium"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simple CASE and cleaning codes into words",
+      "codeHash": "16ca21a7b1c8f344739a39a947b4b9a10cd1acf377d2ae1ff0a4993940237094",
+      "spec": {
+        "template": "compare",
+        "title": "Mapping status codes to human readable text",
+        "leftLabel": "Short Code: status",
+        "rightLabel": "Readable Text: status_text",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Compact codes are translated into readable words for people.",
+            "left": {
+              "code": "status = 'o'",
+              "result": {
+                "text": "'o'"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "WHEN 'o' THEN 'Open'",
+              "result": {
+                "text": "'Open'"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "The fallback ELSE branch catches unexpected codes preventing a silent NULL.",
+            "left": {
+              "code": "unhandled code 'x'",
+              "result": {
+                "text": "NULL"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ELSE 'Unknown code: ' || status",
+              "result": {
+                "text": "'Unknown code: x'"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Mapping status codes to human readable text",
+        "leftLabel": "Short Code: status",
+        "rightLabel": "Readable Text: status_text",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Compact codes are translated into readable words for people.",
+            "left": {
+              "code": "status = 'o'",
+              "result": "'o'",
+              "tone": "data",
+              "checks": [
+                "'o'"
+              ]
+            },
+            "right": {
+              "code": "WHEN 'o' THEN 'Open'",
+              "result": "'Open'",
+              "tone": "ok",
+              "checks": [
+                "'Open'"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "The fallback ELSE branch catches unexpected codes preventing a silent NULL.",
+            "left": {
+              "code": "unhandled code 'x'",
+              "result": "NULL",
+              "tone": "error",
+              "checks": [
+                "NULL"
+              ]
+            },
+            "right": {
+              "code": "ELSE 'Unknown code: ' || status",
+              "result": "'Unknown code: x'",
+              "tone": "ok",
+              "checks": [
+                "'Unknown code: x'"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CASE in ORDER BY: custom sort orders",
+      "codeHash": "2ab0ee9ed750b66fe7ed484fd4e7337b984c75b4027c89e78b46820a9b8d0e67",
+      "spec": {
+        "template": "table",
+        "title": "Custom status ordering via CASE",
+        "columns": [
+          "id",
+          "status",
+          "ordered_on"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Assigning a number with CASE enables a custom sort order for statuses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "104"
+                  },
+                  {
+                    "text": "pending"
+                  },
+                  {
+                    "text": "2026-09-12"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Combining custom status order with date sorts rows cleanly within each status.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "104"
+                  },
+                  {
+                    "text": "pending"
+                  },
+                  {
+                    "text": "2026-09-12"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "shipped"
+                  },
+                  {
+                    "text": "2026-09-10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "2026-09-03"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Custom status ordering via CASE",
+        "columns": [
+          "id",
+          "status",
+          "ordered_on"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Assigning a number with CASE enables a custom sort order for statuses.",
+            "rows": [
+              {
+                "cells": [
+                  "104",
+                  "pending",
+                  "2026-09-12"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Combining custom status order with date sorts rows cleanly within each status.",
+            "rows": [
+              {
+                "cells": [
+                  "104",
+                  "pending",
+                  "2026-09-12"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "103",
+                  "shipped",
+                  "2026-09-10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "101",
+                  "delivered",
+                  "2026-09-01"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "102",
+                  "delivered",
+                  "2026-09-03"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting by condition",
+      "codeHash": "8a310ce7e38f19d1e5cba23b94e06866268e0288a7ddb32b2cbdac366a8c58e2",
+      "spec": {
+        "template": "table",
+        "title": "Conditional aggregation across order statuses",
+        "columns": [
+          "name",
+          "delivered",
+          "open",
+          "all_orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A CASE inside an aggregate tallies matching rows in a single query.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each customer row displays columns for distinct order statuses side by side.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Conditional aggregation across order statuses",
+        "columns": [
+          "name",
+          "delivered",
+          "open",
+          "all_orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A CASE inside an aggregate tallies matching rows in a single query.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "0",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each customer row displays columns for distinct order statuses side by side.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2",
+                  "0",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Priya",
+                  "0",
+                  "1",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pivot-style reports",
+      "codeHash": "286725733b628c51c422d780eedae75982f9ce508ca54ea806d2a910114d17ab",
+      "spec": {
+        "template": "none",
+        "reason": "Pivot report matrix transformation and multi-month conditional summation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Pivot report matrix transformation and multi-month conditional summation."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a product dashboard",
+      "codeHash": "23c89e1567922f63f634c9f2df1b173a61eae0603fe27d126568027701d4f8ec",
+      "spec": {
+        "template": "none",
+        "reason": "Composite dashboard view combining status flags, ordering, and summary tallies."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Composite dashboard view combining status flags, ordering, and summary tallies."
+      }
+    }
+  ]
+}
