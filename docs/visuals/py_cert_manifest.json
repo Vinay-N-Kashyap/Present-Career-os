@@ -5284,27 +5284,27 @@
     },
     "quant-py:11:0": {
       "partTitle": "The path of a packet",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:11:1": {
       "partTitle": "Kernel bypass",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:11:2": {
       "partTitle": "Ring buffers between the NIC and the program",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:11:3": {
       "partTitle": "Zero copy",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:11:4": {
       "partTitle": "CPU pinning and jitter",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:11:5": {
       "partTitle": "Practice time: rings and savings",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:12:0": {
       "partTitle": "Threads and the cost of locks",
