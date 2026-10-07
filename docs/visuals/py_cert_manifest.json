@@ -3724,27 +3724,27 @@
     },
     "cloud-py:6:0": {
       "partTitle": "Identity and Access Management",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:6:1": {
       "partTitle": "How AWS decides: explicit deny wins",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:6:2": {
       "partTitle": "Wildcards and least privilege",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:6:3": {
       "partTitle": "Roles and temporary credentials",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:6:4": {
       "partTitle": "Amazon Resource Names",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:6:5": {
       "partTitle": "Practice time: build the policy engine",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:7:0": {
       "partTitle": "EC2 instances and families",
