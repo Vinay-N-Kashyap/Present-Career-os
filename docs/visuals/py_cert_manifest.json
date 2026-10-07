@@ -316,27 +316,27 @@
     },
     "python:14:0": {
       "partTitle": "Reading an error message",
-      "status": "todo"
+      "status": "none"
     },
     "python:14:1": {
       "partTitle": "try and except",
-      "status": "todo"
+      "status": "passed"
     },
     "python:14:2": {
       "partTitle": "Using the error message",
-      "status": "todo"
+      "status": "none"
     },
     "python:14:3": {
       "partTitle": "else and finally",
-      "status": "todo"
+      "status": "passed"
     },
     "python:14:4": {
       "partTitle": "Raising your own errors",
-      "status": "todo"
+      "status": "passed"
     },
     "python:14:5": {
       "partTitle": "Putting it together: safe input handling",
-      "status": "todo"
+      "status": "none"
     },
     "python:15:0": {
       "partTitle": "What a module is and how to import it",
