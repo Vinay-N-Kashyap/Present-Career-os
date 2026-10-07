@@ -988,27 +988,27 @@
     },
     "dsa-py:12:0": {
       "partTitle": "Divide and conquer",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:12:1": {
       "partTitle": "Merging two sorted lists",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:12:2": {
       "partTitle": "Merge sort put together",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:12:3": {
       "partTitle": "Merging sorted linked lists",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:12:4": {
       "partTitle": "Counting inversions with merge sort",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:12:5": {
       "partTitle": "Sorting in practice with sorted() and key",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:13:0": {
       "partTitle": "Partitioning around a pivot",
