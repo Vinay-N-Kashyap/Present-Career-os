@@ -916,27 +916,27 @@
     },
     "dsa-py:9:0": {
       "partTitle": "What a sliding window is",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:9:1": {
       "partTitle": "Fixed window: the best sum of k in a row",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:9:2": {
       "partTitle": "Flexible window: longest stretch with no repeats",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:9:3": {
       "partTitle": "Flexible window: shortest stretch reaching a total",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:9:4": {
       "partTitle": "Counting letters in a window",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:9:5": {
       "partTitle": "Spotting a window problem",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:10:0": {
       "partTitle": "Binary search on a sorted list",
