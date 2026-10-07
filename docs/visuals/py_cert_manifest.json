@@ -4924,27 +4924,27 @@
     },
     "nlp-py:26:0": {
       "partTitle": "Sparse and dense retrieval",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:26:1": {
       "partTitle": "Bi-encoders and approximate nearest neighbours",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:26:2": {
       "partTitle": "Cross-encoders",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:26:3": {
       "partTitle": "Designing the funnel",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:26:4": {
       "partTitle": "Re-ranking stably",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:26:5": {
       "partTitle": "Practice time: funnel and re-rank",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:27:0": {
       "partTitle": "From logits to a choice",

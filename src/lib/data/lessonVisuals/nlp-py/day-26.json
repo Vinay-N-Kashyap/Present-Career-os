@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Sparse and dense retrieval",
+      "codeHash": "b27cede4c7089440fa67ca719e4e97111663a073bc352a12aa6cf9634d922ffc",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary overlap versus semantic vector similarity",
+        "columns": [
+          "query",
+          "doc"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sparse retrieval relies on exact keyword matching across documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "doc"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vocabulary mismatch occurs when queries and documents use synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "doc"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "emb"
+                  },
+                  {
+                    "text": "vec"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dense retrieval maps queries and documents into continuous embedding vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "doc"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "emb"
+                  },
+                  {
+                    "text": "vec"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Semantic representations capture paraphrases and related terms cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "doc"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "emb"
+                  },
+                  {
+                    "text": "vec"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "emb"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary overlap versus semantic vector similarity",
+        "columns": [
+          "query",
+          "doc"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sparse retrieval relies on exact keyword matching across documents.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "doc"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vocabulary mismatch occurs when queries and documents use synonyms.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "doc"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "emb",
+                  "vec"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dense retrieval maps queries and documents into continuous embedding vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "doc"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "emb",
+                  "vec"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "cos"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Semantic representations capture paraphrases and related terms cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "query",
+                  "doc"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "emb",
+                  "vec"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "cos"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "emb",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bi-encoders and approximate nearest neighbours",
+      "codeHash": "e35907087a61ea1e44587754445e00303062714f727fe24e6721b87604d6d1b7",
+      "spec": {
+        "template": "table",
+        "title": "Bi-encoder representation caching and cluster space partitioning",
+        "columns": [
+          "clusters",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bi-encoders encode queries and documents separately into dense vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Separate encoding precomputes document vectors for fast search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "best_c"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Approximate nearest neighbour indexes accelerate large scale similarity queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "best_c"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "dist"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Partitioning vectors into clusters confines search to the closest cluster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "query"
+                  },
+                  {
+                    "text": "best_c"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "dist"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "clusters"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bi-encoder representation caching and cluster space partitioning",
+        "columns": [
+          "clusters",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bi-encoders encode queries and documents separately into dense vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "clusters",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Separate encoding precomputes document vectors for fast search.",
+            "rows": [
+              {
+                "cells": [
+                  "clusters",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query",
+                  "best_c"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Approximate nearest neighbour indexes accelerate large scale similarity queries.",
+            "rows": [
+              {
+                "cells": [
+                  "clusters",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query",
+                  "best_c"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "dist"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Partitioning vectors into clusters confines search to the closest cluster.",
+            "rows": [
+              {
+                "cells": [
+                  "clusters",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "query",
+                  "best_c"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "dist"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "clusters",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-encoders",
+      "codeHash": "8bfbe55899d8e318b82ccc02741ba4f25f90bd0bd14bd4d58fd55ebdecaac5d6",
+      "spec": {
+        "template": "table",
+        "title": "Cross-encoder full pairwise sequence attention overhead",
+        "columns": [
+          "docs",
+          "bi_encoder_query_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cross-encoders process query and document pairs jointly as one input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "bi_encoder_query_ms"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Joint attention across words judges relevance with superior accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "bi_encoder_query_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "cross_encoder_pair_ms"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bi-encoders provide rapid shortlists while cross-encoders deliver precision.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "bi_encoder_query_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "cross_encoder_pair_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bi_encoder_query_ms"
+                  },
+                  {
+                    "text": "cross_encoder_pair_ms"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A two-stage pipeline combines fast shortlisting with accurate re-ranking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "bi_encoder_query_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "cross_encoder_pair_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bi_encoder_query_ms"
+                  },
+                  {
+                    "text": "cross_encoder_pair_ms"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cross-encoder full pairwise sequence attention overhead",
+        "columns": [
+          "docs",
+          "bi_encoder_query_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cross-encoders process query and document pairs jointly as one input.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "bi_encoder_query_ms"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Joint attention across words judges relevance with superior accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "bi_encoder_query_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "cross_encoder_pair_ms"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bi-encoders provide rapid shortlists while cross-encoders deliver precision.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "bi_encoder_query_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "cross_encoder_pair_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bi_encoder_query_ms",
+                  "cross_encoder_pair_ms"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A two-stage pipeline combines fast shortlisting with accurate re-ranking.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "bi_encoder_query_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "cross_encoder_pair_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bi_encoder_query_ms",
+                  "cross_encoder_pair_ms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing the funnel",
+      "codeHash": "7aeed710791fb1fd14866f8046d4a952bfd4e69275f186ff416dd7adceddf431",
+      "spec": {
+        "template": "none",
+        "reason": "Designing two-stage funnel parameters."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Re-ranking stably",
+      "codeHash": "dbfb88eb3e3aabda935bb8d362aa38f777d1027e6a480008134f06ec15b6e8e0",
+      "spec": {
+        "template": "table",
+        "title": "Stable sorting and candidate ranking preservation",
+        "columns": [
+          "candidates",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Second stage scoring refines the initial candidate list by relevance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stable sorting preserves the original order when candidates have tied scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Ties default to the order established by the initial retrieval stage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Shortlist re-ranking delivers sorted and filtered candidates reliably.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "candidates"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Stable sorting and candidate ranking preservation",
+        "columns": [
+          "candidates",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Second stage scoring refines the initial candidate list by relevance.",
+            "rows": [
+              {
+                "cells": [
+                  "candidates",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stable sorting preserves the original order when candidates have tied scores.",
+            "rows": [
+              {
+                "cells": [
+                  "candidates",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ranked",
+                  "sorted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Ties default to the order established by the initial retrieval stage.",
+            "rows": [
+              {
+                "cells": [
+                  "candidates",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ranked",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "candidates",
+                  "ranked"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Shortlist re-ranking delivers sorted and filtered candidates reliably.",
+            "rows": [
+              {
+                "cells": [
+                  "candidates",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ranked",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "candidates",
+                  "ranked"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "candidates",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: funnel and re-rank",
+      "codeHash": "250b4d2d71ff1216fca7b3cd1dde97665d821c63a651c03c63615a5763c386d6",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: funnel and re-rank execution."
+      },
+      "filled": {}
+    }
+  ]
+}
