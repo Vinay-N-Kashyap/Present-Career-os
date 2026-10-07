@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Events and the event bus",
+      "codeHash": "ff584bb1116860ab615fca6dca1183e7f585e509d5071d88a877b0bd04e4cebf",
+      "spec": {
+        "template": "table",
+        "title": "EventBridge event envelope structure and detail attributes",
+        "columns": [
+          "order_id",
+          "currency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event records facts that happened in the system past.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ord-981"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "EventBridge collects events across account event buses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ord-981"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rules match events and forward them to downstream targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ord-981"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "EventBridge routes on complete nested event detail content.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ord-981"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EventBridge event envelope structure and detail attributes",
+        "columns": [
+          "order_id",
+          "currency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An event records facts that happened in the system past.",
+            "rows": [
+              {
+                "cells": [
+                  "ord-981",
+                  "INR"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "EventBridge collects events across account event buses.",
+            "rows": [
+              {
+                "cells": [
+                  "ord-981",
+                  "INR"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rules match events and forward them to downstream targets.",
+            "rows": [
+              {
+                "cells": [
+                  "ord-981",
+                  "INR"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "EventBridge routes on complete nested event detail content.",
+            "rows": [
+              {
+                "cells": [
+                  "ord-981",
+                  "INR"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event patterns",
+      "codeHash": "671a839e033221e0805904e723fafce671f7d38187ca5fcb7cf760684d9dba79",
+      "spec": {
+        "template": "table",
+        "title": "Event pattern matching against structured event content",
+        "columns": [
+          "source",
+          "currency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Event patterns specify matching field values in JSON format.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "EUR"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Patterns match source fields regardless of additional detail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "EUR"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Nested patterns inspect specific currency values inside detail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "EUR"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pinit.auth"
+                  },
+                  {
+                    "text": "USD"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fields omitted from the pattern are ignored during matching.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "EUR"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pinit.billing"
+                  },
+                  {
+                    "text": "INR"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pinit.auth"
+                  },
+                  {
+                    "text": "USD"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Event pattern matching against structured event content",
+        "columns": [
+          "source",
+          "currency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Event patterns specify matching field values in JSON format.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.billing",
+                  "EUR"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Patterns match source fields regardless of additional detail.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.billing",
+                  "EUR"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pinit.billing",
+                  "INR"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Nested patterns inspect specific currency values inside detail.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.billing",
+                  "EUR"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pinit.billing",
+                  "INR"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "pinit.auth",
+                  "USD"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Fields omitted from the pattern are ignored during matching.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.billing",
+                  "EUR"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pinit.billing",
+                  "INR"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "pinit.auth",
+                  "USD"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Publishing your own events",
+      "codeHash": "e4b865c47acb583babe07b2bbaf2727e927ee5ebdbe14a67334807e053586e1e",
+      "spec": {
+        "template": "table",
+        "title": "Custom event construction and source validation checks",
+        "columns": [
+          "source",
+          "detail_type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom applications publish events providing source and detail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.orders"
+                  },
+                  {
+                    "text": "OrderPlaced"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "EventBridge rejects custom events using reserved source prefixes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.orders"
+                  },
+                  {
+                    "text": "OrderPlaced"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "X"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Past tense detail names ensure clear event rule filtering.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.orders"
+                  },
+                  {
+                    "text": "OrderPlaced"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "X"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws.s3"
+                  },
+                  {
+                    "text": "X"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example validates source syntax before building events.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pinit.orders"
+                  },
+                  {
+                    "text": "OrderPlaced"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "X"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws.s3"
+                  },
+                  {
+                    "text": "X"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Custom event construction and source validation checks",
+        "columns": [
+          "source",
+          "detail_type"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom applications publish events providing source and detail.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.orders",
+                  "OrderPlaced"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "EventBridge rejects custom events using reserved source prefixes.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.orders",
+                  "OrderPlaced"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "X"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Past tense detail names ensure clear event rule filtering.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.orders",
+                  "OrderPlaced"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "X"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "aws.s3",
+                  "X"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example validates source syntax before building events.",
+            "rows": [
+              {
+                "cells": [
+                  "pinit.orders",
+                  "OrderPlaced"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "X"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "aws.s3",
+                  "X"
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Schedules, archives and replay",
+      "codeHash": "c41db9f2f7c2eb28ef10d7d776b4949ec5b20502d625ad9c9aa2859818f16829",
+      "spec": {
+        "template": "table",
+        "title": "Scheduled event timer intervals and archive recovery",
+        "columns": [
+          "start",
+          "every"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "EventBridge Scheduler triggers recurring timed event tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Archives retain event history for bus replay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Replay redelivers past events to corrected consumers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates schedule intervals and event replay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Scheduled event timer intervals and archive recovery",
+        "columns": [
+          "start",
+          "every"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "EventBridge Scheduler triggers recurring timed event tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Archives retain event history for bus replay.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Replay redelivers past events to corrected consumers.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates schedule intervals and event replay.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SNS, SQS or EventBridge?",
+      "codeHash": "8e455d7027df48b80b95817c75e31e05ad42d22b47865983059298b35768a23b",
+      "spec": {
+        "template": "none",
+        "reason": "SNS, SQS or EventBridge?"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: match and build events",
+      "codeHash": "7a1b84722ae8fa577c41b804c2459d2ec139300ab9fffb5cf7dbebf661a9d12a",
+      "spec": {
+        "template": "none",
+        "reason": "Match and build events practice."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -4060,27 +4060,27 @@
     },
     "cloud-py:20:0": {
       "partTitle": "Events and the event bus",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:20:1": {
       "partTitle": "Event patterns",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:20:2": {
       "partTitle": "Publishing your own events",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:20:3": {
       "partTitle": "Schedules, archives and replay",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:20:4": {
       "partTitle": "SNS, SQS or EventBridge?",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:20:5": {
       "partTitle": "Practice time: match and build events",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:21:0": {
       "partTitle": "The shop as independent services",
