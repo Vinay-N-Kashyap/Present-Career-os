@@ -2044,27 +2044,27 @@
     },
     "sql-mastery:26:0": {
       "partTitle": "How an app talks to a database",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:26:1": {
       "partTitle": "SQL injection: the most important security rule",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:26:2": {
       "partTitle": "Parameters: the safe way",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:26:3": {
       "partTitle": "Transactions and errors from code",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:26:4": {
       "partTitle": "ORMs and query builders",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:26:5": {
       "partTitle": "Putting it together: a safe search feature",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:27:0": {
       "partTitle": "The project and its user stories",
