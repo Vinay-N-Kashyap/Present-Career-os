@@ -3172,27 +3172,27 @@
     },
     "dist-py:13:0": {
       "partTitle": "Three delivery guarantees",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:13:1": {
       "partTitle": "Why duplicates hurt",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:13:2": {
       "partTitle": "Processing each message once",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:13:3": {
       "partTitle": "Idempotency keys in APIs",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:13:4": {
       "partTitle": "Exactly-once processing in practice",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:13:5": {
       "partTitle": "Designing naturally idempotent operations",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:14:0": {
       "partTitle": "The poison pill",
