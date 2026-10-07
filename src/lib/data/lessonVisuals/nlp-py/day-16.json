@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Sequence in, sequence out",
+      "codeHash": "f9c737bd9c9f2f087e11f711922b361bdb3ba470aa21d9d2e916dfd10c72e82d",
+      "spec": {
+        "template": "table",
+        "title": "Sequence to sequence encoder decoder mapping architecture",
+        "columns": [
+          "source",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The sequence to sequence architecture coordinates dual networks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The encoder network compresses variable inputs into a fixed context vector.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder iteratively predicts output tokens conditioned on context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Encoder and decoder models train jointly end to end across paired sequences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequence to sequence encoder decoder mapping architecture",
+        "columns": [
+          "source",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The sequence to sequence architecture coordinates dual networks.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The encoder network compresses variable inputs into a fixed context vector.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "split"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder iteratively predicts output tokens conditioned on context.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "split"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Encoder and decoder models train jointly end to end across paired sequences.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "split"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "len",
+                  "target"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The context vector bottleneck",
+      "codeHash": "70275a85f0fd4ca06f5890402d5b0fa105b5e705123c78fb416a9d0d26bd8133",
+      "spec": {
+        "template": "table",
+        "title": "Context vector compression constraint and memory bottleneck",
+        "columns": [
+          "words",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A fixed length vector forces arbitrary sentence sizes into finite capacity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Information bottlenecks cause performance degradation for extended sentences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "lost"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reversing input sentence tokens helped early seq2seq models align context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "lost"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SLOTS"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Attention mechanisms resolve bottleneck constraints by viewing all states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentence"
+                  },
+                  {
+                    "text": "lost"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SLOTS"
+                  },
+                  {
+                    "text": "split"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Context vector compression constraint and memory bottleneck",
+        "columns": [
+          "words",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A fixed length vector forces arbitrary sentence sizes into finite capacity.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "kept"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Information bottlenecks cause performance degradation for extended sentences.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "kept"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "lost"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reversing input sentence tokens helped early seq2seq models align context.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "kept"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "lost"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "SLOTS",
+                  "split"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Attention mechanisms resolve bottleneck constraints by viewing all states.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "kept"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentence",
+                  "lost"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "SLOTS",
+                  "split"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "len",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decoding one token at a time",
+      "codeHash": "694a33cd3aa281c1a98e29fe927eb4b5600dee6a281fa15be9fc7a1238db546b",
+      "spec": {
+        "template": "table",
+        "title": "Autoregressive token generation and beam search hypotheses",
+        "columns": [
+          "word",
+          "output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autoregressive generation predicts each output token conditioned on past steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "output"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the individual highest probability token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "output"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "next_word"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Beam search tracks multiple candidate partial hypotheses concurrently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "output"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "next_word"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "output"
+                  },
+                  {
+                    "text": "next_word"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Decoding halts when encountering special end boundary tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "output"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "next_word"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "output"
+                  },
+                  {
+                    "text": "next_word"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "output"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Autoregressive token generation and beam search hypotheses",
+        "columns": [
+          "word",
+          "output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autoregressive generation predicts each output token conditioned on past steps.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "output"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Greedy decoding selects the individual highest probability token.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "output"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "next_word",
+                  "word"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Beam search tracks multiple candidate partial hypotheses concurrently.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "output"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "next_word",
+                  "word"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "output",
+                  "next_word"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Decoding halts when encountering special end boundary tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "output"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "next_word",
+                  "word"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "output",
+                  "next_word"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "word",
+                  "output"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Teacher forcing",
+      "codeHash": "141ab4fe51491c1d3b0d20d698c3fe701581a1d1c6a4cccb90bf963a0f1124c0",
+      "spec": {
+        "template": "table",
+        "title": "Teacher forcing training vs free running sequential inference",
+        "columns": [
+          "targets",
+          "predictions"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Teacher forcing inputs the actual ground truth token at training steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "predictions"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Free running generation evaluates decoding using predicted tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "predictions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "decoder_inputs"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder inputs routine prefixes start symbols to the input sequence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "predictions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "decoder_inputs"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "list"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pure teacher forcing induces exposure bias when facing uncorrected errors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "targets"
+                  },
+                  {
+                    "text": "predictions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "decoder_inputs"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "list"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "targets"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Teacher forcing training vs free running sequential inference",
+        "columns": [
+          "targets",
+          "predictions"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Teacher forcing inputs the actual ground truth token at training steps.",
+            "rows": [
+              {
+                "cells": [
+                  "targets",
+                  "predictions"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Free running generation evaluates decoding using predicted tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "targets",
+                  "predictions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "decoder_inputs",
+                  "teacher"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder inputs routine prefixes start symbols to the input sequence.",
+            "rows": [
+              {
+                "cells": [
+                  "targets",
+                  "predictions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "decoder_inputs",
+                  "teacher"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "list"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pure teacher forcing induces exposure bias when facing uncorrected errors.",
+            "rows": [
+              {
+                "cells": [
+                  "targets",
+                  "predictions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "decoder_inputs",
+                  "teacher"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "list"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "len",
+                  "targets"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scheduled sampling",
+      "codeHash": "dc2cc2d794cc41749ab01df200e65e5de61c8ec41e512a480337f630f6e045d1",
+      "spec": {
+        "template": "none",
+        "reason": "Scheduled sampling ratio curriculum schedules."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: schedules and inputs",
+      "codeHash": "061546e791f15d6a14e400a5710e6353255beb002a5c6aa57d6c8f6925869516",
+      "spec": {
+        "template": "none",
+        "reason": "Teacher forcing ratio and decoder input practice."
+      },
+      "filled": {}
+    }
+  ]
+}

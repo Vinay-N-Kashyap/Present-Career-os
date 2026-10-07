@@ -4684,27 +4684,27 @@
     },
     "nlp-py:16:0": {
       "partTitle": "Sequence in, sequence out",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:16:1": {
       "partTitle": "The context vector bottleneck",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:16:2": {
       "partTitle": "Decoding one token at a time",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:16:3": {
       "partTitle": "Teacher forcing",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:16:4": {
       "partTitle": "Scheduled sampling",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:16:5": {
       "partTitle": "Practice time: schedules and inputs",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:17:0": {
       "partTitle": "Looking back at the whole input",
