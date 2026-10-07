@@ -100,27 +100,27 @@
     },
     "python:5:0": {
       "partTitle": "if: do something only when a condition is True",
-      "status": "todo"
+      "status": "passed"
     },
     "python:5:1": {
       "partTitle": "else: what to do otherwise",
-      "status": "todo"
+      "status": "passed"
     },
     "python:5:2": {
       "partTitle": "elif: more than two choices",
-      "status": "todo"
+      "status": "passed"
     },
     "python:5:3": {
       "partTitle": "and, or, not: combining conditions",
-      "status": "todo"
+      "status": "none"
     },
     "python:5:4": {
       "partTitle": "Short one-line choices",
-      "status": "todo"
+      "status": "none"
     },
     "python:5:5": {
       "partTitle": "Putting it together: a budget checker",
-      "status": "todo"
+      "status": "passed"
     },
     "python:6:0": {
       "partTitle": "Why we need loops",
