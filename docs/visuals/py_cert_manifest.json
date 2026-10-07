@@ -532,27 +532,27 @@
     },
     "python:23:0": {
       "partTitle": "Why plan before coding",
-      "status": "todo"
+      "status": "none"
     },
     "python:23:1": {
       "partTitle": "User stories",
-      "status": "todo"
+      "status": "passed"
     },
     "python:23:2": {
       "partTitle": "Designing the data shape",
-      "status": "todo"
+      "status": "passed"
     },
     "python:23:3": {
       "partTitle": "Breaking the program into small functions",
-      "status": "todo"
+      "status": "none"
     },
     "python:23:4": {
       "partTitle": "Planning the build order",
-      "status": "todo"
+      "status": "passed"
     },
     "python:23:5": {
       "partTitle": "Putting it together: PLAN.md and the first functions",
-      "status": "todo"
+      "status": "none"
     },
     "python:24:0": {
       "partTitle": "Project structure",
