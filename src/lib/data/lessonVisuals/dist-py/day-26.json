@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Following one request through many services",
+      "codeHash": "ffc6a7b6a65c46692a24ebfb9ff26aa3823523a6f7238867a6b9106e079d5735",
+      "spec": {
+        "template": "none",
+        "reason": "Distributed trace spans hierarchy and timing overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The W3C traceparent header",
+      "codeHash": "d898ea29bf57ab62e8e4c04a3c24923cee6db2d48ad558f6c7bd166f61c5d18e",
+      "spec": {
+        "template": "table",
+        "title": "W3C traceparent header components and field parsing breakdown",
+        "columns": [
+          "version",
+          "flags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Services pass trace context in the standard HTTP traceparent header.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "01"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The header format includes version trace id parent id and flags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "01"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard formats let services join the same trace across platforms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "01"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "00"
+                  },
+                  {
+                    "text": "00f067aa0ba902b7"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "W3C traceparent header components and field parsing breakdown",
+        "columns": [
+          "version",
+          "flags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Services pass trace context in the standard HTTP traceparent header.",
+            "rows": [
+              {
+                "cells": [
+                  "00",
+                  "01"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The header format includes version trace id parent id and flags.",
+            "rows": [
+              {
+                "cells": [
+                  "00",
+                  "01"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "00",
+                  "4bf92f3577b34da6a3ce929d0e0e4736"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Standard formats let services join the same trace across platforms.",
+            "rows": [
+              {
+                "cells": [
+                  "00",
+                  "01"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "00",
+                  "4bf92f3577b34da6a3ce929d0e0e4736"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "00",
+                  "00f067aa0ba902b7"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Creating a child span",
+      "codeHash": "ffc11fdecf1940054aab50b7f458e24c048d60dad63d00edd12a4a7c84ee37bf",
+      "spec": {
+        "template": "compare",
+        "title": "Trace context propagation between child span and root span creation",
+        "leftLabel": "Child Span",
+        "rightLabel": "Root Span",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If the incoming header exists use its span id as parent.",
+            "left": {
+              "code": "child_span(incoming, ...)",
+              "result": {
+                "text": "orders-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "child_span(None, ...)",
+              "result": {
+                "text": "gateway"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Otherwise start a new trace with no parent as root of call chain.",
+            "left": {
+              "code": "orders-service",
+              "result": {
+                "text": "orders-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "gateway",
+              "result": {
+                "text": "gateway"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Tracing libraries perform context propagation automatically.",
+            "left": {
+              "code": "orders-service",
+              "result": {
+                "text": "orders-service"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "gateway",
+              "result": {
+                "text": "gateway"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Trace context propagation between child span and root span creation",
+        "leftLabel": "Child Span",
+        "rightLabel": "Root Span",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If the incoming header exists use its span id as parent.",
+            "left": {
+              "code": "child_span(incoming, ...)",
+              "result": "orders-service",
+              "tone": "ok",
+              "checks": [
+                "orders-service"
+              ]
+            },
+            "right": {
+              "code": "child_span(None, ...)",
+              "result": "gateway",
+              "tone": "ok",
+              "checks": [
+                "gateway"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Otherwise start a new trace with no parent as root of call chain.",
+            "left": {
+              "code": "orders-service",
+              "result": "orders-service",
+              "tone": "ok",
+              "checks": [
+                "orders-service"
+              ]
+            },
+            "right": {
+              "code": "gateway",
+              "result": "gateway",
+              "tone": "data",
+              "checks": [
+                "gateway"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Tracing libraries perform context propagation automatically.",
+            "left": {
+              "code": "orders-service",
+              "result": "orders-service",
+              "tone": "ok",
+              "checks": [
+                "orders-service"
+              ]
+            },
+            "right": {
+              "code": "gateway",
+              "result": "gateway",
+              "tone": "ok",
+              "checks": [
+                "gateway"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating headers",
+      "codeHash": "a82004b406a15d773417edcd17b57f259e9788b08cc09a0e1220524feda8baed",
+      "spec": {
+        "template": "none",
+        "reason": "Regex pattern matching validation for W3C traceparent header."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Sampling",
+      "codeHash": "e3b486dc5bec923c4d92266d39c7b089c7b10fab26b591e82e47fb6e1591c04e",
+      "spec": {
+        "template": "table",
+        "title": "Trace sampling decisions preserving errors and rate-limiting traces",
+        "columns": [
+          "trace_id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sampling controls overhead since busy systems create millions of spans.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+                  },
+                  {
+                    "text": "keep"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sampling decisions always retain error traces for debugging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+                  },
+                  {
+                    "text": "keep"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ffffffffffffffffffffffffffffffff"
+                  },
+                  {
+                    "text": "keep"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Deterministic sampling by trace id keeps cluster decisions consistent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "4bf92f3577b34da6a3ce929d0e0e4736"
+                  },
+                  {
+                    "text": "keep"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0af7651916cd43dd8448eb211c80319c"
+                  },
+                  {
+                    "text": "drop"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ffffffffffffffffffffffffffffffff"
+                  },
+                  {
+                    "text": "keep"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Trace sampling decisions preserving errors and rate-limiting traces",
+        "columns": [
+          "trace_id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sampling controls overhead since busy systems create millions of spans.",
+            "rows": [
+              {
+                "cells": [
+                  "4bf92f3577b34da6a3ce929d0e0e4736",
+                  "keep"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sampling decisions always retain error traces for debugging.",
+            "rows": [
+              {
+                "cells": [
+                  "4bf92f3577b34da6a3ce929d0e0e4736",
+                  "keep"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ffffffffffffffffffffffffffffffff",
+                  "keep"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Deterministic sampling by trace id keeps cluster decisions consistent.",
+            "rows": [
+              {
+                "cells": [
+                  "4bf92f3577b34da6a3ce929d0e0e4736",
+                  "keep"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0af7651916cd43dd8448eb211c80319c",
+                  "drop"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "ffffffffffffffffffffffffffffffff",
+                  "keep"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Traces, logs and metrics together",
+      "codeHash": "eaefa7460c586322cc75caff02ccb143a5bcd7a78dff18459db440d5f6a7a593",
+      "spec": {
+        "template": "table",
+        "title": "Observability correlation linking distributed trace logs by identifier",
+        "columns": [
+          "service",
+          "msg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observability links metrics for detection traces for path and logs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "request received"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recording trace identifiers in log lines enables rapid incident triage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "request received"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "query took 310 ms, missing index on orders.user_id"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Filtering distributed logs by trace identifier reconstructs requests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "request received"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "query took 310 ms, missing index on orders.user_id"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "responded 200 in 420 ms"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Observability correlation linking distributed trace logs by identifier",
+        "columns": [
+          "service",
+          "msg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observability links metrics for detection traces for path and logs.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "request received"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Recording trace identifiers in log lines enables rapid incident triage.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "request received"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "query took 310 ms, missing index on orders.user_id"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Filtering distributed logs by trace identifier reconstructs requests.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "request received"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "query took 310 ms, missing index on orders.user_id"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "gateway",
+                  "responded 200 in 420 ms"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

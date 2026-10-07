@@ -3484,27 +3484,27 @@
     },
     "dist-py:26:0": {
       "partTitle": "Following one request through many services",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:26:1": {
       "partTitle": "The W3C traceparent header",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:26:2": {
       "partTitle": "Creating a child span",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:26:3": {
       "partTitle": "Validating headers",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:26:4": {
       "partTitle": "Sampling",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:26:5": {
       "partTitle": "Traces, logs and metrics together",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:27:0": {
       "partTitle": "A spectrum of guarantees",
