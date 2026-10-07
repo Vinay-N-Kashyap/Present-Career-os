@@ -2116,27 +2116,27 @@
     },
     "sql-mastery:29:0": {
       "partTitle": "Why backups matter",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:29:1": {
       "partTitle": "Copying and restoring tables",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:29:2": {
       "partTitle": "Users, roles and permissions",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:29:3": {
       "partTitle": "Seeing permissions in action",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:29:4": {
       "partTitle": "SQL vs NoSQL",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:29:5": {
       "partTitle": "Putting it together: a production checklist",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:30:0": {
       "partTitle": "What SQL interviews look like",
