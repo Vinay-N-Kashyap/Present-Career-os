@@ -3700,27 +3700,27 @@
     },
     "cloud-py:5:0": {
       "partTitle": "The reference architecture",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:5:1": {
       "partTitle": "NAT gateways: out but not in",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:5:2": {
       "partTitle": "The bastion host",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:5:3": {
       "partTitle": "Writing a validator that lists every problem",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:5:4": {
       "partTitle": "Proving subnets do not overlap",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:5:5": {
       "partTitle": "Milestone review: from plan to production",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:6:0": {
       "partTitle": "Identity and Access Management",
