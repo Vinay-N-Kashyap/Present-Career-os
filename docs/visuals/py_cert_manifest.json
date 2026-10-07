@@ -1252,27 +1252,27 @@
     },
     "dsa-py:23:0": {
       "partTitle": "Dependencies as a directed graph",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:23:1": {
       "partTitle": "In-degree: counting what you still need",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:23:2": {
       "partTitle": "Kahn's algorithm",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:23:3": {
       "partTitle": "Can all courses be finished?",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:23:4": {
       "partTitle": "Build systems and parallel steps",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:23:5": {
       "partTitle": "Choosing the right graph tool",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:24:0": {
       "partTitle": "Groups that merge over time",
