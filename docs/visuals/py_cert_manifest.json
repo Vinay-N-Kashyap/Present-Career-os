@@ -3364,27 +3364,27 @@
     },
     "dist-py:21:0": {
       "partTitle": "What a gateway does",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:21:1": {
       "partTitle": "Per-client rate limiting",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:21:2": {
       "partTitle": "Handling a request end to end",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:21:3": {
       "partTitle": "Timing headers",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:21:4": {
       "partTitle": "Testing every gateway path",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:21:5": {
       "partTitle": "Running gateways in production",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:22:0": {
       "partTitle": "Why gossip?",

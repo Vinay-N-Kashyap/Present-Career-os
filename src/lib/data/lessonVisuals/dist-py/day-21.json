@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a gateway does",
+      "codeHash": "bf7c9fc3f57f3ebbda09dfc382b3e8711fe3b34bbddb5cddc638d99858987467",
+      "spec": {
+        "template": "none",
+        "reason": "API gateway pipeline overview from auth to headers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Per-client rate limiting",
+      "codeHash": "88dc5528a66dae7ab890184eb5586d566d792e847661a4479b973436838edd83",
+      "spec": {
+        "template": "table",
+        "title": "Per-client token bucket limits and rate limit enforcement",
+        "columns": [
+          "client",
+          "capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each client gets its own token bucket capacity and refill rate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free-app"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The gateway checks the bucket returning error if limit exceeded.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free-app"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "paid-app"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rate limiting check first protects circuit breakers and backends.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "free-app"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "paid-app"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free-app"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Per-client token bucket limits and rate limit enforcement",
+        "columns": [
+          "client",
+          "capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each client gets its own token bucket capacity and refill rate.",
+            "rows": [
+              {
+                "cells": [
+                  "free-app",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The gateway checks the bucket returning error if limit exceeded.",
+            "rows": [
+              {
+                "cells": [
+                  "free-app",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "paid-app",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rate limiting check first protects circuit breakers and backends.",
+            "rows": [
+              {
+                "cells": [
+                  "free-app",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "paid-app",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free-app",
+                  "1"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling a request end to end",
+      "codeHash": "83554f2223de05211aa68074440e3b4219fe088f8ff37fd6424fe53c5900198a",
+      "spec": {
+        "template": "compare",
+        "title": "API gateway dispatch pipeline handling success rate limits and circuit trips",
+        "leftLabel": "Allowed 200 OK Response",
+        "rightLabel": "Error 429 / 503 Response",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If is_allowed returns False the gateway returns status 429.",
+            "left": {
+              "code": "rate limit check passes",
+              "result": {
+                "text": "orders"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "client exceeds limit",
+              "result": {
+                "text": "429"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "On open circuit breaker gateway returns 503 otherwise 200.",
+            "left": {
+              "code": "successful backend call",
+              "result": {
+                "text": "order-7"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "circuit breaker open",
+              "result": {
+                "text": "503"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Status 503 indicates temporary issue while 500 signals server error.",
+            "left": {
+              "code": "clean response",
+              "result": {
+                "text": "orders"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "unexpected backend failure",
+              "result": {
+                "text": "bad row in orders table"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "API gateway dispatch pipeline handling success rate limits and circuit trips",
+        "leftLabel": "Allowed 200 OK Response",
+        "rightLabel": "Error 429 / 503 Response",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If is_allowed returns False the gateway returns status 429.",
+            "left": {
+              "code": "rate limit check passes",
+              "result": "orders",
+              "tone": "ok",
+              "checks": [
+                "orders"
+              ]
+            },
+            "right": {
+              "code": "client exceeds limit",
+              "result": "429",
+              "tone": "error",
+              "checks": [
+                "429"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "On open circuit breaker gateway returns 503 otherwise 200.",
+            "left": {
+              "code": "successful backend call",
+              "result": "order-7",
+              "tone": "ok",
+              "checks": [
+                "order-7"
+              ]
+            },
+            "right": {
+              "code": "circuit breaker open",
+              "result": "503",
+              "tone": "error",
+              "checks": [
+                "503"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Status 503 indicates temporary issue while 500 signals server error.",
+            "left": {
+              "code": "clean response",
+              "result": "orders",
+              "tone": "ok",
+              "checks": [
+                "orders"
+              ]
+            },
+            "right": {
+              "code": "unexpected backend failure",
+              "result": "bad row in orders table",
+              "tone": "idle",
+              "checks": [
+                "bad row in orders table"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Timing headers",
+      "codeHash": "1e0565a7c1509a4c41428ef5b07daa90b3abb285b3b5a3ab9d1e11ff02b60d4e",
+      "spec": {
+        "template": "none",
+        "reason": "Response time timing headers and request id tracking."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Testing every gateway path",
+      "codeHash": "53a09a46116ec6fa0fe90c480bbd8b38e98a16e945a1397f341f606dadd4d37c",
+      "spec": {
+        "template": "compare",
+        "title": "Gateway test paths verifying rate limit short-circuiting and passthrough",
+        "leftLabel": "Allowed Request Execution",
+        "rightLabel": "Rate Limited Request",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gateway sits in front of all services and tests every outcome.",
+            "left": {
+              "code": "request allowed through",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "rate limited early",
+              "result": {
+                "text": "429"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rate limited requests must not reach breaker or backend at all.",
+            "left": {
+              "code": "calls appends breaker and backend",
+              "result": {
+                "text": "backend"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "calls list remains empty",
+              "result": {
+                "text": "429"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "After enough backend errors later calls receive 503.",
+            "left": {
+              "code": "healthy execution path",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "circuit open fast fail",
+              "result": {
+                "text": "503"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Gateway test paths verifying rate limit short-circuiting and passthrough",
+        "leftLabel": "Allowed Request Execution",
+        "rightLabel": "Rate Limited Request",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gateway sits in front of all services and tests every outcome.",
+            "left": {
+              "code": "request allowed through",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "rate limited early",
+              "result": "429",
+              "tone": "error",
+              "checks": [
+                "429"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rate limited requests must not reach breaker or backend at all.",
+            "left": {
+              "code": "calls appends breaker and backend",
+              "result": "backend",
+              "tone": "ok",
+              "checks": [
+                "backend"
+              ]
+            },
+            "right": {
+              "code": "calls list remains empty",
+              "result": "429",
+              "tone": "idle",
+              "checks": [
+                "429"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "After enough backend errors later calls receive 503.",
+            "left": {
+              "code": "healthy execution path",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "circuit open fast fail",
+              "result": "503",
+              "tone": "error",
+              "checks": [
+                "503"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running gateways in production",
+      "codeHash": "80518d41c1863336e99ed6b2495e5c2a59a65212f702eb6c895cc8d45a8778bc",
+      "spec": {
+        "template": "table",
+        "title": "Gateway production traffic telemetry distribution by status code",
+        "columns": [
+          "status",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple gateway instances run behind load balancers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "940"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monitor error rates by status code and rate limiting frequencies.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "940"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "429"
+                  },
+                  {
+                    "text": "35"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "503"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Production telemetry summarises traffic by status code distribution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "940"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "429"
+                  },
+                  {
+                    "text": "35"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "503"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Gateway production traffic telemetry distribution by status code",
+        "columns": [
+          "status",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple gateway instances run behind load balancers.",
+            "rows": [
+              {
+                "cells": [
+                  "200",
+                  "940"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monitor error rates by status code and rate limiting frequencies.",
+            "rows": [
+              {
+                "cells": [
+                  "200",
+                  "940"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "429",
+                  "35"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "503",
+                  "20"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Production telemetry summarises traffic by status code distribution.",
+            "rows": [
+              {
+                "cells": [
+                  "200",
+                  "940"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "429",
+                  "35"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "503",
+                  "20"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "500",
+                  "5"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
