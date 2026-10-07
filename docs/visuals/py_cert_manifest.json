@@ -3148,27 +3148,27 @@
     },
     "dist-py:12:0": {
       "partTitle": "Events, producers and consumers",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:12:1": {
       "partTitle": "Partitions and ordering by key",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:12:2": {
       "partTitle": "Consumer groups",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:12:3": {
       "partTitle": "Rebalancing",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:12:4": {
       "partTitle": "Offsets and commits",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:12:5": {
       "partTitle": "Consumer lag and scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:13:0": {
       "partTitle": "Three delivery guarantees",

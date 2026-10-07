@@ -1,0 +1,825 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Events, producers and consumers",
+      "codeHash": "af7e185f362e72e396dedc9cc007aabc768885341c12fa63492a61220096c7aa",
+      "spec": {
+        "template": "none",
+        "reason": "Decoupled event-driven architecture and asynchronous topic pub-sub."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Partitions and ordering by key",
+      "codeHash": "fdfa96a4a6409e3ef2ed17ce56d8d8df1262ac664d0f35e94f25bc7df984b331",
+      "spec": {
+        "template": "table",
+        "title": "Kafka partition key hashing and intra-partition message ordering",
+        "columns": [
+          "key",
+          "what",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A topic splits into partitions spread across brokers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "placed"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Events for one order go to the same partition to guarantee order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "placed"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "paid"
+                  },
+                  {
+                    "text": "paid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order-9"
+                  },
+                  {
+                    "text": "placed"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Producers choose partition by hashing the message key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "placed"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "paid"
+                  },
+                  {
+                    "text": "paid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order-7"
+                  },
+                  {
+                    "text": "shipped"
+                  },
+                  {
+                    "text": "shipped"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order-9"
+                  },
+                  {
+                    "text": "placed"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kafka partition key hashing and intra-partition message ordering",
+        "columns": [
+          "key",
+          "what",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A topic splits into partitions spread across brokers.",
+            "rows": [
+              {
+                "cells": [
+                  "order-7",
+                  "placed",
+                  "placed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Events for one order go to the same partition to guarantee order.",
+            "rows": [
+              {
+                "cells": [
+                  "order-7",
+                  "placed",
+                  "placed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order-7",
+                  "paid",
+                  "paid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order-9",
+                  "placed",
+                  "placed"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Producers choose partition by hashing the message key.",
+            "rows": [
+              {
+                "cells": [
+                  "order-7",
+                  "placed",
+                  "placed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order-7",
+                  "paid",
+                  "paid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order-7",
+                  "shipped",
+                  "shipped"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order-9",
+                  "placed",
+                  "placed"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer groups",
+      "codeHash": "8eeafcebe14f9e750ea0e7704c50eced168e6c9af7a23d62ec29b558c4896160",
+      "spec": {
+        "template": "table",
+        "title": "Kafka consumer group partition assignment and parallel processing",
+        "columns": [
+          "consumers",
+          "num_partitions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Several consumers form a consumer group to share partitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c1"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function assign_partitions assigns each partition to a consumer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c1"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c3"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c4"
+                  },
+                  {
+                    "text": "6"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Different groups each receive all messages from the same topic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c1"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c3"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kafka consumer group partition assignment and parallel processing",
+        "columns": [
+          "consumers",
+          "num_partitions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Several consumers form a consumer group to share partitions.",
+            "rows": [
+              {
+                "cells": [
+                  "c1",
+                  "6"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c2",
+                  "6"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function assign_partitions assigns each partition to a consumer.",
+            "rows": [
+              {
+                "cells": [
+                  "c1",
+                  "6"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c2",
+                  "6"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c3",
+                  "6"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c4",
+                  "6"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Different groups each receive all messages from the same topic.",
+            "rows": [
+              {
+                "cells": [
+                  "c1",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c2",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c3",
+                  "2"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rebalancing",
+      "codeHash": "85ffd4edc9ed19c13635b868d8be06b64976357b4446d6d5c7243602c42e7305",
+      "spec": {
+        "template": "none",
+        "reason": "Consumer group rebalance protocols and partition reassignment algorithms."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Offsets and commits",
+      "codeHash": "8a51486e9ca96db3c56a4f5adba8e9fca5a957d4c9e20bc77787ccb1b9d4abd8",
+      "spec": {
+        "template": "compare",
+        "title": "Kafka offset commit timing crash semantics and replay behavior",
+        "leftLabel": "Clean Normal Processing",
+        "rightLabel": "Crash Before Offset Commit",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each message in a partition has an offset position number.",
+            "left": {
+              "code": "reading next message",
+              "result": {
+                "text": "m0"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reading next message",
+              "result": {
+                "text": "m0"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Crash between processing and committing reprocesses messages.",
+            "left": {
+              "code": "process and advance offset",
+              "result": {
+                "text": "done"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "crash before commit",
+              "result": {
+                "text": "crashed"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "The simulation shows a crash between processing and committing.",
+            "left": {
+              "code": "normal offset progression",
+              "result": {
+                "text": "done"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "message reprocessed upon restart",
+              "result": {
+                "text": "m2"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kafka offset commit timing crash semantics and replay behavior",
+        "leftLabel": "Clean Normal Processing",
+        "rightLabel": "Crash Before Offset Commit",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each message in a partition has an offset position number.",
+            "left": {
+              "code": "reading next message",
+              "result": "m0",
+              "tone": "ok",
+              "checks": [
+                "m0"
+              ]
+            },
+            "right": {
+              "code": "reading next message",
+              "result": "m0",
+              "tone": "ok",
+              "checks": [
+                "m0"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Crash between processing and committing reprocesses messages.",
+            "left": {
+              "code": "process and advance offset",
+              "result": "done",
+              "tone": "ok",
+              "checks": [
+                "done"
+              ]
+            },
+            "right": {
+              "code": "crash before commit",
+              "result": "crashed",
+              "tone": "error",
+              "checks": [
+                "crashed"
+              ]
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "The simulation shows a crash between processing and committing.",
+            "left": {
+              "code": "normal offset progression",
+              "result": "done",
+              "tone": "ok",
+              "checks": [
+                "done"
+              ]
+            },
+            "right": {
+              "code": "message reprocessed upon restart",
+              "result": "m2",
+              "tone": "idle",
+              "checks": [
+                "m2"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer lag and scaling",
+      "codeHash": "a4af184e11f6f33833a779038c7569aedfe0f4bd2234a51aedfd141600ea72f1",
+      "spec": {
+        "template": "table",
+        "title": "Kafka consumer lag metrics and hot partition identification",
+        "columns": [
+          "latest",
+          "committed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consumer lag is the latest offset minus the committed offset.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1500"
+                  },
+                  {
+                    "text": "1490"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rising lag means consumers cannot keep up with incoming traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1500"
+                  },
+                  {
+                    "text": "1490"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1480"
+                  },
+                  {
+                    "text": "1480"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1510"
+                  },
+                  {
+                    "text": "1500"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hot keys cause uneven lag when one partition receives most events.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1500"
+                  },
+                  {
+                    "text": "1490"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1480"
+                  },
+                  {
+                    "text": "1480"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1510"
+                  },
+                  {
+                    "text": "1500"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "9200"
+                  },
+                  {
+                    "text": "3100"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kafka consumer lag metrics and hot partition identification",
+        "columns": [
+          "latest",
+          "committed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consumer lag is the latest offset minus the committed offset.",
+            "rows": [
+              {
+                "cells": [
+                  "1500",
+                  "1490"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rising lag means consumers cannot keep up with incoming traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "1500",
+                  "1490"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1480",
+                  "1480"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1510",
+                  "1500"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Hot keys cause uneven lag when one partition receives most events.",
+            "rows": [
+              {
+                "cells": [
+                  "1500",
+                  "1490"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1480",
+                  "1480"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1510",
+                  "1500"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "9200",
+                  "3100"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
