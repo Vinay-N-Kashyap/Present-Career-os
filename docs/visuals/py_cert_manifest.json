@@ -1900,27 +1900,27 @@
     },
     "sql-mastery:20:0": {
       "partTitle": "What goes wrong with repeated data",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:20:1": {
       "partTitle": "First normal form: one value per cell",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:20:2": {
       "partTitle": "Second normal form: facts about the whole key",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:20:3": {
       "partTitle": "Third normal form: no facts about other facts",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:20:4": {
       "partTitle": "When to break the rules: denormalization",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:20:5": {
       "partTitle": "Putting it together: splitting a flat table",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:21:0": {
       "partTitle": "Why rules belong in the database",

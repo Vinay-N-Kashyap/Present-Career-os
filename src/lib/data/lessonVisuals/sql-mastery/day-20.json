@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What goes wrong with repeated data",
+      "codeHash": "2134b6aaab1a2446ebc398ecdd9d85050c733ca845a34f0e15160d86ecfef779",
+      "spec": {
+        "template": "compare",
+        "title": "Update anomaly in flat repeated table",
+        "leftLabel": "Repeated Flat Records",
+        "rightLabel": "Update Inconsistency",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An incomplete update creates contradictory phone numbers in the database.",
+            "left": {
+              "code": "order 1 phone updated",
+              "result": {
+                "text": "90000 33333"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "order 2 phone untouched",
+              "result": {
+                "text": "98765 11111"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Splitting data ensures each distinct fact is stored once across clean tables.",
+            "left": {
+              "code": "customers, products, orders mixed",
+              "result": {
+                "text": "anomalies occur"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "normalized separate entities",
+              "result": {
+                "text": "clean single facts"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Update anomaly in flat repeated table",
+        "leftLabel": "Repeated Flat Records",
+        "rightLabel": "Update Inconsistency",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An incomplete update creates contradictory phone numbers in the database.",
+            "left": {
+              "code": "order 1 phone updated",
+              "result": "90000 33333",
+              "tone": "data",
+              "checks": [
+                "90000 33333"
+              ]
+            },
+            "right": {
+              "code": "order 2 phone untouched",
+              "result": "98765 11111",
+              "tone": "error",
+              "checks": [
+                "98765 11111"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Splitting data ensures each distinct fact is stored once across clean tables.",
+            "left": {
+              "code": "customers, products, orders mixed",
+              "result": "anomalies occur",
+              "tone": "error",
+              "checks": [
+                "anomalies occur"
+              ]
+            },
+            "right": {
+              "code": "normalized separate entities",
+              "result": "clean single facts",
+              "tone": "ok",
+              "checks": [
+                "clean single facts"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "First normal form: one value per cell",
+      "codeHash": "f4500fa8d47acab3e54c1237aeacc16de84199f5825ca1bf668e726bfa66339b",
+      "spec": {
+        "template": "compare",
+        "title": "First normal form scalar cell values",
+        "leftLabel": "Non-1NF: Comma List in Cell",
+        "rightLabel": "1NF: One Value per Row",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Storing multiple values inside one cell breaks first normal form rules.",
+            "left": {
+              "code": "phones column cell",
+              "result": {
+                "text": "98765 11111, 90000 33333"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "atomic constraint requirement",
+              "result": {
+                "text": "single scalar per cell"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Moving items into a separate table makes each phone easy to search and count.",
+            "left": {
+              "code": "searching within text string",
+              "result": {
+                "text": "slow regex matching"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "customer_phones separate rows",
+              "result": {
+                "text": "clean fast queryable rows"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "First normal form scalar cell values",
+        "leftLabel": "Non-1NF: Comma List in Cell",
+        "rightLabel": "1NF: One Value per Row",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Storing multiple values inside one cell breaks first normal form rules.",
+            "left": {
+              "code": "phones column cell",
+              "result": "98765 11111, 90000 33333",
+              "tone": "error",
+              "checks": [
+                "98765 11111, 90000 33333"
+              ]
+            },
+            "right": {
+              "code": "atomic constraint requirement",
+              "result": "single scalar per cell",
+              "tone": "ok",
+              "checks": [
+                "single scalar per cell"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Moving items into a separate table makes each phone easy to search and count.",
+            "left": {
+              "code": "searching within text string",
+              "result": "slow regex matching",
+              "tone": "error",
+              "checks": [
+                "slow regex matching"
+              ]
+            },
+            "right": {
+              "code": "customer_phones separate rows",
+              "result": "clean fast queryable rows",
+              "tone": "ok",
+              "checks": [
+                "clean fast queryable rows"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Second normal form: facts about the whole key",
+      "codeHash": "9063fd267a827d62f1a8a3a225d996fc1ad15cb7c3c46dbd4ee172aa0b6d1fa7",
+      "spec": {
+        "template": "table",
+        "title": "Second normal form removing partial key dependencies",
+        "columns": [
+          "order_id",
+          "product_id",
+          "quantity"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The quantity column depends on the whole composite key of order and product.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The product name belongs in products table keyed by identifier alone.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Second normal form removing partial key dependencies",
+        "columns": [
+          "order_id",
+          "product_id",
+          "quantity"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The quantity column depends on the whole composite key of order and product.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "1",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The product name belongs in products table keyed by identifier alone.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "1",
+                  "3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "102",
+                  "1",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "103",
+                  "1",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Third normal form: no facts about other facts",
+      "codeHash": "2ba335c810738aed714453a1a76ae454a4f9c8a8a521d246d3ba9aee0e0d65fc",
+      "spec": {
+        "template": "table",
+        "title": "Third normal form eliminating transitive dependencies",
+        "columns": [
+          "id",
+          "name",
+          "city",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Customer city is a fact about customer rather than a fact about the order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Moving city to customers table allows joining on customer id for reports.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Bengaluru"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Bengaluru"
+                  },
+                  {
+                    "text": "50.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Third normal form eliminating transitive dependencies",
+        "columns": [
+          "id",
+          "name",
+          "city",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Customer city is a fact about customer rather than a fact about the order.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha",
+                  "Pune",
+                  "280.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Moving city to customers table allows joining on customer id for reports.",
+            "rows": [
+              {
+                "cells": [
+                  "101",
+                  "Asha",
+                  "Bengaluru",
+                  "280.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "102",
+                  "Ravi",
+                  "Mumbai",
+                  "1200.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "103",
+                  "Asha",
+                  "Bengaluru",
+                  "50.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When to break the rules: denormalization",
+      "codeHash": "ebd221f4df6e026710e9d01f8c9be5e57663b9d2408f98b5da66cb90bec7a910",
+      "spec": {
+        "template": "none",
+        "reason": "Denormalization history snapshots and read performance caching tradeoffs."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Denormalization history snapshots and read performance caching tradeoffs."
+      }
+    },
+    {
+      "partTitle": "Putting it together: splitting a flat table",
+      "codeHash": "6a9f927678523a306873005cf521b9c9dedcda0462f809f1185584805a9db861",
+      "spec": {
+        "template": "none",
+        "reason": "Pipeline ETL script decomposing flat orders table via INSERT SELECT."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Pipeline ETL script decomposing flat orders table via INSERT SELECT."
+      }
+    }
+  ]
+}
