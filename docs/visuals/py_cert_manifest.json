@@ -2284,27 +2284,27 @@
     },
     "ai-py:6:0": {
       "partTitle": "Letting a model use your code",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:6:1": {
       "partTitle": "Declaring a tool",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:6:2": {
       "partTitle": "Dispatching tool calls safely",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:6:3": {
       "partTitle": "Sending results back to the model",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:6:4": {
       "partTitle": "Validating arguments and staying safe",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:6:5": {
       "partTitle": "Many tools, one registry",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:7:0": {
       "partTitle": "Meaning as a list of numbers",
