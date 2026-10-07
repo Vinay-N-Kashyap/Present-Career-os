@@ -4660,27 +4660,27 @@
     },
     "nlp-py:15:0": {
       "partTitle": "The milestone pipeline",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:15:1": {
       "partTitle": "Sentence embeddings by averaging",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:15:2": {
       "partTitle": "Bidirectional reading",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:15:3": {
       "partTitle": "The BiLSTM tagger",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:15:4": {
       "partTitle": "The BiLSTM classifier and its limits",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:15:5": {
       "partTitle": "Milestone practice: connect the pieces",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:16:0": {
       "partTitle": "Sequence in, sequence out",

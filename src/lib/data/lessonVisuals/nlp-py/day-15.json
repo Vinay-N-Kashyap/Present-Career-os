@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The milestone pipeline",
+      "codeHash": "1ec33556e6f9fec0d34e0f658e845c80f5dd869d8a2959666a2540db532e22d0",
+      "spec": {
+        "template": "table",
+        "title": "Pre-Transformer classical neural NLP pipeline stages",
+        "columns": [
+          "step",
+          "what"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre-Transformer systems map tokens to embeddings and process with BiLSTMs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "what"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Output heads perform sequence classification or token level tagging.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "what"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recurrent networks convert static embeddings into context aware representations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "what"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "This modular architecture pattern directly transfers to modern Transformers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "what"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "day"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "what"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pre-Transformer classical neural NLP pipeline stages",
+        "columns": [
+          "step",
+          "what"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre-Transformer systems map tokens to embeddings and process with BiLSTMs.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "what"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Output heads perform sequence classification or token level tagging.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "what"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pipeline",
+                  "day"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recurrent networks convert static embeddings into context aware representations.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "what"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pipeline",
+                  "day"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "pipeline"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "This modular architecture pattern directly transfers to modern Transformers.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "what"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pipeline",
+                  "day"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "pipeline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "what",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sentence embeddings by averaging",
+      "codeHash": "6d87557b54e93ede829869b7be44dad646b57aa8c800aa1310cfc2d26b965cb9",
+      "spec": {
+        "template": "table",
+        "title": "Word embedding pooling for whole sentence representation",
+        "columns": [
+          "great",
+          "movie"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Averaging word vectors constructs an efficient whole sentence embedding.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "movie"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense representations preserve semantic meaning despite ignoring word order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "movie"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "film"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Averaged embeddings provide a robust baseline for sentiment analysis.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "movie"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "film"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "embed"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Filtering unknown vocabulary tokens avoids zero bias distortion in sums.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "movie"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "film"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "embed"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "great"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Word embedding pooling for whole sentence representation",
+        "columns": [
+          "great",
+          "movie"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Averaging word vectors constructs an efficient whole sentence embedding.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "movie"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense representations preserve semantic meaning despite ignoring word order.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "movie"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "film",
+                  "vecs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Averaged embeddings provide a robust baseline for sentiment analysis.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "movie"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "film",
+                  "vecs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "embed"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Filtering unknown vocabulary tokens avoids zero bias distortion in sums.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "movie"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "film",
+                  "vecs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "embed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "math",
+                  "great"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bidirectional reading",
+      "codeHash": "60a309656db1227d58097aeb9c06cfd1db067b6e3fd91f9eef14dadff8a9052f",
+      "spec": {
+        "template": "table",
+        "title": "Bidirectional recurrence state propagation and positional alignment",
+        "columns": [
+          "fwd",
+          "bwd"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A bidirectional RNN runs independent forward and backward recurrence passes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fwd"
+                  },
+                  {
+                    "text": "bwd"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Concatenating directional states grants each token both left and right context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fwd"
+                  },
+                  {
+                    "text": "bwd"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "bidirectional"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Backward pass outputs require reversal before positional alignment with forward.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fwd"
+                  },
+                  {
+                    "text": "bwd"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "bidirectional"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reversed"
+                  },
+                  {
+                    "text": "fwd"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Abstraction over step functions enables plugging arbitrary recurrent cells.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fwd"
+                  },
+                  {
+                    "text": "bwd"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "bidirectional"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reversed"
+                  },
+                  {
+                    "text": "fwd"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bwd"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bidirectional recurrence state propagation and positional alignment",
+        "columns": [
+          "fwd",
+          "bwd"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A bidirectional RNN runs independent forward and backward recurrence passes.",
+            "rows": [
+              {
+                "cells": [
+                  "fwd",
+                  "bwd"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Concatenating directional states grants each token both left and right context.",
+            "rows": [
+              {
+                "cells": [
+                  "fwd",
+                  "bwd"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "bidirectional"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Backward pass outputs require reversal before positional alignment with forward.",
+            "rows": [
+              {
+                "cells": [
+                  "fwd",
+                  "bwd"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "bidirectional"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reversed",
+                  "fwd"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Abstraction over step functions enables plugging arbitrary recurrent cells.",
+            "rows": [
+              {
+                "cells": [
+                  "fwd",
+                  "bwd"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "bidirectional"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reversed",
+                  "fwd"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bwd",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The BiLSTM tagger",
+      "codeHash": "9d94bd105b50c26a6998ac887609cab18b168878d5e136d46babd85164f740af",
+      "spec": {
+        "template": "table",
+        "title": "Neural sequence tag scoring and structured constraint decoding",
+        "columns": [
+          "tokens",
+          "greedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The BiLSTM combined state feeds a classification layer scoring candidate tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent greedy scoring risks generating syntactically invalid BIO sequences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "allowed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A CRF layer uses Viterbi decoding to find optimal globally consistent paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "allowed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "greedy"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Neural layers generate token features while the decoder enforces validity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "greedy"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "allowed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "greedy"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Neural sequence tag scoring and structured constraint decoding",
+        "columns": [
+          "tokens",
+          "greedy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The BiLSTM combined state feeds a classification layer scoring candidate tags.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "greedy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent greedy scoring risks generating syntactically invalid BIO sequences.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "allowed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A CRF layer uses Viterbi decoding to find optimal globally consistent paths.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "allowed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "greedy",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Neural layers generate token features while the decoder enforces validity.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "greedy"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "allowed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "greedy",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The BiLSTM classifier and its limits",
+      "codeHash": "e530feb3240b1fdba186414fd318294f7e965f8f87a5c9643736a57a47e157af",
+      "spec": {
+        "template": "none",
+        "reason": "BiLSTM classification pooling and attention motivation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: connect the pieces",
+      "codeHash": "082eab8d21f69bf148d711eed2a30dbcaf2337252c396fb98f30faa22cf67179",
+      "spec": {
+        "template": "none",
+        "reason": "Milestone 2 implementation connecting all components."
+      },
+      "filled": {}
+    }
+  ]
+}
