@@ -2572,27 +2572,27 @@
     },
     "ai-py:18:0": {
       "partTitle": "Why several agents?",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:18:1": {
       "partTitle": "A supervisor that routes tasks",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:18:2": {
       "partTitle": "Supervisor versus swarm",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:18:3": {
       "partTitle": "Handing over work clearly",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:18:4": {
       "partTitle": "Readable status logs",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:18:5": {
       "partTitle": "Keeping multi-agent systems under control",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:19:0": {
       "partTitle": "Plan first, then act",

@@ -1,0 +1,745 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why several agents?",
+      "codeHash": "8feabdd25517ecd3793ed06e7100311ea7d5e4997e93d2595ee3b21aa2a10892",
+      "spec": {
+        "template": "none",
+        "reason": "Rationale for specialized agents distinct tools and multi-agent division of labor."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "A supervisor that routes tasks",
+      "codeHash": "9bbe31f6343ffa85bb57e99fd9dcd6b725bff6a48905699fdbdf6443a827b473",
+      "spec": {
+        "template": "table",
+        "title": "Supervisor keyword router selecting specialized agent endpoints",
+        "columns": [
+          "input_prompt",
+          "target_agent",
+          "endpoint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Route task checks prompt keywords to select target agent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix the BUG in login"
+                  },
+                  {
+                    "text": "CoderAgent"
+                  },
+                  {
+                    "text": "/agents/coder"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Research EV sales in India"
+                  },
+                  {
+                    "text": "ResearcherAgent"
+                  },
+                  {
+                    "text": "/agents/research"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Return chosen agent name and endpoint from agents dict.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix the BUG in login"
+                  },
+                  {
+                    "text": "CoderAgent"
+                  },
+                  {
+                    "text": "/agents/coder"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Research EV sales in India"
+                  },
+                  {
+                    "text": "ResearcherAgent"
+                  },
+                  {
+                    "text": "/agents/research"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write a thank-you note"
+                  },
+                  {
+                    "text": "GeneralistAgent"
+                  },
+                  {
+                    "text": "/agents/general"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Always have a default route so unknown tasks get an answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix the BUG in login"
+                  },
+                  {
+                    "text": "CoderAgent"
+                  },
+                  {
+                    "text": "/agents/coder"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Research EV sales in India"
+                  },
+                  {
+                    "text": "ResearcherAgent"
+                  },
+                  {
+                    "text": "/agents/research"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write a thank-you note"
+                  },
+                  {
+                    "text": "GeneralistAgent"
+                  },
+                  {
+                    "text": "/agents/general"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Supervisor keyword router selecting specialized agent endpoints",
+        "columns": [
+          "input_prompt",
+          "target_agent",
+          "endpoint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Route task checks prompt keywords to select target agent.",
+            "rows": [
+              {
+                "cells": [
+                  "Fix the BUG in login",
+                  "CoderAgent",
+                  "/agents/coder"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Research EV sales in India",
+                  "ResearcherAgent",
+                  "/agents/research"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Return chosen agent name and endpoint from agents dict.",
+            "rows": [
+              {
+                "cells": [
+                  "Fix the BUG in login",
+                  "CoderAgent",
+                  "/agents/coder"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Research EV sales in India",
+                  "ResearcherAgent",
+                  "/agents/research"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Write a thank-you note",
+                  "GeneralistAgent",
+                  "/agents/general"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Always have a default route so unknown tasks get an answer.",
+            "rows": [
+              {
+                "cells": [
+                  "Fix the BUG in login",
+                  "CoderAgent",
+                  "/agents/coder"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Research EV sales in India",
+                  "ResearcherAgent",
+                  "/agents/research"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Write a thank-you note",
+                  "GeneralistAgent",
+                  "/agents/general"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Supervisor versus swarm",
+      "codeHash": "6498c766154d99b2ba20694fc1b9110818515894310978ea86eaadf2efc0f504",
+      "spec": {
+        "template": "compare",
+        "title": "Supervisor central routing versus autonomous swarm handoffs",
+        "leftLabel": "Supervisor Hub",
+        "rightLabel": "Swarm Mesh",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Supervisor assigns parts to specialists with central control.",
+            "left": {
+              "code": "supervisor -> ResearcherAgent: collect facts",
+              "result": {
+                "text": "supervisor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ResearcherAgent -> WriterAgent",
+              "result": {
+                "text": "swarm"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Swarm agents hand work directly to each other.",
+            "left": {
+              "code": "supervisor central plan dispatch",
+              "result": {
+                "text": "supervisor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "direct peer agent handover transitions",
+              "result": {
+                "text": "swarm"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Supervisors are easier to debug and limit in business workflows.",
+            "left": {
+              "code": "central budget and deterministic audit log",
+              "result": {
+                "text": "supervisor"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "flexible emergent handoff delegation",
+              "result": {
+                "text": "swarm"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Supervisor central routing versus autonomous swarm handoffs",
+        "leftLabel": "Supervisor Hub",
+        "rightLabel": "Swarm Mesh",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Supervisor assigns parts to specialists with central control.",
+            "left": {
+              "code": "supervisor -> ResearcherAgent: collect facts",
+              "result": "supervisor",
+              "tone": "ok",
+              "checks": [
+                "supervisor"
+              ]
+            },
+            "right": {
+              "code": "ResearcherAgent -> WriterAgent",
+              "result": "swarm",
+              "tone": "data",
+              "checks": [
+                "swarm"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Swarm agents hand work directly to each other.",
+            "left": {
+              "code": "supervisor central plan dispatch",
+              "result": "supervisor",
+              "tone": "ok",
+              "checks": [
+                "supervisor"
+              ]
+            },
+            "right": {
+              "code": "direct peer agent handover transitions",
+              "result": "swarm",
+              "tone": "data",
+              "checks": [
+                "swarm"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Supervisors are easier to debug and limit in business workflows.",
+            "left": {
+              "code": "central budget and deterministic audit log",
+              "result": "supervisor",
+              "tone": "ok",
+              "checks": [
+                "supervisor"
+              ]
+            },
+            "right": {
+              "code": "flexible emergent handoff delegation",
+              "result": "swarm",
+              "tone": "data",
+              "checks": [
+                "swarm"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handing over work clearly",
+      "codeHash": "326cfd3c8992fbb6e68e1dc5abf85a679feb855385a42093426e705d6f33adad",
+      "spec": {
+        "template": "sequence",
+        "title": "Structured message handoff between researcher and writer agents",
+        "actors": [
+          "ResearcherAgent",
+          "WriterAgent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A good hand-off message says what was found and what next agent should do.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": {
+                  "text": "findings"
+                },
+                "tone": "ok"
+              }
+            ],
+            "activeActor": "ResearcherAgent"
+          },
+          {
+            "at": "say2",
+            "caption": "Use fixed structure with task findings and constraints.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": {
+                  "text": "task"
+                },
+                "tone": "ok"
+              }
+            ],
+            "activeActor": "WriterAgent"
+          },
+          {
+            "at": "say7",
+            "caption": "If a hand-off is missing a required field reject it early.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": {
+                  "text": "REQUIRED"
+                },
+                "tone": "error"
+              }
+            ],
+            "activeActor": "WriterAgent"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Structured message handoff between researcher and writer agents",
+        "actors": [
+          "ResearcherAgent",
+          "WriterAgent"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A good hand-off message says what was found and what next agent should do.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": "findings",
+                "tone": "ok"
+              }
+            ],
+            "activeActor": "ResearcherAgent"
+          },
+          {
+            "at": "say2",
+            "caption": "Use fixed structure with task findings and constraints.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": "task",
+                "tone": "ok"
+              }
+            ],
+            "activeActor": "WriterAgent"
+          },
+          {
+            "at": "say7",
+            "caption": "If a hand-off is missing a required field reject it early.",
+            "messages": [
+              {
+                "from": "ResearcherAgent",
+                "to": "WriterAgent",
+                "label": "REQUIRED",
+                "tone": "error"
+              }
+            ],
+            "activeActor": "WriterAgent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Readable status logs",
+      "codeHash": "a5ed283788fac570b4c4cdb0f4011ad748f82a60f7afb284705a7a0475e8f474",
+      "spec": {
+        "template": "table",
+        "title": "Agent execution state monitoring and formatted status logging",
+        "columns": [
+          "agent_name",
+          "status_state",
+          "formatted_log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Format agent status returns name in capitals with status.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coder"
+                  },
+                  {
+                    "text": "DONE"
+                  },
+                  {
+                    "text": "[CODER]: DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "researcher"
+                  },
+                  {
+                    "text": "RUNNING"
+                  },
+                  {
+                    "text": "RUNNING"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A consistent format makes logs easy to scan and search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coder"
+                  },
+                  {
+                    "text": "DONE"
+                  },
+                  {
+                    "text": "[CODER]: DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "researcher"
+                  },
+                  {
+                    "text": "RUNNING"
+                  },
+                  {
+                    "text": "RUNNING"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "writer"
+                  },
+                  {
+                    "text": "QUEUED"
+                  },
+                  {
+                    "text": "QUEUED"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Status values come from small fixed set for dashboards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "coder"
+                  },
+                  {
+                    "text": "DONE"
+                  },
+                  {
+                    "text": "[CODER]: DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "researcher"
+                  },
+                  {
+                    "text": "RUNNING"
+                  },
+                  {
+                    "text": "RUNNING"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "writer"
+                  },
+                  {
+                    "text": "QUEUED"
+                  },
+                  {
+                    "text": "QUEUED"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Agent execution state monitoring and formatted status logging",
+        "columns": [
+          "agent_name",
+          "status_state",
+          "formatted_log"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Format agent status returns name in capitals with status.",
+            "rows": [
+              {
+                "cells": [
+                  "coder",
+                  "DONE",
+                  "[CODER]: DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "researcher",
+                  "RUNNING",
+                  "RUNNING"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A consistent format makes logs easy to scan and search.",
+            "rows": [
+              {
+                "cells": [
+                  "coder",
+                  "DONE",
+                  "[CODER]: DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "researcher",
+                  "RUNNING",
+                  "RUNNING"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "writer",
+                  "QUEUED",
+                  "QUEUED"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Status values come from small fixed set for dashboards.",
+            "rows": [
+              {
+                "cells": [
+                  "coder",
+                  "DONE",
+                  "[CODER]: DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "researcher",
+                  "RUNNING",
+                  "RUNNING"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "writer",
+                  "QUEUED",
+                  "QUEUED"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping multi-agent systems under control",
+      "codeHash": "563754d9b720933917e8bc64136cdd8dff5cbe6bb01c1bad03e999fa94934db3",
+      "spec": {
+        "template": "none",
+        "reason": "Global budget thresholds token caps and multi-agent execution control."
+      },
+      "filled": {}
+    }
+  ]
+}
