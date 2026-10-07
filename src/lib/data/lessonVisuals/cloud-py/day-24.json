@@ -1,0 +1,765 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Infrastructure as Code",
+      "codeHash": "4dc2bad515a49fcb17eb294e82f1ba0c698c3bbd95db43cf4072836acb2cd334",
+      "spec": {
+        "template": "table",
+        "title": "Terraform declarative resource block structure",
+        "columns": [
+          "rtype",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Infrastructure as Code defines cloud resources in versioned files.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "media"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Version control allows teams to review changes and roll back.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "media"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform provides widely used IaC tooling across providers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "media"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Declarative code specifies desired end state rather than manual steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "media"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Terraform declarative resource block structure",
+        "columns": [
+          "rtype",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Infrastructure as Code defines cloud resources in versioned files.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "media"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Version control allows teams to review changes and roll back.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "media"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform provides widely used IaC tooling across providers.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "media"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Declarative code specifies desired end state rather than manual steps.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "media"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resource addresses and modules",
+      "codeHash": "cf53dca3c800c7e374d8fe3895c9e6ab11a2b5364aebb085286acbaa8972de1c",
+      "spec": {
+        "template": "table",
+        "title": "Terraform resource address and module namespace parsing",
+        "columns": [
+          "type",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Terraform addresses identify every managed resource uniquely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "data_lake"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Modules bundle related resources into reusable packages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "data_lake"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_subnet"
+                  },
+                  {
+                    "text": "public"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Nested modules prefix addresses with hierarchical names.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "data_lake"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_subnet"
+                  },
+                  {
+                    "text": "public"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_route_table"
+                  },
+                  {
+                    "text": "private"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Address parsing extracts module hierarchy alongside resource type.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket"
+                  },
+                  {
+                    "text": "data_lake"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_subnet"
+                  },
+                  {
+                    "text": "public"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_route_table"
+                  },
+                  {
+                    "text": "private"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Terraform resource address and module namespace parsing",
+        "columns": [
+          "type",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Terraform addresses identify every managed resource uniquely.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "data_lake"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Modules bundle related resources into reusable packages.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "data_lake"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_subnet",
+                  "public"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Nested modules prefix addresses with hierarchical names.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "data_lake"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_subnet",
+                  "public"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_route_table",
+                  "private"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Address parsing extracts module hierarchy alongside resource type.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket",
+                  "data_lake"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_subnet",
+                  "public"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_route_table",
+                  "private"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State: Terraform's memory",
+      "codeHash": "d7d6a7bde003e6eaf02756f170a8d048a9fd467b3cc482ae54373c43b4b6ff6d",
+      "spec": {
+        "template": "table",
+        "title": "Terraform state mapping and manual drift detection",
+        "columns": [
+          "address",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Terraform state maps code addresses to live cloud resource IDs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket.media"
+                  },
+                  {
+                    "text": "pinit-media-prod"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "State tracking allows Terraform to determine necessary updates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket.media"
+                  },
+                  {
+                    "text": "pinit-media-prod"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Remote encrypted state ensures shared access across teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket.media"
+                  },
+                  {
+                    "text": "pinit-media-prod"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_sqs_queue.orders"
+                  },
+                  {
+                    "text": "in sync"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Terraform plan detects manual resource drift automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aws_s3_bucket.media"
+                  },
+                  {
+                    "text": "pinit-media-prod"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "aws_sqs_queue.orders"
+                  },
+                  {
+                    "text": "in sync"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Terraform state mapping and manual drift detection",
+        "columns": [
+          "address",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Terraform state maps code addresses to live cloud resource IDs.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket.media",
+                  "pinit-media-prod"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "State tracking allows Terraform to determine necessary updates.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket.media",
+                  "pinit-media-prod"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Remote encrypted state ensures shared access across teams.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket.media",
+                  "pinit-media-prod"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "aws_sqs_queue.orders",
+                  "in sync"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Terraform plan detects manual resource drift automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "aws_s3_bucket.media",
+                  "pinit-media-prod"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "aws_sqs_queue.orders",
+                  "in sync"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Locking state",
+      "codeHash": "b19561ebb792b5426fdf06c41fc22041a3a7bd388dbc7ba1d46cc999d30dbc77",
+      "spec": {
+        "template": "table",
+        "title": "DynamoDB state lock concurrency control simulation",
+        "columns": [
+          "who",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrent runs risk corrupting state without locking protection.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "State locking prevents concurrent runs from corrupting data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "DynamoDB tables lock state using dedicated LockID keys.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ravi"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Conditional writes ensure only one execution holds the lock item.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ravi"
+                  },
+                  {
+                    "text": "pinit-tf-state/prod/terraform.tfstate"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "DynamoDB state lock concurrency control simulation",
+        "columns": [
+          "who",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concurrent runs risk corrupting state without locking protection.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "State locking prevents concurrent runs from corrupting data.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "DynamoDB tables lock state using dedicated LockID keys.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ravi",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Conditional writes ensure only one execution holds the lock item.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ravi",
+                  "pinit-tf-state/prod/terraform.tfstate"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Plan, apply and reading a plan",
+      "codeHash": "16d03641203045e02b0bc3f76653b2fce06f42916dee2fee9d34cc0a84246c91",
+      "spec": {
+        "template": "none",
+        "reason": "Plan, apply and reading a plan."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: addresses and plans",
+      "codeHash": "5780a8f9da8f720684faf06b657aebdb922151e4a7923fe1457e7e389385510d",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: addresses and plans."
+      },
+      "filled": {}
+    }
+  ]
+}

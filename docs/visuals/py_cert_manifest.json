@@ -4156,27 +4156,27 @@
     },
     "cloud-py:24:0": {
       "partTitle": "Infrastructure as Code",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:24:1": {
       "partTitle": "Resource addresses and modules",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:24:2": {
       "partTitle": "State: Terraform's memory",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:24:3": {
       "partTitle": "Locking state",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:24:4": {
       "partTitle": "Plan, apply and reading a plan",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:24:5": {
       "partTitle": "Practice time: addresses and plans",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:25:0": {
       "partTitle": "Metrics, logs and traces",
