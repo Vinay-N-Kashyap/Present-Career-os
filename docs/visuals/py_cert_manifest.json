@@ -4516,27 +4516,27 @@
     },
     "nlp-py:9:0": {
       "partTitle": "Counting co-occurrences",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:9:1": {
       "partTitle": "Ratios carry meaning",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:9:2": {
       "partTitle": "The weighting function",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:9:3": {
       "partTitle": "GloVe versus Word2Vec",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:9:4": {
       "partTitle": "Using pre-trained embeddings",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:9:5": {
       "partTitle": "Practice time: weights and counts",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:10:0": {
       "partTitle": "Tagging is a sequence problem",

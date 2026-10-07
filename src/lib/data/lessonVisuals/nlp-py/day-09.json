@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Counting co-occurrences",
+      "codeHash": "ab9abf133fffb7af847853f43e69eb20353b5586d2df0a510dc49c909f0c77e4",
+      "spec": {
+        "template": "table",
+        "title": "Global co-occurrence matrix pair frequency tracking",
+        "columns": [
+          "tokens",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A co-occurrence matrix captures how often word pairs appear together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Co-occurrence counting uses sorted tuples as canonical symmetrical keys.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "tuple"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Window size dictates whether extracted associations reflect syntax or topic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "tuple"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Positional weighting discounts word evidence across greater token distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "tuple"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "cooccurrence"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Global co-occurrence matrix pair frequency tracking",
+        "columns": [
+          "tokens",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A co-occurrence matrix captures how often word pairs appear together.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "counts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Co-occurrence counting uses sorted tuples as canonical symmetrical keys.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "window",
+                  "tuple"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Window size dictates whether extracted associations reflect syntax or topic.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "window",
+                  "tuple"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "sorted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Positional weighting discounts word evidence across greater token distance.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "window",
+                  "tuple"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "sorted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "len",
+                  "cooccurrence"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ratios carry meaning",
+      "codeHash": "cb770a150f03cdfbb6d83b6f6ac8b75f8ece6faf8b1a2a209aa78bea4724bc13",
+      "spec": {
+        "template": "table",
+        "title": "Probability ratio analysis isolating semantic associations",
+        "columns": [
+          "solid",
+          "gas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "GloVe demonstrates that ratios of co-occurrence probabilities reveal meaning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "solid"
+                  },
+                  {
+                    "text": "gas"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Solid correlates strongly with ice producing high probability ratios.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "solid"
+                  },
+                  {
+                    "text": "gas"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "water"
+                  },
+                  {
+                    "text": "ratio"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Ratios isolate relevant associations while discarding raw frequency noise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "solid"
+                  },
+                  {
+                    "text": "gas"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "water"
+                  },
+                  {
+                    "text": "ratio"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fashion"
+                  },
+                  {
+                    "text": "p_given_ice"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Vector differences geometrically capture co-occurrence log count ratios.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "solid"
+                  },
+                  {
+                    "text": "gas"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "water"
+                  },
+                  {
+                    "text": "ratio"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fashion"
+                  },
+                  {
+                    "text": "p_given_ice"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p_given_steam"
+                  },
+                  {
+                    "text": "ratio"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Probability ratio analysis isolating semantic associations",
+        "columns": [
+          "solid",
+          "gas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "GloVe demonstrates that ratios of co-occurrence probabilities reveal meaning.",
+            "rows": [
+              {
+                "cells": [
+                  "solid",
+                  "gas"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Solid correlates strongly with ice producing high probability ratios.",
+            "rows": [
+              {
+                "cells": [
+                  "solid",
+                  "gas"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "water",
+                  "ratio"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Ratios isolate relevant associations while discarding raw frequency noise.",
+            "rows": [
+              {
+                "cells": [
+                  "solid",
+                  "gas"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "water",
+                  "ratio"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fashion",
+                  "p_given_ice"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Vector differences geometrically capture co-occurrence log count ratios.",
+            "rows": [
+              {
+                "cells": [
+                  "solid",
+                  "gas"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "water",
+                  "ratio"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fashion",
+                  "p_given_ice"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "p_given_steam",
+                  "ratio"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The weighting function",
+      "codeHash": "a6cd9b6ca1541b632a6c4df8bdf2aa7611c7d74c534a287fedd9687981449eca",
+      "spec": {
+        "template": "table",
+        "title": "GloVe continuous loss weighting and capping function",
+        "columns": [
+          "x_max",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Overly frequent pairs carry little meaning while rare pairs introduce noise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "x_max"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sparse zero entries in the co-occurrence matrix are skipped entirely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "x_max"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The weighting function caps frequent word pairs while dampening rare terms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "x_max"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "glove_weight"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The glove weight calculation normalises counts with power scaling.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "x_max"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "count"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "glove_weight"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alpha"
+                  },
+                  {
+                    "text": "x_max"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GloVe continuous loss weighting and capping function",
+        "columns": [
+          "x_max",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Overly frequent pairs carry little meaning while rare pairs introduce noise.",
+            "rows": [
+              {
+                "cells": [
+                  "x_max",
+                  "alpha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sparse zero entries in the co-occurrence matrix are skipped entirely.",
+            "rows": [
+              {
+                "cells": [
+                  "x_max",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "count",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The weighting function caps frequent word pairs while dampening rare terms.",
+            "rows": [
+              {
+                "cells": [
+                  "x_max",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "count",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "glove_weight",
+                  "count"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The glove weight calculation normalises counts with power scaling.",
+            "rows": [
+              {
+                "cells": [
+                  "x_max",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "count",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "glove_weight",
+                  "count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "alpha",
+                  "x_max"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GloVe versus Word2Vec",
+      "codeHash": "baa09051f7c502e0f1cfe1fe850d2e917637ac55ba47c33f9b651428ccde7d1d",
+      "spec": {
+        "template": "table",
+        "title": "Predictive versus count-based word embedding architectures",
+        "columns": [
+          "Word2Vec",
+          "GloVe"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec predicts local context while GloVe fits global co-occurrence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "GloVe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "GloVe trains efficiently by processing the precomputed co-occurrence matrix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "GloVe"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "methods"
+                  },
+                  {
+                    "text": "FastText"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Word2Vec streaming training accommodates datasets exceeding memory limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "GloVe"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "methods"
+                  },
+                  {
+                    "text": "FastText"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "methods"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Static word embeddings assign one fixed vector to each vocabulary token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "GloVe"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "methods"
+                  },
+                  {
+                    "text": "FastText"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Word2Vec"
+                  },
+                  {
+                    "text": "methods"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "FastText"
+                  },
+                  {
+                    "text": "GloVe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Predictive versus count-based word embedding architectures",
+        "columns": [
+          "Word2Vec",
+          "GloVe"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec predicts local context while GloVe fits global co-occurrence.",
+            "rows": [
+              {
+                "cells": [
+                  "Word2Vec",
+                  "GloVe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "GloVe trains efficiently by processing the precomputed co-occurrence matrix.",
+            "rows": [
+              {
+                "cells": [
+                  "Word2Vec",
+                  "GloVe"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "methods",
+                  "FastText"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Word2Vec streaming training accommodates datasets exceeding memory limits.",
+            "rows": [
+              {
+                "cells": [
+                  "Word2Vec",
+                  "GloVe"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "methods",
+                  "FastText"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Word2Vec",
+                  "methods"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Static word embeddings assign one fixed vector to each vocabulary token.",
+            "rows": [
+              {
+                "cells": [
+                  "Word2Vec",
+                  "GloVe"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "methods",
+                  "FastText"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Word2Vec",
+                  "methods"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "FastText",
+                  "GloVe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Using pre-trained embeddings",
+      "codeHash": "a9983f0b724f10988df3883832c674fe9bcfebecb58dc38e71aadf7223b4dd30",
+      "spec": {
+        "template": "none",
+        "reason": "Pretrained embedding vocabulary coverage analysis."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: weights and counts",
+      "codeHash": "1b618760b7dce4740efd03af50086bc0f4d9bb40ca79a75f9d3420d5a06b1445",
+      "spec": {
+        "template": "none",
+        "reason": "Co-occurrence and GloVe weight practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}
