@@ -76,27 +76,27 @@
     },
     "python:4:0": {
       "partTitle": "The four basic operators",
-      "status": "todo"
+      "status": "none"
     },
     "python:4:1": {
       "partTitle": "Floor division and remainder",
-      "status": "todo"
+      "status": "none"
     },
     "python:4:2": {
       "partTitle": "Percentages: GST and discounts",
-      "status": "todo"
+      "status": "passed"
     },
     "python:4:3": {
       "partTitle": "Rounding money",
-      "status": "todo"
+      "status": "none"
     },
     "python:4:4": {
       "partTitle": "Useful number tools: abs, min, max, sum",
-      "status": "todo"
+      "status": "passed"
     },
     "python:4:5": {
       "partTitle": "Putting it together: a restaurant bill",
-      "status": "todo"
+      "status": "passed"
     },
     "python:5:0": {
       "partTitle": "if: do something only when a condition is True",
