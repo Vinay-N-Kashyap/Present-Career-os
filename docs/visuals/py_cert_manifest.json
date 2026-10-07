@@ -484,27 +484,27 @@
     },
     "python:21:0": {
       "partTitle": "Why developers write tests",
-      "status": "todo"
+      "status": "passed"
     },
     "python:21:1": {
       "partTitle": "assert and failure messages",
-      "status": "todo"
+      "status": "passed"
     },
     "python:21:2": {
       "partTitle": "Test functions and pytest",
-      "status": "todo"
+      "status": "none"
     },
     "python:21:3": {
       "partTitle": "Normal cases and edge cases",
-      "status": "todo"
+      "status": "passed"
     },
     "python:21:4": {
       "partTitle": "Testing errors and keeping functions testable",
-      "status": "todo"
+      "status": "none"
     },
     "python:21:5": {
       "partTitle": "Putting it together: tests for the tracker",
-      "status": "todo"
+      "status": "none"
     },
     "python:22:0": {
       "partTitle": "What Git is and why every job uses it",
