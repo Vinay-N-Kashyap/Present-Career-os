@@ -1,0 +1,750 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The pipeline at a glance",
+      "codeHash": "cb6c8098805c9eb467a87d610ad260e3c3cb3f6ec995435fb75707d1163ed0f0",
+      "spec": {
+        "template": "flow",
+        "title": "Assembly line stages wire search merge and rerank",
+        "nodes": [
+          {
+            "id": "search",
+            "label": "search"
+          },
+          {
+            "id": "merge",
+            "label": "merge"
+          },
+          {
+            "id": "rerank",
+            "label": "rerank"
+          }
+        ],
+        "edges": [
+          {
+            "from": "search",
+            "to": "merge"
+          },
+          {
+            "from": "merge",
+            "to": "rerank"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The pipeline wires together keyword search and vector search.",
+            "values": {
+              "search": {
+                "text": "search"
+              },
+              "merge": {
+                "text": "merge"
+              },
+              "rerank": {
+                "text": "rerank"
+              }
+            },
+            "tones": {
+              "search": "data",
+              "merge": "idle",
+              "rerank": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Question passes through assembly line stages to produces prompt.",
+            "values": {
+              "search": {
+                "text": "search"
+              },
+              "merge": {
+                "text": "merge"
+              },
+              "rerank": {
+                "text": "rerank"
+              }
+            },
+            "tones": {
+              "search": "ok",
+              "merge": "data",
+              "rerank": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Clean design keeps business logic separate from outside services.",
+            "values": {
+              "search": {
+                "text": "search"
+              },
+              "merge": {
+                "text": "merge"
+              },
+              "rerank": {
+                "text": "rerank"
+              }
+            },
+            "tones": {
+              "search": "ok",
+              "merge": "ok",
+              "rerank": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Assembly line stages wire search merge and rerank",
+        "nodes": [
+          {
+            "id": "search",
+            "label": "search"
+          },
+          {
+            "id": "merge",
+            "label": "merge"
+          },
+          {
+            "id": "rerank",
+            "label": "rerank"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The pipeline wires together keyword search and vector search.",
+            "values": {
+              "search": "search",
+              "merge": "merge",
+              "rerank": "rerank"
+            },
+            "tones": {
+              "search": "data",
+              "merge": "idle",
+              "rerank": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Question passes through assembly line stages to produces prompt.",
+            "values": {
+              "search": "search",
+              "merge": "merge",
+              "rerank": "rerank"
+            },
+            "tones": {
+              "search": "ok",
+              "merge": "data",
+              "rerank": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say5",
+            "caption": "Clean design keeps business logic separate from outside services.",
+            "values": {
+              "search": "search",
+              "merge": "merge",
+              "rerank": "rerank"
+            },
+            "tones": {
+              "search": "ok",
+              "merge": "ok",
+              "rerank": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Merging results without duplicates",
+      "codeHash": "825a075dc9fa53bff9c83316a7d597619076f5835c5890e6ee31b80dc0a47649",
+      "spec": {
+        "template": "table",
+        "title": "Deduplicating vector and keyword candidate lists with seen sets",
+        "columns": [
+          "source",
+          "chunk",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector and keyword search return same chunk once in merged list.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c5"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walk through vector results then keyword results keeping seen chunks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c5"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "keyword"
+                  },
+                  {
+                    "text": "c9"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "keyword"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "seen"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sets make seen check fast even with hundreds of candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "c5"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "keyword"
+                  },
+                  {
+                    "text": "c9"
+                  },
+                  {
+                    "text": "merged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "keyword"
+                  },
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "seen"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deduplicating vector and keyword candidate lists with seen sets",
+        "columns": [
+          "source",
+          "chunk",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector and keyword search return same chunk once in merged list.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "c2",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vector",
+                  "c5",
+                  "merged"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walk through vector results then keyword results keeping seen chunks.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "c2",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vector",
+                  "c5",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "keyword",
+                  "c9",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "keyword",
+                  "c2",
+                  "seen"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sets make seen check fast even with hundreds of candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "vector",
+                  "c2",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vector",
+                  "c5",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "keyword",
+                  "c9",
+                  "merged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "keyword",
+                  "c2",
+                  "seen"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The run_rag_pipeline function",
+      "codeHash": "8a314da51d5deae6ed15147c7a97c7d14599c0a3fb763517dc097528f418c564",
+      "spec": {
+        "template": "compare",
+        "title": "Candidate merging and reranked prompt context assembly",
+        "leftLabel": "Candidate Search",
+        "rightLabel": "Rerank Selection",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Call both searches and sort chunks by score.",
+            "left": {
+              "code": "vector_search(query) + keyword_search(query)",
+              "result": {
+                "text": "c2"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "sorted(rerank(query, merged), key=score)[:3]",
+              "result": {
+                "text": "0.95"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return prompt context with question query and top chunks.",
+            "left": {
+              "code": "Context joined by chunk texts",
+              "result": {
+                "text": "top_chunks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "RAG_READY status with formatted prompt",
+              "result": {
+                "text": "RAG_READY"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Test with fake search and rerank functions returning fixed data.",
+            "left": {
+              "code": "fake search returns fixed chunks",
+              "result": {
+                "text": "c5"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "fake rerank returns scores dict",
+              "result": {
+                "text": "0.70"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Candidate merging and reranked prompt context assembly",
+        "leftLabel": "Candidate Search",
+        "rightLabel": "Rerank Selection",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Call both searches and sort chunks by score.",
+            "left": {
+              "code": "vector_search(query) + keyword_search(query)",
+              "result": "c2",
+              "tone": "data",
+              "checks": [
+                "c2"
+              ]
+            },
+            "right": {
+              "code": "sorted(rerank(query, merged), key=score)[:3]",
+              "result": "0.95",
+              "tone": "ok",
+              "checks": [
+                "0.95"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Return prompt context with question query and top chunks.",
+            "left": {
+              "code": "Context joined by chunk texts",
+              "result": "top_chunks",
+              "tone": "data",
+              "checks": [
+                "top_chunks"
+              ]
+            },
+            "right": {
+              "code": "RAG_READY status with formatted prompt",
+              "result": "RAG_READY",
+              "tone": "ok",
+              "checks": [
+                "RAG_READY"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Test with fake search and rerank functions returning fixed data.",
+            "left": {
+              "code": "fake search returns fixed chunks",
+              "result": "c5",
+              "tone": "idle",
+              "checks": [
+                "c5"
+              ]
+            },
+            "right": {
+              "code": "fake rerank returns scores dict",
+              "result": "0.70",
+              "tone": "ok",
+              "checks": [
+                "0.70"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring latency",
+      "codeHash": "1c4d91be9ff5686074a81e3137dbb9910e4377e3ecc61f2e3eea40b929ab73e8",
+      "spec": {
+        "template": "bars",
+        "title": "Latency distribution across retrieval rerank and generation stages",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users judge features by speed and total latency seconds.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": {
+                  "text": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": {
+                  "text": "180"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Time every stage separately with breakdown of where latency occurs.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": {
+                  "text": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": {
+                  "text": "180"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "generation_ms",
+                "value": {
+                  "text": "700"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Generation is usually the biggest part while streaming makes it faster.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": {
+                  "text": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": {
+                  "text": "180"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "generation_ms",
+                "value": {
+                  "text": "700"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Latency distribution across retrieval rerank and generation stages",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Users judge features by speed and total latency seconds.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": 120,
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": 180,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Time every stage separately with breakdown of where latency occurs.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": 120,
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": 180,
+                "tone": "ok"
+              },
+              {
+                "label": "generation_ms",
+                "value": 700,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Generation is usually the biggest part while streaming makes it faster.",
+            "bars": [
+              {
+                "label": "retrieval_ms",
+                "value": 120,
+                "tone": "ok"
+              },
+              {
+                "label": "rerank_ms",
+                "value": 180,
+                "tone": "ok"
+              },
+              {
+                "label": "generation_ms",
+                "value": 700,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling failures gracefully",
+      "codeHash": "54c8edb0bd1df8ecd401a2e903a327f7d3bef25d38dceb32874c4ef4be4beec6",
+      "spec": {
+        "template": "none",
+        "reason": "Code demonstrates try-except error handling fallback logic and TimeoutError handling."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Tracing each stage",
+      "codeHash": "483170e9818b808eab87762a81fedce2a5b7b6dc67e141505b20c27a43541c2a",
+      "spec": {
+        "template": "none",
+        "reason": "Code demonstrates execution tracing telemetry and JSON serialization of trace logs."
+      },
+      "filled": {}
+    }
+  ]
+}

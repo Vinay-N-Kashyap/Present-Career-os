@@ -2500,27 +2500,27 @@
     },
     "ai-py:15:0": {
       "partTitle": "The pipeline at a glance",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:15:1": {
       "partTitle": "Merging results without duplicates",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:15:2": {
       "partTitle": "The run_rag_pipeline function",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:15:3": {
       "partTitle": "Measuring latency",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:15:4": {
       "partTitle": "Handling failures gracefully",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:15:5": {
       "partTitle": "Tracing each stage",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:16:0": {
       "partTitle": "Models do not remember",
