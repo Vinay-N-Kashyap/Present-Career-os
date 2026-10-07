@@ -3508,27 +3508,27 @@
     },
     "dist-py:27:0": {
       "partTitle": "A spectrum of guarantees",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:27:1": {
       "partTitle": "Choosing a level by name",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:27:2": {
       "partTitle": "Detecting stale reads",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:27:3": {
       "partTitle": "Causal consistency in practice",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:27:4": {
       "partTitle": "Eventual consistency done well",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:27:5": {
       "partTitle": "Choosing per feature",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:28:0": {
       "partTitle": "Reverse proxies and CDNs",

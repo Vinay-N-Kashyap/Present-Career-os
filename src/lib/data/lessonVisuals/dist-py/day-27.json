@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A spectrum of guarantees",
+      "codeHash": "46fed5e49e61b7f5c649c54b380e0070f04137e03fa1aebfc98419a486cf3bba",
+      "spec": {
+        "template": "table",
+        "title": "Consistency model spectrum trade-offs between guarantees and availability",
+        "columns": [
+          "name",
+          "promise"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Linearizable systems behave like a single copy updated in real time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Linearizable"
+                  },
+                  {
+                    "text": "one copy, real-time order"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Causal consistency ensures causally related events appear in order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Linearizable"
+                  },
+                  {
+                    "text": "one copy, real-time order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Causal"
+                  },
+                  {
+                    "text": "cause before effect for everyone"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Eventual consistency ensures replicas converge when writes stop.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Linearizable"
+                  },
+                  {
+                    "text": "one copy, real-time order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Causal"
+                  },
+                  {
+                    "text": "cause before effect for everyone"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Eventual"
+                  },
+                  {
+                    "text": "replicas converge when writes stop"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Consistency model spectrum trade-offs between guarantees and availability",
+        "columns": [
+          "name",
+          "promise"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Linearizable systems behave like a single copy updated in real time.",
+            "rows": [
+              {
+                "cells": [
+                  "Linearizable",
+                  "one copy, real-time order"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Causal consistency ensures causally related events appear in order.",
+            "rows": [
+              {
+                "cells": [
+                  "Linearizable",
+                  "one copy, real-time order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Causal",
+                  "cause before effect for everyone"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Eventual consistency ensures replicas converge when writes stop.",
+            "rows": [
+              {
+                "cells": [
+                  "Linearizable",
+                  "one copy, real-time order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Causal",
+                  "cause before effect for everyone"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Eventual",
+                  "replicas converge when writes stop"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a level by name",
+      "codeHash": "0309f4da156d9b1b5637b47a65fdca4da61df1b135df93c5c261f281072d4083",
+      "spec": {
+        "template": "none",
+        "reason": "Consistency level enum mapping and validation lookup."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Detecting stale reads",
+      "codeHash": "33351221a42bcce9987ad7bf961262348d95041887bd0a5dff8686e4cc7a830f",
+      "spec": {
+        "template": "table",
+        "title": "Audit linearizability history detecting stale reads from lagging replicas",
+        "columns": [
+          "started_at",
+          "observed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test systems by auditing recorded histories of reads and writes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "v1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reads are stale when returning older values after completed writes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "v1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "v2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Auditing identifies stale reads caused by replica propagation delay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "v1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "60"
+                  },
+                  {
+                    "text": "v2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "70"
+                  },
+                  {
+                    "text": "v1"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Audit linearizability history detecting stale reads from lagging replicas",
+        "columns": [
+          "started_at",
+          "observed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test systems by auditing recorded histories of reads and writes.",
+            "rows": [
+              {
+                "cells": [
+                  "20",
+                  "v1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reads are stale when returning older values after completed writes.",
+            "rows": [
+              {
+                "cells": [
+                  "20",
+                  "v1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "60",
+                  "v2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Auditing identifies stale reads caused by replica propagation delay.",
+            "rows": [
+              {
+                "cells": [
+                  "20",
+                  "v1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "60",
+                  "v2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "70",
+                  "v1"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Causal consistency in practice",
+      "codeHash": "78f0c1ccf0ca86abc7f7f4c4fda60d1cd6c04f8ddfe6b61882faa5cd909b5660",
+      "spec": {
+        "template": "compare",
+        "title": "Causal dependency ordering delaying dependent replies until cause arrives",
+        "leftLabel": "Causal Delivery",
+        "rightLabel": "Arrived Messages",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Causal consistency prevents confusing anomalies like answers before questions.",
+            "left": {
+              "code": "shown.append(m)",
+              "result": {
+                "text": "I lost my phone"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "arrived[0]",
+              "result": {
+                "text": "Found it!"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Systems buffer dependent updates until causality dependencies are visible.",
+            "left": {
+              "code": "shown",
+              "result": {
+                "text": "I lost my phone"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "waiting",
+              "result": {
+                "text": "Found it!"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Replies wait until the originating message has been processed first.",
+            "left": {
+              "code": "shown",
+              "result": {
+                "text": "Found it!"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "waiting",
+              "result": {
+                "text": "I lost my phone"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Causal dependency ordering delaying dependent replies until cause arrives",
+        "leftLabel": "Causal Delivery",
+        "rightLabel": "Arrived Messages",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Causal consistency prevents confusing anomalies like answers before questions.",
+            "left": {
+              "code": "shown.append(m)",
+              "result": "I lost my phone",
+              "tone": "ok",
+              "checks": [
+                "I lost my phone"
+              ]
+            },
+            "right": {
+              "code": "arrived[0]",
+              "result": "Found it!",
+              "tone": "idle",
+              "checks": [
+                "Found it!"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Systems buffer dependent updates until causality dependencies are visible.",
+            "left": {
+              "code": "shown",
+              "result": "I lost my phone",
+              "tone": "ok",
+              "checks": [
+                "I lost my phone"
+              ]
+            },
+            "right": {
+              "code": "waiting",
+              "result": "Found it!",
+              "tone": "idle",
+              "checks": [
+                "Found it!"
+              ]
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Replies wait until the originating message has been processed first.",
+            "left": {
+              "code": "shown",
+              "result": "Found it!",
+              "tone": "ok",
+              "checks": [
+                "Found it!"
+              ]
+            },
+            "right": {
+              "code": "waiting",
+              "result": "I lost my phone",
+              "tone": "ok",
+              "checks": [
+                "I lost my phone"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Eventual consistency done well",
+      "codeHash": "913a414d4bb3cf0203769311e8dd9aca70cc67799f60c3bb25806753ae1c38be",
+      "spec": {
+        "template": "none",
+        "reason": "Replication anti-entropy gossip repair convergence simulation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Choosing per feature",
+      "codeHash": "daa6f8d61fd0835e415364bea64ffb972df0038712dbe89edad1dba144ea3aa0",
+      "spec": {
+        "template": "table",
+        "title": "Consistency model selection per application feature based on anomaly impact",
+        "columns": [
+          "feature",
+          "level"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Applications choose consistency models per feature by anomaly severity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "wallet balance"
+                  },
+                  {
+                    "text": "STRONG"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Critical wallet balances require strong linearizable consistency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "wallet balance"
+                  },
+                  {
+                    "text": "STRONG"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "group chat"
+                  },
+                  {
+                    "text": "CAUSAL"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Analytics and view counts use high throughput eventual consistency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "wallet balance"
+                  },
+                  {
+                    "text": "STRONG"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "group chat"
+                  },
+                  {
+                    "text": "CAUSAL"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "video view count"
+                  },
+                  {
+                    "text": "EVENTUAL"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Consistency model selection per application feature based on anomaly impact",
+        "columns": [
+          "feature",
+          "level"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Applications choose consistency models per feature by anomaly severity.",
+            "rows": [
+              {
+                "cells": [
+                  "wallet balance",
+                  "STRONG"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Critical wallet balances require strong linearizable consistency.",
+            "rows": [
+              {
+                "cells": [
+                  "wallet balance",
+                  "STRONG"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "group chat",
+                  "CAUSAL"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Analytics and view counts use high throughput eventual consistency.",
+            "rows": [
+              {
+                "cells": [
+                  "wallet balance",
+                  "STRONG"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "group chat",
+                  "CAUSAL"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "video view count",
+                  "EVENTUAL"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
