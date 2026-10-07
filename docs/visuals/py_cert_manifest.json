@@ -2236,27 +2236,27 @@
     },
     "ai-py:4:0": {
       "partTitle": "Zero-shot and few-shot prompts",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:4:1": {
       "partTitle": "Formatting examples cleanly",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:4:2": {
       "partTitle": "Choosing good examples",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:4:3": {
       "partTitle": "Chain-of-thought reasoning",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:4:4": {
       "partTitle": "Self-consistency: majority vote",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:4:5": {
       "partTitle": "When reasoning is worth the tokens",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:5:0": {
       "partTitle": "Why structured output",
