@@ -3532,27 +3532,27 @@
     },
     "dist-py:28:0": {
       "partTitle": "Reverse proxies and CDNs",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:28:1": {
       "partTitle": "Cache-Control headers",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:28:2": {
       "partTitle": "Fresh, stale or expired?",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:28:3": {
       "partTitle": "Purging with surrogate keys",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:28:4": {
       "partTitle": "What to cache, and what not",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:28:5": {
       "partTitle": "Protecting the origin",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:29:0": {
       "partTitle": "When a region fails",
