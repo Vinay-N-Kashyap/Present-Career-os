@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Recall first, precision second",
+      "codeHash": "634eacb6b436ae95d8c790ddcb0cf626fc32edc004506a113c0d1d0427977927",
+      "spec": {
+        "template": "flow",
+        "title": "Two-stage retrieval and reranking pipeline architecture",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "search"
+          },
+          {
+            "id": "n2",
+            "label": "reranking"
+          },
+          {
+            "id": "n3",
+            "label": "answer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stage one hybrid search fetches candidates generously to avoid misses.",
+            "values": {
+              "n1": {
+                "text": "candidates"
+              },
+              "n2": {
+                "text": "search"
+              },
+              "n3": {
+                "text": "answer"
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Stage two reranking reads each candidate carefully against the question.",
+            "values": {
+              "n1": {
+                "text": "window"
+              },
+              "n2": {
+                "text": "reranking"
+              },
+              "n3": {
+                "text": "answer"
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Two-stage retrieval and reranking pipeline architecture",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "search"
+          },
+          {
+            "id": "n2",
+            "label": "reranking"
+          },
+          {
+            "id": "n3",
+            "label": "answer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stage one hybrid search fetches candidates generously to avoid misses.",
+            "values": {
+              "n1": "candidates",
+              "n2": "search",
+              "n3": "answer"
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say3",
+            "caption": "Stage two reranking reads each candidate carefully against the question.",
+            "values": {
+              "n1": "window",
+              "n2": "reranking",
+              "n3": "answer"
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bi-encoders and cross-encoders",
+      "codeHash": "56f265dce831694ca391d4194d81a99bb51332a09d7d2057cd5c0f54fbaff7bb",
+      "spec": {
+        "template": "compare",
+        "title": "Bi-encoder representation versus cross-encoder joint scoring",
+        "leftLabel": "Bi-Encoder",
+        "rightLabel": "Cross-Encoder",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bi-encoder search turns questions and documents into vectors separately.",
+            "left": {
+              "code": "separate vectors",
+              "result": {
+                "text": "fast retrieval"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "joint input pair",
+              "result": {
+                "text": "deep interaction"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cross-encoders read question and document together for higher accuracy.",
+            "left": {
+              "code": "independent dots",
+              "result": {
+                "text": "approximate match"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "joint attention",
+              "result": {
+                "text": "exact relevance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bi-encoder representation versus cross-encoder joint scoring",
+        "leftLabel": "Bi-Encoder",
+        "rightLabel": "Cross-Encoder",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bi-encoder search turns questions and documents into vectors separately.",
+            "left": {
+              "code": "separate vectors",
+              "result": "fast retrieval",
+              "tone": "ok",
+              "checks": [
+                "fast retrieval"
+              ]
+            },
+            "right": {
+              "code": "joint input pair",
+              "result": "deep interaction",
+              "tone": "data",
+              "checks": [
+                "deep interaction"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cross-encoders read question and document together for higher accuracy.",
+            "left": {
+              "code": "independent dots",
+              "result": "approximate match",
+              "tone": "data",
+              "checks": [
+                "approximate match"
+              ]
+            },
+            "right": {
+              "code": "joint attention",
+              "result": "exact relevance",
+              "tone": "ok",
+              "checks": [
+                "exact relevance"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reranking the candidates",
+      "codeHash": "10cf3f885b3ac280638f165987b497469ef9a0734777da0a152660e8325c3b41",
+      "spec": {
+        "template": "table",
+        "title": "Candidate scoring and sorting table by cross-encoder relevance",
+        "columns": [
+          "chunk_id",
+          "chunk_text",
+          "relevance_score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scoring attaches a relevance score to each chunk to determine candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "UPI refund arrives in 2 days"
+                  },
+                  {
+                    "text": "five"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c3"
+                  },
+                  {
+                    "text": "Card refund takes 7 days"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reranked order replaces the initial order to position the best chunk first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c2"
+                  },
+                  {
+                    "text": "UPI refund arrives in 2 days"
+                  },
+                  {
+                    "text": "five"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c3"
+                  },
+                  {
+                    "text": "Card refund takes 7 days"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c1"
+                  },
+                  {
+                    "text": "Store hours are 9 to 9"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Candidate scoring and sorting table by cross-encoder relevance",
+        "columns": [
+          "chunk_id",
+          "chunk_text",
+          "relevance_score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scoring attaches a relevance score to each chunk to determine candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "c2",
+                  "UPI refund arrives in 2 days",
+                  "five"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c3",
+                  "Card refund takes 7 days",
+                  "two"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reranked order replaces the initial order to position the best chunk first.",
+            "rows": [
+              {
+                "cells": [
+                  "c2",
+                  "UPI refund arrives in 2 days",
+                  "five"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c3",
+                  "Card refund takes 7 days",
+                  "two"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "c1",
+                  "Store hours are 9 to 9",
+                  "zero"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dropping weak chunks",
+      "codeHash": "91de90cc96c569013089e659ad2435ae36484e138d0810997f9d1c27446c1099",
+      "spec": {
+        "template": "bars",
+        "title": "Threshold filtering discarding low relevance candidates",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filtering drops weak chunks to avoid prompting models with irrelevant text.",
+            "bars": [
+              {
+                "label": "c2 (score 0.91)",
+                "value": {
+                  "text": "91"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "c3 (score 0.52)",
+                "value": {
+                  "text": "52"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Applying a minimum score threshold discards results below relevance levels.",
+            "bars": [
+              {
+                "label": "c2 (score 0.91)",
+                "value": {
+                  "text": "91"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "c3 (score 0.52)",
+                "value": {
+                  "text": "52"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "c1 (score 0.08)",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Threshold filtering discarding low relevance candidates",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filtering drops weak chunks to avoid prompting models with irrelevant text.",
+            "bars": [
+              {
+                "label": "c2 (score 0.91)",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "c3 (score 0.52)",
+                "value": 52,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Applying a minimum score threshold discards results below relevance levels.",
+            "bars": [
+              {
+                "label": "c2 (score 0.91)",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "c3 (score 0.52)",
+                "value": 52,
+                "tone": "ok"
+              },
+              {
+                "label": "c1 (score 0.08)",
+                "value": 8,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring context precision",
+      "codeHash": "1144e3a412ff24285701a42663fd54412d3291a22dae7c1cc72374c1b91ea73c",
+      "spec": {
+        "template": "none",
+        "reason": "Information retrieval Precision@k and Average Precision metric formula math."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Information retrieval Precision@k and Average Precision metric formula math."
+      }
+    },
+    {
+      "partTitle": "Cost and speed of reranking",
+      "codeHash": "1d9ae77504cae2615cda4ac0c9821afb139ad81e351e18b8413c588ddd70e6e0",
+      "spec": {
+        "template": "none",
+        "reason": "Batch inference candidate latency overhead and API roundtrip timing math."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Batch inference candidate latency overhead and API roundtrip timing math."
+      }
+    }
+  ]
+}

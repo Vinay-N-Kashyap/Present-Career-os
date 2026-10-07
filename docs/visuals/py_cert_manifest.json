@@ -2404,27 +2404,27 @@
     },
     "ai-py:11:0": {
       "partTitle": "Recall first, precision second",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:11:1": {
       "partTitle": "Bi-encoders and cross-encoders",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:11:2": {
       "partTitle": "Reranking the candidates",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:11:3": {
       "partTitle": "Dropping weak chunks",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:11:4": {
       "partTitle": "Measuring context precision",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:11:5": {
       "partTitle": "Cost and speed of reranking",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:12:0": {
       "partTitle": "Lost in the middle",
