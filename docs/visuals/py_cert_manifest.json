@@ -652,27 +652,27 @@
     },
     "python:28:0": {
       "partTitle": "Debugging is a normal part of the job",
-      "status": "todo"
+      "status": "none"
     },
     "python:28:1": {
       "partTitle": "Reading a traceback, from the bottom up",
-      "status": "todo"
+      "status": "none"
     },
     "python:28:2": {
       "partTitle": "The most common errors and their usual causes",
-      "status": "todo"
+      "status": "none"
     },
     "python:28:3": {
       "partTitle": "print() debugging",
-      "status": "todo"
+      "status": "passed"
     },
     "python:28:4": {
       "partTitle": "Breakpoints and the VS Code debugger",
-      "status": "todo"
+      "status": "passed"
     },
     "python:28:5": {
       "partTitle": "Putting it together: fixing a real bug",
-      "status": "todo"
+      "status": "passed"
     },
     "python:29:0": {
       "partTitle": "What deploying means",
