@@ -2092,27 +2092,27 @@
     },
     "sql-mastery:28:0": {
       "partTitle": "From a manager's question to a query",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:28:1": {
       "partTitle": "Takings per day",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:28:2": {
       "partTitle": "Spending per student",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:28:3": {
       "partTitle": "Veg and non-veg, and the busiest hour",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:28:4": {
       "partTitle": "Saving the reports as views",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:28:5": {
       "partTitle": "Putting it together: the manager's dashboard query",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:29:0": {
       "partTitle": "Why backups matter",
