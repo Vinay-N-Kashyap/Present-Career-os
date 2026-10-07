@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Looking back at the whole input",
+      "codeHash": "ef9bdf38aa32256416387ca19c1cbcf927c6f75045e648c01ee4065a82abb667",
+      "spec": {
+        "template": "table",
+        "title": "Attention relevance scores and dynamic context vectors",
+        "columns": [
+          "source",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attention provides dynamic context vectors tailored at each decoding step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The decoder scores relevance against all available encoder hidden states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Relevance weights sum to unity forming a weighted mix of encoder states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "focus"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Attention weights reveal interpretable alignment between source and target.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "target"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "focus"
+                  },
+                  {
+                    "text": "index"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Attention relevance scores and dynamic context vectors",
+        "columns": [
+          "source",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attention provides dynamic context vectors tailored at each decoding step.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The decoder scores relevance against all available encoder hidden states.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention",
+                  "weights"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Relevance weights sum to unity forming a weighted mix of encoder states.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "focus",
+                  "index"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Attention weights reveal interpretable alignment between source and target.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "target"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attention",
+                  "weights"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "focus",
+                  "index"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "target",
+                  "source"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scores to weights: softmax",
+      "codeHash": "bca0148b051d093ab468a0ba3eae0f6859015a0256dcefffec1e80d552523fd4",
+      "spec": {
+        "template": "table",
+        "title": "Softmax exponentiation and numerically stable normalization",
+        "columns": [
+          "scores",
+          "exps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attention computes raw alignment scores matching current decoder needs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "exps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Softmax exponentiates raw scores into normalized positive weight fractions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "exps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exponentiation naturally exaggerates score differences across candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "exps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "naive_softmax"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Subtracting maximum scores prevents numerical floating point overflow.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "exps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "softmax"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "naive_softmax"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Softmax exponentiation and numerically stable normalization",
+        "columns": [
+          "scores",
+          "exps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Attention computes raw alignment scores matching current decoder needs.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "exps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Softmax exponentiates raw scores into normalized positive weight fractions.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "exps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exponentiation naturally exaggerates score differences across candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "exps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "naive_softmax",
+                  "round"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Subtracting maximum scores prevents numerical floating point overflow.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "exps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "softmax",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "naive_softmax",
+                  "round"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "round",
+                  "scores"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The context vector",
+      "codeHash": "7fc005e3fdcfc9ba808352aaa187aac4fcb58ec21ca543e08c208a5dc1721803",
+      "spec": {
+        "template": "table",
+        "title": "Context vector synthesis from attention weights and values",
+        "columns": [
+          "weights",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The context vector computes a weighted sum over encoder value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sharp weights isolate individual values while dispersed weights blend vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "context_vector"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder combines current context vectors with recurrent internal state.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "context_vector"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Context vectors maintain constant dimensionality regardless of sequence length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "weights"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "context_vector"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "weights"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Context vector synthesis from attention weights and values",
+        "columns": [
+          "weights",
+          "values"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The context vector computes a weighted sum over encoder value vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "weights",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sharp weights isolate individual values while dispersed weights blend vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "weights",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "context_vector",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The decoder combines current context vectors with recurrent internal state.",
+            "rows": [
+              {
+                "cells": [
+                  "weights",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "context_vector",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "weights"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Context vectors maintain constant dimensionality regardless of sequence length.",
+            "rows": [
+              {
+                "cells": [
+                  "weights",
+                  "values"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "context_vector",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "weights"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "values",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bahdanau and Luong scoring",
+      "codeHash": "61b9f0481cc6ee4574e3b2c9f1a7263bba3e6fea0cf412b07483a855152f8c9c",
+      "spec": {
+        "template": "table",
+        "title": "Additive Bahdanau versus multiplicative Luong alignment scoring",
+        "columns": [
+          "decoder",
+          "dot"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Alignment mechanisms compute relevance scores through distinct architectures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decoder"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bahdanau additive scoring feeds combined states through tanh neural layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decoder"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "additive"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Luong multiplicative attention evaluates alignment via direct dot products.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decoder"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "additive"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "encoder_states"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dot products scale with directional alignment between query and state vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "decoder"
+                  },
+                  {
+                    "text": "dot"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "additive"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "encoder_states"
+                  },
+                  {
+                    "text": "tanh"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dot"
+                  },
+                  {
+                    "text": "decoder"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Additive Bahdanau versus multiplicative Luong alignment scoring",
+        "columns": [
+          "decoder",
+          "dot"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Alignment mechanisms compute relevance scores through distinct architectures.",
+            "rows": [
+              {
+                "cells": [
+                  "decoder",
+                  "dot"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bahdanau additive scoring feeds combined states through tanh neural layers.",
+            "rows": [
+              {
+                "cells": [
+                  "decoder",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "additive",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Luong multiplicative attention evaluates alignment via direct dot products.",
+            "rows": [
+              {
+                "cells": [
+                  "decoder",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "additive",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "encoder_states",
+                  "tanh"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dot products scale with directional alignment between query and state vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "decoder",
+                  "dot"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "additive",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "encoder_states",
+                  "tanh"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dot",
+                  "decoder"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attention everywhere",
+      "codeHash": "0be2e5cac97758285e7127055a1d1f5eb9fb664b45e1f796f148e7aa93aafaeb",
+      "spec": {
+        "template": "none",
+        "reason": "Self-attention and Transformer architecture motivation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: softmax and context",
+      "codeHash": "53e034a66e87cdb9837bdc5b28a7b124705fc214404b77a934796eb02634aef7",
+      "spec": {
+        "template": "none",
+        "reason": "Softmax and context vector computation practice."
+      },
+      "filled": {}
+    }
+  ]
+}

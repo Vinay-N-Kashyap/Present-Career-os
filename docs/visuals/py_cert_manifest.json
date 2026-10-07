@@ -4708,27 +4708,27 @@
     },
     "nlp-py:17:0": {
       "partTitle": "Looking back at the whole input",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:17:1": {
       "partTitle": "Scores to weights: softmax",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:17:2": {
       "partTitle": "The context vector",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:17:3": {
       "partTitle": "Bahdanau and Luong scoring",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:17:4": {
       "partTitle": "Attention everywhere",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:17:5": {
       "partTitle": "Practice time: softmax and context",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:18:0": {
       "partTitle": "Attention is all you need",
