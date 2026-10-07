@@ -3292,27 +3292,27 @@
     },
     "dist-py:18:0": {
       "partTitle": "Why shard?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:18:1": {
       "partTitle": "Range sharding",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:18:2": {
       "partTitle": "Hash and directory sharding",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:18:3": {
       "partTitle": "Choosing a shard key",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:18:4": {
       "partTitle": "Resharding",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:18:5": {
       "partTitle": "Queries across shards",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:19:0": {
       "partTitle": "Primary and read replicas",
