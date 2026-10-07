@@ -3100,27 +3100,27 @@
     },
     "dist-py:10:0": {
       "partTitle": "All or nothing across services",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:10:1": {
       "partTitle": "The two phases",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:10:2": {
       "partTitle": "Implementing the coordinator",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:10:3": {
       "partTitle": "Counting votes and keeping a log",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:10:4": {
       "partTitle": "The blocking problem",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:10:5": {
       "partTitle": "Three-phase commit and alternatives",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:11:0": {
       "partTitle": "A saga is a chain of local transactions",
