@@ -3412,27 +3412,27 @@
     },
     "dist-py:23:0": {
       "partTitle": "Why load balance?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:23:1": {
       "partTitle": "Smooth weighted round-robin",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:23:2": {
       "partTitle": "Least connections",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:23:3": {
       "partTitle": "Hashing for stickiness",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:23:4": {
       "partTitle": "Health checks and removing servers",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:23:5": {
       "partTitle": "Choosing an algorithm",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:24:0": {
       "partTitle": "Why discovery?",

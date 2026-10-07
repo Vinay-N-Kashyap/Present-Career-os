@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why load balance?",
+      "codeHash": "fe48e1cba6532d7c92f2a3598ea7ab9ea04361640696e3f13296b73aa2c35186",
+      "spec": {
+        "template": "none",
+        "reason": "Load balancer architecture and layer 4 vs layer 7 routing overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Smooth weighted round-robin",
+      "codeHash": "b043602ceb4671e5275c8c8518bafe55e19a4179741623b9f38153f360a9becf",
+      "spec": {
+        "template": "table",
+        "title": "Smooth weighted round-robin server weights and current credit balances",
+        "columns": [
+          "id",
+          "weight",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weighted round-robin sends traffic in proportion to server weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-2"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Smooth weighted round-robin interleaves heavy and light servers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-2"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Over a full cycle each server is chosen exactly weight times.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "big"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "small-2"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Smooth weighted round-robin server weights and current credit balances",
+        "columns": [
+          "id",
+          "weight",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weighted round-robin sends traffic in proportion to server weights.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "5",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "small-1",
+                  "1",
+                  "0"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "small-2",
+                  "1",
+                  "0"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Smooth weighted round-robin interleaves heavy and light servers.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "5",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "small-1",
+                  "1",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "small-2",
+                  "1",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Over a full cycle each server is chosen exactly weight times.",
+            "rows": [
+              {
+                "cells": [
+                  "big",
+                  "5",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "small-1",
+                  "1",
+                  "0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "small-2",
+                  "1",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Least connections",
+      "codeHash": "b9cc6d12968bbce96b8322e97af133fe19254f702bccaaa81b35795965a508e8",
+      "spec": {
+        "template": "table",
+        "title": "Least connections tracking active requests per backend server",
+        "columns": [
+          "id",
+          "active"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Least connections routes requests to the server with fewest active jobs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s2"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The balancer picks the first minimum server without reordering input.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s2"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Routing adapts smoothly across long and short job sequences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "s1"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s2"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "s3"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Least connections tracking active requests per backend server",
+        "columns": [
+          "id",
+          "active"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Least connections routes requests to the server with fewest active jobs.",
+            "rows": [
+              {
+                "cells": [
+                  "s1",
+                  "0"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "s2",
+                  "0"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "s3",
+                  "0"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The balancer picks the first minimum server without reordering input.",
+            "rows": [
+              {
+                "cells": [
+                  "s1",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "s2",
+                  "0"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "s3",
+                  "0"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Routing adapts smoothly across long and short job sequences.",
+            "rows": [
+              {
+                "cells": [
+                  "s1",
+                  "3"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s2",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "s3",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hashing for stickiness",
+      "codeHash": "887b3991bcf1928ef56542bcac1871bb5bf8388ee662c2cec0b955362fde9572",
+      "spec": {
+        "template": "table",
+        "title": "Sticky routing assignment of users to persistent servers",
+        "columns": [
+          "user",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sticky routing directs the same user key to a warm server cache.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "s1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hashing client identifiers preserves affinity across requests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "s1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bala"
+                  },
+                  {
+                    "text": "s1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hashing consistently maps each user identity to the same backend.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha"
+                  },
+                  {
+                    "text": "s1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bala"
+                  },
+                  {
+                    "text": "s1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chitra"
+                  },
+                  {
+                    "text": "s2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sticky routing assignment of users to persistent servers",
+        "columns": [
+          "user",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sticky routing directs the same user key to a warm server cache.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "s1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hashing client identifiers preserves affinity across requests.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "s1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bala",
+                  "s1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hashing consistently maps each user identity to the same backend.",
+            "rows": [
+              {
+                "cells": [
+                  "asha",
+                  "s1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bala",
+                  "s1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chitra",
+                  "s2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Health checks and removing servers",
+      "codeHash": "a9528a46e96c301915085f0af1a1a4e7a5cd13f97b046234cbeba745b0baa0f6",
+      "spec": {
+        "template": "table",
+        "title": "Health check thresholds for server pool membership state transitions",
+        "columns": [
+          "in_pool",
+          "fails",
+          "passes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active health checks call status endpoints every few seconds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Thresholds avoid flapping by requiring multiple consecutive checks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "False"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Servers drain current requests before being taken out of service.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Health check thresholds for server pool membership state transitions",
+        "columns": [
+          "in_pool",
+          "fails",
+          "passes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active health checks call status endpoints every few seconds.",
+            "rows": [
+              {
+                "cells": [
+                  "True",
+                  "0",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Thresholds avoid flapping by requiring multiple consecutive checks.",
+            "rows": [
+              {
+                "cells": [
+                  "False",
+                  "3",
+                  "0"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Servers drain current requests before being taken out of service.",
+            "rows": [
+              {
+                "cells": [
+                  "True",
+                  "0",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing an algorithm",
+      "codeHash": "ab3aaa437b33c6042d74d39570aaeaa06eb1f694c1c32b73c2a668c5b18a6413",
+      "spec": {
+        "template": "none",
+        "reason": "Algorithmic trade-offs between random choice and power of two choices."
+      },
+      "filled": {}
+    }
+  ]
+}
