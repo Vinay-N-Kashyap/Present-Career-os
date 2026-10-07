@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The O(N log N) wall and how to get round it",
+      "codeHash": "545ba6fda74879ccdd67e1b1c9544019893e71a10a92f6a6e7431f2dd6427608",
+      "spec": {
+        "template": "compare",
+        "title": "Comparison limit vs counting sort",
+        "leftLabel": "Comparison Sorts",
+        "rightLabel": "Non-Comparison Sorts",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Comparison sorts require N log N comparisons in worst case.",
+            "left": {
+              "code": "1M items",
+              "result": {
+                "text": "20M steps"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "N log N lower bound",
+              "result": {
+                "text": "proven limit"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counting sort runs in linear time when range is small.",
+            "left": {
+              "code": "1M items",
+              "result": {
+                "text": "20M steps"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "K=100 range",
+              "result": {
+                "text": "1.0001M steps"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparison limit vs counting sort",
+        "leftLabel": "Comparison Sorts",
+        "rightLabel": "Non-Comparison Sorts",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Comparison sorts require N log N comparisons in worst case.",
+            "left": {
+              "code": "1M items",
+              "result": "20M steps",
+              "tone": "error",
+              "checks": [
+                "20M steps"
+              ]
+            },
+            "right": {
+              "code": "N log N lower bound",
+              "result": "proven limit",
+              "tone": "data",
+              "checks": [
+                "proven limit"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counting sort runs in linear time when range is small.",
+            "left": {
+              "code": "1M items",
+              "result": "20M steps",
+              "tone": "error",
+              "checks": [
+                "20M steps"
+              ]
+            },
+            "right": {
+              "code": "K=100 range",
+              "result": "1.0001M steps",
+              "tone": "ok",
+              "checks": [
+                "1.0001M steps"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting sort",
+      "codeHash": "30691a8e26d3bc453f6689782b5c0dbc81ef82931b3ac79c96a48e050e8bbf34",
+      "spec": {
+        "template": "cells",
+        "title": "Frequency array bucket counting",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Make counts list with one slot per possible value.",
+            "items": [
+              {
+                "text": "c[0]: 1"
+              },
+              {
+                "text": "c[3]: 2"
+              },
+              {
+                "text": "c[7]: 3"
+              },
+              {
+                "text": "c[9]: 1"
+              },
+              {
+                "text": "c[10]: 1"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "c[7]",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walk counts upwards writing each value out as counted.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "7"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "sorted",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Frequency array bucket counting",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Make counts list with one slot per possible value.",
+            "items": [
+              "c[0]: 1",
+              "c[3]: 2",
+              "c[7]: 3",
+              "c[9]: 1",
+              "c[10]: 1"
+            ],
+            "pointers": [
+              {
+                "name": "c[7]",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walk counts upwards writing each value out as counted.",
+            "items": [
+              "0",
+              "3",
+              "3",
+              "7",
+              "7",
+              "7"
+            ],
+            "pointers": [
+              {
+                "name": "sorted",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sorting 0s, 1s and 2s in one pass",
+      "codeHash": "db6e771c2f998be83969fe9450518535b61457d3a910cc1369bf8ca08f4c78cc",
+      "spec": {
+        "template": "cells",
+        "title": "Dutch national flag three-pointer partition",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Three pointers partition low zeros and high twos.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "0"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "high",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping zeros to low and twos to high partitions in place.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "high",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Dutch national flag three-pointer partition",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Three pointers partition low zeros and high twos.",
+            "items": [
+              "2",
+              "0",
+              "2",
+              "1",
+              "1",
+              "0"
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "mid",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "high",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping zeros to low and twos to high partitions in place.",
+            "items": [
+              "0",
+              "0",
+              "1",
+              "1",
+              "2",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 4,
+                "tone": "ok"
+              },
+              {
+                "name": "high",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stable counting sort for records",
+      "codeHash": "7dadc583af723f44a93f115fa2a9584ce96b3be55537041bc3d2a4d01ca9ef7c",
+      "spec": {
+        "template": "none",
+        "reason": "Bucket chaining maintaining record entry stability."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Bucket chaining maintaining record entry stability."
+      }
+    },
+    {
+      "partTitle": "Radix sort: digit by digit",
+      "codeHash": "e74dc53abeb63ad850669a6a9a3c7d06be876434b243f70364ec805f60d1c923",
+      "spec": {
+        "template": "table",
+        "title": "Radix sort digit passes",
+        "columns": [
+          "Pass Digit",
+          "Array State",
+          "Ordering Key",
+          "Stability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sort ones digit then tens then hundreds in successive passes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ones digit"
+                  },
+                  {
+                    "text": "[170, 90, 802, 2, 24, 45, 75, 66]"
+                  },
+                  {
+                    "text": "units 0..9"
+                  },
+                  {
+                    "text": "stable"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tens digit"
+                  },
+                  {
+                    "text": "[802, 2, 24, 45, 66, 170, 75, 90]"
+                  },
+                  {
+                    "text": "tens 0..9"
+                  },
+                  {
+                    "text": "stable"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Fixed digit count yields linear time across numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ones digit"
+                  },
+                  {
+                    "text": "[170, 90, 802, 2, 24, 45, 75, 66]"
+                  },
+                  {
+                    "text": "units 0..9"
+                  },
+                  {
+                    "text": "stable"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tens digit"
+                  },
+                  {
+                    "text": "[802, 2, 24, 45, 66, 170, 75, 90]"
+                  },
+                  {
+                    "text": "tens 0..9"
+                  },
+                  {
+                    "text": "stable"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hundreds"
+                  },
+                  {
+                    "text": "[2, 24, 45, 66, 75, 90, 170, 802]"
+                  },
+                  {
+                    "text": "hundreds 0..8"
+                  },
+                  {
+                    "text": "fully sorted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Radix sort digit passes",
+        "columns": [
+          "Pass Digit",
+          "Array State",
+          "Ordering Key",
+          "Stability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sort ones digit then tens then hundreds in successive passes.",
+            "rows": [
+              {
+                "cells": [
+                  "ones digit",
+                  "[170, 90, 802, 2, 24, 45, 75, 66]",
+                  "units 0..9",
+                  "stable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tens digit",
+                  "[802, 2, 24, 45, 66, 170, 75, 90]",
+                  "tens 0..9",
+                  "stable"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Fixed digit count yields linear time across numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "ones digit",
+                  "[170, 90, 802, 2, 24, 45, 75, 66]",
+                  "units 0..9",
+                  "stable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tens digit",
+                  "[802, 2, 24, 45, 66, 170, 75, 90]",
+                  "tens 0..9",
+                  "stable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hundreds",
+                  "[2, 24, 45, 66, 75, 90, 170, 802]",
+                  "hundreds 0..8",
+                  "fully sorted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a sort",
+      "codeHash": "55241ffd9690b3194fcbd69cc4afa23b5b0de83407987fd2a19953a4d424c607",
+      "spec": {
+        "template": "none",
+        "reason": "Decision matrix for selecting sorting algorithm based on constraints."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Decision matrix for selecting sorting algorithm based on constraints."
+      }
+    }
+  ]
+}

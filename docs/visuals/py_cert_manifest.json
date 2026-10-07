@@ -1036,27 +1036,27 @@
     },
     "dsa-py:14:0": {
       "partTitle": "The O(N log N) wall and how to get round it",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:14:1": {
       "partTitle": "Counting sort",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:14:2": {
       "partTitle": "Sorting 0s, 1s and 2s in one pass",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:14:3": {
       "partTitle": "Stable counting sort for records",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:14:4": {
       "partTitle": "Radix sort: digit by digit",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:14:5": {
       "partTitle": "Choosing a sort",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:15:0": {
       "partTitle": "Streams and why sorting every time is too slow",
