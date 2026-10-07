@@ -4324,27 +4324,27 @@
     },
     "nlp-py:1:0": {
       "partTitle": "Why text needs cleaning",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:1:1": {
       "partTitle": "Unicode and normalisation",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:1:2": {
       "partTitle": "Removing accents",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:1:3": {
       "partTitle": "Tokenising with regular expressions",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:1:4": {
       "partTitle": "Stopwords",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:1:5": {
       "partTitle": "Practice time: the full pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:2:0": {
       "partTitle": "Many forms, one meaning",

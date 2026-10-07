@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why text needs cleaning",
+      "codeHash": "da576676b17aed7ce60cd41c7ad008a495e338eebf1e1939927a494a98947da0",
+      "spec": {
+        "template": "table",
+        "title": "Raw text versus cleaned tokens comparison and frequency counts",
+        "columns": [
+          "raw",
+          "clean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Natural language processing enables computers to work with human language.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Computers see characters so case differences create different words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting words without cleaning treats identical words differently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "The"
+                  },
+                  {
+                    "text": "the"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A preprocessing pipeline normalises Unicode, lowercases and splits tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "The"
+                  },
+                  {
+                    "text": "the"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raw text versus cleaned tokens comparison and frequency counts",
+        "columns": [
+          "raw",
+          "clean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Natural language processing enables computers to work with human language.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "clean"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Computers see characters so case differences create different words.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "clean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "clean"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Counting words without cleaning treats identical words differently.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "clean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "clean"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "The",
+                  "the"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A preprocessing pipeline normalises Unicode, lowercases and splits tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "cat",
+                  "clean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "clean"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "The",
+                  "the"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "text",
+                  "clean"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unicode and normalisation",
+      "codeHash": "3f52209a29fd6c3d65bf9bc668434ecb3593f160e6606f579fd3febe49615e5a",
+      "spec": {
+        "template": "table",
+        "title": "Unicode string normalization forms and compatibility decompositions",
+        "columns": [
+          "one",
+          "two"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern text in Unicode covers writing systems across languages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The same visible character can be stored in more than one way.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "e"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unicode normalisation turns text into standard forms like NFC and NFD.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "e"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NFC"
+                  },
+                  {
+                    "text": "NFD"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compatibility forms replace ligature symbols with plain letters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "e"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NFC"
+                  },
+                  {
+                    "text": "NFD"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NFKC"
+                  },
+                  {
+                    "text": "NFKD"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Unicode string normalization forms and compatibility decompositions",
+        "columns": [
+          "one",
+          "two"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern text in Unicode covers writing systems across languages.",
+            "rows": [
+              {
+                "cells": [
+                  "one",
+                  "two"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The same visible character can be stored in more than one way.",
+            "rows": [
+              {
+                "cells": [
+                  "one",
+                  "two"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "one",
+                  "e"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unicode normalisation turns text into standard forms like NFC and NFD.",
+            "rows": [
+              {
+                "cells": [
+                  "one",
+                  "two"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "one",
+                  "e"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "NFC",
+                  "NFD"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compatibility forms replace ligature symbols with plain letters.",
+            "rows": [
+              {
+                "cells": [
+                  "one",
+                  "two"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "one",
+                  "e"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "NFC",
+                  "NFD"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "NFKC",
+                  "NFKD"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Removing accents",
+      "codeHash": "d9913e6a13742143f0c2d7d658a33d1e7f2d9e610e2c4dee8abb7154d5ed6600",
+      "spec": {
+        "template": "table",
+        "title": "Stripping combining accent marks from decomposed NFKD characters",
+        "columns": [
+          "text",
+          "word"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accents become separate combining characters in NFKD form.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "résumé"
+                  },
+                  {
+                    "text": "resume"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Combining marks return non-zero values to filter out.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "résumé"
+                  },
+                  {
+                    "text": "resume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "strip_accents"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stripping accents shrinks the vocabulary and improves search matching.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "résumé"
+                  },
+                  {
+                    "text": "resume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "strip_accents"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cafe"
+                  },
+                  {
+                    "text": "Café"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "In some languages stripping accents changes word meaning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "résumé"
+                  },
+                  {
+                    "text": "resume"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "strip_accents"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cafe"
+                  },
+                  {
+                    "text": "Café"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "word"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Stripping combining accent marks from decomposed NFKD characters",
+        "columns": [
+          "text",
+          "word"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accents become separate combining characters in NFKD form.",
+            "rows": [
+              {
+                "cells": [
+                  "résumé",
+                  "resume"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Combining marks return non-zero values to filter out.",
+            "rows": [
+              {
+                "cells": [
+                  "résumé",
+                  "resume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "strip_accents",
+                  "word"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stripping accents shrinks the vocabulary and improves search matching.",
+            "rows": [
+              {
+                "cells": [
+                  "résumé",
+                  "resume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "strip_accents",
+                  "word"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cafe",
+                  "Café"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "In some languages stripping accents changes word meaning.",
+            "rows": [
+              {
+                "cells": [
+                  "résumé",
+                  "resume"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "strip_accents",
+                  "word"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cafe",
+                  "Café"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "word"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tokenising with regular expressions",
+      "codeHash": "d78e14d1ce6cafce40a2a7c0d46a008b7e3d53ef28128656d90cec814c413d8d",
+      "spec": {
+        "template": "table",
+        "title": "Regex tokenization replacing non-word characters and splitting on spaces",
+        "columns": [
+          "text",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tokenisation splits text into distinct word units.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fox"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A regular expression replaces punctuation characters with spaces.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fox"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Splitting on whitespace ignores extra spaces and prevents empty tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fox"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Findall returns runs of word characters directly from text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fox"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "split"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "findall"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Regex tokenization replacing non-word characters and splitting on spaces",
+        "columns": [
+          "text",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tokenisation splits text into distinct word units.",
+            "rows": [
+              {
+                "cells": [
+                  "fox",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A regular expression replaces punctuation characters with spaces.",
+            "rows": [
+              {
+                "cells": [
+                  "fox",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Splitting on whitespace ignores extra spaces and prevents empty tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "fox",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split",
+                  "tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Findall returns runs of word characters directly from text.",
+            "rows": [
+              {
+                "cells": [
+                  "fox",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "split",
+                  "tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "findall",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stopwords",
+      "codeHash": "1ea673e26a8aea8b4f48d90439423cdaa3f91e8bdf72b2a7453c003ff1be4a9f",
+      "spec": {
+        "template": "none",
+        "reason": "Stopwords."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: the full pipeline",
+      "codeHash": "ae526c604a16d5b0d8eb176fee4c106a60c975fc7f114882ea62d3767f6d9262",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: the full pipeline."
+      },
+      "filled": {}
+    }
+  ]
+}
