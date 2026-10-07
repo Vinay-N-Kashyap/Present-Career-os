@@ -1300,27 +1300,27 @@
     },
     "dsa-py:25:0": {
       "partTitle": "What dynamic programming is",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:25:1": {
       "partTitle": "Memoization: top-down DP",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:25:2": {
       "partTitle": "Tabulation: bottom-up DP",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:25:3": {
       "partTitle": "Climbing stairs",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:25:4": {
       "partTitle": "House robber: choose or skip",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:25:5": {
       "partTitle": "A recipe for DP problems",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:26:0": {
       "partTitle": "When greedy choices fail",
