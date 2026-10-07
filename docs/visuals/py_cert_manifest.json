@@ -1708,27 +1708,27 @@
     },
     "sql-mastery:12:0": {
       "partTitle": "LEFT JOIN: keep every row from the first table",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:12:1": {
       "partTitle": "Counting zero correctly",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:12:2": {
       "partTitle": "Finding rows with no match",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:12:3": {
       "partTitle": "The WHERE trap with LEFT JOIN",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:12:4": {
       "partTitle": "RIGHT JOIN and FULL JOIN",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:12:5": {
       "partTitle": "Putting it together: a customer activity report",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:13:0": {
       "partTitle": "Chaining joins step by step",
