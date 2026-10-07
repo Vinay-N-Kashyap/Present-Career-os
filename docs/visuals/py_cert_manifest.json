@@ -1660,27 +1660,27 @@
     },
     "sql-mastery:10:0": {
       "partTitle": "Why data is split into several tables",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:10:1": {
       "partTitle": "One-to-many relationships",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:10:2": {
       "partTitle": "FOREIGN KEY: letting PostgreSQL protect the link",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:10:3": {
       "partTitle": "Many-to-many relationships",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:10:4": {
       "partTitle": "Reading a database design",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:10:5": {
       "partTitle": "Putting it together: adding reviews to the shop",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:11:0": {
       "partTitle": "What a join does",
