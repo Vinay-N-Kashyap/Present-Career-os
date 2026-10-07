@@ -5092,27 +5092,27 @@
     },
     "quant-py:3:0": {
       "partTitle": "When does an order trade?",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:3:1": {
       "partTitle": "Walking the book",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:3:2": {
       "partTitle": "Remainders rest in the book",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:3:3": {
       "partTitle": "Average fill price",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:3:4": {
       "partTitle": "Determinism and testing",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:3:5": {
       "partTitle": "Practice time: match orders",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:4:0": {
       "partTitle": "Why split an order?",
