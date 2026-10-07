@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why keep copies",
+      "codeHash": "cbb32d18d1910f7707394d2beefaaa2578c9af0c3a645597a226fde36b437b78",
+      "spec": {
+        "template": "none",
+        "reason": "Replication stale reads and partition synchronization trade-offs."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The CAP theorem",
+      "codeHash": "a9ebe42f898d38d7fc42f4d057dcf2408b2871c29840de77e0544d5be1164a5f",
+      "spec": {
+        "template": "compare",
+        "title": "CAP theorem consistency vs availability trade-offs during network partition",
+        "leftLabel": "CP Architecture",
+        "rightLabel": "AP Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Network partition forces choice between consistency and availability.",
+            "left": {
+              "code": "write(\"CP\", replicas, [\"r1\"])",
+              "result": {
+                "text": "CP"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "write(\"AP\", replicas, [\"r1\"])",
+              "result": {
+                "text": "AP"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CP system refuses requests without majority to prevent conflicts.",
+            "left": {
+              "code": "partition isolated r1 rejects write",
+              "result": {
+                "text": "REJECTED"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "partition majority r2+r3 accepts",
+              "result": {
+                "text": "ACCEPTED"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "AP system keeps answering on both sides.",
+            "left": {
+              "code": "minority partition rejects write",
+              "result": {
+                "text": "REJECTED"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AP replica r1 accepts update",
+              "result": {
+                "text": "ACCEPTED"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CAP theorem consistency vs availability trade-offs during network partition",
+        "leftLabel": "CP Architecture",
+        "rightLabel": "AP Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Network partition forces choice between consistency and availability.",
+            "left": {
+              "code": "write(\"CP\", replicas, [\"r1\"])",
+              "result": "CP",
+              "tone": "data",
+              "checks": [
+                "CP"
+              ]
+            },
+            "right": {
+              "code": "write(\"AP\", replicas, [\"r1\"])",
+              "result": "AP",
+              "tone": "data",
+              "checks": [
+                "AP"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CP system refuses requests without majority to prevent conflicts.",
+            "left": {
+              "code": "partition isolated r1 rejects write",
+              "result": "REJECTED",
+              "tone": "error",
+              "checks": [
+                "REJECTED"
+              ]
+            },
+            "right": {
+              "code": "partition majority r2+r3 accepts",
+              "result": "ACCEPTED",
+              "tone": "ok",
+              "checks": [
+                "ACCEPTED"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "AP system keeps answering on both sides.",
+            "left": {
+              "code": "minority partition rejects write",
+              "result": "REJECTED",
+              "tone": "error",
+              "checks": [
+                "REJECTED"
+              ]
+            },
+            "right": {
+              "code": "AP replica r1 accepts update",
+              "result": "ACCEPTED",
+              "tone": "ok",
+              "checks": [
+                "ACCEPTED"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PACELC: the trade-off without failures",
+      "codeHash": "6259731737348cb4fae18111bbd8977dec9ec4571211461d0ad403d4302749b7",
+      "spec": {
+        "template": "table",
+        "title": "PACELC trade-off classification across database engines",
+        "columns": [
+          "partition",
+          "normal",
+          "classification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PACELC evaluates trade-offs during normal operation else latency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "AP"
+                  },
+                  {
+                    "text": "EL"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "System describes choices during partition and normal states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "AP"
+                  },
+                  {
+                    "text": "EL"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CP"
+                  },
+                  {
+                    "text": "EC"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function classify_system maps trade-offs to known engines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "AP"
+                  },
+                  {
+                    "text": "EL"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CP"
+                  },
+                  {
+                    "text": "EC"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CP"
+                  },
+                  {
+                    "text": "EL"
+                  },
+                  {
+                    "text": "CUSTOM"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PACELC trade-off classification across database engines",
+        "columns": [
+          "partition",
+          "normal",
+          "classification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PACELC evaluates trade-offs during normal operation else latency.",
+            "rows": [
+              {
+                "cells": [
+                  "AP",
+                  "EL",
+                  "CUSTOM"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "System describes choices during partition and normal states.",
+            "rows": [
+              {
+                "cells": [
+                  "AP",
+                  "EL",
+                  "CUSTOM"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CP",
+                  "EC",
+                  "CUSTOM"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function classify_system maps trade-offs to known engines.",
+            "rows": [
+              {
+                "cells": [
+                  "AP",
+                  "EL",
+                  "CUSTOM"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CP",
+                  "EC",
+                  "CUSTOM"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "CP",
+                  "EL",
+                  "CUSTOM"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quorums and majorities",
+      "codeHash": "884dff53f737fddb003e86cbecdd040e8fe9d2cf2ce2b9b281c6ad12c189e70a",
+      "spec": {
+        "template": "table",
+        "title": "Quorum calculation and fault tolerance thresholds",
+        "columns": [
+          "total_nodes",
+          "active_nodes",
+          "majority"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quorum requires strictly more than half of nodes to agree.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function has_quorum returns True when active nodes exceed half.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict majority prevents split brain across partitioned sides.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Quorum calculation and fault tolerance thresholds",
+        "columns": [
+          "total_nodes",
+          "active_nodes",
+          "majority"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quorum requires strictly more than half of nodes to agree.",
+            "rows": [
+              {
+                "cells": [
+                  "3",
+                  "2",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Function has_quorum returns True when active nodes exceed half.",
+            "rows": [
+              {
+                "cells": [
+                  "3",
+                  "2",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4",
+                  "2",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict majority prevents split brain across partitioned sides.",
+            "rows": [
+              {
+                "cells": [
+                  "3",
+                  "2",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "4",
+                  "2",
+                  "False"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "5",
+                  "3",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tunable consistency: R + W > N",
+      "codeHash": "087f23348430854c1fa4794d3edc745c618097aa8d496706151973b3ef0aabaf",
+      "spec": {
+        "template": "compare",
+        "title": "Tunable consistency formula R plus W exceeding total replicas N",
+        "leftLabel": "Consistent Quorum",
+        "rightLabel": "Stale Read Risk",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Configurable read and write replicas balance speed and consistency.",
+            "left": {
+              "code": "W=2 R=2 on N=3",
+              "result": {
+                "text": "consistent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "W=1 R=1 on N=3",
+              "result": {
+                "text": "may be stale"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Overlapping read and write sets guarantee latest write.",
+            "left": {
+              "code": "R + W > N overlap verified",
+              "result": {
+                "text": "consistent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "R + W <= N no overlap",
+              "result": {
+                "text": "may be stale"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Quorum settings give consistent reads while tolerating slow replica.",
+            "left": {
+              "code": "W=2 R=2 tolerates 1 failure",
+              "result": {
+                "text": "consistent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "W=3 R=1 fails on 1 failure",
+              "result": {
+                "text": "consistent"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Tunable consistency formula R plus W exceeding total replicas N",
+        "leftLabel": "Consistent Quorum",
+        "rightLabel": "Stale Read Risk",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Configurable read and write replicas balance speed and consistency.",
+            "left": {
+              "code": "W=2 R=2 on N=3",
+              "result": "consistent",
+              "tone": "ok",
+              "checks": [
+                "consistent"
+              ]
+            },
+            "right": {
+              "code": "W=1 R=1 on N=3",
+              "result": "may be stale",
+              "tone": "error",
+              "checks": [
+                "may be stale"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Overlapping read and write sets guarantee latest write.",
+            "left": {
+              "code": "R + W > N overlap verified",
+              "result": "consistent",
+              "tone": "ok",
+              "checks": [
+                "consistent"
+              ]
+            },
+            "right": {
+              "code": "R + W <= N no overlap",
+              "result": "may be stale",
+              "tone": "error",
+              "checks": [
+                "may be stale"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Quorum settings give consistent reads while tolerating slow replica.",
+            "left": {
+              "code": "W=2 R=2 tolerates 1 failure",
+              "result": "consistent",
+              "tone": "ok",
+              "checks": [
+                "consistent"
+              ]
+            },
+            "right": {
+              "code": "W=3 R=1 fails on 1 failure",
+              "result": "consistent",
+              "tone": "error",
+              "checks": [
+                "consistent"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing for real products",
+      "codeHash": "3124b5138ce6629080e64eb2abd9ddc00c005e861e463b351ea303b76d96183e",
+      "spec": {
+        "template": "none",
+        "reason": "Architecture decision guidelines for strong vs eventual consistency."
+      },
+      "filled": {}
+    }
+  ]
+}

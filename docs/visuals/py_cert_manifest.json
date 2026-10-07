@@ -2908,27 +2908,27 @@
     },
     "dist-py:2:0": {
       "partTitle": "Why keep copies",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:2:1": {
       "partTitle": "The CAP theorem",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:2:2": {
       "partTitle": "PACELC: the trade-off without failures",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:2:3": {
       "partTitle": "Quorums and majorities",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:2:4": {
       "partTitle": "Tunable consistency: R + W > N",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:2:5": {
       "partTitle": "Choosing for real products",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:3:0": {
       "partTitle": "Remote procedure calls",
