@@ -1396,27 +1396,27 @@
     },
     "dsa-py:29:0": {
       "partTitle": "Numbers in binary",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:29:1": {
       "partTitle": "The bitwise operators",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:29:2": {
       "partTitle": "XOR magic: single number",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:29:3": {
       "partTitle": "Counting 1 bits",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:29:4": {
       "partTitle": "Bitmasks as tiny sets",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:29:5": {
       "partTitle": "Using bits wisely",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:30:0": {
       "partTitle": "The capstone problem",
