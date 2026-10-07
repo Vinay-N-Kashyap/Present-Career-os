@@ -3892,27 +3892,27 @@
     },
     "cloud-py:13:0": {
       "partTitle": "Tables, items and keys",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:13:1": {
       "partTitle": "Designing keys from access patterns",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:13:2": {
       "partTitle": "Hot partitions",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:13:3": {
       "partTitle": "Global secondary indexes",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:13:4": {
       "partTitle": "Capacity: RCUs and WCUs",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:13:5": {
       "partTitle": "Practice time: hot keys and capacity",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:14:0": {
       "partTitle": "Managed relational databases",
