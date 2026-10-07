@@ -3628,27 +3628,27 @@
     },
     "cloud-py:2:0": {
       "partTitle": "Regions: separate clouds around the world",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:2:1": {
       "partTitle": "Availability Zones: failure boundaries inside a Region",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:2:2": {
       "partTitle": "Checking region codes with a regular expression",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:2:3": {
       "partTitle": "Edge locations and the speed of light",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:2:4": {
       "partTitle": "Designing for failure",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:2:5": {
       "partTitle": "Practice time: AZ checks and region codes",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:3:0": {
       "partTitle": "Your own private network: the VPC",
