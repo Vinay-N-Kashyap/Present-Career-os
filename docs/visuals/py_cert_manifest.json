@@ -4540,27 +4540,27 @@
     },
     "nlp-py:10:0": {
       "partTitle": "Tagging is a sequence problem",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:10:1": {
       "partTitle": "The hidden Markov model",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:10:2": {
       "partTitle": "Why brute force fails",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:10:3": {
       "partTitle": "The Viterbi algorithm",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:10:4": {
       "partTitle": "From HMMs to modern taggers",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:10:5": {
       "partTitle": "Practice time: Viterbi",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:11:0": {
       "partTitle": "What named entity recognition does",
