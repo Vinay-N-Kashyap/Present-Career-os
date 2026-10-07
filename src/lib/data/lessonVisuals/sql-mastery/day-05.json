@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "LIKE: searching inside text",
+      "codeHash": "b54302fa76c869176f4aa4b0a58efd380531d0ff227b62d5b2916e84694a3ed3",
+      "spec": {
+        "template": "table",
+        "title": "Pattern matching with LIKE wildcards",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LIKE compares text with a pattern where wildcards match substrings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The percent sign means any number of characters including none.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pencil box"
+                  },
+                  {
+                    "text": "120.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pattern matching with LIKE wildcards",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LIKE compares text with a pattern where wildcards match substrings.",
+            "rows": [
+              {
+                "cells": [
+                  "Headphones",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The percent sign means any number of characters including none.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pencil box",
+                  "120.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ILIKE: search without worrying about capitals",
+      "codeHash": "c464e4de5ace6c97d4db9487e6c7f7d2404e4828db6ca4f3cb8f0617e1bc4356",
+      "spec": {
+        "template": "compare",
+        "title": "Case-sensitive LIKE versus case-insensitive ILIKE",
+        "leftLabel": "LIKE (Case Sensitive)",
+        "rightLabel": "ILIKE (Case Insensitive)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL has ILIKE which ignores capital letters in text search.",
+            "left": {
+              "code": "LIKE 'head%'",
+              "result": {
+                "text": "case sensitive"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ILIKE 'head%'",
+              "result": {
+                "text": "case insensitive"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "For most search boxes in applications ILIKE is what you want.",
+            "left": {
+              "code": "search 'HEAD%' with LIKE",
+              "result": {
+                "text": "zero matches"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "search 'HEAD%' with ILIKE",
+              "result": {
+                "text": "Headphones"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Case-sensitive LIKE versus case-insensitive ILIKE",
+        "leftLabel": "LIKE (Case Sensitive)",
+        "rightLabel": "ILIKE (Case Insensitive)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL has ILIKE which ignores capital letters in text search.",
+            "left": {
+              "code": "LIKE 'head%'",
+              "result": "case sensitive",
+              "tone": "error",
+              "checks": [
+                "case sensitive"
+              ]
+            },
+            "right": {
+              "code": "ILIKE 'head%'",
+              "result": "case insensitive",
+              "tone": "ok",
+              "checks": [
+                "case insensitive"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "For most search boxes in applications ILIKE is what you want.",
+            "left": {
+              "code": "search 'HEAD%' with LIKE",
+              "result": "zero matches",
+              "tone": "error",
+              "checks": [
+                "zero matches"
+              ]
+            },
+            "right": {
+              "code": "search 'HEAD%' with ILIKE",
+              "result": "Headphones",
+              "tone": "ok",
+              "checks": [
+                "Headphones"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IN: matching a list of values",
+      "codeHash": "4dc0c0e4c49d29c9570efa7af97051c217572d6e5e53db98865b6ac90dfe5267",
+      "spec": {
+        "template": "table",
+        "title": "Filtering with the IN operator",
+        "columns": [
+          "id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sometimes you want rows where a column is one of several values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "delivered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "shipped"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The IN operator means exactly the same as multiple OR conditions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "delivered"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "shipped"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "cancelled"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filtering with the IN operator",
+        "columns": [
+          "id",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sometimes you want rows where a column is one of several values.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "delivered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "shipped"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The IN operator means exactly the same as multiple OR conditions.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "delivered"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "shipped"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "cancelled"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BETWEEN: ranges of numbers and dates",
+      "codeHash": "b82876681226e0b7fee7b0f67c7c2112e8f6addd2bb60e58ab91f79dfb76e580",
+      "spec": {
+        "template": "none",
+        "reason": "Inclusive BETWEEN endpoint semantics and NULL boundary exclusions."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Inclusive BETWEEN endpoint semantics and NULL boundary exclusions."
+      }
+    },
+    {
+      "partTitle": "Combining text, list and range filters",
+      "codeHash": "8be8dae0f05fe09c88d4a7b1a7102225e8ae655a51550332bdfa5d018c34679b",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-predicate filter composition combining ILIKE, IN, and BETWEEN."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-predicate filter composition combining ILIKE, IN, and BETWEEN."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a product search",
+      "codeHash": "c92f87ce3a1a4b4bd80bd1567aadfeea3805911172cd6ced51620f9ebf79a499",
+      "spec": {
+        "template": "table",
+        "title": "Product search query results",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us finish the first week with a search page for the shop.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "First we search products by name with ILIKE and find orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Product search query results",
+        "columns": [
+          "name",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us finish the first week with a search page for the shop.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "First we search products by name with ILIKE and find orders.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Headphones",
+                  "1499.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

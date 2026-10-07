@@ -1540,27 +1540,27 @@
     },
     "sql-mastery:5:0": {
       "partTitle": "LIKE: searching inside text",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:5:1": {
       "partTitle": "ILIKE: search without worrying about capitals",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:5:2": {
       "partTitle": "IN: matching a list of values",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:5:3": {
       "partTitle": "BETWEEN: ranges of numbers and dates",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:5:4": {
       "partTitle": "Combining text, list and range filters",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:5:5": {
       "partTitle": "Putting it together: a product search",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:6:0": {
       "partTitle": "Why order is never guaranteed",
