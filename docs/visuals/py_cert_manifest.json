@@ -3004,27 +3004,27 @@
     },
     "dist-py:6:0": {
       "partTitle": "Why locks across machines",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:6:1": {
       "partTitle": "Leases: locks that expire",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:6:2": {
       "partTitle": "Fencing tokens",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:6:3": {
       "partTitle": "Clock drift and safety margins",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:6:4": {
       "partTitle": "Redlock and majority locks",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:6:5": {
       "partTitle": "Avoiding locks when you can",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:7:0": {
       "partTitle": "Why have a leader?",

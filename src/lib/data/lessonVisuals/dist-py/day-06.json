@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why locks across machines",
+      "codeHash": "117065b672761281ececb3ca4838482b8e4c85d2229b03505d90424b7b46ad16",
+      "spec": {
+        "template": "none",
+        "reason": "Race conditions and mutual exclusion across distributed workers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Leases: locks that expire",
+      "codeHash": "14748251d73ce3cbe2e16f6d0d38e482d168bcd967f344d9085f9e2eaf1ea841",
+      "spec": {
+        "template": "table",
+        "title": "Distributed lease lock acquisition and timeout transitions",
+        "columns": [
+          "now",
+          "owner",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed leases expire after time to live preventing deadlocks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "worker-1"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active lease held by worker prevents another worker from acquiring.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "worker-1"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "worker-2"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expired lease allows new worker to acquire lock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "worker-1"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "500"
+                  },
+                  {
+                    "text": "worker-2"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1200"
+                  },
+                  {
+                    "text": "worker-2"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed lease lock acquisition and timeout transitions",
+        "columns": [
+          "now",
+          "owner",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed leases expire after time to live preventing deadlocks.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "worker-1",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active lease held by worker prevents another worker from acquiring.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "worker-1",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "worker-2",
+                  "False"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expired lease allows new worker to acquire lock.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "worker-1",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "500",
+                  "worker-2",
+                  "False"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "1200",
+                  "worker-2",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fencing tokens",
+      "codeHash": "59dd1f879c1d5e9677c8be085690acad6f335327da21a6507b386b56aee042f0",
+      "spec": {
+        "template": "compare",
+        "title": "Fencing token monotonic counter validation on shared storage",
+        "leftLabel": "Fresh Token Write",
+        "rightLabel": "Stale Token Write",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Fencing token counter increases every time lock is granted.",
+            "left": {
+              "code": "locks.acquire(\"invoice-9\", now=1500)",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "delayed worker-1 holds expired lease",
+              "result": {
+                "text": "False"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Storage tracks highest token rejecting writes with lower tokens.",
+            "left": {
+              "code": "db.write(token=2, \"from worker-2\")",
+              "result": {
+                "text": "from worker-2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "db.write(token=1, \"from worker-1\")",
+              "result": {
+                "text": "REJECTED"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Checking lock on release stops worker releasing expired lock.",
+            "left": {
+              "code": "locks.release(\"invoice-9\", w2_id)",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "locks.release(\"invoice-9\", w1_id)",
+              "result": {
+                "text": "False"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Fencing token monotonic counter validation on shared storage",
+        "leftLabel": "Fresh Token Write",
+        "rightLabel": "Stale Token Write",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Fencing token counter increases every time lock is granted.",
+            "left": {
+              "code": "locks.acquire(\"invoice-9\", now=1500)",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "delayed worker-1 holds expired lease",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Storage tracks highest token rejecting writes with lower tokens.",
+            "left": {
+              "code": "db.write(token=2, \"from worker-2\")",
+              "result": "from worker-2",
+              "tone": "ok",
+              "checks": [
+                "from worker-2"
+              ]
+            },
+            "right": {
+              "code": "db.write(token=1, \"from worker-1\")",
+              "result": "REJECTED",
+              "tone": "error",
+              "checks": [
+                "REJECTED"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Checking lock on release stops worker releasing expired lock.",
+            "left": {
+              "code": "locks.release(\"invoice-9\", w2_id)",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "locks.release(\"invoice-9\", w1_id)",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clock drift and safety margins",
+      "codeHash": "6fbf7fec1d1d43353608d61d79dd7b9a385a907f2b78a021a2829dd3023c2e2e",
+      "spec": {
+        "template": "table",
+        "title": "Clock drift safety margin evaluation for distributed lease validity",
+        "columns": [
+          "now",
+          "acquired_at",
+          "drift_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clocks on different machines run fast or slow creating drift.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Safety margin treats lease valid while elapsed plus drift is below TTL.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "900"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Holder stops working before lease ends leaving room for drift.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "900"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "50"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Clock drift safety margin evaluation for distributed lease validity",
+        "columns": [
+          "now",
+          "acquired_at",
+          "drift_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clocks on different machines run fast or slow creating drift.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0",
+                  "50"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Safety margin treats lease valid while elapsed plus drift is below TTL.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0",
+                  "50"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "900",
+                  "0",
+                  "50"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Holder stops working before lease ends leaving room for drift.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "0",
+                  "50"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "900",
+                  "0",
+                  "50"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1000",
+                  "0",
+                  "50"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redlock and majority locks",
+      "codeHash": "60fa1aa4ae872781401068e9c0b50cc036fa4b1b811695da967325539b990216",
+      "spec": {
+        "template": "compare",
+        "title": "Redlock multi-node majority acquisition and validity evaluation",
+        "leftLabel": "Majority Quorum Acquired",
+        "rightLabel": "Quorum Miss / Timeout",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redlock spreads distributed locks across independent Redis nodes.",
+            "left": {
+              "code": "redlock 3 of 5 nodes",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "redlock 2 of 5 nodes",
+              "result": {
+                "text": "False"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Client holds lock only if majority succeeded quickly enough.",
+            "left": {
+              "code": "elapsed 40 ms within TTL",
+              "result": {
+                "text": "40"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "elapsed 1200 ms exceeds TTL",
+              "result": {
+                "text": "1200"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Failing to reach majority releases partial locks immediately.",
+            "left": {
+              "code": "acquired >= majority",
+              "result": {
+                "text": "True"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "acquired < majority fails",
+              "result": {
+                "text": "False"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Redlock multi-node majority acquisition and validity evaluation",
+        "leftLabel": "Majority Quorum Acquired",
+        "rightLabel": "Quorum Miss / Timeout",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redlock spreads distributed locks across independent Redis nodes.",
+            "left": {
+              "code": "redlock 3 of 5 nodes",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "redlock 2 of 5 nodes",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Client holds lock only if majority succeeded quickly enough.",
+            "left": {
+              "code": "elapsed 40 ms within TTL",
+              "result": "40",
+              "tone": "ok",
+              "checks": [
+                "40"
+              ]
+            },
+            "right": {
+              "code": "elapsed 1200 ms exceeds TTL",
+              "result": "1200",
+              "tone": "error",
+              "checks": [
+                "1200"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Failing to reach majority releases partial locks immediately.",
+            "left": {
+              "code": "acquired >= majority",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ]
+            },
+            "right": {
+              "code": "acquired < majority fails",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Avoiding locks when you can",
+      "codeHash": "237ab1a5ab0616a468e998ebc8500ce8c5eadea3adfe3eab2e9306882cabb71e",
+      "spec": {
+        "template": "none",
+        "reason": "Optimistic locking compare-and-set and lockless architecture."
+      },
+      "filled": {}
+    }
+  ]
+}
