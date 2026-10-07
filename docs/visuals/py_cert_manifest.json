@@ -1564,27 +1564,27 @@
     },
     "sql-mastery:6:0": {
       "partTitle": "Why order is never guaranteed",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:6:1": {
       "partTitle": "ORDER BY: ascending and descending",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:6:2": {
       "partTitle": "Sorting by more than one column",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:6:3": {
       "partTitle": "LIMIT: the top few rows",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:6:4": {
       "partTitle": "OFFSET: pages of results",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:6:5": {
       "partTitle": "Putting it together: a catalogue with pages",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:7:0": {
       "partTitle": "What a function is in SQL",
