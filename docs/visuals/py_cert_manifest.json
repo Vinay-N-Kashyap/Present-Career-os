@@ -2212,27 +2212,27 @@
     },
     "ai-py:3:0": {
       "partTitle": "Messages and roles",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:3:1": {
       "partTitle": "Anatomy of a good system prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:3:2": {
       "partTitle": "Structuring prompts with tags",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:3:3": {
       "partTitle": "Prompt injection and stripping tags",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:3:4": {
       "partTitle": "Guardrails on the output",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:3:5": {
       "partTitle": "Personas, tone and testing prompts",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:4:0": {
       "partTitle": "Zero-shot and few-shot prompts",
