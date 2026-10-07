@@ -580,27 +580,27 @@
     },
     "python:25:0": {
       "partTitle": "A summary of spending",
-      "status": "todo"
+      "status": "passed"
     },
     "python:25:1": {
       "partTitle": "Totals per category",
-      "status": "todo"
+      "status": "passed"
     },
     "python:25:2": {
       "partTitle": "Filtering by month",
-      "status": "todo"
+      "status": "passed"
     },
     "python:25:3": {
       "partTitle": "Saving and loading with JSON",
-      "status": "todo"
+      "status": "none"
     },
     "python:25:4": {
       "partTitle": "Connecting it all in the menu",
-      "status": "todo"
+      "status": "none"
     },
     "python:25:5": {
       "partTitle": "Putting it together: all must-haves done",
-      "status": "todo"
+      "status": "none"
     },
     "python:26:0": {
       "partTitle": "What a web API is",
