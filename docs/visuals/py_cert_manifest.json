@@ -4852,27 +4852,27 @@
     },
     "nlp-py:23:0": {
       "partTitle": "Contextual embeddings",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:23:1": {
       "partTitle": "Masked language modelling",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:23:2": {
       "partTitle": "Counting the masking plan",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:23:3": {
       "partTitle": "BERT's input format",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:23:4": {
       "partTitle": "Fine-tuning BERT",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:23:5": {
       "partTitle": "Practice time: masking and inputs",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:24:0": {
       "partTitle": "Predicting the next token",

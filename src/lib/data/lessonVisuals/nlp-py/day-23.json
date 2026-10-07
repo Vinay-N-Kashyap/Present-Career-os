@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Contextual embeddings",
+      "codeHash": "710f12de6e5f3a5630d3043d6002a57652759b4004d32e19b2f896eae3ebcba4",
+      "spec": {
+        "template": "table",
+        "title": "Contextual semantic shifts and word representation sensitivity",
+        "columns": [
+          "nature",
+          "money"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional embeddings assign static vectors regardless of bank contexts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nature"
+                  },
+                  {
+                    "text": "money"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Contextual models yield dynamic vectors that depend on the sentence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nature"
+                  },
+                  {
+                    "text": "money"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "river"
+                  },
+                  {
+                    "text": "water"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self-attention mixes surrounding context words into the vector representation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nature"
+                  },
+                  {
+                    "text": "money"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "river"
+                  },
+                  {
+                    "text": "water"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "account"
+                  },
+                  {
+                    "text": "opened"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-training taught language knowledge before you fine-tune the task.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nature"
+                  },
+                  {
+                    "text": "money"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "river"
+                  },
+                  {
+                    "text": "water"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "account"
+                  },
+                  {
+                    "text": "opened"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "totals"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Contextual semantic shifts and word representation sensitivity",
+        "columns": [
+          "nature",
+          "money"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional embeddings assign static vectors regardless of bank contexts.",
+            "rows": [
+              {
+                "cells": [
+                  "nature",
+                  "money"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Contextual models yield dynamic vectors that depend on the sentence.",
+            "rows": [
+              {
+                "cells": [
+                  "nature",
+                  "money"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "river",
+                  "water"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Self-attention mixes surrounding context words into the vector representation.",
+            "rows": [
+              {
+                "cells": [
+                  "nature",
+                  "money"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "river",
+                  "water"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "account",
+                  "opened"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-training taught language knowledge before you fine-tune the task.",
+            "rows": [
+              {
+                "cells": [
+                  "nature",
+                  "money"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "river",
+                  "water"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "account",
+                  "opened"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "totals",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masked language modelling",
+      "codeHash": "3979d0aa166206553fbf3f2040f99f6fe99be61e6e03f0ac35c613a5a204057a",
+      "spec": {
+        "template": "table",
+        "title": "Masked language modelling token selection and corruption",
+        "columns": [
+          "tokens",
+          "masked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bidirectional context requires predicting hidden tokens without left bias.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "masked"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Masked language models hide words and train the model to predict them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "masked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "picked"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "BERT selects tokens across each sentence for prediction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "masked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "picked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "choice"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Representations build good features for every token across sentences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "masked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "picked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "choice"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Masked language modelling token selection and corruption",
+        "columns": [
+          "tokens",
+          "masked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bidirectional context requires predicting hidden tokens without left bias.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "masked"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Masked language models hide words and train the model to predict them.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "masked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "picked"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "BERT selects tokens across each sentence for prediction.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "masked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "picked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "choice"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Representations build good features for every token across sentences.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "masked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "picked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "choice"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting the masking plan",
+      "codeHash": "447c1574e87b88370ca9b81687bbd469403a534747bd66d9c333a806e300418c",
+      "spec": {
+        "template": "none",
+        "reason": "Bookkeeping and rounding logic for masking plan."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "BERT's input format",
+      "codeHash": "ec3da2133870a0593afd45127771bba5ea1eea42df631d1d819c5ddb02a40388",
+      "spec": {
+        "template": "table",
+        "title": "BERT special token framing and segment type identifiers",
+        "columns": [
+          "tokens",
+          "segments"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Special tokens format inputs according to strict structural requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "segments"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Classification tasks use the summary vector located at the input start.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "segments"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_a"
+                  },
+                  {
+                    "text": "tokens_b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Boundary tokens separate two sentences when comparing sentence pairs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "segments"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_a"
+                  },
+                  {
+                    "text": "tokens_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Segment indicators tell the model which sentence each token belongs to.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "segments"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_a"
+                  },
+                  {
+                    "text": "tokens_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "list"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bert_input"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "BERT special token framing and segment type identifiers",
+        "columns": [
+          "tokens",
+          "segments"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Special tokens format inputs according to strict structural requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "segments"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Classification tasks use the summary vector located at the input start.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "segments"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens_a",
+                  "tokens_b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Boundary tokens separate two sentences when comparing sentence pairs.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "segments"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens_a",
+                  "tokens_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Segment indicators tell the model which sentence each token belongs to.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "segments"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens_a",
+                  "tokens_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "list",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bert_input",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fine-tuning BERT",
+      "codeHash": "97bf5d90a6acec5d6f506dcefd39fb90f6548d52ff6c28912077dc10a228a61c",
+      "spec": {
+        "template": "table",
+        "title": "Downstream task classification heads and token level outputs",
+        "columns": [
+          "task",
+          "head"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fine-tuning adapts pre-trained weights by training on labelled data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "head"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sentence classification directs the pooled vector into a classifier layer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "head"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tasks"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Token tagging evaluates every token vector with a tag classifier.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "head"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tasks"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tasks"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-trained knowledge allows training with far less labelled data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "head"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tasks"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tasks"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "tasks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Downstream task classification heads and token level outputs",
+        "columns": [
+          "task",
+          "head"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fine-tuning adapts pre-trained weights by training on labelled data.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "head"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sentence classification directs the pooled vector into a classifier layer.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "head"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tasks",
+                  "items"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Token tagging evaluates every token vector with a tag classifier.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "head"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tasks",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tasks",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Pre-trained knowledge allows training with far less labelled data.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "head"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tasks",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tasks",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "task",
+                  "tasks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: masking and inputs",
+      "codeHash": "4aadf9dcdd0153d632cd134771ba4744e5dc669fe112c95a6dc82d2f4f9980ca",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: masking and input preprocessing functions."
+      },
+      "filled": {}
+    }
+  ]
+}
