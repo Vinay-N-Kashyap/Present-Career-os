@@ -3580,27 +3580,27 @@
     },
     "dist-py:30:0": {
       "partTitle": "The trading engine's requirements",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:30:1": {
       "partTitle": "The execute_trade function",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:30:2": {
       "partTitle": "Testing every failure path",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:30:3": {
       "partTitle": "Fencing tokens protect the ledger",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:30:4": {
       "partTitle": "The certification audit",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:30:5": {
       "partTitle": "Looking back, and next steps",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:1:0": {
       "partTitle": "What the cloud really is",
