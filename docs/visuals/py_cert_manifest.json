@@ -3460,27 +3460,27 @@
     },
     "dist-py:25:0": {
       "partTitle": "The chatty client problem",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:25:1": {
       "partTitle": "Aggregating a profile",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:25:2": {
       "partTitle": "Calling services in parallel",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:25:3": {
       "partTitle": "CORS headers for browsers",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:25:4": {
       "partTitle": "One BFF per client type",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:25:5": {
       "partTitle": "Operating the edge",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:26:0": {
       "partTitle": "Following one request through many services",
