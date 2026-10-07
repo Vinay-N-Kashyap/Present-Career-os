@@ -2260,27 +2260,27 @@
     },
     "ai-py:5:0": {
       "partTitle": "Why structured output",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:5:1": {
       "partTitle": "Cleaning up the model's JSON",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:5:2": {
       "partTitle": "Checking required keys",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:5:3": {
       "partTitle": "Checking value types",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:5:4": {
       "partTitle": "Retry with a repair prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:5:5": {
       "partTitle": "Milestone 1: a schema-checked extractor",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:6:0": {
       "partTitle": "Letting a model use your code",
