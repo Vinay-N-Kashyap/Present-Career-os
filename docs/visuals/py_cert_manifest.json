@@ -1804,27 +1804,27 @@
     },
     "sql-mastery:16:0": {
       "partTitle": "Why long queries need names",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:16:1": {
       "partTitle": "Several steps, one after another",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:16:2": {
       "partTitle": "WITH versus subqueries",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:16:3": {
       "partTitle": "Recursive WITH: counting and sequences",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:16:4": {
       "partTitle": "Recursive WITH: walking a hierarchy",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:16:5": {
       "partTitle": "Putting it together: a monthly report in steps",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:17:0": {
       "partTitle": "What a window function is",

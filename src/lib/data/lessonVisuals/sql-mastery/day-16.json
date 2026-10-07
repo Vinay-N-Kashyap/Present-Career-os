@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why long queries need names",
+      "codeHash": "0c5de8e18d234177c3c90861b92ec35bb71e942b25d1621f65a375d2a6067cb6",
+      "spec": {
+        "template": "table",
+        "title": "Filtering order totals calculated in CTE",
+        "columns": [
+          "order_id",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "WITH lets you give a step a name and use that name like a table.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The query shape reads like a recipe making named steps sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "102"
+                  },
+                  {
+                    "text": "1200.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filtering order totals calculated in CTE",
+        "columns": [
+          "order_id",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "WITH lets you give a step a name and use that name like a table.",
+            "rows": [
+              {
+                "cells": [
+                  "102",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The query shape reads like a recipe making named steps sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  "102",
+                  "1200.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "101",
+                  "280.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Several steps, one after another",
+      "codeHash": "d5f1e3e61dc39bc5109967351b029b36ea49feadebed339b20385da9b002177a",
+      "spec": {
+        "template": "table",
+        "title": "Layered CTE steps for customer totals and average",
+        "columns": [
+          "name",
+          "spent",
+          "average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A WITH can hold several steps separated by commas building layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2377.00"
+                  },
+                  {
+                    "text": "1212.33"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "There is only one WITH word at the top followed by steps with commas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2377.00"
+                  },
+                  {
+                    "text": "1212.33"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Layered CTE steps for customer totals and average",
+        "columns": [
+          "name",
+          "spent",
+          "average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A WITH can hold several steps separated by commas building layers.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2377.00",
+                  "1212.33"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "There is only one WITH word at the top followed by steps with commas.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "2377.00",
+                  "1212.33"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WITH versus subqueries",
+      "codeHash": "8b5da2147ca3a0a8a22fed9221fc99bdf7815a0b3158afa7ff24b49a98cd365f",
+      "spec": {
+        "template": "compare",
+        "title": "Nested subquery versus common table expression clarity",
+        "leftLabel": "Nested Subquery",
+        "rightLabel": "Common Table Expression (CTE)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A WITH query is read from top to bottom in the order steps happen.",
+            "left": {
+              "code": "nested brackets",
+              "result": {
+                "text": "inside out reading"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "WITH step_name AS (...)",
+              "result": {
+                "text": "top to bottom flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WITH clause lets you use the same step without repeating queries.",
+            "left": {
+              "code": "copy SQL twice",
+              "result": {
+                "text": "redundant duplicate"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "reference CTE",
+              "result": {
+                "text": "single definition"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Nested subquery versus common table expression clarity",
+        "leftLabel": "Nested Subquery",
+        "rightLabel": "Common Table Expression (CTE)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A WITH query is read from top to bottom in the order steps happen.",
+            "left": {
+              "code": "nested brackets",
+              "result": "inside out reading",
+              "tone": "error",
+              "checks": [
+                "inside out reading"
+              ]
+            },
+            "right": {
+              "code": "WITH step_name AS (...)",
+              "result": "top to bottom flow",
+              "tone": "ok",
+              "checks": [
+                "top to bottom flow"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WITH clause lets you use the same step without repeating queries.",
+            "left": {
+              "code": "copy SQL twice",
+              "result": "redundant duplicate",
+              "tone": "error",
+              "checks": [
+                "redundant duplicate"
+              ]
+            },
+            "right": {
+              "code": "reference CTE",
+              "result": "single definition",
+              "tone": "ok",
+              "checks": [
+                "single definition"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recursive WITH: counting and sequences",
+      "codeHash": "031066148ebc937cc2dac8e076bd1fecb87064eed999882bebc53adec7507cb4",
+      "spec": {
+        "template": "none",
+        "reason": "Recursive CTE termination mechanics and iteration cycle limits."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Recursive CTE termination mechanics and iteration cycle limits."
+      }
+    },
+    {
+      "partTitle": "Recursive WITH: walking a hierarchy",
+      "codeHash": "0eac9a682ba47d0a267a23abd3c2b0152d6d338f4d511c910dad814083a01595",
+      "spec": {
+        "template": "none",
+        "reason": "Hierarchical graph traversal and reporting tree expansion."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Hierarchical graph traversal and reporting tree expansion."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a monthly report in steps",
+      "codeHash": "7882dfa4cbcaba929fdebb129c1dffbc1bed3838b867371fe0d0f14c07316109",
+      "spec": {
+        "template": "table",
+        "title": "Delivered spending and average comparison flags",
+        "columns": [
+          "name",
+          "spent",
+          "above_average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a report in named steps for customer delivered spending.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each step is short and testable on its own for easier query checking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Delivered spending and average comparison flags",
+        "columns": [
+          "name",
+          "spent",
+          "above_average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a report in named steps for customer delivered spending.",
+            "rows": [
+              {
+                "cells": [
+                  "Ravi",
+                  "1200.00",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each step is short and testable on its own for easier query checking.",
+            "rows": [
+              {
+                "cells": [
+                  "Ravi",
+                  "1200.00",
+                  "true"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Asha",
+                  "280.00",
+                  "false"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
