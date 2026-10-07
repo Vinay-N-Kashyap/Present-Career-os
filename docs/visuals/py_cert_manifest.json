@@ -3268,27 +3268,27 @@
     },
     "dist-py:17:0": {
       "partTitle": "Merging without coordination",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:17:1": {
       "partTitle": "The G-Counter",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:17:2": {
       "partTitle": "The PN-Counter",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:17:3": {
       "partTitle": "Last-writer-wins registers",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:17:4": {
       "partTitle": "Sets that merge: add-wins sets",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:17:5": {
       "partTitle": "When to use CRDTs",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:18:0": {
       "partTitle": "Why shard?",
