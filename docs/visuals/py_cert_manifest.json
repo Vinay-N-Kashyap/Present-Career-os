@@ -3220,27 +3220,27 @@
     },
     "dist-py:15:0": {
       "partTitle": "The engine's flow",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:15:1": {
       "partTitle": "Dropping duplicates",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:15:2": {
       "partTitle": "The run_transaction function",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:15:3": {
       "partTitle": "Measuring duration",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:15:4": {
       "partTitle": "Testing every failure path",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:15:5": {
       "partTitle": "Publishing events reliably: the outbox",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:16:0": {
       "partTitle": "Physical clocks drift",
