@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A saga is a chain of local transactions",
+      "codeHash": "985dca5f452e4d4b1602ac869700a47477095777d26019df8ce7f2bbff2e6590",
+      "spec": {
+        "template": "table",
+        "title": "Saga chain actions and corresponding compensating undo operations",
+        "columns": [
+          "action",
+          "compensation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Booking a trip touches flight hotel and payment services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reserve flight"
+                  },
+                  {
+                    "text": "cancel flight"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If a later step fails the saga runs compensating actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reserve flight"
+                  },
+                  {
+                    "text": "cancel flight"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reserve hotel"
+                  },
+                  {
+                    "text": "cancel hotel"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "charge card"
+                  },
+                  {
+                    "text": "refund card"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example lists a trip booking saga with compensation for each step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reserve flight"
+                  },
+                  {
+                    "text": "cancel flight"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reserve hotel"
+                  },
+                  {
+                    "text": "cancel hotel"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "charge card"
+                  },
+                  {
+                    "text": "refund card"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "send confirmation"
+                  },
+                  {
+                    "text": "send cancellation"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Saga chain actions and corresponding compensating undo operations",
+        "columns": [
+          "action",
+          "compensation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Booking a trip touches flight hotel and payment services.",
+            "rows": [
+              {
+                "cells": [
+                  "reserve flight",
+                  "cancel flight"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If a later step fails the saga runs compensating actions.",
+            "rows": [
+              {
+                "cells": [
+                  "reserve flight",
+                  "cancel flight"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reserve hotel",
+                  "cancel hotel"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "charge card",
+                  "refund card"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example lists a trip booking saga with compensation for each step.",
+            "rows": [
+              {
+                "cells": [
+                  "reserve flight",
+                  "cancel flight"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reserve hotel",
+                  "cancel hotel"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "charge card",
+                  "refund card"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "send confirmation",
+                  "send cancellation"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing compensations",
+      "codeHash": "c32e0febd3b01d9d0438084f1b4ffea626aa3332bc03d835fe22db269f9797cf",
+      "spec": {
+        "template": "table",
+        "title": "Saga step classification reversible flags and pivot identification",
+        "columns": [
+          "name",
+          "reversible",
+          "can_fail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A compensation provides semantic undo rather than rollback.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "validate address"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The step after which the saga will complete is the pivot.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "validate address"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reserve stock"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "charge card"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Steps order risky actions first and irreversible ones last.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "validate address"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reserve stock"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "charge card"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ship parcel"
+                  },
+                  {
+                    "text": "False"
+                  },
+                  {
+                    "text": "False"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Saga step classification reversible flags and pivot identification",
+        "columns": [
+          "name",
+          "reversible",
+          "can_fail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A compensation provides semantic undo rather than rollback.",
+            "rows": [
+              {
+                "cells": [
+                  "validate address",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The step after which the saga will complete is the pivot.",
+            "rows": [
+              {
+                "cells": [
+                  "validate address",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reserve stock",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "charge card",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Steps order risky actions first and irreversible ones last.",
+            "rows": [
+              {
+                "cells": [
+                  "validate address",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reserve stock",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "charge card",
+                  "True",
+                  "True"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ship parcel",
+                  "False",
+                  "False"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running a saga",
+      "codeHash": "e4a9b4fc51e5f28e45a9305c99e915b8e5c868b8fec5432162a5e83d7fcf5a8b",
+      "spec": {
+        "template": "compare",
+        "title": "Saga execution progression comparing completed against compensated",
+        "leftLabel": "All Actions Succeed",
+        "rightLabel": "Failure Triggers Compensation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function run_saga runs actions in order remembering finished steps.",
+            "left": {
+              "code": "actions run in order",
+              "result": {
+                "text": "hotel"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "failure triggers rollback",
+              "result": {
+                "text": "payment"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "If action raises run compensate for finished steps newest first.",
+            "left": {
+              "code": "all steps finish cleanly",
+              "result": {
+                "text": "SAGA_COMPLETED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "compensate runs newest first",
+              "result": {
+                "text": "SAGA_COMPENSATED"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If all actions succeed return SAGA_COMPLETED.",
+            "left": {
+              "code": "return final status",
+              "result": {
+                "text": "SAGA_COMPLETED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "return failure details",
+              "result": {
+                "text": "card declined"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Saga execution progression comparing completed against compensated",
+        "leftLabel": "All Actions Succeed",
+        "rightLabel": "Failure Triggers Compensation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function run_saga runs actions in order remembering finished steps.",
+            "left": {
+              "code": "actions run in order",
+              "result": "hotel",
+              "tone": "ok",
+              "checks": [
+                "hotel"
+              ]
+            },
+            "right": {
+              "code": "failure triggers rollback",
+              "result": "payment",
+              "tone": "error",
+              "checks": [
+                "payment"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "If action raises run compensate for finished steps newest first.",
+            "left": {
+              "code": "all steps finish cleanly",
+              "result": "SAGA_COMPLETED",
+              "tone": "ok",
+              "checks": [
+                "SAGA_COMPLETED"
+              ]
+            },
+            "right": {
+              "code": "compensate runs newest first",
+              "result": "SAGA_COMPENSATED",
+              "tone": "error",
+              "checks": [
+                "SAGA_COMPENSATED"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If all actions succeed return SAGA_COMPLETED.",
+            "left": {
+              "code": "return final status",
+              "result": "SAGA_COMPLETED",
+              "tone": "ok",
+              "checks": [
+                "SAGA_COMPLETED"
+              ]
+            },
+            "right": {
+              "code": "return failure details",
+              "result": "card declined",
+              "tone": "idle",
+              "checks": [
+                "card declined"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The saga log",
+      "codeHash": "3cfcf5266f988116a2b9ebd88236f145bf11da99a53c4d61600ee516131d724c",
+      "spec": {
+        "template": "table",
+        "title": "Durable saga transaction event log state recording and recovery",
+        "columns": [
+          "step",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every step outcome is written to a durable saga log.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flight"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hotel"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "After restart the service reads log to resume forward or backward.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flight"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hotel"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "payment"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function format_saga_log provides consistent log formatting.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flight"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hotel"
+                  },
+                  {
+                    "text": "DONE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "payment"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hotel"
+                  },
+                  {
+                    "text": "COMPENSATED"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flight"
+                  },
+                  {
+                    "text": "COMPENSATED"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Durable saga transaction event log state recording and recovery",
+        "columns": [
+          "step",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every step outcome is written to a durable saga log.",
+            "rows": [
+              {
+                "cells": [
+                  "flight",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hotel",
+                  "DONE"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "After restart the service reads log to resume forward or backward.",
+            "rows": [
+              {
+                "cells": [
+                  "flight",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hotel",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "payment",
+                  "FAILED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function format_saga_log provides consistent log formatting.",
+            "rows": [
+              {
+                "cells": [
+                  "flight",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "hotel",
+                  "DONE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "payment",
+                  "FAILED"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "hotel",
+                  "COMPENSATED"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "flight",
+                  "COMPENSATED"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Orchestration or choreography",
+      "codeHash": "ea00fd83269bc7fd186eb903ba0d5516874207fe0ba4d0a346da8bc311aa1e8b",
+      "spec": {
+        "template": "none",
+        "reason": "Architectural trade-offs between orchestration and choreography."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Isolation and other pitfalls",
+      "codeHash": "917372107b764a93451224fe83b665d8fee480beaff4a1966954119f38e45c61",
+      "spec": {
+        "template": "none",
+        "reason": "Isolation anomalies semantic locks and idempotency pitfalls."
+      },
+      "filled": {}
+    }
+  ]
+}

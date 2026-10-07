@@ -3124,27 +3124,27 @@
     },
     "dist-py:11:0": {
       "partTitle": "A saga is a chain of local transactions",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:11:1": {
       "partTitle": "Designing compensations",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:11:2": {
       "partTitle": "Running a saga",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:11:3": {
       "partTitle": "The saga log",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:11:4": {
       "partTitle": "Orchestration or choreography",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:11:5": {
       "partTitle": "Isolation and other pitfalls",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:12:0": {
       "partTitle": "Events, producers and consumers",
