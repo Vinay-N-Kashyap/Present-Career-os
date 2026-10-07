@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why full fine-tuning is expensive",
+      "codeHash": "2ef7dfc1219d2ff143b64695d2cf9d8dffdb4211015e84298ebc7b2ae97056c1",
+      "spec": {
+        "template": "table",
+        "title": "Memory footprints across full tuning and parameter efficient adaptation",
+        "columns": [
+          "full",
+          "peft"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Full fine-tuning updates every weight throughout the entire architecture.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "peft"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Task adaptation changes occupy a small subspace within the weight space.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "peft"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "optimizer_factor"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Parameter-efficient fine-tuning freezes weights and trains fewer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "peft"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "optimizer_factor"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bytes_per_param"
+                  },
+                  {
+                    "text": "trainable_share"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example estimates memory required across parameter training schemes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "peft"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "optimizer_factor"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bytes_per_param"
+                  },
+                  {
+                    "text": "trainable_share"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Memory footprints across full tuning and parameter efficient adaptation",
+        "columns": [
+          "full",
+          "peft"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Full fine-tuning updates every weight throughout the entire architecture.",
+            "rows": [
+              {
+                "cells": [
+                  "full",
+                  "peft"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Task adaptation changes occupy a small subspace within the weight space.",
+            "rows": [
+              {
+                "cells": [
+                  "full",
+                  "peft"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "optimizer_factor"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Parameter-efficient fine-tuning freezes weights and trains fewer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "full",
+                  "peft"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "optimizer_factor"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bytes_per_param",
+                  "trainable_share"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example estimates memory required across parameter training schemes.",
+            "rows": [
+              {
+                "cells": [
+                  "full",
+                  "peft"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "optimizer_factor"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bytes_per_param",
+                  "trainable_share"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "full",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Low-rank matrices",
+      "codeHash": "db1d0d53dfb19cbcc3d01871345f5d384f8b90c2465defa57e77ac1a1acdaacd",
+      "spec": {
+        "template": "table",
+        "title": "Matrix rank decomposition into low dimensional factors",
+        "columns": [
+          "B",
+          "A"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Factorizing rank into two thin matrices compresses parameter volume.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Low rank updates express model modifications along few directions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Outer vector products show that every row is a multiple of another.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "This outer product illustration clarifies low rank matrix factorization.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Matrix rank decomposition into low dimensional factors",
+        "columns": [
+          "B",
+          "A"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Factorizing rank into two thin matrices compresses parameter volume.",
+            "rows": [
+              {
+                "cells": [
+                  "B",
+                  "A"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Low rank updates express model modifications along few directions.",
+            "rows": [
+              {
+                "cells": [
+                  "B",
+                  "A"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "product",
+                  "row"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Outer vector products show that every row is a multiple of another.",
+            "rows": [
+              {
+                "cells": [
+                  "B",
+                  "A"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "product",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "This outer product illustration clarifies low rank matrix factorization.",
+            "rows": [
+              {
+                "cells": [
+                  "B",
+                  "A"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "product",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "product",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How LoRA works",
+      "codeHash": "47ba53f8ee86224cfe4f3b9cb70494d99169353130178ee118d68e5ab603ac99",
+      "spec": {
+        "template": "table",
+        "title": "LoRA residual matrix additions and adapter integration",
+        "columns": [
+          "W",
+          "B"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA freezes original weight matrices and adds trainable factorized adapters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Zero initialized matrices ensure initial outputs match the base model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each task requires only lightweight modular adapter matrices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Wx"
+                  },
+                  {
+                    "text": "BAx"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs an input through W alone to show the update.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Wx"
+                  },
+                  {
+                    "text": "BAx"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "LoRA residual matrix additions and adapter integration",
+        "columns": [
+          "W",
+          "B"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "LoRA freezes original weight matrices and adds trainable factorized adapters.",
+            "rows": [
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Zero initialized matrices ensure initial outputs match the base model.",
+            "rows": [
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "A",
+                  "alpha"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Each task requires only lightweight modular adapter matrices.",
+            "rows": [
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "A",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Wx",
+                  "BAx"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs an input through W alone to show the update.",
+            "rows": [
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "A",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Wx",
+                  "BAx"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "W",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Merging LoRA into the model",
+      "codeHash": "ee96e11632a61e29e31708e5dc2238e65715ca3c153b8b1ec7e7662b4486188f",
+      "spec": {
+        "template": "table",
+        "title": "Weight folding arithmetic and zero-latency deployment",
+        "columns": [
+          "merged",
+          "scale"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trained updates can merge permanently into the base model weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The merged model preserves inference speed without runtime overhead.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Separate adapter configurations permit rapid switching across tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example merges an update and checks consistency with the adapter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "merged"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "W"
+                  },
+                  {
+                    "text": "B"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "lora_merge"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Weight folding arithmetic and zero-latency deployment",
+        "columns": [
+          "merged",
+          "scale"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trained updates can merge permanently into the base model weights.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "scale"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The merged model preserves inference speed without runtime overhead.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "scale"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Separate adapter configurations permit rapid switching across tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "scale"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "A",
+                  "alpha"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example merges an update and checks consistency with the adapter.",
+            "rows": [
+              {
+                "cells": [
+                  "merged",
+                  "scale"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "W",
+                  "B"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "A",
+                  "alpha"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lora_merge",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing rank and what to adapt",
+      "codeHash": "76b0c4d40b65d88abeaa2efd4962eacc2b8d56f7e8573dfc5d87d6d4dde5e611",
+      "spec": {
+        "template": "none",
+        "reason": "Guidelines on choosing rank and target matrices."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: savings and merging",
+      "codeHash": "a474c69658304c400b5ff81120587f564c4ecce9f9da6c43d9d9541b60a85f3f",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: savings and merging verification."
+      },
+      "filled": {}
+    }
+  ]
+}

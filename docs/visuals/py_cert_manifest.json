@@ -4996,27 +4996,27 @@
     },
     "nlp-py:29:0": {
       "partTitle": "Why full fine-tuning is expensive",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:29:1": {
       "partTitle": "Low-rank matrices",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:29:2": {
       "partTitle": "How LoRA works",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:29:3": {
       "partTitle": "Merging LoRA into the model",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:29:4": {
       "partTitle": "Choosing rank and what to adapt",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:29:5": {
       "partTitle": "Practice time: savings and merging",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:30:0": {
       "partTitle": "The capstone architecture",
