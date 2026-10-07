@@ -364,27 +364,27 @@
     },
     "python:16:0": {
       "partTitle": "Why programs need files",
-      "status": "todo"
+      "status": "passed"
     },
     "python:16:1": {
       "partTitle": "The with statement",
-      "status": "todo"
+      "status": "none"
     },
     "python:16:2": {
       "partTitle": "Appending and reading line by line",
-      "status": "todo"
+      "status": "none"
     },
     "python:16:3": {
       "partTitle": "Turning lines into data with split",
-      "status": "todo"
+      "status": "passed"
     },
     "python:16:4": {
       "partTitle": "Saving and loading a list of records",
-      "status": "todo"
+      "status": "passed"
     },
     "python:16:5": {
       "partTitle": "Putting it together: a tracker that remembers",
-      "status": "todo"
+      "status": "none"
     },
     "python:17:0": {
       "partTitle": "What JSON is",
