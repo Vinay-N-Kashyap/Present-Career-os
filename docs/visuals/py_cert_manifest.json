@@ -4972,27 +4972,27 @@
     },
     "nlp-py:28:0": {
       "partTitle": "Why automatic metrics",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:28:1": {
       "partTitle": "BLEU: clipped n-gram precision",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:28:2": {
       "partTitle": "The brevity penalty",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:28:3": {
       "partTitle": "ROUGE for summaries",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:28:4": {
       "partTitle": "The limits of overlap metrics",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:28:5": {
       "partTitle": "Practice time: penalties and recall",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:29:0": {
       "partTitle": "Why full fine-tuning is expensive",
