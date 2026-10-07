@@ -3772,27 +3772,27 @@
     },
     "cloud-py:8:0": {
       "partTitle": "Why a load balancer",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:8:1": {
       "partTitle": "Listeners, rules and target groups",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:8:2": {
       "partTitle": "Health checks and thresholds",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:8:3": {
       "partTitle": "HTTPS and TLS termination",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:8:4": {
       "partTitle": "Sticky sessions and connection draining",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:8:5": {
       "partTitle": "Practice time: route and check health",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:9:0": {
       "partTitle": "Object storage and S3",
