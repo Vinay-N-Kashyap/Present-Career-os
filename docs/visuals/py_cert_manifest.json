@@ -1924,27 +1924,27 @@
     },
     "sql-mastery:21:0": {
       "partTitle": "Why rules belong in the database",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:21:1": {
       "partTitle": "CHECK rules",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:21:2": {
       "partTitle": "UNIQUE on one or several columns",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:21:3": {
       "partTitle": "ALTER TABLE: changing a table that already exists",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:21:4": {
       "partTitle": "What happens on delete: CASCADE, SET NULL, RESTRICT",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:21:5": {
       "partTitle": "Putting it together: a well-protected table",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:22:0": {
       "partTitle": "Why some changes must happen together",
