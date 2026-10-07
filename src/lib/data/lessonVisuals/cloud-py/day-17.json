@@ -1,0 +1,945 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How DNS finds your app",
+      "codeHash": "44043fc337a4da73ecf63f7e351a2f28e670a5951dd1814ee1f0d91535d6092b",
+      "spec": {
+        "template": "table",
+        "title": "DNS hierarchical server resolution simulation",
+        "columns": [
+          "hierarchy",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The resolver walks down the server hierarchy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "com"
+                  },
+                  {
+                    "text": "tld-com-server"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Authoritative name servers answer for the domain.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "com"
+                  },
+                  {
+                    "text": "tld-com-server"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "route53-ns-1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The resolver walks down every server in the chain.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "com"
+                  },
+                  {
+                    "text": "tld-com-server"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "route53-ns-1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shop.example.com"
+                  },
+                  {
+                    "text": "203.0.113.10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "DNS lookups follow each record through to the final address.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "com"
+                  },
+                  {
+                    "text": "tld-com-server"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "route53-ns-1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shop.example.com"
+                  },
+                  {
+                    "text": "203.0.113.10"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "DNS hierarchical server resolution simulation",
+        "columns": [
+          "hierarchy",
+          "server"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The resolver walks down the server hierarchy.",
+            "rows": [
+              {
+                "cells": [
+                  "com",
+                  "tld-com-server"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Authoritative name servers answer for the domain.",
+            "rows": [
+              {
+                "cells": [
+                  "com",
+                  "tld-com-server"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "example.com",
+                  "route53-ns-1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The resolver walks down every server in the chain.",
+            "rows": [
+              {
+                "cells": [
+                  "com",
+                  "tld-com-server"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "example.com",
+                  "route53-ns-1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shop.example.com",
+                  "203.0.113.10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "DNS lookups follow each record through to the final address.",
+            "rows": [
+              {
+                "cells": [
+                  "com",
+                  "tld-com-server"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "example.com",
+                  "route53-ns-1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shop.example.com",
+                  "203.0.113.10"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Record types and alias records",
+      "codeHash": "f798656a9bc901370fef0247efac5da907de8f12d8ff72b4f3ee9edfa8e9829b",
+      "spec": {
+        "template": "table",
+        "title": "DNS record types and apex alias configuration",
+        "columns": [
+          "name",
+          "rtype"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple record types map names to endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Zone apex names cannot hold standard CNAME mappings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "www.example.com"
+                  },
+                  {
+                    "text": "CNAME"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Alias records point directly to cloud resources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "www.example.com"
+                  },
+                  {
+                    "text": "CNAME"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "api.example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example inspects every record in the hosted zone.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "www.example.com"
+                  },
+                  {
+                    "text": "CNAME"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "api.example.com"
+                  },
+                  {
+                    "text": "A-ALIAS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "example.com"
+                  },
+                  {
+                    "text": "MX"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "DNS record types and apex alias configuration",
+        "columns": [
+          "name",
+          "rtype"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiple record types map names to endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  "example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Zone apex names cannot hold standard CNAME mappings.",
+            "rows": [
+              {
+                "cells": [
+                  "example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "www.example.com",
+                  "CNAME"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Alias records point directly to cloud resources.",
+            "rows": [
+              {
+                "cells": [
+                  "example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "www.example.com",
+                  "CNAME"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "api.example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example inspects every record in the hosted zone.",
+            "rows": [
+              {
+                "cells": [
+                  "example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "www.example.com",
+                  "CNAME"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "api.example.com",
+                  "A-ALIAS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "example.com",
+                  "MX"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Health checks and failover routing",
+      "codeHash": "2aa7c5fb7ae43ecfcc4ed2a3aade9a86d556c2af46c20fd120d62200cba20cfe",
+      "spec": {
+        "template": "table",
+        "title": "Route 53 health check and failover resolution logic",
+        "columns": [
+          "moment",
+          "endpoint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Periodic health checks monitor each remote endpoint.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Repeated failures mark an endpoint as unhealthy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "us-east-1 down"
+                  },
+                  {
+                    "text": "eu-west-1-alb"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failover routing sends traffic to healthy secondary targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "us-east-1 down"
+                  },
+                  {
+                    "text": "eu-west-1-alb"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "both down"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Total outages fall back to the primary record anyway.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "normal"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "us-east-1 down"
+                  },
+                  {
+                    "text": "eu-west-1-alb"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "both down"
+                  },
+                  {
+                    "text": "us-east-1-alb"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Route 53 health check and failover resolution logic",
+        "columns": [
+          "moment",
+          "endpoint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Periodic health checks monitor each remote endpoint.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "us-east-1-alb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Repeated failures mark an endpoint as unhealthy.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "us-east-1-alb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "us-east-1 down",
+                  "eu-west-1-alb"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failover routing sends traffic to healthy secondary targets.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "us-east-1-alb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "us-east-1 down",
+                  "eu-west-1-alb"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "both down",
+                  "us-east-1-alb"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Total outages fall back to the primary record anyway.",
+            "rows": [
+              {
+                "cells": [
+                  "normal",
+                  "us-east-1-alb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "us-east-1 down",
+                  "eu-west-1-alb"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "both down",
+                  "us-east-1-alb"
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted routing and canary releases",
+      "codeHash": "2da5ad0e48d5357f014e9d5259818d6d4b8b96fd1e813c2e29d191377e9bb396",
+      "spec": {
+        "template": "table",
+        "title": "Weighted traffic distribution and canary releases",
+        "columns": [
+          "endpoint",
+          "weight"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weighted routing splits traffic between deployment targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "v1"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Canary releases let operators observe error rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "v1"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "v2-canary"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Standby targets remain ready without active traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "v1"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "v2-canary"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example inspects every possible roll across weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "v1"
+                  },
+                  {
+                    "text": "90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "v2-canary"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Weighted traffic distribution and canary releases",
+        "columns": [
+          "endpoint",
+          "weight"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Weighted routing splits traffic between deployment targets.",
+            "rows": [
+              {
+                "cells": [
+                  "v1",
+                  "90"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Canary releases let operators observe error rates.",
+            "rows": [
+              {
+                "cells": [
+                  "v1",
+                  "90"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "v2-canary",
+                  "10"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Standby targets remain ready without active traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "v1",
+                  "90"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "v2-canary",
+                  "10"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example inspects every possible roll across weights.",
+            "rows": [
+              {
+                "cells": [
+                  "v1",
+                  "90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "v2-canary",
+                  "10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency and geolocation routing",
+      "codeHash": "c7d8c39ee26996a8ed78a1c2a0699cf9e5e4d15eb96579c828430a3c511bffa2",
+      "spec": {
+        "template": "none",
+        "reason": "Latency and geolocation routing policies."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: failover and weights",
+      "codeHash": "5c7f10449db4537fc3057294a814a94e98a1b542c7e8f402f0a9b1bf795fd0bf",
+      "spec": {
+        "template": "none",
+        "reason": "Failover and weighted calculation practice."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -3988,27 +3988,27 @@
     },
     "cloud-py:17:0": {
       "partTitle": "How DNS finds your app",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:17:1": {
       "partTitle": "Record types and alias records",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:17:2": {
       "partTitle": "Health checks and failover routing",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:17:3": {
       "partTitle": "Weighted routing and canary releases",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:17:4": {
       "partTitle": "Latency and geolocation routing",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:17:5": {
       "partTitle": "Practice time: failover and weights",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:18:0": {
       "partTitle": "Why queues",
