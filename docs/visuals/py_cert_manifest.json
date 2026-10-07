@@ -844,27 +844,27 @@
     },
     "dsa-py:6:0": {
       "partTitle": "A queue: first in, first out",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:6:1": {
       "partTitle": "Why deque beats a list for queues",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:6:2": {
       "partTitle": "A ring buffer: a queue of fixed size",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:6:3": {
       "partTitle": "deque with a maximum length",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:6:4": {
       "partTitle": "Building a stack from a queue",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:6:5": {
       "partTitle": "Queues in real systems",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:7:0": {
       "partTitle": "Hashing: turning a key into a position",
