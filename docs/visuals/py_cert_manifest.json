@@ -2524,27 +2524,27 @@
     },
     "ai-py:16:0": {
       "partTitle": "Models do not remember",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:16:1": {
       "partTitle": "Sliding window memory",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:16:2": {
       "partTitle": "Summary buffer memory",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:16:3": {
       "partTitle": "Counting messages by role",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:16:4": {
       "partTitle": "Long-term memory: facts worth keeping",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:16:5": {
       "partTitle": "Choosing a memory strategy",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:17:0": {
       "partTitle": "From one tool call to an agent",

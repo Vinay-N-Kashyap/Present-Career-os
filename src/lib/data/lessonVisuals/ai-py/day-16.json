@@ -1,0 +1,682 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Models do not remember",
+      "codeHash": "f6ebbfa26c4a6c41f76e5bd31d3089f3db2d4c3cb00719bff564cca86432c2f8",
+      "spec": {
+        "template": "none",
+        "reason": "Stateless LLM API context window token costs and chat history lists."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Sliding window memory",
+      "codeHash": "44fbd1601593fe7b2464f9cf3fe40eb872ffaa99b31e28ca425237bc622b4237",
+      "spec": {
+        "template": "flow",
+        "title": "Sliding window retains recent messages and drops older turns",
+        "nodes": [
+          {
+            "id": "conversation",
+            "label": "conversation"
+          },
+          {
+            "id": "window",
+            "label": "window"
+          },
+          {
+            "id": "kept",
+            "label": "kept"
+          }
+        ],
+        "edges": [
+          {
+            "from": "conversation",
+            "to": "window"
+          },
+          {
+            "from": "window",
+            "to": "kept"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The window sliding along the conversation keeps recent messages.",
+            "values": {
+              "conversation": {
+                "text": "conversation"
+              },
+              "window": {
+                "text": "window"
+              },
+              "kept": {
+                "text": "kept"
+              }
+            },
+            "tones": {
+              "conversation": "data",
+              "window": "idle",
+              "kept": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The weakness is sudden forgetting when older messages drop.",
+            "values": {
+              "conversation": {
+                "text": "conversation"
+              },
+              "window": {
+                "text": "window"
+              },
+              "kept": {
+                "text": "kept"
+              }
+            },
+            "tones": {
+              "conversation": "data",
+              "window": "data",
+              "kept": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Always keep system prompt outside window so rules never drop.",
+            "values": {
+              "conversation": {
+                "text": "conversation"
+              },
+              "window": {
+                "text": "window"
+              },
+              "kept": {
+                "text": "kept"
+              }
+            },
+            "tones": {
+              "conversation": "ok",
+              "window": "ok",
+              "kept": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sliding window retains recent messages and drops older turns",
+        "nodes": [
+          {
+            "id": "conversation",
+            "label": "conversation"
+          },
+          {
+            "id": "window",
+            "label": "window"
+          },
+          {
+            "id": "kept",
+            "label": "kept"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The window sliding along the conversation keeps recent messages.",
+            "values": {
+              "conversation": "conversation",
+              "window": "window",
+              "kept": "kept"
+            },
+            "tones": {
+              "conversation": "data",
+              "window": "idle",
+              "kept": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say4",
+            "caption": "The weakness is sudden forgetting when older messages drop.",
+            "values": {
+              "conversation": "conversation",
+              "window": "window",
+              "kept": "kept"
+            },
+            "tones": {
+              "conversation": "data",
+              "window": "data",
+              "kept": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say5",
+            "caption": "Always keep system prompt outside window so rules never drop.",
+            "values": {
+              "conversation": "conversation",
+              "window": "window",
+              "kept": "kept"
+            },
+            "tones": {
+              "conversation": "ok",
+              "window": "ok",
+              "kept": "ok"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Summary buffer memory",
+      "codeHash": "20de9403bed7b9d57f071f31bd6611960029d32f015c3e53c59400a3322fe4dc",
+      "spec": {
+        "template": "compare",
+        "title": "Summary buffer replaces older turns with system summary",
+        "leftLabel": "Full Conversation",
+        "rightLabel": "Summary Buffer",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A summary buffer keeps recent messages and replaces older ones.",
+            "left": {
+              "code": "messages[:-2] exceeding budget",
+              "result": {
+                "text": "flights"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "summary = {role: system, topic: summary}",
+              "result": {
+                "text": "summary"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Add turn and check if total tokens exceed budget with summarized status.",
+            "left": {
+              "code": "sum(m[\"tokens\"] for m in messages)",
+              "result": {
+                "text": "tokens"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "update_memory(history, new_turn)",
+              "result": {
+                "text": "hotels"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Summaries keep gist of long conversations at fixed cost.",
+            "left": {
+              "code": "messages = history + [new_turn]",
+              "result": {
+                "text": "history"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "memory = [summary] + recent",
+              "result": {
+                "text": "memory"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Summary buffer replaces older turns with system summary",
+        "leftLabel": "Full Conversation",
+        "rightLabel": "Summary Buffer",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A summary buffer keeps recent messages and replaces older ones.",
+            "left": {
+              "code": "messages[:-2] exceeding budget",
+              "result": "flights",
+              "tone": "data",
+              "checks": [
+                "flights"
+              ]
+            },
+            "right": {
+              "code": "summary = {role: system, topic: summary}",
+              "result": "summary",
+              "tone": "ok",
+              "checks": [
+                "summary"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Add turn and check if total tokens exceed budget with summarized status.",
+            "left": {
+              "code": "sum(m[\"tokens\"] for m in messages)",
+              "result": "tokens",
+              "tone": "data",
+              "checks": [
+                "tokens"
+              ]
+            },
+            "right": {
+              "code": "update_memory(history, new_turn)",
+              "result": "hotels",
+              "tone": "ok",
+              "checks": [
+                "hotels"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Summaries keep gist of long conversations at fixed cost.",
+            "left": {
+              "code": "messages = history + [new_turn]",
+              "result": "history",
+              "tone": "idle",
+              "checks": [
+                "history"
+              ]
+            },
+            "right": {
+              "code": "memory = [summary] + recent",
+              "result": "memory",
+              "tone": "ok",
+              "checks": [
+                "memory"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting messages by role",
+      "codeHash": "0dd68560c511370cef9f43432e78491ce9b08107f8fbe35546cd9ae93e6cc4ec",
+      "spec": {
+        "template": "bars",
+        "title": "Message counts by role for dialogue analytics and triggers",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Count roles returns user and assistant message totals.",
+            "bars": [
+              {
+                "label": "user",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Simple counts are useful signals across conversation turns.",
+            "bars": [
+              {
+                "label": "user",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Starting result with both keys set to zero guarantees presence.",
+            "bars": [
+              {
+                "label": "user",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Message counts by role for dialogue analytics and triggers",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Count roles returns user and assistant message totals.",
+            "bars": [
+              {
+                "label": "user",
+                "value": 0,
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Simple counts are useful signals across conversation turns.",
+            "bars": [
+              {
+                "label": "user",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Starting result with both keys set to zero guarantees presence.",
+            "bars": [
+              {
+                "label": "user",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "assistant",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Long-term memory: facts worth keeping",
+      "codeHash": "8cd7aa29e850da821a88ae396ee60784f8582d6539b040eb6fbff361659faf20",
+      "spec": {
+        "template": "table",
+        "title": "Long-term profile memory key allowlist validation",
+        "columns": [
+          "profile_key",
+          "fact_value",
+          "store_status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Important user facts outlive a single conversation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "diet"
+                  },
+                  {
+                    "text": "vegetarian"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seat"
+                  },
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Long-term memory stores facts outside chat for future prompts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "diet"
+                  },
+                  {
+                    "text": "vegetarian"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seat"
+                  },
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "card_number"
+                  },
+                  {
+                    "text": "4111..."
+                  },
+                  {
+                    "text": "ALLOWED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decide carefully what to store and never store sensitive data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "diet"
+                  },
+                  {
+                    "text": "vegetarian"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seat"
+                  },
+                  {
+                    "text": "window"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "card_number"
+                  },
+                  {
+                    "text": "4111..."
+                  },
+                  {
+                    "text": "ALLOWED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Long-term profile memory key allowlist validation",
+        "columns": [
+          "profile_key",
+          "fact_value",
+          "store_status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Important user facts outlive a single conversation.",
+            "rows": [
+              {
+                "cells": [
+                  "diet",
+                  "vegetarian",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seat",
+                  "window",
+                  "stored"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Long-term memory stores facts outside chat for future prompts.",
+            "rows": [
+              {
+                "cells": [
+                  "diet",
+                  "vegetarian",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seat",
+                  "window",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "card_number",
+                  "4111...",
+                  "ALLOWED"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decide carefully what to store and never store sensitive data.",
+            "rows": [
+              {
+                "cells": [
+                  "diet",
+                  "vegetarian",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seat",
+                  "window",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "card_number",
+                  "4111...",
+                  "ALLOWED"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a memory strategy",
+      "codeHash": "e1e1be55336c38f398d1ae7ffaca4e06b9c0fde5cef4ec87180fca20d215cc1d",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual architecture combining long-term facts, summary buffers, and sliding window layers into prompt context."
+      },
+      "filled": {}
+    }
+  ]
+}
