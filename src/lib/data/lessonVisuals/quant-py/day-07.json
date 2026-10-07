@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Imbalance at the top of the book",
+      "codeHash": "82f67ed04a91b4807bf7a9ebc1b9135bfbc83b262f3f46ebbc9bc691382c0978",
+      "spec": {
+        "template": "table",
+        "title": "Top-of-book liquidity asymmetry and order book imbalance",
+        "columns": [
+          "bid_qty",
+          "ask_qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Order book imbalance compares resting quantities at best bid and ask.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Imbalance ranges between extremes while zero indicates balanced liquidity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "books"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lighter liquidity sides are more likely to clear when buy orders arrive.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "books"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "obi"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example computes imbalance across distinct order books.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "books"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "obi"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "books"
+                  },
+                  {
+                    "text": "bid_qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-of-book liquidity asymmetry and order book imbalance",
+        "columns": [
+          "bid_qty",
+          "ask_qty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Order book imbalance compares resting quantities at best bid and ask.",
+            "rows": [
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Imbalance ranges between extremes while zero indicates balanced liquidity.",
+            "rows": [
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "books",
+                  "obi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lighter liquidity sides are more likely to clear when buy orders arrive.",
+            "rows": [
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "books",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "obi",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example computes imbalance across distinct order books.",
+            "rows": [
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "books",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "obi",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "books",
+                  "bid_qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The micro-price",
+      "codeHash": "23ed0f3537885827d48f6541817d677062179e637848716739f72bbb812a6f26",
+      "spec": {
+        "template": "table",
+        "title": "Volume-weighted fair value and micro-price calculation",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The micro-price adjusts midpoint levels towards the side likely to fill next.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Crossed quantity weighting pulls the price towards the side facing pressure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Equal queue sizes preserve micro-price alignment with the simple midpoint.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example compares midpoint and micro-price shifts as imbalance changes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bid_qty"
+                  },
+                  {
+                    "text": "ask_qty"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "micro_price"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Volume-weighted fair value and micro-price calculation",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The micro-price adjusts midpoint levels towards the side likely to fill next.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Crossed quantity weighting pulls the price towards the side facing pressure.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Equal queue sizes preserve micro-price alignment with the simple midpoint.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example compares midpoint and micro-price shifts as imbalance changes.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bid_qty",
+                  "ask_qty"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "total",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "micro_price",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From imbalance to a signal",
+      "codeHash": "6679bf0483ae5e866833eacd911afec11492a3939f38f9dd7a7ae35094241337",
+      "spec": {
+        "template": "table",
+        "title": "Imbalance signal generation and threshold gating",
+        "columns": [
+          "signal",
+          "obi"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Signal classification turns raw metric numbers into actionable trading states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signal"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data bounds clamp values safely before producing signal outputs and scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signal"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Clamping protects downstream pipelines from invalid and corrupt input data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signal"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example converts a series of imbalances into signals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "signal"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "obi_signal"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Imbalance signal generation and threshold gating",
+        "columns": [
+          "signal",
+          "obi"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Signal classification turns raw metric numbers into actionable trading states.",
+            "rows": [
+              {
+                "cells": [
+                  "signal",
+                  "obi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data bounds clamp values safely before producing signal outputs and scores.",
+            "rows": [
+              {
+                "cells": [
+                  "signal",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "threshold",
+                  "max"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Clamping protects downstream pipelines from invalid and corrupt input data.",
+            "rows": [
+              {
+                "cells": [
+                  "signal",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "threshold",
+                  "max"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "min",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example converts a series of imbalances into signals.",
+            "rows": [
+              {
+                "cells": [
+                  "signal",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "threshold",
+                  "max"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "min",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "obi_signal",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing a signal honestly",
+      "codeHash": "b4a710e90c75cab725279eab99a26aef87d2c846725a9080fd6a03b5efdfe805",
+      "spec": {
+        "template": "table",
+        "title": "Signal directional predictability and out-of-sample backtesting",
+        "columns": [
+          "hits",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Statistical evaluation verifies whether a signal actually predicts direction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Directional hit rate benchmarks compare predictions against random baselines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "snapshots"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Simple models often beat overfitted strategies across unseen market regimes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "snapshots"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "next_move"
+                  },
+                  {
+                    "text": "predicted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example measures the hit rate of the imbalance signal across snapshots.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "snapshots"
+                  },
+                  {
+                    "text": "obi"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "next_move"
+                  },
+                  {
+                    "text": "predicted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Signal directional predictability and out-of-sample backtesting",
+        "columns": [
+          "hits",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Statistical evaluation verifies whether a signal actually predicts direction.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Directional hit rate benchmarks compare predictions against random baselines.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "snapshots",
+                  "obi"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Simple models often beat overfitted strategies across unseen market regimes.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "snapshots",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "next_move",
+                  "predicted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example measures the hit rate of the imbalance signal across snapshots.",
+            "rows": [
+              {
+                "cells": [
+                  "hits",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "snapshots",
+                  "obi"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "next_move",
+                  "predicted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "hits",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deeper book signals",
+      "codeHash": "4fd3e1e8cd6478723a0659adeffefbfb08f67d86f53f81ac5262b2fc0deab30b",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-level order book features and trade flow signals."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: micro-price and signal",
+      "codeHash": "ccdbb74cdacd2c336719a8037fe20c07700e39887754c562f9b8faa49810a453",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: micro-price calculations and signal clamping."
+      },
+      "filled": {}
+    }
+  ]
+}

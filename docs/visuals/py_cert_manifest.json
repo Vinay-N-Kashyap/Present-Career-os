@@ -5188,27 +5188,27 @@
     },
     "quant-py:7:0": {
       "partTitle": "Imbalance at the top of the book",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:7:1": {
       "partTitle": "The micro-price",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:7:2": {
       "partTitle": "From imbalance to a signal",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:7:3": {
       "partTitle": "Testing a signal honestly",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:7:4": {
       "partTitle": "Deeper book signals",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:7:5": {
       "partTitle": "Practice time: micro-price and signal",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:8:0": {
       "partTitle": "What a market maker does",
