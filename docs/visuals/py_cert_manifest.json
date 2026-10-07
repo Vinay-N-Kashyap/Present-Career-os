@@ -700,27 +700,27 @@
     },
     "python:30:0": {
       "partTitle": "What junior Python interviews look like",
-      "status": "todo"
+      "status": "none"
     },
     "python:30:1": {
       "partTitle": "Common Python questions",
-      "status": "todo"
+      "status": "passed"
     },
     "python:30:2": {
       "partTitle": "Explaining your project in two minutes",
-      "status": "todo"
+      "status": "none"
     },
     "python:30:3": {
       "partTitle": "Solving a coding task out loud",
-      "status": "todo"
+      "status": "passed"
     },
     "python:30:4": {
       "partTitle": "More classic small problems",
-      "status": "todo"
+      "status": "passed"
     },
     "python:30:5": {
       "partTitle": "Your next steps after this month",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:1:0": {
       "partTitle": "Why speed depends on the size of the input",
