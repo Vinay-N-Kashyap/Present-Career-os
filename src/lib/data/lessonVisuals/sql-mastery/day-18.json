@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Running totals with SUM OVER",
+      "codeHash": "ebca88d592684ef0593fd42319552d84028b2c6d25b6de69d4ac060d4e933c80",
+      "spec": {
+        "template": "compare",
+        "title": "Progressive running total versus constant grand total",
+        "leftLabel": "Grand Total: OVER ()",
+        "rightLabel": "Running Total: OVER (ORDER BY day)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ORDER BY inside OVER adds up all rows from start up to current row.",
+            "left": {
+              "code": "OVER ()",
+              "result": {
+                "text": "constant 4337 on all rows"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "OVER (ORDER BY day)",
+              "result": {
+                "text": "280, 1480, 3577, 4337"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Without an order clause the function gives the grand total on every row.",
+            "left": {
+              "code": "sum(amount) OVER ()",
+              "result": {
+                "text": "unaccumulated aggregate"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "sum() OVER (ORDER BY)",
+              "result": {
+                "text": "growing accumulation"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Progressive running total versus constant grand total",
+        "leftLabel": "Grand Total: OVER ()",
+        "rightLabel": "Running Total: OVER (ORDER BY day)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The ORDER BY inside OVER adds up all rows from start up to current row.",
+            "left": {
+              "code": "OVER ()",
+              "result": "constant 4337 on all rows",
+              "tone": "data",
+              "checks": [
+                "constant 4337 on all rows"
+              ]
+            },
+            "right": {
+              "code": "OVER (ORDER BY day)",
+              "result": "280, 1480, 3577, 4337",
+              "tone": "ok",
+              "checks": [
+                "280, 1480, 3577, 4337"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Without an order clause the function gives the grand total on every row.",
+            "left": {
+              "code": "sum(amount) OVER ()",
+              "result": "unaccumulated aggregate",
+              "tone": "data",
+              "checks": [
+                "unaccumulated aggregate"
+              ]
+            },
+            "right": {
+              "code": "sum() OVER (ORDER BY)",
+              "result": "growing accumulation",
+              "tone": "ok",
+              "checks": [
+                "growing accumulation"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Frames: which rows the window covers",
+      "codeHash": "bf9ee468349e07b5f51f3f5db4c62cb3f55466fa8dc8c33249bc683385446f94",
+      "spec": {
+        "template": "table",
+        "title": "Window frames sliding calculations",
+        "columns": [
+          "day",
+          "amount",
+          "so_far",
+          "last_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A running total includes all rows from the beginning up to current row.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "100.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The frame sliding window means this row and the two before it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "100.00"
+                  },
+                  {
+                    "text": "100.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-02"
+                  },
+                  {
+                    "text": "200.00"
+                  },
+                  {
+                    "text": "300.00"
+                  },
+                  {
+                    "text": "300.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-03"
+                  },
+                  {
+                    "text": "300.00"
+                  },
+                  {
+                    "text": "600.00"
+                  },
+                  {
+                    "text": "600.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Window frames sliding calculations",
+        "columns": [
+          "day",
+          "amount",
+          "so_far",
+          "last_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A running total includes all rows from the beginning up to current row.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "100.00",
+                  "100.00",
+                  "100.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The frame sliding window means this row and the two before it.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "100.00",
+                  "100.00",
+                  "100.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-02",
+                  "200.00",
+                  "300.00",
+                  "300.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-03",
+                  "300.00",
+                  "600.00",
+                  "600.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moving averages",
+      "codeHash": "ffab6a3ec984dfaa08b6b78378ad9403c028226564069b399666d7b5ab4ea41d",
+      "spec": {
+        "template": "table",
+        "title": "Three-day moving average calculation",
+        "columns": [
+          "day",
+          "amount",
+          "avg_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A moving average smooths daily fluctuations so trend is easier to see.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "For each day it averages that day and the two rows before it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-02"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "740.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-03"
+                  },
+                  {
+                    "text": "2097.00"
+                  },
+                  {
+                    "text": "1192.33"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Three-day moving average calculation",
+        "columns": [
+          "day",
+          "amount",
+          "avg_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A moving average smooths daily fluctuations so trend is easier to see.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "280.00",
+                  "280.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "For each day it averages that day and the two rows before it.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "280.00",
+                  "280.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-02",
+                  "1200.00",
+                  "740.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-03",
+                  "2097.00",
+                  "1192.33"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running totals per group",
+      "codeHash": "370b30c296a299a9bb621e4b04fd4a24081fa522b375c653bf2d8f9d2550fce8",
+      "spec": {
+        "template": "none",
+        "reason": "Account transaction ledger state tracking partitioned by account entity."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Account transaction ledger state tracking partitioned by account entity."
+      }
+    },
+    {
+      "partTitle": "Period-over-period growth",
+      "codeHash": "a4c87b1e91263cc5429130177b42d85e7102e0275b6799cf944f092cef580c38",
+      "spec": {
+        "template": "none",
+        "reason": "Month-over-month growth percentage formulas and zero-division guardrails."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Month-over-month growth percentage formulas and zero-division guardrails."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a sales trend report",
+      "codeHash": "cefbdf0b4316a56d481406eab1ce8c4694099c77c3624f5dc2ecc841d54e4f1e",
+      "spec": {
+        "template": "table",
+        "title": "Daily trend report with month running totals and moving averages",
+        "columns": [
+          "day",
+          "amount",
+          "month_so_far",
+          "avg_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build a trend report of daily sales with running totals and averages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PostgreSQL lets you name window definitions once with a WINDOW clause.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  },
+                  {
+                    "text": "280.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-02"
+                  },
+                  {
+                    "text": "1200.00"
+                  },
+                  {
+                    "text": "1480.00"
+                  },
+                  {
+                    "text": "740.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-03"
+                  },
+                  {
+                    "text": "2097.00"
+                  },
+                  {
+                    "text": "3577.00"
+                  },
+                  {
+                    "text": "1192.33"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Daily trend report with month running totals and moving averages",
+        "columns": [
+          "day",
+          "amount",
+          "month_so_far",
+          "avg_3_days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us build a trend report of daily sales with running totals and averages.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "280.00",
+                  "280.00",
+                  "280.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "PostgreSQL lets you name window definitions once with a WINDOW clause.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-01",
+                  "280.00",
+                  "280.00",
+                  "280.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-02",
+                  "1200.00",
+                  "1480.00",
+                  "740.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2026-09-03",
+                  "2097.00",
+                  "3577.00",
+                  "1192.33"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1852,27 +1852,27 @@
     },
     "sql-mastery:18:0": {
       "partTitle": "Running totals with SUM OVER",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:18:1": {
       "partTitle": "Frames: which rows the window covers",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:18:2": {
       "partTitle": "Moving averages",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:18:3": {
       "partTitle": "Running totals per group",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:18:4": {
       "partTitle": "Period-over-period growth",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:18:5": {
       "partTitle": "Putting it together: a sales trend report",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:19:0": {
       "partTitle": "CASE: if-then-else inside SQL",
