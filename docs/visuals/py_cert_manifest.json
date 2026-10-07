@@ -628,27 +628,27 @@
     },
     "python:27:0": {
       "partTitle": "From a terminal menu to a web API",
-      "status": "todo"
+      "status": "passed"
     },
     "python:27:1": {
       "partTitle": "Your first FastAPI app",
-      "status": "todo"
+      "status": "passed"
     },
     "python:27:2": {
       "partTitle": "GET routes that reuse tracker.py",
-      "status": "todo"
+      "status": "passed"
     },
     "python:27:3": {
       "partTitle": "POST routes and data checking with Pydantic models",
-      "status": "todo"
+      "status": "none"
     },
     "python:27:4": {
       "partTitle": "Trying and testing your API",
-      "status": "todo"
+      "status": "none"
     },
     "python:27:5": {
       "partTitle": "Putting it together: the Expense Tracker API",
-      "status": "todo"
+      "status": "none"
     },
     "python:28:0": {
       "partTitle": "Debugging is a normal part of the job",
