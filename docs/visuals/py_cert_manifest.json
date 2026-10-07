@@ -940,27 +940,27 @@
     },
     "dsa-py:10:0": {
       "partTitle": "Binary search on a sorted list",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:10:1": {
       "partTitle": "The off-by-one traps",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:10:2": {
       "partTitle": "Searching a rotated sorted list",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:10:3": {
       "partTitle": "Finding the smallest in a rotated list",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:10:4": {
       "partTitle": "Binary search on the answer",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:10:5": {
       "partTitle": "Binary search in real life",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:11:0": {
       "partTitle": "A function that calls itself",
