@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Managed relational databases",
+      "codeHash": "c34508cc584b3b7b4ecf70f1b2044855993872fcf751a3fb73e39fd2513046d6",
+      "spec": {
+        "template": "table",
+        "title": "Managed database operations division of responsibility between AWS and user",
+        "columns": [
+          "job",
+          "responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "RDS automates routine database installation and infrastructure maintenance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "install database"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Automated backups and standby failover run inside private network subnets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "install database"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nightly backups"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares operational database jobs managed by AWS versus users.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "install database"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nightly backups"
+                  },
+                  {
+                    "text": "AWS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "design tables"
+                  },
+                  {
+                    "text": "you"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Managed database operations division of responsibility between AWS and user",
+        "columns": [
+          "job",
+          "responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "RDS automates routine database installation and infrastructure maintenance.",
+            "rows": [
+              {
+                "cells": [
+                  "install database",
+                  "AWS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Automated backups and standby failover run inside private network subnets.",
+            "rows": [
+              {
+                "cells": [
+                  "install database",
+                  "AWS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "nightly backups",
+                  "AWS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares operational database jobs managed by AWS versus users.",
+            "rows": [
+              {
+                "cells": [
+                  "install database",
+                  "AWS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "nightly backups",
+                  "AWS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "design tables",
+                  "you"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-AZ: a standby in another zone",
+      "codeHash": "f4508efcb1df9127546ad0b99856eefbf5b1e6dd1adc1e6887debb2e3f9a4854",
+      "spec": {
+        "template": "table",
+        "title": "Multi-AZ synchronous replication and automated primary failover",
+        "columns": [
+          "environment",
+          "primary_az"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-AZ maintains synchronous database standby replicas across zones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prod"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Upon primary failure the standby promotes automatically updating DNS endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prod"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prod"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates failover outcomes with and without Multi-AZ enabled.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prod"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prod"
+                  },
+                  {
+                    "text": "us-east-1b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dev"
+                  },
+                  {
+                    "text": "us-east-1a"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-AZ synchronous replication and automated primary failover",
+        "columns": [
+          "environment",
+          "primary_az"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-AZ maintains synchronous database standby replicas across zones.",
+            "rows": [
+              {
+                "cells": [
+                  "prod",
+                  "us-east-1a"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Upon primary failure the standby promotes automatically updating DNS endpoints.",
+            "rows": [
+              {
+                "cells": [
+                  "prod",
+                  "us-east-1a"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prod",
+                  "us-east-1b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example simulates failover outcomes with and without Multi-AZ enabled.",
+            "rows": [
+              {
+                "cells": [
+                  "prod",
+                  "us-east-1a"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prod",
+                  "us-east-1b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dev",
+                  "us-east-1a"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read replicas: scaling reads",
+      "codeHash": "3e1e54ba35d4fbe7cc4026d1d897b55da53c48c83e4e8bb017a4de8081991940",
+      "spec": {
+        "template": "table",
+        "title": "Asynchronous read replication and eventual consistency lag tracking",
+        "columns": [
+          "node",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Asynchronous replication to read replicas can introduce slight replica lag.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "primary"
+                  },
+                  {
+                    "text": "asynchronous"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replica"
+                  },
+                  {
+                    "text": "replica lag"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Multi-AZ ensures availability while read replicas scale read throughput.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "primary"
+                  },
+                  {
+                    "text": "asynchronous"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replica"
+                  },
+                  {
+                    "text": "replica lag"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example demonstrates replication delay before writes appear on replicas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "primary"
+                  },
+                  {
+                    "text": "asynchronous"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replica"
+                  },
+                  {
+                    "text": "replica lag"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Asynchronous read replication and eventual consistency lag tracking",
+        "columns": [
+          "node",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Asynchronous replication to read replicas can introduce slight replica lag.",
+            "rows": [
+              {
+                "cells": [
+                  "primary",
+                  "asynchronous"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replica",
+                  "replica lag"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Multi-AZ ensures availability while read replicas scale read throughput.",
+            "rows": [
+              {
+                "cells": [
+                  "primary",
+                  "asynchronous"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replica",
+                  "replica lag"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example demonstrates replication delay before writes appear on replicas.",
+            "rows": [
+              {
+                "cells": [
+                  "primary",
+                  "asynchronous"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replica",
+                  "replica lag"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing queries in the application",
+      "codeHash": "12e5dc69d2a82d783973fbe160b14a644bb9ec54036f79e0eccc1f4f3f0e8e5d",
+      "spec": {
+        "template": "table",
+        "title": "Database read and write query routing between writer and reader endpoints",
+        "columns": [
+          "query_type",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read queries route to read replicas while write statements target primary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "reader-1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Round robin spreads read traffic evenly across all available replicas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "reader-1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "reader-2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When no replicas exist all queries automatically fall back to the primary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "reader-1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "reader-2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SELECT 1"
+                  },
+                  {
+                    "text": "writer"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Database read and write query routing between writer and reader endpoints",
+        "columns": [
+          "query_type",
+          "target"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read queries route to read replicas while write statements target primary.",
+            "rows": [
+              {
+                "cells": [
+                  "SELECT 1",
+                  "reader-1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Round robin spreads read traffic evenly across all available replicas.",
+            "rows": [
+              {
+                "cells": [
+                  "SELECT 1",
+                  "reader-1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SELECT 1",
+                  "reader-2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When no replicas exist all queries automatically fall back to the primary.",
+            "rows": [
+              {
+                "cells": [
+                  "SELECT 1",
+                  "reader-1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SELECT 1",
+                  "reader-2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SELECT 1",
+                  "writer"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backups, snapshots and connection pooling",
+      "codeHash": "c52c23235f8278393697e4c85c17ede923b32a386d946f0ef86a81ca71e4f029",
+      "spec": {
+        "template": "none",
+        "reason": "Database backups and connection pooling mechanics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: fail over and route",
+      "codeHash": "2d5a68826e596468052d7c276fb40530fecb1f3c4ac018593cd02849d2b6b677",
+      "spec": {
+        "template": "none",
+        "reason": "Failover validation and zero replica exception handling."
+      },
+      "filled": {}
+    }
+  ]
+}

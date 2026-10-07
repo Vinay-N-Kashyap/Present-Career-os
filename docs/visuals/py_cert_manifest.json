@@ -3916,27 +3916,27 @@
     },
     "cloud-py:14:0": {
       "partTitle": "Managed relational databases",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:14:1": {
       "partTitle": "Multi-AZ: a standby in another zone",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:14:2": {
       "partTitle": "Read replicas: scaling reads",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:14:3": {
       "partTitle": "Routing queries in the application",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:14:4": {
       "partTitle": "Backups, snapshots and connection pooling",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:14:5": {
       "partTitle": "Practice time: fail over and route",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:15:0": {
       "partTitle": "The architecture",
