@@ -4276,27 +4276,27 @@
     },
     "cloud-py:29:0": {
       "partTitle": "RTO and RPO",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:29:1": {
       "partTitle": "The four DR strategies",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:29:2": {
       "partTitle": "Choosing a strategy from targets",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:29:3": {
       "partTitle": "Pricing downtime and data loss",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:29:4": {
       "partTitle": "Backups that actually work",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:29:5": {
       "partTitle": "Practice time: choose and price",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:30:0": {
       "partTitle": "The capstone architecture",
