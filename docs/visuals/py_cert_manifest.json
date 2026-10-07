@@ -4396,27 +4396,27 @@
     },
     "nlp-py:4:0": {
       "partTitle": "Documents as vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:4:1": {
       "partTitle": "Bag of words",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:4:2": {
       "partTitle": "Term frequency",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:4:3": {
       "partTitle": "Inverse document frequency",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:4:4": {
       "partTitle": "TF-IDF",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:4:5": {
       "partTitle": "Practice time: weights and vectors",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:5:0": {
       "partTitle": "How a search engine works",
