@@ -3436,27 +3436,27 @@
     },
     "dist-py:24:0": {
       "partTitle": "Why discovery?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:24:1": {
       "partTitle": "Registration with leases",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:24:2": {
       "partTitle": "Building instance URLs",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:24:3": {
       "partTitle": "Client-side and server-side discovery",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:24:4": {
       "partTitle": "DNS-based discovery and caching",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:24:5": {
       "partTitle": "Health beyond heartbeats",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:25:0": {
       "partTitle": "The chatty client problem",

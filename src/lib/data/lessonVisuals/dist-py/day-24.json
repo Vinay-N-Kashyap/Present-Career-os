@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why discovery?",
+      "codeHash": "ea9e71d859b396fa9d30581f41a2bb800737555c34638dc8332cf999b9faac2c",
+      "spec": {
+        "template": "none",
+        "reason": "Service discovery architecture and registry lookups overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Registration with leases",
+      "codeHash": "dd48b58475d52dd28cdd325605ce56fb34d1ac6478eb0e27f68efa7dfe5fa9f6",
+      "spec": {
+        "template": "table",
+        "title": "Service registry instances and heartbeat lease expirations",
+        "columns": [
+          "id",
+          "url"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When an instance starts it registers its id and address lease.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "o-1"
+                  },
+                  {
+                    "text": "http://10.0.1.21:8080"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The instance sends regular heartbeats to renew its active lease.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "o-1"
+                  },
+                  {
+                    "text": "http://10.0.1.21:8080"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "o-2"
+                  },
+                  {
+                    "text": "http://10.0.1.22:8080"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Healthy returns active instances in registration order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "o-1"
+                  },
+                  {
+                    "text": "http://10.0.1.21:8080"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Service registry instances and heartbeat lease expirations",
+        "columns": [
+          "id",
+          "url"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When an instance starts it registers its id and address lease.",
+            "rows": [
+              {
+                "cells": [
+                  "o-1",
+                  "http://10.0.1.21:8080"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The instance sends regular heartbeats to renew its active lease.",
+            "rows": [
+              {
+                "cells": [
+                  "o-1",
+                  "http://10.0.1.21:8080"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "o-2",
+                  "http://10.0.1.22:8080"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Healthy returns active instances in registration order.",
+            "rows": [
+              {
+                "cells": [
+                  "o-1",
+                  "http://10.0.1.21:8080"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building instance URLs",
+      "codeHash": "c6d0628efcaadf22ca638bafc22d9cc174c3e3414e2d8e441935004ec9f0e7b1",
+      "spec": {
+        "template": "table",
+        "title": "Instance network endpoints and availability zone metadata",
+        "columns": [
+          "ip",
+          "port",
+          "zone"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Helper functions format instance urls consistently everywhere.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10.0.1.21"
+                  },
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "ap-south-1a"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Registries store address port and regional metadata separately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10.0.1.21"
+                  },
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "ap-south-1a"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.2.14"
+                  },
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "ap-south-1b"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Clients prefer same-zone instances to reduce network latency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10.0.1.21"
+                  },
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "ap-south-1a"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.2.14"
+                  },
+                  {
+                    "text": "8080"
+                  },
+                  {
+                    "text": "ap-south-1b"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10.0.1.30"
+                  },
+                  {
+                    "text": "8081"
+                  },
+                  {
+                    "text": "ap-south-1a"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Instance network endpoints and availability zone metadata",
+        "columns": [
+          "ip",
+          "port",
+          "zone"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Helper functions format instance urls consistently everywhere.",
+            "rows": [
+              {
+                "cells": [
+                  "10.0.1.21",
+                  "8080",
+                  "ap-south-1a"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Registries store address port and regional metadata separately.",
+            "rows": [
+              {
+                "cells": [
+                  "10.0.1.21",
+                  "8080",
+                  "ap-south-1a"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10.0.2.14",
+                  "8080",
+                  "ap-south-1b"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Clients prefer same-zone instances to reduce network latency.",
+            "rows": [
+              {
+                "cells": [
+                  "10.0.1.21",
+                  "8080",
+                  "ap-south-1a"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10.0.2.14",
+                  "8080",
+                  "ap-south-1b"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "10.0.1.30",
+                  "8081",
+                  "ap-south-1a"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Client-side and server-side discovery",
+      "codeHash": "f377545eb75f435a48dd2543d8e9390c107906174e09d9eac09d61d938cd8c2c",
+      "spec": {
+        "template": "compare",
+        "title": "Architectural comparison between client-side and server-side discovery",
+        "leftLabel": "Client-side Discovery",
+        "rightLabel": "Server-side Discovery",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client-side discovery asks the registry and picks an instance.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": {
+                "text": "http://10.0.1.21:8080"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": {
+                "text": "orders"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Server-side discovery sends requests to a balancer or proxy.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": {
+                "text": "http://10.0.1.22:8080"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": {
+                "text": "orders"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Server-side routing keeps client applications simple.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": {
+                "text": "http://10.0.1.21:8080"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": {
+                "text": "orders"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Architectural comparison between client-side and server-side discovery",
+        "leftLabel": "Client-side Discovery",
+        "rightLabel": "Server-side Discovery",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client-side discovery asks the registry and picks an instance.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": "http://10.0.1.21:8080",
+              "tone": "ok",
+              "checks": [
+                "http://10.0.1.21:8080"
+              ]
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": "orders",
+              "tone": "data",
+              "checks": [
+                "orders"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Server-side discovery sends requests to a balancer or proxy.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": "http://10.0.1.22:8080",
+              "tone": "ok",
+              "checks": [
+                "http://10.0.1.22:8080"
+              ]
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": "orders",
+              "tone": "data",
+              "checks": [
+                "orders"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Server-side routing keeps client applications simple.",
+            "left": {
+              "code": "client_side_call(\"orders\")",
+              "result": "http://10.0.1.21:8080",
+              "tone": "ok",
+              "checks": [
+                "http://10.0.1.21:8080"
+              ]
+            },
+            "right": {
+              "code": "server_side_call(\"orders\")",
+              "result": "orders",
+              "tone": "data",
+              "checks": [
+                "orders"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DNS-based discovery and caching",
+      "codeHash": "66d63d265f0334d241b87491e6820b84c8777c93c33332d306766dac5f180233",
+      "spec": {
+        "template": "none",
+        "reason": "DNS-based discovery TTL caching and stale resolution tradeoffs."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Health beyond heartbeats",
+      "codeHash": "93f8b9e014d6a5af4e8ec092ec14027a7d26e084564230d9fd89c290903831ce",
+      "spec": {
+        "template": "table",
+        "title": "Process health checks separating liveness and readiness state",
+        "columns": [
+          "live",
+          "ready",
+          "reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A heartbeat proves the process runs but not that dependencies work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Platforms distinguish liveness from readiness to route traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "ok (cache degraded)"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Failed readiness removes an instance until health checks pass again.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "ok"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "ok (cache degraded)"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "True"
+                  },
+                  {
+                    "text": "False"
+                  },
+                  {
+                    "text": "database unreachable"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Process health checks separating liveness and readiness state",
+        "columns": [
+          "live",
+          "ready",
+          "reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A heartbeat proves the process runs but not that dependencies work.",
+            "rows": [
+              {
+                "cells": [
+                  "True",
+                  "True",
+                  "ok"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Platforms distinguish liveness from readiness to route traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "True",
+                  "True",
+                  "ok"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "True",
+                  "True",
+                  "ok (cache degraded)"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Failed readiness removes an instance until health checks pass again.",
+            "rows": [
+              {
+                "cells": [
+                  "True",
+                  "True",
+                  "ok"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "True",
+                  "True",
+                  "ok (cache degraded)"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "True",
+                  "False",
+                  "database unreachable"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
