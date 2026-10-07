@@ -4300,27 +4300,27 @@
     },
     "cloud-py:30:0": {
       "partTitle": "The capstone architecture",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:30:1": {
       "partTitle": "Routing transactions: health, latency and residency",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:30:2": {
       "partTitle": "Keeping money consistent across Regions",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:30:3": {
       "partTitle": "Failing over a whole Region",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:30:4": {
       "partTitle": "The readiness audit",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:30:5": {
       "partTitle": "Capstone practice and what comes next",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:1:0": {
       "partTitle": "Why text needs cleaning",

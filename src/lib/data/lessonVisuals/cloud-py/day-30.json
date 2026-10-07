@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The capstone architecture",
+      "codeHash": "862f15b90d86a76736c4891c78d925f008ecb439e96e2c450a9cbfcc2f55b2db",
+      "spec": {
+        "template": "table",
+        "title": "Multi-Region banking platform architectural stack and components",
+        "columns": [
+          "Edge",
+          "Compute"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A digital bank serving customers with near zero downtime and data loss.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Edge"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each Region has the full application stack with public and private subnets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Edge"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Entry"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "DynamoDB global tables replicate customer profiles across Regions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Edge"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Entry"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Data"
+                  },
+                  {
+                    "text": "Messaging"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Everything is defined in Terraform and encrypted with KMS keys.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Edge"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Entry"
+                  },
+                  {
+                    "text": "Compute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Data"
+                  },
+                  {
+                    "text": "Messaging"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Security"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-Region banking platform architectural stack and components",
+        "columns": [
+          "Edge",
+          "Compute"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A digital bank serving customers with near zero downtime and data loss.",
+            "rows": [
+              {
+                "cells": [
+                  "Edge",
+                  "Compute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each Region has the full application stack with public and private subnets.",
+            "rows": [
+              {
+                "cells": [
+                  "Edge",
+                  "Compute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Entry",
+                  "Compute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "DynamoDB global tables replicate customer profiles across Regions.",
+            "rows": [
+              {
+                "cells": [
+                  "Edge",
+                  "Compute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Entry",
+                  "Compute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Data",
+                  "Messaging"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Everything is defined in Terraform and encrypted with KMS keys.",
+            "rows": [
+              {
+                "cells": [
+                  "Edge",
+                  "Compute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Entry",
+                  "Compute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Data",
+                  "Messaging"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Security",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing transactions: health, latency and residency",
+      "codeHash": "32f5d44f368df0f077ff9bc63967427609c198a9d134a85c6a24e67c4ee7f94a",
+      "spec": {
+        "template": "table",
+        "title": "Transaction routing decisions filtered by health, law and latency",
+        "columns": [
+          "healthy",
+          "country"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Routing a banking transaction follows three rules in strict order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Customer data may only be processed in Regions allowed by residency law.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "regions"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Never send a transaction to an unhealthy Region.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "regions"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "region"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Choose the lowest latency among Regions that pass the first rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "regions"
+                  },
+                  {
+                    "text": "country"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "region"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latency_ms"
+                  },
+                  {
+                    "text": "success"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Transaction routing decisions filtered by health, law and latency",
+        "columns": [
+          "healthy",
+          "country"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Routing a banking transaction follows three rules in strict order.",
+            "rows": [
+              {
+                "cells": [
+                  "healthy",
+                  "country"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Customer data may only be processed in Regions allowed by residency law.",
+            "rows": [
+              {
+                "cells": [
+                  "healthy",
+                  "country"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "regions",
+                  "country"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Never send a transaction to an unhealthy Region.",
+            "rows": [
+              {
+                "cells": [
+                  "healthy",
+                  "country"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "regions",
+                  "country"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "healthy",
+                  "region"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Choose the lowest latency among Regions that pass the first rules.",
+            "rows": [
+              {
+                "cells": [
+                  "healthy",
+                  "country"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "regions",
+                  "country"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "healthy",
+                  "region"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "latency_ms",
+                  "success"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping money consistent across Regions",
+      "codeHash": "b507c34975ec7c9758304a09329e438ad4b3937cd41dbe5d93c9c4a02669c078",
+      "spec": {
+        "template": "table",
+        "title": "Ledger balance consistency and home Region failover guarantees",
+        "columns": [
+          "balance",
+          "amount"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Balances are hard because two Regions could approve withdrawals at once.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "balance"
+                  },
+                  {
+                    "text": "amount"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Global tables resolve concurrent writes with last writer wins.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "balance"
+                  },
+                  {
+                    "text": "amount"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "frankfurt"
+                  },
+                  {
+                    "text": "declined"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A home Region processes money movements while reads serve everywhere.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "balance"
+                  },
+                  {
+                    "text": "amount"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "frankfurt"
+                  },
+                  {
+                    "text": "declined"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mumbai"
+                  },
+                  {
+                    "text": "approved"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Money movements use an append-only ledger with an idempotency key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "balance"
+                  },
+                  {
+                    "text": "amount"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "frankfurt"
+                  },
+                  {
+                    "text": "declined"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mumbai"
+                  },
+                  {
+                    "text": "approved"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "balance"
+                  },
+                  {
+                    "text": "approved"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ledger balance consistency and home Region failover guarantees",
+        "columns": [
+          "balance",
+          "amount"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Balances are hard because two Regions could approve withdrawals at once.",
+            "rows": [
+              {
+                "cells": [
+                  "balance",
+                  "amount"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Global tables resolve concurrent writes with last writer wins.",
+            "rows": [
+              {
+                "cells": [
+                  "balance",
+                  "amount"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "frankfurt",
+                  "declined"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A home Region processes money movements while reads serve everywhere.",
+            "rows": [
+              {
+                "cells": [
+                  "balance",
+                  "amount"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "frankfurt",
+                  "declined"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "mumbai",
+                  "approved"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Money movements use an append-only ledger with an idempotency key.",
+            "rows": [
+              {
+                "cells": [
+                  "balance",
+                  "amount"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "frankfurt",
+                  "declined"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "mumbai",
+                  "approved"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "balance",
+                  "approved"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failing over a whole Region",
+      "codeHash": "d369b1217dba81d5c7bfe7d13bd43b8ba43008edaa2c68fb860d838210e4f41d",
+      "spec": {
+        "template": "table",
+        "title": "Region failover traffic shift and survivor capacity allocation",
+        "columns": [
+          "traffic",
+          "capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When a Region fails several automatic actions take place.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ap-south-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Health checks stop sending users to the failed Region.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ap-south-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "failed"
+                  },
+                  {
+                    "text": "traffic"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Accounts move to backup home Regions after ledger replicas catch up.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ap-south-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "failed"
+                  },
+                  {
+                    "text": "traffic"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "eu-west-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Surviving Regions scale out to absorb extra traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ap-south-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "failed"
+                  },
+                  {
+                    "text": "traffic"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "eu-west-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "us-east-1"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Region failover traffic shift and survivor capacity allocation",
+        "columns": [
+          "traffic",
+          "capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When a Region fails several automatic actions take place.",
+            "rows": [
+              {
+                "cells": [
+                  "ap-south-1",
+                  "capacity"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Health checks stop sending users to the failed Region.",
+            "rows": [
+              {
+                "cells": [
+                  "ap-south-1",
+                  "capacity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "failed",
+                  "traffic"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Accounts move to backup home Regions after ledger replicas catch up.",
+            "rows": [
+              {
+                "cells": [
+                  "ap-south-1",
+                  "capacity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "failed",
+                  "traffic"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "eu-west-1",
+                  "capacity"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Surviving Regions scale out to absorb extra traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "ap-south-1",
+                  "capacity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "failed",
+                  "traffic"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "eu-west-1",
+                  "capacity"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "us-east-1",
+                  "capacity"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The readiness audit",
+      "codeHash": "c4f9ff3dba81b031498d1daaee2652bd39538a5627db9b0b5d81b69ab8fc8222",
+      "spec": {
+        "template": "none",
+        "reason": "The readiness audit."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice and what comes next",
+      "codeHash": "c67640d5cadfd43687ff635d784aff634e08d0f4e502908aa3f723a67b567338",
+      "spec": {
+        "template": "none",
+        "reason": "Capstone practice and what comes next."
+      },
+      "filled": {}
+    }
+  ]
+}
