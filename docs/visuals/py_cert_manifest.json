@@ -1348,27 +1348,27 @@
     },
     "dsa-py:27:0": {
       "partTitle": "Comparing two strings",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:27:1": {
       "partTitle": "The LCS recurrence",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:27:2": {
       "partTitle": "Rebuilding the common letters",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:27:3": {
       "partTitle": "Edit distance",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:27:4": {
       "partTitle": "A tiny spell checker",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:27:5": {
       "partTitle": "Spotting 2D DP problems",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:28:0": {
       "partTitle": "Choose, explore, un-choose",
