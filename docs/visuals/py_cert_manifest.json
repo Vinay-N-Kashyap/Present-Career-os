@@ -4180,27 +4180,27 @@
     },
     "cloud-py:25:0": {
       "partTitle": "Metrics, logs and traces",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:25:1": {
       "partTitle": "Percentiles beat averages",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:25:2": {
       "partTitle": "Alarms over consecutive datapoints",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:25:3": {
       "partTitle": "Logs and Logs Insights",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:25:4": {
       "partTitle": "Dashboards and alerts people act on",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:25:5": {
       "partTitle": "Practice time: alarms and log summaries",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:26:0": {
       "partTitle": "Why encryption, and where",

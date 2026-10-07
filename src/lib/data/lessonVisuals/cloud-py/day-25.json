@@ -1,0 +1,999 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Metrics, logs and traces",
+      "codeHash": "5f46be03fa363a7e26ea94099e4ca3da8364635b94c781afc89b23a0712c5a43",
+      "spec": {
+        "template": "table",
+        "title": "CloudWatch observability metrics, logs and latency signals",
+        "columns": [
+          "ms",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observability helps teams understand what systems do from outside.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "120"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Metrics aggregate operational numbers over time for alarms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "120"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Logs capture records of individual events with diagnostic detail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "120"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "400"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Traces follow execution calls across distributed services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "120"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "400"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "800"
+                  },
+                  {
+                    "text": "503"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CloudWatch observability metrics, logs and latency signals",
+        "columns": [
+          "ms",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observability helps teams understand what systems do from outside.",
+            "rows": [
+              {
+                "cells": [
+                  "120",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Metrics aggregate operational numbers over time for alarms.",
+            "rows": [
+              {
+                "cells": [
+                  "120",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "90",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Logs capture records of individual events with diagnostic detail.",
+            "rows": [
+              {
+                "cells": [
+                  "120",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "90",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "400",
+                  "500"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Traces follow execution calls across distributed services.",
+            "rows": [
+              {
+                "cells": [
+                  "120",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "90",
+                  "200"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "400",
+                  "500"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "800",
+                  "503"
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Percentiles beat averages",
+      "codeHash": "c3408514fdab487c3abbdd8ed97a76c990f1fa87be7a725e2510118c857ffc63",
+      "spec": {
+        "template": "table",
+        "title": "Latency distribution percentiles exposing tail performance",
+        "columns": [
+          "percentile",
+          "latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Averages hide extreme latency spikes experienced by unlucky users.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Percentiles measure typical user calls and reveal slow tail latency.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "2500"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Service level objectives define latency targets using percentiles.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "2500"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "10000"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Production alarms track tail percentiles instead of simple averages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "2500"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "10000"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Latency distribution percentiles exposing tail performance",
+        "columns": [
+          "percentile",
+          "latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Averages hide extreme latency spikes experienced by unlucky users.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "100"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Percentiles measure typical user calls and reveal slow tail latency.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "2500"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Service level objectives define latency targets using percentiles.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "2500"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "max",
+                  "10000"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Production alarms track tail percentiles instead of simple averages.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "100"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "2500"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max",
+                  "10000"
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alarms over consecutive datapoints",
+      "codeHash": "8dc77ee026891a98fcdc68af9d7dc59ed8e4c510df84606121ed5d822e634fee",
+      "spec": {
+        "template": "table",
+        "title": "Consecutive period evaluation for CloudWatch alarms",
+        "columns": [
+          "value",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudWatch alarms transition between monitored metric states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "40"
+                  },
+                  {
+                    "text": "INSUFFICIENT_DATA"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Alarms configure thresholds, comparisons and evaluation periods.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "40"
+                  },
+                  {
+                    "text": "INSUFFICIENT_DATA"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "70"
+                  },
+                  {
+                    "text": "OK"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Consecutive evaluation periods prevent noisy false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "40"
+                  },
+                  {
+                    "text": "INSUFFICIENT_DATA"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "70"
+                  },
+                  {
+                    "text": "OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "95"
+                  },
+                  {
+                    "text": "ALARM"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The alarm evaluates recent datapoints against configured operators.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "40"
+                  },
+                  {
+                    "text": "INSUFFICIENT_DATA"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "70"
+                  },
+                  {
+                    "text": "OK"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "95"
+                  },
+                  {
+                    "text": "ALARM"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Consecutive period evaluation for CloudWatch alarms",
+        "columns": [
+          "value",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudWatch alarms transition between monitored metric states.",
+            "rows": [
+              {
+                "cells": [
+                  "40",
+                  "INSUFFICIENT_DATA"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Alarms configure thresholds, comparisons and evaluation periods.",
+            "rows": [
+              {
+                "cells": [
+                  "40",
+                  "INSUFFICIENT_DATA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "70",
+                  "OK"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Consecutive evaluation periods prevent noisy false alarms.",
+            "rows": [
+              {
+                "cells": [
+                  "40",
+                  "INSUFFICIENT_DATA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "70",
+                  "OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "95",
+                  "ALARM"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The alarm evaluates recent datapoints against configured operators.",
+            "rows": [
+              {
+                "cells": [
+                  "40",
+                  "INSUFFICIENT_DATA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "70",
+                  "OK"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "95",
+                  "ALARM"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Logs and Logs Insights",
+      "codeHash": "9cdc27006f19c47ef143f8dd26aa72c3e00831dd1b75973f58d991dc53067d85",
+      "spec": {
+        "template": "table",
+        "title": "CloudWatch Logs Insights query filtering by status code",
+        "columns": [
+          "path",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudWatch Logs groups lines into application log streams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/pay"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Retention periods prevent log group storage costs from growing forever.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/pay"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/cart"
+                  },
+                  {
+                    "text": "502"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Structured JSON logs allow Logs Insights queries to filter and aggregate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/pay"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/cart"
+                  },
+                  {
+                    "text": "502"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/auth"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Queries aggregate status errors across specific request paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "/pay"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/cart"
+                  },
+                  {
+                    "text": "502"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/auth"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "/home"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CloudWatch Logs Insights query filtering by status code",
+        "columns": [
+          "path",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CloudWatch Logs groups lines into application log streams.",
+            "rows": [
+              {
+                "cells": [
+                  "/pay",
+                  "500"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Retention periods prevent log group storage costs from growing forever.",
+            "rows": [
+              {
+                "cells": [
+                  "/pay",
+                  "500"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "/cart",
+                  "502"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Structured JSON logs allow Logs Insights queries to filter and aggregate.",
+            "rows": [
+              {
+                "cells": [
+                  "/pay",
+                  "500"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "/cart",
+                  "502"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "/auth",
+                  "500"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Queries aggregate status errors across specific request paths.",
+            "rows": [
+              {
+                "cells": [
+                  "/pay",
+                  "500"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "/cart",
+                  "502"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "/auth",
+                  "500"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "/home",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dashboards and alerts people act on",
+      "codeHash": "165b0adf90f6613cb608ca539df1942eab12988dfa6acd2b301395afc6bec921",
+      "spec": {
+        "template": "none",
+        "reason": "Dashboards and alerts people act on."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: alarms and log summaries",
+      "codeHash": "629171f6e9c5f4166656752bce96caaed640cce21ff3fe2ea6c325d62b072274",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: alarms and log summaries."
+      },
+      "filled": {}
+    }
+  ]
+}
