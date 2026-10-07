@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why store JSON in a database",
+      "codeHash": "9eca0d652224651263212d6c95e587bf26e70bbe727a31953baf47c4d866c9b8",
+      "spec": {
+        "template": "table",
+        "title": "Storing heterogeneous payloads with jsonb columns",
+        "columns": [
+          "id",
+          "happened_at",
+          "event_type",
+          "details_summary"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "PostgreSQL stores jsonb in processed binary form for fast searching.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "click"
+                  },
+                  {
+                    "text": "page: /home"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Systems combine normal columns for fixed facts with jsonb for extra details.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "click"
+                  },
+                  {
+                    "text": "page: /home"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2026-09-01"
+                  },
+                  {
+                    "text": "purchase"
+                  },
+                  {
+                    "text": "amount: 499, items: 2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "2026-09-02"
+                  },
+                  {
+                    "text": "click"
+                  },
+                  {
+                    "text": "page: /cart"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Storing heterogeneous payloads with jsonb columns",
+        "columns": [
+          "id",
+          "happened_at",
+          "event_type",
+          "details_summary"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "PostgreSQL stores jsonb in processed binary form for fast searching.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "2026-09-01",
+                  "click",
+                  "page: /home"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Systems combine normal columns for fixed facts with jsonb for extra details.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "2026-09-01",
+                  "click",
+                  "page: /home"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "2026-09-01",
+                  "purchase",
+                  "amount: 499, items: 2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "2026-09-02",
+                  "click",
+                  "page: /cart"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading values: -> and ->>",
+      "codeHash": "2f07611cb2a4cdaf698ee025119037f53ef0950d258d876d4cfe733faeb0cdb2",
+      "spec": {
+        "template": "compare",
+        "title": "Distinction between JSON operator -> and text operator ->>",
+        "leftLabel": "Operator -> (JSON Output)",
+        "rightLabel": "Operator ->> (Text Output)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The arrow returns JSON whereas double arrow returns plain text.",
+            "left": {
+              "code": "details -> 'page'",
+              "result": {
+                "text": "\"/home\" (quoted JSON)"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "details ->> 'page'",
+              "result": {
+                "text": "/home (plain text)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Chained arrows reach inside nested objects and array positions.",
+            "left": {
+              "code": "details -> 'customer' ->> 'city'",
+              "result": {
+                "text": "Pune"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "details -> 'items' ->> 0",
+              "result": {
+                "text": "Pen"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distinction between JSON operator -> and text operator ->>",
+        "leftLabel": "Operator -> (JSON Output)",
+        "rightLabel": "Operator ->> (Text Output)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The arrow returns JSON whereas double arrow returns plain text.",
+            "left": {
+              "code": "details -> 'page'",
+              "result": "\"/home\" (quoted JSON)",
+              "tone": "data",
+              "checks": [
+                "\"/home\" (quoted JSON)"
+              ]
+            },
+            "right": {
+              "code": "details ->> 'page'",
+              "result": "/home (plain text)",
+              "tone": "ok",
+              "checks": [
+                "/home (plain text)"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Chained arrows reach inside nested objects and array positions.",
+            "left": {
+              "code": "details -> 'customer' ->> 'city'",
+              "result": "Pune",
+              "tone": "ok",
+              "checks": [
+                "Pune"
+              ]
+            },
+            "right": {
+              "code": "details -> 'items' ->> 0",
+              "result": "Pen",
+              "tone": "ok",
+              "checks": [
+                "Pen"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filtering and grouping by JSON values",
+      "codeHash": "a71d5d08455bd76161d786cfde17b11bf43f8f6709f14b72e86c91ac67b50653",
+      "spec": {
+        "template": "table",
+        "title": "Aggregating and querying within JSON keys",
+        "columns": [
+          "event_type",
+          "total_count",
+          "query_syntax"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping by extracted JSON values counts events of each type.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "click"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "GROUP BY data ->> 'type'"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The contains operator checks whether JSON contains matching key and value.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "click"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "GROUP BY data ->> 'type'"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "purchase"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "data @> '{\"type\": \"click\"}'"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "view"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "data ? 'coupon'"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aggregating and querying within JSON keys",
+        "columns": [
+          "event_type",
+          "total_count",
+          "query_syntax"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grouping by extracted JSON values counts events of each type.",
+            "rows": [
+              {
+                "cells": [
+                  "click",
+                  "3",
+                  "GROUP BY data ->> 'type'"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The contains operator checks whether JSON contains matching key and value.",
+            "rows": [
+              {
+                "cells": [
+                  "click",
+                  "3",
+                  "GROUP BY data ->> 'type'"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "purchase",
+                  "1",
+                  "data @> '{\"type\": \"click\"}'"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "view",
+                  "1",
+                  "data ? 'coupon'"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building and changing JSON",
+      "codeHash": "511066aef527692565911770b8df8bfb4028a86d6b4c95786ce7acd7fe5adb86",
+      "spec": {
+        "template": "compare",
+        "title": "Constructing and mutating jsonb values",
+        "leftLabel": "SQL Function or Operator",
+        "rightLabel": "Resulting JSON Payload",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Functions build JSON objects and aggregate rows into arrays.",
+            "left": {
+              "code": "jsonb_build_object('id', id)",
+              "result": {
+                "text": "{\"id\": 1, \"name\": \"Asha\"}"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "jsonb_agg(...)",
+              "result": {
+                "text": "[{...}, {...}] array"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The concatenation operator merges objects while minus removes keys.",
+            "left": {
+              "code": "settings || '{\"lang\": \"hi\"}'",
+              "result": {
+                "text": "adds or overwrites key"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "settings - 'coupon'",
+              "result": {
+                "text": "drops coupon key"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Constructing and mutating jsonb values",
+        "leftLabel": "SQL Function or Operator",
+        "rightLabel": "Resulting JSON Payload",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Functions build JSON objects and aggregate rows into arrays.",
+            "left": {
+              "code": "jsonb_build_object('id', id)",
+              "result": "{\"id\": 1, \"name\": \"Asha\"}",
+              "tone": "data",
+              "checks": [
+                "{\"id\": 1, \"name\": \"Asha\"}"
+              ]
+            },
+            "right": {
+              "code": "jsonb_agg(...)",
+              "result": "[{...}, {...}] array",
+              "tone": "ok",
+              "checks": [
+                "[{...}, {...}] array"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The concatenation operator merges objects while minus removes keys.",
+            "left": {
+              "code": "settings || '{\"lang\": \"hi\"}'",
+              "result": "adds or overwrites key",
+              "tone": "ok",
+              "checks": [
+                "adds or overwrites key"
+              ]
+            },
+            "right": {
+              "code": "settings - 'coupon'",
+              "result": "drops coupon key",
+              "tone": "ok",
+              "checks": [
+                "drops coupon key"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Columns or JSON: choosing well",
+      "codeHash": "b7ea8da652e18db913c8bc703ce0eb6545c7ed269262852c7feac7957c08dc83",
+      "spec": {
+        "template": "none",
+        "reason": "Schema trade-offs between structured relational columns and flexible jsonb."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Schema trade-offs between structured relational columns and flexible jsonb."
+      }
+    },
+    {
+      "partTitle": "Putting it together: analysing app events",
+      "codeHash": "6a6ed27882b9341a018f89d04fb540c0ea38f139f29141399230b7ddb28ec6cb",
+      "spec": {
+        "template": "none",
+        "reason": "End-to-end event analytics script computing page breakdown and revenue aggregation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "End-to-end event analytics script computing page breakdown and revenue aggregation."
+      }
+    }
+  ]
+}

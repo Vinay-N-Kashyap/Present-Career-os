@@ -2020,27 +2020,27 @@
     },
     "sql-mastery:25:0": {
       "partTitle": "Why store JSON in a database",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:25:1": {
       "partTitle": "Reading values: -> and ->>",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:25:2": {
       "partTitle": "Filtering and grouping by JSON values",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:25:3": {
       "partTitle": "Building and changing JSON",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:25:4": {
       "partTitle": "Columns or JSON: choosing well",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:25:5": {
       "partTitle": "Putting it together: analysing app events",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:26:0": {
       "partTitle": "How an app talks to a database",
