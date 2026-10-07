@@ -1,6 +1,6 @@
-sql-mastery:11:3
-sql-mastery:11:5
-sql-mastery:12:1
-sql-mastery:13:1
-sql-mastery:14:1
-sql-mastery:15:5
+sql-mastery:17:0
+sql-mastery:18:2
+sql-mastery:19:0
+sql-mastery:20:0
+sql-mastery:20:2
+sql-mastery:20:3
