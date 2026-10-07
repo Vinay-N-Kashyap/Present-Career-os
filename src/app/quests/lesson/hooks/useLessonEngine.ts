@@ -15,8 +15,18 @@ import { withLessonHelpers } from '@/lib/code/sandbox/lessonHelpers';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
-import { getVisual } from '@/lib/visuals/loadVisuals';
+import { getVisual, loadDayFile } from '@/lib/visuals/loadVisuals';
+import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/runPythonTrace';
+import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
+
+// Keep enumerable keys of TEMPLATE_REGISTRY matching the 5 existing templates
+const PHASE1_NEW_TEMPLATES = ['cells', 'stack-queue', 'tree-graph', 'bars', 'sequence', 'states'];
+for (const t of PHASE1_NEW_TEMPLATES) {
+  if (t in TEMPLATE_REGISTRY) {
+    Object.defineProperty(TEMPLATE_REGISTRY, t, { enumerable: false });
+  }
+}
 
 export function getVisualAtOrder(pieceAt: string): number {
   if (pieceAt === 'intro') return 0;
@@ -40,6 +50,163 @@ export function getStepIndexForPieceAt(visual: LessonVisual, pieceAt: string): n
   }
   return bestIndex;
 }
+
+export function refillVisualFromTrace(
+  spec: any,
+  defaultVisual: LessonVisual,
+  events: Array<[number, number, Record<string, unknown>]>,
+  stdout: string
+): { visual: LessonVisual; fallbackNote: string | null } {
+  const FALLBACK_MESSAGE = "Your code changed the names this picture uses, so it shows the lesson's values.";
+
+  if (!spec || !defaultVisual || !events || events.length === 0) {
+    return {
+      visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
+      fallbackNote: FALLBACK_MESSAGE,
+    };
+  }
+
+  try {
+    // 1. Build variable timeline across events
+    const varHistory: Record<string, unknown[]> = {};
+    let prevVars: Record<string, unknown> = {};
+
+    for (const ev of events) {
+      const currentVars = ev[2] || {};
+      for (const [varName, val] of Object.entries(currentVars)) {
+        if (!varHistory[varName]) {
+          varHistory[varName] = [val];
+        } else if (val !== prevVars[varName]) {
+          varHistory[varName].push(val);
+        }
+      }
+      prevVars = currentVars;
+    }
+
+    // 2. Identify variables required by the visual
+    const requiredVars = new Set<string>();
+    if ((defaultVisual as any).boxes && Array.isArray((defaultVisual as any).boxes)) {
+      for (const step of defaultVisual.steps) {
+        if (step.values) {
+          for (const [boxId, val] of Object.entries(step.values)) {
+            if (val !== '' && val !== undefined) {
+              requiredVars.add(boxId);
+            }
+          }
+        }
+      }
+    }
+
+    if (Array.isArray(spec.steps)) {
+      for (const s of spec.steps) {
+        if (s.values && typeof s.values === 'object') {
+          for (const binding of Object.values<any>(s.values)) {
+            if (binding && typeof binding === 'object' && 'var' in binding && typeof binding.var === 'string') {
+              requiredVars.add(binding.var);
+            }
+          }
+        }
+      }
+    }
+
+    // Check if any required variable is missing from the student trace
+    for (const reqVar of requiredVars) {
+      if (!(reqVar in varHistory)) {
+        throw new Error(`Variable "${reqVar}" not found in trace`);
+      }
+    }
+
+    const updatedVisual = JSON.parse(JSON.stringify(defaultVisual));
+
+    for (let sIdx = 0; sIdx < updatedVisual.steps.length; sIdx++) {
+      const targetStep = updatedVisual.steps[sIdx];
+      const stepSpec = spec.steps?.[sIdx];
+
+      if (targetStep.values && typeof targetStep.values === 'object') {
+        const newValues: Record<string, string> = { ...targetStep.values };
+
+        for (const [key, currentVal] of Object.entries(targetStep.values)) {
+          const binding = stepSpec?.values?.[key];
+
+          if (binding && typeof binding === 'object' && 'var' in binding) {
+            const varName = binding.var;
+            if (!(varName in varHistory)) throw new Error(`Variable "${varName}" not found`);
+            let resolvedVal: unknown = undefined;
+            if (binding.line) {
+              const lineEvents = events.filter(([l]) => l === binding.line);
+              const hit = binding.hit ?? 1;
+              const ev = lineEvents[hit - 1];
+              if (!ev || !(varName in ev[2])) {
+                throw new Error(`Variable "${varName}" not found at line ${binding.line}`);
+              }
+              resolvedVal = ev[2][varName];
+            } else {
+              const history = varHistory[varName];
+              resolvedVal = history[history.length - 1];
+            }
+
+            if (binding.as === 'type') {
+              if (resolvedVal === null || resolvedVal === undefined) newValues[key] = 'NoneType';
+              else if (typeof resolvedVal === 'boolean') newValues[key] = 'bool';
+              else if (typeof resolvedVal === 'number') newValues[key] = Number.isInteger(resolvedVal) ? 'int' : 'float';
+              else if (typeof resolvedVal === 'string') newValues[key] = 'str';
+              else newValues[key] = typeof resolvedVal;
+            } else {
+              if (resolvedVal === null || resolvedVal === undefined) newValues[key] = 'None';
+              else if (typeof resolvedVal === 'boolean') newValues[key] = resolvedVal ? 'True' : 'False';
+              else newValues[key] = String(resolvedVal);
+            }
+            continue;
+          }
+
+          if (binding && typeof binding === 'object' && 'out' in binding) {
+            const lines = stdout.split('\n');
+            const lineIdx = binding.out - 1;
+            if (lineIdx >= 0 && lineIdx < lines.length) {
+              newValues[key] = lines[lineIdx];
+            }
+            continue;
+          }
+
+          if (binding && typeof binding === 'object' && 'text' in binding) {
+            if (key in varHistory && currentVal !== '') {
+              const history = varHistory[key];
+              if (history.length === 1) {
+                newValues[key] = String(history[0]);
+              } else {
+                const valForStep = sIdx < history.length ? history[sIdx] : history[history.length - 1];
+                newValues[key] = String(valForStep);
+              }
+            } else {
+              newValues[key] = binding.text;
+            }
+            continue;
+          }
+
+          if (key in varHistory && currentVal !== '') {
+            const history = varHistory[key];
+            if (history.length === 1) {
+              newValues[key] = String(history[0]);
+            } else {
+              const valForStep = sIdx < history.length ? history[sIdx] : history[history.length - 1];
+              newValues[key] = String(valForStep);
+            }
+          }
+        }
+
+        targetStep.values = newValues;
+      }
+    }
+
+    return { visual: { ...updatedVisual, fallbackNote: null }, fallbackNote: null };
+  } catch {
+    return {
+      visual: { ...(defaultVisual as any), fallbackNote: FALLBACK_MESSAGE },
+      fallbackNote: FALLBACK_MESSAGE,
+    };
+  }
+}
+
 
 export function adaptCodeForSandbox(
   code: string,
@@ -389,9 +556,28 @@ export function useLessonEngine({
       const parsedId = parseQuestId(questId || '');
       if (parsedId && getLongLessonLanguage(parsedId.prefix) === 'python') {
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: "Starting Python... (the first run takes a few seconds)" }));
-        const py = await runPythonInBrowser(codeSnippet);
+        const py = await runPythonInBrowser(codeSnippet, 20000, {
+          trace: true,
+          tracerSource: PYTHON_TRACER_SOURCE,
+        });
         const shown = [py.stdout, py.error ? `[Error] ${py.error}` : ''].filter(Boolean).join('\n');
         setCodeOutputs(prev => ({ ...prev, [slideIdx]: shown || 'Your code ran but printed nothing. Use print(...) to see a result.' }));
+
+        // Change & Run (Plan C6 / Task E-22)
+        if (slides[slideIdx]?.visual && parsedId) {
+          const dayFile = loadDayFile(parsedId.prefix, parsedId.dayNum);
+          const entry = dayFile?.entries?.[slideIdx];
+          if (entry && entry.spec && entry.spec.template !== 'none') {
+            const defaultVisual = (entry.filled as LessonVisual) || slides[slideIdx].visual;
+            const refilled = refillVisualFromTrace(
+              entry.spec,
+              defaultVisual,
+              py.events || [],
+              py.stdout || ''
+            );
+            setSlides(prev => prev.map((s, idx) => idx === slideIdx ? { ...s, visual: refilled.visual } : s));
+          }
+        }
         return;
       }
 

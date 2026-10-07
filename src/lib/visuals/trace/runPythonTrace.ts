@@ -1,5 +1,6 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide';
 import { PYTHON_TRACER_SOURCE } from './pythonTracer';
+export { PYTHON_TRACER_SOURCE };
 
 export type TraceEvent = [
   line: number,

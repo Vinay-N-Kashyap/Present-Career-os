@@ -14,6 +14,7 @@ export interface VisualStageProps {
   onSyncWithVoice: () => void;
   highlightedLabel: string | null;
   onShapeTap: (label: string) => void;
+  fallbackNote?: string | null;
 }
 
 export function VisualStage({
@@ -24,6 +25,7 @@ export function VisualStage({
   onSyncWithVoice,
   highlightedLabel,
   onShapeTap,
+  fallbackNote,
 }: VisualStageProps): React.ReactElement {
   const [isMobileCollapsed, setIsMobileCollapsed] = useState(false);
 
@@ -305,6 +307,22 @@ export function VisualStage({
         >
           {currentStep?.caption || ''}
         </div>
+
+        {Boolean(fallbackNote || (visual as any)?.fallbackNote) && (
+          <div
+            className="visual-fallback-note"
+            data-testid="visual-fallback-note"
+            style={{
+              fontSize: '13px',
+              color: 'var(--text-muted)',
+              textAlign: 'center',
+              fontStyle: 'italic',
+              padding: '2px 8px',
+            }}
+          >
+            {fallbackNote || (visual as any)?.fallbackNote}
+          </div>
+        )}
 
         {/* Step Controls: Back, Step Dots, Next, and optional "Sync with voice" */}
         <div
