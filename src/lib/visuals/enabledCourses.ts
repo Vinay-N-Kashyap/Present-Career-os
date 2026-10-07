@@ -11,7 +11,8 @@
 // - 'ai-py': AI Engineering (Month 4) released via [task:L-ai-py]
 // - 'dist-py': Distributed Systems in Python (Month 5) released via [task:L-dist-py]
 // - 'cloud-py': Cloud Engineering in Python (Month 6) released via [task:L-cloud-py]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py'];
+// - 'nlp-py': Natural Language Processing in Python (Month 7) released via [task:L-nlp-py]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
