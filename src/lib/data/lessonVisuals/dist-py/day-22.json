@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why gossip?",
+      "codeHash": "55d8dc1f2844beea5c5fe9bbc74e516657829ff943766c3070366ad8fc6fa72d",
+      "spec": {
+        "template": "none",
+        "reason": "Gossip protocol logarithmic dissemination overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Choosing gossip peers",
+      "codeHash": "3f35072d4a8c754be5070f7f8150f9ad3bbfc325afde1e9c7ceaf718b9a87583",
+      "spec": {
+        "template": "none",
+        "reason": "Random gossip peer fanout and shuffle algorithm."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "SWIM: probing for failures",
+      "codeHash": "d3ae5807f2d01c4b9102c7b07794245402f79391f334fb1287cf3b633cf847ac",
+      "spec": {
+        "template": "table",
+        "title": "SWIM failure detection probe methods and target status outcomes",
+        "columns": [
+          "target",
+          "status",
+          "method"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each round a node pings one random member directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "DIRECT"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When direct ping times out helpers probe the target indirectly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "DIRECT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "INDIRECT"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If nobody reaches target swim probe returns suspect via indirect.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "DIRECT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "INDIRECT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n4"
+                  },
+                  {
+                    "text": "SUSPECT"
+                  },
+                  {
+                    "text": "INDIRECT"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SWIM failure detection probe methods and target status outcomes",
+        "columns": [
+          "target",
+          "status",
+          "method"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each round a node pings one random member directly.",
+            "rows": [
+              {
+                "cells": [
+                  "n4",
+                  "ALIVE",
+                  "DIRECT"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When direct ping times out helpers probe the target indirectly.",
+            "rows": [
+              {
+                "cells": [
+                  "n4",
+                  "ALIVE",
+                  "DIRECT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n4",
+                  "ALIVE",
+                  "INDIRECT"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If nobody reaches target swim probe returns suspect via indirect.",
+            "rows": [
+              {
+                "cells": [
+                  "n4",
+                  "ALIVE",
+                  "DIRECT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n4",
+                  "ALIVE",
+                  "INDIRECT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n4",
+                  "SUSPECT",
+                  "INDIRECT"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Suspicion before declaring death",
+      "codeHash": "4a528fecd1917119eb0816449450c72c3775ee4c3753cc28b7989a1791ad22dc",
+      "spec": {
+        "template": "states",
+        "title": "SWIM failure detection lifecycle states and refutations",
+        "states": [
+          "ALIVE",
+          "SUSPECT",
+          "DEAD"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "currentState": "SUSPECT",
+            "transition": {
+              "from": "ALIVE",
+              "to": "SUSPECT"
+            },
+            "caption": "Unreachable nodes become suspect first before declaring failure.",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "currentState": "DEAD",
+            "transition": {
+              "from": "SUSPECT",
+              "to": "DEAD"
+            },
+            "caption": "If suspicion is not refuted within timeout the node is dead.",
+            "tone": "error"
+          },
+          {
+            "at": "say5",
+            "currentState": "ALIVE",
+            "transition": {
+              "from": "SUSPECT",
+              "to": "ALIVE"
+            },
+            "caption": "Incarnation numbers let newer alive messages refute suspicion.",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "SWIM failure detection lifecycle states and refutations",
+        "states": [
+          "ALIVE",
+          "SUSPECT",
+          "DEAD"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unreachable nodes become suspect first before declaring failure.",
+            "currentState": "SUSPECT",
+            "transition": {
+              "from": "ALIVE",
+              "to": "SUSPECT"
+            },
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "If suspicion is not refuted within timeout the node is dead.",
+            "currentState": "DEAD",
+            "transition": {
+              "from": "SUSPECT",
+              "to": "DEAD"
+            },
+            "tone": "error"
+          },
+          {
+            "at": "say5",
+            "caption": "Incarnation numbers let newer alive messages refute suspicion.",
+            "currentState": "ALIVE",
+            "transition": {
+              "from": "SUSPECT",
+              "to": "ALIVE"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Membership and dissemination",
+      "codeHash": "ea8a5206f11be83791bacd69274facf93e14a63df34d4d5a60dc8a3da69a1238",
+      "spec": {
+        "template": "table",
+        "title": "SWIM membership table updating statuses by incarnation number",
+        "columns": [
+          "node",
+          "status",
+          "incarnation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Updates piggyback on ping and ack messages without extra overhead.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n1"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n2"
+                  },
+                  {
+                    "text": "SUSPECT"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recent updates with higher incarnation numbers take priority.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n1"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n2"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n3"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Membership lists are eventually consistent across cluster members.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n1"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n2"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n3"
+                  },
+                  {
+                    "text": "ALIVE"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SWIM membership table updating statuses by incarnation number",
+        "columns": [
+          "node",
+          "status",
+          "incarnation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Updates piggyback on ping and ack messages without extra overhead.",
+            "rows": [
+              {
+                "cells": [
+                  "n1",
+                  "ALIVE",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n2",
+                  "SUSPECT",
+                  "1"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Recent updates with higher incarnation numbers take priority.",
+            "rows": [
+              {
+                "cells": [
+                  "n1",
+                  "ALIVE",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n2",
+                  "ALIVE",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n3",
+                  "ALIVE",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Membership lists are eventually consistent across cluster members.",
+            "rows": [
+              {
+                "cells": [
+                  "n1",
+                  "ALIVE",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n2",
+                  "ALIVE",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n3",
+                  "ALIVE",
+                  "0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where gossip fits",
+      "codeHash": "3fcd7b412bcf90e3a0f7e391af784f31b26ea770c2a55d825a1b42c4d72b0718",
+      "spec": {
+        "template": "compare",
+        "title": "Information suitability comparison between gossip and consensus",
+        "leftLabel": "Gossip Protocols",
+        "rightLabel": "Consensus Raft",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gossip suits eventually consistent state like node health and load.",
+            "left": {
+              "code": "cluster membership",
+              "result": {
+                "text": "gossip"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "lock owner",
+              "result": {
+                "text": "consensus (Raft)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exact decisions like locks and write order still require Raft.",
+            "left": {
+              "code": "node health",
+              "result": {
+                "text": "gossip"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "order of writes",
+              "result": {
+                "text": "consensus (Raft)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Many distributed architectures combine gossip and consensus together.",
+            "left": {
+              "code": "load per node",
+              "result": {
+                "text": "gossip"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "leader identity",
+              "result": {
+                "text": "consensus (Raft)"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Information suitability comparison between gossip and consensus",
+        "leftLabel": "Gossip Protocols",
+        "rightLabel": "Consensus Raft",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gossip suits eventually consistent state like node health and load.",
+            "left": {
+              "code": "cluster membership",
+              "result": "gossip",
+              "tone": "ok",
+              "checks": [
+                "gossip"
+              ]
+            },
+            "right": {
+              "code": "lock owner",
+              "result": "consensus (Raft)",
+              "tone": "data",
+              "checks": [
+                "consensus (Raft)"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exact decisions like locks and write order still require Raft.",
+            "left": {
+              "code": "node health",
+              "result": "gossip",
+              "tone": "ok",
+              "checks": [
+                "gossip"
+              ]
+            },
+            "right": {
+              "code": "order of writes",
+              "result": "consensus (Raft)",
+              "tone": "data",
+              "checks": [
+                "consensus (Raft)"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Many distributed architectures combine gossip and consensus together.",
+            "left": {
+              "code": "load per node",
+              "result": "gossip",
+              "tone": "ok",
+              "checks": [
+                "gossip"
+              ]
+            },
+            "right": {
+              "code": "leader identity",
+              "result": "consensus (Raft)",
+              "tone": "data",
+              "checks": [
+                "consensus (Raft)"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

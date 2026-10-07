@@ -3388,27 +3388,27 @@
     },
     "dist-py:22:0": {
       "partTitle": "Why gossip?",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:22:1": {
       "partTitle": "Choosing gossip peers",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:22:2": {
       "partTitle": "SWIM: probing for failures",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:22:3": {
       "partTitle": "Suspicion before declaring death",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:22:4": {
       "partTitle": "Membership and dissemination",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:22:5": {
       "partTitle": "Where gossip fits",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:23:0": {
       "partTitle": "Why load balance?",
