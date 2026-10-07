@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "UNION: stacking results",
+      "codeHash": "58400421f914b065e32ec52f4cde125346f0666720b49511bd735533e54d955f",
+      "spec": {
+        "template": "compare",
+        "title": "Horizontal joins versus vertical UNION stacking",
+        "leftLabel": "Horizontal JOIN",
+        "rightLabel": "Vertical UNION",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Joins put tables side by side while UNION stacks results on top.",
+            "left": {
+              "code": "JOIN tables",
+              "result": {
+                "text": "side by side columns"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "UNION queries",
+              "result": {
+                "text": "stacked rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Plain UNION also removes duplicate rows keeping unique entries once.",
+            "left": {
+              "code": "Pune in both tables",
+              "result": {
+                "text": "duplicate record"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "UNION result",
+              "result": {
+                "text": "Pune appears once"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Horizontal joins versus vertical UNION stacking",
+        "leftLabel": "Horizontal JOIN",
+        "rightLabel": "Vertical UNION",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Joins put tables side by side while UNION stacks results on top.",
+            "left": {
+              "code": "JOIN tables",
+              "result": "side by side columns",
+              "tone": "data",
+              "checks": [
+                "side by side columns"
+              ]
+            },
+            "right": {
+              "code": "UNION queries",
+              "result": "stacked rows",
+              "tone": "ok",
+              "checks": [
+                "stacked rows"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Plain UNION also removes duplicate rows keeping unique entries once.",
+            "left": {
+              "code": "Pune in both tables",
+              "result": "duplicate record",
+              "tone": "data",
+              "checks": [
+                "duplicate record"
+              ]
+            },
+            "right": {
+              "code": "UNION result",
+              "result": "Pune appears once",
+              "tone": "ok",
+              "checks": [
+                "Pune appears once"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "UNION ALL: keep every row",
+      "codeHash": "d2d78b37cb6db95079549b8cbd2d822dc7b800682021f39fec6f6c22a5447481",
+      "spec": {
+        "template": "compare",
+        "title": "Deduplicated UNION versus UNION ALL row preservation",
+        "leftLabel": "UNION (Deduplicated)",
+        "rightLabel": "UNION ALL (All Rows)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The UNION ALL keeps every row including duplicates without checking.",
+            "left": {
+              "code": "UNION sum(amount)",
+              "result": {
+                "text": "1650 (dropped 250)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "UNION ALL sum(amount)",
+              "result": {
+                "text": "1900 (accurate)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Use UNION ALL when duplicates are real and meaningful for true totals.",
+            "left": {
+              "code": "duplicate 250 dropped",
+              "result": {
+                "text": "wrong calculation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "both 250 kept",
+              "result": {
+                "text": "correct total"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Deduplicated UNION versus UNION ALL row preservation",
+        "leftLabel": "UNION (Deduplicated)",
+        "rightLabel": "UNION ALL (All Rows)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The UNION ALL keeps every row including duplicates without checking.",
+            "left": {
+              "code": "UNION sum(amount)",
+              "result": "1650 (dropped 250)",
+              "tone": "error",
+              "checks": [
+                "1650 (dropped 250)"
+              ]
+            },
+            "right": {
+              "code": "UNION ALL sum(amount)",
+              "result": "1900 (accurate)",
+              "tone": "ok",
+              "checks": [
+                "1900 (accurate)"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Use UNION ALL when duplicates are real and meaningful for true totals.",
+            "left": {
+              "code": "duplicate 250 dropped",
+              "result": "wrong calculation",
+              "tone": "error",
+              "checks": [
+                "wrong calculation"
+              ]
+            },
+            "right": {
+              "code": "both 250 kept",
+              "result": "correct total",
+              "tone": "ok",
+              "checks": [
+                "correct total"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The rules for combining queries",
+      "codeHash": "62c539b914c868179dbc796d52677f6adb587815761bfd40ab1b0e9f515b1ceb",
+      "spec": {
+        "template": "table",
+        "title": "Matching column counts and types in UNION",
+        "columns": [
+          "name",
+          "city",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Both queries must select the same number of columns with compatible types.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "customer"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The fixed text column also tells you where each row came from clearly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "customer"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Paper Mart"
+                  },
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "supplier"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "customer"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Matching column counts and types in UNION",
+        "columns": [
+          "name",
+          "city",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Both queries must select the same number of columns with compatible types.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "Pune",
+                  "customer"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The fixed text column also tells you where each row came from clearly.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "Pune",
+                  "customer"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Paper Mart",
+                  "Pune",
+                  "supplier"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "Mumbai",
+                  "customer"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "INTERSECT and EXCEPT: comparing lists",
+      "codeHash": "dd9bfb4dffaedc3ecf9a7b7033ea7525eea6e0a921500758be36b49b00327fc7",
+      "spec": {
+        "template": "none",
+        "reason": "Set theory intersection and difference operations between disparate lists."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Set theory intersection and difference operations between disparate lists."
+      }
+    },
+    {
+      "partTitle": "UNION with joins and totals",
+      "codeHash": "b2c05a98b82ac0f3885db18e7862cf975fcadbb2e2e7fa0a889bad486f9a7b4e",
+      "spec": {
+        "template": "table",
+        "title": "Activity feed combining disparate events",
+        "columns": [
+          "created_at",
+          "kind",
+          "event"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A common example is an activity feed combining orders and reviews.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-13"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "Priya gave 3 stars"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When results from several tables are stacked a kind column aids clarity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-13"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "Priya gave 3 stars"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-12"
+                  },
+                  {
+                    "text": "order"
+                  },
+                  {
+                    "text": "Ravi placed order 2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2026-09-11"
+                  },
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "Asha gave 5 stars"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Activity feed combining disparate events",
+        "columns": [
+          "created_at",
+          "kind",
+          "event"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A common example is an activity feed combining orders and reviews.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-13",
+                  "review",
+                  "Priya gave 3 stars"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When results from several tables are stacked a kind column aids clarity.",
+            "rows": [
+              {
+                "cells": [
+                  "2026-09-13",
+                  "review",
+                  "Priya gave 3 stars"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2026-09-12",
+                  "order",
+                  "Ravi placed order 2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2026-09-11",
+                  "review",
+                  "Asha gave 5 stars"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together: where the shop is",
+      "codeHash": "762b259770cd71526dd3c314c58d3acb54116e38e7d8ba3c0e438700c9313e2e",
+      "spec": {
+        "template": "none",
+        "reason": "Strategic retail presence analysis combining UNION, INTERSECT, and EXCEPT."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Strategic retail presence analysis combining UNION, INTERSECT, and EXCEPT."
+      }
+    }
+  ]
+}

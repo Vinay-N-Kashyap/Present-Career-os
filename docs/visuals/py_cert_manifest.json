@@ -1756,27 +1756,27 @@
     },
     "sql-mastery:14:0": {
       "partTitle": "UNION: stacking results",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:14:1": {
       "partTitle": "UNION ALL: keep every row",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:14:2": {
       "partTitle": "The rules for combining queries",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:14:3": {
       "partTitle": "INTERSECT and EXCEPT: comparing lists",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:14:4": {
       "partTitle": "UNION with joins and totals",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:14:5": {
       "partTitle": "Putting it together: where the shop is",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:15:0": {
       "partTitle": "A subquery that returns one value",
