@@ -388,27 +388,27 @@
     },
     "python:17:0": {
       "partTitle": "What JSON is",
-      "status": "todo"
+      "status": "passed"
     },
     "python:17:1": {
       "partTitle": "loads: from JSON text back to Python",
-      "status": "todo"
+      "status": "passed"
     },
     "python:17:2": {
       "partTitle": "Saving and loading JSON files",
-      "status": "todo"
+      "status": "none"
     },
     "python:17:3": {
       "partTitle": "Handling broken or unexpected data",
-      "status": "todo"
+      "status": "passed"
     },
     "python:17:4": {
       "partTitle": "Dates and other values JSON cannot store",
-      "status": "todo"
+      "status": "none"
     },
     "python:17:5": {
       "partTitle": "Putting it together: a JSON-backed tracker",
-      "status": "todo"
+      "status": "none"
     },
     "python:18:0": {
       "partTitle": "What classes and objects are",
