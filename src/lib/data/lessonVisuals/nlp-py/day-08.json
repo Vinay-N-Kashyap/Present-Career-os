@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The out-of-vocabulary problem",
+      "codeHash": "cdb121b688176ae41a7b9054b1ee07dc0248b915691ddc70eab164f22ca40389",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary coverage and out-of-vocabulary token analysis",
+        "columns": [
+          "vocab",
+          "oov"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec models lack representations for unseen vocabulary words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "oov"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vocabulary absence frequently arises from typos and rare morphological forms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "oov"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "friend"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Discarding unknown words into an isolated shared vector loses rich details.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "oov"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "friend"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sat"
+                  },
+                  {
+                    "text": "mat"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "FastText leverages subword constituent parts to construct missing vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "oov"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "friend"
+                  },
+                  {
+                    "text": "running"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sat"
+                  },
+                  {
+                    "text": "mat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary coverage and out-of-vocabulary token analysis",
+        "columns": [
+          "vocab",
+          "oov"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word2Vec models lack representations for unseen vocabulary words.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "oov"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vocabulary absence frequently arises from typos and rare morphological forms.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "oov"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "friend",
+                  "running"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Discarding unknown words into an isolated shared vector loses rich details.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "oov"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "friend",
+                  "running"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sat",
+                  "mat"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "FastText leverages subword constituent parts to construct missing vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "oov"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "friend",
+                  "running"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sat",
+                  "mat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cat",
+                  "sentence"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Character n-grams",
+      "codeHash": "0737a3c720a71f6ec8f89aa0f46358415272bd2da1a7a0a389eb36b9c00f8ac3",
+      "spec": {
+        "template": "table",
+        "title": "Character n-gram extraction and boundary markers",
+        "columns": [
+          "word",
+          "grams"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText decomposes each word into a collection of character n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enclosing words in boundary markers distinguishes prefixes from suffixes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min_n"
+                  },
+                  {
+                    "text": "max_n"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The whole wrapped word is preserved to ensure dedicated representation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min_n"
+                  },
+                  {
+                    "text": "max_n"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Character n-grams extract fixed length substrings in deterministic order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min_n"
+                  },
+                  {
+                    "text": "max_n"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "char_ngrams"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Character n-gram extraction and boundary markers",
+        "columns": [
+          "word",
+          "grams"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText decomposes each word into a collection of character n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "grams"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enclosing words in boundary markers distinguishes prefixes from suffixes.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "grams"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "min_n",
+                  "max_n"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The whole wrapped word is preserved to ensure dedicated representation.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "grams"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "min_n",
+                  "max_n"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "append"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Character n-grams extract fixed length substrings in deterministic order.",
+            "rows": [
+              {
+                "cells": [
+                  "word",
+                  "grams"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "min_n",
+                  "max_n"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "append"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "len",
+                  "char_ngrams"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vectors from n-grams",
+      "codeHash": "f0e130ba6fdee4a6f9d6af29070d4a6058bd70dbb31ada6604d7a24987e8483b",
+      "spec": {
+        "template": "table",
+        "title": "Subword vector composition and Jaccard overlap",
+        "columns": [
+          "running",
+          "runner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText learns dense vector representations for each character n-gram.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "runner"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A word vector sums constituent n-gram vectors for automatic similarity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "runner"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Jaccard similarity measures character n-gram overlap between related words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "runner"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "jaccard"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Related morphological word forms share substantial n-gram proportions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "runner"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "grams"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "jaccard"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "banana"
+                  },
+                  {
+                    "text": "cardinal"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Subword vector composition and Jaccard overlap",
+        "columns": [
+          "running",
+          "runner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText learns dense vector representations for each character n-gram.",
+            "rows": [
+              {
+                "cells": [
+                  "running",
+                  "runner"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A word vector sums constituent n-gram vectors for automatic similarity.",
+            "rows": [
+              {
+                "cells": [
+                  "running",
+                  "runner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "runs",
+                  "grams"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Jaccard similarity measures character n-gram overlap between related words.",
+            "rows": [
+              {
+                "cells": [
+                  "running",
+                  "runner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "runs",
+                  "grams"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "jaccard",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Related morphological word forms share substantial n-gram proportions.",
+            "rows": [
+              {
+                "cells": [
+                  "running",
+                  "runner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "runs",
+                  "grams"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "jaccard",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "banana",
+                  "cardinal"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vectors for unseen words",
+      "codeHash": "f697c99f35162b7f3c5ef7f153084457a037b2e28a2c2b7f34231802cb5c0eb8",
+      "spec": {
+        "template": "table",
+        "title": "Out-of-vocabulary vector reconstruction from subword table",
+        "columns": [
+          "run",
+          "ing"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText builds vectors for unseen words using known component n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "run"
+                  },
+                  {
+                    "text": "ing"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The typo shares character substrings that appear in running.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "run"
+                  },
+                  {
+                    "text": "ing"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unn"
+                  },
+                  {
+                    "text": "nin"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The algorithm averages known subword vectors element by element.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "run"
+                  },
+                  {
+                    "text": "ing"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unn"
+                  },
+                  {
+                    "text": "nin"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "known"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Robustness to typos makes subword vectors effective for real-world search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "run"
+                  },
+                  {
+                    "text": "ing"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "unn"
+                  },
+                  {
+                    "text": "nin"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "known"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "oov_vector"
+                  },
+                  {
+                    "text": "nv"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Out-of-vocabulary vector reconstruction from subword table",
+        "columns": [
+          "run",
+          "ing"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "FastText builds vectors for unseen words using known component n-grams.",
+            "rows": [
+              {
+                "cells": [
+                  "run",
+                  "ing"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The typo shares character substrings that appear in running.",
+            "rows": [
+              {
+                "cells": [
+                  "run",
+                  "ing"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unn",
+                  "nin"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The algorithm averages known subword vectors element by element.",
+            "rows": [
+              {
+                "cells": [
+                  "run",
+                  "ing"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unn",
+                  "nin"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "table",
+                  "known"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Robustness to typos makes subword vectors effective for real-world search.",
+            "rows": [
+              {
+                "cells": [
+                  "run",
+                  "ing"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "unn",
+                  "nin"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "table",
+                  "known"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "oov_vector",
+                  "nv"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subwords everywhere",
+      "codeHash": "8048c2debd0f0fe059477bd8631457b6451730acf1d5fea485909903f759afd5",
+      "spec": {
+        "template": "none",
+        "reason": "Subword tokenization and hash-bucket scheme overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: n-grams and OOV vectors",
+      "codeHash": "76ab6adca2311d7d92c0b88b94d5b0991390f8308981391a8782a7a47035d753",
+      "spec": {
+        "template": "none",
+        "reason": "Character n-grams and OOV vector practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

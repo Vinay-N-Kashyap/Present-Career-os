@@ -4492,27 +4492,27 @@
     },
     "nlp-py:8:0": {
       "partTitle": "The out-of-vocabulary problem",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:8:1": {
       "partTitle": "Character n-grams",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:8:2": {
       "partTitle": "Vectors from n-grams",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:8:3": {
       "partTitle": "Vectors for unseen words",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:8:4": {
       "partTitle": "Subwords everywhere",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:8:5": {
       "partTitle": "Practice time: n-grams and OOV vectors",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:9:0": {
       "partTitle": "Counting co-occurrences",
