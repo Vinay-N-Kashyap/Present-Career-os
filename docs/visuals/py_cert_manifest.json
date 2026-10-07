@@ -1228,27 +1228,27 @@
     },
     "dsa-py:22:0": {
       "partTitle": "Weighted graphs",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:22:1": {
       "partTitle": "The idea: always settle the closest node",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:22:2": {
       "partTitle": "Dijkstra with heapq",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:22:3": {
       "partTitle": "Recovering the actual route",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:22:4": {
       "partTitle": "Network delay time",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:22:5": {
       "partTitle": "Why negative weights break Dijkstra",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:23:0": {
       "partTitle": "Dependencies as a directed graph",
