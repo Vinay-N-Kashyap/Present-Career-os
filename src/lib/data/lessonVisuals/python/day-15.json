@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 15,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What a module is and how to import it",
+      "codeHash": "8538814cd12f1f701f2b5747c9e37a609e83bf0aeb3019b1a5596c2b3009a92b",
+      "spec": {
+        "template": "boxes",
+        "title": "Importing tools from modules",
+        "boxes": [
+          {
+            "id": "math",
+            "label": "math"
+          },
+          {
+            "id": "pi",
+            "label": "pi"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "To use a module import it at the top of your file.",
+            "values": {
+              "math": {
+                "text": "import math"
+              },
+              "pi": {
+                "text": "math.sqrt(16)"
+              }
+            },
+            "tones": {
+              "math": "data",
+              "pi": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Import just the tools you need directly without module name.",
+            "values": {
+              "math": {
+                "text": "from math import pi"
+              },
+              "pi": {
+                "var": "pi",
+                "line": 5
+              }
+            },
+            "tones": {
+              "math": "data",
+              "pi": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Importing tools from modules",
+        "boxes": [
+          {
+            "id": "math",
+            "label": "math"
+          },
+          {
+            "id": "pi",
+            "label": "pi"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "To use a module import it at the top of your file.",
+            "values": {
+              "math": "import math",
+              "pi": "math.sqrt(16)"
+            },
+            "tones": {
+              "math": "data",
+              "pi": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Import just the tools you need directly without module name.",
+            "values": {
+              "math": "from math import pi",
+              "pi": "3.141592653589793"
+            },
+            "tones": {
+              "math": "data",
+              "pi": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The random module",
+      "codeHash": "309bdd5834b600fa51862a1b10dc46c1ac666eaf6a262e11c0a8f3033001efba",
+      "spec": {
+        "template": "none",
+        "reason": "Random values change each run and are validated through range assertions in code."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Dates with datetime",
+      "codeHash": "d6fc83df2142b5933efeefa3b45dfccce47016fae0b4977acc34901790a07e4b",
+      "spec": {
+        "template": "boxes",
+        "title": "Working with dates and timedeltas",
+        "boxes": [
+          {
+            "id": "start",
+            "label": "start"
+          },
+          {
+            "id": "end",
+            "label": "end"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Turns text in year month day format into a date.",
+            "values": {
+              "start": {
+                "var": "start",
+                "line": 2
+              },
+              "end": {
+                "text": "date(2026, 10, 1)"
+              }
+            },
+            "tones": {
+              "start": "data",
+              "end": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Subtracting two dates gives a timedelta length of time.",
+            "values": {
+              "start": {
+                "var": "start",
+                "line": 3
+              },
+              "end": {
+                "var": "end",
+                "line": 3
+              }
+            },
+            "tones": {
+              "start": "data",
+              "end": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Working with dates and timedeltas",
+        "boxes": [
+          {
+            "id": "start",
+            "label": "start"
+          },
+          {
+            "id": "end",
+            "label": "end"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Turns text in year month day format into a date.",
+            "values": {
+              "start": "{'__other__': 'date'}",
+              "end": "date(2026, 10, 1)"
+            },
+            "tones": {
+              "start": "data",
+              "end": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Subtracting two dates gives a timedelta length of time.",
+            "values": {
+              "start": "{'__other__': 'date'}",
+              "end": "{'__other__': 'date'}"
+            },
+            "tones": {
+              "start": "data",
+              "end": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Other useful modules",
+      "codeHash": "c6024f0922a98b38e6d29d18dc2d29d0843e5d6164f9822f44dabb16eb9640db",
+      "spec": {
+        "template": "boxes",
+        "title": "Useful modules in the standard library",
+        "boxes": [
+          {
+            "id": "amounts",
+            "label": "amounts"
+          },
+          {
+            "id": "categories",
+            "label": "categories"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Statistics calculates mean and median for you.",
+            "values": {
+              "amounts": {
+                "var": "amounts",
+                "line": 3
+              },
+              "categories": {
+                "text": "Counter(categories)"
+              }
+            },
+            "tones": {
+              "amounts": "data",
+              "categories": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counter gives the count of each value in categories.",
+            "values": {
+              "amounts": {
+                "var": "amounts",
+                "line": 6
+              },
+              "categories": {
+                "var": "categories",
+                "line": 6
+              }
+            },
+            "tones": {
+              "amounts": "data",
+              "categories": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Useful modules in the standard library",
+        "boxes": [
+          {
+            "id": "amounts",
+            "label": "amounts"
+          },
+          {
+            "id": "categories",
+            "label": "categories"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Statistics calculates mean and median for you.",
+            "values": {
+              "amounts": "[20, 45, 120, 45, 300]",
+              "categories": "Counter(categories)"
+            },
+            "tones": {
+              "amounts": "data",
+              "categories": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Counter gives the count of each value in categories.",
+            "values": {
+              "amounts": "[20, 45, 120, 45, 300]",
+              "categories": "['food', 'travel', 'food', 'rent', 'foo…"
+            },
+            "tones": {
+              "amounts": "data",
+              "categories": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your own modules",
+      "codeHash": "659a3beb2ce9acecc549a2110d9f2a97039c0a9565e2e0d9c16ffe4597a0f1d3",
+      "spec": {
+        "template": "none",
+        "reason": "Module structure and __name__ execution check are architectural conventions."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: due dates for bills",
+      "codeHash": "9b4217f668fdd6fa1ab9000cfe255b175f71495ad9a204dadfde3cf58c8fd408",
+      "spec": {
+        "template": "none",
+        "reason": "Bill due date calculation ties together datetime and math modules previously demonstrated."
+      },
+      "filled": {}
+    }
+  ]
+}

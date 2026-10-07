@@ -340,27 +340,27 @@
     },
     "python:15:0": {
       "partTitle": "What a module is and how to import it",
-      "status": "todo"
+      "status": "passed"
     },
     "python:15:1": {
       "partTitle": "The random module",
-      "status": "todo"
+      "status": "none"
     },
     "python:15:2": {
       "partTitle": "Dates with datetime",
-      "status": "todo"
+      "status": "passed"
     },
     "python:15:3": {
       "partTitle": "Other useful modules",
-      "status": "todo"
+      "status": "passed"
     },
     "python:15:4": {
       "partTitle": "Your own modules",
-      "status": "todo"
+      "status": "none"
     },
     "python:15:5": {
       "partTitle": "Putting it together: due dates for bills",
-      "status": "todo"
+      "status": "none"
     },
     "python:16:0": {
       "partTitle": "Why programs need files",
