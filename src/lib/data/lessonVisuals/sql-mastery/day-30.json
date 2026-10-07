@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What SQL interviews look like",
+      "codeHash": "0dd45bd80000e9d9c333e03bf1d172d173da25d8b4313191a042965ed554bf09",
+      "spec": {
+        "template": "table",
+        "title": "Common SQL technical interview domains",
+        "columns": [
+          "topic",
+          "typical_question",
+          "evaluation_focus"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Interviews assess concepts query writing and schema design questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "joins"
+                  },
+                  {
+                    "text": "INNER vs LEFT difference"
+                  },
+                  {
+                    "text": "Unmatched row retention"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Interviewers prioritize correctness clarity and handling edge case ties.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "joins"
+                  },
+                  {
+                    "text": "INNER vs LEFT difference"
+                  },
+                  {
+                    "text": "Unmatched row retention"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grouping"
+                  },
+                  {
+                    "text": "WHERE vs HAVING filter"
+                  },
+                  {
+                    "text": "Pre vs post aggregate"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranking"
+                  },
+                  {
+                    "text": "Second highest salary"
+                  },
+                  {
+                    "text": "Handling tied values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Common SQL technical interview domains",
+        "columns": [
+          "topic",
+          "typical_question",
+          "evaluation_focus"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Interviews assess concepts query writing and schema design questions.",
+            "rows": [
+              {
+                "cells": [
+                  "joins",
+                  "INNER vs LEFT difference",
+                  "Unmatched row retention"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Interviewers prioritize correctness clarity and handling edge case ties.",
+            "rows": [
+              {
+                "cells": [
+                  "joins",
+                  "INNER vs LEFT difference",
+                  "Unmatched row retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grouping",
+                  "WHERE vs HAVING filter",
+                  "Pre vs post aggregate"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ranking",
+                  "Second highest salary",
+                  "Handling tied values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Second highest value",
+      "codeHash": "b9cd631d22dd06e9c525d5e9facbdf5530d1016017c9a73c9fd41d31b3a534c5",
+      "spec": {
+        "template": "compare",
+        "title": "Tied value handling in second highest salary queries",
+        "leftLabel": "Naive LIMIT OFFSET Trap",
+        "rightLabel": "DENSE_RANK Window Solution",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Using dense_rank identifies distinct ranked salaries despite duplicate ties.",
+            "left": {
+              "code": "dense_rank() OVER (ORDER BY salary)",
+              "result": {
+                "text": "rank 1: 90000, rank 2: 75000"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "WHERE dr = 2",
+              "result": {
+                "text": "returns 75000 accurately"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A naive offset query returns the duplicate salary when ties exist.",
+            "left": {
+              "code": "LIMIT 1 OFFSET 1",
+              "result": {
+                "text": "returns 90000 duplicate"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "dense_rank() handles ties",
+              "result": {
+                "text": "skips duplicate top salary"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Tied value handling in second highest salary queries",
+        "leftLabel": "Naive LIMIT OFFSET Trap",
+        "rightLabel": "DENSE_RANK Window Solution",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Using dense_rank identifies distinct ranked salaries despite duplicate ties.",
+            "left": {
+              "code": "dense_rank() OVER (ORDER BY salary)",
+              "result": "rank 1: 90000, rank 2: 75000",
+              "tone": "data",
+              "checks": [
+                "rank 1: 90000, rank 2: 75000"
+              ]
+            },
+            "right": {
+              "code": "WHERE dr = 2",
+              "result": "returns 75000 accurately",
+              "tone": "ok",
+              "checks": [
+                "returns 75000 accurately"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A naive offset query returns the duplicate salary when ties exist.",
+            "left": {
+              "code": "LIMIT 1 OFFSET 1",
+              "result": "returns 90000 duplicate",
+              "tone": "error",
+              "checks": [
+                "returns 90000 duplicate"
+              ]
+            },
+            "right": {
+              "code": "dense_rank() handles ties",
+              "result": "skips duplicate top salary",
+              "tone": "ok",
+              "checks": [
+                "skips duplicate top salary"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Duplicates, and top N per group",
+      "codeHash": "17492941fa3eb212cbfdc5bfa58e7915a769a7d88bc9907ba6a7d2fb9de2c630",
+      "spec": {
+        "template": "table",
+        "title": "Duplicate record identification and deduplication",
+        "columns": [
+          "email",
+          "duplicate_count",
+          "resolution_strategy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Combining GROUP BY and HAVING filters groups to identify duplicate emails.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha@x.com"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Identified via HAVING count > 1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Window row_number partitions duplicate email rows to keep a single copy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "asha@x.com"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Keep rn = 1, purge rn > 1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ravi@x.com"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Preserved without deletion"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "priya@x.com"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Preserved without deletion"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Duplicate record identification and deduplication",
+        "columns": [
+          "email",
+          "duplicate_count",
+          "resolution_strategy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Combining GROUP BY and HAVING filters groups to identify duplicate emails.",
+            "rows": [
+              {
+                "cells": [
+                  "asha@x.com",
+                  "3",
+                  "Identified via HAVING count > 1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Window row_number partitions duplicate email rows to keep a single copy.",
+            "rows": [
+              {
+                "cells": [
+                  "asha@x.com",
+                  "3",
+                  "Keep rn = 1, purge rn > 1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ravi@x.com",
+                  "1",
+                  "Preserved without deletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "priya@x.com",
+                  "1",
+                  "Preserved without deletion"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Explaining concepts clearly",
+      "codeHash": "85daa19c7ac2376f81763ceafb3bcf0bf31c72e4c6bbd9e64534b38c2fe65cd2",
+      "spec": {
+        "template": "compare",
+        "title": "Comparing join behavior and filter semantics",
+        "leftLabel": "INNER JOIN Query Semantics",
+        "rightLabel": "LEFT JOIN Query Semantics",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "INNER JOIN keeps matches while LEFT JOIN preserves customers without orders.",
+            "left": {
+              "code": "customers JOIN orders",
+              "result": {
+                "text": "excludes Meera (0 orders)"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "customers LEFT JOIN orders",
+              "result": {
+                "text": "includes Meera with NULL"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WHERE clause filters rows before grouping while HAVING filters groups.",
+            "left": {
+              "code": "WHERE price < 100",
+              "result": {
+                "text": "filters rows before aggregate"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "HAVING count(*) > 5",
+              "result": {
+                "text": "filters grouped result sets"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparing join behavior and filter semantics",
+        "leftLabel": "INNER JOIN Query Semantics",
+        "rightLabel": "LEFT JOIN Query Semantics",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "INNER JOIN keeps matches while LEFT JOIN preserves customers without orders.",
+            "left": {
+              "code": "customers JOIN orders",
+              "result": "excludes Meera (0 orders)",
+              "tone": "data",
+              "checks": [
+                "excludes Meera (0 orders)"
+              ]
+            },
+            "right": {
+              "code": "customers LEFT JOIN orders",
+              "result": "includes Meera with NULL",
+              "tone": "ok",
+              "checks": [
+                "includes Meera with NULL"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WHERE clause filters rows before grouping while HAVING filters groups.",
+            "left": {
+              "code": "WHERE price < 100",
+              "result": "filters rows before aggregate",
+              "tone": "data",
+              "checks": [
+                "filters rows before aggregate"
+              ]
+            },
+            "right": {
+              "code": "HAVING count(*) > 5",
+              "result": "filters grouped result sets",
+              "tone": "ok",
+              "checks": [
+                "filters grouped result sets"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Talking about your Canteen project",
+      "codeHash": "147e62c8d1b1b0b3fd39be5af10dc2c32f0d17abe46d135cee6c79d3f08871e2",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive pitch framing for Canteen schema design and architecture decisions."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive pitch framing for Canteen schema design and architecture decisions."
+      }
+    },
+    {
+      "partTitle": "Your next steps",
+      "codeHash": "6077edfb74d2a41aeece0027e9dc60413ce368311cf7e3459151ae7b451fcf02",
+      "spec": {
+        "template": "none",
+        "reason": "Continuous professional learning roadmap and LeetCode SQL problem strategies."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Continuous professional learning roadmap and LeetCode SQL problem strategies."
+      }
+    }
+  ]
+}
