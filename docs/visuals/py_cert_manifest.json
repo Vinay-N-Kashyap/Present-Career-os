@@ -1732,27 +1732,27 @@
     },
     "sql-mastery:13:0": {
       "partTitle": "Chaining joins step by step",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:13:1": {
       "partTitle": "Filtering and grouping across many tables",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:13:2": {
       "partTitle": "Self joins: a table joined to itself",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:13:3": {
       "partTitle": "More uses of self joins",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:13:4": {
       "partTitle": "Choosing the right join at each step",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:13:5": {
       "partTitle": "Putting it together: who bought what",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:14:0": {
       "partTitle": "UNION: stacking results",

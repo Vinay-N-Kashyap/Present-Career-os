@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Chaining joins step by step",
+      "codeHash": "b19b84c5048eb2b97ec22280cf4d3c91eafebff9ebaaa708f49671146bec6fc4",
+      "spec": {
+        "template": "table",
+        "title": "Chaining four tables in path order",
+        "columns": [
+          "customer",
+          "order_id",
+          "product",
+          "quantity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Questions crossing four tables write one join for each step in path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each JOIN line has its own matching rule linking tables together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "101"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "103"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "5"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chaining four tables in path order",
+        "columns": [
+          "customer",
+          "order_id",
+          "product",
+          "quantity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Questions crossing four tables write one join for each step in path.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "101",
+                  "Notebook",
+                  "3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Each JOIN line has its own matching rule linking tables together.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "101",
+                  "Notebook",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Asha",
+                  "101",
+                  "Pen",
+                  "10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Asha",
+                  "103",
+                  "Pen",
+                  "5"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filtering and grouping across many tables",
+      "codeHash": "4677843698d27c155f00aaa3c31d50bfeb42234bf6942df5c576404e64b003d6",
+      "spec": {
+        "template": "table",
+        "title": "Grouping and filtering across joined tables",
+        "columns": [
+          "product",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "With several tables joined you can filter and group by any of them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This is where joins become powerful mixing information across tables.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Grouping and filtering across joined tables",
+        "columns": [
+          "product",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "With several tables joined you can filter and group by any of them.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "This is where joins become powerful mixing information across tables.",
+            "rows": [
+              {
+                "cells": [
+                  "Pen",
+                  "10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Notebook",
+                  "3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backpack",
+                  "1"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Self joins: a table joined to itself",
+      "codeHash": "ce446b18e0d9e8d3667a3d50116f849a0de9c018cd7ad6048de5b881f0934880",
+      "spec": {
+        "template": "compare",
+        "title": "Self join hierarchy mapping",
+        "leftLabel": "Raw Foreign Key",
+        "rightLabel": "Self Join Result",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sometimes the information you need lives in rows of the same table.",
+            "left": {
+              "code": "Vikram manager_id: 1",
+              "result": {
+                "text": "numeric id only"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "e.name, m.name",
+              "result": {
+                "text": "Vikram -> Anita"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The join matches the employee manager id with the manager id directly.",
+            "left": {
+              "code": "Anita manager_id: NULL",
+              "result": {
+                "text": "no manager"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Anita, manager: NULL",
+              "result": {
+                "text": "CEO preserved"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Self join hierarchy mapping",
+        "leftLabel": "Raw Foreign Key",
+        "rightLabel": "Self Join Result",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sometimes the information you need lives in rows of the same table.",
+            "left": {
+              "code": "Vikram manager_id: 1",
+              "result": "numeric id only",
+              "tone": "data",
+              "checks": [
+                "numeric id only"
+              ]
+            },
+            "right": {
+              "code": "e.name, m.name",
+              "result": "Vikram -> Anita",
+              "tone": "ok",
+              "checks": [
+                "Vikram -> Anita"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The join matches the employee manager id with the manager id directly.",
+            "left": {
+              "code": "Anita manager_id: NULL",
+              "result": "no manager",
+              "tone": "data",
+              "checks": [
+                "no manager"
+              ]
+            },
+            "right": {
+              "code": "Anita, manager: NULL",
+              "result": "CEO preserved",
+              "tone": "ok",
+              "checks": [
+                "CEO preserved"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "More uses of self joins",
+      "codeHash": "7f80e399b46a30b5a7fbb6c16e75baa730efe1a537cdecd53aadb51c588cb5d7",
+      "spec": {
+        "template": "none",
+        "reason": "Self-referential pairwise combinations and deduplication conditions."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Self-referential pairwise combinations and deduplication conditions."
+      }
+    },
+    {
+      "partTitle": "Choosing the right join at each step",
+      "codeHash": "597052818d9c2574bd96d53443f1fe536fe53f72c46758de939920888c791ec2",
+      "spec": {
+        "template": "none",
+        "reason": "Left join preservation degradation from downstream inner join filters."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Left join preservation degradation from downstream inner join filters."
+      }
+    },
+    {
+      "partTitle": "Putting it together: who bought what",
+      "codeHash": "9ba4091c6a11986a11b0dea99383f43a0903ce6cdf6bd9eabf092a5739101c6a",
+      "spec": {
+        "template": "table",
+        "title": "Aggregated customer product purchase summary",
+        "columns": [
+          "name",
+          "products",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a report that crosses all four shop tables for customers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Notebook, Pen"
+                  },
+                  {
+                    "text": "18"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The query starts from customers with LEFT JOINs all the way cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "Notebook, Pen"
+                  },
+                  {
+                    "text": "18"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "Backpack"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meera"
+                  },
+                  {
+                    "text": "NULL"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aggregated customer product purchase summary",
+        "columns": [
+          "name",
+          "products",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write a report that crosses all four shop tables for customers.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "Notebook, Pen",
+                  "18"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The query starts from customers with LEFT JOINs all the way cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "Asha",
+                  "Notebook, Pen",
+                  "18"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Ravi",
+                  "Backpack",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Priya",
+                  "Notebook",
+                  "1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Meera",
+                  "NULL",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
