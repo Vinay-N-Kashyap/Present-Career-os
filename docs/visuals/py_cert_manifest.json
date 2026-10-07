@@ -2188,27 +2188,27 @@
     },
     "ai-py:2:0": {
       "partTitle": "Tokens are pieces of words",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:2:1": {
       "partTitle": "Byte-pair encoding: learning the pieces",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:2:2": {
       "partTitle": "Applying merge rules",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:2:3": {
       "partTitle": "The context window",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:2:4": {
       "partTitle": "What does a call cost?",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:2:5": {
       "partTitle": "Context economics: spending tokens wisely",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:3:0": {
       "partTitle": "Messages and roles",
