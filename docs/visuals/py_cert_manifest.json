@@ -3820,27 +3820,27 @@
     },
     "cloud-py:10:0": {
       "partTitle": "How buckets leak",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:10:1": {
       "partTitle": "Bucket policies",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:10:2": {
       "partTitle": "Enforcing HTTPS with aws:SecureTransport",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:10:3": {
       "partTitle": "Bucket naming rules",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:10:4": {
       "partTitle": "Encryption at rest",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:10:5": {
       "partTitle": "Practice time: lock the bucket down",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:11:0": {
       "partTitle": "Functions without servers",
