@@ -2836,27 +2836,27 @@
     },
     "ai-py:29:0": {
       "partTitle": "When chunk retrieval struggles",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:29:1": {
       "partTitle": "Building a graph from triples",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:29:2": {
       "partTitle": "Traversing a relation",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:29:3": {
       "partTitle": "Multi-hop questions",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:29:4": {
       "partTitle": "Cypher queries, safely",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:29:5": {
       "partTitle": "Combining graphs with vector search",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:30:0": {
       "partTitle": "The platform flow",
