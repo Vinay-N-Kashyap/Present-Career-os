@@ -3340,27 +3340,27 @@
     },
     "dist-py:20:0": {
       "partTitle": "Cascading failures",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:20:1": {
       "partTitle": "The circuit breaker states",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:20:2": {
       "partTitle": "Implementing the breaker",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:20:3": {
       "partTitle": "Reporting breaker status",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:20:4": {
       "partTitle": "Bulkheads",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:20:5": {
       "partTitle": "Fallbacks and graceful degradation",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:21:0": {
       "partTitle": "What a gateway does",

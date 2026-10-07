@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cascading failures",
+      "codeHash": "3c409de316b1dd869528c753bc30f6b0385a1b168786dfd10b8f7974b48957aa",
+      "spec": {
+        "template": "none",
+        "reason": "Cascading failure thread pool exhaustion dynamics."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The circuit breaker states",
+      "codeHash": "03e410a30b4c9e3365ae228a26f91a56f2fd7b89aa670fcb5d63e212b965408d",
+      "spec": {
+        "template": "states",
+        "title": "Circuit breaker transitions between closed open and half-open states",
+        "states": [
+          {
+            "id": "CLOSED",
+            "label": "CLOSED"
+          },
+          {
+            "id": "OPEN",
+            "label": "OPEN"
+          },
+          {
+            "id": "HALF_OPEN",
+            "label": "HALF_OPEN"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A circuit breaker wraps dependency calls and has three states.",
+            "currentState": "CLOSED",
+            "tone": "ok"
+          },
+          {
+            "at": "say2",
+            "caption": "After too many failures calls are rejected immediately.",
+            "currentState": "OPEN",
+            "transition": {
+              "from": "CLOSED",
+              "to": "OPEN"
+            },
+            "tone": "error"
+          },
+          {
+            "at": "say4",
+            "caption": "After reset timeout one trial call is allowed in HALF_OPEN.",
+            "currentState": "HALF_OPEN",
+            "transition": {
+              "from": "OPEN",
+              "to": "HALF_OPEN"
+            },
+            "tone": "idle"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Circuit breaker transitions between closed open and half-open states",
+        "states": [
+          {
+            "id": "CLOSED",
+            "label": "CLOSED"
+          },
+          {
+            "id": "OPEN",
+            "label": "OPEN"
+          },
+          {
+            "id": "HALF_OPEN",
+            "label": "HALF_OPEN"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A circuit breaker wraps dependency calls and has three states.",
+            "currentState": "CLOSED",
+            "tone": "ok"
+          },
+          {
+            "at": "say2",
+            "caption": "After too many failures calls are rejected immediately.",
+            "currentState": "OPEN",
+            "transition": {
+              "from": "CLOSED",
+              "to": "OPEN"
+            },
+            "tone": "error"
+          },
+          {
+            "at": "say4",
+            "caption": "After reset timeout one trial call is allowed in HALF_OPEN.",
+            "currentState": "HALF_OPEN",
+            "transition": {
+              "from": "OPEN",
+              "to": "HALF_OPEN"
+            },
+            "tone": "idle"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Implementing the breaker",
+      "codeHash": "e21bd35d1126468c720963ce97e511c0a68007a79cf7116163f44a59ef16b905",
+      "spec": {
+        "template": "compare",
+        "title": "Circuit breaker execution paths normal closed calls versus open trips",
+        "leftLabel": "Healthy Service (CLOSED)",
+        "rightLabel": "Failing Service (OPEN)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If breaker is OPEN calls raise CircuitOpenError immediately.",
+            "left": {
+              "code": "fn() executes normally",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "raise CircuitOpenError",
+              "result": {
+                "text": "circuit open"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Move to OPEN once failures reach threshold or trial fails.",
+            "left": {
+              "code": "failures count reset",
+              "result": {
+                "text": "CLOSED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trips open at threshold",
+              "result": {
+                "text": "OPEN"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "On success reset failures to zero and return result.",
+            "left": {
+              "code": "trial call succeeds",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "dependency still down",
+              "result": {
+                "text": "payments down"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Circuit breaker execution paths normal closed calls versus open trips",
+        "leftLabel": "Healthy Service (CLOSED)",
+        "rightLabel": "Failing Service (OPEN)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "If breaker is OPEN calls raise CircuitOpenError immediately.",
+            "left": {
+              "code": "fn() executes normally",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "raise CircuitOpenError",
+              "result": "circuit open",
+              "tone": "error",
+              "checks": [
+                "circuit open"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Move to OPEN once failures reach threshold or trial fails.",
+            "left": {
+              "code": "failures count reset",
+              "result": "CLOSED",
+              "tone": "ok",
+              "checks": [
+                "CLOSED"
+              ]
+            },
+            "right": {
+              "code": "trips open at threshold",
+              "result": "OPEN",
+              "tone": "error",
+              "checks": [
+                "OPEN"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "On success reset failures to zero and return result.",
+            "left": {
+              "code": "trial call succeeds",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "dependency still down",
+              "result": "payments down",
+              "tone": "idle",
+              "checks": [
+                "payments down"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reporting breaker status",
+      "codeHash": "ab0546d065c3d6417186af3c9b0976fc36a31ea4da4e8d04f5876430a767165e",
+      "spec": {
+        "template": "table",
+        "title": "Circuit breaker status formatting telemetry metrics and alerting",
+        "columns": [
+          "dep",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function format_circuit_status returns consistent status string.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "CLOSED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "An OPEN breaker is an important signal for on call engineers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "CLOSED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "OPEN"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Alert when a breaker stays open longer than expected.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "CLOSED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "OPEN"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "recommendations"
+                  },
+                  {
+                    "text": "HALF_OPEN"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Circuit breaker status formatting telemetry metrics and alerting",
+        "columns": [
+          "dep",
+          "state"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function format_circuit_status returns consistent status string.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "CLOSED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "An OPEN breaker is an important signal for on call engineers.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "CLOSED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "payments",
+                  "OPEN"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Alert when a breaker stays open longer than expected.",
+            "rows": [
+              {
+                "cells": [
+                  "inventory",
+                  "CLOSED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "payments",
+                  "OPEN"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "recommendations",
+                  "HALF_OPEN"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bulkheads",
+      "codeHash": "d69802055c56a93d6db6142a13328c3594139385089d3f15526a31335916dc50",
+      "spec": {
+        "template": "table",
+        "title": "Bulkhead isolated connection pools preventing resource starvation",
+        "columns": [
+          "dep",
+          "pools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bulkhead isolates resources so one failing dependency cannot use all.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Give each dependency its own limited pool of connections.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Bulkheads work together with circuit breakers to limit damage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inventory"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "search"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bulkhead isolated connection pools preventing resource starvation",
+        "columns": [
+          "dep",
+          "pools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A bulkhead isolates resources so one failing dependency cannot use all.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Give each dependency its own limited pool of connections.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "inventory",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Bulkheads work together with circuit breakers to limit damage.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "4"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "inventory",
+                  "4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fallbacks and graceful degradation",
+      "codeHash": "017dbff2dc0bec1710bf79915836aa54e7da768dd7ad57f04feb2b79299c23ae",
+      "spec": {
+        "template": "none",
+        "reason": "Graceful degradation fallback policies and cache recovery."
+      },
+      "filled": {}
+    }
+  ]
+}
