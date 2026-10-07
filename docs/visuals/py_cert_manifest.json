@@ -1996,27 +1996,27 @@
     },
     "sql-mastery:24:0": {
       "partTitle": "What a view is",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:24:1": {
       "partTitle": "Views always show current data",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:24:2": {
       "partTitle": "Views for simplicity and safety",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:24:3": {
       "partTitle": "Building on views",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:24:4": {
       "partTitle": "Materialized views: saved results you refresh",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:24:5": {
       "partTitle": "Putting it together: a reporting view for the shop",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:25:0": {
       "partTitle": "Why store JSON in a database",
