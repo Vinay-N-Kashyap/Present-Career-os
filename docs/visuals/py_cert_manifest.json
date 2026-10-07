@@ -892,27 +892,27 @@
     },
     "dsa-py:8:0": {
       "partTitle": "Two pointers from both ends",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:8:1": {
       "partTitle": "Container with the most water",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:8:2": {
       "partTitle": "Checking a palindrome",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:8:3": {
       "partTitle": "Removing duplicates with same-direction pointers",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:8:4": {
       "partTitle": "Three sum: two pointers inside a loop",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:8:5": {
       "partTitle": "Choosing between two pointers and a hash map",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:9:0": {
       "partTitle": "What a sliding window is",

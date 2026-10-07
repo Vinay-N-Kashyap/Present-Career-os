@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Two pointers from both ends",
+      "codeHash": "ec7e213138399e2ccfe8025023d736e0a43e9de8b0b1f67b97d75aab20e98042",
+      "spec": {
+        "template": "cells",
+        "title": "Opposite direction two pointers on sorted list",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Start left pointer at beginning and right pointer at end.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "11"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If pair sum is too big move right pointer left to smaller number.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "11"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Opposite direction two pointers on sorted list",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Start left pointer at beginning and right pointer at end.",
+            "items": [
+              "1",
+              "3",
+              "4",
+              "6",
+              "8",
+              "11"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If pair sum is too big move right pointer left to smaller number.",
+            "items": [
+              "1",
+              "3",
+              "4",
+              "6",
+              "8",
+              "11"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container with the most water",
+      "codeHash": "6553e2acbdad87a9fb9931dc9e280dc35b7cecd4af416503777764f1dd302c57",
+      "spec": {
+        "template": "bars",
+        "title": "Container water area bounded by shorter line",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Start with widest container then move inwards.",
+            "bars": [
+              {
+                "label": "left 0",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "right 8",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "area",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 50
+          },
+          {
+            "at": "say3",
+            "caption": "Always move shorter line pointer inwards to find taller line.",
+            "bars": [
+              {
+                "label": "left 1",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "right 8",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "area",
+                "value": {
+                  "text": "49"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 50
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Container water area bounded by shorter line",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Start with widest container then move inwards.",
+            "bars": [
+              {
+                "label": "left 0",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "right 8",
+                "value": 7,
+                "tone": "data"
+              },
+              {
+                "label": "area",
+                "value": 8,
+                "tone": "ok"
+              }
+            ],
+            "max": 50
+          },
+          {
+            "at": "say3",
+            "caption": "Always move shorter line pointer inwards to find taller line.",
+            "bars": [
+              {
+                "label": "left 1",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "right 8",
+                "value": 7,
+                "tone": "data"
+              },
+              {
+                "label": "area",
+                "value": 49,
+                "tone": "ok"
+              }
+            ],
+            "max": 50
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking a palindrome",
+      "codeHash": "63905707975a501c32d754c53af9f9d288e81ee0e8f18ee14bcbee151ab66b11",
+      "spec": {
+        "template": "cells",
+        "title": "Two pointers palindrome inwards convergence",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers compare characters from both ends.",
+            "items": [
+              {
+                "text": "m"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "d"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "m"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Inwards convergence compares characters skipping punctuation.",
+            "items": [
+              {
+                "text": "m"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "d"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "m"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Two pointers palindrome inwards convergence",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers compare characters from both ends.",
+            "items": [
+              "m",
+              "a",
+              "d",
+              "a",
+              "m"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Inwards convergence compares characters skipping punctuation.",
+            "items": [
+              "m",
+              "a",
+              "d",
+              "a",
+              "m"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Removing duplicates with same-direction pointers",
+      "codeHash": "d0d4375962626e20de2d8d2d3e7058eef2708e026089d0c0713693426ad8e1c8",
+      "spec": {
+        "template": "none",
+        "reason": "Read and write pointers moving in same direction."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Read and write pointers moving in same direction."
+      }
+    },
+    {
+      "partTitle": "Three sum: two pointers inside a loop",
+      "codeHash": "237dd27920bfffe9acd6ecb5baf2125a284fad5bd355bb2fea0dfd63ac864eb9",
+      "spec": {
+        "template": "none",
+        "reason": "Three sum reduction to two pointers inside loop."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Three sum reduction to two pointers inside loop."
+      }
+    },
+    {
+      "partTitle": "Choosing between two pointers and a hash map",
+      "codeHash": "31e6b686a6598ac8e9c11f6d1fceed037588b58d4291ae0fe82db29b2eac218a",
+      "spec": {
+        "template": "compare",
+        "title": "Trade-off between two pointers and hash map",
+        "leftLabel": "Two Pointers",
+        "rightLabel": "Hash Map",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers require sorted data and use constant extra space.",
+            "left": {
+              "code": "sorted nums",
+              "result": {
+                "text": "O(1) space"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "sort needed",
+              "result": {
+                "text": "O(N log N)"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Hash map works on unsorted data keeping original positions.",
+            "left": {
+              "code": "lost positions",
+              "result": {
+                "text": "O(1) memory"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "unsorted array",
+              "result": {
+                "text": "O(N) memory"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Trade-off between two pointers and hash map",
+        "leftLabel": "Two Pointers",
+        "rightLabel": "Hash Map",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers require sorted data and use constant extra space.",
+            "left": {
+              "code": "sorted nums",
+              "result": "O(1) space",
+              "tone": "ok",
+              "checks": [
+                "O(1) space"
+              ]
+            },
+            "right": {
+              "code": "sort needed",
+              "result": "O(N log N)",
+              "tone": "data",
+              "checks": [
+                "O(N log N)"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Hash map works on unsorted data keeping original positions.",
+            "left": {
+              "code": "lost positions",
+              "result": "O(1) memory",
+              "tone": "data",
+              "checks": [
+                "O(1) memory"
+              ]
+            },
+            "right": {
+              "code": "unsorted array",
+              "result": "O(N) memory",
+              "tone": "ok",
+              "checks": [
+                "O(N) memory"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
