@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Groups that merge over time",
+      "codeHash": "e88c51ac04b8f2e42d89740e4f7712bbb7c5aa68199f1ae8e2a9d6b6aae2085f",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Disjoint set tree with root representative",
+        "nodes": [
+          {
+            "id": "0",
+            "label": "0 (root)"
+          },
+          {
+            "id": "1",
+            "label": "1"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          }
+        ],
+        "edges": [
+          {
+            "from": "1",
+            "to": "0",
+            "label": "parent"
+          },
+          {
+            "from": "2",
+            "to": "0",
+            "label": "parent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "find identifies the group representative while union merges two sets.",
+            "highlightNodes": [
+              "0"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The root of the tree is the group representative and find follows parents.",
+            "highlightNodes": [
+              "0",
+              "1",
+              "2"
+            ],
+            "highlightEdges": [
+              "1->0",
+              "2->0"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Disjoint set tree with root representative",
+        "nodes": [
+          {
+            "id": "0",
+            "label": "0 (root)"
+          },
+          {
+            "id": "1",
+            "label": "1"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          }
+        ],
+        "edges": [
+          {
+            "from": "1",
+            "to": "0",
+            "label": "parent"
+          },
+          {
+            "from": "2",
+            "to": "0",
+            "label": "parent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "find identifies the group representative while union merges two sets."
+          },
+          {
+            "at": "say4",
+            "caption": "The root of the tree is the group representative and find follows parents."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Path compression",
+      "codeHash": "0f56fe8c3f274593d3d9b6abfa88f9f8a878a45cc5a517810ba8a248e5919c6c",
+      "spec": {
+        "template": "compare",
+        "title": "Chained tree without compression versus flattened paths",
+        "leftLabel": "Without Compression",
+        "rightLabel": "Path Compression",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Without care tree chains make find operations slow in the worst case.",
+            "left": {
+              "code": "chain 3->2->1->0",
+              "result": {
+                "text": "depth 4"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "flattened to 0",
+              "result": {
+                "text": "depth 1"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Path compression points every visited node straight at the root.",
+            "left": {
+              "code": "find(3)",
+              "result": {
+                "text": "O(N) steps"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "find(3)",
+              "result": {
+                "text": "O(1) step"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Chained tree without compression versus flattened paths",
+        "leftLabel": "Without Compression",
+        "rightLabel": "Path Compression",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Without care tree chains make find operations slow in the worst case.",
+            "left": {
+              "code": "chain 3->2->1->0",
+              "result": "depth 4",
+              "tone": "error",
+              "checks": [
+                "depth 4"
+              ]
+            },
+            "right": {
+              "code": "flattened to 0",
+              "result": "depth 1",
+              "tone": "ok",
+              "checks": [
+                "depth 1"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Path compression points every visited node straight at the root.",
+            "left": {
+              "code": "find(3)",
+              "result": "O(N) steps",
+              "tone": "data",
+              "checks": [
+                "O(N) steps"
+              ]
+            },
+            "right": {
+              "code": "find(3)",
+              "result": "O(1) step",
+              "tone": "ok",
+              "checks": [
+                "O(1) step"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Union by rank and the UnionFind class",
+      "codeHash": "0b21a5c965c785b66206b0195a0f97c0989be812bf3719568d5d2f03c0245dab",
+      "spec": {
+        "template": "table",
+        "title": "Union by rank balancing rules",
+        "columns": [
+          "Union Case",
+          "Rank Comparison",
+          "Merge Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Union by rank keeps trees shallow by attaching shorter tree under taller.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rank(x) > rank(y)"
+                  },
+                  {
+                    "text": "x taller than y"
+                  },
+                  {
+                    "text": "parent[y] = x"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "union returns False when both elements already share the same group.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rank(x) > rank(y)"
+                  },
+                  {
+                    "text": "x taller than y"
+                  },
+                  {
+                    "text": "parent[y] = x"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "root(x) == root(y)"
+                  },
+                  {
+                    "text": "Same component"
+                  },
+                  {
+                    "text": "Return False (cycle)"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Union by rank balancing rules",
+        "columns": [
+          "Union Case",
+          "Rank Comparison",
+          "Merge Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Union by rank keeps trees shallow by attaching shorter tree under taller.",
+            "rows": [
+              {
+                "cells": [
+                  "rank(x) > rank(y)",
+                  "x taller than y",
+                  "parent[y] = x"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "union returns False when both elements already share the same group.",
+            "rows": [
+              {
+                "cells": [
+                  "rank(x) > rank(y)",
+                  "x taller than y",
+                  "parent[y] = x"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "root(x) == root(y)",
+                  "Same component",
+                  "Return False (cycle)"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding the redundant connection",
+      "codeHash": "e21c47670382bb4f171d85d650b64615bb934e4ffc2827c62688a59e9d61c6a5",
+      "spec": {
+        "template": "none",
+        "reason": "Cycle detection scanning edges and identifying redundant connection."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cycle detection scanning edges and identifying redundant connection."
+      }
+    },
+    {
+      "partTitle": "Kruskal's minimum spanning tree",
+      "codeHash": "fcba1dbd725314f60a33367ac2fb4b36189f420b5dd0a25ea0ca00987dec466e",
+      "spec": {
+        "template": "table",
+        "title": "Kruskal greedy edge selection table",
+        "columns": [
+          "Sorted Edge",
+          "Edge Weight",
+          "Kruskal Decision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A minimum spanning tree connects all nodes with cheapest total edge cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "(A, B)"
+                  },
+                  {
+                    "text": "cost: 1"
+                  },
+                  {
+                    "text": "Connect buildings"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Kruskal algorithm sorts edges adding each edge unless it creates a loop.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "(A, B)"
+                  },
+                  {
+                    "text": "cost: 1"
+                  },
+                  {
+                    "text": "Union joins groups"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "(B, C)"
+                  },
+                  {
+                    "text": "cost: 4"
+                  },
+                  {
+                    "text": "Skip: creates cycle"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kruskal greedy edge selection table",
+        "columns": [
+          "Sorted Edge",
+          "Edge Weight",
+          "Kruskal Decision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A minimum spanning tree connects all nodes with cheapest total edge cost.",
+            "rows": [
+              {
+                "cells": [
+                  "(A, B)",
+                  "cost: 1",
+                  "Connect buildings"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Kruskal algorithm sorts edges adding each edge unless it creates a loop.",
+            "rows": [
+              {
+                "cells": [
+                  "(A, B)",
+                  "cost: 1",
+                  "Union joins groups"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "(B, C)",
+                  "cost: 4",
+                  "Skip: creates cycle"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Union-find or BFS?",
+      "codeHash": "8fcd2c3a1d247a841defdcc3b49bcabab5a3d62151c5134586522354d415611c",
+      "spec": {
+        "template": "none",
+        "reason": "Dynamic connectivity edge streaming comparison between DSU and BFS."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Dynamic connectivity edge streaming comparison between DSU and BFS."
+      }
+    }
+  ]
+}

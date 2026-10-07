@@ -1276,27 +1276,27 @@
     },
     "dsa-py:24:0": {
       "partTitle": "Groups that merge over time",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:24:1": {
       "partTitle": "Path compression",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:24:2": {
       "partTitle": "Union by rank and the UnionFind class",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:24:3": {
       "partTitle": "Finding the redundant connection",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:24:4": {
       "partTitle": "Kruskal's minimum spanning tree",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:24:5": {
       "partTitle": "Union-find or BFS?",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:25:0": {
       "partTitle": "What dynamic programming is",
