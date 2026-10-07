@@ -2716,27 +2716,27 @@
     },
     "ai-py:24:0": {
       "partTitle": "From imitation to preference",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:24:1": {
       "partTitle": "RLHF in outline",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:24:2": {
       "partTitle": "Log probabilities",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:24:3": {
       "partTitle": "Direct preference optimisation",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:24:4": {
       "partTitle": "Collecting good preference data",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:24:5": {
       "partTitle": "Measuring alignment with win rates",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:25:0": {
       "partTitle": "Why self-host an open model?",
