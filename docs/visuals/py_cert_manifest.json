@@ -1444,27 +1444,27 @@
     },
     "sql-mastery:1:0": {
       "partTitle": "What a database is, and why apps need one",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:1:1": {
       "partTitle": "Tables, rows and columns",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:1:2": {
       "partTitle": "Primary keys: one unique id for every row",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:1:3": {
       "partTitle": "SELECT and FROM: reading data",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:1:4": {
       "partTitle": "The rules of writing SQL",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:1:5": {
       "partTitle": "Putting it together: a first look at the shop",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:2:0": {
       "partTitle": "CREATE TABLE: designing the shape of your data",
