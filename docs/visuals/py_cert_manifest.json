@@ -4804,27 +4804,27 @@
     },
     "nlp-py:21:0": {
       "partTitle": "The encoder layer, step by step",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:21:1": {
       "partTitle": "Adding positional encodings to a sequence",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:21:2": {
       "partTitle": "Layer normalisation",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:21:3": {
       "partTitle": "Residual connections in the layer",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:21:4": {
       "partTitle": "A complete tiny encoder layer",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:21:5": {
       "partTitle": "Milestone practice: positions and normalisation",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:22:0": {
       "partTitle": "Words, characters or subwords?",
