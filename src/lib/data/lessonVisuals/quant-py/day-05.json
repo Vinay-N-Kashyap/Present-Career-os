@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The exchange core",
+      "codeHash": "e7ed0e46a509a73301eb600b5116a5abfacb34b9bb94479f04c576abbc03efd6",
+      "spec": {
+        "template": "table",
+        "title": "Exchange pipeline architecture and message execution flow",
+        "columns": [
+          "gateway",
+          "sequencer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gateway receives inbound orders and verifies incoming member submissions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "sequencer"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Downstream market data updates notify members regarding executed trades.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "sequencer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "order"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The sequencer produces a stream processed sequentially inside the loop.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "sequencer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matching"
+                  },
+                  {
+                    "text": "engine"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints the flow of one order through the pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "sequencer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matching"
+                  },
+                  {
+                    "text": "engine"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stages"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exchange pipeline architecture and message execution flow",
+        "columns": [
+          "gateway",
+          "sequencer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The gateway receives inbound orders and verifies incoming member submissions.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "sequencer"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Downstream market data updates notify members regarding executed trades.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "sequencer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "order"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The sequencer produces a stream processed sequentially inside the loop.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "sequencer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "matching",
+                  "engine"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints the flow of one order through the pipeline stages.",
+            "rows": [
+              {
+                "cells": [
+                  "gateway",
+                  "sequencer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "matching",
+                  "engine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stages",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Processing a stream of orders",
+      "codeHash": "c65e32668e46a048cc37e58317696550bf7833a42721e194d8709d702831dc28",
+      "spec": {
+        "template": "table",
+        "title": "Sequential stream order matching and state transitions",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The matching engine processes orders sequentially against resting volume.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Passing copies prevents mutating input dictionaries holding resting quantities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Empty book sides return None rather than misleading zero price markers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example runs an order stream and prints the book state sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "order"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "None"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential stream order matching and state transitions",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The matching engine processes orders sequentially against resting volume.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Passing copies prevents mutating input dictionaries holding resting quantities.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order",
+                  "price"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Empty book sides return None rather than misleading zero price markers.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "None"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example runs an order stream and prints the book state sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "order",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "None"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "best",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring throughput",
+      "codeHash": "0b41160bc5c340c9e8b6684ef8f4c4bd9e259e83c8d3d9fda17a79a75b9842ec",
+      "spec": {
+        "template": "table",
+        "title": "Throughput measurement and execution clock profiling",
+        "columns": [
+          "start",
+          "orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Throughput counts total orders processed per second by the matching engine.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "orders"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Throughput calculations return orders per second and nanoseconds per order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "orders"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Accurate performance clocks measure execution intervals without jitter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "orders"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "perf_counter_ns"
+                  },
+                  {
+                    "text": "time"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example times matching loop throughput across random order streams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "orders"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "price"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "perf_counter_ns"
+                  },
+                  {
+                    "text": "time"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Throughput measurement and execution clock profiling",
+        "columns": [
+          "start",
+          "orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Throughput counts total orders processed per second by the matching engine.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "orders"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Throughput calculations return orders per second and nanoseconds per order.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "orders"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "price"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Accurate performance clocks measure execution intervals without jitter.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "orders"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "perf_counter_ns",
+                  "time"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example times matching loop throughput across random order streams.",
+            "rows": [
+              {
+                "cells": [
+                  "start",
+                  "orders"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "side",
+                  "price"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "perf_counter_ns",
+                  "time"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "random",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency distributions",
+      "codeHash": "35e1e1e2fca86ef72f696e87bf48c0edf181ca2b72ae6b651b56b1c98b99c4d2",
+      "spec": {
+        "template": "table",
+        "title": "Tail latency distributions and percentile metrics",
+        "columns": [
+          "mean",
+          "median"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Average latency hides slow execution spikes during volatile trading.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Engineers report tail percentiles to quantify execution performance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latencies"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Memory allocation and garbage collection pauses trigger latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latencies"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "statistics"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares sample mean and tail percentiles under latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mean"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latencies"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "statistics"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tail latency distributions and percentile metrics",
+        "columns": [
+          "mean",
+          "median"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Average latency hides slow execution spikes during volatile trading.",
+            "rows": [
+              {
+                "cells": [
+                  "mean",
+                  "median"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Engineers report tail percentiles to quantify execution performance.",
+            "rows": [
+              {
+                "cells": [
+                  "mean",
+                  "median"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latencies",
+                  "sorted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Memory allocation and garbage collection pauses trigger latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  "mean",
+                  "median"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latencies",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "statistics"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares sample mean and tail percentiles under latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  "mean",
+                  "median"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latencies",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "statistics"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Market data and recovery",
+      "codeHash": "e98784a8e1301e213b5caa613024ecc3675f025d5aef24882aff0c220ca4035f",
+      "spec": {
+        "template": "none",
+        "reason": "Market data distribution and sequence gap recovery."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: run and measure",
+      "codeHash": "6a029eee1322d152f4282269240f45c8c3b28f43fb3b080fa0e38c8da03b252f",
+      "spec": {
+        "template": "none",
+        "reason": "Milestone practice: matching engine kernel integration."
+      },
+      "filled": {}
+    }
+  ]
+}

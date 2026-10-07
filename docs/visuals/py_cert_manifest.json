@@ -5140,27 +5140,27 @@
     },
     "quant-py:5:0": {
       "partTitle": "The exchange core",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:5:1": {
       "partTitle": "Processing a stream of orders",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:5:2": {
       "partTitle": "Measuring throughput",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:5:3": {
       "partTitle": "Latency distributions",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:5:4": {
       "partTitle": "Market data and recovery",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:5:5": {
       "partTitle": "Milestone practice: run and measure",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:6:0": {
       "partTitle": "What market impact is",
