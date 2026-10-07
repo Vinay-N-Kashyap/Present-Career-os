@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "INSERT: adding rows",
+      "codeHash": "378c707be1537b33caece0f0107e3ca7f54f1f7b155964ca094718cb7f6268c9",
+      "spec": {
+        "template": "table",
+        "title": "INSERT row values into products",
+        "columns": [
+          "id",
+          "name",
+          "category",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "INSERT adds new rows to a table specifying columns and values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "You can add many rows in one statement separating them with commas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "10.00"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "1499.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "INSERT row values into products",
+        "columns": [
+          "id",
+          "name",
+          "category",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "INSERT adds new rows to a table specifying columns and values.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Notebook",
+                  "stationery",
+                  "60.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "You can add many rows in one statement separating them with commas.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Notebook",
+                  "stationery",
+                  "60.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Pen",
+                  "stationery",
+                  "10.00"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Headphones",
+                  "electronics",
+                  "1499.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RETURNING: seeing what you just added",
+      "codeHash": "3fb6a1ce362016327d1f4687040560501a87558401bfa6ce02e5f18b7e173097",
+      "spec": {
+        "template": "table",
+        "title": "RETURNING clause output rows",
+        "columns": [
+          "id",
+          "customer",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When you insert a row you often need to know which serial id it got.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "pending"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The RETURNING clause shows you the new rows just like a query would.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "pending"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "paid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Priya"
+                  },
+                  {
+                    "text": "paid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RETURNING clause output rows",
+        "columns": [
+          "id",
+          "customer",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "When you insert a row you often need to know which serial id it got.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "pending"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The RETURNING clause shows you the new rows just like a query would.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "pending"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Ravi",
+                  "paid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Priya",
+                  "paid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "UPDATE: changing rows",
+      "codeHash": "932e2b7ca5af43bb3d5708e2eee3c3a06f86e87d45640ace4c1c6db955395f40",
+      "spec": {
+        "template": "compare",
+        "title": "UPDATE existing records with WHERE condition",
+        "leftLabel": "Before UPDATE",
+        "rightLabel": "After UPDATE",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "UPDATE changes values in rows choosing target records with a condition.",
+            "left": {
+              "code": "Pen price",
+              "result": {
+                "text": "price: 10"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SET price = 12",
+              "result": {
+                "text": "price: 12"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WHERE part is the most important part deciding which rows change.",
+            "left": {
+              "code": "all categories",
+              "result": {
+                "text": "unfiltered update"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "WHERE category = electronics",
+              "result": {
+                "text": "matched rows only"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "UPDATE existing records with WHERE condition",
+        "leftLabel": "Before UPDATE",
+        "rightLabel": "After UPDATE",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "UPDATE changes values in rows choosing target records with a condition.",
+            "left": {
+              "code": "Pen price",
+              "result": "price: 10",
+              "tone": "data",
+              "checks": [
+                "price: 10"
+              ]
+            },
+            "right": {
+              "code": "SET price = 12",
+              "result": "price: 12",
+              "tone": "ok",
+              "checks": [
+                "price: 12"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The WHERE part is the most important part deciding which rows change.",
+            "left": {
+              "code": "all categories",
+              "result": "unfiltered update",
+              "tone": "error",
+              "checks": [
+                "unfiltered update"
+              ]
+            },
+            "right": {
+              "code": "WHERE category = electronics",
+              "result": "matched rows only",
+              "tone": "ok",
+              "checks": [
+                "matched rows only"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DELETE: removing rows",
+      "codeHash": "7f159154c76ba68e8ed9597e0f199c49393c02c61a29544b92428eb8e7335c69",
+      "spec": {
+        "template": "none",
+        "reason": "DELETE row removal and soft delete patterns."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "DELETE row removal and soft delete patterns."
+      }
+    },
+    {
+      "partTitle": "The most dangerous mistake: forgetting WHERE",
+      "codeHash": "56b2408db28208f7a981ca5252a590534022c2f12b1838d8819fd2995803e22f",
+      "spec": {
+        "template": "none",
+        "reason": "Accidental catastrophic bulk data mutations without WHERE clauses."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Accidental catastrophic bulk data mutations without WHERE clauses."
+      }
+    },
+    {
+      "partTitle": "Putting it together: keeping the shop up to date",
+      "codeHash": "33421edb465d563f3097b8f69617ccafb4c48d5546a3b1fa771475bd754a080d",
+      "spec": {
+        "template": "table",
+        "title": "Shop inventory table modifications",
+        "columns": [
+          "id",
+          "name",
+          "category",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Notice the order of the steps adding products and updating prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Sticky notes"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "45.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every change has a filter condition except INSERT to keep data safe.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Headphones"
+                  },
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "1648.90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Sticky notes"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "45.00"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Shop inventory table modifications",
+        "columns": [
+          "id",
+          "name",
+          "category",
+          "price"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Notice the order of the steps adding products and updating prices.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Notebook",
+                  "stationery",
+                  "60.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "5",
+                  "Sticky notes",
+                  "stationery",
+                  "45.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every change has a filter condition except INSERT to keep data safe.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Notebook",
+                  "stationery",
+                  "60.00"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Headphones",
+                  "electronics",
+                  "1648.90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "5",
+                  "Sticky notes",
+                  "stationery",
+                  "45.00"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

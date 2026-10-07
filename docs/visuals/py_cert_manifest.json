@@ -1492,27 +1492,27 @@
     },
     "sql-mastery:3:0": {
       "partTitle": "INSERT: adding rows",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:3:1": {
       "partTitle": "RETURNING: seeing what you just added",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:3:2": {
       "partTitle": "UPDATE: changing rows",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:3:3": {
       "partTitle": "DELETE: removing rows",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:3:4": {
       "partTitle": "The most dangerous mistake: forgetting WHERE",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:3:5": {
       "partTitle": "Putting it together: keeping the shop up to date",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:4:0": {
       "partTitle": "WHERE and comparisons",
