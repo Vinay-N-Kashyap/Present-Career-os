@@ -172,27 +172,27 @@
     },
     "python:8:0": {
       "partTitle": "Creating a list and reading items",
-      "status": "todo"
+      "status": "passed"
     },
     "python:8:1": {
       "partTitle": "Changing a list: append, insert, remove",
-      "status": "todo"
+      "status": "passed"
     },
     "python:8:2": {
       "partTitle": "Checking and searching: in, count, index",
-      "status": "todo"
+      "status": "none"
     },
     "python:8:3": {
       "partTitle": "Slicing lists",
-      "status": "todo"
+      "status": "passed"
     },
     "python:8:4": {
       "partTitle": "Copies and the \"same list\" trap",
-      "status": "todo"
+      "status": "none"
     },
     "python:8:5": {
       "partTitle": "Putting it together: a list of expenses",
-      "status": "todo"
+      "status": "none"
     },
     "python:9:0": {
       "partTitle": "enumerate: items with their positions",

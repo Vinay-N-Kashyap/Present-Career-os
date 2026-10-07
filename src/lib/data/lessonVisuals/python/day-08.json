@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 8,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Creating a list and reading items",
+      "codeHash": "3d3c57fcf3a86c508dcd8e5345f16cbcf0b4914fa689e1f07ae0d7d96eeccf50",
+      "spec": {
+        "template": "boxes",
+        "title": "Reading items from a list",
+        "boxes": [
+          {
+            "id": "items",
+            "label": "items"
+          },
+          {
+            "id": "item",
+            "label": "item"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A list is written with square brackets and commas.",
+            "values": {
+              "items": {
+                "var": "items",
+                "line": 1
+              },
+              "item": {
+                "text": "Tea"
+              }
+            },
+            "tones": {
+              "items": "data",
+              "item": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The index reads an item by its position.",
+            "values": {
+              "items": {
+                "var": "items",
+                "line": 1
+              },
+              "item": {
+                "text": "Movie"
+              }
+            },
+            "tones": {
+              "items": "data",
+              "item": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Reading items from a list",
+        "boxes": [
+          {
+            "id": "items",
+            "label": "items"
+          },
+          {
+            "id": "item",
+            "label": "item"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A list is written with square brackets and commas.",
+            "values": {
+              "items": "['Tea', 'Bus', 'Lunch', 'Movie']",
+              "item": "Tea"
+            },
+            "tones": {
+              "items": "data",
+              "item": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The index reads an item by its position.",
+            "values": {
+              "items": "['Tea', 'Bus', 'Lunch', 'Movie']",
+              "item": "Movie"
+            },
+            "tones": {
+              "items": "data",
+              "item": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing a list: append, insert, remove",
+      "codeHash": "38738733979e399f0b2e9f2f917462c7a15371cfe7bb8dad32ec5c5be8930a26",
+      "spec": {
+        "template": "boxes",
+        "title": "Modifying lists with methods",
+        "boxes": [
+          {
+            "id": "items",
+            "label": "items"
+          },
+          {
+            "id": "last",
+            "label": "last"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Append adds an item to the end of the list.",
+            "values": {
+              "items": {
+                "var": "items",
+                "line": 2
+              },
+              "last": {
+                "text": "Lunch"
+              }
+            },
+            "tones": {
+              "items": "data",
+              "last": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The pop method removes and returns the last item.",
+            "values": {
+              "items": {
+                "var": "items",
+                "line": 9
+              },
+              "last": {
+                "var": "last",
+                "line": 9
+              }
+            },
+            "tones": {
+              "items": "data",
+              "last": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Modifying lists with methods",
+        "boxes": [
+          {
+            "id": "items",
+            "label": "items"
+          },
+          {
+            "id": "last",
+            "label": "last"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Append adds an item to the end of the list.",
+            "values": {
+              "items": "['Tea', 'Bus', 'Lunch']",
+              "last": "Lunch"
+            },
+            "tones": {
+              "items": "data",
+              "last": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The pop method removes and returns the last item.",
+            "values": {
+              "items": "['Breakfast', 'Masala tea']",
+              "last": "'Lunch'"
+            },
+            "tones": {
+              "items": "data",
+              "last": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking and searching: in, count, index",
+      "codeHash": "d017be54727f353dc8db81fd0cbe8039ed21304716262333bd499f515d616bb1",
+      "spec": {
+        "template": "none",
+        "reason": "List membership and search operators are straightforward boolean and integer operations."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Slicing lists",
+      "codeHash": "7303ef45c1c6fba895f58955a7f9983137e52c6a2613a89dda072bbb84fb2c8e",
+      "spec": {
+        "template": "boxes",
+        "title": "Slicing portions of a list",
+        "boxes": [
+          {
+            "id": "history",
+            "label": "history"
+          },
+          {
+            "id": "recent",
+            "label": "recent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slicing gives a new list with items from start to stop.",
+            "values": {
+              "history": {
+                "var": "history",
+                "line": 1
+              },
+              "recent": {
+                "text": "history[:3]"
+              }
+            },
+            "tones": {
+              "history": "data",
+              "recent": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Changing the slice does not change the original list.",
+            "values": {
+              "history": {
+                "var": "history",
+                "line": 6
+              },
+              "recent": {
+                "var": "recent",
+                "line": 6
+              }
+            },
+            "tones": {
+              "history": "data",
+              "recent": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Slicing portions of a list",
+        "boxes": [
+          {
+            "id": "history",
+            "label": "history"
+          },
+          {
+            "id": "recent",
+            "label": "recent"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Slicing gives a new list with items from start to stop.",
+            "values": {
+              "history": "[20, 45, 120, 300, 60, 90]",
+              "recent": "history[:3]"
+            },
+            "tones": {
+              "history": "data",
+              "recent": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Changing the slice does not change the original list.",
+            "values": {
+              "history": "[20, 45, 120, 300, 60, 90]",
+              "recent": "[300, 60, 90]"
+            },
+            "tones": {
+              "history": "data",
+              "recent": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Copies and the \"same list\" trap",
+      "codeHash": "75060fc705a172a7621b9df7cbecb51b27557a0b57a13bb8251ca4213913cddb",
+      "spec": {
+        "template": "none",
+        "reason": "List reference aliasing is explained directly via variable comparisons."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: a list of expenses",
+      "codeHash": "d009aac4ce9684b5333b722b6d97eeaf4d99ad8a74f4c62e71cbffb155786f3b",
+      "spec": {
+        "template": "none",
+        "reason": "Expense tracker lists demonstrate basic method chaining shown in code."
+      },
+      "filled": {}
+    }
+  ]
+}
