@@ -4084,27 +4084,27 @@
     },
     "cloud-py:21:0": {
       "partTitle": "The shop as independent services",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:21:1": {
       "partTitle": "Routing events to service queues",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:21:2": {
       "partTitle": "Poison messages and dead-letter queues",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:21:3": {
       "partTitle": "Idempotent consumers and exactly-once effects",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:21:4": {
       "partTitle": "Tracing an order through the system",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:21:5": {
       "partTitle": "Milestone practice: build the backbone",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:22:0": {
       "partTitle": "Containers and images",
