@@ -3244,27 +3244,27 @@
     },
     "dist-py:16:0": {
       "partTitle": "Physical clocks drift",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:16:1": {
       "partTitle": "Happened-before",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:16:2": {
       "partTitle": "Lamport timestamps",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:16:3": {
       "partTitle": "Vector clocks",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:16:4": {
       "partTitle": "Comparing vector clocks",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:16:5": {
       "partTitle": "Resolving conflicts",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:17:0": {
       "partTitle": "Merging without coordination",
