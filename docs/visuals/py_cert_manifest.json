@@ -2452,27 +2452,27 @@
     },
     "ai-py:13:0": {
       "partTitle": "Why evaluation comes first",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:13:1": {
       "partTitle": "Context recall",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:13:2": {
       "partTitle": "Faithfulness",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:13:3": {
       "partTitle": "Answer relevance and model judges",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:13:4": {
       "partTitle": "Combining scores with a harmonic mean",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:13:5": {
       "partTitle": "Evaluation as a safety gate",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:14:0": {
       "partTitle": "The threat model",

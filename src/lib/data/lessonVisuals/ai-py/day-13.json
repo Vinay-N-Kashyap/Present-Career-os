@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why evaluation comes first",
+      "codeHash": "abc3bd15aec8d65d81dccceaa3bec318e7c0a92d87cf1ca2d1b342fab78df58f",
+      "spec": {
+        "template": "table",
+        "title": "RAG evaluation triad failure taxonomy and metrics",
+        "columns": [
+          "metric_name",
+          "measurement_target",
+          "failure_symptom"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Evaluating retrieval and generation layers verifies whether answers are correct.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "context recall"
+                  },
+                  {
+                    "text": "retrieved needed chunks"
+                  },
+                  {
+                    "text": "missing key facts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "faithfulness"
+                  },
+                  {
+                    "text": "supported by context"
+                  },
+                  {
+                    "text": "invented hallucinations"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The evaluation triad measures context recall faithfulness and relevance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "context recall"
+                  },
+                  {
+                    "text": "retrieved needed chunks"
+                  },
+                  {
+                    "text": "missing key facts"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "faithfulness"
+                  },
+                  {
+                    "text": "supported by context"
+                  },
+                  {
+                    "text": "invented hallucinations"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answer relevance"
+                  },
+                  {
+                    "text": "addresses user question"
+                  },
+                  {
+                    "text": "off topic evasion"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RAG evaluation triad failure taxonomy and metrics",
+        "columns": [
+          "metric_name",
+          "measurement_target",
+          "failure_symptom"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Evaluating retrieval and generation layers verifies whether answers are correct.",
+            "rows": [
+              {
+                "cells": [
+                  "context recall",
+                  "retrieved needed chunks",
+                  "missing key facts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "faithfulness",
+                  "supported by context",
+                  "invented hallucinations"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The evaluation triad measures context recall faithfulness and relevance.",
+            "rows": [
+              {
+                "cells": [
+                  "context recall",
+                  "retrieved needed chunks",
+                  "missing key facts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "faithfulness",
+                  "supported by context",
+                  "invented hallucinations"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "answer relevance",
+                  "addresses user question",
+                  "off topic evasion"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context recall",
+      "codeHash": "35fdc6a54403899c518ed05226ba17f201aac689a9e27e1262514fd650dcaf62",
+      "spec": {
+        "template": "bars",
+        "title": "Context recall and hit rate evaluation across test questions",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Context recall measures the fraction of needed chunks retrieved.",
+            "bars": [
+              {
+                "label": "query_one",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "query_two",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hit rate tracks the share of questions retrieving at least one chunk.",
+            "bars": [
+              {
+                "label": "query_one",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "query_two",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "query_three",
+                "value": {
+                  "text": "50"
+                },
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Context recall and hit rate evaluation across test questions",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Context recall measures the fraction of needed chunks retrieved.",
+            "bars": [
+              {
+                "label": "query_one",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "query_two",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Hit rate tracks the share of questions retrieving at least one chunk.",
+            "bars": [
+              {
+                "label": "query_one",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "query_two",
+                "value": 0,
+                "tone": "error"
+              },
+              {
+                "label": "query_three",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Faithfulness",
+      "codeHash": "f8e159220bc356d13386501f2df259ca6aac176353f65f4ee142f8acafc8f95d",
+      "spec": {
+        "template": "compare",
+        "title": "Context grounded claim verification versus hallucinated content",
+        "leftLabel": "Hallucinatory Reply",
+        "rightLabel": "Grounded Reply",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Faithfulness checks whether every claim is supported by retrieved context.",
+            "left": {
+              "code": "claims: bonus included",
+              "result": {
+                "text": "unsupported claim"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "claims: UPI in 2 days",
+              "result": {
+                "text": "supported by text"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Grounded outputs achieve high faithfulness scores above the threshold.",
+            "left": {
+              "code": "score: 0.50",
+              "result": {
+                "text": "ungrounded"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "score: 1.00",
+              "result": {
+                "text": "grounded"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Context grounded claim verification versus hallucinated content",
+        "leftLabel": "Hallucinatory Reply",
+        "rightLabel": "Grounded Reply",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Faithfulness checks whether every claim is supported by retrieved context.",
+            "left": {
+              "code": "claims: bonus included",
+              "result": "unsupported claim",
+              "tone": "error",
+              "checks": [
+                "unsupported claim"
+              ]
+            },
+            "right": {
+              "code": "claims: UPI in 2 days",
+              "result": "supported by text",
+              "tone": "ok",
+              "checks": [
+                "supported by text"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Grounded outputs achieve high faithfulness scores above the threshold.",
+            "left": {
+              "code": "score: 0.50",
+              "result": "ungrounded",
+              "tone": "error",
+              "checks": [
+                "ungrounded"
+              ]
+            },
+            "right": {
+              "code": "score: 1.00",
+              "result": "grounded",
+              "tone": "ok",
+              "checks": [
+                "grounded"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Answer relevance and model judges",
+      "codeHash": "9592939bcf109ea1a36c8a5a63ff0be9b145b1fbd2d407524ef132f080c4927e",
+      "spec": {
+        "template": "none",
+        "reason": "LLM-as-judge prompt framing and five-point Likert scale calibration logic."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "LLM-as-judge prompt framing and five-point Likert scale calibration logic."
+      }
+    },
+    {
+      "partTitle": "Combining scores with a harmonic mean",
+      "codeHash": "81b73b9d6a3186ccb9d4fc0bd8a8fee33acb0905854caaab8a8037d0d758a80e",
+      "spec": {
+        "template": "compare",
+        "title": "Arithmetic mean versus RAGAS harmonic mean composite penalty",
+        "leftLabel": "Arithmetic Mean",
+        "rightLabel": "Harmonic Mean",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Composite metric combines individual scores into a single dashboard index.",
+            "left": {
+              "code": "balanced scores (0.9, 0.9, 0.9)",
+              "result": {
+                "text": "mean 0.90"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "balanced scores (0.9, 0.9, 0.9)",
+              "result": {
+                "text": "composite 0.90"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Harmonic mean is dragged down heavily whenever any component score is weak.",
+            "left": {
+              "code": "unbalanced (0.9, 0.9, 0.2)",
+              "result": {
+                "text": "arithmetic 0.67"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "unbalanced (0.9, 0.9, 0.2)",
+              "result": {
+                "text": "harmonic 0.42"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Arithmetic mean versus RAGAS harmonic mean composite penalty",
+        "leftLabel": "Arithmetic Mean",
+        "rightLabel": "Harmonic Mean",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Composite metric combines individual scores into a single dashboard index.",
+            "left": {
+              "code": "balanced scores (0.9, 0.9, 0.9)",
+              "result": "mean 0.90",
+              "tone": "ok",
+              "checks": [
+                "mean 0.90"
+              ]
+            },
+            "right": {
+              "code": "balanced scores (0.9, 0.9, 0.9)",
+              "result": "composite 0.90",
+              "tone": "ok",
+              "checks": [
+                "composite 0.90"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Harmonic mean is dragged down heavily whenever any component score is weak.",
+            "left": {
+              "code": "unbalanced (0.9, 0.9, 0.2)",
+              "result": "arithmetic 0.67",
+              "tone": "data",
+              "checks": [
+                "arithmetic 0.67"
+              ]
+            },
+            "right": {
+              "code": "unbalanced (0.9, 0.9, 0.2)",
+              "result": "harmonic 0.42",
+              "tone": "error",
+              "checks": [
+                "harmonic 0.42"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluation as a safety gate",
+      "codeHash": "a316bcaab62ac0eacd8b3d7d8d9eacc66b2622316111f85632ad75339a496e65",
+      "spec": {
+        "template": "none",
+        "reason": "CI regression gate rules blocking candidates when metric scores degrade."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "CI regression gate rules blocking candidates when metric scores degrade."
+      }
+    }
+  ]
+}
