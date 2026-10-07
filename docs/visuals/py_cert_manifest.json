@@ -2620,27 +2620,27 @@
     },
     "ai-py:20:0": {
       "partTitle": "Why stream?",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:20:1": {
       "partTitle": "The SSE format",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:20:2": {
       "partTitle": "Parsing a streamed chunk",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:20:3": {
       "partTitle": "Writing events for the browser",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:20:4": {
       "partTitle": "Partial lines and buffering",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:20:5": {
       "partTitle": "Cancellation and good streaming UX",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:21:0": {
       "partTitle": "What the research assistant does",
