@@ -1132,27 +1132,27 @@
     },
     "dsa-py:18:0": {
       "partTitle": "A heap stored in a list",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:18:1": {
       "partTitle": "Push with sift up",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:18:2": {
       "partTitle": "Pop with sift down",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:18:3": {
       "partTitle": "heapq and the k-th smallest",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:18:4": {
       "partTitle": "Priority queues for tasks",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:18:5": {
       "partTitle": "Merging k sorted lists with a heap",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:19:0": {
       "partTitle": "A tree of letters",
