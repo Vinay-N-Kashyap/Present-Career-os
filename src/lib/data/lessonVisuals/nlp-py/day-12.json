@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Text classification",
+      "codeHash": "85125e48a26351151ca6106768d00cf550af23039175fe85970e41d849aceba2",
+      "spec": {
+        "template": "table",
+        "title": "Supervised document sentiment classification and vocabulary",
+        "columns": [
+          "pos",
+          "neg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Text classification assigns categorical sentiment or topic labels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "neg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Supervised models learn distinguishing features from labeled training text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "neg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "acting"
+                  },
+                  {
+                    "text": "boring"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Naive Bayes provides an effective baseline for text sentiment classification.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "neg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "acting"
+                  },
+                  {
+                    "text": "boring"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bag of words representations count term frequencies regardless of word order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "neg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "acting"
+                  },
+                  {
+                    "text": "boring"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "moving"
+                  },
+                  {
+                    "text": "label"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Supervised document sentiment classification and vocabulary",
+        "columns": [
+          "pos",
+          "neg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Text classification assigns categorical sentiment or topic labels.",
+            "rows": [
+              {
+                "cells": [
+                  "pos",
+                  "neg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Supervised models learn distinguishing features from labeled training text.",
+            "rows": [
+              {
+                "cells": [
+                  "pos",
+                  "neg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "acting",
+                  "boring"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Naive Bayes provides an effective baseline for text sentiment classification.",
+            "rows": [
+              {
+                "cells": [
+                  "pos",
+                  "neg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "acting",
+                  "boring"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "words"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bag of words representations count term frequencies regardless of word order.",
+            "rows": [
+              {
+                "cells": [
+                  "pos",
+                  "neg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "acting",
+                  "boring"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "words"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "moving",
+                  "label"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bayes' rule and the naive assumption",
+      "codeHash": "5757aa3519b3c6f69c8aa7d2bdf8aff0490b7449f5e77d4bca3990e51e7b52f5",
+      "spec": {
+        "template": "table",
+        "title": "Bayesian posterior score computation from priors and likelihoods",
+        "columns": [
+          "great",
+          "fun"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bayes rule decomposes posterior probability into prior and likelihood.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "fun"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Class priors represent the base rate occurrence of each category.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "fun"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prior"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The naive assumption treats word occurrences as conditionally independent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "fun"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prior"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "boring"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The winning prediction maximizes prior times cumulative word likelihood.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "great"
+                  },
+                  {
+                    "text": "fun"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prior"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "like"
+                  },
+                  {
+                    "text": "boring"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "review"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bayesian posterior score computation from priors and likelihoods",
+        "columns": [
+          "great",
+          "fun"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bayes rule decomposes posterior probability into prior and likelihood.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "fun"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Class priors represent the base rate occurrence of each category.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "fun"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prior",
+                  "score"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The naive assumption treats word occurrences as conditionally independent.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "fun"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prior",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "boring"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The winning prediction maximizes prior times cumulative word likelihood.",
+            "rows": [
+              {
+                "cells": [
+                  "great",
+                  "fun"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prior",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "like",
+                  "boring"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "review",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Training: counting words per class",
+      "codeHash": "734d8a7ab8d4ea515b653d98c4f259d6e612268e152e40e60664a286deece72f",
+      "spec": {
+        "template": "table",
+        "title": "Class word frequency counting and Laplace smoothing",
+        "columns": [
+          "labels",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training Naive Bayes reduces to counting word frequencies per class.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "labels"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Word likelihood divides term occurrences by total class tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "labels"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "label"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unseen training words cause a zero score if left unhandled.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "labels"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "label"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Laplace add-one smoothing prevents zero probabilities for unseen terms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "labels"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train"
+                  },
+                  {
+                    "text": "label"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Counter"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "train"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Class word frequency counting and Laplace smoothing",
+        "columns": [
+          "labels",
+          "counts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training Naive Bayes reduces to counting word frequencies per class.",
+            "rows": [
+              {
+                "cells": [
+                  "labels",
+                  "counts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Word likelihood divides term occurrences by total class tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "labels",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "label"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Unseen training words cause a zero score if left unhandled.",
+            "rows": [
+              {
+                "cells": [
+                  "labels",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "label"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Laplace add-one smoothing prevents zero probabilities for unseen terms.",
+            "rows": [
+              {
+                "cells": [
+                  "labels",
+                  "counts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train",
+                  "label"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Counter",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "counts",
+                  "train"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Working in log space",
+      "codeHash": "262e62a9080b6b1a801e5aae8499359b31449461e36e6d79ebe86e95d97428f2",
+      "spec": {
+        "template": "table",
+        "title": "Log probability space conversion preventing arithmetic underflow",
+        "columns": [
+          "product",
+          "probs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiplying many small probabilities triggers floating point underflow.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "probs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Logarithms convert product operations into numerically stable sums.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "probs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sums of log probabilities remain well within computer dynamic range.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "probs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monotonic log scaling preserves the identical maximum scoring class.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "probs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "log"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "probs"
+                  },
+                  {
+                    "text": "product"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Log probability space conversion preventing arithmetic underflow",
+        "columns": [
+          "product",
+          "probs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multiplying many small probabilities triggers floating point underflow.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "probs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Logarithms convert product operations into numerically stable sums.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "probs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "log"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sums of log probabilities remain well within computer dynamic range.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "probs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "log"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Monotonic log scaling preserves the identical maximum scoring class.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "probs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "log"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "probs",
+                  "product"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Classifying and evaluating",
+      "codeHash": "c59bc080d7fb58904805df0b1e422873989235265ae09599aff994e081ffe0db",
+      "spec": {
+        "template": "none",
+        "reason": "Classifying documents and confusion matrix evaluation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: score and classify",
+      "codeHash": "617178d0ceb3ce900d7df8674b02e5a5d1231afed65c8799083526c1d48bd9e3",
+      "spec": {
+        "template": "none",
+        "reason": "Log score and Naive Bayes classifier practice."
+      },
+      "filled": {}
+    }
+  ]
+}

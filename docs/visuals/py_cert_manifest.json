@@ -4588,27 +4588,27 @@
     },
     "nlp-py:12:0": {
       "partTitle": "Text classification",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:12:1": {
       "partTitle": "Bayes' rule and the naive assumption",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:12:2": {
       "partTitle": "Training: counting words per class",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:12:3": {
       "partTitle": "Working in log space",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:12:4": {
       "partTitle": "Classifying and evaluating",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:12:5": {
       "partTitle": "Practice time: score and classify",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:13:0": {
       "partTitle": "Why order and memory matter",
