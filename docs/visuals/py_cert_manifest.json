@@ -4204,27 +4204,27 @@
     },
     "cloud-py:26:0": {
       "partTitle": "Why encryption, and where",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:26:1": {
       "partTitle": "KMS keys, policies and grants",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:26:2": {
       "partTitle": "Envelope encryption",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:26:3": {
       "partTitle": "Auditing key policies",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:26:4": {
       "partTitle": "Rotation, secrets and CloudTrail",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:26:5": {
       "partTitle": "Practice time: envelopes and policies",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:27:0": {
       "partTitle": "Threats at the front door",

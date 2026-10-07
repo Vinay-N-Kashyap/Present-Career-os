@@ -1,0 +1,981 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why encryption, and where",
+      "codeHash": "56bdb0a1f21548561e9fa2bf6cde605ab4957b37f2f24b035da0e9c881a51931",
+      "spec": {
+        "template": "table",
+        "title": "Encryption layers across storage, transit and hardware key storage",
+        "columns": [
+          "data",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data lives in memory, on disk and over the network.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "disk"
+                  },
+                  {
+                    "text": "S3"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Encryption at rest stops unauthorized reading of drive data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "disk"
+                  },
+                  {
+                    "text": "S3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drive"
+                  },
+                  {
+                    "text": "RDS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Encryption in transit uses TLS across networks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "disk"
+                  },
+                  {
+                    "text": "S3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drive"
+                  },
+                  {
+                    "text": "RDS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "network"
+                  },
+                  {
+                    "text": "TLS"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "AWS Key Management Service manages keys inside hardware security modules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "disk"
+                  },
+                  {
+                    "text": "S3"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "drive"
+                  },
+                  {
+                    "text": "RDS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "network"
+                  },
+                  {
+                    "text": "TLS"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "CloudTrail"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Encryption layers across storage, transit and hardware key storage",
+        "columns": [
+          "data",
+          "key"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data lives in memory, on disk and over the network.",
+            "rows": [
+              {
+                "cells": [
+                  "disk",
+                  "S3"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Encryption at rest stops unauthorized reading of drive data.",
+            "rows": [
+              {
+                "cells": [
+                  "disk",
+                  "S3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drive",
+                  "RDS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Encryption in transit uses TLS across networks.",
+            "rows": [
+              {
+                "cells": [
+                  "disk",
+                  "S3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drive",
+                  "RDS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "network",
+                  "TLS"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "AWS Key Management Service manages keys inside hardware security modules.",
+            "rows": [
+              {
+                "cells": [
+                  "disk",
+                  "S3"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "drive",
+                  "RDS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "network",
+                  "TLS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "KMS",
+                  "CloudTrail"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "KMS keys, policies and grants",
+      "codeHash": "3f5156138bd9396a14363f8e7a1b142b08dee3f08747f6587df391b7e564d511",
+      "spec": {
+        "template": "table",
+        "title": "KMS key policy statements and authorized callers",
+        "columns": [
+          "principal",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AWS managed keys are created automatically by services such as S3 or RDS.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role/media-app"
+                  },
+                  {
+                    "text": "kms:Decrypt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every KMS key has a key policy controlling account access.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role/media-app"
+                  },
+                  {
+                    "text": "kms:Decrypt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arn:aws:iam::111122223333:root"
+                  },
+                  {
+                    "text": "kms:*"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Conditions make key policies precise for specific caller services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role/media-app"
+                  },
+                  {
+                    "text": "kms:Decrypt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arn:aws:iam::111122223333:root"
+                  },
+                  {
+                    "text": "kms:*"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Grants provide temporary permissions that services use to decrypt disks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "role/media-app"
+                  },
+                  {
+                    "text": "kms:Decrypt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arn:aws:iam::111122223333:root"
+                  },
+                  {
+                    "text": "kms:*"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "KMS key policy statements and authorized callers",
+        "columns": [
+          "principal",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AWS managed keys are created automatically by services such as S3 or RDS.",
+            "rows": [
+              {
+                "cells": [
+                  "role/media-app",
+                  "kms:Decrypt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every KMS key has a key policy controlling account access.",
+            "rows": [
+              {
+                "cells": [
+                  "role/media-app",
+                  "kms:Decrypt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arn:aws:iam::111122223333:root",
+                  "kms:*"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Conditions make key policies precise for specific caller services.",
+            "rows": [
+              {
+                "cells": [
+                  "role/media-app",
+                  "kms:Decrypt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arn:aws:iam::111122223333:root",
+                  "kms:*"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Grants provide temporary permissions that services use to decrypt disks.",
+            "rows": [
+              {
+                "cells": [
+                  "role/media-app",
+                  "kms:Decrypt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arn:aws:iam::111122223333:root",
+                  "kms:*"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Envelope encryption",
+      "codeHash": "8e543c3d030687433911946064e23d1f28f18535f9b506293d34cc2e98a9fedf",
+      "spec": {
+        "template": "table",
+        "title": "Envelope encryption data key workflow and ciphertexts",
+        "columns": [
+          "master_key",
+          "data_key"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "KMS returns the data key once in plaintext and once encrypted.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Encrypt data locally with the plaintext data key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fast"
+                  },
+                  {
+                    "text": "ciphertext"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "To decrypt send the encrypted data key back to KMS.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fast"
+                  },
+                  {
+                    "text": "ciphertext"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "locally"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The master key never leaves KMS during envelope encryption.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fast"
+                  },
+                  {
+                    "text": "ciphertext"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "KMS"
+                  },
+                  {
+                    "text": "locally"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "S3"
+                  },
+                  {
+                    "text": "DynamoDB"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Envelope encryption data key workflow and ciphertexts",
+        "columns": [
+          "master_key",
+          "data_key"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "KMS returns the data key once in plaintext and once encrypted.",
+            "rows": [
+              {
+                "cells": [
+                  "KMS",
+                  "data"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Encrypt data locally with the plaintext data key.",
+            "rows": [
+              {
+                "cells": [
+                  "KMS",
+                  "data"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fast",
+                  "ciphertext"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "To decrypt send the encrypted data key back to KMS.",
+            "rows": [
+              {
+                "cells": [
+                  "KMS",
+                  "data"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fast",
+                  "ciphertext"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "KMS",
+                  "locally"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The master key never leaves KMS during envelope encryption.",
+            "rows": [
+              {
+                "cells": [
+                  "KMS",
+                  "data"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fast",
+                  "ciphertext"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "KMS",
+                  "locally"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "S3",
+                  "DynamoDB"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auditing key policies",
+      "codeHash": "df8e1fd5b731990a55ec2d098db0451fd72ecb0191edc02099a72f4a7475913a",
+      "spec": {
+        "template": "table",
+        "title": "Auditing key policies for wildcard actions and open principals",
+        "columns": [
+          "risks",
+          "policy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A key policy that is too open undoes KMS protection.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risks"
+                  },
+                  {
+                    "text": "policy"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A public principal with no condition lets anyone use the key.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risks"
+                  },
+                  {
+                    "text": "policy"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PUBLIC_PRINCIPAL"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A principal with a strong condition narrows down key access.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risks"
+                  },
+                  {
+                    "text": "policy"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PUBLIC_PRINCIPAL"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "kms:ViaService"
+                  },
+                  {
+                    "text": "kms:CallerAccount"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Broad wildcard actions should remain restricted to account root.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "risks"
+                  },
+                  {
+                    "text": "policy"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "PUBLIC_PRINCIPAL"
+                  },
+                  {
+                    "text": "Allow"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "kms:ViaService"
+                  },
+                  {
+                    "text": "kms:CallerAccount"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "KMS_WILDCARD"
+                  },
+                  {
+                    "text": "kms:*"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Auditing key policies for wildcard actions and open principals",
+        "columns": [
+          "risks",
+          "policy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A key policy that is too open undoes KMS protection.",
+            "rows": [
+              {
+                "cells": [
+                  "risks",
+                  "policy"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A public principal with no condition lets anyone use the key.",
+            "rows": [
+              {
+                "cells": [
+                  "risks",
+                  "policy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PUBLIC_PRINCIPAL",
+                  "Allow"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A principal with a strong condition narrows down key access.",
+            "rows": [
+              {
+                "cells": [
+                  "risks",
+                  "policy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PUBLIC_PRINCIPAL",
+                  "Allow"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "kms:ViaService",
+                  "kms:CallerAccount"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Broad wildcard actions should remain restricted to account root.",
+            "rows": [
+              {
+                "cells": [
+                  "risks",
+                  "policy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PUBLIC_PRINCIPAL",
+                  "Allow"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "kms:ViaService",
+                  "kms:CallerAccount"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "KMS_WILDCARD",
+                  "kms:*"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rotation, secrets and CloudTrail",
+      "codeHash": "5b452bd1930b5e99cf70977ed7fbd4043b53d47c5eea81b7c1f15c64107be00b",
+      "spec": {
+        "template": "none",
+        "reason": "Rotation, secrets and CloudTrail."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: envelopes and policies",
+      "codeHash": "271f1d9bf61c2c1ffcff7094ca13d6efeba352ddefa3f9482e9af6943a76b9f4",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: envelopes and policies."
+      },
+      "filled": {}
+    }
+  ]
+}
