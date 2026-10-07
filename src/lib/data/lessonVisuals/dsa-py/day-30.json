@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The capstone problem",
+      "codeHash": "6a0d7818f08696e092637a0d8b267a0c6cf7609c426319c9189ff6f0dea76b3e",
+      "spec": {
+        "template": "compare",
+        "title": "Unconstrained Dijkstra versus stop-bounded flight search",
+        "leftLabel": "Unbounded Dijkstra",
+        "rightLabel": "Constrained Bellman-Ford",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Find the cheapest route that uses at most k plus one flights.",
+            "left": {
+              "code": "route search",
+              "result": {
+                "text": "cheap but 6 stops"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "route search",
+              "result": {
+                "text": "valid <= k stops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Plain Dijkstra ignores the number of stops returning too many changes.",
+            "left": {
+              "code": "stops check",
+              "result": {
+                "text": "unbounded changes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "stops check",
+              "result": {
+                "text": "bounded rounds"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unconstrained Dijkstra versus stop-bounded flight search",
+        "leftLabel": "Unbounded Dijkstra",
+        "rightLabel": "Constrained Bellman-Ford",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Find the cheapest route that uses at most k plus one flights.",
+            "left": {
+              "code": "route search",
+              "result": "cheap but 6 stops",
+              "tone": "error",
+              "checks": [
+                "cheap but 6 stops"
+              ]
+            },
+            "right": {
+              "code": "route search",
+              "result": "valid <= k stops",
+              "tone": "ok",
+              "checks": [
+                "valid <= k stops"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Plain Dijkstra ignores the number of stops returning too many changes.",
+            "left": {
+              "code": "stops check",
+              "result": "unbounded changes",
+              "tone": "error",
+              "checks": [
+                "unbounded changes"
+              ]
+            },
+            "right": {
+              "code": "stops check",
+              "result": "bounded rounds",
+              "tone": "ok",
+              "checks": [
+                "bounded rounds"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bellman-Ford limited to k + 1 rounds",
+      "codeHash": "4afe62ec70f13291c0991a399d7ed863887b2b4610a6cfd4efc21cdb09d330c0",
+      "spec": {
+        "template": "table",
+        "title": "Step-limited Bellman-Ford cost relaxation rounds",
+        "columns": [
+          "Round Iteration",
+          "Cost Reading Source",
+          "Flights Step Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relax every edge round after round to bound routes by flight count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Round 1"
+                  },
+                  {
+                    "text": "Read cost from round 0"
+                  },
+                  {
+                    "text": "At most 1 flight"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Read from costs of the previous round and write into a separate copy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Round 1"
+                  },
+                  {
+                    "text": "Read cost from round 0"
+                  },
+                  {
+                    "text": "At most 1 flight"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Round 2"
+                  },
+                  {
+                    "text": "Read cost from copy 1"
+                  },
+                  {
+                    "text": "At most 2 flights"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Step-limited Bellman-Ford cost relaxation rounds",
+        "columns": [
+          "Round Iteration",
+          "Cost Reading Source",
+          "Flights Step Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relax every edge round after round to bound routes by flight count.",
+            "rows": [
+              {
+                "cells": [
+                  "Round 1",
+                  "Read cost from round 0",
+                  "At most 1 flight"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Read from costs of the previous round and write into a separate copy.",
+            "rows": [
+              {
+                "cells": [
+                  "Round 1",
+                  "Read cost from round 0",
+                  "At most 1 flight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Round 2",
+                  "Read cost from copy 1",
+                  "At most 2 flights"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A heap-based alternative",
+      "codeHash": "98e4bb1da3499c926b8616fa3bcd7eaec9e8e58aeefd7eeb29a29212b6b965c4",
+      "spec": {
+        "template": "none",
+        "reason": "Priority queue state space tracking (cost, airport, stops used) with pruning."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Priority queue state space tracking (cost, airport, stops used) with pruning."
+      }
+    },
+    {
+      "partTitle": "Auditing the network",
+      "codeHash": "63dfb1afa9b6045ccfd8b8ed3f143a02dce534ee341af29840a4b668e49b2ea0",
+      "spec": {
+        "template": "table",
+        "title": "Flight network sanity audit and metrics summary",
+        "columns": [
+          "Audit Metric",
+          "Extraction Method",
+          "Inspection Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "audit_flight_graph returns summary with routes airports and cheapest price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Total Routes"
+                  },
+                  {
+                    "text": "len(flights)"
+                  },
+                  {
+                    "text": "12 flights"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A set collects airports from both ends so each is counted once.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Total Routes"
+                  },
+                  {
+                    "text": "len(flights)"
+                  },
+                  {
+                    "text": "12 flights"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Unique Airports"
+                  },
+                  {
+                    "text": "Set of src and dst"
+                  },
+                  {
+                    "text": "5 airports"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Flight network sanity audit and metrics summary",
+        "columns": [
+          "Audit Metric",
+          "Extraction Method",
+          "Inspection Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "audit_flight_graph returns summary with routes airports and cheapest price.",
+            "rows": [
+              {
+                "cells": [
+                  "Total Routes",
+                  "len(flights)",
+                  "12 flights"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A set collects airports from both ends so each is counted once.",
+            "rows": [
+              {
+                "cells": [
+                  "Total Routes",
+                  "len(flights)",
+                  "12 flights"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Unique Airports",
+                  "Set of src and dst",
+                  "5 airports"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting the engine together",
+      "codeHash": "543801be7d3a8e64a12003c922c9e5f2b6141f55cec25ccbf30ab62b7497db70",
+      "spec": {
+        "template": "table",
+        "title": "Production routing engine qualities",
+        "columns": [
+          "Capstone Quality",
+          "Engineering Measure",
+          "Production Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The final engine wraps functions in a class and returns the route itself.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Class Architecture"
+                  },
+                  {
+                    "text": "FlightRouter engine"
+                  },
+                  {
+                    "text": "Reusable interface"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Production ready software validates inputs and handles edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Class Architecture"
+                  },
+                  {
+                    "text": "FlightRouter engine"
+                  },
+                  {
+                    "text": "Reusable interface"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Robust Validation"
+                  },
+                  {
+                    "text": "Range check inputs"
+                  },
+                  {
+                    "text": "Clear error messages"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production routing engine qualities",
+        "columns": [
+          "Capstone Quality",
+          "Engineering Measure",
+          "Production Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The final engine wraps functions in a class and returns the route itself.",
+            "rows": [
+              {
+                "cells": [
+                  "Class Architecture",
+                  "FlightRouter engine",
+                  "Reusable interface"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Production ready software validates inputs and handles edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  "Class Architecture",
+                  "FlightRouter engine",
+                  "Reusable interface"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Robust Validation",
+                  "Range check inputs",
+                  "Clear error messages"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Looking back, and next steps",
+      "codeHash": "e3254dc875d795b85a2c7163741e49c0106f5e4ce92567430786ccc9c58c8c19",
+      "spec": {
+        "template": "none",
+        "reason": "Course retrospective reviewing toolkit patterns, assessment, and graduation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Course retrospective reviewing toolkit patterns, assessment, and graduation."
+      }
+    }
+  ]
+}

@@ -1420,27 +1420,27 @@
     },
     "dsa-py:30:0": {
       "partTitle": "The capstone problem",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:30:1": {
       "partTitle": "Bellman-Ford limited to k + 1 rounds",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:30:2": {
       "partTitle": "A heap-based alternative",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:30:3": {
       "partTitle": "Auditing the network",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:30:4": {
       "partTitle": "Putting the engine together",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:30:5": {
       "partTitle": "Looking back, and next steps",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:1:0": {
       "partTitle": "What a database is, and why apps need one",
