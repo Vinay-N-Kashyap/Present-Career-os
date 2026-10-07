@@ -676,27 +676,27 @@
     },
     "python:29:0": {
       "partTitle": "What deploying means",
-      "status": "todo"
+      "status": "passed"
     },
     "python:29:1": {
       "partTitle": "Getting the project ready",
-      "status": "todo"
+      "status": "none"
     },
     "python:29:2": {
       "partTitle": "Environment variables for settings and secrets",
-      "status": "todo"
+      "status": "passed"
     },
     "python:29:3": {
       "partTitle": "Deploying and checking it works",
-      "status": "todo"
+      "status": "none"
     },
     "python:29:4": {
       "partTitle": "A README that sells your project",
-      "status": "todo"
+      "status": "passed"
     },
     "python:29:5": {
       "partTitle": "Putting it together: your deployment checklist",
-      "status": "todo"
+      "status": "none"
     },
     "python:30:0": {
       "partTitle": "What junior Python interviews look like",
