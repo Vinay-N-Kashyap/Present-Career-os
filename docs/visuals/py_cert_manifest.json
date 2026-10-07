@@ -2428,27 +2428,27 @@
     },
     "ai-py:12:0": {
       "partTitle": "Lost in the middle",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:12:1": {
       "partTitle": "Arranging chunks from the outside in",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:12:2": {
       "partTitle": "Estimating context size",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:12:3": {
       "partTitle": "Compressing chunks to what matters",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:12:4": {
       "partTitle": "Removing near-duplicates",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:12:5": {
       "partTitle": "Fitting a token budget",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:13:0": {
       "partTitle": "Why evaluation comes first",
