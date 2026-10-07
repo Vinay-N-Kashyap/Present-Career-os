@@ -5164,27 +5164,27 @@
     },
     "quant-py:6:0": {
       "partTitle": "What market impact is",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:6:1": {
       "partTitle": "The Almgren-Chriss model",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:6:2": {
       "partTitle": "Speed versus risk",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:6:3": {
       "partTitle": "Slippage",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:6:4": {
       "partTitle": "Transaction cost analysis",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:6:5": {
       "partTitle": "Practice time: costs and slippage",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:7:0": {
       "partTitle": "Imbalance at the top of the book",
