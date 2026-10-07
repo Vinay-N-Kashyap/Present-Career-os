@@ -1372,27 +1372,27 @@
     },
     "dsa-py:28:0": {
       "partTitle": "Choose, explore, un-choose",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:28:1": {
       "partTitle": "Pruning: stop early",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:28:2": {
       "partTitle": "N-Queens",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:28:3": {
       "partTitle": "Printing a board",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:28:4": {
       "partTitle": "Sudoku validation with sets",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:28:5": {
       "partTitle": "When to reach for backtracking",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:29:0": {
       "partTitle": "Numbers in binary",
