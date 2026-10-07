@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "WHERE and comparisons",
+      "codeHash": "4a6a63458beac0c1fa762e0f82139c33c1de8de3997b12cf2566416766949c29",
+      "spec": {
+        "template": "table",
+        "title": "Filtering rows with WHERE comparisons",
+        "columns": [
+          "name",
+          "category",
+          "price",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The WHERE clause keeps only rows where a condition is true.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "120"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "PostgreSQL checks the condition for each row keeping matched entries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "120"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pen"
+                  },
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "10.00"
+                  },
+                  {
+                    "text": "500"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Desk lamp"
+                  },
+                  {
+                    "text": "home"
+                  },
+                  {
+                    "text": "899.00"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filtering rows with WHERE comparisons",
+        "columns": [
+          "name",
+          "category",
+          "price",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The WHERE clause keeps only rows where a condition is true.",
+            "rows": [
+              {
+                "cells": [
+                  "Notebook",
+                  "stationery",
+                  "60.00",
+                  "120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pen",
+                  "stationery",
+                  "10.00",
+                  "500"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "PostgreSQL checks the condition for each row keeping matched entries.",
+            "rows": [
+              {
+                "cells": [
+                  "Notebook",
+                  "stationery",
+                  "60.00",
+                  "120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pen",
+                  "stationery",
+                  "10.00",
+                  "500"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Desk lamp",
+                  "home",
+                  "899.00",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AND, OR and NOT",
+      "codeHash": "3d0e17564b938ea69d1c43484c7750ba6d4e3f8161ec45b1d7313375a74e25aa",
+      "spec": {
+        "template": "compare",
+        "title": "Operator precedence and parentheses in SQL WHERE",
+        "leftLabel": "Without Brackets",
+        "rightLabel": "With Brackets",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When you mix AND and OR SQL does AND before OR causing confusion.",
+            "left": {
+              "code": "bags OR home AND cheap",
+              "result": {
+                "text": "bags OR (home AND cheap)"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "evaluate precedence",
+              "result": {
+                "text": "AND evaluates first"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Brackets make your intention clear to PostgreSQL and anyone reading.",
+            "left": {
+              "code": "Backpack 1200",
+              "result": {
+                "text": "included by OR"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "(bags OR home) AND cheap",
+              "result": {
+                "text": "Tote bag, Cushion"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Operator precedence and parentheses in SQL WHERE",
+        "leftLabel": "Without Brackets",
+        "rightLabel": "With Brackets",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When you mix AND and OR SQL does AND before OR causing confusion.",
+            "left": {
+              "code": "bags OR home AND cheap",
+              "result": "bags OR (home AND cheap)",
+              "tone": "error",
+              "checks": [
+                "bags OR (home AND cheap)"
+              ]
+            },
+            "right": {
+              "code": "evaluate precedence",
+              "result": "AND evaluates first",
+              "tone": "data",
+              "checks": [
+                "AND evaluates first"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Brackets make your intention clear to PostgreSQL and anyone reading.",
+            "left": {
+              "code": "Backpack 1200",
+              "result": "included by OR",
+              "tone": "error",
+              "checks": [
+                "included by OR"
+              ]
+            },
+            "right": {
+              "code": "(bags OR home) AND cheap",
+              "result": "Tote bag, Cushion",
+              "tone": "ok",
+              "checks": [
+                "Tote bag, Cushion"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NULL: the unknown value",
+      "codeHash": "bb7b42ae2e0363bf60faef5dfb46a2256dec0996142cca40c094e6a12a852eae",
+      "spec": {
+        "template": "none",
+        "reason": "Three-valued logic where NULL comparison yields UNKNOWN rather than TRUE or FALSE."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Three-valued logic where NULL comparison yields UNKNOWN rather than TRUE or FALSE."
+      }
+    },
+    {
+      "partTitle": "Filtering dates",
+      "codeHash": "4bbda1c30174b7c4637f2fdefb953698015911ce05569b31ece9ff06cbc6cc39",
+      "spec": {
+        "template": "table",
+        "title": "Filtering orders by date range",
+        "columns": [
+          "id",
+          "customer",
+          "ordered_on"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dates are common filter targets written in year month day format.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2026-08-28"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Earlier dates are smaller so range conditions combine with AND.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Ravi"
+                  },
+                  {
+                    "text": "2026-09-03"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Asha"
+                  },
+                  {
+                    "text": "2026-09-10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filtering orders by date range",
+        "columns": [
+          "id",
+          "customer",
+          "ordered_on"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dates are common filter targets written in year month day format.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Asha",
+                  "2026-08-28"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Earlier dates are smaller so range conditions combine with AND.",
+            "rows": [
+              {
+                "cells": [
+                  "2",
+                  "Ravi",
+                  "2026-09-03"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "3",
+                  "Asha",
+                  "2026-09-10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WHERE with UPDATE and DELETE",
+      "codeHash": "3f136a9fd2cff0d5ead4bd1620bd0e3c91a713550023df1fb7bddeb76ec7edda",
+      "spec": {
+        "template": "none",
+        "reason": "Safeguarding UPDATE and DELETE targets with matching SELECT verifications."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Safeguarding UPDATE and DELETE targets with matching SELECT verifications."
+      }
+    },
+    {
+      "partTitle": "Putting it together: answering shop questions",
+      "codeHash": "b1ec91c55505a320ab2ab7c01f3675501ee008c167cc03c2f28286a304ec1131",
+      "spec": {
+        "template": "table",
+        "title": "Multi-condition inventory filtering",
+        "columns": [
+          "name",
+          "price",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Which products can sell today combines price under limit and stock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "120"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Writing questions in plain words first helps experienced developers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Notebook"
+                  },
+                  {
+                    "text": "60.00"
+                  },
+                  {
+                    "text": "120"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Phone stand"
+                  },
+                  {
+                    "text": "299.00"
+                  },
+                  {
+                    "text": "60"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-condition inventory filtering",
+        "columns": [
+          "name",
+          "price",
+          "stock"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Which products can sell today combines price under limit and stock.",
+            "rows": [
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "120"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Writing questions in plain words first helps experienced developers.",
+            "rows": [
+              {
+                "cells": [
+                  "Notebook",
+                  "60.00",
+                  "120"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Phone stand",
+                  "299.00",
+                  "60"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

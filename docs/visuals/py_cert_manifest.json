@@ -1516,27 +1516,27 @@
     },
     "sql-mastery:4:0": {
       "partTitle": "WHERE and comparisons",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:4:1": {
       "partTitle": "AND, OR and NOT",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:4:2": {
       "partTitle": "NULL: the unknown value",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:4:3": {
       "partTitle": "Filtering dates",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:4:4": {
       "partTitle": "WHERE with UPDATE and DELETE",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:4:5": {
       "partTitle": "Putting it together: answering shop questions",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:5:0": {
       "partTitle": "LIKE: searching inside text",
