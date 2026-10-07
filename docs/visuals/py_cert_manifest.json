@@ -820,27 +820,27 @@
     },
     "dsa-py:5:0": {
       "partTitle": "What a cache is and why it needs a limit",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:5:1": {
       "partTitle": "Two structures, two jobs",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:5:2": {
       "partTitle": "Building get and put",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:5:3": {
       "partTitle": "The OrderedDict shortcut",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:5:4": {
       "partTitle": "Testing your cache like an engineer",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:5:5": {
       "partTitle": "Measuring a cache: hit rate",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:6:0": {
       "partTitle": "A queue: first in, first out",
