@@ -4612,27 +4612,27 @@
     },
     "nlp-py:13:0": {
       "partTitle": "Why order and memory matter",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:13:1": {
       "partTitle": "The RNN update",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:13:2": {
       "partTitle": "Running an RNN over a sequence",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:13:3": {
       "partTitle": "Vanishing and exploding gradients",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:13:4": {
       "partTitle": "Gradient clipping and what comes next",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:13:5": {
       "partTitle": "Practice time: RNN steps and gradients",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:14:0": {
       "partTitle": "Gates: learned valves",
