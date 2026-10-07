@@ -1156,27 +1156,27 @@
     },
     "dsa-py:19:0": {
       "partTitle": "A tree of letters",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:19:1": {
       "partTitle": "insert, search and starts_with",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:19:2": {
       "partTitle": "Listing words with a prefix",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:19:3": {
       "partTitle": "Counting words and prefixes",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:19:4": {
       "partTitle": "Tries versus sets and sorted lists",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:19:5": {
       "partTitle": "A word-search game with a trie",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:20:0": {
       "partTitle": "Graphs and how to store them",
