@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "GROUP BY: one summary per group",
+      "codeHash": "5d8d0ab0664433bd8cf9d46e04728dfadeb8361e52e35a7d8ad07349b7f57fa2",
+      "spec": {
+        "template": "table",
+        "title": "GROUP BY category product counts and stock units",
+        "columns": [
+          "category",
+          "products",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managers usually want answers per group like products per category.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "650"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The query splits items into groups counting each group separately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "650"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "85"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bags"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "GROUP BY category product counts and stock units",
+        "columns": [
+          "category",
+          "products",
+          "units"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managers usually want answers per group like products per category.",
+            "rows": [
+              {
+                "cells": [
+                  "stationery",
+                  "3",
+                  "650"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The query splits items into groups counting each group separately.",
+            "rows": [
+              {
+                "cells": [
+                  "stationery",
+                  "3",
+                  "650"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "electronics",
+                  "2",
+                  "85"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bags",
+                  "1",
+                  "15"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The grouping rule",
+      "codeHash": "894f16da4fb6b113a82cf6ab614ac83f8646f1101f6452dc7f69fb1372d7c830",
+      "spec": {
+        "template": "compare",
+        "title": "Unaggregated column in SELECT versus valid GROUP BY",
+        "leftLabel": "Invalid SELECT",
+        "rightLabel": "Valid Aggregated Query",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Giving one name would be guessing and databases do not guess values.",
+            "left": {
+              "code": "SELECT category, name",
+              "result": {
+                "text": "error: ambiguous name"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SELECT category, count(*)",
+              "result": {
+                "text": "deterministic count"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Every column must appear in GROUP BY or be used in an aggregate function.",
+            "left": {
+              "code": "unaggregated name",
+              "result": {
+                "text": "fails validation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "min(name) AS first_item",
+              "result": {
+                "text": "Notebook"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unaggregated column in SELECT versus valid GROUP BY",
+        "leftLabel": "Invalid SELECT",
+        "rightLabel": "Valid Aggregated Query",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Giving one name would be guessing and databases do not guess values.",
+            "left": {
+              "code": "SELECT category, name",
+              "result": "error: ambiguous name",
+              "tone": "error",
+              "checks": [
+                "error: ambiguous name"
+              ]
+            },
+            "right": {
+              "code": "SELECT category, count(*)",
+              "result": "deterministic count",
+              "tone": "ok",
+              "checks": [
+                "deterministic count"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Every column must appear in GROUP BY or be used in an aggregate function.",
+            "left": {
+              "code": "unaggregated name",
+              "result": "fails validation",
+              "tone": "error",
+              "checks": [
+                "fails validation"
+              ]
+            },
+            "right": {
+              "code": "min(name) AS first_item",
+              "result": "Notebook",
+              "tone": "ok",
+              "checks": [
+                "Notebook"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grouping by more than one column, and by calculations",
+      "codeHash": "661b4e68ebf9d6b78f7b455de1fc1de27bb78b717021b751c0b38e401b746cec",
+      "spec": {
+        "template": "table",
+        "title": "Multi-column grouping by city and status",
+        "columns": [
+          "city",
+          "status",
+          "orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "You can group by several columns making one group for each combination.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Add an order clause so groups come out in a sensible order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Mumbai"
+                  },
+                  {
+                    "text": "pending"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "delivered"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pune"
+                  },
+                  {
+                    "text": "shipped"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-column grouping by city and status",
+        "columns": [
+          "city",
+          "status",
+          "orders"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "You can group by several columns making one group for each combination.",
+            "rows": [
+              {
+                "cells": [
+                  "Mumbai",
+                  "delivered",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Add an order clause so groups come out in a sensible order.",
+            "rows": [
+              {
+                "cells": [
+                  "Mumbai",
+                  "delivered",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Mumbai",
+                  "pending",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Pune",
+                  "delivered",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Pune",
+                  "shipped",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HAVING: filtering groups",
+      "codeHash": "878e58bff3c00632ccc7475b660171bd62875a1373e3fc4f1c033c6dcc46cfc6",
+      "spec": {
+        "template": "none",
+        "reason": "Post-aggregation group filtering with HAVING conditions."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Post-aggregation group filtering with HAVING conditions."
+      }
+    },
+    {
+      "partTitle": "Common grouping mistakes",
+      "codeHash": "eb830e5f04eb16e46c7b7a5927e84257dd603f99c0fed50326516115ca1939c8",
+      "spec": {
+        "template": "none",
+        "reason": "Common grouping failure modes, premature WHERE filters, and NULL grouping."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Common grouping failure modes, premature WHERE filters, and NULL grouping."
+      }
+    },
+    {
+      "partTitle": "Putting it together: a category report",
+      "codeHash": "68f1da2b12ef36c46446599fe51288ea018620d529594284c6550b2859054611",
+      "spec": {
+        "template": "table",
+        "title": "Category report with HAVING filter",
+        "columns": [
+          "category",
+          "products",
+          "total_stock",
+          "avg_price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write the category report a shop manager would ask for.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "650"
+                  },
+                  {
+                    "text": "73.33"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The HAVING clause keeps categories with more than one product.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stationery"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "650"
+                  },
+                  {
+                    "text": "73.33"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "electronics"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "85"
+                  },
+                  {
+                    "text": "899.00"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Category report with HAVING filter",
+        "columns": [
+          "category",
+          "products",
+          "total_stock",
+          "avg_price"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Let us write the category report a shop manager would ask for.",
+            "rows": [
+              {
+                "cells": [
+                  "stationery",
+                  "3",
+                  "650",
+                  "73.33"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The HAVING clause keeps categories with more than one product.",
+            "rows": [
+              {
+                "cells": [
+                  "stationery",
+                  "3",
+                  "650",
+                  "73.33"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "electronics",
+                  "2",
+                  "85",
+                  "899.00"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

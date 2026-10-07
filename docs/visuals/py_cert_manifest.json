@@ -1636,27 +1636,27 @@
     },
     "sql-mastery:9:0": {
       "partTitle": "GROUP BY: one summary per group",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:9:1": {
       "partTitle": "The grouping rule",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:9:2": {
       "partTitle": "Grouping by more than one column, and by calculations",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:9:3": {
       "partTitle": "HAVING: filtering groups",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:9:4": {
       "partTitle": "Common grouping mistakes",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:9:5": {
       "partTitle": "Putting it together: a category report",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:10:0": {
       "partTitle": "Why data is split into several tables",
