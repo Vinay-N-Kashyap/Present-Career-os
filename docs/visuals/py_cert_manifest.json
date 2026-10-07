@@ -2332,27 +2332,27 @@
     },
     "ai-py:8:0": {
       "partTitle": "Why brute force stops scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:8:1": {
       "partTitle": "Search with metadata filters",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:8:2": {
       "partTitle": "Selecting the top k",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:8:3": {
       "partTitle": "IVF: search only the nearby buckets",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:8:4": {
       "partTitle": "HNSW: a graph you can walk",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:8:5": {
       "partTitle": "Measuring recall",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:9:0": {
       "partTitle": "Why documents are cut into chunks",

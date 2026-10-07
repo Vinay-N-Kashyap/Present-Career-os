@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why brute force stops scaling",
+      "codeHash": "2adde10e3bf324a282aa233452f0bdac8b3dbd2f7135b05f3d79be4a8cdf4c63",
+      "spec": {
+        "template": "bars",
+        "title": "Search compute scaling across database sizes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Brute force search multiplies every document vector causing operations to scale.",
+            "bars": [
+              {
+                "label": "thousand_docs",
+                "value": {
+                  "text": "15"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "million_docs",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Approximate neighbour search provides speedups for large scale retrieval.",
+            "bars": [
+              {
+                "label": "brute_force_time",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "approximate_time",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Search compute scaling across database sizes",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Brute force search multiplies every document vector causing operations to scale.",
+            "bars": [
+              {
+                "label": "thousand_docs",
+                "value": 15,
+                "tone": "ok"
+              },
+              {
+                "label": "million_docs",
+                "value": 1500,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Approximate neighbour search provides speedups for large scale retrieval.",
+            "bars": [
+              {
+                "label": "brute_force_time",
+                "value": 100,
+                "tone": "error"
+              },
+              {
+                "label": "approximate_time",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Search with metadata filters",
+      "codeHash": "198755678389d2709c3c61fa183edaa1bc51c207f03146026ca14c7aedc61f47",
+      "spec": {
+        "template": "table",
+        "title": "Metadata filtering applied prior to cosine ranking",
+        "columns": [
+          "document_id",
+          "metadata_filter",
+          "cosine_score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector indexing associates documents with searchable metadata attributes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "refund-en"
+                  },
+                  {
+                    "text": "lang: en"
+                  },
+                  {
+                    "text": "0.9000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "refund-hi"
+                  },
+                  {
+                    "text": "lang: hi"
+                  },
+                  {
+                    "text": "0.8800"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering by metadata keys removes non-matching documents before ranking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "refund-en"
+                  },
+                  {
+                    "text": "lang: en"
+                  },
+                  {
+                    "text": "0.9000"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shipping-en"
+                  },
+                  {
+                    "text": "lang: en"
+                  },
+                  {
+                    "text": "0.2000"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Metadata filtering applied prior to cosine ranking",
+        "columns": [
+          "document_id",
+          "metadata_filter",
+          "cosine_score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector indexing associates documents with searchable metadata attributes.",
+            "rows": [
+              {
+                "cells": [
+                  "refund-en",
+                  "lang: en",
+                  "0.9000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "refund-hi",
+                  "lang: hi",
+                  "0.8800"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering by metadata keys removes non-matching documents before ranking.",
+            "rows": [
+              {
+                "cells": [
+                  "refund-en",
+                  "lang: en",
+                  "0.9000"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shipping-en",
+                  "lang: en",
+                  "0.2000"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Selecting the top k",
+      "codeHash": "8e02e325405d84f4fca9ffe805dcbafeffc56c834f6f993e2b807a4785e7fd2d",
+      "spec": {
+        "template": "table",
+        "title": "Top k selection extracting highest similarity items",
+        "columns": [
+          "item_id",
+          "similarity_score",
+          "selection_status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Selecting top candidates preserves items with highest similarity score.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "b"
+                  },
+                  {
+                    "text": "0.93"
+                  },
+                  {
+                    "text": "top rank"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d"
+                  },
+                  {
+                    "text": "0.93"
+                  },
+                  {
+                    "text": "top rank"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scanning lists preserves caller input while extracting the highest scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "b"
+                  },
+                  {
+                    "text": "0.93"
+                  },
+                  {
+                    "text": "top rank"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d"
+                  },
+                  {
+                    "text": "0.93"
+                  },
+                  {
+                    "text": "top rank"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "0.78"
+                  },
+                  {
+                    "text": "unselected"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top k selection extracting highest similarity items",
+        "columns": [
+          "item_id",
+          "similarity_score",
+          "selection_status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Selecting top candidates preserves items with highest similarity score.",
+            "rows": [
+              {
+                "cells": [
+                  "b",
+                  "0.93",
+                  "top rank"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "d",
+                  "0.93",
+                  "top rank"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scanning lists preserves caller input while extracting the highest scores.",
+            "rows": [
+              {
+                "cells": [
+                  "b",
+                  "0.93",
+                  "top rank"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "d",
+                  "0.93",
+                  "top rank"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "c",
+                  "0.78",
+                  "unselected"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IVF: search only the nearby buckets",
+      "codeHash": "739311b0be70a6adea8465a895c7ae7557c5e3bd77adb9a511380f4ca2e5130a",
+      "spec": {
+        "template": "none",
+        "reason": "Centroid cluster assignment and inverted file partitioned search mechanics."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Centroid cluster assignment and inverted file partitioned search mechanics."
+      }
+    },
+    {
+      "partTitle": "HNSW: a graph you can walk",
+      "codeHash": "16c34230a387ef3f0c9fc3c65bd82dd960200ba4557f42268e22c87db0ad7131",
+      "spec": {
+        "template": "compare",
+        "title": "Linear document search versus HNSW graph traversal",
+        "leftLabel": "Linear Scan",
+        "rightLabel": "HNSW Graph Walk",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HNSW links each vector to nearest neighbours forming a navigable graph.",
+            "left": {
+              "code": "compare every node",
+              "result": {
+                "text": "full comparison"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "navigate neighbor links",
+              "result": {
+                "text": "graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Greedy walks repeatedly step towards closer neighbours until convergence.",
+            "left": {
+              "code": "random search",
+              "result": {
+                "text": "unfocused evaluation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "path: A -> B -> C",
+              "result": {
+                "text": "fast local convergence"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Linear document search versus HNSW graph traversal",
+        "leftLabel": "Linear Scan",
+        "rightLabel": "HNSW Graph Walk",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HNSW links each vector to nearest neighbours forming a navigable graph.",
+            "left": {
+              "code": "compare every node",
+              "result": "full comparison",
+              "tone": "data",
+              "checks": [
+                "full comparison"
+              ]
+            },
+            "right": {
+              "code": "navigate neighbor links",
+              "result": "graph traversal",
+              "tone": "ok",
+              "checks": [
+                "graph traversal"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Greedy walks repeatedly step towards closer neighbours until convergence.",
+            "left": {
+              "code": "random search",
+              "result": "unfocused evaluation",
+              "tone": "error",
+              "checks": [
+                "unfocused evaluation"
+              ]
+            },
+            "right": {
+              "code": "path: A -> B -> C",
+              "result": "fast local convergence",
+              "tone": "ok",
+              "checks": [
+                "fast local convergence"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring recall",
+      "codeHash": "3754190dd46bde5a9bb05a140e9a3962bef96e502416d1fa3b2d9e9b4736de30",
+      "spec": {
+        "template": "none",
+        "reason": "Recall metric evaluation comparing approximate results against brute force baseline."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Recall metric evaluation comparing approximate results against brute force baseline."
+      }
+    }
+  ]
+}
