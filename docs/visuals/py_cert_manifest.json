@@ -964,27 +964,27 @@
     },
     "dsa-py:11:0": {
       "partTitle": "A function that calls itself",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:11:1": {
       "partTitle": "The call stack",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:11:2": {
       "partTitle": "Recursion on lists and repeated work",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:11:3": {
       "partTitle": "Backtracking: choose, explore, un-choose",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:11:4": {
       "partTitle": "Permutations: every possible order",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:11:5": {
       "partTitle": "Pruning: stopping early",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:12:0": {
       "partTitle": "Divide and conquer",
