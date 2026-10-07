@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 13,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What an f-string is",
+      "codeHash": "3cf49e8079e5a4b69a05961d4447fcd663a99a1a6d2f3c8b7d0cf6cfd613ae74",
+      "spec": {
+        "template": "boxes",
+        "title": "Interpolating with f-strings",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Put the letter f just before the opening quote.",
+            "values": {
+              "item": {
+                "var": "item",
+                "line": 1
+              },
+              "amount": {
+                "text": "20"
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Python replaces curly brackets with the variable value.",
+            "values": {
+              "item": {
+                "var": "item",
+                "line": 2
+              },
+              "amount": {
+                "var": "amount",
+                "line": 2
+              }
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Interpolating with f-strings",
+        "boxes": [
+          {
+            "id": "item",
+            "label": "item"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Put the letter f just before the opening quote.",
+            "values": {
+              "item": "'Tea'",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Python replaces curly brackets with the variable value.",
+            "values": {
+              "item": "'Tea'",
+              "amount": "20"
+            },
+            "tones": {
+              "item": "data",
+              "amount": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expressions inside the brackets",
+      "codeHash": "6ae6ffdc89154348dd8b9c70632f05d2ad5076143c496a6a801758c7e9b4b5ab",
+      "spec": {
+        "template": "boxes",
+        "title": "Evaluating expressions in f-strings",
+        "boxes": [
+          {
+            "id": "price",
+            "label": "price"
+          },
+          {
+            "id": "quantity",
+            "label": "quantity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Any expression works inside the curly brackets.",
+            "values": {
+              "price": {
+                "var": "price",
+                "line": 1
+              },
+              "quantity": {
+                "var": "quantity",
+                "line": 2
+              }
+            },
+            "tones": {
+              "price": "data",
+              "quantity": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Keep the expressions short for readable text.",
+            "values": {
+              "price": {
+                "var": "price",
+                "line": 5
+              },
+              "quantity": {
+                "var": "quantity",
+                "line": 5
+              }
+            },
+            "tones": {
+              "price": "data",
+              "quantity": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Evaluating expressions in f-strings",
+        "boxes": [
+          {
+            "id": "price",
+            "label": "price"
+          },
+          {
+            "id": "quantity",
+            "label": "quantity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Any expression works inside the curly brackets.",
+            "values": {
+              "price": "20",
+              "quantity": "3"
+            },
+            "tones": {
+              "price": "data",
+              "quantity": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Keep the expressions short for readable text.",
+            "values": {
+              "price": "20",
+              "quantity": "3"
+            },
+            "tones": {
+              "price": "data",
+              "quantity": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Formatting numbers: decimals and commas",
+      "codeHash": "1afe8725e68bb97c6230a8243dd31355faa681d8be609fe5ee2234d0fbfba16b",
+      "spec": {
+        "template": "boxes",
+        "title": "Formatting numeric display",
+        "boxes": [
+          {
+            "id": "amount",
+            "label": "amount"
+          },
+          {
+            "id": "salary",
+            "label": "salary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Add a colon and a format after the value.",
+            "values": {
+              "amount": {
+                "var": "amount",
+                "line": 1
+              },
+              "salary": {
+                "text": "1250000"
+              }
+            },
+            "tones": {
+              "amount": "data",
+              "salary": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Format codes add commas as thousands separators.",
+            "values": {
+              "amount": {
+                "var": "amount",
+                "line": 4
+              },
+              "salary": {
+                "var": "salary",
+                "line": 4
+              }
+            },
+            "tones": {
+              "amount": "data",
+              "salary": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Formatting numeric display",
+        "boxes": [
+          {
+            "id": "amount",
+            "label": "amount"
+          },
+          {
+            "id": "salary",
+            "label": "salary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Add a colon and a format after the value.",
+            "values": {
+              "amount": "99.5",
+              "salary": "1250000"
+            },
+            "tones": {
+              "amount": "data",
+              "salary": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Format codes add commas as thousands separators.",
+            "values": {
+              "amount": "99.5",
+              "salary": "1250000"
+            },
+            "tones": {
+              "amount": "data",
+              "salary": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lining up columns",
+      "codeHash": "85839250a8aba1757bd3daf2e5a81f462f83e1437cb2d6dd2aef4f99dd581d78",
+      "spec": {
+        "template": "none",
+        "reason": "Width alignment specifiers are visually inspected via mono-spaced terminal output."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Multi-line text and join",
+      "codeHash": "5f038a4ba28ade6ba9f5437545dc56053ba5148f8f2ad0870841f81e7fa09d03",
+      "spec": {
+        "template": "none",
+        "reason": "String join operations with newline separators are clearly visible in printed text."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: a printed receipt",
+      "codeHash": "0078945c74dad9b9e5c45b7ef15bdf264977c0b3db2b97b9f2b400953397b84d",
+      "spec": {
+        "template": "none",
+        "reason": "Receipt layout formats combine width and decimal specifiers already demonstrated."
+      },
+      "filled": {}
+    }
+  ]
+}

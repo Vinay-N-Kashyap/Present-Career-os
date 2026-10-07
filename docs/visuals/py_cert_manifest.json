@@ -292,27 +292,27 @@
     },
     "python:13:0": {
       "partTitle": "What an f-string is",
-      "status": "todo"
+      "status": "passed"
     },
     "python:13:1": {
       "partTitle": "Expressions inside the brackets",
-      "status": "todo"
+      "status": "passed"
     },
     "python:13:2": {
       "partTitle": "Formatting numbers: decimals and commas",
-      "status": "todo"
+      "status": "passed"
     },
     "python:13:3": {
       "partTitle": "Lining up columns",
-      "status": "todo"
+      "status": "none"
     },
     "python:13:4": {
       "partTitle": "Multi-line text and join",
-      "status": "todo"
+      "status": "none"
     },
     "python:13:5": {
       "partTitle": "Putting it together: a printed receipt",
-      "status": "todo"
+      "status": "none"
     },
     "python:14:0": {
       "partTitle": "Reading an error message",
