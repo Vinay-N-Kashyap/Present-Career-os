@@ -2308,27 +2308,27 @@
     },
     "ai-py:7:0": {
       "partTitle": "Meaning as a list of numbers",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:7:1": {
       "partTitle": "Vector length",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:7:2": {
       "partTitle": "Cosine similarity",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:7:3": {
       "partTitle": "Ranking documents by meaning",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:7:4": {
       "partTitle": "Normalising vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:7:5": {
       "partTitle": "Embeddings in practice",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:8:0": {
       "partTitle": "Why brute force stops scaling",
