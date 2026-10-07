@@ -2860,27 +2860,27 @@
     },
     "ai-py:30:0": {
       "partTitle": "The platform flow",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:30:1": {
       "partTitle": "The run_ai_platform function",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:30:2": {
       "partTitle": "Wrapping services with tracing",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:30:3": {
       "partTitle": "Testing every path",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:30:4": {
       "partTitle": "Certification audit",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:30:5": {
       "partTitle": "Your AI engineering checklist",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:1:0": {
       "partTitle": "Many machines acting as one",
