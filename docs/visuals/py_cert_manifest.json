@@ -604,27 +604,27 @@
     },
     "python:26:0": {
       "partTitle": "What a web API is",
-      "status": "todo"
+      "status": "passed"
     },
     "python:26:1": {
       "partTitle": "URLs, parameters and status codes",
-      "status": "todo"
+      "status": "passed"
     },
     "python:26:2": {
       "partTitle": "Calling an API with requests",
-      "status": "todo"
+      "status": "none"
     },
     "python:26:3": {
       "partTitle": "Reading nested JSON safely",
-      "status": "todo"
+      "status": "passed"
     },
     "python:26:4": {
       "partTitle": "API keys and handling failures",
-      "status": "todo"
+      "status": "none"
     },
     "python:26:5": {
       "partTitle": "Putting it together: expenses in another currency",
-      "status": "todo"
+      "status": "none"
     },
     "python:27:0": {
       "partTitle": "From a terminal menu to a web API",
