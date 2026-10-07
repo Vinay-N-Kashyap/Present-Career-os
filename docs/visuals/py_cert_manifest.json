@@ -436,27 +436,27 @@
     },
     "python:19:0": {
       "partTitle": "Making objects print nicely with __str__",
-      "status": "todo"
+      "status": "passed"
     },
     "python:19:1": {
       "partTitle": "Inheritance: building on an existing class",
-      "status": "todo"
+      "status": "passed"
     },
     "python:19:2": {
       "partTitle": "Overriding methods",
-      "status": "todo"
+      "status": "none"
     },
     "python:19:3": {
       "partTitle": "super(): reusing the parent's work",
-      "status": "todo"
+      "status": "passed"
     },
     "python:19:4": {
       "partTitle": "When to use classes and inheritance",
-      "status": "todo"
+      "status": "none"
     },
     "python:19:5": {
       "partTitle": "Putting it together: expenses and subscriptions",
-      "status": "todo"
+      "status": "none"
     },
     "python:20:0": {
       "partTitle": "Installing Python and VS Code",
