@@ -4564,27 +4564,27 @@
     },
     "nlp-py:11:0": {
       "partTitle": "What named entity recognition does",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:11:1": {
       "partTitle": "The BIO scheme",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:11:2": {
       "partTitle": "Valid and invalid tag sequences",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:11:3": {
       "partTitle": "From tags back to entities",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:11:4": {
       "partTitle": "Evaluating NER",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:11:5": {
       "partTitle": "Practice time: validate and extract",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:12:0": {
       "partTitle": "Text classification",
