@@ -4228,27 +4228,27 @@
     },
     "cloud-py:27:0": {
       "partTitle": "Threats at the front door",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:27:1": {
       "partTitle": "AWS WAF web ACLs",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:27:2": {
       "partTitle": "Rate-based rules",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:27:3": {
       "partTitle": "IP sets and CIDR validation",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:27:4": {
       "partTitle": "DDoS and AWS Shield",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:27:5": {
       "partTitle": "Practice time: inspect and validate",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:28:0": {
       "partTitle": "FinOps: engineering meets finance",
