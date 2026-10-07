@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Trees: nodes with children",
+      "codeHash": "df88561d1cc26c673cdda2e2b53a1b595e19f81e6b30eb2a76fc8513ef7a1ff3",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Binary tree structure with root and children",
+        "nodes": [
+          {
+            "id": "1",
+            "label": "1 (root)"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          },
+          {
+            "id": "3",
+            "label": "3"
+          },
+          {
+            "id": "4",
+            "label": "4 (leaf)"
+          },
+          {
+            "id": "5",
+            "label": "5 (leaf)"
+          }
+        ],
+        "edges": [
+          {
+            "from": "1",
+            "to": "2",
+            "label": "left"
+          },
+          {
+            "from": "1",
+            "to": "3",
+            "label": "right"
+          },
+          {
+            "from": "2",
+            "to": "4",
+            "label": "left"
+          },
+          {
+            "from": "2",
+            "to": "5",
+            "label": "right"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The top node acts as the root while nodes without children are leaves.",
+            "highlightNodes": [
+              "1",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A binary tree node references at most two children named left and right.",
+            "highlightNodes": [
+              "1",
+              "2",
+              "3"
+            ],
+            "highlightEdges": [
+              "1->2",
+              "1->3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Binary tree structure with root and children",
+        "nodes": [
+          {
+            "id": "1",
+            "label": "1 (root)"
+          },
+          {
+            "id": "2",
+            "label": "2"
+          },
+          {
+            "id": "3",
+            "label": "3"
+          },
+          {
+            "id": "4",
+            "label": "4 (leaf)"
+          },
+          {
+            "id": "5",
+            "label": "5 (leaf)"
+          }
+        ],
+        "edges": [
+          {
+            "from": "1",
+            "to": "2",
+            "label": "left"
+          },
+          {
+            "from": "1",
+            "to": "3",
+            "label": "right"
+          },
+          {
+            "from": "2",
+            "to": "4",
+            "label": "left"
+          },
+          {
+            "from": "2",
+            "to": "5",
+            "label": "right"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The top node acts as the root while nodes without children are leaves."
+          },
+          {
+            "at": "say2",
+            "caption": "A binary tree node references at most two children named left and right."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Depth-first walks: preorder, inorder, postorder",
+      "codeHash": "2bd6cb4e282d2c8bbe48e662e66e802687bf9aeb8182788787849c066115b15a",
+      "spec": {
+        "template": "table",
+        "title": "Depth-first tree traversal orders",
+        "columns": [
+          "Traversal",
+          "Visit Order",
+          "Common Use Case"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preorder visits the node before walking left and right subtrees.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Preorder"
+                  },
+                  {
+                    "text": "node -> left -> right"
+                  },
+                  {
+                    "text": "copy tree or print folder"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Inorder visits the left subtree before the node and then right.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Preorder"
+                  },
+                  {
+                    "text": "node -> left -> right"
+                  },
+                  {
+                    "text": "copy tree or print folder"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Inorder"
+                  },
+                  {
+                    "text": "left -> node -> right"
+                  },
+                  {
+                    "text": "sorted order in BST"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Depth-first tree traversal orders",
+        "columns": [
+          "Traversal",
+          "Visit Order",
+          "Common Use Case"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preorder visits the node before walking left and right subtrees.",
+            "rows": [
+              {
+                "cells": [
+                  "Preorder",
+                  "node -> left -> right",
+                  "copy tree or print folder"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Inorder visits the left subtree before the node and then right.",
+            "rows": [
+              {
+                "cells": [
+                  "Preorder",
+                  "node -> left -> right",
+                  "copy tree or print folder"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Inorder",
+                  "left -> node -> right",
+                  "sorted order in BST"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Level order with a queue",
+      "codeHash": "0831de7788ae183299480077ba853565893b5264a31daa758f35f10862ac81ca",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Level order traversal with queue deque",
+        "kind": "queue",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "BFS initializes a queue deque with root node to process levels.",
+            "items": [
+              {
+                "text": "root (1)"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Taking queue length separates current level nodes before pushing children.",
+            "items": [
+              {
+                "text": "child (2)"
+              },
+              {
+                "text": "child (3)"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Level order traversal with queue deque",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "BFS initializes a queue deque with root node to process levels.",
+            "mode": "stack",
+            "items": [
+              "root (1)"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Taking queue length separates current level nodes before pushing children.",
+            "mode": "stack",
+            "items": [
+              "child (2)",
+              "child (3)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum depth",
+      "codeHash": "29979b99098f9dd49f2259442855d58ca40841e240ff6957c40c4bc18c9e1eba",
+      "spec": {
+        "template": "none",
+        "reason": "Recursive depth calculation combining subtree heights."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Recursive depth calculation combining subtree heights."
+      }
+    },
+    {
+      "partTitle": "Walking a tree with your own stack",
+      "codeHash": "d2b96363ad0facb9f685bdce9644db3fe9c859fadd60ce088703b6cfd341e610",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Iterative tree traversal using an explicit stack",
+        "kind": "stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push right child before left child onto the stack during traversal.",
+            "items": [
+              {
+                "text": "right child (3)"
+              },
+              {
+                "text": "left child (2)"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping queue for stack changes traversal from breadth-first to depth-first.",
+            "items": [
+              {
+                "text": "visiting node (2)"
+              },
+              {
+                "text": "remaining (3)"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Iterative tree traversal using an explicit stack",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Push right child before left child onto the stack during traversal.",
+            "mode": "stack",
+            "items": [
+              "right child (3)",
+              "left child (2)"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swapping queue for stack changes traversal from breadth-first to depth-first.",
+            "mode": "stack",
+            "items": [
+              "visiting node (2)",
+              "remaining (3)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trees from lists and tree problems in general",
+      "codeHash": "504721a886a0f49e6c5db964fab528809bd9e1eea8d7b8cfbc9b8686c8962b7f",
+      "spec": {
+        "template": "none",
+        "reason": "Tree construction from serialized array and general recursion shapes."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Tree construction from serialized array and general recursion shapes."
+      }
+    }
+  ]
+}

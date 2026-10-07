@@ -1084,27 +1084,27 @@
     },
     "dsa-py:16:0": {
       "partTitle": "Trees: nodes with children",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:16:1": {
       "partTitle": "Depth-first walks: preorder, inorder, postorder",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:16:2": {
       "partTitle": "Level order with a queue",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:16:3": {
       "partTitle": "Maximum depth",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:16:4": {
       "partTitle": "Walking a tree with your own stack",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:16:5": {
       "partTitle": "Trees from lists and tree problems in general",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:17:0": {
       "partTitle": "The binary search tree rule",
