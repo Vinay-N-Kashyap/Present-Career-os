@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "An array: items side by side in memory",
+      "codeHash": "1c0957b9a538155055b52cf2c51b1b9eb6dcbad6ed0e4ed09ad884028bd1330d",
+      "spec": {
+        "template": "cells",
+        "title": "Contiguous array items in memory",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Items sit side by side in contiguous memory.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "20"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "40"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "nums[0]",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reading nums at index two is instant with direct offset arithmetic.",
+            "items": [
+              {
+                "text": "10"
+              },
+              {
+                "text": "20"
+              },
+              {
+                "text": "30"
+              },
+              {
+                "text": "40"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "nums[2]",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Contiguous array items in memory",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Items sit side by side in contiguous memory.",
+            "items": [
+              "10",
+              "20",
+              "30",
+              "40"
+            ],
+            "pointers": [
+              {
+                "name": "nums[0]",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reading nums at index two is instant with direct offset arithmetic.",
+            "items": [
+              "10",
+              "20",
+              "30",
+              "40"
+            ],
+            "pointers": [
+              {
+                "name": "nums[2]",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Growing by doubling",
+      "codeHash": "18ded0fa17d0b6e41bb75d2904aac535e34404799425782c7a1bfaf0ad15c037",
+      "spec": {
+        "template": "table",
+        "title": "Capacity growth by doubling",
+        "columns": [
+          "Appends",
+          "Capacity",
+          "Work cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Capacity grows by doubling multiple when full.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1 to 2"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2 copies"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3 to 4"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "4 copies"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Most appends find free space and cost constant work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1 to 2"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2 copies"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3 to 4"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "4 copies"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5 to 8"
+                  },
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "8 copies"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capacity growth by doubling",
+        "columns": [
+          "Appends",
+          "Capacity",
+          "Work cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Capacity grows by doubling multiple when full.",
+            "rows": [
+              {
+                "cells": [
+                  "1 to 2",
+                  "2",
+                  "2 copies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 to 4",
+                  "4",
+                  "4 copies"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Most appends find free space and cost constant work.",
+            "rows": [
+              {
+                "cells": [
+                  "1 to 2",
+                  "2",
+                  "2 copies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "3 to 4",
+                  "4",
+                  "4 copies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "5 to 8",
+                  "8",
+                  "8 copies"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amortized O(1): the average cost",
+      "codeHash": "56a2f46843b012d5d993f95d868caeeb806e2c61b67402514c0615e5fb1bc3b2",
+      "spec": {
+        "template": "none",
+        "reason": "Mathematical proof of amortized doubling cost over N operations."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Mathematical proof of amortized doubling cost over N operations."
+      }
+    },
+    {
+      "partTitle": "Changing a list in place with a write pointer",
+      "codeHash": "1e74ab0ec5fed46ccc9f76c13037a5394781b17b5b8c8ccb062b818f45291f6b",
+      "spec": {
+        "template": "cells",
+        "title": "Write pointer duplicate removal in place",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read position walks over items while write position marks kept place.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "read",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "write",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "First write items are kept in same order.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Write pointer duplicate removal in place",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Read position walks over items while write position marks kept place.",
+            "items": [
+              "1",
+              "1",
+              "2",
+              "3",
+              "3",
+              "3",
+              "4"
+            ],
+            "pointers": [
+              {
+                "name": "read",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "write",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "First write items are kept in same order.",
+            "items": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "3",
+              "3",
+              "4"
+            ],
+            "pointers": [
+              {
+                "name": "write",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "List operations and their costs",
+      "codeHash": "136774cb7f7d7ac4df215290e787de928d0e6618e587f034c955f3e199aeffc0",
+      "spec": {
+        "template": "table",
+        "title": "List operations and costs",
+        "columns": [
+          "Operation",
+          "Cost",
+          "Reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Index access and append pop from end cost constant work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nums[i]"
+                  },
+                  {
+                    "text": "O(1)"
+                  },
+                  {
+                    "text": "direct index"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "append(x)"
+                  },
+                  {
+                    "text": "amortized O(1)"
+                  },
+                  {
+                    "text": "free space"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Insert at front and remove shift items taking linear work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nums[i]"
+                  },
+                  {
+                    "text": "O(1)"
+                  },
+                  {
+                    "text": "direct index"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "append(x)"
+                  },
+                  {
+                    "text": "amortized O(1)"
+                  },
+                  {
+                    "text": "free space"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "insert(0, x)"
+                  },
+                  {
+                    "text": "O(N)"
+                  },
+                  {
+                    "text": "shift elements"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pop(0)"
+                  },
+                  {
+                    "text": "O(N)"
+                  },
+                  {
+                    "text": "shift elements"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "List operations and costs",
+        "columns": [
+          "Operation",
+          "Cost",
+          "Reason"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Index access and append pop from end cost constant work.",
+            "rows": [
+              {
+                "cells": [
+                  "nums[i]",
+                  "O(1)",
+                  "direct index"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "append(x)",
+                  "amortized O(1)",
+                  "free space"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Insert at front and remove shift items taking linear work.",
+            "rows": [
+              {
+                "cells": [
+                  "nums[i]",
+                  "O(1)",
+                  "direct index"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "append(x)",
+                  "amortized O(1)",
+                  "free space"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "insert(0, x)",
+                  "O(N)",
+                  "shift elements"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "pop(0)",
+                  "O(N)",
+                  "shift elements"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lists of lists and the copy trap",
+      "codeHash": "578f31d3de29a2b531332ebdea135fb9930d026929b4e4dde5f2f542f1f5477a",
+      "spec": {
+        "template": "none",
+        "reason": "Reference aliasing in nested list multiplication."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Reference aliasing in nested list multiplication."
+      }
+    }
+  ]
+}

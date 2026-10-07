@@ -748,27 +748,27 @@
     },
     "dsa-py:2:0": {
       "partTitle": "An array: items side by side in memory",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:2:1": {
       "partTitle": "Growing by doubling",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:2:2": {
       "partTitle": "Amortized O(1): the average cost",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:2:3": {
       "partTitle": "Changing a list in place with a write pointer",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:2:4": {
       "partTitle": "List operations and their costs",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:2:5": {
       "partTitle": "Lists of lists and the copy trap",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:3:0": {
       "partTitle": "Nodes that point to the next node",
