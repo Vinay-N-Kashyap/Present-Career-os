@@ -4348,27 +4348,27 @@
     },
     "nlp-py:2:0": {
       "partTitle": "Many forms, one meaning",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:2:1": {
       "partTitle": "Stemming with suffix rules",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:2:2": {
       "partTitle": "Parts of speech",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:2:3": {
       "partTitle": "Dictionary lemmatisation",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:2:4": {
       "partTitle": "Choosing between them",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:2:5": {
       "partTitle": "Practice time: stem and lemmatise",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:3:0": {
       "partTitle": "What a language model does",

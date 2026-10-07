@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Many forms, one meaning",
+      "codeHash": "598b312ff39cbd6aefb4cdbc381030f4f56501315deff8367e452436ec3ed0fb",
+      "spec": {
+        "template": "table",
+        "title": "Morphological inflected forms grouped by common base root",
+        "columns": [
+          "tokens",
+          "base"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "English words change form across tenses and comparative variations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search tasks expect different inflected forms to match the same root.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reducing each word to a base form shrinks overall vocabulary size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shoes"
+                  },
+                  {
+                    "text": "shoe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stemming chops off endings while lemmatisation finds dictionary lemmas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "running"
+                  },
+                  {
+                    "text": "run"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shoes"
+                  },
+                  {
+                    "text": "shoe"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Morphological inflected forms grouped by common base root",
+        "columns": [
+          "tokens",
+          "base"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "English words change form across tenses and comparative variations.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "run"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search tasks expect different inflected forms to match the same root.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "run"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "running",
+                  "run"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reducing each word to a base form shrinks overall vocabulary size.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "run"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "running",
+                  "run"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shoes",
+                  "shoe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stemming chops off endings while lemmatisation finds dictionary lemmas.",
+            "rows": [
+              {
+                "cells": [
+                  "runs",
+                  "run"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "running",
+                  "run"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shoes",
+                  "shoe"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "base"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stemming with suffix rules",
+      "codeHash": "20dd7327dd5fa0a232ea08a6159832666e4d5b0e303698c8e14573ddd84ab9d0",
+      "spec": {
+        "template": "table",
+        "title": "Heuristic suffix stripping rules and consonant undoubling logic",
+        "columns": [
+          "word",
+          "suf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A stemmer applies rules to strip suffixes across languages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "studies"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Stems are not always real words when suffixes are stripped.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "studies"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "studi"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stemmers make errors through over-stemming and under-stemming.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "studies"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "studi"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "universal"
+                  },
+                  {
+                    "text": "ly"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The minimum length rule protects short words from excessive truncation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "studies"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "studi"
+                  },
+                  {
+                    "text": "es"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "universal"
+                  },
+                  {
+                    "text": "ly"
+                  }
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "suf"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Heuristic suffix stripping rules and consonant undoubling logic",
+        "columns": [
+          "word",
+          "suf"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A stemmer applies rules to strip suffixes across languages.",
+            "rows": [
+              {
+                "cells": [
+                  "studies",
+                  "es"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Stems are not always real words when suffixes are stripped.",
+            "rows": [
+              {
+                "cells": [
+                  "studies",
+                  "es"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "studi",
+                  "es"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Stemmers make errors through over-stemming and under-stemming.",
+            "rows": [
+              {
+                "cells": [
+                  "studies",
+                  "es"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "studi",
+                  "es"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "universal",
+                  "ly"
+                ],
+                "tone": "crit"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The minimum length rule protects short words from excessive truncation.",
+            "rows": [
+              {
+                "cells": [
+                  "studies",
+                  "es"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "studi",
+                  "es"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "universal",
+                  "ly"
+                ],
+                "tone": "crit"
+              },
+              {
+                "cells": [
+                  "word",
+                  "suf"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parts of speech",
+      "codeHash": "3727d6849eed8a0de32b2ea06d6c2866b9885958b84b60a5d9558a691e05cf6a",
+      "spec": {
+        "template": "table",
+        "title": "Part of speech tags influencing lemma resolution for identical words",
+        "columns": [
+          "word",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The same word can play different roles as a noun or verb.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parts of speech classify grammatical roles such as noun and verb.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Part of speech changes the base form when reducing verbs and adjectives.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "ADJ"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Lemmatisers take the part of speech as input to avoid guessing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "meeting"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "ADJ"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "saw"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Part of speech tags influencing lemma resolution for identical words",
+        "columns": [
+          "word",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The same word can play different roles as a noun or verb.",
+            "rows": [
+              {
+                "cells": [
+                  "meeting",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Parts of speech classify grammatical roles such as noun and verb.",
+            "rows": [
+              {
+                "cells": [
+                  "meeting",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "meeting",
+                  "VERB"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Part of speech changes the base form when reducing verbs and adjectives.",
+            "rows": [
+              {
+                "cells": [
+                  "meeting",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "meeting",
+                  "VERB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "better",
+                  "ADJ"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Lemmatisers take the part of speech as input to avoid guessing.",
+            "rows": [
+              {
+                "cells": [
+                  "meeting",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "meeting",
+                  "VERB"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "better",
+                  "ADJ"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "saw",
+                  "NOUN"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dictionary lemmatisation",
+      "codeHash": "8b8b28f3b99a38091b09ebc009878d4057ee4cd62faf87fe5e710fb8f9a2fe7d",
+      "spec": {
+        "template": "table",
+        "title": "Dictionary lookup mapping irregular inflections to canon lemmas",
+        "columns": [
+          "word",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A lemmatiser uses a dictionary of word forms and regular ending rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cats"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dictionary lookup handles irregular forms like mice becoming mouse.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cats"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mice"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lookup the word and part of speech pair to return the base lemma.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cats"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mice"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "was"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tuple keys allow fast single operation dictionary lookups.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cats"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mice"
+                  },
+                  {
+                    "text": "NOUN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "was"
+                  },
+                  {
+                    "text": "VERB"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "better"
+                  },
+                  {
+                    "text": "ADJ"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dictionary lookup mapping irregular inflections to canon lemmas",
+        "columns": [
+          "word",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A lemmatiser uses a dictionary of word forms and regular ending rules.",
+            "rows": [
+              {
+                "cells": [
+                  "cats",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dictionary lookup handles irregular forms like mice becoming mouse.",
+            "rows": [
+              {
+                "cells": [
+                  "cats",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mice",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lookup the word and part of speech pair to return the base lemma.",
+            "rows": [
+              {
+                "cells": [
+                  "cats",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mice",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "was",
+                  "VERB"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tuple keys allow fast single operation dictionary lookups.",
+            "rows": [
+              {
+                "cells": [
+                  "cats",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mice",
+                  "NOUN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "was",
+                  "VERB"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "better",
+                  "ADJ"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing between them",
+      "codeHash": "3de8f5c8d84b8b8be9ef33d41cf2a69cfc69b8a06080203ef083dff308f1ff89",
+      "spec": {
+        "template": "none",
+        "reason": "Choosing between them."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: stem and lemmatise",
+      "codeHash": "65b5a89e779840a68b8ac7d82f2173d3f279a1719d24e7f15fe65c296608ba81",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: stem and lemmatise."
+      },
+      "filled": {}
+    }
+  ]
+}
