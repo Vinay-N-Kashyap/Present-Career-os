@@ -244,27 +244,27 @@
     },
     "python:11:0": {
       "partTitle": "The shape of real data",
-      "status": "todo"
+      "status": "passed"
     },
     "python:11:1": {
       "partTitle": "Looping over records",
-      "status": "todo"
+      "status": "passed"
     },
     "python:11:2": {
       "partTitle": "Totals and filters with comprehensions",
-      "status": "todo"
+      "status": "none"
     },
     "python:11:3": {
       "partTitle": "Finding one record",
-      "status": "todo"
+      "status": "passed"
     },
     "python:11:4": {
       "partTitle": "Sorting records",
-      "status": "todo"
+      "status": "none"
     },
     "python:11:5": {
       "partTitle": "Putting it together: a monthly report",
-      "status": "todo"
+      "status": "none"
     },
     "python:12:0": {
       "partTitle": "Tuples: fixed groups of values",
