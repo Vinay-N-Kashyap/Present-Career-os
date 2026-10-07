@@ -1180,27 +1180,27 @@
     },
     "dsa-py:20:0": {
       "partTitle": "Graphs and how to store them",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:20:1": {
       "partTitle": "BFS: shortest path in steps",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:20:2": {
       "partTitle": "DFS: going deep",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:20:3": {
       "partTitle": "Counting connected components",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:20:4": {
       "partTitle": "Grids are graphs too",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:20:5": {
       "partTitle": "Choosing BFS or DFS and planning a graph solution",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:21:0": {
       "partTitle": "What an auto-complete engine must do",
