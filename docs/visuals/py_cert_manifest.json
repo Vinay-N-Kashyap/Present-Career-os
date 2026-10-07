@@ -5260,27 +5260,27 @@
     },
     "quant-py:10:0": {
       "partTitle": "Why binary feeds",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:10:1": {
       "partTitle": "Bytes, endianness and struct",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:10:2": {
       "partTitle": "Decoding an Add Order message",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:10:3": {
       "partTitle": "Fixed-point prices",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:10:4": {
       "partTitle": "Rebuilding the book from a feed",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:10:5": {
       "partTitle": "Practice time: decode and convert",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:11:0": {
       "partTitle": "The path of a packet",
