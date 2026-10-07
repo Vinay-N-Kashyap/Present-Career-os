@@ -2692,27 +2692,27 @@
     },
     "ai-py:23:0": {
       "partTitle": "Prompting, RAG or fine-tuning?",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:23:1": {
       "partTitle": "Why full fine-tuning is expensive",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:23:2": {
       "partTitle": "LoRA: small adapters",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:23:3": {
       "partTitle": "Counting LoRA parameters",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:23:4": {
       "partTitle": "Quantisation and QLoRA",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:23:5": {
       "partTitle": "Preparing training data",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:24:0": {
       "partTitle": "From imitation to preference",
