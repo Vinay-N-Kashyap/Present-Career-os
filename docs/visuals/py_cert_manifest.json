@@ -3556,27 +3556,27 @@
     },
     "dist-py:29:0": {
       "partTitle": "When a region fails",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:29:1": {
       "partTitle": "Checking compliance",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:29:2": {
       "partTitle": "The DR strategies",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:29:3": {
       "partTitle": "Active-passive failover",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:29:4": {
       "partTitle": "Active-active challenges",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:29:5": {
       "partTitle": "Drills and reporting",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:30:0": {
       "partTitle": "The trading engine's requirements",

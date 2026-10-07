@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 29,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "When a region fails",
+      "codeHash": "6ce75c8e326f857992bf2b8e4c7e846a6185232037a098d0188ccdc013408ae1",
+      "spec": {
+        "template": "none",
+        "reason": "Regional disaster recovery RPO and RTO objectives overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Checking compliance",
+      "codeHash": "8c476311077f9e5a4219e9ab070f076ed6d232d12edc62377879900eaaf9dbfb",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery compliance auditing service RPO and RTO targets",
+        "columns": [
+          "service",
+          "grade"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compliance checks verify whether actual metrics meet target goals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "TIER_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Report data loss objectives and downtime recovery targets separately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "TIER_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "search"
+                  },
+                  {
+                    "text": "TIER_1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Critical payment services have tighter recovery targets than reports.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "payments"
+                  },
+                  {
+                    "text": "TIER_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "search"
+                  },
+                  {
+                    "text": "TIER_1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "FAILED"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery compliance auditing service RPO and RTO targets",
+        "columns": [
+          "service",
+          "grade"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compliance checks verify whether actual metrics meet target goals.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "TIER_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Report data loss objectives and downtime recovery targets separately.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "TIER_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search",
+                  "TIER_1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Critical payment services have tighter recovery targets than reports.",
+            "rows": [
+              {
+                "cells": [
+                  "payments",
+                  "TIER_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search",
+                  "TIER_1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reports",
+                  "FAILED"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The DR strategies",
+      "codeHash": "2078efe3eef95c4a836ace848cea207355ccbb72d128c71322fdc74a5f18e40d",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery strategy trade-offs across RPO and RTO bounds",
+        "columns": [
+          "name",
+          "rpo",
+          "rto"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backup and restore is cheapest but takes longer to recover after disaster.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "backup and restore"
+                  },
+                  {
+                    "text": "1440"
+                  },
+                  {
+                    "text": "480"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Warm standby maintains scaled down replicas ready to scale up quickly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "backup and restore"
+                  },
+                  {
+                    "text": "1440"
+                  },
+                  {
+                    "text": "480"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pilot light"
+                  },
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "60"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "warm standby"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Select the most cost effective strategy that satisfies service targets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "backup and restore"
+                  },
+                  {
+                    "text": "1440"
+                  },
+                  {
+                    "text": "480"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pilot light"
+                  },
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "60"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "warm standby"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "active-active"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery strategy trade-offs across RPO and RTO bounds",
+        "columns": [
+          "name",
+          "rpo",
+          "rto"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Backup and restore is cheapest but takes longer to recover after disaster.",
+            "rows": [
+              {
+                "cells": [
+                  "backup and restore",
+                  "1440",
+                  "480"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Warm standby maintains scaled down replicas ready to scale up quickly.",
+            "rows": [
+              {
+                "cells": [
+                  "backup and restore",
+                  "1440",
+                  "480"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "pilot light",
+                  "15",
+                  "60"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "warm standby",
+                  "5",
+                  "15"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Select the most cost effective strategy that satisfies service targets.",
+            "rows": [
+              {
+                "cells": [
+                  "backup and restore",
+                  "1440",
+                  "480"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "pilot light",
+                  "15",
+                  "60"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "warm standby",
+                  "5",
+                  "15"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "active-active",
+                  "0",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active-passive failover",
+      "codeHash": "d7b8b4b736708f2bb8321f7c391fc7049bbdcec145c5d3e9aee9c8fc6797618a",
+      "spec": {
+        "template": "table",
+        "title": "Active-passive failover runbook execution steps and safety fences",
+        "columns": [
+          "step",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active passive deployments maintain standby replicas in secondary regions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "detect"
+                  },
+                  {
+                    "text": "alerts show region ap-south-1 unreachable for 5 minutes"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Failover steps promote standby databases and redirect global routing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "detect"
+                  },
+                  {
+                    "text": "alerts show region ap-south-1 unreachable for 5 minutes"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fence"
+                  },
+                  {
+                    "text": "mark old primary as read-only / block its writes"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Fencing prevents split brain before promoting secondary databases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "detect"
+                  },
+                  {
+                    "text": "alerts show region ap-south-1 unreachable for 5 minutes"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fence"
+                  },
+                  {
+                    "text": "mark old primary as read-only / block its writes"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "promote"
+                  },
+                  {
+                    "text": "promote the database replica in ap-southeast-1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Active-passive failover runbook execution steps and safety fences",
+        "columns": [
+          "step",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active passive deployments maintain standby replicas in secondary regions.",
+            "rows": [
+              {
+                "cells": [
+                  "detect",
+                  "alerts show region ap-south-1 unreachable for 5 minutes"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Failover steps promote standby databases and redirect global routing.",
+            "rows": [
+              {
+                "cells": [
+                  "detect",
+                  "alerts show region ap-south-1 unreachable for 5 minutes"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fence",
+                  "mark old primary as read-only / block its writes"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Fencing prevents split brain before promoting secondary databases.",
+            "rows": [
+              {
+                "cells": [
+                  "detect",
+                  "alerts show region ap-south-1 unreachable for 5 minutes"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "fence",
+                  "mark old primary as read-only / block its writes"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "promote",
+                  "promote the database replica in ap-southeast-1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active-active challenges",
+      "codeHash": "3ecc7248997b61a48cde67bf6ec425cb2eee17226b05b29b711e4156c72bb2be",
+      "spec": {
+        "template": "none",
+        "reason": "Active-active multi-region write conflict resolution tradeoffs."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Drills and reporting",
+      "codeHash": "f17d8b3f16ffe47e6ee58f39acdaeb5b46537d1332cd3378c217a3ea59ac109f",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery drill historical outcomes and SLA targets",
+        "columns": [
+          "month",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regular disaster recovery drills validate failover plans under practice.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jan"
+                  },
+                  {
+                    "text": "above target"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Measure actual recovery time and data loss metrics during each exercise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jan"
+                  },
+                  {
+                    "text": "above target"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "above target"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Update operational runbooks after every drill to fix discovered gaps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Jan"
+                  },
+                  {
+                    "text": "above target"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Jul"
+                  },
+                  {
+                    "text": "above target"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Oct"
+                  },
+                  {
+                    "text": "meets target"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery drill historical outcomes and SLA targets",
+        "columns": [
+          "month",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regular disaster recovery drills validate failover plans under practice.",
+            "rows": [
+              {
+                "cells": [
+                  "Jan",
+                  "above target"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Measure actual recovery time and data loss metrics during each exercise.",
+            "rows": [
+              {
+                "cells": [
+                  "Jan",
+                  "above target"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Jul",
+                  "above target"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Update operational runbooks after every drill to fix discovered gaps.",
+            "rows": [
+              {
+                "cells": [
+                  "Jan",
+                  "above target"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Jul",
+                  "above target"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Oct",
+                  "meets target"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
