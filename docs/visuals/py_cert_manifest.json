@@ -4012,27 +4012,27 @@
     },
     "cloud-py:18:0": {
       "partTitle": "Why queues",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:18:1": {
       "partTitle": "Receive, process, delete: the visibility timeout",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:18:2": {
       "partTitle": "Standard and FIFO queues",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:18:3": {
       "partTitle": "FIFO deduplication",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:18:4": {
       "partTitle": "Long polling, batches and scaling consumers",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:18:5": {
       "partTitle": "Practice time: build the queue",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:19:0": {
       "partTitle": "Publish and subscribe",
