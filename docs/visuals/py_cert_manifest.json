@@ -2764,27 +2764,27 @@
     },
     "ai-py:26:0": {
       "partTitle": "Models that see",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:26:1": {
       "partTitle": "Images become patch tokens",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:26:2": {
       "partTitle": "The cost of images",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:26:3": {
       "partTitle": "Keeping the aspect ratio",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:26:4": {
       "partTitle": "Shared embeddings for text and images",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:26:5": {
       "partTitle": "Prompting with images, safely",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:27:0": {
       "partTitle": "Why limits matter",
