@@ -4420,27 +4420,27 @@
     },
     "nlp-py:5:0": {
       "partTitle": "How a search engine works",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:5:1": {
       "partTitle": "The inverted index",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:5:2": {
       "partTitle": "Scoring documents for a query",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:5:3": {
       "partTitle": "Putting the pipeline together",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:5:4": {
       "partTitle": "Evaluating search quality",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:5:5": {
       "partTitle": "Milestone practice: build the engine",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:6:0": {
       "partTitle": "Similarity as geometry",
