@@ -4372,27 +4372,27 @@
     },
     "nlp-py:3:0": {
       "partTitle": "What a language model does",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:3:1": {
       "partTitle": "Maximum likelihood estimates",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:3:2": {
       "partTitle": "The zero problem",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:3:3": {
       "partTitle": "Laplace (add-one) smoothing",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:3:4": {
       "partTitle": "Evaluating with perplexity",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:3:5": {
       "partTitle": "Practice time: smooth and evaluate",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:4:0": {
       "partTitle": "Documents as vectors",
