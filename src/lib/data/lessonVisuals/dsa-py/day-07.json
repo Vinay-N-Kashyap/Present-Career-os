@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Hashing: turning a key into a position",
+      "codeHash": "573408272f417bf88417c2dda71dda56c7e6d0bde1c3772a7baccee78b82a7bd",
+      "spec": {
+        "template": "table",
+        "title": "Hash function bucket mapping",
+        "columns": [
+          "Key",
+          "Hash Value",
+          "Bucket Index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash function turns key into number and assigns bucket.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aarav"
+                  },
+                  {
+                    "text": "12345"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "meera"
+                  },
+                  {
+                    "text": "67890"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Same key always computes same bucket without full search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "aarav"
+                  },
+                  {
+                    "text": "12345"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "meera"
+                  },
+                  {
+                    "text": "67890"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rohan"
+                  },
+                  {
+                    "text": "54321"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hash function bucket mapping",
+        "columns": [
+          "Key",
+          "Hash Value",
+          "Bucket Index"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash function turns key into number and assigns bucket.",
+            "rows": [
+              {
+                "cells": [
+                  "aarav",
+                  "12345",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "meera",
+                  "67890",
+                  "2"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Same key always computes same bucket without full search.",
+            "rows": [
+              {
+                "cells": [
+                  "aarav",
+                  "12345",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "meera",
+                  "67890",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rohan",
+                  "54321",
+                  "1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collisions and chaining",
+      "codeHash": "f9d752dcd75f005edad97702041f1cc94736092c68a8e98dae994a4e8ca96e9c",
+      "spec": {
+        "template": "cells",
+        "title": "Collision chaining across buckets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different keys landing in same bucket produce collision.",
+            "items": [
+              {
+                "text": "b0: empty"
+              },
+              {
+                "text": "b1: [1, 5, 9]"
+              },
+              {
+                "text": "b2: [2]"
+              },
+              {
+                "text": "b3: empty"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "collision",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chaining stores small list of key value pairs per bucket.",
+            "items": [
+              {
+                "text": "b0: empty"
+              },
+              {
+                "text": "b1: [1, 5, 9]"
+              },
+              {
+                "text": "b2: [2]"
+              },
+              {
+                "text": "b3: empty"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "lookup",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Collision chaining across buckets",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different keys landing in same bucket produce collision.",
+            "items": [
+              "b0: empty",
+              "b1: [1, 5, 9]",
+              "b2: [2]",
+              "b3: empty"
+            ],
+            "pointers": [
+              {
+                "name": "collision",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chaining stores small list of key value pairs per bucket.",
+            "items": [
+              "b0: empty",
+              "b1: [1, 5, 9]",
+              "b2: [2]",
+              "b3: empty"
+            ],
+            "pointers": [
+              {
+                "name": "lookup",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Load factor and resizing",
+      "codeHash": "fda41c91440594e1f8f401567fb62f3a52d4fd013cf81d5ca967385fb5cd4d57",
+      "spec": {
+        "template": "bars",
+        "title": "Load factor resizing threshold",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Load factor is number of items divided by number of buckets.",
+            "bars": [
+              {
+                "label": "4 items / 8 buckets",
+                "value": {
+                  "text": "0.50"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "6 items / 8 buckets",
+                "value": {
+                  "text": "0.75"
+                },
+                "tone": "data"
+              }
+            ],
+            "max": 1
+          },
+          {
+            "at": "say2",
+            "caption": "Passing limit triggers resize doubling bucket count.",
+            "bars": [
+              {
+                "label": "4 items / 8 buckets",
+                "value": {
+                  "text": "0.50"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "6 items / 8 buckets",
+                "value": {
+                  "text": "0.75"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "7 items / 16 buckets",
+                "value": {
+                  "text": "0.44"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Load factor resizing threshold",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Load factor is number of items divided by number of buckets.",
+            "bars": [
+              {
+                "label": "4 items / 8 buckets",
+                "value": 0.5,
+                "tone": "data"
+              },
+              {
+                "label": "6 items / 8 buckets",
+                "value": 0.75,
+                "tone": "data"
+              }
+            ],
+            "max": 1
+          },
+          {
+            "at": "say2",
+            "caption": "Passing limit triggers resize doubling bucket count.",
+            "bars": [
+              {
+                "label": "4 items / 8 buckets",
+                "value": 0.5,
+                "tone": "data"
+              },
+              {
+                "label": "6 items / 8 buckets",
+                "value": 0.75,
+                "tone": "data"
+              },
+              {
+                "label": "7 items / 16 buckets",
+                "value": 0.44,
+                "tone": "ok"
+              }
+            ],
+            "max": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting with a dict",
+      "codeHash": "daf981b9e542c7199f371c09a680a0e5330dfec3218602d30abdfaef0f30f22a",
+      "spec": {
+        "template": "none",
+        "reason": "Frequency mapping with Counter and anagram checking."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Frequency mapping with Counter and anagram checking."
+      }
+    },
+    {
+      "partTitle": "Two sum with a hash map",
+      "codeHash": "54e8cc239abe96f3fbc5aa88622b1a1a6db998ee933bf6a6c3cd62b9faed0f4a",
+      "spec": {
+        "template": "table",
+        "title": "Two sum target matching with hash map",
+        "columns": [
+          "Index i",
+          "Number x",
+          "Partner target - x",
+          "Seen Dict"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Walking list once computes required partner for each number.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "{}"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "{2: 0}"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking whether partner exists in seen dict runs in constant time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "{}"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "7"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "{2: 0}"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "result"
+                  },
+                  {
+                    "text": "[0, 1]"
+                  },
+                  {
+                    "text": "found"
+                  },
+                  {
+                    "text": "pair"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two sum target matching with hash map",
+        "columns": [
+          "Index i",
+          "Number x",
+          "Partner target - x",
+          "Seen Dict"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Walking list once computes required partner for each number.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "2",
+                  "7",
+                  "{}"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1",
+                  "7",
+                  "2",
+                  "{2: 0}"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Checking whether partner exists in seen dict runs in constant time.",
+            "rows": [
+              {
+                "cells": [
+                  "0",
+                  "2",
+                  "7",
+                  "{}"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1",
+                  "7",
+                  "2",
+                  "{2: 0}"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "result",
+                  "[0, 1]",
+                  "found",
+                  "pair"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sets and what can be a key",
+      "codeHash": "5ec3affec39b735cc081474d7ce713f22fccfc550705f14cd2b88289e9bbefba",
+      "spec": {
+        "template": "none",
+        "reason": "Hashability constraints on mutable vs immutable types."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Hashability constraints on mutable vs immutable types."
+      }
+    }
+  ]
+}

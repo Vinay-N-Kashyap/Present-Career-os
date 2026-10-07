@@ -868,27 +868,27 @@
     },
     "dsa-py:7:0": {
       "partTitle": "Hashing: turning a key into a position",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:7:1": {
       "partTitle": "Collisions and chaining",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:7:2": {
       "partTitle": "Load factor and resizing",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:7:3": {
       "partTitle": "Counting with a dict",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:7:4": {
       "partTitle": "Two sum with a hash map",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:7:5": {
       "partTitle": "Sets and what can be a key",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:8:0": {
       "partTitle": "Two pointers from both ends",
