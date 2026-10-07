@@ -4132,27 +4132,27 @@
     },
     "cloud-py:23:0": {
       "partTitle": "Orchestration and Step Functions",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:23:1": {
       "partTitle": "Amazon States Language",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:23:2": {
       "partTitle": "The saga pattern",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:23:3": {
       "partTitle": "Retries, catches and timeouts",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:23:4": {
       "partTitle": "Parallel steps and human approval",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:23:5": {
       "partTitle": "Practice time: saga and validator",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:24:0": {
       "partTitle": "Infrastructure as Code",
