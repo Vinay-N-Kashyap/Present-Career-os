@@ -196,27 +196,27 @@
     },
     "python:9:0": {
       "partTitle": "enumerate: items with their positions",
-      "status": "todo"
+      "status": "none"
     },
     "python:9:1": {
       "partTitle": "Building a new list with a loop",
-      "status": "todo"
+      "status": "passed"
     },
     "python:9:2": {
       "partTitle": "List comprehensions: the one-line version",
-      "status": "todo"
+      "status": "passed"
     },
     "python:9:3": {
       "partTitle": "Filtering with if",
-      "status": "todo"
+      "status": "passed"
     },
     "python:9:4": {
       "partTitle": "When not to use a comprehension",
-      "status": "todo"
+      "status": "none"
     },
     "python:9:5": {
       "partTitle": "Putting it together: filtered reports",
-      "status": "todo"
+      "status": "none"
     },
     "python:10:0": {
       "partTitle": "What a dictionary is",
