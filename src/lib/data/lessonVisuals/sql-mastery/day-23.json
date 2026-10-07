@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sql-mastery",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why big tables get slow",
+      "codeHash": "fe0caf7432810cb8ad6dc60bb15d0d8b40ca614ec9a2afa3c6de63116d1c87ee",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential full table scan versus indexed jump",
+        "leftLabel": "Without Index: Seq Scan",
+        "rightLabel": "With Index: Direct Jump",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A sequential scan reads every single row to check matching records.",
+            "left": {
+              "code": "unindexed table scan",
+              "result": {
+                "text": "checks 50000 rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "indexed lookup B-tree",
+              "result": {
+                "text": "skips non-matching rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "An index sorted structure points to where matching records live.",
+            "left": {
+              "code": "unordered heap access",
+              "result": {
+                "text": "slow full table read"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "customer_id index jump",
+              "result": {
+                "text": "instant row location"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential full table scan versus indexed jump",
+        "leftLabel": "Without Index: Seq Scan",
+        "rightLabel": "With Index: Direct Jump",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A sequential scan reads every single row to check matching records.",
+            "left": {
+              "code": "unindexed table scan",
+              "result": "checks 50000 rows",
+              "tone": "error",
+              "checks": [
+                "checks 50000 rows"
+              ]
+            },
+            "right": {
+              "code": "indexed lookup B-tree",
+              "result": "skips non-matching rows",
+              "tone": "ok",
+              "checks": [
+                "skips non-matching rows"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "An index sorted structure points to where matching records live.",
+            "left": {
+              "code": "unordered heap access",
+              "result": "slow full table read",
+              "tone": "data",
+              "checks": [
+                "slow full table read"
+              ]
+            },
+            "right": {
+              "code": "customer_id index jump",
+              "result": "instant row location",
+              "tone": "ok",
+              "checks": [
+                "instant row location"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EXPLAIN: seeing the plan",
+      "codeHash": "fb1a304b21379b1f36daa0b134c2ae6887de0d55031c1113791a5004650692dc",
+      "spec": {
+        "template": "compare",
+        "title": "Comparing query execution plans with EXPLAIN",
+        "leftLabel": "Unindexed Query Plan",
+        "rightLabel": "Indexed Query Plan",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The plan shows whether PostgreSQL runs a Seq Scan or uses an index.",
+            "left": {
+              "code": "EXPLAIN SELECT customer_id = 42",
+              "result": {
+                "text": "Seq Scan on orders"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "EXPLAIN SELECT id = 42",
+              "result": {
+                "text": "Index Scan on orders_pkey"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Reading query plans reveals whether PostgreSQL scans whole table or index.",
+            "left": {
+              "code": "Seq Scan + Filter",
+              "result": {
+                "text": "inspects whole table"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Index Scan on key",
+              "result": {
+                "text": "retrieves exact pointer"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Comparing query execution plans with EXPLAIN",
+        "leftLabel": "Unindexed Query Plan",
+        "rightLabel": "Indexed Query Plan",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The plan shows whether PostgreSQL runs a Seq Scan or uses an index.",
+            "left": {
+              "code": "EXPLAIN SELECT customer_id = 42",
+              "result": "Seq Scan on orders",
+              "tone": "data",
+              "checks": [
+                "Seq Scan on orders"
+              ]
+            },
+            "right": {
+              "code": "EXPLAIN SELECT id = 42",
+              "result": "Index Scan on orders_pkey",
+              "tone": "ok",
+              "checks": [
+                "Index Scan on orders_pkey"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Reading query plans reveals whether PostgreSQL scans whole table or index.",
+            "left": {
+              "code": "Seq Scan + Filter",
+              "result": "inspects whole table",
+              "tone": "error",
+              "checks": [
+                "inspects whole table"
+              ]
+            },
+            "right": {
+              "code": "Index Scan on key",
+              "result": "retrieves exact pointer",
+              "tone": "ok",
+              "checks": [
+                "retrieves exact pointer"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CREATE INDEX",
+      "codeHash": "4cdb28cbf74ba116a094666571bacff2c6ed7340aaf0c4838a71c9f8364bc1ef",
+      "spec": {
+        "template": "table",
+        "title": "Index creation and optimization candidates",
+        "columns": [
+          "command",
+          "operation",
+          "plan_impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Executing CREATE INDEX builds an ordered structure for fast lookups.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CREATE INDEX"
+                  },
+                  {
+                    "text": "idx_orders_customer"
+                  },
+                  {
+                    "text": "Switches to Bitmap Scan"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Foreign key columns are prime candidates to index for faster joins.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CREATE INDEX"
+                  },
+                  {
+                    "text": "idx_orders_customer"
+                  },
+                  {
+                    "text": "Switches to Bitmap Scan"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Foreign Key"
+                  },
+                  {
+                    "text": "customer_id"
+                  },
+                  {
+                    "text": "Accelerates JOIN and WHERE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Filter Column"
+                  },
+                  {
+                    "text": "status or date"
+                  },
+                  {
+                    "text": "Speeds dashboard reports"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Index creation and optimization candidates",
+        "columns": [
+          "command",
+          "operation",
+          "plan_impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Executing CREATE INDEX builds an ordered structure for fast lookups.",
+            "rows": [
+              {
+                "cells": [
+                  "CREATE INDEX",
+                  "idx_orders_customer",
+                  "Switches to Bitmap Scan"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Foreign key columns are prime candidates to index for faster joins.",
+            "rows": [
+              {
+                "cells": [
+                  "CREATE INDEX",
+                  "idx_orders_customer",
+                  "Switches to Bitmap Scan"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Foreign Key",
+                  "customer_id",
+                  "Accelerates JOIN and WHERE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Filter Column",
+                  "status or date",
+                  "Speeds dashboard reports"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What indexes cost",
+      "codeHash": "71321186ab458627253b5e6c6d80595f293b49c60cedebfd1d2fe9ed75828144",
+      "spec": {
+        "template": "table",
+        "title": "Catalog objects and write maintenance overhead",
+        "columns": [
+          "name",
+          "kind",
+          "maintenance_impact"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each index consumes disk space and adds extra work on every table write.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clicks"
+                  },
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "Base storage"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Indexes balance trade-off between faster reads and slower write workload.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "clicks"
+                  },
+                  {
+                    "text": "table"
+                  },
+                  {
+                    "text": "Base storage"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "idx_clicks_page"
+                  },
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "Updated on every insert"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "idx_clicks_time"
+                  },
+                  {
+                    "text": "index"
+                  },
+                  {
+                    "text": "Extra disk tree maintained"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Catalog objects and write maintenance overhead",
+        "columns": [
+          "name",
+          "kind",
+          "maintenance_impact"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each index consumes disk space and adds extra work on every table write.",
+            "rows": [
+              {
+                "cells": [
+                  "clicks",
+                  "table",
+                  "Base storage"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Indexes balance trade-off between faster reads and slower write workload.",
+            "rows": [
+              {
+                "cells": [
+                  "clicks",
+                  "table",
+                  "Base storage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "idx_clicks_page",
+                  "index",
+                  "Updated on every insert"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "idx_clicks_time",
+                  "index",
+                  "Extra disk tree maintained"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Indexes on several columns and on expressions",
+      "codeHash": "5ecf7095524773a38c409f704c78416292efc36a09304f7a4b615a69e19f4592",
+      "spec": {
+        "template": "none",
+        "reason": "Multi-column composite ordering and case-insensitive expression indexes."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Multi-column composite ordering and case-insensitive expression indexes."
+      }
+    },
+    {
+      "partTitle": "Putting it together: speeding up a slow report",
+      "codeHash": "11a364eee7ced6dc8cccae7929d7790b0b98053ed62c2ea509ebba90a693d35c",
+      "spec": {
+        "template": "none",
+        "reason": "Comprehensive EXPLAIN ANALYZE comparison before and after index creation."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Comprehensive EXPLAIN ANALYZE comparison before and after index creation."
+      }
+    }
+  ]
+}

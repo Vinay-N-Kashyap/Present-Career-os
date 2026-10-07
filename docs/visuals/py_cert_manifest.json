@@ -1972,27 +1972,27 @@
     },
     "sql-mastery:23:0": {
       "partTitle": "Why big tables get slow",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:23:1": {
       "partTitle": "EXPLAIN: seeing the plan",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:23:2": {
       "partTitle": "CREATE INDEX",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:23:3": {
       "partTitle": "What indexes cost",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:23:4": {
       "partTitle": "Indexes on several columns and on expressions",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:23:5": {
       "partTitle": "Putting it together: speeding up a slow report",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:24:0": {
       "partTitle": "What a view is",
