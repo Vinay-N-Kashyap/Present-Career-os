@@ -3652,27 +3652,27 @@
     },
     "cloud-py:3:0": {
       "partTitle": "Your own private network: the VPC",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:3:1": {
       "partTitle": "Reading CIDR notation",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:3:2": {
       "partTitle": "The five addresses AWS keeps",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:3:3": {
       "partTitle": "Splitting a VPC into subnets",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:3:4": {
       "partTitle": "Public and private subnets: it is all in the route table",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:3:5": {
       "partTitle": "Practice time: sizes and routes",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:4:0": {
       "partTitle": "Two layers of firewall",

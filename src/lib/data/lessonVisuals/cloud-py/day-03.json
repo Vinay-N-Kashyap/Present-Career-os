@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Your own private network: the VPC",
+      "codeHash": "c23f83d7dd7348c67fe411ab9a05383ca8d69e43d49a8ec45a2d542a1dfdb2ff",
+      "spec": {
+        "template": "none",
+        "reason": "Virtual Private Cloud address range and private network overview."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Reading CIDR notation",
+      "codeHash": "b3a834d97ac45f40e09d11055d4501cad8bd01a478d6e820bd1587e1691eb1c9",
+      "spec": {
+        "template": "table",
+        "title": "IPv4 CIDR prefix lengths and available IP host address space",
+        "columns": [
+          "prefix",
+          "addresses"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CIDR notation specifies fixed network bits and variable host bits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Larger slash numbers leave fewer free bits yielding smaller networks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "24"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Cloud VPC sizes range between sixteen and twenty-eight prefix limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "24"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "28"
+                  },
+                  {
+                    "text": "addresses"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "IPv4 CIDR prefix lengths and available IP host address space",
+        "columns": [
+          "prefix",
+          "addresses"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CIDR notation specifies fixed network bits and variable host bits.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "addresses"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Larger slash numbers leave fewer free bits yielding smaller networks.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "addresses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "24",
+                  "addresses"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Cloud VPC sizes range between sixteen and twenty-eight prefix limits.",
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "addresses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "24",
+                  "addresses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "28",
+                  "addresses"
+                ],
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The five addresses AWS keeps",
+      "codeHash": "8b9da98aa62f32bbeefb7cb6260c2b3d12ce14a478e070abfaec58259594277a",
+      "spec": {
+        "template": "table",
+        "title": "Subnet prefix masks and usable host IP capacity excluding reservations",
+        "columns": [
+          "mask",
+          "subnet"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS reserves five addresses in every subnet for networking functions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "24"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Usable addresses are reduced by reserved allocations when sizing subnets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "24"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "28"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Guard clauses return zero for subnet masks outside permitted cloud bounds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "24"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "28"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30"
+                  },
+                  {
+                    "text": "10.0.1.0/24"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Subnet prefix masks and usable host IP capacity excluding reservations",
+        "columns": [
+          "mask",
+          "subnet"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS reserves five addresses in every subnet for networking functions.",
+            "rows": [
+              {
+                "cells": [
+                  "24",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Usable addresses are reduced by reserved allocations when sizing subnets.",
+            "rows": [
+              {
+                "cells": [
+                  "24",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "28",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Guard clauses return zero for subnet masks outside permitted cloud bounds.",
+            "rows": [
+              {
+                "cells": [
+                  "24",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "28",
+                  "10.0.1.0/24"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30",
+                  "10.0.1.0/24"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Splitting a VPC into subnets",
+      "codeHash": "6bd8c251a4459c180360ea1c2db903f01a8da32cbd8aabb310bf156570a5df98",
+      "spec": {
+        "template": "table",
+        "title": "VPC subnet planning allocating non-overlapping CIDR blocks per zone",
+        "columns": [
+          "name",
+          "block"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Carving VPC ranges into subnets provides dedicated address allocations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subnets must never overlap to prevent routing packet confusion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public-b"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Structured naming schemes distinguish public and private subnets across zones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "public-a"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "public-b"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "private-a"
+                  },
+                  {
+                    "text": "10.0.0.0/16"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VPC subnet planning allocating non-overlapping CIDR blocks per zone",
+        "columns": [
+          "name",
+          "block"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Carving VPC ranges into subnets provides dedicated address allocations.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subnets must never overlap to prevent routing packet confusion.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public-b",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Structured naming schemes distinguish public and private subnets across zones.",
+            "rows": [
+              {
+                "cells": [
+                  "public-a",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "public-b",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "private-a",
+                  "10.0.0.0/16"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Public and private subnets: it is all in the route table",
+      "codeHash": "011b546182c8df30d13428f6125ecd759fe60f532df99d8b85466012870af601",
+      "spec": {
+        "template": "compare",
+        "title": "Route table rules distinguishing public and private subnets",
+        "leftLabel": "Public Subnet Route",
+        "rightLabel": "Private Subnet Route",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Route tables map destination IP ranges to designated network gateways.",
+            "left": {
+              "code": "public_rt[1][\"target\"]",
+              "result": {
+                "text": "igw-0abc"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "private_rt[1][\"target\"]",
+              "result": {
+                "text": "nat-0def"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Public subnets route default traffic to an attached internet gateway.",
+            "left": {
+              "code": "destination",
+              "result": {
+                "text": "0.0.0.0/0"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destination",
+              "result": {
+                "text": "0.0.0.0/0"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Private subnets route outbound traffic through a NAT gateway.",
+            "left": {
+              "code": "target",
+              "result": {
+                "text": "igw-0abc"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "target",
+              "result": {
+                "text": "nat-0def"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Route table rules distinguishing public and private subnets",
+        "leftLabel": "Public Subnet Route",
+        "rightLabel": "Private Subnet Route",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Route tables map destination IP ranges to designated network gateways.",
+            "left": {
+              "code": "public_rt[1][\"target\"]",
+              "result": "igw-0abc",
+              "tone": "ok",
+              "checks": [
+                "igw-0abc"
+              ]
+            },
+            "right": {
+              "code": "private_rt[1][\"target\"]",
+              "result": "nat-0def",
+              "tone": "idle",
+              "checks": [
+                "nat-0def"
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Public subnets route default traffic to an attached internet gateway.",
+            "left": {
+              "code": "destination",
+              "result": "0.0.0.0/0",
+              "tone": "ok",
+              "checks": [
+                "0.0.0.0/0"
+              ]
+            },
+            "right": {
+              "code": "destination",
+              "result": "0.0.0.0/0",
+              "tone": "data",
+              "checks": [
+                "0.0.0.0/0"
+              ]
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Private subnets route outbound traffic through a NAT gateway.",
+            "left": {
+              "code": "target",
+              "result": "igw-0abc",
+              "tone": "ok",
+              "checks": [
+                "igw-0abc"
+              ]
+            },
+            "right": {
+              "code": "target",
+              "result": "nat-0def",
+              "tone": "idle",
+              "checks": [
+                "nat-0def"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practice time: sizes and routes",
+      "codeHash": "fb9a187892c38c80d3900dde42ce32e97e1b7af51550f68c32835f0823bcdaa2",
+      "spec": {
+        "template": "none",
+        "reason": "Route table boolean validation check comparison."
+      },
+      "filled": {}
+    }
+  ]
+}
