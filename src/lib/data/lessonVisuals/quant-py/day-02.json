@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Limit orders and market orders",
+      "codeHash": "8ad8c9740109682f3adc0ba6b61911858459557531c6ca5fecf5b946edd8333c",
+      "spec": {
+        "template": "table",
+        "title": "Resting limit order book sides and execution terms",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Limit orders specify execution boundaries and wait when untraded immediately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Market orders execute immediately against whatever prices are available.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "side"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resting orders populate the order book on bid and ask sides.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "side"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows a small book with a few resting orders on each side.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "side"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Resting limit order book sides and execution terms",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Limit orders specify execution boundaries and wait when untraded immediately.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Market orders execute immediately against whatever prices are available.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "side"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Resting orders populate the order book on bid and ask sides.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "side"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bids",
+                  "book"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows a small book with a few resting orders on each side.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "side"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bids",
+                  "book"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "asks",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Price-time priority",
+      "codeHash": "355ae33fdc533a40de00037819108e866d2376d50768dd10a0f1ac88b5ee92c4",
+      "spec": {
+        "template": "table",
+        "title": "Price-time priority execution sequencing and FIFO queues",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Price-time priority determines matching sequence when orders could trade.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The best price trades first with higher bids and lower asks taking precedence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Orders at the same price trade in FIFO order based on when they arrived.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "key"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example sorts orders into price-time order with sorted keys.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "asks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "orders"
+                  },
+                  {
+                    "text": "key"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bids"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Price-time priority execution sequencing and FIFO queues",
+        "columns": [
+          "bids",
+          "asks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Price-time priority determines matching sequence when orders could trade.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The best price trades first with higher bids and lower asks taking precedence.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "sorted"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Orders at the same price trade in FIFO order based on when they arrived.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "key"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example sorts orders into price-time order with sorted keys.",
+            "rows": [
+              {
+                "cells": [
+                  "bids",
+                  "asks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "sorted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "orders",
+                  "key"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "bids",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inserting an order",
+      "codeHash": "7a621429b4e69d681d9564ea123c38c7fa5b2f394222e75f50060783bc01890e",
+      "spec": {
+        "template": "table",
+        "title": "Order insertion positioning and queue ordering",
+        "columns": [
+          "side",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inserting each order at the right position avoids sorting the whole book.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking from the best price stops at the first resting order with worse price.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict price comparisons place newly arrived orders behind existing orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example inserts orders and prints the updated book configuration.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "side"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worse"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "len"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "insert_order"
+                  },
+                  {
+                    "text": "insert"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Order insertion positioning and queue ordering",
+        "columns": [
+          "side",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inserting each order at the right position avoids sorting the whole book.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "pos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking from the best price stops at the first resting order with worse price.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worse",
+                  "book"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Strict price comparisons place newly arrived orders behind existing orders.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worse",
+                  "book"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "len"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example inserts orders and prints the updated book configuration.",
+            "rows": [
+              {
+                "cells": [
+                  "side",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worse",
+                  "book"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "len"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "insert_order",
+                  "insert"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Price levels and depth",
+      "codeHash": "b78287d8de62d8ca349c8e91b0c155fcc004e8cd85874463ff73034572bcc1c8",
+      "spec": {
+        "template": "table",
+        "title": "Level 2 market depth and cumulative volume ladders",
+        "columns": [
+          "levels",
+          "cumulative"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregated price levels sum the total quantity across matching resting orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "levels"
+                  },
+                  {
+                    "text": "cumulative"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cumulative depth tallies available liquidity from the best price outwards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "levels"
+                  },
+                  {
+                    "text": "cumulative"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Market depth indicates how large an order volume the market can absorb.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "levels"
+                  },
+                  {
+                    "text": "cumulative"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example aggregates orders into price levels and computes cumulative depth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "levels"
+                  },
+                  {
+                    "text": "cumulative"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "asks"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "levels"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Level 2 market depth and cumulative volume ladders",
+        "columns": [
+          "levels",
+          "cumulative"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Aggregated price levels sum the total quantity across matching resting orders.",
+            "rows": [
+              {
+                "cells": [
+                  "levels",
+                  "cumulative"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cumulative depth tallies available liquidity from the best price outwards.",
+            "rows": [
+              {
+                "cells": [
+                  "levels",
+                  "cumulative"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asks",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Market depth indicates how large an order volume the market can absorb.",
+            "rows": [
+              {
+                "cells": [
+                  "levels",
+                  "cumulative"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asks",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "append"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example aggregates orders into price levels and computes cumulative depth.",
+            "rows": [
+              {
+                "cells": [
+                  "levels",
+                  "cumulative"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "asks",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "append"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "levels",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cancels, modifies and data structures",
+      "codeHash": "4f0e5fb7500fc4815d4abf91b5103edcb7d78fb5653832c639c832b566c76ccf",
+      "spec": {
+        "template": "none",
+        "reason": "Cancels, modifies and order index maps."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build the book",
+      "codeHash": "81c6f63f45394bcf7cc231dba54bb0223455548a93f9d3356ac469bb270f985e",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: build the book and order ladder."
+      },
+      "filled": {}
+    }
+  ]
+}

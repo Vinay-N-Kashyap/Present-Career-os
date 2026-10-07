@@ -5068,27 +5068,27 @@
     },
     "quant-py:2:0": {
       "partTitle": "Limit orders and market orders",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:2:1": {
       "partTitle": "Price-time priority",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:2:2": {
       "partTitle": "Inserting an order",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:2:3": {
       "partTitle": "Price levels and depth",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:2:4": {
       "partTitle": "Cancels, modifies and data structures",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:2:5": {
       "partTitle": "Practice time: build the book",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:3:0": {
       "partTitle": "When does an order trade?",
