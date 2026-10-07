@@ -412,27 +412,27 @@
     },
     "python:18:0": {
       "partTitle": "What classes and objects are",
-      "status": "todo"
+      "status": "passed"
     },
     "python:18:1": {
       "partTitle": "__init__ and self: giving objects their data",
-      "status": "todo"
+      "status": "passed"
     },
     "python:18:2": {
       "partTitle": "Methods: actions that belong to an object",
-      "status": "todo"
+      "status": "none"
     },
     "python:18:3": {
       "partTitle": "Methods that change the object",
-      "status": "todo"
+      "status": "passed"
     },
     "python:18:4": {
       "partTitle": "Many objects in a list",
-      "status": "todo"
+      "status": "none"
     },
     "python:18:5": {
       "partTitle": "Putting it together: an ExpenseBook class",
-      "status": "todo"
+      "status": "none"
     },
     "python:19:0": {
       "partTitle": "Making objects print nicely with __str__",
