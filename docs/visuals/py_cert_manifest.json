@@ -2548,27 +2548,27 @@
     },
     "ai-py:17:0": {
       "partTitle": "From one tool call to an agent",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:17:1": {
       "partTitle": "Parsing a ReAct step",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:17:2": {
       "partTitle": "The agent loop",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:17:3": {
       "partTitle": "Stopping runaway agents",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:17:4": {
       "partTitle": "Writing a good agent prompt",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:17:5": {
       "partTitle": "When not to use an agent",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:18:0": {
       "partTitle": "Why several agents?",
