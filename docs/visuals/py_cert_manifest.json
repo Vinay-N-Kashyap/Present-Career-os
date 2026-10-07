@@ -724,27 +724,27 @@
     },
     "dsa-py:1:0": {
       "partTitle": "Why speed depends on the size of the input",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:1:1": {
       "partTitle": "Big-O: keep the part that grows fastest",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:1:2": {
       "partTitle": "O(1) and O(N): constant and linear time",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:1:3": {
       "partTitle": "O(log N): halving the problem",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:1:4": {
       "partTitle": "O(N^2) and how to spot it",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:1:5": {
       "partTitle": "Space complexity: memory counts too",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:2:0": {
       "partTitle": "An array: items side by side in memory",
