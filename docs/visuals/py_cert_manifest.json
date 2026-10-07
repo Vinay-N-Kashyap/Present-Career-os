@@ -2932,27 +2932,27 @@
     },
     "dist-py:3:0": {
       "partTitle": "Remote procedure calls",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:3:1": {
       "partTitle": "Text versus binary serialisation",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:3:2": {
       "partTitle": "Varints: small numbers, few bytes",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:3:3": {
       "partTitle": "Tags and wire types",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:3:4": {
       "partTitle": "Evolving schemas safely",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:3:5": {
       "partTitle": "Deadlines, retries and status codes",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:4:0": {
       "partTitle": "The problem with hash mod N",
