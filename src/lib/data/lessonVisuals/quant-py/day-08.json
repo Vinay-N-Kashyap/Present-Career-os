@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What a market maker does",
+      "codeHash": "ea2896a9579aeaf2514e327ddcb42e6c95acf924afd79319c496f32d5d1428d5",
+      "spec": {
+        "template": "table",
+        "title": "Continuous two-sided quoting and market maker inventory risk",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Continuous quotes earn the bid ask spread on completed round trip trades.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unbalanced executions build inventory exposure as market prices move.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "inventory"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adverse selection penalizes stale quotes during informed trader arrivals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "inventory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "new_price"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates earning the spread and incurring inventory losses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bid"
+                  },
+                  {
+                    "text": "ask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size"
+                  },
+                  {
+                    "text": "inventory"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "new_price"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Continuous two-sided quoting and market maker inventory risk",
+        "columns": [
+          "bid",
+          "ask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Continuous quotes earn the bid ask spread on completed round trip trades.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unbalanced executions build inventory exposure as market prices move.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "inventory"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adverse selection penalizes stale quotes during informed trader arrivals.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "inventory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "new_price",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates earning the spread and incurring inventory losses.",
+            "rows": [
+              {
+                "cells": [
+                  "bid",
+                  "ask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size",
+                  "inventory"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "new_price",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The reservation price",
+      "codeHash": "e8208881c291b7d801a31bce7816f923548f13f759dfd4fb05cedb55fb455dda",
+      "spec": {
+        "template": "table",
+        "title": "Avellaneda-Stoikov reservation price and inventory adjustment",
+        "columns": [
+          "mid",
+          "gamma"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The reservation price represents the indifference valuation for inventory.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "gamma"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Long inventory positions depress the reservation value below the midpoint.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "gamma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "t_left"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Price shifts widen with elevated volatility and risk aversion parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "gamma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "t_left"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes reservation prices across several inventory levels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "gamma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "t_left"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mid"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "inventory"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Avellaneda-Stoikov reservation price and inventory adjustment",
+        "columns": [
+          "mid",
+          "gamma"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The reservation price represents the indifference valuation for inventory.",
+            "rows": [
+              {
+                "cells": [
+                  "mid",
+                  "gamma"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Long inventory positions depress the reservation value below the midpoint.",
+            "rows": [
+              {
+                "cells": [
+                  "mid",
+                  "gamma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sigma",
+                  "t_left"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Price shifts widen with elevated volatility and risk aversion parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "mid",
+                  "gamma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sigma",
+                  "t_left"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mid",
+                  "sigma"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes reservation prices across several inventory levels.",
+            "rows": [
+              {
+                "cells": [
+                  "mid",
+                  "gamma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sigma",
+                  "t_left"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mid",
+                  "sigma"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "inventory"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Skewed quotes",
+      "codeHash": "3af6ce2660948d933b63c3c5bc4f3459f0f4000ffbd2f1006b74c303110ddb99",
+      "spec": {
+        "template": "table",
+        "title": "Asymmetric quote placement and inventory mean-reversion",
+        "columns": [
+          "half_spread",
+          "mid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quotes center around the reservation price rather than simple midpoints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "half_spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Lower ask quotes attract buyers to shed long inventory positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "half_spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous skewing steers inventory back towards target neutral positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "half_spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "t_left"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows how the quotes move as inventory accumulates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "half_spread"
+                  },
+                  {
+                    "text": "mid"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sigma"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "t_left"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "as_quotes"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Asymmetric quote placement and inventory mean-reversion",
+        "columns": [
+          "half_spread",
+          "mid"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quotes center around the reservation price rather than simple midpoints.",
+            "rows": [
+              {
+                "cells": [
+                  "half_spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Lower ask quotes attract buyers to shed long inventory positions.",
+            "rows": [
+              {
+                "cells": [
+                  "half_spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Continuous skewing steers inventory back towards target neutral positions.",
+            "rows": [
+              {
+                "cells": [
+                  "half_spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "t_left",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example shows how the quotes move as inventory accumulates.",
+            "rows": [
+              {
+                "cells": [
+                  "half_spread",
+                  "mid"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "sigma"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "t_left",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "as_quotes",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inventory limits",
+      "codeHash": "629f315eef6461b7d85b4e9e57ba51d74405e17a1d6c071aea2a2c4048ee9d66",
+      "spec": {
+        "template": "table",
+        "title": "Hard limits, warning thresholds and risk circuit breakers",
+        "columns": [
+          "inv",
+          "limit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hard inventory limits establish essential risk bounds alongside quote skews.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inv"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The quoting engine stops bidding when long inventory touches hard limits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inv"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STOP_BUYING"
+                  },
+                  {
+                    "text": "STOP_SELLING"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Approaching warning thresholds triggers aggressive quote skewing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inv"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STOP_BUYING"
+                  },
+                  {
+                    "text": "STOP_SELLING"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SKEW_QUOTES"
+                  },
+                  {
+                    "text": "NORMAL"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example traces inventory changes and evaluates risk actions at each step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "inv"
+                  },
+                  {
+                    "text": "limit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "STOP_BUYING"
+                  },
+                  {
+                    "text": "STOP_SELLING"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SKEW_QUOTES"
+                  },
+                  {
+                    "text": "NORMAL"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "inventory_action"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hard limits, warning thresholds and risk circuit breakers",
+        "columns": [
+          "inv",
+          "limit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hard inventory limits establish essential risk bounds alongside quote skews.",
+            "rows": [
+              {
+                "cells": [
+                  "inv",
+                  "limit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The quoting engine stops bidding when long inventory touches hard limits.",
+            "rows": [
+              {
+                "cells": [
+                  "inv",
+                  "limit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STOP_BUYING",
+                  "STOP_SELLING"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Approaching warning thresholds triggers aggressive quote skewing.",
+            "rows": [
+              {
+                "cells": [
+                  "inv",
+                  "limit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STOP_BUYING",
+                  "STOP_SELLING"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SKEW_QUOTES",
+                  "NORMAL"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example traces inventory changes and evaluates risk actions at each step.",
+            "rows": [
+              {
+                "cells": [
+                  "inv",
+                  "limit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "STOP_BUYING",
+                  "STOP_SELLING"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SKEW_QUOTES",
+                  "NORMAL"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "inventory_action",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adverse selection and speed",
+      "codeHash": "d6edf498c4de315e0100abba95751eccfbba0de12589b9349f59e1f7dc86756a",
+      "spec": {
+        "template": "none",
+        "reason": "Adverse selection measurement and post-trade markout analysis."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: quotes and limits",
+      "codeHash": "618b42085c73d48fa51fb2208c7211fcd71a97c2ce4faa0de60b4ee922d68136",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: quote generation and inventory gating."
+      },
+      "filled": {}
+    }
+  ]
+}

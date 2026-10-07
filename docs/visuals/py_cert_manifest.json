@@ -5212,27 +5212,27 @@
     },
     "quant-py:8:0": {
       "partTitle": "What a market maker does",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:8:1": {
       "partTitle": "The reservation price",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:8:2": {
       "partTitle": "Skewed quotes",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:8:3": {
       "partTitle": "Inventory limits",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:8:4": {
       "partTitle": "Adverse selection and speed",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:8:5": {
       "partTitle": "Practice time: quotes and limits",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:9:0": {
       "partTitle": "The Financial Information eXchange protocol",
