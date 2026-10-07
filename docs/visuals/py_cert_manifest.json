@@ -1684,27 +1684,27 @@
     },
     "sql-mastery:11:0": {
       "partTitle": "What a join does",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:11:1": {
       "partTitle": "Table aliases: shorter joins",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:11:2": {
       "partTitle": "INNER JOIN keeps only matching rows",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:11:3": {
       "partTitle": "Joining and then filtering, sorting and totalling",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:11:4": {
       "partTitle": "Joining a junction table",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:11:5": {
       "partTitle": "Putting it together: an orders report",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:12:0": {
       "partTitle": "LEFT JOIN: keep every row from the first table",
