@@ -124,27 +124,27 @@
     },
     "python:6:0": {
       "partTitle": "Why we need loops",
-      "status": "todo"
+      "status": "passed"
     },
     "python:6:1": {
       "partTitle": "Looping over text and range()",
-      "status": "todo"
+      "status": "none"
     },
     "python:6:2": {
       "partTitle": "The accumulator pattern: running totals",
-      "status": "todo"
+      "status": "passed"
     },
     "python:6:3": {
       "partTitle": "while loops",
-      "status": "todo"
+      "status": "passed"
     },
     "python:6:4": {
       "partTitle": "break and continue",
-      "status": "todo"
+      "status": "none"
     },
     "python:6:5": {
       "partTitle": "Putting it together: a spending report",
-      "status": "todo"
+      "status": "passed"
     },
     "python:7:0": {
       "partTitle": "What a function is",
