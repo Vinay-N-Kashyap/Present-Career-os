@@ -2476,27 +2476,27 @@
     },
     "ai-py:14:0": {
       "partTitle": "The threat model",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:14:1": {
       "partTitle": "Detecting classic injections",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:14:2": {
       "partTitle": "Why patterns are not enough",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:14:3": {
       "partTitle": "Cleaning retrieved content",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:14:4": {
       "partTitle": "Canary tokens and output checks",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:14:5": {
       "partTitle": "Least privilege and human approval",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:15:0": {
       "partTitle": "The pipeline at a glance",
