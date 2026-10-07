@@ -1,6 +1,6 @@
-dsa-py:27:3
-dsa-py:28:0
-dsa-py:28:2
-dsa-py:29:1
-dsa-py:29:4
-dsa-py:30:0
+sql-mastery:2:0
+sql-mastery:2:5
+sql-mastery:3:2
+sql-mastery:4:3
+sql-mastery:4:5
+sql-mastery:5:5
