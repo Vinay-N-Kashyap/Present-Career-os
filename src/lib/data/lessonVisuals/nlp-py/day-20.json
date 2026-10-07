@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Attention is order-blind",
+      "codeHash": "093a7af9272e8375df62c3a2f645c3600e7de0b47d3d797380f5b0a69dcaa5ec",
+      "spec": {
+        "template": "table",
+        "title": "Permutation invariance and attention order-blindness",
+        "columns": [
+          "dog",
+          "man"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Self attention treats input sets without regard to sequence order.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shuffled phrases produce the same representations for each word.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "emb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transformers read everything at once so order must be added explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "emb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Positional signals merge directly into token embeddings before attention.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "man"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bites"
+                  },
+                  {
+                    "text": "emb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "word"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attention_for"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Permutation invariance and attention order-blindness",
+        "columns": [
+          "dog",
+          "man"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Self attention treats input sets without regard to sequence order.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shuffled phrases produce the same representations for each word.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "emb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transformers read everything at once so order must be added explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "emb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "word",
+                  "sentence"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Positional signals merge directly into token embeddings before attention.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "man"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bites",
+                  "emb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "word",
+                  "sentence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "attention_for",
+                  "dog"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sinusoidal positional encoding",
+      "codeHash": "dcde9ae44beb79da2f86317ef4f39996061fcc7c38432a1e2a626c94f5e379ab",
+      "spec": {
+        "template": "table",
+        "title": "Trigonometric frequency spectrum and harmonic positional encodings",
+        "columns": [
+          "sin",
+          "cos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer synthesizes fixed positional patterns using trigonometric waves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sin"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Even dimensions compute sine waves while odd dimensions compute cosine waves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sin"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "d_model"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Progressive frequencies assign every sequence position a unique signature.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sin"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "d_model"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "positional_encoding"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Paired sine and cosine channels share identical frequencies across indices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sin"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "d_model"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "positional_encoding"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d_model"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Trigonometric frequency spectrum and harmonic positional encodings",
+        "columns": [
+          "sin",
+          "cos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Transformer synthesizes fixed positional patterns using trigonometric waves.",
+            "rows": [
+              {
+                "cells": [
+                  "sin",
+                  "cos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Even dimensions compute sine waves while odd dimensions compute cosine waves.",
+            "rows": [
+              {
+                "cells": [
+                  "sin",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "d_model"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Progressive frequencies assign every sequence position a unique signature.",
+            "rows": [
+              {
+                "cells": [
+                  "sin",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "d_model"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "positional_encoding"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Paired sine and cosine channels share identical frequencies across indices.",
+            "rows": [
+              {
+                "cells": [
+                  "sin",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "d_model"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "positional_encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "d_model",
+                  "pos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adding positions to embeddings",
+      "codeHash": "0b1d34b668499a333746cbc336d7eac97df84236f18fe76e52e3cf8b22b5db59",
+      "spec": {
+        "template": "table",
+        "title": "Embedding vector addition and token positional differentiation",
+        "columns": [
+          "dog",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Positional encodings match embedding dimensions and sum together elementwise.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector summation assigns identical words at separate positions distinct vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding rather than concatenating keeps the size the same.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Learned positional embeddings cannot extrapolate beyond trained context bounds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "pos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dog"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Embedding vector addition and token positional differentiation",
+        "columns": [
+          "dog",
+          "pos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Positional encodings match embedding dimensions and sum together elementwise.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "pos"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Vector summation assigns identical words at separate positions distinct vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "dog"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding rather than concatenating keeps the size the same.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "dog"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Learned positional embeddings cannot extrapolate beyond trained context bounds.",
+            "rows": [
+              {
+                "cells": [
+                  "dog",
+                  "pos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "round",
+                  "dog"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dog",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rotary position embeddings (RoPE)",
+      "codeHash": "afc866efa3736b2425c3866e50a357854daa8d17026a78b7d27de4ba28e2d7fe",
+      "spec": {
+        "template": "table",
+        "title": "Rotary position embeddings planar rotation and distance invariance",
+        "columns": [
+          "rotate_pair",
+          "theta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RoPE incorporates relative position through rotational coordinate transforms.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rotate_pair"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "RoPE rotates coordinate pairs in queries and keys proportionally to position.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rotate_pair"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rotating a point by an angle applies trigonometric formulas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rotate_pair"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "sin"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rotated query and key dot products depend only on relative position distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rotate_pair"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pos"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "sin"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "rotate_pair"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rotary position embeddings planar rotation and distance invariance",
+        "columns": [
+          "rotate_pair",
+          "theta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RoPE incorporates relative position through rotational coordinate transforms.",
+            "rows": [
+              {
+                "cells": [
+                  "rotate_pair",
+                  "theta"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "RoPE rotates coordinate pairs in queries and keys proportionally to position.",
+            "rows": [
+              {
+                "cells": [
+                  "rotate_pair",
+                  "theta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rotating a point by an angle applies trigonometric formulas.",
+            "rows": [
+              {
+                "cells": [
+                  "rotate_pair",
+                  "theta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "sin"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Rotated query and key dot products depend only on relative position distance.",
+            "rows": [
+              {
+                "cells": [
+                  "rotate_pair",
+                  "theta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pos",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "sin"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "rotate_pair"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a position method",
+      "codeHash": "2cf98d846c6538f3624da2e594bc54d8d07dc0d77fc71347e69f86bb61319890",
+      "spec": {
+        "template": "none",
+        "reason": "Method selection trade-offs and context extension."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: encodings and rotations",
+      "codeHash": "7a7ad77dfb5aa0b43e287dc7b1c5035a49317e55cb8ba4c52a86101a454349c8",
+      "spec": {
+        "template": "none",
+        "reason": "Positional encoding and RoPE practice implementation."
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -4780,27 +4780,27 @@
     },
     "nlp-py:20:0": {
       "partTitle": "Attention is order-blind",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:20:1": {
       "partTitle": "Sinusoidal positional encoding",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:20:2": {
       "partTitle": "Adding positions to embeddings",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:20:3": {
       "partTitle": "Rotary position embeddings (RoPE)",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:20:4": {
       "partTitle": "Choosing a position method",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:20:5": {
       "partTitle": "Practice time: encodings and rotations",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:21:0": {
       "partTitle": "The encoder layer, step by step",
