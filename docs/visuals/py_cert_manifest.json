@@ -4828,27 +4828,27 @@
     },
     "nlp-py:22:0": {
       "partTitle": "Words, characters or subwords?",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:22:1": {
       "partTitle": "How byte-pair encoding learns",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:22:2": {
       "partTitle": "Applying a merge",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:22:3": {
       "partTitle": "Tokenising new text",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:22:4": {
       "partTitle": "WordPiece and SentencePiece",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:22:5": {
       "partTitle": "Practice time: merges",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:23:0": {
       "partTitle": "Contextual embeddings",
