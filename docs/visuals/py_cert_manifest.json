@@ -2668,27 +2668,27 @@
     },
     "ai-py:22:0": {
       "partTitle": "Why cache LLM answers",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:22:1": {
       "partTitle": "Exact caching",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:22:2": {
       "partTitle": "Semantic caching",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:22:3": {
       "partTitle": "Exact first, then semantic",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:22:4": {
       "partTitle": "Measuring hit rate and savings",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:22:5": {
       "partTitle": "Stale, personal and unsafe cache entries",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:23:0": {
       "partTitle": "Prompting, RAG or fine-tuning?",
