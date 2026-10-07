@@ -23,6 +23,7 @@
     "test": "node scripts/utils/run-tests.cjs",
     "test:e2e": "playwright test",
     "visuals:status": "node --experimental-strip-types scripts/visuals/status.mts",
+    "visuals:generate": "tsx scripts/visuals/generate.mts",
     "screenshots": "node scripts/take_screenshots.mjs"
   },
   "dependencies": {
