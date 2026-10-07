@@ -1,0 +1,891 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Containers and images",
+      "codeHash": "38a487d61587691ac6488183bf0f089d23a33269b7e9f63a6ef200749aeae3c5",
+      "spec": {
+        "template": "table",
+        "title": "Container image layer structure and caching optimization",
+        "columns": [
+          "image",
+          "layer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A container packages an application with its runtime.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "python:3.12-slim"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Images are built from a Dockerfile in the registry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "python:3.12-slim"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requirements.txt"
+                  },
+                  {
+                    "text": "dependencies"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unchanged layers remain cached while copying code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "python:3.12-slim"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requirements.txt"
+                  },
+                  {
+                    "text": "dependencies"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app:server"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tag images with something traceable like a commit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "python:3.12-slim"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requirements.txt"
+                  },
+                  {
+                    "text": "dependencies"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "app:server"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Container image layer structure and caching optimization",
+        "columns": [
+          "image",
+          "layer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A container packages an application with its runtime.",
+            "rows": [
+              {
+                "cells": [
+                  "python:3.12-slim",
+                  "base"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Images are built from a Dockerfile in the registry.",
+            "rows": [
+              {
+                "cells": [
+                  "python:3.12-slim",
+                  "base"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "requirements.txt",
+                  "dependencies"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unchanged layers remain cached while copying code.",
+            "rows": [
+              {
+                "cells": [
+                  "python:3.12-slim",
+                  "base"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "requirements.txt",
+                  "dependencies"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app:server",
+                  "code"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tag images with something traceable like a commit.",
+            "rows": [
+              {
+                "cells": [
+                  "python:3.12-slim",
+                  "base"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "requirements.txt",
+                  "dependencies"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "app:server",
+                  "code"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ECS: clusters, task definitions and services",
+      "codeHash": "6e3918a9a2da9e36497c7b449c0713e0a831db03e4d2f7efd2d31db60c3d2ced",
+      "spec": {
+        "template": "table",
+        "title": "ECS task definition sizing and service execution settings",
+        "columns": [
+          "cpu",
+          "memory"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Task definitions specify CPU and memory resources for containers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "ECS services maintain desired running task instances.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distinct task and execution roles provide least privilege access.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "AWS Fargate runs containers without managing underlying servers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ECS task definition sizing and service execution settings",
+        "columns": [
+          "cpu",
+          "memory"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Task definitions specify CPU and memory resources for containers.",
+            "rows": [
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "ECS services maintain desired running task instances.",
+            "rows": [
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Distinct task and execution roles provide least privilege access.",
+            "rows": [
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "AWS Fargate runs containers without managing underlying servers.",
+            "rows": [
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fargate sizes",
+      "codeHash": "bcd41ac7ba499968824e2442b9f88a6d17bb8bf235c291afb7486844e179dd06",
+      "spec": {
+        "template": "table",
+        "title": "Valid Fargate vCPU and memory configuration matrix",
+        "columns": [
+          "cpu",
+          "memory_mb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fargate accepts CPU and memory pairs from defined configurations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "256"
+                  },
+                  {
+                    "text": "512"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each CPU tier allows specific memory increments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "256"
+                  },
+                  {
+                    "text": "512"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Teams validate container sizes before initiating deployment.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "256"
+                  },
+                  {
+                    "text": "512"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "2048"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Right-sizing containers minimizes waste while preserving headroom.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "256"
+                  },
+                  {
+                    "text": "512"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "512"
+                  },
+                  {
+                    "text": "1024"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "2048"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2048"
+                  },
+                  {
+                    "text": "4096"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Valid Fargate vCPU and memory configuration matrix",
+        "columns": [
+          "cpu",
+          "memory_mb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fargate accepts CPU and memory pairs from defined configurations.",
+            "rows": [
+              {
+                "cells": [
+                  "256",
+                  "512"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each CPU tier allows specific memory increments.",
+            "rows": [
+              {
+                "cells": [
+                  "256",
+                  "512"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Teams validate container sizes before initiating deployment.",
+            "rows": [
+              {
+                "cells": [
+                  "256",
+                  "512"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "2048"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Right-sizing containers minimizes waste while preserving headroom.",
+            "rows": [
+              {
+                "cells": [
+                  "256",
+                  "512"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "512",
+                  "1024"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "2048"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2048",
+                  "4096"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Configuration and secrets",
+      "codeHash": "11dce1d575949e88c70ebb2a130fb016e4f6e3bed62fdba5339e78aa1c381c95",
+      "spec": {
+        "template": "table",
+        "title": "Container environment variables and Secrets Manager bindings",
+        "columns": [
+          "name",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Containers read environment variables for configuration.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PORT"
+                  },
+                  {
+                    "text": "8080"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive database passwords must never be stored as plain values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PORT"
+                  },
+                  {
+                    "text": "8080"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LOG_LEVEL"
+                  },
+                  {
+                    "text": "info"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Secrets Manager references allow ECS to fetch credentials safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PORT"
+                  },
+                  {
+                    "text": "8080"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LOG_LEVEL"
+                  },
+                  {
+                    "text": "info"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DB_PASS"
+                  },
+                  {
+                    "text": "arn:aws:secretsmanager:ap-south-1:1:secret:db"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validation functions prevent collisions between plain settings and secrets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "PORT"
+                  },
+                  {
+                    "text": "8080"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LOG_LEVEL"
+                  },
+                  {
+                    "text": "info"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DB_PASS"
+                  },
+                  {
+                    "text": "arn:aws:secretsmanager:ap-south-1:1:secret:db"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Container environment variables and Secrets Manager bindings",
+        "columns": [
+          "name",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Containers read environment variables for configuration.",
+            "rows": [
+              {
+                "cells": [
+                  "PORT",
+                  "8080"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive database passwords must never be stored as plain values.",
+            "rows": [
+              {
+                "cells": [
+                  "PORT",
+                  "8080"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LOG_LEVEL",
+                  "info"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Secrets Manager references allow ECS to fetch credentials safely.",
+            "rows": [
+              {
+                "cells": [
+                  "PORT",
+                  "8080"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LOG_LEVEL",
+                  "info"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DB_PASS",
+                  "arn:aws:secretsmanager:ap-south-1:1:secret:db"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Validation functions prevent collisions between plain settings and secrets.",
+            "rows": [
+              {
+                "cells": [
+                  "PORT",
+                  "8080"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LOG_LEVEL",
+                  "info"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DB_PASS",
+                  "arn:aws:secretsmanager:ap-south-1:1:secret:db"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaling and deploying services",
+      "codeHash": "f478a04c1ddae6fa039bba009278bce4f0bfe5817b52a6b187b2aa5be36c5980",
+      "spec": {
+        "template": "none",
+        "reason": "Scaling and deploying services."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: size and configure",
+      "codeHash": "6eebd9370b07a849d1db28be7d1e85b3db7143551e8e532ed5bfcf1405db37d3",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: size and configure."
+      },
+      "filled": {}
+    }
+  ]
+}

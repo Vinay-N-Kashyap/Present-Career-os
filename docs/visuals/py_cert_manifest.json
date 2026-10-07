@@ -4108,27 +4108,27 @@
     },
     "cloud-py:22:0": {
       "partTitle": "Containers and images",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:22:1": {
       "partTitle": "ECS: clusters, task definitions and services",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:22:2": {
       "partTitle": "Fargate sizes",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:22:3": {
       "partTitle": "Configuration and secrets",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:22:4": {
       "partTitle": "Scaling and deploying services",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:22:5": {
       "partTitle": "Practice time: size and configure",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:23:0": {
       "partTitle": "Orchestration and Step Functions",
