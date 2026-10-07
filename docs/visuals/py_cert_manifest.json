@@ -4948,27 +4948,27 @@
     },
     "nlp-py:27:0": {
       "partTitle": "From logits to a choice",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:27:1": {
       "partTitle": "Temperature",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:27:2": {
       "partTitle": "Top-k sampling",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:27:3": {
       "partTitle": "Nucleus (top-p) sampling",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:27:4": {
       "partTitle": "Choosing decoding settings",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:27:5": {
       "partTitle": "Practice time: nucleus and temperature",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:28:0": {
       "partTitle": "Why automatic metrics",
