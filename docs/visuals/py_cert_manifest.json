@@ -1108,27 +1108,27 @@
     },
     "dsa-py:17:0": {
       "partTitle": "The binary search tree rule",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:17:1": {
       "partTitle": "Searching and the cost of balance",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:17:2": {
       "partTitle": "Validating a BST with ranges",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:17:3": {
       "partTitle": "Lowest common ancestor in a BST",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:17:4": {
       "partTitle": "The k-th smallest and range queries",
-      "status": "todo"
+      "status": "passed"
     },
     "dsa-py:17:5": {
       "partTitle": "Deleting from a BST",
-      "status": "todo"
+      "status": "none"
     },
     "dsa-py:18:0": {
       "partTitle": "A heap stored in a list",
