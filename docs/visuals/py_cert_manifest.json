@@ -1588,27 +1588,27 @@
     },
     "sql-mastery:7:0": {
       "partTitle": "What a function is in SQL",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:7:1": {
       "partTitle": "Text functions",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:7:2": {
       "partTitle": "Numbers: maths and rounding",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:7:3": {
       "partTitle": "Dates: today, differences and parts",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:7:4": {
       "partTitle": "Formatting dates and numbers for people",
-      "status": "todo"
+      "status": "none"
     },
     "sql-mastery:7:5": {
       "partTitle": "Putting it together: an invoice view of products",
-      "status": "todo"
+      "status": "passed"
     },
     "sql-mastery:8:0": {
       "partTitle": "Aggregate functions: many rows, one answer",
