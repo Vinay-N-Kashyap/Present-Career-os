@@ -460,27 +460,27 @@
     },
     "python:20:0": {
       "partTitle": "Installing Python and VS Code",
-      "status": "todo"
+      "status": "passed"
     },
     "python:20:1": {
       "partTitle": "Running a .py file from the terminal",
-      "status": "todo"
+      "status": "none"
     },
     "python:20:2": {
       "partTitle": "Reading what the user types with input()",
-      "status": "todo"
+      "status": "passed"
     },
     "python:20:3": {
       "partTitle": "A menu loop",
-      "status": "todo"
+      "status": "none"
     },
     "python:20:4": {
       "partTitle": "pip and packages",
-      "status": "todo"
+      "status": "passed"
     },
     "python:20:5": {
       "partTitle": "Virtual environments",
-      "status": "todo"
+      "status": "none"
     },
     "python:21:0": {
       "partTitle": "Why developers write tests",
