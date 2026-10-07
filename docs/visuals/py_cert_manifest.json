@@ -2356,27 +2356,27 @@
     },
     "ai-py:9:0": {
       "partTitle": "Why documents are cut into chunks",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:9:1": {
       "partTitle": "Sliding window with overlap",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:9:2": {
       "partTitle": "Overlap maths",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:9:3": {
       "partTitle": "Splitting on natural boundaries",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:9:4": {
       "partTitle": "Chunk metadata for citations",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:9:5": {
       "partTitle": "Choosing a chunk size",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:10:0": {
       "partTitle": "Retrieval-augmented generation",
