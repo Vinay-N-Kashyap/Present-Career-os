@@ -3676,27 +3676,27 @@
     },
     "cloud-py:4:0": {
       "partTitle": "Two layers of firewall",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:4:1": {
       "partTitle": "Stateful versus stateless",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:4:2": {
       "partTitle": "NACL rule numbers: first match wins",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:4:3": {
       "partTitle": "Security groups that reference each other",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:4:4": {
       "partTitle": "Least privilege on the network",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:4:5": {
       "partTitle": "Practice time: evaluate the firewalls",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:5:0": {
       "partTitle": "The reference architecture",
