@@ -2788,27 +2788,27 @@
     },
     "ai-py:27:0": {
       "partTitle": "Why limits matter",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:27:1": {
       "partTitle": "The token bucket",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:27:2": {
       "partTitle": "Allowing, rejecting and refusing",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:27:3": {
       "partTitle": "Counting calls per minute",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:27:4": {
       "partTitle": "Retries with exponential backoff",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:27:5": {
       "partTitle": "Budgets and graceful degradation",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:28:0": {
       "partTitle": "Why LLM apps need observability",

@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why limits matter",
+      "codeHash": "4d19240b3ccf2c5be6c274166ad26b9fb98343e26daffb36ed22b99dd036528e",
+      "spec": {
+        "template": "none",
+        "reason": "Rate limit policies RPM and TPM conceptual foundation."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "The token bucket",
+      "codeHash": "0ec632fe756a2f8d91a4958cdfeffda9be179134cb10606dc50c28b39747c3c5",
+      "spec": {
+        "template": "flow",
+        "title": "Token bucket state and lazy refill mechanism",
+        "nodes": [
+          {
+            "id": "capacity",
+            "label": "capacity"
+          },
+          {
+            "id": "tokens",
+            "label": "tokens"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "edges": [
+          {
+            "from": "capacity",
+            "to": "tokens",
+            "label": "rate"
+          },
+          {
+            "from": "tokens",
+            "to": "amount",
+            "label": "take"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bucket holds up to capacity tokens refilling at fixed rate.",
+            "values": {
+              "capacity": {
+                "text": "10_000"
+              },
+              "tokens": {
+                "text": "10_000"
+              },
+              "amount": {
+                "text": "6000"
+              }
+            },
+            "tones": {
+              "capacity": "idle",
+              "tokens": "ok",
+              "amount": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Each call removes tokens if available or gets rejected.",
+            "values": {
+              "capacity": {
+                "text": "10_000"
+              },
+              "tokens": {
+                "text": "tokens"
+              },
+              "amount": {
+                "text": "amount"
+              }
+            },
+            "tones": {
+              "capacity": "idle",
+              "tokens": "ok",
+              "amount": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Lazy refill computes added tokens on arrival capped at capacity.",
+            "values": {
+              "capacity": {
+                "text": "capacity"
+              },
+              "tokens": {
+                "text": "tokens"
+              },
+              "amount": {
+                "text": "amount"
+              }
+            },
+            "tones": {
+              "capacity": "ok",
+              "tokens": "ok",
+              "amount": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Token bucket state and lazy refill mechanism",
+        "nodes": [
+          {
+            "id": "capacity",
+            "label": "capacity"
+          },
+          {
+            "id": "tokens",
+            "label": "tokens"
+          },
+          {
+            "id": "amount",
+            "label": "amount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bucket holds up to capacity tokens refilling at fixed rate.",
+            "values": {
+              "capacity": "10_000",
+              "tokens": "10_000",
+              "amount": "6000"
+            },
+            "tones": {
+              "capacity": "idle",
+              "tokens": "ok",
+              "amount": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "Each call removes tokens if available or gets rejected.",
+            "values": {
+              "capacity": "10_000",
+              "tokens": "tokens",
+              "amount": "amount"
+            },
+            "tones": {
+              "capacity": "idle",
+              "tokens": "ok",
+              "amount": "data"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say5",
+            "caption": "Lazy refill computes added tokens on arrival capped at capacity.",
+            "values": {
+              "capacity": "capacity",
+              "tokens": "tokens",
+              "amount": "amount"
+            },
+            "tones": {
+              "capacity": "ok",
+              "tokens": "ok",
+              "amount": "idle"
+            },
+            "arrows": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Allowing, rejecting and refusing",
+      "codeHash": "7ec14cc0412a030205bed8a3c4035b17a0beeca0193a54d62853983168282008",
+      "spec": {
+        "template": "table",
+        "title": "Token bucket request validation status and remaining limits",
+        "columns": [
+          "requested",
+          "available",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Requested larger than capacity returns 413 error status.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "150000"
+                  },
+                  {
+                    "text": "100000"
+                  },
+                  {
+                    "text": "413"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Requested exceeding available returns 429 rate limit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "150000"
+                  },
+                  {
+                    "text": "100000"
+                  },
+                  {
+                    "text": "413"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "25000"
+                  },
+                  {
+                    "text": "20000"
+                  },
+                  {
+                    "text": "429"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Fitting requested tokens return 200 status code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "150000"
+                  },
+                  {
+                    "text": "100000"
+                  },
+                  {
+                    "text": "413"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "25000"
+                  },
+                  {
+                    "text": "20000"
+                  },
+                  {
+                    "text": "429"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5000"
+                  },
+                  {
+                    "text": "20000"
+                  },
+                  {
+                    "text": "200"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token bucket request validation status and remaining limits",
+        "columns": [
+          "requested",
+          "available",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Requested larger than capacity returns 413 error status.",
+            "rows": [
+              {
+                "cells": [
+                  "150000",
+                  "100000",
+                  "413"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Requested exceeding available returns 429 rate limit.",
+            "rows": [
+              {
+                "cells": [
+                  "150000",
+                  "100000",
+                  "413"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "25000",
+                  "20000",
+                  "429"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Fitting requested tokens return 200 status code.",
+            "rows": [
+              {
+                "cells": [
+                  "150000",
+                  "100000",
+                  "413"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "25000",
+                  "20000",
+                  "429"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "5000",
+                  "20000",
+                  "200"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting calls per minute",
+      "codeHash": "8add997e848c8c3fbe6f3353156dd6323d500c08bab52d77e9770488e0c637db",
+      "spec": {
+        "template": "bars",
+        "title": "Sliding window rate limit call count per minute",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function rpm_exceeded detects when count exceeds max_rpm.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sliding window keeps recent timestamps dropping older calls.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "call_3",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deque collection stores timestamps efficiently.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "call_3",
+                "value": {
+                  "text": "3"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "max_rpm",
+                "value": {
+                  "text": "60"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Sliding window rate limit call count per minute",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function rpm_exceeded detects when count exceeds max_rpm.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sliding window keeps recent timestamps dropping older calls.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": 2,
+                "tone": "ok"
+              },
+              {
+                "label": "call_3",
+                "value": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deque collection stores timestamps efficiently.",
+            "bars": [
+              {
+                "label": "call_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "label": "call_2",
+                "value": 2,
+                "tone": "ok"
+              },
+              {
+                "label": "call_3",
+                "value": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "max_rpm",
+                "value": 60,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retries with exponential backoff",
+      "codeHash": "36e651a51437e96f1ae8d964365918f361946bc8ea3c1c4a2c25151e96a05018",
+      "spec": {
+        "template": "compare",
+        "title": "HTTP status code retry eligibility and exponential backoff",
+        "leftLabel": "Retryable Status",
+        "rightLabel": "Fatal Error Status",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temporary server error and 429 rate limits are retryable.",
+            "left": {
+              "code": "status in RETRYABLE: 429",
+              "result": {
+                "text": "429"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status in RETRYABLE: 400",
+              "result": {
+                "text": "400"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exponential backoff waits longer after each failure.",
+            "left": {
+              "code": "retry status wait delay",
+              "result": {
+                "text": "retry"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "fatal status abort wait",
+              "result": {
+                "text": "do not retry"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Errors like 400 and 413 never fix themselves so abort retries.",
+            "left": {
+              "code": "status in RETRYABLE: 503",
+              "result": {
+                "text": "retry"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status in RETRYABLE: 413",
+              "result": {
+                "text": "413"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "HTTP status code retry eligibility and exponential backoff",
+        "leftLabel": "Retryable Status",
+        "rightLabel": "Fatal Error Status",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Temporary server error and 429 rate limits are retryable.",
+            "left": {
+              "code": "status in RETRYABLE: 429",
+              "result": "429",
+              "tone": "ok",
+              "checks": [
+                "429"
+              ]
+            },
+            "right": {
+              "code": "status in RETRYABLE: 400",
+              "result": "400",
+              "tone": "error",
+              "checks": [
+                "400"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exponential backoff waits longer after each failure.",
+            "left": {
+              "code": "retry status wait delay",
+              "result": "retry",
+              "tone": "ok",
+              "checks": [
+                "retry"
+              ]
+            },
+            "right": {
+              "code": "fatal status abort wait",
+              "result": "do not retry",
+              "tone": "error",
+              "checks": [
+                "do not retry"
+              ]
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Errors like 400 and 413 never fix themselves so abort retries.",
+            "left": {
+              "code": "status in RETRYABLE: 503",
+              "result": "retry",
+              "tone": "ok",
+              "checks": [
+                "retry"
+              ]
+            },
+            "right": {
+              "code": "status in RETRYABLE: 413",
+              "result": "413",
+              "tone": "error",
+              "checks": [
+                "413"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Budgets and graceful degradation",
+      "codeHash": "5a2f16eb8ab41928b1cf86e5be7c7085ec6e7b41606a06a8c5450b5863d6e12a",
+      "spec": {
+        "template": "none",
+        "reason": "Cost tracking thresholds and graceful model degradation."
+      },
+      "filled": {}
+    }
+  ]
+}
