@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Partitioning around a pivot",
+      "codeHash": "dccd2f7e8fdb0a5242544c29d69be773587c8fbb6bb9f35da9941dfdc936c708",
+      "spec": {
+        "template": "cells",
+        "title": "Lomuto partitioning around pivot element",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Last item serves as pivot while pointer p marks small elements.",
+            "items": [
+              {
+                "text": "7"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "9"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "p",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "pivot",
+                "index": 6,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swap pivot into position p placing smaller items left.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "8"
+              },
+              {
+                "text": "9"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ],
+            "pointers": [
+              {
+                "name": "pivot",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Lomuto partitioning around pivot element",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Last item serves as pivot while pointer p marks small elements.",
+            "items": [
+              "7",
+              "2",
+              "9",
+              "4",
+              "3",
+              "8",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "p",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "pivot",
+                "index": 6,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Swap pivot into position p placing smaller items left.",
+            "items": [
+              "2",
+              "4",
+              "3",
+              "5",
+              "7",
+              "8",
+              "9"
+            ],
+            "pointers": [
+              {
+                "name": "pivot",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quick sort",
+      "codeHash": "7b4a25aca864feade99832ca1c006f8887ad3f87ccabc0b38579aa53e06be224",
+      "spec": {
+        "template": "none",
+        "reason": "Recursive partition boundary dividing into left and right subproblems."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Recursive partition boundary dividing into left and right subproblems."
+      }
+    },
+    {
+      "partTitle": "The worst case and random pivots",
+      "codeHash": "8f09b68fe7c0e52302116916cd160a95c19856ec49b953afa58f096c3d814448",
+      "spec": {
+        "template": "bars",
+        "title": "Comparison count deterministic vs random pivot",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unbalanced pivots cause quadratic comparison work.",
+            "bars": [
+              {
+                "label": "Sorted last pivot",
+                "value": {
+                  "text": "44,850 comps"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Quadratic bound",
+                "value": {
+                  "text": "O(N^2)"
+                },
+                "tone": "error"
+              }
+            ],
+            "max": 50000
+          },
+          {
+            "at": "say2",
+            "caption": "Random pivot avoids sorted worst case achieving expected N log N.",
+            "bars": [
+              {
+                "label": "Sorted last pivot",
+                "value": {
+                  "text": "44,850 comps"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Random pivot",
+                "value": {
+                  "text": "2,410 comps"
+                },
+                "tone": "ok"
+              }
+            ],
+            "max": 50000
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Comparison count deterministic vs random pivot",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unbalanced pivots cause quadratic comparison work.",
+            "bars": [
+              {
+                "label": "Sorted last pivot",
+                "value": "44,850 comps",
+                "tone": "error"
+              },
+              {
+                "label": "Quadratic bound",
+                "value": "O(N^2)",
+                "tone": "error"
+              }
+            ],
+            "max": 50000
+          },
+          {
+            "at": "say2",
+            "caption": "Random pivot avoids sorted worst case achieving expected N log N.",
+            "bars": [
+              {
+                "label": "Sorted last pivot",
+                "value": "44,850 comps",
+                "tone": "error"
+              },
+              {
+                "label": "Random pivot",
+                "value": "2,410 comps",
+                "tone": "ok"
+              }
+            ],
+            "max": 50000
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quickselect: the k-th largest in O(N)",
+      "codeHash": "fbcc169f0757a6e55bba1b71f61b682434e9670f762f56ddfbed2be827bccb06",
+      "spec": {
+        "template": "cells",
+        "title": "Quickselect unilateral partition elimination",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quickselect follows only partition containing target index.",
+            "items": [
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "4"
+              }
+            ],
+            "highlightRange": [
+              0,
+              5
+            ],
+            "pointers": [
+              {
+                "name": "target",
+                "index": 4,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Partition search follows right part if pivot lands left.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              }
+            ],
+            "highlightRange": [
+              3,
+              5
+            ],
+            "pointers": [
+              {
+                "name": "k-th",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Quickselect unilateral partition elimination",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Quickselect follows only partition containing target index.",
+            "items": [
+              "3",
+              "2",
+              "1",
+              "5",
+              "6",
+              "4"
+            ],
+            "pointers": [
+              {
+                "name": "target",
+                "index": 4,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              5
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Partition search follows right part if pivot lands left.",
+            "items": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "pointers": [
+              {
+                "name": "k-th",
+                "index": 4,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              3,
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "heapq and choosing the right tool",
+      "codeHash": "8e13169eed2c06cfbb5e2132bb6b61cf9bd23f6124e4674e333bf5a6e56ae32d",
+      "spec": {
+        "template": "none",
+        "reason": "Complexity trade-offs among full sort, heap, and quickselect."
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Complexity trade-offs among full sort, heap, and quickselect."
+      }
+    },
+    {
+      "partTitle": "Merge sort or quick sort?",
+      "codeHash": "b18f76ca2572ee93ecc92dd1dac52eb41fd57b35c86c7590f25ea47b996f1d43",
+      "spec": {
+        "template": "table",
+        "title": "Merge sort vs quick sort comparison",
+        "columns": [
+          "Sorting Metric",
+          "Merge Sort",
+          "Quick Sort",
+          "Winner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Both algorithms achieve N log N average comparison time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Average time"
+                  },
+                  {
+                    "text": "O(N log N)"
+                  },
+                  {
+                    "text": "O(N log N)"
+                  },
+                  {
+                    "text": "tie"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Worst case"
+                  },
+                  {
+                    "text": "O(N log N)"
+                  },
+                  {
+                    "text": "O(N^2)"
+                  },
+                  {
+                    "text": "Merge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Merge sort suits linked lists while quick sort favors arrays.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Average time"
+                  },
+                  {
+                    "text": "O(N log N)"
+                  },
+                  {
+                    "text": "O(N log N)"
+                  },
+                  {
+                    "text": "tie"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Extra space"
+                  },
+                  {
+                    "text": "O(N)"
+                  },
+                  {
+                    "text": "O(log N)"
+                  },
+                  {
+                    "text": "Quick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Stability"
+                  },
+                  {
+                    "text": "stable"
+                  },
+                  {
+                    "text": "unstable"
+                  },
+                  {
+                    "text": "Merge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Merge sort vs quick sort comparison",
+        "columns": [
+          "Sorting Metric",
+          "Merge Sort",
+          "Quick Sort",
+          "Winner"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Both algorithms achieve N log N average comparison time.",
+            "rows": [
+              {
+                "cells": [
+                  "Average time",
+                  "O(N log N)",
+                  "O(N log N)",
+                  "tie"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Worst case",
+                  "O(N log N)",
+                  "O(N^2)",
+                  "Merge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Merge sort suits linked lists while quick sort favors arrays.",
+            "rows": [
+              {
+                "cells": [
+                  "Average time",
+                  "O(N log N)",
+                  "O(N log N)",
+                  "tie"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Extra space",
+                  "O(N)",
+                  "O(log N)",
+                  "Quick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Stability",
+                  "stable",
+                  "unstable",
+                  "Merge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
