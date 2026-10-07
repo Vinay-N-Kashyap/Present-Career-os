@@ -2740,27 +2740,27 @@
     },
     "ai-py:25:0": {
       "partTitle": "Why self-host an open model?",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:25:1": {
       "partTitle": "The KV cache",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:25:2": {
       "partTitle": "PagedAttention",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:25:3": {
       "partTitle": "Batching and throughput",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:25:4": {
       "partTitle": "GGUF and quantisation names",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:25:5": {
       "partTitle": "Choosing how to run a model",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:26:0": {
       "partTitle": "Models that see",
