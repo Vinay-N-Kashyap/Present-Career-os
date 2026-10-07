@@ -4756,27 +4756,27 @@
     },
     "nlp-py:19:0": {
       "partTitle": "Why more than one head",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:19:1": {
       "partTitle": "Splitting the model dimension",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:19:2": {
       "partTitle": "Splitting and merging vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:19:3": {
       "partTitle": "Running the heads",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:19:4": {
       "partTitle": "What heads learn, and efficient variants",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:19:5": {
       "partTitle": "Practice time: dimensions and heads",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:20:0": {
       "partTitle": "Attention is order-blind",
