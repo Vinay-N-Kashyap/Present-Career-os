@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadPyodide, type PyodideInterface } from 'pyodide';
 
-import { PYTHON_M1_VISUALS } from '../src/lib/data/lessonVisuals/pythonMonth1Visuals';
+import { getVisual } from '../src/lib/visuals/loadVisuals';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { LessonVisual, VisualTone } from '../src/lib/types/lessonVisual';
 
@@ -383,20 +383,20 @@ test('V-03: Rule 8 (Match) catches mismatch between partTitle and lesson part ti
 });
 
 test('V-03: Rule 9 (Coverage) catches missing or unexpected keys in pilot scope', () => {
-  const keys = Object.keys(PYTHON_M1_VISUALS);
-  assert.equal(keys.length, 18, `Rule 9: Expected exactly 18 visuals for Days 1-3, found ${keys.length}`);
-
+  let count = 0;
   for (let day = 1; day <= 3; day++) {
     for (let p = 0; p < 6; p++) {
-      const key = `python:${day}:${p}`;
-      assert.ok(key in PYTHON_M1_VISUALS, `Rule 9: Key ${key} must exist`);
+      const visual = getVisual('python', day, p);
+      assert.ok(visual, `Rule 9: Key python:${day}:${p} must exist`);
+      count++;
     }
   }
+  assert.equal(count, 18, `Rule 9: Expected exactly 18 visuals for Days 1-3, found ${count}`);
 });
 
 // ── V-04: Full Validation on Real Data ───────────────────────────────────────
 
-test('V-04: All 18 visuals in PYTHON_M1_VISUALS pass all C6 rules', async () => {
+test('V-04: All 18 visuals in Days 1-3 pass all C6 rules', async () => {
   const pyodide = await loadPyodide();
 
   for (let day = 1; day <= 3; day++) {
@@ -405,12 +405,13 @@ test('V-04: All 18 visuals in PYTHON_M1_VISUALS pass all C6 rules', async () => 
 
     for (let p = 0; p < 6; p++) {
       const key = `python:${day}:${p}`;
-      const entry = PYTHON_M1_VISUALS[key];
-      assert.ok(entry, `Entry for ${key} exists`);
+      const visual = getVisual('python', day, p);
+      assert.ok(visual, `Visual for ${key} exists`);
 
       const part = lesson.parts[p];
       assert.ok(part, `Part ${p} for Day ${day} exists`);
 
+      const entry = { partTitle: part.title, visual };
       await validateSingleVisual(key, entry, part, pyodide);
     }
   }

@@ -5,7 +5,7 @@ import {
   tokenizeParagraphWithUnderlines,
   shouldShowSpaceDots,
 } from '../src/lib/visuals/visualRules';
-import { PYTHON_M1_VISUALS } from '../src/lib/data/lessonVisuals/pythonMonth1Visuals';
+import { getVisual } from '../src/lib/visuals/loadVisuals';
 import type { LessonVisual } from '../src/lib/types/lessonVisual';
 
 test('Rule 1: no underlines for table, letters or compare visuals', () => {
@@ -39,9 +39,9 @@ test('Rule 1: no underlines for table, letters or compare visuals', () => {
   assert.deepEqual(getTappableLabelsForVisual(compareVisual), []);
 
   // For Part 1.3 (table visual), tappable labels must be empty -> 0 underlines
-  const part13 = PYTHON_M1_VISUALS['python:1:2'];
-  assert.ok(part13, 'python:1:2 exists');
-  assert.deepEqual(getTappableLabelsForVisual(part13.visual), []);
+  const part13Visual = getVisual('python', 1, 2);
+  assert.ok(part13Visual, 'python:1:2 exists');
+  assert.deepEqual(getTappableLabelsForVisual(part13Visual), []);
 });
 
 test('Rule 2: flow and boxes provide tappable labels', () => {
@@ -76,21 +76,21 @@ test('Rule 3: underline only the first match per paragraph', () => {
 
 test('Rule 4: show space dots only where visual data has showSpaces: true', () => {
   // Parts 3.1 (python:3:0), 3.4 (python:3:3), and 3.6 (python:3:5) must have showSpaces: true
-  const part31 = PYTHON_M1_VISUALS['python:3:0'];
-  const part34 = PYTHON_M1_VISUALS['python:3:3'];
-  const part36 = PYTHON_M1_VISUALS['python:3:5'];
+  const part31Visual = getVisual('python', 3, 0);
+  const part34Visual = getVisual('python', 3, 3);
+  const part36Visual = getVisual('python', 3, 5);
 
-  assert.ok(part31, 'python:3:0 exists');
-  assert.ok(part34, 'python:3:3 exists');
-  assert.ok(part36, 'python:3:5 exists');
+  assert.ok(part31Visual, 'python:3:0 exists');
+  assert.ok(part34Visual, 'python:3:3 exists');
+  assert.ok(part36Visual, 'python:3:5 exists');
 
-  assert.equal(shouldShowSpaceDots(part31.visual), true);
-  assert.equal(shouldShowSpaceDots(part34.visual), true);
-  assert.equal(shouldShowSpaceDots(part36.visual), true);
+  assert.equal(shouldShowSpaceDots(part31Visual), true);
+  assert.equal(shouldShowSpaceDots(part34Visual), true);
+  assert.equal(shouldShowSpaceDots(part36Visual), true);
 
   // Other parts like 1.3 (python:1:2) and 2.2 (python:2:1) must NOT show space dots
-  const part13 = PYTHON_M1_VISUALS['python:1:2'];
-  const part22 = PYTHON_M1_VISUALS['python:2:1'];
-  assert.equal(shouldShowSpaceDots(part13.visual), false);
-  assert.equal(shouldShowSpaceDots(part22.visual), false);
+  const part13Visual = getVisual('python', 1, 2);
+  const part22Visual = getVisual('python', 2, 1);
+  assert.equal(shouldShowSpaceDots(part13Visual), false);
+  assert.equal(shouldShowSpaceDots(part22Visual), false);
 });

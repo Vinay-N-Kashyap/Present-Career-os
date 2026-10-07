@@ -2,7 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { PYTHON_M1_VISUALS } from '../src/lib/data/lessonVisuals/pythonMonth1Visuals';
+import { getVisual } from '../src/lib/visuals/loadVisuals';
 import {
   VisualStage,
   FlowTemplate,
@@ -16,8 +16,16 @@ describe('V-05: Visual Templates & VisualStage Rendering', () => {
   it('renders all 18 visuals across all steps with no errors', () => {
     let renderedStepsCount = 0;
 
-    for (const [key, entry] of Object.entries(PYTHON_M1_VISUALS)) {
-      const { visual } = entry;
+    const visuals: Array<{ key: string; visual: any }> = [];
+    for (let day = 1; day <= 3; day++) {
+      for (let p = 0; p < 6; p++) {
+        const v = getVisual('python', day, p);
+        assert.ok(v, `Visual python:${day}:${p} must exist`);
+        visuals.push({ key: `python:${day}:${p}`, visual: v });
+      }
+    }
+
+    for (const { key, visual } of visuals) {
 
       for (let stepIdx = 0; stepIdx < visual.steps.length; stepIdx++) {
         // 1. Render through VisualStage
@@ -100,12 +108,12 @@ describe('V-05: Visual Templates & VisualStage Rendering', () => {
   });
 
   it('renders word-tap highlighting without error', () => {
-    const entry22 = PYTHON_M1_VISUALS['python:2:1'];
-    assert.ok(entry22 && entry22.visual.template === 'boxes');
+    const visual22 = getVisual('python', 2, 1);
+    assert.ok(visual22 && visual22.template === 'boxes');
 
     const htmlWithHighlight = renderToStaticMarkup(
       React.createElement(VisualStage, {
-        visual: entry22.visual,
+        visual: visual22,
         currentStepIndex: 0,
         onStepChange: () => {},
         isManualOverride: false,

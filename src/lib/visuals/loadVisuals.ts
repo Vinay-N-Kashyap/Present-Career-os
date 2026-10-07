@@ -1,6 +1,5 @@
 import type { LessonVisual } from '@/lib/types/lessonVisual';
 import { isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
-import { PYTHON_M1_VISUALS } from '@/lib/data/lessonVisuals/pythonMonth1Visuals';
 
 export interface DayFileEntry {
   partTitle: string;
@@ -81,11 +80,10 @@ export function loadDayFile(prefix: string, day: number): LessonVisualDayFile | 
 /**
  * Retrieve the visual for a specific lesson part.
  *
- * Rules (Plan E-15):
+ * Rules (Plan E-15, E-21):
  * 1. Load day file only for prefixes listed in enabledCourses.ts.
- * 2. Until E-21, returns pilot file pythonMonth1Visuals.ts for python Days 1–3.
- * 3. Disabled courses get no visuals (returns null).
- * 4. Missing files return null without crashing.
+ * 2. Disabled courses get no visuals (returns null).
+ * 3. Missing files return null without crashing.
  */
 export function getVisual(
   prefix: string,
@@ -97,14 +95,7 @@ export function getVisual(
     return null;
   }
 
-  // 2. Until E-21, pilot file for python Days 1–3
-  if (prefix === 'python' && day >= 1 && day <= 3) {
-    const pilotKey = `python:${day}:${partIndex}`;
-    const pilotEntry = PYTHON_M1_VISUALS[pilotKey];
-    return pilotEntry ? pilotEntry.visual : null;
-  }
-
-  // 3. Load from day file
+  // 2. Load from day file
   const dayFile = loadDayFile(prefix, day);
   if (!dayFile || !Array.isArray(dayFile.entries)) {
     return null;
