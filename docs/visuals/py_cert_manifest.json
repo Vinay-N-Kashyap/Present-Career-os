@@ -2644,27 +2644,27 @@
     },
     "ai-py:21:0": {
       "partTitle": "What the research assistant does",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:21:1": {
       "partTitle": "The supervisor interface",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:21:2": {
       "partTitle": "Orchestrating the plan",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:21:3": {
       "partTitle": "Validating the report",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:21:4": {
       "partTitle": "Tools with sources and safe code",
-      "status": "todo"
+      "status": "passed"
     },
     "ai-py:21:5": {
       "partTitle": "Hardening the assistant",
-      "status": "todo"
+      "status": "none"
     },
     "ai-py:22:0": {
       "partTitle": "Why cache LLM answers",
