@@ -3964,27 +3964,27 @@
     },
     "cloud-py:16:0": {
       "partTitle": "What a CDN does",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:16:1": {
       "partTitle": "Cache-Control and TTL",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:16:2": {
       "partTitle": "Cache keys and hit ratio",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:16:3": {
       "partTitle": "Invalidations and versioned file names",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:16:4": {
       "partTitle": "Code at the edge",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:16:5": {
       "partTitle": "Practice time: TTLs and cache keys",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:17:0": {
       "partTitle": "How DNS finds your app",
