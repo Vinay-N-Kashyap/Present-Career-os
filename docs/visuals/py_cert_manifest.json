@@ -3196,27 +3196,27 @@
     },
     "dist-py:14:0": {
       "partTitle": "The poison pill",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:14:1": {
       "partTitle": "Temporary or permanent?",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:14:2": {
       "partTitle": "Retry, then dead-letter",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:14:3": {
       "partTitle": "What to store in the DLQ",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:14:4": {
       "partTitle": "Redrive and retry topics",
-      "status": "todo"
+      "status": "passed"
     },
     "dist-py:14:5": {
       "partTitle": "Monitoring and ordering concerns",
-      "status": "todo"
+      "status": "none"
     },
     "dist-py:15:0": {
       "partTitle": "The engine's flow",

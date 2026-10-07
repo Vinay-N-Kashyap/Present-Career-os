@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The poison pill",
+      "codeHash": "935c42ef3cdb2ee0c2f61d18d28518736ee863abced1b674d269b9f4cbcdf5d2",
+      "spec": {
+        "template": "none",
+        "reason": "Malformed poison pill messages stalling partition consumers."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Temporary or permanent?",
+      "codeHash": "69217aeef49ab0e574d62e7f490ce32dcd3f7e45f3771af12c97dd09d8360579",
+      "spec": {
+        "template": "table",
+        "title": "Error classification separating transient retries from permanent DLQ",
+        "columns": [
+          "error",
+          "classify"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Errors fall into temporary and permanent categories.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "db slow"
+                  },
+                  {
+                    "text": "retry with backoff"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Permanent errors fail every time without retry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "db slow"
+                  },
+                  {
+                    "text": "retry with backoff"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amount is negative"
+                  },
+                  {
+                    "text": "send to DLQ"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retry temporary errors with backoff and send permanent to DLQ.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "db slow"
+                  },
+                  {
+                    "text": "retry with backoff"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "amount is negative"
+                  },
+                  {
+                    "text": "send to DLQ"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reset"
+                  },
+                  {
+                    "text": "retry with backoff"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "customer_id"
+                  },
+                  {
+                    "text": "send to DLQ"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Error classification separating transient retries from permanent DLQ",
+        "columns": [
+          "error",
+          "classify"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Errors fall into temporary and permanent categories.",
+            "rows": [
+              {
+                "cells": [
+                  "db slow",
+                  "retry with backoff"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Permanent errors fail every time without retry.",
+            "rows": [
+              {
+                "cells": [
+                  "db slow",
+                  "retry with backoff"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "amount is negative",
+                  "send to DLQ"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Retry temporary errors with backoff and send permanent to DLQ.",
+            "rows": [
+              {
+                "cells": [
+                  "db slow",
+                  "retry with backoff"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "amount is negative",
+                  "send to DLQ"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "reset",
+                  "retry with backoff"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "customer_id",
+                  "send to DLQ"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retry, then dead-letter",
+      "codeHash": "063c891d509405e2bc3524418a6ef1f875fcc9bf854ae2b86f4461adbb93c083",
+      "spec": {
+        "template": "compare",
+        "title": "Message retry progression leading to dead letter queue dispatch",
+        "leftLabel": "Flaky Temporary Error",
+        "rightLabel": "Permanent Broken Message",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function handle_message calls handler and returns result.",
+            "left": {
+              "code": "flaky call fails once",
+              "result": {
+                "text": "RETRY_SCHEDULED"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "broken payload fails",
+              "result": {
+                "text": "RETRY_SCHEDULED"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exceeding max_attempts routes failed message to the DLQ.",
+            "left": {
+              "code": "second attempt succeeds",
+              "result": {
+                "text": "PROCESSED"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "attempts exceed maximum",
+              "result": {
+                "text": "ROUTED_TO_DLQ"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Once a message routes to DLQ the partition is unblocked.",
+            "left": {
+              "code": "payload returns ok",
+              "result": {
+                "text": "ok"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "error recorded in dlq",
+              "result": {
+                "text": "missing customer_id"
+              },
+              "tone": "idle"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Message retry progression leading to dead letter queue dispatch",
+        "leftLabel": "Flaky Temporary Error",
+        "rightLabel": "Permanent Broken Message",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Function handle_message calls handler and returns result.",
+            "left": {
+              "code": "flaky call fails once",
+              "result": "RETRY_SCHEDULED",
+              "tone": "idle",
+              "checks": [
+                "RETRY_SCHEDULED"
+              ]
+            },
+            "right": {
+              "code": "broken payload fails",
+              "result": "RETRY_SCHEDULED",
+              "tone": "error",
+              "checks": [
+                "RETRY_SCHEDULED"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exceeding max_attempts routes failed message to the DLQ.",
+            "left": {
+              "code": "second attempt succeeds",
+              "result": "PROCESSED",
+              "tone": "ok",
+              "checks": [
+                "PROCESSED"
+              ]
+            },
+            "right": {
+              "code": "attempts exceed maximum",
+              "result": "ROUTED_TO_DLQ",
+              "tone": "error",
+              "checks": [
+                "ROUTED_TO_DLQ"
+              ]
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Once a message routes to DLQ the partition is unblocked.",
+            "left": {
+              "code": "payload returns ok",
+              "result": "ok",
+              "tone": "ok",
+              "checks": [
+                "ok"
+              ]
+            },
+            "right": {
+              "code": "error recorded in dlq",
+              "result": "missing customer_id",
+              "tone": "idle",
+              "checks": [
+                "missing customer_id"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What to store in the DLQ",
+      "codeHash": "9c9447ba7ac6a94fdced73aa5ce189d47298a344be4230e21091c0881383800e",
+      "spec": {
+        "template": "table",
+        "title": "Dead letter queue entry metadata schema and error aggregation",
+        "columns": [
+          "msg_id",
+          "error",
+          "failed_at"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A DLQ entry contains original message error and timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function dlq_entry packages msg_id error and timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "ValueError: negative amount"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Group DLQ entries by error message to diagnose issues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "ValueError: negative amount"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  },
+                  {
+                    "text": "1020"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  },
+                  {
+                    "text": "1030"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dead letter queue entry metadata schema and error aggregation",
+        "columns": [
+          "msg_id",
+          "error",
+          "failed_at"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A DLQ entry contains original message error and timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id",
+                  "1000"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Function dlq_entry packages msg_id error and timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id",
+                  "1000"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "2",
+                  "ValueError: negative amount",
+                  "1010"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Group DLQ entries by error message to diagnose issues.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id",
+                  "1000"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "2",
+                  "ValueError: negative amount",
+                  "1010"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "3",
+                  "KeyError: customer_id",
+                  "1020"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "4",
+                  "KeyError: customer_id",
+                  "1030"
+                ],
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redrive and retry topics",
+      "codeHash": "541c784ad7bfd453e1c2bbe334bb3e7d95e08d2b17f9738bc5bf294cad834cf7",
+      "spec": {
+        "template": "table",
+        "title": "Dead letter queue redrive filtering by resolved error types",
+        "columns": [
+          "id",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed messages in the DLQ are redriven to the main topic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Redriving messages is safe when processing is idempotent.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "ValueError: negative amount"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Redrive routes only entries whose error has been resolved.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "ValueError: negative amount"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "KeyError: customer_id"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dead letter queue redrive filtering by resolved error types",
+        "columns": [
+          "id",
+          "error"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed messages in the DLQ are redriven to the main topic.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Redriving messages is safe when processing is idempotent.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "ValueError: negative amount"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Redrive routes only entries whose error has been resolved.",
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "KeyError: customer_id"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "2",
+                  "ValueError: negative amount"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "3",
+                  "KeyError: customer_id"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monitoring and ordering concerns",
+      "codeHash": "97b5c294393761bd6b4b80a78f14acfca36fc1bccd007e023a2f252e9fa91959",
+      "spec": {
+        "template": "none",
+        "reason": "DLQ monitoring alerting and ordered key park policies."
+      },
+      "filled": {}
+    }
+  ]
+}
