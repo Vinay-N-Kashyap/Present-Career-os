@@ -5236,27 +5236,27 @@
     },
     "quant-py:9:0": {
       "partTitle": "The Financial Information eXchange protocol",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:9:1": {
       "partTitle": "Header, body and trailer",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:9:2": {
       "partTitle": "Validating incoming messages",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:9:3": {
       "partTitle": "Sessions, logon and sequence numbers",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:9:4": {
       "partTitle": "Execution reports and order state",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:9:5": {
       "partTitle": "Practice time: build and validate",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:10:0": {
       "partTitle": "Why binary feeds",
