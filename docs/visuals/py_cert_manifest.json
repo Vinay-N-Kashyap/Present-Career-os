@@ -4036,27 +4036,27 @@
     },
     "cloud-py:19:0": {
       "partTitle": "Publish and subscribe",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:19:1": {
       "partTitle": "Fan-out with SNS and SQS",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:19:2": {
       "partTitle": "Filter policies",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:19:3": {
       "partTitle": "Delivery retries and dead-letter queues",
-      "status": "todo"
+      "status": "passed"
     },
     "cloud-py:19:4": {
       "partTitle": "Push notifications, email and SMS",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:19:5": {
       "partTitle": "Practice time: fan out and filter",
-      "status": "todo"
+      "status": "none"
     },
     "cloud-py:20:0": {
       "partTitle": "Events and the event bus",

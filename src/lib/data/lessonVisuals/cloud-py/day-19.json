@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Publish and subscribe",
+      "codeHash": "51988e7571496f8226b9d3185b5e0b2000e22ef8012b9d385efaf7874a7e67fe",
+      "spec": {
+        "template": "table",
+        "title": "SNS topic publish and subscribe fan-out model",
+        "columns": [
+          "subscriber",
+          "order_id"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Publishers broadcast messages to all registered topic subscribers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing: charge"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subscribers attach diverse services to receive topic notifications.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing: charge"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "email: send receipt for"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding new subscribers requires no modifications to the publisher.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing: charge"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "email: send receipt for"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stock: reserve items for"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every topic subscriber receives a copy of each published message.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing: charge"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "email: send receipt for"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stock: reserve items for"
+                  },
+                  {
+                    "text": "ord-981"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SNS topic publish and subscribe fan-out model",
+        "columns": [
+          "subscriber",
+          "order_id"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Publishers broadcast messages to all registered topic subscribers.",
+            "rows": [
+              {
+                "cells": [
+                  "billing: charge",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Subscribers attach diverse services to receive topic notifications.",
+            "rows": [
+              {
+                "cells": [
+                  "billing: charge",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "email: send receipt for",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding new subscribers requires no modifications to the publisher.",
+            "rows": [
+              {
+                "cells": [
+                  "billing: charge",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "email: send receipt for",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stock: reserve items for",
+                  "ord-981"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every topic subscriber receives a copy of each published message.",
+            "rows": [
+              {
+                "cells": [
+                  "billing: charge",
+                  "ord-981"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "email: send receipt for",
+                  "ord-981"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stock: reserve items for",
+                  "ord-981"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fan-out with SNS and SQS",
+      "codeHash": "6452f344119aa4a938aec107f851a2a180fddb23d2c324a042bd90e50c52d1c0",
+      "spec": {
+        "template": "table",
+        "title": "SNS to SQS queue fan-out delivery verification",
+        "columns": [
+          "endpoint",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fan-out architectures buffer messages into dedicated consumer queues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each service reads from its own queue at its own pace.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "old-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Maintenance downtime in one service never blocks downstream queues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "old-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "email-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example delivers events while tracking endpoint failures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "billing-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "old-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "email-q"
+                  },
+                  {
+                    "text": "CONFIRMED"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "new-q"
+                  },
+                  {
+                    "text": "PENDING"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SNS to SQS queue fan-out delivery verification",
+        "columns": [
+          "endpoint",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fan-out architectures buffer messages into dedicated consumer queues.",
+            "rows": [
+              {
+                "cells": [
+                  "billing-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each service reads from its own queue at its own pace.",
+            "rows": [
+              {
+                "cells": [
+                  "billing-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "old-q",
+                  "CONFIRMED"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Maintenance downtime in one service never blocks downstream queues.",
+            "rows": [
+              {
+                "cells": [
+                  "billing-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "old-q",
+                  "CONFIRMED"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "email-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example delivers events while tracking endpoint failures.",
+            "rows": [
+              {
+                "cells": [
+                  "billing-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "old-q",
+                  "CONFIRMED"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "email-q",
+                  "CONFIRMED"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "new-q",
+                  "PENDING"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filter policies",
+      "codeHash": "af85bf96f6d1f6fc5c733f0132309cf782686fb71cba54eef29d84cb9d05b394",
+      "spec": {
+        "template": "table",
+        "title": "SNS subscription filter policies and attribute matching",
+        "columns": [
+          "customer",
+          "country"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each subscriber receives only relevant service orders.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "VIP"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filter policies evaluate message attributes before delivering.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "VIP"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BASIC"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every configured attribute in the policy must match allowed values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "VIP"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BASIC"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ENTERPRISE"
+                  },
+                  {
+                    "text": "US"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Filtering prevents subscribers from receiving irrelevant messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "VIP"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BASIC"
+                  },
+                  {
+                    "text": "IN"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ENTERPRISE"
+                  },
+                  {
+                    "text": "US"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BASIC"
+                  },
+                  {
+                    "text": "US"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SNS subscription filter policies and attribute matching",
+        "columns": [
+          "customer",
+          "country"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each subscriber receives only relevant service orders.",
+            "rows": [
+              {
+                "cells": [
+                  "VIP",
+                  "IN"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filter policies evaluate message attributes before delivering.",
+            "rows": [
+              {
+                "cells": [
+                  "VIP",
+                  "IN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BASIC",
+                  "IN"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Every configured attribute in the policy must match allowed values.",
+            "rows": [
+              {
+                "cells": [
+                  "VIP",
+                  "IN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BASIC",
+                  "IN"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "ENTERPRISE",
+                  "US"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Filtering prevents subscribers from receiving irrelevant messages.",
+            "rows": [
+              {
+                "cells": [
+                  "VIP",
+                  "IN"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BASIC",
+                  "IN"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "ENTERPRISE",
+                  "US"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BASIC",
+                  "US"
+                ],
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Delivery retries and dead-letter queues",
+      "codeHash": "ca903850a6491e35564e30d3cc603143a838703eb29df3f366a60080e80d2414",
+      "spec": {
+        "template": "table",
+        "title": "SNS retry backoff schedule and dead-letter handling",
+        "columns": [
+          "endpoint_ok_after",
+          "max_attempts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SNS retries failed message delivery according to configured policy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unrecoverable messages are routed to a dead-letter queue.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "99"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exponential backoff delays give recovering endpoints breathing room.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "99"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates delivery retries with progressive backoff.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "99"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SNS retry backoff schedule and dead-letter handling",
+        "columns": [
+          "endpoint_ok_after",
+          "max_attempts"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SNS retries failed message delivery according to configured policy.",
+            "rows": [
+              {
+                "cells": [
+                  "2",
+                  "4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unrecoverable messages are routed to a dead-letter queue.",
+            "rows": [
+              {
+                "cells": [
+                  "2",
+                  "4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "99",
+                  "4"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Exponential backoff delays give recovering endpoints breathing room.",
+            "rows": [
+              {
+                "cells": [
+                  "2",
+                  "4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "99",
+                  "4"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example simulates delivery retries with progressive backoff.",
+            "rows": [
+              {
+                "cells": [
+                  "2",
+                  "4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "99",
+                  "4"
+                ],
+                "tone": "crit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Push notifications, email and SMS",
+      "codeHash": "d955ef3377a22f0e313eb37f246e4a6a9969a32d99a8d0b758964a481cbfa8c3",
+      "spec": {
+        "template": "none",
+        "reason": "Push notifications, email and SMS."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: fan out and filter",
+      "codeHash": "1a981a959a511f4502f0d2b6b18d57ef40e465b574a55c9137d2f188ffc0dad2",
+      "spec": {
+        "template": "none",
+        "reason": "Fan out and filter practice."
+      },
+      "filled": {}
+    }
+  ]
+}
