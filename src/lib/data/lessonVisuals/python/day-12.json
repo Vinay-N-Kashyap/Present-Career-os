@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "prefix": "python",
+  "day": 12,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Tuples: fixed groups of values",
+      "codeHash": "eb3292009e2fc77de151ea4b1cef8b2908ba8374692c2f8e08d12a3fca9177d3",
+      "spec": {
+        "template": "boxes",
+        "title": "Tuples as fixed groups",
+        "boxes": [
+          {
+            "id": "bengaluru",
+            "label": "bengaluru"
+          },
+          {
+            "id": "birthday",
+            "label": "birthday"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tuple is written with round brackets.",
+            "values": {
+              "bengaluru": {
+                "var": "bengaluru",
+                "line": 1
+              },
+              "birthday": {
+                "text": "(15, 8, 2004)"
+              }
+            },
+            "tones": {
+              "bengaluru": "data",
+              "birthday": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tuples are used where each position has a fixed meaning.",
+            "values": {
+              "bengaluru": {
+                "var": "bengaluru",
+                "line": 5
+              },
+              "birthday": {
+                "var": "birthday",
+                "line": 5
+              }
+            },
+            "tones": {
+              "bengaluru": "data",
+              "birthday": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Tuples as fixed groups",
+        "boxes": [
+          {
+            "id": "bengaluru",
+            "label": "bengaluru"
+          },
+          {
+            "id": "birthday",
+            "label": "birthday"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A tuple is written with round brackets.",
+            "values": {
+              "bengaluru": "[12.97, 77.59]",
+              "birthday": "(15, 8, 2004)"
+            },
+            "tones": {
+              "bengaluru": "data",
+              "birthday": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tuples are used where each position has a fixed meaning.",
+            "values": {
+              "bengaluru": "[12.97, 77.59]",
+              "birthday": "[15, 8, 2004]"
+            },
+            "tones": {
+              "bengaluru": "data",
+              "birthday": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unpacking and returning several values",
+      "codeHash": "7f449a023c6f80036d676b6d8edec4d384497d1951eec9256c72e39c523d8607",
+      "spec": {
+        "template": "boxes",
+        "title": "Unpacking tuple values",
+        "boxes": [
+          {
+            "id": "lat",
+            "label": "lat"
+          },
+          {
+            "id": "lng",
+            "label": "lng"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unpacking takes values out of a tuple into separate variables.",
+            "values": {
+              "lat": {
+                "var": "lat",
+                "line": 2
+              },
+              "lng": {
+                "var": "lng",
+                "line": 2
+              }
+            },
+            "tones": {
+              "lat": "data",
+              "lng": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A function can return more than one value as a tuple.",
+            "values": {
+              "lat": {
+                "var": "lat",
+                "line": 8
+              },
+              "lng": {
+                "var": "lng",
+                "line": 8
+              }
+            },
+            "tones": {
+              "lat": "ok",
+              "lng": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Unpacking tuple values",
+        "boxes": [
+          {
+            "id": "lat",
+            "label": "lat"
+          },
+          {
+            "id": "lng",
+            "label": "lng"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unpacking takes values out of a tuple into separate variables.",
+            "values": {
+              "lat": "12.97",
+              "lng": "77.59"
+            },
+            "tones": {
+              "lat": "data",
+              "lng": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A function can return more than one value as a tuple.",
+            "values": {
+              "lat": "12.97",
+              "lng": "77.59"
+            },
+            "tones": {
+              "lat": "ok",
+              "lng": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sets: only unique values",
+      "codeHash": "589446a9098789d384e7358a09e5162a00534b033158ff7d1c08ec2a4ac9d88c",
+      "spec": {
+        "template": "boxes",
+        "title": "Unique items with sets",
+        "boxes": [
+          {
+            "id": "categories",
+            "label": "categories"
+          },
+          {
+            "id": "unique",
+            "label": "unique"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A set keeps values where each value appears only once.",
+            "values": {
+              "categories": {
+                "var": "categories",
+                "line": 1
+              },
+              "unique": {
+                "text": "set(categories)"
+              }
+            },
+            "tones": {
+              "categories": "data",
+              "unique": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Turning a list into a set drops repeated values.",
+            "values": {
+              "categories": {
+                "var": "categories",
+                "line": 2
+              },
+              "unique": {
+                "var": "unique",
+                "line": 2
+              }
+            },
+            "tones": {
+              "categories": "data",
+              "unique": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Unique items with sets",
+        "boxes": [
+          {
+            "id": "categories",
+            "label": "categories"
+          },
+          {
+            "id": "unique",
+            "label": "unique"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A set keeps values where each value appears only once.",
+            "values": {
+              "categories": "['food', 'travel', 'food', 'rent', 'foo…",
+              "unique": "set(categories)"
+            },
+            "tones": {
+              "categories": "data",
+              "unique": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Turning a list into a set drops repeated values.",
+            "values": {
+              "categories": "['food', 'travel', 'food', 'rent', 'foo…",
+              "unique": "{'food', 'rent', 'travel'}"
+            },
+            "tones": {
+              "categories": "data",
+              "unique": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking membership quickly",
+      "codeHash": "a3ae4fc2b76d845e40ba9025a6536bc3c927ec170b0d90bfb1eaf2a891298c3e",
+      "spec": {
+        "template": "none",
+        "reason": "Fast set membership checking with in and set operators are clear from boolean prints."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Choosing the right container",
+      "codeHash": "fa53c6bcf13025aec9c68b4bebfdfc01338c9e338c74030c7bde36081dae58d2",
+      "spec": {
+        "template": "none",
+        "reason": "Comparative container trade-offs are conceptual reference guidelines."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Putting it together: categories and ranges",
+      "codeHash": "14271e14036d08a7d837c5114f3210ca9b9e8e64aae1e2f7194ffdb94f4a23bd",
+      "spec": {
+        "template": "none",
+        "reason": "Monthly category range demo composes previously tested tuple/set patterns."
+      },
+      "filled": {}
+    }
+  ]
+}

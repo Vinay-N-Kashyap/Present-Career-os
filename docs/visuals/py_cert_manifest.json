@@ -268,27 +268,27 @@
     },
     "python:12:0": {
       "partTitle": "Tuples: fixed groups of values",
-      "status": "todo"
+      "status": "passed"
     },
     "python:12:1": {
       "partTitle": "Unpacking and returning several values",
-      "status": "todo"
+      "status": "passed"
     },
     "python:12:2": {
       "partTitle": "Sets: only unique values",
-      "status": "todo"
+      "status": "passed"
     },
     "python:12:3": {
       "partTitle": "Checking membership quickly",
-      "status": "todo"
+      "status": "none"
     },
     "python:12:4": {
       "partTitle": "Choosing the right container",
-      "status": "todo"
+      "status": "none"
     },
     "python:12:5": {
       "partTitle": "Putting it together: categories and ranges",
-      "status": "todo"
+      "status": "none"
     },
     "python:13:0": {
       "partTitle": "What an f-string is",
