@@ -4876,27 +4876,27 @@
     },
     "nlp-py:24:0": {
       "partTitle": "Predicting the next token",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:24:1": {
       "partTitle": "The causal mask",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:24:2": {
       "partTitle": "Masked attention in action",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:24:3": {
       "partTitle": "Generation and the KV cache",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:24:4": {
       "partTitle": "Encoders, decoders and both",
-      "status": "todo"
+      "status": "passed"
     },
     "nlp-py:24:5": {
       "partTitle": "Practice time: masks and caches",
-      "status": "todo"
+      "status": "none"
     },
     "nlp-py:25:0": {
       "partTitle": "Extractive question answering",
