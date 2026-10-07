@@ -5116,27 +5116,27 @@
     },
     "quant-py:4:0": {
       "partTitle": "Why split an order?",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:4:1": {
       "partTitle": "The VWAP benchmark",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:4:2": {
       "partTitle": "Building a VWAP schedule",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:4:3": {
       "partTitle": "TWAP: equal slices over time",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:4:4": {
       "partTitle": "Choosing and measuring an algorithm",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:4:5": {
       "partTitle": "Practice time: schedules",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:5:0": {
       "partTitle": "The exchange core",
