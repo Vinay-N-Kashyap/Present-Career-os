@@ -8356,27 +8356,27 @@
     },
     "safe-py:19:0": {
       "partTitle": "What calibration means",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:19:1": {
       "partTitle": "Confidence bins",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:19:2": {
       "partTitle": "Expected calibration error",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:19:3": {
       "partTitle": "Reliability tables",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:19:4": {
       "partTitle": "Fixing calibration",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:19:5": {
       "partTitle": "Calibration in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:20:0": {
       "partTitle": "Knowing when not to answer",
