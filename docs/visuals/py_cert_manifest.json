@@ -8404,27 +8404,27 @@
     },
     "safe-py:21:0": {
       "partTitle": "Why an evaluation harness",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:21:1": {
       "partTitle": "Test cases with expected decisions",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:21:2": {
       "partTitle": "Running the suite",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:21:3": {
       "partTitle": "Regression gates",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:21:4": {
       "partTitle": "What to measure in the gate",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:21:5": {
       "partTitle": "The harness in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:22:0": {
       "partTitle": "Why audit logs",
