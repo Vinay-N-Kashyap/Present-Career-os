@@ -6076,27 +6076,27 @@
     },
     "prompt-py:14:0": {
       "partTitle": "Code interpreter tools",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:14:1": {
       "partTitle": "Describing data",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:14:2": {
       "partTitle": "Grouping and totals",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:14:3": {
       "partTitle": "Common data problems",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:14:4": {
       "partTitle": "Checking AI analysis",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:14:5": {
       "partTitle": "Practice time: describe and group",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:15:0": {
       "partTitle": "The pipeline",
