@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 1,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What happens when you open a website",
+      "codeHash": "6f132b81ed2cf3672748e0a7cf86acbf8b7ea97a26297f6de76e7fc42460b5f7",
+      "spec": {
+        "template": "flow",
+        "title": "From your instructions to the screen",
+        "nodes": [
+          {
+            "id": "browser",
+            "label": "browser",
+            "tappable": true
+          },
+          {
+            "id": "server",
+            "label": "server",
+            "tappable": true
+          },
+          {
+            "id": "files",
+            "label": "files",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Your browser sends a request to the server.",
+            "values": {
+              "browser": {
+                "text": "Chrome"
+              },
+              "server": {
+                "text": "flipkart.com"
+              },
+              "files": {
+                "text": "server"
+              }
+            },
+            "tones": {
+              "browser": "data",
+              "server": "idle",
+              "files": "idle"
+            },
+            "arrows": [
+              [
+                "browser",
+                "server"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The server sends files back to your browser.",
+            "values": {
+              "browser": {
+                "text": "Chrome"
+              },
+              "server": {
+                "text": "flipkart.com"
+              },
+              "files": {
+                "text": "files"
+              }
+            },
+            "tones": {
+              "browser": "idle",
+              "server": "data",
+              "files": "ok"
+            },
+            "arrows": [
+              [
+                "server",
+                "browser"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "JavaScript and HTML together build the website.",
+            "values": {
+              "browser": {
+                "text": "draws the page"
+              },
+              "server": {
+                "text": "flipkart.com"
+              },
+              "files": {
+                "text": "JavaScript"
+              }
+            },
+            "tones": {
+              "browser": "ok",
+              "server": "idle",
+              "files": "data"
+            },
+            "arrows": [
+              [
+                "files",
+                "browser"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "From your instructions to the screen",
+        "nodes": [
+          {
+            "id": "browser",
+            "label": "browser",
+            "tappable": true
+          },
+          {
+            "id": "server",
+            "label": "server",
+            "tappable": true
+          },
+          {
+            "id": "files",
+            "label": "files",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Your browser sends a request to the server.",
+            "values": {
+              "browser": "Chrome",
+              "server": "flipkart.com",
+              "files": "server"
+            },
+            "tones": {
+              "browser": "data",
+              "server": "idle",
+              "files": "idle"
+            },
+            "arrows": [
+              [
+                "browser",
+                "server"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The server sends files back to your browser.",
+            "values": {
+              "browser": "Chrome",
+              "server": "flipkart.com",
+              "files": "files"
+            },
+            "tones": {
+              "browser": "idle",
+              "server": "data",
+              "files": "ok"
+            },
+            "arrows": [
+              [
+                "server",
+                "browser"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "JavaScript and HTML together build the website.",
+            "values": {
+              "browser": "draws the page",
+              "server": "flipkart.com",
+              "files": "JavaScript"
+            },
+            "tones": {
+              "browser": "ok",
+              "server": "idle",
+              "files": "data"
+            },
+            "arrows": [
+              [
+                "files",
+                "browser"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTML: the content of the page",
+      "codeHash": "13ba42e7b8350ce3681521a2f25500be5fa5f56a6880668f187f48a26524fb9c",
+      "spec": {
+        "template": "boxes",
+        "title": "HTML structure and tags",
+        "boxes": [
+          {
+            "id": "heading",
+            "label": "heading",
+            "tappable": true
+          },
+          {
+            "id": "button",
+            "label": "button",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HTML describes headings, buttons and links on the page.",
+            "values": {
+              "heading": {
+                "text": "<h1>"
+              },
+              "button": {
+                "text": "<button>"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Tags come in pairs with content placed between them.",
+            "values": {
+              "heading": {
+                "text": "<h1>My Job Tracker</h1>"
+              },
+              "button": {
+                "text": "<button>Add Job</button>"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Common tags like h1 and button structure the application.",
+            "values": {
+              "heading": {
+                "text": "<h1>My Job Tracker</h1>"
+              },
+              "button": {
+                "text": "<button>Add Job</button>"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "HTML structure and tags",
+        "boxes": [
+          {
+            "id": "heading",
+            "label": "heading",
+            "tappable": true
+          },
+          {
+            "id": "button",
+            "label": "button",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HTML describes headings, buttons and links on the page.",
+            "values": {
+              "heading": "<h1>",
+              "button": "<button>"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Tags come in pairs with content placed between them.",
+            "values": {
+              "heading": "<h1>My Job Tracker</h1>",
+              "button": "<button>Add Job</button>"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Common tags like h1 and button structure the application.",
+            "values": {
+              "heading": "<h1>My Job Tracker</h1>",
+              "button": "<button>Add Job</button>"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CSS: how the page looks",
+      "codeHash": "bf4a2af30130e99583f6a068ce9e8f70e9155aa52fcbfcb695ea41efe5d39f47",
+      "spec": {
+        "template": "wireframe",
+        "title": "CSS Box Model and layout",
+        "boxes": [
+          {
+            "id": "h1",
+            "label": "heading",
+            "tone": "ok"
+          },
+          {
+            "id": "container",
+            "label": "div",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CSS decides colours, sizes, fonts and spacing on screen.",
+            "layoutMode": "box-model",
+            "activeBoxId": "h1",
+            "tone": "ok"
+          },
+          {
+            "at": "say2",
+            "caption": "A CSS rule selects elements and applies styling.",
+            "layoutMode": "box-model",
+            "activeBoxId": "container",
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "CSS Box Model and layout",
+        "boxes": [
+          {
+            "id": "h1",
+            "label": "heading",
+            "tone": "ok"
+          },
+          {
+            "id": "container",
+            "label": "div",
+            "tone": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CSS decides colours, sizes, fonts and spacing on screen.",
+            "layoutMode": "box-model",
+            "activeBoxId": "h1",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "h1",
+                "label": "heading",
+                "tone": "ok"
+              },
+              {
+                "id": "container",
+                "label": "div",
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A CSS rule selects elements and applies styling.",
+            "layoutMode": "box-model",
+            "activeBoxId": "container",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "h1",
+                "label": "heading",
+                "tone": "ok"
+              },
+              {
+                "id": "container",
+                "label": "div",
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JavaScript: making the page do things",
+      "codeHash": "2f521b956ae598f29aff135118db0ef9bc860f6eb9c0dd6c44f3c5da874406bc",
+      "spec": {
+        "template": "compare",
+        "title": "Numbers versus Text in JavaScript",
+        "leftLabel": "Numbers",
+        "rightLabel": "Text",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Instructions follow line by line from top to bottom.",
+            "left": {
+              "code": "console.log(2 + 3);",
+              "result": {
+                "text": "2 + 3"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(\"Asha\" + \" Rao\");",
+              "result": {
+                "text": "\"Asha\" + \" Rao\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Numbers add mathematically, while quotes join text together.",
+            "left": {
+              "code": "console.log(2 + 3);",
+              "result": {
+                "text": "5"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(\"Asha\" + \" Rao\");",
+              "result": {
+                "text": "Asha Rao"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Numbers versus Text in JavaScript",
+        "leftLabel": "Numbers",
+        "rightLabel": "Text",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Instructions follow line by line from top to bottom.",
+            "left": {
+              "code": "console.log(2 + 3);",
+              "result": "2 + 3",
+              "tone": "idle",
+              "checks": [
+                "2 + 3"
+              ]
+            },
+            "right": {
+              "code": "console.log(\"Asha\" + \" Rao\");",
+              "result": "\"Asha\" + \" Rao\"",
+              "tone": "idle",
+              "checks": [
+                "\"Asha\" + \" Rao\""
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Numbers add mathematically, while quotes join text together.",
+            "left": {
+              "code": "console.log(2 + 3);",
+              "result": "5",
+              "tone": "ok",
+              "checks": [
+                "5"
+              ]
+            },
+            "right": {
+              "code": "console.log(\"Asha\" + \" Rao\");",
+              "result": "Asha Rao",
+              "tone": "data",
+              "checks": [
+                "Asha Rao"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What React is and why companies use it",
+      "codeHash": "a0e0993b0cf396437c6e0073233d6e3389de961a48ec3286d4e0e85af58913a6",
+      "spec": {
+        "template": "component-tree",
+        "title": "React component hierarchy",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "card1",
+            "name": "JobCard",
+            "tone": "ok"
+          },
+          {
+            "id": "card2",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React builds screens out of small reusable components.",
+            "activeId": "app",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Components are reused with different information props.",
+            "activeId": "card1",
+            "propsPassed": {
+              "from": "app",
+              "to": "card1",
+              "propName": "title",
+              "value": {
+                "text": "Frontend Developer"
+              }
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say3",
+            "caption": "When data changes, React updates the screen for you.",
+            "activeId": "card2",
+            "propsPassed": {
+              "from": "app",
+              "to": "card2",
+              "propName": "title",
+              "value": {
+                "text": "React Developer"
+              }
+            },
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "React component hierarchy",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "card1",
+            "name": "JobCard",
+            "tone": "ok"
+          },
+          {
+            "id": "card2",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React builds screens out of small reusable components.",
+            "activeId": "app",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "card1",
+                "name": "JobCard",
+                "tone": "ok"
+              },
+              {
+                "id": "card2",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Components are reused with different information props.",
+            "activeId": "card1",
+            "propsPassed": {
+              "from": "app",
+              "to": "card1",
+              "propName": "title",
+              "value": "Frontend Developer"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "card1",
+                "name": "JobCard",
+                "tone": "ok"
+              },
+              {
+                "id": "card2",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When data changes, React updates the screen for you.",
+            "activeId": "card2",
+            "propsPassed": {
+              "from": "app",
+              "to": "card2",
+              "propName": "title",
+              "value": "React Developer"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "card1",
+                "name": "JobCard",
+                "tone": "ok"
+              },
+              {
+                "id": "card2",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Your month plan and your Job Tracker project",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Overview discussion of month learning path and milestone roadmap"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Overview discussion of month learning path and milestone roadmap"
+      }
+    }
+  ]
+}
