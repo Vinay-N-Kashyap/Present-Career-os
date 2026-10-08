@@ -8452,27 +8452,27 @@
     },
     "safe-py:23:0": {
       "partTitle": "What an AI incident looks like",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:23:1": {
       "partTitle": "Severity levels",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:23:2": {
       "partTitle": "Containment first",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:23:3": {
       "partTitle": "Measuring response times",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:23:4": {
       "partTitle": "Communicating during an incident",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:23:5": {
       "partTitle": "Blameless post-mortems",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:24:0": {
       "partTitle": "Why document AI systems",
