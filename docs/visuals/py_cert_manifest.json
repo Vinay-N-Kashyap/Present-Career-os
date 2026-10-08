@@ -7324,27 +7324,27 @@
     },
     "vec-py:6:0": {
       "partTitle": "The inverted index",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:6:1": {
       "partTitle": "TF-IDF",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:6:2": {
       "partTitle": "BM25",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:6:3": {
       "partTitle": "Length normalisation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:6:4": {
       "partTitle": "When keywords beat vectors",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:6:5": {
       "partTitle": "Practice time: keyword search",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:7:0": {
       "partTitle": "Why hybrid search",
