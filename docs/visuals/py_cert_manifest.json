@@ -6868,27 +6868,27 @@
     },
     "train-py:17:0": {
       "partTitle": "What a checkpoint contains",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:17:1": {
       "partTitle": "Saving and loading safely",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:17:2": {
       "partTitle": "Sharded checkpoints",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:17:3": {
       "partTitle": "How often to checkpoint",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:17:4": {
       "partTitle": "Resuming exactly",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:17:5": {
       "partTitle": "Practice time: checkpoints",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:18:0": {
       "partTitle": "Failures at scale",
