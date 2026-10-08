@@ -5836,27 +5836,27 @@
     },
     "prompt-py:4:0": {
       "partTitle": "Chain-of-thought prompting",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:4:1": {
       "partTitle": "Extracting the final answer",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:4:2": {
       "partTitle": "Self-consistency voting",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:4:3": {
       "partTitle": "Tree of thoughts",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:4:4": {
       "partTitle": "When reasoning prompts help",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:4:5": {
       "partTitle": "Practice time: vote and extract",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:5:0": {
       "partTitle": "Tokens in practice",
