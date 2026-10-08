@@ -8427,6 +8427,632 @@
     "src/lib/visuals/enabledCourses.ts"
    ],
    "kind": "release"
+  },
+  {
+   "id": "C-node-web-D01",
+   "title": "node-web day 1: The Node.js Runtime, Event Loop & Process Model visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-01.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 1,
+   "keys": [
+    "node-web:1:0",
+    "node-web:1:1",
+    "node-web:1:2",
+    "node-web:1:3",
+    "node-web:1:4",
+    "node-web:1:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D02",
+   "title": "node-web day 2: Modular Architecture: ESM, CommonJS & Path Resolution visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-02.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 2,
+   "keys": [
+    "node-web:2:0",
+    "node-web:2:1",
+    "node-web:2:2",
+    "node-web:2:3",
+    "node-web:2:4",
+    "node-web:2:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D03",
+   "title": "node-web day 3: Backend TypeScript: Types, Interfaces & Narrowing visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-03.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 3,
+   "keys": [
+    "node-web:3:0",
+    "node-web:3:1",
+    "node-web:3:2",
+    "node-web:3:3",
+    "node-web:3:4",
+    "node-web:3:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D04",
+   "title": "node-web day 4: TypeScript Generics & Utility Types for Backends visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-04.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 4,
+   "keys": [
+    "node-web:4:0",
+    "node-web:4:1",
+    "node-web:4:2",
+    "node-web:4:3",
+    "node-web:4:4",
+    "node-web:4:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D05",
+   "title": "node-web day 5: Asynchronous Flow, Promises & Error Handling visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-05.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 5,
+   "keys": [
+    "node-web:5:0",
+    "node-web:5:1",
+    "node-web:5:2",
+    "node-web:5:3",
+    "node-web:5:4",
+    "node-web:5:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D06",
+   "title": "node-web day 6: The HTTP Protocol: Methods, Status Codes & Headers visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-06.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 6,
+   "keys": [
+    "node-web:6:0",
+    "node-web:6:1",
+    "node-web:6:2",
+    "node-web:6:3",
+    "node-web:6:4",
+    "node-web:6:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D07",
+   "title": "node-web day 7: Request Handlers as Pure Functions visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-07.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 7,
+   "keys": [
+    "node-web:7:0",
+    "node-web:7:1",
+    "node-web:7:2",
+    "node-web:7:3",
+    "node-web:7:4",
+    "node-web:7:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D08",
+   "title": "node-web day 8: Routing Tables & Path Parameter Matching visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-08.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 8,
+   "keys": [
+    "node-web:8:0",
+    "node-web:8:1",
+    "node-web:8:2",
+    "node-web:8:3",
+    "node-web:8:4",
+    "node-web:8:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D09",
+   "title": "node-web day 9: Query String Parsing & Parameter Coercion visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-09.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 9,
+   "keys": [
+    "node-web:9:0",
+    "node-web:9:1",
+    "node-web:9:2",
+    "node-web:9:3",
+    "node-web:9:4",
+    "node-web:9:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D10",
+   "title": "node-web day 10: Request Body Validation with Schema Validators visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-10.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 10,
+   "keys": [
+    "node-web:10:0",
+    "node-web:10:1",
+    "node-web:10:2",
+    "node-web:10:3",
+    "node-web:10:4",
+    "node-web:10:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D11",
+   "title": "node-web day 11: Middleware Chains & Onion Architecture visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-11.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 11,
+   "keys": [
+    "node-web:11:0",
+    "node-web:11:1",
+    "node-web:11:2",
+    "node-web:11:3",
+    "node-web:11:4",
+    "node-web:11:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D12",
+   "title": "node-web day 12: RFC 7807 Problem Details Error Formatting visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-12.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 12,
+   "keys": [
+    "node-web:12:0",
+    "node-web:12:1",
+    "node-web:12:2",
+    "node-web:12:3",
+    "node-web:12:4",
+    "node-web:12:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D13",
+   "title": "node-web day 13: Structured JSON Logging & Request Tracing visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-13.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 13,
+   "keys": [
+    "node-web:13:0",
+    "node-web:13:1",
+    "node-web:13:2",
+    "node-web:13:3",
+    "node-web:13:4",
+    "node-web:13:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D14",
+   "title": "node-web day 14: Configuration Management & Fail-Fast Startup visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-14.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 14,
+   "keys": [
+    "node-web:14:0",
+    "node-web:14:1",
+    "node-web:14:2",
+    "node-web:14:3",
+    "node-web:14:4",
+    "node-web:14:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D15",
+   "title": "node-web day 15: Pagination, Sorting & Filtering Standards visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-15.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 15,
+   "keys": [
+    "node-web:15:0",
+    "node-web:15:1",
+    "node-web:15:2",
+    "node-web:15:3",
+    "node-web:15:4",
+    "node-web:15:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D16",
+   "title": "node-web day 16: Password Security & Cryptographic Hashing visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-16.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 16,
+   "keys": [
+    "node-web:16:0",
+    "node-web:16:1",
+    "node-web:16:2",
+    "node-web:16:3",
+    "node-web:16:4",
+    "node-web:16:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D17",
+   "title": "node-web day 17: Stateful Sessions vs Stateless Bearer Tokens visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-17.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 17,
+   "keys": [
+    "node-web:17:0",
+    "node-web:17:1",
+    "node-web:17:2",
+    "node-web:17:3",
+    "node-web:17:4",
+    "node-web:17:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D18",
+   "title": "node-web day 18: JSON Web Tokens (JWT): Structure & Verification visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-18.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 18,
+   "keys": [
+    "node-web:18:0",
+    "node-web:18:1",
+    "node-web:18:2",
+    "node-web:18:3",
+    "node-web:18:4",
+    "node-web:18:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D19",
+   "title": "node-web day 19: Role-Based Access Control (RBAC) & Route Guards visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-19.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 19,
+   "keys": [
+    "node-web:19:0",
+    "node-web:19:1",
+    "node-web:19:2",
+    "node-web:19:3",
+    "node-web:19:4",
+    "node-web:19:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D20",
+   "title": "node-web day 20: API Security: Rate Limiting, CORS & Input Sanitization visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-20.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 20,
+   "keys": [
+    "node-web:20:0",
+    "node-web:20:1",
+    "node-web:20:2",
+    "node-web:20:3",
+    "node-web:20:4",
+    "node-web:20:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D21",
+   "title": "node-web day 21: Data Access Layer & The In-Memory Repository Pattern visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-21.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 21,
+   "keys": [
+    "node-web:21:0",
+    "node-web:21:1",
+    "node-web:21:2",
+    "node-web:21:3",
+    "node-web:21:4",
+    "node-web:21:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D22",
+   "title": "node-web day 22: Advanced Repository Querying & State Mutation visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-22.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 22,
+   "keys": [
+    "node-web:22:0",
+    "node-web:22:1",
+    "node-web:22:2",
+    "node-web:22:3",
+    "node-web:22:4",
+    "node-web:22:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D23",
+   "title": "node-web day 23: Transactions & Unit of Work Concepts visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-23.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 23,
+   "keys": [
+    "node-web:23:0",
+    "node-web:23:1",
+    "node-web:23:2",
+    "node-web:23:3",
+    "node-web:23:4",
+    "node-web:23:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D24",
+   "title": "node-web day 24: In-Memory Caching & TTL Expiration Strategies visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-24.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 24,
+   "keys": [
+    "node-web:24:0",
+    "node-web:24:1",
+    "node-web:24:2",
+    "node-web:24:3",
+    "node-web:24:4",
+    "node-web:24:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D25",
+   "title": "node-web day 25: Idempotency Keys & Safe Request Retries visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-25.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 25,
+   "keys": [
+    "node-web:25:0",
+    "node-web:25:1",
+    "node-web:25:2",
+    "node-web:25:3",
+    "node-web:25:4",
+    "node-web:25:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D26",
+   "title": "node-web day 26: Automated Testing of Backend Handlers & Contracts visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-26.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 26,
+   "keys": [
+    "node-web:26:0",
+    "node-web:26:1",
+    "node-web:26:2",
+    "node-web:26:3",
+    "node-web:26:4",
+    "node-web:26:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D27",
+   "title": "node-web day 27: OpenAPI Specification & Self-Documenting APIs visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-27.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 27,
+   "keys": [
+    "node-web:27:0",
+    "node-web:27:1",
+    "node-web:27:2",
+    "node-web:27:3",
+    "node-web:27:4",
+    "node-web:27:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D28",
+   "title": "node-web day 28: Asynchronous Task Queues & Exponential Backoff visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-28.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 28,
+   "keys": [
+    "node-web:28:0",
+    "node-web:28:1",
+    "node-web:28:2",
+    "node-web:28:3",
+    "node-web:28:4",
+    "node-web:28:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D29",
+   "title": "node-web day 29: Health Checks, Readiness Probes & Graceful Shutdown visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-29.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 29,
+   "keys": [
+    "node-web:29:0",
+    "node-web:29:1",
+    "node-web:29:2",
+    "node-web:29:3",
+    "node-web:29:4",
+    "node-web:29:5"
+   ]
+  },
+  {
+   "id": "C-node-web-D30",
+   "title": "node-web day 30: 🏆 Capstone: Production Node.js & TypeScript API Engine visuals",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/node-web/day-30.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "node-web",
+   "day": 30,
+   "keys": [
+    "node-web:30:0",
+    "node-web:30:1",
+    "node-web:30:2",
+    "node-web:30:3",
+    "node-web:30:4",
+    "node-web:30:5"
+   ]
+  },
+  {
+   "id": "R-node-web-1-5",
+   "title": "Checkpoint node-web days 1-5",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-node-web-6-10",
+   "title": "Checkpoint node-web days 6-10",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-node-web-11-15",
+   "title": "Checkpoint node-web days 11-15",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-node-web-16-20",
+   "title": "Checkpoint node-web days 16-20",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-node-web-21-25",
+   "title": "Checkpoint node-web days 21-25",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-node-web-26-30",
+   "title": "Checkpoint node-web days 26-30",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "L-node-web",
+   "title": "Release visuals for node-web",
+   "allowedFiles": [
+    "src/lib/visuals/enabledCourses.ts"
+   ],
+   "kind": "release"
   }
  ]
 }
