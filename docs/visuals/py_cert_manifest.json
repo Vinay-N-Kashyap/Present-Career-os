@@ -5428,27 +5428,27 @@
     },
     "quant-py:17:0": {
       "partTitle": "Implied volatility",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:17:1": {
       "partTitle": "Vega",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:17:2": {
       "partTitle": "Newton-Raphson",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:17:3": {
       "partTitle": "When there is no answer",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:17:4": {
       "partTitle": "The smile and the surface",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:17:5": {
       "partTitle": "Practice time: solve for volatility",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:18:0": {
       "partTitle": "What Value at Risk means",
