@@ -5740,27 +5740,27 @@
     },
     "quant-py:30:0": {
       "partTitle": "The tick handler",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:30:1": {
       "partTitle": "Inventory skew in action",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:30:2": {
       "partTitle": "Risk gating each quote",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:30:3": {
       "partTitle": "Production readiness",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:30:4": {
       "partTitle": "Going live safely",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:30:5": {
       "partTitle": "Capstone practice: tick handler and readiness",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:1:0": {
       "partTitle": "What generative AI is",
