@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why limit usage",
+      "codeHash": "59b1e3cfefdf8942288446ef7338ee60e6356ea2bbf8c6bc6793ad53ed801e76",
+      "spec": {
+        "template": "table",
+        "title": "Resource exhaustion prevention and economic denial of service",
+        "columns": [
+          "cost_per_call",
+          "calls_per_minute",
+          "limit_per_minute"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A rate limit caps how many calls each user can make in a period of time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cost_per_call"
+                  },
+                  {
+                    "text": "calls_per_minute"
+                  },
+                  {
+                    "text": "limit_per_minute"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost_per_call"
+                  },
+                  {
+                    "text": "calls_per_minute"
+                  },
+                  {
+                    "text": "limit_per_minute"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Limits apply per user so one heavy client does not degrade shared services.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cost_per_call"
+                  },
+                  {
+                    "text": "calls_per_minute"
+                  },
+                  {
+                    "text": "limit_per_minute"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cost_per_call"
+                  },
+                  {
+                    "text": "calls_per_minute"
+                  },
+                  {
+                    "text": "limit_per_minute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Resource exhaustion prevention and economic denial of service",
+        "columns": [
+          "cost_per_call",
+          "calls_per_minute",
+          "limit_per_minute"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A rate limit caps how many calls each user can make in a period of time.",
+            "rows": [
+              {
+                "cells": [
+                  "cost_per_call",
+                  "calls_per_minute",
+                  "limit_per_minute"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cost_per_call",
+                  "calls_per_minute",
+                  "limit_per_minute"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Limits apply per user so one heavy client does not degrade shared services.",
+            "rows": [
+              {
+                "cells": [
+                  "cost_per_call",
+                  "calls_per_minute",
+                  "limit_per_minute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cost_per_call",
+                  "calls_per_minute",
+                  "limit_per_minute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed windows and their flaw",
+      "codeHash": "ede6e5fa2900873fceb0db76271990c6cbd2a79bb0589c15c065936354098513",
+      "spec": {
+        "template": "table",
+        "title": "Fixed vs sliding window algorithms and burst boundary vulnerabilities",
+        "columns": [
+          "calls",
+          "counts",
+          "calls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The simplest limiter counts calls in fixed windows across each minute.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calls"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "calls"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "calls"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "calls"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A sliding window evaluates recent activity regardless of boundary resets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calls"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "calls"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "calls"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "calls"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fixed vs sliding window algorithms and burst boundary vulnerabilities",
+        "columns": [
+          "calls",
+          "counts",
+          "calls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The simplest limiter counts calls in fixed windows across each minute.",
+            "rows": [
+              {
+                "cells": [
+                  "calls",
+                  "counts",
+                  "calls"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "calls",
+                  "counts",
+                  "calls"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A sliding window evaluates recent activity regardless of boundary resets.",
+            "rows": [
+              {
+                "cells": [
+                  "calls",
+                  "counts",
+                  "calls"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calls",
+                  "counts",
+                  "calls"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A sliding-window limiter",
+      "codeHash": "a9b6d8699f6bc73cc4ddb88d08349a205053f0e9a458d84482d0b12e1566c30c",
+      "spec": {
+        "template": "table",
+        "title": "Sliding window timestamp queue eviction and capacity checks",
+        "columns": [
+          "history",
+          "history",
+          "history"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "If fewer than limit calls remain the request is allowed and recorded.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A deque container efficiently drops old times from the front of the window.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sliding window timestamp queue eviction and capacity checks",
+        "columns": [
+          "history",
+          "history",
+          "history"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "If fewer than limit calls remain the request is allowed and recorded.",
+            "rows": [
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A deque container efficiently drops old times from the front of the window.",
+            "rows": [
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Per-user limits",
+      "codeHash": "a01337cf78a9ea510c33d79f732f670c8bb8febe72b2eea0d6c3214b13b799a6",
+      "spec": {
+        "template": "table",
+        "title": "Isolated tenant rate limiting and state isolation",
+        "columns": [
+          "history",
+          "history",
+          "history"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each user needs their own history so heavy usage does not impact others.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A dictionary mapping users to separate queues maintains isolated quotas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  },
+                  {
+                    "text": "history"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Isolated tenant rate limiting and state isolation",
+        "columns": [
+          "history",
+          "history",
+          "history"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each user needs their own history so heavy usage does not impact others.",
+            "rows": [
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A dictionary mapping users to separate queues maintains isolated quotas.",
+            "rows": [
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "history",
+                  "history",
+                  "history"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting abuse",
+      "codeHash": "17b91ed564c86ea8317cdd421321ea3b236cbd52d9859e5b4e5664780c70d372",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Limits and abuse in the pipeline",
+      "codeHash": "3cae131259b86be32b9dac053dfbc4e0f31bb544925eea69cbdac15b62cc0b22",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

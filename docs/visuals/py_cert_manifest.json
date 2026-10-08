@@ -8260,27 +8260,27 @@
     },
     "safe-py:15:0": {
       "partTitle": "Why limit usage",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:15:1": {
       "partTitle": "Fixed windows and their flaw",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:15:2": {
       "partTitle": "A sliding-window limiter",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:15:3": {
       "partTitle": "Per-user limits",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:15:4": {
       "partTitle": "Detecting abuse",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:15:5": {
       "partTitle": "Limits and abuse in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:16:0": {
       "partTitle": "What red-teaming is",
