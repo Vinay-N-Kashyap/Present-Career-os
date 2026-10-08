@@ -5764,27 +5764,27 @@
     },
     "prompt-py:1:0": {
       "partTitle": "What generative AI is",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:1:1": {
       "partTitle": "Tokens and next-word prediction",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:1:2": {
       "partTitle": "What a prompt is",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:1:3": {
       "partTitle": "Checking prompts with code",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:1:4": {
       "partTitle": "Strengths and limits",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:1:5": {
       "partTitle": "Practice time: check and build prompts",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:2:0": {
       "partTitle": "System prompts and user prompts",

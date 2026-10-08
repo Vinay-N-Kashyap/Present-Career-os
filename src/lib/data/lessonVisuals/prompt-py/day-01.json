@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What generative AI is",
+      "codeHash": "797e8446d9f938ae5f4c23ea8bc0d9448f971a50225669325d6c1a977f912b88",
+      "spec": {
+        "template": "table",
+        "title": "Lookup retrieval versus generative statistical prediction",
+        "columns": [
+          "question",
+          "lookup",
+          "predict"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Generative models produce synthetic content in response to instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "lookup"
+                  },
+                  {
+                    "text": "predict"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Statistical prediction replaces static database search engine queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "lookup"
+                  },
+                  {
+                    "text": "predict"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capital of France"
+                  },
+                  {
+                    "text": "Paris"
+                  },
+                  {
+                    "text": "Paris"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Language models output plausible text rather than guaranteed factual truth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "lookup"
+                  },
+                  {
+                    "text": "predict"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capital of France"
+                  },
+                  {
+                    "text": "Paris"
+                  },
+                  {
+                    "text": "Paris"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capital of France"
+                  },
+                  {
+                    "text": "not found"
+                  },
+                  {
+                    "text": "a plausible-sounding guess"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Lookup retrieval versus generative statistical prediction",
+        "columns": [
+          "question",
+          "lookup",
+          "predict"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Generative models produce synthetic content in response to instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "question",
+                  "lookup",
+                  "predict"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Statistical prediction replaces static database search engine queries.",
+            "rows": [
+              {
+                "cells": [
+                  "question",
+                  "lookup",
+                  "predict"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capital of France",
+                  "Paris",
+                  "Paris"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Language models output plausible text rather than guaranteed factual truth.",
+            "rows": [
+              {
+                "cells": [
+                  "question",
+                  "lookup",
+                  "predict"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capital of France",
+                  "Paris",
+                  "Paris"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capital of France",
+                  "not found",
+                  "a plausible-sounding guess"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tokens and next-word prediction",
+      "codeHash": "b8c825cd8c36c1bf51bf545e402f19b5d573ff9d76dc729ecbb5f0f1c58df581",
+      "spec": {
+        "template": "table",
+        "title": "Tokenization chunks and sequential next-word counts",
+        "columns": [
+          "words",
+          "following",
+          "sentence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models parse input text into small token pieces.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sequential generation scores candidate tokens at each iterative step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompt words steer every subsequent token choice in model generation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "following"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tokenization chunks and sequential next-word counts",
+        "columns": [
+          "words",
+          "following",
+          "sentence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models parse input text into small token pieces.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sequential generation scores candidate tokens at each iterative step.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompt words steer every subsequent token choice in model generation.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "following",
+                  "sentence"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What a prompt is",
+      "codeHash": "512c701366adaaec10e0985c451fd89ff9575f3973009e9c5d41b8dff427984f",
+      "spec": {
+        "template": "table",
+        "title": "Prompt components specifying topic format and audience",
+        "columns": [
+          "topic",
+          "fmt",
+          "audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompts provide background context instructions and examples to the model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "topic"
+                  },
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precise prompt wording directly governs output quality.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "topic"
+                  },
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "photosynthesis"
+                  },
+                  {
+                    "text": "3-bullet summary"
+                  },
+                  {
+                    "text": "a 10-year-old"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Effective prompts define the topic format and target audience explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "topic"
+                  },
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "photosynthesis"
+                  },
+                  {
+                    "text": "3-bullet summary"
+                  },
+                  {
+                    "text": "a 10-year-old"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compound interest"
+                  },
+                  {
+                    "text": "short table with an example"
+                  },
+                  {
+                    "text": "first-time savers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prompt components specifying topic format and audience",
+        "columns": [
+          "topic",
+          "fmt",
+          "audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prompts provide background context instructions and examples to the model.",
+            "rows": [
+              {
+                "cells": [
+                  "topic",
+                  "fmt",
+                  "audience"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precise prompt wording directly governs output quality.",
+            "rows": [
+              {
+                "cells": [
+                  "topic",
+                  "fmt",
+                  "audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "photosynthesis",
+                  "3-bullet summary",
+                  "a 10-year-old"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Effective prompts define the topic format and target audience explicitly.",
+            "rows": [
+              {
+                "cells": [
+                  "topic",
+                  "fmt",
+                  "audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "photosynthesis",
+                  "3-bullet summary",
+                  "a 10-year-old"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "compound interest",
+                  "short table with an example",
+                  "first-time savers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking prompts with code",
+      "codeHash": "1027fd872d900dd1fad7f572c938d36dfa1a584b7b8937c70688653521562d0c",
+      "spec": {
+        "template": "table",
+        "title": "Automated prompt structure and specificity verification",
+        "columns": [
+          "prompt",
+          "words",
+          "has_format",
+          "has_audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated verification catches vague prompts prior to submission.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Heuristics evaluate word counts format indicators and target audience tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The verification checker returns a final verdict of specific or vague.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "has_format"
+                  },
+                  {
+                    "text": "has_audience"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated prompt structure and specificity verification",
+        "columns": [
+          "prompt",
+          "words",
+          "has_format",
+          "has_audience"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated verification catches vague prompts prior to submission.",
+            "rows": [
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Heuristics evaluate word counts format indicators and target audience tags.",
+            "rows": [
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The verification checker returns a final verdict of specific or vague.",
+            "rows": [
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "prompt",
+                  "words",
+                  "has_format",
+                  "has_audience"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Strengths and limits",
+      "codeHash": "619fc5a0cec391c4b6a638514ae3d80e2d16f66922e814c4007166c02e3995d4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: check and build prompts",
+      "codeHash": "0720be7c847ba11597f254b082f75ab962033b3cc8785e147fab9d4da94fed4c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
