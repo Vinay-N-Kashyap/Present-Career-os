@@ -6436,27 +6436,27 @@
     },
     "prompt-py:29:0": {
       "partTitle": "Open-weight models",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:29:1": {
       "partTitle": "Running models with Ollama",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:29:2": {
       "partTitle": "Memory and hardware",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:29:3": {
       "partTitle": "Quantisation",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:29:4": {
       "partTitle": "Keeping up with AI",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:29:5": {
       "partTitle": "Practice time: fit and quantise",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:30:0": {
       "partTitle": "What makes a great prompt",
