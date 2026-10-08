@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 1,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Parameters take up memory",
+      "codeHash": "ecf8242465da87f9fcdcdd5a77050bbcc7b6087a9c00435ba4886e77aa4c5f70",
+      "spec": {
+        "template": "table",
+        "title": "Model parameter precision and memory footprints",
+        "columns": [
+          "name",
+          "params",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural network architectures store weights as numerical parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Precision formats allocate distinct memory bytes per parameter weight.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model parameter precision and memory footprints",
+        "columns": [
+          "name",
+          "params",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural network architectures store weights as numerical parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "row"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Precision formats allocate distinct memory bytes per parameter weight.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "row"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How much compute training takes",
+      "codeHash": "f5088a3d133ba4dea34cdb243a764f82bec8932b070d9b7b014dc0485ba6c521",
+      "spec": {
+        "template": "table",
+        "title": "Training compute arithmetic and floating-point operations",
+        "columns": [
+          "name",
+          "params",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training computation cost is measured in floating point operations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every token represents a distinct piece of text processed during training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Training compute arithmetic and floating-point operations",
+        "columns": [
+          "name",
+          "params",
+          "tokens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training computation cost is measured in floating point operations.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "tokens"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Every token represents a distinct piece of text processed during training.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From FLOPs to days",
+      "codeHash": "7642026b3e10e3841b9435ec0c7f3a44a3d96e7b905b357def198a390f36f8ef",
+      "spec": {
+        "template": "table",
+        "title": "Cluster hardware throughput and training timeline estimation",
+        "columns": [
+          "flops",
+          "peak",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hardware utilisation reflects the achieved fraction of maximum capacity.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flops"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flops"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Distributed execution shortens impossible timelines into realistic runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flops"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flops"
+                  },
+                  {
+                    "text": "peak"
+                  },
+                  {
+                    "text": "flops"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cluster hardware throughput and training timeline estimation",
+        "columns": [
+          "flops",
+          "peak",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Hardware utilisation reflects the achieved fraction of maximum capacity.",
+            "rows": [
+              {
+                "cells": [
+                  "flops",
+                  "peak",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "flops",
+                  "peak",
+                  "days"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Distributed execution shortens impossible timelines into realistic runs.",
+            "rows": [
+              {
+                "cells": [
+                  "flops",
+                  "peak",
+                  "days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "flops",
+                  "peak",
+                  "flops"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why one GPU is not enough",
+      "codeHash": "50c0a57e0bad4610be1445e8d1424fcf71d919e3e42ee1ed196c2119de1d617c",
+      "spec": {
+        "template": "table",
+        "title": "Hardware scaling boundaries: memory wall versus time wall",
+        "columns": [
+          "name",
+          "params",
+          "walls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training bottlenecks present separate memory and time constraints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "walls"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "walls"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data parallelism distributes independent batches across separate devices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "walls"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hardware scaling boundaries: memory wall versus time wall",
+        "columns": [
+          "name",
+          "params",
+          "walls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training bottlenecks present separate memory and time constraints.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "walls"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "walls"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Data parallelism distributes independent batches across separate devices.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "walls"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "params",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating inputs like a professional",
+      "codeHash": "302e9db2766fdabb07650b0290c41884ab45293c9091fc2624b50ac780868d4f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: memory and time",
+      "codeHash": "75b15c2c051f50bb0feedef889470ce671a5f2b162ac80c9b85210b7f507e1e7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

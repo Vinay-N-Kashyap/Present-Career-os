@@ -6484,27 +6484,27 @@
     },
     "train-py:1:0": {
       "partTitle": "Parameters take up memory",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:1:1": {
       "partTitle": "How much compute training takes",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:1:2": {
       "partTitle": "From FLOPs to days",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:1:3": {
       "partTitle": "Why one GPU is not enough",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:1:4": {
       "partTitle": "Validating inputs like a professional",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:1:5": {
       "partTitle": "Practice time: memory and time",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:2:0": {
       "partTitle": "The training loop",
