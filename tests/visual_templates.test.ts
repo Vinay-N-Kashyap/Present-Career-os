@@ -10,6 +10,9 @@ import {
   TableTemplate,
   LettersTemplate,
   CompareTemplate,
+  ComponentTreeTemplate,
+  WorkflowTemplate,
+  WireframeTemplate,
 } from '../src/app/quests/lesson/components/visuals';
 
 describe('V-05: Visual Templates & VisualStage Rendering', () => {
@@ -124,5 +127,61 @@ describe('V-05: Visual Templates & VisualStage Rendering', () => {
     );
 
     assert.ok(htmlWithHighlight.includes('balance'));
+  });
+
+  it('renders ComponentTreeTemplate, WorkflowTemplate, and WireframeTemplate without error', () => {
+    // 1. ComponentTreeTemplate
+    const compHtml = renderToStaticMarkup(
+      React.createElement(ComponentTreeTemplate, {
+        step: {
+          caption: 'App renders Header and Feed.',
+          activeId: 'Feed',
+          propsPassed: { from: 'App', to: 'Feed', propName: 'items', value: 'list' },
+          reRenderingIds: ['Feed'],
+        },
+      })
+    );
+    assert.ok(compHtml.includes('&lt;Feed /&gt;') || compHtml.includes('<Feed />'));
+    assert.ok(compHtml.includes('props: items'));
+
+    // 2. WorkflowTemplate
+    const wfHtml = renderToStaticMarkup(
+      React.createElement(WorkflowTemplate, {
+        step: {
+          caption: 'Request routes from API Gateway to App Service.',
+          activeStageId: 'service',
+          statusBadge: '200 OK',
+        },
+      })
+    );
+    assert.ok(wfHtml.includes('API Gateway'));
+    assert.ok(wfHtml.includes('App Service'));
+    assert.ok(wfHtml.includes('200 OK'));
+
+    // 3. WireframeTemplate (Box Model)
+    const boxHtml = renderToStaticMarkup(
+      React.createElement(WireframeTemplate, {
+        step: {
+          caption: 'CSS Box Model with margin, border, and padding.',
+          layoutMode: 'box-model',
+        },
+      })
+    );
+    assert.ok(boxHtml.includes('margin'));
+    assert.ok(boxHtml.includes('border'));
+    assert.ok(boxHtml.includes('padding'));
+
+    // 4. WireframeTemplate (Flexbox)
+    const flexHtml = renderToStaticMarkup(
+      React.createElement(WireframeTemplate, {
+        step: {
+          caption: 'Flex container with header, sidebar, and content.',
+          layoutMode: 'flex-row',
+          justifyContent: 'space-between',
+        },
+      })
+    );
+    assert.ok(flexHtml.includes('&lt;header&gt;') || flexHtml.includes('<header>'));
+    assert.ok(flexHtml.includes('&lt;main&gt;') || flexHtml.includes('<main>'));
   });
 });
