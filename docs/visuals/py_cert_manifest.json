@@ -7012,27 +7012,27 @@
     },
     "train-py:23:0": {
       "partTitle": "Throughput",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:23:1": {
       "partTitle": "Model FLOPs utilisation",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:23:2": {
       "partTitle": "Step time statistics",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:23:3": {
       "partTitle": "Where the missing FLOPs go",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:23:4": {
       "partTitle": "Reporting performance honestly",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:23:5": {
       "partTitle": "Practice time: measuring speed",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:24:0": {
       "partTitle": "Profiling a step",
