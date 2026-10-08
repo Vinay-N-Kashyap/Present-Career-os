@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 3,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "In-context learning",
+      "codeHash": "0ef016aa1753a1547817408fcf25553c0e6bf553bd00a13095c8e370dc570014",
+      "spec": {
+        "template": "table",
+        "title": "In-context learning demonstration query adaptation",
+        "columns": [
+          "task",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In context learning adapts model behaviour via prompt demonstration pairs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Demonstration examples establish pattern consistency for subsequent queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sample pairs illustrate output format style and boundary handling.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "In-context learning demonstration query adaptation",
+        "columns": [
+          "task",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In context learning adapts model behaviour via prompt demonstration pairs.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Demonstration examples establish pattern consistency for subsequent queries.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Sample pairs illustrate output format style and boundary handling.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "task",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-shot, one-shot and few-shot",
+      "codeHash": "f2f7762066cdfaa39f2b3663ca4531832c1ee39ec88c896e672df946c6e890db",
+      "spec": {
+        "template": "table",
+        "title": "Zero-shot, one-shot and few-shot taxonomy categorization",
+        "columns": [
+          "n_examples",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Zero shot prompts provide instructions without reference examples.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "kind"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "One shot prompting provides a single example to fix expected output format.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "kind"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "ONE_SHOT"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Few shot prompting guides strict formats and complex edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "kind"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "ONE_SHOT"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "n_examples"
+                  },
+                  {
+                    "text": "FEW_SHOT"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Zero-shot, one-shot and few-shot taxonomy categorization",
+        "columns": [
+          "n_examples",
+          "kind"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Zero shot prompts provide instructions without reference examples.",
+            "rows": [
+              {
+                "cells": [
+                  "n_examples",
+                  "kind"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "One shot prompting provides a single example to fix expected output format.",
+            "rows": [
+              {
+                "cells": [
+                  "n_examples",
+                  "kind"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n_examples",
+                  "ONE_SHOT"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Few shot prompting guides strict formats and complex edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  "n_examples",
+                  "kind"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n_examples",
+                  "ONE_SHOT"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "n_examples",
+                  "FEW_SHOT"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Formatting example pairs",
+      "codeHash": "7df9ed3076e0fa906e696261ceb77e2d12de8d506bbe0c9fc3fd1c2fbe59747b",
+      "spec": {
+        "template": "table",
+        "title": "Example demonstration formatting and input-output blocks",
+        "columns": [
+          "instruction",
+          "examples",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consistent demonstration labels establish predictable structural syntax.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts conclude with an open output field indicating where to continue.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Blank line delimiters distinguish independent demonstration blocks clearly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "instruction"
+                  },
+                  {
+                    "text": "examples"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Example demonstration formatting and input-output blocks",
+        "columns": [
+          "instruction",
+          "examples",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consistent demonstration labels establish predictable structural syntax.",
+            "rows": [
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts conclude with an open output field indicating where to continue.",
+            "rows": [
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Blank line delimiters distinguish independent demonstration blocks clearly.",
+            "rows": [
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "instruction",
+                  "examples",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing examples automatically",
+      "codeHash": "854415ed592af2d3bf95d6b117e1807cef36606f5dfcd122c7faff438b88114f",
+      "spec": {
+        "template": "table",
+        "title": "Dynamic example retrieval and linguistic word overlap ranking",
+        "columns": [
+          "pool",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic selection identifies candidate examples matching incoming queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pool"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Word overlap metrics score linguistic similarity between pairs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pool"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Refund for a broken phone"
+                  },
+                  {
+                    "text": "My phone arrived broken!"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Ranked pool examples populate context windows for demonstration guidance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pool"
+                  },
+                  {
+                    "text": "query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Refund for a broken phone"
+                  },
+                  {
+                    "text": "My phone arrived broken!"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Phone screen is broken"
+                  },
+                  {
+                    "text": "My phone arrived broken!"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dynamic example retrieval and linguistic word overlap ranking",
+        "columns": [
+          "pool",
+          "query"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic selection identifies candidate examples matching incoming queries.",
+            "rows": [
+              {
+                "cells": [
+                  "pool",
+                  "query"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Word overlap metrics score linguistic similarity between pairs.",
+            "rows": [
+              {
+                "cells": [
+                  "pool",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Refund for a broken phone",
+                  "My phone arrived broken!"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Ranked pool examples populate context windows for demonstration guidance.",
+            "rows": [
+              {
+                "cells": [
+                  "pool",
+                  "query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Refund for a broken phone",
+                  "My phone arrived broken!"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Phone screen is broken",
+                  "My phone arrived broken!"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common few-shot mistakes",
+      "codeHash": "b61e13ec3e7d4fbaf7a21ba6eba4906063bddb18f3f6111b552cb63a2d009dc7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build and select",
+      "codeHash": "17253a80dbaa9a7049712e660245d9d1f594897be7399193f14fda1468669463",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

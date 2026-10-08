@@ -5812,27 +5812,27 @@
     },
     "prompt-py:3:0": {
       "partTitle": "In-context learning",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:3:1": {
       "partTitle": "Zero-shot, one-shot and few-shot",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:3:2": {
       "partTitle": "Formatting example pairs",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:3:3": {
       "partTitle": "Choosing examples automatically",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:3:4": {
       "partTitle": "Common few-shot mistakes",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:3:5": {
       "partTitle": "Practice time: build and select",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:4:0": {
       "partTitle": "Chain-of-thought prompting",
