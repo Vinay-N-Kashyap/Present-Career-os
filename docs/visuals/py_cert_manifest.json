@@ -6316,27 +6316,27 @@
     },
     "prompt-py:24:0": {
       "partTitle": "Triggers and actions",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:24:1": {
       "partTitle": "Webhooks",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:24:2": {
       "partTitle": "Routing events with rules",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:24:3": {
       "partTitle": "Retries and exponential backoff",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:24:4": {
       "partTitle": "Monitoring automations",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:24:5": {
       "partTitle": "Practice time: route and back off",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:25:0": {
       "partTitle": "What a custom assistant is",

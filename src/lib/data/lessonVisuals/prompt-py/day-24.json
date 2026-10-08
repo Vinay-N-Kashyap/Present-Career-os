@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Triggers and actions",
+      "codeHash": "9280c042d3b86a9d4312b8e5a5f8f69a47a55efb17f628d2c954ef619842e1c0",
+      "spec": {
+        "template": "table",
+        "title": "Trigger-action event pipelines and AI transformations",
+        "columns": [
+          "event",
+          "action",
+          "event"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An automation links a trigger event to executed action steps in response.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "event"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "event"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "AI steps classify incoming email messages and extract fields automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "event"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "new_email"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Trigger-action event pipelines and AI transformations",
+        "columns": [
+          "event",
+          "action",
+          "event"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An automation links a trigger event to executed action steps in response.",
+            "rows": [
+              {
+                "cells": [
+                  "event",
+                  "action",
+                  "event"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "event",
+                  "action",
+                  "event"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "AI steps classify incoming email messages and extract fields automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "event",
+                  "action",
+                  "event"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "event",
+                  "action",
+                  "new_email"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Webhooks",
+      "codeHash": "0bdb3f39c7d738afa7b5d43d7959c6fd71d5a247d67d5f2b9623226eb12d0ef8",
+      "spec": {
+        "template": "table",
+        "title": "HTTP webhook reception and idempotent deduplication",
+        "columns": [
+          "seen_ids",
+          "event",
+          "seen_ids"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A webhook sends instant HTTP JSON notifications when remote events happen.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "seen_ids"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "seen_ids"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seen_ids"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "seen_ids"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Webhook data arrives as JSON payloads which local code parses and validates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "seen_ids"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "seen_ids"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "seen_ids"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "payloads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "HTTP webhook reception and idempotent deduplication",
+        "columns": [
+          "seen_ids",
+          "event",
+          "seen_ids"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A webhook sends instant HTTP JSON notifications when remote events happen.",
+            "rows": [
+              {
+                "cells": [
+                  "seen_ids",
+                  "event",
+                  "seen_ids"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "seen_ids",
+                  "event",
+                  "seen_ids"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Webhook data arrives as JSON payloads which local code parses and validates.",
+            "rows": [
+              {
+                "cells": [
+                  "seen_ids",
+                  "event",
+                  "seen_ids"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "seen_ids",
+                  "event",
+                  "payloads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing events with rules",
+      "codeHash": "38a7d5699161cf2d0b85b35192042b6165adf5638f39f5232611930f505b1288",
+      "spec": {
+        "template": "table",
+        "title": "Conditional rule evaluation and event dispatch routing",
+        "columns": [
+          "rules",
+          "event",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Event routing sends different incoming events to specialized actions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional rules inspect event type and priority to notify appropriate teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "event"
+                  },
+                  {
+                    "text": "rules"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Conditional rule evaluation and event dispatch routing",
+        "columns": [
+          "rules",
+          "event",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Event routing sends different incoming events to specialized actions.",
+            "rows": [
+              {
+                "cells": [
+                  "rules",
+                  "event",
+                  "actions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rules",
+                  "event",
+                  "actions"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional rules inspect event type and priority to notify appropriate teams.",
+            "rows": [
+              {
+                "cells": [
+                  "rules",
+                  "event",
+                  "actions"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "rules",
+                  "event",
+                  "rules"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retries and exponential backoff",
+      "codeHash": "7d0ac4a76cd8aa721fa81ff773f94f1a7a267abeb0f156a5cab2457f4f8e5986",
+      "spec": {
+        "template": "table",
+        "title": "Exponential backoff retry intervals with jitter cap",
+        "columns": [
+          "attempts",
+          "base",
+          "cap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "External services sometimes fail temporarily due to rate limits or timeouts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attempts"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "cap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attempts"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "cap"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exponential backoff waits longer after each failure up to a specified cap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attempts"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "cap"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attempts"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exponential backoff retry intervals with jitter cap",
+        "columns": [
+          "attempts",
+          "base",
+          "cap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "External services sometimes fail temporarily due to rate limits or timeouts.",
+            "rows": [
+              {
+                "cells": [
+                  "attempts",
+                  "base",
+                  "cap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attempts",
+                  "base",
+                  "cap"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Exponential backoff waits longer after each failure up to a specified cap.",
+            "rows": [
+              {
+                "cells": [
+                  "attempts",
+                  "base",
+                  "cap"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "attempts",
+                  "base",
+                  "base"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monitoring automations",
+      "codeHash": "36ba41058fcb5ef2bbce0c11d05283753830d5cecaa4f901e15b5e037dfe6a8c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: route and back off",
+      "codeHash": "2814cf318635aa5a418c21130fbacddb5b48846f47f4b1fcfc0b726c00f45cac",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
