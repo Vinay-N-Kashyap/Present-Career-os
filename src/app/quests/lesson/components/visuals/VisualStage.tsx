@@ -11,6 +11,9 @@ import { TreeGraphTemplate } from './TreeGraphTemplate';
 import { BarsTemplate } from './BarsTemplate';
 import { SequenceTemplate } from './SequenceTemplate';
 import { StatesTemplate } from './StatesTemplate';
+import { ComponentTreeTemplate } from './ComponentTreeTemplate';
+import { WorkflowTemplate } from './WorkflowTemplate';
+import { WireframeTemplate } from './WireframeTemplate';
 
 export interface VisualStageProps {
   visual: LessonVisual;
@@ -235,6 +238,36 @@ export function VisualStage({
           <StatesTemplate
             states={(visual as any).states || []}
             step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'component-tree':
+        return (
+          <ComponentTreeTemplate
+            nodes={(visual as any).nodes || []}
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'workflow':
+        return (
+          <WorkflowTemplate
+            stages={(visual as any).stages || []}
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'wireframe':
+        return (
+          <WireframeTemplate
+            boxes={(visual as any).boxes || []}
+            step={visual.steps[safeStepIndex] as any}
+            highlightedLabel={highlightedLabel}
+            onShapeTap={onShapeTap}
             showSpaces={visual.showSpaces}
           />
         );

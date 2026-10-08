@@ -11,6 +11,9 @@ export { TreeGraphTemplate } from './TreeGraphTemplate';
 export { BarsTemplate } from './BarsTemplate';
 export { SequenceTemplate } from './SequenceTemplate';
 export { StatesTemplate } from './StatesTemplate';
+export { ComponentTreeTemplate } from './ComponentTreeTemplate';
+export { WorkflowTemplate } from './WorkflowTemplate';
+export { WireframeTemplate } from './WireframeTemplate';
 export {
   getToneColor,
   getToneBg,
