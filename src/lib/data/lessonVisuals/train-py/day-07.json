@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Floating-point formats",
+      "codeHash": "25524aeda385ecdcdda21050149f0bbcde44f7a025d25ed5bc91542df7a046b5",
+      "spec": {
+        "template": "table",
+        "title": "Floating-point number formats and precision trade-offs",
+        "columns": [
+          "struct",
+          "to_fp16",
+          "pack"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Floating representations balance dynamic range against decimal precision.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "to_fp16"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "to_fp16"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Preserving dynamic range suits neural training while saving memory.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "to_fp16"
+                  },
+                  {
+                    "text": "pack"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "struct"
+                  },
+                  {
+                    "text": "to_fp16"
+                  },
+                  {
+                    "text": "struct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Floating-point number formats and precision trade-offs",
+        "columns": [
+          "struct",
+          "to_fp16",
+          "pack"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Floating representations balance dynamic range against decimal precision.",
+            "rows": [
+              {
+                "cells": [
+                  "struct",
+                  "to_fp16",
+                  "pack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "to_fp16",
+                  "pack"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Preserving dynamic range suits neural training while saving memory.",
+            "rows": [
+              {
+                "cells": [
+                  "struct",
+                  "to_fp16",
+                  "pack"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "struct",
+                  "to_fp16",
+                  "struct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Overflow and underflow",
+      "codeHash": "e5ae0d33e256560d9634889c68dd47ef544df40d939c386a2b9fd11d53ae7125",
+      "spec": {
+        "template": "table",
+        "title": "Numerical boundaries: overflow, underflow, and valid ranges",
+        "columns": [
+          "status",
+          "abs",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extreme values trigger overflows or underflows outside valid ranges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "abs"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "abs"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tiny gradients underflow to zero and disrupt deep network learning.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "abs"
+                  },
+                  {
+                    "text": "value"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "abs"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Numerical boundaries: overflow, underflow, and valid ranges",
+        "columns": [
+          "status",
+          "abs",
+          "value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extreme values trigger overflows or underflows outside valid ranges.",
+            "rows": [
+              {
+                "cells": [
+                  "status",
+                  "abs",
+                  "value"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "status",
+                  "abs",
+                  "value"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tiny gradients underflow to zero and disrupt deep network learning.",
+            "rows": [
+              {
+                "cells": [
+                  "status",
+                  "abs",
+                  "value"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "status",
+                  "abs",
+                  "status"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Loss scaling",
+      "codeHash": "42363b4a7a9a39e4688f2dcfa3a8347717faaedaf14ba371508233bb8693d019",
+      "spec": {
+        "template": "table",
+        "title": "Loss scaling mechanism for low-precision gradient rescue",
+        "columns": [
+          "grad",
+          "scale",
+          "stored"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loss scaling rescues small gradients before the backward pass.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unscaling divides gradients by the factor to leave updates unchanged.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "stored"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Loss scaling mechanism for low-precision gradient rescue",
+        "columns": [
+          "grad",
+          "scale",
+          "stored"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Loss scaling rescues small gradients before the backward pass.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "scale",
+                  "stored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "scale",
+                  "stored"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unscaling divides gradients by the factor to leave updates unchanged.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "scale",
+                  "stored"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "scale",
+                  "grad"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic loss scaling",
+      "codeHash": "5eeb2dc9aa9a4a28a2ad2b7f21f0c94e3764e21d232f7f0155dc0a7bcb606dd3",
+      "spec": {
+        "template": "table",
+        "title": "Dynamic scale adaptation and overflow-driven backoff",
+        "columns": [
+          "scale",
+          "good",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic loss scaling adjusts the factor automatically during training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Detected overflows skip the optimizer step and halve the current scale.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scale"
+                  },
+                  {
+                    "text": "good"
+                  },
+                  {
+                    "text": "scale"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dynamic scale adaptation and overflow-driven backoff",
+        "columns": [
+          "scale",
+          "good",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic loss scaling adjusts the factor automatically during training.",
+            "rows": [
+              {
+                "cells": [
+                  "scale",
+                  "good",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scale",
+                  "good",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Detected overflows skip the optimizer step and halve the current scale.",
+            "rows": [
+              {
+                "cells": [
+                  "scale",
+                  "good",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scale",
+                  "good",
+                  "scale"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mixed precision in practice",
+      "codeHash": "7a9a1f0e6816482cf1b49046ae5088354456da03ec90b940e9039b0d3db818c1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: precision",
+      "codeHash": "6667c18baac592958d3e2fa43e2c80c62bb359e1bb254ca36306116b386b1c0f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -6628,27 +6628,27 @@
     },
     "train-py:7:0": {
       "partTitle": "Floating-point formats",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:7:1": {
       "partTitle": "Overflow and underflow",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:7:2": {
       "partTitle": "Loss scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:7:3": {
       "partTitle": "Dynamic loss scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:7:4": {
       "partTitle": "Mixed precision in practice",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:7:5": {
       "partTitle": "Practice time: precision",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:8:0": {
       "partTitle": "Where training memory goes",
