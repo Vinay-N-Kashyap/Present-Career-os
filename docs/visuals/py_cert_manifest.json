@@ -5380,27 +5380,27 @@
     },
     "quant-py:15:0": {
       "partTitle": "The tick-to-trade pipeline",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:15:1": {
       "partTitle": "Bursts and bounded queues",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:15:2": {
       "partTitle": "Latency percentiles",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:15:3": {
       "partTitle": "Where latency hides",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:15:4": {
       "partTitle": "Observability without slowing down",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:15:5": {
       "partTitle": "Milestone practice: gateway and percentiles",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:16:0": {
       "partTitle": "What an option is",

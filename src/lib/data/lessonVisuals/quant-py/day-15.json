@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The tick-to-trade pipeline",
+      "codeHash": "7c75114e54b7762c70e9d9a117ce3a43e9f4cb6720374874297985d34c68e690",
+      "spec": {
+        "template": "table",
+        "title": "Tick-to-trade stage budgets and pipeline latency allocation",
+        "columns": [
+          "stage",
+          "ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tick-to-trade measures elapsed time from market packet ingress to egress.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The pipeline receives packets, updates books, and evaluates strategy logic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dedicated cores pass execution messages through lock-free SPSC queues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example adds up a latency budget and shows which pipeline stage dominates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget_ns"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tick-to-trade stage budgets and pipeline latency allocation",
+        "columns": [
+          "stage",
+          "ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tick-to-trade measures elapsed time from market packet ingress to egress.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "ns"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The pipeline receives packets, updates books, and evaluates strategy logic.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget_ns",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Dedicated cores pass execution messages through lock-free SPSC queues.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget_ns",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "values"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example adds up a latency budget and shows which pipeline stage dominates.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget_ns",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "values"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stage",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bursts and bounded queues",
+      "codeHash": "01a79fa23f54e061420bd2d82a03f734d8f6643edcc715d9dcc547ed2739a638",
+      "spec": {
+        "template": "table",
+        "title": "Traffic burst absorption, queue capacity and packet drop metrics",
+        "columns": [
+          "capacity",
+          "per_tick"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Volatile trading bursts produce arrival volume spikes exceeding average rates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "per_tick"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bounded queues absorb bursts until filled capacity forces packet drops.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "per_tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "depth"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Maximum queue depth metrics reveal head room before buffer drops occur.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "per_tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "depth"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arrivals"
+                  },
+                  {
+                    "text": "max_depth"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs the gateway with steady loads and acute traffic bursts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "per_tick"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "depth"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arrivals"
+                  },
+                  {
+                    "text": "max_depth"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gateway"
+                  },
+                  {
+                    "text": "min"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Traffic burst absorption, queue capacity and packet drop metrics",
+        "columns": [
+          "capacity",
+          "per_tick"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Volatile trading bursts produce arrival volume spikes exceeding average rates.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "per_tick"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bounded queues absorb bursts until filled capacity forces packet drops.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "per_tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "depth",
+                  "dropped"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Maximum queue depth metrics reveal head room before buffer drops occur.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "per_tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "depth",
+                  "dropped"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arrivals",
+                  "max_depth"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs the gateway with steady loads and acute traffic bursts.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "per_tick"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "depth",
+                  "dropped"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arrivals",
+                  "max_depth"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gateway",
+                  "min"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latency percentiles",
+      "codeHash": "d0efad269c6f8881d8b641885b6b83e98072fb980fee7af26aa8d5a07ce7e30f",
+      "spec": {
+        "template": "table",
+        "title": "Nearest-rank latency percentiles and tail spike evaluation",
+        "columns": [
+          "p50",
+          "p90"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tick-to-trade latency distributions summarize performance across all messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "p90"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The nearest-rank method calculates percentile ranks over sorted sample sets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "p90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Maximum latency metrics illuminate rare execution stalls masked by averages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "p90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "samples"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The example computes percentiles for clean traffic and spiky latency runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "p50"
+                  },
+                  {
+                    "text": "p90"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "p99"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "samples"
+                  },
+                  {
+                    "text": "sorted"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "percentiles"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Nearest-rank latency percentiles and tail spike evaluation",
+        "columns": [
+          "p50",
+          "p90"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tick-to-trade latency distributions summarize performance across all messages.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "p90"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The nearest-rank method calculates percentile ranks over sorted sample sets.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "p90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "max"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Maximum latency metrics illuminate rare execution stalls masked by averages.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "p90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "max"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "samples",
+                  "sorted"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The example computes percentiles for clean traffic and spiky latency runs.",
+            "rows": [
+              {
+                "cells": [
+                  "p50",
+                  "p90"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p99",
+                  "max"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "samples",
+                  "sorted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "percentiles",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where latency hides",
+      "codeHash": "727784b4cd78d099cc994b37530e0826f04efd2819db5aef82ff2ca6842b2833",
+      "spec": {
+        "template": "table",
+        "title": "Queueing delay propagation and tail latency cascade modeling",
+        "columns": [
+          "service",
+          "arrivals"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Excess tick-to-trade latency stems from specific system bottlenecks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "service"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pre-allocating buffers avoids heap memory allocation pauses along hot paths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "service"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free_at"
+                  },
+                  {
+                    "text": "waits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Occasional execution delays build queueing latency behind slower stages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "service"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free_at"
+                  },
+                  {
+                    "text": "waits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arrive"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how a slow stage creates queueing delay for trailing messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "service"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "free_at"
+                  },
+                  {
+                    "text": "waits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "arrive"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "append"
+                  },
+                  {
+                    "text": "zip"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Queueing delay propagation and tail latency cascade modeling",
+        "columns": [
+          "service",
+          "arrivals"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Excess tick-to-trade latency stems from specific system bottlenecks.",
+            "rows": [
+              {
+                "cells": [
+                  "service",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pre-allocating buffers avoids heap memory allocation pauses along hot paths.",
+            "rows": [
+              {
+                "cells": [
+                  "service",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free_at",
+                  "waits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Occasional execution delays build queueing latency behind slower stages.",
+            "rows": [
+              {
+                "cells": [
+                  "service",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free_at",
+                  "waits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arrive",
+                  "cost"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how a slow stage creates queueing delay for trailing messages.",
+            "rows": [
+              {
+                "cells": [
+                  "service",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "free_at",
+                  "waits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "arrive",
+                  "cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "append",
+                  "zip"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Observability without slowing down",
+      "codeHash": "a7860e2ae7ecc94fce67bdcfa82e6f714c699faaeb6f20ef79b7f395d92cb447",
+      "spec": {
+        "template": "none",
+        "reason": "Zero-overhead observability and out-of-band telemetry analysis."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: gateway and percentiles",
+      "codeHash": "c5ae83298b77f716484aa601a6b0a2cdab35f6f357aefb90bed7a7ff3a7fc145",
+      "spec": {
+        "template": "none",
+        "reason": "Milestone practice: gateway burst queueing and latency distributions."
+      },
+      "filled": {}
+    }
+  ]
+}
