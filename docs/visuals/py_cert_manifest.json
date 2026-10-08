@@ -7180,27 +7180,27 @@
     },
     "train-py:30:0": {
       "partTitle": "Choosing a strategy that fits",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:30:1": {
       "partTitle": "The complete plan",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:30:2": {
       "partTitle": "Reporting a training run",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:30:3": {
       "partTitle": "Everything you can now calculate",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:30:4": {
       "partTitle": "Where to go next",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:30:5": {
       "partTitle": "Capstone practice: plan and report",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:1:0": {
       "partTitle": "Why vectors",
