@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 9,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why components need props",
+      "codeHash": "57c875182602028d2bab8d2af414eedddd66579d186176086fb4670e39653e2f",
+      "spec": {
+        "template": "flow",
+        "title": "Passing custom parameters to reusable components",
+        "nodes": [
+          {
+            "id": "parent",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "props",
+            "label": "props",
+            "tappable": false
+          },
+          {
+            "id": "child",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Props pass custom inputs from parent to child components.",
+            "values": {
+              "parent": {
+                "text": "\"Frontend Developer\""
+              },
+              "props": {
+                "text": "\"Infosys\""
+              },
+              "child": {
+                "text": "JobCard"
+              }
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "data",
+              "child": "idle"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Components render different outputs using passed props values.",
+            "values": {
+              "parent": {
+                "text": "\"Tester\""
+              },
+              "props": {
+                "text": "\"TCS\""
+              },
+              "child": {
+                "text": "JobCard"
+              }
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "ok",
+              "child": "ok"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ],
+              [
+                "props",
+                "child"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Passing custom parameters to reusable components",
+        "nodes": [
+          {
+            "id": "parent",
+            "label": "App",
+            "tappable": false
+          },
+          {
+            "id": "props",
+            "label": "props",
+            "tappable": false
+          },
+          {
+            "id": "child",
+            "label": "JobCard",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Props pass custom inputs from parent to child components.",
+            "values": {
+              "parent": "\"Frontend Developer\"",
+              "props": "\"Infosys\"",
+              "child": "JobCard"
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "data",
+              "child": "idle"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Components render different outputs using passed props values.",
+            "values": {
+              "parent": "\"Tester\"",
+              "props": "\"TCS\"",
+              "child": "JobCard"
+            },
+            "tones": {
+              "parent": "idle",
+              "props": "ok",
+              "child": "ok"
+            },
+            "arrows": [
+              [
+                "parent",
+                "props"
+              ],
+              [
+                "props",
+                "child"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Passing props",
+      "codeHash": "9656184d080a06eb50c2ab0b798743b2b27d0ec7651cf7f69146041af5f47ddb",
+      "spec": {
+        "template": "compare",
+        "title": "String attributes versus numeric expression props",
+        "leftLabel": "String Prop",
+        "rightLabel": "Numeric Prop",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Props accept strings in quotes and expressions in curly braces.",
+            "left": {
+              "code": "const props = { title: \"Tester\", salary: \"300000\" };",
+              "result": {
+                "text": "\"300000\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const fixed = { title: \"Tester\", salary: 300000 };",
+              "result": {
+                "text": "300000"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Passing a string in quotes causes unexpected maths instead of numbers.",
+            "left": {
+              "code": "console.log(props.salary + 50000);",
+              "result": {
+                "text": "\"300000\""
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "console.log(fixed.salary + 50000);",
+              "result": {
+                "text": "300000"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "String attributes versus numeric expression props",
+        "leftLabel": "String Prop",
+        "rightLabel": "Numeric Prop",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Props accept strings in quotes and expressions in curly braces.",
+            "left": {
+              "code": "const props = { title: \"Tester\", salary: \"300000\" };",
+              "result": "\"300000\"",
+              "tone": "warn",
+              "checks": [
+                "\"300000\""
+              ]
+            },
+            "right": {
+              "code": "const fixed = { title: \"Tester\", salary: 300000 };",
+              "result": "300000",
+              "tone": "ok",
+              "checks": [
+                "300000"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Passing a string in quotes causes unexpected maths instead of numbers.",
+            "left": {
+              "code": "console.log(props.salary + 50000);",
+              "result": "\"300000\"",
+              "tone": "warn",
+              "checks": [
+                "\"300000\""
+              ]
+            },
+            "right": {
+              "code": "console.log(fixed.salary + 50000);",
+              "result": "300000",
+              "tone": "ok",
+              "checks": [
+                "300000"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reading props with destructuring",
+      "codeHash": "94d5ec1d793ee0ce0e808844584297b3450bf7360adcf6786a35cbaeea604d7c",
+      "spec": {
+        "template": "boxes",
+        "title": "Direct destructuring of component parameter props",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Destructuring extracts individual props directly in parameter brackets.",
+            "values": {
+              "title": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              },
+              "salary": {
+                "text": "400000"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Components use destructured variables directly in their body.",
+            "values": {
+              "title": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              },
+              "salary": {
+                "text": "400000"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Direct destructuring of component parameter props",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Destructuring extracts individual props directly in parameter brackets.",
+            "values": {
+              "title": "\"Frontend Developer\"",
+              "company": "\"Infosys\"",
+              "salary": "400000"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Components use destructured variables directly in their body.",
+            "values": {
+              "title": "\"Frontend Developer\"",
+              "company": "\"Infosys\"",
+              "salary": "400000"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Default values for props",
+      "codeHash": "344fd90eb6632472b7ec90ed3440e343b9d96e001d5345237b89f09d41bc35d2",
+      "spec": {
+        "template": "boxes",
+        "title": "Fallback defaults for optional component props",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Providing default values prevents undefined prop rendering errors.",
+            "values": {
+              "status": {
+                "text": "\"applied\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Default values make component usage cleaner and safer.",
+            "values": {
+              "status": {
+                "text": "\"interview\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Fallback defaults for optional component props",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Providing default values prevents undefined prop rendering errors.",
+            "values": {
+              "status": "\"applied\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Default values make component usage cleaner and safer.",
+            "values": {
+              "status": "\"interview\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Passing a whole object as a prop",
+      "codeHash": "8ee9d943e8c4e2ebd94cf0f78359d01f0094fc99678ef5b95f0465af69de09ce",
+      "spec": {
+        "template": "component-tree",
+        "title": "Passing full object structures through props",
+        "nodes": [
+          {
+            "id": "list",
+            "name": "JobList",
+            "tone": "idle"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Passing a full object prop simplifies parent component code.",
+            "activeId": "card",
+            "propsPassed": {
+              "from": "list",
+              "to": "card",
+              "propName": "job",
+              "value": {
+                "text": "\"React Developer\""
+              }
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say3",
+            "caption": "Passing whole objects keeps parent component markup compact.",
+            "activeId": "card",
+            "propsPassed": {
+              "from": "list",
+              "to": "card",
+              "propName": "job",
+              "value": {
+                "text": "\"Zoho\""
+              }
+            },
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Passing full object structures through props",
+        "nodes": [
+          {
+            "id": "list",
+            "name": "JobList",
+            "tone": "idle"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Passing a full object prop simplifies parent component code.",
+            "activeId": "card",
+            "propsPassed": {
+              "from": "list",
+              "to": "card",
+              "propName": "job",
+              "value": "\"React Developer\""
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "list",
+                "name": "JobList",
+                "tone": "idle"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Passing whole objects keeps parent component markup compact.",
+            "activeId": "card",
+            "propsPassed": {
+              "from": "list",
+              "to": "card",
+              "propName": "job",
+              "value": "\"Zoho\""
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "list",
+                "name": "JobList",
+                "tone": "idle"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Props flow one way and are read-only",
+      "codeHash": "9e607d8cd5011e360832b53e21b72a9d533add37537d54bb07d1e199b6a9ac81",
+      "spec": {
+        "template": "none",
+        "reason": "Architectural principles of unidirectional data flow and immutability of props"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Architectural principles of unidirectional data flow and immutability of props"
+      }
+    }
+  ]
+}
