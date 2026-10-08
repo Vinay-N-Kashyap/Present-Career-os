@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 4,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The idea of data parallelism",
+      "codeHash": "a9390d94a2747c2613bbcdb2d6ca4f9f0ac4c535984f6e11c04d0eb892ae38c8",
+      "spec": {
+        "template": "table",
+        "title": "Data parallel architecture: replicated models and sharded inputs",
+        "columns": [
+          "data",
+          "rank",
+          "shard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In data parallelism every worker maintains an identical model copy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "shard"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "shard"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Computed gradients are averaged across all workers before updating.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "shard"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Data parallel architecture: replicated models and sharded inputs",
+        "columns": [
+          "data",
+          "rank",
+          "shard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In data parallelism every worker maintains an identical model copy.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "rank",
+                  "shard"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "data",
+                  "rank",
+                  "shard"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Computed gradients are averaged across all workers before updating.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "rank",
+                  "shard"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "data",
+                  "rank",
+                  "data"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The distributed sampler",
+      "codeHash": "307b6b7b154c345fd92ad1ffd7dfc20fc2da0d703f121e308560fe5422554c73",
+      "spec": {
+        "template": "table",
+        "title": "Distributed dataset sampling and rank index partition",
+        "columns": [
+          "indices",
+          "rank",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distributed sampler assigns partitioned data shards to each rank.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indices"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "indices"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The sampler pads the index list so repeating indices balance all ranks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "indices"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "indices"
+                  },
+                  {
+                    "text": "rank"
+                  },
+                  {
+                    "text": "indices"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed dataset sampling and rank index partition",
+        "columns": [
+          "indices",
+          "rank",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distributed sampler assigns partitioned data shards to each rank.",
+            "rows": [
+              {
+                "cells": [
+                  "indices",
+                  "rank",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "indices",
+                  "rank",
+                  "total"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The sampler pads the index list so repeating indices balance all ranks.",
+            "rows": [
+              {
+                "cells": [
+                  "indices",
+                  "rank",
+                  "total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "indices",
+                  "rank",
+                  "indices"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Averaging gradients",
+      "codeHash": "22b823118ee6aceada1928ebbb2c4ff24da60c94bc30b79d3c5bcd23c917d2b4",
+      "spec": {
+        "template": "table",
+        "title": "Element-wise gradient reduction across distributed workers",
+        "columns": [
+          "avg",
+          "vals",
+          "worker_grads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each rank computes gradients from its own shard during backward pass.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "vals"
+                  },
+                  {
+                    "text": "worker_grads"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "vals"
+                  },
+                  {
+                    "text": "worker_grads"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Collective all-reduce operations synchronise averaged gradients globally.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "vals"
+                  },
+                  {
+                    "text": "worker_grads"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "avg"
+                  },
+                  {
+                    "text": "vals"
+                  },
+                  {
+                    "text": "avg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Element-wise gradient reduction across distributed workers",
+        "columns": [
+          "avg",
+          "vals",
+          "worker_grads"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each rank computes gradients from its own shard during backward pass.",
+            "rows": [
+              {
+                "cells": [
+                  "avg",
+                  "vals",
+                  "worker_grads"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "avg",
+                  "vals",
+                  "worker_grads"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Collective all-reduce operations synchronise averaged gradients globally.",
+            "rows": [
+              {
+                "cells": [
+                  "avg",
+                  "vals",
+                  "worker_grads"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "avg",
+                  "vals",
+                  "avg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Same result as one big batch",
+      "codeHash": "b605220d5c1e23a97dc994584e0b24e32290438dc2df1d15df0be488fcf22a00",
+      "spec": {
+        "template": "table",
+        "title": "Mathematical equivalence: distributed shards versus single-worker batch",
+        "columns": [
+          "single",
+          "workers",
+          "averaged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Equal shards ensure distributed updates match single machine batches.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "single"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "single"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Data parallelism does not change what the model learns during training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "single"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "averaged"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "single"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mathematical equivalence: distributed shards versus single-worker batch",
+        "columns": [
+          "single",
+          "workers",
+          "averaged"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Equal shards ensure distributed updates match single machine batches.",
+            "rows": [
+              {
+                "cells": [
+                  "single",
+                  "workers",
+                  "averaged"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "single",
+                  "workers",
+                  "averaged"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Data parallelism does not change what the model learns during training.",
+            "rows": [
+              {
+                "cells": [
+                  "single",
+                  "workers",
+                  "averaged"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "single",
+                  "workers",
+                  "single"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where data parallelism struggles",
+      "codeHash": "e7b501176624ac621baede22bc73804e03a091d2ca07b510ab434786b1bde249",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: sharding and averaging",
+      "codeHash": "d4874ad5180245caafb3076e0cb358dd74583ffa65b10d6a2e49903eda365f37",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

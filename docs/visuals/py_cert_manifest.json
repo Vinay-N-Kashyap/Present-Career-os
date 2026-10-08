@@ -6556,27 +6556,27 @@
     },
     "train-py:4:0": {
       "partTitle": "The idea of data parallelism",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:4:1": {
       "partTitle": "The distributed sampler",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:4:2": {
       "partTitle": "Averaging gradients",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:4:3": {
       "partTitle": "Same result as one big batch",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:4:4": {
       "partTitle": "Where data parallelism struggles",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:4:5": {
       "partTitle": "Practice time: sharding and averaging",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:5:0": {
       "partTitle": "Collective operations",
