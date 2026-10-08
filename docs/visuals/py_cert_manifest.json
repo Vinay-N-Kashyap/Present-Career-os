@@ -5860,27 +5860,27 @@
     },
     "prompt-py:5:0": {
       "partTitle": "Tokens in practice",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:5:1": {
       "partTitle": "The context window",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:5:2": {
       "partTitle": "What AI costs",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:5:3": {
       "partTitle": "Trimming prompts",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:5:4": {
       "partTitle": "Putting the week together",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:5:5": {
       "partTitle": "Milestone practice: budget and cost",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:6:0": {
       "partTitle": "From scores to probabilities",
