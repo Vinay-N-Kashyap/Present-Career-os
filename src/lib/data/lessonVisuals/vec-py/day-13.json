@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Scalar quantisation",
+      "codeHash": "e29006a35b093c0e4d315c5436f2800a4df9d9168c94391033e17e3a0c1ded1c",
+      "spec": {
+        "template": "table",
+        "title": "Independent dimension scaling to byte ranges",
+        "columns": [
+          "mins",
+          "maxs",
+          "codes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scalar quantisation maps each dimension independently to a compact integer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mins"
+                  },
+                  {
+                    "text": "maxs"
+                  },
+                  {
+                    "text": "codes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mins"
+                  },
+                  {
+                    "text": "maxs"
+                  },
+                  {
+                    "text": "codes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The minimum and maximum across the collection define the scale range.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mins"
+                  },
+                  {
+                    "text": "maxs"
+                  },
+                  {
+                    "text": "codes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mins"
+                  },
+                  {
+                    "text": "maxs"
+                  },
+                  {
+                    "text": "mins"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Independent dimension scaling to byte ranges",
+        "columns": [
+          "mins",
+          "maxs",
+          "codes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scalar quantisation maps each dimension independently to a compact integer.",
+            "rows": [
+              {
+                "cells": [
+                  "mins",
+                  "maxs",
+                  "codes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mins",
+                  "maxs",
+                  "codes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The minimum and maximum across the collection define the scale range.",
+            "rows": [
+              {
+                "cells": [
+                  "mins",
+                  "maxs",
+                  "codes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "mins",
+                  "maxs",
+                  "mins"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary quantisation",
+      "codeHash": "039163bd6ece6ad4986b4d0ee93314b883d673281618a03d462172da01fe3500",
+      "spec": {
+        "template": "table",
+        "title": "Sign bit extraction and integer bit packing",
+        "columns": [
+          "code",
+          "binarize",
+          "code"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Binary quantisation preserves only the positive sign of each dimension.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "binarize"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "binarize"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Bits are packed into standard integers to represent the whole code.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "binarize"
+                  },
+                  {
+                    "text": "code"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "code"
+                  },
+                  {
+                    "text": "binarize"
+                  },
+                  {
+                    "text": "binarize"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sign bit extraction and integer bit packing",
+        "columns": [
+          "code",
+          "binarize",
+          "code"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Binary quantisation preserves only the positive sign of each dimension.",
+            "rows": [
+              {
+                "cells": [
+                  "code",
+                  "binarize",
+                  "code"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "binarize",
+                  "code"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Bits are packed into standard integers to represent the whole code.",
+            "rows": [
+              {
+                "cells": [
+                  "code",
+                  "binarize",
+                  "code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "code",
+                  "binarize",
+                  "binarize"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hamming distance",
+      "codeHash": "5decbfa885ed90c71c3170affdf6e0fb66a5d2973da855b99bce2b85298c2703",
+      "spec": {
+        "template": "table",
+        "title": "Exclusive OR bitwise differences and bit counting",
+        "columns": [
+          "Hamming",
+          "distance",
+          "diff"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Hamming distance counts the number of positions where binary bits differ.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Hamming"
+                  },
+                  {
+                    "text": "distance"
+                  },
+                  {
+                    "text": "diff"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Hamming"
+                  },
+                  {
+                    "text": "distance"
+                  },
+                  {
+                    "text": "diff"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "CPUs evaluate bit differences with a single instruction for rapid search.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Hamming"
+                  },
+                  {
+                    "text": "distance"
+                  },
+                  {
+                    "text": "diff"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Hamming"
+                  },
+                  {
+                    "text": "distance"
+                  },
+                  {
+                    "text": "diff"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Exclusive OR bitwise differences and bit counting",
+        "columns": [
+          "Hamming",
+          "distance",
+          "diff"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Hamming distance counts the number of positions where binary bits differ.",
+            "rows": [
+              {
+                "cells": [
+                  "Hamming",
+                  "distance",
+                  "diff"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Hamming",
+                  "distance",
+                  "diff"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "CPUs evaluate bit differences with a single instruction for rapid search.",
+            "rows": [
+              {
+                "cells": [
+                  "Hamming",
+                  "distance",
+                  "diff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hamming",
+                  "distance",
+                  "diff"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Re-scoring",
+      "codeHash": "9c5039397af74c837a6113d3ed94e73546f5d0ddaa02688e2608a88b8efb36b7",
+      "spec": {
+        "template": "table",
+        "title": "Two-stage candidate shortlisting and exact rescoring",
+        "columns": [
+          "shortlist",
+          "final",
+          "vecs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compressed codes find candidate matches quickly before final ranking.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shortlist"
+                  },
+                  {
+                    "text": "final"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shortlist"
+                  },
+                  {
+                    "text": "final"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A two-stage approach recovers lost recall using exact distance calculations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shortlist"
+                  },
+                  {
+                    "text": "final"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shortlist"
+                  },
+                  {
+                    "text": "final"
+                  },
+                  {
+                    "text": "shortlist"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two-stage candidate shortlisting and exact rescoring",
+        "columns": [
+          "shortlist",
+          "final",
+          "vecs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compressed codes find candidate matches quickly before final ranking.",
+            "rows": [
+              {
+                "cells": [
+                  "shortlist",
+                  "final",
+                  "vecs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shortlist",
+                  "final",
+                  "vecs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A two-stage approach recovers lost recall using exact distance calculations.",
+            "rows": [
+              {
+                "cells": [
+                  "shortlist",
+                  "final",
+                  "vecs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shortlist",
+                  "final",
+                  "shortlist"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a compression method",
+      "codeHash": "a371cf2a7a5671d1b4ab3a271e3ce537328d813e9f76d5cc1abcb527f6399784",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: compact codes",
+      "codeHash": "2e835686e7764432d8404c9f2326c4d9bb7fb6c1b03d9b42931b060f7580b1df",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

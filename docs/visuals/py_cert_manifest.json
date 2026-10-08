@@ -7492,27 +7492,27 @@
     },
     "vec-py:13:0": {
       "partTitle": "Scalar quantisation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:13:1": {
       "partTitle": "Binary quantisation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:13:2": {
       "partTitle": "Hamming distance",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:13:3": {
       "partTitle": "Re-scoring",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:13:4": {
       "partTitle": "Choosing a compression method",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:13:5": {
       "partTitle": "Practice time: compact codes",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:14:0": {
       "partTitle": "Locality-sensitive hashing",
