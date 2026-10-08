@@ -5,6 +5,12 @@ import { BoxesTemplate } from './BoxesTemplate';
 import { TableTemplate } from './TableTemplate';
 import { LettersTemplate } from './LettersTemplate';
 import { CompareTemplate } from './CompareTemplate';
+import { CellsTemplate } from './CellsTemplate';
+import { StackQueueTemplate } from './StackQueueTemplate';
+import { TreeGraphTemplate } from './TreeGraphTemplate';
+import { BarsTemplate } from './BarsTemplate';
+import { SequenceTemplate } from './SequenceTemplate';
+import { StatesTemplate } from './StatesTemplate';
 
 export interface VisualStageProps {
   visual: LessonVisual;
@@ -28,6 +34,7 @@ export function VisualStage({
   fallbackNote,
 }: VisualStageProps): React.ReactElement {
   const [isMobileCollapsed, setIsMobileCollapsed] = useState(false);
+  const [viewMode, setViewMode] = useState<'diagram' | 'storyboard'>('diagram');
 
   const totalSteps = visual.steps.length;
   // Ensure current step index is within bounds
@@ -46,7 +53,98 @@ export function VisualStage({
     }
   };
 
+  // Keyboard navigation for power users and accessibility
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable ||
+          target.closest('.monaco-editor'))
+      ) {
+        return;
+      }
+
+      if (e.key === 'ArrowLeft') {
+        if (safeStepIndex > 0) {
+          onStepChange(safeStepIndex - 1, true);
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (safeStepIndex < totalSteps - 1) {
+          onStepChange(safeStepIndex + 1, true);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [safeStepIndex, totalSteps, onStepChange]);
+
   const renderTemplate = () => {
+    if (viewMode === 'storyboard') {
+      return (
+        <div
+          data-testid="visual-storyboard"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            width: '100%',
+            maxHeight: '100%',
+            overflowY: 'auto',
+            padding: '4px 6px',
+          }}
+        >
+          {visual.steps.map((st, sIdx) => {
+            const isActive = sIdx === safeStepIndex;
+            return (
+              <div
+                key={sIdx}
+                onClick={() => onStepChange(sIdx, true)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '10px',
+                  padding: '8px 12px',
+                  borderRadius: '10px',
+                  background: isActive ? 'color-mix(in srgb, var(--accent) 12%, var(--bg2))' : 'var(--bg2)',
+                  border: isActive ? '1.5px solid var(--accent)' : '1px solid var(--border)',
+                  cursor: 'pointer',
+                  transition: 'background 150ms ease, border-color 150ms ease',
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    padding: '2px 6px',
+                    borderRadius: '6px',
+                    background: isActive ? 'var(--accent)' : 'var(--border)',
+                    color: isActive ? '#ffffff' : 'var(--text-muted)',
+                    flexShrink: 0,
+                  }}
+                >
+                  Step {sIdx + 1}
+                </span>
+                <span
+                  style={{
+                    fontSize: '13px',
+                    color: isActive ? 'var(--t1)' : 'var(--text-muted)',
+                    fontWeight: isActive ? 600 : 400,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {st.caption}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+
     switch (visual.template) {
       case 'flow':
         return (
@@ -93,6 +191,53 @@ export function VisualStage({
             showSpaces={visual.showSpaces}
           />
         );
+      case 'cells':
+        return (
+          <CellsTemplate
+            step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'stack-queue':
+        return (
+          <StackQueueTemplate
+            step={visual.steps[safeStepIndex] as any}
+            mode={(visual as any).mode}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'tree-graph':
+        return (
+          <TreeGraphTemplate
+            nodes={(visual as any).nodes || []}
+            edges={(visual as any).edges || []}
+            step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'bars':
+        return (
+          <BarsTemplate
+            step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'sequence':
+        return (
+          <SequenceTemplate
+            actors={(visual as any).actors || []}
+            step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
+      case 'states':
+        return (
+          <StatesTemplate
+            states={(visual as any).states || []}
+            step={visual.steps[safeStepIndex] as any}
+            showSpaces={visual.showSpaces}
+          />
+        );
       default:
         return null;
     }
@@ -128,8 +273,9 @@ export function VisualStage({
         }
         @media (max-width: 1023px) {
           .visual-stage-root {
-            max-height: ${isMobileCollapsed ? '54px' : '260px'} !important;
-            height: ${isMobileCollapsed ? '54px' : '260px'} !important;
+            max-height: ${isMobileCollapsed ? '54px' : '380px'} !important;
+            height: auto !important;
+            min-height: ${isMobileCollapsed ? '54px' : '220px'} !important;
             overflow-y: hidden !important;
             padding: 8px 10px !important;
           }
@@ -193,7 +339,27 @@ export function VisualStage({
         }
       `}</style>
 
-      {/* Header: Title and Step Indicator / Mobile Collapse */}
+      {/* Screen Reader Live Announcer */}
+      <div
+        className="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0, 0, 0, 0)',
+          whiteSpace: 'nowrap',
+          border: 0,
+        }}
+      >
+        Step {safeStepIndex + 1} of {totalSteps}: {currentStep?.caption || ''}
+      </div>
+
+      {/* Header: Title, View Mode Switch, and Step Indicator / Mobile Collapse */}
       <div
         style={{
           display: 'flex',
@@ -237,6 +403,27 @@ export function VisualStage({
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+          {/* View Mode Toggle: Diagram vs Storyboard */}
+          <button
+            onClick={() => setViewMode((prev) => (prev === 'diagram' ? 'storyboard' : 'diagram'))}
+            style={{
+              background: 'var(--bg2)',
+              border: '1px solid var(--border)',
+              borderRadius: '6px',
+              color: 'var(--t1)',
+              fontSize: '11px',
+              fontWeight: 600,
+              padding: '2px 8px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+            }}
+            title={viewMode === 'diagram' ? 'Switch to Storyboard View' : 'Switch to Diagram View'}
+          >
+            {viewMode === 'diagram' ? '📋 List' : '📐 Canvas'}
+          </button>
+
           <span
             style={{
               fontFamily: 'var(--font-mono, monospace)',
