@@ -7924,27 +7924,27 @@
     },
     "safe-py:1:0": {
       "partTitle": "Safety is an engineering job",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:1:1": {
       "partTitle": "Kinds of harm",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:1:2": {
       "partTitle": "Likelihood times impact",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:1:3": {
       "partTitle": "The risk register",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:1:4": {
       "partTitle": "Controls and residual risk",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:1:5": {
       "partTitle": "Where this course goes",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:2:0": {
       "partTitle": "What threat modelling is",
