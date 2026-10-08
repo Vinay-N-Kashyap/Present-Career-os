@@ -7084,27 +7084,27 @@
     },
     "train-py:26:0": {
       "partTitle": "Why full fine-tuning is expensive",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:26:1": {
       "partTitle": "The low-rank idea",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:26:2": {
       "partTitle": "The LoRA forward pass",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:26:3": {
       "partTitle": "Merging adapters",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:26:4": {
       "partTitle": "QLoRA and distributed fine-tuning",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:26:5": {
       "partTitle": "Practice time: LoRA",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:27:0": {
       "partTitle": "What quantisation does",
