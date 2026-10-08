@@ -6172,27 +6172,27 @@
     },
     "prompt-py:18:0": {
       "partTitle": "Speech-to-text",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:18:1": {
       "partTitle": "Cleaning transcripts",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:18:2": {
       "partTitle": "Finding action items",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:18:3": {
       "partTitle": "Measuring transcription quality",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:18:4": {
       "partTitle": "Text-to-speech and voice assistants",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:18:5": {
       "partTitle": "Practice time: action items and WER",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:19:0": {
       "partTitle": "Why models hallucinate",

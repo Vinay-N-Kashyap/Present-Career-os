@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Speech-to-text",
+      "codeHash": "35e68e28231c537b1b94c4a42fb0ce9373e44c929becf13d47cd46aaeb3dd284",
+      "spec": {
+        "template": "table",
+        "title": "Automatic speech recognition and speaker diarization",
+        "columns": [
+          "time",
+          "speaker",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic speech recognition converts spoken audio into written text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transcription accuracy depends on audio quality and technical vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "time"
+                  },
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "transcript"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automatic speech recognition and speaker diarization",
+        "columns": [
+          "time",
+          "speaker",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automatic speech recognition converts spoken audio into written text.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "speaker",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "time",
+                  "speaker",
+                  "text"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Transcription accuracy depends on audio quality and technical vocabulary.",
+            "rows": [
+              {
+                "cells": [
+                  "time",
+                  "speaker",
+                  "text"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "time",
+                  "speaker",
+                  "transcript"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cleaning transcripts",
+      "codeHash": "d46d5f8a089b58a155ce63d62dfb260d047ad2a909244d53084503ffca7ae7dc",
+      "spec": {
+        "template": "table",
+        "title": "Disfluency removal and transcript text cleaning",
+        "columns": [
+          "raw",
+          "text",
+          "raw"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw transcripts contain messy filler words, stuttering, and repetitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cleaning raw transcripts makes downstream summaries better and cheaper.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "raw"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "raw"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disfluency removal and transcript text cleaning",
+        "columns": [
+          "raw",
+          "text",
+          "raw"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw transcripts contain messy filler words, stuttering, and repetitions.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "text",
+                  "raw"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "text",
+                  "raw"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cleaning raw transcripts makes downstream summaries better and cheaper.",
+            "rows": [
+              {
+                "cells": [
+                  "raw",
+                  "text",
+                  "raw"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "raw",
+                  "text",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding action items",
+      "codeHash": "fda8edc46be841cbb0ceef46b2c85f32eaaebb0eaad150fc6dfb8afab3c09380",
+      "spec": {
+        "template": "table",
+        "title": "Commitment and action item extraction from dialogues",
+        "columns": [
+          "speaker",
+          "text",
+          "lines"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The most valuable output of any team meeting is its concrete action items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Verbal commitments and explicit markers identify assigned action items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "speaker"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "speaker"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Commitment and action item extraction from dialogues",
+        "columns": [
+          "speaker",
+          "text",
+          "lines"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The most valuable output of any team meeting is its concrete action items.",
+            "rows": [
+              {
+                "cells": [
+                  "speaker",
+                  "text",
+                  "lines"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "speaker",
+                  "text",
+                  "lines"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Verbal commitments and explicit markers identify assigned action items.",
+            "rows": [
+              {
+                "cells": [
+                  "speaker",
+                  "text",
+                  "lines"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "speaker",
+                  "text",
+                  "speaker"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring transcription quality",
+      "codeHash": "b518108a006a31ebdd2f6350cf38a8feec89f8c2ff6d64a6b0089b26b4456190",
+      "spec": {
+        "template": "table",
+        "title": "Word error rate edit distance computation",
+        "columns": [
+          "ref",
+          "hyp",
+          "prev"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word error rate provides the standard metric for transcription accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "hyp"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "hyp"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The metric counts word substitutions, insertions, and deletions in text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "hyp"
+                  },
+                  {
+                    "text": "prev"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ref"
+                  },
+                  {
+                    "text": "hyp"
+                  },
+                  {
+                    "text": "cur"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Word error rate edit distance computation",
+        "columns": [
+          "ref",
+          "hyp",
+          "prev"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Word error rate provides the standard metric for transcription accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "ref",
+                  "hyp",
+                  "prev"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ref",
+                  "hyp",
+                  "prev"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The metric counts word substitutions, insertions, and deletions in text.",
+            "rows": [
+              {
+                "cells": [
+                  "ref",
+                  "hyp",
+                  "prev"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "ref",
+                  "hyp",
+                  "cur"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Text-to-speech and voice assistants",
+      "codeHash": "8e431ccf18e9f8116d8ae25cf7fdd09a7f82a988c41729ac1941a88d8dc4701d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: action items and WER",
+      "codeHash": "2e60f05963133ebeb3635f5b39bb1e6ddc9b2ed3af82a7976d42b73276a2a5a9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
