@@ -7396,27 +7396,27 @@
     },
     "vec-py:9:0": {
       "partTitle": "Filters in search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:9:1": {
       "partTitle": "Pre-filtering",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:9:2": {
       "partTitle": "Post-filtering and its pitfall",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:9:3": {
       "partTitle": "Filter selectivity",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:9:4": {
       "partTitle": "Richer filters",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:9:5": {
       "partTitle": "Practice time: filtering",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:10:0": {
       "partTitle": "The idea of clustering",

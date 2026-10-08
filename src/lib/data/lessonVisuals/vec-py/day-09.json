@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Filters in search",
+      "codeHash": "20e199d01044a5270492bda0fe9ffdb07e69f0a833cbda55c7f29e8136c48695",
+      "spec": {
+        "template": "table",
+        "title": "Metadata attribute filtering over vector collections",
+        "columns": [
+          "matches",
+          "where",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A metadata filter enforces conditions that all returned items satisfy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "matches"
+                  },
+                  {
+                    "text": "where"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matches"
+                  },
+                  {
+                    "text": "where"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Two retrieval strategies exist: filter first or rank first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "matches"
+                  },
+                  {
+                    "text": "where"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "matches"
+                  },
+                  {
+                    "text": "where"
+                  },
+                  {
+                    "text": "matches"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Metadata attribute filtering over vector collections",
+        "columns": [
+          "matches",
+          "where",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A metadata filter enforces conditions that all returned items satisfy.",
+            "rows": [
+              {
+                "cells": [
+                  "matches",
+                  "where",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "matches",
+                  "where",
+                  "items"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Two retrieval strategies exist: filter first or rank first.",
+            "rows": [
+              {
+                "cells": [
+                  "matches",
+                  "where",
+                  "items"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "matches",
+                  "where",
+                  "matches"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pre-filtering",
+      "codeHash": "3a22657e29bac933acd85e5cf6bf0878fdac4cdc85865b9fd05a5d61180393a8",
+      "spec": {
+        "template": "table",
+        "title": "Pre-filtering candidate selection before vector ranking",
+        "columns": [
+          "items",
+          "english",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre-filtering applies conditions first and ranks only matching items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "english"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "english"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Under exhaustive search, pre-filtering remains simple and exact.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "english"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "english"
+                  },
+                  {
+                    "text": "english"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pre-filtering candidate selection before vector ranking",
+        "columns": [
+          "items",
+          "english",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pre-filtering applies conditions first and ranks only matching items.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "english",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "english",
+                  "items"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Under exhaustive search, pre-filtering remains simple and exact.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "english",
+                  "items"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "items",
+                  "english",
+                  "english"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Post-filtering and its pitfall",
+      "codeHash": "86e7121101849af6a55f579bcdba71fd35f67e7a951f136ddf1a2bf4d080d3fb",
+      "spec": {
+        "template": "table",
+        "title": "Post-filtering candidate truncation and result sparsity",
+        "columns": [
+          "ranked",
+          "lang",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post-filtering runs search first and removes candidates that fail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "lang"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "lang"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pitfall occurs when few top results match the required filter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "lang"
+                  },
+                  {
+                    "text": "ranked"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "lang"
+                  },
+                  {
+                    "text": "lang"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Post-filtering candidate truncation and result sparsity",
+        "columns": [
+          "ranked",
+          "lang",
+          "ranked"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post-filtering runs search first and removes candidates that fail.",
+            "rows": [
+              {
+                "cells": [
+                  "ranked",
+                  "lang",
+                  "ranked"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ranked",
+                  "lang",
+                  "ranked"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pitfall occurs when few top results match the required filter.",
+            "rows": [
+              {
+                "cells": [
+                  "ranked",
+                  "lang",
+                  "ranked"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ranked",
+                  "lang",
+                  "lang"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filter selectivity",
+      "codeHash": "00ee264848866eeeb80eb47ffd58ba4bd0274bc0ad285be71cffbfc888e8afd7",
+      "spec": {
+        "template": "table",
+        "title": "Filter selectivity ratios and candidate over-fetching",
+        "columns": [
+          "selectivity",
+          "fetch",
+          "selectivity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Selectivity measures the fraction of items that pass a given filter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "selectivity"
+                  },
+                  {
+                    "text": "fetch"
+                  },
+                  {
+                    "text": "selectivity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "selectivity"
+                  },
+                  {
+                    "text": "fetch"
+                  },
+                  {
+                    "text": "selectivity"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Modern query planners estimate selectivity to choose an execution strategy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "selectivity"
+                  },
+                  {
+                    "text": "fetch"
+                  },
+                  {
+                    "text": "selectivity"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "selectivity"
+                  },
+                  {
+                    "text": "fetch"
+                  },
+                  {
+                    "text": "fetch"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Filter selectivity ratios and candidate over-fetching",
+        "columns": [
+          "selectivity",
+          "fetch",
+          "selectivity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Selectivity measures the fraction of items that pass a given filter.",
+            "rows": [
+              {
+                "cells": [
+                  "selectivity",
+                  "fetch",
+                  "selectivity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "selectivity",
+                  "fetch",
+                  "selectivity"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Modern query planners estimate selectivity to choose an execution strategy.",
+            "rows": [
+              {
+                "cells": [
+                  "selectivity",
+                  "fetch",
+                  "selectivity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "selectivity",
+                  "fetch",
+                  "fetch"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Richer filters",
+      "codeHash": "f911b63a0893ea8adc07a6ab05ef7b15eca2006a011ac2e4c221844c5dabd755",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: filtering",
+      "codeHash": "d304a140f7947f43f7dc137bef8fd2b99827cdd800779b03ecee6095a7bb7ca1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
