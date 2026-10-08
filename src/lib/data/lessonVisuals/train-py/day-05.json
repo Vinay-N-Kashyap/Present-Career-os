@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Collective operations",
+      "codeHash": "bf82c99ac3700919aac6a5f89f4664d312ac9fe97330debe8f1052ed5a14f7b8",
+      "spec": {
+        "template": "table",
+        "title": "Distributed collective communication operations and data flow",
+        "columns": [
+          "broadcast",
+          "reduce_to_0",
+          "all_gather"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Collective communication patterns coordinate worker communication groups.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "broadcast"
+                  },
+                  {
+                    "text": "reduce_to_0"
+                  },
+                  {
+                    "text": "all_gather"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "broadcast"
+                  },
+                  {
+                    "text": "reduce_to_0"
+                  },
+                  {
+                    "text": "all_gather"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "All-reduce combines participant tensors and delivers results to all.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "broadcast"
+                  },
+                  {
+                    "text": "reduce_to_0"
+                  },
+                  {
+                    "text": "all_gather"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "broadcast"
+                  },
+                  {
+                    "text": "reduce_to_0"
+                  },
+                  {
+                    "text": "broadcast"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed collective communication operations and data flow",
+        "columns": [
+          "broadcast",
+          "reduce_to_0",
+          "all_gather"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Collective communication patterns coordinate worker communication groups.",
+            "rows": [
+              {
+                "cells": [
+                  "broadcast",
+                  "reduce_to_0",
+                  "all_gather"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "broadcast",
+                  "reduce_to_0",
+                  "all_gather"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "All-reduce combines participant tensors and delivers results to all.",
+            "rows": [
+              {
+                "cells": [
+                  "broadcast",
+                  "reduce_to_0",
+                  "all_gather"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "broadcast",
+                  "reduce_to_0",
+                  "broadcast"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "All-reduce",
+      "codeHash": "f33adef39bd6bd2c42b03c5aea285b96580593a89f8661bcd86b68e65ad57f33",
+      "spec": {
+        "template": "table",
+        "title": "All-reduce vector aggregation operations: sum, mean, and max",
+        "columns": [
+          "name",
+          "ops",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "All-reduce forms the primary communication engine in parallel training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "ops"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "ops"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Workers contribute vectors and receive combined element-wise results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "ops"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "ops"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "All-reduce vector aggregation operations: sum, mean, and max",
+        "columns": [
+          "name",
+          "ops",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "All-reduce forms the primary communication engine in parallel training.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "ops",
+                  "result"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "ops",
+                  "result"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Workers contribute vectors and receive combined element-wise results.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "ops",
+                  "result"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "name",
+                  "ops",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The naive approach and its bottleneck",
+      "codeHash": "c5b204fb1c48da6c95cf43cc46b266a30470e021c0fded3b6e44e26e18b12e69",
+      "spec": {
+        "template": "table",
+        "title": "Centralised leader bottleneck in naive parameter collection",
+        "columns": [
+          "size_gb",
+          "leader_traffic",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Centralised reduction routes all worker traffic through a single leader.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_gb"
+                  },
+                  {
+                    "text": "leader_traffic"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_gb"
+                  },
+                  {
+                    "text": "leader_traffic"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Concentrating network transfers on one leader creates severe bottlenecks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "size_gb"
+                  },
+                  {
+                    "text": "leader_traffic"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "size_gb"
+                  },
+                  {
+                    "text": "leader_traffic"
+                  },
+                  {
+                    "text": "size_gb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Centralised leader bottleneck in naive parameter collection",
+        "columns": [
+          "size_gb",
+          "leader_traffic",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Centralised reduction routes all worker traffic through a single leader.",
+            "rows": [
+              {
+                "cells": [
+                  "size_gb",
+                  "leader_traffic",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "size_gb",
+                  "leader_traffic",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Concentrating network transfers on one leader creates severe bottlenecks.",
+            "rows": [
+              {
+                "cells": [
+                  "size_gb",
+                  "leader_traffic",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "size_gb",
+                  "leader_traffic",
+                  "size_gb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ring all-reduce",
+      "codeHash": "9ffe09e1fbb7f2d20006c5a1ae9b98522762194c9e8f97b6dbc14cb3eb387584",
+      "spec": {
+        "template": "table",
+        "title": "Ring all-reduce topological pipelining and bandwidth optimisation",
+        "columns": [
+          "data",
+          "chunks",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In a logical ring each worker sends data only to its direct neighbour.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reduce-scatter transmits tensor chunks around the ring in sequence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ring all-reduce topological pipelining and bandwidth optimisation",
+        "columns": [
+          "data",
+          "chunks",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In a logical ring each worker sends data only to its direct neighbour.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "chunks",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "data",
+                  "chunks",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reduce-scatter transmits tensor chunks around the ring in sequence.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "chunks",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "data",
+                  "chunks",
+                  "data"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing and using collectives",
+      "codeHash": "fb44be0dfe2124e0dc9eb69b17cc34bed63b7d3f376baa17a563693276afda5b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: collectives",
+      "codeHash": "567c34de4fa5ad60f2314e4d0bd111eea404b716e6d8e59bf961db65bed7bcad",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

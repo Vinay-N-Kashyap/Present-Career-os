@@ -6580,27 +6580,27 @@
     },
     "train-py:5:0": {
       "partTitle": "Collective operations",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:5:1": {
       "partTitle": "All-reduce",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:5:2": {
       "partTitle": "The naive approach and its bottleneck",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:5:3": {
       "partTitle": "Ring all-reduce",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:5:4": {
       "partTitle": "Choosing and using collectives",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:5:5": {
       "partTitle": "Practice time: collectives",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:6:0": {
       "partTitle": "Micro-batches and the memory limit",
