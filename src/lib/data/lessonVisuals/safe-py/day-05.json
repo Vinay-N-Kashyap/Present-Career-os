@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 5,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Indirect prompt injection",
+      "codeHash": "8d39b85bbfc836d84a4db1bb1e2a4cb069a0ad639869370283673fee0b4a4a33",
+      "spec": {
+        "template": "table",
+        "title": "Indirect prompt injection in retrieved contexts",
+        "columns": [
+          "page",
+          "prompt",
+          "page"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Indirect injection happens when an attacker hides commands inside content.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "page"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "page"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "page"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "page"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Any text your system did not author directly must be treated as untrusted.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "page"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "page"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "page"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "page"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Indirect prompt injection in retrieved contexts",
+        "columns": [
+          "page",
+          "prompt",
+          "page"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Indirect injection happens when an attacker hides commands inside content.",
+            "rows": [
+              {
+                "cells": [
+                  "page",
+                  "prompt",
+                  "page"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "page",
+                  "prompt",
+                  "page"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Any text your system did not author directly must be treated as untrusted.",
+            "rows": [
+              {
+                "cells": [
+                  "page",
+                  "prompt",
+                  "page"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "page",
+                  "prompt",
+                  "page"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Marking content as data",
+      "codeHash": "8157a13b681aefe0b41b46d3e160c71fcb351ffe1b14cbb1f3e49c58a0d0ff03",
+      "spec": {
+        "template": "table",
+        "title": "XML markup tags for instruction-data boundary separation",
+        "columns": [
+          "docs",
+          "wrapped",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clear boundary markers isolate untrusted document data from instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "wrapped"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "wrapped"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Explicit markup helps models resist following adversarial instructions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "wrapped"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "wrapped"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "XML markup tags for instruction-data boundary separation",
+        "columns": [
+          "docs",
+          "wrapped",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clear boundary markers isolate untrusted document data from instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "wrapped",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "wrapped",
+                  "docs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Explicit markup helps models resist following adversarial instructions.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "wrapped",
+                  "docs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "wrapped",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Escaping so tags cannot be closed",
+      "codeHash": "e4486d776fd4fcd597663c1bf206f6a69934c3dbadc7f789e4a902f7b5b76f8d",
+      "spec": {
+        "template": "table",
+        "title": "Markup escaping to prevent premature tag injection",
+        "columns": [
+          "attack",
+          "text",
+          "attack"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Escaping replaces special characters so they render strictly as plain text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attack"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "attack"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attack"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "attack"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The order of replacements matters when escaping markup characters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "attack"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "attack"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "attack"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "attack"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Markup escaping to prevent premature tag injection",
+        "columns": [
+          "attack",
+          "text",
+          "attack"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Escaping replaces special characters so they render strictly as plain text.",
+            "rows": [
+              {
+                "cells": [
+                  "attack",
+                  "text",
+                  "attack"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "attack",
+                  "text",
+                  "attack"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The order of replacements matters when escaping markup characters.",
+            "rows": [
+              {
+                "cells": [
+                  "attack",
+                  "text",
+                  "attack"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "attack",
+                  "text",
+                  "attack"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Invisible characters",
+      "codeHash": "87cb8af28e1466104b75b7fe81959cd76a76839f5be83cae90d405e6d1b02879",
+      "spec": {
+        "template": "table",
+        "title": "Zero-width Unicode character evasion detection",
+        "columns": [
+          "msg",
+          "msg",
+          "msg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unicode includes characters that take up no space on screen.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Attackers use hidden characters to evade detection by pattern filters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  },
+                  {
+                    "text": "msg"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Zero-width Unicode character evasion detection",
+        "columns": [
+          "msg",
+          "msg",
+          "msg"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unicode includes characters that take up no space on screen.",
+            "rows": [
+              {
+                "cells": [
+                  "msg",
+                  "msg",
+                  "msg"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "msg",
+                  "msg",
+                  "msg"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Attackers use hidden characters to evade detection by pattern filters.",
+            "rows": [
+              {
+                "cells": [
+                  "msg",
+                  "msg",
+                  "msg"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "msg",
+                  "msg",
+                  "msg"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stripping hidden characters",
+      "codeHash": "038097d5c40d5d7d0aa03cce923cf34b7207ed3bd53d0c2e7aea029649f829d5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Defending against indirect injection",
+      "codeHash": "55ae4e00688ecda6adb97b848a1855a7f67d1c834f2b3347c041c1cc5bc55dd1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

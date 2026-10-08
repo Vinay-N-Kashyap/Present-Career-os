@@ -8020,27 +8020,27 @@
     },
     "safe-py:5:0": {
       "partTitle": "Indirect prompt injection",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:5:1": {
       "partTitle": "Marking content as data",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:5:2": {
       "partTitle": "Escaping so tags cannot be closed",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:5:3": {
       "partTitle": "Invisible characters",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:5:4": {
       "partTitle": "Stripping hidden characters",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:5:5": {
       "partTitle": "Defending against indirect injection",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:6:0": {
       "partTitle": "Model output is untrusted",
