@@ -7300,27 +7300,27 @@
     },
     "vec-py:5:0": {
       "partTitle": "Relevance judgements",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:5:1": {
       "partTitle": "Recall and precision at k",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:5:2": {
       "partTitle": "Mean reciprocal rank",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:5:3": {
       "partTitle": "Recall against exact search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:5:4": {
       "partTitle": "Reading the numbers",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:5:5": {
       "partTitle": "Practice time: metrics",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:6:0": {
       "partTitle": "The inverted index",
