@@ -7996,27 +7996,27 @@
     },
     "safe-py:4:0": {
       "partTitle": "What prompt injection is",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:4:1": {
       "partTitle": "Regular expressions for attack phrases",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:4:2": {
       "partTitle": "Scoring a message",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:4:3": {
       "partTitle": "Allow, review or block",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:4:4": {
       "partTitle": "Limits of pattern matching",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:4:5": {
       "partTitle": "Putting the detector in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:5:0": {
       "partTitle": "Indirect prompt injection",
