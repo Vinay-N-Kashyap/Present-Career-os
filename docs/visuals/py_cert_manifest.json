@@ -6220,27 +6220,27 @@
     },
     "prompt-py:20:0": {
       "partTitle": "Privacy basics",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:20:1": {
       "partTitle": "Redacting personal data with Python",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:20:2": {
       "partTitle": "Prompt injection",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:20:3": {
       "partTitle": "Jailbreaks and detection",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:20:4": {
       "partTitle": "Designing safer AI features",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:20:5": {
       "partTitle": "Practice time: redact and detect",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:21:0": {
       "partTitle": "A multimodal workflow",
