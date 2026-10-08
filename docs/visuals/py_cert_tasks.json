@@ -8371,6 +8371,62 @@
     "react-basics:30:4",
     "react-basics:30:5"
    ]
+  },
+  {
+   "id": "R-react-basics-1-5",
+   "title": "Checkpoint react-basics days 1-5",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-react-basics-6-10",
+   "title": "Checkpoint react-basics days 6-10",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-react-basics-11-15",
+   "title": "Checkpoint react-basics days 11-15",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-react-basics-16-20",
+   "title": "Checkpoint react-basics days 16-20",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-react-basics-21-25",
+   "title": "Checkpoint react-basics days 21-25",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "R-react-basics-26-30",
+   "title": "Checkpoint react-basics days 26-30",
+   "allowedFiles": [
+    "docs/visuals/shot_keys.txt"
+   ],
+   "kind": "checkpoint"
+  },
+  {
+   "id": "L-react-basics",
+   "title": "Release visuals for react-basics",
+   "allowedFiles": [
+    "src/lib/visuals/enabledCourses.ts"
+   ],
+   "kind": "release"
   }
  ]
 }
