@@ -1,6 +1,6 @@
-quant-py:21:0
-quant-py:21:1
-quant-py:22:1
-quant-py:23:0
-quant-py:23:2
-quant-py:25:1
+quant-py:26:2
+quant-py:27:0
+quant-py:27:1
+quant-py:27:3
+quant-py:28:2
+quant-py:29:1
