@@ -7132,27 +7132,27 @@
     },
     "train-py:28:0": {
       "partTitle": "Teachers and students",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:28:1": {
       "partTitle": "Softmax with temperature",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:28:2": {
       "partTitle": "The distillation loss",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:28:3": {
       "partTitle": "Distillation in practice",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:28:4": {
       "partTitle": "Choosing a small-model strategy",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:28:5": {
       "partTitle": "Practice time: distillation",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:29:0": {
       "partTitle": "Clusters and schedulers",

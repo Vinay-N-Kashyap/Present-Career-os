@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Teachers and students",
+      "codeHash": "bb88c859799b6407e2920c1393e7d975c2c2e972641daa211b0a84c230fc6357",
+      "spec": {
+        "template": "table",
+        "title": "Teacher-student supervision transfer and soft target distributions",
+        "columns": [
+          "words",
+          "label",
+          "teacher"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Knowledge distillation trains a student model using teacher outputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "label"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "label"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A richer soft signal helps the student learn faster during training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "label"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "label"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Teacher-student supervision transfer and soft target distributions",
+        "columns": [
+          "words",
+          "label",
+          "teacher"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Knowledge distillation trains a student model using teacher outputs.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "label",
+                  "teacher"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "label",
+                  "teacher"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A richer soft signal helps the student learn faster during training.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "label",
+                  "teacher"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "words",
+                  "label",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Softmax with temperature",
+      "codeHash": "c123071afa29ef5d03c8247eb6a542e79f64e1a551488fe2394ebb02b12e3598",
+      "spec": {
+        "template": "table",
+        "title": "Softmax temperature scaling revealing dark knowledge",
+        "columns": [
+          "logits",
+          "t",
+          "logits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models produce unnormalized logits that softmax converts into probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "t"
+                  },
+                  {
+                    "text": "logits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "t"
+                  },
+                  {
+                    "text": "logits"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dividing logits by temperature controls how peaked distributions become.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "t"
+                  },
+                  {
+                    "text": "logits"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "logits"
+                  },
+                  {
+                    "text": "t"
+                  },
+                  {
+                    "text": "t"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Softmax temperature scaling revealing dark knowledge",
+        "columns": [
+          "logits",
+          "t",
+          "logits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models produce unnormalized logits that softmax converts into probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "t",
+                  "logits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "logits",
+                  "t",
+                  "logits"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dividing logits by temperature controls how peaked distributions become.",
+            "rows": [
+              {
+                "cells": [
+                  "logits",
+                  "t",
+                  "logits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "logits",
+                  "t",
+                  "t"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The distillation loss",
+      "codeHash": "67365904c5732a7f2f3cbd221bd73239a57d7d395b45b7b5f27c0320429c6e2f",
+      "spec": {
+        "template": "table",
+        "title": "Kullback-Leibler divergence distillation loss computation",
+        "columns": [
+          "teacher",
+          "student",
+          "teacher"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distillation loss measures differences between softened distributions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "teacher"
+                  },
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "teacher"
+                  },
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The loss evaluates divergence between teacher and student target logits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "teacher"
+                  },
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "teacher"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "teacher"
+                  },
+                  {
+                    "text": "student"
+                  },
+                  {
+                    "text": "student"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kullback-Leibler divergence distillation loss computation",
+        "columns": [
+          "teacher",
+          "student",
+          "teacher"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The distillation loss measures differences between softened distributions.",
+            "rows": [
+              {
+                "cells": [
+                  "teacher",
+                  "student",
+                  "teacher"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "teacher",
+                  "student",
+                  "teacher"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The loss evaluates divergence between teacher and student target logits.",
+            "rows": [
+              {
+                "cells": [
+                  "teacher",
+                  "student",
+                  "teacher"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "teacher",
+                  "student",
+                  "student"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distillation in practice",
+      "codeHash": "d08830bed62905e23a1c68315139f86eb14cd8040f7807a884742892d4e63102",
+      "spec": {
+        "template": "table",
+        "title": "Production economics and serving cost divergence",
+        "columns": [
+          "requests_per_month",
+          "cost_per_1k",
+          "requests_per_month"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Student models are often a fraction of the size of the original teacher.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "requests_per_month"
+                  },
+                  {
+                    "text": "cost_per_1k"
+                  },
+                  {
+                    "text": "requests_per_month"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requests_per_month"
+                  },
+                  {
+                    "text": "cost_per_1k"
+                  },
+                  {
+                    "text": "requests_per_month"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A compact student preserves teacher quality at a fraction of serving cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "requests_per_month"
+                  },
+                  {
+                    "text": "cost_per_1k"
+                  },
+                  {
+                    "text": "requests_per_month"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requests_per_month"
+                  },
+                  {
+                    "text": "cost_per_1k"
+                  },
+                  {
+                    "text": "cost_per_1k"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production economics and serving cost divergence",
+        "columns": [
+          "requests_per_month",
+          "cost_per_1k",
+          "requests_per_month"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Student models are often a fraction of the size of the original teacher.",
+            "rows": [
+              {
+                "cells": [
+                  "requests_per_month",
+                  "cost_per_1k",
+                  "requests_per_month"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "requests_per_month",
+                  "cost_per_1k",
+                  "requests_per_month"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A compact student preserves teacher quality at a fraction of serving cost.",
+            "rows": [
+              {
+                "cells": [
+                  "requests_per_month",
+                  "cost_per_1k",
+                  "requests_per_month"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "requests_per_month",
+                  "cost_per_1k",
+                  "cost_per_1k"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a small-model strategy",
+      "codeHash": "f01d0c2cb48c00c12ceea77d1ca67d6cb1a5cbac4d6fdbc1644ec8c7687b131b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: distillation",
+      "codeHash": "ee846dda4e7d07bd01669cbd239d510f48bb2499970d9476539549ba345d4033",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
