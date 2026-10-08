@@ -6652,27 +6652,27 @@
     },
     "train-py:8:0": {
       "partTitle": "Where training memory goes",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:8:1": {
       "partTitle": "Comparing setups",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:8:2": {
       "partTitle": "Activation memory",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:8:3": {
       "partTitle": "Does it fit?",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:8:4": {
       "partTitle": "Reading memory reports",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:8:5": {
       "partTitle": "Practice time: memory accounting",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:9:0": {
       "partTitle": "The redundancy problem",
