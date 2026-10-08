@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Data at scale",
+      "codeHash": "0fa8c4239ef0844b1fc25f0fd75c302719aa1357e051e9cba6aa94d87c2e7d04",
+      "spec": {
+        "template": "table",
+        "title": "High-throughput token ingestion and cluster consumption rate",
+        "columns": [
+          "tokens_per_sec_per_gpu",
+          "gpus",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large language models train on trillions of tokens stored across files.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_sec_per_gpu"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_sec_per_gpu"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hardware sits idle when the data pipeline cannot keep up with execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_sec_per_gpu"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens_per_sec_per_gpu"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "High-throughput token ingestion and cluster consumption rate",
+        "columns": [
+          "tokens_per_sec_per_gpu",
+          "gpus",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large language models train on trillions of tokens stored across files.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens_per_sec_per_gpu",
+                  "gpus",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens_per_sec_per_gpu",
+                  "gpus",
+                  "total"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hardware sits idle when the data pipeline cannot keep up with execution.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens_per_sec_per_gpu",
+                  "gpus",
+                  "total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tokens_per_sec_per_gpu",
+                  "gpus",
+                  "total"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deterministic shuffling",
+      "codeHash": "cce54f243ea956fbe3698161ca4aa888142fc43145f317d0710770291cfcecd6",
+      "spec": {
+        "template": "table",
+        "title": "Deterministic epoch-seeded distributed data shuffling",
+        "columns": [
+          "worker_a",
+          "worker_b",
+          "epoch"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Shuffling data each epoch helps training while remaining reproducible.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "worker_a"
+                  },
+                  {
+                    "text": "worker_b"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worker_a"
+                  },
+                  {
+                    "text": "worker_b"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every worker must see the same global order to take its own share.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "worker_a"
+                  },
+                  {
+                    "text": "worker_b"
+                  },
+                  {
+                    "text": "epoch"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worker_a"
+                  },
+                  {
+                    "text": "worker_b"
+                  },
+                  {
+                    "text": "worker_a"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deterministic epoch-seeded distributed data shuffling",
+        "columns": [
+          "worker_a",
+          "worker_b",
+          "epoch"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Shuffling data each epoch helps training while remaining reproducible.",
+            "rows": [
+              {
+                "cells": [
+                  "worker_a",
+                  "worker_b",
+                  "epoch"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "worker_a",
+                  "worker_b",
+                  "epoch"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Every worker must see the same global order to take its own share.",
+            "rows": [
+              {
+                "cells": [
+                  "worker_a",
+                  "worker_b",
+                  "epoch"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "worker_a",
+                  "worker_b",
+                  "worker_a"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balancing shards across workers",
+      "codeHash": "fc07766b5c53c8b2e176e1657ed6839463450afaf790fa2df7d16374557a28f3",
+      "spec": {
+        "template": "table",
+        "title": "Greedy shard allocation balancing load across workers",
+        "columns": [
+          "sizes",
+          "load",
+          "assigned"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data files often differ in size creating imbalanced workloads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A greedy balancing method assigns larger files to the least loaded worker.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "sizes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Greedy shard allocation balancing load across workers",
+        "columns": [
+          "sizes",
+          "load",
+          "assigned"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data files often differ in size creating imbalanced workloads.",
+            "rows": [
+              {
+                "cells": [
+                  "sizes",
+                  "load",
+                  "assigned"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sizes",
+                  "load",
+                  "assigned"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A greedy balancing method assigns larger files to the least loaded worker.",
+            "rows": [
+              {
+                "cells": [
+                  "sizes",
+                  "load",
+                  "assigned"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sizes",
+                  "load",
+                  "sizes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Avoiding input bottlenecks",
+      "codeHash": "70155610cd5e510ca2b3f231bdc3e821b32e0d0b4ef67f5d82634b404e78d869",
+      "spec": {
+        "template": "table",
+        "title": "Pipeline prefetching and pinned memory overlap",
+        "columns": [
+          "load_ms",
+          "compute_ms",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data loaders use several worker processes to prepare batches in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "load_ms"
+                  },
+                  {
+                    "text": "compute_ms"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "load_ms"
+                  },
+                  {
+                    "text": "compute_ms"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefetching prepares batches in advance while processors work.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "load_ms"
+                  },
+                  {
+                    "text": "compute_ms"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "load_ms"
+                  },
+                  {
+                    "text": "compute_ms"
+                  },
+                  {
+                    "text": "load_ms"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pipeline prefetching and pinned memory overlap",
+        "columns": [
+          "load_ms",
+          "compute_ms",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data loaders use several worker processes to prepare batches in parallel.",
+            "rows": [
+              {
+                "cells": [
+                  "load_ms",
+                  "compute_ms",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "load_ms",
+                  "compute_ms",
+                  "steps"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefetching prepares batches in advance while processors work.",
+            "rows": [
+              {
+                "cells": [
+                  "load_ms",
+                  "compute_ms",
+                  "steps"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "load_ms",
+                  "compute_ms",
+                  "load_ms"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resuming the data stream",
+      "codeHash": "3de833d682d50fe25d82b9fb5ec0d9f1ad58e8c7b532f5127b21a14525e5f51b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: data pipelines",
+      "codeHash": "ba846b44578317c417d2dfd7b35caeb040d20fa695cf3e9511ac76fe506a5c22",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

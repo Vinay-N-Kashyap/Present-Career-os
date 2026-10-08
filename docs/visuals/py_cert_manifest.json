@@ -6916,27 +6916,27 @@
     },
     "train-py:19:0": {
       "partTitle": "Data at scale",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:19:1": {
       "partTitle": "Deterministic shuffling",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:19:2": {
       "partTitle": "Balancing shards across workers",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:19:3": {
       "partTitle": "Avoiding input bottlenecks",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:19:4": {
       "partTitle": "Resuming the data stream",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:19:5": {
       "partTitle": "Practice time: data pipelines",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:20:0": {
       "partTitle": "The latency-bandwidth model",
