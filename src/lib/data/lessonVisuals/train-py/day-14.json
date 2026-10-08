@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Plain SGD and its limits",
+      "codeHash": "ec3b7c30b7ed2559dfeb95affcacb73758c20ccd8bcf1783430852522f839338",
+      "spec": {
+        "template": "table",
+        "title": "Plain stochastic gradient descent and ill-conditioned ravines",
+        "columns": [
+          "grad",
+          "step",
+          "lr"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Plain gradient descent struggles along ravines with unequal steepness.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Oscillating updates crawl slowly along flat valley floors toward minima.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Plain stochastic gradient descent and ill-conditioned ravines",
+        "columns": [
+          "grad",
+          "step",
+          "lr"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Plain gradient descent struggles along ravines with unequal steepness.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "step",
+                  "lr"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "step",
+                  "lr"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Oscillating updates crawl slowly along flat valley floors toward minima.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "step",
+                  "lr"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "step",
+                  "grad"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Momentum",
+      "codeHash": "f4ce220b2ad9e8c8c9be9fef24e0724a65fdba0428da2f6e348f2d4c62713c9f",
+      "spec": {
+        "template": "table",
+        "title": "Momentum velocity accumulation and oscillation damping",
+        "columns": [
+          "beta",
+          "step",
+          "grad"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Momentum accumulates gradient velocity vectors across successive updates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "beta"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "beta"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Consistent directions accelerate progress while oscillations cancel out.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "beta"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "beta"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "beta"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Momentum velocity accumulation and oscillation damping",
+        "columns": [
+          "beta",
+          "step",
+          "grad"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Momentum accumulates gradient velocity vectors across successive updates.",
+            "rows": [
+              {
+                "cells": [
+                  "beta",
+                  "step",
+                  "grad"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "beta",
+                  "step",
+                  "grad"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Consistent directions accelerate progress while oscillations cancel out.",
+            "rows": [
+              {
+                "cells": [
+                  "beta",
+                  "step",
+                  "grad"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "beta",
+                  "step",
+                  "beta"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adam",
+      "codeHash": "1832d87194562a8f85fdcf6fd25103ba264daafdfc356820af3bedb7600c966a",
+      "spec": {
+        "template": "table",
+        "title": "Adam adaptive moment estimation and bias correction dynamics",
+        "columns": [
+          "grad",
+          "range",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adam maintains first momentum averages and squared second moment trackers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bias correction compensates for initial moment values starting near zero.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "grad"
+                  },
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "grad"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Adam adaptive moment estimation and bias correction dynamics",
+        "columns": [
+          "grad",
+          "range",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adam maintains first momentum averages and squared second moment trackers.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "range",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "range",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bias correction compensates for initial moment values starting near zero.",
+            "rows": [
+              {
+                "cells": [
+                  "grad",
+                  "range",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "grad",
+                  "range",
+                  "grad"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Optimizers and memory",
+      "codeHash": "9616a76e82ee94da5452c35f3c4223a9860039b6d553fb7cbaa6ea673416b0d7",
+      "spec": {
+        "template": "table",
+        "title": "Optimizer memory footprint across SGD, Momentum, and Adam",
+        "columns": [
+          "params",
+          "states",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Adaptive Adam tracking stores multiple state values for each parameter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Quantised optimizer variants reduce persistent state memory footprints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Optimizer memory footprint across SGD, Momentum, and Adam",
+        "columns": [
+          "params",
+          "states",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Adaptive Adam tracking stores multiple state values for each parameter.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "states",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "states",
+                  "name"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Quantised optimizer variants reduce persistent state memory footprints.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "states",
+                  "name"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "states",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Optimizers in distributed training",
+      "codeHash": "ac6a72609cd78698ca46931e058273be02b0f2d2f013891e9b01185824d4ac53",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: optimizers",
+      "codeHash": "92804ed71686daa762ba5621716555c851398a72b8b0c31e7f4438abc067272d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

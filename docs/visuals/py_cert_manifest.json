@@ -6796,27 +6796,27 @@
     },
     "train-py:14:0": {
       "partTitle": "Plain SGD and its limits",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:14:1": {
       "partTitle": "Momentum",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:14:2": {
       "partTitle": "Adam",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:14:3": {
       "partTitle": "Optimizers and memory",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:14:4": {
       "partTitle": "Optimizers in distributed training",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:14:5": {
       "partTitle": "Practice time: optimizers",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:15:0": {
       "partTitle": "Why change the learning rate",
