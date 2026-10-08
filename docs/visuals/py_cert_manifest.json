@@ -5308,27 +5308,27 @@
     },
     "quant-py:12:0": {
       "partTitle": "Threads and the cost of locks",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:12:1": {
       "partTitle": "The SPSC ring queue",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:12:2": {
       "partTitle": "Why powers of two",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:12:3": {
       "partTitle": "Full, empty and back-pressure",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:12:4": {
       "partTitle": "Testing concurrent code",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:12:5": {
       "partTitle": "Practice time: build the queue",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:13:0": {
       "partTitle": "Caches and cache lines",

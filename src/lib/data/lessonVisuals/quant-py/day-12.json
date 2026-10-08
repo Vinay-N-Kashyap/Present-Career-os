@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Threads and the cost of locks",
+      "codeHash": "5ac4f614a0a17b549538e5f27c4fa1969be1f07bc0922a4058a7137d1a24d326",
+      "spec": {
+        "template": "table",
+        "title": "Thread coordination contention and mutex locking costs",
+        "columns": [
+          "threads",
+          "worst_wait"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading engines partition execution pipelines across concurrent threads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "worst_wait"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threads pass messages through queues guarded by mutual exclusion locks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "worst_wait"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "service_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Lock-free designs coordinate threads using ordered shared counters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "worst_wait"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "service_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "service_ns"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how waiting time grows as more threads compete for one lock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "worst_wait"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "service_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threads"
+                  },
+                  {
+                    "text": "service_ns"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "worst_wait"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Thread coordination contention and mutex locking costs",
+        "columns": [
+          "threads",
+          "worst_wait"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading engines partition execution pipelines across concurrent threads.",
+            "rows": [
+              {
+                "cells": [
+                  "threads",
+                  "worst_wait"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threads pass messages through queues guarded by mutual exclusion locks.",
+            "rows": [
+              {
+                "cells": [
+                  "threads",
+                  "worst_wait"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "service_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Lock-free designs coordinate threads using ordered shared counters.",
+            "rows": [
+              {
+                "cells": [
+                  "threads",
+                  "worst_wait"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "service_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "threads",
+                  "service_ns"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows how waiting time grows as more threads compete for one lock.",
+            "rows": [
+              {
+                "cells": [
+                  "threads",
+                  "worst_wait"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "service_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "threads",
+                  "service_ns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "worst_wait",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The SPSC ring queue",
+      "codeHash": "ee4ac5337e970cfd5f17812af857f68a754ed994c303fb0df92f5f3f4e28de77",
+      "spec": {
+        "template": "table",
+        "title": "Single-Producer Single-Consumer lock-free ring queue",
+        "columns": [
+          "head",
+          "tail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An SPSC queue isolates one producer thread and one consumer thread.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated head and tail counters eliminate write contention across threads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "slots"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Producer threads verify remaining capacity before inserting enqueue items.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "slots"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "enqueue"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs a queue through fill, drain and wrap around cycles.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "head"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "slots"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "enqueue"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "SpscQueue"
+                  },
+                  {
+                    "text": "slots"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Single-Producer Single-Consumer lock-free ring queue",
+        "columns": [
+          "head",
+          "tail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An SPSC queue isolates one producer thread and one consumer thread.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "tail"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated head and tail counters eliminate write contention across threads.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "slots"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Producer threads verify remaining capacity before inserting enqueue items.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "slots"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capacity",
+                  "enqueue"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example runs a queue through fill, drain and wrap around cycles.",
+            "rows": [
+              {
+                "cells": [
+                  "head",
+                  "tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mask",
+                  "slots"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capacity",
+                  "enqueue"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SpscQueue",
+                  "slots"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why powers of two",
+      "codeHash": "88c6f892270704879d260fa22ad121148a48ac5ec07baa9f61b1481aebbb03e3",
+      "spec": {
+        "template": "table",
+        "title": "Power-of-two bitwise masking vs integer division",
+        "columns": [
+          "capacity",
+          "mask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modulo division represents a slow integer operation on modern processors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "mask"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bitwise AND operations calculate slot remainders in a single CPU cycle.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "mask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bin"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bit manipulation checks whether buffer capacity satisfies power of two rules.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "mask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bin"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "all"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks that mask and modulo operations produce identical results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "mask"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "bin"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "all"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Power-of-two bitwise masking vs integer division",
+        "columns": [
+          "capacity",
+          "mask"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modulo division represents a slow integer operation on modern processors.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "mask"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bitwise AND operations calculate slot remainders in a single CPU cycle.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "mask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bin",
+                  "range"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Bit manipulation checks whether buffer capacity satisfies power of two rules.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "mask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bin",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "all",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks that mask and modulo operations produce identical results.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "mask"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "bin",
+                  "range"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "all",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "capacity",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full, empty and back-pressure",
+      "codeHash": "608dfb66e38f9639fe610e76c9fde124ca5bb6425689496be3b26ecfdd244342",
+      "spec": {
+        "template": "table",
+        "title": "Queue capacity boundaries, overflow policies and depth alarms",
+        "columns": [
+          "capacity",
+          "depth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bounded queue structures implement deterministic policies when buffers fill.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "depth"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rejection policies return False when buffer capacity is reached.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "depth"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alerts"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Systems monitor queue depth and alarm before queues become completely full.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "depth"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alerts"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example monitors queue depth and raises early alerts for downstream lags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "depth"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "alerts"
+                  },
+                  {
+                    "text": "arrivals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "enumerate"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "min"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Queue capacity boundaries, overflow policies and depth alarms",
+        "columns": [
+          "capacity",
+          "depth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bounded queue structures implement deterministic policies when buffers fill.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "depth"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rejection policies return False when buffer capacity is reached.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "depth"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "alerts",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Systems monitor queue depth and alarm before queues become completely full.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "depth"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "alerts",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "append"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example monitors queue depth and raises early alerts for downstream lags.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "depth"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "alerts",
+                  "arrivals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "enumerate",
+                  "append"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "min",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing concurrent code",
+      "codeHash": "69b22639a804addb691ae1efe65735206fcad7576b73c51df945a74095c1ac0a",
+      "spec": {
+        "template": "none",
+        "reason": "Concurrent queue verification and invariant stress testing."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build the queue",
+      "codeHash": "08fe89e7d7cbc35d4dbab2ce9125c4ebe4c62c99ee7bf4e23c492fcbb2d43c95",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: SPSC queue implementation and bitwise sizing."
+      },
+      "filled": {}
+    }
+  ]
+}
