@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Gradients become ready in reverse",
+      "codeHash": "769293ef3eb27010d9c7287dde3d88a6a7d3fcaa91965b3d6642e04d65998ccd",
+      "spec": {
+        "template": "table",
+        "title": "Reverse order of gradient readiness during backward pass",
+        "columns": [
+          "layer_ms",
+          "clock",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The backward pass runs from the last layer to the first.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layer_ms"
+                  },
+                  {
+                    "text": "clock"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layer_ms"
+                  },
+                  {
+                    "text": "clock"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Instead we start all-reducing gradients while earlier layers are computing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layer_ms"
+                  },
+                  {
+                    "text": "clock"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layer_ms"
+                  },
+                  {
+                    "text": "clock"
+                  },
+                  {
+                    "text": "layer_ms"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reverse order of gradient readiness during backward pass",
+        "columns": [
+          "layer_ms",
+          "clock",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The backward pass runs from the last layer to the first.",
+            "rows": [
+              {
+                "cells": [
+                  "layer_ms",
+                  "clock",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layer_ms",
+                  "clock",
+                  "name"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Instead we start all-reducing gradients while earlier layers are computing.",
+            "rows": [
+              {
+                "cells": [
+                  "layer_ms",
+                  "clock",
+                  "name"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layer_ms",
+                  "clock",
+                  "layer_ms"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gradient buckets",
+      "codeHash": "a5f7bd5e075d73aa0f2e0370424cb23d583cda8909ebc80cb9eb8c2158272b25",
+      "spec": {
+        "template": "table",
+        "title": "Grouping individual tensor gradients into contiguous buckets",
+        "columns": [
+          "sizes",
+          "buckets",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gradients are grouped into buckets of a chosen target size.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "buckets"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "buckets"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When a bucket is full its all-reduce starts while the backward pass continues.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "buckets"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sizes"
+                  },
+                  {
+                    "text": "buckets"
+                  },
+                  {
+                    "text": "sizes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Grouping individual tensor gradients into contiguous buckets",
+        "columns": [
+          "sizes",
+          "buckets",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gradients are grouped into buckets of a chosen target size.",
+            "rows": [
+              {
+                "cells": [
+                  "sizes",
+                  "buckets",
+                  "current"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sizes",
+                  "buckets",
+                  "current"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When a bucket is full its all-reduce starts while the backward pass continues.",
+            "rows": [
+              {
+                "cells": [
+                  "sizes",
+                  "buckets",
+                  "current"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sizes",
+                  "buckets",
+                  "sizes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simulating overlap",
+      "codeHash": "102a628d71fc1305c441dfcdb7e916b7a55f0a2aab997baa39bb8f3f8c34a956",
+      "spec": {
+        "template": "table",
+        "title": "Two-clock overlap simulation tracking compute and communication",
+        "columns": [
+          "compute",
+          "comm",
+          "start"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We track two clocks for bucket computation and communication.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The overlapped step finishes much sooner than sequential execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "compute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two-clock overlap simulation tracking compute and communication",
+        "columns": [
+          "compute",
+          "comm",
+          "start"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We track two clocks for bucket computation and communication.",
+            "rows": [
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "start"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "start"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The overlapped step finishes much sooner than sequential execution.",
+            "rows": [
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "start"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "compute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "When overlap is not enough",
+      "codeHash": "9d9937eb57137f21abfd20dc639d238cda32f7f3abd1a262577a193e3f224d24",
+      "spec": {
+        "template": "table",
+        "title": "Communication-bound limits where overlap cannot hide transfer",
+        "columns": [
+          "compute",
+          "comm",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Total communication time can exceed backward computation in some regimes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Measuring the fraction of step time where the GPU is idle clarifies cases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  },
+                  {
+                    "text": "compute"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Communication-bound limits where overlap cannot hide transfer",
+        "columns": [
+          "compute",
+          "comm",
+          "name"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Total communication time can exceed backward computation in some regimes.",
+            "rows": [
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "name"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "name"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Measuring the fraction of step time where the GPU is idle clarifies cases.",
+            "rows": [
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "name"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "compute",
+                  "comm",
+                  "compute"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Overlap in real frameworks",
+      "codeHash": "49b05784fc1f93800467e1d656b77f094f7c2601aed9514c992cbcc64b0a8439",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: overlap",
+      "codeHash": "aeb7d362d1c2cfb939578f3ecdc0c81694380751e074d5831ffa5be1c7fa39e8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

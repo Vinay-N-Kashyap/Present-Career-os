@@ -6964,27 +6964,27 @@
     },
     "train-py:21:0": {
       "partTitle": "Gradients become ready in reverse",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:21:1": {
       "partTitle": "Gradient buckets",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:21:2": {
       "partTitle": "Simulating overlap",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:21:3": {
       "partTitle": "When overlap is not enough",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:21:4": {
       "partTitle": "Overlap in real frameworks",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:21:5": {
       "partTitle": "Practice time: overlap",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:22:0": {
       "partTitle": "Scaling laws",
