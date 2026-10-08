@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why loops: doing something for every item",
+      "codeHash": "6f2daad7f40c294597507dd4bf4f3265a8f7acb07d48c5e561ed40b73ab5a329",
+      "spec": {
+        "template": "flow",
+        "title": "Iterating through collections with for of",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "n1",
+            "label": "job",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "print",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A loop processes every job in the list automatically.",
+            "values": {
+              "n0": {
+                "text": "jobs"
+              },
+              "n1": {
+                "text": "job"
+              },
+              "n2": {
+                "text": "console.log"
+              }
+            },
+            "tones": {
+              "n0": "idle",
+              "n1": "idle",
+              "n2": "idle"
+            },
+            "arrows": [
+              [
+                "n0",
+                "n1"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "In for of loops, each item is assigned to job.",
+            "values": {
+              "n0": {
+                "text": "jobs"
+              },
+              "n1": {
+                "text": "\"Frontend Developer\""
+              },
+              "n2": {
+                "text": "\"Infosys\""
+              }
+            },
+            "tones": {
+              "n0": "idle",
+              "n1": "data",
+              "n2": "ok"
+            },
+            "arrows": [
+              [
+                "n0",
+                "n1"
+              ],
+              [
+                "n1",
+                "n2"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Iterating through collections with for of",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "n1",
+            "label": "job",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "print",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A loop processes every job in the list automatically.",
+            "values": {
+              "n0": "jobs",
+              "n1": "job",
+              "n2": "console.log"
+            },
+            "tones": {
+              "n0": "idle",
+              "n1": "idle",
+              "n2": "idle"
+            },
+            "arrows": [
+              [
+                "n0",
+                "n1"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "In for of loops, each item is assigned to job.",
+            "values": {
+              "n0": "jobs",
+              "n1": "\"Frontend Developer\"",
+              "n2": "\"Infosys\""
+            },
+            "tones": {
+              "n0": "idle",
+              "n1": "data",
+              "n2": "ok"
+            },
+            "arrows": [
+              [
+                "n0",
+                "n1"
+              ],
+              [
+                "n1",
+                "n2"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting and adding up with a loop",
+      "codeHash": "0c05b4fdaa07f2f36b4314b2c5bfdc33f5e40f307aa306fef365bf5c9e5a940d",
+      "spec": {
+        "template": "boxes",
+        "title": "Accumulating values and counts across loops",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "interviews",
+            "tappable": false
+          },
+          {
+            "id": "b1",
+            "label": "totalSalary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Variables calculate totals and counts before and during loops.",
+            "values": {
+              "b0": {
+                "text": "0"
+              },
+              "b1": {
+                "text": "0"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Inside the loop, if status is interview we increment the count.",
+            "values": {
+              "b0": {
+                "text": "interviews + 1"
+              },
+              "b1": {
+                "text": "totalSalary + job.salary"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Accumulating values and counts across loops",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "interviews",
+            "tappable": false
+          },
+          {
+            "id": "b1",
+            "label": "totalSalary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Variables calculate totals and counts before and during loops.",
+            "values": {
+              "b0": "0",
+              "b1": "0"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Inside the loop, if status is interview we increment the count.",
+            "values": {
+              "b0": "interviews + 1",
+              "b1": "totalSalary + job.salary"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "map: turn every item into something new",
+      "codeHash": "5fce08446005b92f2611ba71d932327ab9b9f53ea68bf712dd283c980e51921f",
+      "spec": {
+        "template": "flow",
+        "title": "Transforming array elements with map",
+        "nodes": [
+          {
+            "id": "src",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "transform",
+            "tappable": false
+          },
+          {
+            "id": "dst",
+            "label": "titles",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array map transforms items into a new array.",
+            "values": {
+              "src": {
+                "text": "jobs"
+              },
+              "fn": {
+                "text": "job => job.title"
+              },
+              "dst": {
+                "text": "titles"
+              }
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "idle",
+              "dst": "idle"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "For every job, the function returns its title into titles array.",
+            "values": {
+              "src": {
+                "text": "\"Frontend Developer\""
+              },
+              "fn": {
+                "text": "job => job.title"
+              },
+              "dst": {
+                "text": "\"React Developer\""
+              }
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "data",
+              "dst": "ok"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ],
+              [
+                "fn",
+                "dst"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Transforming array elements with map",
+        "nodes": [
+          {
+            "id": "src",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "transform",
+            "tappable": false
+          },
+          {
+            "id": "dst",
+            "label": "titles",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array map transforms items into a new array.",
+            "values": {
+              "src": "jobs",
+              "fn": "job => job.title",
+              "dst": "titles"
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "idle",
+              "dst": "idle"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "For every job, the function returns its title into titles array.",
+            "values": {
+              "src": "\"Frontend Developer\"",
+              "fn": "job => job.title",
+              "dst": "\"React Developer\""
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "data",
+              "dst": "ok"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ],
+              [
+                "fn",
+                "dst"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "filter: keep only some items",
+      "codeHash": "89e37f8fdde917d562c77e1036c524b7d36764eed03aeae6946d8c0a385ec37e",
+      "spec": {
+        "template": "flow",
+        "title": "Filtering items matching specific conditions",
+        "nodes": [
+          {
+            "id": "allJobs",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "condition",
+            "label": "filter",
+            "tappable": false
+          },
+          {
+            "id": "matched",
+            "label": "interviewJobs",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filter checks items and keeps only those returning true.",
+            "values": {
+              "allJobs": {
+                "text": "jobs"
+              },
+              "condition": {
+                "text": "job.status === \"interview\""
+              },
+              "matched": {
+                "text": "interviewJobs"
+              }
+            },
+            "tones": {
+              "allJobs": "idle",
+              "condition": "idle",
+              "matched": "idle"
+            },
+            "arrows": [
+              [
+                "allJobs",
+                "condition"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filter keeps only the jobs where status equals interview.",
+            "values": {
+              "allJobs": {
+                "text": "jobs"
+              },
+              "condition": {
+                "text": "job.status === \"interview\""
+              },
+              "matched": {
+                "text": "interviewJobs"
+              }
+            },
+            "tones": {
+              "allJobs": "idle",
+              "condition": "data",
+              "matched": "ok"
+            },
+            "arrows": [
+              [
+                "allJobs",
+                "condition"
+              ],
+              [
+                "condition",
+                "matched"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Filtering items matching specific conditions",
+        "nodes": [
+          {
+            "id": "allJobs",
+            "label": "jobs",
+            "tappable": false
+          },
+          {
+            "id": "condition",
+            "label": "filter",
+            "tappable": false
+          },
+          {
+            "id": "matched",
+            "label": "interviewJobs",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Filter checks items and keeps only those returning true.",
+            "values": {
+              "allJobs": "jobs",
+              "condition": "job.status === \"interview\"",
+              "matched": "interviewJobs"
+            },
+            "tones": {
+              "allJobs": "idle",
+              "condition": "idle",
+              "matched": "idle"
+            },
+            "arrows": [
+              [
+                "allJobs",
+                "condition"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Filter keeps only the jobs where status equals interview.",
+            "values": {
+              "allJobs": "jobs",
+              "condition": "job.status === \"interview\"",
+              "matched": "interviewJobs"
+            },
+            "tones": {
+              "allJobs": "idle",
+              "condition": "data",
+              "matched": "ok"
+            },
+            "arrows": [
+              [
+                "allJobs",
+                "condition"
+              ],
+              [
+                "condition",
+                "matched"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "find and some: one item, or a yes/no answer",
+      "codeHash": "f5ed6ba91572136699ed3ba9f5645b482dba71bf5f553bae8f53087fbe581782",
+      "spec": {
+        "template": "boxes",
+        "title": "Locating unique entries with find",
+        "boxes": [
+          {
+            "id": "found",
+            "label": "job",
+            "tappable": false
+          },
+          {
+            "id": "matchedId",
+            "label": "id",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Find returns the first item matching your function condition.",
+            "values": {
+              "found": {
+                "text": "jobs.find(job => job.id === 2)"
+              },
+              "matchedId": {
+                "text": "2"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Use find when opening detail pages for a specific job.",
+            "values": {
+              "found": {
+                "text": "jobs.find(job => job.id === 2)"
+              },
+              "matchedId": {
+                "text": "2"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Locating unique entries with find",
+        "boxes": [
+          {
+            "id": "found",
+            "label": "job",
+            "tappable": false
+          },
+          {
+            "id": "matchedId",
+            "label": "id",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Find returns the first item matching your function condition.",
+            "values": {
+              "found": "jobs.find(job => job.id === 2)",
+              "matchedId": "2"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Use find when opening detail pages for a specific job.",
+            "values": {
+              "found": "jobs.find(job => job.id === 2)",
+              "matchedId": "2"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Putting it together, and a look at React",
+      "codeHash": "5773932de55525ba76b5d1231a84c26710bf5ad5a1765729fbbbe87d828cff8c",
+      "spec": {
+        "template": "none",
+        "reason": "Summary of array method chaining and preview of JSX list rendering in React"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Summary of array method chaining and preview of JSX list rendering in React"
+      }
+    }
+  ]
+}
