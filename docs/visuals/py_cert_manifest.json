@@ -8188,27 +8188,27 @@
     },
     "safe-py:12:0": {
       "partTitle": "Two ways to get refusal wrong",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:12:1": {
       "partTitle": "Detecting refusals",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:12:2": {
       "partTitle": "Over- and under-refusal rates",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:12:3": {
       "partTitle": "Balancing the two",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:12:4": {
       "partTitle": "Refusing well",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:12:5": {
       "partTitle": "Refusal testing in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:13:0": {
       "partTitle": "From text to actions",
