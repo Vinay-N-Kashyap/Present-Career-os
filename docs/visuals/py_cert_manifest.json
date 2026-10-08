@@ -5620,27 +5620,27 @@
     },
     "quant-py:25:0": {
       "partTitle": "Line of sight and towers",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:25:1": {
       "partTitle": "Link latency",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:25:2": {
       "partTitle": "Rain fade and availability",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:25:3": {
       "partTitle": "Millimetre wave and laser links",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:25:4": {
       "partTitle": "Shortwave across oceans",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:25:5": {
       "partTitle": "Practice time: link and towers",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:26:0": {
       "partTitle": "Why backtests lie",

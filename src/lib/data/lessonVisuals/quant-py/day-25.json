@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Line of sight and towers",
+      "codeHash": "f51e28a50d75dde5f37d558376be5f943ed53cb529b961390a9838c182405e77",
+      "spec": {
+        "template": "table",
+        "title": "Microwave tower line of sight and Earth curvature bulge",
+        "columns": [
+          "hop_km",
+          "bulge"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave antennas require unobstructed line of sight across terrain.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hop_km"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary curvature limits practical hop spans between tower installations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hop_km"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Intermediate relay towers receive and retransmit signals along the route.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hop_km"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "70"
+                  },
+                  {
+                    "text": "bulge"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Microwave tower line of sight and Earth curvature bulge",
+        "columns": [
+          "hop_km",
+          "bulge"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave antennas require unobstructed line of sight across terrain.",
+            "rows": [
+              {
+                "cells": [
+                  "hop_km",
+                  "bulge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary curvature limits practical hop spans between tower installations.",
+            "rows": [
+              {
+                "cells": [
+                  "hop_km",
+                  "bulge"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30",
+                  "bulge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Intermediate relay towers receive and retransmit signals along the route.",
+            "rows": [
+              {
+                "cells": [
+                  "hop_km",
+                  "bulge"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30",
+                  "bulge"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "70",
+                  "bulge"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Link latency",
+      "codeHash": "62c1204545145805ed6efdfbdf6a4dd443b6997713c564e28004bea5a76321d4",
+      "spec": {
+        "template": "table",
+        "title": "Microwave propagation and relay hop latency budgets",
+        "columns": [
+          "distance_km",
+          "towers",
+          "hop_ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave link latency combines air propagation and tower relay delays.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "distance_km"
+                  },
+                  {
+                    "text": "towers"
+                  },
+                  {
+                    "text": "hop_ns"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Modern radio equipment reduces nanosecond overhead at each repeater.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "distance_km"
+                  },
+                  {
+                    "text": "towers"
+                  },
+                  {
+                    "text": "hop_ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1180"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Trading firms continuously optimize hardware to reach minimal relay delay.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "distance_km"
+                  },
+                  {
+                    "text": "towers"
+                  },
+                  {
+                    "text": "hop_ns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1180"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "distance_km"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "300"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Microwave propagation and relay hop latency budgets",
+        "columns": [
+          "distance_km",
+          "towers",
+          "hop_ns"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microwave link latency combines air propagation and tower relay delays.",
+            "rows": [
+              {
+                "cells": [
+                  "distance_km",
+                  "towers",
+                  "hop_ns"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Modern radio equipment reduces nanosecond overhead at each repeater.",
+            "rows": [
+              {
+                "cells": [
+                  "distance_km",
+                  "towers",
+                  "hop_ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1180",
+                  "20",
+                  "300"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Trading firms continuously optimize hardware to reach minimal relay delay.",
+            "rows": [
+              {
+                "cells": [
+                  "distance_km",
+                  "towers",
+                  "hop_ns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "1180",
+                  "20",
+                  "300"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "distance_km",
+                  "20",
+                  "300"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rain fade and availability",
+      "codeHash": "983690ce97714fddf4b88cad510115fcd3a4c2c41b3a6f69000b5234bd21b33e",
+      "spec": {
+        "template": "table",
+        "title": "Rain fade attenuation and wireless link operational status",
+        "columns": [
+          "rain",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Atmospheric precipitation causes signal attenuation known as rain fade.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rain"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rain thresholds classify link health into operational states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rain"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.0"
+                  },
+                  {
+                    "text": "UP"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stormy conditions force traffic fallback to slower terrestrial fibre.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rain"
+                  },
+                  {
+                    "text": "status"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "0.0"
+                  },
+                  {
+                    "text": "UP"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "30.0"
+                  },
+                  {
+                    "text": "DOWN"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rain fade attenuation and wireless link operational status",
+        "columns": [
+          "rain",
+          "status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Atmospheric precipitation causes signal attenuation known as rain fade.",
+            "rows": [
+              {
+                "cells": [
+                  "rain",
+                  "status"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rain thresholds classify link health into operational states.",
+            "rows": [
+              {
+                "cells": [
+                  "rain",
+                  "status"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.0",
+                  "UP"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stormy conditions force traffic fallback to slower terrestrial fibre.",
+            "rows": [
+              {
+                "cells": [
+                  "rain",
+                  "status"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "0.0",
+                  "UP"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "30.0",
+                  "DOWN"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Millimetre wave and laser links",
+      "codeHash": "58f7cbd92966060cacdf97f70b9553accdbefb91eeb422a21f398d9fe3c05aa4",
+      "spec": {
+        "template": "table",
+        "title": "Free space optics and millimeter wave wireless links",
+        "columns": [
+          "bandwidth_mbps",
+          "rain_sensitivity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Higher transmission frequencies deliver wider bandwidth at shorter ranges.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bandwidth_mbps"
+                  },
+                  {
+                    "text": "rain_sensitivity"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Free space optical laser links achieve near vacuum propagation speeds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bandwidth_mbps"
+                  },
+                  {
+                    "text": "rain_sensitivity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hybrid architectures blend microwave reliability with optical links.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "bandwidth_mbps"
+                  },
+                  {
+                    "text": "rain_sensitivity"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "100000"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Free space optics and millimeter wave wireless links",
+        "columns": [
+          "bandwidth_mbps",
+          "rain_sensitivity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Higher transmission frequencies deliver wider bandwidth at shorter ranges.",
+            "rows": [
+              {
+                "cells": [
+                  "bandwidth_mbps",
+                  "rain_sensitivity"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Free space optical laser links achieve near vacuum propagation speeds.",
+            "rows": [
+              {
+                "cells": [
+                  "bandwidth_mbps",
+                  "rain_sensitivity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10000",
+                  "2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hybrid architectures blend microwave reliability with optical links.",
+            "rows": [
+              {
+                "cells": [
+                  "bandwidth_mbps",
+                  "rain_sensitivity"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "10000",
+                  "2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "100000",
+                  "0"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shortwave across oceans",
+      "codeHash": "ccec55fd29f650df8c11cbb4e38c89f7637e49b90f4718dae19879e00aabb527",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: link and towers",
+      "codeHash": "1654525233c78b5491392b44ca97cc7598df8657a1b3cf11a6c446b32992ab54",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
