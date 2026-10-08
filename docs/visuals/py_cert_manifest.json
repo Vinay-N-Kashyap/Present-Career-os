@@ -6532,27 +6532,27 @@
     },
     "train-py:3:0": {
       "partTitle": "Why mini-batches",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:3:1": {
       "partTitle": "Making batches",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:3:2": {
       "partTitle": "Batch size and gradient noise",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:3:3": {
       "partTitle": "Learning rate scaling rules",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:3:4": {
       "partTitle": "Mini-batch training loop",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:3:5": {
       "partTitle": "Practice time: batches and scaling",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:4:0": {
       "partTitle": "The idea of data parallelism",
