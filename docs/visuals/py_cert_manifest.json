@@ -6244,27 +6244,27 @@
     },
     "prompt-py:21:0": {
       "partTitle": "A multimodal workflow",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:21:1": {
       "partTitle": "The safe request gate",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:21:2": {
       "partTitle": "Audit logs without personal data",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:21:3": {
       "partTitle": "Choosing the right modality",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:21:4": {
       "partTitle": "Testing the whole flow",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:21:5": {
       "partTitle": "Milestone practice: gate and audit log",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:22:0": {
       "partTitle": "AI coding assistants",

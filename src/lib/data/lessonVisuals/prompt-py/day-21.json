@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "A multimodal workflow",
+      "codeHash": "ff76a32b519b717d3b4eaf35bd541ddbe8dad880d21a4acf89d40f4fe4dd6221",
+      "spec": {
+        "template": "table",
+        "title": "Multimodal ticket processing and multi-stage verification",
+        "columns": [
+          "workflow",
+          "step",
+          "workflow"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real tasks combine photographs, voice recordings, and repair ticket parts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "workflow"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "workflow"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The workflow transcribes voice notes and parses structured ticket fields.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "workflow"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multimodal ticket processing and multi-stage verification",
+        "columns": [
+          "workflow",
+          "step",
+          "workflow"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real tasks combine photographs, voice recordings, and repair ticket parts.",
+            "rows": [
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "workflow"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "workflow"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The workflow transcribes voice notes and parses structured ticket fields.",
+            "rows": [
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "workflow"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The safe request gate",
+      "codeHash": "09bcfeae50a1492772e8a16648ea12c765ad627b9126dfc9f315e3ec3c72e55a",
+      "spec": {
+        "template": "table",
+        "title": "Front-door safe request filtering and PII scrubbing",
+        "columns": [
+          "gate",
+          "clean",
+          "risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A safe request gate sits at the front to inspect every incoming message.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gate"
+                  },
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gate"
+                  },
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The gate redacts emails and evaluates injection phrases in input text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gate"
+                  },
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "risk"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gate"
+                  },
+                  {
+                    "text": "clean"
+                  },
+                  {
+                    "text": "clean"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Front-door safe request filtering and PII scrubbing",
+        "columns": [
+          "gate",
+          "clean",
+          "risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A safe request gate sits at the front to inspect every incoming message.",
+            "rows": [
+              {
+                "cells": [
+                  "gate",
+                  "clean",
+                  "risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gate",
+                  "clean",
+                  "risk"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The gate redacts emails and evaluates injection phrases in input text.",
+            "rows": [
+              {
+                "cells": [
+                  "gate",
+                  "clean",
+                  "risk"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "gate",
+                  "clean",
+                  "clean"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audit logs without personal data",
+      "codeHash": "aac2e29f9a2e60b8f316c08a0f8a9f3fea12a8e279f9574b438c970951bbd46a",
+      "spec": {
+        "template": "table",
+        "title": "Pseudonymous hashing and privacy-preserving audit logs",
+        "columns": [
+          "short_hash",
+          "uid",
+          "short_hash"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Organisations need structured logs recording action events and detected risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short_hash"
+                  },
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "short_hash"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "short_hash"
+                  },
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "short_hash"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hashing turns identifiers into fixed strings without leaking personal data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "short_hash"
+                  },
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "short_hash"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "short_hash"
+                  },
+                  {
+                    "text": "uid"
+                  },
+                  {
+                    "text": "uid"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pseudonymous hashing and privacy-preserving audit logs",
+        "columns": [
+          "short_hash",
+          "uid",
+          "short_hash"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Organisations need structured logs recording action events and detected risk.",
+            "rows": [
+              {
+                "cells": [
+                  "short_hash",
+                  "uid",
+                  "short_hash"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "short_hash",
+                  "uid",
+                  "short_hash"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Hashing turns identifiers into fixed strings without leaking personal data.",
+            "rows": [
+              {
+                "cells": [
+                  "short_hash",
+                  "uid",
+                  "short_hash"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "short_hash",
+                  "uid",
+                  "uid"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing the right modality",
+      "codeHash": "265bc45b7a01abc4daaac9b3366149f3834da8c51fc7dc563d4ef2404d59865c",
+      "spec": {
+        "template": "table",
+        "title": "Task complexity and input modality heuristic routing",
+        "columns": [
+          "suggest",
+          "task",
+          "suggest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineering teams choose the simplest modality that solves each task.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suggest"
+                  },
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "suggest"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "suggest"
+                  },
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "suggest"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Text is cheapest while images are needed for handwritten form inputs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "suggest"
+                  },
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "suggest"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "suggest"
+                  },
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "task"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Task complexity and input modality heuristic routing",
+        "columns": [
+          "suggest",
+          "task",
+          "suggest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineering teams choose the simplest modality that solves each task.",
+            "rows": [
+              {
+                "cells": [
+                  "suggest",
+                  "task",
+                  "suggest"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "suggest",
+                  "task",
+                  "suggest"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Text is cheapest while images are needed for handwritten form inputs.",
+            "rows": [
+              {
+                "cells": [
+                  "suggest",
+                  "task",
+                  "suggest"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "suggest",
+                  "task",
+                  "task"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Testing the whole flow",
+      "codeHash": "fe88eed064ec4787a3755ecac63159aacc521be284901456eced355e00a54c89",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: gate and audit log",
+      "codeHash": "89791fd759d438343182b0c88128176266bed0214fccaf3e6aeb1cc49f04b6d3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
