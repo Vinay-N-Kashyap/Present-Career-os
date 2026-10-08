@@ -8164,27 +8164,27 @@
     },
     "safe-py:11:0": {
       "partTitle": "Why citations can mislead",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:11:1": {
       "partTitle": "Does the cited source support the sentence?",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:11:2": {
       "partTitle": "Finding bad citations",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:11:3": {
       "partTitle": "Which sentences need a citation?",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:11:4": {
       "partTitle": "Measuring citation coverage",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:11:5": {
       "partTitle": "Citations in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:12:0": {
       "partTitle": "Two ways to get refusal wrong",

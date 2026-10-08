@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why citations can mislead",
+      "codeHash": "5aabeb12950c174b858f9968e17931a511e0950a2e39a52ff850f7d38d9ae7b2",
+      "spec": {
+        "template": "table",
+        "title": "Citation integrity risks and hallucinated references",
+        "columns": [
+          "sources",
+          "answer",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Citations make answers trustworthy because readers can check source evidence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A citation can point to a real source that says nothing about the claim.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Citation integrity risks and hallucinated references",
+        "columns": [
+          "sources",
+          "answer",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Citations make answers trustworthy because readers can check source evidence.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A citation can point to a real source that says nothing about the claim.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Does the cited source support the sentence?",
+      "codeHash": "7e313f11a0cc0008cf67179bc87516731baaf14894d0efd703ea2f23eacc34ab",
+      "spec": {
+        "template": "table",
+        "title": "Targeted support verification against cited source documents",
+        "columns": [
+          "sources",
+          "text",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A citation should point to a source that supports the sentence it references.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When a sentence cites several sources it suffices for one source to support it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "sources"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Targeted support verification against cited source documents",
+        "columns": [
+          "sources",
+          "text",
+          "sources"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A citation should point to a source that supports the sentence it references.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "text",
+                  "sources"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "text",
+                  "sources"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When a sentence cites several sources it suffices for one source to support it.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "text",
+                  "sources"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "text",
+                  "sources"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding bad citations",
+      "codeHash": "b4d864b0743615bbe8b9364a5e785fdb2ee122888b987f1b381a1fd4ae2c4256",
+      "spec": {
+        "template": "table",
+        "title": "Bad citation index detection and diagnostic reporting",
+        "columns": [
+          "sources",
+          "answer",
+          "bad"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A sentence is bad if any cited id does not exist or lacks supporting content.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "bad"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "bad"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Returning indices rather than texts lets the interface highlight sentences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "bad"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "bad"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bad citation index detection and diagnostic reporting",
+        "columns": [
+          "sources",
+          "answer",
+          "bad"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A sentence is bad if any cited id does not exist or lacks supporting content.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "bad"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "bad"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Returning indices rather than texts lets the interface highlight sentences.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "bad"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "bad"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Which sentences need a citation?",
+      "codeHash": "e2d37c55217659a0e16922d04cd3fbb12bfdf76d4ea9682b83574df614b3c787",
+      "spec": {
+        "template": "table",
+        "title": "Factual claim sentence classification heuristics",
+        "columns": [
+          "sentences",
+          "sentences",
+          "sentences"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Conversational phrases like greetings or sign-offs make no factual claim.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A simple rule treats longer sentences as factual claims that need a citation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "sentences"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Factual claim sentence classification heuristics",
+        "columns": [
+          "sentences",
+          "sentences",
+          "sentences"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Conversational phrases like greetings or sign-offs make no factual claim.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "sentences",
+                  "sentences"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentences",
+                  "sentences",
+                  "sentences"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A simple rule treats longer sentences as factual claims that need a citation.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "sentences",
+                  "sentences"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sentences",
+                  "sentences",
+                  "sentences"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring citation coverage",
+      "codeHash": "11eef0bf4ef53195b8f2859f8a2749d2427ccf10766b875cfa02c4edb4878a33",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Citations in the pipeline",
+      "codeHash": "52a43d633c879ae791b4dc4547153e8414b6ca3ccb7d5a0af05e57ba5e912afc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
