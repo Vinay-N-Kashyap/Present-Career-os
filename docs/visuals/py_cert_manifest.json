@@ -5524,27 +5524,27 @@
     },
     "quant-py:21:0": {
       "partTitle": "Aggregating Greeks",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:21:1": {
       "partTitle": "Scenario revaluation",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:21:2": {
       "partTitle": "VaR and ES from scenarios",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:21:3": {
       "partTitle": "Delta hedging",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:21:4": {
       "partTitle": "Running the engine continuously",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:21:5": {
       "partTitle": "Milestone practice: engine and hedge",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:22:0": {
       "partTitle": "What alpha means",
@@ -8642,5 +8642,9 @@
       "partTitle": "Your safety pipeline",
       "status": "todo"
     }
+  },
+  "quant-py/day-21.json": {
+    "bytes": 83,
+    "sha256": "f3f711bf79c956fd7f33b12fcf50daa87f3928fafbb338cd1aa8cc8e86c0b8f3"
   }
 }

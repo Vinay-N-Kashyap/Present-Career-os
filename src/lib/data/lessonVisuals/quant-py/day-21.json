@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 21,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Aggregating Greeks",
+      "codeHash": "043fe861974f2e620158a8b8a34c0df9f115f49dfdd165e4354d170feb8500ec",
+      "spec": {
+        "template": "table",
+        "title": "Aggregating portfolio Greeks across multiple strike positions",
+        "columns": [
+          "name",
+          "qty",
+          "delta",
+          "vega"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading desks manage option strikes and expiries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "100 call"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "0.6"
+                  },
+                  {
+                    "text": "0.4"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Net risk aggregates underlying delta and vega sensitivities across contracts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "100 call"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "0.6"
+                  },
+                  {
+                    "text": "0.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "110 call"
+                  },
+                  {
+                    "text": "-5"
+                  },
+                  {
+                    "text": "0.3"
+                  },
+                  {
+                    "text": "0.5"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Short option holdings contribute negative net exposure to risk reports.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "100 call"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "0.6"
+                  },
+                  {
+                    "text": "0.4"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "110 call"
+                  },
+                  {
+                    "text": "-5"
+                  },
+                  {
+                    "text": "0.3"
+                  },
+                  {
+                    "text": "0.5"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stock"
+                  },
+                  {
+                    "text": "200"
+                  },
+                  {
+                    "text": "1.0"
+                  },
+                  {
+                    "text": "0.0"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Aggregating portfolio Greeks across multiple strike positions",
+        "columns": [
+          "name",
+          "qty",
+          "delta",
+          "vega"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading desks manage option strikes and expiries.",
+            "rows": [
+              {
+                "cells": [
+                  "100 call",
+                  "10",
+                  "0.6",
+                  "0.4"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Net risk aggregates underlying delta and vega sensitivities across contracts.",
+            "rows": [
+              {
+                "cells": [
+                  "100 call",
+                  "10",
+                  "0.6",
+                  "0.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "110 call",
+                  "-5",
+                  "0.3",
+                  "0.5"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Short option holdings contribute negative net exposure to risk reports.",
+            "rows": [
+              {
+                "cells": [
+                  "100 call",
+                  "10",
+                  "0.6",
+                  "0.4"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "110 call",
+                  "-5",
+                  "0.3",
+                  "0.5"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "stock",
+                  "200",
+                  "1.0",
+                  "0.0"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scenario revaluation",
+      "codeHash": "b60b3353ac90ecb672d6f80fa0f0fea86c4fc184f3c33a7ec7f2f8eb993ff072",
+      "spec": {
+        "template": "table",
+        "title": "Full scenario revaluation versus delta approximation",
+        "columns": [
+          "base",
+          "delta",
+          "full_pnl",
+          "gamma_gap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Risk engines revalue each option position fully under simulated shock moves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "delta"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each scenario updates the stock price and volatility parameters for pricing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "delta"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "delta"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Nonlinear gamma effects emerge between full revaluation and delta estimates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "delta"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "delta"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "s_new"
+                  },
+                  {
+                    "text": "full_pnl"
+                  },
+                  {
+                    "text": "gamma_gap"
+                  }
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Full scenario revaluation versus delta approximation",
+        "columns": [
+          "base",
+          "delta",
+          "full_pnl",
+          "gamma_gap"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Risk engines revalue each option position fully under simulated shock moves.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "delta",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each scenario updates the stock price and volatility parameters for pricing.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "delta",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "call",
+                  "delta",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Nonlinear gamma effects emerge between full revaluation and delta estimates.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "delta",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "call",
+                  "delta",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "call",
+                  "s_new",
+                  "full_pnl",
+                  "gamma_gap"
+                ],
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "VaR and ES from scenarios",
+      "codeHash": "c1d763c7cd0b3a78e6dea954ceb98db8864a7175961241c145d4e39a8d7a9d68",
+      "spec": {
+        "template": "table",
+        "title": "Scenario tail distributions for Value at Risk and Expected Shortfall",
+        "columns": [
+          "pnl",
+          "k",
+          "tail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Portfolio scenarios generate ordered distributions for tail risk evaluation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The worst scenario outcomes define quantile percent cutoffs in stress tests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-120000"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Negative profit values reflect severe losses across historical tail samples.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-120000"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-80000"
+                  },
+                  {
+                    "text": "k"
+                  },
+                  {
+                    "text": "tail"
+                  }
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Scenario tail distributions for Value at Risk and Expected Shortfall",
+        "columns": [
+          "pnl",
+          "k",
+          "tail"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Portfolio scenarios generate ordered distributions for tail risk evaluation.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "k",
+                  "tail"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The worst scenario outcomes define quantile percent cutoffs in stress tests.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "k",
+                  "tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-120000",
+                  "k",
+                  "tail"
+                ],
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Negative profit values reflect severe losses across historical tail samples.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "k",
+                  "tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-120000",
+                  "k",
+                  "tail"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "-80000",
+                  "k",
+                  "tail"
+                ],
+                "tone": "warn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Delta hedging",
+      "codeHash": "36cbed1ccd8abed6e61102d616b058783608f18fb16fe586eca676a39986d3aa",
+      "spec": {
+        "template": "table",
+        "title": "Delta hedging calculations and contract unit rounding",
+        "columns": [
+          "net_delta",
+          "per_unit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading desks eliminate directional exposure through underlying shares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "net_delta"
+                  },
+                  {
+                    "text": "per_unit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The hedge quantity balances fractional contracts into whole units.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "net_delta"
+                  },
+                  {
+                    "text": "per_unit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "204.5"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Python rounding logic resolves even numbers without directional drift.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "net_delta"
+                  },
+                  {
+                    "text": "per_unit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "204.5"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "-150.2"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Delta hedging calculations and contract unit rounding",
+        "columns": [
+          "net_delta",
+          "per_unit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading desks eliminate directional exposure through underlying shares.",
+            "rows": [
+              {
+                "cells": [
+                  "net_delta",
+                  "per_unit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The hedge quantity balances fractional contracts into whole units.",
+            "rows": [
+              {
+                "cells": [
+                  "net_delta",
+                  "per_unit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "204.5",
+                  "1.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Python rounding logic resolves even numbers without directional drift.",
+            "rows": [
+              {
+                "cells": [
+                  "net_delta",
+                  "per_unit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "204.5",
+                  "1.0"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "-150.2",
+                  "1.0"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running the engine continuously",
+      "codeHash": "28490159e7eaa62aaf001a764da3d7e21a64731050e76116561c42a61b56c292",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: engine and hedge",
+      "codeHash": "54827b8a0614c35b2925e0bc966435d6536c38d708b4c4b3dd20a87cdc288e85",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
