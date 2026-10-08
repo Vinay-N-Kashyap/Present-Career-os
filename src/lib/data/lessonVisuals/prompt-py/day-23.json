@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What an agent is",
+      "codeHash": "baeeb3402838ca2ef9b9c48f016c9fba87e750336d082ae2ba59a2c8d31c606b",
+      "spec": {
+        "template": "table",
+        "title": "Agent tool registration and iterative thought execution",
+        "columns": [
+          "tools",
+          "description",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An autonomous agent operates in a loop calling external tools to act.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The agent thinks, calls an appropriate tool, and inspects the result.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "description"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Agent tool registration and iterative thought execution",
+        "columns": [
+          "tools",
+          "description",
+          "tools"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An autonomous agent operates in a loop calling external tools to act.",
+            "rows": [
+              {
+                "cells": [
+                  "tools",
+                  "description",
+                  "tools"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tools",
+                  "description",
+                  "tools"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The agent thinks, calls an appropriate tool, and inspects the result.",
+            "rows": [
+              {
+                "cells": [
+                  "tools",
+                  "description",
+                  "tools"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "tools",
+                  "description",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The ReAct loop",
+      "codeHash": "66f62ae177a21bc39144600ef32016db3ff6b1ad82395032181e478f68665979",
+      "spec": {
+        "template": "table",
+        "title": "ReAct cycle: Reason, Act, Observe iteration",
+        "columns": [
+          "trace",
+          "trace",
+          "trace"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ReAct pattern alternates between thought, action, and observation steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The iterative cycle continues until the model delivers a final answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "trace"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ReAct cycle: Reason, Act, Observe iteration",
+        "columns": [
+          "trace",
+          "trace",
+          "trace"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ReAct pattern alternates between thought, action, and observation steps.",
+            "rows": [
+              {
+                "cells": [
+                  "trace",
+                  "trace",
+                  "trace"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "trace",
+                  "trace",
+                  "trace"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The iterative cycle continues until the model delivers a final answer.",
+            "rows": [
+              {
+                "cells": [
+                  "trace",
+                  "trace",
+                  "trace"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "trace",
+                  "trace",
+                  "trace"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing actions",
+      "codeHash": "c2f0b8e9dc3e0b9ac03017b9a66c566c504cace9642d9eef71a1993011b1dae2",
+      "spec": {
+        "template": "table",
+        "title": "Action command regex parsing and argument extraction",
+        "columns": [
+          "line",
+          "parse_action",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parsing routines reliably find the target tool name and input argument.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "parse_action"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "parse_action"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Regular expression matching extracts tool calls and separates arguments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "parse_action"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "line"
+                  },
+                  {
+                    "text": "parse_action"
+                  },
+                  {
+                    "text": "parse_action"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Action command regex parsing and argument extraction",
+        "columns": [
+          "line",
+          "parse_action",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parsing routines reliably find the target tool name and input argument.",
+            "rows": [
+              {
+                "cells": [
+                  "line",
+                  "parse_action",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "line",
+                  "parse_action",
+                  "line"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Regular expression matching extracts tool calls and separates arguments.",
+            "rows": [
+              {
+                "cells": [
+                  "line",
+                  "parse_action",
+                  "line"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "line",
+                  "parse_action",
+                  "parse_action"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running the loop",
+      "codeHash": "c66952ca139e25c47cfa2f4bb29a9942f1ca59c8bbd27749978e11b0eb90592b",
+      "spec": {
+        "template": "table",
+        "title": "Agent runtime loop execution with safety bounds",
+        "columns": [
+          "tools",
+          "outputs",
+          "observations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The agent loop reads outputs sequentially and dispatches tool commands.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "observations"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "observations"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Enforcing a step limit prevents endless loops when actions fail repeatedly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "observations"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "outputs"
+                  },
+                  {
+                    "text": "tools"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Agent runtime loop execution with safety bounds",
+        "columns": [
+          "tools",
+          "outputs",
+          "observations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The agent loop reads outputs sequentially and dispatches tool commands.",
+            "rows": [
+              {
+                "cells": [
+                  "tools",
+                  "outputs",
+                  "observations"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tools",
+                  "outputs",
+                  "observations"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Enforcing a step limit prevents endless loops when actions fail repeatedly.",
+            "rows": [
+              {
+                "cells": [
+                  "tools",
+                  "outputs",
+                  "observations"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "tools",
+                  "outputs",
+                  "tools"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing agents safely",
+      "codeHash": "ccab34922ab031a5fa9b446ea9bff480303fab8e62011f5ca4b0d043706c569a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: parse and run",
+      "codeHash": "02fd967c7bdbb027a5d5b7c4a7a2c915ed2fffed52de30002b2da3be19c4f474",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

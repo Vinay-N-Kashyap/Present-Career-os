@@ -6292,27 +6292,27 @@
     },
     "prompt-py:23:0": {
       "partTitle": "What an agent is",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:23:1": {
       "partTitle": "The ReAct loop",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:23:2": {
       "partTitle": "Parsing actions",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:23:3": {
       "partTitle": "Running the loop",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:23:4": {
       "partTitle": "Designing agents safely",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:23:5": {
       "partTitle": "Practice time: parse and run",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:24:0": {
       "partTitle": "Triggers and actions",
