@@ -7852,27 +7852,27 @@
     },
     "vec-py:28:0": {
       "partTitle": "Bytes per vector",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:28:1": {
       "partTitle": "Graph index overhead",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:28:2": {
       "partTitle": "Choosing a format for a budget",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:28:3": {
       "partTitle": "From memory to cost",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:28:4": {
       "partTitle": "Planning for growth",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:28:5": {
       "partTitle": "Practice time: capacity",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:29:0": {
       "partTitle": "Personal data in vector search",

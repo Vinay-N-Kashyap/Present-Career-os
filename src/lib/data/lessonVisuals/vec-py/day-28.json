@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 28,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Bytes per vector",
+      "codeHash": "2607c24168f7e1c5b400822f851e8c0160e8ba225c48e9253e096afd332ab574",
+      "spec": {
+        "template": "table",
+        "title": "Raw vector memory footprints across dimensions and precisions",
+        "columns": [
+          "dims",
+          "float32",
+          "dims"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The memory for raw vectors equals total vectors times dimensions times bytes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "float32"
+                  },
+                  {
+                    "text": "dims"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "float32"
+                  },
+                  {
+                    "text": "dims"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dimensions matter when calculating total memory across collections.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "float32"
+                  },
+                  {
+                    "text": "dims"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "dims"
+                  },
+                  {
+                    "text": "float32"
+                  },
+                  {
+                    "text": "dims"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Raw vector memory footprints across dimensions and precisions",
+        "columns": [
+          "dims",
+          "float32",
+          "dims"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The memory for raw vectors equals total vectors times dimensions times bytes.",
+            "rows": [
+              {
+                "cells": [
+                  "dims",
+                  "float32",
+                  "dims"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "dims",
+                  "float32",
+                  "dims"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Dimensions matter when calculating total memory across collections.",
+            "rows": [
+              {
+                "cells": [
+                  "dims",
+                  "float32",
+                  "dims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "dims",
+                  "float32",
+                  "dims"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph index overhead",
+      "codeHash": "535eb0d350daafb9e0dfeb300b19fcfc3e5dbd1c5a495156d16c0b55e5384742",
+      "spec": {
+        "template": "table",
+        "title": "Graph link indexing overhead vs compressed vector size",
+        "columns": [
+          "vectors",
+          "links",
+          "vectors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Graph indexes store neighbour links in addition to raw vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "links"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "links"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Link memory becomes the main cost once vectors are heavily compressed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "links"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "links"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Graph link indexing overhead vs compressed vector size",
+        "columns": [
+          "vectors",
+          "links",
+          "vectors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Graph indexes store neighbour links in addition to raw vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "links",
+                  "vectors"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "links",
+                  "vectors"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Link memory becomes the main cost once vectors are heavily compressed.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "links",
+                  "vectors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "links",
+                  "vectors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a format for a budget",
+      "codeHash": "2d12cb788e38f99859c4d5754a124cf2554bb965c974bd0c0913fd143a683809",
+      "spec": {
+        "template": "table",
+        "title": "Storage format selection within tight memory constraints",
+        "columns": [
+          "budget",
+          "choice",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Given a memory budget pick the most precise storage format that fits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "choice"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "choice"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search candidate formats stopping at the first that fits including graph links.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "choice"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "choice"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Storage format selection within tight memory constraints",
+        "columns": [
+          "budget",
+          "choice",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Given a memory budget pick the most precise storage format that fits.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "choice",
+                  "budget"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "choice",
+                  "budget"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Search candidate formats stopping at the first that fits including graph links.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "choice",
+                  "budget"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "choice",
+                  "budget"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From memory to cost",
+      "codeHash": "843988a8464af665539e5ce5a2983f648df5874f7b7c309c430d344693ea141c",
+      "spec": {
+        "template": "table",
+        "title": "Server counts and operational infrastructure expenditure",
+        "columns": [
+          "replicas",
+          "servers",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memory translates into servers and servers into infrastructure money.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "servers"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "servers"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compression often cuts cost more than any other architectural change.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "servers"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "servers"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Server counts and operational infrastructure expenditure",
+        "columns": [
+          "replicas",
+          "servers",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memory translates into servers and servers into infrastructure money.",
+            "rows": [
+              {
+                "cells": [
+                  "replicas",
+                  "servers",
+                  "replicas"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replicas",
+                  "servers",
+                  "replicas"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compression often cuts cost more than any other architectural change.",
+            "rows": [
+              {
+                "cells": [
+                  "replicas",
+                  "servers",
+                  "replicas"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "replicas",
+                  "servers",
+                  "replicas"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Planning for growth",
+      "codeHash": "1f1b1d1810f693e5fe239f70c1dfe7ea830330b71c4e01f2bf75df6e9ef5e896",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: capacity",
+      "codeHash": "72e1e0f4eb017f34a8cc6fddde4a1cb4fa2e74fdf07a5c00e339a93857125161",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
