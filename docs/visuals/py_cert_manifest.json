@@ -8140,27 +8140,27 @@
     },
     "safe-py:10:0": {
       "partTitle": "What hallucination is",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:10:1": {
       "partTitle": "Content words",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:10:2": {
       "partTitle": "Scoring support",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:10:3": {
       "partTitle": "Numbers are where it hurts",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:10:4": {
       "partTitle": "Stronger groundedness checks",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:10:5": {
       "partTitle": "Groundedness in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:11:0": {
       "partTitle": "Why citations can mislead",
