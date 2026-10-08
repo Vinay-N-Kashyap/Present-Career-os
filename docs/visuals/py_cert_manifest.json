@@ -7684,27 +7684,27 @@
     },
     "vec-py:21:0": {
       "partTitle": "Two-stage retrieval",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:21:1": {
       "partTitle": "A simple re-ranker",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:21:2": {
       "partTitle": "The redundancy problem",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:21:3": {
       "partTitle": "Maximal marginal relevance",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:21:4": {
       "partTitle": "Putting the pipeline together",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:21:5": {
       "partTitle": "Practice time: re-ranking",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:22:0": {
       "partTitle": "Why queries need help",
