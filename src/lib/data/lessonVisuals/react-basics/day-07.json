@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 7,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why real apps use many files",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "component-tree",
+        "title": "Modular application architecture across files",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Applications split components across individual modular files.",
+            "activeId": "app",
+            "tone": "idle"
+          },
+          {
+            "at": "say3",
+            "caption": "Modules use export and import to share component code.",
+            "activeId": "card",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Modular application architecture across files",
+        "nodes": [
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "idle"
+          },
+          {
+            "id": "hdr",
+            "name": "Header",
+            "tone": "ok"
+          },
+          {
+            "id": "card",
+            "name": "JobCard",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Applications split components across individual modular files.",
+            "activeId": "app",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Modules use export and import to share component code.",
+            "activeId": "card",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "app",
+                "name": "App",
+                "tone": "idle"
+              },
+              {
+                "id": "hdr",
+                "name": "Header",
+                "tone": "ok"
+              },
+              {
+                "id": "card",
+                "name": "JobCard",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "export and import",
+      "codeHash": "0fb9570c223945d176d1e4b34d0aec62d5bc8b513f63bca4370870b72052911f",
+      "spec": {
+        "template": "flow",
+        "title": "Sharing code between files with exports",
+        "nodes": [
+          {
+            "id": "src",
+            "label": "export",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "formatSalary",
+            "tappable": false
+          },
+          {
+            "id": "out",
+            "label": "import",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Export allows functions to be shared across project files.",
+            "values": {
+              "src": {
+                "text": "formatSalary"
+              },
+              "fn": {
+                "text": "formatSalary"
+              },
+              "out": {
+                "text": "formatSalary"
+              }
+            },
+            "tones": {
+              "src": "data",
+              "fn": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Import brings named exports into files using curly brackets.",
+            "values": {
+              "src": {
+                "text": "formatSalary"
+              },
+              "fn": {
+                "text": "formatSalary"
+              },
+              "out": {
+                "text": "formatSalary"
+              }
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ],
+              [
+                "fn",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sharing code between files with exports",
+        "nodes": [
+          {
+            "id": "src",
+            "label": "export",
+            "tappable": false
+          },
+          {
+            "id": "fn",
+            "label": "formatSalary",
+            "tappable": false
+          },
+          {
+            "id": "out",
+            "label": "import",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Export allows functions to be shared across project files.",
+            "values": {
+              "src": "formatSalary",
+              "fn": "formatSalary",
+              "out": "formatSalary"
+            },
+            "tones": {
+              "src": "data",
+              "fn": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Import brings named exports into files using curly brackets.",
+            "values": {
+              "src": "formatSalary",
+              "fn": "formatSalary",
+              "out": "formatSalary"
+            },
+            "tones": {
+              "src": "idle",
+              "fn": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "src",
+                "fn"
+              ],
+              [
+                "fn",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Node.js and npm: tools on your laptop",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "none",
+        "reason": "Overview of Node.js runtime and npm package management ecosystem"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Overview of Node.js runtime and npm package management ecosystem"
+      }
+    },
+    {
+      "partTitle": "Create your React project with Vite",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "flow",
+        "title": "Vite development workflow and local server",
+        "nodes": [
+          {
+            "id": "cmd",
+            "label": "terminal",
+            "tappable": false
+          },
+          {
+            "id": "server",
+            "label": "vite",
+            "tappable": false
+          },
+          {
+            "id": "browser",
+            "label": "localhost",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The development server starts local hosting in the browser.",
+            "values": {
+              "cmd": {
+                "text": "http://localhost:5173"
+              },
+              "server": {
+                "text": "http://localhost:5173"
+              },
+              "browser": {
+                "text": "http://localhost:5173"
+              }
+            },
+            "tones": {
+              "cmd": "data",
+              "server": "idle",
+              "browser": "idle"
+            },
+            "arrows": [
+              [
+                "cmd",
+                "server"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stopping the terminal server halts the active local site.",
+            "values": {
+              "cmd": {
+                "text": "http://localhost:5173"
+              },
+              "server": {
+                "text": "http://localhost:5173"
+              },
+              "browser": {
+                "text": "http://localhost:5173"
+              }
+            },
+            "tones": {
+              "cmd": "idle",
+              "server": "data",
+              "browser": "idle"
+            },
+            "arrows": [
+              [
+                "cmd",
+                "server"
+              ],
+              [
+                "server",
+                "browser"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Vite development workflow and local server",
+        "nodes": [
+          {
+            "id": "cmd",
+            "label": "terminal",
+            "tappable": false
+          },
+          {
+            "id": "server",
+            "label": "vite",
+            "tappable": false
+          },
+          {
+            "id": "browser",
+            "label": "localhost",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The development server starts local hosting in the browser.",
+            "values": {
+              "cmd": "http://localhost:5173",
+              "server": "http://localhost:5173",
+              "browser": "http://localhost:5173"
+            },
+            "tones": {
+              "cmd": "data",
+              "server": "idle",
+              "browser": "idle"
+            },
+            "arrows": [
+              [
+                "cmd",
+                "server"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Stopping the terminal server halts the active local site.",
+            "values": {
+              "cmd": "http://localhost:5173",
+              "server": "http://localhost:5173",
+              "browser": "http://localhost:5173"
+            },
+            "tones": {
+              "cmd": "idle",
+              "server": "data",
+              "browser": "idle"
+            },
+            "arrows": [
+              [
+                "cmd",
+                "server"
+              ],
+              [
+                "server",
+                "browser"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A tour of your project",
+      "codeHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "spec": {
+        "template": "component-tree",
+        "title": "React project directory and entry structure",
+        "nodes": [
+          {
+            "id": "html",
+            "name": "index.html",
+            "tone": "idle"
+          },
+          {
+            "id": "main",
+            "name": "main.jsx",
+            "tone": "ok"
+          },
+          {
+            "id": "app",
+            "name": "App.jsx",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Root HTML contains the host container for the React application.",
+            "activeId": "html",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Source files launch React and mount the App component.",
+            "activeId": "app",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "React project directory and entry structure",
+        "nodes": [
+          {
+            "id": "html",
+            "name": "index.html",
+            "tone": "idle"
+          },
+          {
+            "id": "main",
+            "name": "main.jsx",
+            "tone": "ok"
+          },
+          {
+            "id": "app",
+            "name": "App.jsx",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Root HTML contains the host container for the React application.",
+            "activeId": "html",
+            "tone": "idle",
+            "nodes": [
+              {
+                "id": "html",
+                "name": "index.html",
+                "tone": "idle"
+              },
+              {
+                "id": "main",
+                "name": "main.jsx",
+                "tone": "ok"
+              },
+              {
+                "id": "app",
+                "name": "App.jsx",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Source files launch React and mount the App component.",
+            "activeId": "app",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "html",
+                "name": "index.html",
+                "tone": "idle"
+              },
+              {
+                "id": "main",
+                "name": "main.jsx",
+                "tone": "ok"
+              },
+              {
+                "id": "app",
+                "name": "App.jsx",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting with objects (for today's practice)",
+      "codeHash": "99f3cb7051c0b305bd26686af3054232431689e6b1153ca083ef769be65cb1fd",
+      "spec": {
+        "template": "boxes",
+        "title": "Counting grouped items with object keys",
+        "boxes": [
+          {
+            "id": "applied",
+            "label": "applied",
+            "tappable": false
+          },
+          {
+            "id": "interview",
+            "label": "interview",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Objects count occurrences of items matching each status.",
+            "values": {
+              "applied": {
+                "text": "\"applied\""
+              },
+              "interview": {
+                "text": "\"interview\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Looping updates count values for each job status property.",
+            "values": {
+              "applied": {
+                "text": "\"applied\""
+              },
+              "interview": {
+                "text": "\"interview\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Counting grouped items with object keys",
+        "boxes": [
+          {
+            "id": "applied",
+            "label": "applied",
+            "tappable": false
+          },
+          {
+            "id": "interview",
+            "label": "interview",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Objects count occurrences of items matching each status.",
+            "values": {
+              "applied": "\"applied\"",
+              "interview": "\"interview\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Looping updates count values for each job status property.",
+            "values": {
+              "applied": "\"applied\"",
+              "interview": "\"interview\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    }
+  ]
+}
