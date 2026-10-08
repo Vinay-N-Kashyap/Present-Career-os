@@ -6676,27 +6676,27 @@
     },
     "train-py:9:0": {
       "partTitle": "The redundancy problem",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:9:1": {
       "partTitle": "Stage 1: shard the optimizer states",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:9:2": {
       "partTitle": "Stages 2 and 3",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:9:3": {
       "partTitle": "How big can we go?",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:9:4": {
       "partTitle": "Communication and offloading",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:9:5": {
       "partTitle": "Practice time: ZeRO",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:10:0": {
       "partTitle": "FSDP in one picture",

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 9,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The redundancy problem",
+      "codeHash": "dc04d5e76815b0c32f0a356fb0c720bb95292f75a29b63f5fd01382bf5ee00cd",
+      "spec": {
+        "template": "table",
+        "title": "Memory redundancy across replicated data-parallel ranks",
+        "columns": [
+          "params",
+          "gpus",
+          "unique"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard data parallelism replicates identical full model states on each GPU.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "unique"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "unique"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Zero redundancy optimisation eliminates duplication by sharding states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "unique"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Memory redundancy across replicated data-parallel ranks",
+        "columns": [
+          "params",
+          "gpus",
+          "unique"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard data parallelism replicates identical full model states on each GPU.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "unique"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "unique"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Zero redundancy optimisation eliminates duplication by sharding states.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "unique"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 1: shard the optimizer states",
+      "codeHash": "fab12c27fe52e2b585483f1c900a13aa936c9bfdbede15800699e17f618691d5",
+      "spec": {
+        "template": "table",
+        "title": "ZeRO stage 1: optimizer state partitioning across GPU ranks",
+        "columns": [
+          "params",
+          "gpus",
+          "per_gpu"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimizer states dominate parameter memory in mixed precision training.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "per_gpu"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "per_gpu"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Initial sharding partitions master weights and optimizer moments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "per_gpu"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ZeRO stage 1: optimizer state partitioning across GPU ranks",
+        "columns": [
+          "params",
+          "gpus",
+          "per_gpu"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimizer states dominate parameter memory in mixed precision training.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "per_gpu"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "per_gpu"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Initial sharding partitions master weights and optimizer moments.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "per_gpu"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "gpus",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stages 2 and 3",
+      "codeHash": "71916137ef916ae5cdcef565972c6b9931d9305d98f190def88456bc4089a174",
+      "spec": {
+        "template": "table",
+        "title": "ZeRO progressive stages: gradient and parameter sharding",
+        "columns": [
+          "stage",
+          "formulas",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Progressive stages shard gradients and retain only local parameter slices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "formulas"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "formulas"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Complete sharding distributes model parameters uniformly across devices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "formulas"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stage"
+                  },
+                  {
+                    "text": "formulas"
+                  },
+                  {
+                    "text": "stage"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ZeRO progressive stages: gradient and parameter sharding",
+        "columns": [
+          "stage",
+          "formulas",
+          "params"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Progressive stages shard gradients and retain only local parameter slices.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "formulas",
+                  "params"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stage",
+                  "formulas",
+                  "params"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Complete sharding distributes model parameters uniformly across devices.",
+            "rows": [
+              {
+                "cells": [
+                  "stage",
+                  "formulas",
+                  "params"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stage",
+                  "formulas",
+                  "stage"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How big can we go?",
+      "codeHash": "32c649e3bbb49bfe9261622172ed30e48285fcd79190f511af6a90067b0b2b7d",
+      "spec": {
+        "template": "table",
+        "title": "Maximum trainable model parameter scaling limits per ZeRO stage",
+        "columns": [
+          "gpu_gb",
+          "gpus",
+          "reserve"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memory formulas determine the largest model that fits on available hardware.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpu_gb"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "reserve"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpu_gb"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "reserve"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Setting a safe memory reserve protects against activation spikes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpu_gb"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "reserve"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpu_gb"
+                  },
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "gpu_gb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Maximum trainable model parameter scaling limits per ZeRO stage",
+        "columns": [
+          "gpu_gb",
+          "gpus",
+          "reserve"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Memory formulas determine the largest model that fits on available hardware.",
+            "rows": [
+              {
+                "cells": [
+                  "gpu_gb",
+                  "gpus",
+                  "reserve"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpu_gb",
+                  "gpus",
+                  "reserve"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Setting a safe memory reserve protects against activation spikes.",
+            "rows": [
+              {
+                "cells": [
+                  "gpu_gb",
+                  "gpus",
+                  "reserve"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpu_gb",
+                  "gpus",
+                  "gpu_gb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Communication and offloading",
+      "codeHash": "7f28393e1cc4f14a819ad734bc24a304d93e43b9e4dcde876d86b3bd7ae6d230",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: ZeRO",
+      "codeHash": "c7eec0487a707ce7bfc625622a640e1e5b9f3b30077c78ee0b5d3f2d6084f778",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
