@@ -17,7 +17,8 @@
 // - 'train-py': LLM Fine-Tuning & Training (Month 10) released via [task:L-train-py]
 // - 'vec-py': Vector Search & Embeddings (Month 11) released via [task:L-vec-py]
 // - 'safe-py': AI Safety & Alignment (Month 12) released via [task:L-safe-py]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py'];
+// - 'react-basics': React Basics (Month 1 Web Full-Stack) released via [task:L-react-basics]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
