@@ -5956,27 +5956,27 @@
     },
     "prompt-py:9:0": {
       "partTitle": "Why grounding matters",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:9:1": {
       "partTitle": "Chunking documents",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:9:2": {
       "partTitle": "Retrieving relevant chunks",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:9:3": {
       "partTitle": "The grounded prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:9:4": {
       "partTitle": "Checking citations",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:9:5": {
       "partTitle": "Practice time: retrieve and check",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:10:0": {
       "partTitle": "AI search tools",
