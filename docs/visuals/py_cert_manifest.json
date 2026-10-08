@@ -6196,27 +6196,27 @@
     },
     "prompt-py:19:0": {
       "partTitle": "Why models hallucinate",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:19:1": {
       "partTitle": "Checking claims against sources",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:19:2": {
       "partTitle": "Where bias comes from",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:19:3": {
       "partTitle": "Fallbacks and guardrails",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:19:4": {
       "partTitle": "A verification checklist",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:19:5": {
       "partTitle": "Practice time: unsupported claims and guardrails",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:20:0": {
       "partTitle": "Privacy basics",

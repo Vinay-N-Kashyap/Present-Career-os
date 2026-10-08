@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why models hallucinate",
+      "codeHash": "31d9a9f11309f765000ba90f8768cfa99bc65d279c3b23099f15806bd3bb3f0a",
+      "spec": {
+        "template": "table",
+        "title": "Hallucination risks and false premise vulnerability",
+        "columns": [
+          "actual",
+          "careful",
+          "actual"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models produce fluent plausible text rather than verified truth.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actual"
+                  },
+                  {
+                    "text": "careful"
+                  },
+                  {
+                    "text": "actual"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actual"
+                  },
+                  {
+                    "text": "careful"
+                  },
+                  {
+                    "text": "actual"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hallucinations are especially likely when questions assume false facts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actual"
+                  },
+                  {
+                    "text": "careful"
+                  },
+                  {
+                    "text": "actual"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actual"
+                  },
+                  {
+                    "text": "careful"
+                  },
+                  {
+                    "text": "known_winners"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hallucination risks and false premise vulnerability",
+        "columns": [
+          "actual",
+          "careful",
+          "actual"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models produce fluent plausible text rather than verified truth.",
+            "rows": [
+              {
+                "cells": [
+                  "actual",
+                  "careful",
+                  "actual"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "actual",
+                  "careful",
+                  "actual"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hallucinations are especially likely when questions assume false facts.",
+            "rows": [
+              {
+                "cells": [
+                  "actual",
+                  "careful",
+                  "actual"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "actual",
+                  "careful",
+                  "known_winners"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking claims against sources",
+      "codeHash": "fc6c5d3d385dd557100afb4d707ccd575951ad95db82ffa70fb462e2e11f6a70",
+      "spec": {
+        "template": "table",
+        "title": "Automated claim verification against source corpora",
+        "columns": [
+          "sources",
+          "answer",
+          "sentence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated checks compare each answer sentence against provided sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Comparing content words confirms whether a claim is genuinely supported.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "sentence"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated claim verification against source corpora",
+        "columns": [
+          "sources",
+          "answer",
+          "sentence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated checks compare each answer sentence against provided sources.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sentence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sentence"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Comparing content words confirms whether a claim is genuinely supported.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "sentence"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "answer",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where bias comes from",
+      "codeHash": "693d97764b8af7848fb01d3f4a5201459388163ae207d07cd0aa857d855a1141",
+      "spec": {
+        "template": "table",
+        "title": "Fairness auditing and demographic perturbation testing",
+        "columns": [
+          "template",
+          "names",
+          "template"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models learn from human text and risk reproducing stereotypes or imbalances.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "template"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "template"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "template"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "template"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unfair bias in automated screening decisions can cause real-world harm.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "template"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "template"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "template"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "names"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fairness auditing and demographic perturbation testing",
+        "columns": [
+          "template",
+          "names",
+          "template"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models learn from human text and risk reproducing stereotypes or imbalances.",
+            "rows": [
+              {
+                "cells": [
+                  "template",
+                  "names",
+                  "template"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "template",
+                  "names",
+                  "template"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Unfair bias in automated screening decisions can cause real-world harm.",
+            "rows": [
+              {
+                "cells": [
+                  "template",
+                  "names",
+                  "template"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "template",
+                  "names",
+                  "names"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fallbacks and guardrails",
+      "codeHash": "699c97fdabbfdb524d2e256faf3efaad7e922ea5e4e04585e5295216a4693f0e",
+      "spec": {
+        "template": "table",
+        "title": "Output guardrail evaluation and fallback message routing",
+        "columns": [
+          "guardrail",
+          "words",
+          "fallback"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A guardrail check sits between model and user to block unacceptable output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "guardrail"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "fallback"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "guardrail"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "fallback"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When checks fail the system shows a safe fallback message to the user.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "guardrail"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "fallback"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "guardrail"
+                  },
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "guardrail"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Output guardrail evaluation and fallback message routing",
+        "columns": [
+          "guardrail",
+          "words",
+          "fallback"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A guardrail check sits between model and user to block unacceptable output.",
+            "rows": [
+              {
+                "cells": [
+                  "guardrail",
+                  "words",
+                  "fallback"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "guardrail",
+                  "words",
+                  "fallback"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When checks fail the system shows a safe fallback message to the user.",
+            "rows": [
+              {
+                "cells": [
+                  "guardrail",
+                  "words",
+                  "fallback"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "guardrail",
+                  "words",
+                  "guardrail"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A verification checklist",
+      "codeHash": "8c1d919a4dbba275edd7d6b5cf0232f0146632a931164e051fa1dc84edc689c2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: unsupported claims and guardrails",
+      "codeHash": "88485e7af39cc14a1210e348437c79cac586c77155c71f0049fee978334b5870",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
