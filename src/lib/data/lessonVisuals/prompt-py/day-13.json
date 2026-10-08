@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AI as a brainstorming partner",
+      "codeHash": "8500b0451e52c1c8ef23ac576abb1842b359751a79fad7cd8b9ea4b658e788d8",
+      "spec": {
+        "template": "table",
+        "title": "Perspective multi-angle prompts for creative divergence",
+        "columns": [
+          "product",
+          "angles",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Research on brainstorming shows that ideation volume yields superior solutions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "angles"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "angles"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Prompting from different angles produces variety across user personas.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "angles"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "product"
+                  },
+                  {
+                    "text": "angles"
+                  },
+                  {
+                    "text": "product"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Perspective multi-angle prompts for creative divergence",
+        "columns": [
+          "product",
+          "angles",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Research on brainstorming shows that ideation volume yields superior solutions.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "angles",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "product",
+                  "angles",
+                  "line"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Prompting from different angles produces variety across user personas.",
+            "rows": [
+              {
+                "cells": [
+                  "product",
+                  "angles",
+                  "line"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "product",
+                  "angles",
+                  "product"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The SCAMPER technique",
+      "codeHash": "2a152a31499ad8167985cb83367df8b462a6c43314ac57eb5075f9a60067bdd9",
+      "spec": {
+        "template": "table",
+        "title": "SCAMPER lateral thinking transformations",
+        "columns": [
+          "templates",
+          "bag",
+          "templates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SCAMPER applies a systematic checklist for improving any product or process.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "templates"
+                  },
+                  {
+                    "text": "bag"
+                  },
+                  {
+                    "text": "templates"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "templates"
+                  },
+                  {
+                    "text": "bag"
+                  },
+                  {
+                    "text": "templates"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Questions ask what to substitute, combine, adapt, or borrow from another field.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "templates"
+                  },
+                  {
+                    "text": "bag"
+                  },
+                  {
+                    "text": "templates"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "templates"
+                  },
+                  {
+                    "text": "bag"
+                  },
+                  {
+                    "text": "bag"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SCAMPER lateral thinking transformations",
+        "columns": [
+          "templates",
+          "bag",
+          "templates"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "SCAMPER applies a systematic checklist for improving any product or process.",
+            "rows": [
+              {
+                "cells": [
+                  "templates",
+                  "bag",
+                  "templates"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "templates",
+                  "bag",
+                  "templates"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Questions ask what to substitute, combine, adapt, or borrow from another field.",
+            "rows": [
+              {
+                "cells": [
+                  "templates",
+                  "bag",
+                  "templates"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "templates",
+                  "bag",
+                  "bag"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Devil's advocate and critics",
+      "codeHash": "aff1f87dca25de67cfbf113a8ddbfba2579a454a874db76079e09c50950b266e",
+      "spec": {
+        "template": "table",
+        "title": "Adversarial critique and persona objections",
+        "columns": [
+          "idea",
+          "critics",
+          "objection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asking for the strongest objections to an idea reveals hidden risks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "idea"
+                  },
+                  {
+                    "text": "critics"
+                  },
+                  {
+                    "text": "objection"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "idea"
+                  },
+                  {
+                    "text": "critics"
+                  },
+                  {
+                    "text": "objection"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A devil advocate exposes weak assumptions when changes are still cheap.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "idea"
+                  },
+                  {
+                    "text": "critics"
+                  },
+                  {
+                    "text": "objection"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "idea"
+                  },
+                  {
+                    "text": "critics"
+                  },
+                  {
+                    "text": "idea"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Adversarial critique and persona objections",
+        "columns": [
+          "idea",
+          "critics",
+          "objection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asking for the strongest objections to an idea reveals hidden risks.",
+            "rows": [
+              {
+                "cells": [
+                  "idea",
+                  "critics",
+                  "objection"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "idea",
+                  "critics",
+                  "objection"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A devil advocate exposes weak assumptions when changes are still cheap.",
+            "rows": [
+              {
+                "cells": [
+                  "idea",
+                  "critics",
+                  "objection"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "idea",
+                  "critics",
+                  "idea"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cleaning up the idea list",
+      "codeHash": "3c97160306533311e6d57b1046ba5d4e1cdeef5c925bb55854cbf4884e81e326",
+      "spec": {
+        "template": "table",
+        "title": "Fuzzy deduplication and canonical set filtering",
+        "columns": [
+          "ideas",
+          "kept",
+          "removed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Brainstorming produces duplicates that differ only in casing or punctuation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ideas"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "removed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ideas"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "removed"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "String normalisation catches duplicates before voting begins on candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ideas"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "removed"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ideas"
+                  },
+                  {
+                    "text": "seen"
+                  },
+                  {
+                    "text": "removed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fuzzy deduplication and canonical set filtering",
+        "columns": [
+          "ideas",
+          "kept",
+          "removed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Brainstorming produces duplicates that differ only in casing or punctuation.",
+            "rows": [
+              {
+                "cells": [
+                  "ideas",
+                  "kept",
+                  "removed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ideas",
+                  "kept",
+                  "removed"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "String normalisation catches duplicates before voting begins on candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "ideas",
+                  "kept",
+                  "removed"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "ideas",
+                  "seen",
+                  "removed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Selecting the best ideas",
+      "codeHash": "12aa568d34d1b765aaae27b9ebb2864287d7a132f4ae166eee314727501a28da",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: SCAMPER and de-duplication",
+      "codeHash": "bed5337e897295e9db077c05e13cf9c0a19ad9ffb873d59f1096f19335b268a3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -6052,27 +6052,27 @@
     },
     "prompt-py:13:0": {
       "partTitle": "AI as a brainstorming partner",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:13:1": {
       "partTitle": "The SCAMPER technique",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:13:2": {
       "partTitle": "Devil's advocate and critics",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:13:3": {
       "partTitle": "Cleaning up the idea list",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:13:4": {
       "partTitle": "Selecting the best ideas",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:13:5": {
       "partTitle": "Practice time: SCAMPER and de-duplication",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:14:0": {
       "partTitle": "Code interpreter tools",
