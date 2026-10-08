@@ -7204,27 +7204,27 @@
     },
     "vec-py:1:0": {
       "partTitle": "Why vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:1:1": {
       "partTitle": "Bag-of-words vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:1:2": {
       "partTitle": "The hashing trick",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:1:3": {
       "partTitle": "Unit-length vectors",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:1:4": {
       "partTitle": "Learned embeddings",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:1:5": {
       "partTitle": "Practice time: making vectors",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:2:0": {
       "partTitle": "The dot product",
