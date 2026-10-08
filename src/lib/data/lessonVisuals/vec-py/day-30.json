@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 30,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The capstone design",
+      "codeHash": "022373c5a4bac6d6ba2e7452222e113c5b9498b31a1fb3405ca474b7d87d912c",
+      "spec": {
+        "template": "table",
+        "title": "Hybrid search pipeline stages and execution order",
+        "columns": [
+          "pipeline",
+          "pipeline",
+          "pipeline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The engine stores documents with tokens, a vector and metadata records.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Filtering happens first so only allowed documents are scored.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  },
+                  {
+                    "text": "pipeline"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hybrid search pipeline stages and execution order",
+        "columns": [
+          "pipeline",
+          "pipeline",
+          "pipeline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The engine stores documents with tokens, a vector and metadata records.",
+            "rows": [
+              {
+                "cells": [
+                  "pipeline",
+                  "pipeline",
+                  "pipeline"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pipeline",
+                  "pipeline",
+                  "pipeline"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Filtering happens first so only allowed documents are scored.",
+            "rows": [
+              {
+                "cells": [
+                  "pipeline",
+                  "pipeline",
+                  "pipeline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "pipeline",
+                  "pipeline",
+                  "pipeline"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid scoring",
+      "codeHash": "287c0e2396c9832d67b29bc79f96de64a53422730c0f35df2ef1d7fa4a951a8a",
+      "spec": {
+        "template": "table",
+        "title": "Alpha fusion weighting vector similarity and keyword overlap",
+        "columns": [
+          "docs",
+          "overlap",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The vector part captures meaning while keyword parts reward exact words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Keyword overlap here is the fraction of distinct query tokens found.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Alpha fusion weighting vector similarity and keyword overlap",
+        "columns": [
+          "docs",
+          "overlap",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The vector part captures meaning while keyword parts reward exact words.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "overlap",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "overlap",
+                  "docs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Keyword overlap here is the fraction of distinct query tokens found.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "overlap",
+                  "docs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "overlap",
+                  "docs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating the engine",
+      "codeHash": "6736041a8b9c0e71ef1bb675abd570e6a096eda28a1e9a353d0abfb953960646",
+      "spec": {
+        "template": "table",
+        "title": "Capstone golden set evaluation and failed query analysis",
+        "columns": [
+          "golden",
+          "runs",
+          "golden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The evaluation report runs every golden query and computes recall and MRR.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failed queries are listed explicitly because they are actionable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "golden"
+                  },
+                  {
+                    "text": "runs"
+                  },
+                  {
+                    "text": "golden"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capstone golden set evaluation and failed query analysis",
+        "columns": [
+          "golden",
+          "runs",
+          "golden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The evaluation report runs every golden query and computes recall and MRR.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "runs",
+                  "golden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "runs",
+                  "golden"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Failed queries are listed explicitly because they are actionable.",
+            "rows": [
+              {
+                "cells": [
+                  "golden",
+                  "runs",
+                  "golden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "golden",
+                  "runs",
+                  "golden"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing the report",
+      "codeHash": "df13e94aef7cd56e14978db1806662cb350e07a0ab36917de897edeabc621847",
+      "spec": {
+        "template": "table",
+        "title": "Capstone synthesis reporting and executive summaries",
+        "columns": [
+          "report",
+          "report",
+          "report"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A good report fits on one page showing what was built and its results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Clear reports earn trust and make decisions easy for engineering teams.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  },
+                  {
+                    "text": "report"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capstone synthesis reporting and executive summaries",
+        "columns": [
+          "report",
+          "report",
+          "report"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A good report fits on one page showing what was built and its results.",
+            "rows": [
+              {
+                "cells": [
+                  "report",
+                  "report",
+                  "report"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "report",
+                  "report",
+                  "report"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Clear reports earn trust and make decisions easy for engineering teams.",
+            "rows": [
+              {
+                "cells": [
+                  "report",
+                  "report",
+                  "report"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "report",
+                  "report",
+                  "report"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What you have built",
+      "codeHash": "2ea04c593e8c803e2a06793780bc0b66423962a196b2cf3f07479e555774f97f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Capstone practice: engine and report",
+      "codeHash": "98994c032196898228733cb7c4b556335d885baec2772e38699c696a7c96b012",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
