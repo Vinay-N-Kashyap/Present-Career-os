@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Expected Shortfall",
+      "codeHash": "3dedde8c65ef2f861ce39f2b993f06d884f0427f5956b8a8bb13245540657ff1",
+      "spec": {
+        "template": "table",
+        "title": "Expected Shortfall conditional tail expectation and risk capital",
+        "columns": [
+          "calm",
+          "hidden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Expected Shortfall computes average losses beyond the VaR threshold.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calm"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional expectations average severe losses situated within the worst tail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calm"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tail"
+                  },
+                  {
+                    "text": "returns"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Conditional VaR grows whenever catastrophic tail events get worse.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calm"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tail"
+                  },
+                  {
+                    "text": "returns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expected Shortfall captures the catastrophic tail disaster that VaR hid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "calm"
+                  },
+                  {
+                    "text": "hidden"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tail"
+                  },
+                  {
+                    "text": "returns"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sum"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var_es"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Expected Shortfall conditional tail expectation and risk capital",
+        "columns": [
+          "calm",
+          "hidden"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Expected Shortfall computes average losses beyond the VaR threshold.",
+            "rows": [
+              {
+                "cells": [
+                  "calm",
+                  "hidden"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Conditional expectations average severe losses situated within the worst tail.",
+            "rows": [
+              {
+                "cells": [
+                  "calm",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tail",
+                  "returns"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Conditional VaR grows whenever catastrophic tail events get worse.",
+            "rows": [
+              {
+                "cells": [
+                  "calm",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tail",
+                  "returns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "round"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expected Shortfall captures the catastrophic tail disaster that VaR hid.",
+            "rows": [
+              {
+                "cells": [
+                  "calm",
+                  "hidden"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tail",
+                  "returns"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sum",
+                  "round"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "var_es",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Coherent risk measures",
+      "codeHash": "22fa3b2f7ae8704538f5660fbb0f777ae3e33a45de98e5027698613c9d287369",
+      "spec": {
+        "template": "table",
+        "title": "Axiomatic coherent risk measures and mathematical subadditivity",
+        "columns": [
+          "loss",
+          "prob"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Theoretical risk frameworks define essential axioms for coherent measures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "prob"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Monotonicity and translation invariance govern foundational portfolio risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "prob"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "outcomes"
+                  },
+                  {
+                    "text": "product"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Subadditivity guarantees combined portfolio risk never exceeds component sums.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "prob"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "outcomes"
+                  },
+                  {
+                    "text": "product"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var95"
+                  },
+                  {
+                    "text": "cum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows VaR breaking subadditivity with independent default risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "prob"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "outcomes"
+                  },
+                  {
+                    "text": "product"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var95"
+                  },
+                  {
+                    "text": "cum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sorted"
+                  },
+                  {
+                    "text": "dist"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Axiomatic coherent risk measures and mathematical subadditivity",
+        "columns": [
+          "loss",
+          "prob"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Theoretical risk frameworks define essential axioms for coherent measures.",
+            "rows": [
+              {
+                "cells": [
+                  "loss",
+                  "prob"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Monotonicity and translation invariance govern foundational portfolio risk.",
+            "rows": [
+              {
+                "cells": [
+                  "loss",
+                  "prob"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "outcomes",
+                  "product"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Subadditivity guarantees combined portfolio risk never exceeds component sums.",
+            "rows": [
+              {
+                "cells": [
+                  "loss",
+                  "prob"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "outcomes",
+                  "product"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "var95",
+                  "cum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows VaR breaking subadditivity with independent default risk.",
+            "rows": [
+              {
+                "cells": [
+                  "loss",
+                  "prob"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "outcomes",
+                  "product"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "var95",
+                  "cum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sorted",
+                  "dist"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diversification in numbers",
+      "codeHash": "dec7cc93b4c4d1dcec08f0dde6c56a2b2c25d117fbffca790c548fb343be3220",
+      "spec": {
+        "template": "table",
+        "title": "Portfolio correlation matrix impacts and diversification benefits",
+        "columns": [
+          "combined",
+          "benefit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diversification benefits quantify risk reduction achieved by pooling positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "combined"
+                  },
+                  {
+                    "text": "benefit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Uncorrelated and negatively correlated positions generate large risk reduction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "combined"
+                  },
+                  {
+                    "text": "benefit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Combined risks exceeding component sums signal data or metric flaws.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "combined"
+                  },
+                  {
+                    "text": "benefit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "combined"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows combined risk across varying correlations between positions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "combined"
+                  },
+                  {
+                    "text": "benefit"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "combined"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "benefit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Portfolio correlation matrix impacts and diversification benefits",
+        "columns": [
+          "combined",
+          "benefit"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diversification benefits quantify risk reduction achieved by pooling positions.",
+            "rows": [
+              {
+                "cells": [
+                  "combined",
+                  "benefit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Uncorrelated and negatively correlated positions generate large risk reduction.",
+            "rows": [
+              {
+                "cells": [
+                  "combined",
+                  "benefit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Combined risks exceeding component sums signal data or metric flaws.",
+            "rows": [
+              {
+                "cells": [
+                  "combined",
+                  "benefit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print",
+                  "combined"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows combined risk across varying correlations between positions.",
+            "rows": [
+              {
+                "cells": [
+                  "combined",
+                  "benefit"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print",
+                  "combined"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "benefit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stress testing",
+      "codeHash": "4f43a3919d6ca48e89dc7ce7eb038946ea590e799d77410fad0172f54b89cde6",
+      "spec": {
+        "template": "table",
+        "title": "Multi-factor stress scenario modeling and portfolio revaluation",
+        "columns": [
+          "move",
+          "vol_points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stress testing asks direct questions regarding portfolio exposure to crises.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "move"
+                  },
+                  {
+                    "text": "vol_points"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Historical scenarios replay crises while hypothetical scenarios test shocks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "move"
+                  },
+                  {
+                    "text": "vol_points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "scenarios"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scenario specifications apply sudden shocks to underlying market risk factors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "move"
+                  },
+                  {
+                    "text": "vol_points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "scenarios"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delta_dollars"
+                  },
+                  {
+                    "text": "vega_per_point"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example applies scenarios to a book with stock and volatility exposures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "move"
+                  },
+                  {
+                    "text": "vol_points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "book"
+                  },
+                  {
+                    "text": "scenarios"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "delta_dollars"
+                  },
+                  {
+                    "text": "vega_per_point"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "book"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-factor stress scenario modeling and portfolio revaluation",
+        "columns": [
+          "move",
+          "vol_points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stress testing asks direct questions regarding portfolio exposure to crises.",
+            "rows": [
+              {
+                "cells": [
+                  "move",
+                  "vol_points"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Historical scenarios replay crises while hypothetical scenarios test shocks.",
+            "rows": [
+              {
+                "cells": [
+                  "move",
+                  "vol_points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "scenarios"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Scenario specifications apply sudden shocks to underlying market risk factors.",
+            "rows": [
+              {
+                "cells": [
+                  "move",
+                  "vol_points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "scenarios"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "delta_dollars",
+                  "vega_per_point"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example applies scenarios to a book with stock and volatility exposures.",
+            "rows": [
+              {
+                "cells": [
+                  "move",
+                  "vol_points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "book",
+                  "scenarios"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "delta_dollars",
+                  "vega_per_point"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "items",
+                  "book"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reporting risk",
+      "codeHash": "ff073fa9a06efea59d814e7d906925e4636d9f3ccf17215b891300e492fdc29a",
+      "spec": {
+        "template": "none",
+        "reason": "Daily risk dashboards, limit hierarchies, and reporting workflows."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: tails and diversification",
+      "codeHash": "c8c197bc01c40868cbabb3c0732dbc6d15291886ae36a894db09f7665d755c9d",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: Expected Shortfall and portfolio diversification calculations."
+      },
+      "filled": {}
+    }
+  ]
+}

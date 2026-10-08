@@ -5476,27 +5476,27 @@
     },
     "quant-py:19:0": {
       "partTitle": "Expected Shortfall",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:19:1": {
       "partTitle": "Coherent risk measures",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:19:2": {
       "partTitle": "Diversification in numbers",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:19:3": {
       "partTitle": "Stress testing",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:19:4": {
       "partTitle": "Reporting risk",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:19:5": {
       "partTitle": "Practice time: tails and diversification",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:20:0": {
       "partTitle": "Return and risk of a portfolio",
