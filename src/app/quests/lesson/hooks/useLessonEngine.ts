@@ -15,7 +15,7 @@ import { withLessonHelpers } from '@/lib/code/sandbox/lessonHelpers';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
-import { getVisual, loadDayFile } from '@/lib/visuals/loadVisuals';
+import { getVisual, loadDayFile, fetchAndCacheDayFile } from '@/lib/visuals/loadVisuals';
 import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/runPythonTrace';
 import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
@@ -878,6 +878,33 @@ export function useLessonEngine({
     setSlides(staticSlides);
     setSlidesLoading(false);
   }, [questId, questData, syllabus, longLesson, testInfo, setSlides, setSlidesLoading]);
+
+  // Client-side visual hydrator: dynamically load day file if not yet loaded in browser cache
+  useEffect(() => {
+    if (!questId) return;
+    const parsed = parseQuestId(questId);
+    if (!parsed?.prefix || !parsed?.dayNum) return;
+    const { prefix, dayNum } = parsed;
+
+    fetchAndCacheDayFile(prefix, dayNum).then((dayFile) => {
+      if (dayFile && Array.isArray(dayFile.entries)) {
+        setSlides((prevSlides) => {
+          if (!prevSlides || prevSlides.length === 0) return prevSlides;
+          let changed = false;
+          const updated = prevSlides.map((slide, i) => {
+            if (slide.visual) return slide;
+            const fetched = getVisual(prefix, dayNum, i);
+            if (fetched) {
+              changed = true;
+              return { ...slide, visual: fetched };
+            }
+            return slide;
+          });
+          return changed ? updated : prevSlides;
+        });
+      }
+    });
+  }, [questId, setSlides]);
 
   // Audio unlock listener and hydration
   useEffect(() => {

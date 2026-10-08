@@ -7,6 +7,7 @@ import {
   loadDayFile,
   registerDayFile,
   clearDayFileCache,
+  fetchAndCacheDayFile,
   type LessonVisualDayFile,
 } from '@/lib/visuals/loadVisuals';
 import { ENABLED_COURSES, isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
@@ -136,5 +137,17 @@ describe('Loader and Release Switch (Task E-15)', () => {
       content.includes('getVisual('),
       'useLessonEngine.ts must invoke getVisual'
     );
+  });
+
+  it('fetchAndCacheDayFile loads and caches day file asynchronously', async () => {
+    clearDayFileCache();
+    const dayFile = await fetchAndCacheDayFile('python', 1);
+    assert.ok(dayFile, 'fetchAndCacheDayFile must return day file for python:1');
+    assert.equal(dayFile.prefix, 'python');
+    assert.equal(dayFile.day, 1);
+
+    // Should now be in cache
+    const cachedVisual = getVisual('python', 1, 0);
+    assert.ok(cachedVisual, 'Visual should be available in cache after fetch');
   });
 });

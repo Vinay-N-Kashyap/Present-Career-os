@@ -71,9 +71,50 @@ export function loadDayFile(prefix: string, day: number): LessonVisualDayFile | 
     } catch {
       // Safe fallback on missing file or read/parse error
     }
+    dayFileCache.set(cacheKey, null);
+    return null;
   }
 
-  dayFileCache.set(cacheKey, null);
+  // In browser, return from cache if present; otherwise return null without locking cache
+  return dayFileCache.get(cacheKey) ?? null;
+}
+
+/**
+ * Asynchronously fetch and cache a day file in browser/client environments,
+ * or load synchronously in Node environments.
+ */
+export async function fetchAndCacheDayFile(
+  prefix: string,
+  day: number
+): Promise<LessonVisualDayFile | null> {
+  const cacheKey = `${prefix}:${day}`;
+  if (dayFileCache.has(cacheKey) && dayFileCache.get(cacheKey) !== null) {
+    return dayFileCache.get(cacheKey)!;
+  }
+
+  if (!isCourseVisualsEnabled(prefix)) {
+    return null;
+  }
+
+  // Node environment
+  if (typeof window === 'undefined') {
+    return loadDayFile(prefix, day);
+  }
+
+  // Browser environment: fetch from API endpoint
+  try {
+    const res = await fetch(`/api/visuals?prefix=${encodeURIComponent(prefix)}&day=${day}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && Array.isArray(data.entries)) {
+        registerDayFile(data);
+        return data;
+      }
+    }
+  } catch {
+    // Non-fatal network error
+  }
+
   return null;
 }
 
