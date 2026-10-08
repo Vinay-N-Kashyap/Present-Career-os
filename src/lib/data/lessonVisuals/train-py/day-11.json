@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Matrix multiplication recap",
+      "codeHash": "58fd1e9b66870f17856c14ac8815b96a59d14f50964b600b106b61bc1e4e2ed4",
+      "spec": {
+        "template": "table",
+        "title": "Matrix multiplication foundation and linear layer computation",
+        "columns": [
+          "range",
+          "len",
+          "sum"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear layers perform matrix multiplication across transformer models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tensor parallelism splits multiplications across distinct device partitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "sum"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "range"
+                  },
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "range"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Matrix multiplication foundation and linear layer computation",
+        "columns": [
+          "range",
+          "len",
+          "sum"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear layers perform matrix multiplication across transformer models.",
+            "rows": [
+              {
+                "cells": [
+                  "range",
+                  "len",
+                  "sum"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len",
+                  "sum"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tensor parallelism splits multiplications across distinct device partitions.",
+            "rows": [
+              {
+                "cells": [
+                  "range",
+                  "len",
+                  "sum"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "range",
+                  "len",
+                  "range"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Column parallelism",
+      "codeHash": "173c8e287a969dc75dc722428d845086b83a625921654047faac413b111af8af",
+      "spec": {
+        "template": "table",
+        "title": "Column-parallel decomposition and output concatenation",
+        "columns": [
+          "parts",
+          "cols",
+          "piece"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In column parallelism weight columns are split into independent groups.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "cols"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "cols"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Partial outputs are concatenated together to form the complete tensor.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "cols"
+                  },
+                  {
+                    "text": "piece"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "cols"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Column-parallel decomposition and output concatenation",
+        "columns": [
+          "parts",
+          "cols",
+          "piece"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In column parallelism weight columns are split into independent groups.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "cols",
+                  "piece"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "cols",
+                  "piece"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Partial outputs are concatenated together to form the complete tensor.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "cols",
+                  "piece"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "cols",
+                  "parts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Row parallelism",
+      "codeHash": "7db4f55566ffc92e990f14d1b7bf64d5beb1db59454fa01823eeafb6ec4555cc",
+      "spec": {
+        "template": "table",
+        "title": "Row-parallel decomposition and all-reduce partial summation",
+        "columns": [
+          "parts",
+          "rows",
+          "partials"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In row parallelism matrix rows are split alongside sliced input vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "partials"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "partials"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An all-reduce combines distributed partial results into the final output.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "partials"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "rows"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Row-parallel decomposition and all-reduce partial summation",
+        "columns": [
+          "parts",
+          "rows",
+          "partials"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In row parallelism matrix rows are split alongside sliced input vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "rows",
+                  "partials"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "rows",
+                  "partials"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "An all-reduce combines distributed partial results into the final output.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "rows",
+                  "partials"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "rows",
+                  "parts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Megatron MLP pattern",
+      "codeHash": "4a03a8d8688d77852e787ddffa306e769cff1e2fb7fbe112b18ee420d24e4df9",
+      "spec": {
+        "template": "table",
+        "title": "Megatron MLP column-row pairing and activation placement",
+        "columns": [
+          "relu",
+          "full",
+          "dev"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Megatron splits the first layer by columns to form hidden representations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "relu"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "dev"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "relu"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "dev"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A single all-reduce sums partial outputs across communicating devices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "relu"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "dev"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "relu"
+                  },
+                  {
+                    "text": "full"
+                  },
+                  {
+                    "text": "relu"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Megatron MLP column-row pairing and activation placement",
+        "columns": [
+          "relu",
+          "full",
+          "dev"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Megatron splits the first layer by columns to form hidden representations.",
+            "rows": [
+              {
+                "cells": [
+                  "relu",
+                  "full",
+                  "dev"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "relu",
+                  "full",
+                  "dev"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "A single all-reduce sums partial outputs across communicating devices.",
+            "rows": [
+              {
+                "cells": [
+                  "relu",
+                  "full",
+                  "dev"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "relu",
+                  "full",
+                  "relu"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Where tensor parallelism fits",
+      "codeHash": "716324e1bfaea4affe1bf4b35b2e682fef876ffcc52569ba89f01be34795ab01",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: splitting layers",
+      "codeHash": "675df17449e671adecc98a7b22dabb0739b6829179d71e02671a798870172c7a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -6724,27 +6724,27 @@
     },
     "train-py:11:0": {
       "partTitle": "Matrix multiplication recap",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:11:1": {
       "partTitle": "Column parallelism",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:11:2": {
       "partTitle": "Row parallelism",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:11:3": {
       "partTitle": "The Megatron MLP pattern",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:11:4": {
       "partTitle": "Where tensor parallelism fits",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:11:5": {
       "partTitle": "Practice time: splitting layers",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:12:0": {
       "partTitle": "Stages and the naive pipeline",
