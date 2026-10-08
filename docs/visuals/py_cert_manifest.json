@@ -7564,27 +7564,27 @@
     },
     "vec-py:16:0": {
       "partTitle": "Layers like a skip list",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:16:1": {
       "partTitle": "Random levels",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:16:2": {
       "partTitle": "Neighbour selection",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:16:3": {
       "partTitle": "Parameters: M, efConstruction and efSearch",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:16:4": {
       "partTitle": "Searching all the layers",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:16:5": {
       "partTitle": "Practice time: HNSW pieces",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:17:0": {
       "partTitle": "Benchmarking a configuration",
