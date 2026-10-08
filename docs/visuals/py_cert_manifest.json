@@ -7540,27 +7540,27 @@
     },
     "vec-py:15:0": {
       "partTitle": "Proximity graphs",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:15:1": {
       "partTitle": "Greedy search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:15:2": {
       "partTitle": "Local minima",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:15:3": {
       "partTitle": "Beam search with ef",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:15:4": {
       "partTitle": "Cost and recall",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:15:5": {
       "partTitle": "Practice time: graph search",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:16:0": {
       "partTitle": "Layers like a skip list",
