@@ -12,8 +12,8 @@
 
 **Total Program Volume:** 12 courses &times; 30 days &times; 6 parts = **2,160 lesson parts**.  
 **Builder:** Antigravity. **Reviewer:** Claude. **Approver:** The Owner.  
-**Version:** 1.0, 8 October 2026. Built on the proven architecture of `PINIT_PY_CERT_VISUALS_PLAN.pdf` (v1.2).  
-**Generated PDF Artifact:** `docs/visuals/PINIT_WEB_FULLSTACK_VISUALS_PLAN.pdf` (200 Pages, 3.98 MB).
+**Version:** 2.0 (Masterclass Production Edition), 8 October 2026. Built on the proven architecture of `PINIT_PY_CERT_VISUALS_PLAN.pdf`.  
+**Generated PDF Artifact:** `docs/visuals/PINIT_WEB_FULLSTACK_VISUALS_PLAN.pdf` (197 Pages, 9.78 MB).
 
 ---
 
@@ -177,9 +177,9 @@ Antigravity is never asked to decide or type anything that an automated test can
 
 ## 📋 PDF Artifact Location
 
-The complete, unabridged, 200-page SRS specification PDF with all 360 individual daily task cards, commands, and 2,160 keys is compiled and available at:
+The complete, unabridged, 197-page SRS specification PDF with all 360 individual daily task cards, commands, and 2,160 keys is compiled and available at:
 
 * **Repository Path:** `docs/visuals/PINIT_WEB_FULLSTACK_VISUALS_PLAN.pdf`
 * **Artifact Path:** `C:\Users\Admin\.gemini\antigravity\brain\c7b35c15-f056-4dc6-888b-f56621a809c1\PINIT_WEB_FULLSTACK_VISUALS_PLAN.pdf`
-* **File Size:** **3.80 MB** (3,980,223 bytes)
-* **Total Pages:** **200 Pages**
+* **File Size:** **9.78 MB** (10,260,300 bytes)
+* **Total Pages:** **197 Pages** (Rendered via Headless Chromium)
