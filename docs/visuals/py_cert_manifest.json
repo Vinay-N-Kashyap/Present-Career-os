@@ -8068,27 +8068,27 @@
     },
     "safe-py:7:0": {
       "partTitle": "Why card numbers are special",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:7:1": {
       "partTitle": "The Luhn check",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:7:2": {
       "partTitle": "Cleaning and length rules",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:7:3": {
       "partTitle": "Finding card numbers in text",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:7:4": {
       "partTitle": "Masking in place",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:7:5": {
       "partTitle": "Personal data on both sides",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:8:0": {
       "partTitle": "Moderation classifiers",
