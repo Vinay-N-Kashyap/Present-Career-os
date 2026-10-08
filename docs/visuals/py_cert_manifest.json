@@ -8212,27 +8212,27 @@
     },
     "safe-py:13:0": {
       "partTitle": "From text to actions",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:13:1": {
       "partTitle": "A tool registry",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:13:2": {
       "partTitle": "Validating a tool call",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:13:3": {
       "partTitle": "Path traversal",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:13:4": {
       "partTitle": "A safe join",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:13:5": {
       "partTitle": "Tool safety in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:14:0": {
       "partTitle": "Human in the loop",
