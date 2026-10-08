@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Return and risk of a portfolio",
+      "codeHash": "0d7e113fc58c22d06a6ab5f542953699bf1b1c1526b2a2afc516acf464cd9a5c",
+      "spec": {
+        "template": "table",
+        "title": "Portfolio expected return, covariance aggregation and correlation",
+        "columns": [
+          "mu",
+          "var"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Expected portfolio returns reflect weighted linear combinations of assets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "var"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cross asset variance terms determine portfolio standard deviation nonlinearly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "var"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mu_a"
+                  },
+                  {
+                    "text": "mu_b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Pairwise correlation terms govern diversification efficiency between assets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "var"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mu_a"
+                  },
+                  {
+                    "text": "mu_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sig_a"
+                  },
+                  {
+                    "text": "sig_b"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The return never changes with correlation; only the risk does.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "var"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "mu_a"
+                  },
+                  {
+                    "text": "mu_b"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sig_a"
+                  },
+                  {
+                    "text": "sig_b"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Portfolio expected return, covariance aggregation and correlation",
+        "columns": [
+          "mu",
+          "var"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Expected portfolio returns reflect weighted linear combinations of assets.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "var"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cross asset variance terms determine portfolio standard deviation nonlinearly.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "var"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mu_a",
+                  "mu_b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Pairwise correlation terms govern diversification efficiency between assets.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "var"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mu_a",
+                  "mu_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sig_a",
+                  "sig_b"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The return never changes with correlation; only the risk does.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "var"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "mu_a",
+                  "mu_b"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sig_a",
+                  "sig_b"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Sharpe ratio",
+      "codeHash": "bf0d1005482216e780f1c3c348cf3fceb940700d5c9328faad4d4a981680b26a",
+      "spec": {
+        "template": "table",
+        "title": "Risk-adjusted return benchmarking and Sharpe ratio metrics",
+        "columns": [
+          "rf",
+          "mix_risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Sharpe ratio measures portfolio excess return relative to risk taken.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "mix_risk"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Excess returns divided by volatility quantify compensation per risk unit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "mix_risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the Sharpe ratio of assets against the combined mix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "mix_risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Diversification raises Sharpe ratios above standalone assets as a free lunch.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "mix_risk"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sharpe"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "sharpe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Risk-adjusted return benchmarking and Sharpe ratio metrics",
+        "columns": [
+          "rf",
+          "mix_risk"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Sharpe ratio measures portfolio excess return relative to risk taken.",
+            "rows": [
+              {
+                "cells": [
+                  "rf",
+                  "mix_risk"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Excess returns divided by volatility quantify compensation per risk unit.",
+            "rows": [
+              {
+                "cells": [
+                  "rf",
+                  "mix_risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sharpe",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example compares the Sharpe ratio of assets against the combined mix.",
+            "rows": [
+              {
+                "cells": [
+                  "rf",
+                  "mix_risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sharpe",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Diversification raises Sharpe ratios above standalone assets as a free lunch.",
+            "rows": [
+              {
+                "cells": [
+                  "rf",
+                  "mix_risk"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sharpe",
+                  "round"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "sharpe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The minimum-variance portfolio",
+      "codeHash": "7b44aafe1b9724b281e975745afe388a81714f9dfdf005269a85cad78c1bd601",
+      "spec": {
+        "template": "table",
+        "title": "Minimum-variance asset allocation and analytical risk minimization",
+        "columns": [
+          "sa",
+          "sb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The minimum-variance portfolio identifies weights that minimize total risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sa"
+                  },
+                  {
+                    "text": "sb"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Analytical derivatives equate variance slopes to zero to solve optimal weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sa"
+                  },
+                  {
+                    "text": "sb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk"
+                  },
+                  {
+                    "text": "formula"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example scans weights and confirms the formula finds the lowest risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sa"
+                  },
+                  {
+                    "text": "sb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk"
+                  },
+                  {
+                    "text": "formula"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "min"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Checking formulas against brute-force scans verifies quantitative logic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sa"
+                  },
+                  {
+                    "text": "sb"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk"
+                  },
+                  {
+                    "text": "formula"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "best"
+                  },
+                  {
+                    "text": "min"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "rho"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Minimum-variance asset allocation and analytical risk minimization",
+        "columns": [
+          "sa",
+          "sb"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The minimum-variance portfolio identifies weights that minimize total risk.",
+            "rows": [
+              {
+                "cells": [
+                  "sa",
+                  "sb"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Analytical derivatives equate variance slopes to zero to solve optimal weights.",
+            "rows": [
+              {
+                "cells": [
+                  "sa",
+                  "sb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "risk",
+                  "formula"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example scans weights and confirms the formula finds the lowest risk.",
+            "rows": [
+              {
+                "cells": [
+                  "sa",
+                  "sb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "risk",
+                  "formula"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "best",
+                  "min"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Checking formulas against brute-force scans verifies quantitative logic.",
+            "rows": [
+              {
+                "cells": [
+                  "sa",
+                  "sb"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "risk",
+                  "formula"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "best",
+                  "min"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "rho"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The efficient frontier",
+      "codeHash": "f2b7657fd7e4c96db4d149baf0a92dc5f259d36dd62247cf3f30c1b057542a68",
+      "spec": {
+        "template": "table",
+        "title": "Markowitz efficient frontier geometry and capital allocation line",
+        "columns": [
+          "mu",
+          "sig"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The efficient frontier traces upper bounds of optimal risk return trade-offs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "sig"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Efficient frontier portfolios deliver maximum expected returns for chosen risk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "sig"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tangency portfolios achieve optimal capital allocation with peak Sharpe ratios.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "sig"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "rho"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints the frontier points and marks the highest-Sharpe mix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "mu"
+                  },
+                  {
+                    "text": "sig"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "points"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rf"
+                  },
+                  {
+                    "text": "rho"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "round"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Markowitz efficient frontier geometry and capital allocation line",
+        "columns": [
+          "mu",
+          "sig"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The efficient frontier traces upper bounds of optimal risk return trade-offs.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "sig"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Efficient frontier portfolios deliver maximum expected returns for chosen risk.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "sig"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "append"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tangency portfolios achieve optimal capital allocation with peak Sharpe ratios.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "sig"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rf",
+                  "rho"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints the frontier points and marks the highest-Sharpe mix.",
+            "rows": [
+              {
+                "cells": [
+                  "mu",
+                  "sig"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "points",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rf",
+                  "rho"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "round",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Estimation error and practical limits",
+      "codeHash": "4b78701da5484510c8c5b287b9222316839a879ee492325a8ef635553da32042",
+      "spec": {
+        "template": "none",
+        "reason": "Estimation error shrinkage and portfolio weight boundary constraints."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: build a portfolio",
+      "codeHash": "89d99c0cce9b55cfd4d1c0b2f29ee248002c92c2d8ee3ad274b7604929d3fdc6",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: Markowitz frontier tracing and minimum variance optimization."
+      },
+      "filled": {}
+    }
+  ]
+}

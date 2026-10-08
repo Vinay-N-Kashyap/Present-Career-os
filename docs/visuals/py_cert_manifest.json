@@ -5500,27 +5500,27 @@
     },
     "quant-py:20:0": {
       "partTitle": "Return and risk of a portfolio",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:20:1": {
       "partTitle": "The Sharpe ratio",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:20:2": {
       "partTitle": "The minimum-variance portfolio",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:20:3": {
       "partTitle": "The efficient frontier",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:20:4": {
       "partTitle": "Estimation error and practical limits",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:20:5": {
       "partTitle": "Practice time: build a portfolio",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:21:0": {
       "partTitle": "Aggregating Greeks",
