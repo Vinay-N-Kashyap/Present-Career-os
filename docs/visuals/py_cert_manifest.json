@@ -7876,27 +7876,27 @@
     },
     "vec-py:29:0": {
       "partTitle": "Personal data in vector search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:29:1": {
       "partTitle": "Redacting before embedding",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:29:2": {
       "partTitle": "Deleting a user's data",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:29:3": {
       "partTitle": "Retention and minimisation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:29:4": {
       "partTitle": "Security threats specific to RAG",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:29:5": {
       "partTitle": "Practice time: privacy",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:30:0": {
       "partTitle": "The capstone design",
