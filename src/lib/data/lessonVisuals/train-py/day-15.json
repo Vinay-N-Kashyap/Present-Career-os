@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why change the learning rate",
+      "codeHash": "a7e09a8122494adef780f057bd28d1e6e710912fae681086acac1f20dda0463c",
+      "spec": {
+        "template": "table",
+        "title": "Three-phase learning rate scheduling: warmup, train, and cooldown",
+        "columns": [
+          "warmup",
+          "name",
+          "plan"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Erratic early gradients require guarded learning rates to stabilise weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decaying step sizes allow the model to settle stably into sharp minima.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "warmup"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Three-phase learning rate scheduling: warmup, train, and cooldown",
+        "columns": [
+          "warmup",
+          "name",
+          "plan"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Erratic early gradients require guarded learning rates to stabilise weights.",
+            "rows": [
+              {
+                "cells": [
+                  "warmup",
+                  "name",
+                  "plan"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "warmup",
+                  "name",
+                  "plan"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Decaying step sizes allow the model to settle stably into sharp minima.",
+            "rows": [
+              {
+                "cells": [
+                  "warmup",
+                  "name",
+                  "plan"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "warmup",
+                  "name",
+                  "warmup"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linear warmup",
+      "codeHash": "26f4ca6aaa9555c4763eb8902ab00ba2e17c555b5346fd5984236d3d99965fc3",
+      "spec": {
+        "template": "table",
+        "title": "Linear warmup rate scaling from zero to maximum learning rate",
+        "columns": [
+          "max_lr",
+          "warmup",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear warmup scales the learning rate from near zero to peak levels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_lr"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_lr"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Warmup provides cheap stability insurance during early training steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "max_lr"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max_lr"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "max_lr"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Linear warmup rate scaling from zero to maximum learning rate",
+        "columns": [
+          "max_lr",
+          "warmup",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear warmup scales the learning rate from near zero to peak levels.",
+            "rows": [
+              {
+                "cells": [
+                  "max_lr",
+                  "warmup",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max_lr",
+                  "warmup",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Warmup provides cheap stability insurance during early training steps.",
+            "rows": [
+              {
+                "cells": [
+                  "max_lr",
+                  "warmup",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max_lr",
+                  "warmup",
+                  "max_lr"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cosine decay",
+      "codeHash": "9aa785303ceb2e03c3f6afa13d5820b1763650da84e9c620e113c745a38b44c3",
+      "spec": {
+        "template": "table",
+        "title": "Cosine annealing schedule and smooth decay trajectory",
+        "columns": [
+          "step",
+          "warmup",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine decay lowers the learning rate smoothly along an annealing wave.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Annealing rates decay gently to support extended optimization phases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "warmup"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cosine annealing schedule and smooth decay trajectory",
+        "columns": [
+          "step",
+          "warmup",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine decay lowers the learning rate smoothly along an annealing wave.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "warmup",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "warmup",
+                  "total"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Annealing rates decay gently to support extended optimization phases.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "warmup",
+                  "total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "warmup",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Step decay",
+      "codeHash": "b40e88f73af5a03d884661fa8d885c337f9d61f98e87ec3c70973a4856f8613c",
+      "spec": {
+        "template": "table",
+        "title": "Step decay schedule and discrete geometric rate reductions",
+        "columns": [
+          "base",
+          "drop",
+          "every"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Step decay multiplies the learning rate by a drop factor at intervals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "drop"
+                  },
+                  {
+                    "text": "every"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "drop"
+                  },
+                  {
+                    "text": "every"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Sudden learning rate reductions trigger sharp drops in loss curves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "drop"
+                  },
+                  {
+                    "text": "every"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "drop"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Step decay schedule and discrete geometric rate reductions",
+        "columns": [
+          "base",
+          "drop",
+          "every"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Step decay multiplies the learning rate by a drop factor at intervals.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "drop",
+                  "every"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "base",
+                  "drop",
+                  "every"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Sudden learning rate reductions trigger sharp drops in loss curves.",
+            "rows": [
+              {
+                "cells": [
+                  "base",
+                  "drop",
+                  "every"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "base",
+                  "drop",
+                  "base"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Schedules in practice",
+      "codeHash": "0acde2d516b82ede5f02e59dc4ed20d9f5e410000df4fcf733ca19f3df2cb9ef",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: schedules",
+      "codeHash": "287be1f5903c4681200c1caf31630cda58e5524c9e116287555f046da98cb2be",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

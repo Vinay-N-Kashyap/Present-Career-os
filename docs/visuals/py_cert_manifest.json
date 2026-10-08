@@ -6820,27 +6820,27 @@
     },
     "train-py:15:0": {
       "partTitle": "Why change the learning rate",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:15:1": {
       "partTitle": "Linear warmup",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:15:2": {
       "partTitle": "Cosine decay",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:15:3": {
       "partTitle": "Step decay",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:15:4": {
       "partTitle": "Schedules in practice",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:15:5": {
       "partTitle": "Practice time: schedules",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:16:0": {
       "partTitle": "Exploding gradients",
