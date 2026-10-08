@@ -6772,27 +6772,27 @@
     },
     "train-py:13:0": {
       "partTitle": "Why activations are stored",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:13:1": {
       "partTitle": "Checkpointing every k layers",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:13:2": {
       "partTitle": "The square-root rule",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:13:3": {
       "partTitle": "The compute cost",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:13:4": {
       "partTitle": "Putting the memory tools together",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:13:5": {
       "partTitle": "Practice time: checkpointing",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:14:0": {
       "partTitle": "Plain SGD and its limits",
