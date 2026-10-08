@@ -6940,27 +6940,27 @@
     },
     "train-py:20:0": {
       "partTitle": "The latency-bandwidth model",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:20:1": {
       "partTitle": "Ring all-reduce time",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:20:2": {
       "partTitle": "Network topology",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:20:3": {
       "partTitle": "Is communication the bottleneck?",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:20:4": {
       "partTitle": "Reducing communication",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:20:5": {
       "partTitle": "Practice time: communication cost",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:21:0": {
       "partTitle": "Gradients become ready in reverse",
