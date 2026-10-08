@@ -8572,27 +8572,27 @@
     },
     "safe-py:28:0": {
       "partTitle": "Learning from preferences",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:28:1": {
       "partTitle": "The Bradley-Terry model",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:28:2": {
       "partTitle": "The pairwise loss",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:28:3": {
       "partTitle": "Fitting ratings from comparisons",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:28:4": {
       "partTitle": "Reward hacking",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:28:5": {
       "partTitle": "Preferences in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:29:0": {
       "partTitle": "Why monitor in production",
