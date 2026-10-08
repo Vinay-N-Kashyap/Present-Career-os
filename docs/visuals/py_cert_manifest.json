@@ -7372,27 +7372,27 @@
     },
     "vec-py:8:0": {
       "partTitle": "Why chunk",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:8:1": {
       "partTitle": "Fixed-size chunks with overlap",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:8:2": {
       "partTitle": "Sentence-aware chunks",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:8:3": {
       "partTitle": "Choosing a chunk size",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:8:4": {
       "partTitle": "Chunk metadata",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:8:5": {
       "partTitle": "Practice time: chunking",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:9:0": {
       "partTitle": "Filters in search",

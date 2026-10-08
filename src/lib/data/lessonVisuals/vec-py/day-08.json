@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 8,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why chunk",
+      "codeHash": "51d8312872e1ecdad69718771f4645ca7af6975431cea9d65c1a027bf6056325",
+      "spec": {
+        "template": "table",
+        "title": "Document chunking trade-offs and passage retrieval",
+        "columns": [
+          "words",
+          "chunks",
+          "words"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A single vector for a whole report blurs distinct topics together.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Smaller chunks yield sharper vectors that isolate relevant passages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document chunking trade-offs and passage retrieval",
+        "columns": [
+          "words",
+          "chunks",
+          "words"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A single vector for a whole report blurs distinct topics together.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "chunks",
+                  "words"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "chunks",
+                  "words"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Smaller chunks yield sharper vectors that isolate relevant passages.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "chunks",
+                  "words"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "words",
+                  "chunks",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed-size chunks with overlap",
+      "codeHash": "a26f13eb321c9e844b3ee677d7671cdc2166af595ef383b415f4f54b21eb8be4",
+      "spec": {
+        "template": "table",
+        "title": "Fixed window text chunking with sliding overlap",
+        "columns": [
+          "words",
+          "start",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sliding overlap preserves each sentence across a chunk boundary.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Fixed chunking provides predictable partitions across input text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "start"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fixed window text chunking with sliding overlap",
+        "columns": [
+          "words",
+          "start",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sliding overlap preserves each sentence across a chunk boundary.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "start",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "start",
+                  "step"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Fixed chunking provides predictable partitions across input text.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "start",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "words",
+                  "start",
+                  "start"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sentence-aware chunks",
+      "codeHash": "29367ae2a6db0606954754dd7e151cafdf17844c6a924bcea98228bcf93c78c0",
+      "spec": {
+        "template": "table",
+        "title": "Sentence boundary preservation in passage chunks",
+        "columns": [
+          "sentences",
+          "chunks",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sentence chunking never cuts inside a complete sentence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Chunks that respect complete sentences read naturally in prompts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sentences"
+                  },
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sentence boundary preservation in passage chunks",
+        "columns": [
+          "sentences",
+          "chunks",
+          "current"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sentence chunking never cuts inside a complete sentence.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "chunks",
+                  "current"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sentences",
+                  "chunks",
+                  "current"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Chunks that respect complete sentences read naturally in prompts.",
+            "rows": [
+              {
+                "cells": [
+                  "sentences",
+                  "chunks",
+                  "current"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sentences",
+                  "chunks",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a chunk size",
+      "codeHash": "803a0b89e41990e7ddccb73b52095c43ad50d35a20d8c154a550bf42035db924",
+      "spec": {
+        "template": "table",
+        "title": "Chunk size selection and token budget allocation",
+        "columns": [
+          "chunks",
+          "overlap",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Small chunks provide precise semantic matches but can lack context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Large chunks preserve context while consuming more prompt budget.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "overlap"
+                  },
+                  {
+                    "text": "overlap"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chunk size selection and token budget allocation",
+        "columns": [
+          "chunks",
+          "overlap",
+          "chunks"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Small chunks provide precise semantic matches but can lack context.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "overlap",
+                  "chunks"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "overlap",
+                  "chunks"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Large chunks preserve context while consuming more prompt budget.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "overlap",
+                  "chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "overlap",
+                  "overlap"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chunk metadata",
+      "codeHash": "2cf261fea17e4d76ce8d2bbc84c094ff05d9df502b06362b5eed6aa8f76c893c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: chunking",
+      "codeHash": "0b1fa0f95909aed62cd176100a2eccb5354c31ecdbbc360439864aabc2d1679e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
