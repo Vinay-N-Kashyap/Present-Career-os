@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why chain prompts",
+      "codeHash": "59f06abdac0ef7e6f8eb1fe961c83b6af37b2c1afd2f4bb4d999e22185c0d50f",
+      "spec": {
+        "template": "table",
+        "title": "Sequential prompt execution and modular task decomposition",
+        "columns": [
+          "extract",
+          "analyse",
+          "draft"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Prompt chaining splits complex work into discrete single-purpose steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "extract"
+                  },
+                  {
+                    "text": "analyse"
+                  },
+                  {
+                    "text": "draft"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "extract"
+                  },
+                  {
+                    "text": "analyse"
+                  },
+                  {
+                    "text": "draft"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Chains extract facts, analyse them, and draft the final formatted result.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "extract"
+                  },
+                  {
+                    "text": "analyse"
+                  },
+                  {
+                    "text": "draft"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "extract"
+                  },
+                  {
+                    "text": "analyse"
+                  },
+                  {
+                    "text": "notes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sequential prompt execution and modular task decomposition",
+        "columns": [
+          "extract",
+          "analyse",
+          "draft"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Prompt chaining splits complex work into discrete single-purpose steps.",
+            "rows": [
+              {
+                "cells": [
+                  "extract",
+                  "analyse",
+                  "draft"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "extract",
+                  "analyse",
+                  "draft"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Chains extract facts, analyse them, and draft the final formatted result.",
+            "rows": [
+              {
+                "cells": [
+                  "extract",
+                  "analyse",
+                  "draft"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "extract",
+                  "analyse",
+                  "notes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing a chain",
+      "codeHash": "62094e6ea034a9c5cb4d0b95b72cd4fcfd6a808eee5076d84875cbcdeb63de7d",
+      "spec": {
+        "template": "table",
+        "title": "Chain architecture planning with inputs and outputs",
+        "columns": [
+          "name",
+          "needs",
+          "gives"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Designers start from the final output and work backwards through each step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "needs"
+                  },
+                  {
+                    "text": "gives"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "needs"
+                  },
+                  {
+                    "text": "gives"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear input and output definitions make chains modular and reliable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "needs"
+                  },
+                  {
+                    "text": "gives"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "extract"
+                  },
+                  {
+                    "text": "needs"
+                  },
+                  {
+                    "text": "gives"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chain architecture planning with inputs and outputs",
+        "columns": [
+          "name",
+          "needs",
+          "gives"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Designers start from the final output and work backwards through each step.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "needs",
+                  "gives"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "needs",
+                  "gives"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clear input and output definitions make chains modular and reliable.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "needs",
+                  "gives"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "extract",
+                  "needs",
+                  "gives"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running a chain safely",
+      "codeHash": "13ca3bc63bfc673fadae41a328849fd03a29879799e2caecb80d73d925859877",
+      "spec": {
+        "template": "table",
+        "title": "Chain execution runtime and step tracing inspection",
+        "columns": [
+          "name",
+          "trace",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The chain runner executes steps in order and records an execution trace.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Empty outputs trigger immediate stops so failure does not cascade.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "trace"
+                  },
+                  {
+                    "text": "current"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chain execution runtime and step tracing inspection",
+        "columns": [
+          "name",
+          "trace",
+          "result"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The chain runner executes steps in order and records an execution trace.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "trace",
+                  "result"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "trace",
+                  "result"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Empty outputs trigger immediate stops so failure does not cascade.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "trace",
+                  "result"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "name",
+                  "trace",
+                  "current"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decomposing instructions",
+      "codeHash": "5ad7596ad2dcc716b5c0ed04a5c9d3ef7086fc5595cec7cffdb9c8fe8201849a",
+      "spec": {
+        "template": "table",
+        "title": "Natural language request decomposition into ordered steps",
+        "columns": [
+          "task",
+          "pieces",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-step requests combine several actions into one long sentence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "pieces"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "pieces"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rule logic splits the composite task into clean ordered subtasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "pieces"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "task"
+                  },
+                  {
+                    "text": "pieces"
+                  },
+                  {
+                    "text": "task"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Natural language request decomposition into ordered steps",
+        "columns": [
+          "task",
+          "pieces",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi-step requests combine several actions into one long sentence.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "pieces",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "task",
+                  "pieces",
+                  "step"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Rule logic splits the composite task into clean ordered subtasks.",
+            "rows": [
+              {
+                "cells": [
+                  "task",
+                  "pieces",
+                  "step"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "task",
+                  "pieces",
+                  "task"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chains with checks in between",
+      "codeHash": "f14a64718d02016e01fc3ee78742812aba1a5f66b6738a4d798c7c170bc1c943",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: chain and split",
+      "codeHash": "1451cee9f4ce1fab7288f829606b225c551ef243e3e75886e12df6b4f194b39a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

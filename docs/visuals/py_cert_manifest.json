@@ -6004,27 +6004,27 @@
     },
     "prompt-py:11:0": {
       "partTitle": "Why chain prompts",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:11:1": {
       "partTitle": "Designing a chain",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:11:2": {
       "partTitle": "Running a chain safely",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:11:3": {
       "partTitle": "Decomposing instructions",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:11:4": {
       "partTitle": "Chains with checks in between",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:11:5": {
       "partTitle": "Practice time: chain and split",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:12:0": {
       "partTitle": "Tone and audience",
