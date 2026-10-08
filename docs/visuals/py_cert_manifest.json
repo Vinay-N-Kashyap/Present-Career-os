@@ -7468,27 +7468,27 @@
     },
     "vec-py:12:0": {
       "partTitle": "The memory problem",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:12:1": {
       "partTitle": "Sub-vectors and codebooks",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:12:2": {
       "partTitle": "Encoding",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:12:3": {
       "partTitle": "Asymmetric distance computation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:12:4": {
       "partTitle": "Accuracy and tuning",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:12:5": {
       "partTitle": "Practice time: product quantisation",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:13:0": {
       "partTitle": "Scalar quantisation",
