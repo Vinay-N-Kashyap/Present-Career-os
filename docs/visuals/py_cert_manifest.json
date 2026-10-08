@@ -7156,27 +7156,27 @@
     },
     "train-py:29:0": {
       "partTitle": "Clusters and schedulers",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:29:1": {
       "partTitle": "Placing jobs well",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:29:2": {
       "partTitle": "The full cost of a run",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:29:3": {
       "partTitle": "Utilisation of shared clusters",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:29:4": {
       "partTitle": "Planning the capacity you need",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:29:5": {
       "partTitle": "Practice time: clusters and cost",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:30:0": {
       "partTitle": "Choosing a strategy that fits",
