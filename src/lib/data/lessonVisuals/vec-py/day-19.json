@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 19,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why shard",
+      "codeHash": "9a00db51e993a9b8d104d5bd1b8f87c29ec8182867faa088b7b1e4a0441d7969",
+      "spec": {
+        "template": "table",
+        "title": "Capacity calculation and horizontal shard partitioning",
+        "columns": [
+          "vectors",
+          "usable",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sharding splits large vector collections across multiple independent servers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "usable"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "usable"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Horizontal scaling increases storage capacity by distributing shards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "usable"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vectors"
+                  },
+                  {
+                    "text": "usable"
+                  },
+                  {
+                    "text": "vectors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capacity calculation and horizontal shard partitioning",
+        "columns": [
+          "vectors",
+          "usable",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Sharding splits large vector collections across multiple independent servers.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "usable",
+                  "shards"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "usable",
+                  "shards"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Horizontal scaling increases storage capacity by distributing shards.",
+            "rows": [
+              {
+                "cells": [
+                  "vectors",
+                  "usable",
+                  "shards"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "vectors",
+                  "usable",
+                  "vectors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash-based placement",
+      "codeHash": "c71159418c874f4e6372de50642b572e7ae1c409e13d4bf7b6b36145ec9236b4",
+      "spec": {
+        "template": "table",
+        "title": "Deterministic hash partitioning and uniform document spread",
+        "columns": [
+          "shards",
+          "counts",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A stable hash algorithm ensures consistent placement across server restarts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deterministic hashing spreads documents evenly across partition shards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "counts"
+                  },
+                  {
+                    "text": "counts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deterministic hash partitioning and uniform document spread",
+        "columns": [
+          "shards",
+          "counts",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A stable hash algorithm ensures consistent placement across server restarts.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "counts",
+                  "shards"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "counts",
+                  "shards"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deterministic hashing spreads documents evenly across partition shards.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "counts",
+                  "shards"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "counts",
+                  "counts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scatter-gather search",
+      "codeHash": "dc88e69595a9c3ba21c70504e13d1be73970f2ca4d27b8bea7b9065877f63514",
+      "spec": {
+        "template": "table",
+        "title": "Parallel shard dispatch and global top-k gathering",
+        "columns": [
+          "shards",
+          "gathered",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scatter search dispatches queries to shards and gathers merged results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "gathered"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "gathered"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each shard returns local candidates before the coordinator merges them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "gathered"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "shards"
+                  },
+                  {
+                    "text": "gathered"
+                  },
+                  {
+                    "text": "gathered"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parallel shard dispatch and global top-k gathering",
+        "columns": [
+          "shards",
+          "gathered",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scatter search dispatches queries to shards and gathers merged results.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "gathered",
+                  "shards"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "gathered",
+                  "shards"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each shard returns local candidates before the coordinator merges them.",
+            "rows": [
+              {
+                "cells": [
+                  "shards",
+                  "gathered",
+                  "shards"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "shards",
+                  "gathered",
+                  "gathered"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replication",
+      "codeHash": "bbd5992f9dd30892eabf23dd3845be38b0cc304b3306a7735634ae641454f99a",
+      "spec": {
+        "template": "table",
+        "title": "High availability replicas and query load distribution",
+        "columns": [
+          "replicas",
+          "healthy",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Replicas provide high availability when an individual machine fails.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding read replicas multiplies query throughput across concurrent requests.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "replicas"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "replicas"
+                  },
+                  {
+                    "text": "healthy"
+                  },
+                  {
+                    "text": "healthy"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "High availability replicas and query load distribution",
+        "columns": [
+          "replicas",
+          "healthy",
+          "replicas"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Replicas provide high availability when an individual machine fails.",
+            "rows": [
+              {
+                "cells": [
+                  "replicas",
+                  "healthy",
+                  "replicas"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "replicas",
+                  "healthy",
+                  "replicas"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adding read replicas multiplies query throughput across concurrent requests.",
+            "rows": [
+              {
+                "cells": [
+                  "replicas",
+                  "healthy",
+                  "replicas"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "replicas",
+                  "healthy",
+                  "healthy"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating a sharded cluster",
+      "codeHash": "cd4da5bcc05beee0480f9b7104cf7c9b17409983c20e5837c44d9de26307407c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: shards",
+      "codeHash": "cd9a79be04fbae9b2a5e5e0cf71f8295e657cac3fa4e10c320984712680a44df",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
