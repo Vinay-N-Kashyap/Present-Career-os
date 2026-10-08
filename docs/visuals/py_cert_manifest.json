@@ -6340,27 +6340,27 @@
     },
     "prompt-py:25:0": {
       "partTitle": "What a custom assistant is",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:25:1": {
       "partTitle": "Writing assistant instructions",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:25:2": {
       "partTitle": "Answering from a FAQ",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:25:3": {
       "partTitle": "Actions: connecting to APIs",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:25:4": {
       "partTitle": "Validating assistant configurations",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:25:5": {
       "partTitle": "Practice time: FAQ answers and config checks",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:26:0": {
       "partTitle": "AI as a personal planner",
