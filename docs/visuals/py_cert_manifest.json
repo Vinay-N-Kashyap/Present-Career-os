@@ -7060,27 +7060,27 @@
     },
     "train-py:25:0": {
       "partTitle": "Sparse models",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:25:1": {
       "partTitle": "Top-k routing",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:25:2": {
       "partTitle": "Expert capacity",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:25:3": {
       "partTitle": "Load balancing",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:25:4": {
       "partTitle": "Expert parallelism",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:25:5": {
       "partTitle": "Practice time: experts",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:26:0": {
       "partTitle": "Why full fine-tuning is expensive",

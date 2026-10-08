@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Sparse models",
+      "codeHash": "0eebbacc86cecc4719147ecb6d055c44a8c0d655ecf46e40cbeede2bc85f2237",
+      "spec": {
+        "template": "table",
+        "title": "Sparse mixture of experts architecture and token routing mechanics",
+        "columns": [
+          "experts",
+          "shared",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A mixture-of-experts layer contains several expert networks and a router.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "experts"
+                  },
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "experts"
+                  },
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A model can have many more parameters for about the same compute per token.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "experts"
+                  },
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "experts"
+                  },
+                  {
+                    "text": "shared"
+                  },
+                  {
+                    "text": "experts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sparse mixture of experts architecture and token routing mechanics",
+        "columns": [
+          "experts",
+          "shared",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A mixture-of-experts layer contains several expert networks and a router.",
+            "rows": [
+              {
+                "cells": [
+                  "experts",
+                  "shared",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "experts",
+                  "shared",
+                  "total"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A model can have many more parameters for about the same compute per token.",
+            "rows": [
+              {
+                "cells": [
+                  "experts",
+                  "shared",
+                  "total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "experts",
+                  "shared",
+                  "experts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Top-k routing",
+      "codeHash": "49f39fb54eb509ad5a43686565c087c6779b9d3e14da3544841d0fcef15c0916",
+      "spec": {
+        "template": "table",
+        "title": "Top-k gating score calculation and expert assignment selection",
+        "columns": [
+          "scores",
+          "chosen",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The router is a small linear layer that produces a score for each expert.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Top routing sends each token to designated experts with the highest scores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "scores"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scores"
+                  },
+                  {
+                    "text": "chosen"
+                  },
+                  {
+                    "text": "chosen"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-k gating score calculation and expert assignment selection",
+        "columns": [
+          "scores",
+          "chosen",
+          "scores"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The router is a small linear layer that produces a score for each expert.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "chosen",
+                  "scores"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "chosen",
+                  "scores"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Top routing sends each token to designated experts with the highest scores.",
+            "rows": [
+              {
+                "cells": [
+                  "scores",
+                  "chosen",
+                  "scores"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "scores",
+                  "chosen",
+                  "chosen"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expert capacity",
+      "codeHash": "224f0bcdbc057195d3bc28c1755f0ec426effd108d57aecc83342e7730fcacf8",
+      "spec": {
+        "template": "table",
+        "title": "Expert buffer capacity enforcement and overflow token dropping",
+        "columns": [
+          "capacity",
+          "load",
+          "dropped"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each expert therefore has a capacity bounding maximum tokens per batch.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tokens that arrive when their expert is full are dropped from that layer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "dropped"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "capacity"
+                  },
+                  {
+                    "text": "load"
+                  },
+                  {
+                    "text": "capacity"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Expert buffer capacity enforcement and overflow token dropping",
+        "columns": [
+          "capacity",
+          "load",
+          "dropped"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each expert therefore has a capacity bounding maximum tokens per batch.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "load",
+                  "dropped"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "capacity",
+                  "load",
+                  "dropped"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tokens that arrive when their expert is full are dropped from that layer.",
+            "rows": [
+              {
+                "cells": [
+                  "capacity",
+                  "load",
+                  "dropped"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "capacity",
+                  "load",
+                  "capacity"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Load balancing",
+      "codeHash": "e888a2bb1301e80cc6179b3faee3bb2d87420f7c26f1d37d5102d29bac789295",
+      "spec": {
+        "template": "table",
+        "title": "Auxiliary load balancing loss penalizing routing skewness",
+        "columns": [
+          "fraction",
+          "prob",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Without encouragement routers tend to favour a few experts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fraction"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fraction"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "An auxiliary load-balancing loss adds a penalty when tokens are uneven.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fraction"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "fraction"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fraction"
+                  },
+                  {
+                    "text": "prob"
+                  },
+                  {
+                    "text": "prob"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Auxiliary load balancing loss penalizing routing skewness",
+        "columns": [
+          "fraction",
+          "prob",
+          "fraction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Without encouragement routers tend to favour a few experts.",
+            "rows": [
+              {
+                "cells": [
+                  "fraction",
+                  "prob",
+                  "fraction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fraction",
+                  "prob",
+                  "fraction"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "An auxiliary load-balancing loss adds a penalty when tokens are uneven.",
+            "rows": [
+              {
+                "cells": [
+                  "fraction",
+                  "prob",
+                  "fraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fraction",
+                  "prob",
+                  "prob"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expert parallelism",
+      "codeHash": "94b433f35854b5e184baf4f9437d4102e35b3b0917c3fcbd02e6f434e4e9dfe9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: experts",
+      "codeHash": "6c162a984e6e91930c091ed1f7dd782728fc1da61b6d9970185414847ce7358d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
