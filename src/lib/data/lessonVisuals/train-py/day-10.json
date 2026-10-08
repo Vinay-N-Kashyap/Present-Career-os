@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "FSDP in one picture",
+      "codeHash": "62c080f21ab553db4d736d10d82edf17d390c018a8284376177f39040f168d4e",
+      "spec": {
+        "template": "table",
+        "title": "FSDP operational lifecycle: all-gather, compute, and free",
+        "columns": [
+          "events",
+          "forward",
+          "backward"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Before forward execution each unit gathers its full layer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backward execution computes gradients and performs reduce-scatter reduction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "events"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FSDP operational lifecycle: all-gather, compute, and free",
+        "columns": [
+          "events",
+          "forward",
+          "backward"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Before forward execution each unit gathers its full layer parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "events",
+                  "forward",
+                  "backward"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "events",
+                  "forward",
+                  "backward"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backward execution computes gradients and performs reduce-scatter reduction.",
+            "rows": [
+              {
+                "cells": [
+                  "events",
+                  "forward",
+                  "backward"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "events",
+                  "forward",
+                  "events"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The schedule layer by layer",
+      "codeHash": "c58978245153cf5ed8372eb9ca7df38f6c8f37b50e9b132736b569be32ebfdb7",
+      "spec": {
+        "template": "table",
+        "title": "Layer-by-layer forward and backward collective scheduling",
+        "columns": [
+          "layers",
+          "events",
+          "block1"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forward execution visits layers in sequential order to compute activations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "block1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "block1"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backward evaluation traverses layers in reverse order to distribute gradients.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "block1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "events"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Layer-by-layer forward and backward collective scheduling",
+        "columns": [
+          "layers",
+          "events",
+          "block1"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forward execution visits layers in sequential order to compute activations.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "events",
+                  "block1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "events",
+                  "block1"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Backward evaluation traverses layers in reverse order to distribute gradients.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "events",
+                  "block1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "events",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flattening and sharding",
+      "codeHash": "a313393252a554b6fe48b6a68b087d8973b6647b4f652483441b9e4cfc893a3a",
+      "spec": {
+        "template": "table",
+        "title": "Parameter flattening, padding, and uniform shard distribution",
+        "columns": [
+          "values",
+          "padded",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Flattening concatenates unit parameters into one continuous tensor buffer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "padded"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "padded"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Flattened parameters are partitioned into equal consecutive shards.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "padded"
+                  },
+                  {
+                    "text": "shards"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "padded"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parameter flattening, padding, and uniform shard distribution",
+        "columns": [
+          "values",
+          "padded",
+          "shards"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Flattening concatenates unit parameters into one continuous tensor buffer.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "padded",
+                  "shards"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "values",
+                  "padded",
+                  "shards"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Flattened parameters are partitioned into equal consecutive shards.",
+            "rows": [
+              {
+                "cells": [
+                  "values",
+                  "padded",
+                  "shards"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "values",
+                  "padded",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Peak memory with FSDP",
+      "codeHash": "6d3091323dd2c73c2c5b6c413b5fd3b5497bfd68a05a35a0621303ff6681d0c8",
+      "spec": {
+        "template": "table",
+        "title": "FSDP peak parameter memory comparison against standard DDP",
+        "columns": [
+          "layers",
+          "ddp",
+          "fsdp"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Peak parameter memory equals local shards plus currently gathered units.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "ddp"
+                  },
+                  {
+                    "text": "fsdp"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "ddp"
+                  },
+                  {
+                    "text": "fsdp"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Gradients and optimizer states follow identical sharding reductions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "ddp"
+                  },
+                  {
+                    "text": "fsdp"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layers"
+                  },
+                  {
+                    "text": "ddp"
+                  },
+                  {
+                    "text": "layers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "FSDP peak parameter memory comparison against standard DDP",
+        "columns": [
+          "layers",
+          "ddp",
+          "fsdp"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Peak parameter memory equals local shards plus currently gathered units.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "ddp",
+                  "fsdp"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "ddp",
+                  "fsdp"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Gradients and optimizer states follow identical sharding reductions.",
+            "rows": [
+              {
+                "cells": [
+                  "layers",
+                  "ddp",
+                  "fsdp"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "layers",
+                  "ddp",
+                  "layers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Using FSDP well",
+      "codeHash": "91b4db70d0eef6f51361b436ba4ffe766bacf61ac55bc86883944e0bf711bb49",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: FSDP",
+      "codeHash": "bac7c55ddeac2e3504ef8be159527ff4cc7239ce3830248712d2f00ba882fed7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -6700,27 +6700,27 @@
     },
     "train-py:10:0": {
       "partTitle": "FSDP in one picture",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:10:1": {
       "partTitle": "The schedule layer by layer",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:10:2": {
       "partTitle": "Flattening and sharding",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:10:3": {
       "partTitle": "Peak memory with FSDP",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:10:4": {
       "partTitle": "Using FSDP well",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:10:5": {
       "partTitle": "Practice time: FSDP",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:11:0": {
       "partTitle": "Matrix multiplication recap",
