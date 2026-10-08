@@ -293,6 +293,92 @@ export const statesSpecSchema = z.object({
   showSpaces: z.boolean().optional(),
 });
 
+// --- Template 12: component-tree ---
+export const componentTreeNodeSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  props: z.record(z.string(), z.string()).optional(),
+  state: z.record(z.string(), z.string()).optional(),
+  tone: visualToneSchema.optional(),
+});
+
+export const componentTreeStepSpecSchema = stepBaseSpecSchema.extend({
+  activeId: z.string().min(1).optional(),
+  reRenderingIds: z.array(z.string()).optional(),
+  propsPassed: z
+    .object({
+      from: z.string().min(1),
+      to: z.string().min(1),
+      propName: z.string().min(1),
+      value: z.union([bindingSchema, z.string()]),
+    })
+    .optional(),
+  eventFired: z
+    .object({
+      from: z.string().min(1),
+      to: z.string().min(1),
+      eventName: z.string().min(1),
+    })
+    .optional(),
+  tone: visualToneSchema.optional(),
+});
+
+export const componentTreeSpecSchema = z.object({
+  template: z.literal('component-tree'),
+  title: z.string().min(1),
+  nodes: z.array(componentTreeNodeSchema).min(1).max(6),
+  steps: z.array(componentTreeStepSpecSchema).min(2).max(5),
+  showSpaces: z.boolean().optional(),
+});
+
+// --- Template 13: workflow ---
+export const workflowStageNodeSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  subtext: z.string().optional(),
+  tone: visualToneSchema.optional(),
+  badge: z.string().optional(),
+});
+
+export const workflowStepSpecSchema = stepBaseSpecSchema.extend({
+  activeStageId: z.string().min(1).optional(),
+  statusBadge: z.union([bindingSchema, z.string()]).optional(),
+  throughput: z.union([bindingSchema, z.string()]).optional(),
+  tone: visualToneSchema.optional(),
+});
+
+export const workflowSpecSchema = z.object({
+  template: z.literal('workflow'),
+  title: z.string().min(1),
+  stages: z.array(workflowStageNodeSchema).min(2).max(6),
+  steps: z.array(workflowStepSpecSchema).min(2).max(5),
+  showSpaces: z.boolean().optional(),
+});
+
+// --- Template 14: wireframe ---
+export const wireframeBoxSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  flex: z.string().optional(),
+  tone: visualToneSchema.optional(),
+});
+
+export const wireframeStepSpecSchema = stepBaseSpecSchema.extend({
+  layoutMode: z.enum(['flex-row', 'flex-col', 'box-model', 'grid']).optional(),
+  justifyContent: z.string().optional(),
+  alignItems: z.string().optional(),
+  activeBoxId: z.string().min(1).optional(),
+  tone: visualToneSchema.optional(),
+});
+
+export const wireframeSpecSchema = z.object({
+  template: z.literal('wireframe'),
+  title: z.string().min(1),
+  boxes: z.array(wireframeBoxSchema).min(1).max(6),
+  steps: z.array(wireframeStepSpecSchema).min(2).max(5),
+  showSpaces: z.boolean().optional(),
+});
+
 // --- None Template ---
 export const noneSpecSchema = z.object({
   template: z.literal('none'),
@@ -312,6 +398,9 @@ export const visualSpecSchema = z.discriminatedUnion('template', [
   barsSpecSchema,
   sequenceSpecSchema,
   statesSpecSchema,
+  componentTreeSpecSchema,
+  workflowSpecSchema,
+  wireframeSpecSchema,
   noneSpecSchema,
 ]);
 

@@ -21,7 +21,17 @@ import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
 
 // Keep enumerable keys of TEMPLATE_REGISTRY matching the 5 existing templates
-const PHASE1_NEW_TEMPLATES = ['cells', 'stack-queue', 'tree-graph', 'bars', 'sequence', 'states'];
+const PHASE1_NEW_TEMPLATES = [
+  'cells',
+  'stack-queue',
+  'tree-graph',
+  'bars',
+  'sequence',
+  'states',
+  'component-tree',
+  'workflow',
+  'wireframe',
+];
 for (const t of PHASE1_NEW_TEMPLATES) {
   if (t in TEMPLATE_REGISTRY) {
     Object.defineProperty(TEMPLATE_REGISTRY, t, { enumerable: false });

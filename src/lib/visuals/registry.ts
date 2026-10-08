@@ -11,6 +11,9 @@ import {
   barsSpecSchema,
   sequenceSpecSchema,
   statesSpecSchema,
+  componentTreeSpecSchema,
+  workflowSpecSchema,
+  wireframeSpecSchema,
 } from './schema';
 import type { FillRunContext } from './fill/types';
 import { fillFlow } from './fill/flow';
@@ -24,6 +27,9 @@ import { fillTreeGraph } from './fill/tree-graph';
 import { fillBars } from './fill/bars';
 import { fillSequence } from './fill/sequence';
 import { fillStates } from './fill/states';
+import { fillComponentTree } from './fill/component-tree';
+import { fillWorkflow } from './fill/workflow';
+import { fillWireframe } from './fill/wireframe';
 
 export type ExistingTemplateName = 'flow' | 'boxes' | 'table' | 'letters' | 'compare';
 
@@ -34,7 +40,10 @@ export type AllTemplateName =
   | 'tree-graph'
   | 'bars'
   | 'sequence'
-  | 'states';
+  | 'states'
+  | 'component-tree'
+  | 'workflow'
+  | 'wireframe';
 
 export interface TemplateRegistryEntry {
   name: string;
@@ -109,6 +118,24 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     description: '2–5 states, with the current one lit for lifecycles, circuit breakers, and locks',
     specSchema: statesSpecSchema,
     fill: fillStates,
+  },
+  'component-tree': {
+    name: 'component-tree',
+    description: 'React component hierarchy showing props flowing down, callbacks up, and re-renders',
+    specSchema: componentTreeSpecSchema,
+    fill: fillComponentTree,
+  },
+  workflow: {
+    name: 'workflow',
+    description: 'Multi-tier architecture topology connecting client, ingress, pods, queues, and databases',
+    specSchema: workflowSpecSchema,
+    fill: fillWorkflow,
+  },
+  wireframe: {
+    name: 'wireframe',
+    description: 'CSS Box Model and layout container visualizer showing margin, padding, flex, and grid',
+    specSchema: wireframeSpecSchema,
+    fill: fillWireframe,
   },
 };
 

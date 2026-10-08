@@ -12,6 +12,9 @@ import {
   flowSpecSchema,
   bindingSchema,
   lessonVisualDayFileSchema,
+  componentTreeSpecSchema,
+  workflowSpecSchema,
+  wireframeSpecSchema,
 } from '../src/lib/visuals/schema';
 import {
   TEMPLATE_REGISTRY,
@@ -255,3 +258,71 @@ test('registry maps all 5 existing templates', () => {
   assert.strictEqual(getTemplateRegistryEntry('non-existent'), undefined);
   assert.strictEqual(Object.keys(TEMPLATE_REGISTRY).length, 5);
 });
+
+test('component-tree spec passes schema validation', () => {
+  const spec = {
+    template: 'component-tree',
+    title: 'React Props Flow',
+    nodes: [
+      { id: 'app', name: 'App' },
+      { id: 'card', name: 'Card' },
+    ],
+    steps: [
+      { at: 'say1', caption: 'Root render', activeId: 'app' },
+      {
+        at: 'say2',
+        caption: 'Props passed',
+        activeId: 'card',
+        propsPassed: { from: 'app', to: 'card', propName: 'user', value: 'Alice' },
+      },
+    ],
+  };
+  assert.strictEqual(visualSpecSchema.safeParse(spec).success, true);
+  assert.strictEqual(componentTreeSpecSchema.safeParse(spec).success, true);
+});
+
+test('workflow spec passes schema validation', () => {
+  const spec = {
+    template: 'workflow',
+    title: 'Deployment Pipeline',
+    stages: [
+      { id: 'build', name: 'Build' },
+      { id: 'deploy', name: 'Deploy' },
+    ],
+    steps: [
+      { at: 'say1', caption: 'Building container', activeStageId: 'build', statusBadge: 'Compiling' },
+      { at: 'say2', caption: 'Deploying to cluster', activeStageId: 'deploy', statusBadge: 'Live' },
+    ],
+  };
+  assert.strictEqual(visualSpecSchema.safeParse(spec).success, true);
+  assert.strictEqual(workflowSpecSchema.safeParse(spec).success, true);
+});
+
+test('wireframe spec passes schema validation', () => {
+  const spec = {
+    template: 'wireframe',
+    title: 'Flexbox Layout',
+    boxes: [
+      { id: 'b1', label: 'Sidebar' },
+      { id: 'b2', label: 'Content' },
+    ],
+    steps: [
+      { at: 'say1', caption: 'Row layout', layoutMode: 'flex-row' },
+      { at: 'say2', caption: 'Centered content', layoutMode: 'flex-row', justifyContent: 'center' },
+    ],
+  };
+  assert.strictEqual(visualSpecSchema.safeParse(spec).success, true);
+  assert.strictEqual(wireframeSpecSchema.safeParse(spec).success, true);
+});
+
+test('registry maps new web templates', () => {
+  const webTemplates = ['component-tree', 'workflow', 'wireframe'] as const;
+  for (const name of webTemplates) {
+    assert.ok(isRegisteredTemplate(name), `${name} should be registered`);
+    const entry = getTemplateRegistryEntry(name);
+    assert.ok(entry, `Entry for ${name} should exist`);
+    assert.strictEqual(entry.name, name);
+    assert.ok(entry.specSchema, `Schema for ${name} should exist`);
+  }
+});
+

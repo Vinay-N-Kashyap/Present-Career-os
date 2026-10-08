@@ -376,6 +376,129 @@ export interface StatesSpec {
   showSpaces?: boolean;
 }
 
+// --- Template 12: component-tree ---
+export interface ComponentTreeNodeType {
+  id: string;
+  name: string;
+  props?: Record<string, string>;
+  state?: Record<string, string>;
+  tone?: VisualTone;
+}
+
+export interface ComponentTreeStep extends StepBase {
+  activeId?: string;
+  reRenderingIds?: string[];
+  propsPassed?: { from: string; to: string; propName: string; value: string };
+  eventFired?: { from: string; to: string; eventName: string };
+  tone?: VisualTone;
+  nodes?: ComponentTreeNodeType[];
+}
+
+export interface ComponentTreeVisual {
+  template: 'component-tree';
+  title: string;
+  nodes: ComponentTreeNodeType[];
+  steps: ComponentTreeStep[];
+  showSpaces?: boolean;
+}
+
+export interface ComponentTreeStepSpec extends StepBaseSpec {
+  activeId?: string;
+  reRenderingIds?: string[];
+  propsPassed?: { from: string; to: string; propName: string; value: Binding | string };
+  eventFired?: { from: string; to: string; eventName: string };
+  tone?: VisualTone;
+}
+
+export interface ComponentTreeSpec {
+  template: 'component-tree';
+  title: string;
+  nodes: ComponentTreeNodeType[];
+  steps: ComponentTreeStepSpec[];
+  showSpaces?: boolean;
+}
+
+// --- Template 13: workflow ---
+export interface WorkflowStageNodeType {
+  id: string;
+  name: string;
+  subtext?: string;
+  tone?: VisualTone;
+  badge?: string;
+}
+
+export interface WorkflowStep extends StepBase {
+  activeStageId?: string;
+  statusBadge?: string;
+  throughput?: string;
+  tone?: VisualTone;
+  stages?: WorkflowStageNodeType[];
+}
+
+export interface WorkflowVisual {
+  template: 'workflow';
+  title: string;
+  stages: WorkflowStageNodeType[];
+  steps: WorkflowStep[];
+  showSpaces?: boolean;
+}
+
+export interface WorkflowStepSpec extends StepBaseSpec {
+  activeStageId?: string;
+  statusBadge?: Binding | string;
+  throughput?: Binding | string;
+  tone?: VisualTone;
+}
+
+export interface WorkflowSpec {
+  template: 'workflow';
+  title: string;
+  stages: WorkflowStageNodeType[];
+  steps: WorkflowStepSpec[];
+  showSpaces?: boolean;
+}
+
+// --- Template 14: wireframe ---
+export interface WireframeBoxType {
+  id: string;
+  label: string;
+  flex?: string;
+  tone?: VisualTone;
+}
+
+export interface WireframeStep extends StepBase {
+  layoutMode?: 'flex-row' | 'flex-col' | 'box-model' | 'grid';
+  justifyContent?: string;
+  alignItems?: string;
+  activeBoxId?: string;
+  tone?: VisualTone;
+  boxes?: WireframeBoxType[];
+}
+
+export interface WireframeVisual {
+  template: 'wireframe';
+  title: string;
+  boxes: WireframeBoxType[];
+  steps: WireframeStep[];
+  showSpaces?: boolean;
+}
+
+export interface WireframeStepSpec extends StepBaseSpec {
+  layoutMode?: 'flex-row' | 'flex-col' | 'box-model' | 'grid';
+  justifyContent?: string;
+  alignItems?: string;
+  activeBoxId?: string;
+  tone?: VisualTone;
+}
+
+export interface WireframeSpec {
+  template: 'wireframe';
+  title: string;
+  boxes: WireframeBoxType[];
+  steps: WireframeStepSpec[];
+  showSpaces?: boolean;
+}
+
 // --- None template ---
 export interface NoneVisual {
   template: 'none';
@@ -387,7 +510,7 @@ export interface NoneSpec {
   reason: string;
 }
 
-// --- Filled LessonVisual (Union of all 11 filled visual templates) ---
+// --- Filled LessonVisual (Union of all 14 filled visual templates) ---
 export type LessonVisual =
   | FlowVisual
   | BoxesVisual
@@ -399,7 +522,10 @@ export type LessonVisual =
   | TreeGraphVisual
   | BarsVisual
   | SequenceVisual
-  | StatesVisual;
+  | StatesVisual
+  | ComponentTreeVisual
+  | WorkflowVisual
+  | WireframeVisual;
 
 // --- VisualSpec (Union of all specs with bindings) ---
 export type VisualSpec =
@@ -414,6 +540,9 @@ export type VisualSpec =
   | BarsSpec
   | SequenceSpec
   | StatesSpec
+  | ComponentTreeSpec
+  | WorkflowSpec
+  | WireframeSpec
   | NoneSpec;
 
 // --- Day-File Type (Plan C3) ---
