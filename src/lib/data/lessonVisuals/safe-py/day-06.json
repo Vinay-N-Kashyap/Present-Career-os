@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 6,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Model output is untrusted",
+      "codeHash": "03867fd2f90224262e2d054a790ec93a63269d6a4da1a736f20dded6ab7d5ec7",
+      "spec": {
+        "template": "table",
+        "title": "Model output trustworthiness and parsing failure modes",
+        "columns": [
+          "answers",
+          "answers",
+          "answers"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Never trust a model answer simply because your system produced it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The rule is simple: treat model output like user input before using it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "answers"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model output trustworthiness and parsing failure modes",
+        "columns": [
+          "answers",
+          "answers",
+          "answers"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Never trust a model answer simply because your system produced it.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "answers",
+                  "answers"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "answers",
+                  "answers"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The rule is simple: treat model output like user input before using it.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "answers",
+                  "answers"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "answers",
+                  "answers"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing JSON safely",
+      "codeHash": "c8de22096d71740895182679c3c9c17c384e5d460554befbbe5c798f98e0575d",
+      "spec": {
+        "template": "table",
+        "title": "Defensive JSON decoding and exception handling",
+        "columns": [
+          "text",
+          "status",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The json module turns JSON text into python objects safely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Parsing code must catch that error rather than crash on invalid payloads.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "status"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Defensive JSON decoding and exception handling",
+        "columns": [
+          "text",
+          "status",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The json module turns JSON text into python objects safely.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "status",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "status",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Parsing code must catch that error rather than crash on invalid payloads.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "status",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "status",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting JSON from chatter",
+      "codeHash": "6a5b1377f76e05d24369a22ffc54709dbd540972f1ad3d6e2ec6b641648c6959",
+      "spec": {
+        "template": "table",
+        "title": "Substring brace boundary extraction from conversational wrapper",
+        "columns": [
+          "text",
+          "start",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models often add friendly conversational text around structured JSON.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A simple robust fix isolates text between the first and last curly brace.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Substring brace boundary extraction from conversational wrapper",
+        "columns": [
+          "text",
+          "start",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models often add friendly conversational text around structured JSON.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "start",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "text",
+                  "start",
+                  "text"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A simple robust fix isolates text between the first and last curly brace.",
+            "rows": [
+              {
+                "cells": [
+                  "text",
+                  "start",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "text",
+                  "start",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking a schema",
+      "codeHash": "3ffb810a090faeca58cd519ae0b6cb75bb9585aa5ec51c49464d2a3cf45c90ec",
+      "spec": {
+        "template": "table",
+        "title": "Schema constraint validation and unauthorized field detection",
+        "columns": [
+          "schema",
+          "data",
+          "errors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A schema verifies whether incoming data contains required fields and types.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "schema"
+                  },
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "schema"
+                  },
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Extra fields matter for safety and should not slip through unchecked.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "schema"
+                  },
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "schema"
+                  },
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Schema constraint validation and unauthorized field detection",
+        "columns": [
+          "schema",
+          "data",
+          "errors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A schema verifies whether incoming data contains required fields and types.",
+            "rows": [
+              {
+                "cells": [
+                  "schema",
+                  "data",
+                  "errors"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "schema",
+                  "data",
+                  "errors"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Extra fields matter for safety and should not slip through unchecked.",
+            "rows": [
+              {
+                "cells": [
+                  "schema",
+                  "data",
+                  "errors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "schema",
+                  "data",
+                  "errors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The boolean trap",
+      "codeHash": "68751b6e0199b51da0edd96c97ae5ad7450c6c4dbdd0882f1ae56e51aee08b47",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Output validation in the pipeline",
+      "codeHash": "47814a35dfa34d8f947670c85b760bff5f880cc1ca912eca5dbcab7cf7cc961f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

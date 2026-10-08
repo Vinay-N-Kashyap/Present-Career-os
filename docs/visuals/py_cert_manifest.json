@@ -8044,27 +8044,27 @@
     },
     "safe-py:6:0": {
       "partTitle": "Model output is untrusted",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:6:1": {
       "partTitle": "Parsing JSON safely",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:6:2": {
       "partTitle": "Extracting JSON from chatter",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:6:3": {
       "partTitle": "Checking a schema",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:6:4": {
       "partTitle": "The boolean trap",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:6:5": {
       "partTitle": "Output validation in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:7:0": {
       "partTitle": "Why card numbers are special",
