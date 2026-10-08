@@ -224,4 +224,43 @@ describe('Task E-17: Visual Generator Script', () => {
       'Rejection reason must mention schema validation failure on bindings'
     );
   });
+
+  it('5. generates a valid spec for react-basics', async () => {
+    const validReactSpec = {
+      template: 'boxes',
+      title: 'Browser and Server',
+      boxes: [
+        { id: '1', label: 'browser', tappable: true },
+        { id: '2', label: 'server', tappable: true },
+      ],
+      steps: [
+        {
+          at: 'say1',
+          caption: 'Your browser sends a request to the server.',
+          values: {
+            '1': { text: 'browser' },
+            '2': { text: 'server' },
+          },
+        },
+        {
+          at: 'say2',
+          caption: 'The server sends files back to your browser.',
+          values: {
+            '1': { text: 'browser' },
+            '2': { text: 'server' },
+          },
+        },
+      ],
+    };
+
+    setLlmJsonTransportForTests(async () => {
+      return JSON.stringify(validReactSpec);
+    });
+
+    const result = await generatePart('react-basics', 1, 0, { skipKeyCheck: true });
+    assert.equal(result.status, 'passed');
+    assert.equal(result.entry.spec.template, 'boxes');
+    assert.equal(result.attempts, 1);
+  });
 });
+

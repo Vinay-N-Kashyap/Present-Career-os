@@ -74,6 +74,62 @@ export const COURSE_METADATA: Record<
     allowed: ['flow', 'table', 'bars', 'compare', 'states'],
     hint: 'show the guardrail pipeline, what is blocked or allowed, and the scores that decide',
   },
+  // Web Full-Stack Certification Course Tracks (Months 1–12)
+  'react-basics': {
+    name: 'Frontend Architecture (React)',
+    allowed: ['component-tree', 'wireframe', 'flow', 'boxes', 'compare', 'states'],
+    hint: 'draw component trees showing props passing down and event callbacks bubbling up; show state changing and triggering virtual DOM updates',
+  },
+  'node-web': {
+    name: 'Node.js & TypeScript Backend',
+    allowed: ['sequence', 'stack-queue', 'flow', 'boxes', 'table', 'states'],
+    hint: 'show request/response lifecycles, middleware pipelines, Call Stack -> Event Loop -> Task Queues, and buffer chunks',
+  },
+  'dsa-optim': {
+    name: 'System DSA & Optimizations',
+    allowed: ['cells', 'stack-queue', 'tree-graph', 'table', 'bars', 'compare'],
+    hint: 'show memory arrays with two pointers moving, call stack frames during recursion, and asymptotic Big-O comparisons',
+  },
+  devops: {
+    name: 'DevOps & CI/CD Pipelines',
+    allowed: ['flow', 'workflow', 'states', 'sequence', 'compare'],
+    hint: 'draw CI/CD pipeline stages (Lint -> Build -> Test -> Containerize -> Deploy) and Docker image layering',
+  },
+  cloud: {
+    name: 'Cloud Native Architectures',
+    allowed: ['workflow', 'sequence', 'states', 'table', 'bars', 'compare'],
+    hint: 'draw cloud infrastructure topologies (VPC, Subnets, ALB, ECS Tasks, S3 buckets, IAM policies) and request routing',
+  },
+  dist: {
+    name: 'Distributed Systems Design',
+    allowed: ['sequence', 'workflow', 'states', 'table', 'cells', 'compare'],
+    hint: 'show message routing across distributed services, Kafka partition logs, circuit breaker state machines, and cache invalidation',
+  },
+  cyber: {
+    name: 'Cybersecurity & AppSec',
+    allowed: ['flow', 'sequence', 'table', 'compare', 'states'],
+    hint: 'draw attack vectors, token authentication handshakes (OAuth/JWT), sanitization pipelines, and encryption/hashing steps',
+  },
+  ai: {
+    name: 'Applied AI Integrations',
+    allowed: ['flow', 'table', 'bars', 'sequence', 'compare', 'boxes'],
+    hint: 'show the RAG pipeline (Query -> Embedding -> Vector Search -> Context Assembly -> LLM Response) and token usage',
+  },
+  'sre-web': {
+    name: 'Multi-Cloud Reliability & SRE',
+    allowed: ['bars', 'states', 'sequence', 'table', 'workflow', 'compare'],
+    hint: 'display latency percentiles, error budgets, SLO health gauges, distributed trace spans, and multi-region failover',
+  },
+  'stream-web': {
+    name: 'High-Throughput Streaming',
+    allowed: ['cells', 'flow', 'sequence', 'bars', 'table', 'states'],
+    hint: 'draw append-only commit logs, partition offsets, consumer group lag, sliding time windows, and backpressure buffers',
+  },
+  'aideploy-web': {
+    name: 'Production AI Deployment',
+    allowed: ['workflow', 'flow', 'bars', 'table', 'states', 'compare'],
+    hint: 'show AI gateway routing, token rate limiters, semantic cache hits vs misses, safety guardrail checks, and model evaluation',
+  },
 };
 
 export interface GeneratorConfig {
