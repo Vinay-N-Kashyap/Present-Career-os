@@ -28,6 +28,18 @@ export const COURSE_ALLOWED_TEMPLATES: Record<string, string[]> = {
   'train-py': ['bars', 'table', 'flow', 'cells', 'sequence', 'compare'],
   'vec-py': ['table', 'bars', 'tree-graph', 'cells', 'flow', 'compare'],
   'safe-py': ['flow', 'table', 'bars', 'compare', 'states'],
+  // Web Full-Stack Certification Course Tracks (Months 1–12)
+  'react-basics': ['component-tree', 'wireframe', 'flow', 'boxes', 'compare', 'states'],
+  'node-web': ['sequence', 'stack-queue', 'flow', 'boxes', 'table', 'states'],
+  'dsa-optim': ['cells', 'stack-queue', 'tree-graph', 'table', 'bars', 'compare'],
+  devops: ['flow', 'workflow', 'states', 'sequence', 'compare'],
+  cloud: ['workflow', 'sequence', 'states', 'table', 'bars', 'compare'],
+  dist: ['sequence', 'workflow', 'states', 'table', 'cells', 'compare'],
+  cyber: ['flow', 'sequence', 'table', 'compare', 'states'],
+  ai: ['flow', 'table', 'bars', 'sequence', 'compare', 'boxes'],
+  'sre-web': ['bars', 'states', 'sequence', 'table', 'workflow', 'compare'],
+  'stream-web': ['cells', 'flow', 'sequence', 'bars', 'table', 'states'],
+  'aideploy-web': ['workflow', 'flow', 'bars', 'table', 'states', 'compare'],
 };
 
 const STOP_WORDS = new Set([

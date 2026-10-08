@@ -302,5 +302,16 @@ describe('Gate v2 (Task E-13)', () => {
       assert.equal(res.passed, false);
       assert.ok(res.errors.some((e) => e.startsWith('R14:')), `Expected R14 error in: ${res.errors}`);
     });
+
+    it('R2: web course templates (react-basics, node-web, devops, cloud) are properly allowed', () => {
+      const { COURSE_ALLOWED_TEMPLATES } = require('@/lib/visuals/gate');
+      assert.ok(COURSE_ALLOWED_TEMPLATES['react-basics'].includes('component-tree'));
+      assert.ok(COURSE_ALLOWED_TEMPLATES['react-basics'].includes('wireframe'));
+      assert.ok(COURSE_ALLOWED_TEMPLATES['node-web'].includes('sequence'));
+      assert.ok(COURSE_ALLOWED_TEMPLATES.devops.includes('workflow'));
+      assert.ok(COURSE_ALLOWED_TEMPLATES.cloud.includes('workflow'));
+      assert.ok(COURSE_ALLOWED_TEMPLATES['aideploy-web'].includes('workflow'));
+    });
   });
 });
+
