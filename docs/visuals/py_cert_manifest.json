@@ -7948,27 +7948,27 @@
     },
     "safe-py:2:0": {
       "partTitle": "What threat modelling is",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:2:1": {
       "partTitle": "The OWASP Top 10 for LLM Applications",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:2:2": {
       "partTitle": "Tagging findings with keywords",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:2:3": {
       "partTitle": "Controls for each category",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:2:4": {
       "partTitle": "Finding gaps",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:2:5": {
       "partTitle": "Threat modelling in practice",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:3:0": {
       "partTitle": "Why validate input",

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What threat modelling is",
+      "codeHash": "b0c452fabd5346bcf5f84e6c5a6b33e060a7073f1e5907b71a8271a622014880",
+      "spec": {
+        "template": "table",
+        "title": "Data flow mapping and untrusted trust boundary identification",
+        "columns": [
+          "flows",
+          "flows",
+          "flows"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Threat modelling systematically investigates what could go wrong with a system.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Points where trust changes across components represent critical boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  },
+                  {
+                    "text": "flows"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Data flow mapping and untrusted trust boundary identification",
+        "columns": [
+          "flows",
+          "flows",
+          "flows"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Threat modelling systematically investigates what could go wrong with a system.",
+            "rows": [
+              {
+                "cells": [
+                  "flows",
+                  "flows",
+                  "flows"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "flows",
+                  "flows",
+                  "flows"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Points where trust changes across components represent critical boundaries.",
+            "rows": [
+              {
+                "cells": [
+                  "flows",
+                  "flows",
+                  "flows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "flows",
+                  "flows",
+                  "flows"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The OWASP Top 10 for LLM Applications",
+      "codeHash": "106c1413280e0d3bcfa8b18a2e26af06ac9ffa9483017bfa9021bcebf760dfd3",
+      "spec": {
+        "template": "table",
+        "title": "OWASP LLM Top 10 vulnerability classification",
+        "columns": [
+          "top10",
+          "name",
+          "top10"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OWASP compiles the most important risks for systems built on language models.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "top10"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "top10"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "top10"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "top10"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standardized taxonomies provide teams with a shared vocabulary across audits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "top10"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "top10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "top10"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "top10"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "OWASP LLM Top 10 vulnerability classification",
+        "columns": [
+          "top10",
+          "name",
+          "top10"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OWASP compiles the most important risks for systems built on language models.",
+            "rows": [
+              {
+                "cells": [
+                  "top10",
+                  "name",
+                  "top10"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "top10",
+                  "name",
+                  "top10"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standardized taxonomies provide teams with a shared vocabulary across audits.",
+            "rows": [
+              {
+                "cells": [
+                  "top10",
+                  "name",
+                  "top10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "top10",
+                  "name",
+                  "top10"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tagging findings with keywords",
+      "codeHash": "1c5c682bd43eebd8f7ea8111726061e75e842900f4ce9bf7c7c5916257bda989",
+      "spec": {
+        "template": "table",
+        "title": "Automated vulnerability tagging via keyword stems",
+        "columns": [
+          "stems",
+          "tags",
+          "stems"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tagging each finding with OWASP codes makes it possible to track risks easily.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stems"
+                  },
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "stems"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stems"
+                  },
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "stems"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple tagger looks for keyword stems to identify vulnerability categories.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "stems"
+                  },
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "stems"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stems"
+                  },
+                  {
+                    "text": "tags"
+                  },
+                  {
+                    "text": "stems"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated vulnerability tagging via keyword stems",
+        "columns": [
+          "stems",
+          "tags",
+          "stems"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tagging each finding with OWASP codes makes it possible to track risks easily.",
+            "rows": [
+              {
+                "cells": [
+                  "stems",
+                  "tags",
+                  "stems"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stems",
+                  "tags",
+                  "stems"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A simple tagger looks for keyword stems to identify vulnerability categories.",
+            "rows": [
+              {
+                "cells": [
+                  "stems",
+                  "tags",
+                  "stems"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stems",
+                  "tags",
+                  "stems"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Controls for each category",
+      "codeHash": "c83a55c51170fa572e8a345df37bb386c0211dd172cf75aff77ac47ef0f00207",
+      "spec": {
+        "template": "table",
+        "title": "Threat mitigation mapping and control coverage analysis",
+        "columns": [
+          "controls",
+          "names",
+          "controls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each threat category has well-known controls established across the industry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "controls"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "controls"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "controls"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "controls"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "A threat with no control is a gap that attackers actively seek to exploit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "controls"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "controls"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "controls"
+                  },
+                  {
+                    "text": "names"
+                  },
+                  {
+                    "text": "controls"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Threat mitigation mapping and control coverage analysis",
+        "columns": [
+          "controls",
+          "names",
+          "controls"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each threat category has well-known controls established across the industry.",
+            "rows": [
+              {
+                "cells": [
+                  "controls",
+                  "names",
+                  "controls"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "controls",
+                  "names",
+                  "controls"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "A threat with no control is a gap that attackers actively seek to exploit.",
+            "rows": [
+              {
+                "cells": [
+                  "controls",
+                  "names",
+                  "controls"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "controls",
+                  "names",
+                  "controls"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Finding gaps",
+      "codeHash": "24e1515df085cb1718b89c63462ed383773a4b8cb27be50c8b38b0e359012738",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Threat modelling in practice",
+      "codeHash": "c6ce440913f50642bfb20334541905cdb2352c329a7872ea6f7f1a0c6c912f12",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
