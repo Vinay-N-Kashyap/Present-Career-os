@@ -8380,27 +8380,27 @@
     },
     "safe-py:20:0": {
       "partTitle": "Knowing when not to answer",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:20:1": {
       "partTitle": "Coverage and selective accuracy",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:20:2": {
       "partTitle": "The risk-coverage curve",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:20:3": {
       "partTitle": "Choosing a threshold for a target",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:20:4": {
       "partTitle": "What to do instead of answering",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:20:5": {
       "partTitle": "Abstention in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:21:0": {
       "partTitle": "Why an evaluation harness",

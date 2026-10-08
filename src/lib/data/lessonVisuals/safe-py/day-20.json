@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 20,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Knowing when not to answer",
+      "codeHash": "c0477fb26338d811061423b609352f48815846a7cf25a2f204581d4534611892",
+      "spec": {
+        "template": "table",
+        "title": "Selective answering based on confidence thresholds",
+        "columns": [
+          "answers",
+          "confident"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System declines to answer when not confident enough.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "confident"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "confident"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Abstention trades question coverage for selective accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answers"
+                  },
+                  {
+                    "text": "confident"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "all_acc"
+                  },
+                  {
+                    "text": "questions"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Selective answering based on confidence thresholds",
+        "columns": [
+          "answers",
+          "confident"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System declines to answer when not confident enough.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "confident"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answers",
+                  "confident"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Abstention trades question coverage for selective accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "answers",
+                  "confident"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "all_acc",
+                  "questions"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Coverage and selective accuracy",
+      "codeHash": "c1015f35ee84b5202fd1cc22cce4f13ce13ccf3aa5816cd373a3de8ce24dbbd2",
+      "spec": {
+        "template": "table",
+        "title": "Coverage and selective accuracy at various thresholds",
+        "columns": [
+          "answered",
+          "correct"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Selective accuracy measures correct answered questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answered"
+                  },
+                  {
+                    "text": "correct"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answered"
+                  },
+                  {
+                    "text": "correct"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Raising the threshold lowers overall coverage while boosting accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "answered"
+                  },
+                  {
+                    "text": "correct"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Coverage and selective accuracy at various thresholds",
+        "columns": [
+          "answered",
+          "correct"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Selective accuracy measures correct answered questions.",
+            "rows": [
+              {
+                "cells": [
+                  "answered",
+                  "correct"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "answered",
+                  "correct"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Raising the threshold lowers overall coverage while boosting accuracy.",
+            "rows": [
+              {
+                "cells": [
+                  "answered",
+                  "correct"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "threshold",
+                  "conf"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The risk-coverage curve",
+      "codeHash": "c3e6c9586b1fa3167181da56a5ed662eb3f4df8dd5e93849be90630f5806b3e5",
+      "spec": {
+        "template": "table",
+        "title": "Risk-coverage trade-off across sorted predictions",
+        "columns": [
+          "pairs",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Risk measures the error rate among answered questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Confidence scores ensure risk falls steadily as coverage drops.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "top"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "risk"
+                  },
+                  {
+                    "text": "coverage"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Risk-coverage trade-off across sorted predictions",
+        "columns": [
+          "pairs",
+          "top"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Risk measures the error rate among answered questions.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "top"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "top"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Confidence scores ensure risk falls steadily as coverage drops.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "top"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "risk",
+                  "coverage"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing a threshold for a target",
+      "codeHash": "085a194db9b338351d570af287f68e4500647ff4f5272bd69e8f8ec20bcbb859",
+      "spec": {
+        "template": "table",
+        "title": "Target selective accuracy threshold selection",
+        "columns": [
+          "target",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lowest threshold answers more target questions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning none signals that the target is unattainable on this data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "conf"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "answered"
+                  },
+                  {
+                    "text": "correct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Target selective accuracy threshold selection",
+        "columns": [
+          "target",
+          "conf"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Lowest threshold answers more target questions.",
+            "rows": [
+              {
+                "cells": [
+                  "target",
+                  "conf"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "target",
+                  "conf"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Returning none signals that the target is unattainable on this data.",
+            "rows": [
+              {
+                "cells": [
+                  "target",
+                  "conf"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "answered",
+                  "correct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What to do instead of answering",
+      "codeHash": "61aa6b468d58aca813d1aa3701beca1550a6d2ccf848d90a95c06086a48c0bc2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Abstention in the pipeline",
+      "codeHash": "34f7f9ff2430c02df1b4b95e2539603f6628ce7dc8d0fa8752287b189147b2ea",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
