@@ -7732,27 +7732,27 @@
     },
     "vec-py:23:0": {
       "partTitle": "Retrieval-augmented generation",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:23:1": {
       "partTitle": "Token budgets",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:23:2": {
       "partTitle": "Citations",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:23:3": {
       "partTitle": "Grounded prompts",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:23:4": {
       "partTitle": "Evaluating RAG answers",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:23:5": {
       "partTitle": "Practice time: context and citations",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:24:0": {
       "partTitle": "Why cache semantically",

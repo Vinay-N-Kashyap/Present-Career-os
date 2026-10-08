@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 23,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Retrieval-augmented generation",
+      "codeHash": "7bf7393ad41bd935afe766810d092990852a43e69d419cf79c52c33ce16e0af1",
+      "spec": {
+        "template": "table",
+        "title": "Contextual injection and prompt synthesis architecture",
+        "columns": [
+          "chunks",
+          "question",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieval augmented generation provides relevant chunks directly to the model.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Citations enable users to verify where each generative answer originated.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "question"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Contextual injection and prompt synthesis architecture",
+        "columns": [
+          "chunks",
+          "question",
+          "prompt"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Retrieval augmented generation provides relevant chunks directly to the model.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "question",
+                  "prompt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "question",
+                  "prompt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Citations enable users to verify where each generative answer originated.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "question",
+                  "prompt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "question",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token budgets",
+      "codeHash": "47233287c2cdc797ec9121d6aeb1aed4fdf5b92e270c6623c931302259c2f231",
+      "spec": {
+        "template": "table",
+        "title": "Context window token allocation and greedy packing",
+        "columns": [
+          "chunks",
+          "tokens",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Retrieved chunks must fit inside the designated context budget.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Skipping chunks that exceed budget allows continuing with smaller passages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "tokens"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Context window token allocation and greedy packing",
+        "columns": [
+          "chunks",
+          "tokens",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Retrieved chunks must fit inside the designated context budget.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "tokens",
+                  "budget"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "tokens",
+                  "budget"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Skipping chunks that exceed budget allows continuing with smaller passages.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "tokens",
+                  "budget"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "tokens",
+                  "tokens"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Citations",
+      "codeHash": "05c1b7379f6f8f1532b63955c7050c4e389dab5cf573e7184127d53a783e9509",
+      "spec": {
+        "template": "table",
+        "title": "Source claim linking and citation marker assignment",
+        "columns": [
+          "numbers",
+          "parts",
+          "numbers"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Citations connect factual claims to their original verification source.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "numbers"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "numbers"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "numbers"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "numbers"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reusing the same source preserves its original citation number.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "numbers"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "numbers"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "numbers"
+                  },
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Source claim linking and citation marker assignment",
+        "columns": [
+          "numbers",
+          "parts",
+          "numbers"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Citations connect factual claims to their original verification source.",
+            "rows": [
+              {
+                "cells": [
+                  "numbers",
+                  "parts",
+                  "numbers"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "numbers",
+                  "parts",
+                  "numbers"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Reusing the same source preserves its original citation number.",
+            "rows": [
+              {
+                "cells": [
+                  "numbers",
+                  "parts",
+                  "numbers"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "numbers",
+                  "parts",
+                  "parts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grounded prompts",
+      "codeHash": "6147a345fbb1b59759101b0bde1294f05db37080ae20773b912f37a9c7283280",
+      "spec": {
+        "template": "table",
+        "title": "Prompt instruction delimitation and grounded evaluation",
+        "columns": [
+          "sources",
+          "rules",
+          "lines"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clear delimiters separate prompt instructions from retrieved source context.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Evaluation measures faithfulness and whether sources support claims.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sources"
+                  },
+                  {
+                    "text": "rules"
+                  },
+                  {
+                    "text": "rules"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prompt instruction delimitation and grounded evaluation",
+        "columns": [
+          "sources",
+          "rules",
+          "lines"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clear delimiters separate prompt instructions from retrieved source context.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "rules",
+                  "lines"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "rules",
+                  "lines"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Evaluation measures faithfulness and whether sources support claims.",
+            "rows": [
+              {
+                "cells": [
+                  "sources",
+                  "rules",
+                  "lines"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sources",
+                  "rules",
+                  "rules"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating RAG answers",
+      "codeHash": "fb42a490fa32b97b8a7b72ac5cf96c8cd9a03941335f8ae72fb51cd0b90b42fc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: context and citations",
+      "codeHash": "d99b2a85c5f526fda37682deb42b1252156006cc893ff1897452145764fdaade",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
