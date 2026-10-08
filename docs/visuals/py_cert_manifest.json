@@ -5932,27 +5932,27 @@
     },
     "prompt-py:8:0": {
       "partTitle": "Two kinds of summary",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:8:1": {
       "partTitle": "A simple extractive summariser",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:8:2": {
       "partTitle": "Prompting for good summaries",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:8:3": {
       "partTitle": "Documents longer than the context window",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:8:4": {
       "partTitle": "Checking summary length and quality",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:8:5": {
       "partTitle": "Practice time: summarise and check",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:9:0": {
       "partTitle": "Why grounding matters",
