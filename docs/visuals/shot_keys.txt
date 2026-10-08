@@ -1,6 +1,6 @@
-vec-py:16:1
-vec-py:16:2
-vec-py:17:2
-vec-py:18:1
-vec-py:19:0
-vec-py:19:1
+vec-py:21:2
+vec-py:22:1
+vec-py:22:3
+vec-py:23:0
+vec-py:23:2
+vec-py:24:2
