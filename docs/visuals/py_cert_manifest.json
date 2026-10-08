@@ -7276,27 +7276,27 @@
     },
     "vec-py:4:0": {
       "partTitle": "Why not just sort?",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:4:1": {
       "partTitle": "Heaps in Python",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:4:2": {
       "partTitle": "Tie-breaking and determinism",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:4:3": {
       "partTitle": "Merging shard results",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:4:4": {
       "partTitle": "Top-k in real systems",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:4:5": {
       "partTitle": "Practice time: top-k",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:5:0": {
       "partTitle": "Relevance judgements",
