@@ -7588,27 +7588,27 @@
     },
     "vec-py:17:0": {
       "partTitle": "Benchmarking a configuration",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:17:1": {
       "partTitle": "Dominated configurations",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:17:2": {
       "partTitle": "Choosing with requirements",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:17:3": {
       "partTitle": "Tuning in practice",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:17:4": {
       "partTitle": "Beyond recall and latency",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:17:5": {
       "partTitle": "Practice time: tuning",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:18:0": {
       "partTitle": "Upserts and versions",
