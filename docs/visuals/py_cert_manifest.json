@@ -7420,27 +7420,27 @@
     },
     "vec-py:10:0": {
       "partTitle": "The idea of clustering",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:10:1": {
       "partTitle": "Assigning points",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:10:2": {
       "partTitle": "The k-means loop",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:10:3": {
       "partTitle": "Choosing k and training data",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:10:4": {
       "partTitle": "Evaluating a clustering",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:10:5": {
       "partTitle": "Practice time: clustering",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:11:0": {
       "partTitle": "From clusters to inverted lists",
