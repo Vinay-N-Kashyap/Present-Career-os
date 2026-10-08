@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Locality-sensitive hashing",
+      "codeHash": "8894a71c30f2416de10424b3fcb239b6e8a911b5b89bfec7d0bd7bcd2407b2ab",
+      "spec": {
+        "template": "table",
+        "title": "Locality-sensitive hashing signature collisions",
+        "columns": [
+          "planes",
+          "sig",
+          "planes"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Similar vectors are likely to receive the same hash signature.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "sig"
+                  },
+                  {
+                    "text": "planes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "sig"
+                  },
+                  {
+                    "text": "planes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Search scans only vectors in the same bucket while skipping the remainder.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "sig"
+                  },
+                  {
+                    "text": "planes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "sig"
+                  },
+                  {
+                    "text": "sig"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Locality-sensitive hashing signature collisions",
+        "columns": [
+          "planes",
+          "sig",
+          "planes"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Similar vectors are likely to receive the same hash signature.",
+            "rows": [
+              {
+                "cells": [
+                  "planes",
+                  "sig",
+                  "planes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "planes",
+                  "sig",
+                  "planes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Search scans only vectors in the same bucket while skipping the remainder.",
+            "rows": [
+              {
+                "cells": [
+                  "planes",
+                  "sig",
+                  "planes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "planes",
+                  "sig",
+                  "sig"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Random hyperplanes",
+      "codeHash": "77a8e91a42063b08173e7bf85b0ff1c0353bed32ded60976f416255d0ac178a7",
+      "spec": {
+        "template": "table",
+        "title": "Normal vector dot products and angular agreement",
+        "columns": [
+          "theta",
+          "agree",
+          "theta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A random hyperplane splits vector space along normal partition lines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "agree"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "agree"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vectors with high cosine similarity usually agree across random plane bits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "agree"
+                  },
+                  {
+                    "text": "theta"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "theta"
+                  },
+                  {
+                    "text": "agree"
+                  },
+                  {
+                    "text": "agree"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Normal vector dot products and angular agreement",
+        "columns": [
+          "theta",
+          "agree",
+          "theta"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A random hyperplane splits vector space along normal partition lines.",
+            "rows": [
+              {
+                "cells": [
+                  "theta",
+                  "agree",
+                  "theta"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "theta",
+                  "agree",
+                  "theta"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Vectors with high cosine similarity usually agree across random plane bits.",
+            "rows": [
+              {
+                "cells": [
+                  "theta",
+                  "agree",
+                  "theta"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "theta",
+                  "agree",
+                  "agree"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Several hash tables",
+      "codeHash": "d164703965ddb870470c99af0522c792b28a0e86dcb616708fbb33831ee054ab",
+      "spec": {
+        "template": "table",
+        "title": "Multi-table candidate union and false negative mitigation",
+        "columns": [
+          "tables",
+          "vecs",
+          "tables"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Using several independent tables prevents false negatives across partitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "tables"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "tables"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "More tables raise search recall while moderately increasing candidates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "tables"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "vecs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-table candidate union and false negative mitigation",
+        "columns": [
+          "tables",
+          "vecs",
+          "tables"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Using several independent tables prevents false negatives across partitions.",
+            "rows": [
+              {
+                "cells": [
+                  "tables",
+                  "vecs",
+                  "tables"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tables",
+                  "vecs",
+                  "tables"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "More tables raise search recall while moderately increasing candidates.",
+            "rows": [
+              {
+                "cells": [
+                  "tables",
+                  "vecs",
+                  "tables"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "tables",
+                  "vecs",
+                  "vecs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning LSH",
+      "codeHash": "de60420403716e9720fa85839c98ac10961c26e4748f06be14858c3bf93dce04",
+      "spec": {
+        "template": "table",
+        "title": "Hyperplane counts and table collision probability curves",
+        "columns": [
+          "planes",
+          "tables",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The probability curve ensures similar pairs meet while dissimilar pairs do not.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Adding hash tables lifts the collision curve and raises search recall.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "row"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "planes"
+                  },
+                  {
+                    "text": "tables"
+                  },
+                  {
+                    "text": "tables"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hyperplane counts and table collision probability curves",
+        "columns": [
+          "planes",
+          "tables",
+          "row"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The probability curve ensures similar pairs meet while dissimilar pairs do not.",
+            "rows": [
+              {
+                "cells": [
+                  "planes",
+                  "tables",
+                  "row"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "planes",
+                  "tables",
+                  "row"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Adding hash tables lifts the collision curve and raises search recall.",
+            "rows": [
+              {
+                "cells": [
+                  "planes",
+                  "tables",
+                  "row"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "planes",
+                  "tables",
+                  "tables"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LSH in practice",
+      "codeHash": "c48d58c9baa05c38012aff196c9c0546c8ec3201ab9cde1d69452dc6e8947511",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: hashing",
+      "codeHash": "5564b1c2b1c8dfebd0b846f12e163ddf129db3e999ed2bb940332517d11b55d1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

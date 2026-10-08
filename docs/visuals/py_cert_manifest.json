@@ -7516,27 +7516,27 @@
     },
     "vec-py:14:0": {
       "partTitle": "Locality-sensitive hashing",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:14:1": {
       "partTitle": "Random hyperplanes",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:14:2": {
       "partTitle": "Several hash tables",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:14:3": {
       "partTitle": "Tuning LSH",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:14:4": {
       "partTitle": "LSH in practice",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:14:5": {
       "partTitle": "Practice time: hashing",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:15:0": {
       "partTitle": "Proximity graphs",
