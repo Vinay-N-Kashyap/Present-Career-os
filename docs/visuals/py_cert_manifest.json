@@ -7444,27 +7444,27 @@
     },
     "vec-py:11:0": {
       "partTitle": "From clusters to inverted lists",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:11:1": {
       "partTitle": "Searching with nprobe",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:11:2": {
       "partTitle": "Measuring the trade-off",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:11:3": {
       "partTitle": "Cost model and list balance",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:11:4": {
       "partTitle": "IVF in real systems",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:11:5": {
       "partTitle": "Practice time: IVF",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:12:0": {
       "partTitle": "The memory problem",

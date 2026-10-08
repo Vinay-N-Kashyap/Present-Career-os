@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 11,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "From clusters to inverted lists",
+      "codeHash": "526373e0faa49404ea60220b9062404dabe5f0e674583a8ae196953795fed8c4",
+      "spec": {
+        "template": "table",
+        "title": "Centroid inverted list index organization",
+        "columns": [
+          "cents",
+          "vecs",
+          "lists"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The index stores inverted lists of vectors assigned to each centroid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cents"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "lists"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cents"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "lists"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Keeping empty lists ensures a predictable structure for every centroid.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cents"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "lists"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cents"
+                  },
+                  {
+                    "text": "vecs"
+                  },
+                  {
+                    "text": "cents"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Centroid inverted list index organization",
+        "columns": [
+          "cents",
+          "vecs",
+          "lists"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The index stores inverted lists of vectors assigned to each centroid.",
+            "rows": [
+              {
+                "cells": [
+                  "cents",
+                  "vecs",
+                  "lists"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cents",
+                  "vecs",
+                  "lists"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Keeping empty lists ensures a predictable structure for every centroid.",
+            "rows": [
+              {
+                "cells": [
+                  "cents",
+                  "vecs",
+                  "lists"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cents",
+                  "vecs",
+                  "cents"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Searching with nprobe",
+      "codeHash": "2363fcbbd96570b5a3386e1adea09a4059da95f0f63e814b7e2dfc76d578dc6b",
+      "spec": {
+        "template": "table",
+        "title": "Centroid probe candidate gathering and ranking",
+        "columns": [
+          "nprobe",
+          "probe",
+          "cand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The query first compares against every centroid to pick nearby lists.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "probe"
+                  },
+                  {
+                    "text": "cand"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "probe"
+                  },
+                  {
+                    "text": "cand"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scanning lists of the nearest centroids compares vectors inside them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "probe"
+                  },
+                  {
+                    "text": "cand"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "probe"
+                  },
+                  {
+                    "text": "nprobe"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Centroid probe candidate gathering and ranking",
+        "columns": [
+          "nprobe",
+          "probe",
+          "cand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The query first compares against every centroid to pick nearby lists.",
+            "rows": [
+              {
+                "cells": [
+                  "nprobe",
+                  "probe",
+                  "cand"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "nprobe",
+                  "probe",
+                  "cand"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scanning lists of the nearest centroids compares vectors inside them.",
+            "rows": [
+              {
+                "cells": [
+                  "nprobe",
+                  "probe",
+                  "cand"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nprobe",
+                  "probe",
+                  "nprobe"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring the trade-off",
+      "codeHash": "f43b73c137e538941c483997e73fde9dda8dce6a4acac1135c19e5bf13fd34b8",
+      "spec": {
+        "template": "table",
+        "title": "Recall versus computation cost scaling curves",
+        "columns": [
+          "nprobe",
+          "hits",
+          "work"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recall against exact search indicates how many true neighbours are found.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "work"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "work"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recall rises quickly at first and then flattens as work grows steadily.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "work"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nprobe"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recall versus computation cost scaling curves",
+        "columns": [
+          "nprobe",
+          "hits",
+          "work"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recall against exact search indicates how many true neighbours are found.",
+            "rows": [
+              {
+                "cells": [
+                  "nprobe",
+                  "hits",
+                  "work"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "nprobe",
+                  "hits",
+                  "work"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Recall rises quickly at first and then flattens as work grows steadily.",
+            "rows": [
+              {
+                "cells": [
+                  "nprobe",
+                  "hits",
+                  "work"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nprobe",
+                  "hits",
+                  "hits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost model and list balance",
+      "codeHash": "1075d64fd66c49defbb3926d83b8931a70ca3ba7000b2e215bdf99a9194d4923",
+      "spec": {
+        "template": "table",
+        "title": "Partition sizing cost models and bucket balancing",
+        "columns": [
+          "nlist",
+          "cost",
+          "nlist"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unbalanced lists break efficiency when a query probes an oversized list.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nlist"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "nlist"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nlist"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "nlist"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Training on representative data keeps candidate lists balanced.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "nlist"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "nlist"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "nlist"
+                  },
+                  {
+                    "text": "cost"
+                  },
+                  {
+                    "text": "cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Partition sizing cost models and bucket balancing",
+        "columns": [
+          "nlist",
+          "cost",
+          "nlist"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unbalanced lists break efficiency when a query probes an oversized list.",
+            "rows": [
+              {
+                "cells": [
+                  "nlist",
+                  "cost",
+                  "nlist"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "nlist",
+                  "cost",
+                  "nlist"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Training on representative data keeps candidate lists balanced.",
+            "rows": [
+              {
+                "cells": [
+                  "nlist",
+                  "cost",
+                  "nlist"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nlist",
+                  "cost",
+                  "cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IVF in real systems",
+      "codeHash": "2e4a4de665b865f6d7372a004f57dcc2ac03887d17d757ccb327d10304e711e7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: IVF",
+      "codeHash": "6dc6f171b46b84a6616f02f11d41bfb3a845988ed4cfb94b720d63db5fa1cf71",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
