@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 17,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "How image generators work",
+      "codeHash": "b57413d9bcbc5c1b72e70deb68c5fed121d6777db18d4932f59e1cac101f5d22",
+      "spec": {
+        "template": "table",
+        "title": "Iterative reverse diffusion noise removal progression",
+        "columns": [
+          "image",
+          "target",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diffusion models learn to remove noise from synthetic images step by step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The generator removes noise guided by your prompt until an image appears.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "target"
+                  },
+                  {
+                    "text": "image"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Iterative reverse diffusion noise removal progression",
+        "columns": [
+          "image",
+          "target",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diffusion models learn to remove noise from synthetic images step by step.",
+            "rows": [
+              {
+                "cells": [
+                  "image",
+                  "target",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "image",
+                  "target",
+                  "step"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The generator removes noise guided by your prompt until an image appears.",
+            "rows": [
+              {
+                "cells": [
+                  "image",
+                  "target",
+                  "step"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "image",
+                  "target",
+                  "image"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anatomy of an image prompt",
+      "codeHash": "4a95fb320257077a4a61aed773194459509ff444a36d324b12ddc068fac17577",
+      "spec": {
+        "template": "table",
+        "title": "Layered image prompt composition components",
+        "columns": [
+          "subject",
+          "styles",
+          "lighting"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Image prompts describe distinct layers including subject, style, and lighting.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "styles"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "styles"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lighting and camera composition establish the overall aesthetic atmosphere.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "styles"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "styles"
+                  },
+                  {
+                    "text": "subject"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Layered image prompt composition components",
+        "columns": [
+          "subject",
+          "styles",
+          "lighting"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Image prompts describe distinct layers including subject, style, and lighting.",
+            "rows": [
+              {
+                "cells": [
+                  "subject",
+                  "styles",
+                  "lighting"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "subject",
+                  "styles",
+                  "lighting"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Lighting and camera composition establish the overall aesthetic atmosphere.",
+            "rows": [
+              {
+                "cells": [
+                  "subject",
+                  "styles",
+                  "lighting"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "subject",
+                  "styles",
+                  "subject"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parameters: aspect ratio and negatives",
+      "codeHash": "49dd4680180461ee59d181f19aa140e86fc70d4cefa3b66e1aea6164fc77f1f6",
+      "spec": {
+        "template": "table",
+        "title": "Generation parameter flags for aspect ratio and exclusions",
+        "columns": [
+          "subject",
+          "style",
+          "lighting"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tools accept explicit parameters alongside the prompt to set aspect ratio.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "style"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "style"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Negative prompts explicitly list unwanted elements such as text or watermarks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "style"
+                  },
+                  {
+                    "text": "lighting"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "style"
+                  },
+                  {
+                    "text": "subject"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Generation parameter flags for aspect ratio and exclusions",
+        "columns": [
+          "subject",
+          "style",
+          "lighting"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tools accept explicit parameters alongside the prompt to set aspect ratio.",
+            "rows": [
+              {
+                "cells": [
+                  "subject",
+                  "style",
+                  "lighting"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "subject",
+                  "style",
+                  "lighting"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Negative prompts explicitly list unwanted elements such as text or watermarks.",
+            "rows": [
+              {
+                "cells": [
+                  "subject",
+                  "style",
+                  "lighting"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "subject",
+                  "style",
+                  "subject"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighting parts of a prompt",
+      "codeHash": "6b3ffc4e7e5e8cf2d004884fc22757ef0bebcb39cefe484cc977eb347c978c61",
+      "spec": {
+        "template": "table",
+        "title": "Token weight parsing and relative attention allocation",
+        "columns": [
+          "parts",
+          "total",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Explicit weight syntax lets users emphasize specific parts of a prompt.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalising weights against the total clarifies the relative visual balance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "parts"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "parts"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Token weight parsing and relative attention allocation",
+        "columns": [
+          "parts",
+          "total",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Explicit weight syntax lets users emphasize specific parts of a prompt.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "total",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "total",
+                  "text"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalising weights against the total clarifies the relative visual balance.",
+            "rows": [
+              {
+                "cells": [
+                  "parts",
+                  "total",
+                  "text"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "parts",
+                  "total",
+                  "parts"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Responsible image generation",
+      "codeHash": "c6bf90e90d4fdf4b1151adf65fee2ab61dce16ab918708ea8f93296a16182bd4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: compose and parse",
+      "codeHash": "4ab19b381183be078c0e58b6b2a16eb5b5e693ce4f1ace554ed97c2f02b3a9e3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

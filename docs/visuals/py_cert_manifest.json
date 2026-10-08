@@ -6148,27 +6148,27 @@
     },
     "prompt-py:17:0": {
       "partTitle": "How image generators work",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:17:1": {
       "partTitle": "Anatomy of an image prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:17:2": {
       "partTitle": "Parameters: aspect ratio and negatives",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:17:3": {
       "partTitle": "Weighting parts of a prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:17:4": {
       "partTitle": "Responsible image generation",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:17:5": {
       "partTitle": "Practice time: compose and parse",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:18:0": {
       "partTitle": "Speech-to-text",
