@@ -8116,27 +8116,27 @@
     },
     "safe-py:9:0": {
       "partTitle": "The confusion matrix",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:9:1": {
       "partTitle": "Precision",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:9:2": {
       "partTitle": "Recall",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:9:3": {
       "partTitle": "F1: balancing both",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:9:4": {
       "partTitle": "Base rates and accuracy",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:9:5": {
       "partTitle": "Evaluating a safety check",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:10:0": {
       "partTitle": "What hallucination is",
