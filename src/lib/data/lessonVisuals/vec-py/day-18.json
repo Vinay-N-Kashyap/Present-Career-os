@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Upserts and versions",
+      "codeHash": "13578773ebba5b6ef124dbd4da48a00f0d5b6d006318b3eb7a51a81482b7d8b9",
+      "spec": {
+        "template": "table",
+        "title": "Monotonic record versioning and idempotency",
+        "columns": [
+          "store",
+          "vector",
+          "version"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An upsert operation inserts new records and replaces existing documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "store"
+                  },
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "version"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "store"
+                  },
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "version"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Incrementing version numbers shows how many times a record has changed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "store"
+                  },
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "version"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "store"
+                  },
+                  {
+                    "text": "vector"
+                  },
+                  {
+                    "text": "vector"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Monotonic record versioning and idempotency",
+        "columns": [
+          "store",
+          "vector",
+          "version"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An upsert operation inserts new records and replaces existing documents.",
+            "rows": [
+              {
+                "cells": [
+                  "store",
+                  "vector",
+                  "version"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "store",
+                  "vector",
+                  "version"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Incrementing version numbers shows how many times a record has changed.",
+            "rows": [
+              {
+                "cells": [
+                  "store",
+                  "vector",
+                  "version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "store",
+                  "vector",
+                  "vector"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deletes and tombstones",
+      "codeHash": "d0e408a42e384180978f5f18934e2d10a3fc5fb9f6bbd295ae72e27f1925ba2e",
+      "spec": {
+        "template": "table",
+        "title": "Tombstone markers and non-blocking deletions",
+        "columns": [
+          "records",
+          "delete",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Marking records with a tombstone flags deleted items without full rewrites.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "delete"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "delete"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Background compaction rebuilds segments to reclaim space from tombstones.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "delete"
+                  },
+                  {
+                    "text": "records"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "records"
+                  },
+                  {
+                    "text": "delete"
+                  },
+                  {
+                    "text": "delete"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tombstone markers and non-blocking deletions",
+        "columns": [
+          "records",
+          "delete",
+          "records"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Marking records with a tombstone flags deleted items without full rewrites.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "delete",
+                  "records"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "records",
+                  "delete",
+                  "records"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Background compaction rebuilds segments to reclaim space from tombstones.",
+            "rows": [
+              {
+                "cells": [
+                  "records",
+                  "delete",
+                  "records"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "records",
+                  "delete",
+                  "delete"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Searching around tombstones",
+      "codeHash": "1b0f8f00507543657b65ca70af28a51d473ca5aacf843450b78ca67923876e47",
+      "spec": {
+        "template": "table",
+        "title": "Tombstone traversal filtering during approximate search",
+        "columns": [
+          "items",
+          "live",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search queries must never return deleted records to protect privacy.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "live"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "live"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Traversed graph nodes act as stepping stones without being returned.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "live"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "items"
+                  },
+                  {
+                    "text": "live"
+                  },
+                  {
+                    "text": "live"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tombstone traversal filtering during approximate search",
+        "columns": [
+          "items",
+          "live",
+          "items"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search queries must never return deleted records to protect privacy.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "live",
+                  "items"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "items",
+                  "live",
+                  "items"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Traversed graph nodes act as stepping stones without being returned.",
+            "rows": [
+              {
+                "cells": [
+                  "items",
+                  "live",
+                  "items"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "items",
+                  "live",
+                  "live"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Segments and compaction",
+      "codeHash": "c745fab56ec39c4938cdfbc83caff3b89c775aba787a08e6af95e73bcd86eaf4",
+      "spec": {
+        "template": "table",
+        "title": "Immutable segment merge and space reclamation",
+        "columns": [
+          "latest",
+          "kept",
+          "latest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Databases organize updates into immutable segments written sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "latest"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "latest"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latest"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "latest"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compaction merges segments and purges deleted records permanently.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "latest"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "latest"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latest"
+                  },
+                  {
+                    "text": "kept"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Immutable segment merge and space reclamation",
+        "columns": [
+          "latest",
+          "kept",
+          "latest"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Databases organize updates into immutable segments written sequentially.",
+            "rows": [
+              {
+                "cells": [
+                  "latest",
+                  "kept",
+                  "latest"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latest",
+                  "kept",
+                  "latest"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Compaction merges segments and purges deleted records permanently.",
+            "rows": [
+              {
+                "cells": [
+                  "latest",
+                  "kept",
+                  "latest"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "latest",
+                  "kept",
+                  "kept"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistency for readers",
+      "codeHash": "213a028c1aa864af5b3d49c1ff929f5cfc6c699e3314333cc7cc4beb5a98d555",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: operations",
+      "codeHash": "c666713182b2ff6e3d8f11cd562806a10d9459ce909ceeffa0cf489088cbccee",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

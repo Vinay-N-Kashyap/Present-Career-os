@@ -7612,27 +7612,27 @@
     },
     "vec-py:18:0": {
       "partTitle": "Upserts and versions",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:18:1": {
       "partTitle": "Deletes and tombstones",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:18:2": {
       "partTitle": "Searching around tombstones",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:18:3": {
       "partTitle": "Segments and compaction",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:18:4": {
       "partTitle": "Consistency for readers",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:18:5": {
       "partTitle": "Practice time: operations",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:19:0": {
       "partTitle": "Why shard",
