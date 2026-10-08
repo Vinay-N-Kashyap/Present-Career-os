@@ -8092,27 +8092,27 @@
     },
     "safe-py:8:0": {
       "partTitle": "Moderation classifiers",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:8:1": {
       "partTitle": "Per-category thresholds",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:8:2": {
       "partTitle": "Four outcomes",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:8:3": {
       "partTitle": "The threshold trade-off",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:8:4": {
       "partTitle": "Moderation in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:8:5": {
       "partTitle": "Where moderation goes wrong",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:9:0": {
       "partTitle": "The confusion matrix",
