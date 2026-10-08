@@ -5596,27 +5596,27 @@
     },
     "quant-py:24:0": {
       "partTitle": "The speed of light in fibre",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:24:1": {
       "partTitle": "Colocation",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:24:2": {
       "partTitle": "Cross-connects and network design",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:24:3": {
       "partTitle": "Fibre versus air",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:24:4": {
       "partTitle": "The latency arms race and its limits",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:24:5": {
       "partTitle": "Practice time: physics calculators",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:25:0": {
       "partTitle": "Line of sight and towers",
