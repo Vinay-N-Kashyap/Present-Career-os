@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 2,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "What a variable is",
+      "codeHash": "0d7ca8b325ce4b73b6fe8c0d70138734851dc46eb52b545355944c86580d3a74",
+      "spec": {
+        "template": "boxes",
+        "title": "Variables hold and update information",
+        "boxes": [
+          {
+            "id": "jobTitle",
+            "label": "jobTitle",
+            "tappable": true
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A variable is a named box that stores information.",
+            "values": {
+              "jobTitle": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "You create a variable with let and set its starting value.",
+            "values": {
+              "jobTitle": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Using the variable label gets the stored value back.",
+            "values": {
+              "jobTitle": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Variables hold and update information",
+        "boxes": [
+          {
+            "id": "jobTitle",
+            "label": "jobTitle",
+            "tappable": true
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A variable is a named box that stores information.",
+            "values": {
+              "jobTitle": "\"Frontend Developer\"",
+              "company": "\"Infosys\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "You create a variable with let and set its starting value.",
+            "values": {
+              "jobTitle": "\"Frontend Developer\"",
+              "company": "\"Infosys\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Using the variable label gets the stored value back.",
+            "values": {
+              "jobTitle": "\"Frontend Developer\"",
+              "company": "\"Infosys\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing values, and const for values that stay the same",
+      "codeHash": "0dcc33047638c53ef762d4b9c8436848e217de4f79271ae1acbd15d4a1000777",
+      "spec": {
+        "template": "compare",
+        "title": "let versus const variable reassignment",
+        "leftLabel": "const (Locked)",
+        "rightLabel": "let (Changeable)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "const creates a locked variable that cannot be reassigned.",
+            "left": {
+              "code": "const appName = \"Job Tracker\";",
+              "result": {
+                "text": "\"Job Tracker\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "let jobsApplied = 2;",
+              "result": {
+                "text": "2"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "let allows changing values later when the application updates.",
+            "left": {
+              "code": "const appName = \"Job Tracker\";",
+              "result": {
+                "text": "\"Job Tracker\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "jobsApplied = 3;",
+              "result": {
+                "text": "3"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "let versus const variable reassignment",
+        "leftLabel": "const (Locked)",
+        "rightLabel": "let (Changeable)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "const creates a locked variable that cannot be reassigned.",
+            "left": {
+              "code": "const appName = \"Job Tracker\";",
+              "result": "\"Job Tracker\"",
+              "tone": "ok",
+              "checks": [
+                "\"Job Tracker\""
+              ]
+            },
+            "right": {
+              "code": "let jobsApplied = 2;",
+              "result": "2",
+              "tone": "idle",
+              "checks": [
+                "2"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "let allows changing values later when the application updates.",
+            "left": {
+              "code": "const appName = \"Job Tracker\";",
+              "result": "\"Job Tracker\"",
+              "tone": "ok",
+              "checks": [
+                "\"Job Tracker\""
+              ]
+            },
+            "right": {
+              "code": "jobsApplied = 3;",
+              "result": "3",
+              "tone": "data",
+              "checks": [
+                "3"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Strings: working with text",
+      "codeHash": "89c7cafed97a645a95df49b2db2ebf9191ec67fc3d7ee48e8185388a5839dc6c",
+      "spec": {
+        "template": "flow",
+        "title": "String manipulation and transformation",
+        "nodes": [
+          {
+            "id": "first",
+            "label": "firstName",
+            "tappable": true
+          },
+          {
+            "id": "last",
+            "label": "lastName",
+            "tappable": true
+          },
+          {
+            "id": "full",
+            "label": "fullName",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Strings in quotes represent text data like names and titles.",
+            "values": {
+              "first": {
+                "text": "\"asha\""
+              },
+              "last": {
+                "text": "\"rao\""
+              },
+              "full": {
+                "text": "firstName"
+              }
+            },
+            "tones": {
+              "first": "data",
+              "last": "idle",
+              "full": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "The plus sign joins two strings together with spaces.",
+            "values": {
+              "first": {
+                "text": "\"asha\""
+              },
+              "last": {
+                "text": "\"rao\""
+              },
+              "full": {
+                "text": "lastName"
+              }
+            },
+            "tones": {
+              "first": "idle",
+              "last": "idle",
+              "full": "data"
+            },
+            "arrows": [
+              [
+                "first",
+                "full"
+              ],
+              [
+                "last",
+                "full"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "String methods like length and toUpperCase transform values.",
+            "values": {
+              "first": {
+                "text": "firstName"
+              },
+              "last": {
+                "text": "lastName"
+              },
+              "full": {
+                "text": "fullName"
+              }
+            },
+            "tones": {
+              "first": "idle",
+              "last": "idle",
+              "full": "ok"
+            },
+            "arrows": [
+              [
+                "first",
+                "full"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "String manipulation and transformation",
+        "nodes": [
+          {
+            "id": "first",
+            "label": "firstName",
+            "tappable": true
+          },
+          {
+            "id": "last",
+            "label": "lastName",
+            "tappable": true
+          },
+          {
+            "id": "full",
+            "label": "fullName",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Strings in quotes represent text data like names and titles.",
+            "values": {
+              "first": "\"asha\"",
+              "last": "\"rao\"",
+              "full": "firstName"
+            },
+            "tones": {
+              "first": "data",
+              "last": "idle",
+              "full": "idle"
+            },
+            "arrows": []
+          },
+          {
+            "at": "say2",
+            "caption": "The plus sign joins two strings together with spaces.",
+            "values": {
+              "first": "\"asha\"",
+              "last": "\"rao\"",
+              "full": "lastName"
+            },
+            "tones": {
+              "first": "idle",
+              "last": "idle",
+              "full": "data"
+            },
+            "arrows": [
+              [
+                "first",
+                "full"
+              ],
+              [
+                "last",
+                "full"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "String methods like length and toUpperCase transform values.",
+            "values": {
+              "first": "firstName",
+              "last": "lastName",
+              "full": "fullName"
+            },
+            "tones": {
+              "first": "idle",
+              "last": "idle",
+              "full": "ok"
+            },
+            "arrows": [
+              [
+                "first",
+                "full"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Numbers and maths",
+      "codeHash": "7894a0b9f35fa4aa254244189fca1c4a59c7800fb084928ceadfe8fba3cf9692",
+      "spec": {
+        "template": "compare",
+        "title": "Numbers maths versus string joining",
+        "leftLabel": "Numbers Addition",
+        "rightLabel": "String Joining",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Numbers without quotes perform mathematical arithmetic.",
+            "left": {
+              "code": "console.log(price + delivery);",
+              "result": {
+                "text": "540"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(\"500\" + 40);",
+              "result": {
+                "text": "\"500\" + 40"
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The plus sign adds numbers, but concatenates text strings.",
+            "left": {
+              "code": "console.log(price + delivery);",
+              "result": {
+                "text": "540"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(\"500\" + 40);",
+              "result": {
+                "text": "50040"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Numbers maths versus string joining",
+        "leftLabel": "Numbers Addition",
+        "rightLabel": "String Joining",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Numbers without quotes perform mathematical arithmetic.",
+            "left": {
+              "code": "console.log(price + delivery);",
+              "result": "540",
+              "tone": "ok",
+              "checks": [
+                "540"
+              ]
+            },
+            "right": {
+              "code": "console.log(\"500\" + 40);",
+              "result": "\"500\" + 40",
+              "tone": "idle",
+              "checks": [
+                "\"500\" + 40"
+              ]
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The plus sign adds numbers, but concatenates text strings.",
+            "left": {
+              "code": "console.log(price + delivery);",
+              "result": "540",
+              "tone": "ok",
+              "checks": [
+                "540"
+              ]
+            },
+            "right": {
+              "code": "console.log(\"500\" + 40);",
+              "result": "50040",
+              "tone": "data",
+              "checks": [
+                "50040"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Booleans and comparing values",
+      "codeHash": "2789100bc9f6c756081835a68963374e990774f3fbfd6287bc8820544069ae33",
+      "spec": {
+        "template": "boxes",
+        "title": "Boolean facts and comparison results",
+        "boxes": [
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": true
+          },
+          {
+            "id": "isRemote",
+            "label": "isLoggedIn",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A boolean holds either true or false for yes and no facts.",
+            "values": {
+              "salary": {
+                "text": "450000"
+              },
+              "isRemote": {
+                "text": "true"
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Comparing values produces boolean results of true or false.",
+            "values": {
+              "salary": {
+                "text": "450000"
+              },
+              "isRemote": {
+                "text": "true"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Boolean facts and comparison results",
+        "boxes": [
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": true
+          },
+          {
+            "id": "isRemote",
+            "label": "isLoggedIn",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A boolean holds either true or false for yes and no facts.",
+            "values": {
+              "salary": "450000",
+              "isRemote": "true"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Comparing values produces boolean results of true or false.",
+            "values": {
+              "salary": "450000",
+              "isRemote": "true"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "null, undefined, typeof and good names",
+      "codeHash": "7706f0153fafc9b348e3dbbdee44dd69a276cca672fda9dfc211100d604b550f",
+      "spec": {
+        "template": "none",
+        "reason": "Overview of empty values null and undefined, and naming guidelines"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Overview of empty values null and undefined, and naming guidelines"
+      }
+    }
+  ]
+}
