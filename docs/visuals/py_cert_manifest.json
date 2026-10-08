@@ -5644,27 +5644,27 @@
     },
     "quant-py:26:0": {
       "partTitle": "Why backtests lie",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:26:1": {
       "partTitle": "Lookahead bias",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:26:2": {
       "partTitle": "Survivorship bias",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:26:3": {
       "partTitle": "Overfitting and multiple testing",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:26:4": {
       "partTitle": "Honest research practice",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:26:5": {
       "partTitle": "Practice time: audit and haircut",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:27:0": {
       "partTitle": "Lessons from disasters",
