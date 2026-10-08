@@ -8476,27 +8476,27 @@
     },
     "safe-py:24:0": {
       "partTitle": "Why document AI systems",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:24:1": {
       "partTitle": "What goes in each section",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:24:2": {
       "partTitle": "Checking completeness",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:24:3": {
       "partTitle": "Rendering Markdown",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:24:4": {
       "partTitle": "Keeping cards up to date",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:24:5": {
       "partTitle": "Cards in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:25:0": {
       "partTitle": "Why governance matters",

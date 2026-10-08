@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why document AI systems",
+      "codeHash": "f8e2b93dbb7ac6878b78f7d5df4e2f10041eea67bfc25ccffeea081f27f49665",
+      "spec": {
+        "template": "table",
+        "title": "Standard model card section schema and organization",
+        "columns": [
+          "sections",
+          "sections"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Model cards document intended behaviour and known limitations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sections"
+                  },
+                  {
+                    "text": "sections"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "intended_use"
+                  },
+                  {
+                    "text": "limitations"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Cards guide users on appropriate applications and warnings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sections"
+                  },
+                  {
+                    "text": "sections"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "evaluation"
+                  },
+                  {
+                    "text": "contact"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Standard model card section schema and organization",
+        "columns": [
+          "sections",
+          "sections"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Model cards document intended behaviour and known limitations.",
+            "rows": [
+              {
+                "cells": [
+                  "sections",
+                  "sections"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "intended_use",
+                  "limitations"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Cards guide users on appropriate applications and warnings.",
+            "rows": [
+              {
+                "cells": [
+                  "sections",
+                  "sections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "evaluation",
+                  "contact"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "What goes in each section",
+      "codeHash": "5cadc416c9592ebc5ce4872e490f48e5a6f259a6b5fa8c6d465b5e7c7adaf747",
+      "spec": {
+        "template": "table",
+        "title": "Card section fields and factual descriptions",
+        "columns": [
+          "card",
+          "card"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Intended use defines target users and intended system tasks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "intended_use"
+                  },
+                  {
+                    "text": "limitations"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Evaluation metrics report empirical safety results from the harness.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "card"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "out_of_scope_use"
+                  },
+                  {
+                    "text": "evaluation"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Card section fields and factual descriptions",
+        "columns": [
+          "card",
+          "card"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Intended use defines target users and intended system tasks.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "card"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "intended_use",
+                  "limitations"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Evaluation metrics report empirical safety results from the harness.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "card"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "out_of_scope_use",
+                  "evaluation"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Checking completeness",
+      "codeHash": "d73c723c32f56c5c916682a1df007b26ea43bc480fb1c1a8daa11381f1d83a4f",
+      "spec": {
+        "template": "table",
+        "title": "Documentation completeness checking and missing section detection",
+        "columns": [
+          "required",
+          "missing"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Required sections verify documentation is non empty before shipping.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "required"
+                  },
+                  {
+                    "text": "missing"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "intended_use"
+                  },
+                  {
+                    "text": "limitations"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Completeness checks run alongside the regression gate in CI.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "required"
+                  },
+                  {
+                    "text": "missing"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "evaluation"
+                  },
+                  {
+                    "text": "contact"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Documentation completeness checking and missing section detection",
+        "columns": [
+          "required",
+          "missing"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Required sections verify documentation is non empty before shipping.",
+            "rows": [
+              {
+                "cells": [
+                  "required",
+                  "missing"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "intended_use",
+                  "limitations"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Completeness checks run alongside the regression gate in CI.",
+            "rows": [
+              {
+                "cells": [
+                  "required",
+                  "missing"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "evaluation",
+                  "contact"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rendering Markdown",
+      "codeHash": "00ce3f5cae12ea1d73295ba318dc5c34df2d2ac54887c02d87d8e7bfd6d969b5",
+      "spec": {
+        "template": "table",
+        "title": "Rendering structured card data into markdown blocks",
+        "columns": [
+          "card",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System cards are rendered into clean Markdown documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "order"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "intended_use"
+                  },
+                  {
+                    "text": "limitations"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Headings format each section with clear hierarchical tags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "card"
+                  },
+                  {
+                    "text": "order"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "blocks"
+                  },
+                  {
+                    "text": "contact"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rendering structured card data into markdown blocks",
+        "columns": [
+          "card",
+          "order"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System cards are rendered into clean Markdown documents.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "order"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "intended_use",
+                  "limitations"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Headings format each section with clear hierarchical tags.",
+            "rows": [
+              {
+                "cells": [
+                  "card",
+                  "order"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "blocks",
+                  "contact"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeping cards up to date",
+      "codeHash": "62579d22d5f906903285bd6b6844a7502c0bc198d4211a565a3a73359bc5452f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Cards in the pipeline",
+      "codeHash": "2912a63d47fc9e8c16bbd93ff734457d316ce027c45abd46ff6637ba696875d5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
