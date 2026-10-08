@@ -7828,27 +7828,27 @@
     },
     "vec-py:27:0": {
       "partTitle": "Why averages hide slow queries",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:27:1": {
       "partTitle": "Computing percentiles",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:27:2": {
       "partTitle": "Embedding drift",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:27:3": {
       "partTitle": "Quality signals in production",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:27:4": {
       "partTitle": "Alerts that help",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:27:5": {
       "partTitle": "Practice time: monitoring",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:28:0": {
       "partTitle": "Bytes per vector",
