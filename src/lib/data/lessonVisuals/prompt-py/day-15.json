@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 15,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The pipeline",
+      "codeHash": "a148089ce9f1b908c23f3400c121133c9509cdcb1e3b1f107287b4f65ec02b40",
+      "spec": {
+        "template": "table",
+        "title": "Five-stage grounded question answering pipeline architecture",
+        "columns": [
+          "chunks",
+          "prompt",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A question answering pipeline connects prompt building and model calls.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Numbered sources and question instructions anchor model answer citations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "answer"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Five-stage grounded question answering pipeline architecture",
+        "columns": [
+          "chunks",
+          "prompt",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A question answering pipeline connects prompt building and model calls.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "prompt",
+                  "citations"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "prompt",
+                  "citations"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Numbered sources and question instructions anchor model answer citations.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "prompt",
+                  "citations"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "prompt",
+                  "answer"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retrieval and the grounded prompt",
+      "codeHash": "5dfe4f5867e6f00ed94a123d569ca1760683b4d1bee5b8da25f330e09ca951a0",
+      "spec": {
+        "template": "table",
+        "title": "Ranked chunk retrieval and indexed prompt assembly",
+        "columns": [
+          "chunks",
+          "ranked",
+          "ids"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grounded prompt combines retrieved chunks with structured question format.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "ids"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "ids"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Returning chunk indices lets later steps map citations back to sources.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "ids"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "ranked"
+                  },
+                  {
+                    "text": "ids"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Ranked chunk retrieval and indexed prompt assembly",
+        "columns": [
+          "chunks",
+          "ranked",
+          "ids"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A grounded prompt combines retrieved chunks with structured question format.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "ranked",
+                  "ids"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "ranked",
+                  "ids"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Returning chunk indices lets later steps map citations back to sources.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "ranked",
+                  "ids"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "words",
+                  "ranked",
+                  "ids"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asking for a JSON answer",
+      "codeHash": "c1f13d80c535f67709771e9d8c3cef876bfd8a1b24aa28d72125a05db1fa66e0",
+      "spec": {
+        "template": "table",
+        "title": "JSON response schema instructions and format enforcement",
+        "columns": [
+          "fmt",
+          "answer",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The prompt demands structured JSON output containing an answer and citations.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Structured JSON lets validation code check citations directly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fmt"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "JSON response schema instructions and format enforcement",
+        "columns": [
+          "fmt",
+          "answer",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The prompt demands structured JSON output containing an answer and citations.",
+            "rows": [
+              {
+                "cells": [
+                  "fmt",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fmt",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Structured JSON lets validation code check citations directly.",
+            "rows": [
+              {
+                "cells": [
+                  "fmt",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "base",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing and validating the reply",
+      "codeHash": "fb9e4d9f9eeffe3f8fb68af088c48949ad2e232fb5baeeb321fa030c0d8c730f",
+      "spec": {
+        "template": "table",
+        "title": "Response extraction, JSON parsing and citation bounds validation",
+        "columns": [
+          "reply",
+          "answer",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parsing extracts the inner JSON payload from a chatty model reply.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reply"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reply"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Validation checks that citations form an integer list and answer is present.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "reply"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "answer"
+                  },
+                  {
+                    "text": "citations"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Response extraction, JSON parsing and citation bounds validation",
+        "columns": [
+          "reply",
+          "answer",
+          "citations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parsing extracts the inner JSON payload from a chatty model reply.",
+            "rows": [
+              {
+                "cells": [
+                  "reply",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "reply",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Validation checks that citations form an integer list and answer is present.",
+            "rows": [
+              {
+                "cells": [
+                  "reply",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "data",
+                  "answer",
+                  "citations"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure handling and user experience",
+      "codeHash": "ab5de3a346cf3a6c93cbf8d21ce4183320ed5717c10e8abdfdad969816baf8f8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Milestone practice: grounded prompt and reply parser",
+      "codeHash": "598b94ab836d68188f0980e50d9a32dc12766bfd861a3783b1279c236fe1c995",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

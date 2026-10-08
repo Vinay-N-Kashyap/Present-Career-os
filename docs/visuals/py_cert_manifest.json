@@ -6100,27 +6100,27 @@
     },
     "prompt-py:15:0": {
       "partTitle": "The pipeline",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:15:1": {
       "partTitle": "Retrieval and the grounded prompt",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:15:2": {
       "partTitle": "Asking for a JSON answer",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:15:3": {
       "partTitle": "Parsing and validating the reply",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:15:4": {
       "partTitle": "Failure handling and user experience",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:15:5": {
       "partTitle": "Milestone practice: grounded prompt and reply parser",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:16:0": {
       "partTitle": "Multimodal AI",
