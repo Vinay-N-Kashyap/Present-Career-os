@@ -970,7 +970,7 @@
   },
   {
    "id": "C-dsa-py-D05",
-   "title": "dsa-py day 5: \u2b50 MILESTONE 1: Production LRU Cache Engine (Doubly Linked List + Hash Map)",
+   "title": "dsa-py day 5: ⭐ MILESTONE 1: Production LRU Cache Engine (Doubly Linked List + Hash Map)",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dsa-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -1176,7 +1176,7 @@
   },
   {
    "id": "C-dsa-py-D15",
-   "title": "dsa-py day 15: \u2b50 MILESTONE 2: High-Throughput Stream Median Finder (Dual Binary Heaps)",
+   "title": "dsa-py day 15: ⭐ MILESTONE 2: High-Throughput Stream Median Finder (Dual Binary Heaps)",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dsa-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -1306,7 +1306,7 @@
   },
   {
    "id": "C-dsa-py-D21",
-   "title": "dsa-py day 21: \u2b50 MILESTONE 3: Fast Auto-Complete Engine (Trie + Frequency Min-Heap)",
+   "title": "dsa-py day 21: ⭐ MILESTONE 3: Fast Auto-Complete Engine (Trie + Frequency Min-Heap)",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dsa-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -1409,7 +1409,7 @@
   },
   {
    "id": "C-dsa-py-D26",
-   "title": "dsa-py day 26: \u2b50 MILESTONE 4: 0/1 Knapsack & Coin Change Optimization Engine",
+   "title": "dsa-py day 26: ⭐ MILESTONE 4: 0/1 Knapsack & Coin Change Optimization Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dsa-py/day-26.json",
     "docs/visuals/py_cert_manifest.json"
@@ -1485,7 +1485,7 @@
   },
   {
    "id": "C-dsa-py-D30",
-   "title": "dsa-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Real-Time Global Flight Path Routing & Navigation Optimizer",
+   "title": "dsa-py day 30: 🏆 FINAL CAPSTONE: Real-Time Global Flight Path Routing & Navigation Optimizer",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dsa-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -2228,7 +2228,7 @@
   },
   {
    "id": "C-ai-py-D05",
-   "title": "ai-py day 5: \u2b50 MILESTONE 1: Structured JSON Outputs & Pydantic/Zod Schema Enforcement",
+   "title": "ai-py day 5: ⭐ MILESTONE 1: Structured JSON Outputs & Pydantic/Zod Schema Enforcement",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/ai-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -2434,7 +2434,7 @@
   },
   {
    "id": "C-ai-py-D15",
-   "title": "ai-py day 15: \u2b50 MILESTONE 2: Production End-to-End Hybrid RAG Pipeline with Reranking",
+   "title": "ai-py day 15: ⭐ MILESTONE 2: Production End-to-End Hybrid RAG Pipeline with Reranking",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/ai-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -2564,7 +2564,7 @@
   },
   {
    "id": "C-ai-py-D21",
-   "title": "ai-py day 21: \u2b50 MILESTONE 3: Autonomous Multi-Agent Research Assistant with Web & Code Tools",
+   "title": "ai-py day 21: ⭐ MILESTONE 3: Autonomous Multi-Agent Research Assistant with Web & Code Tools",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/ai-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -2743,7 +2743,7 @@
   },
   {
    "id": "C-ai-py-D30",
-   "title": "ai-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Enterprise Agentic RAG Platform with Guardrails, Semantic Caching & Multi-Tool Execution",
+   "title": "ai-py day 30: 🏆 FINAL CAPSTONE: Enterprise Agentic RAG Platform with Guardrails, Semantic Caching & Multi-Tool Execution",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/ai-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -2854,7 +2854,7 @@
   },
   {
    "id": "C-dist-py-D05",
-   "title": "dist-py day 5: \u2b50 MILESTONE 1: High-Performance Distributed Cache with Cache-Aside & Thundering Herd Defense",
+   "title": "dist-py day 5: ⭐ MILESTONE 1: High-Performance Distributed Cache with Cache-Aside & Thundering Herd Defense",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dist-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3060,7 +3060,7 @@
   },
   {
    "id": "C-dist-py-D15",
-   "title": "dist-py day 15: \u2b50 MILESTONE 2: Resilient Event-Driven Transaction Engine with Sagas & Idempotency Keys",
+   "title": "dist-py day 15: ⭐ MILESTONE 2: Resilient Event-Driven Transaction Engine with Sagas & Idempotency Keys",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dist-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3190,7 +3190,7 @@
   },
   {
    "id": "C-dist-py-D21",
-   "title": "dist-py day 21: \u2b50 MILESTONE 3: Distributed Rate Limiter & Circuit Breaker API Gateway",
+   "title": "dist-py day 21: ⭐ MILESTONE 3: Distributed Rate Limiter & Circuit Breaker API Gateway",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dist-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3369,7 +3369,7 @@
   },
   {
    "id": "C-dist-py-D30",
-   "title": "dist-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Enterprise Global Real-Time Financial Trading & Ledger Exchange Engine",
+   "title": "dist-py day 30: 🏆 FINAL CAPSTONE: Enterprise Global Real-Time Financial Trading & Ledger Exchange Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/dist-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3480,7 +3480,7 @@
   },
   {
    "id": "C-cloud-py-D05",
-   "title": "cloud-py day 5: \u2b50 MILESTONE 1: High-Availability Multi-AZ VPC Network Topology & Bastion Host",
+   "title": "cloud-py day 5: ⭐ MILESTONE 1: High-Availability Multi-AZ VPC Network Topology & Bastion Host",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/cloud-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3686,7 +3686,7 @@
   },
   {
    "id": "C-cloud-py-D15",
-   "title": "cloud-py day 15: \u2b50 MILESTONE 2: Serverless Event-Driven Video Processing Engine",
+   "title": "cloud-py day 15: ⭐ MILESTONE 2: Serverless Event-Driven Video Processing Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/cloud-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3816,7 +3816,7 @@
   },
   {
    "id": "C-cloud-py-D21",
-   "title": "cloud-py day 21: \u2b50 MILESTONE 3: High-Scale E-Commerce Microservices Event Bus with SQS/SNS Fanout",
+   "title": "cloud-py day 21: ⭐ MILESTONE 3: High-Scale E-Commerce Microservices Event Bus with SQS/SNS Fanout",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/cloud-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -3995,7 +3995,7 @@
   },
   {
    "id": "C-cloud-py-D30",
-   "title": "cloud-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Global Resilient Multi-Region FinTech Banking Infrastructure with Active-Active Failover",
+   "title": "cloud-py day 30: 🏆 FINAL CAPSTONE: Global Resilient Multi-Region FinTech Banking Infrastructure with Active-Active Failover",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/cloud-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4112,7 +4112,7 @@
   },
   {
    "id": "C-nlp-py-D05",
-   "title": "nlp-py day 5: \u2b50 MILESTONE 1: Complete Text Normalization, TF-IDF & Vector Space Search Engine",
+   "title": "nlp-py day 5: ⭐ MILESTONE 1: Complete Text Normalization, TF-IDF & Vector Space Search Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/nlp-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4318,7 +4318,7 @@
   },
   {
    "id": "C-nlp-py-D15",
-   "title": "nlp-py day 15: \u2b50 MILESTONE 2: Complete Word2Vec Embeddings, Viterbi POS Tagger & Bidirectional LSTM Classifier",
+   "title": "nlp-py day 15: ⭐ MILESTONE 2: Complete Word2Vec Embeddings, Viterbi POS Tagger & Bidirectional LSTM Classifier",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/nlp-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4448,7 +4448,7 @@
   },
   {
    "id": "C-nlp-py-D21",
-   "title": "nlp-py day 21: \u2b50 MILESTONE 3: Complete Scaled Dot-Product Self-Attention & Positional Encoding Engine",
+   "title": "nlp-py day 21: ⭐ MILESTONE 3: Complete Scaled Dot-Product Self-Attention & Positional Encoding Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/nlp-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4627,7 +4627,7 @@
   },
   {
    "id": "C-nlp-py-D30",
-   "title": "nlp-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Sovereign Natural Language Processing & LLM Infrastructure Engine",
+   "title": "nlp-py day 30: 🏆 FINAL CAPSTONE: Sovereign Natural Language Processing & LLM Infrastructure Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/nlp-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4738,7 +4738,7 @@
   },
   {
    "id": "C-quant-py-D05",
-   "title": "quant-py day 5: \u2b50 MILESTONE 1: Complete Limit Order Book & Matching Engine Kernel",
+   "title": "quant-py day 5: ⭐ MILESTONE 1: Complete Limit Order Book & Matching Engine Kernel",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/quant-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -4944,7 +4944,7 @@
   },
   {
    "id": "C-quant-py-D15",
-   "title": "quant-py day 15: \u2b50 MILESTONE 2: Complete Ultra-Low-Latency Order Messaging & Concurrency Engine",
+   "title": "quant-py day 15: ⭐ MILESTONE 2: Complete Ultra-Low-Latency Order Messaging & Concurrency Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/quant-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5074,7 +5074,7 @@
   },
   {
    "id": "C-quant-py-D21",
-   "title": "quant-py day 21: \u2b50 MILESTONE 3: Complete Quantitative Pricing, Greeks & Risk Engine",
+   "title": "quant-py day 21: ⭐ MILESTONE 3: Complete Quantitative Pricing, Greeks & Risk Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/quant-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5253,7 +5253,7 @@
   },
   {
    "id": "C-quant-py-D30",
-   "title": "quant-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Ultra-Low-Latency Quantitative Trading & Market Making System",
+   "title": "quant-py day 30: 🏆 FINAL CAPSTONE: Ultra-Low-Latency Quantitative Trading & Market Making System",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/quant-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5288,7 +5288,7 @@
   },
   {
    "id": "C-prompt-py-D01",
-   "title": "prompt-py day 1: What is AI? \u2014 Prompts, Context, and Getting Useful Responses",
+   "title": "prompt-py day 1: What is AI? — Prompts, Context, and Getting Useful Responses",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/prompt-py/day-01.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5364,7 +5364,7 @@
   },
   {
    "id": "C-prompt-py-D05",
-   "title": "prompt-py day 5: \u2b50 MILESTONE 1: Complete AI Tokenomics, Persona Role Framing & Chain-of-Thought Prompting Engine",
+   "title": "prompt-py day 5: ⭐ MILESTONE 1: Complete AI Tokenomics, Persona Role Framing & Chain-of-Thought Prompting Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/prompt-py/day-05.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5570,7 +5570,7 @@
   },
   {
    "id": "C-prompt-py-D15",
-   "title": "prompt-py day 15: \u2b50 MILESTONE 2: Complete Structured JSON, RAG Grounding, Prompt Chaining & Data Analysis Engine",
+   "title": "prompt-py day 15: ⭐ MILESTONE 2: Complete Structured JSON, RAG Grounding, Prompt Chaining & Data Analysis Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/prompt-py/day-15.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5700,7 +5700,7 @@
   },
   {
    "id": "C-prompt-py-D21",
-   "title": "prompt-py day 21: \u2b50 MILESTONE 3: Complete Multimodal Vision, Image Generation, Voice AI & Safety/Injection Defense Engine",
+   "title": "prompt-py day 21: ⭐ MILESTONE 3: Complete Multimodal Vision, Image Generation, Voice AI & Safety/Injection Defense Engine",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/prompt-py/day-21.json",
     "docs/visuals/py_cert_manifest.json"
@@ -5879,7 +5879,7 @@
   },
   {
    "id": "C-prompt-py-D30",
-   "title": "prompt-py day 30: \ud83c\udfc6 FINAL CAPSTONE: Sovereign Everyday AI Literacy & Master Prompt Engineering Suite",
+   "title": "prompt-py day 30: 🏆 FINAL CAPSTONE: Sovereign Everyday AI Literacy & Master Prompt Engineering Suite",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/prompt-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -6511,7 +6511,7 @@
   },
   {
    "id": "C-train-py-D30",
-   "title": "train-py day 30: \ud83c\udfc6 Capstone: Planning and Reporting a Distributed Training Run",
+   "title": "train-py day 30: 🏆 Capstone: Planning and Reporting a Distributed Training Run",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/train-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -7137,7 +7137,7 @@
   },
   {
    "id": "C-vec-py-D30",
-   "title": "vec-py day 30: \ud83c\udfc6 Capstone: A Hybrid Search Engine with Filters and an Evaluation Report",
+   "title": "vec-py day 30: 🏆 Capstone: A Hybrid Search Engine with Filters and an Evaluation Report",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/vec-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -7763,7 +7763,7 @@
   },
   {
    "id": "C-safe-py-D30",
-   "title": "safe-py day 30: \ud83c\udfc6 Capstone: A Guardrail Pipeline and Safety Scorecard",
+   "title": "safe-py day 30: 🏆 Capstone: A Guardrail Pipeline and Safety Scorecard",
    "allowedFiles": [
     "src/lib/data/lessonVisuals/safe-py/day-30.json",
     "docs/visuals/py_cert_manifest.json"
@@ -7801,6 +7801,576 @@
    "title": "Owner sign-off: 12m plan",
    "allowedFiles": [],
    "kind": "milestone"
+  },
+  {
+   "id": "C-react-basics-D01",
+   "title": "react-basics day 1: How a Website Works: HTML, CSS, JavaScript and React",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-01.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 1,
+   "keys": [
+    "react-basics:1:0",
+    "react-basics:1:1",
+    "react-basics:1:2",
+    "react-basics:1:3",
+    "react-basics:1:4",
+    "react-basics:1:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D02",
+   "title": "react-basics day 2: Variables and Data Types",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-02.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 2,
+   "keys": [
+    "react-basics:2:0",
+    "react-basics:2:1",
+    "react-basics:2:2",
+    "react-basics:2:3",
+    "react-basics:2:4",
+    "react-basics:2:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D03",
+   "title": "react-basics day 3: Functions and Making Decisions",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-03.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 3,
+   "keys": [
+    "react-basics:3:0",
+    "react-basics:3:1",
+    "react-basics:3:2",
+    "react-basics:3:3",
+    "react-basics:3:4",
+    "react-basics:3:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D04",
+   "title": "react-basics day 4: Arrays and Objects",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-04.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 4,
+   "keys": [
+    "react-basics:4:0",
+    "react-basics:4:1",
+    "react-basics:4:2",
+    "react-basics:4:3",
+    "react-basics:4:4",
+    "react-basics:4:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D05",
+   "title": "react-basics day 5: Loops and Array Methods: map, filter, find",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-05.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 5,
+   "keys": [
+    "react-basics:5:0",
+    "react-basics:5:1",
+    "react-basics:5:2",
+    "react-basics:5:3",
+    "react-basics:5:4",
+    "react-basics:5:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D06",
+   "title": "react-basics day 6: Modern JavaScript: Template Strings, Destructuring and Spread",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-06.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 6,
+   "keys": [
+    "react-basics:6:0",
+    "react-basics:6:1",
+    "react-basics:6:2",
+    "react-basics:6:3",
+    "react-basics:6:4",
+    "react-basics:6:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D07",
+   "title": "react-basics day 7: Modules and Creating Your First React Project",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-07.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 7,
+   "keys": [
+    "react-basics:7:0",
+    "react-basics:7:1",
+    "react-basics:7:2",
+    "react-basics:7:3",
+    "react-basics:7:4",
+    "react-basics:7:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D08",
+   "title": "react-basics day 8: Your First Component and JSX",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-08.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 8,
+   "keys": [
+    "react-basics:8:0",
+    "react-basics:8:1",
+    "react-basics:8:2",
+    "react-basics:8:3",
+    "react-basics:8:4",
+    "react-basics:8:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D09",
+   "title": "react-basics day 9: Props: Passing Data to Components",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-09.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 9,
+   "keys": [
+    "react-basics:9:0",
+    "react-basics:9:1",
+    "react-basics:9:2",
+    "react-basics:9:3",
+    "react-basics:9:4",
+    "react-basics:9:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D10",
+   "title": "react-basics day 10: Showing Lists with map and key",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-10.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 10,
+   "keys": [
+    "react-basics:10:0",
+    "react-basics:10:1",
+    "react-basics:10:2",
+    "react-basics:10:3",
+    "react-basics:10:4",
+    "react-basics:10:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D11",
+   "title": "react-basics day 11: Showing Things Only When Needed",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-11.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 11,
+   "keys": [
+    "react-basics:11:0",
+    "react-basics:11:1",
+    "react-basics:11:2",
+    "react-basics:11:3",
+    "react-basics:11:4",
+    "react-basics:11:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D12",
+   "title": "react-basics day 12: State with useState: Making the Screen Change",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-12.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 12,
+   "keys": [
+    "react-basics:12:0",
+    "react-basics:12:1",
+    "react-basics:12:2",
+    "react-basics:12:3",
+    "react-basics:12:4",
+    "react-basics:12:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D13",
+   "title": "react-basics day 13: Handling Clicks and Typing",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-13.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 13,
+   "keys": [
+    "react-basics:13:0",
+    "react-basics:13:1",
+    "react-basics:13:2",
+    "react-basics:13:3",
+    "react-basics:13:4",
+    "react-basics:13:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D14",
+   "title": "react-basics day 14: Forms: Getting Input From the User",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-14.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 14,
+   "keys": [
+    "react-basics:14:0",
+    "react-basics:14:1",
+    "react-basics:14:2",
+    "react-basics:14:3",
+    "react-basics:14:4",
+    "react-basics:14:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D15",
+   "title": "react-basics day 15: Sharing Data Between Components",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-15.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 15,
+   "keys": [
+    "react-basics:15:0",
+    "react-basics:15:1",
+    "react-basics:15:2",
+    "react-basics:15:3",
+    "react-basics:15:4",
+    "react-basics:15:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D16",
+   "title": "react-basics day 16: useEffect: Doing Things After the Screen Shows",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-16.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 16,
+   "keys": [
+    "react-basics:16:0",
+    "react-basics:16:1",
+    "react-basics:16:2",
+    "react-basics:16:3",
+    "react-basics:16:4",
+    "react-basics:16:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D17",
+   "title": "react-basics day 17: Loading Data From the Internet",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-17.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 17,
+   "keys": [
+    "react-basics:17:0",
+    "react-basics:17:1",
+    "react-basics:17:2",
+    "react-basics:17:3",
+    "react-basics:17:4",
+    "react-basics:17:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D18",
+   "title": "react-basics day 18: Styling and Layouts That Work on Phones",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-18.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 18,
+   "keys": [
+    "react-basics:18:0",
+    "react-basics:18:1",
+    "react-basics:18:2",
+    "react-basics:18:3",
+    "react-basics:18:4",
+    "react-basics:18:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D19",
+   "title": "react-basics day 19: Multiple Pages with React Router",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-19.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 19,
+   "keys": [
+    "react-basics:19:0",
+    "react-basics:19:1",
+    "react-basics:19:2",
+    "react-basics:19:3",
+    "react-basics:19:4",
+    "react-basics:19:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D20",
+   "title": "react-basics day 20: Custom Hooks: Reusing Logic",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-20.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 20,
+   "keys": [
+    "react-basics:20:0",
+    "react-basics:20:1",
+    "react-basics:20:2",
+    "react-basics:20:3",
+    "react-basics:20:4",
+    "react-basics:20:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D21",
+   "title": "react-basics day 21: Context: Sharing Data With the Whole App",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-21.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 21,
+   "keys": [
+    "react-basics:21:0",
+    "react-basics:21:1",
+    "react-basics:21:2",
+    "react-basics:21:3",
+    "react-basics:21:4",
+    "react-basics:21:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D22",
+   "title": "react-basics day 22: Git and GitHub: Saving and Sharing Your Code",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-22.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 22,
+   "keys": [
+    "react-basics:22:0",
+    "react-basics:22:1",
+    "react-basics:22:2",
+    "react-basics:22:3",
+    "react-basics:22:4",
+    "react-basics:22:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D23",
+   "title": "react-basics day 23: Planning Your Job Tracker App",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-23.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 23,
+   "keys": [
+    "react-basics:23:0",
+    "react-basics:23:1",
+    "react-basics:23:2",
+    "react-basics:23:3",
+    "react-basics:23:4",
+    "react-basics:23:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D24",
+   "title": "react-basics day 24: Project Build 1: Layout and Components",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-24.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 24,
+   "keys": [
+    "react-basics:24:0",
+    "react-basics:24:1",
+    "react-basics:24:2",
+    "react-basics:24:3",
+    "react-basics:24:4",
+    "react-basics:24:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D25",
+   "title": "react-basics day 25: Project Build 2: Adding Jobs and Filters",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-25.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 25,
+   "keys": [
+    "react-basics:25:0",
+    "react-basics:25:1",
+    "react-basics:25:2",
+    "react-basics:25:3",
+    "react-basics:25:4",
+    "react-basics:25:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D26",
+   "title": "react-basics day 26: Project Build 3: Saving Data and a Details Page",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-26.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 26,
+   "keys": [
+    "react-basics:26:0",
+    "react-basics:26:1",
+    "react-basics:26:2",
+    "react-basics:26:3",
+    "react-basics:26:4",
+    "react-basics:26:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D27",
+   "title": "react-basics day 27: Debugging: Finding and Fixing Mistakes",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-27.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 27,
+   "keys": [
+    "react-basics:27:0",
+    "react-basics:27:1",
+    "react-basics:27:2",
+    "react-basics:27:3",
+    "react-basics:27:4",
+    "react-basics:27:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D28",
+   "title": "react-basics day 28: Testing Your Code",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-28.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 28,
+   "keys": [
+    "react-basics:28:0",
+    "react-basics:28:1",
+    "react-basics:28:2",
+    "react-basics:28:3",
+    "react-basics:28:4",
+    "react-basics:28:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D29",
+   "title": "react-basics day 29: Putting Your App Online",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-29.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 29,
+   "keys": [
+    "react-basics:29:0",
+    "react-basics:29:1",
+    "react-basics:29:2",
+    "react-basics:29:3",
+    "react-basics:29:4",
+    "react-basics:29:5"
+   ]
+  },
+  {
+   "id": "C-react-basics-D30",
+   "title": "react-basics day 30: Interview Practice and Your Next Steps",
+   "allowedFiles": [
+    "src/lib/data/lessonVisuals/react-basics/day-30.json",
+    "docs/visuals/py_cert_manifest.json"
+   ],
+   "kind": "content",
+   "course": "react-basics",
+   "day": 30,
+   "keys": [
+    "react-basics:30:0",
+    "react-basics:30:1",
+    "react-basics:30:2",
+    "react-basics:30:3",
+    "react-basics:30:4",
+    "react-basics:30:5"
+   ]
   }
  ]
 }
