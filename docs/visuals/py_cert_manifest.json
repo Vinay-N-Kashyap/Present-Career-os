@@ -8524,27 +8524,27 @@
     },
     "safe-py:26:0": {
       "partTitle": "Data is where behaviour comes from",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:26:1": {
       "partTitle": "Why duplicates matter",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:26:2": {
       "partTitle": "Normalised deduplication",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:26:3": {
       "partTitle": "Licences and data rights",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:26:4": {
       "partTitle": "Filtering by licence",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:26:5": {
       "partTitle": "Data hygiene in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:27:0": {
       "partTitle": "Why mark AI-generated text",

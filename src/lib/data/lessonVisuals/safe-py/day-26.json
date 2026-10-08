@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 26,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Data is where behaviour comes from",
+      "codeHash": "e678010f09c9e2727ced0e402fb2e2e487aa140fe14a41cc64f985fc1687b773",
+      "spec": {
+        "template": "table",
+        "title": "Training data hygiene problem categories and remediation",
+        "columns": [
+          "problems",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training data issues directly influence model behaviour.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "problems"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "problems"
+                  },
+                  {
+                    "text": "deduplication"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Data hygiene cleans inputs before model training begins.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "problems"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "problems"
+                  },
+                  {
+                    "text": "licence filtering"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Training data hygiene problem categories and remediation",
+        "columns": [
+          "problems",
+          "step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training data issues directly influence model behaviour.",
+            "rows": [
+              {
+                "cells": [
+                  "problems",
+                  "step"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "problems",
+                  "deduplication"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Data hygiene cleans inputs before model training begins.",
+            "rows": [
+              {
+                "cells": [
+                  "problems",
+                  "step"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "problems",
+                  "licence filtering"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why duplicates matter",
+      "codeHash": "e83aca1b2a5f93ad1ba6df9b4a8e7f32d7205ec0de44538ff7be38e77d4fa592",
+      "spec": {
+        "template": "table",
+        "title": "Tracking duplicate text frequency across document sets",
+        "columns": [
+          "docs",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Web scale datasets contain huge numbers of duplicate documents.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "Counter"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Frequent text occurrences cause models to memorise passages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Shipping is free."
+                  },
+                  {
+                    "text": "text"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tracking duplicate text frequency across document sets",
+        "columns": [
+          "docs",
+          "text"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Web scale datasets contain huge numbers of duplicate documents.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "text"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "Counter"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Frequent text occurrences cause models to memorise passages.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "text"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Shipping is free.",
+                  "text"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Normalised deduplication",
+      "codeHash": "cf133fa361b6e6b623dfec0ec3912315e2275d23af5b48b345d1cfcfd44aaea1",
+      "spec": {
+        "template": "table",
+        "title": "Normalized deduplication index tracking and duplicate counts",
+        "columns": [
+          "docs",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Near duplicates differ only in letter casing and spacing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "seen"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Deduplication retains the first unique normalised entry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Shipping is free."
+                  },
+                  {
+                    "text": "kept"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Normalized deduplication index tracking and duplicate counts",
+        "columns": [
+          "docs",
+          "kept"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Near duplicates differ only in letter casing and spacing.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "kept"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "seen"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Deduplication retains the first unique normalised entry.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "kept"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Shipping is free.",
+                  "kept"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Licences and data rights",
+      "codeHash": "96cbfc1165e9903af1e908d115c5d32dc4ed6d8cb31613d74b71c659fa6b421e",
+      "spec": {
+        "template": "table",
+        "title": "Document licence categorization and permission metadata",
+        "columns": [
+          "docs",
+          "licence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every document carries legal reuse terms and rights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "licence"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "MIT"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Documents with unknown licences present serious legal risks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "licence"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d1"
+                  },
+                  {
+                    "text": "CC-BY"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document licence categorization and permission metadata",
+        "columns": [
+          "docs",
+          "licence"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every document carries legal reuse terms and rights.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "licence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "MIT"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Documents with unknown licences present serious legal risks.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "licence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "d1",
+                  "CC-BY"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filtering by licence",
+      "codeHash": "549a43a714e88e6b481142730253377cf65d126149ab2a6b649b4ff2b310e7d4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Data hygiene in the pipeline",
+      "codeHash": "bd619298cabb401183971abadd1a37fb8814781c649ddf9e99c0510ddcbcef8f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
