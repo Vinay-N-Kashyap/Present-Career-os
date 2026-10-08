@@ -5452,27 +5452,27 @@
     },
     "quant-py:18:0": {
       "partTitle": "What Value at Risk means",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:18:1": {
       "partTitle": "Parametric VaR",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:18:2": {
       "partTitle": "Historical VaR",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:18:3": {
       "partTitle": "Scaling to longer horizons",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:18:4": {
       "partTitle": "Limits of VaR",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:18:5": {
       "partTitle": "Practice time: VaR calculators",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:19:0": {
       "partTitle": "Expected Shortfall",

@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What Value at Risk means",
+      "codeHash": "7e7fe33c7ba497a0635b190a6748859ce069ed224d43935f2a6ea676f5e59789",
+      "spec": {
+        "template": "table",
+        "title": "Value at Risk threshold formulation and breach backtesting",
+        "columns": [
+          "pnl",
+          "breaches"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Value at Risk establishes threshold loss boundaries over defined horizons.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "breaches"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "VaR specifications require horizon duration, confidence level and loss amount.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "breaches"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var_95"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "VaR establishes quantile bounds rather than catastrophic worst case losses.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "breaches"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var_95"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Backtesting breach counts validates whether risk models remain calibrated.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pnl"
+                  },
+                  {
+                    "text": "breaches"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "var_95"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "len"
+                  },
+                  {
+                    "text": "pnl"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "breaches"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Value at Risk threshold formulation and breach backtesting",
+        "columns": [
+          "pnl",
+          "breaches"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Value at Risk establishes threshold loss boundaries over defined horizons.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "breaches"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "VaR specifications require horizon duration, confidence level and loss amount.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "breaches"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "var_95",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "VaR establishes quantile bounds rather than catastrophic worst case losses.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "breaches"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "var_95",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "len",
+                  "pnl"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Backtesting breach counts validates whether risk models remain calibrated.",
+            "rows": [
+              {
+                "cells": [
+                  "pnl",
+                  "breaches"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "var_95",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "len",
+                  "pnl"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "breaches",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parametric VaR",
+      "codeHash": "0a1c21cb24f91c13bcfa3cd55ffab8f73160ffcb63446e0ceab6c84141b1dd4a",
+      "spec": {
+        "template": "table",
+        "title": "Parametric variance-covariance Gaussian tail risk formulation",
+        "columns": [
+          "vol",
+          "mean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The parametric method assumes portfolio returns follow known volatility.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vol"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Multiplying portfolio value by tail loss fractions yields dollar VaR.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vol"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "value"
+                  },
+                  {
+                    "text": "pct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Normal distribution assumptions underestimate extreme moves in fat tails.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vol"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "value"
+                  },
+                  {
+                    "text": "pct"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Z"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes multiple confidence levels for the same portfolio.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vol"
+                  },
+                  {
+                    "text": "mean"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "value"
+                  },
+                  {
+                    "text": "pct"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Z"
+                  },
+                  {
+                    "text": "items"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "vol"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parametric variance-covariance Gaussian tail risk formulation",
+        "columns": [
+          "vol",
+          "mean"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The parametric method assumes portfolio returns follow known volatility.",
+            "rows": [
+              {
+                "cells": [
+                  "vol",
+                  "mean"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Multiplying portfolio value by tail loss fractions yields dollar VaR.",
+            "rows": [
+              {
+                "cells": [
+                  "vol",
+                  "mean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "value",
+                  "pct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Normal distribution assumptions underestimate extreme moves in fat tails.",
+            "rows": [
+              {
+                "cells": [
+                  "vol",
+                  "mean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "value",
+                  "pct"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Z",
+                  "items"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example computes multiple confidence levels for the same portfolio.",
+            "rows": [
+              {
+                "cells": [
+                  "vol",
+                  "mean"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "value",
+                  "pct"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Z",
+                  "items"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "vol"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Historical VaR",
+      "codeHash": "d36a864f8901e8d68603f8d0d66adc7eb4480911e86d76eb6e29d657c0dd7767",
+      "spec": {
+        "template": "table",
+        "title": "Historical simulation, empirical return sorting and quantile cutoffs",
+        "columns": [
+          "rets",
+          "s"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Historical simulation uses actual past returns on current portfolio values.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rets"
+                  },
+                  {
+                    "text": "s"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sorting empirical returns isolates percentile positions along the loss tail.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rets"
+                  },
+                  {
+                    "text": "s"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sorted"
+                  },
+                  {
+                    "text": "rets"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Empirical histories incorporate realized fat tails and historical skew.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rets"
+                  },
+                  {
+                    "text": "s"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sorted"
+                  },
+                  {
+                    "text": "rets"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "floor"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example sorts a short return history and extracts quantile cutoffs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rets"
+                  },
+                  {
+                    "text": "s"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sorted"
+                  },
+                  {
+                    "text": "rets"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "floor"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "int"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Historical simulation, empirical return sorting and quantile cutoffs",
+        "columns": [
+          "rets",
+          "s"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Historical simulation uses actual past returns on current portfolio values.",
+            "rows": [
+              {
+                "cells": [
+                  "rets",
+                  "s"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sorting empirical returns isolates percentile positions along the loss tail.",
+            "rows": [
+              {
+                "cells": [
+                  "rets",
+                  "s"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sorted",
+                  "rets"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Empirical histories incorporate realized fat tails and historical skew.",
+            "rows": [
+              {
+                "cells": [
+                  "rets",
+                  "s"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sorted",
+                  "rets"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "floor"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example sorts a short return history and extracts quantile cutoffs.",
+            "rows": [
+              {
+                "cells": [
+                  "rets",
+                  "s"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sorted",
+                  "rets"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "floor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "int"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scaling to longer horizons",
+      "codeHash": "8555753327fdf7b458ce305e47eff9aee53fb03a4d56925e7bcbe60545d10394",
+      "spec": {
+        "template": "table",
+        "title": "Square-root of time rule and multi-day horizon scaling",
+        "columns": [
+          "one_day",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The square root of time rule scales daily loss estimates across longer periods.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one_day"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent return variances add linearly over successive trading intervals.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one_day"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Scaling approximations break down when returns exhibit autocorrelation trends.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one_day"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example scales a baseline risk estimate across multi day horizons.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "one_day"
+                  },
+                  {
+                    "text": "days"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "days"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "one_day"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Square-root of time rule and multi-day horizon scaling",
+        "columns": [
+          "one_day",
+          "days"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The square root of time rule scales daily loss estimates across longer periods.",
+            "rows": [
+              {
+                "cells": [
+                  "one_day",
+                  "days"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Independent return variances add linearly over successive trading intervals.",
+            "rows": [
+              {
+                "cells": [
+                  "one_day",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Scaling approximations break down when returns exhibit autocorrelation trends.",
+            "rows": [
+              {
+                "cells": [
+                  "one_day",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "days",
+                  "print"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example scales a baseline risk estimate across multi day horizons.",
+            "rows": [
+              {
+                "cells": [
+                  "one_day",
+                  "days"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "days",
+                  "print"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "one_day",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Limits of VaR",
+      "codeHash": "7aee6323b1269ac8e89e327d9704da0e996cd1c100e5fe6ac551a791fb6deead",
+      "spec": {
+        "template": "none",
+        "reason": "Value at Risk tail subadditivity limits and stress testing."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: VaR calculators",
+      "codeHash": "e2ed8a69b9af2a7764350de0666d940bcb3c1f77b0b7ae13ee0b99579898d908",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: parametric and historical VaR computation."
+      },
+      "filled": {}
+    }
+  ]
+}
