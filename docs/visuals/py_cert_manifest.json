@@ -7708,27 +7708,27 @@
     },
     "vec-py:22:0": {
       "partTitle": "Why queries need help",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:22:1": {
       "partTitle": "Normalising queries",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:22:2": {
       "partTitle": "Synonym expansion",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:22:3": {
       "partTitle": "Searching with several variants",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:22:4": {
       "partTitle": "Learning from query logs",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:22:5": {
       "partTitle": "Practice time: queries",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:23:0": {
       "partTitle": "Retrieval-augmented generation",
