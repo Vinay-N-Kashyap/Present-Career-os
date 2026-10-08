@@ -8548,27 +8548,27 @@
     },
     "safe-py:27:0": {
       "partTitle": "Why mark AI-generated text",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:27:1": {
       "partTitle": "The green-list idea",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:27:2": {
       "partTitle": "Deciding green with a keyed hash",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:27:3": {
       "partTitle": "Detecting with a z-score",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:27:4": {
       "partTitle": "Limits of watermarking",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:27:5": {
       "partTitle": "Watermarking in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:28:0": {
       "partTitle": "Learning from preferences",

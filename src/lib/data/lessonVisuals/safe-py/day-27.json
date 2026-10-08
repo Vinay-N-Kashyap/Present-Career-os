@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 27,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why mark AI-generated text",
+      "codeHash": "a34878a3d352f1b1f64e5cb2dba255109fbbdb0524424fe81eb8377cbc18323c",
+      "spec": {
+        "template": "table",
+        "title": "Approaches for marking and detecting AI generated text",
+        "columns": [
+          "approaches",
+          "good"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Machine generated text spreads rapidly across digital channels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "approaches"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "watermark"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Watermarks embed statistical signals directly into text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "approaches"
+                  },
+                  {
+                    "text": "good"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "metadata label"
+                  },
+                  {
+                    "text": "easy to add"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Approaches for marking and detecting AI generated text",
+        "columns": [
+          "approaches",
+          "good"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Machine generated text spreads rapidly across digital channels.",
+            "rows": [
+              {
+                "cells": [
+                  "approaches",
+                  "good"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "watermark",
+                  "good"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Watermarks embed statistical signals directly into text.",
+            "rows": [
+              {
+                "cells": [
+                  "approaches",
+                  "good"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "metadata label",
+                  "easy to add"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The green-list idea",
+      "codeHash": "afa89cfea4ed9930367db77eedf18187018ae3ea9c76067fafb57aaa354b74fb",
+      "spec": {
+        "template": "table",
+        "title": "Vocabulary splitting into green and red candidate lists",
+        "columns": [
+          "vocab",
+          "green"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models select one candidate token at a time.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "green"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pseudo random hash splits vocabulary into red and green.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "vocab"
+                  },
+                  {
+                    "text": "green"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quietly"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vocabulary splitting into green and red candidate lists",
+        "columns": [
+          "vocab",
+          "green"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Language models select one candidate token at a time.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "green"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "vocab",
+                  "dog"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The pseudo random hash splits vocabulary into red and green.",
+            "rows": [
+              {
+                "cells": [
+                  "vocab",
+                  "green"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "quietly",
+                  "sat"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deciding green with a keyed hash",
+      "codeHash": "c4b262cc135cf55ae115187eb8ae1449f6adb8ae0a720707d414379390fcdfec",
+      "spec": {
+        "template": "table",
+        "title": "Cryptographic hash determination of green list membership",
+        "columns": [
+          "tokens",
+          "token"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hashing tokens with the secret key produces repeatable results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "token"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "hashlib"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Different secret keys generate distinct detection patterns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "token"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cat"
+                  },
+                  {
+                    "text": "sat"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cryptographic hash determination of green list membership",
+        "columns": [
+          "tokens",
+          "token"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Hashing tokens with the secret key produces repeatable results.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "token"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tokens",
+                  "hashlib"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Different secret keys generate distinct detection patterns.",
+            "rows": [
+              {
+                "cells": [
+                  "tokens",
+                  "token"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cat",
+                  "sat"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting with a z-score",
+      "codeHash": "e5429cce7a3ffbb2f440390565a412714953e1871587c8d423d98e2498c2d642",
+      "spec": {
+        "template": "table",
+        "title": "Watermark detection z score evaluation across sample lengths",
+        "columns": [
+          "gamma",
+          "math"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Watermark detectors compare green token counts to chance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The z score measures deviations above the expected baseline count.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gamma"
+                  },
+                  {
+                    "text": "gamma"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Watermark detection z score evaluation across sample lengths",
+        "columns": [
+          "gamma",
+          "math"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Watermark detectors compare green token counts to chance.",
+            "rows": [
+              {
+                "cells": [
+                  "gamma",
+                  "math"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "sqrt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The z score measures deviations above the expected baseline count.",
+            "rows": [
+              {
+                "cells": [
+                  "gamma",
+                  "math"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gamma",
+                  "gamma"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Limits of watermarking",
+      "codeHash": "a7fe57e6f6460ae4d2173359e60fc88497bc7817d476c8075644c1dd82947eeb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Watermarking in the pipeline",
+      "codeHash": "eabacc0ba1ba555818683527b534dd9199a43a12e0c86183005e80b3fef19b58",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
