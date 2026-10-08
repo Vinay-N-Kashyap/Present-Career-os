@@ -5668,27 +5668,27 @@
     },
     "quant-py:27:0": {
       "partTitle": "Lessons from disasters",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:27:1": {
       "partTitle": "Order-level checks",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:27:2": {
       "partTitle": "Aggregate limits and kill switches",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:27:3": {
       "partTitle": "Where the checks live",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:27:4": {
       "partTitle": "Testing the safety net",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:27:5": {
       "partTitle": "Practice time: gate and switch",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:28:0": {
       "partTitle": "Perpetual futures",
