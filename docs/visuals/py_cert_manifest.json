@@ -8500,27 +8500,27 @@
     },
     "safe-py:25:0": {
       "partTitle": "Why governance matters",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:25:1": {
       "partTitle": "The EU AI Act risk tiers",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:25:2": {
       "partTitle": "Triage by keywords",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:25:3": {
       "partTitle": "The NIST AI Risk Management Framework",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:25:4": {
       "partTitle": "Checking framework coverage",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:25:5": {
       "partTitle": "Governance in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:26:0": {
       "partTitle": "Data is where behaviour comes from",
