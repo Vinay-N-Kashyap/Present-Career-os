@@ -7804,27 +7804,27 @@
     },
     "vec-py:26:0": {
       "partTitle": "Graded relevance",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:26:1": {
       "partTitle": "DCG and nDCG",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:26:2": {
       "partTitle": "Evaluating a system on a golden set",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:26:3": {
       "partTitle": "Comparing systems fairly",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:26:4": {
       "partTitle": "Building a golden set that lasts",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:26:5": {
       "partTitle": "Practice time: evaluation",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:27:0": {
       "partTitle": "Why averages hide slow queries",
