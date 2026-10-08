@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 6,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Template strings: building text the easy way",
+      "codeHash": "7d73ebdde00fb235f6c1c81227910d129000e6b424bd46cf91a013373750f2a7",
+      "spec": {
+        "template": "compare",
+        "title": "Template strings and variable interpolation",
+        "leftLabel": "Concatenation",
+        "rightLabel": "Template String",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concatenation joins strings with plus signs.",
+            "left": {
+              "code": "\"Hello, \" + name + \"!\";",
+              "result": {
+                "text": "\"Asha\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "`Hi ${name}, you applied to ${jobs} jobs.`;",
+              "result": {
+                "text": "name"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Template strings evaluate values within curly brackets.",
+            "left": {
+              "code": "\"Hello, \" + name + \"!\";",
+              "result": {
+                "text": "\"Asha\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "`Next month that could be ${jobs * 2} jobs!`;",
+              "result": {
+                "text": "jobs"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Template strings and variable interpolation",
+        "leftLabel": "Concatenation",
+        "rightLabel": "Template String",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Concatenation joins strings with plus signs.",
+            "left": {
+              "code": "\"Hello, \" + name + \"!\";",
+              "result": "\"Asha\"",
+              "tone": "idle",
+              "checks": [
+                "\"Asha\""
+              ]
+            },
+            "right": {
+              "code": "`Hi ${name}, you applied to ${jobs} jobs.`;",
+              "result": "name",
+              "tone": "ok",
+              "checks": [
+                "name"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Template strings evaluate values within curly brackets.",
+            "left": {
+              "code": "\"Hello, \" + name + \"!\";",
+              "result": "\"Asha\"",
+              "tone": "idle",
+              "checks": [
+                "\"Asha\""
+              ]
+            },
+            "right": {
+              "code": "`Next month that could be ${jobs * 2} jobs!`;",
+              "result": "jobs",
+              "tone": "data",
+              "checks": [
+                "jobs"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Destructuring objects: taking out the parts you need",
+      "codeHash": "d6dcf8da39a3607646044e5a2002a6e215978889e96e33d332b627ba486caff0",
+      "spec": {
+        "template": "boxes",
+        "title": "Destructuring object properties into variables",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "b1",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Destructuring extracts object properties into separate variables.",
+            "values": {
+              "b0": {
+                "text": "\"React Developer\""
+              },
+              "b1": {
+                "text": "\"Zoho\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Curly brackets create variables with matching property names.",
+            "values": {
+              "b0": {
+                "text": "\"React Developer\""
+              },
+              "b1": {
+                "text": "\"Zoho\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Destructuring object properties into variables",
+        "boxes": [
+          {
+            "id": "b0",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "b1",
+            "label": "company",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Destructuring extracts object properties into separate variables.",
+            "values": {
+              "b0": "\"React Developer\"",
+              "b1": "\"Zoho\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Curly brackets create variables with matching property names.",
+            "values": {
+              "b0": "\"React Developer\"",
+              "b1": "\"Zoho\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Destructuring arrays: the useState pattern",
+      "codeHash": "de0bdad302d935f62b39ff05ac9a30d1cae191f4373c103d373d72f5a4150c67",
+      "spec": {
+        "template": "boxes",
+        "title": "Array destructuring assigns values by position",
+        "boxes": [
+          {
+            "id": "pos0",
+            "label": "first",
+            "tappable": false
+          },
+          {
+            "id": "pos1",
+            "label": "second",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array destructuring assigns values based on item position.",
+            "values": {
+              "pos0": {
+                "text": "\"HTML\""
+              },
+              "pos1": {
+                "text": "\"CSS\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The useState pattern destructures state value and updater function.",
+            "values": {
+              "pos0": {
+                "text": "count"
+              },
+              "pos1": {
+                "text": "setCount"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Array destructuring assigns values by position",
+        "boxes": [
+          {
+            "id": "pos0",
+            "label": "first",
+            "tappable": false
+          },
+          {
+            "id": "pos1",
+            "label": "second",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array destructuring assigns values based on item position.",
+            "values": {
+              "pos0": "\"HTML\"",
+              "pos1": "\"CSS\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "The useState pattern destructures state value and updater function.",
+            "values": {
+              "pos0": "count",
+              "pos1": "setCount"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spread with arrays: copying and adding",
+      "codeHash": "f67a18fc6a841d1f96af670738537efdb7a90e5051ee7b32fe67116ce775dfd7",
+      "spec": {
+        "template": "compare",
+        "title": "Array reference assignment versus spread cloning",
+        "leftLabel": "Direct Reference",
+        "rightLabel": "Spread Clone",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assigning an array creates a reference rather than copy.",
+            "left": {
+              "code": "const b = a;",
+              "result": {
+                "text": "b"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const c = [...a];",
+              "result": {
+                "text": "c"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spread operator copies items into an entirely new array.",
+            "left": {
+              "code": "const b = a;",
+              "result": {
+                "text": "b"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "const moreJobs = [...jobs, \"Designer\"];",
+              "result": {
+                "text": "\"Designer\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Array reference assignment versus spread cloning",
+        "leftLabel": "Direct Reference",
+        "rightLabel": "Spread Clone",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assigning an array creates a reference rather than copy.",
+            "left": {
+              "code": "const b = a;",
+              "result": "b",
+              "tone": "warn",
+              "checks": [
+                "b"
+              ]
+            },
+            "right": {
+              "code": "const c = [...a];",
+              "result": "c",
+              "tone": "ok",
+              "checks": [
+                "c"
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spread operator copies items into an entirely new array.",
+            "left": {
+              "code": "const b = a;",
+              "result": "b",
+              "tone": "warn",
+              "checks": [
+                "b"
+              ]
+            },
+            "right": {
+              "code": "const moreJobs = [...jobs, \"Designer\"];",
+              "result": "\"Designer\"",
+              "tone": "ok",
+              "checks": [
+                "\"Designer\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spread with objects: updating one detail",
+      "codeHash": "a56676d49183ac1af6f497da31d65ec7d7409faa16e68a822def478a56195990",
+      "spec": {
+        "template": "boxes",
+        "title": "Immutable object updates with spread operator",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Spread copies all existing properties into a new object.",
+            "values": {
+              "title": {
+                "text": "\"Dev\""
+              },
+              "company": {
+                "text": "\"TCS\""
+              },
+              "status": {
+                "text": "\"applied\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Properties specified after spread override the old values.",
+            "values": {
+              "title": {
+                "text": "\"Dev\""
+              },
+              "company": {
+                "text": "\"TCS\""
+              },
+              "status": {
+                "text": "\"interview\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Immutable object updates with spread operator",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Spread copies all existing properties into a new object.",
+            "values": {
+              "title": "\"Dev\"",
+              "company": "\"TCS\"",
+              "status": "\"applied\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Properties specified after spread override the old values.",
+            "values": {
+              "title": "\"Dev\"",
+              "company": "\"TCS\"",
+              "status": "\"interview\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe access with ?. and ??",
+      "codeHash": "890c4e54fb0491862dc5a1e42379a83ce91c7867a8cf21cb7a01fd0c59e93f7c",
+      "spec": {
+        "template": "none",
+        "reason": "Overview of optional chaining operator and nullish coalescing operator"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Overview of optional chaining operator and nullish coalescing operator"
+      }
+    }
+  ]
+}
