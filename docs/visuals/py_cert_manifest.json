@@ -7252,27 +7252,27 @@
     },
     "vec-py:3:0": {
       "partTitle": "k-nearest neighbours",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:3:1": {
       "partTitle": "Normalise once, dot many times",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:3:2": {
       "partTitle": "Matrix form",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:3:3": {
       "partTitle": "Why exact search stops scaling",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:3:4": {
       "partTitle": "A tiny search service",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:3:5": {
       "partTitle": "Practice time: exact search",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:4:0": {
       "partTitle": "Why not just sort?",
