@@ -6604,27 +6604,27 @@
     },
     "train-py:6:0": {
       "partTitle": "Micro-batches and the memory limit",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:6:1": {
       "partTitle": "Accumulating correctly",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:6:2": {
       "partTitle": "The effective batch size",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:6:3": {
       "partTitle": "Fewer all-reduces",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:6:4": {
       "partTitle": "A full accumulation loop",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:6:5": {
       "partTitle": "Practice time: accumulation",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:7:0": {
       "partTitle": "Floating-point formats",
