@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 2,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "ES Modules vs CommonJS: The Modern Standard",
+      "codeHash": "885084e5d3175d5a6dfa57edc566c2702e1bc36b1c327eb173aa8e9d761222a7",
+      "spec": {
+        "template": "table",
+        "title": "Module standards comparison",
+        "columns": [
+          "Standard",
+          "Syntax",
+          "Static Analysis"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CommonJS loads modules synchronously from disk.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CommonJS"
+                  },
+                  {
+                    "text": "require"
+                  },
+                  {
+                    "text": "CommonJS"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ESM"
+                  },
+                  {
+                    "text": "import / export"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "ECMAScript Modules are the official standardized module format.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CommonJS"
+                  },
+                  {
+                    "text": "require"
+                  },
+                  {
+                    "text": "CommonJS"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ESM"
+                  },
+                  {
+                    "text": "import / export"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Native ESM guarantees that your code adheres to standard specifications.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "CommonJS"
+                  },
+                  {
+                    "text": "require"
+                  },
+                  {
+                    "text": "CommonJS"
+                  }
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ESM"
+                  },
+                  {
+                    "text": "import / export"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Module standards comparison",
+        "columns": [
+          "Standard",
+          "Syntax",
+          "Static Analysis"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CommonJS loads modules synchronously from disk.",
+            "rows": [
+              {
+                "cells": [
+                  "CommonJS",
+                  "require",
+                  "CommonJS"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "ESM",
+                  "import / export",
+                  "true"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "ECMAScript Modules are the official standardized module format.",
+            "rows": [
+              {
+                "cells": [
+                  "CommonJS",
+                  "require",
+                  "CommonJS"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "ESM",
+                  "import / export",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Native ESM guarantees that your code adheres to standard specifications.",
+            "rows": [
+              {
+                "cells": [
+                  "CommonJS",
+                  "require",
+                  "CommonJS"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "ESM",
+                  "import / export",
+                  "true"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Working with File and Directory URLs",
+      "codeHash": "5b13843046ed23c5378210bbef083c61273bacf6c5b9c2fb890593571ae9688d",
+      "spec": {
+        "template": "boxes",
+        "title": "Module URL specifier components",
+        "boxes": [
+          {
+            "id": "protocol",
+            "label": "protocol"
+          },
+          {
+            "id": "host",
+            "label": "host"
+          },
+          {
+            "id": "pathname",
+            "label": "pathname"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In modern ECMAScript Modules import.meta provides file URLs.",
+            "values": {
+              "protocol": {
+                "text": "file"
+              },
+              "host": {
+                "text": "localhost"
+              },
+              "pathname": {
+                "text": "/var/app/dist/server.js"
+              }
+            },
+            "tones": {
+              "protocol": "data",
+              "host": "idle",
+              "pathname": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Node provides helper functions to convert file URLs to paths.",
+            "values": {
+              "protocol": {
+                "text": "file"
+              },
+              "host": {
+                "text": "localhost"
+              },
+              "pathname": {
+                "text": "/var/app/dist/server.js"
+              }
+            },
+            "tones": {
+              "protocol": "idle",
+              "host": "data",
+              "pathname": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Always anchor paths to import.meta.url rather than process.cwd().",
+            "values": {
+              "protocol": {
+                "text": "file"
+              },
+              "host": {
+                "text": "localhost"
+              },
+              "pathname": {
+                "text": "/var/app/dist/server.js"
+              }
+            },
+            "tones": {
+              "protocol": "ok",
+              "host": "ok",
+              "pathname": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Module URL specifier components",
+        "boxes": [
+          {
+            "id": "protocol",
+            "label": "protocol"
+          },
+          {
+            "id": "host",
+            "label": "host"
+          },
+          {
+            "id": "pathname",
+            "label": "pathname"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In modern ECMAScript Modules import.meta provides file URLs.",
+            "values": {
+              "protocol": "file",
+              "host": "localhost",
+              "pathname": "/var/app/dist/server.js"
+            },
+            "tones": {
+              "protocol": "data",
+              "host": "idle",
+              "pathname": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Node provides helper functions to convert file URLs to paths.",
+            "values": {
+              "protocol": "file",
+              "host": "localhost",
+              "pathname": "/var/app/dist/server.js"
+            },
+            "tones": {
+              "protocol": "idle",
+              "host": "data",
+              "pathname": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Always anchor paths to import.meta.url rather than process.cwd().",
+            "values": {
+              "protocol": "file",
+              "host": "localhost",
+              "pathname": "/var/app/dist/server.js"
+            },
+            "tones": {
+              "protocol": "ok",
+              "host": "ok",
+              "pathname": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Path Resolution: path.join, path.resolve and path.normalize",
+      "codeHash": "8d83242bff0d3f6ac826b7198bbd3b9b5900f7f13593c92ec79a64b5c66da589",
+      "spec": {
+        "template": "flow",
+        "title": "Path normalization pipeline",
+        "nodes": [
+          {
+            "id": "base",
+            "label": "base"
+          },
+          {
+            "id": "endpoint",
+            "label": "endpoint"
+          },
+          {
+            "id": "normalized",
+            "label": "normalized"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Never concatenate path strings with simple plus operators.",
+            "values": {
+              "base": {
+                "text": "/api/v1/"
+              },
+              "endpoint": {
+                "text": "/users/profile/"
+              },
+              "normalized": {
+                "text": "/etc/passwd"
+              }
+            },
+            "tones": {
+              "base": "data",
+              "endpoint": "idle",
+              "normalized": "idle"
+            },
+            "arrows": [
+              [
+                "base",
+                "endpoint"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The path module provides cross-platform path utilities.",
+            "values": {
+              "base": {
+                "text": "/api/v1/"
+              },
+              "endpoint": {
+                "text": "/users/profile/"
+              },
+              "normalized": {
+                "text": "/etc/passwd"
+              }
+            },
+            "tones": {
+              "base": "idle",
+              "endpoint": "data",
+              "normalized": "ok"
+            },
+            "arrows": [
+              [
+                "endpoint",
+                "normalized"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Path normalization protects against malicious directory traversal exploits.",
+            "values": {
+              "base": {
+                "text": "/api/v1/"
+              },
+              "endpoint": {
+                "text": "/users/profile/"
+              },
+              "normalized": {
+                "text": "/etc/passwd"
+              }
+            },
+            "tones": {
+              "base": "ok",
+              "endpoint": "ok",
+              "normalized": "ok"
+            },
+            "arrows": [
+              [
+                "base",
+                "normalized"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Path normalization pipeline",
+        "nodes": [
+          {
+            "id": "base",
+            "label": "base"
+          },
+          {
+            "id": "endpoint",
+            "label": "endpoint"
+          },
+          {
+            "id": "normalized",
+            "label": "normalized"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Never concatenate path strings with simple plus operators.",
+            "values": {
+              "base": "/api/v1/",
+              "endpoint": "/users/profile/",
+              "normalized": "/etc/passwd"
+            },
+            "tones": {
+              "base": "data",
+              "endpoint": "idle",
+              "normalized": "idle"
+            },
+            "arrows": [
+              [
+                "base",
+                "endpoint"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The path module provides cross-platform path utilities.",
+            "values": {
+              "base": "/api/v1/",
+              "endpoint": "/users/profile/",
+              "normalized": "/etc/passwd"
+            },
+            "tones": {
+              "base": "idle",
+              "endpoint": "data",
+              "normalized": "ok"
+            },
+            "arrows": [
+              [
+                "endpoint",
+                "normalized"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Path normalization protects against malicious directory traversal exploits.",
+            "values": {
+              "base": "/api/v1/",
+              "endpoint": "/users/profile/",
+              "normalized": "/etc/passwd"
+            },
+            "tones": {
+              "base": "ok",
+              "endpoint": "ok",
+              "normalized": "ok"
+            },
+            "arrows": [
+              [
+                "base",
+                "normalized"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Named Exports, Default Exports, and Re-exporting",
+      "codeHash": "5cd1b558aa9df390c2b8033bc7ab1ed8ce5fb169ba9dbfdf819c036c6a5a5282",
+      "spec": {
+        "template": "boxes",
+        "title": "Modular export architecture",
+        "boxes": [
+          {
+            "id": "service",
+            "label": "defaultService"
+          },
+          {
+            "id": "utilities",
+            "label": "namedUtilities"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A named export allows exporting multiple distinct functions by name.",
+            "values": {
+              "service": {
+                "text": "AuthenticationService"
+              },
+              "utilities": {
+                "text": "hashPassword"
+              }
+            },
+            "tones": {
+              "service": "data",
+              "utilities": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A default export allows a module to declare a single primary export.",
+            "values": {
+              "service": {
+                "text": "AuthenticationService"
+              },
+              "utilities": {
+                "text": "verifyToken"
+              }
+            },
+            "tones": {
+              "service": "idle",
+              "utilities": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Explicit named exports are strongly favored in production enterprise codebases.",
+            "values": {
+              "service": {
+                "text": "AuthenticationService"
+              },
+              "utilities": {
+                "text": "parseHeader"
+              }
+            },
+            "tones": {
+              "service": "ok",
+              "utilities": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Modular export architecture",
+        "boxes": [
+          {
+            "id": "service",
+            "label": "defaultService"
+          },
+          {
+            "id": "utilities",
+            "label": "namedUtilities"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A named export allows exporting multiple distinct functions by name.",
+            "values": {
+              "service": "AuthenticationService",
+              "utilities": "hashPassword"
+            },
+            "tones": {
+              "service": "data",
+              "utilities": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A default export allows a module to declare a single primary export.",
+            "values": {
+              "service": "AuthenticationService",
+              "utilities": "verifyToken"
+            },
+            "tones": {
+              "service": "idle",
+              "utilities": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Explicit named exports are strongly favored in production enterprise codebases.",
+            "values": {
+              "service": "AuthenticationService",
+              "utilities": "parseHeader"
+            },
+            "tones": {
+              "service": "ok",
+              "utilities": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Package.json Module Configuration and \"type\": \"module\"",
+      "codeHash": "83465090c2ec1cad18efaa7403e3f8d683e5b1fa91ceda8e52007828b34b16bf",
+      "spec": {
+        "template": "table",
+        "title": "Package.json module manifest keys",
+        "columns": [
+          "Configuration Key",
+          "Configured Value",
+          "Runtime Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To tell Node your project uses ESM set type module in package.json.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "type"
+                  },
+                  {
+                    "text": "module"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "main"
+                  },
+                  {
+                    "text": "dist/index.js"
+                  },
+                  {
+                    "text": "main"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When type module is configured Node treats all js files as ESM.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "type"
+                  },
+                  {
+                    "text": "module"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "main"
+                  },
+                  {
+                    "text": "dist/index.js"
+                  },
+                  {
+                    "text": "main"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Combining package.json exports mapping allows clean import statements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "type"
+                  },
+                  {
+                    "text": "module"
+                  },
+                  {
+                    "text": "type"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "main"
+                  },
+                  {
+                    "text": "dist/index.js"
+                  },
+                  {
+                    "text": "main"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Package.json module manifest keys",
+        "columns": [
+          "Configuration Key",
+          "Configured Value",
+          "Runtime Meaning"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "To tell Node your project uses ESM set type module in package.json.",
+            "rows": [
+              {
+                "cells": [
+                  "type",
+                  "module",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "main",
+                  "dist/index.js",
+                  "main"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "When type module is configured Node treats all js files as ESM.",
+            "rows": [
+              {
+                "cells": [
+                  "type",
+                  "module",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "main",
+                  "dist/index.js",
+                  "main"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Combining package.json exports mapping allows clean import statements.",
+            "rows": [
+              {
+                "cells": [
+                  "type",
+                  "module",
+                  "type"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "main",
+                  "dist/index.js",
+                  "main"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling Dynamic Imports and Conditional Loading",
+      "codeHash": "1b864e03a45fe2f1abfb17d74f09563caab5544e100155bcaff31e1401324c80",
+      "spec": {
+        "template": "none",
+        "reason": "Discussion of dynamic import functions and runtime module loading architecture"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Discussion of dynamic import functions and runtime module loading architecture"
+      }
+    }
+  ]
+}
