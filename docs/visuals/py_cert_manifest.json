@@ -5980,27 +5980,27 @@
     },
     "prompt-py:10:0": {
       "partTitle": "AI search tools",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:10:1": {
       "partTitle": "Evaluating a source",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:10:2": {
       "partTitle": "Cross-checking claims",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:10:3": {
       "partTitle": "Common misinformation patterns",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:10:4": {
       "partTitle": "Writing up research",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:10:5": {
       "partTitle": "Practice time: score and cross-check",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:11:0": {
       "partTitle": "Why chain prompts",

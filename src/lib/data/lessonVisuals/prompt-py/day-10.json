@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 10,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AI search tools",
+      "codeHash": "1eebd4de1f2685242770f25efe52ac597452b6b331be326657f25f2320b66883",
+      "spec": {
+        "template": "table",
+        "title": "AI research workflow and source verification pipeline",
+        "columns": [
+          "workflow",
+          "step",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AI search accelerates research for finding sources and comparing viewpoints.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking each cited source confirms that claims match the underlying text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "workflow"
+                  },
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "authors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AI research workflow and source verification pipeline",
+        "columns": [
+          "workflow",
+          "step",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "AI search accelerates research for finding sources and comparing viewpoints.",
+            "rows": [
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "source"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "source"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Checking each cited source confirms that claims match the underlying text.",
+            "rows": [
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "source"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "workflow",
+                  "step",
+                  "authors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating a source",
+      "codeHash": "d60cecbfb6aa48752db8c9d809730fe121e49e0d24635f47872871af98d6025a",
+      "spec": {
+        "template": "table",
+        "title": "Domain authority and source credibility scoring signals",
+        "columns": [
+          "domain",
+          "author",
+          "cites"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Domain authority indicates credible sites though domain alone is not proof.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "domain"
+                  },
+                  {
+                    "text": "author"
+                  },
+                  {
+                    "text": "cites"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "domain"
+                  },
+                  {
+                    "text": "author"
+                  },
+                  {
+                    "text": "cites"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Named authors and original data references raise overall credibility.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "domain"
+                  },
+                  {
+                    "text": "author"
+                  },
+                  {
+                    "text": "cites"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "domain"
+                  },
+                  {
+                    "text": "score"
+                  },
+                  {
+                    "text": "cites"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Domain authority and source credibility scoring signals",
+        "columns": [
+          "domain",
+          "author",
+          "cites"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Domain authority indicates credible sites though domain alone is not proof.",
+            "rows": [
+              {
+                "cells": [
+                  "domain",
+                  "author",
+                  "cites"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "domain",
+                  "author",
+                  "cites"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Named authors and original data references raise overall credibility.",
+            "rows": [
+              {
+                "cells": [
+                  "domain",
+                  "author",
+                  "cites"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "domain",
+                  "score",
+                  "cites"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-checking claims",
+      "codeHash": "c6bfcc0377f122c400af6afc6a5862669c38cc60af83632539fa76bed0d3a1cf",
+      "spec": {
+        "template": "table",
+        "title": "Multi-source consensus and independent claim cross-checking",
+        "columns": [
+          "source",
+          "claims",
+          "support"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Independent sources must confirm key claims before accepting them as fact.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "claims"
+                  },
+                  {
+                    "text": "support"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "claims"
+                  },
+                  {
+                    "text": "support"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multiple news articles often repeat one release rather than new findings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "source"
+                  },
+                  {
+                    "text": "claims"
+                  },
+                  {
+                    "text": "support"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "reports"
+                  },
+                  {
+                    "text": "claims"
+                  },
+                  {
+                    "text": "support"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-source consensus and independent claim cross-checking",
+        "columns": [
+          "source",
+          "claims",
+          "support"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Independent sources must confirm key claims before accepting them as fact.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "claims",
+                  "support"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "source",
+                  "claims",
+                  "support"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multiple news articles often repeat one release rather than new findings.",
+            "rows": [
+              {
+                "cells": [
+                  "source",
+                  "claims",
+                  "support"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "reports",
+                  "claims",
+                  "support"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common misinformation patterns",
+      "codeHash": "4c084f20f6201c707a96ca42a5d5c36fd5d13fe7753a1b32153361a5fa3823b2",
+      "spec": {
+        "template": "table",
+        "title": "Misleading statistics and context distortion detection",
+        "columns": [
+          "headline",
+          "reality",
+          "rate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Correlation presented as causation does not prove that one caused another.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "headline"
+                  },
+                  {
+                    "text": "reality"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "headline"
+                  },
+                  {
+                    "text": "reality"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Emotional framing content spreads fastest and deserves critical scrutiny.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "headline"
+                  },
+                  {
+                    "text": "reality"
+                  },
+                  {
+                    "text": "rate"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "before"
+                  },
+                  {
+                    "text": "after"
+                  },
+                  {
+                    "text": "pct"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Misleading statistics and context distortion detection",
+        "columns": [
+          "headline",
+          "reality",
+          "rate"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Correlation presented as causation does not prove that one caused another.",
+            "rows": [
+              {
+                "cells": [
+                  "headline",
+                  "reality",
+                  "rate"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "headline",
+                  "reality",
+                  "rate"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Emotional framing content spreads fastest and deserves critical scrutiny.",
+            "rows": [
+              {
+                "cells": [
+                  "headline",
+                  "reality",
+                  "rate"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "before",
+                  "after",
+                  "pct"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Writing up research",
+      "codeHash": "a094b8312e92b4b1f6ffe7c3ffa5966919fe984fb2e25f8f8f4157e02f5460ff",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: score and cross-check",
+      "codeHash": "183364594361a7e125c18bde82213932b3a46e7fe9eed7b6accabd12bd7df616",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
