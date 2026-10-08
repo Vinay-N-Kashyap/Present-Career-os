@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The training loop",
+      "codeHash": "8c537fa6a6b288621e8babde537dcd6bfb2dfa15e84b65ca6cbc9a236aaf8de4",
+      "spec": {
+        "template": "table",
+        "title": "Neural network training loop stages and execution sequence",
+        "columns": [
+          "forward",
+          "loss",
+          "backward"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Forward evaluation computes predictions from current parameter weights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backward passes evaluate parameter gradients across all model layers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "backward"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "forward"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "forward"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Neural network training loop stages and execution sequence",
+        "columns": [
+          "forward",
+          "loss",
+          "backward"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Forward evaluation computes predictions from current parameter weights.",
+            "rows": [
+              {
+                "cells": [
+                  "forward",
+                  "loss",
+                  "backward"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "forward",
+                  "loss",
+                  "backward"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Backward passes evaluate parameter gradients across all model layers.",
+            "rows": [
+              {
+                "cells": [
+                  "forward",
+                  "loss",
+                  "backward"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "forward",
+                  "loss",
+                  "forward"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A tiny model and its loss",
+      "codeHash": "0f4aba2373d4e1b7c20b8868fb004a7a6ad2f7ef379448ffc422fb0f8f9e4497",
+      "spec": {
+        "template": "table",
+        "title": "Linear regression hypothesis and mean squared error loss",
+        "columns": [
+          "xs",
+          "ys",
+          "mse"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Mean squared error loss penalises differences between model predictions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "xs"
+                  },
+                  {
+                    "text": "ys"
+                  },
+                  {
+                    "text": "mse"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "xs"
+                  },
+                  {
+                    "text": "ys"
+                  },
+                  {
+                    "text": "mse"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking loss curves informs engineers about overall training stability.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "xs"
+                  },
+                  {
+                    "text": "ys"
+                  },
+                  {
+                    "text": "mse"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "xs"
+                  },
+                  {
+                    "text": "ys"
+                  },
+                  {
+                    "text": "xs"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Linear regression hypothesis and mean squared error loss",
+        "columns": [
+          "xs",
+          "ys",
+          "mse"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Mean squared error loss penalises differences between model predictions.",
+            "rows": [
+              {
+                "cells": [
+                  "xs",
+                  "ys",
+                  "mse"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "xs",
+                  "ys",
+                  "mse"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Tracking loss curves informs engineers about overall training stability.",
+            "rows": [
+              {
+                "cells": [
+                  "xs",
+                  "ys",
+                  "mse"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "xs",
+                  "ys",
+                  "xs"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gradients by hand",
+      "codeHash": "41976b31c9fcf1e3c485d831f9ea6ee87e1a5c84c69adcfbb84b8982f490bf19",
+      "spec": {
+        "template": "table",
+        "title": "Manual gradient derivation and analytical error propagation",
+        "columns": [
+          "errors",
+          "dw",
+          "db"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient vectors point toward the direction of steepest loss increase.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "dw"
+                  },
+                  {
+                    "text": "db"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "dw"
+                  },
+                  {
+                    "text": "db"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The gradient reflects the mean error direction across data samples.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "dw"
+                  },
+                  {
+                    "text": "db"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "errors"
+                  },
+                  {
+                    "text": "dw"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Manual gradient derivation and analytical error propagation",
+        "columns": [
+          "errors",
+          "dw",
+          "db"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient vectors point toward the direction of steepest loss increase.",
+            "rows": [
+              {
+                "cells": [
+                  "errors",
+                  "dw",
+                  "db"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "errors",
+                  "dw",
+                  "db"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The gradient reflects the mean error direction across data samples.",
+            "rows": [
+              {
+                "cells": [
+                  "errors",
+                  "dw",
+                  "db"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "errors",
+                  "dw",
+                  "errors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gradient descent in action",
+      "codeHash": "c9a3ccdc51e04ff5a18993d71f21a955f85454c387d85a6f7a45339b8483c421",
+      "spec": {
+        "template": "table",
+        "title": "Gradient descent iterative optimisation and convergence path",
+        "columns": [
+          "step",
+          "loss",
+          "lr"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient descent updates parameters iteratively along the descent path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The objective loss drops quickly as model parameters reach convergence.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "lr"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "step"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Gradient descent iterative optimisation and convergence path",
+        "columns": [
+          "step",
+          "loss",
+          "lr"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gradient descent updates parameters iteratively along the descent path.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "loss",
+                  "lr"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "step",
+                  "loss",
+                  "lr"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The objective loss drops quickly as model parameters reach convergence.",
+            "rows": [
+              {
+                "cells": [
+                  "step",
+                  "loss",
+                  "lr"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "step",
+                  "loss",
+                  "step"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing the learning rate",
+      "codeHash": "c2fc2846d499ac0240135974bb46a4b03b6a6833567dac441aa59ded57578f78",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: gradients and fitting",
+      "codeHash": "ee66a162ee9be515546fbd3207aafc791333b23d62ee8c9f6a7fd7278bbcc464",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

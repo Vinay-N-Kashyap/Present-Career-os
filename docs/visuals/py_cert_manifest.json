@@ -6508,27 +6508,27 @@
     },
     "train-py:2:0": {
       "partTitle": "The training loop",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:2:1": {
       "partTitle": "A tiny model and its loss",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:2:2": {
       "partTitle": "Gradients by hand",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:2:3": {
       "partTitle": "Gradient descent in action",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:2:4": {
       "partTitle": "Choosing the learning rate",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:2:5": {
       "partTitle": "Practice time: gradients and fitting",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:3:0": {
       "partTitle": "Why mini-batches",
