@@ -6844,27 +6844,27 @@
     },
     "train-py:16:0": {
       "partTitle": "Exploding gradients",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:16:1": {
       "partTitle": "The global gradient norm",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:16:2": {
       "partTitle": "Clipping by global norm",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:16:3": {
       "partTitle": "Detecting spikes and NaNs",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:16:4": {
       "partTitle": "Responding to instability",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:16:5": {
       "partTitle": "Practice time: stability",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:17:0": {
       "partTitle": "What a checkpoint contains",
