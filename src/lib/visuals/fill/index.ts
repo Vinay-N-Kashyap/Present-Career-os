@@ -7,4 +7,7 @@ export * from './boxes';
 export * from './table';
 export * from './letters';
 export * from './compare';
+export * from './component-tree';
+export * from './workflow';
+export * from './wireframe';
 export * from './fill';

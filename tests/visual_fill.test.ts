@@ -21,6 +21,12 @@ import type {
   SequenceVisual,
   StatesSpec,
   StatesVisual,
+  ComponentTreeSpec,
+  ComponentTreeVisual,
+  WorkflowSpec,
+  WorkflowVisual,
+  WireframeSpec,
+  WireframeVisual,
 } from '../src/lib/types/lessonVisual';
 import { PYTHON_LONG_LESSONS } from '../src/lib/data/pythonLongLessons';
 import { DSA_PYTHON_LONG_LESSONS } from '../src/lib/data/dsaPythonLongLessons';
@@ -812,3 +818,151 @@ test('14. states adapter fills real dist-py Day 20 circuit breaker part', async 
   assert.equal(filled.steps[2].transition?.label, 'reset timeout passes');
   assert.equal(filled.steps[2].tone, 'data');
 });
+
+// Test 15: component-tree adapter fills React component tree hierarchy
+test('15. component-tree adapter fills React component tree hierarchy', async () => {
+  assert.ok(TEMPLATE_REGISTRY['component-tree']?.fill, 'component-tree has fill adapter');
+
+  const day1 = PYTHON_LONG_LESSONS.find((l) => l.day === 1);
+  assert.ok(day1);
+  const part1 = day1.parts[0];
+  assert.ok(part1);
+
+  const spec: ComponentTreeSpec = {
+    template: 'component-tree',
+    title: 'React component hierarchy',
+    nodes: [
+      { id: 'app', name: 'App', tone: 'idle' },
+      { id: 'navbar', name: 'Navbar', tone: 'data' },
+      { id: 'user-badge', name: 'UserBadge', tone: 'ok' },
+    ],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'App renders Navbar.',
+        activeId: 'app',
+        tone: 'idle',
+      },
+      {
+        at: 'say2',
+        caption: 'App passes user prop down to UserBadge.',
+        activeId: 'user-badge',
+        propsPassed: {
+          from: 'app',
+          to: 'user-badge',
+          propName: 'user',
+          value: 'Admin',
+        },
+        tone: 'ok',
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part1)) as ComponentTreeVisual;
+
+  assert.equal(filled.template, 'component-tree');
+  assert.equal(filled.title, 'React component hierarchy');
+  assert.equal(filled.nodes.length, 3);
+  assert.equal(filled.steps.length, 2);
+  assert.equal(filled.steps[0].activeId, 'app');
+  assert.equal(filled.steps[1].activeId, 'user-badge');
+  assert.equal(filled.steps[1].propsPassed?.propName, 'user');
+  assert.equal(filled.steps[1].propsPassed?.value, 'Admin');
+});
+
+// Test 16: workflow adapter fills architecture topology
+test('16. workflow adapter fills architecture topology', async () => {
+  assert.ok(TEMPLATE_REGISTRY.workflow?.fill, 'workflow has fill adapter');
+
+  const day1 = PYTHON_LONG_LESSONS.find((l) => l.day === 1);
+  assert.ok(day1);
+  const part1 = day1.parts[0];
+  assert.ok(part1);
+
+  const spec: WorkflowSpec = {
+    template: 'workflow',
+    title: 'Production Request Pipeline',
+    stages: [
+      { id: 'gateway', name: 'API Gateway', tone: 'idle' },
+      { id: 'auth', name: 'Auth Service', tone: 'data' },
+      { id: 'db', name: 'Database', tone: 'ok' },
+    ],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Request arrives at API Gateway.',
+        activeStageId: 'gateway',
+        statusBadge: '200 OK',
+        tone: 'idle',
+      },
+      {
+        at: 'say2',
+        caption: 'Service writes to Database.',
+        activeStageId: 'db',
+        statusBadge: 'Committed',
+        throughput: '1200 req/s',
+        tone: 'ok',
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part1)) as WorkflowVisual;
+
+  assert.equal(filled.template, 'workflow');
+  assert.equal(filled.title, 'Production Request Pipeline');
+  assert.equal(filled.stages.length, 3);
+  assert.equal(filled.steps.length, 2);
+  assert.equal(filled.steps[0].activeStageId, 'gateway');
+  assert.equal(filled.steps[0].statusBadge, '200 OK');
+  assert.equal(filled.steps[1].activeStageId, 'db');
+  assert.equal(filled.steps[1].throughput, '1200 req/s');
+});
+
+// Test 17: wireframe adapter fills layout container
+test('17. wireframe adapter fills layout container', async () => {
+  assert.ok(TEMPLATE_REGISTRY.wireframe?.fill, 'wireframe has fill adapter');
+
+  const day1 = PYTHON_LONG_LESSONS.find((l) => l.day === 1);
+  assert.ok(day1);
+  const part1 = day1.parts[0];
+  assert.ok(part1);
+
+  const spec: WireframeSpec = {
+    template: 'wireframe',
+    title: 'Flexbox Layout Container',
+    boxes: [
+      { id: 'header', label: 'Header', flex: '1' },
+      { id: 'sidebar', label: 'Sidebar', flex: '0 0 200px' },
+      { id: 'main', label: 'Main Content', flex: '1' },
+    ],
+    steps: [
+      {
+        at: 'say1',
+        caption: 'Row layout initialized.',
+        layoutMode: 'flex-row',
+        activeBoxId: 'header',
+        tone: 'idle',
+      },
+      {
+        at: 'say2',
+        caption: 'Sidebar aligned with main content.',
+        layoutMode: 'flex-row',
+        justifyContent: 'space-between',
+        alignItems: 'stretch',
+        activeBoxId: 'sidebar',
+        tone: 'ok',
+      },
+    ],
+  };
+
+  const filled = (await fill(spec, part1)) as WireframeVisual;
+
+  assert.equal(filled.template, 'wireframe');
+  assert.equal(filled.title, 'Flexbox Layout Container');
+  assert.equal(filled.boxes.length, 3);
+  assert.equal(filled.steps.length, 2);
+  assert.equal(filled.steps[0].layoutMode, 'flex-row');
+  assert.equal(filled.steps[1].justifyContent, 'space-between');
+  assert.equal(filled.steps[1].alignItems, 'stretch');
+});
+
