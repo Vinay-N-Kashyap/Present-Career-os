@@ -5788,27 +5788,27 @@
     },
     "prompt-py:2:0": {
       "partTitle": "System prompts and user prompts",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:2:1": {
       "partTitle": "The C-R-E-A-T-E framework",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:2:2": {
       "partTitle": "Personas and roles",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:2:3": {
       "partTitle": "Negative constraints and guardrails",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:2:4": {
       "partTitle": "Auditing existing prompts",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:2:5": {
       "partTitle": "Practice time: assemble and audit",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:3:0": {
       "partTitle": "In-context learning",
