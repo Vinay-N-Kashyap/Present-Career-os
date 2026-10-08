@@ -6892,27 +6892,27 @@
     },
     "train-py:18:0": {
       "partTitle": "Failures at scale",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:18:1": {
       "partTitle": "The cost of a failure",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:18:2": {
       "partTitle": "Elastic training",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:18:3": {
       "partTitle": "Preemption and cloud capacity",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:18:4": {
       "partTitle": "Designing for failure",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:18:5": {
       "partTitle": "Practice time: resilience",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:19:0": {
       "partTitle": "Data at scale",

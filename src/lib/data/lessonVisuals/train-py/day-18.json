@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 18,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Failures at scale",
+      "codeHash": "bfa9558176b16ef504ec774fb81d748457bdb00dc2a7b3b90aeedfd5ec0ed51c",
+      "spec": {
+        "template": "table",
+        "title": "Cluster hardware failures and mean time between interruptions",
+        "columns": [
+          "gpus",
+          "cluster_mtbf",
+          "gpu_mtbf_hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every GPU server cable and switch has a small chance of failing on any day.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "cluster_mtbf"
+                  },
+                  {
+                    "text": "gpu_mtbf_hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "cluster_mtbf"
+                  },
+                  {
+                    "text": "gpu_mtbf_hours"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If one rank fails in a synchronous job the whole job stops.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "cluster_mtbf"
+                  },
+                  {
+                    "text": "gpu_mtbf_hours"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpus"
+                  },
+                  {
+                    "text": "cluster_mtbf"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cluster hardware failures and mean time between interruptions",
+        "columns": [
+          "gpus",
+          "cluster_mtbf",
+          "gpu_mtbf_hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every GPU server cable and switch has a small chance of failing on any day.",
+            "rows": [
+              {
+                "cells": [
+                  "gpus",
+                  "cluster_mtbf",
+                  "gpu_mtbf_hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpus",
+                  "cluster_mtbf",
+                  "gpu_mtbf_hours"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If one rank fails in a synchronous job the whole job stops.",
+            "rows": [
+              {
+                "cells": [
+                  "gpus",
+                  "cluster_mtbf",
+                  "gpu_mtbf_hours"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpus",
+                  "cluster_mtbf",
+                  "gpus"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The cost of a failure",
+      "codeHash": "34c254fcb60d346145e42e1c65865c7dfa79118ee8c4630c54a20e0d995fc9ae",
+      "spec": {
+        "template": "table",
+        "title": "Quantifying compute loss and restart overhead after failure",
+        "columns": [
+          "resume",
+          "lost_steps",
+          "minutes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training resumes from the last checkpoint after an unexpected job failure.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "resume"
+                  },
+                  {
+                    "text": "lost_steps"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resume"
+                  },
+                  {
+                    "text": "lost_steps"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Restart time covers detecting failure and reloading the checkpoint.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "resume"
+                  },
+                  {
+                    "text": "lost_steps"
+                  },
+                  {
+                    "text": "minutes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "resume"
+                  },
+                  {
+                    "text": "lost_steps"
+                  },
+                  {
+                    "text": "resume"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Quantifying compute loss and restart overhead after failure",
+        "columns": [
+          "resume",
+          "lost_steps",
+          "minutes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Training resumes from the last checkpoint after an unexpected job failure.",
+            "rows": [
+              {
+                "cells": [
+                  "resume",
+                  "lost_steps",
+                  "minutes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "resume",
+                  "lost_steps",
+                  "minutes"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Restart time covers detecting failure and reloading the checkpoint.",
+            "rows": [
+              {
+                "cells": [
+                  "resume",
+                  "lost_steps",
+                  "minutes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "resume",
+                  "lost_steps",
+                  "resume"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Elastic training",
+      "codeHash": "a709a0beff7a0fa8d3559c5f8d29667be0778c207f8269daa0ace4ef0c896e75",
+      "spec": {
+        "template": "table",
+        "title": "Elastic reconfiguration and gradient accumulation scaling",
+        "columns": [
+          "global_batch",
+          "micro",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Elastic training continues with fewer GPUs instead of waiting.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "global_batch"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "global_batch"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The global batch must stay constant as gradient accumulation compensates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "global_batch"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "gpus"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "global_batch"
+                  },
+                  {
+                    "text": "micro"
+                  },
+                  {
+                    "text": "global_batch"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Elastic reconfiguration and gradient accumulation scaling",
+        "columns": [
+          "global_batch",
+          "micro",
+          "gpus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Elastic training continues with fewer GPUs instead of waiting.",
+            "rows": [
+              {
+                "cells": [
+                  "global_batch",
+                  "micro",
+                  "gpus"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "global_batch",
+                  "micro",
+                  "gpus"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The global batch must stay constant as gradient accumulation compensates.",
+            "rows": [
+              {
+                "cells": [
+                  "global_batch",
+                  "micro",
+                  "gpus"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "global_batch",
+                  "micro",
+                  "global_batch"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Preemption and cloud capacity",
+      "codeHash": "cf6a87b098254577c4a527e19e81f17cc0baeecc7c468bc282cd0a49e5fab1d8",
+      "spec": {
+        "template": "table",
+        "title": "Spot instance preemption economics and resilience",
+        "columns": [
+          "gpu_hours",
+          "price",
+          "on_demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud spot instances offer cheaper capacity with occasional interruption.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpu_hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "on_demand"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpu_hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "on_demand"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Spot capacity works effectively with frequent checkpoints and restarts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "gpu_hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "on_demand"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "gpu_hours"
+                  },
+                  {
+                    "text": "price"
+                  },
+                  {
+                    "text": "gpu_hours"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Spot instance preemption economics and resilience",
+        "columns": [
+          "gpu_hours",
+          "price",
+          "on_demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud spot instances offer cheaper capacity with occasional interruption.",
+            "rows": [
+              {
+                "cells": [
+                  "gpu_hours",
+                  "price",
+                  "on_demand"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpu_hours",
+                  "price",
+                  "on_demand"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Spot capacity works effectively with frequent checkpoints and restarts.",
+            "rows": [
+              {
+                "cells": [
+                  "gpu_hours",
+                  "price",
+                  "on_demand"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpu_hours",
+                  "price",
+                  "gpu_hours"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing for failure",
+      "codeHash": "b00330e98e0887691bd068016437f3e82d3d526477b05f0e001844ce83d41c19",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: resilience",
+      "codeHash": "e5c2eec42d93cd38ff609a5500ab11e80b067515b08727443f3ccdf398f89206",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
