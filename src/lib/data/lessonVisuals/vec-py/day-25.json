@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 25,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Keeping indexes fresh",
+      "codeHash": "02b50f90e4bdfea7d399269f69ee37608c0b85a2b679226c30da83275c56328d",
+      "spec": {
+        "template": "table",
+        "title": "Document modification timestamp tracking and staleness",
+        "columns": [
+          "docs",
+          "updated",
+          "indexed"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A document is stale when updated after its last indexed timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "updated"
+                  },
+                  {
+                    "text": "indexed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "updated"
+                  },
+                  {
+                    "text": "indexed"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Incremental indexing processes only changed documents to maintain freshness.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "updated"
+                  },
+                  {
+                    "text": "indexed"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "updated"
+                  },
+                  {
+                    "text": "updated"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document modification timestamp tracking and staleness",
+        "columns": [
+          "docs",
+          "updated",
+          "indexed"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A document is stale when updated after its last indexed timestamp.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "updated",
+                  "indexed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "updated",
+                  "indexed"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Incremental indexing processes only changed documents to maintain freshness.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "updated",
+                  "indexed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "updated",
+                  "updated"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Why models do not mix",
+      "codeHash": "a4d41f7afd59dab52bda2945293e2c41908330e05628bd6c4500255929f9dea1",
+      "spec": {
+        "template": "table",
+        "title": "Model space incompatibility and vector divergence",
+        "columns": [
+          "model_a",
+          "model_b",
+          "model_a"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each embedding model defines distinct spaces with incompatible vectors.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model_a"
+                  },
+                  {
+                    "text": "model_b"
+                  },
+                  {
+                    "text": "model_a"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model_a"
+                  },
+                  {
+                    "text": "model_b"
+                  },
+                  {
+                    "text": "model_a"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Queries must always use the exact same embedding model as the index.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "model_a"
+                  },
+                  {
+                    "text": "model_b"
+                  },
+                  {
+                    "text": "model_a"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "model_a"
+                  },
+                  {
+                    "text": "model_b"
+                  },
+                  {
+                    "text": "model_b"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Model space incompatibility and vector divergence",
+        "columns": [
+          "model_a",
+          "model_b",
+          "model_a"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Each embedding model defines distinct spaces with incompatible vectors.",
+            "rows": [
+              {
+                "cells": [
+                  "model_a",
+                  "model_b",
+                  "model_a"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "model_a",
+                  "model_b",
+                  "model_a"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Queries must always use the exact same embedding model as the index.",
+            "rows": [
+              {
+                "cells": [
+                  "model_a",
+                  "model_b",
+                  "model_a"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "model_a",
+                  "model_b",
+                  "model_b"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blue-green index migration",
+      "codeHash": "bb51383453cb95e23790612641c33c09c67ab3e060abdfe198468505e60fa400",
+      "spec": {
+        "template": "table",
+        "title": "Zero-downtime blue-green index transition states",
+        "columns": [
+          "states",
+          "state",
+          "serving"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Blue-green migration builds the target index alongside active traffic.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "serving"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "serving"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Once evaluated and ready, queries switch instantly with rollback safety.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "serving"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "states"
+                  },
+                  {
+                    "text": "state"
+                  },
+                  {
+                    "text": "state"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Zero-downtime blue-green index transition states",
+        "columns": [
+          "states",
+          "state",
+          "serving"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Blue-green migration builds the target index alongside active traffic.",
+            "rows": [
+              {
+                "cells": [
+                  "states",
+                  "state",
+                  "serving"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "states",
+                  "state",
+                  "serving"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Once evaluated and ready, queries switch instantly with rollback safety.",
+            "rows": [
+              {
+                "cells": [
+                  "states",
+                  "state",
+                  "serving"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "states",
+                  "state",
+                  "state"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Migration costs",
+      "codeHash": "b23f611dd5b724681effa6e5e1145c72892f28a64ff9428d87786fc2abed0dec",
+      "spec": {
+        "template": "table",
+        "title": "Re-embedding resource estimation and batch checkpointing",
+        "columns": [
+          "chunks",
+          "workers",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Re-embedding a large collection requires planning compute and token cost.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Running migration jobs in batches with checkpoints protects against failures.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "chunks"
+                  },
+                  {
+                    "text": "workers"
+                  },
+                  {
+                    "text": "chunks"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Re-embedding resource estimation and batch checkpointing",
+        "columns": [
+          "chunks",
+          "workers",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Re-embedding a large collection requires planning compute and token cost.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "workers",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "workers",
+                  "hours"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Running migration jobs in batches with checkpoints protects against failures.",
+            "rows": [
+              {
+                "cells": [
+                  "chunks",
+                  "workers",
+                  "hours"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "chunks",
+                  "workers",
+                  "chunks"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Versioning everything",
+      "codeHash": "26749b7c2c5092005f50626ffe7822ef5d7bbc837003529e3b3915f54a7a3ded",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: freshness and migration",
+      "codeHash": "77dfb0372d12bd93e37556685f557306d94c503db0dd0f2e157cba57189896db",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

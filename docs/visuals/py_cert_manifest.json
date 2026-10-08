@@ -7780,27 +7780,27 @@
     },
     "vec-py:25:0": {
       "partTitle": "Keeping indexes fresh",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:25:1": {
       "partTitle": "Why models do not mix",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:25:2": {
       "partTitle": "Blue-green index migration",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:25:3": {
       "partTitle": "Migration costs",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:25:4": {
       "partTitle": "Versioning everything",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:25:5": {
       "partTitle": "Practice time: freshness and migration",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:26:0": {
       "partTitle": "Graded relevance",
