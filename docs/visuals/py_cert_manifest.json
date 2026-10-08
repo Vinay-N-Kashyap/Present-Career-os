@@ -5908,27 +5908,27 @@
     },
     "prompt-py:7:0": {
       "partTitle": "Why structured output",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:7:1": {
       "partTitle": "Describing the schema",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:7:2": {
       "partTitle": "Validating JSON output",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:7:3": {
       "partTitle": "Extracting JSON from chatty replies",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:7:4": {
       "partTitle": "Function calling and tools",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:7:5": {
       "partTitle": "Practice time: validate and extract",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:8:0": {
       "partTitle": "Two kinds of summary",

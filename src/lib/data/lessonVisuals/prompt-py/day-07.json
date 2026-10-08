@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 7,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why structured output",
+      "codeHash": "fa9c0adc8ca55208a54a1e85a5a459677aedb1d2100b1ff0686a2ea59b31f391",
+      "spec": {
+        "template": "table",
+        "title": "Structured JSON output extraction from model responses",
+        "columns": [
+          "name",
+          "age",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Predictable structure helps programs update a database or trigger action.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard format provides named fields with values such as text and numbers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "tags"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structured JSON output extraction from model responses",
+        "columns": [
+          "name",
+          "age",
+          "tags"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Predictable structure helps programs update a database or trigger action.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "tags"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "tags"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard format provides named fields with values such as text and numbers.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "tags"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "tags"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Describing the schema",
+      "codeHash": "b2b9fcb0d31247436a473a2d72be72259e1685b821d53ff0cae489664dd2c8fa",
+      "spec": {
+        "template": "table",
+        "title": "Schema specifications and field definitions for prompt extraction",
+        "columns": [
+          "customer",
+          "issue",
+          "priority"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A schema describes required fields and allowed values for data extraction.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "customer"
+                  },
+                  {
+                    "text": "issue"
+                  },
+                  {
+                    "text": "priority"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "customer"
+                  },
+                  {
+                    "text": "issue"
+                  },
+                  {
+                    "text": "priority"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compact description defines each field name and expected type in prompts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "customer"
+                  },
+                  {
+                    "text": "issue"
+                  },
+                  {
+                    "text": "priority"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "customer"
+                  },
+                  {
+                    "text": "issue"
+                  },
+                  {
+                    "text": "priority"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Schema specifications and field definitions for prompt extraction",
+        "columns": [
+          "customer",
+          "issue",
+          "priority"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A schema describes required fields and allowed values for data extraction.",
+            "rows": [
+              {
+                "cells": [
+                  "customer",
+                  "issue",
+                  "priority"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "customer",
+                  "issue",
+                  "priority"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compact description defines each field name and expected type in prompts.",
+            "rows": [
+              {
+                "cells": [
+                  "customer",
+                  "issue",
+                  "priority"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "customer",
+                  "issue",
+                  "priority"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating JSON output",
+      "codeHash": "ca177327ea9a511c57828a867e10d3c89ce3b427c9db16903f14bbea140b5ed5",
+      "spec": {
+        "template": "table",
+        "title": "Output schema validation and error reporting",
+        "columns": [
+          "name",
+          "age",
+          "errors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validation checks that output parses and every field matches its type.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Invalid parsing raises an error which you catch and report.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "age"
+                  },
+                  {
+                    "text": "errors"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Output schema validation and error reporting",
+        "columns": [
+          "name",
+          "age",
+          "errors"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Validation checks that output parses and every field matches its type.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "errors"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "errors"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Invalid parsing raises an error which you catch and report.",
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "errors"
+                ],
+                "tone": "warn"
+              },
+              {
+                "cells": [
+                  "name",
+                  "age",
+                  "errors"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting JSON from chatty replies",
+      "codeHash": "2e349efd73e7110589e9c9343aa47238b715238dc9fb65ef5c8969fc3ba42ba9",
+      "spec": {
+        "template": "table",
+        "title": "Delimiter slicing for JSON extraction from conversational text",
+        "columns": [
+          "city",
+          "temp",
+          "parsed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chatty models often add conversational text around JSON code fences.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "city"
+                  },
+                  {
+                    "text": "temp"
+                  },
+                  {
+                    "text": "parsed"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "city"
+                  },
+                  {
+                    "text": "temp"
+                  },
+                  {
+                    "text": "parsed"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A robust method extracts everything between opening and closing braces.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "city"
+                  },
+                  {
+                    "text": "temp"
+                  },
+                  {
+                    "text": "parsed"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "city"
+                  },
+                  {
+                    "text": "temp"
+                  },
+                  {
+                    "text": "parsed"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Delimiter slicing for JSON extraction from conversational text",
+        "columns": [
+          "city",
+          "temp",
+          "parsed"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chatty models often add conversational text around JSON code fences.",
+            "rows": [
+              {
+                "cells": [
+                  "city",
+                  "temp",
+                  "parsed"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "city",
+                  "temp",
+                  "parsed"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A robust method extracts everything between opening and closing braces.",
+            "rows": [
+              {
+                "cells": [
+                  "city",
+                  "temp",
+                  "parsed"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "city",
+                  "temp",
+                  "parsed"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Function calling and tools",
+      "codeHash": "76977516c27fca53a9d39a3213a7fdc7df634282e97ff7cc869bc4835a41eead",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: validate and extract",
+      "codeHash": "8157c36b5c7abfd6ca5178cbfd7605805d6bfe2dfda528ceae56ce486bf719a5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
