@@ -5572,27 +5572,27 @@
     },
     "quant-py:23:0": {
       "partTitle": "Fragmented markets",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:23:1": {
       "partTitle": "Fees, rebates and the maker-taker model",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:23:2": {
       "partTitle": "The smart order router",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:23:3": {
       "partTitle": "Dark pools and hidden liquidity",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:23:4": {
       "partTitle": "Measuring execution quality",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:23:5": {
       "partTitle": "Practice time: route and account",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:24:0": {
       "partTitle": "The speed of light in fibre",
