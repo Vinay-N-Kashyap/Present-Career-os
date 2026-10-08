@@ -7660,27 +7660,27 @@
     },
     "vec-py:20:0": {
       "partTitle": "Tenants and namespaces",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:20:1": {
       "partTitle": "Access control lists",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:20:2": {
       "partTitle": "Tenant-safe search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:20:3": {
       "partTitle": "Leaks through AI answers",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:20:4": {
       "partTitle": "Testing isolation",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:20:5": {
       "partTitle": "Practice time: access control",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:21:0": {
       "partTitle": "Two-stage retrieval",
