@@ -7348,27 +7348,27 @@
     },
     "vec-py:7:0": {
       "partTitle": "Why hybrid search",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:7:1": {
       "partTitle": "Reciprocal rank fusion",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:7:2": {
       "partTitle": "Normalised score fusion",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:7:3": {
       "partTitle": "Choosing a fusion method",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:7:4": {
       "partTitle": "Hybrid search in a pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:7:5": {
       "partTitle": "Practice time: fusion",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:8:0": {
       "partTitle": "Why chunk",
