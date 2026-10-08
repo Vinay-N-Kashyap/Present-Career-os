@@ -8596,27 +8596,27 @@
     },
     "safe-py:29:0": {
       "partTitle": "Why monitor in production",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:29:1": {
       "partTitle": "A decision dashboard",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:29:2": {
       "partTitle": "Baselines",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:29:3": {
       "partTitle": "Spike alerts",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:29:4": {
       "partTitle": "Alerts people trust",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:29:5": {
       "partTitle": "Monitoring in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:30:0": {
       "partTitle": "Looking back",
