@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 4,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Arrays: lists of values",
+      "codeHash": "6d0f5ad66c867ba4fee3f4a53a0c4be4a59090087b05d119efc95ed6572f7fdb",
+      "spec": {
+        "template": "boxes",
+        "title": "Array indices and ordered values",
+        "boxes": [
+          {
+            "id": "item0",
+            "label": "item0",
+            "tappable": false
+          },
+          {
+            "id": "item1",
+            "label": "item1",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Square brackets create an array holding multiple skills values.",
+            "values": {
+              "item0": {
+                "text": "\"HTML\""
+              },
+              "item1": {
+                "text": "\"CSS\""
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Each item position starts at index 0 in the list.",
+            "values": {
+              "item0": {
+                "text": "\"HTML\""
+              },
+              "item1": {
+                "text": "\"JavaScript\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Array indices and ordered values",
+        "boxes": [
+          {
+            "id": "item0",
+            "label": "item0",
+            "tappable": false
+          },
+          {
+            "id": "item1",
+            "label": "item1",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Square brackets create an array holding multiple skills values.",
+            "values": {
+              "item0": "\"HTML\"",
+              "item1": "\"CSS\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Each item position starts at index 0 in the list.",
+            "values": {
+              "item0": "\"HTML\"",
+              "item1": "\"JavaScript\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing arrays",
+      "codeHash": "1cdc6f954d32ab99c2395cb7f5bd745cf30acafecf7cbd5b17ac83f8c0d1753e",
+      "spec": {
+        "template": "compare",
+        "title": "Adding elements with array push",
+        "leftLabel": "Initial Array",
+        "rightLabel": "After Push",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Push adds a new item to the end of the array.",
+            "left": {
+              "code": "const skills = [\"HTML\", \"CSS\"];",
+              "result": {
+                "text": "\"CSS\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "skills.push(\"JavaScript\");",
+              "result": {
+                "text": "\"JavaScript\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Even though const is used, push can still change the array.",
+            "left": {
+              "code": "const skills = [\"HTML\", \"CSS\"];",
+              "result": {
+                "text": "\"HTML\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "skills.push(\"JavaScript\");",
+              "result": {
+                "text": "\"JavaScript\""
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Adding elements with array push",
+        "leftLabel": "Initial Array",
+        "rightLabel": "After Push",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Push adds a new item to the end of the array.",
+            "left": {
+              "code": "const skills = [\"HTML\", \"CSS\"];",
+              "result": "\"CSS\"",
+              "tone": "idle",
+              "checks": [
+                "\"CSS\""
+              ]
+            },
+            "right": {
+              "code": "skills.push(\"JavaScript\");",
+              "result": "\"JavaScript\"",
+              "tone": "ok",
+              "checks": [
+                "\"JavaScript\""
+              ]
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Even though const is used, push can still change the array.",
+            "left": {
+              "code": "const skills = [\"HTML\", \"CSS\"];",
+              "result": "\"HTML\"",
+              "tone": "idle",
+              "checks": [
+                "\"HTML\""
+              ]
+            },
+            "right": {
+              "code": "skills.push(\"JavaScript\");",
+              "result": "\"JavaScript\"",
+              "tone": "data",
+              "checks": [
+                "\"JavaScript\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Objects: details with names",
+      "codeHash": "b33315089e1213541df80dadd0d0278c2bc3f621287ec3bdf094dcd93157169f",
+      "spec": {
+        "template": "boxes",
+        "title": "Object properties and dot notation access",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An object uses curly brackets to store property pairs.",
+            "values": {
+              "title": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              },
+              "salary": {
+                "text": "400000"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Dot notation reads individual properties like job title.",
+            "values": {
+              "title": {
+                "text": "\"Frontend Developer\""
+              },
+              "company": {
+                "text": "\"Infosys\""
+              },
+              "salary": {
+                "text": "400000"
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Object properties and dot notation access",
+        "boxes": [
+          {
+            "id": "title",
+            "label": "title",
+            "tappable": false
+          },
+          {
+            "id": "company",
+            "label": "company",
+            "tappable": false
+          },
+          {
+            "id": "salary",
+            "label": "salary",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An object uses curly brackets to store property pairs.",
+            "values": {
+              "title": "\"Frontend Developer\"",
+              "company": "\"Infosys\"",
+              "salary": "400000"
+            },
+            "tones": {}
+          },
+          {
+            "at": "say3",
+            "caption": "Dot notation reads individual properties like job title.",
+            "values": {
+              "title": "\"Frontend Developer\"",
+              "company": "\"Infosys\"",
+              "salary": "400000"
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changing and adding properties",
+      "codeHash": "bd34a2db0944bdc9d1bfd0eda169f0e3ed7adb1b30d3fd37a83d8184efd9a3ca",
+      "spec": {
+        "template": "boxes",
+        "title": "Updating properties and bracket notation access",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          },
+          {
+            "id": "interviewDate",
+            "label": "interviewDate",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assigning a new value updates the status property.",
+            "values": {
+              "status": {
+                "text": "\"interview\""
+              },
+              "interviewDate": {
+                "text": "\"2026-10-05\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Square brackets read properties when using variable names.",
+            "values": {
+              "status": {
+                "text": "\"interview\""
+              },
+              "interviewDate": {
+                "text": "\"2026-10-05\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Updating properties and bracket notation access",
+        "boxes": [
+          {
+            "id": "status",
+            "label": "status",
+            "tappable": false
+          },
+          {
+            "id": "interviewDate",
+            "label": "interviewDate",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Assigning a new value updates the status property.",
+            "values": {
+              "status": "\"interview\"",
+              "interviewDate": "\"2026-10-05\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Square brackets read properties when using variable names.",
+            "values": {
+              "status": "\"interview\"",
+              "interviewDate": "\"2026-10-05\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Arrays of objects: real app data",
+      "codeHash": "3a50ed706d84440d852b971c1ccaece7384522ec6a614755dec97627a6587edd",
+      "spec": {
+        "template": "boxes",
+        "title": "Combining arrays and objects for records",
+        "boxes": [
+          {
+            "id": "job0",
+            "label": "job0",
+            "tappable": false
+          },
+          {
+            "id": "job1",
+            "label": "job1",
+            "tappable": false
+          },
+          {
+            "id": "job2",
+            "label": "job2",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An array of objects represents a list of job items.",
+            "values": {
+              "job0": {
+                "text": "\"Frontend Developer\""
+              },
+              "job1": {
+                "text": "\"React Developer\""
+              },
+              "job2": {
+                "text": "\"UI Developer\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Combine index and dot notation to reach company details.",
+            "values": {
+              "job0": {
+                "text": "\"Infosys\""
+              },
+              "job1": {
+                "text": "\"Zoho\""
+              },
+              "job2": {
+                "text": "\"Swiggy\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Combining arrays and objects for records",
+        "boxes": [
+          {
+            "id": "job0",
+            "label": "job0",
+            "tappable": false
+          },
+          {
+            "id": "job1",
+            "label": "job1",
+            "tappable": false
+          },
+          {
+            "id": "job2",
+            "label": "job2",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An array of objects represents a list of job items.",
+            "values": {
+              "job0": "\"Frontend Developer\"",
+              "job1": "\"React Developer\"",
+              "job2": "\"UI Developer\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Combine index and dot notation to reach company details.",
+            "values": {
+              "job0": "\"Infosys\"",
+              "job1": "\"Zoho\"",
+              "job2": "\"Swiggy\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Common mistakes and how to avoid them",
+      "codeHash": "bfa1b2ea491ab8693bec4f19a787010c56fa4c060f49f9b8c2e1dfbe9f2fa88b",
+      "spec": {
+        "template": "none",
+        "reason": "Review of common beginner mistakes with array indexing and object properties"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Review of common beginner mistakes with array indexing and object properties"
+      }
+    }
+  ]
+}
