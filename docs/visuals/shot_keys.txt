@@ -1,6 +1,6 @@
-react-basics:17:3
-react-basics:18:0
-react-basics:18:3
-react-basics:18:4
-react-basics:19:4
-react-basics:20:1
+react-basics:21:1
+react-basics:22:1
+react-basics:23:0
+react-basics:23:1
+react-basics:23:4
+react-basics:25:1
