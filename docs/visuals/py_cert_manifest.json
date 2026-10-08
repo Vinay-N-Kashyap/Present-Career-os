@@ -6748,27 +6748,27 @@
     },
     "train-py:12:0": {
       "partTitle": "Stages and the naive pipeline",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:12:1": {
       "partTitle": "Micro-batches and the GPipe schedule",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:12:2": {
       "partTitle": "The bubble fraction",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:12:3": {
       "partTitle": "1F1B and memory",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:12:4": {
       "partTitle": "Balancing stages",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:12:5": {
       "partTitle": "Practice time: pipelines",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:13:0": {
       "partTitle": "Why activations are stored",
