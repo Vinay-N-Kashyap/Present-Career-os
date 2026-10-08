@@ -5404,27 +5404,27 @@
     },
     "quant-py:16:0": {
       "partTitle": "What an option is",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:16:1": {
       "partTitle": "The Black-Scholes-Merton idea",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:16:2": {
       "partTitle": "The formula",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:16:3": {
       "partTitle": "The Greeks: delta and gamma",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:16:4": {
       "partTitle": "Put-call parity",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:16:5": {
       "partTitle": "Practice time: price and check",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:17:0": {
       "partTitle": "Implied volatility",

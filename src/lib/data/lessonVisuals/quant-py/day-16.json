@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "What an option is",
+      "codeHash": "5ff58c2af4068788844f5f04baf8662779957afbf2bbf2c3173bfdfc9d59c19d",
+      "spec": {
+        "template": "table",
+        "title": "Derivative contract payoffs and terminal expiry profiles",
+        "columns": [
+          "call",
+          "put"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An option grants the right to buy or sell assets at a fixed strike.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "European options restrict execution rights strictly to contract expiry dates.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "At expiry, a call yields positive payoff when stock price exceeds the strike.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "K"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints expiry payoffs of calls and puts across final stock prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "max"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "K"
+                  },
+                  {
+                    "text": "max"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "payoff"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Derivative contract payoffs and terminal expiry profiles",
+        "columns": [
+          "call",
+          "put"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An option grants the right to buy or sell assets at a fixed strike.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "European options restrict execution rights strictly to contract expiry dates.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "At expiry, a call yields positive payoff when stock price exceeds the strike.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "K",
+                  "max"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example prints expiry payoffs of calls and puts across final stock prices.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "max",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "K",
+                  "max"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "payoff"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Black-Scholes-Merton idea",
+      "codeHash": "b4cfda74c925f31e7a3c686655b82bb6579ea6bcb302bc4d1eb40bf28af939c0",
+      "spec": {
+        "template": "table",
+        "title": "Geometric Brownian motion and continuous delta replication",
+        "columns": [
+          "sigma",
+          "T"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic trading replicates option payoffs to eliminate arbitrage opportunities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "T"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Replication costs dictate option fair price to prevent risk-free profits.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "T"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "finals"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The underlying stock follows a random walk governed by continuous volatility.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "T"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "finals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows simulated final stock price paths under constant parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "T"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "random"
+                  },
+                  {
+                    "text": "finals"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "print"
+                  },
+                  {
+                    "text": "round"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Geometric Brownian motion and continuous delta replication",
+        "columns": [
+          "sigma",
+          "T"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic trading replicates option payoffs to eliminate arbitrage opportunities.",
+            "rows": [
+              {
+                "cells": [
+                  "sigma",
+                  "T"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Replication costs dictate option fair price to prevent risk-free profits.",
+            "rows": [
+              {
+                "cells": [
+                  "sigma",
+                  "T"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "finals"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The underlying stock follows a random walk governed by continuous volatility.",
+            "rows": [
+              {
+                "cells": [
+                  "sigma",
+                  "T"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "finals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows simulated final stock price paths under constant parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "sigma",
+                  "T"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "random",
+                  "finals"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "exp"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print",
+                  "round"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The formula",
+      "codeHash": "bb3eaa99661253b0d673d241fe48324d6529ca87a870930802fe4fab5b857f6c",
+      "spec": {
+        "template": "table",
+        "title": "Black-Scholes-Merton closed-form analytical pricing formula",
+        "columns": [
+          "call",
+          "put"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Black-Scholes computes European call and put valuations analytically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The normal cumulative distribution function calculates exercise probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d1"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalized drift terms scale logarithmic ratios by parameter sigma.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d1"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example implements the formula and prices the benchmark option.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "put"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "d1"
+                  },
+                  {
+                    "text": "d2"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "S"
+                  },
+                  {
+                    "text": "K"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Black-Scholes-Merton closed-form analytical pricing formula",
+        "columns": [
+          "call",
+          "put"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Black-Scholes computes European call and put valuations analytically.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The normal cumulative distribution function calculates exercise probabilities.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "d1",
+                  "d2"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Normalized drift terms scale logarithmic ratios by parameter sigma.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "d1",
+                  "d2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example implements the formula and prices the benchmark option.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "put"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "d1",
+                  "d2"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "S",
+                  "K"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Greeks: delta and gamma",
+      "codeHash": "766e3c7ec5b1c60fe35a8da142bfc64a850d99a724e377ca2644f5ea67f48937",
+      "spec": {
+        "template": "table",
+        "title": "Option Greeks sensitivity analysis: delta and gamma dynamics",
+        "columns": [
+          "call",
+          "d1"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Option Greeks quantify sensitivity against underlying asset price moves.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Delta measures option price changes corresponding to unit moves in stock.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Gamma measures how rapidly delta changes and dictates hedge rebalancing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks delta numerically by bumping underlying stock prices.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "d1"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "sqrt"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sigma"
+                  },
+                  {
+                    "text": "exp"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "call"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Option Greeks sensitivity analysis: delta and gamma dynamics",
+        "columns": [
+          "call",
+          "d1"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Option Greeks quantify sensitivity against underlying asset price moves.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "d1"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Delta measures option price changes corresponding to unit moves in stock.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Gamma measures how rapidly delta changes and dictates hedge rebalancing.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sigma",
+                  "exp"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example checks delta numerically by bumping underlying stock prices.",
+            "rows": [
+              {
+                "cells": [
+                  "call",
+                  "d1"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "math",
+                  "sqrt"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sigma",
+                  "exp"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "call",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Put-call parity",
+      "codeHash": "ab2f14543fadd2723bdfc6585bb302831bf44de36024ff07d015c5ba0028279d",
+      "spec": {
+        "template": "none",
+        "reason": "Put-call parity no-arbitrage relationships and violation detection."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: price and check",
+      "codeHash": "d427ed5d503a149e1bf3c6b60cfb2cae6a4db999242308128e30cb8d22e8e67d",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: Black-Scholes implementation and Greeks calculation."
+      },
+      "filled": {}
+    }
+  ]
+}
