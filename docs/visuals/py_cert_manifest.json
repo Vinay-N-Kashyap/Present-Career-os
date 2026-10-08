@@ -8236,27 +8236,27 @@
     },
     "safe-py:14:0": {
       "partTitle": "Human in the loop",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:14:1": {
       "partTitle": "Approval rules as data",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:14:2": {
       "partTitle": "Agent plans",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:14:3": {
       "partTitle": "Running a plan safely",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:14:4": {
       "partTitle": "Making approval meaningful",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:14:5": {
       "partTitle": "Approval in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:15:0": {
       "partTitle": "Why limit usage",

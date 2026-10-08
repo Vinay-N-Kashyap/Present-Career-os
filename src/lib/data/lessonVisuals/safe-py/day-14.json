@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "safe-py",
+  "day": 14,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Human in the loop",
+      "codeHash": "bbd6cba7b947310829e48ff7e62bb2819f4dc26092586415c8a2ed3aa1b9407f",
+      "spec": {
+        "template": "table",
+        "title": "Human-in-the-loop intervention criteria and high-risk workflows",
+        "columns": [
+          "actions",
+          "amount",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Human in the loop requires approval before high-stakes actions are executed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Approval should be reserved for critical actions to prevent approval fatigue.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "actions"
+                  },
+                  {
+                    "text": "amount"
+                  },
+                  {
+                    "text": "actions"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Human-in-the-loop intervention criteria and high-risk workflows",
+        "columns": [
+          "actions",
+          "amount",
+          "actions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Human in the loop requires approval before high-stakes actions are executed.",
+            "rows": [
+              {
+                "cells": [
+                  "actions",
+                  "amount",
+                  "actions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "actions",
+                  "amount",
+                  "actions"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Approval should be reserved for critical actions to prevent approval fatigue.",
+            "rows": [
+              {
+                "cells": [
+                  "actions",
+                  "amount",
+                  "actions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "actions",
+                  "amount",
+                  "actions"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Approval rules as data",
+      "codeHash": "160eee22d8889edd64075191648c26a869dcb63e72ef92bc369a1644ac4686d0",
+      "spec": {
+        "template": "table",
+        "title": "Policy threshold configuration and reason code generation",
+        "columns": [
+          "action",
+          "decision",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Critical administrative tools always need approval regardless of arguments.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "action"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "action"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Monetary transactions need approval whenever amounts exceed policy thresholds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "action"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "action"
+                  },
+                  {
+                    "text": "decision"
+                  },
+                  {
+                    "text": "action"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Policy threshold configuration and reason code generation",
+        "columns": [
+          "action",
+          "decision",
+          "action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Critical administrative tools always need approval regardless of arguments.",
+            "rows": [
+              {
+                "cells": [
+                  "action",
+                  "decision",
+                  "action"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "action",
+                  "decision",
+                  "action"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Monetary transactions need approval whenever amounts exceed policy thresholds.",
+            "rows": [
+              {
+                "cells": [
+                  "action",
+                  "decision",
+                  "action"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "action",
+                  "decision",
+                  "action"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Agent plans",
+      "codeHash": "925d6fc68d310bb5e9ca079b0e5ae036d475d7e7a457ed15570ba8957ebd80e6",
+      "spec": {
+        "template": "table",
+        "title": "Multi-step agent execution plan inspection and gating",
+        "columns": [
+          "plan",
+          "allowed",
+          "plan"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running an agent plan safely requires validating every step before execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If any step is not allowed the entire plan must halt immediately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "plan"
+                  },
+                  {
+                    "text": "allowed"
+                  },
+                  {
+                    "text": "plan"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multi-step agent execution plan inspection and gating",
+        "columns": [
+          "plan",
+          "allowed",
+          "plan"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running an agent plan safely requires validating every step before execution.",
+            "rows": [
+              {
+                "cells": [
+                  "plan",
+                  "allowed",
+                  "plan"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "plan",
+                  "allowed",
+                  "plan"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "If any step is not allowed the entire plan must halt immediately.",
+            "rows": [
+              {
+                "cells": [
+                  "plan",
+                  "allowed",
+                  "plan"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "plan",
+                  "allowed",
+                  "plan"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Running a plan safely",
+      "codeHash": "0312b35c13622c9e66c1c43d1039eac8a9fa038065c6dc3001fc8e0c1129835e",
+      "spec": {
+        "template": "table",
+        "title": "Plan runner status lifecycle and approval pauses",
+        "columns": [
+          "steps",
+          "tools",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Steps using unauthorized tools stop plan execution with status BLOCKED.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A step with danger tool prefixes stops with status WAITING_APPROVAL.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "steps"
+                  },
+                  {
+                    "text": "tools"
+                  },
+                  {
+                    "text": "steps"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Plan runner status lifecycle and approval pauses",
+        "columns": [
+          "steps",
+          "tools",
+          "steps"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Steps using unauthorized tools stop plan execution with status BLOCKED.",
+            "rows": [
+              {
+                "cells": [
+                  "steps",
+                  "tools",
+                  "steps"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "tools",
+                  "steps"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A step with danger tool prefixes stops with status WAITING_APPROVAL.",
+            "rows": [
+              {
+                "cells": [
+                  "steps",
+                  "tools",
+                  "steps"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "steps",
+                  "tools",
+                  "steps"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Making approval meaningful",
+      "codeHash": "db6bc4625e0cb8da826bebe8685f2bbb0a18fd1be10a52527e7e4a5419e31aea",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Approval in the pipeline",
+      "codeHash": "c294266f6ae3e0358c1d02d8328a78043b11c6404614edadef3338c47e8cd3dc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
