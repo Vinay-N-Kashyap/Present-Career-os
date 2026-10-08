@@ -6028,27 +6028,27 @@
     },
     "prompt-py:12:0": {
       "partTitle": "Tone and audience",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:12:1": {
       "partTitle": "Measuring formality",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:12:2": {
       "partTitle": "Executive memos",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:12:3": {
       "partTitle": "Emails with AI",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:12:4": {
       "partTitle": "Editing and proofreading",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:12:5": {
       "partTitle": "Practice time: tone and memos",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:13:0": {
       "partTitle": "AI as a brainstorming partner",

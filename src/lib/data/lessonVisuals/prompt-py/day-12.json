@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 12,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tone and audience",
+      "codeHash": "4baad8f3535d0e9c28240d8d3f227923cc7e3adcbec3cdffac7ac8e5bd7ce1ad",
+      "spec": {
+        "template": "table",
+        "title": "Audience-specific tone shifting and phrasing adaptation",
+        "columns": [
+          "audience",
+          "manager",
+          "client"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audience expectations dictate different wording for a senior manager.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "manager"
+                  },
+                  {
+                    "text": "client"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "manager"
+                  },
+                  {
+                    "text": "client"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tone dimensions include formality, warmth, directness, and target length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "manager"
+                  },
+                  {
+                    "text": "client"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "audience"
+                  },
+                  {
+                    "text": "manager"
+                  },
+                  {
+                    "text": "friend"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Audience-specific tone shifting and phrasing adaptation",
+        "columns": [
+          "audience",
+          "manager",
+          "client"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audience expectations dictate different wording for a senior manager.",
+            "rows": [
+              {
+                "cells": [
+                  "audience",
+                  "manager",
+                  "client"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "audience",
+                  "manager",
+                  "client"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tone dimensions include formality, warmth, directness, and target length.",
+            "rows": [
+              {
+                "cells": [
+                  "audience",
+                  "manager",
+                  "client"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "audience",
+                  "manager",
+                  "friend"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring formality",
+      "codeHash": "e029aabc630616f818f46235e070a9b286afb2f943d8d1b5f6a511e2c7d6de87",
+      "spec": {
+        "template": "table",
+        "title": "Formality score metrics and register classification",
+        "columns": [
+          "words",
+          "hits",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heuristic rules estimate formality using contractions and casual words.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Counting informal signals labels text as formal, neutral, or casual.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "score"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "formality"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Formality score metrics and register classification",
+        "columns": [
+          "words",
+          "hits",
+          "score"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heuristic rules estimate formality using contractions and casual words.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "hits",
+                  "score"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "hits",
+                  "score"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Counting informal signals labels text as formal, neutral, or casual.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "hits",
+                  "score"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "words",
+                  "hits",
+                  "formality"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive memos",
+      "codeHash": "597c510ba29c01a56597d7748362347b41c50440e2aef4557c794fcdf61eeccb",
+      "spec": {
+        "template": "table",
+        "title": "Structured executive memo formatting and point layout",
+        "columns": [
+          "sender",
+          "subject",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An executive memo organizes recipient, sender, subject, and key points.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sender"
+                  },
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sender"
+                  },
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Leading with the key decision needed gives immediate clarity on next steps.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sender"
+                  },
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "points"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sender"
+                  },
+                  {
+                    "text": "subject"
+                  },
+                  {
+                    "text": "lines"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structured executive memo formatting and point layout",
+        "columns": [
+          "sender",
+          "subject",
+          "points"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An executive memo organizes recipient, sender, subject, and key points.",
+            "rows": [
+              {
+                "cells": [
+                  "sender",
+                  "subject",
+                  "points"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "sender",
+                  "subject",
+                  "points"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Leading with the key decision needed gives immediate clarity on next steps.",
+            "rows": [
+              {
+                "cells": [
+                  "sender",
+                  "subject",
+                  "points"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "sender",
+                  "subject",
+                  "lines"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Emails with AI",
+      "codeHash": "a0b13f75ce7a1988fc7b856bd9b92b446b87056ea9ca5c2996ec6e93dc56aeb4",
+      "spec": {
+        "template": "table",
+        "title": "Goal-driven email prompting with strict parameters",
+        "columns": [
+          "recipient",
+          "goal",
+          "offer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Specifying the facts, recipient, and goal produces clear business emails.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "recipient"
+                  },
+                  {
+                    "text": "goal"
+                  },
+                  {
+                    "text": "offer"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "recipient"
+                  },
+                  {
+                    "text": "goal"
+                  },
+                  {
+                    "text": "offer"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A clear subject line ensures that recipient emails are opened promptly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "recipient"
+                  },
+                  {
+                    "text": "goal"
+                  },
+                  {
+                    "text": "offer"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "recipient"
+                  },
+                  {
+                    "text": "goal"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Goal-driven email prompting with strict parameters",
+        "columns": [
+          "recipient",
+          "goal",
+          "offer"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Specifying the facts, recipient, and goal produces clear business emails.",
+            "rows": [
+              {
+                "cells": [
+                  "recipient",
+                  "goal",
+                  "offer"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "recipient",
+                  "goal",
+                  "offer"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A clear subject line ensures that recipient emails are opened promptly.",
+            "rows": [
+              {
+                "cells": [
+                  "recipient",
+                  "goal",
+                  "offer"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "recipient",
+                  "goal",
+                  "prompt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Editing and proofreading",
+      "codeHash": "5b10396ac8d9e4bcebd872c5f5651fe30123dc98bec79a5c57b0191dc620533a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: tone and memos",
+      "codeHash": "c85768db3ad6fd8d2a870a4e007811e6672a935a2ca0ce6166d23e27d0624b98",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
