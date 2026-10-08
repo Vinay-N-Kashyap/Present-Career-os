@@ -5548,27 +5548,27 @@
     },
     "quant-py:22:0": {
       "partTitle": "What alpha means",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:22:1": {
       "partTitle": "Pairs and the spread",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:22:2": {
       "partTitle": "Z-score signals",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:22:3": {
       "partTitle": "Mean reversion speed: half-life",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:22:4": {
       "partTitle": "Validating and combining signals",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:22:5": {
       "partTitle": "Practice time: pairs and half-life",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:23:0": {
       "partTitle": "Fragmented markets",
