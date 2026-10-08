@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 16,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Multimodal AI",
+      "codeHash": "633aeb67fed75d5a73fdc0db6996754243af27cc9a6c6760022858fef727e098",
+      "spec": {
+        "template": "table",
+        "title": "Multimodal image reasoning and task extraction mapping",
+        "columns": [
+          "image",
+          "prompt",
+          "image"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multimodal models accept visual inputs such as images and screenshots.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "image"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "image"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vision models describe visual scenes and answer questions about layout.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "image"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "image"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "receipt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Multimodal image reasoning and task extraction mapping",
+        "columns": [
+          "image",
+          "prompt",
+          "image"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multimodal models accept visual inputs such as images and screenshots.",
+            "rows": [
+              {
+                "cells": [
+                  "image",
+                  "prompt",
+                  "image"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "image",
+                  "prompt",
+                  "image"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Vision models describe visual scenes and answer questions about layout.",
+            "rows": [
+              {
+                "cells": [
+                  "image",
+                  "prompt",
+                  "image"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "image",
+                  "prompt",
+                  "receipt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "How OCR works",
+      "codeHash": "294d18e061d3fdfe45c1bffe40bcbd6e3cc42568f7ae899b2d2df1c4996c4a5e",
+      "spec": {
+        "template": "table",
+        "title": "Optical character recognition confusion matrix and cleaning",
+        "columns": [
+          "fixes",
+          "text",
+          "fixes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optical character recognition turns scanned document images into text.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "fixes"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "fixes"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictable errors follow typical patterns like letter and digit confusion.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "fixes"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "text"
+                  },
+                  {
+                    "text": "clean_number"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Optical character recognition confusion matrix and cleaning",
+        "columns": [
+          "fixes",
+          "text",
+          "fixes"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optical character recognition turns scanned document images into text.",
+            "rows": [
+              {
+                "cells": [
+                  "fixes",
+                  "text",
+                  "fixes"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fixes",
+                  "text",
+                  "fixes"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Predictable errors follow typical patterns like letter and digit confusion.",
+            "rows": [
+              {
+                "cells": [
+                  "fixes",
+                  "text",
+                  "fixes"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "fixes",
+                  "text",
+                  "clean_number"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting fields with regular expressions",
+      "codeHash": "e0698ae2ddcf0793c9a8add44c09db9540d79b047e3def6ba677da97003b9152",
+      "spec": {
+        "template": "table",
+        "title": "Regex pattern extraction for scanned invoice data",
+        "columns": [
+          "scan",
+          "date",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regular expression matching extracts invoice fields such as date and total.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scan"
+                  },
+                  {
+                    "text": "date"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scan"
+                  },
+                  {
+                    "text": "date"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Anchoring patterns to known labels makes field extraction far more reliable.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "scan"
+                  },
+                  {
+                    "text": "date"
+                  },
+                  {
+                    "text": "total"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "scan"
+                  },
+                  {
+                    "text": "date"
+                  },
+                  {
+                    "text": "scan"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Regex pattern extraction for scanned invoice data",
+        "columns": [
+          "scan",
+          "date",
+          "total"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regular expression matching extracts invoice fields such as date and total.",
+            "rows": [
+              {
+                "cells": [
+                  "scan",
+                  "date",
+                  "total"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "scan",
+                  "date",
+                  "total"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Anchoring patterns to known labels makes field extraction far more reliable.",
+            "rows": [
+              {
+                "cells": [
+                  "scan",
+                  "date",
+                  "total"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "scan",
+                  "date",
+                  "scan"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Confidence and human review",
+      "codeHash": "2150a336c3dcecd52ad7d12144901c3ed231ab9940263a35ca53789b43158e05",
+      "spec": {
+        "template": "table",
+        "title": "Human-in-the-loop triage based on OCR confidence thresholds",
+        "columns": [
+          "words",
+          "threshold",
+          "review"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Confidence scores let pipelines decide whether to accept text automatically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "review"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "review"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The system routes words below the target threshold to human review.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "review"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "words"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "words"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Human-in-the-loop triage based on OCR confidence thresholds",
+        "columns": [
+          "words",
+          "threshold",
+          "review"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Confidence scores let pipelines decide whether to accept text automatically.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "threshold",
+                  "review"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "words",
+                  "threshold",
+                  "review"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The system routes words below the target threshold to human review.",
+            "rows": [
+              {
+                "cells": [
+                  "words",
+                  "threshold",
+                  "review"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "words",
+                  "threshold",
+                  "words"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Screenshots and user interfaces",
+      "codeHash": "70bf03e72951864acce836dc0381418e9a682b65d4ac3e9efa079f05af2ec744",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: extract and review",
+      "codeHash": "d0a9b9dee2a5e5876b93b5bd076dbde8528517316719f401c430780ecf94b2ad",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
