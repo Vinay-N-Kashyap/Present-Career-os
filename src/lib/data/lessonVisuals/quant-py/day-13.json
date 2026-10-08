@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-py",
+  "day": 13,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Caches and cache lines",
+      "codeHash": "b5b41a87aa988f2e21455e3ece1a1df9fb0c227234bc53eceb07ec4f7913f8cf",
+      "spec": {
+        "template": "table",
+        "title": "CPU cache hierarchy, memory latency and cache line boundaries",
+        "columns": [
+          "offset",
+          "LINE"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Main memory access is slow compared with internal processor registers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multi-level CPU caches store recently accessed data across hierarchy tiers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latency_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Caches transfer contiguous memory blocks structured as fixed cache lines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latency_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "L1"
+                  },
+                  {
+                    "text": "RAM"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows which cache line different memory offsets fall into.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "latency_ns"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "L1"
+                  },
+                  {
+                    "text": "RAM"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CPU cache hierarchy, memory latency and cache line boundaries",
+        "columns": [
+          "offset",
+          "LINE"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Main memory access is slow compared with internal processor registers.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "LINE"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multi-level CPU caches store recently accessed data across hierarchy tiers.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "LINE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latency_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Caches transfer contiguous memory blocks structured as fixed cache lines.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "LINE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latency_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "L1",
+                  "RAM"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The example shows which cache line different memory offsets fall into.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "LINE"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "latency_ns",
+                  "print"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "L1",
+                  "RAM"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "offset",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache coherence",
+      "codeHash": "6d8ad459263963fb2970b581adc4303eb815b89e5246712d047466162f9dbfae",
+      "spec": {
+        "template": "table",
+        "title": "MESI protocol state transitions and multi-core line transfers",
+        "columns": [
+          "core",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache coherence protocols synchronize private cache copies across CPU cores.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "core"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A core must invalidate every other copy before writing a modified line.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "core"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "owner"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Two cores writing the same line cause it to bounce repeatedly between them.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "core"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "owner"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "writes"
+                  },
+                  {
+                    "text": "transfers"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hardware coherence remains automatic and correct while throughput suffers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "core"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "owner"
+                  },
+                  {
+                    "text": "count"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "writes"
+                  },
+                  {
+                    "text": "transfers"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "owner"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "MESI protocol state transitions and multi-core line transfers",
+        "columns": [
+          "core",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cache coherence protocols synchronize private cache copies across CPU cores.",
+            "rows": [
+              {
+                "cells": [
+                  "core",
+                  "line"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A core must invalidate every other copy before writing a modified line.",
+            "rows": [
+              {
+                "cells": [
+                  "core",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "owner",
+                  "count"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Two cores writing the same line cause it to bounce repeatedly between them.",
+            "rows": [
+              {
+                "cells": [
+                  "core",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "owner",
+                  "count"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "writes",
+                  "transfers"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hardware coherence remains automatic and correct while throughput suffers.",
+            "rows": [
+              {
+                "cells": [
+                  "core",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "owner",
+                  "count"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "writes",
+                  "transfers"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "owner",
+                  "line"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "False sharing",
+      "codeHash": "24231062d9ea69b9e06932e2d5122d5fbc5b0b7638ab0ff6b61bf0c5f16c410f",
+      "spec": {
+        "template": "table",
+        "title": "False sharing identification across concurrent data structures",
+        "columns": [
+          "offset",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "False sharing occurs when independent variables occupy the same cache line.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adjacent queue head and tail pointers share a line and cause ping-pong delays.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "producer_head"
+                  },
+                  {
+                    "text": "consumer_tail"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adding threads induces unexpected slowdowns in structure execution speed.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "producer_head"
+                  },
+                  {
+                    "text": "consumer_tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stats"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example lays out a structure and identifies fields that share lines.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "producer_head"
+                  },
+                  {
+                    "text": "consumer_tail"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "stats"
+                  },
+                  {
+                    "text": "LINE"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fields"
+                  },
+                  {
+                    "text": "print"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "False sharing identification across concurrent data structures",
+        "columns": [
+          "offset",
+          "size"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "False sharing occurs when independent variables occupy the same cache line.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "size"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Adjacent queue head and tail pointers share a line and cause ping-pong delays.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "size"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "producer_head",
+                  "consumer_tail"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Adding threads induces unexpected slowdowns in structure execution speed.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "size"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "producer_head",
+                  "consumer_tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stats",
+                  "LINE"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example lays out a structure and identifies fields that share lines.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "size"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "producer_head",
+                  "consumer_tail"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "stats",
+                  "LINE"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fields",
+                  "print"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Padding and alignment",
+      "codeHash": "e8d58310e8e3a7b7eaea9eb7dcd975d213df2cace859428fa0e9e1b3a5f6e3f4",
+      "spec": {
+        "template": "table",
+        "title": "Cacheline alignment, byte padding formulas and layout isolation",
+        "columns": [
+          "offset",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding padding bytes ensures isolated fields begin at new cache line offsets.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Systems languages provide explicit alignment attributes and padding arrays.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layout"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Padding protects queue counters updated by different threads at high rate.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layout"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "padded_offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example pads the queue structure and eliminates false sharing conflicts.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "offset"
+                  },
+                  {
+                    "text": "line"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "layout"
+                  },
+                  {
+                    "text": "append"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "padded_offset"
+                  },
+                  {
+                    "text": "size"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "producer_head"
+                  },
+                  {
+                    "text": "consumer_tail"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cacheline alignment, byte padding formulas and layout isolation",
+        "columns": [
+          "offset",
+          "line"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adding padding bytes ensures isolated fields begin at new cache line offsets.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "line"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Systems languages provide explicit alignment attributes and padding arrays.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layout",
+                  "append"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Padding protects queue counters updated by different threads at high rate.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layout",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "padded_offset",
+                  "size"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The example pads the queue structure and eliminates false sharing conflicts.",
+            "rows": [
+              {
+                "cells": [
+                  "offset",
+                  "line"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "layout",
+                  "append"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "padded_offset",
+                  "size"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "producer_head",
+                  "consumer_tail"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Data layout for speed",
+      "codeHash": "6245f3a400da0baa793875a637677616892bee1faed77add84df02150146abb3",
+      "spec": {
+        "template": "none",
+        "reason": "Data structure cache affinity and contiguous array layout optimization."
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: audit and pad",
+      "codeHash": "0211eed3d3842e8123a7e8b1f20ba403695e43360a2258e4a7e4a62356aac25a",
+      "spec": {
+        "template": "none",
+        "reason": "Practice time: structure padding audit and cacheline boundary checks."
+      },
+      "filled": {}
+    }
+  ]
+}

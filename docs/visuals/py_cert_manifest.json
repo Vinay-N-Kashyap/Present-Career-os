@@ -5332,27 +5332,27 @@
     },
     "quant-py:13:0": {
       "partTitle": "Caches and cache lines",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:13:1": {
       "partTitle": "Cache coherence",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:13:2": {
       "partTitle": "False sharing",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:13:3": {
       "partTitle": "Padding and alignment",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:13:4": {
       "partTitle": "Data layout for speed",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:13:5": {
       "partTitle": "Practice time: audit and pad",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:14:0": {
       "partTitle": "Single instruction, multiple data",
