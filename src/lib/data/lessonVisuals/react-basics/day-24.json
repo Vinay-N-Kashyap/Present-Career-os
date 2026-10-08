@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 24,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The dashboard layout",
+      "codeHash": "65591ede18aa67eeba2d67a95d2efffda870db22d06a432ce12c00d46dfd8d27",
+      "spec": {
+        "template": "wireframe",
+        "title": "Responsive dashboard structure and section placement",
+        "wireframe": {
+          "header": "Job Tracker Dashboard",
+          "sections": [
+            {
+              "id": "stats",
+              "label": "StatCards (Grid)",
+              "kind": "grid"
+            },
+            {
+              "id": "recent",
+              "label": "Recent Applications",
+              "kind": "list"
+            },
+            {
+              "id": "add",
+              "label": "Add Job Form",
+              "kind": "form"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Position the stat cards, recent job applications and the form.",
+            "focus": "stats"
+          },
+          {
+            "at": "say2",
+            "caption": "Organize layout structure and verify responsiveness across devices.",
+            "focus": "recent"
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Responsive dashboard structure and section placement",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Position the stat cards, recent job applications and the form."
+          },
+          {
+            "at": "say2",
+            "caption": "Organize layout structure and verify responsiveness across devices."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calculating the statistics",
+      "codeHash": "589bdeaff5f8730524bc577d64b0d719ace213d6fe9b873cf8e74dbb56efad28",
+      "spec": {
+        "template": "boxes",
+        "title": "Encapsulated statistics calculation helper",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total",
+            "tappable": false
+          },
+          {
+            "id": "interviews",
+            "label": "interviews",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compute job statistics during component render using a helper function.",
+            "values": {
+              "total": {
+                "text": "\"applied\""
+              },
+              "interviews": {
+                "text": "\"interview\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Keep statistical calculations in separate utility functions for easy reuse.",
+            "values": {
+              "total": {
+                "text": "\"offer\""
+              },
+              "interviews": {
+                "text": "\"interview\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Encapsulated statistics calculation helper",
+        "boxes": [
+          {
+            "id": "total",
+            "label": "total",
+            "tappable": false
+          },
+          {
+            "id": "interviews",
+            "label": "interviews",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compute job statistics during component render using a helper function.",
+            "values": {
+              "total": "\"applied\"",
+              "interviews": "\"interview\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Keep statistical calculations in separate utility functions for easy reuse.",
+            "values": {
+              "total": "\"offer\"",
+              "interviews": "\"interview\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A reusable StatCard component",
+      "codeHash": "101e4ef290f11fbc45580a517e09e7b3a7bc511b1f7a499e6869c78542512b5e",
+      "spec": {
+        "template": "boxes",
+        "title": "Configurable metric card with dynamic tones",
+        "boxes": [
+          {
+            "id": "label",
+            "label": "label",
+            "tappable": false
+          },
+          {
+            "id": "value",
+            "label": "value",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Render reusable statistic cards by configuring label and value props.",
+            "values": {
+              "label": {
+                "text": "\"Total\""
+              },
+              "value": {
+                "text": "\"green\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Map through metric card definitions and spread prop values directly.",
+            "values": {
+              "label": {
+                "text": "\"Offers\""
+              },
+              "value": {
+                "text": "\"green\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Configurable metric card with dynamic tones",
+        "boxes": [
+          {
+            "id": "label",
+            "label": "label",
+            "tappable": false
+          },
+          {
+            "id": "value",
+            "label": "value",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Render reusable statistic cards by configuring label and value props.",
+            "values": {
+              "label": "\"Total\"",
+              "value": "\"green\""
+            },
+            "tones": {}
+          },
+          {
+            "at": "say2",
+            "caption": "Map through metric card definitions and spread prop values directly.",
+            "values": {
+              "label": "\"Offers\"",
+              "value": "\"green\""
+            },
+            "tones": {}
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Readable labels and dates",
+      "codeHash": "9aae15284497a5a654178b178685bf73222eddf2e951e84f23066f0079324480",
+      "spec": {
+        "template": "compare",
+        "title": "Separating machine data from user-facing presentations",
+        "leftLabel": "Stored Format",
+        "rightLabel": "Formatted Display",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transform raw machine data into friendly human labels on the screen.",
+            "left": {
+              "code": "console.log(statusLabel(\"interview\"));",
+              "result": {
+                "text": "\"interview\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(statusLabel(\"interview\"));",
+              "result": {
+                "text": "\"Interview\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keep stored ISO dates distinct from visual user presentations.",
+            "left": {
+              "code": "console.log(prettyDate(\"2026-09-28\"));",
+              "result": {
+                "text": "\"2026-09-28\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(prettyDate(\"2026-09-28\"));",
+              "result": {
+                "text": "\"Jan\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Separating machine data from user-facing presentations",
+        "leftLabel": "Stored Format",
+        "rightLabel": "Formatted Display",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transform raw machine data into friendly human labels on the screen.",
+            "left": {
+              "code": "console.log(statusLabel(\"interview\"));",
+              "result": "\"interview\"",
+              "tone": "idle",
+              "checks": [
+                "\"interview\""
+              ]
+            },
+            "right": {
+              "code": "console.log(statusLabel(\"interview\"));",
+              "result": "\"Interview\"",
+              "tone": "ok",
+              "checks": [
+                "\"Interview\""
+              ]
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Keep stored ISO dates distinct from visual user presentations.",
+            "left": {
+              "code": "console.log(prettyDate(\"2026-09-28\"));",
+              "result": "\"2026-09-28\"",
+              "tone": "idle",
+              "checks": [
+                "\"2026-09-28\""
+              ]
+            },
+            "right": {
+              "code": "console.log(prettyDate(\"2026-09-28\"));",
+              "result": "\"Jan\"",
+              "tone": "ok",
+              "checks": [
+                "\"Jan\""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recent jobs and empty states",
+      "codeHash": "778fd2563f396db47cfe1b55df3d2bd8e4a5d3e7f95e6b30f041dc45604bdc90",
+      "spec": {
+        "template": "states",
+        "title": "Empty states versus populated list rendering",
+        "states": [
+          {
+            "id": "populated",
+            "label": "Populated List"
+          },
+          {
+            "id": "empty",
+            "label": "Empty State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Display the three most recent applications sorted by date.",
+            "activeState": "populated",
+            "values": {
+              "count": {
+                "text": "\"A\""
+              }
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Show a welcoming message when the user has no applications yet.",
+            "activeState": "empty",
+            "values": {
+              "count": {
+                "text": "\"B\""
+              }
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Empty states versus populated list rendering",
+        "states": [
+          {
+            "id": "populated",
+            "label": "Populated List"
+          },
+          {
+            "id": "empty",
+            "label": "Empty State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Display the three most recent applications sorted by date."
+          },
+          {
+            "at": "say2",
+            "caption": "Show a welcoming message when the user has no applications yet."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accessibility: an app everyone can use",
+      "codeHash": "78b9fceea58d1459fbf5853378dbad61847b1c9c6bdf90d1cd1cec29177aaca2",
+      "spec": {
+        "template": "none",
+        "reason": "Accessibility standards, keyboard focus management, ARIA labels and Lighthouse scoring"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Accessibility standards, keyboard focus management, ARIA labels and Lighthouse scoring"
+      }
+    }
+  ]
+}
