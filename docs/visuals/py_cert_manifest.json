@@ -6364,27 +6364,27 @@
     },
     "prompt-py:26:0": {
       "partTitle": "AI as a personal planner",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:26:1": {
       "partTitle": "Meals and budgets",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:26:2": {
       "partTitle": "Habits and streaks",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:26:3": {
       "partTitle": "Travel planning",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:26:4": {
       "partTitle": "Splitting costs fairly",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:26:5": {
       "partTitle": "Practice time: streaks and bills",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:27:0": {
       "partTitle": "High-stakes domains",
