@@ -5692,27 +5692,27 @@
     },
     "quant-py:28:0": {
       "partTitle": "Perpetual futures",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:28:1": {
       "partTitle": "Funding payments",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:28:2": {
       "partTitle": "Leverage and margin",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:28:3": {
       "partTitle": "Funding rate arbitrage",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:28:4": {
       "partTitle": "Liquidation cascades",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:28:5": {
       "partTitle": "Practice time: funding and liquidation",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:29:0": {
       "partTitle": "Why hardware",
