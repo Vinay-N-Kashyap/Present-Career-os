@@ -7108,27 +7108,27 @@
     },
     "train-py:27:0": {
       "partTitle": "What quantisation does",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:27:1": {
       "partTitle": "Symmetric INT8 quantisation",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:27:2": {
       "partTitle": "Measuring quantisation error",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:27:3": {
       "partTitle": "4-bit quantisation",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:27:4": {
       "partTitle": "Quantisation in training and serving",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:27:5": {
       "partTitle": "Practice time: quantisation",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:28:0": {
       "partTitle": "Teachers and students",
