@@ -14,7 +14,8 @@
 // - 'nlp-py': Natural Language Processing in Python (Month 7) released via [task:L-nlp-py]
 // - 'quant-py': Quantitative & Financial Engineering in Python (Month 8) released via [task:L-quant-py]
 // - 'prompt-py': Prompt Engineering & LLM Applications (Month 9) released via [task:L-prompt-py]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py'];
+// - 'train-py': LLM Fine-Tuning & Training (Month 10) released via [task:L-train-py]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
