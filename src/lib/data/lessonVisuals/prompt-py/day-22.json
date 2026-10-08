@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "prompt-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AI coding assistants",
+      "codeHash": "564f251c2881479846e3c68a61ed62b61bc3e46d80d59be7c3367d38f2e45277",
+      "spec": {
+        "template": "table",
+        "title": "Coding assistant trade-offs and edge case detection",
+        "columns": [
+          "average",
+          "values",
+          "average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Coding assistants suggest code functions and explain unfamiliar error messages.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "average"
+                  },
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "average"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "average"
+                  },
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "average"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "AI code can produce subtle bugs and ignore critical boundary edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "average"
+                  },
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "average"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "average"
+                  },
+                  {
+                    "text": "values"
+                  },
+                  {
+                    "text": "values"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Coding assistant trade-offs and edge case detection",
+        "columns": [
+          "average",
+          "values",
+          "average"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Coding assistants suggest code functions and explain unfamiliar error messages.",
+            "rows": [
+              {
+                "cells": [
+                  "average",
+                  "values",
+                  "average"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "average",
+                  "values",
+                  "average"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "AI code can produce subtle bugs and ignore critical boundary edge cases.",
+            "rows": [
+              {
+                "cells": [
+                  "average",
+                  "values",
+                  "average"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "average",
+                  "values",
+                  "values"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompting for code",
+      "codeHash": "2543e8a91e853297028f9e5e19b0851bb730ce62a77a0b0148e6e97d6cb8a569",
+      "spec": {
+        "template": "table",
+        "title": "Specification-driven prompt templates for code generation",
+        "columns": [
+          "spec",
+          "prompt",
+          "spec"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Providing explicit constraints and outputs guides coding assistants accurately.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spec"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "spec"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spec"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "spec"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts must explicitly handle edge cases and invalid input requirements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "spec"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "spec"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "spec"
+                  },
+                  {
+                    "text": "prompt"
+                  },
+                  {
+                    "text": "prompt"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Specification-driven prompt templates for code generation",
+        "columns": [
+          "spec",
+          "prompt",
+          "spec"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Providing explicit constraints and outputs guides coding assistants accurately.",
+            "rows": [
+              {
+                "cells": [
+                  "spec",
+                  "prompt",
+                  "spec"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "spec",
+                  "prompt",
+                  "spec"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Prompts must explicitly handle edge cases and invalid input requirements.",
+            "rows": [
+              {
+                "cells": [
+                  "spec",
+                  "prompt",
+                  "spec"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "spec",
+                  "prompt",
+                  "prompt"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generating tests from examples",
+      "codeHash": "78d4b30b99774d2dd202c1e6ddb18473927dd36597ec9ed3fd71642c835741bc",
+      "spec": {
+        "template": "table",
+        "title": "Automated test synthesis and assertion suites",
+        "columns": [
+          "cases",
+          "name",
+          "cases"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unit tests turn concrete examples into automatic verification checks.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cases"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "cases"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cases"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "cases"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Generating assert lines turns example test cases into executable suites.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cases"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "cases"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cases"
+                  },
+                  {
+                    "text": "name"
+                  },
+                  {
+                    "text": "name"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated test synthesis and assertion suites",
+        "columns": [
+          "cases",
+          "name",
+          "cases"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unit tests turn concrete examples into automatic verification checks.",
+            "rows": [
+              {
+                "cells": [
+                  "cases",
+                  "name",
+                  "cases"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cases",
+                  "name",
+                  "cases"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Generating assert lines turns example test cases into executable suites.",
+            "rows": [
+              {
+                "cells": [
+                  "cases",
+                  "name",
+                  "cases"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "cases",
+                  "name",
+                  "name"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated code review with ast",
+      "codeHash": "ff59f4b15ed1940842a7f0a36054b38076af02aa171b1ceb7225a0e5e4b28870",
+      "spec": {
+        "template": "table",
+        "title": "AST static analysis and linting rule checks",
+        "columns": [
+          "tree",
+          "node",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ast module parses source code into a hierarchical tree of syntax nodes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tree"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tree"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking the tree lets linters check code safely without executing it.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "tree"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "source"
+                  }
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tree"
+                  },
+                  {
+                    "text": "node"
+                  },
+                  {
+                    "text": "tree"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AST static analysis and linting rule checks",
+        "columns": [
+          "tree",
+          "node",
+          "source"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The ast module parses source code into a hierarchical tree of syntax nodes.",
+            "rows": [
+              {
+                "cells": [
+                  "tree",
+                  "node",
+                  "source"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "tree",
+                  "node",
+                  "source"
+                ],
+                "tone": "info"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Walking the tree lets linters check code safely without executing it.",
+            "rows": [
+              {
+                "cells": [
+                  "tree",
+                  "node",
+                  "source"
+                ],
+                "tone": "accent"
+              },
+              {
+                "cells": [
+                  "tree",
+                  "node",
+                  "tree"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reviewing AI code: a checklist",
+      "codeHash": "891dc0b937b097743f2b82a9aade34bd7d1056a864a3612aecb2c716eda0f2b8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: tests and review",
+      "codeHash": "ab9e44b0fa73a9847781f9b2cfcda1d953daf64e17ea6ab512b661a96ae74075",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

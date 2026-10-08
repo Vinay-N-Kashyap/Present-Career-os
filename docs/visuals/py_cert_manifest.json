@@ -6268,27 +6268,27 @@
     },
     "prompt-py:22:0": {
       "partTitle": "AI coding assistants",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:22:1": {
       "partTitle": "Prompting for code",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:22:2": {
       "partTitle": "Generating tests from examples",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:22:3": {
       "partTitle": "Automated code review with ast",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:22:4": {
       "partTitle": "Reviewing AI code: a checklist",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:22:5": {
       "partTitle": "Practice time: tests and review",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:23:0": {
       "partTitle": "What an agent is",
