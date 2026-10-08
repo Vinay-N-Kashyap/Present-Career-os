@@ -8308,27 +8308,27 @@
     },
     "safe-py:17:0": {
       "partTitle": "How attackers disguise text",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:17:1": {
       "partTitle": "Unicode normalisation",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:17:2": {
       "partTitle": "Undoing leetspeak",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:17:3": {
       "partTitle": "Removing spacing tricks",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:17:4": {
       "partTitle": "Finding banned words",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:17:5": {
       "partTitle": "Normalisation in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:18:0": {
       "partTitle": "Why fairness is a safety issue",
