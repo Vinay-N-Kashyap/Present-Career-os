@@ -5356,27 +5356,27 @@
     },
     "quant-py:14:0": {
       "partTitle": "Single instruction, multiple data",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:14:1": {
       "partTitle": "Chunks and the scalar tail",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:14:2": {
       "partTitle": "Amdahl's law",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:14:3": {
       "partTitle": "What vectorises well in finance",
-      "status": "todo"
+      "status": "passed"
     },
     "quant-py:14:4": {
       "partTitle": "Measuring before optimising",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:14:5": {
       "partTitle": "Practice time: vectors and speedups",
-      "status": "todo"
+      "status": "none"
     },
     "quant-py:15:0": {
       "partTitle": "The tick-to-trade pipeline",
