@@ -7972,27 +7972,27 @@
     },
     "safe-py:3:0": {
       "partTitle": "Why validate input",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:3:1": {
       "partTitle": "Checking rules in order",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:3:2": {
       "partTitle": "Control characters",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:3:3": {
       "partTitle": "Tokens and budgets",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:3:4": {
       "partTitle": "Truncating to a budget",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:3:5": {
       "partTitle": "Validation in a pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:4:0": {
       "partTitle": "What prompt injection is",
