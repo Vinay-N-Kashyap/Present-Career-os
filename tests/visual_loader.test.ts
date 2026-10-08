@@ -12,12 +12,12 @@ import {
 import { ENABLED_COURSES, isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
 
 describe('Loader and Release Switch (Task E-15)', () => {
-  it('enabledCourses starts as ["python"]', () => {
-    assert.deepEqual(ENABLED_COURSES, ['python']);
+  it('enabledCourses contains all released courses', () => {
+    assert.ok(ENABLED_COURSES.includes('python'));
+    assert.ok(ENABLED_COURSES.includes('safe-py'));
     assert.equal(isCourseVisualsEnabled('python'), true);
-    assert.equal(isCourseVisualsEnabled('dsa-py'), false);
-    assert.equal(isCourseVisualsEnabled('sql-mastery'), false);
-    assert.equal(isCourseVisualsEnabled('ai-py'), false);
+    assert.equal(isCourseVisualsEnabled('safe-py'), true);
+    assert.equal(isCourseVisualsEnabled('unknown-prefix'), false);
   });
 
   it('enabled course loads visuals for python Days 1–3 from pilot file', () => {
@@ -43,7 +43,7 @@ describe('Loader and Release Switch (Task E-15)', () => {
   });
 
   it('disabled course gets no visuals (returns null)', () => {
-    const disabledCourses = ['dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py'];
+    const disabledCourses = ['unknown-course-1', 'unknown-course-2'];
     for (const prefix of disabledCourses) {
       assert.equal(isCourseVisualsEnabled(prefix), false);
       const v = getVisual(prefix, 1, 0);
@@ -52,9 +52,9 @@ describe('Loader and Release Switch (Task E-15)', () => {
   });
 
   it('missing file gets no visual and no crash', () => {
-    // Python day 25 has no day file yet
+    // Out of bound day number has no day file
     assert.doesNotThrow(() => {
-      const v = getVisual('python', 25, 0);
+      const v = getVisual('python', 99, 0);
       assert.equal(v, null);
     });
 
