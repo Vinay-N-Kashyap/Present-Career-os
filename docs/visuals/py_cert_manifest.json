@@ -5884,27 +5884,27 @@
     },
     "prompt-py:6:0": {
       "partTitle": "From scores to probabilities",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:6:1": {
       "partTitle": "Temperature",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:6:2": {
       "partTitle": "Top-p (nucleus) sampling",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:6:3": {
       "partTitle": "Frequency and presence penalties",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:6:4": {
       "partTitle": "Choosing settings for the task",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:6:5": {
       "partTitle": "Practice time: temperature and top-p",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:7:0": {
       "partTitle": "Why structured output",
