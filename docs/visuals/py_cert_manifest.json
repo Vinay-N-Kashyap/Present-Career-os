@@ -6412,27 +6412,27 @@
     },
     "prompt-py:28:0": {
       "partTitle": "Why evaluate",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:28:1": {
       "partTitle": "Scoring and leaderboards",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:28:2": {
       "partTitle": "Comparing open-ended answers",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:28:3": {
       "partTitle": "Quality, cost and speed",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:28:4": {
       "partTitle": "Evaluation pitfalls",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:28:5": {
       "partTitle": "Practice time: leaderboard and win rates",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:29:0": {
       "partTitle": "Open-weight models",
