@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Profiling a step",
+      "codeHash": "731e15ae062b5f1f42238e028b8da5be8d3ab1ba42c51f8e8579b152f6ac27aa",
+      "spec": {
+        "template": "table",
+        "title": "Phase timeline recording data load forward backward and sync",
+        "columns": [
+          "profile",
+          "total",
+          "phase"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A profiler records how long each part of a step takes in execution.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "profile"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "phase"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "profile"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "phase"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The largest phase is usually the best place to look for improvements.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "profile"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "phase"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "profile"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "profile"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Phase timeline recording data load forward backward and sync",
+        "columns": [
+          "profile",
+          "total",
+          "phase"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A profiler records how long each part of a step takes in execution.",
+            "rows": [
+              {
+                "cells": [
+                  "profile",
+                  "total",
+                  "phase"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "profile",
+                  "total",
+                  "phase"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The largest phase is usually the best place to look for improvements.",
+            "rows": [
+              {
+                "cells": [
+                  "profile",
+                  "total",
+                  "phase"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "profile",
+                  "total",
+                  "profile"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Three kinds of bottleneck",
+      "codeHash": "604252e9f9bf95149f4c2542dced078aa751b5c56c2f7d56b0349bc8c6c8cd48",
+      "spec": {
+        "template": "table",
+        "title": "Bottleneck taxonomy categorizing input communication and compute",
+        "columns": [
+          "data",
+          "compute",
+          "comm"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An input-bound step spends a large share of its time waiting for data.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A compute-bound step spends most of its time computing.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "comm"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "data"
+                  },
+                  {
+                    "text": "compute"
+                  },
+                  {
+                    "text": "data"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bottleneck taxonomy categorizing input communication and compute",
+        "columns": [
+          "data",
+          "compute",
+          "comm"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An input-bound step spends a large share of its time waiting for data.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "compute",
+                  "comm"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "data",
+                  "compute",
+                  "comm"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A compute-bound step spends most of its time computing.",
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "compute",
+                  "comm"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "data",
+                  "compute",
+                  "data"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixes for each bottleneck",
+      "codeHash": "66df97d21ea45f65e8ad4bc700cc5f60318bad2b0630f5bf2d77d936f458c980",
+      "spec": {
+        "template": "table",
+        "title": "Systematic remediation strategies targeted to diagnosed bottleneck",
+        "columns": [
+          "fixes",
+          "kind",
+          "fix"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "For input-bound pipelines engineers add data loader workers and prefetch.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "fix"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "fix"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute-bound stages benefit from mixed precision and fused kernels.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "fix"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fixes"
+                  },
+                  {
+                    "text": "kind"
+                  },
+                  {
+                    "text": "fixes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Systematic remediation strategies targeted to diagnosed bottleneck",
+        "columns": [
+          "fixes",
+          "kind",
+          "fix"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "For input-bound pipelines engineers add data loader workers and prefetch.",
+            "rows": [
+              {
+                "cells": [
+                  "fixes",
+                  "kind",
+                  "fix"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "fixes",
+                  "kind",
+                  "fix"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Compute-bound stages benefit from mixed precision and fused kernels.",
+            "rows": [
+              {
+                "cells": [
+                  "fixes",
+                  "kind",
+                  "fix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "fixes",
+                  "kind",
+                  "fixes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stragglers and variation",
+      "codeHash": "68e656e3f1f0e6c1cd88d9baf690613a9e77b271af0fc4901621b4f8f866af02",
+      "spec": {
+        "template": "table",
+        "title": "Detecting straggler ranks and cross-worker execution skew",
+        "columns": [
+          "rank_ms",
+          "median",
+          "rank_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In synchronous training the slowest GPU sets the pace of every step.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rank_ms"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "rank_ms"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rank_ms"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "rank_ms"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Removing or replacing a straggler can speed up the whole job noticeably.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "rank_ms"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "rank_ms"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "rank_ms"
+                  },
+                  {
+                    "text": "median"
+                  },
+                  {
+                    "text": "median"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Detecting straggler ranks and cross-worker execution skew",
+        "columns": [
+          "rank_ms",
+          "median",
+          "rank_ms"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In synchronous training the slowest GPU sets the pace of every step.",
+            "rows": [
+              {
+                "cells": [
+                  "rank_ms",
+                  "median",
+                  "rank_ms"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "rank_ms",
+                  "median",
+                  "rank_ms"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Removing or replacing a straggler can speed up the whole job noticeably.",
+            "rows": [
+              {
+                "cells": [
+                  "rank_ms",
+                  "median",
+                  "rank_ms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "rank_ms",
+                  "median",
+                  "median"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "A profiling workflow",
+      "codeHash": "cd04092c3ccbbeff99b2f5cdcc64d00d2a1b46c6efd2ef781269f2c8116ab7d3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: bottlenecks",
+      "codeHash": "e3f5902daadf13812370e3f862d289a0793f5960ae79efbee35d801b90b14da6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

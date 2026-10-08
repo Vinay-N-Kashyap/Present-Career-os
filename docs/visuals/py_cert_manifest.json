@@ -7036,27 +7036,27 @@
     },
     "train-py:24:0": {
       "partTitle": "Profiling a step",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:24:1": {
       "partTitle": "Three kinds of bottleneck",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:24:2": {
       "partTitle": "Fixes for each bottleneck",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:24:3": {
       "partTitle": "Stragglers and variation",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:24:4": {
       "partTitle": "A profiling workflow",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:24:5": {
       "partTitle": "Practice time: bottlenecks",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:25:0": {
       "partTitle": "Sparse models",
