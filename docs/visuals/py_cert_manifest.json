@@ -6388,27 +6388,27 @@
     },
     "prompt-py:27:0": {
       "partTitle": "High-stakes domains",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:27:1": {
       "partTitle": "Disclaimers and scope",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:27:2": {
       "partTitle": "AI in legal work",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:27:3": {
       "partTitle": "AI in healthcare",
-      "status": "todo"
+      "status": "passed"
     },
     "prompt-py:27:4": {
       "partTitle": "AI in marketing and finance",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:27:5": {
       "partTitle": "Practice time: disclaimers and clauses",
-      "status": "todo"
+      "status": "none"
     },
     "prompt-py:28:0": {
       "partTitle": "Why evaluate",
