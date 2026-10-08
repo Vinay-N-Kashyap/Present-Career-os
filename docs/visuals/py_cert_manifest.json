@@ -7756,27 +7756,27 @@
     },
     "vec-py:24:0": {
       "partTitle": "Why cache semantically",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:24:1": {
       "partTitle": "Building the cache",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:24:2": {
       "partTitle": "Choosing the threshold",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:24:3": {
       "partTitle": "Measuring savings",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:24:4": {
       "partTitle": "Freshness and safety",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:24:5": {
       "partTitle": "Practice time: caching",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:25:0": {
       "partTitle": "Keeping indexes fresh",

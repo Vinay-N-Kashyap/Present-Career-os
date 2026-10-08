@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 24,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Why cache semantically",
+      "codeHash": "7f64c39bbe5968e10929ee10f90656d99fae1c575d5f31ad27e8df4047233293",
+      "spec": {
+        "template": "table",
+        "title": "Embedding similarity cache lookup and bypass efficiency",
+        "columns": [
+          "phrasings",
+          "base",
+          "phrasings"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A semantic cache compares query embeddings to return stored answers quickly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "phrasings"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "phrasings"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "phrasings"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "phrasings"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A cache hit skips retrieval and language model generation entirely.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "phrasings"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "phrasings"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "phrasings"
+                  },
+                  {
+                    "text": "base"
+                  },
+                  {
+                    "text": "base"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Embedding similarity cache lookup and bypass efficiency",
+        "columns": [
+          "phrasings",
+          "base",
+          "phrasings"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A semantic cache compares query embeddings to return stored answers quickly.",
+            "rows": [
+              {
+                "cells": [
+                  "phrasings",
+                  "base",
+                  "phrasings"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "phrasings",
+                  "base",
+                  "phrasings"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "A cache hit skips retrieval and language model generation entirely.",
+            "rows": [
+              {
+                "cells": [
+                  "phrasings",
+                  "base",
+                  "phrasings"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "phrasings",
+                  "base",
+                  "base"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the cache",
+      "codeHash": "088d2b1a1e8a9e30e44f0caa9f88e936bb5080ed6293a8e7b31af1504325355c",
+      "spec": {
+        "template": "table",
+        "title": "Vector cache entry storage and telemetry tracking",
+        "columns": [
+          "cache",
+          "hits",
+          "misses"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "During lookup, similarity above the threshold returns the cached answer.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cache"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cache"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Counting cache hits and misses provides measurable performance telemetry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cache"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "misses"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cache"
+                  },
+                  {
+                    "text": "hits"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector cache entry storage and telemetry tracking",
+        "columns": [
+          "cache",
+          "hits",
+          "misses"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "During lookup, similarity above the threshold returns the cached answer.",
+            "rows": [
+              {
+                "cells": [
+                  "cache",
+                  "hits",
+                  "misses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cache",
+                  "hits",
+                  "misses"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say10",
+            "caption": "Counting cache hits and misses provides measurable performance telemetry.",
+            "rows": [
+              {
+                "cells": [
+                  "cache",
+                  "hits",
+                  "misses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cache",
+                  "hits",
+                  "hits"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choosing the threshold",
+      "codeHash": "4ed722f822f31f4e52cb8ae9539aede5e18094965e8b8a57f992b699b4931252",
+      "spec": {
+        "template": "table",
+        "title": "Threshold calibration and precision-recall trade-offs",
+        "columns": [
+          "pairs",
+          "threshold",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A high similarity threshold returns cached answers only for identical queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Favouring precision prevents returning wrong answers to divergent queries.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "hits"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "pairs"
+                  },
+                  {
+                    "text": "threshold"
+                  },
+                  {
+                    "text": "threshold"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Threshold calibration and precision-recall trade-offs",
+        "columns": [
+          "pairs",
+          "threshold",
+          "hits"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A high similarity threshold returns cached answers only for identical queries.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "threshold",
+                  "hits"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "threshold",
+                  "hits"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Favouring precision prevents returning wrong answers to divergent queries.",
+            "rows": [
+              {
+                "cells": [
+                  "pairs",
+                  "threshold",
+                  "hits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "pairs",
+                  "threshold",
+                  "threshold"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring savings",
+      "codeHash": "0394a551a98561b43aabe0e5d86f83b6820b56bbcf34a5f43b4da0f2b56f246c",
+      "spec": {
+        "template": "table",
+        "title": "Cost and latency savings analysis across query volumes",
+        "columns": [
+          "requests",
+          "llm_cost",
+          "lookup_cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every request pays a minor lookup cost while cache misses run the pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "llm_cost"
+                  },
+                  {
+                    "text": "lookup_cost"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "llm_cost"
+                  },
+                  {
+                    "text": "lookup_cost"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Latency savings follow directly because cache hits take mere milliseconds.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "llm_cost"
+                  },
+                  {
+                    "text": "lookup_cost"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "requests"
+                  },
+                  {
+                    "text": "llm_cost"
+                  },
+                  {
+                    "text": "requests"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cost and latency savings analysis across query volumes",
+        "columns": [
+          "requests",
+          "llm_cost",
+          "lookup_cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every request pays a minor lookup cost while cache misses run the pipeline.",
+            "rows": [
+              {
+                "cells": [
+                  "requests",
+                  "llm_cost",
+                  "lookup_cost"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "requests",
+                  "llm_cost",
+                  "lookup_cost"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Latency savings follow directly because cache hits take mere milliseconds.",
+            "rows": [
+              {
+                "cells": [
+                  "requests",
+                  "llm_cost",
+                  "lookup_cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "requests",
+                  "llm_cost",
+                  "requests"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Freshness and safety",
+      "codeHash": "636ee4cd3f6943bb6169fff0787f4ccc4c1519511be5882c62af229a3c9ebd90",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: caching",
+      "codeHash": "95dbbc61c5925f961e814cf80e1b740e09ab1f73365af80451212b4acbdd3d41",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
