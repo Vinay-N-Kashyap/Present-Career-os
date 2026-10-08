@@ -8332,27 +8332,27 @@
     },
     "safe-py:18:0": {
       "partTitle": "Why fairness is a safety issue",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:18:1": {
       "partTitle": "Demographic parity",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:18:2": {
       "partTitle": "Equal opportunity",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:18:3": {
       "partTitle": "Fairness measures can conflict",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:18:4": {
       "partTitle": "Fairness for language models",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:18:5": {
       "partTitle": "Fairness checks in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:19:0": {
       "partTitle": "What calibration means",
