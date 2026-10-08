@@ -7228,27 +7228,27 @@
     },
     "vec-py:2:0": {
       "partTitle": "The dot product",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:2:1": {
       "partTitle": "Cosine similarity",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:2:2": {
       "partTitle": "Euclidean distance",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:2:3": {
       "partTitle": "Ranking by any metric",
-      "status": "todo"
+      "status": "passed"
     },
     "vec-py:2:4": {
       "partTitle": "Similarity in practice",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:2:5": {
       "partTitle": "Practice time: similarity",
-      "status": "todo"
+      "status": "none"
     },
     "vec-py:3:0": {
       "partTitle": "k-nearest neighbours",

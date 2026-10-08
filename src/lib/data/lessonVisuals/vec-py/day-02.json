@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "vec-py",
+  "day": 2,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The dot product",
+      "codeHash": "f4bd40bfef748579ebfa8546ce1cf48692538497c090b23d285411c49f860bd5",
+      "spec": {
+        "template": "table",
+        "title": "Dot product magnitude and directional alignment calculation",
+        "columns": [
+          "docs",
+          "q",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The dot product multiplies matching positions of vectors and adds results.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A large positive dot product means vectors point in similar directions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "q"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dot product magnitude and directional alignment calculation",
+        "columns": [
+          "docs",
+          "q",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The dot product multiplies matching positions of vectors and adds results.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A large positive dot product means vectors point in similar directions.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "q"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cosine similarity",
+      "codeHash": "f7a8c3a945095f4473c290df4d91f57be91227a7e3632ebeddede8d27c36c0c0",
+      "spec": {
+        "template": "table",
+        "title": "Cosine similarity metric isolating angle from vector scale",
+        "columns": [
+          "cosine",
+          "cosine",
+          "cosine"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity divides the dot product by the product of vector lengths.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cosine similarity evaluates angle while ignoring overall document length.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  },
+                  {
+                    "text": "cosine"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cosine similarity metric isolating angle from vector scale",
+        "columns": [
+          "cosine",
+          "cosine",
+          "cosine"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity divides the dot product by the product of vector lengths.",
+            "rows": [
+              {
+                "cells": [
+                  "cosine",
+                  "cosine",
+                  "cosine"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cosine",
+                  "cosine",
+                  "cosine"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cosine similarity evaluates angle while ignoring overall document length.",
+            "rows": [
+              {
+                "cells": [
+                  "cosine",
+                  "cosine",
+                  "cosine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cosine",
+                  "cosine",
+                  "cosine"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Euclidean distance",
+      "codeHash": "95ef53fe5f724128b589e19d2b70f98c7952fa8c704093d1786ff2f0ca48b282",
+      "spec": {
+        "template": "table",
+        "title": "Euclidean distance and monotonic relation to unit cosine",
+        "columns": [
+          "cos",
+          "dist_sq",
+          "cos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Euclidean distance measures the geometric straight-line separation of points.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "dist_sq"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "dist_sq"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "For unit vectors Euclidean distance and cosine similarity rank identically.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "dist_sq"
+                  },
+                  {
+                    "text": "cos"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "cos"
+                  },
+                  {
+                    "text": "dist_sq"
+                  },
+                  {
+                    "text": "dist_sq"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Euclidean distance and monotonic relation to unit cosine",
+        "columns": [
+          "cos",
+          "dist_sq",
+          "cos"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Euclidean distance measures the geometric straight-line separation of points.",
+            "rows": [
+              {
+                "cells": [
+                  "cos",
+                  "dist_sq",
+                  "cos"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "dist_sq",
+                  "cos"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "For unit vectors Euclidean distance and cosine similarity rank identically.",
+            "rows": [
+              {
+                "cells": [
+                  "cos",
+                  "dist_sq",
+                  "cos"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "cos",
+                  "dist_sq",
+                  "dist_sq"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ranking by any metric",
+      "codeHash": "ada217bb41bea86e7240f51e4f229f12247438f8e073bf00629dbdc646c5413b",
+      "spec": {
+        "template": "table",
+        "title": "Unified candidate ranking across diverse similarity metrics",
+        "columns": [
+          "docs",
+          "q",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search is ranking that orders documents by similarity relative to a query.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sorting scores descending with index tie-breaking orders candidates cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "docs"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "docs"
+                  },
+                  {
+                    "text": "q"
+                  },
+                  {
+                    "text": "q"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Unified candidate ranking across diverse similarity metrics",
+        "columns": [
+          "docs",
+          "q",
+          "docs"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search is ranking that orders documents by similarity relative to a query.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Sorting scores descending with index tie-breaking orders candidates cleanly.",
+            "rows": [
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "docs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "docs",
+                  "q",
+                  "q"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Similarity in practice",
+      "codeHash": "930c57dd8ac8e537b2daf21b74819a4b95d3f18de31d1300151385cf0e971830",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: similarity",
+      "codeHash": "22b9e6d57f2565424a66de6de96a8fcd47a9b309da3a6826a6ae66874bb04930",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}
