@@ -8428,27 +8428,27 @@
     },
     "safe-py:22:0": {
       "partTitle": "Why audit logs",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:22:1": {
       "partTitle": "Hashing identifiers",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:22:2": {
       "partTitle": "A privacy-safe audit entry",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:22:3": {
       "partTitle": "What else to log",
-      "status": "todo"
+      "status": "passed"
     },
     "safe-py:22:4": {
       "partTitle": "Summarising the log",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:22:5": {
       "partTitle": "Audit logs in the pipeline",
-      "status": "todo"
+      "status": "none"
     },
     "safe-py:23:0": {
       "partTitle": "What an AI incident looks like",
