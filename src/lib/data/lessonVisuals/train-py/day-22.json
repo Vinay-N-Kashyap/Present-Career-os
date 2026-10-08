@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "train-py",
+  "day": 22,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Scaling laws",
+      "codeHash": "bdae28687d068346c2c84ed904e505a9c10a2a3ec7c9a0ce37ea788ce2d71cdf",
+      "spec": {
+        "template": "table",
+        "title": "Predictable power-law loss trajectory across parameter scales",
+        "columns": [
+          "params",
+          "loss",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scaling laws describe how validation loss falls predictably across runs.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Teams use scaling laws to forecast performance before spending millions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "alpha"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "loss"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Predictable power-law loss trajectory across parameter scales",
+        "columns": [
+          "params",
+          "loss",
+          "alpha"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scaling laws describe how validation loss falls predictably across runs.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "loss",
+                  "alpha"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "loss",
+                  "alpha"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Teams use scaling laws to forecast performance before spending millions.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "loss",
+                  "alpha"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "loss",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chinchilla: balancing parameters and data",
+      "codeHash": "c1ca68cccd3b6fd1b2a61d6bb6aedb6c6ba85585b13b0f50be31b27352bc7448",
+      "spec": {
+        "template": "table",
+        "title": "Chinchilla compute-optimal allocation between size and tokens",
+        "columns": [
+          "budget",
+          "math",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "For a fixed compute budget engineers balance model size against tokens.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chinchilla established a balance between training tokens and parameters.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "budget"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "budget"
+                  },
+                  {
+                    "text": "math"
+                  },
+                  {
+                    "text": "math"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chinchilla compute-optimal allocation between size and tokens",
+        "columns": [
+          "budget",
+          "math",
+          "budget"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "For a fixed compute budget engineers balance model size against tokens.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "math",
+                  "budget"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "math",
+                  "budget"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chinchilla established a balance between training tokens and parameters.",
+            "rows": [
+              {
+                "cells": [
+                  "budget",
+                  "math",
+                  "budget"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "budget",
+                  "math",
+                  "math"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Beyond compute-optimal",
+      "codeHash": "3c0f6b13502d8b8a9e60ffc6985e94c20680a5a5ac148701e054f1a39af63ef0",
+      "spec": {
+        "template": "table",
+        "title": "Inference economics and deliberate overtraining of compact models",
+        "columns": [
+          "train_cost",
+          "total",
+          "requests_billions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models are evaluated on inference costs when served to millions of people.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "train_cost"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "requests_billions"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train_cost"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "requests_billions"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A smaller model costs more to train but less to run for every request.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "train_cost"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "requests_billions"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "train_cost"
+                  },
+                  {
+                    "text": "total"
+                  },
+                  {
+                    "text": "train_cost"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inference economics and deliberate overtraining of compact models",
+        "columns": [
+          "train_cost",
+          "total",
+          "requests_billions"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Models are evaluated on inference costs when served to millions of people.",
+            "rows": [
+              {
+                "cells": [
+                  "train_cost",
+                  "total",
+                  "requests_billions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "train_cost",
+                  "total",
+                  "requests_billions"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "A smaller model costs more to train but less to run for every request.",
+            "rows": [
+              {
+                "cells": [
+                  "train_cost",
+                  "total",
+                  "requests_billions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "train_cost",
+                  "total",
+                  "train_cost"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "From FLOPs to a budget",
+      "codeHash": "50950392ff065794456b5da9784805d65c67166faa09919ca320bc25ee041130",
+      "spec": {
+        "template": "table",
+        "title": "Synthesizing FLOPs into actionable GPU-hours and financial budgets",
+        "columns": [
+          "params",
+          "tokens",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A budget report turns a plan into numbers decision makers understand.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The verdict is undertrained below fifteen tokens per parameter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "hours"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "params"
+                  },
+                  {
+                    "text": "tokens"
+                  },
+                  {
+                    "text": "params"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Synthesizing FLOPs into actionable GPU-hours and financial budgets",
+        "columns": [
+          "params",
+          "tokens",
+          "hours"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A budget report turns a plan into numbers decision makers understand.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "tokens",
+                  "hours"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "params",
+                  "tokens",
+                  "hours"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The verdict is undertrained below fifteen tokens per parameter.",
+            "rows": [
+              {
+                "cells": [
+                  "params",
+                  "tokens",
+                  "hours"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "params",
+                  "tokens",
+                  "params"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Using scaling laws responsibly",
+      "codeHash": "28435dd529b377eaeefa70598387c320de17f9832fcf62df4a9428fb968d6ecf",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    },
+    {
+      "partTitle": "Practice time: budgets",
+      "codeHash": "ce74a7d79e9beac7557ebf44644cddd22a42848c739e2bd03246d552a480024a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {}
+    }
+  ]
+}

@@ -6988,27 +6988,27 @@
     },
     "train-py:22:0": {
       "partTitle": "Scaling laws",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:22:1": {
       "partTitle": "Chinchilla: balancing parameters and data",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:22:2": {
       "partTitle": "Beyond compute-optimal",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:22:3": {
       "partTitle": "From FLOPs to a budget",
-      "status": "todo"
+      "status": "passed"
     },
     "train-py:22:4": {
       "partTitle": "Using scaling laws responsibly",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:22:5": {
       "partTitle": "Practice time: budgets",
-      "status": "todo"
+      "status": "none"
     },
     "train-py:23:0": {
       "partTitle": "Throughput",
