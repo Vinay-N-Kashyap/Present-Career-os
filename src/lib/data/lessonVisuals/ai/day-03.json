@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 3,
+  "promptSha": "f5845a46c5144a6e2e36749d63b6938afd98cca773f5e23e4e6f86e66b73eb8c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Anatomy of Enterprise System Prompts: Defining Persona, Scope, and Tone",
+      "codeHash": "f61851584015664714bf584583845ab76d6e11cf3e08f2e360d4a35eca34eeb8",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise system prompt architectural sections and governance directives",
+        "columns": [
+          "Section Name",
+          "Architectural Purpose",
+          "Implementation Directives"
+        ],
+        "rows": [
+          [
+            "Persona Identity",
+            "Defines Expertise and Authority",
+            "Staff Software Engineer Context"
+          ],
+          [
+            "Core Objectives",
+            "Establishes Mandatory Goals",
+            "Accurate Code Solutions"
+          ],
+          [
+            "Operating Scope",
+            "Restricts Authorized Domains",
+            "Cloud Platform Boundaries"
+          ],
+          [
+            "Tone Directives",
+            "Specifies Style and Brevity",
+            "Concise Professional Responses"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Production system prompts organize behavior into distinct sections.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Operating scope limits authorized domains to prevent unapproved guidance.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise system prompt architectural sections and governance directives",
+        "columns": [
+          "Section Name",
+          "Architectural Purpose",
+          "Implementation Directives"
+        ],
+        "rows": [
+          [
+            "Persona Identity",
+            "Defines Expertise and Authority",
+            "Staff Software Engineer Context"
+          ],
+          [
+            "Core Objectives",
+            "Establishes Mandatory Goals",
+            "Accurate Code Solutions"
+          ],
+          [
+            "Operating Scope",
+            "Restricts Authorized Domains",
+            "Cloud Platform Boundaries"
+          ],
+          [
+            "Tone Directives",
+            "Specifies Style and Brevity",
+            "Concise Professional Responses"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Production system prompts organize behavior into distinct sections.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Operating scope limits authorized domains to prevent unapproved guidance.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Explicit Operational Boundaries & Negative Constraints",
+      "codeHash": "757faabf945001f292ff0d7b86ef3abc2b775bc23e33081dee7c5843a67041cb",
+      "spec": {
+        "template": "compare",
+        "title": "Pure negative prohibitions versus negative with alternative framing",
+        "left": {
+          "title": "Pure Negative Prohibition",
+          "items": [
+            "Phrased as bare DO NOT or NEVER rules",
+            "Attention mechanisms attend heavily to forbidden words",
+            "Prone to compliance failures under user pressure",
+            "Leaves the model without an alternative output path"
+          ]
+        },
+        "right": {
+          "title": "Negative with Alternative",
+          "items": [
+            "Combines explicit refusal with alternative actions",
+            "Directs attention toward sanctioned replacement phrases",
+            "Drastically improves compliance across adversarial tests",
+            "Provides standard scripted fallback responses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Language models struggle when provided with purely negative instructions.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Alternative framing specifies exact fallback actions for forbidden tasks.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Pure negative prohibitions versus negative with alternative framing",
+        "left": {
+          "title": "Pure Negative Prohibition",
+          "items": [
+            "Phrased as bare DO NOT or NEVER rules",
+            "Attention mechanisms attend heavily to forbidden words",
+            "Prone to compliance failures under user pressure",
+            "Leaves the model without an alternative output path"
+          ]
+        },
+        "right": {
+          "title": "Negative with Alternative",
+          "items": [
+            "Combines explicit refusal with alternative actions",
+            "Directs attention toward sanctioned replacement phrases",
+            "Drastically improves compliance across adversarial tests",
+            "Provides standard scripted fallback responses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Language models struggle when provided with purely negative instructions.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Alternative framing specifies exact fallback actions for forbidden tasks.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Prompt Engineering: Structural XML Tags & Context Segmentation",
+      "codeHash": "7d22a2aa840bebf7e48baf725cfb681dfc8dce0cb189f6f871d25345bd0b71ad",
+      "spec": {
+        "template": "flow",
+        "title": "Untrusted user input XML delimiter encapsulation and prompt injection defense",
+        "nodes": [
+          {
+            "id": "untrustedInput",
+            "label": "Untrusted User Payload",
+            "tappable": false
+          },
+          {
+            "id": "xmlEncapsulation",
+            "label": "XML Tag Encapsulation",
+            "tappable": false
+          },
+          {
+            "id": "instructionBoundary",
+            "label": "Delimited System Boundary",
+            "tappable": false
+          },
+          {
+            "id": "sanitizedPrompt",
+            "label": "Safe Execution Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "untrustedInput",
+            "to": "xmlEncapsulation",
+            "label": "Wrap In Tags"
+          },
+          {
+            "from": "xmlEncapsulation",
+            "to": "instructionBoundary",
+            "label": "Enforce Boundary"
+          },
+          {
+            "from": "instructionBoundary",
+            "to": "sanitizedPrompt",
+            "label": "Dispatch Model"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt injection attacks attempt to override system instructions.",
+            "activeNodes": [
+              "untrustedInput",
+              "xmlEncapsulation"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "XML tags separate untrusted data from system instruction directives.",
+            "activeNodes": [
+              "instructionBoundary",
+              "sanitizedPrompt"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Untrusted user input XML delimiter encapsulation and prompt injection defense",
+        "nodes": [
+          {
+            "id": "untrustedInput",
+            "label": "Untrusted User Payload",
+            "tappable": false
+          },
+          {
+            "id": "xmlEncapsulation",
+            "label": "XML Tag Encapsulation",
+            "tappable": false
+          },
+          {
+            "id": "instructionBoundary",
+            "label": "Delimited System Boundary",
+            "tappable": false
+          },
+          {
+            "id": "sanitizedPrompt",
+            "label": "Safe Execution Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "untrustedInput",
+            "to": "xmlEncapsulation",
+            "label": "Wrap In Tags"
+          },
+          {
+            "from": "xmlEncapsulation",
+            "to": "instructionBoundary",
+            "label": "Enforce Boundary"
+          },
+          {
+            "from": "instructionBoundary",
+            "to": "sanitizedPrompt",
+            "label": "Dispatch Model"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt injection attacks attempt to override system instructions.",
+            "activeNodes": [
+              "untrustedInput",
+              "xmlEncapsulation"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "XML tags separate untrusted data from system instruction directives.",
+            "activeNodes": [
+              "instructionBoundary",
+              "sanitizedPrompt"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Preventing Goal Drift and Role Slippage in Multi-Turn Sessions",
+      "codeHash": "ecc5c6150b19402aaa70265842aa6c3ec4bd28e3e7e5e0b7a5f1bb149fa5c8ac",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Graceful Degradation and Safe Fallback Responses",
+      "codeHash": "cc0136f344e013c92e4c3a505d81c45223f76c203a59bc5a4eebee29174ccc63",
+      "spec": {
+        "template": "sequence",
+        "title": "Safe fallback response generation and graceful degradation protocol",
+        "actors": [
+          {
+            "id": "userClient",
+            "label": "User Application"
+          },
+          {
+            "id": "systemPrompt",
+            "label": "System Guardrail Prompt"
+          },
+          {
+            "id": "supportPortal",
+            "label": "Authorized Support Route"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userClient",
+            "to": "systemPrompt",
+            "label": "Submit Out-of-Scope Query",
+            "tone": "data"
+          },
+          {
+            "from": "systemPrompt",
+            "to": "userClient",
+            "label": "Emit Pre-Approved Refusal Protocol",
+            "tone": "danger"
+          },
+          {
+            "from": "systemPrompt",
+            "to": "supportPortal",
+            "label": "Provide Constructive Path Forward",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Production systems implement graceful degradation and refusal protocols.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "System prompts supply pre-approved responses for out-of-scope queries.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Safe fallback response generation and graceful degradation protocol",
+        "actors": [
+          {
+            "id": "userClient",
+            "label": "User Application"
+          },
+          {
+            "id": "systemPrompt",
+            "label": "System Guardrail Prompt"
+          },
+          {
+            "id": "supportPortal",
+            "label": "Authorized Support Route"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userClient",
+            "to": "systemPrompt",
+            "label": "Submit Out-of-Scope Query",
+            "tone": "data"
+          },
+          {
+            "from": "systemPrompt",
+            "to": "userClient",
+            "label": "Emit Pre-Approved Refusal Protocol",
+            "tone": "danger"
+          },
+          {
+            "from": "systemPrompt",
+            "to": "supportPortal",
+            "label": "Provide Constructive Path Forward",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Production systems implement graceful degradation and refusal protocols.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "System prompts supply pre-approved responses for out-of-scope queries.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Enterprise System Prompt Builder with XML Boundary Enforcement",
+      "codeHash": "5b0247c264ada17429ee3fbe7cd3a89be0656d1211276a72ba8eec5d2cba74f3",
+      "spec": {
+        "template": "table",
+        "title": "System prompt compiler verification and negative constraint enforcement",
+        "columns": [
+          "Evaluation Aspect",
+          "Test Input Context",
+          "Expected Compiler Action",
+          "Safety Verdict"
+        ],
+        "rows": [
+          [
+            "Authorized Query",
+            "Kubernetes Deployment Help",
+            "Emit Authoritative SDE Advice",
+            "Permitted Response"
+          ],
+          [
+            "Forbidden Domain",
+            "Financial Investment Advice",
+            "Decline with Standard Refusal",
+            "Enforced Refusal"
+          ],
+          [
+            "Injection Payload",
+            "Ignore Constraints Tag",
+            "Enforce XML Data Boundary",
+            "Sanitized Isolation"
+          ],
+          [
+            "Tone Compliance",
+            "Concise Technical Request",
+            "Omit Conversational Filler",
+            "Compliant Formatting"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The compiler transforms structured configurations into system prompts.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "XML isolation tags neutralize adversarial prompt injection attempts.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "System prompt compiler verification and negative constraint enforcement",
+        "columns": [
+          "Evaluation Aspect",
+          "Test Input Context",
+          "Expected Compiler Action",
+          "Safety Verdict"
+        ],
+        "rows": [
+          [
+            "Authorized Query",
+            "Kubernetes Deployment Help",
+            "Emit Authoritative SDE Advice",
+            "Permitted Response"
+          ],
+          [
+            "Forbidden Domain",
+            "Financial Investment Advice",
+            "Decline with Standard Refusal",
+            "Enforced Refusal"
+          ],
+          [
+            "Injection Payload",
+            "Ignore Constraints Tag",
+            "Enforce XML Data Boundary",
+            "Sanitized Isolation"
+          ],
+          [
+            "Tone Compliance",
+            "Concise Technical Request",
+            "Omit Conversational Filler",
+            "Compliant Formatting"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The compiler transforms structured configurations into system prompts.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "XML isolation tags neutralize adversarial prompt injection attempts.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
