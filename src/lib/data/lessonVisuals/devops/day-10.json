@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 10,
+  "promptSha": "9b6d5c1cd40b339bae8b7d57015432ed309b7664a9927d817ed92fa85fcaf965",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "CI Velocity & Feedback Loops: The Cost of Slow Pipelines",
+      "codeHash": "2b0d4fdc5f26e216071d5d83de03f245293eb1d65315b8598699a84f77be8c35",
+      "spec": {
+        "template": "compare",
+        "title": "Sequential single runner duration versus parallel feedback loops",
+        "leftLabel": "Sequential Runner (1)",
+        "rightLabel": "Parallel Runners (4)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pipeline execution velocity directly governs developer productivity.",
+            "left": {
+              "code": "parallelRunners: 1",
+              "result": {
+                "text": "durationMinutes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "parallelRunners: 4",
+              "result": {
+                "text": "parallelRunners"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Fast feedback cycles keep engineers in flow state merging changes rapidly.",
+            "left": {
+              "code": "unoptimized",
+              "result": {
+                "text": "testCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "optimized",
+              "result": {
+                "text": "testCount"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sequential single runner duration versus parallel feedback loops",
+        "leftLabel": "Sequential Runner (1)",
+        "rightLabel": "Parallel Runners (4)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pipeline execution velocity directly governs developer productivity.",
+            "left": {
+              "code": "parallelRunners: 1",
+              "result": {
+                "text": "durationMinutes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "parallelRunners: 4",
+              "result": {
+                "text": "parallelRunners"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Fast feedback cycles keep engineers in flow state merging changes rapidly.",
+            "left": {
+              "code": "unoptimized",
+              "result": {
+                "text": "testCount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "optimized",
+              "result": {
+                "text": "testCount"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Matrix Strategy: Multi-Node & Multi-OS Combinatorics",
+      "codeHash": "c24bb6735c12cdb43c45e06156c14954b0a295f25346d0114c9e5d1f4c56b020",
+      "spec": {
+        "template": "flow",
+        "title": "Combinatorial matrix dimension job generation flow",
+        "nodes": [
+          {
+            "id": "matrix",
+            "label": "matrix"
+          },
+          {
+            "id": "ubuntu",
+            "label": "ubuntu-latest"
+          },
+          {
+            "id": "macos",
+            "label": "macos-latest"
+          },
+          {
+            "id": "test",
+            "label": "test"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Matrix strategies configure automated combinatorial execution across nodes.",
+            "values": {
+              "matrix": {
+                "text": "matrix"
+              },
+              "ubuntu": {
+                "text": "ubuntu-latest"
+              }
+            },
+            "arrows": [
+              [
+                "matrix",
+                "ubuntu"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Parallel runners execute tests across operating system matrix entries.",
+            "values": {
+              "ubuntu": {
+                "text": "ubuntu-latest"
+              },
+              "macos": {
+                "text": "macos-latest"
+              }
+            },
+            "arrows": [
+              [
+                "ubuntu",
+                "macos"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Combinatorial matrix dimension job generation flow",
+        "nodes": [
+          {
+            "id": "matrix",
+            "label": "matrix"
+          },
+          {
+            "id": "ubuntu",
+            "label": "ubuntu-latest"
+          },
+          {
+            "id": "macos",
+            "label": "macos-latest"
+          },
+          {
+            "id": "test",
+            "label": "test"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Matrix strategies configure automated combinatorial execution across nodes.",
+            "values": {
+              "matrix": {
+                "text": "matrix"
+              },
+              "ubuntu": {
+                "text": "ubuntu-latest"
+              }
+            },
+            "arrows": [
+              [
+                "matrix",
+                "ubuntu"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Parallel runners execute tests across operating system matrix entries.",
+            "values": {
+              "ubuntu": {
+                "text": "ubuntu-latest"
+              },
+              "macos": {
+                "text": "macos-latest"
+              }
+            },
+            "arrows": [
+              [
+                "ubuntu",
+                "macos"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependency Caching with actions/cache & Cache Keys",
+      "codeHash": "c8f8c4f6b01795da6ae7053bc6c609cbbf4038ec7caeeab50b7a814a2207c0b8",
+      "spec": {
+        "template": "compare",
+        "title": "Dependency cache lookup key hit versus network download miss",
+        "leftLabel": "Cache Hit (Immediate Restore)",
+        "rightLabel": "Cache Miss (Download Required)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Caching pairs archived dependencies directory with a unique cache key.",
+            "left": {
+              "code": "resolveCacheKey",
+              "result": {
+                "text": "requestedKey"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availableKeys",
+              "result": {
+                "text": "availableKeys"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Matching cache keys achieve instant restoration avoiding full download.",
+            "left": {
+              "code": "hit: true",
+              "result": {
+                "text": "Linux-node-modules-a1f890e2b4"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hit: false",
+              "result": {
+                "text": "requestedKey"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dependency cache lookup key hit versus network download miss",
+        "leftLabel": "Cache Hit (Immediate Restore)",
+        "rightLabel": "Cache Miss (Download Required)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Caching pairs archived dependencies directory with a unique cache key.",
+            "left": {
+              "code": "resolveCacheKey",
+              "result": {
+                "text": "requestedKey"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availableKeys",
+              "result": {
+                "text": "availableKeys"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Matching cache keys achieve instant restoration avoiding full download.",
+            "left": {
+              "code": "hit: true",
+              "result": {
+                "text": "Linux-node-modules-a1f890e2b4"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hit: false",
+              "result": {
+                "text": "requestedKey"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Test Sharding: Parallelizing Test Suites Across Runners",
+      "codeHash": "9e0b5dae32cea65a9b3390d23ad32ffa537f3fd684ea1f273c349d81147b34c2",
+      "spec": {
+        "template": "flow",
+        "title": "Test suite slice partitioning across sharded runner nodes",
+        "nodes": [
+          {
+            "id": "t1",
+            "label": "auth.test.ts"
+          },
+          {
+            "id": "t2",
+            "label": "billing.test.ts"
+          },
+          {
+            "id": "s1",
+            "label": "Runner"
+          },
+          {
+            "id": "s2",
+            "label": "shards"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Test sharding divides complete test suite across parallel runner slices.",
+            "values": {
+              "t1": {
+                "text": "auth.test.ts"
+              },
+              "s1": {
+                "text": "Runner"
+              }
+            },
+            "arrows": [
+              [
+                "t1",
+                "s1"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Runners execute tests simultaneously cutting total pipeline elapsed time.",
+            "values": {
+              "t2": {
+                "text": "billing.test.ts"
+              },
+              "s2": {
+                "text": "shards"
+              }
+            },
+            "arrows": [
+              [
+                "t2",
+                "s2"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Test suite slice partitioning across sharded runner nodes",
+        "nodes": [
+          {
+            "id": "t1",
+            "label": "auth.test.ts"
+          },
+          {
+            "id": "t2",
+            "label": "billing.test.ts"
+          },
+          {
+            "id": "s1",
+            "label": "Runner"
+          },
+          {
+            "id": "s2",
+            "label": "shards"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Test sharding divides complete test suite across parallel runner slices.",
+            "values": {
+              "t1": {
+                "text": "auth.test.ts"
+              },
+              "s1": {
+                "text": "Runner"
+              }
+            },
+            "arrows": [
+              [
+                "t1",
+                "s1"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Runners execute tests simultaneously cutting total pipeline elapsed time.",
+            "values": {
+              "t2": {
+                "text": "billing.test.ts"
+              },
+              "s2": {
+                "text": "shards"
+              }
+            },
+            "arrows": [
+              [
+                "t2",
+                "s2"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Artifact Management: Uploading and Merging Reports",
+      "codeHash": "8f7f1becc2a74e11de025914a08346f04c66ebac8a160ceccbb633a3f577cfe3",
+      "spec": {
+        "template": "workflow",
+        "title": "Artifact archiving storage upload and merge pipeline stages",
+        "stages": [
+          {
+            "id": "test",
+            "name": "Execute",
+            "subtext": "Sharded Tests"
+          },
+          {
+            "id": "upload",
+            "name": "Upload",
+            "subtext": "coverage-shard-1"
+          },
+          {
+            "id": "download",
+            "name": "Download",
+            "subtext": "Consolidate Reports"
+          },
+          {
+            "id": "publish",
+            "name": "Publish",
+            "subtext": "Summary Report"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Upload action archives test reports and uploads them into cloud storage.",
+            "activeStageId": "upload",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say5",
+            "caption": "Downstream reporting job merges coverage reports and publishes summary.",
+            "activeStageId": "publish",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Artifact archiving storage upload and merge pipeline stages",
+        "stages": [
+          {
+            "id": "test",
+            "name": "Execute",
+            "subtext": "Sharded Tests"
+          },
+          {
+            "id": "upload",
+            "name": "Upload",
+            "subtext": "coverage-shard-1"
+          },
+          {
+            "id": "download",
+            "name": "Download",
+            "subtext": "Consolidate Reports"
+          },
+          {
+            "id": "publish",
+            "name": "Publish",
+            "subtext": "Summary Report"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Upload action archives test reports and uploads them into cloud storage.",
+            "activeStageId": "upload",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say5",
+            "caption": "Downstream reporting job merges coverage reports and publishes summary.",
+            "activeStageId": "publish",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flaky Test Quarantine & Retry Automation",
+      "codeHash": "7230d5d38bdf650ca3e49310751b5391f7371f7c74542e274814ef1fb88d50c8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
