@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 17,
+  "promptSha": "3fc8a977fd057977f64af6c54c5ffc90c8d8f59bfbe7e10a42e75cb29b37cae3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Binary Search Tree Invariant",
+      "codeHash": "0c22ee11cdc4c7b436fa2d113ab2cb4071e068a7cf2a4f131d3b178ee2a349d6",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Binary search tree ordering invariant",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n15",
+            "label": "15"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n15"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Left subtree values must be strictly less than current node.",
+            "activeNodeId": "n5",
+            "visitedNodeIds": [
+              "n10",
+              "n5"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Right subtree values must be strictly greater than current node.",
+            "activeNodeId": "n15",
+            "visitedNodeIds": [
+              "n10",
+              "n5",
+              "n15"
+            ],
+            "activeEdge": [
+              "n10",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Binary search tree ordering invariant",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n15",
+            "label": "15"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n15"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Left subtree values must be strictly less than current node.",
+            "activeNodeId": "n5",
+            "visitedNodeIds": [
+              "n10",
+              "n5"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Right subtree values must be strictly greater than current node.",
+            "activeNodeId": "n15",
+            "visitedNodeIds": [
+              "n10",
+              "n5",
+              "n15"
+            ],
+            "activeEdge": [
+              "n10",
+              "n15"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast Logarithmic Search in BST",
+      "codeHash": "ec534f228d500d453f764353d2fd043ed7b2c0c8803614281044dc5108131dae",
+      "spec": {
+        "template": "compare",
+        "title": "Binary search tree directional decision",
+        "left": {
+          "title": "Target Smaller",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "val < current.val"
+            },
+            {
+              "label": "Decision",
+              "value": "Search left subtree"
+            }
+          ]
+        },
+        "right": {
+          "title": "Target Larger",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "val > current.val"
+            },
+            {
+              "label": "Decision",
+              "value": "Search right subtree"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Smaller target value searches left subtree and ignores right.",
+            "left": {
+              "code": "current = current.left",
+              "result": "left",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "current = current.right",
+              "result": "skip",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Larger target value searches right subtree and ignores left.",
+            "left": {
+              "code": "current = current.left",
+              "result": "skip",
+              "tone": "data"
+            },
+            "right": {
+              "code": "current = current.right",
+              "result": "right",
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Binary search tree directional decision",
+        "left": {
+          "title": "Target Smaller",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "val < current.val"
+            },
+            {
+              "label": "Decision",
+              "value": "Search left subtree"
+            }
+          ]
+        },
+        "right": {
+          "title": "Target Larger",
+          "items": [
+            {
+              "label": "Condition",
+              "value": "val > current.val"
+            },
+            {
+              "label": "Decision",
+              "value": "Search right subtree"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Smaller target value searches left subtree and ignores right.",
+            "left": {
+              "code": "current = current.left",
+              "result": "left",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "current = current.right",
+              "result": "skip",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Larger target value searches right subtree and ignores left.",
+            "left": {
+              "code": "current = current.left",
+              "result": "skip",
+              "tone": "data"
+            },
+            "right": {
+              "code": "current = current.right",
+              "result": "right",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validating a Binary Search Tree",
+      "codeHash": "4a1996c6a4e1757d68e55b88914e052aacfb34a7039e3c2e80c4cf276f336fd7",
+      "spec": {
+        "template": "table",
+        "title": "Recursive BST min max boundary propagation",
+        "columns": [
+          "Subtree Branch",
+          "New Boundary Rule",
+          "Validation Check"
+        ],
+        "rows": [
+          [
+            {
+              "text": "Left branch"
+            },
+            {
+              "text": "max = node.val"
+            },
+            {
+              "text": "val < max"
+            }
+          ],
+          [
+            {
+              "text": "Right branch"
+            },
+            {
+              "text": "min = node.val"
+            },
+            {
+              "text": "val > min"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Moving left updates maximum boundary for entire left subtree.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Moving right updates minimum boundary for entire right subtree.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Recursive BST min max boundary propagation",
+        "columns": [
+          "Subtree Branch",
+          "New Boundary Rule",
+          "Validation Check"
+        ],
+        "rows": [
+          [
+            "Left branch",
+            "max = node.val",
+            "val < max"
+          ],
+          [
+            "Right branch",
+            "min = node.val",
+            "val > min"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Moving left updates maximum boundary for entire left subtree.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Moving right updates minimum boundary for entire right subtree.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inorder Traversal and Sorted Data",
+      "codeHash": "47abd41ccaeceb1f53033871676d63b342dfb91f2e1ed08769c9168d2f269677",
+      "spec": {
+        "template": "cells",
+        "title": "Inorder traversal extraction of sorted array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running inorder traversal collects values in perfectly sorted order.",
+            "items": [
+              {
+                "text": "8"
+              },
+              {
+                "text": "10"
+              },
+              {
+                "text": "12"
+              },
+              {
+                "text": "15"
+              },
+              {
+                "text": "20"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "out",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Counter reaching target unequivocally identifies smallest element.",
+            "items": [
+              {
+                "text": "8"
+              },
+              {
+                "text": "10"
+              },
+              {
+                "text": "12"
+              },
+              {
+                "text": "15"
+              },
+              {
+                "text": "20"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "k",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Inorder traversal extraction of sorted array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Running inorder traversal collects values in perfectly sorted order.",
+            "items": [
+              "8",
+              "10",
+              "12",
+              "15",
+              "20"
+            ],
+            "pointers": [
+              {
+                "name": "out",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Counter reaching target unequivocally identifies smallest element.",
+            "items": [
+              "8",
+              "10",
+              "12",
+              "15",
+              "20"
+            ],
+            "pointers": [
+              {
+                "name": "k",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lowest Common Ancestor in a BST",
+      "codeHash": "839139866b4eb8ec15939a9ce5d9c1c33dc8594c3d9ec3790e713a4a9fae1fa2",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Lowest common ancestor split point",
+        "nodes": [
+          {
+            "id": "n20",
+            "label": "20"
+          },
+          {
+            "id": "n10",
+            "label": "10 (LCA)"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n15",
+            "label": "15"
+          }
+        ],
+        "edges": [
+          [
+            "n20",
+            "n10"
+          ],
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n15"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Target values strictly smaller than root descend into left subtree.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n20",
+              "n10"
+            ],
+            "activeEdge": [
+              "n20",
+              "n10"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Split occurred between targets confirms current node is lowest common ancestor.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n20",
+              "n10",
+              "n5",
+              "n15"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Lowest common ancestor split point",
+        "nodes": [
+          {
+            "id": "n20",
+            "label": "20"
+          },
+          {
+            "id": "n10",
+            "label": "10 (LCA)"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n15",
+            "label": "15"
+          }
+        ],
+        "edges": [
+          [
+            "n20",
+            "n10"
+          ],
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n15"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Target values strictly smaller than root descend into left subtree.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n20",
+              "n10"
+            ],
+            "activeEdge": [
+              "n20",
+              "n10"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Split occurred between targets confirms current node is lowest common ancestor.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n20",
+              "n10",
+              "n5",
+              "n15"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deletion in a Binary Search Tree",
+      "codeHash": "2432e65f1ac51bf5af566a774af02b401eeda8422f078ebce6e17d0576a2b51c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
