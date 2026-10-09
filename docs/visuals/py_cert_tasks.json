@@ -9679,6 +9679,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-devops-D01",
+      "title": "devops day 1: DevOps Culture, CI/CD & The 12-Factor App visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 1,
+      "keys": [
+        "devops:1:0",
+        "devops:1:1",
+        "devops:1:2",
+        "devops:1:3",
+        "devops:1:4",
+        "devops:1:5"
+      ]
+    },
+    {
+      "id": "C-devops-D02",
+      "title": "devops day 2: Linux Administration, POSIX Signals & Process Daemons visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 2,
+      "keys": [
+        "devops:2:0",
+        "devops:2:1",
+        "devops:2:2",
+        "devops:2:3",
+        "devops:2:4",
+        "devops:2:5"
+      ]
+    },
+    {
+      "id": "C-devops-D03",
+      "title": "devops day 3: Docker Architecture, Copy-on-Write & Image Layer Caching visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 3,
+      "keys": [
+        "devops:3:0",
+        "devops:3:1",
+        "devops:3:2",
+        "devops:3:3",
+        "devops:3:4",
+        "devops:3:5"
+      ]
+    },
+    {
+      "id": "C-devops-D04",
+      "title": "devops day 4: Docker Multi-Stage Builds & Minimal Production Images visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 4,
+      "keys": [
+        "devops:4:0",
+        "devops:4:1",
+        "devops:4:2",
+        "devops:4:3",
+        "devops:4:4",
+        "devops:4:5"
+      ]
+    },
+    {
+      "id": "C-devops-D05",
+      "title": "devops day 5: ⭐ MILESTONE 1: Multi-Container Microservices Stack with Docker Compose visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 5,
+      "keys": [
+        "devops:5:0",
+        "devops:5:1",
+        "devops:5:2",
+        "devops:5:3",
+        "devops:5:4",
+        "devops:5:5"
+      ]
+    },
+    {
+      "id": "C-devops-D06",
+      "title": "devops day 6: Docker Container Networking & Host/Bridge Port Mappings visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 6,
+      "keys": [
+        "devops:6:0",
+        "devops:6:1",
+        "devops:6:2",
+        "devops:6:3",
+        "devops:6:4",
+        "devops:6:5"
+      ]
+    },
+    {
+      "id": "C-devops-D07",
+      "title": "devops day 7: Docker Security, Rootless Daemons & Read-Only Root Filesystems visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 7,
+      "keys": [
+        "devops:7:0",
+        "devops:7:1",
+        "devops:7:2",
+        "devops:7:3",
+        "devops:7:4",
+        "devops:7:5"
+      ]
+    },
+    {
+      "id": "C-devops-D08",
+      "title": "devops day 8: Container Healthchecks, Restart Policies & Resource Limits visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 8,
+      "keys": [
+        "devops:8:0",
+        "devops:8:1",
+        "devops:8:2",
+        "devops:8:3",
+        "devops:8:4",
+        "devops:8:5"
+      ]
+    },
+    {
+      "id": "C-devops-D09",
+      "title": "devops day 9: GitHub Actions CI: Workflow Syntax, Triggers & Secret Stores visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 9,
+      "keys": [
+        "devops:9:0",
+        "devops:9:1",
+        "devops:9:2",
+        "devops:9:3",
+        "devops:9:4",
+        "devops:9:5"
+      ]
+    },
+    {
+      "id": "C-devops-D10",
+      "title": "devops day 10: CI Test Automation, Parallelism & Test Matrix Strategies visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 10,
+      "keys": [
+        "devops:10:0",
+        "devops:10:1",
+        "devops:10:2",
+        "devops:10:3",
+        "devops:10:4",
+        "devops:10:5"
+      ]
+    },
+    {
+      "id": "C-devops-D11",
+      "title": "devops day 11: Semantic Versioning (SemVer) & Automated Git Tagging visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 11,
+      "keys": [
+        "devops:11:0",
+        "devops:11:1",
+        "devops:11:2",
+        "devops:11:3",
+        "devops:11:4",
+        "devops:11:5"
+      ]
+    },
+    {
+      "id": "C-devops-D12",
+      "title": "devops day 12: Container Registry Security & Vulnerability Scanning (Trivy/Clair) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 12,
+      "keys": [
+        "devops:12:0",
+        "devops:12:1",
+        "devops:12:2",
+        "devops:12:3",
+        "devops:12:4",
+        "devops:12:5"
+      ]
+    },
+    {
+      "id": "C-devops-D13",
+      "title": "devops day 13: Automated Staging Deployments, SSH Bastions & Environment Promotion visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 13,
+      "keys": [
+        "devops:13:0",
+        "devops:13:1",
+        "devops:13:2",
+        "devops:13:3",
+        "devops:13:4",
+        "devops:13:5"
+      ]
+    },
+    {
+      "id": "C-devops-D14",
+      "title": "devops day 14: Automated Smoke Testing & Synthetic Health Verification visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 14,
+      "keys": [
+        "devops:14:0",
+        "devops:14:1",
+        "devops:14:2",
+        "devops:14:3",
+        "devops:14:4",
+        "devops:14:5"
+      ]
+    },
+    {
+      "id": "C-devops-D15",
+      "title": "devops day 15: ⭐ MILESTONE 2: Production GitHub Actions CI/CD Pipeline with Matrix Testing & Automated Rollbacks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 15,
+      "keys": [
+        "devops:15:0",
+        "devops:15:1",
+        "devops:15:2",
+        "devops:15:3",
+        "devops:15:4",
+        "devops:15:5"
+      ]
+    },
+    {
+      "id": "C-devops-D16",
+      "title": "devops day 16: Kubernetes Core Architecture: Pods, ReplicaSets & Deployments visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 16,
+      "keys": [
+        "devops:16:0",
+        "devops:16:1",
+        "devops:16:2",
+        "devops:16:3",
+        "devops:16:4",
+        "devops:16:5"
+      ]
+    },
+    {
+      "id": "C-devops-D17",
+      "title": "devops day 17: Kubernetes Networking: ClusterIP, NodePort & LoadBalancer Services visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 17,
+      "keys": [
+        "devops:17:0",
+        "devops:17:1",
+        "devops:17:2",
+        "devops:17:3",
+        "devops:17:4",
+        "devops:17:5"
+      ]
+    },
+    {
+      "id": "C-devops-D18",
+      "title": "devops day 18: Kubernetes Ingress Controllers & Automated TLS Termination visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 18,
+      "keys": [
+        "devops:18:0",
+        "devops:18:1",
+        "devops:18:2",
+        "devops:18:3",
+        "devops:18:4",
+        "devops:18:5"
+      ]
+    },
+    {
+      "id": "C-devops-D19",
+      "title": "devops day 19: Kubernetes ConfigMaps, Secrets & Environment Volume Mounting visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 19,
+      "keys": [
+        "devops:19:0",
+        "devops:19:1",
+        "devops:19:2",
+        "devops:19:3",
+        "devops:19:4",
+        "devops:19:5"
+      ]
+    },
+    {
+      "id": "C-devops-D20",
+      "title": "devops day 20: Kubernetes Health Probes: Liveness, Readiness & Startup Probes visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 20,
+      "keys": [
+        "devops:20:0",
+        "devops:20:1",
+        "devops:20:2",
+        "devops:20:3",
+        "devops:20:4",
+        "devops:20:5"
+      ]
+    },
+    {
+      "id": "C-devops-D21",
+      "title": "devops day 21: ⭐ MILESTONE 3: Production High-Availability Kubernetes Cluster with Ingress & HPA visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 21,
+      "keys": [
+        "devops:21:0",
+        "devops:21:1",
+        "devops:21:2",
+        "devops:21:3",
+        "devops:21:4",
+        "devops:21:5"
+      ]
+    },
+    {
+      "id": "C-devops-D22",
+      "title": "devops day 22: Helm Package Management & Multi-Environment Values visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 22,
+      "keys": [
+        "devops:22:0",
+        "devops:22:1",
+        "devops:22:2",
+        "devops:22:3",
+        "devops:22:4",
+        "devops:22:5"
+      ]
+    },
+    {
+      "id": "C-devops-D23",
+      "title": "devops day 23: GitOps Continuous Delivery with ArgoCD & Declarative Sync visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 23,
+      "keys": [
+        "devops:23:0",
+        "devops:23:1",
+        "devops:23:2",
+        "devops:23:3",
+        "devops:23:4",
+        "devops:23:5"
+      ]
+    },
+    {
+      "id": "C-devops-D24",
+      "title": "devops day 24: Prometheus Metric Scraping & PromQL Alerting Rules visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 24,
+      "keys": [
+        "devops:24:0",
+        "devops:24:1",
+        "devops:24:2",
+        "devops:24:3",
+        "devops:24:4",
+        "devops:24:5"
+      ]
+    },
+    {
+      "id": "C-devops-D25",
+      "title": "devops day 25: Grafana Dashboards & Distributed Tracing with OpenTelemetry visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 25,
+      "keys": [
+        "devops:25:0",
+        "devops:25:1",
+        "devops:25:2",
+        "devops:25:3",
+        "devops:25:4",
+        "devops:25:5"
+      ]
+    },
+    {
+      "id": "C-devops-D26",
+      "title": "devops day 26: Centralized Logging with Fluentbit, Elasticsearch & Kibana visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 26,
+      "keys": [
+        "devops:26:0",
+        "devops:26:1",
+        "devops:26:2",
+        "devops:26:3",
+        "devops:26:4",
+        "devops:26:5"
+      ]
+    },
+    {
+      "id": "C-devops-D27",
+      "title": "devops day 27: Zero-Downtime Blue-Green & Canary Rollout Orchestration visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 27,
+      "keys": [
+        "devops:27:0",
+        "devops:27:1",
+        "devops:27:2",
+        "devops:27:3",
+        "devops:27:4",
+        "devops:27:5"
+      ]
+    },
+    {
+      "id": "C-devops-D28",
+      "title": "devops day 28: DevSecOps: Automated SAST, DAST & Software Supply Chain Security visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 28,
+      "keys": [
+        "devops:28:0",
+        "devops:28:1",
+        "devops:28:2",
+        "devops:28:3",
+        "devops:28:4",
+        "devops:28:5"
+      ]
+    },
+    {
+      "id": "C-devops-D29",
+      "title": "devops day 29: Zero-Downtime Database Migrations & The Expand-Contract Pattern visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 29,
+      "keys": [
+        "devops:29:0",
+        "devops:29:1",
+        "devops:29:2",
+        "devops:29:3",
+        "devops:29:4",
+        "devops:29:5"
+      ]
+    },
+    {
+      "id": "C-devops-D30",
+      "title": "devops day 30: 🏆 FINAL CAPSTONE: Enterprise GitOps Continuous Delivery & Zero-Downtime Multi-Cluster Kubernetes Platform visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/devops/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "devops",
+      "day": 30,
+      "keys": [
+        "devops:30:0",
+        "devops:30:1",
+        "devops:30:2",
+        "devops:30:3",
+        "devops:30:4",
+        "devops:30:5"
+      ]
+    },
+    {
+      "id": "R-devops-1-5",
+      "title": "Checkpoint devops days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-devops-6-10",
+      "title": "Checkpoint devops days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-devops-11-15",
+      "title": "Checkpoint devops days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-devops-16-20",
+      "title": "Checkpoint devops days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-devops-21-25",
+      "title": "Checkpoint devops days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-devops-26-30",
+      "title": "Checkpoint devops days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-devops",
+      "title": "Release visuals for devops",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
