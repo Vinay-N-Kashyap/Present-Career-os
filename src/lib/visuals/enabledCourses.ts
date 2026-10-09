@@ -20,7 +20,8 @@
 // - 'react-basics': React Basics (Month 1 Web Full-Stack) released via [task:L-react-basics]
 // - 'node-web': Node.js Backend & API Engineering (Month 2 Web Full-Stack) released via [task:L-node-web]
 // - 'dsa-optim': Data Structures, Algorithms & Optimization (Month 3 Web Full-Stack) released via [task:L-dsa-optim]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics', 'node-web', 'dsa-optim'];
+// - 'devops': DevOps, Docker & CI/CD Pipelines (Month 5 Web Full-Stack) released via [task:L-devops]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics', 'node-web', 'dsa-optim', 'devops'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
