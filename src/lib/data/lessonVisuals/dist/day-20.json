@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 20,
+  "promptSha": "777e16892437577d963053355f93321400b4e315bd6f4c3ca33c243fb51bbb0b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cascading Failures & The Anatomy of a Distributed Blackout",
+      "codeHash": "eaa0e21474cda1534d5ef1f7529018dd82a2e42dcc376b77dbccb7630f82f238",
+      "spec": {
+        "template": "workflow",
+        "title": "Cascading failure thread pool exhaustion across microservices",
+        "workflow": [
+          {
+            "id": "latencySpike",
+            "label": "Downstream Service C Response Slowdown",
+            "status": "completed"
+          },
+          {
+            "id": "poolExhaustion",
+            "label": "Upstream Service B Threads Block and Exhaust Pool",
+            "status": "active"
+          },
+          {
+            "id": "platformBlackout",
+            "label": "Service A Threads Exhausted in Cascading Blackout",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Threads block waiting on downstream responses and exhaust connection pools.",
+            "activeWorkflowId": "poolExhaustion",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Slowdown in a downstream service triggers a cascading platform failure.",
+            "activeWorkflowId": "platformBlackout",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Cascading failure thread pool exhaustion across microservices",
+        "workflow": [
+          {
+            "id": "latencySpike",
+            "label": "Downstream Service C Response Slowdown",
+            "status": "completed"
+          },
+          {
+            "id": "poolExhaustion",
+            "label": "Upstream Service B Threads Block and Exhaust Pool",
+            "status": "active"
+          },
+          {
+            "id": "platformBlackout",
+            "label": "Service A Threads Exhausted in Cascading Blackout",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Threads block waiting on downstream responses and exhaust connection pools.",
+            "activeWorkflowId": "poolExhaustion",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Slowdown in a downstream service triggers a cascading platform failure.",
+            "activeWorkflowId": "platformBlackout",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Circuit Breaker State Machine: Closed, Open & Half-Open",
+      "codeHash": "d4171a4e8b1924970b37f0b6a35014d15bb95ce3485d537b54659d4c8d1e40a2",
+      "spec": {
+        "template": "states",
+        "title": "Circuit breaker finite state machine lifecycle transitions",
+        "states": [
+          {
+            "id": "stateClosed",
+            "label": "CLOSED: Normal Healthy Requests Flow"
+          },
+          {
+            "id": "stateOpen",
+            "label": "OPEN: Instant Fail-Fast Rejection"
+          },
+          {
+            "id": "stateHalfOpen",
+            "label": "HALF-OPEN: Canary Trial Testing Recovery"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In the closed state all requests pass through to the service normally.",
+            "activeStateId": "stateClosed",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "In the open state the circuit breaker fails fast rejecting requests.",
+            "activeStateId": "stateOpen",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Circuit breaker finite state machine lifecycle transitions",
+        "states": [
+          {
+            "id": "stateClosed",
+            "label": "CLOSED: Normal Healthy Requests Flow"
+          },
+          {
+            "id": "stateOpen",
+            "label": "OPEN: Instant Fail-Fast Rejection"
+          },
+          {
+            "id": "stateHalfOpen",
+            "label": "HALF-OPEN: Canary Trial Testing Recovery"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "In the closed state all requests pass through to the service normally.",
+            "activeStateId": "stateClosed",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "In the open state the circuit breaker fails fast rejecting requests.",
+            "activeStateId": "stateOpen",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Window Metrics: Count-Based vs Time-Based Windows",
+      "codeHash": "e88eeeea2487d43a9674bf01801d051463d2415211f2f752c0a4a97ddc1f17c7",
+      "spec": {
+        "template": "compare",
+        "title": "Count-based sliding window versus time-based sliding window",
+        "left": {
+          "title": "Count-Based Window",
+          "items": [
+            "Tracks fixed sample of last N requests",
+            "Calculates failure rate across bounded calls",
+            "Independent of traffic arrival frequency"
+          ]
+        },
+        "right": {
+          "title": "Time-Based Window",
+          "items": [
+            "Tracks requests over trailing time window",
+            "Maintains ring buffer of discrete time buckets",
+            "Naturally evicts stale idle periods over time"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A count based window records the outcomes of recent service calls.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "A time based window records all calls occurring within recent seconds.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Count-based sliding window versus time-based sliding window",
+        "left": {
+          "title": "Count-Based Window",
+          "items": [
+            "Tracks fixed sample of last N requests",
+            "Calculates failure rate across bounded calls",
+            "Independent of traffic arrival frequency"
+          ]
+        },
+        "right": {
+          "title": "Time-Based Window",
+          "items": [
+            "Tracks requests over trailing time window",
+            "Maintains ring buffer of discrete time buckets",
+            "Naturally evicts stale idle periods over time"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A count based window records the outcomes of recent service calls.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "A time based window records all calls occurring within recent seconds.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fallback Strategies & Graceful Degradation",
+      "codeHash": "4a423cc95a51ab272270ebc1a4622d9d1a53556850602f1c01fe03a78dea1021",
+      "spec": {
+        "template": "table",
+        "title": "Fallback strategies providing graceful system degradation",
+        "columns": [
+          "Fallback Strategy",
+          "Operating Mechanism",
+          "Freshness Level",
+          "User Impact"
+        ],
+        "rows": [
+          [
+            "Cached Fallback",
+            "Return Stale Cache or Local Memory",
+            "Near Real-Time Data",
+            "Fully Transparent View"
+          ],
+          [
+            "Static Default",
+            "Return Hardcoded Sensible Value",
+            "Generic Preset",
+            "Core Navigation Preserved"
+          ],
+          [
+            "Feature Degradation",
+            "Hide Failing Non-Critical Widget",
+            "Partial Page Render",
+            "Primary Article Remains Readable"
+          ],
+          [
+            "Async Queueing",
+            "Buffer Mutation to Queue for Replay",
+            "Eventual Consistency",
+            "Confirmation Acknowledged"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Resilient systems execute fallback strategies for graceful degradation.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Cached fallback returns the last successfully cached version of data.",
+            "highlightRow": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fallback strategies providing graceful system degradation",
+        "columns": [
+          "Fallback Strategy",
+          "Operating Mechanism",
+          "Freshness Level",
+          "User Impact"
+        ],
+        "rows": [
+          [
+            "Cached Fallback",
+            "Return Stale Cache or Local Memory",
+            "Near Real-Time Data",
+            "Fully Transparent View"
+          ],
+          [
+            "Static Default",
+            "Return Hardcoded Sensible Value",
+            "Generic Preset",
+            "Core Navigation Preserved"
+          ],
+          [
+            "Feature Degradation",
+            "Hide Failing Non-Critical Widget",
+            "Partial Page Render",
+            "Primary Article Remains Readable"
+          ],
+          [
+            "Async Queueing",
+            "Buffer Mutation to Queue for Replay",
+            "Eventual Consistency",
+            "Confirmation Acknowledged"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Resilient systems execute fallback strategies for graceful degradation.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Cached fallback returns the last successfully cached version of data.",
+            "highlightRow": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bulkhead Isolation: Thread Pools & Semaphore Partitions",
+      "codeHash": "44d4f55deb152c8d74b88f93a37a1f0ae3584a423bbaadfcf1115f4bc844f606",
+      "spec": {
+        "template": "sequence",
+        "title": "Bulkhead resource quota isolation between critical and slow APIs",
+        "actors": [
+          {
+            "id": "traffic",
+            "label": "Incoming Client Traffic"
+          },
+          {
+            "id": "bulkhead",
+            "label": "Bulkhead Quota Router"
+          },
+          {
+            "id": "paymentPool",
+            "label": "Payment Thread Pool"
+          },
+          {
+            "id": "imagePool",
+            "label": "Image Thread Pool"
+          }
+        ],
+        "messages": [
+          {
+            "from": "traffic",
+            "to": "bulkhead",
+            "label": "Dispatch Payment and Image Calls",
+            "tone": "data"
+          },
+          {
+            "from": "bulkhead",
+            "to": "paymentPool",
+            "label": "Allocate Quota to Payment Pool",
+            "tone": "ok"
+          },
+          {
+            "from": "bulkhead",
+            "to": "imagePool",
+            "label": "Exhaust Image Pool Without Blocking",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bulkheads prevent flooding from spreading across compartments in a hull.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Bulkhead isolation partitions server resources into dedicated quotas.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Bulkhead resource quota isolation between critical and slow APIs",
+        "actors": [
+          {
+            "id": "traffic",
+            "label": "Incoming Client Traffic"
+          },
+          {
+            "id": "bulkhead",
+            "label": "Bulkhead Quota Router"
+          },
+          {
+            "id": "paymentPool",
+            "label": "Payment Thread Pool"
+          },
+          {
+            "id": "imagePool",
+            "label": "Image Thread Pool"
+          }
+        ],
+        "messages": [
+          {
+            "from": "traffic",
+            "to": "bulkhead",
+            "label": "Dispatch Payment and Image Calls",
+            "tone": "data"
+          },
+          {
+            "from": "bulkhead",
+            "to": "paymentPool",
+            "label": "Allocate Quota to Payment Pool",
+            "tone": "ok"
+          },
+          {
+            "from": "bulkhead",
+            "to": "imagePool",
+            "label": "Exhaust Image Pool Without Blocking",
+            "tone": "error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bulkheads prevent flooding from spreading across compartments in a hull.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Bulkhead isolation partitions server resources into dedicated quotas.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Resilient Service Gateway with Circuit Breaker & Bulkhead",
+      "codeHash": "5902373ee6429063eb1d2c23d3f76760b66035f2e116bbf65af9a58418b46856",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
