@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 28,
+  "promptSha": "5381ee685babf36c567296efb8ac717119fa6574c9494f1f5dc5dc7b78a16910",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Constraint Satisfaction Problems & State-Space Trees",
+      "codeHash": "96c4b4cac74de98c6bc4ac355ebafe4e0033b3c656dfadc3a92839495c44f7d7",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Constraint satisfaction state space exploration tree",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "r0",
+            "label": "r0"
+          },
+          {
+            "id": "r1",
+            "label": "r1"
+          },
+          {
+            "id": "prune",
+            "label": "prune"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "r0"
+          ],
+          [
+            "r0",
+            "r1"
+          ],
+          [
+            "r0",
+            "prune"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Backtracking explores state tree depth-first assigning variable.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Algorithm immediately prunes entire subtree abandoning descendants.",
+            "activeNodeId": "prune",
+            "visitedNodeIds": [
+              "root",
+              "r0",
+              "prune"
+            ],
+            "activeEdge": [
+              "r0",
+              "prune"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Constraint satisfaction state space exploration tree",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "r0",
+            "label": "r0"
+          },
+          {
+            "id": "r1",
+            "label": "r1"
+          },
+          {
+            "id": "prune",
+            "label": "prune"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "r0"
+          ],
+          [
+            "r0",
+            "r1"
+          ],
+          [
+            "r0",
+            "prune"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Backtracking explores state tree depth-first assigning variable.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Algorithm immediately prunes entire subtree abandoning descendants.",
+            "activeNodeId": "prune",
+            "visitedNodeIds": [
+              "root",
+              "r0",
+              "prune"
+            ],
+            "activeEdge": [
+              "r0",
+              "prune"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The N-Queens Problem & Geometric Attack Invariants",
+      "codeHash": "929834b918cf1372c1f383c50ff1c2f288706f44ecc76a92345ea49513643186",
+      "spec": {
+        "template": "table",
+        "title": "Geometric diagonal invariant attack table",
+        "columns": [
+          "Square",
+          "SumPos",
+          "DiffNeg",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Positive diagonal check sum is constant for squares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sq-alpha"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Negative diagonal check difference is constant for squares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sq-alpha"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sq-beta"
+                  },
+                  {
+                    "text": "nine"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "conflict"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Geometric diagonal invariant attack table",
+        "columns": [
+          "Square",
+          "SumPos",
+          "DiffNeg",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Positive diagonal check sum is constant for squares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sq-alpha"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Negative diagonal check difference is constant for squares.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "sq-alpha"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "placed"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "sq-beta"
+                  },
+                  {
+                    "text": "nine"
+                  },
+                  {
+                    "text": "neg-one"
+                  },
+                  {
+                    "text": "conflict"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Recursive N-Queens Solver Implementation",
+      "codeHash": "7a19f5e9dee7560d06d7d98944de3103caf58f092ce639997e20ff892ceafd5e",
+      "spec": {
+        "template": "cells",
+        "title": "Valid chessboard queen column assignment array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recursive function attempts to place queen in row.",
+            "items": [
+              {
+                "text": "col-one"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Position is safe push column to path array.",
+            "items": [
+              {
+                "text": "col-one"
+              },
+              {
+                "text": "col-three"
+              },
+              {
+                "text": "col-zero"
+              },
+              {
+                "text": "col-two"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Valid chessboard queen column assignment array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recursive function attempts to place queen in row.",
+            "items": [
+              {
+                "text": "col-one"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Position is safe push column to path array.",
+            "items": [
+              {
+                "text": "col-one"
+              },
+              {
+                "text": "col-three"
+              },
+              {
+                "text": "col-zero"
+              },
+              {
+                "text": "col-two"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bitmask Optimization (Sub-Millisecond N-Queens)",
+      "codeHash": "172221c25329f190254991ece595c94a7a86256c57e5757014814a754ac2ed52",
+      "spec": {
+        "template": "table",
+        "title": "Bitmask column and diagonal collision tracker",
+        "columns": [
+          "Row",
+          "ColsMask",
+          "PosMask",
+          "NegMask"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Column mask tracks occupied vertical columns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r-zero"
+                  },
+                  {
+                    "text": "c-mask"
+                  },
+                  {
+                    "text": "p-mask"
+                  },
+                  {
+                    "text": "n-mask"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Conflicts evaluated in single bitwise operation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r-zero"
+                  },
+                  {
+                    "text": "c-mask"
+                  },
+                  {
+                    "text": "p-mask"
+                  },
+                  {
+                    "text": "n-mask"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "r-one"
+                  },
+                  {
+                    "text": "shifted"
+                  },
+                  {
+                    "text": "shifted"
+                  },
+                  {
+                    "text": "shifted"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bitmask column and diagonal collision tracker",
+        "columns": [
+          "Row",
+          "ColsMask",
+          "PosMask",
+          "NegMask"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Column mask tracks occupied vertical columns.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r-zero"
+                  },
+                  {
+                    "text": "c-mask"
+                  },
+                  {
+                    "text": "p-mask"
+                  },
+                  {
+                    "text": "n-mask"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Conflicts evaluated in single bitwise operation.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "r-zero"
+                  },
+                  {
+                    "text": "c-mask"
+                  },
+                  {
+                    "text": "p-mask"
+                  },
+                  {
+                    "text": "n-mask"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "r-one"
+                  },
+                  {
+                    "text": "shifted"
+                  },
+                  {
+                    "text": "shifted"
+                  },
+                  {
+                    "text": "shifted"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sudoku Solver & General Constraint Satisfaction",
+      "codeHash": "dd18ba747157a4ae5c83e2f69971042086a066a1300eb7d2166e1c003b9d6003",
+      "spec": {
+        "template": "table",
+        "title": "Sudoku cell constraint validation table",
+        "columns": [
+          "Cell",
+          "Digit",
+          "Safe",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Iterate candidate digits validating against existing row and column.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-origin"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Reset cell to empty triggering backtracking to previous cell.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-origin"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-next"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "failed"
+                  },
+                  {
+                    "text": "backtrack"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sudoku cell constraint validation table",
+        "columns": [
+          "Cell",
+          "Digit",
+          "Safe",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Iterate candidate digits validating against existing row and column.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-origin"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Reset cell to empty triggering backtracking to previous cell.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-origin"
+                  },
+                  {
+                    "text": "five"
+                  },
+                  {
+                    "text": "valid"
+                  },
+                  {
+                    "text": "assigned"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-next"
+                  },
+                  {
+                    "text": "none"
+                  },
+                  {
+                    "text": "failed"
+                  },
+                  {
+                    "text": "backtrack"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Board Formatter & Backtracking Synthesis",
+      "codeHash": "7cab895a2db9e7bda67b046b6590b502fd9d7cfdd302977ae70691fcf0af2c1a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
