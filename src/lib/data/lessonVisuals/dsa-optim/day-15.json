@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 15,
+  "promptSha": "16c0f99e47d7a2fb6665292bc89f202244e7dc300e645ffe9624af99e98d4d4a",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stream Median Problem & The Dual Heap Architecture",
+      "codeHash": "44be45b8efd42a5215f4473d490cc877499d4696e276b2139bcfcf984ce25050",
+      "spec": {
+        "template": "compare",
+        "title": "Dual heap stream median architecture",
+        "left": {
+          "title": "Max-Heap Lower",
+          "items": [
+            {
+              "label": "Elements",
+              "value": "1, 2, 3"
+            },
+            {
+              "label": "Root (maxLower)",
+              "value": "3"
+            }
+          ]
+        },
+        "right": {
+          "title": "Min-Heap Upper",
+          "items": [
+            {
+              "label": "Elements",
+              "value": "4, 5, 6"
+            },
+            {
+              "label": "Root (minUpper)",
+              "value": "4"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Dual heap architecture balances lower half and upper half.",
+            "left": {
+              "code": "maxLower",
+              "result": "3",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minUpper",
+              "result": "4",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Stream median computes average of max and min heap roots.",
+            "left": {
+              "code": "maxLower",
+              "result": "3",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minUpper",
+              "result": "4",
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dual heap stream median architecture",
+        "left": {
+          "title": "Max-Heap Lower",
+          "items": [
+            {
+              "label": "Elements",
+              "value": "1, 2, 3"
+            },
+            {
+              "label": "Root (maxLower)",
+              "value": "3"
+            }
+          ]
+        },
+        "right": {
+          "title": "Min-Heap Upper",
+          "items": [
+            {
+              "label": "Elements",
+              "value": "4, 5, 6"
+            },
+            {
+              "label": "Root (minUpper)",
+              "value": "4"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Dual heap architecture balances lower half and upper half.",
+            "left": {
+              "code": "maxLower",
+              "result": "3",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minUpper",
+              "result": "4",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Stream median computes average of max and min heap roots.",
+            "left": {
+              "code": "maxLower",
+              "result": "3",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minUpper",
+              "result": "4",
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Binary Heap Invariants & Sift Mechanics",
+      "codeHash": "146d658f77a7fea81e014e28fceb5553f49e99eeab40d09f624ad1adad54cb0d",
+      "spec": {
+        "template": "cells",
+        "title": "Binary heap parent child indexing invariants",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Min heap parent is less than or equal to both child nodes.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "child",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Insertion appends element and bubbles upward restoring heap order.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "0"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "parent",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Binary heap parent child indexing invariants",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Min heap parent is less than or equal to both child nodes.",
+            "items": [
+              "1",
+              "3",
+              "2",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "parent",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "child",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Insertion appends element and bubbles upward restoring heap order.",
+            "items": [
+              "1",
+              "3",
+              "2",
+              "0"
+            ],
+            "pointers": [
+              {
+                "name": "curr",
+                "index": 3,
+                "tone": "data"
+              },
+              {
+                "name": "parent",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual Heap Balancing Invariant & Sizing Rules",
+      "codeHash": "75fe8ad245b045149f48d43c9790945e9b532a7e45b0da6a41fa231d47b08039",
+      "spec": {
+        "template": "compare",
+        "title": "Dual heap balancing invariant sizing differences",
+        "left": {
+          "title": "Valid Sizing Difference",
+          "items": [
+            {
+              "label": "Equal Size",
+              "value": "diff === 0"
+            },
+            {
+              "label": "Max Extra",
+              "value": "diff === 1"
+            }
+          ]
+        },
+        "right": {
+          "title": "Rebalance Trigger",
+          "items": [
+            {
+              "label": "Max Overflow",
+              "value": "diff > 1"
+            },
+            {
+              "label": "Min Overflow",
+              "value": "diff < 0"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Balancing invariant keeps max heap size equal or one element larger.",
+            "left": {
+              "code": "diff === 0 || diff === 1",
+              "result": "valid",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "diff",
+              "result": "check",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Inspect heap sizes and transfer element between heaps when extra.",
+            "left": {
+              "code": "diff === 0 || diff === 1",
+              "result": "valid",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "diff",
+              "result": "transfer",
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dual heap balancing invariant sizing differences",
+        "left": {
+          "title": "Valid Sizing Difference",
+          "items": [
+            {
+              "label": "Equal Size",
+              "value": "diff === 0"
+            },
+            {
+              "label": "Max Extra",
+              "value": "diff === 1"
+            }
+          ]
+        },
+        "right": {
+          "title": "Rebalance Trigger",
+          "items": [
+            {
+              "label": "Max Overflow",
+              "value": "diff > 1"
+            },
+            {
+              "label": "Min Overflow",
+              "value": "diff < 0"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Balancing invariant keeps max heap size equal or one element larger.",
+            "left": {
+              "code": "diff === 0 || diff === 1",
+              "result": "valid",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "diff",
+              "result": "check",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Inspect heap sizes and transfer element between heaps when extra.",
+            "left": {
+              "code": "diff === 0 || diff === 1",
+              "result": "valid",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "diff",
+              "result": "transfer",
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "O(1) Instant Median Query Mechanics",
+      "codeHash": "96665378696f099d411fdd30f42e6499fed2295f4a1162a3379251a0226fc480",
+      "spec": {
+        "template": "table",
+        "title": "Instant median query from heap roots",
+        "columns": [
+          "Stream Parity",
+          "Max Root",
+          "Min Root",
+          "Output Median"
+        ],
+        "rows": [
+          [
+            {
+              "text": "Odd count"
+            },
+            {
+              "text": "10"
+            },
+            {
+              "text": "15"
+            },
+            {
+              "text": "10"
+            }
+          ],
+          [
+            {
+              "text": "Even count"
+            },
+            {
+              "text": "10"
+            },
+            {
+              "text": "20"
+            },
+            {
+              "text": "15"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Odd total count means max heap root holds exact stream median.",
+            "activeRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Even total count calculates arithmetic mean of both heap roots.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Instant median query from heap roots",
+        "columns": [
+          "Stream Parity",
+          "Max Root",
+          "Min Root",
+          "Output Median"
+        ],
+        "rows": [
+          [
+            "Odd count",
+            "10",
+            "15",
+            "10"
+          ],
+          [
+            "Even count",
+            "10",
+            "20",
+            "15"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Odd total count means max heap root holds exact stream median.",
+            "activeRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Even total count calculates arithmetic mean of both heap roots.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generic Comparator Binary Heap Implementation",
+      "codeHash": "385b3e249beb4eb5394825e1b009631c5865f180233d6633e9d6ab2054579dfc",
+      "spec": {
+        "template": "compare",
+        "title": "Generic comparator min-heap vs max-heap ordering",
+        "left": {
+          "title": "Min-Heap Comparator",
+          "items": [
+            {
+              "label": "Order",
+              "value": "(a, b) => a - b"
+            },
+            {
+              "label": "Priority",
+              "value": "Smallest at root"
+            }
+          ]
+        },
+        "right": {
+          "title": "Max-Heap Comparator",
+          "items": [
+            {
+              "label": "Order",
+              "value": "(a, b) => b - a"
+            },
+            {
+              "label": "Priority",
+              "value": "Largest at root"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Min heap comparator returns negative value when first item is smaller.",
+            "left": {
+              "code": "(a, b) => a - b",
+              "result": "negative",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "(a, b) => b - a",
+              "result": "positive",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Max heap comparator reverses subtraction for descending priority.",
+            "left": {
+              "code": "(a, b) => a - b",
+              "result": "ascending",
+              "tone": "data"
+            },
+            "right": {
+              "code": "(a, b) => b - a",
+              "result": "descending",
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Generic comparator min-heap vs max-heap ordering",
+        "left": {
+          "title": "Min-Heap Comparator",
+          "items": [
+            {
+              "label": "Order",
+              "value": "(a, b) => a - b"
+            },
+            {
+              "label": "Priority",
+              "value": "Smallest at root"
+            }
+          ]
+        },
+        "right": {
+          "title": "Max-Heap Comparator",
+          "items": [
+            {
+              "label": "Order",
+              "value": "(a, b) => b - a"
+            },
+            {
+              "label": "Priority",
+              "value": "Largest at root"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Min heap comparator returns negative value when first item is smaller.",
+            "left": {
+              "code": "(a, b) => a - b",
+              "result": "negative",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "(a, b) => b - a",
+              "result": "positive",
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Max heap comparator reverses subtraction for descending priority.",
+            "left": {
+              "code": "(a, b) => a - b",
+              "result": "ascending",
+              "tone": "data"
+            },
+            "right": {
+              "code": "(a, b) => b - a",
+              "result": "descending",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Milestone 2 Production Stream Median Engine",
+      "codeHash": "92131234ef5dc1e369bf946a0c6cc05917ebc69071bf53c12be77bf461715de4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
