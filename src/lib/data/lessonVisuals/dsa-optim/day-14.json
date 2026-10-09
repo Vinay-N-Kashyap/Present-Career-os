@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 14,
+  "promptSha": "429b25bfe31be7d0a49b7f99ab3b3cb33106104530d5d40c371e13ea183da3be",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Comparison Lower Bound & Non-Comparison Feasibility",
+      "codeHash": "128a80690cf9ff5d246f6c679adb2a10d1349ba77f4ca8533c17a696c5fd0901",
+      "spec": {
+        "template": "table",
+        "title": "Comparison vs non-comparison lower bounds",
+        "columns": [
+          "Element Count N",
+          "Comparison Min Ops",
+          "Non-Comparison Linear Ops"
+        ],
+        "rows": [
+          [
+            {
+              "text": "10"
+            },
+            {
+              "text": "19"
+            },
+            {
+              "text": "10"
+            }
+          ],
+          [
+            {
+              "text": "100"
+            },
+            {
+              "text": "520"
+            },
+            {
+              "text": "100"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Comparison sorting modeled as binary decision tree with leaves.",
+            "activeRow": 0
+          },
+          {
+            "at": "say8",
+            "caption": "Mapping values directly to index buckets achieves linear time.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparison vs non-comparison lower bounds",
+        "columns": [
+          "Element Count N",
+          "Comparison Min Ops",
+          "Non-Comparison Linear Ops"
+        ],
+        "rows": [
+          [
+            "10",
+            "19",
+            "10"
+          ],
+          [
+            "100",
+            "520",
+            "100"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Comparison sorting modeled as binary decision tree with leaves.",
+            "activeRow": 0
+          },
+          {
+            "at": "say8",
+            "caption": "Mapping values directly to index buckets achieves linear time.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting Sort with Prefix Sum Reconstruction",
+      "codeHash": "affe475013645202116ef818b56c2a7c7b3f1730706d864f8e31790d3f507de6",
+      "spec": {
+        "template": "cells",
+        "title": "Counting sort frequency count array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Allocating count array increments frequency for each distinct key.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Prefix sum array transforms counts into cumulative target indices.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "6"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "prefix",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Counting sort frequency count array",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Allocating count array increments frequency for each distinct key.",
+            "items": [
+              "1",
+              "2",
+              "2",
+              "1"
+            ],
+            "pointers": [
+              {
+                "name": "count",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Prefix sum array transforms counts into cumulative target indices.",
+            "items": [
+              "1",
+              "3",
+              "5",
+              "6"
+            ],
+            "pointers": [
+              {
+                "name": "prefix",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dutch National Flag Algorithm (3-Way In-Place Sort)",
+      "codeHash": "d7f45c80822d055577c958707f563e38e3d784ce16dc61edac56a0d5a928b725",
+      "spec": {
+        "template": "cells",
+        "title": "Dutch National Flag three pointer partition",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pointer low tracks boundary of zeros while pointer high tracks twos.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "0"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "high",
+                "index": 3,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "In place pointer swaps guarantee sorted colors in single pass.",
+            "items": [
+              {
+                "text": "0"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "high",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Dutch National Flag three pointer partition",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pointer low tracks boundary of zeros while pointer high tracks twos.",
+            "items": [
+              "0",
+              "1",
+              "2",
+              "0"
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "high",
+                "index": 3,
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "In place pointer swaps guarantee sorted colors in single pass.",
+            "items": [
+              "0",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "low",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "mid",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "high",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Least Significant Digit (LSD) Radix Sort",
+      "codeHash": "a8eb53e1b1e7ff6d672111948c288b651f51db1e988782561a0fbe9442fea98e",
+      "spec": {
+        "template": "table",
+        "title": "Radix sort least significant digit passes",
+        "columns": [
+          "Value",
+          "Units Pass",
+          "Tens Pass"
+        ],
+        "rows": [
+          [
+            {
+              "text": "170"
+            },
+            {
+              "text": "170"
+            },
+            {
+              "text": "802"
+            }
+          ],
+          [
+            {
+              "text": "802"
+            },
+            {
+              "text": "802"
+            },
+            {
+              "text": "024"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Radix sort sorts numbers digit by digit from units upward.",
+            "activeRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Stable sub sorting preserves ordering of identical digit values.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Radix sort least significant digit passes",
+        "columns": [
+          "Value",
+          "Units Pass",
+          "Tens Pass"
+        ],
+        "rows": [
+          [
+            "170",
+            "170",
+            "802"
+          ],
+          [
+            "802",
+            "802",
+            "024"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Radix sort sorts numbers digit by digit from units upward.",
+            "activeRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Stable sub sorting preserves ordering of identical digit values.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bucket Sort for Uniformly Distributed Data",
+      "codeHash": "4213f75a1f9001ca040f5e890e07203c9b453bc68a378a90e22a5c40ff412103",
+      "spec": {
+        "template": "cells",
+        "title": "Bucket sort uniform distribution index mapping",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bucket sort maps floating point values into index buckets.",
+            "items": [
+              {
+                "text": "0.12"
+              },
+              {
+                "text": "0.17"
+              },
+              {
+                "text": "0.21"
+              },
+              {
+                "text": "0.26"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "bIdx",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Iterating through sorted buckets produces concatenated output.",
+            "items": [
+              {
+                "text": "0.12"
+              },
+              {
+                "text": "0.17"
+              },
+              {
+                "text": "0.21"
+              },
+              {
+                "text": "0.26"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "bIdx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Bucket sort uniform distribution index mapping",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bucket sort maps floating point values into index buckets.",
+            "items": [
+              "0.12",
+              "0.17",
+              "0.21",
+              "0.26"
+            ],
+            "pointers": [
+              {
+                "name": "bIdx",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Iterating through sorted buckets produces concatenated output.",
+            "items": [
+              "0.12",
+              "0.17",
+              "0.21",
+              "0.26"
+            ],
+            "pointers": [
+              {
+                "name": "bIdx",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sorting Algorithm Taxonomy & Decision Matrix",
+      "codeHash": "6966943f6ecc3f6be5428594bfeaef0d483c0addd43818802e20266e78196d28",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
