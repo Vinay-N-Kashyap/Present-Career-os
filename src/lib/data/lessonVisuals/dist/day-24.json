@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 24,
+  "promptSha": "30893c30f48aa74072adc627124dad93d4594df40bca30c3d7183bf5cf8f224b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Dynamic IP Problem in Cloud & Container Orchestration",
+      "codeHash": "9e8881d5cd8d5aa4bc1c4d982f691c840e22910aa772ccb397562503f03dfd56",
+      "spec": {
+        "template": "workflow",
+        "title": "Ephemeral container dynamic IP service discovery lifecycle",
+        "workflow": [
+          {
+            "id": "containerSpawn",
+            "label": "Container Pod Deployed with Dynamic IP",
+            "status": "completed"
+          },
+          {
+            "id": "registerEndpoint",
+            "label": "Register IP Port and Metadata to Service Registry",
+            "status": "active"
+          },
+          {
+            "id": "dynamicLookup",
+            "label": "Callers Query Registry and Connect Successfully",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Every newly launched container receives a dynamic private address.",
+            "activeWorkflowId": "containerSpawn",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "Service discovery provides a real-time registry of all instances.",
+            "activeWorkflowId": "registerEndpoint",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Ephemeral container dynamic IP service discovery lifecycle",
+        "workflow": [
+          {
+            "id": "containerSpawn",
+            "label": "Container Pod Deployed with Dynamic IP",
+            "status": "completed"
+          },
+          {
+            "id": "registerEndpoint",
+            "label": "Register IP Port and Metadata to Service Registry",
+            "status": "active"
+          },
+          {
+            "id": "dynamicLookup",
+            "label": "Callers Query Registry and Connect Successfully",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Every newly launched container receives a dynamic private address.",
+            "activeWorkflowId": "containerSpawn",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "Service discovery provides a real-time registry of all instances.",
+            "activeWorkflowId": "registerEndpoint",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Client-Side vs Server-Side Service Discovery",
+      "codeHash": "252226c09e50587c2ff2847c755c24b4fce457e28f34eac6b600cff1be1a057d",
+      "spec": {
+        "template": "compare",
+        "title": "Client-side discovery versus server-side discovery architecture",
+        "left": {
+          "title": "Client-Side Discovery",
+          "items": [
+            "Calling client queries service registry directly",
+            "Client executes local load balancing algorithm",
+            "Requires discovery language SDK per client"
+          ]
+        },
+        "right": {
+          "title": "Server-Side Discovery",
+          "items": [
+            "Client invokes stable virtual DNS proxy name",
+            "Centralized load balancer routes to endpoints",
+            "Language agnostic polyglot service design"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In client side discovery calling clients query the registry directly.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In server side discovery clients call a stable virtual dns name.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Client-side discovery versus server-side discovery architecture",
+        "left": {
+          "title": "Client-Side Discovery",
+          "items": [
+            "Calling client queries service registry directly",
+            "Client executes local load balancing algorithm",
+            "Requires discovery language SDK per client"
+          ]
+        },
+        "right": {
+          "title": "Server-Side Discovery",
+          "items": [
+            "Client invokes stable virtual DNS proxy name",
+            "Centralized load balancer routes to endpoints",
+            "Language agnostic polyglot service design"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In client side discovery calling clients query the registry directly.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In server side discovery clients call a stable virtual dns name.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Registry Anatomy: TTL Heartbeats & Leases",
+      "codeHash": "7f1aef8f9bd3c408693dde60be485a569bec0dd82ee39f7eb64c405aa4b8211d",
+      "spec": {
+        "template": "states",
+        "title": "Heartbeat lease TTL renewal and eviction state machine",
+        "states": [
+          {
+            "id": "leaseGranted",
+            "label": "Registration Grants Short Heartbeat Lease"
+          },
+          {
+            "id": "heartbeatRefreshed",
+            "label": "Periodic Heartbeat Refreshes Lease Timestamp"
+          },
+          {
+            "id": "ttlExpired",
+            "label": "Heartbeat Missed and Lease Duration Expires"
+          },
+          {
+            "id": "zombieEvicted",
+            "label": "Dead Instance Evicted and Subscribers Notified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Registries utilize heartbeat leases with time to live durations.",
+            "activeStateId": "leaseGranted",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "If an instance fails to send heartbeats the registry assumes crashes.",
+            "activeStateId": "ttlExpired",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Heartbeat lease TTL renewal and eviction state machine",
+        "states": [
+          {
+            "id": "leaseGranted",
+            "label": "Registration Grants Short Heartbeat Lease"
+          },
+          {
+            "id": "heartbeatRefreshed",
+            "label": "Periodic Heartbeat Refreshes Lease Timestamp"
+          },
+          {
+            "id": "ttlExpired",
+            "label": "Heartbeat Missed and Lease Duration Expires"
+          },
+          {
+            "id": "zombieEvicted",
+            "label": "Dead Instance Evicted and Subscribers Notified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Registries utilize heartbeat leases with time to live durations.",
+            "activeStateId": "leaseGranted",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "If an instance fails to send heartbeats the registry assumes crashes.",
+            "activeStateId": "ttlExpired",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Health Checking Strategies: Liveness, Readiness & Startup Probes",
+      "codeHash": "e06c4e7cde95e14ecbc6df704236255c9d86089e089c34180210075d073b0903",
+      "spec": {
+        "template": "table",
+        "title": "Liveness probes versus readiness probes comparison table",
+        "columns": [
+          "Probe Type",
+          "Diagnostic Question",
+          "Action on Failure",
+          "Traffic Route Impact"
+        ],
+        "rows": [
+          [
+            "Liveness Probe",
+            "Is Container Process Deadlocked",
+            "Kill and Restart Container",
+            "Reboot Clears Freeze"
+          ],
+          [
+            "Readiness Probe",
+            "Is Node Ready for User Requests",
+            "Detach from Load Balancer",
+            "Traffic Safely Diverted"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "If a liveness probe fails the orchestrator kills and restarts containers.",
+            "highlightRow": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "If readiness fails the orchestrator detaches the node from balancers.",
+            "highlightRow": 1,
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Liveness probes versus readiness probes comparison table",
+        "columns": [
+          "Probe Type",
+          "Diagnostic Question",
+          "Action on Failure",
+          "Traffic Route Impact"
+        ],
+        "rows": [
+          [
+            "Liveness Probe",
+            "Is Container Process Deadlocked",
+            "Kill and Restart Container",
+            "Reboot Clears Freeze"
+          ],
+          [
+            "Readiness Probe",
+            "Is Node Ready for User Requests",
+            "Detach from Load Balancer",
+            "Traffic Safely Diverted"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "If a liveness probe fails the orchestrator kills and restarts containers.",
+            "highlightRow": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "If readiness fails the orchestrator detaches the node from balancers.",
+            "highlightRow": 1,
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Coordination via ZooKeeper / etcd Hierarchical Trees",
+      "codeHash": "840859b70d2a7246fb428c17df4e6d7278437e76cfc570ec057c80e12ac8cc5f",
+      "spec": {
+        "template": "sequence",
+        "title": "ZooKeeper ephemeral znode session lifecycle and event push sequence",
+        "actors": [
+          {
+            "id": "serviceNode",
+            "label": "Service Instance"
+          },
+          {
+            "id": "zookeeper",
+            "label": "ZooKeeper Cluster"
+          },
+          {
+            "id": "balancer",
+            "label": "Watching Load Balancer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "serviceNode",
+            "to": "zookeeper",
+            "label": "Create Ephemeral ZNode on Boot",
+            "tone": "data"
+          },
+          {
+            "from": "balancer",
+            "to": "zookeeper",
+            "label": "Register Watcher on Service Node",
+            "tone": "data"
+          },
+          {
+            "from": "serviceNode",
+            "to": "zookeeper",
+            "label": "Session Disconnects on Crash",
+            "tone": "error"
+          },
+          {
+            "from": "zookeeper",
+            "to": "balancer",
+            "label": "Push Ephemeral Deletion Event",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each service instance creates a temporary ephemeral node in the tree.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When an instance crashes zookeeper pushes events to watching balancers.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "ZooKeeper ephemeral znode session lifecycle and event push sequence",
+        "actors": [
+          {
+            "id": "serviceNode",
+            "label": "Service Instance"
+          },
+          {
+            "id": "zookeeper",
+            "label": "ZooKeeper Cluster"
+          },
+          {
+            "id": "balancer",
+            "label": "Watching Load Balancer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "serviceNode",
+            "to": "zookeeper",
+            "label": "Create Ephemeral ZNode on Boot",
+            "tone": "data"
+          },
+          {
+            "from": "balancer",
+            "to": "zookeeper",
+            "label": "Register Watcher on Service Node",
+            "tone": "data"
+          },
+          {
+            "from": "serviceNode",
+            "to": "zookeeper",
+            "label": "Session Disconnects on Crash",
+            "tone": "error"
+          },
+          {
+            "from": "zookeeper",
+            "to": "balancer",
+            "label": "Push Ephemeral Deletion Event",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each service instance creates a temporary ephemeral node in the tree.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When an instance crashes zookeeper pushes events to watching balancers.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Dynamic Service Mesh Discovery Simulator",
+      "codeHash": "27f713d72b0d0d1a214ac2b70c6e4949ce5c6c7db6078d35ae84e4968373e01f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
