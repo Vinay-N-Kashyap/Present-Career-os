@@ -12183,6 +12183,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-ai-D01",
+      "title": "ai day 1: Generative AI Foundations & Transformer Self-Attention visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 1,
+      "keys": [
+        "ai:1:0",
+        "ai:1:1",
+        "ai:1:2",
+        "ai:1:3",
+        "ai:1:4",
+        "ai:1:5"
+      ]
+    },
+    {
+      "id": "C-ai-D02",
+      "title": "ai day 2: LLM Tokenization, Byte-Pair Encoding (BPE) & Context Economics visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 2,
+      "keys": [
+        "ai:2:0",
+        "ai:2:1",
+        "ai:2:2",
+        "ai:2:3",
+        "ai:2:4",
+        "ai:2:5"
+      ]
+    },
+    {
+      "id": "C-ai-D03",
+      "title": "ai day 3: System Prompts, Personas & Guardrail Instructions visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 3,
+      "keys": [
+        "ai:3:0",
+        "ai:3:1",
+        "ai:3:2",
+        "ai:3:3",
+        "ai:3:4",
+        "ai:3:5"
+      ]
+    },
+    {
+      "id": "C-ai-D04",
+      "title": "ai day 4: Few-Shot Prompting & Chain-of-Thought (CoT) Reasoning visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 4,
+      "keys": [
+        "ai:4:0",
+        "ai:4:1",
+        "ai:4:2",
+        "ai:4:3",
+        "ai:4:4",
+        "ai:4:5"
+      ]
+    },
+    {
+      "id": "C-ai-D05",
+      "title": "ai day 5: ⭐ MILESTONE 1: Structured JSON Outputs & Pydantic/Zod Schema Enforcement visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 5,
+      "keys": [
+        "ai:5:0",
+        "ai:5:1",
+        "ai:5:2",
+        "ai:5:3",
+        "ai:5:4",
+        "ai:5:5"
+      ]
+    },
+    {
+      "id": "C-ai-D06",
+      "title": "ai day 6: Function Calling & Tool Declaration Protocols visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 6,
+      "keys": [
+        "ai:6:0",
+        "ai:6:1",
+        "ai:6:2",
+        "ai:6:3",
+        "ai:6:4",
+        "ai:6:5"
+      ]
+    },
+    {
+      "id": "C-ai-D07",
+      "title": "ai day 7: Text Embeddings & Vector Cosine Similarity Mathematics visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 7,
+      "keys": [
+        "ai:7:0",
+        "ai:7:1",
+        "ai:7:2",
+        "ai:7:3",
+        "ai:7:4",
+        "ai:7:5"
+      ]
+    },
+    {
+      "id": "C-ai-D08",
+      "title": "ai day 8: Vector Databases: Indexing & Approximate Nearest Neighbors (HNSW) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 8,
+      "keys": [
+        "ai:8:0",
+        "ai:8:1",
+        "ai:8:2",
+        "ai:8:3",
+        "ai:8:4",
+        "ai:8:5"
+      ]
+    },
+    {
+      "id": "C-ai-D09",
+      "title": "ai day 9: Document Chunking Strategies & Overlap Math visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 9,
+      "keys": [
+        "ai:9:0",
+        "ai:9:1",
+        "ai:9:2",
+        "ai:9:3",
+        "ai:9:4",
+        "ai:9:5"
+      ]
+    },
+    {
+      "id": "C-ai-D10",
+      "title": "ai day 10: Naive RAG vs Hybrid Search (Dense Vectors + BM25 Sparse) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 10,
+      "keys": [
+        "ai:10:0",
+        "ai:10:1",
+        "ai:10:2",
+        "ai:10:3",
+        "ai:10:4",
+        "ai:10:5"
+      ]
+    },
+    {
+      "id": "C-ai-D11",
+      "title": "ai day 11: Cross-Encoder Reranking & Context Precision (Cohere Rerank) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 11,
+      "keys": [
+        "ai:11:0",
+        "ai:11:1",
+        "ai:11:2",
+        "ai:11:3",
+        "ai:11:4",
+        "ai:11:5"
+      ]
+    },
+    {
+      "id": "C-ai-D12",
+      "title": "ai day 12: Context Compression & The 'Lost in the Middle' Invariant visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 12,
+      "keys": [
+        "ai:12:0",
+        "ai:12:1",
+        "ai:12:2",
+        "ai:12:3",
+        "ai:12:4",
+        "ai:12:5"
+      ]
+    },
+    {
+      "id": "C-ai-D13",
+      "title": "ai day 13: RAG Evaluation: Faithfulness, Answer Relevance & Context Recall (Ragas) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 13,
+      "keys": [
+        "ai:13:0",
+        "ai:13:1",
+        "ai:13:2",
+        "ai:13:3",
+        "ai:13:4",
+        "ai:13:5"
+      ]
+    },
+    {
+      "id": "C-ai-D14",
+      "title": "ai day 14: LLM Security: Prompt Injection & Jailbreak Defenses visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 14,
+      "keys": [
+        "ai:14:0",
+        "ai:14:1",
+        "ai:14:2",
+        "ai:14:3",
+        "ai:14:4",
+        "ai:14:5"
+      ]
+    },
+    {
+      "id": "C-ai-D15",
+      "title": "ai day 15: ⭐ MILESTONE 2: Production End-to-End Hybrid RAG Pipeline with Reranking visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 15,
+      "keys": [
+        "ai:15:0",
+        "ai:15:1",
+        "ai:15:2",
+        "ai:15:3",
+        "ai:15:4",
+        "ai:15:5"
+      ]
+    },
+    {
+      "id": "C-ai-D16",
+      "title": "ai day 16: LLM Memory Architectures: Sliding Windows & Summary Buffers visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 16,
+      "keys": [
+        "ai:16:0",
+        "ai:16:1",
+        "ai:16:2",
+        "ai:16:3",
+        "ai:16:4",
+        "ai:16:5"
+      ]
+    },
+    {
+      "id": "C-ai-D17",
+      "title": "ai day 17: Autonomous Agents: The ReAct (Reason + Act) Pattern visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 17,
+      "keys": [
+        "ai:17:0",
+        "ai:17:1",
+        "ai:17:2",
+        "ai:17:3",
+        "ai:17:4",
+        "ai:17:5"
+      ]
+    },
+    {
+      "id": "C-ai-D18",
+      "title": "ai day 18: Multi-Agent Collaboration: Supervisor & Swarm Architectures visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 18,
+      "keys": [
+        "ai:18:0",
+        "ai:18:1",
+        "ai:18:2",
+        "ai:18:3",
+        "ai:18:4",
+        "ai:18:5"
+      ]
+    },
+    {
+      "id": "C-ai-D19",
+      "title": "ai day 19: Agentic Planning: Plan-and-Solve & Reflection Self-Correction visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 19,
+      "keys": [
+        "ai:19:0",
+        "ai:19:1",
+        "ai:19:2",
+        "ai:19:3",
+        "ai:19:4",
+        "ai:19:5"
+      ]
+    },
+    {
+      "id": "C-ai-D20",
+      "title": "ai day 20: Real-Time Token Streaming with Server-Sent Events (SSE) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 20,
+      "keys": [
+        "ai:20:0",
+        "ai:20:1",
+        "ai:20:2",
+        "ai:20:3",
+        "ai:20:4",
+        "ai:20:5"
+      ]
+    },
+    {
+      "id": "C-ai-D21",
+      "title": "ai day 21: ⭐ MILESTONE 3: Autonomous Multi-Agent Research Assistant with Web & Code Tools visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 21,
+      "keys": [
+        "ai:21:0",
+        "ai:21:1",
+        "ai:21:2",
+        "ai:21:3",
+        "ai:21:4",
+        "ai:21:5"
+      ]
+    },
+    {
+      "id": "C-ai-D22",
+      "title": "ai day 22: LLM Caching: Exact vs Semantic Caching with Vector DBs (GPTCache) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 22,
+      "keys": [
+        "ai:22:0",
+        "ai:22:1",
+        "ai:22:2",
+        "ai:22:3",
+        "ai:22:4",
+        "ai:22:5"
+      ]
+    },
+    {
+      "id": "C-ai-D23",
+      "title": "ai day 23: PEFT: LoRA & QLoRA Fine-Tuning Adapters visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 23,
+      "keys": [
+        "ai:23:0",
+        "ai:23:1",
+        "ai:23:2",
+        "ai:23:3",
+        "ai:23:4",
+        "ai:23:5"
+      ]
+    },
+    {
+      "id": "C-ai-D24",
+      "title": "ai day 24: Direct Preference Optimization (DPO) & RLHF Alignment visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 24,
+      "keys": [
+        "ai:24:0",
+        "ai:24:1",
+        "ai:24:2",
+        "ai:24:3",
+        "ai:24:4",
+        "ai:24:5"
+      ]
+    },
+    {
+      "id": "C-ai-D25",
+      "title": "ai day 25: Open-Source LLMs: vLLM High-Throughput Serving & GGUF Quantization visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 25,
+      "keys": [
+        "ai:25:0",
+        "ai:25:1",
+        "ai:25:2",
+        "ai:25:3",
+        "ai:25:4",
+        "ai:25:5"
+      ]
+    },
+    {
+      "id": "C-ai-D26",
+      "title": "ai day 26: Multimodal AI: Vision-Language Models & Cross-Modal Embeddings visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 26,
+      "keys": [
+        "ai:26:0",
+        "ai:26:1",
+        "ai:26:2",
+        "ai:26:3",
+        "ai:26:4",
+        "ai:26:5"
+      ]
+    },
+    {
+      "id": "C-ai-D27",
+      "title": "ai day 27: LLMOps: Token Rate Limiting & Cost Budget Allocation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 27,
+      "keys": [
+        "ai:27:0",
+        "ai:27:1",
+        "ai:27:2",
+        "ai:27:3",
+        "ai:27:4",
+        "ai:27:5"
+      ]
+    },
+    {
+      "id": "C-ai-D28",
+      "title": "ai day 28: LLM Observability & Distributed Tracing (Langfuse / Helicone) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 28,
+      "keys": [
+        "ai:28:0",
+        "ai:28:1",
+        "ai:28:2",
+        "ai:28:3",
+        "ai:28:4",
+        "ai:28:5"
+      ]
+    },
+    {
+      "id": "C-ai-D29",
+      "title": "ai day 29: Knowledge Graph RAG (GraphRAG) with Neo4j visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 29,
+      "keys": [
+        "ai:29:0",
+        "ai:29:1",
+        "ai:29:2",
+        "ai:29:3",
+        "ai:29:4",
+        "ai:29:5"
+      ]
+    },
+    {
+      "id": "C-ai-D30",
+      "title": "ai day 30: 🏆 FINAL CAPSTONE: Enterprise Agentic RAG Platform with Guardrails, Semantic Caching & Multi-Tool Execution visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/ai/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "ai",
+      "day": 30,
+      "keys": [
+        "ai:30:0",
+        "ai:30:1",
+        "ai:30:2",
+        "ai:30:3",
+        "ai:30:4",
+        "ai:30:5"
+      ]
+    },
+    {
+      "id": "R-ai-1-5",
+      "title": "Checkpoint ai days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-ai-6-10",
+      "title": "Checkpoint ai days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-ai-11-15",
+      "title": "Checkpoint ai days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-ai-16-20",
+      "title": "Checkpoint ai days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-ai-21-25",
+      "title": "Checkpoint ai days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-ai-26-30",
+      "title": "Checkpoint ai days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-ai",
+      "title": "Release visuals for ai",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
