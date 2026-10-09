@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 12,
+  "promptSha": "e3242296c3a9ab19194e5097331b915593e5e9581e581c7a03a7a623b703b5c0",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "API Gateway HTTP APIs (V2) vs REST APIs (V1)",
+      "codeHash": "41eecb8e92974b90e8c281f5595d7420c0c1771d6384f6de7d7a082ffb8f8e0d",
+      "spec": {
+        "template": "compare",
+        "title": "HTTP API V2 compared to legacy REST API V1",
+        "leftLabel": "REST APIs (V1 Legacy)",
+        "rightLabel": "HTTP APIs (V2 Modern)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs offer substantial cost savings and lower latency over REST APIs.",
+            "left": {
+              "code": "Higher Cost Baseline",
+              "result": {
+                "text": "REST API V1"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "70% Cost Reduction",
+              "result": {
+                "text": "HTTP API V2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "HTTP APIs provide the modern cost-effective default for modern services.",
+            "left": {
+              "code": "Complex Feature Set",
+              "result": {
+                "text": "Monetization & XML"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Ultra-Fast Lightweight",
+              "result": {
+                "text": "Modern Default"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "HTTP API V2 compared to legacy REST API V1",
+        "leftLabel": "REST APIs (V1 Legacy)",
+        "rightLabel": "HTTP APIs (V2 Modern)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs offer substantial cost savings and lower latency over REST APIs.",
+            "left": {
+              "code": "Higher Cost Baseline",
+              "result": {
+                "text": "REST API V1"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "70% Cost Reduction",
+              "result": {
+                "text": "HTTP API V2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "HTTP APIs provide the modern cost-effective default for modern services.",
+            "left": {
+              "code": "Complex Feature Set",
+              "result": {
+                "text": "Monetization & XML"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Ultra-Fast Lightweight",
+              "result": {
+                "text": "Modern Default"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routes, Integrations & Lambda Proxy Integration",
+      "codeHash": "c1bc7b58bafc6aa8435f7dface78a876ed38ccfad055d5384fd78830e5142368",
+      "spec": {
+        "template": "workflow",
+        "title": "Route matching and Lambda proxy integration pipeline",
+        "stages": [
+          {
+            "id": "request",
+            "name": "HTTP Client",
+            "subtext": "Inbound Request"
+          },
+          {
+            "id": "route",
+            "name": "Route Match",
+            "subtext": "Method + Path"
+          },
+          {
+            "id": "proxy",
+            "name": "Proxy Payload",
+            "subtext": "Structured JSON"
+          },
+          {
+            "id": "handler",
+            "name": "Lambda Function",
+            "subtext": "Compute Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A route combines an http method with a resource path pattern.",
+            "activeStageId": "route",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Lambda proxy integration packages client HTTP requests into JSON events.",
+            "activeStageId": "proxy",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Route matching and Lambda proxy integration pipeline",
+        "stages": [
+          {
+            "id": "request",
+            "name": "HTTP Client",
+            "subtext": "Inbound Request"
+          },
+          {
+            "id": "route",
+            "name": "Route Match",
+            "subtext": "Method + Path"
+          },
+          {
+            "id": "proxy",
+            "name": "Proxy Payload",
+            "subtext": "Structured JSON"
+          },
+          {
+            "id": "handler",
+            "name": "Lambda Function",
+            "subtext": "Compute Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A route combines an http method with a resource path pattern.",
+            "activeStageId": "route",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Lambda proxy integration packages client HTTP requests into JSON events.",
+            "activeStageId": "proxy",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Origin Resource Sharing (CORS) Configuration",
+      "codeHash": "1308f145331ccaaa3ec32c51b82d539ac044e19ad6121fef5f80980a9e3b484b",
+      "spec": {
+        "template": "sequence",
+        "title": "CORS configuration preflight handshake sequence",
+        "actors": [
+          {
+            "id": "browser",
+            "name": "Web Browser"
+          },
+          {
+            "id": "gateway",
+            "name": "API Gateway"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Browser security restricts cross-origin HTTP requests initiated by scripts.",
+            "from": "browser",
+            "to": "gateway",
+            "label": "OPTIONS Preflight",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "API Gateway automatically handles preflight requests without Lambda calls.",
+            "from": "gateway",
+            "to": "browser",
+            "label": "CORS Headers 200 OK",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "CORS configuration preflight handshake sequence",
+        "actors": [
+          {
+            "id": "browser",
+            "name": "Web Browser"
+          },
+          {
+            "id": "gateway",
+            "name": "API Gateway"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Browser security restricts cross-origin HTTP requests initiated by scripts.",
+            "from": "browser",
+            "to": "gateway",
+            "label": "OPTIONS Preflight",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "API Gateway automatically handles preflight requests without Lambda calls.",
+            "from": "gateway",
+            "to": "browser",
+            "label": "CORS Headers 200 OK",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JWT Authorizers for OAuth 2.0 / OIDC Authentication",
+      "codeHash": "08017ba5c3d6a1fe04849e19938336c42beca3a2726699c0b6178aeb193d46df",
+      "spec": {
+        "template": "states",
+        "title": "JWT authorizer cryptographic validation states",
+        "states": [
+          {
+            "id": "bearer",
+            "label": "Bearer Token Inbound"
+          },
+          {
+            "id": "validating",
+            "label": "Validating Issuer & Signature"
+          },
+          {
+            "id": "authorized",
+            "label": "Claims Verified & Forwarded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs support JWT authorizers enabling authentication via providers.",
+            "active": "bearer"
+          },
+          {
+            "at": "say5",
+            "caption": "API Gateway validates the token signature before forwarding requests.",
+            "active": "authorized"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "JWT authorizer cryptographic validation states",
+        "states": [
+          {
+            "id": "bearer",
+            "label": "Bearer Token Inbound"
+          },
+          {
+            "id": "validating",
+            "label": "Validating Issuer & Signature"
+          },
+          {
+            "id": "authorized",
+            "label": "Claims Verified & Forwarded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "HTTP APIs support JWT authorizers enabling authentication via providers.",
+            "active": "bearer"
+          },
+          {
+            "at": "say5",
+            "caption": "API Gateway validates the token signature before forwarding requests.",
+            "active": "authorized"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Custom Lambda Authorizers (Token vs Request-Based)",
+      "codeHash": "e4ffc490c52f217820517a944f777cabbc74668d8c72afaef83b2a8f90b72b0d",
+      "spec": {
+        "template": "table",
+        "title": "Custom Lambda authorizer response payloads and formats",
+        "columns": [
+          "Authorizer Format",
+          "Payload Property",
+          "Downstream Context"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Custom Lambda authorizers implement tailored verification logic for APIs.",
+            "rows": [
+              [
+                {
+                  "text": "Simple Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "isAuthorized: true",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Basic Boolean",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "IAM Policy Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "policyDocument",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Role-Based Access",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A token authorizer inspects bearer tokens passed in the authorization header.",
+            "rows": [
+              [
+                {
+                  "text": "Simple Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "isAuthorized: true",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Basic Boolean",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Context Metadata",
+                  "tone": "data"
+                },
+                {
+                  "text": "context: { userId }",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Downstream Injected",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Custom Lambda authorizer response payloads and formats",
+        "columns": [
+          "Authorizer Format",
+          "Payload Property",
+          "Downstream Context"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Custom Lambda authorizers implement tailored verification logic for APIs.",
+            "rows": [
+              [
+                {
+                  "text": "Simple Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "isAuthorized: true",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Basic Boolean",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "IAM Policy Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "policyDocument",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Role-Based Access",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "A token authorizer inspects bearer tokens passed in the authorization header.",
+            "rows": [
+              [
+                {
+                  "text": "Simple Format",
+                  "tone": "data"
+                },
+                {
+                  "text": "isAuthorized: true",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Basic Boolean",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Context Metadata",
+                  "tone": "data"
+                },
+                {
+                  "text": "context: { userId }",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Downstream Injected",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Throttling, Usage Plans, and Burst Limits",
+      "codeHash": "d34ec1ab32768a996d908a62f30c1d3203c5ba5ea4f00494129953ab860c0b57",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
