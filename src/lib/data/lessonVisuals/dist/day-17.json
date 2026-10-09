@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 17,
+  "promptSha": "9eb76f64751a6a60b958615dab00663dd6246a0ceb5def55fa806b210c21e42e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Strong Eventual Consistency & The CRDT Mathematical Foundation",
+      "codeHash": "9980882d727c9597b9e2fc1be793f4991c6fd0d1f85fbf257524522d81053d10",
+      "spec": {
+        "template": "table",
+        "title": "Mathematical axioms of CRDT join-semilattice convergence",
+        "columns": [
+          "Axiom Property",
+          "Formal Identity",
+          "Network Meaning",
+          "Convergence Benefit"
+        ],
+        "rows": [
+          [
+            "Commutativity",
+            "A Merge B Equals B Merge A",
+            "Packet Arrival Order Irrelevant",
+            "Network Reordering Tolerated"
+          ],
+          [
+            "Associativity",
+            "Grouping Does Not Alter Result",
+            "Arbitrary Multi-Hop Sync",
+            "Hierarchical Merges Valid"
+          ],
+          [
+            "Idempotency",
+            "A Merge A Equals A",
+            "Duplicate Messages Cause No Harm",
+            "Safe Network Retries"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A crdt accepts local writes without requiring synchronous coordination.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Merge operators must satisfy associativity commutativity and idempotency.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mathematical axioms of CRDT join-semilattice convergence",
+        "columns": [
+          "Axiom Property",
+          "Formal Identity",
+          "Network Meaning",
+          "Convergence Benefit"
+        ],
+        "rows": [
+          [
+            "Commutativity",
+            "A Merge B Equals B Merge A",
+            "Packet Arrival Order Irrelevant",
+            "Network Reordering Tolerated"
+          ],
+          [
+            "Associativity",
+            "Grouping Does Not Alter Result",
+            "Arbitrary Multi-Hop Sync",
+            "Hierarchical Merges Valid"
+          ],
+          [
+            "Idempotency",
+            "A Merge A Equals A",
+            "Duplicate Messages Cause No Harm",
+            "Safe Network Retries"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A crdt accepts local writes without requiring synchronous coordination.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Merge operators must satisfy associativity commutativity and idempotency.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "G-Counter (Grow-Only Counter): Monotonic Node Arrays",
+      "codeHash": "a88ea2c8905ba434d8101f6fe69396e07b76faaba6ad8485a07f127a428cc55f",
+      "spec": {
+        "template": "cells",
+        "title": "Grow-only counter array slots per cluster node",
+        "cells": [
+          {
+            "id": "nodeA",
+            "label": "Node A Slot: Ten Counts",
+            "tone": "ok"
+          },
+          {
+            "id": "nodeB",
+            "label": "Node B Slot: Fifteen Counts",
+            "tone": "ok"
+          },
+          {
+            "id": "nodeC",
+            "label": "Node C Slot: Eight Counts",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each node is permitted to increment only its assigned array slot.",
+            "activeCellId": "nodeA",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The global value is calculated as the sum of all elements across the array.",
+            "activeCellId": "nodeB",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Grow-only counter array slots per cluster node",
+        "cells": [
+          {
+            "id": "nodeA",
+            "label": "Node A Slot: Ten Counts",
+            "tone": "ok"
+          },
+          {
+            "id": "nodeB",
+            "label": "Node B Slot: Fifteen Counts",
+            "tone": "ok"
+          },
+          {
+            "id": "nodeC",
+            "label": "Node C Slot: Eight Counts",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each node is permitted to increment only its assigned array slot.",
+            "activeCellId": "nodeA",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The global value is calculated as the sum of all elements across the array.",
+            "activeCellId": "nodeB",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PN-Counter (Positive-Negative Counter): Bidirectional Increments & Decrements",
+      "codeHash": "15c9a62944c6d0570fa7858803bcbcd94ea389a26f63cdd0285b66059563d59b",
+      "spec": {
+        "template": "workflow",
+        "title": "Positive-negative counter bidirectional update workflow",
+        "workflow": [
+          {
+            "id": "incStep",
+            "label": "Increment Positive Counter P Slot",
+            "status": "completed"
+          },
+          {
+            "id": "decStep",
+            "label": "Increment Negative Counter N Slot",
+            "status": "active"
+          },
+          {
+            "id": "calcValue",
+            "label": "Subtract Negative Sum from Positive Sum",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A positive negative counter pairs two internal grow counters.",
+            "activeWorkflowId": "incStep",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "The overall value is calculated by subtracting negative sums from positive.",
+            "activeWorkflowId": "calcValue",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Positive-negative counter bidirectional update workflow",
+        "workflow": [
+          {
+            "id": "incStep",
+            "label": "Increment Positive Counter P Slot",
+            "status": "completed"
+          },
+          {
+            "id": "decStep",
+            "label": "Increment Negative Counter N Slot",
+            "status": "active"
+          },
+          {
+            "id": "calcValue",
+            "label": "Subtract Negative Sum from Positive Sum",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A positive negative counter pairs two internal grow counters.",
+            "activeWorkflowId": "incStep",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say7",
+            "caption": "The overall value is calculated by subtracting negative sums from positive.",
+            "activeWorkflowId": "calcValue",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LWW-Element-Set (Last-Write-Wins Set) & Tombstones",
+      "codeHash": "22b5e30465b05ebcbcec4e4fcf0cc7215e3ccabef488774257079de7b3c5138c",
+      "spec": {
+        "template": "states",
+        "title": "LWW-element-set membership and tombstone state lifecycle",
+        "states": [
+          {
+            "id": "itemAdded",
+            "label": "Element Recorded in Add Set With Timestamp"
+          },
+          {
+            "id": "tombstoneDeleted",
+            "label": "Element Recorded in Remove Set Tombstone"
+          },
+          {
+            "id": "timestampDominant",
+            "label": "Add Timestamp Strictly Greater Than Tombstone"
+          },
+          {
+            "id": "elementRemoved",
+            "label": "Tombstone Timestamp Greater Or Equal"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When an item is added the element is stored in the add set.",
+            "activeStateId": "itemAdded",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Deleted items receive a timestamped tombstone in the remove set.",
+            "activeStateId": "tombstoneDeleted",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "LWW-element-set membership and tombstone state lifecycle",
+        "states": [
+          {
+            "id": "itemAdded",
+            "label": "Element Recorded in Add Set With Timestamp"
+          },
+          {
+            "id": "tombstoneDeleted",
+            "label": "Element Recorded in Remove Set Tombstone"
+          },
+          {
+            "id": "timestampDominant",
+            "label": "Add Timestamp Strictly Greater Than Tombstone"
+          },
+          {
+            "id": "elementRemoved",
+            "label": "Tombstone Timestamp Greater Or Equal"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When an item is added the element is stored in the add set.",
+            "activeStateId": "itemAdded",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Deleted items receive a timestamped tombstone in the remove set.",
+            "activeStateId": "tombstoneDeleted",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State-Based (CvRDT) vs Operation-Based (CmRDT) CRDTs",
+      "codeHash": "4e2609acf445b5b42e68e213c5cd4690341794a8c08bd9f3199aba472a5d347d",
+      "spec": {
+        "template": "compare",
+        "title": "State-based CvRDT versus operation-based CmRDT trade-offs",
+        "left": {
+          "title": "State-Based CvRDT",
+          "items": [
+            "Replicas broadcast entire state payloads",
+            "Tolerates message drops and duplicates",
+            "High bandwidth consumption over time"
+          ]
+        },
+        "right": {
+          "title": "Operation-Based CmRDT",
+          "items": [
+            "Replicas broadcast incremental mutation diffs",
+            "Requires exactly-once or causal transport",
+            "Extremely low network bandwidth overhead"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "State based types tolerate packet loss and reordering over networks.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Operation based types require reliable ordered transport for correct delivery.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "State-based CvRDT versus operation-based CmRDT trade-offs",
+        "left": {
+          "title": "State-Based CvRDT",
+          "items": [
+            "Replicas broadcast entire state payloads",
+            "Tolerates message drops and duplicates",
+            "High bandwidth consumption over time"
+          ]
+        },
+        "right": {
+          "title": "Operation-Based CmRDT",
+          "items": [
+            "Replicas broadcast incremental mutation diffs",
+            "Requires exactly-once or causal transport",
+            "Extremely low network bandwidth overhead"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "State based types tolerate packet loss and reordering over networks.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Operation based types require reliable ordered transport for correct delivery.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Replica CRDT Collaborative Store Simulator",
+      "codeHash": "e0b1948488f299c31819940d277674d43bd4fb674673686187c78c305f14783d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
