@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 1,
+  "promptSha": "45a5297da4f76daae43bd40ac0ae805b2495a4ccfd2598a6c48a2181374282b7",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The CALMS Framework for Modern Operations",
+      "codeHash": "c68a94009128d1d4c33f1625c8cae5db3f84662faa787ecc6eb5663ca4ee87e8",
+      "spec": {
+        "template": "workflow",
+        "title": "CALMS framework operational feedback pillars",
+        "stages": [
+          {
+            "id": "culture",
+            "name": "Culture",
+            "subtext": "Responsibility"
+          },
+          {
+            "id": "automation",
+            "name": "Automation",
+            "subtext": "Pipelines"
+          },
+          {
+            "id": "lean",
+            "name": "Lean",
+            "subtext": "Batches"
+          },
+          {
+            "id": "measurement",
+            "name": "Measurement",
+            "subtext": "Telemetry"
+          },
+          {
+            "id": "sharing",
+            "name": "Sharing",
+            "subtext": "Postmortems"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Culture fosters shared responsibility monitoring production services.",
+            "activeStageId": "culture",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Automation eliminates repetitive manual toil using reproducible pipelines.",
+            "activeStageId": "automation",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "CALMS framework operational feedback pillars",
+        "stages": [
+          {
+            "id": "culture",
+            "name": "Culture",
+            "subtext": "Responsibility"
+          },
+          {
+            "id": "automation",
+            "name": "Automation",
+            "subtext": "Pipelines"
+          },
+          {
+            "id": "lean",
+            "name": "Lean",
+            "subtext": "Batches"
+          },
+          {
+            "id": "measurement",
+            "name": "Measurement",
+            "subtext": "Telemetry"
+          },
+          {
+            "id": "sharing",
+            "name": "Sharing",
+            "subtext": "Postmortems"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Culture fosters shared responsibility monitoring production services.",
+            "activeStageId": "culture",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Automation eliminates repetitive manual toil using reproducible pipelines.",
+            "activeStageId": "automation",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "12-Factor App: Factor III (Config in the Environment)",
+      "codeHash": "b312f648da44ef9414ef141d6db4f8a153bee18f74701167d1f7c9368c9ad163",
+      "spec": {
+        "template": "compare",
+        "title": "Environment variable configuration separation",
+        "leftLabel": "Local Environment",
+        "rightLabel": "Production Environment",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Configuration changes between deployment targets across environments.",
+            "left": {
+              "code": "NODE_ENV=development",
+              "result": {
+                "text": "LOCAL_DEV"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "NODE_ENV=production",
+              "result": {
+                "text": "STRICT_PROD"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Applications strictly separate code from configuration reading secrets.",
+            "left": {
+              "code": "DB_HOST=localhost",
+              "result": {
+                "text": "local-db"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "DB_HOST=pg-prod.internal",
+              "result": {
+                "text": "prod-db"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Environment variable configuration separation",
+        "leftLabel": "Local Environment",
+        "rightLabel": "Production Environment",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Configuration changes between deployment targets across environments.",
+            "left": {
+              "code": "NODE_ENV=development",
+              "result": {
+                "text": "LOCAL_DEV"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "NODE_ENV=production",
+              "result": {
+                "text": "STRICT_PROD"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Applications strictly separate code from configuration reading secrets.",
+            "left": {
+              "code": "DB_HOST=localhost",
+              "result": {
+                "text": "local-db"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "DB_HOST=pg-prod.internal",
+              "result": {
+                "text": "prod-db"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "12-Factor App: Factor IX (Disposability & Graceful Shutdown)",
+      "codeHash": "bdf71bd44da960eeb6bc4dfd347b56b0f5cc404b33ea91440f96967138ef587e",
+      "spec": {
+        "template": "states",
+        "title": "Graceful shutdown process lifecycle draining",
+        "states": [
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "draining",
+            "label": "Draining"
+          },
+          {
+            "id": "terminated",
+            "label": "Terminated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Orchestrator sends signal initiating graceful shutdown of server.",
+            "currentState": "running",
+            "transition": {
+              "from": "running",
+              "to": "draining",
+              "label": "SIGTERM"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Stop accepting incoming requests and complete connections cleanly.",
+            "currentState": "draining",
+            "transition": {
+              "from": "draining",
+              "to": "terminated",
+              "label": "drained"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Graceful shutdown process lifecycle draining",
+        "states": [
+          {
+            "id": "running",
+            "label": "Running"
+          },
+          {
+            "id": "draining",
+            "label": "Draining"
+          },
+          {
+            "id": "terminated",
+            "label": "Terminated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Orchestrator sends signal initiating graceful shutdown of server.",
+            "currentState": "running",
+            "transition": {
+              "from": "running",
+              "to": "draining",
+              "label": "SIGTERM"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Stop accepting incoming requests and complete connections cleanly.",
+            "currentState": "draining",
+            "transition": {
+              "from": "draining",
+              "to": "terminated",
+              "label": "drained"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Integration vs Continuous Delivery vs Continuous Deployment",
+      "codeHash": "260a8d02d45f6d538e1dbfef7a9c93de524f5c40bebeae43062cbd4bc0e17216",
+      "spec": {
+        "template": "workflow",
+        "title": "Continuous delivery automation progression",
+        "stages": [
+          {
+            "id": "lint",
+            "name": "Lint",
+            "subtext": "Static Checks"
+          },
+          {
+            "id": "test",
+            "name": "Test",
+            "subtext": "Automated Suite"
+          },
+          {
+            "id": "package",
+            "name": "Package",
+            "subtext": "Container Artifact"
+          },
+          {
+            "id": "staging",
+            "name": "Staging",
+            "subtext": "Pre-Production"
+          },
+          {
+            "id": "prod",
+            "name": "Production",
+            "subtext": "Live Users"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated runners trigger build test and execute static linters.",
+            "activeStageId": "lint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say5",
+            "caption": "Continuous delivery automatically packages build into release artifact.",
+            "activeStageId": "package",
+            "statusBadge": "packaged"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Continuous delivery automation progression",
+        "stages": [
+          {
+            "id": "lint",
+            "name": "Lint",
+            "subtext": "Static Checks"
+          },
+          {
+            "id": "test",
+            "name": "Test",
+            "subtext": "Automated Suite"
+          },
+          {
+            "id": "package",
+            "name": "Package",
+            "subtext": "Container Artifact"
+          },
+          {
+            "id": "staging",
+            "name": "Staging",
+            "subtext": "Pre-Production"
+          },
+          {
+            "id": "prod",
+            "name": "Production",
+            "subtext": "Live Users"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated runners trigger build test and execute static linters.",
+            "activeStageId": "lint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say5",
+            "caption": "Continuous delivery automatically packages build into release artifact.",
+            "activeStageId": "package",
+            "statusBadge": "packaged"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pipeline Triggers & Branching Strategies",
+      "codeHash": "ec4046d98450b73bc3d102a4114522c4044c33f3517529e4be15a180da88151a",
+      "spec": {
+        "template": "flow",
+        "title": "Git trigger branch routing pipeline flow",
+        "nodes": [
+          {
+            "id": "pr",
+            "label": "pull_request"
+          },
+          {
+            "id": "push",
+            "label": "push"
+          },
+          {
+            "id": "main",
+            "label": "main"
+          },
+          {
+            "id": "staging",
+            "label": "deploy_staging"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pull Request events typically trigger fast feedback suites.",
+            "values": {
+              "pr": {
+                "text": "pull_request"
+              },
+              "push": {
+                "text": "push"
+              }
+            },
+            "arrows": [
+              [
+                "pr",
+                "push"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Developers merge small short-lived branches into main multiple times a day.",
+            "values": {
+              "main": {
+                "text": "main"
+              },
+              "staging": {
+                "text": "deploy_staging"
+              }
+            },
+            "arrows": [
+              [
+                "main",
+                "staging"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Git trigger branch routing pipeline flow",
+        "nodes": [
+          {
+            "id": "pr",
+            "label": "pull_request"
+          },
+          {
+            "id": "push",
+            "label": "push"
+          },
+          {
+            "id": "main",
+            "label": "main"
+          },
+          {
+            "id": "staging",
+            "label": "deploy_staging"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pull Request events typically trigger fast feedback suites.",
+            "values": {
+              "pr": {
+                "text": "pull_request"
+              },
+              "push": {
+                "text": "push"
+              }
+            },
+            "arrows": [
+              [
+                "pr",
+                "push"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Developers merge small short-lived branches into main multiple times a day.",
+            "values": {
+              "main": {
+                "text": "main"
+              },
+              "staging": {
+                "text": "deploy_staging"
+              }
+            },
+            "arrows": [
+              [
+                "main",
+                "staging"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Budgets, DORA Metrics & MTTR",
+      "codeHash": "16d1efed8a6d82f832dfcc48826a7a6a2517e835a19b85210d01ba84739ebdfc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
