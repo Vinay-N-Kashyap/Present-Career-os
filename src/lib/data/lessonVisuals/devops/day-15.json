@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 15,
+  "promptSha": "afb0013f8d4027b609dc4d873f82466ecb49183d691aedd28e3ea36b52232cf4",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 2 Enterprise CI/CD Pipeline Blueprint",
+      "codeHash": "d1b4a6b9bc25e701221fe31e90461510e2491c8109a71c6b157e0e3e401a730a",
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 2 enterprise CI/CD deployment pipeline stages",
+        "stages": [
+          {
+            "id": "quality",
+            "name": "Quality",
+            "subtext": "ESLint & tsc"
+          },
+          {
+            "id": "test",
+            "name": "Testing",
+            "subtext": "Vitest Matrix"
+          },
+          {
+            "id": "security",
+            "name": "Security",
+            "subtext": "Docker & Trivy"
+          },
+          {
+            "id": "staging",
+            "name": "Staging",
+            "subtext": "OIDC Deploy"
+          },
+          {
+            "id": "smoke",
+            "name": "Smoke",
+            "subtext": "Synthetic E2E"
+          },
+          {
+            "id": "prod",
+            "name": "Production",
+            "subtext": "Approval Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated assembly line connects every commit to verified production release.",
+            "activeStageId": "quality",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say12",
+            "caption": "Each stage acts as an immutable gatekeeper safeguarding cloud infrastructure.",
+            "activeStageId": "prod",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Milestone 2 enterprise CI/CD deployment pipeline stages",
+        "stages": [
+          {
+            "id": "quality",
+            "name": "Quality",
+            "subtext": "ESLint & tsc"
+          },
+          {
+            "id": "test",
+            "name": "Testing",
+            "subtext": "Vitest Matrix"
+          },
+          {
+            "id": "security",
+            "name": "Security",
+            "subtext": "Docker & Trivy"
+          },
+          {
+            "id": "staging",
+            "name": "Staging",
+            "subtext": "OIDC Deploy"
+          },
+          {
+            "id": "smoke",
+            "name": "Smoke",
+            "subtext": "Synthetic E2E"
+          },
+          {
+            "id": "prod",
+            "name": "Production",
+            "subtext": "Approval Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Automated assembly line connects every commit to verified production release.",
+            "activeStageId": "quality",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say12",
+            "caption": "Each stage acts as an immutable gatekeeper safeguarding cloud infrastructure.",
+            "activeStageId": "prod",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 1 & 2: Linting, Typechecking & Matrix Testing",
+      "codeHash": "2891c54b42316a30befa9337d3c0cdc1ff3a92a44a3bc33af1db9387b5553e61",
+      "spec": {
+        "template": "workflow",
+        "title": "Parallel static analysis and sharded matrix execution stages",
+        "stages": [
+          {
+            "id": "eslint",
+            "name": "ESLint",
+            "subtext": "Static Checks"
+          },
+          {
+            "id": "tsc",
+            "name": "TypeScript",
+            "subtext": "tsc --noEmit"
+          },
+          {
+            "id": "shard1",
+            "name": "Shard 1",
+            "subtext": "Node 20 Shard 1/2"
+          },
+          {
+            "id": "shard2",
+            "name": "Shard 2",
+            "subtext": "Node 20 Shard 2/2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static analysis verifies syntactic correctness and types before testing.",
+            "activeStageId": "eslint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Test shards execute concurrently cutting overall verification duration in half.",
+            "activeStageId": "shard2",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Parallel static analysis and sharded matrix execution stages",
+        "stages": [
+          {
+            "id": "eslint",
+            "name": "ESLint",
+            "subtext": "Static Checks"
+          },
+          {
+            "id": "tsc",
+            "name": "TypeScript",
+            "subtext": "tsc --noEmit"
+          },
+          {
+            "id": "shard1",
+            "name": "Shard 1",
+            "subtext": "Node 20 Shard 1/2"
+          },
+          {
+            "id": "shard2",
+            "name": "Shard 2",
+            "subtext": "Node 20 Shard 2/2"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Static analysis verifies syntactic correctness and types before testing.",
+            "activeStageId": "eslint",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Test shards execute concurrently cutting overall verification duration in half.",
+            "activeStageId": "shard2",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 3: Multi-Stage Container Build & Vulnerability Gate",
+      "codeHash": "a851de82db88a1333961796b6d8a04d75b4bfb6c8cb9750424eea66b250e10de",
+      "spec": {
+        "template": "compare",
+        "title": "Stage 3 multi-stage distroless base build and cryptographic signing",
+        "leftLabel": "Distroless Minimal Base",
+        "rightLabel": "Cosign Digital Signature",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-stage builds package minimal runtime assets into distroless base.",
+            "left": {
+              "code": "baseImage",
+              "result": {
+                "text": "gcr.io/distroless/nodejs20-debian12"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "imageTag",
+              "result": {
+                "text": "imageTag"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cosign signs pushed container image digests using identity federation.",
+            "left": {
+              "code": "signed: true",
+              "result": {
+                "text": "gcr.io/distroless/nodejs20-debian12"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "processStage3Build",
+              "result": {
+                "text": "imageTag"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Stage 3 multi-stage distroless base build and cryptographic signing",
+        "leftLabel": "Distroless Minimal Base",
+        "rightLabel": "Cosign Digital Signature",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-stage builds package minimal runtime assets into distroless base.",
+            "left": {
+              "code": "baseImage",
+              "result": {
+                "text": "gcr.io/distroless/nodejs20-debian12"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "imageTag",
+              "result": {
+                "text": "imageTag"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cosign signs pushed container image digests using identity federation.",
+            "left": {
+              "code": "signed: true",
+              "result": {
+                "text": "gcr.io/distroless/nodejs20-debian12"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "processStage3Build",
+              "result": {
+                "text": "imageTag"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 4: Automated Staging Environment Deployment",
+      "codeHash": "d6d98ded72708053d03cc8374692708c3e094c31e511ec115ffa9dfde3e4f255",
+      "spec": {
+        "template": "compare",
+        "title": "Stage 4 automated staging deployment replica health reconciliation",
+        "leftLabel": "Target Deployment Specification",
+        "rightLabel": "Reconciled Healthy Replicas",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deployment jobs connect securely assuming temporary roles in staging.",
+            "left": {
+              "code": "deployment: 'staging-api-v2'",
+              "result": {
+                "text": "staging-api-v2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "deployment",
+              "result": {
+                "text": "deployment"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Rolling updates boot new pods ensuring service availability throughout rollout.",
+            "left": {
+              "code": "desiredReplicas: 3",
+              "result": {
+                "text": "staging-api-v2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availableReplicas: 3",
+              "result": {
+                "text": "deployment"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Stage 4 automated staging deployment replica health reconciliation",
+        "leftLabel": "Target Deployment Specification",
+        "rightLabel": "Reconciled Healthy Replicas",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Deployment jobs connect securely assuming temporary roles in staging.",
+            "left": {
+              "code": "deployment: 'staging-api-v2'",
+              "result": {
+                "text": "staging-api-v2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "deployment",
+              "result": {
+                "text": "deployment"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Rolling updates boot new pods ensuring service availability throughout rollout.",
+            "left": {
+              "code": "desiredReplicas: 3",
+              "result": {
+                "text": "staging-api-v2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availableReplicas: 3",
+              "result": {
+                "text": "deployment"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 5: Synthetic Smoke Testing & Health Assertion",
+      "codeHash": "25f10278321a3441a559c99ae96bc2a49e685547cde2e9391627d1480825861c",
+      "spec": {
+        "template": "workflow",
+        "title": "Stage 5 synthetic smoke testing and health verification pipeline",
+        "stages": [
+          {
+            "id": "live",
+            "name": "Liveness",
+            "subtext": "/live"
+          },
+          {
+            "id": "ready",
+            "name": "Readiness",
+            "subtext": "/ready"
+          },
+          {
+            "id": "journey",
+            "name": "Journey",
+            "subtext": "/api/v1/auth/verify"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Liveness probe confirms runtime process responsiveness on staging.",
+            "activeStageId": "live",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Passing all checks confirms staging health and unlocks production gate.",
+            "activeStageId": "journey",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Stage 5 synthetic smoke testing and health verification pipeline",
+        "stages": [
+          {
+            "id": "live",
+            "name": "Liveness",
+            "subtext": "/live"
+          },
+          {
+            "id": "ready",
+            "name": "Readiness",
+            "subtext": "/ready"
+          },
+          {
+            "id": "journey",
+            "name": "Journey",
+            "subtext": "/api/v1/auth/verify"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Liveness probe confirms runtime process responsiveness on staging.",
+            "activeStageId": "live",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say8",
+            "caption": "Passing all checks confirms staging health and unlocks production gate.",
+            "activeStageId": "journey",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stage 6: Production Governance & Automated Fast-Rollback",
+      "codeHash": "7bfacda13658679398d78dcf297d359e8f85a16bbe165e630dae3ed8d358d495",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
