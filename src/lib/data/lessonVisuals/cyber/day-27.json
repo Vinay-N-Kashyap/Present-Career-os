@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 27,
+  "promptSha": "1a15d38f56c09c389e468fb2b0e0f9cb963fa9365e44bb07a882242da7156f37",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Perimeter Fallacy & NIST SP 800-207 Core Tenets",
+      "codeHash": "ea65ad26d1deebd5524e8a431d52504fa88de3c1f7d386f9b6eac536b24a4141",
+      "spec": {
+        "template": "compare",
+        "title": "Legacy castle-and-moat perimeter model versus zero trust architecture",
+        "left": {
+          "title": "Castle and Moat Perimeter",
+          "items": [
+            "Trust everything inside corporate network",
+            "Single boundary firewall defense",
+            "Physical network location dictates trust",
+            "Permits unrestricted internal lateral movement"
+          ]
+        },
+        "right": {
+          "title": "Zero Trust Architecture",
+          "items": [
+            "Never trust always verify requests",
+            "Assume active breach across all workloads",
+            "Continuous real time risk evaluation",
+            "Granular least privilege enforcement"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Zero Trust principles mandate continuous verification and assumed breach.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Every access request must be dynamically authenticated and authorized.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Legacy castle-and-moat perimeter model versus zero trust architecture",
+        "left": {
+          "title": "Castle and Moat Perimeter",
+          "items": [
+            "Trust everything inside corporate network",
+            "Single boundary firewall defense",
+            "Physical network location dictates trust",
+            "Permits unrestricted internal lateral movement"
+          ]
+        },
+        "right": {
+          "title": "Zero Trust Architecture",
+          "items": [
+            "Never trust always verify requests",
+            "Assume active breach across all workloads",
+            "Continuous real time risk evaluation",
+            "Granular least privilege enforcement"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Zero Trust principles mandate continuous verification and assumed breach.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Every access request must be dynamically authenticated and authorized.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Contextual Authentication & Device Posture Attestation",
+      "codeHash": "972255df6322061d5166203c06f6e9a8341ae7b8aaee561509fbfbc211b50ab6",
+      "spec": {
+        "template": "flow",
+        "title": "Endpoint contextual device posture attestation and health verification",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Connecting Endpoint",
+            "tappable": false
+          },
+          {
+            "id": "posture",
+            "label": "Device Posture Agent",
+            "tappable": false
+          },
+          {
+            "id": "signals",
+            "label": "Disk Encryption and EDR Health",
+            "tappable": false
+          },
+          {
+            "id": "verdict",
+            "label": "Continuous Access Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "posture",
+            "label": "Requests Session"
+          },
+          {
+            "from": "posture",
+            "to": "signals",
+            "label": "Inspects Health"
+          },
+          {
+            "from": "signals",
+            "to": "verdict",
+            "label": "Attests Telemetry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Device posture attestation validates endpoint security health baselines.",
+            "activeNodes": [
+              "client",
+              "posture"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous evaluation revokes the session if device posture degrades.",
+            "activeNodes": [
+              "signals",
+              "verdict"
+            ],
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Endpoint contextual device posture attestation and health verification",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Connecting Endpoint",
+            "tappable": false
+          },
+          {
+            "id": "posture",
+            "label": "Device Posture Agent",
+            "tappable": false
+          },
+          {
+            "id": "signals",
+            "label": "Disk Encryption and EDR Health",
+            "tappable": false
+          },
+          {
+            "id": "verdict",
+            "label": "Continuous Access Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "posture",
+            "label": "Requests Session"
+          },
+          {
+            "from": "posture",
+            "to": "signals",
+            "label": "Inspects Health"
+          },
+          {
+            "from": "signals",
+            "to": "verdict",
+            "label": "Attests Telemetry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Device posture attestation validates endpoint security health baselines.",
+            "activeNodes": [
+              "client",
+              "posture"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous evaluation revokes the session if device posture degrades.",
+            "activeNodes": [
+              "signals",
+              "verdict"
+            ],
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Microsegmentation & Software-Defined Perimeters (SDP)",
+      "codeHash": "76591004f4d4948f3c2fcb08c1773b2983038dc6589b9b47420765d658eef318",
+      "spec": {
+        "template": "sequence",
+        "title": "Software-defined perimeter microsegmentation east-west isolation flow",
+        "actors": [
+          {
+            "id": "frontend",
+            "label": "Frontend Service"
+          },
+          {
+            "id": "firewall",
+            "label": "Microsegmentation Guard"
+          },
+          {
+            "id": "orderApi",
+            "label": "Order Processing API"
+          },
+          {
+            "id": "database",
+            "label": "Customer Database"
+          }
+        ],
+        "messages": [
+          {
+            "from": "frontend",
+            "to": "firewall",
+            "label": "Request Outbound Port 443",
+            "tone": "data"
+          },
+          {
+            "from": "firewall",
+            "to": "orderApi",
+            "label": "Forward Permitted Traffic Flow",
+            "tone": "success"
+          },
+          {
+            "from": "frontend",
+            "to": "database",
+            "label": "Direct Database Socket Blocked",
+            "tone": "danger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Microsegmentation restricts lateral communication between internal servers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Granular policies prevent compromised nodes from lateral reach.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Software-defined perimeter microsegmentation east-west isolation flow",
+        "actors": [
+          {
+            "id": "frontend",
+            "label": "Frontend Service"
+          },
+          {
+            "id": "firewall",
+            "label": "Microsegmentation Guard"
+          },
+          {
+            "id": "orderApi",
+            "label": "Order Processing API"
+          },
+          {
+            "id": "database",
+            "label": "Customer Database"
+          }
+        ],
+        "messages": [
+          {
+            "from": "frontend",
+            "to": "firewall",
+            "label": "Request Outbound Port 443",
+            "tone": "data"
+          },
+          {
+            "from": "firewall",
+            "to": "orderApi",
+            "label": "Forward Permitted Traffic Flow",
+            "tone": "success"
+          },
+          {
+            "from": "frontend",
+            "to": "database",
+            "label": "Direct Database Socket Blocked",
+            "tone": "danger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Microsegmentation restricts lateral communication between internal servers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Granular policies prevent compromised nodes from lateral reach.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Identity-Aware Proxies (IAP) & NIST Zero Trust Control Architecture",
+      "codeHash": "3ae4a5b0b985c3e232db5a551160f176d287d8941dd046dd692b32c9f31adbfa",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Mutual TLS (mTLS) & Workload Identity via SPIFFE/SPIRE",
+      "codeHash": "7146861aac9ef4da6ea548b31938a14b88dea0675db01a08f84017367884460d",
+      "spec": {
+        "template": "sequence",
+        "title": "Workload mutual TLS cryptographic authentication using SPIFFE identity",
+        "actors": [
+          {
+            "id": "spireServer",
+            "label": "SPIRE Authority"
+          },
+          {
+            "id": "clientWorkload",
+            "label": "Order Service Client"
+          },
+          {
+            "id": "targetWorkload",
+            "label": "Payment API Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "spireServer",
+            "to": "clientWorkload",
+            "label": "Issue Ephemeral X.509 SVID",
+            "tone": "data"
+          },
+          {
+            "from": "clientWorkload",
+            "to": "targetWorkload",
+            "label": "Initiate Mutual TLS Handshake",
+            "tone": "data"
+          },
+          {
+            "from": "targetWorkload",
+            "to": "clientWorkload",
+            "label": "Verify SPIFFE ID and Cryptographic Chain",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mutual TLS requires client and server cryptographic certificates.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing mutual TLS eliminates static secrets across microservices.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Workload mutual TLS cryptographic authentication using SPIFFE identity",
+        "actors": [
+          {
+            "id": "spireServer",
+            "label": "SPIRE Authority"
+          },
+          {
+            "id": "clientWorkload",
+            "label": "Order Service Client"
+          },
+          {
+            "id": "targetWorkload",
+            "label": "Payment API Server"
+          }
+        ],
+        "messages": [
+          {
+            "from": "spireServer",
+            "to": "clientWorkload",
+            "label": "Issue Ephemeral X.509 SVID",
+            "tone": "data"
+          },
+          {
+            "from": "clientWorkload",
+            "to": "targetWorkload",
+            "label": "Initiate Mutual TLS Handshake",
+            "tone": "data"
+          },
+          {
+            "from": "targetWorkload",
+            "to": "clientWorkload",
+            "label": "Verify SPIFFE ID and Cryptographic Chain",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mutual TLS requires client and server cryptographic certificates.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing mutual TLS eliminates static secrets across microservices.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Just-In-Time (JIT) Privileged Access & Zero Standing Privileges",
+      "codeHash": "5a21e317a8b95a6fefd39d5a6779683cb17da1fa366812e6b0522a89bc7fbd5a",
+      "spec": {
+        "template": "states",
+        "title": "Just-in-time privileged access management and ephemeral permission lifecycle",
+        "states": [
+          {
+            "id": "standing",
+            "label": "Zero Standing Privileges"
+          },
+          {
+            "id": "request",
+            "label": "Ephemeral Access Request"
+          },
+          {
+            "id": "active",
+            "label": "Active JIT Privilege Window"
+          },
+          {
+            "id": "revoked",
+            "label": "Automatic Expiration Revoked"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Just-in-time access eliminates persistent standing privileges.",
+            "activeStateId": "request",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Expiring time windows revoke elevated privileges automatically.",
+            "activeStateId": "revoked",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Just-in-time privileged access management and ephemeral permission lifecycle",
+        "states": [
+          {
+            "id": "standing",
+            "label": "Zero Standing Privileges"
+          },
+          {
+            "id": "request",
+            "label": "Ephemeral Access Request"
+          },
+          {
+            "id": "active",
+            "label": "Active JIT Privilege Window"
+          },
+          {
+            "id": "revoked",
+            "label": "Automatic Expiration Revoked"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Just-in-time access eliminates persistent standing privileges.",
+            "activeStateId": "request",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Expiring time windows revoke elevated privileges automatically.",
+            "activeStateId": "revoked",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
