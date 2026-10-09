@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 21,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Repository Pattern: Separation of Domain and Storage",
+      "codeHash": "76185cc366829f070799bfc988ba3dcf4a3ea93665c9becdd606776c820d77f1",
+      "spec": {
+        "template": "boxes",
+        "title": "Repository entity mediation buffer",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "title",
+            "label": "title"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The repository pattern buffers business logic from storage tech.",
+            "values": {
+              "id": {
+                "text": "jp_1"
+              },
+              "title": {
+                "text": "Backend Engineer"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "title": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Domain services communicate exclusively with the repository interface.",
+            "values": {
+              "id": {
+                "text": "jp_1"
+              },
+              "title": {
+                "text": "Backend Engineer"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "title": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Relying on abstractions allows teams to refactor storage backends.",
+            "values": {
+              "id": {
+                "text": "jp_1"
+              },
+              "title": {
+                "text": "Backend Engineer"
+              }
+            },
+            "tones": {
+              "id": "ok",
+              "title": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Repository entity mediation buffer",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "title",
+            "label": "title"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The repository pattern buffers business logic from storage tech.",
+            "values": {
+              "id": "jp_1",
+              "title": "Backend Engineer"
+            },
+            "tones": {
+              "id": "data",
+              "title": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Domain services communicate exclusively with the repository interface.",
+            "values": {
+              "id": "jp_1",
+              "title": "Backend Engineer"
+            },
+            "tones": {
+              "id": "data",
+              "title": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Relying on abstractions allows teams to refactor storage backends.",
+            "values": {
+              "id": "jp_1",
+              "title": "Backend Engineer"
+            },
+            "tones": {
+              "id": "ok",
+              "title": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generic Entity Interfaces and Unique Identifiers",
+      "codeHash": "9b265520a16a809881a16005849903e32f8b400c144ef6921078f9e5b4ff2f4f",
+      "spec": {
+        "template": "boxes",
+        "title": "Domain student entity structural traits",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "course",
+            "label": "enrolledCourse"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We define a generic base entity interface with shared traits.",
+            "values": {
+              "name": {
+                "text": "Vikram"
+              },
+              "course": {
+                "text": "node-web"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "course": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Distributed systems prefer randomized unique string identifiers.",
+            "values": {
+              "name": {
+                "text": "Vikram"
+              },
+              "course": {
+                "text": "node-web"
+              }
+            },
+            "tones": {
+              "name": "data",
+              "course": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "String identifiers prevent enumeration attacks on primary keys.",
+            "values": {
+              "name": {
+                "text": "Vikram"
+              },
+              "course": {
+                "text": "node-web"
+              }
+            },
+            "tones": {
+              "name": "ok",
+              "course": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Domain student entity structural traits",
+        "boxes": [
+          {
+            "id": "name",
+            "label": "name"
+          },
+          {
+            "id": "course",
+            "label": "enrolledCourse"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We define a generic base entity interface with shared traits.",
+            "values": {
+              "name": "Vikram",
+              "course": "node-web"
+            },
+            "tones": {
+              "name": "data",
+              "course": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Distributed systems prefer randomized unique string identifiers.",
+            "values": {
+              "name": "Vikram",
+              "course": "node-web"
+            },
+            "tones": {
+              "name": "data",
+              "course": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "String identifiers prevent enumeration attacks on primary keys.",
+            "values": {
+              "name": "Vikram",
+              "course": "node-web"
+            },
+            "tones": {
+              "name": "ok",
+              "course": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standard CRUD Operations (create, findById, findAll, update, delete)",
+      "codeHash": "3eabc155c5645d568c59681c3163e56ce10c1893797ed424f1cfe0e078a8fa0b",
+      "spec": {
+        "template": "boxes",
+        "title": "Standard CRUD user repository contract",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Create persists a new entity into storage with an identifier.",
+            "values": {
+              "id": {
+                "text": "usr_1"
+              },
+              "name": {
+                "text": "Alice"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "name": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Update mutates an existing entity while adhering to invariants.",
+            "values": {
+              "id": {
+                "text": "usr_1"
+              },
+              "name": {
+                "text": "Alice Smith"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "name": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Soft deletion preserves historical relational integrity for records.",
+            "values": {
+              "id": {
+                "text": "usr_1"
+              },
+              "name": {
+                "text": "Alice Smith"
+              }
+            },
+            "tones": {
+              "id": "ok",
+              "name": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Standard CRUD user repository contract",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Create persists a new entity into storage with an identifier.",
+            "values": {
+              "id": "usr_1",
+              "name": "Alice"
+            },
+            "tones": {
+              "id": "data",
+              "name": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Update mutates an existing entity while adhering to invariants.",
+            "values": {
+              "id": "usr_1",
+              "name": "Alice Smith"
+            },
+            "tones": {
+              "id": "data",
+              "name": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Soft deletion preserves historical relational integrity for records.",
+            "values": {
+              "id": "usr_1",
+              "name": "Alice Smith"
+            },
+            "tones": {
+              "id": "ok",
+              "name": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling Entity Not Found and Duplicate Key Conflicts",
+      "codeHash": "b472a59cb1bbba9131f7de9c6cd54e56830067bc7301c5d26dcbbbec7312c2ee",
+      "spec": {
+        "template": "boxes",
+        "title": "Duplicate key conflict detection attributes",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "value",
+            "label": "value"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The two most frequent repository scenarios are not found and duplicate key.",
+            "values": {
+              "key": {
+                "text": "email"
+              },
+              "value": {
+                "text": "alice@pin.it"
+              }
+            },
+            "tones": {
+              "key": "data",
+              "value": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Catching unique constraint violations allows throwing a duplicate key error.",
+            "values": {
+              "key": {
+                "text": "email"
+              },
+              "value": {
+                "text": "alice@pin.it"
+              }
+            },
+            "tones": {
+              "key": "error",
+              "value": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Domain exception hierarchies translate errors into RFC problem details.",
+            "values": {
+              "key": {
+                "text": "email"
+              },
+              "value": {
+                "text": "alice@pin.it"
+              }
+            },
+            "tones": {
+              "key": "ok",
+              "value": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Duplicate key conflict detection attributes",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "value",
+            "label": "value"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The two most frequent repository scenarios are not found and duplicate key.",
+            "values": {
+              "key": "email",
+              "value": "alice@pin.it"
+            },
+            "tones": {
+              "key": "data",
+              "value": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Catching unique constraint violations allows throwing a duplicate key error.",
+            "values": {
+              "key": "email",
+              "value": "alice@pin.it"
+            },
+            "tones": {
+              "key": "error",
+              "value": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Domain exception hierarchies translate errors into RFC problem details.",
+            "values": {
+              "key": "email",
+              "value": "alice@pin.it"
+            },
+            "tones": {
+              "key": "ok",
+              "value": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Memory Storage Arrays and Maps for Unit Testing",
+      "codeHash": "9de9372f0d207425a583c6bf3e9096eea7bda9659f7bd8fb0534378ed00f5b25",
+      "spec": {
+        "template": "boxes",
+        "title": "High-speed in-memory testing double store",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "val",
+            "label": "val"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unit tests instantiate high speed in memory stores backed by maps.",
+            "values": {
+              "id": {
+                "text": "t1"
+              },
+              "val": {
+                "text": "42"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "val": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Testing business logic with in memory doubles executes with blazing speed.",
+            "values": {
+              "id": {
+                "text": "t1"
+              },
+              "val": {
+                "text": "42"
+              }
+            },
+            "tones": {
+              "id": "data",
+              "val": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "In memory doubles eliminate test runner contention and bottlenecks.",
+            "values": {
+              "id": {
+                "text": "t1"
+              },
+              "val": {
+                "text": "42"
+              }
+            },
+            "tones": {
+              "id": "ok",
+              "val": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "High-speed in-memory testing double store",
+        "boxes": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "val",
+            "label": "val"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unit tests instantiate high speed in memory stores backed by maps.",
+            "values": {
+              "id": "t1",
+              "val": "42"
+            },
+            "tones": {
+              "id": "data",
+              "val": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Testing business logic with in memory doubles executes with blazing speed.",
+            "values": {
+              "id": "t1",
+              "val": "42"
+            },
+            "tones": {
+              "id": "data",
+              "val": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "In memory doubles eliminate test runner contention and bottlenecks.",
+            "values": {
+              "id": "t1",
+              "val": "42"
+            },
+            "tones": {
+              "id": "ok",
+              "val": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Generic In-Memory Repository Class",
+      "codeHash": "27c862ada12e63960f0b3cb2d011b375758747cd27d3fbfc68521aa17351ecc9",
+      "spec": {
+        "template": "none",
+        "reason": "Building a generic in-memory repository class"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building a generic in-memory repository class"
+      }
+    }
+  ]
+}
