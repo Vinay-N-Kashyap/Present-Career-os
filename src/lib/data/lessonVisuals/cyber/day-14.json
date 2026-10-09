@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 14,
+  "promptSha": "0828177743ee822d6759b2eaf7afe8850a3baf08a63b5eabdf546b55683baf58",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Role of Defensive HTTP Security Headers in Modern Browsers",
+      "codeHash": "ead46aab6b320034efa2af6141d64dd20efd5b5326959d4c0642f22ecacba420",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise defensive HTTP security headers inventory and mitigations",
+        "columns": [
+          "Security Header",
+          "Directive Value",
+          "Mitigated Vulnerability",
+          "Severity If Missing"
+        ],
+        "rows": [
+          [
+            "Strict-Transport-Security",
+            "max-age=31536000; preload",
+            "SSL Stripping & Downgrades",
+            "Critical Risk"
+          ],
+          [
+            "X-Frame-Options",
+            "DENY / SAMEORIGIN",
+            "UI Redressing & Clickjacking",
+            "High Risk"
+          ],
+          [
+            "X-Content-Type-Options",
+            "nosniff",
+            "MIME-Type Sniffing Attacks",
+            "High Risk"
+          ],
+          [
+            "Referrer-Policy",
+            "strict-origin-when-cross-origin",
+            "Credential & URL Token Leakage",
+            "Medium Risk"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Setting defensive headers allows systems to enforce transport encryption.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The suite includes transport security and frame options directives.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise defensive HTTP security headers inventory and mitigations",
+        "columns": [
+          "Security Header",
+          "Directive Value",
+          "Mitigated Vulnerability",
+          "Severity If Missing"
+        ],
+        "rows": [
+          [
+            "Strict-Transport-Security",
+            "max-age=31536000; preload",
+            "SSL Stripping & Downgrades",
+            "Critical Risk"
+          ],
+          [
+            "X-Frame-Options",
+            "DENY / SAMEORIGIN",
+            "UI Redressing & Clickjacking",
+            "High Risk"
+          ],
+          [
+            "X-Content-Type-Options",
+            "nosniff",
+            "MIME-Type Sniffing Attacks",
+            "High Risk"
+          ],
+          [
+            "Referrer-Policy",
+            "strict-origin-when-cross-origin",
+            "Credential & URL Token Leakage",
+            "Medium Risk"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Setting defensive headers allows systems to enforce transport encryption.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The suite includes transport security and frame options directives.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP Strict Transport Security (HSTS): SSL Stripping Mitigation & Preload Lists",
+      "codeHash": "40aa962aac3781c5571d9a128e3d690771453c52fc451a74b8ce386d0cc6617b",
+      "spec": {
+        "template": "states",
+        "title": "HTTP Strict Transport Security upgrade enforcement and preload stages",
+        "states": [
+          {
+            "id": "unencryptedRedirect",
+            "label": "Insecure HTTP Initial Request Redirected"
+          },
+          {
+            "id": "hstsHeaderDelivered",
+            "label": "HSTS Directive Caches HTTPS Requirement"
+          },
+          {
+            "id": "upgradeEnforced",
+            "label": "Browser Automatically Upgrades HTTP to HTTPS"
+          },
+          {
+            "id": "preloadedProtection",
+            "label": "Preload List Blocks Cleartext Transmissions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Initial unencrypted redirects create vulnerabilities exploited by attackers.",
+            "activeStateId": "unencryptedRedirect",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The browser automatically transforms unencrypted links into secure requests.",
+            "activeStateId": "upgradeEnforced",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "HTTP Strict Transport Security upgrade enforcement and preload stages",
+        "states": [
+          {
+            "id": "unencryptedRedirect",
+            "label": "Insecure HTTP Initial Request Redirected"
+          },
+          {
+            "id": "hstsHeaderDelivered",
+            "label": "HSTS Directive Caches HTTPS Requirement"
+          },
+          {
+            "id": "upgradeEnforced",
+            "label": "Browser Automatically Upgrades HTTP to HTTPS"
+          },
+          {
+            "id": "preloadedProtection",
+            "label": "Preload List Blocks Cleartext Transmissions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Initial unencrypted redirects create vulnerabilities exploited by attackers.",
+            "activeStateId": "unencryptedRedirect",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The browser automatically transforms unencrypted links into secure requests.",
+            "activeStateId": "upgradeEnforced",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defeating Clickjacking Attacks with X-Frame-Options & CSP frame-ancestors",
+      "codeHash": "784d999f38c7d6e7d076bc8f2b225e9d1a29cad2373fc6b37dca096d622f34e0",
+      "spec": {
+        "template": "flow",
+        "title": "Clickjacking UI redressing attack vector and frame-ancestors defense",
+        "nodes": [
+          {
+            "id": "parentHost",
+            "label": "Malicious Attacker Webpage",
+            "tappable": false
+          },
+          {
+            "id": "invisibleFrame",
+            "label": "Invisible Transparent IFrame",
+            "tappable": false
+          },
+          {
+            "id": "targetApp",
+            "label": "Target Banking Application",
+            "tappable": false
+          },
+          {
+            "id": "browserPolicy",
+            "label": "Frame Ancestors Security Guard",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "parentHost",
+            "to": "invisibleFrame",
+            "label": "Embeds"
+          },
+          {
+            "from": "invisibleFrame",
+            "to": "targetApp",
+            "label": "Overlays"
+          },
+          {
+            "from": "targetApp",
+            "to": "browserPolicy",
+            "label": "Enforces"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Victims click decoy buttons that land on underlying framed actions.",
+            "activeNodes": [
+              "parentHost",
+              "invisibleFrame"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Deny directives instruct the browser to never render the page in frames.",
+            "activeNodes": [
+              "targetApp",
+              "browserPolicy"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Clickjacking UI redressing attack vector and frame-ancestors defense",
+        "nodes": [
+          {
+            "id": "parentHost",
+            "label": "Malicious Attacker Webpage",
+            "tappable": false
+          },
+          {
+            "id": "invisibleFrame",
+            "label": "Invisible Transparent IFrame",
+            "tappable": false
+          },
+          {
+            "id": "targetApp",
+            "label": "Target Banking Application",
+            "tappable": false
+          },
+          {
+            "id": "browserPolicy",
+            "label": "Frame Ancestors Security Guard",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "parentHost",
+            "to": "invisibleFrame",
+            "label": "Embeds"
+          },
+          {
+            "from": "invisibleFrame",
+            "to": "targetApp",
+            "label": "Overlays"
+          },
+          {
+            "from": "targetApp",
+            "to": "browserPolicy",
+            "label": "Enforces"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Victims click decoy buttons that land on underlying framed actions.",
+            "activeNodes": [
+              "parentHost",
+              "invisibleFrame"
+            ],
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Deny directives instruct the browser to never render the page in frames.",
+            "activeNodes": [
+              "targetApp",
+              "browserPolicy"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MIME-Type Sniffing Defense: X-Content-Type-Options: nosniff",
+      "codeHash": "27b8650cababf2c341e5b1de022485f77cdc1f17ad596e298890949eb10c65fe",
+      "spec": {
+        "template": "compare",
+        "title": "Permissive browser MIME sniffing versus strict nosniff directive",
+        "left": {
+          "title": "Permissive MIME Sniffing",
+          "items": [
+            "Browser inspects initial response bytes to deduce type",
+            "Malicious uploads containing script executed as code",
+            "Enables cross site scripting through media uploads"
+          ]
+        },
+        "right": {
+          "title": "Strict Nosniff Directive",
+          "items": [
+            "Browser strictly respects declared response content type",
+            "Non script files refused execution as executable code",
+            "Completely neutralizes media mime confusion attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Older browsers might sniff script tags and execute files as JavaScript.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The browser is forced to adhere strictly to declared header types.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Permissive browser MIME sniffing versus strict nosniff directive",
+        "left": {
+          "title": "Permissive MIME Sniffing",
+          "items": [
+            "Browser inspects initial response bytes to deduce type",
+            "Malicious uploads containing script executed as code",
+            "Enables cross site scripting through media uploads"
+          ]
+        },
+        "right": {
+          "title": "Strict Nosniff Directive",
+          "items": [
+            "Browser strictly respects declared response content type",
+            "Non script files refused execution as executable code",
+            "Completely neutralizes media mime confusion attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Older browsers might sniff script tags and execute files as JavaScript.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "The browser is forced to adhere strictly to declared header types.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Privacy & Leaked Credentials: Referrer-Policy & Permissions-Policy",
+      "codeHash": "c1946ac1ac369ce70c9ae39881f98570ce38ebcbbab1a6db9d763159353e31ff",
+      "spec": {
+        "template": "table",
+        "title": "Privacy and permission security header directives and hardware limits",
+        "columns": [
+          "Policy Directive",
+          "Target Header",
+          "Enforced Capability",
+          "Security Impact"
+        ],
+        "rows": [
+          [
+            "No Referrer Directive",
+            "Referrer-Policy",
+            "Never Transmit Previous URL",
+            "Eliminates URL Secret Token Leaks"
+          ],
+          [
+            "Strict Origin Policy",
+            "Referrer-Policy",
+            "Origin Only on Cross-Origin HTTPS",
+            "Protects Private Query Path Data"
+          ],
+          [
+            "Disable Hardware Features",
+            "Permissions-Policy",
+            "Disable Camera and Microphone",
+            "Prevents Malicious Device Hijacks"
+          ],
+          [
+            "Disable Geolocation",
+            "Permissions-Policy",
+            "Deny Geographic Position Probing",
+            "Guarantees User Privacy Boundary"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Query parameters containing secret tokens can leak to external websites.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Policy rules guarantee third party scripts cannot activate device cameras.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Privacy and permission security header directives and hardware limits",
+        "columns": [
+          "Policy Directive",
+          "Target Header",
+          "Enforced Capability",
+          "Security Impact"
+        ],
+        "rows": [
+          [
+            "No Referrer Directive",
+            "Referrer-Policy",
+            "Never Transmit Previous URL",
+            "Eliminates URL Secret Token Leaks"
+          ],
+          [
+            "Strict Origin Policy",
+            "Referrer-Policy",
+            "Origin Only on Cross-Origin HTTPS",
+            "Protects Private Query Path Data"
+          ],
+          [
+            "Disable Hardware Features",
+            "Permissions-Policy",
+            "Disable Camera and Microphone",
+            "Prevents Malicious Device Hijacks"
+          ],
+          [
+            "Disable Geolocation",
+            "Permissions-Policy",
+            "Deny Geographic Position Probing",
+            "Guarantees User Privacy Boundary"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Query parameters containing secret tokens can leak to external websites.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Policy rules guarantee third party scripts cannot activate device cameras.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise HTTP Security Header Audit & Compliance Engine",
+      "codeHash": "29b0c454bc4eb92778a248395d98224d5b500f57f35004fa4ab5c88d5092a13e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
