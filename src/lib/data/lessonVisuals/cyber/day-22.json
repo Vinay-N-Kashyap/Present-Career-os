@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 22,
+  "promptSha": "18920fa758af36dcd83328eaa4f1025d4416bfb9400ae8e7c3846a810c41db81",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Anatomy of the C Call Stack & Stack Smashing Mechanics",
+      "codeHash": "9feae82c2d91349dcc131d9330b12dcc8370d747f58faa42910ea52a69307d93",
+      "spec": {
+        "template": "table",
+        "title": "Call stack frame layout and control data corruption under buffer overflow",
+        "columns": [
+          "Stack Region",
+          "Memory Direction",
+          "Original Content",
+          "Corrupted State Under Overflow"
+        ],
+        "rows": [
+          [
+            "Local Buffer Array",
+            "Grows Downward Stack",
+            "User Input Storage Buffer",
+            "Oversized Input Exceeds Bounds"
+          ],
+          [
+            "Saved Frame Pointer",
+            "Higher Memory Address",
+            "Base Pointer Value",
+            "Overwritten with Attacker Bytes"
+          ],
+          [
+            "Saved Return Address",
+            "Higher Memory Address",
+            "Instruction Pointer EIP",
+            "Hijacked to Point to Shellcode"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Oversized input writes past allocated array boundaries on the stack.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "An attacker hijacks execution flow redirecting CPU control to shellcode.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Call stack frame layout and control data corruption under buffer overflow",
+        "columns": [
+          "Stack Region",
+          "Memory Direction",
+          "Original Content",
+          "Corrupted State Under Overflow"
+        ],
+        "rows": [
+          [
+            "Local Buffer Array",
+            "Grows Downward Stack",
+            "User Input Storage Buffer",
+            "Oversized Input Exceeds Bounds"
+          ],
+          [
+            "Saved Frame Pointer",
+            "Higher Memory Address",
+            "Base Pointer Value",
+            "Overwritten with Attacker Bytes"
+          ],
+          [
+            "Saved Return Address",
+            "Higher Memory Address",
+            "Instruction Pointer EIP",
+            "Hijacked to Point to Shellcode"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Oversized input writes past allocated array boundaries on the stack.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "An attacker hijacks execution flow redirecting CPU control to shellcode.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stack Canaries: Terminator & Random Cookies Defense",
+      "codeHash": "8373b4d8331c096224032f8ff121a4b7742a47d8c97168ffebf25396554e60e4",
+      "spec": {
+        "template": "states",
+        "title": "Stack canary prologue injection and epilogue corruption detection stages",
+        "states": [
+          {
+            "id": "prologuePlaced",
+            "label": "Canary Secret Injected into Frame"
+          },
+          {
+            "id": "bufferOverwritten",
+            "label": "Linear Memory Write Targets Buffer"
+          },
+          {
+            "id": "cookieCorrupted",
+            "label": "Canary Value Altered by Overflow"
+          },
+          {
+            "id": "smashAborted",
+            "label": "Epilogue Aborts with Stack Smashing Error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The compiler places a canary cookie on the stack before the return address.",
+            "activeStateId": "prologuePlaced",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The runtime immediately terminates the process when corruption is detected.",
+            "activeStateId": "smashAborted",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Stack canary prologue injection and epilogue corruption detection stages",
+        "states": [
+          {
+            "id": "prologuePlaced",
+            "label": "Canary Secret Injected into Frame"
+          },
+          {
+            "id": "bufferOverwritten",
+            "label": "Linear Memory Write Targets Buffer"
+          },
+          {
+            "id": "cookieCorrupted",
+            "label": "Canary Value Altered by Overflow"
+          },
+          {
+            "id": "smashAborted",
+            "label": "Epilogue Aborts with Stack Smashing Error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The compiler places a canary cookie on the stack before the return address.",
+            "activeStateId": "prologuePlaced",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The runtime immediately terminates the process when corruption is detected.",
+            "activeStateId": "smashAborted",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Address Space Layout Randomization (ASLR) & Entropy",
+      "codeHash": "3071cfb3534686c490cac88ee19dd49119258ae347c2944aa1ccbae34e1bc34c",
+      "spec": {
+        "template": "compare",
+        "title": "Deterministic memory layout versus Address Space Layout Randomization",
+        "left": {
+          "title": "Deterministic Static Memory",
+          "items": [
+            "Executables and libraries loaded at fixed predictable offsets",
+            "Attackers hardcode target function addresses with ease",
+            "Consistent memory addresses across all server restarts"
+          ]
+        },
+        "right": {
+          "title": "Randomized ASLR Memory",
+          "items": [
+            "Randomizes base addresses of stack heap and libraries",
+            "Shared library functions reside at unpredictable offsets",
+            "Blind jumps trigger immediate memory segmentation faults"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Predictable memory allowed attackers to hardcode fixed function addresses.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "The operating system randomizes base memory addresses of libraries.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Deterministic memory layout versus Address Space Layout Randomization",
+        "left": {
+          "title": "Deterministic Static Memory",
+          "items": [
+            "Executables and libraries loaded at fixed predictable offsets",
+            "Attackers hardcode target function addresses with ease",
+            "Consistent memory addresses across all server restarts"
+          ]
+        },
+        "right": {
+          "title": "Randomized ASLR Memory",
+          "items": [
+            "Randomizes base addresses of stack heap and libraries",
+            "Shared library functions reside at unpredictable offsets",
+            "Blind jumps trigger immediate memory segmentation faults"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Predictable memory allowed attackers to hardcode fixed function addresses.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "The operating system randomizes base memory addresses of libraries.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Non-Executable Stack (NX / W^X) & Defense-in-Depth",
+      "codeHash": "f761d4662e9d11c87c3f315f9b8c9892d8f033fcc6d5a5fd9727cfc50e0df7a2",
+      "spec": {
+        "template": "table",
+        "title": "Memory segment execution permissions under Write XOR Execute policy",
+        "columns": [
+          "Memory Segment",
+          "Writable Permission",
+          "Executable Permission",
+          "Policy Compliance"
+        ],
+        "rows": [
+          [
+            "Call Stack Segment",
+            "Writable for Variables",
+            "Execution Strictly Disabled",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Heap Allocation Space",
+            "Writable for Dynamic Data",
+            "Execution Strictly Disabled",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Code Text Segment",
+            "Read Only Binary Data",
+            "Executable for Machine Code",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Corrupted Attack Page",
+            "Writable by Attacker",
+            "Executable Shellcode Target",
+            "Hardware Trap Halts Process"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Under this policy a page can be writable or executable but never both.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Executing code from a marked memory page raises an immediate hardware trap.",
+            "activeRowIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Memory segment execution permissions under Write XOR Execute policy",
+        "columns": [
+          "Memory Segment",
+          "Writable Permission",
+          "Executable Permission",
+          "Policy Compliance"
+        ],
+        "rows": [
+          [
+            "Call Stack Segment",
+            "Writable for Variables",
+            "Execution Strictly Disabled",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Heap Allocation Space",
+            "Writable for Dynamic Data",
+            "Execution Strictly Disabled",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Code Text Segment",
+            "Read Only Binary Data",
+            "Executable for Machine Code",
+            "Complies with Write XOR Execute"
+          ],
+          [
+            "Corrupted Attack Page",
+            "Writable by Attacker",
+            "Executable Shellcode Target",
+            "Hardware Trap Halts Process"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Under this policy a page can be writable or executable but never both.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Executing code from a marked memory page raises an immediate hardware trap.",
+            "activeRowIndex": 3,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Return-Oriented Programming (ROP) & Gadget Chain Execution",
+      "codeHash": "8c3501d88d2286b4d322ada806891605db62a4d2d287eda66939d0c4746494d0",
+      "spec": {
+        "template": "flow",
+        "title": "Return-oriented programming gadget chaining bypassing non-executable memory",
+        "nodes": [
+          {
+            "id": "smashedStack",
+            "label": "Smashed Call Stack Memory",
+            "tappable": false
+          },
+          {
+            "id": "popGadget",
+            "label": "ROP Gadget Pop Registers",
+            "tappable": false
+          },
+          {
+            "id": "syscallGadget",
+            "label": "ROP Gadget System Call Invocation",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "smashedStack",
+            "to": "popGadget",
+            "label": "Returns"
+          },
+          {
+            "from": "popGadget",
+            "to": "syscallGadget",
+            "label": "Chains"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A ROP gadget is a sequence of machine instructions ending with return.",
+            "activeNodes": [
+              "smashedStack",
+              "popGadget"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The processor pops the next gadget address from the stack and jumps.",
+            "activeNodes": [
+              "popGadget",
+              "syscallGadget"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Return-oriented programming gadget chaining bypassing non-executable memory",
+        "nodes": [
+          {
+            "id": "smashedStack",
+            "label": "Smashed Call Stack Memory",
+            "tappable": false
+          },
+          {
+            "id": "popGadget",
+            "label": "ROP Gadget Pop Registers",
+            "tappable": false
+          },
+          {
+            "id": "syscallGadget",
+            "label": "ROP Gadget System Call Invocation",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "smashedStack",
+            "to": "popGadget",
+            "label": "Returns"
+          },
+          {
+            "from": "popGadget",
+            "to": "syscallGadget",
+            "label": "Chains"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A ROP gadget is a sequence of machine instructions ending with return.",
+            "activeNodes": [
+              "smashedStack",
+              "popGadget"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The processor pops the next gadget address from the stack and jumps.",
+            "activeNodes": [
+              "popGadget",
+              "syscallGadget"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Compiler Memory Hardening: Stack Protectors, RELRO & Control Flow Guard",
+      "codeHash": "61f9df797c29b6072bc05825e7cdde66983b0846e8c6c8bb8e61766cb61d5df8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
