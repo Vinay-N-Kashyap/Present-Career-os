@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 16,
+  "promptSha": "c400c350f49b3831d15711f90b938cd96f9a59a60596dfdfcbde7f3f0df0ab8e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Understanding Tree Node Anatomy",
+      "codeHash": "203add44742a8262b046844f65865d88cf0a86f11060de037d270387e9962b32",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Binary tree node left and right children",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n20",
+            "label": "20"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n20"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Binary tree consists of nodes with left child and right child.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n10"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tree nodes store properties for value and pointers to child nodes.",
+            "activeNodeId": "n5",
+            "visitedNodeIds": [
+              "n10",
+              "n5",
+              "n20"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Binary tree node left and right children",
+        "nodes": [
+          {
+            "id": "n10",
+            "label": "10"
+          },
+          {
+            "id": "n5",
+            "label": "5"
+          },
+          {
+            "id": "n20",
+            "label": "20"
+          }
+        ],
+        "edges": [
+          [
+            "n10",
+            "n5"
+          ],
+          [
+            "n10",
+            "n20"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Binary tree consists of nodes with left child and right child.",
+            "activeNodeId": "n10",
+            "visitedNodeIds": [
+              "n10"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Tree nodes store properties for value and pointers to child nodes.",
+            "activeNodeId": "n5",
+            "visitedNodeIds": [
+              "n10",
+              "n5",
+              "n20"
+            ],
+            "activeEdge": [
+              "n10",
+              "n5"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Preorder Depth-First Traversal",
+      "codeHash": "545f4b01e0f24c6373cebc0b139dc5aee64fd425f549273c905583e5dae95f6b",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Preorder root left right depth-first order",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preorder traversal visits current node first then traverses subtrees.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reading parent first allows creating exact duplicate of tree structure.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n4",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Preorder root left right depth-first order",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Preorder traversal visits current node first then traverses subtrees.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Reading parent first allows creating exact duplicate of tree structure.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n4",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inorder Depth-First Traversal",
+      "codeHash": "05f175d3f34974221ed83f322873bb8869301cc695a8a6b8f936bafc1756a500",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Inorder left root right depth-first order",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inorder traversal visits left subtree then root and then right subtree.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n4"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Performing inorder traversal visits nodes in ascending sorted order.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n4",
+              "n2",
+              "n1",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Inorder left root right depth-first order",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inorder traversal visits left subtree then root and then right subtree.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n4"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Performing inorder traversal visits nodes in ascending sorted order.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n4",
+              "n2",
+              "n1",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Postorder Depth-First Traversal",
+      "codeHash": "ba1b1c00b30f7c3bb3299ecc7de5da28341609e0180e18447138d5e02816f66f",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Postorder left right root traversal",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Postorder traversal processes subtrees before visiting root node.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n4"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deleting children before parent safely frees tree memory without leaks.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n4",
+              "n2",
+              "n3",
+              "n1"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Postorder left right root traversal",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "1"
+          },
+          {
+            "id": "n2",
+            "label": "2"
+          },
+          {
+            "id": "n4",
+            "label": "4"
+          },
+          {
+            "id": "n3",
+            "label": "3"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n1",
+            "n3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Postorder traversal processes subtrees before visiting root node.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n4"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Deleting children before parent safely frees tree memory without leaks.",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n4",
+              "n2",
+              "n3",
+              "n1"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Breadth-First Level-Order Traversal",
+      "codeHash": "8abc3ca34cdb947197a33e5af868f085055aba9858f01cde092b6bbce6a5c986",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Level-order breadth-first queue processing",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Breadth first search requires explicit queue data structure.",
+            "action": "push",
+            "actionItem": {
+              "text": "1"
+            },
+            "items": [
+              {
+                "text": "1"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Queue operates on first basis processing shallower nodes before deeper.",
+            "action": "pop",
+            "actionItem": {
+              "text": "1"
+            },
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "3"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Level-order breadth-first queue processing",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Breadth first search requires explicit queue data structure.",
+            "action": "push",
+            "actionItem": "1",
+            "items": [
+              "1"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Queue operates on first basis processing shallower nodes before deeper.",
+            "action": "pop",
+            "actionItem": "1",
+            "items": [
+              "2",
+              "3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comparing Tree Traversal Strategies",
+      "codeHash": "ffe08bef7e49e4a9015c9ba37928d5adc7380a7a4c72341029f42fe123ebaeb6",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
