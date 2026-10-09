@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 26,
+  "promptSha": "2816ba6291c5ddb6b7110d84bc7ff914ed653a2eb8a62533e262fb5868d08df3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Distributed Container Logging Architecture & Fluentbit",
+      "codeHash": "9677188659e5e9e2b8d52457b2ceeb0f0b982092a8a4fd6924222000802d6c51",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed container logging architecture and fluentbit ingestion",
+        "leftLabel": "Node DaemonSet Agent",
+        "rightLabel": "Log Aggregator Endpoint",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "DaemonSet agent runs on every physical worker node collecting container logs.",
+            "left": {
+              "code": "name: 'fluentbit-collector'",
+              "result": {
+                "text": "fluentbit"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pipeline: 'fluentbit'",
+              "result": {
+                "text": "DaemonSet"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Decouples storage from container lifecycle streaming standard output cleanly.",
+            "left": {
+              "code": "source: '/var/log/containers/*.log'",
+              "result": {
+                "text": "stdout"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destination: 'elasticsearch:9200'",
+              "result": {
+                "text": "lifecycle"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed container logging architecture and fluentbit ingestion",
+        "leftLabel": "Node DaemonSet Agent",
+        "rightLabel": "Log Aggregator Endpoint",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "DaemonSet agent runs on every physical worker node collecting container logs.",
+            "left": {
+              "code": "name: 'fluentbit-collector'",
+              "result": {
+                "text": "fluentbit"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "pipeline: 'fluentbit'",
+              "result": {
+                "text": "DaemonSet"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Decouples storage from container lifecycle streaming standard output cleanly.",
+            "left": {
+              "code": "source: '/var/log/containers/*.log'",
+              "result": {
+                "text": "stdout"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destination: 'elasticsearch:9200'",
+              "result": {
+                "text": "lifecycle"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structured JSON Logging Standards in Microservices",
+      "codeHash": "5961912fb34466062e33e149fffe9859ba7512dc4e80ad7581c012dda17e2d34",
+      "spec": {
+        "template": "compare",
+        "title": "Structured JSON logging standards in microservices",
+        "leftLabel": "Structured JSON Event Payload",
+        "rightLabel": "Distributed Trace Context",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production microservices emit structured json logs to standard output.",
+            "left": {
+              "code": "level: 'ERROR'",
+              "result": {
+                "text": "level"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "timestamp: '2026-10-02T14:32:00.184Z'",
+              "result": {
+                "text": "timestamp"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Embedding trace identifiers connects individual log records to traces.",
+            "left": {
+              "code": "trace_id",
+              "result": {
+                "text": "trace_id"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "message",
+              "result": {
+                "text": "message"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Structured JSON logging standards in microservices",
+        "leftLabel": "Structured JSON Event Payload",
+        "rightLabel": "Distributed Trace Context",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production microservices emit structured json logs to standard output.",
+            "left": {
+              "code": "level: 'ERROR'",
+              "result": {
+                "text": "level"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "timestamp: '2026-10-02T14:32:00.184Z'",
+              "result": {
+                "text": "timestamp"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Embedding trace identifiers connects individual log records to traces.",
+            "left": {
+              "code": "trace_id",
+              "result": {
+                "text": "trace_id"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "message",
+              "result": {
+                "text": "message"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Elasticsearch Bulk Ingestion API",
+      "codeHash": "e97274d9e51957caf65c0000b850e221d65db4e523c20b1d041abdb28e40881b",
+      "spec": {
+        "template": "compare",
+        "title": "High throughput elasticsearch bulk ingestion API",
+        "leftLabel": "Buffered Memory Log Records",
+        "rightLabel": "Bulk Ingest Flush Strategy",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bulk ingestion accepts newline delimited records to optimize ingest speed.",
+            "left": {
+              "code": "batchSize: 500",
+              "result": {
+                "text": "bulk"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "flushIntervalMs: 5000",
+              "result": {
+                "text": "ndjson"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Batching architecture improves ingestion throughput across high volume streams.",
+            "left": {
+              "code": "maxBufferSizeMb: 10",
+              "result": {
+                "text": "batching"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationCluster",
+              "result": {
+                "text": "throughput"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "High throughput elasticsearch bulk ingestion API",
+        "leftLabel": "Buffered Memory Log Records",
+        "rightLabel": "Bulk Ingest Flush Strategy",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bulk ingestion accepts newline delimited records to optimize ingest speed.",
+            "left": {
+              "code": "batchSize: 500",
+              "result": {
+                "text": "bulk"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "flushIntervalMs: 5000",
+              "result": {
+                "text": "ndjson"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Batching architecture improves ingestion throughput across high volume streams.",
+            "left": {
+              "code": "maxBufferSizeMb: 10",
+              "result": {
+                "text": "batching"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationCluster",
+              "result": {
+                "text": "throughput"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Elasticsearch Inverted Index & Query DSL Filtering",
+      "codeHash": "406ec76eb26f6fb4ee9a91e11f211f62b1b3f4be24e0ce99b83d3af7ae5296e7",
+      "spec": {
+        "template": "compare",
+        "title": "Elasticsearch inverted index and query DSL filtering",
+        "leftLabel": "Inverted Index Term Dictionary",
+        "rightLabel": "Query DSL Filter Clause",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Inverted index tokenizes text fields mapping unique words to document records.",
+            "left": {
+              "code": "invertedIndex",
+              "result": {
+                "text": "inverted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "documentIds",
+              "result": {
+                "text": "tokenizes"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Filter clause executes exact match checks cached in memory without scoring.",
+            "left": {
+              "code": "filterClause",
+              "result": {
+                "text": "filter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "exactMatch",
+              "result": {
+                "text": "exact"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Elasticsearch inverted index and query DSL filtering",
+        "leftLabel": "Inverted Index Term Dictionary",
+        "rightLabel": "Query DSL Filter Clause",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Inverted index tokenizes text fields mapping unique words to document records.",
+            "left": {
+              "code": "invertedIndex",
+              "result": {
+                "text": "inverted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "documentIds",
+              "result": {
+                "text": "tokenizes"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Filter clause executes exact match checks cached in memory without scoring.",
+            "left": {
+              "code": "filterClause",
+              "result": {
+                "text": "filter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "exactMatch",
+              "result": {
+                "text": "exact"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated PII Masking & Data Compliance Filters",
+      "codeHash": "f416d419384adc6bfb75b80e73d2748b48a2f39848e4c9c58f3346c20ad14ebd",
+      "spec": {
+        "template": "compare",
+        "title": "Automated PII masking and data compliance filters",
+        "leftLabel": "Sensitive Field Regex Rule",
+        "rightLabel": "Masked Payload Output",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Filter plugins scan log payloads against regular expression pattern rules.",
+            "left": {
+              "code": "filterPlugin",
+              "result": {
+                "text": "filter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "regexPattern",
+              "result": {
+                "text": "regex"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sensitive credentials are redacted or hashed before leaving the host machine.",
+            "left": {
+              "code": "redactedPassword",
+              "result": {
+                "text": "password"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "redactedSecret",
+              "result": {
+                "text": "redacted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Automated PII masking and data compliance filters",
+        "leftLabel": "Sensitive Field Regex Rule",
+        "rightLabel": "Masked Payload Output",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Filter plugins scan log payloads against regular expression pattern rules.",
+            "left": {
+              "code": "filterPlugin",
+              "result": {
+                "text": "filter"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "regexPattern",
+              "result": {
+                "text": "regex"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sensitive credentials are redacted or hashed before leaving the host machine.",
+            "left": {
+              "code": "redactedPassword",
+              "result": {
+                "text": "password"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "redactedSecret",
+              "result": {
+                "text": "redacted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Index Lifecycle Management (ILM) & Log Retention Architecture",
+      "codeHash": "337ac9a8ccb76729ce5de46a5a6c0cc53ec8d0d17cb46d5780236e4806cb7586",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
