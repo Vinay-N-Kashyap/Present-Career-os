@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 12,
+  "promptSha": "8faac33b5a819391246fc7f4cd60743b3b09ad7609d712de0f85fa7f62e13a4a",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Divide and Conquer Paradigm & Master Theorem",
+      "codeHash": "e25ace37d13fe1b7355a09e3c273f89a8f770023cb3b0822a1eb561f32ffb4b4",
+      "spec": {
+        "template": "table",
+        "title": "Divide and conquer recurrence scaling",
+        "columns": [
+          "Input Size N",
+          "Tree Levels",
+          "Total Operations"
+        ],
+        "rows": [
+          [
+            {
+              "text": "8"
+            },
+            {
+              "text": "3"
+            },
+            {
+              "text": "24"
+            }
+          ],
+          [
+            {
+              "text": "16"
+            },
+            {
+              "text": "4"
+            },
+            {
+              "text": "64"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Paradigm divides problem into subproblems and conquers recursively.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Recurrence relation evaluates divide and conquer merge operations.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Divide and conquer recurrence scaling",
+        "columns": [
+          "Input Size N",
+          "Tree Levels",
+          "Total Operations"
+        ],
+        "rows": [
+          [
+            "8",
+            "3",
+            "24"
+          ],
+          [
+            "16",
+            "4",
+            "64"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Paradigm divides problem into subproblems and conquers recursively.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Recurrence relation evaluates divide and conquer merge operations.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Linear O(N) Two-Pointer Merge Operation",
+      "codeHash": "deb07939325517e0f78ca07dbe1f7087a32263b6ab284b311afc7f2376855ee0",
+      "spec": {
+        "template": "cells",
+        "title": "Two-pointer merge operation on sorted arrays",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers track elements at beginning of left and right arrays.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Merge operation appends smaller element and advances pointer.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Two-pointer merge operation on sorted arrays",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two pointers track elements at beginning of left and right arrays.",
+            "items": [
+              "1",
+              "4",
+              "2",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Merge operation appends smaller element and advances pointer.",
+            "items": [
+              "1",
+              "4",
+              "2",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Recursive Merge Sort Implementation",
+      "codeHash": "a6d291a2a20ea89d4dd4c39fba06775d898985a24a908865428f2210fb1b1898",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Recursive merge sort subarray halves",
+        "nodes": [
+          {
+            "id": "top",
+            "label": "input"
+          },
+          {
+            "id": "left",
+            "label": "left"
+          },
+          {
+            "id": "right",
+            "label": "right"
+          }
+        ],
+        "edges": [
+          [
+            "top",
+            "left"
+          ],
+          [
+            "top",
+            "right"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recursive function calculates midpoint index dividing input array.",
+            "activeNodeId": "top",
+            "visitedNodeIds": [
+              "top"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Recursive call tree divides elements across balanced tree levels.",
+            "activeNodeId": "left",
+            "visitedNodeIds": [
+              "top",
+              "left",
+              "right"
+            ],
+            "activeEdge": [
+              "top",
+              "left"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Recursive merge sort subarray halves",
+        "nodes": [
+          {
+            "id": "top",
+            "label": "input"
+          },
+          {
+            "id": "left",
+            "label": "left"
+          },
+          {
+            "id": "right",
+            "label": "right"
+          }
+        ],
+        "edges": [
+          [
+            "top",
+            "left"
+          ],
+          [
+            "top",
+            "right"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recursive function calculates midpoint index dividing input array.",
+            "activeNodeId": "top",
+            "visitedNodeIds": [
+              "top"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Recursive call tree divides elements across balanced tree levels.",
+            "activeNodeId": "left",
+            "visitedNodeIds": [
+              "top",
+              "left",
+              "right"
+            ],
+            "activeEdge": [
+              "top",
+              "left"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stability & Auxiliary Space Trade-offs",
+      "codeHash": "2bf0f6b91d3f0a051706f91fb7b70fd539bd19fa2f15c732b70775679880c64d",
+      "spec": {
+        "template": "table",
+        "title": "Merge sort stability preservation on keys",
+        "columns": [
+          "Student Label",
+          "Score Value",
+          "Relative Stability"
+        ],
+        "rows": [
+          [
+            {
+              "text": "Alice-First"
+            },
+            {
+              "text": "90"
+            },
+            {
+              "text": "Rank 1"
+            }
+          ],
+          [
+            {
+              "text": "Charlie-Second"
+            },
+            {
+              "text": "90"
+            },
+            {
+              "text": "Rank 2"
+            }
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stable sorting maintains relative order for identical keys.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Standard array merge sort requires auxiliary memory buffer.",
+            "activeRow": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Merge sort stability preservation on keys",
+        "columns": [
+          "Student Label",
+          "Score Value",
+          "Relative Stability"
+        ],
+        "rows": [
+          [
+            "Alice-First",
+            "90",
+            "Rank 1"
+          ],
+          [
+            "Charlie-Second",
+            "90",
+            "Rank 2"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Stable sorting maintains relative order for identical keys.",
+            "activeRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Standard array merge sort requires auxiliary memory buffer.",
+            "activeRow": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Counting Inversions via Merge Sort in O(N log N)",
+      "codeHash": "7bc0af57284f91a07d397410566d4f8c7615837a6da4b3743909e46aaad9acd7",
+      "spec": {
+        "template": "cells",
+        "title": "Counting inversions during merge operations",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array inversion occurs when earlier index holds greater value.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "error"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Right element inversion counts remaining items in left array.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Counting inversions during merge operations",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Array inversion occurs when earlier index holds greater value.",
+            "items": [
+              "2",
+              "4",
+              "1",
+              "3",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "error"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Right element inversion counts remaining items in left array.",
+            "items": [
+              "2",
+              "4",
+              "1",
+              "3",
+              "5"
+            ],
+            "pointers": [
+              {
+                "name": "i",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "j",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Merge Sort with Single Auxiliary Buffer",
+      "codeHash": "3b30d9314214c7d8698a0d20d01de809531852cabf6e278112372315a5bceea5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
