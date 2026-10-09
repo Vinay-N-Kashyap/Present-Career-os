@@ -23,7 +23,8 @@
 // - 'devops': DevOps, Docker & CI/CD Pipelines (Month 5 Web Full-Stack) released via [task:L-devops]
 // - 'cloud': Cloud Architecture & Distributed Systems (Month 6 Web Full-Stack) released via [task:L-cloud]
 // - 'dist': Distributed Systems Architecture (Month 7 Web Full-Stack) released via [task:L-dist]
-export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist'];
+// - 'cyber': Cybersecurity, Cryptography & Secure Web Development (Month 8 Web Full-Stack) released via [task:L-cyber]
+export const ENABLED_COURSES: readonly string[] = ['python', 'dsa-py', 'sql-mastery', 'ai-py', 'dist-py', 'cloud-py', 'nlp-py', 'quant-py', 'prompt-py', 'train-py', 'vec-py', 'safe-py', 'react-basics', 'node-web', 'dsa-optim', 'devops', 'cloud', 'dist', 'cyber'];
 
 export function isCourseVisualsEnabled(prefix: string): boolean {
   return ENABLED_COURSES.includes(prefix);
