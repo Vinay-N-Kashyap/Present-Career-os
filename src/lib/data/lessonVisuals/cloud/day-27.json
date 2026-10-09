@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 27,
+  "promptSha": "199463e629dec0bfb3e7c2ca8cd431a91f491725aa752839b898364a213a28ff",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AWS WAF Architecture & Web ACL Fundamentals",
+      "codeHash": "35d2079477fbe52161a3a44afd99b9bc180e3a74116aeff075e545fcc0d237ae",
+      "spec": {
+        "template": "bars",
+        "title": "Web ACL capacity units consumption and limit boundaries",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each rule priority number determines evaluation order.",
+            "bars": [
+              {
+                "label": "Managed Rule Consumption",
+                "value": 700,
+                "max": 1500,
+                "tone": "data"
+              },
+              {
+                "label": "Total Allocated WCU Capacity",
+                "value": 1500,
+                "max": 1500,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Default action applies when no rule matches.",
+            "bars": [
+              {
+                "label": "Rule Group Evaluation",
+                "value": 1050,
+                "max": 1500,
+                "tone": "ok"
+              },
+              {
+                "label": "Remaining WCU Buffer",
+                "value": 450,
+                "max": 1500,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Web ACL capacity units consumption and limit boundaries",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each rule priority number determines evaluation order.",
+            "bars": [
+              {
+                "label": "Managed Rule Consumption",
+                "value": 700,
+                "max": 1500,
+                "tone": "data"
+              },
+              {
+                "label": "Total Allocated WCU Capacity",
+                "value": 1500,
+                "max": 1500,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Default action applies when no rule matches.",
+            "bars": [
+              {
+                "label": "Rule Group Evaluation",
+                "value": 1050,
+                "max": 1500,
+                "tone": "ok"
+              },
+              {
+                "label": "Remaining WCU Buffer",
+                "value": 450,
+                "max": 1500,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Managed Rule Groups: SQLi & XSS Detection",
+      "codeHash": "c650aa7a165b58cee55261ed689dd3b64a2a97a27954c0905b33e7d7d09b9363",
+      "spec": {
+        "template": "table",
+        "title": "AWS WAF managed rule groups and detection patterns",
+        "columns": [
+          "Managed Rule Set",
+          "Threat Detection Target",
+          "Inspection Zone",
+          "Default WAF Action"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a rule detects patterns it immediately blocks the request.",
+            "rows": [
+              [
+                {
+                  "text": "AWSManagedRulesSQLiRuleSet",
+                  "tone": "data"
+                },
+                {
+                  "text": "SQL Injection Patterns",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Query String & Body",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "AWSManagedRulesCommonRuleSet",
+                  "tone": "data"
+                },
+                {
+                  "text": "Cross-Site Scripting (XSS)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Headers & URI Path",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The detection rule group identifies script injection attempts in payloads.",
+            "rows": [
+              [
+                {
+                  "text": "AWSManagedRulesKnownBadInputs",
+                  "tone": "data"
+                },
+                {
+                  "text": "Log4j & SSRF Exploits",
+                  "tone": "ok"
+                },
+                {
+                  "text": "All Request Fields",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "AWSManagedRulesBotControl",
+                  "tone": "data"
+                },
+                {
+                  "text": "Scrapers & Credential Bots",
+                  "tone": "ok"
+                },
+                {
+                  "text": "User-Agent & Fingerprint",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Action: Challenge",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AWS WAF managed rule groups and detection patterns",
+        "columns": [
+          "Managed Rule Set",
+          "Threat Detection Target",
+          "Inspection Zone",
+          "Default WAF Action"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a rule detects patterns it immediately blocks the request.",
+            "rows": [
+              [
+                {
+                  "text": "AWSManagedRulesSQLiRuleSet",
+                  "tone": "data"
+                },
+                {
+                  "text": "SQL Injection Patterns",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Query String & Body",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "AWSManagedRulesCommonRuleSet",
+                  "tone": "data"
+                },
+                {
+                  "text": "Cross-Site Scripting (XSS)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Headers & URI Path",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The detection rule group identifies script injection attempts in payloads.",
+            "rows": [
+              [
+                {
+                  "text": "AWSManagedRulesKnownBadInputs",
+                  "tone": "data"
+                },
+                {
+                  "text": "Log4j & SSRF Exploits",
+                  "tone": "ok"
+                },
+                {
+                  "text": "All Request Fields",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Action: Block",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "AWSManagedRulesBotControl",
+                  "tone": "data"
+                },
+                {
+                  "text": "Scrapers & Credential Bots",
+                  "tone": "ok"
+                },
+                {
+                  "text": "User-Agent & Fingerprint",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Action: Challenge",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rate-Based Rules & Volumetric Attack Mitigation",
+      "codeHash": "79fdc36f2b6f5a6915e34fa2d7d29ee1607263c2b090f4ed6bde59f628ceb1de",
+      "spec": {
+        "template": "states",
+        "title": "Rate-based rule volumetric traffic evaluation and blocking states",
+        "states": [
+          {
+            "id": "rateNormal",
+            "label": "Rate Normal (Allowed)"
+          },
+          {
+            "id": "thresholdExceeded",
+            "label": "Threshold Exceeded (Evaluating)"
+          },
+          {
+            "id": "rateBlocked",
+            "label": "IP Quarantined (HTTP 403 Blocked)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When rate limited WAF adds the IP to blocked sets and returns forbidden.",
+            "active": "thresholdExceeded"
+          },
+          {
+            "at": "say6",
+            "caption": "Blocked addresses are automatically released when rates return to normal.",
+            "active": "rateBlocked"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Rate-based rule volumetric traffic evaluation and blocking states",
+        "states": [
+          {
+            "id": "rateNormal",
+            "label": "Rate Normal (Allowed)"
+          },
+          {
+            "id": "thresholdExceeded",
+            "label": "Threshold Exceeded (Evaluating)"
+          },
+          {
+            "id": "rateBlocked",
+            "label": "IP Quarantined (HTTP 403 Blocked)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When rate limited WAF adds the IP to blocked sets and returns forbidden.",
+            "active": "thresholdExceeded"
+          },
+          {
+            "at": "say6",
+            "caption": "Blocked addresses are automatically released when rates return to normal.",
+            "active": "rateBlocked"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS Shield Standard & Shield Advanced Protection",
+      "codeHash": "c4830f58bb86474c137b8bf465454f98c2e3baa1f1f208104993307eaa7f5267",
+      "spec": {
+        "template": "compare",
+        "title": "AWS Shield Standard compared to Shield Advanced protection",
+        "leftLabel": "AWS Shield Standard (Free)",
+        "rightLabel": "AWS Shield Advanced (Enterprise)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Shield standard is automatically enabled providing infrastructure protection.",
+            "left": {
+              "code": "Layer 3 & 4 SYN/UDP Flood",
+              "result": {
+                "text": "Automatic Mitigation"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Dedicated DDoS Response Team",
+              "result": {
+                "text": "24/7 Human Architect Support"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Shield advanced provides response team access and cost protection credits.",
+            "left": {
+              "code": "No Scaling Cost Reimbursement",
+              "result": {
+                "text": "Customer Pays Spike"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Spike Cost Protection Credits",
+              "result": {
+                "text": "AWS Credits Spike Charges"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "AWS Shield Standard compared to Shield Advanced protection",
+        "leftLabel": "AWS Shield Standard (Free)",
+        "rightLabel": "AWS Shield Advanced (Enterprise)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Shield standard is automatically enabled providing infrastructure protection.",
+            "left": {
+              "code": "Layer 3 & 4 SYN/UDP Flood",
+              "result": {
+                "text": "Automatic Mitigation"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Dedicated DDoS Response Team",
+              "result": {
+                "text": "24/7 Human Architect Support"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Shield advanced provides response team access and cost protection credits.",
+            "left": {
+              "code": "No Scaling Cost Reimbursement",
+              "result": {
+                "text": "Customer Pays Spike"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Spike Cost Protection Credits",
+              "result": {
+                "text": "AWS Credits Spike Charges"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WAF Full-Request Logging & Kinesis Data Firehose Streaming",
+      "codeHash": "4d5208b0761b11d0036aa8090ab0f5b9e3ded8c3cc84928214e1316d9d683246",
+      "spec": {
+        "template": "workflow",
+        "title": "WAF request logging and Kinesis streaming pipeline",
+        "stages": [
+          {
+            "id": "webAclInspect",
+            "name": "Web ACL Inspection",
+            "subtext": "Match & Action"
+          },
+          {
+            "id": "redactHeaders",
+            "name": "Redact Sensitive Fields",
+            "subtext": "Mask Auth & Cookies"
+          },
+          {
+            "id": "firehoseStream",
+            "name": "Kinesis Data Firehose",
+            "subtext": "Near Real-Time Stream"
+          },
+          {
+            "id": "siemArchive",
+            "name": "OpenSearch / SIEM",
+            "subtext": "Forensic Analytics"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kinesis data firehose streams logs in real time to search clusters.",
+            "activeStageId": "webAclInspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Redacted fields mask sensitive headers before logs leave the boundary.",
+            "activeStageId": "firehoseStream",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "WAF request logging and Kinesis streaming pipeline",
+        "stages": [
+          {
+            "id": "webAclInspect",
+            "name": "Web ACL Inspection",
+            "subtext": "Match & Action"
+          },
+          {
+            "id": "redactHeaders",
+            "name": "Redact Sensitive Fields",
+            "subtext": "Mask Auth & Cookies"
+          },
+          {
+            "id": "firehoseStream",
+            "name": "Kinesis Data Firehose",
+            "subtext": "Near Real-Time Stream"
+          },
+          {
+            "id": "siemArchive",
+            "name": "OpenSearch / SIEM",
+            "subtext": "Forensic Analytics"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kinesis data firehose streams logs in real time to search clusters.",
+            "activeStageId": "webAclInspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Redacted fields mask sensitive headers before logs leave the boundary.",
+            "activeStageId": "firehoseStream",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise WAF Security Posture Assessment",
+      "codeHash": "394bd0811aeb565d37e3a9e6707b833a9dbf7994fbaf8b43cb353838534231b1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
