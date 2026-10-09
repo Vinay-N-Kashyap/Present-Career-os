@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 21,
+  "promptSha": "80bb86c72000f088e3a3f3d21aa7069a4db513416661245411eaea85d9c58600",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Prefix Indexing with Tries & Word Frequency Maps",
+      "codeHash": "2fb2956bd7fe3302a407db6243d4afaef64a4354285d3cad548c43ef04b37305",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Prefix tree indexing and character edges",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "c",
+            "label": "c"
+          },
+          {
+            "id": "o",
+            "label": "o"
+          },
+          {
+            "id": "d",
+            "label": "d"
+          },
+          {
+            "id": "e",
+            "label": "e"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "c"
+          ],
+          [
+            "c",
+            "o"
+          ],
+          [
+            "o",
+            "d"
+          ],
+          [
+            "d",
+            "e"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prefix tree organizes characters along branches into retrieval tree.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Engine traverses character edges to reach prefix node.",
+            "activeNodeId": "c",
+            "visitedNodeIds": [
+              "root",
+              "c"
+            ],
+            "activeEdge": [
+              "root",
+              "c"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Prefix tree indexing and character edges",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "c",
+            "label": "c"
+          },
+          {
+            "id": "o",
+            "label": "o"
+          },
+          {
+            "id": "d",
+            "label": "d"
+          },
+          {
+            "id": "e",
+            "label": "e"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "c"
+          ],
+          [
+            "c",
+            "o"
+          ],
+          [
+            "o",
+            "d"
+          ],
+          [
+            "d",
+            "e"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prefix tree organizes characters along branches into retrieval tree.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Engine traverses character edges to reach prefix node.",
+            "activeNodeId": "c",
+            "visitedNodeIds": [
+              "root",
+              "c"
+            ],
+            "activeEdge": [
+              "root",
+              "c"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subtree Traversal & Candidate Collection Mechanics",
+      "codeHash": "ba1a5c4a52bc69ce97ec311f8de463c435d594ffc0e020d08dc5c10296386c17",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Subtree traversal and candidate collection",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "b",
+            "label": "b"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "a"
+          ],
+          [
+            "root",
+            "b"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recursive search traverses prefix downward to collect candidate words.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Traversal encounters terminal node and records candidate string.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "root",
+              "a"
+            ],
+            "activeEdge": [
+              "root",
+              "a"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Subtree traversal and candidate collection",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "root"
+          },
+          {
+            "id": "a",
+            "label": "a"
+          },
+          {
+            "id": "b",
+            "label": "b"
+          }
+        ],
+        "edges": [
+          [
+            "root",
+            "a"
+          ],
+          [
+            "root",
+            "b"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recursive search traverses prefix downward to collect candidate words.",
+            "activeNodeId": "root",
+            "visitedNodeIds": [
+              "root"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Traversal encounters terminal node and records candidate string.",
+            "activeNodeId": "a",
+            "visitedNodeIds": [
+              "root",
+              "a"
+            ],
+            "activeEdge": [
+              "root",
+              "a"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bounded Min-Heap for Top-K Ranking",
+      "codeHash": "4c4609be0a6b682be991729037ecc5c01eb8c0feb7ce660f0cd92341c3bb7802",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Bounded priority queue top candidate retention",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pushing candidate suggestions into priority heap structure.",
+            "action": "push",
+            "actionItem": {
+              "text": "rust"
+            },
+            "items": [
+              {
+                "text": "rust"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Heap pops element with smallest frequency when exceeding capacity.",
+            "action": "pop",
+            "actionItem": {
+              "text": "rust"
+            },
+            "items": [
+              {
+                "text": "ruby"
+              },
+              {
+                "text": "react"
+              },
+              {
+                "text": "redis"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Bounded priority queue top candidate retention",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pushing candidate suggestions into priority heap structure.",
+            "action": "push",
+            "actionItem": {
+              "text": "rust"
+            },
+            "items": [
+              {
+                "text": "rust"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Heap pops element with smallest frequency when exceeding capacity.",
+            "action": "pop",
+            "actionItem": {
+              "text": "rust"
+            },
+            "items": [
+              {
+                "text": "ruby"
+              },
+              {
+                "text": "react"
+              },
+              {
+                "text": "redis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Frequency Boosting & Query Learning",
+      "codeHash": "cfb7c226e258cb5a37a54a8fc6640f60417ca00b98877896dfea76dde808f69c",
+      "spec": {
+        "template": "table",
+        "title": "Dynamic query frequency learning map",
+        "columns": [
+          "Query",
+          "Frequency"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engine traverses terminal node and increments frequency counter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "typescript"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Term is dynamically inserted with initial frequency score.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "typescript"
+                  },
+                  {
+                    "text": "boosted"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tailwind"
+                  },
+                  {
+                    "text": "initial"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dynamic query frequency learning map",
+        "columns": [
+          "Query",
+          "Frequency"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engine traverses terminal node and increments frequency counter.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "typescript"
+                  },
+                  {
+                    "text": "single"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Term is dynamically inserted with initial frequency score.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "typescript"
+                  },
+                  {
+                    "text": "boosted"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "tailwind"
+                  },
+                  {
+                    "text": "initial"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sub-Millisecond Search Optimization & Caching",
+      "codeHash": "9084ff7bf47f30f824c16a1f783bbded0681c6f42e799b7344e59cf7b8288d07",
+      "spec": {
+        "template": "cells",
+        "title": "Precomputed suggestion caching at prefix nodes",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Node caches precomputed suggestions directly during write operations.",
+            "items": [
+              {
+                "text": "apple"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Node returns precomputed suggestions list without visiting descendants.",
+            "items": [
+              {
+                "text": "apple"
+              },
+              {
+                "text": "application"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Precomputed suggestion caching at prefix nodes",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Node caches precomputed suggestions directly during write operations.",
+            "items": [
+              {
+                "text": "apple"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Node returns precomputed suggestions list without visiting descendants.",
+            "items": [
+              {
+                "text": "apple"
+              },
+              {
+                "text": "application"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Milestone 3 Auto-Complete Engine Walkthrough",
+      "codeHash": "5c7b8442f1c68f2dfa1f27164172e000def6e4a5ebac627fe41e4aa58c0973b9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
