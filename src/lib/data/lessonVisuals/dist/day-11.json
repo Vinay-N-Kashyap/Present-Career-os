@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 11,
+  "promptSha": "b3cd0fd9af2d43805145cbe6e4cb5f85974873a89dac8192848f67400fd06853",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Saga Pattern Fundamentals: Eventual Consistency Without 2PC Locks",
+      "codeHash": "f06d5ee5837d170d3de34dde731d7e7c7a06b36e7d687b0c168f0dc6593fba7d",
+      "spec": {
+        "template": "workflow",
+        "title": "Saga local transaction sequence eliminating distributed coordinator locks",
+        "workflow": [
+          {
+            "id": "serviceA",
+            "label": "Service A Local DB Commit",
+            "status": "completed"
+          },
+          {
+            "id": "eventEmit",
+            "label": "Domain Event Emitted",
+            "status": "active"
+          },
+          {
+            "id": "serviceB",
+            "label": "Service B Local DB Commit",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A saga divides distributed execution across independent microservices.",
+            "activeWorkflowId": "serviceA",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "No long locks are held across boundaries because disk commits happen fast.",
+            "activeWorkflowId": "serviceB",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Saga local transaction sequence eliminating distributed coordinator locks",
+        "workflow": [
+          {
+            "id": "serviceA",
+            "label": "Service A Local DB Commit",
+            "status": "completed"
+          },
+          {
+            "id": "eventEmit",
+            "label": "Domain Event Emitted",
+            "status": "active"
+          },
+          {
+            "id": "serviceB",
+            "label": "Service B Local DB Commit",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A saga divides distributed execution across independent microservices.",
+            "activeWorkflowId": "serviceA",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "No long locks are held across boundaries because disk commits happen fast.",
+            "activeWorkflowId": "serviceB",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Compensating Transactions: Semantic Undo in Distributed Systems",
+      "codeHash": "86b5b96631d7be4c31aa043eeae3889ddf1e2f0ec13e9e86290cb51bdf388cb0",
+      "spec": {
+        "template": "states",
+        "title": "Compensating transactions restoring eventual consistency",
+        "states": [
+          {
+            "id": "forwardCommitted",
+            "label": "Forward Actions Committed"
+          },
+          {
+            "id": "failureEncountered",
+            "label": "Downstream Step Failed"
+          },
+          {
+            "id": "compensatingRollback",
+            "label": "Compensating Actions Executing"
+          },
+          {
+            "id": "consistentAbort",
+            "label": "Consistent Business State Restored"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Compensating operations achieve eventual consistency after step failures.",
+            "activeStateId": "compensatingRollback",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Compensating operations run in reverse order of forward actions.",
+            "activeStateId": "consistentAbort",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Compensating transactions restoring eventual consistency",
+        "states": [
+          {
+            "id": "forwardCommitted",
+            "label": "Forward Actions Committed"
+          },
+          {
+            "id": "failureEncountered",
+            "label": "Downstream Step Failed"
+          },
+          {
+            "id": "compensatingRollback",
+            "label": "Compensating Actions Executing"
+          },
+          {
+            "id": "consistentAbort",
+            "label": "Consistent Business State Restored"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Compensating operations achieve eventual consistency after step failures.",
+            "activeStateId": "compensatingRollback",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Compensating operations run in reverse order of forward actions.",
+            "activeStateId": "consistentAbort",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Saga Choreography: Decentralized Event-Driven Coordination",
+      "codeHash": "01597a5fbb2bfa16126d520c801506a49c75ad3b9433f501000eeed047753d08",
+      "spec": {
+        "template": "sequence",
+        "title": "Decentralized choreography event flow between microservices",
+        "actors": [
+          {
+            "id": "orderSvc",
+            "label": "Order Service"
+          },
+          {
+            "id": "eventBus",
+            "label": "Message Broker"
+          },
+          {
+            "id": "paymentSvc",
+            "label": "Payment Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orderSvc",
+            "to": "eventBus",
+            "label": "Publish OrderCreated",
+            "tone": "data"
+          },
+          {
+            "from": "eventBus",
+            "to": "paymentSvc",
+            "label": "Deliver OrderCreated",
+            "tone": "ok"
+          },
+          {
+            "from": "paymentSvc",
+            "to": "eventBus",
+            "label": "Publish PaymentProcessed",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Microservices exchange domain events across a distributed message broker.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Payment listens for order creation and processes its local charge.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Decentralized choreography event flow between microservices",
+        "actors": [
+          {
+            "id": "orderSvc",
+            "label": "Order Service"
+          },
+          {
+            "id": "eventBus",
+            "label": "Message Broker"
+          },
+          {
+            "id": "paymentSvc",
+            "label": "Payment Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orderSvc",
+            "to": "eventBus",
+            "label": "Publish OrderCreated",
+            "tone": "data"
+          },
+          {
+            "from": "eventBus",
+            "to": "paymentSvc",
+            "label": "Deliver OrderCreated",
+            "tone": "ok"
+          },
+          {
+            "from": "paymentSvc",
+            "to": "eventBus",
+            "label": "Publish PaymentProcessed",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Microservices exchange domain events across a distributed message broker.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Payment listens for order creation and processes its local charge.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Saga Orchestration: Centralized State Machine Coordinator",
+      "codeHash": "7602640f9cea7cf1ae863547168eb0e645375ab1a2f0785fff015f5258260887",
+      "spec": {
+        "template": "compare",
+        "title": "Architectural trade-offs of choreography versus orchestration",
+        "left": {
+          "title": "Saga Choreography",
+          "items": [
+            "Decentralized pub-sub event flow",
+            "No centralized single coordinator",
+            "Complex tracking of overall state"
+          ]
+        },
+        "right": {
+          "title": "Saga Orchestration",
+          "items": [
+            "Centralized state machine engine",
+            "Explicit commands and reply tracking",
+            "Straightforward auditing and visualization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Orchestration relies on a centralized coordinator to manage transactions.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Centralized orchestration simplifies audit monitoring across services.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Architectural trade-offs of choreography versus orchestration",
+        "left": {
+          "title": "Saga Choreography",
+          "items": [
+            "Decentralized pub-sub event flow",
+            "No centralized single coordinator",
+            "Complex tracking of overall state"
+          ]
+        },
+        "right": {
+          "title": "Saga Orchestration",
+          "items": [
+            "Centralized state machine engine",
+            "Explicit commands and reply tracking",
+            "Straightforward auditing and visualization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Orchestration relies on a centralized coordinator to manage transactions.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Centralized orchestration simplifies audit monitoring across services.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forward Recovery vs Backward Recovery in Distributed Sagas",
+      "codeHash": "531dc0ea50a31c38d7b06a703e9d191ef6cbb42d26fca1432589966442d9aabd",
+      "spec": {
+        "template": "table",
+        "title": "Comparison matrix of forward recovery versus backward recovery",
+        "columns": [
+          "Philosophy",
+          "Failure Trigger",
+          "System Action",
+          "Outcome State"
+        ],
+        "rows": [
+          [
+            "Backward Recovery",
+            "Business Rule Rejection",
+            "Compensating Rollback",
+            "Original State Restored"
+          ],
+          [
+            "Forward Recovery",
+            "Transient Network Timeout",
+            "Exponential Backoff Retries",
+            "Transaction Completed"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Backward recovery triggers compensating actions to reverse prior steps.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Forward recovery retries failing steps until successful completion.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparison matrix of forward recovery versus backward recovery",
+        "columns": [
+          "Philosophy",
+          "Failure Trigger",
+          "System Action",
+          "Outcome State"
+        ],
+        "rows": [
+          [
+            "Backward Recovery",
+            "Business Rule Rejection",
+            "Compensating Rollback",
+            "Original State Restored"
+          ],
+          [
+            "Forward Recovery",
+            "Transient Network Timeout",
+            "Exponential Backoff Retries",
+            "Transaction Completed"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Backward recovery triggers compensating actions to reverse prior steps.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Forward recovery retries failing steps until successful completion.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Distributed Saga Engine with State Persistence & Rollback",
+      "codeHash": "c6ec0a9956f8f08b84b30654355cb1ebaa2559233d95fc0c22d5cbc2b7949c20",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
