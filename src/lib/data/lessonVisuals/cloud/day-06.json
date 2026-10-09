@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 6,
+  "promptSha": "9290c4c8a5471205a6c2de27971d33b1712df63a744ee8f3fa963ae01fc45a33",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "IAM Architecture: Users, Groups, and the Root Account",
+      "codeHash": "4a35d1513cbf4163896da104624db100a1215c35724d076823247e3b3fae663f",
+      "spec": {
+        "template": "workflow",
+        "title": "IAM identity hierarchy and credential security boundaries",
+        "stages": [
+          {
+            "id": "root",
+            "name": "Root Account",
+            "subtext": "Break Glass Only"
+          },
+          {
+            "id": "groups",
+            "name": "IAM Groups",
+            "subtext": "Job Role Policies"
+          },
+          {
+            "id": "users",
+            "name": "IAM Users",
+            "subtext": "MFA Enforced"
+          },
+          {
+            "id": "leastPriv",
+            "name": "Least Privilege",
+            "subtext": "Scoped Access"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lock away root credentials immediately following account creation.",
+            "activeStageId": "root",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Enterprise practice places users into groups reflecting job functions.",
+            "activeStageId": "groups",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "IAM identity hierarchy and credential security boundaries",
+        "stages": [
+          {
+            "id": "root",
+            "name": "Root Account",
+            "subtext": "Break Glass Only"
+          },
+          {
+            "id": "groups",
+            "name": "IAM Groups",
+            "subtext": "Job Role Policies"
+          },
+          {
+            "id": "users",
+            "name": "IAM Users",
+            "subtext": "MFA Enforced"
+          },
+          {
+            "id": "leastPriv",
+            "name": "Least Privilege",
+            "subtext": "Scoped Access"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Lock away root credentials immediately following account creation.",
+            "activeStageId": "root",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Enterprise practice places users into groups reflecting job functions.",
+            "activeStageId": "groups",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JSON Policy Structure: Effect, Action, Resource, Condition",
+      "codeHash": "664264d6388034715258fe6e89bd3eda4ac59202ae4a98569d2d44d876c7b4cb",
+      "spec": {
+        "template": "table",
+        "title": "IAM policy document structure and statement blocks",
+        "columns": [
+          "Policy Element",
+          "JSON Value",
+          "Evaluation Role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Policy statement blocks evaluate access permissions formatted in JSON.",
+            "rows": [
+              [
+                {
+                  "text": "Effect",
+                  "tone": "data"
+                },
+                {
+                  "text": "Allow",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permission Decision",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Action",
+                  "tone": "data"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permitted API Call",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Action defines specific operations permitted or forbidden across services.",
+            "rows": [
+              [
+                {
+                  "text": "Effect",
+                  "tone": "data"
+                },
+                {
+                  "text": "Allow",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permission Decision",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Action",
+                  "tone": "data"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permitted API Call",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Resource",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:s3:::app/*",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Targeted Storage ARN",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "IAM policy document structure and statement blocks",
+        "columns": [
+          "Policy Element",
+          "JSON Value",
+          "Evaluation Role"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Policy statement blocks evaluate access permissions formatted in JSON.",
+            "rows": [
+              [
+                {
+                  "text": "Effect",
+                  "tone": "data"
+                },
+                {
+                  "text": "Allow",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permission Decision",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Action",
+                  "tone": "data"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permitted API Call",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Action defines specific operations permitted or forbidden across services.",
+            "rows": [
+              [
+                {
+                  "text": "Effect",
+                  "tone": "data"
+                },
+                {
+                  "text": "Allow",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permission Decision",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Action",
+                  "tone": "data"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Permitted API Call",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Resource",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:s3:::app/*",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Targeted Storage ARN",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IAM Roles and Instance Profiles",
+      "codeHash": "ad89061c82ec50e6678f4aca7b12f9d8db78e1b2f11123cc37092f35aa488410",
+      "spec": {
+        "template": "sequence",
+        "title": "IAM role instance profile dynamic credential rotation",
+        "actors": [
+          {
+            "id": "instance",
+            "name": "EC2 Node"
+          },
+          {
+            "id": "imds",
+            "name": "IMDSv2 Service"
+          },
+          {
+            "id": "sts",
+            "name": "AWS STS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Roles have no static long term credentials like passwords or access keys.",
+            "from": "instance",
+            "to": "imds",
+            "label": "Fetch Token",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Instance metadata service automatically rotates temporary credentials.",
+            "from": "imds",
+            "to": "sts",
+            "label": "AssumeRole Call",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "IAM role instance profile dynamic credential rotation",
+        "actors": [
+          {
+            "id": "instance",
+            "name": "EC2 Node"
+          },
+          {
+            "id": "imds",
+            "name": "IMDSv2 Service"
+          },
+          {
+            "id": "sts",
+            "name": "AWS STS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Roles have no static long term credentials like passwords or access keys.",
+            "from": "instance",
+            "to": "imds",
+            "label": "Fetch Token",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Instance metadata service automatically rotates temporary credentials.",
+            "from": "imds",
+            "to": "sts",
+            "label": "AssumeRole Call",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trust Policies (AssumeRolePolicyDocument) vs Permission Policies",
+      "codeHash": "06c728ef526c630841ef72132e45284df08cafd6e58c30ffae491cb0ff5367bf",
+      "spec": {
+        "template": "compare",
+        "title": "Trust policies compared to permission policies",
+        "leftLabel": "Trust Policy (AssumeRole)",
+        "rightLabel": "Permissions Policy (Access)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Roles consist of two distinct documents separating trust from permissions.",
+            "left": {
+              "code": "Principal: ec2.amazonaws.com",
+              "result": {
+                "text": "Trust Policy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Action: s3:PutObject",
+              "result": {
+                "text": "Permissions Policy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Without explicit allow in trust policy requests reject immediately.",
+            "left": {
+              "code": "AssumeRole Denied",
+              "result": {
+                "text": "Access Denied"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Role Assumed Successfully",
+              "result": {
+                "text": "Access Granted"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Trust policies compared to permission policies",
+        "leftLabel": "Trust Policy (AssumeRole)",
+        "rightLabel": "Permissions Policy (Access)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Roles consist of two distinct documents separating trust from permissions.",
+            "left": {
+              "code": "Principal: ec2.amazonaws.com",
+              "result": {
+                "text": "Trust Policy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Action: s3:PutObject",
+              "result": {
+                "text": "Permissions Policy"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Without explicit allow in trust policy requests reject immediately.",
+            "left": {
+              "code": "AssumeRole Denied",
+              "result": {
+                "text": "Access Denied"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Role Assumed Successfully",
+              "result": {
+                "text": "Access Granted"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IAM Evaluation Logic: Explicit Deny Precedence",
+      "codeHash": "d4072a134db7c9f55958266e20fa7efff3d25724ededa4fc2ecb2e76d0e94780",
+      "spec": {
+        "template": "states",
+        "title": "IAM evaluation logic and explicit deny precedence",
+        "states": [
+          {
+            "id": "defaultDeny",
+            "label": "Default Implicit Deny"
+          },
+          {
+            "id": "evaluating",
+            "label": "Evaluating Policies"
+          },
+          {
+            "id": "decision",
+            "label": "Explicit Deny Trumps Allow"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Requests implicitly deny by default unless explicit policies grant access.",
+            "active": "defaultDeny"
+          },
+          {
+            "at": "say6",
+            "caption": "Explicit deny overrides any allow permissions functioning as immutable veto.",
+            "active": "decision"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "IAM evaluation logic and explicit deny precedence",
+        "states": [
+          {
+            "id": "defaultDeny",
+            "label": "Default Implicit Deny"
+          },
+          {
+            "id": "evaluating",
+            "label": "Evaluating Policies"
+          },
+          {
+            "id": "decision",
+            "label": "Explicit Deny Trumps Allow"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Requests implicitly deny by default unless explicit policies grant access.",
+            "active": "defaultDeny"
+          },
+          {
+            "at": "say6",
+            "caption": "Explicit deny overrides any allow permissions functioning as immutable veto.",
+            "active": "decision"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Credential Hardening: IAM Access Analyzer & Auditing",
+      "codeHash": "876bb5f29cc5fa7b63e967f9adf67694fb294ac74843ed2f75c8ba282a645e9e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
