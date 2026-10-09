@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 19,
+  "promptSha": "eb1d3d9c99f086dda74c156037fb0d24a937a45e27347a5e9c5e5bb4b1778fbb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Software Supply Chain Risks & The Open Source Attack Surface",
+      "codeHash": "15e428da9ace182665a52ffb6126fa17ac0a06d78db7506802daa0fadc0fb3b7",
+      "spec": {
+        "template": "compare",
+        "title": "First-party application codebase versus third-party supply chain attack surface",
+        "left": {
+          "title": "First-Party Application Code",
+          "items": [
+            "Handcrafted business logic authored by internal team",
+            "Carefully reviewed during internal pull requests",
+            "Represents tiny fraction of overall executable logic"
+          ]
+        },
+        "right": {
+          "title": "Third-Party Open Source Supply Chain",
+          "items": [
+            "Thousands of direct and transitive package dependencies",
+            "Vulnerable to compromised upstream maintainer accounts",
+            "Dramatically expands application security attack surface"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Open source libraries expand the attack surface and risk footprint.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Compromised upstream packages make downstream applications vulnerable.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "First-party application codebase versus third-party supply chain attack surface",
+        "left": {
+          "title": "First-Party Application Code",
+          "items": [
+            "Handcrafted business logic authored by internal team",
+            "Carefully reviewed during internal pull requests",
+            "Represents tiny fraction of overall executable logic"
+          ]
+        },
+        "right": {
+          "title": "Third-Party Open Source Supply Chain",
+          "items": [
+            "Thousands of direct and transitive package dependencies",
+            "Vulnerable to compromised upstream maintainer accounts",
+            "Dramatically expands application security attack surface"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Open source libraries expand the attack surface and risk footprint.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Compromised upstream packages make downstream applications vulnerable.",
+            "highlightSide": "right",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Software Bill of Materials (SBOM) Standards: CycloneDX & SPDX",
+      "codeHash": "d9b884f71f1d1ca61bc10bbd0d37892a7a70470601c81627900920dd8c957ebc",
+      "spec": {
+        "template": "table",
+        "title": "Software Bill of Materials (SBOM) international governance standards",
+        "columns": [
+          "SBOM Standard",
+          "Governing Body",
+          "Format Ecosystem",
+          "Declared Metadata Attributes"
+        ],
+        "rows": [
+          [
+            "CycloneDX",
+            "OWASP Community",
+            "JSON and XML Schema",
+            "Package URLs and Cryptographic Hashes"
+          ],
+          [
+            "SPDX Specification",
+            "Linux Foundation",
+            "ISO International Standard",
+            "Component Provenance and Licenses"
+          ],
+          [
+            "Syft Cataloger",
+            "Open Source Tooling",
+            "Container and Filesystem",
+            "Automatic Direct Component Catalog"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An SBOM provides a machine readable inventory of software components.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "An SBOM query identifies all impacted microservices in seconds.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Software Bill of Materials (SBOM) international governance standards",
+        "columns": [
+          "SBOM Standard",
+          "Governing Body",
+          "Format Ecosystem",
+          "Declared Metadata Attributes"
+        ],
+        "rows": [
+          [
+            "CycloneDX",
+            "OWASP Community",
+            "JSON and XML Schema",
+            "Package URLs and Cryptographic Hashes"
+          ],
+          [
+            "SPDX Specification",
+            "Linux Foundation",
+            "ISO International Standard",
+            "Component Provenance and Licenses"
+          ],
+          [
+            "Syft Cataloger",
+            "Open Source Tooling",
+            "Container and Filesystem",
+            "Automatic Direct Component Catalog"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An SBOM provides a machine readable inventory of software components.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "An SBOM query identifies all impacted microservices in seconds.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated CVE Vulnerability Matching & CVSS Severity Scoring",
+      "codeHash": "e5a6a5b1389f9d7cfca72ddf9f694ce01494f4d79b0d7a75576f695035fdf020",
+      "spec": {
+        "template": "table",
+        "title": "Common Vulnerability Scoring System (CVSS) severity scoring tiers",
+        "columns": [
+          "CVSS Severity Tier",
+          "Score Range Interval",
+          "Typical Impact Vector",
+          "CI/CD Build Policy"
+        ],
+        "rows": [
+          [
+            "Critical Severity",
+            "Nine to Ten Points",
+            "Remote Code Execution Zero Day",
+            "Fail Build Immediately"
+          ],
+          [
+            "High Severity",
+            "Seven to Eight Points",
+            "Privilege Escalation Exploit",
+            "Fail Build If Patch Available"
+          ],
+          [
+            "Medium Severity",
+            "Four to Six Points",
+            "Information Disclosure Vulnerability",
+            "Emit Warning and Remediation Ticket"
+          ],
+          [
+            "Low Severity",
+            "Zero to Three Points",
+            "Minor Security Bypass Vector",
+            "Log Advisory for Regular Patch Cycle"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Scores are categorized into qualitative severity tiers for assessment.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Build gates enforce policies that fail builds when critical CVEs are found.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Common Vulnerability Scoring System (CVSS) severity scoring tiers",
+        "columns": [
+          "CVSS Severity Tier",
+          "Score Range Interval",
+          "Typical Impact Vector",
+          "CI/CD Build Policy"
+        ],
+        "rows": [
+          [
+            "Critical Severity",
+            "Nine to Ten Points",
+            "Remote Code Execution Zero Day",
+            "Fail Build Immediately"
+          ],
+          [
+            "High Severity",
+            "Seven to Eight Points",
+            "Privilege Escalation Exploit",
+            "Fail Build If Patch Available"
+          ],
+          [
+            "Medium Severity",
+            "Four to Six Points",
+            "Information Disclosure Vulnerability",
+            "Emit Warning and Remediation Ticket"
+          ],
+          [
+            "Low Severity",
+            "Zero to Three Points",
+            "Minor Security Bypass Vector",
+            "Log Advisory for Regular Patch Cycle"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Scores are categorized into qualitative severity tiers for assessment.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Build gates enforce policies that fail builds when critical CVEs are found.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependency Confusion & Typosquatting Defense Engine",
+      "codeHash": "2f7f4b18206cb1c989e1662ca80d62aff61f877b4a15ba4a46963250330c8019",
+      "spec": {
+        "template": "states",
+        "title": "Typosquatting package detection and private namespace isolation stages",
+        "states": [
+          {
+            "id": "packageRequested",
+            "label": "Developer Requests Package Installation"
+          },
+          {
+            "id": "distanceCalculated",
+            "label": "Levenshtein Distance Calculated"
+          },
+          {
+            "id": "squattingDetected",
+            "label": "Adversarial Counterfeit Detected"
+          },
+          {
+            "id": "registryEnforced",
+            "label": "Scoped Namespace Blocks Public Registry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Typosquatting occurs when an attacker publishes an adversarial package.",
+            "activeStateId": "squattingDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Security tools calculate edit distances against catalogs of package names.",
+            "activeStateId": "distanceCalculated",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Typosquatting package detection and private namespace isolation stages",
+        "states": [
+          {
+            "id": "packageRequested",
+            "label": "Developer Requests Package Installation"
+          },
+          {
+            "id": "distanceCalculated",
+            "label": "Levenshtein Distance Calculated"
+          },
+          {
+            "id": "squattingDetected",
+            "label": "Adversarial Counterfeit Detected"
+          },
+          {
+            "id": "registryEnforced",
+            "label": "Scoped Namespace Blocks Public Registry"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Typosquatting occurs when an attacker publishes an adversarial package.",
+            "activeStateId": "squattingDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Security tools calculate edit distances against catalogs of package names.",
+            "activeStateId": "distanceCalculated",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transitive Dependency Tree Traversal & Scoped Packages",
+      "codeHash": "e284db8fcf0509331b0665220aeb282668a503a92a16d2cf71a415d4bed56351",
+      "spec": {
+        "template": "flow",
+        "title": "Transitive dependency graph traversal revealing deeply buried vulnerabilities",
+        "nodes": [
+          {
+            "id": "appRoot",
+            "label": "Top-Level Web Application",
+            "tappable": false
+          },
+          {
+            "id": "directDep",
+            "label": "Direct Express Framework Dependency",
+            "tappable": false
+          },
+          {
+            "id": "transitiveOne",
+            "label": "Transitive Cookie Parsing Module",
+            "tappable": false
+          },
+          {
+            "id": "vulnerableDeep",
+            "label": "Vulnerable Nested Dependency",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appRoot",
+            "to": "directDep",
+            "label": "Imports"
+          },
+          {
+            "from": "directDep",
+            "to": "transitiveOne",
+            "label": "Requires"
+          },
+          {
+            "from": "transitiveOne",
+            "to": "vulnerableDeep",
+            "label": "Chains"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transitive dependencies form a deep directed acyclic graph.",
+            "activeNodes": [
+              "appRoot",
+              "directDep"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Scanners recursively traverse the entire graph to identify vulnerabilities.",
+            "activeNodes": [
+              "transitiveOne",
+              "vulnerableDeep"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Transitive dependency graph traversal revealing deeply buried vulnerabilities",
+        "nodes": [
+          {
+            "id": "appRoot",
+            "label": "Top-Level Web Application",
+            "tappable": false
+          },
+          {
+            "id": "directDep",
+            "label": "Direct Express Framework Dependency",
+            "tappable": false
+          },
+          {
+            "id": "transitiveOne",
+            "label": "Transitive Cookie Parsing Module",
+            "tappable": false
+          },
+          {
+            "id": "vulnerableDeep",
+            "label": "Vulnerable Nested Dependency",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appRoot",
+            "to": "directDep",
+            "label": "Imports"
+          },
+          {
+            "from": "directDep",
+            "to": "transitiveOne",
+            "label": "Requires"
+          },
+          {
+            "from": "transitiveOne",
+            "to": "vulnerableDeep",
+            "label": "Chains"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Transitive dependencies form a deep directed acyclic graph.",
+            "activeNodes": [
+              "appRoot",
+              "directDep"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Scanners recursively traverse the entire graph to identify vulnerabilities.",
+            "activeNodes": [
+              "transitiveOne",
+              "vulnerableDeep"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Package Integrity Verification & Checksum Locking",
+      "codeHash": "ab01091bc9acada3e790ca8b8fd141dff58b81ee96d66ceb19d482a23db73bb9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
