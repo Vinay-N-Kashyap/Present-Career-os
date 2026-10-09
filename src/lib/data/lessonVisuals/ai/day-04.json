@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 4,
+  "promptSha": "24c47367a84695c2681f99f4efa05df4103c0e6da2778960cbe595cfa022bd69",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "In-Context Learning: Zero-Shot vs Few-Shot Exemplar Dynamics",
+      "codeHash": "50c0e04ea1156c175958b39227952114861a688a3fc7c208cf4e0d1f2b848244",
+      "spec": {
+        "template": "compare",
+        "title": "Zero-shot instruction prompting versus few-shot exemplar demonstrations",
+        "left": {
+          "title": "Zero-Shot Prompting",
+          "items": [
+            "Relies strictly on task instructions",
+            "Fast and consumes minimal token budget",
+            "Prone to format hallucinations on rigid schemas",
+            "Struggles with subtle classification edge cases"
+          ]
+        },
+        "right": {
+          "title": "Few-Shot Exemplars",
+          "items": [
+            "Provides two to five input-output demonstrations",
+            "Anchors exact output formatting and tone",
+            "Boosts accuracy on complex classification tasks",
+            "Consumes additional input tokens per API call"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Few-shot prompting provides high-quality input and output exemplars.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Relevant exemplars significantly boost task accuracy on complex problems.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Zero-shot instruction prompting versus few-shot exemplar demonstrations",
+        "left": {
+          "title": "Zero-Shot Prompting",
+          "items": [
+            "Relies strictly on task instructions",
+            "Fast and consumes minimal token budget",
+            "Prone to format hallucinations on rigid schemas",
+            "Struggles with subtle classification edge cases"
+          ]
+        },
+        "right": {
+          "title": "Few-Shot Exemplars",
+          "items": [
+            "Provides two to five input-output demonstrations",
+            "Anchors exact output formatting and tone",
+            "Boosts accuracy on complex classification tasks",
+            "Consumes additional input tokens per API call"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Few-shot prompting provides high-quality input and output exemplars.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Relevant exemplars significantly boost task accuracy on complex problems.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chain-of-Thought (CoT) Prompting: 'Let's Think Step by Step'",
+      "codeHash": "8b0a7053a12a6f3890fa1b36e2b4d96d33a4d21df59918011735d25a3c77abb9",
+      "spec": {
+        "template": "flow",
+        "title": "Chain-of-thought sequential problem decomposition and reasoning execution",
+        "nodes": [
+          {
+            "id": "complexTask",
+            "label": "Complex Logic Task Input",
+            "tappable": false
+          },
+          {
+            "id": "cotTrigger",
+            "label": "Step by Step Trigger",
+            "tappable": false
+          },
+          {
+            "id": "reasoningTokens",
+            "label": "Intermediate Reasoning Chain",
+            "tappable": false
+          },
+          {
+            "id": "finalAnswer",
+            "label": "Accurate Final Conclusion",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "complexTask",
+            "to": "cotTrigger",
+            "label": "Analyze Query"
+          },
+          {
+            "from": "cotTrigger",
+            "to": "reasoningTokens",
+            "label": "Generate Thoughts"
+          },
+          {
+            "from": "reasoningTokens",
+            "to": "finalAnswer",
+            "label": "Deduce Conclusion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Chain of thought prompting forces intermediate reasoning steps.",
+            "activeNodes": [
+              "complexTask",
+              "cotTrigger"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Reasoning steps decompose complex tasks to calculate accurate conclusions.",
+            "activeNodes": [
+              "reasoningTokens",
+              "finalAnswer"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Chain-of-thought sequential problem decomposition and reasoning execution",
+        "nodes": [
+          {
+            "id": "complexTask",
+            "label": "Complex Logic Task Input",
+            "tappable": false
+          },
+          {
+            "id": "cotTrigger",
+            "label": "Step by Step Trigger",
+            "tappable": false
+          },
+          {
+            "id": "reasoningTokens",
+            "label": "Intermediate Reasoning Chain",
+            "tappable": false
+          },
+          {
+            "id": "finalAnswer",
+            "label": "Accurate Final Conclusion",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "complexTask",
+            "to": "cotTrigger",
+            "label": "Analyze Query"
+          },
+          {
+            "from": "cotTrigger",
+            "to": "reasoningTokens",
+            "label": "Generate Thoughts"
+          },
+          {
+            "from": "reasoningTokens",
+            "to": "finalAnswer",
+            "label": "Deduce Conclusion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Chain of thought prompting forces intermediate reasoning steps.",
+            "activeNodes": [
+              "complexTask",
+              "cotTrigger"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Reasoning steps decompose complex tasks to calculate accurate conclusions.",
+            "activeNodes": [
+              "reasoningTokens",
+              "finalAnswer"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structured Exemplar Design: Selecting Diverse Edge Cases",
+      "codeHash": "9de871dbf3d62b1e6ab784f87b68fc9e7f30f8c48d1edd46032d83f30c71d67f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Self-Consistency: Generating Multiple Reasoning Paths and Majority Voting",
+      "codeHash": "4ba68c2ef36f4362cd3d0959e9c9c5713d63af24251d2fc3fb71370f6f9c0cb2",
+      "spec": {
+        "template": "sequence",
+        "title": "Self-consistency stochastic path sampling and majority vote aggregation",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Inference Client"
+          },
+          {
+            "id": "sampler",
+            "label": "Stochastic Sampler"
+          },
+          {
+            "id": "voter",
+            "label": "Majority Vote Aggregator"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "sampler",
+            "label": "Request Multiple Reasoning Paths",
+            "tone": "data"
+          },
+          {
+            "from": "sampler",
+            "to": "voter",
+            "label": "Emit Independent Candidate Answers",
+            "tone": "data"
+          },
+          {
+            "from": "voter",
+            "to": "client",
+            "label": "Return Consensus Majority Winner",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-consistency samples distinct reasoning paths to identify majority answers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Majority vote aggregators improve accuracy over single pass reasoning.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Self-consistency stochastic path sampling and majority vote aggregation",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Inference Client"
+          },
+          {
+            "id": "sampler",
+            "label": "Stochastic Sampler"
+          },
+          {
+            "id": "voter",
+            "label": "Majority Vote Aggregator"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "sampler",
+            "label": "Request Multiple Reasoning Paths",
+            "tone": "data"
+          },
+          {
+            "from": "sampler",
+            "to": "voter",
+            "label": "Emit Independent Candidate Answers",
+            "tone": "data"
+          },
+          {
+            "from": "voter",
+            "to": "client",
+            "label": "Return Consensus Majority Winner",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Self-consistency samples distinct reasoning paths to identify majority answers.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Majority vote aggregators improve accuracy over single pass reasoning.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Least-to-Most and Tree-of-Thoughts Decomposition Strategies",
+      "codeHash": "c38d116b2dd2a8804e365180e5b6be70724acbc9dcf041e86d4886b5b150dc80",
+      "spec": {
+        "template": "table",
+        "title": "Least-to-most and tree-of-thoughts decomposition state search",
+        "columns": [
+          "Decomposition Method",
+          "Reasoning Topology",
+          "Search Mechanism",
+          "Target Task Complexity"
+        ],
+        "rows": [
+          [
+            "Standard Chain of Thought",
+            "Linear Sequential Chain",
+            "Single Forward Pass",
+            "Basic Math and Logic"
+          ],
+          [
+            "Least to Most Prompting",
+            "Progressive Subproblems",
+            "Context Bootstrapping",
+            "Multi Step Dependency"
+          ],
+          [
+            "Tree of Thoughts BFS",
+            "Branching State Space",
+            "Breadth First Search",
+            "Exploratory Planning"
+          ],
+          [
+            "Tree of Thoughts DFS",
+            "Hierarchical Search Tree",
+            "Depth First Backtracking",
+            "Autonomous Code Generation"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Least-to-most prompting breaks complex challenges into simpler sub-problems.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Search algorithms use backtracking to prune dead ends in decision trees.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Least-to-most and tree-of-thoughts decomposition state search",
+        "columns": [
+          "Decomposition Method",
+          "Reasoning Topology",
+          "Search Mechanism",
+          "Target Task Complexity"
+        ],
+        "rows": [
+          [
+            "Standard Chain of Thought",
+            "Linear Sequential Chain",
+            "Single Forward Pass",
+            "Basic Math and Logic"
+          ],
+          [
+            "Least to Most Prompting",
+            "Progressive Subproblems",
+            "Context Bootstrapping",
+            "Multi Step Dependency"
+          ],
+          [
+            "Tree of Thoughts BFS",
+            "Branching State Space",
+            "Breadth First Search",
+            "Exploratory Planning"
+          ],
+          [
+            "Tree of Thoughts DFS",
+            "Hierarchical Search Tree",
+            "Depth First Backtracking",
+            "Autonomous Code Generation"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Least-to-most prompting breaks complex challenges into simpler sub-problems.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Search algorithms use backtracking to prune dead ends in decision trees.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Self-Consistency Engine with Majority Vote Verification",
+      "codeHash": "8dc8987d567c2033e2c9fb784f70aa1b51c71d55e74d8e38e6f428a0ec3e2dda",
+      "spec": {
+        "template": "compare",
+        "title": "Decisive majority consensus versus evenly split ambiguous outputs",
+        "left": {
+          "title": "Decisive Majority Consensus",
+          "items": [
+            "Multiple reasoning paths converge on same answer",
+            "Consensus frequency reaches sixty percent threshold",
+            "Certifies final answer as high confidence",
+            "Suppresses isolated arithmetic calculation slips"
+          ]
+        },
+        "right": {
+          "title": "Evenly Split Ambiguity",
+          "items": [
+            "Disparate outputs fail to reach voting threshold",
+            "Identifies edge case confusion across paths",
+            "Flags query as ambiguous requiring escalation",
+            "Triggers automated fallback human review"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Decisive majority consensus certifies answers with high confidence.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Disagreeing outputs flag ambiguous queries to trigger fallback escalation.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Decisive majority consensus versus evenly split ambiguous outputs",
+        "left": {
+          "title": "Decisive Majority Consensus",
+          "items": [
+            "Multiple reasoning paths converge on same answer",
+            "Consensus frequency reaches sixty percent threshold",
+            "Certifies final answer as high confidence",
+            "Suppresses isolated arithmetic calculation slips"
+          ]
+        },
+        "right": {
+          "title": "Evenly Split Ambiguity",
+          "items": [
+            "Disparate outputs fail to reach voting threshold",
+            "Identifies edge case confusion across paths",
+            "Flags query as ambiguous requiring escalation",
+            "Triggers automated fallback human review"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Decisive majority consensus certifies answers with high confidence.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Disagreeing outputs flag ambiguous queries to trigger fallback escalation.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
