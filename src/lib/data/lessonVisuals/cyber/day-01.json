@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 1,
+  "promptSha": "a0a00a4afbf5b186c8ec7bd30769a8c9d82a72e35ce5943f3366281ba2645e4d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The CIA Triad & Information Security Axioms",
+      "codeHash": "9f1101e7a09e3868317d7d20fd4e44e16f9f9f11563236329a9ca162295f9864",
+      "spec": {
+        "template": "table",
+        "title": "CIA triad information security core pillars and objectives",
+        "columns": [
+          "Pillar",
+          "Core Objective",
+          "Primary Threat",
+          "Protective Control"
+        ],
+        "rows": [
+          [
+            "Confidentiality",
+            "Prevent unauthorized disclosure",
+            "Data snooping and credential theft",
+            "AES Encryption and RBAC"
+          ],
+          [
+            "Integrity",
+            "Guarantee information accuracy",
+            "Tampering and unauthorized edits",
+            "HMAC Signatures and Hash Digests"
+          ],
+          [
+            "Availability",
+            "Ensure timely reliable access",
+            "Denial of service outages",
+            "Rate Limiting and CDN Redundancy"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Information security engineering rests on confidentiality and integrity.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Availability mandates dependable unimpeded access to computing resources.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CIA triad information security core pillars and objectives",
+        "columns": [
+          "Pillar",
+          "Core Objective",
+          "Primary Threat",
+          "Protective Control"
+        ],
+        "rows": [
+          [
+            "Confidentiality",
+            "Prevent unauthorized disclosure",
+            "Data snooping and credential theft",
+            "AES Encryption and RBAC"
+          ],
+          [
+            "Integrity",
+            "Guarantee information accuracy",
+            "Tampering and unauthorized edits",
+            "HMAC Signatures and Hash Digests"
+          ],
+          [
+            "Availability",
+            "Ensure timely reliable access",
+            "Denial of service outages",
+            "Rate Limiting and CDN Redundancy"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Information security engineering rests on confidentiality and integrity.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Availability mandates dependable unimpeded access to computing resources.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantitative & Qualitative Risk Calculation",
+      "codeHash": "0de86afcd3133ab4998f87ba2a8bb23bf5888b10dd6e6df87bb49a1d1da18b85",
+      "spec": {
+        "template": "compare",
+        "title": "Quantitative risk formula factors versus qualitative risk impact tiers",
+        "left": {
+          "title": "Quantitative Risk Formula",
+          "items": [
+            "Risk equals Threat times Vulnerability times Impact",
+            "Measured numerically on standardized rating scales",
+            "Computes annualized loss expectancy for controls"
+          ]
+        },
+        "right": {
+          "title": "Qualitative Severity Tiers",
+          "items": [
+            "Critical enterprise payment gateway vulnerabilities",
+            "Moderate severity flaws in internal tools",
+            "Negligible operational risk on air-gapped systems"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The standard risk formula expresses risk as threat times impact.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Air-gapped systems with zero exposure experience negligible risk.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Quantitative risk formula factors versus qualitative risk impact tiers",
+        "left": {
+          "title": "Quantitative Risk Formula",
+          "items": [
+            "Risk equals Threat times Vulnerability times Impact",
+            "Measured numerically on standardized rating scales",
+            "Computes annualized loss expectancy for controls"
+          ]
+        },
+        "right": {
+          "title": "Qualitative Severity Tiers",
+          "items": [
+            "Critical enterprise payment gateway vulnerabilities",
+            "Moderate severity flaws in internal tools",
+            "Negligible operational risk on air-gapped systems"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The standard risk formula expresses risk as threat times impact.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Air-gapped systems with zero exposure experience negligible risk.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The STRIDE Threat Modeling Taxonomy (Spoofing & Tampering)",
+      "codeHash": "c6b6dcdc3272337126942d76baabbb45491194783171cc86b7a04678ecec83cf",
+      "spec": {
+        "template": "states",
+        "title": "STRIDE threat taxonomy spoofing and tampering mitigation states",
+        "states": [
+          {
+            "id": "unauthenticated",
+            "label": "Unverified Inbound Request"
+          },
+          {
+            "id": "spoofingDetected",
+            "label": "Spoofing Impersonation Flagged"
+          },
+          {
+            "id": "tamperingDetected",
+            "label": "Payload Integrity Hash Mismatch"
+          },
+          {
+            "id": "hmacVerified",
+            "label": "Cryptographic Signature Validated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Spoofing involves an adversary illegitimately claiming another identity.",
+            "activeStateId": "spoofingDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Mitigating tampering mandates cryptographic signatures and integrity codes.",
+            "activeStateId": "hmacVerified",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "STRIDE threat taxonomy spoofing and tampering mitigation states",
+        "states": [
+          {
+            "id": "unauthenticated",
+            "label": "Unverified Inbound Request"
+          },
+          {
+            "id": "spoofingDetected",
+            "label": "Spoofing Impersonation Flagged"
+          },
+          {
+            "id": "tamperingDetected",
+            "label": "Payload Integrity Hash Mismatch"
+          },
+          {
+            "id": "hmacVerified",
+            "label": "Cryptographic Signature Validated"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Spoofing involves an adversary illegitimately claiming another identity.",
+            "activeStateId": "spoofingDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "Mitigating tampering mandates cryptographic signatures and integrity codes.",
+            "activeStateId": "hmacVerified",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "STRIDE: Repudiation, Information Disclosure & Denial of Service",
+      "codeHash": "7cf91afc21106d080b3e90488eb7e0f4515c0f78497ab68d9bf047b5a4e936c6",
+      "spec": {
+        "template": "table",
+        "title": "STRIDE secondary threat categories and defensive architectural controls",
+        "columns": [
+          "Threat Category",
+          "System Target",
+          "Attack Impact",
+          "Primary Mitigation"
+        ],
+        "rows": [
+          [
+            "Repudiation",
+            "Banking Wire Transfer",
+            "Denies transaction authorship",
+            "Immutable Write-Once Audit Logs"
+          ],
+          [
+            "Information Disclosure",
+            "Customer PII and Database",
+            "Leaks confidential credentials",
+            "TLS and Column-Level Encryption"
+          ],
+          [
+            "Denial of Service",
+            "Public Edge Ingress API",
+            "Exhausts memory and compute bandwidth",
+            "Rate Limiting and CDN Buffering"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Non-repudiation is enforced through immutable audit logs.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Denial of service attacks seek to render systems unusable.",
+            "activeRowIndex": 2,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "STRIDE secondary threat categories and defensive architectural controls",
+        "columns": [
+          "Threat Category",
+          "System Target",
+          "Attack Impact",
+          "Primary Mitigation"
+        ],
+        "rows": [
+          [
+            "Repudiation",
+            "Banking Wire Transfer",
+            "Denies transaction authorship",
+            "Immutable Write-Once Audit Logs"
+          ],
+          [
+            "Information Disclosure",
+            "Customer PII and Database",
+            "Leaks confidential credentials",
+            "TLS and Column-Level Encryption"
+          ],
+          [
+            "Denial of Service",
+            "Public Edge Ingress API",
+            "Exhausts memory and compute bandwidth",
+            "Rate Limiting and CDN Buffering"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Non-repudiation is enforced through immutable audit logs.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Denial of service attacks seek to render systems unusable.",
+            "activeRowIndex": 2,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Elevation of Privilege & Attack Surface Analysis",
+      "codeHash": "f2d6a13ceec2a632dbd221a135a25a6e43c14fff1efc51118ca76b22950a0365",
+      "spec": {
+        "template": "sequence",
+        "title": "Least privilege authorization check and privilege escalation barrier",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Identity"
+          },
+          {
+            "id": "authGuard",
+            "label": "RBAC Authorization Guard"
+          },
+          {
+            "id": "secureKernel",
+            "label": "Privileged Resource"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "authGuard",
+            "label": "Request Access with Guest Permissions",
+            "tone": "data"
+          },
+          {
+            "from": "authGuard",
+            "to": "authGuard",
+            "label": "Audit Permissions Against Required Role",
+            "tone": "ok"
+          },
+          {
+            "from": "authGuard",
+            "to": "client",
+            "label": "Reject Unauthorized Administrative Attempt",
+            "tone": "error"
+          },
+          {
+            "from": "authGuard",
+            "to": "secureKernel",
+            "label": "Allow Verified Admin with Least Privilege",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Elevation of privilege involves acquiring unauthorized rights.",
+            "activeMessageIndex": 2,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "The principle of least privilege dictates minimum required permissions.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Least privilege authorization check and privilege escalation barrier",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Identity"
+          },
+          {
+            "id": "authGuard",
+            "label": "RBAC Authorization Guard"
+          },
+          {
+            "id": "secureKernel",
+            "label": "Privileged Resource"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "authGuard",
+            "label": "Request Access with Guest Permissions",
+            "tone": "data"
+          },
+          {
+            "from": "authGuard",
+            "to": "authGuard",
+            "label": "Audit Permissions Against Required Role",
+            "tone": "ok"
+          },
+          {
+            "from": "authGuard",
+            "to": "client",
+            "label": "Reject Unauthorized Administrative Attempt",
+            "tone": "error"
+          },
+          {
+            "from": "authGuard",
+            "to": "secureKernel",
+            "label": "Allow Verified Admin with Least Privilege",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Elevation of privilege involves acquiring unauthorized rights.",
+            "activeMessageIndex": 2,
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "The principle of least privilege dictates minimum required permissions.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defense-in-Depth Multi-Tier Architectural Audit",
+      "codeHash": "bbffd597426c4525e2d2ca2f8c78aaa1f6d30824ba4972188946174d222c14a4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
