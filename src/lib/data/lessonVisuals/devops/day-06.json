@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 6,
+  "promptSha": "1923b881df58893d932a50157eef454579d4ff268cc202b2fac24dff898ad979",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Docker Network Drivers Overview",
+      "codeHash": "e42ea66f4cc4d9b8f1c5a1b16731ca0dfb85cd1c6f948ee5457235406dd2f432",
+      "spec": {
+        "template": "compare",
+        "title": "Bridge network versus host driver container isolation",
+        "leftLabel": "Bridge Network Driver",
+        "rightLabel": "Host Network Driver",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bridge driver creates a virtual bridge interface on the host.",
+            "left": {
+              "code": "name: 'bridge'",
+              "result": {
+                "text": "High"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'host'",
+              "result": {
+                "text": "None"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Host driver disables network isolation completely attaching to host stack.",
+            "left": {
+              "code": "hasHostPortCollisionRisk: false",
+              "result": {
+                "text": "bridge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hasHostPortCollisionRisk: true",
+              "result": {
+                "text": "host"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bridge network versus host driver container isolation",
+        "leftLabel": "Bridge Network Driver",
+        "rightLabel": "Host Network Driver",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bridge driver creates a virtual bridge interface on the host.",
+            "left": {
+              "code": "name: 'bridge'",
+              "result": {
+                "text": "High"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "name: 'host'",
+              "result": {
+                "text": "None"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Host driver disables network isolation completely attaching to host stack.",
+            "left": {
+              "code": "hasHostPortCollisionRisk: false",
+              "result": {
+                "text": "bridge"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hasHostPortCollisionRisk: true",
+              "result": {
+                "text": "host"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual Ethernet Pairs & Linux Bridge Plumbing",
+      "codeHash": "b87e9c121dfe0131af4fccdc21d4300a5e2c56e337951346e663b79b64a60dd6",
+      "spec": {
+        "template": "sequence",
+        "title": "Virtual ethernet pairs bridge packet traversal",
+        "actors": [
+          "container",
+          "veth",
+          "bridge"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The kernel creates a virtual patch cable connecting the bridge.",
+            "messages": [
+              {
+                "from": "container",
+                "to": "veth",
+                "label": "eth0"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Container sends packet across virtual link traversing into the bridge.",
+            "messages": [
+              {
+                "from": "veth",
+                "to": "bridge",
+                "label": "docker0"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Virtual ethernet pairs bridge packet traversal",
+        "actors": [
+          "container",
+          "veth",
+          "bridge"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The kernel creates a virtual patch cable connecting the bridge.",
+            "messages": [
+              {
+                "from": "container",
+                "to": "veth",
+                "label": "eth0"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Container sends packet across virtual link traversing into the bridge.",
+            "messages": [
+              {
+                "from": "veth",
+                "to": "bridge",
+                "label": "docker0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Port Forwarding Semantics: 0.0.0.0 vs 127.0.0.1",
+      "codeHash": "e9575c803ec74f1a78033a30efcc5b976ffc8d97445e847da5d8b62107a7afb5",
+      "spec": {
+        "template": "compare",
+        "title": "Localhost versus universal interface port binding semantics",
+        "leftLabel": "Localhost Binding",
+        "rightLabel": "Universal Interface Binding",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Port forwarding binds listening on all network interfaces including internet.",
+            "left": {
+              "code": "127.0.0.1:5432:5432",
+              "result": {
+                "text": "127.0.0.1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "8080:80",
+              "result": {
+                "text": "0.0.0.0"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Explicit binding restricts access strictly to the local machine.",
+            "left": {
+              "code": "isPubliclyAccessible: false",
+              "result": {
+                "text": "tcp"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPubliclyAccessible: true",
+              "result": {
+                "text": "tcp"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Localhost versus universal interface port binding semantics",
+        "leftLabel": "Localhost Binding",
+        "rightLabel": "Universal Interface Binding",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Port forwarding binds listening on all network interfaces including internet.",
+            "left": {
+              "code": "127.0.0.1:5432:5432",
+              "result": {
+                "text": "127.0.0.1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "8080:80",
+              "result": {
+                "text": "0.0.0.0"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Explicit binding restricts access strictly to the local machine.",
+            "left": {
+              "code": "isPubliclyAccessible: false",
+              "result": {
+                "text": "tcp"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "isPubliclyAccessible: true",
+              "result": {
+                "text": "tcp"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Embedded Docker DNS (127.0.0.11) & Name Resolution",
+      "codeHash": "396feea3e84e3a8741b6b8a90cb4a120849051ac0c395971f964c6620053bf3d",
+      "spec": {
+        "template": "flow",
+        "title": "Embedded docker DNS service name resolution flow",
+        "nodes": [
+          {
+            "id": "c1",
+            "label": "container"
+          },
+          {
+            "id": "dns",
+            "label": "embedded"
+          },
+          {
+            "id": "svc",
+            "label": "api-service"
+          },
+          {
+            "id": "net",
+            "label": "network"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Application code sends query resolving target service through DNS server.",
+            "values": {
+              "c1": {
+                "text": "container"
+              },
+              "dns": {
+                "text": "network"
+              }
+            },
+            "arrows": [
+              [
+                "c1",
+                "dns"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Matching container returns private address for registered service names.",
+            "values": {
+              "dns": {
+                "text": "production-net"
+              },
+              "svc": {
+                "text": "api-service"
+              }
+            },
+            "arrows": [
+              [
+                "dns",
+                "svc"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Embedded docker DNS service name resolution flow",
+        "nodes": [
+          {
+            "id": "c1",
+            "label": "container"
+          },
+          {
+            "id": "dns",
+            "label": "embedded"
+          },
+          {
+            "id": "svc",
+            "label": "api-service"
+          },
+          {
+            "id": "net",
+            "label": "network"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Application code sends query resolving target service through DNS server.",
+            "values": {
+              "c1": {
+                "text": "container"
+              },
+              "dns": {
+                "text": "network"
+              }
+            },
+            "arrows": [
+              [
+                "c1",
+                "dns"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Matching container returns private address for registered service names.",
+            "values": {
+              "dns": {
+                "text": "production-net"
+              },
+              "svc": {
+                "text": "api-service"
+              }
+            },
+            "arrows": [
+              [
+                "dns",
+                "svc"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inspecting Network Topologies & Diagnostics",
+      "codeHash": "bc3f2ea8e3c0a06bfd078ed2844477aeb0b2d11d26fc3ece1c8b86529d4f526a",
+      "spec": {
+        "template": "workflow",
+        "title": "Docker network diagnostic command inspection workflow",
+        "stages": [
+          {
+            "id": "list",
+            "name": "List",
+            "subtext": "Active Networks"
+          },
+          {
+            "id": "inspect",
+            "name": "Inspect",
+            "subtext": "Subnet Topology"
+          },
+          {
+            "id": "connect",
+            "name": "Connect",
+            "subtext": "Attach Dynamic"
+          },
+          {
+            "id": "disconnect",
+            "name": "Disconnect",
+            "subtext": "Isolate Network"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Command lists all active networks alongside driver type and identity.",
+            "activeStageId": "list",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say3",
+            "caption": "Inspect outputs detailed state listing subnet gateway and containers.",
+            "activeStageId": "inspect",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Docker network diagnostic command inspection workflow",
+        "stages": [
+          {
+            "id": "list",
+            "name": "List",
+            "subtext": "Active Networks"
+          },
+          {
+            "id": "inspect",
+            "name": "Inspect",
+            "subtext": "Subnet Topology"
+          },
+          {
+            "id": "connect",
+            "name": "Connect",
+            "subtext": "Attach Dynamic"
+          },
+          {
+            "id": "disconnect",
+            "name": "Disconnect",
+            "subtext": "Isolate Network"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Command lists all active networks alongside driver type and identity.",
+            "activeStageId": "list",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say3",
+            "caption": "Inspect outputs detailed state listing subnet gateway and containers.",
+            "activeStageId": "inspect",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Network Architecture for Tiered Microservices",
+      "codeHash": "5e57ad5a03d8a1c812c1f4f3db9e8131c43b78dac62301105af716ff2ffe7b60",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
