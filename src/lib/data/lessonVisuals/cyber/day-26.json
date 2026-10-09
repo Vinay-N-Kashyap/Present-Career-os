@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 26,
+  "promptSha": "e9f464cdcc494cf8ca5ab9d9ebd09b3a3022dd38ae395562903614eb12e5d0a3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "CVSS v3.1 Metric Dimensions & Threat Vector Architecture",
+      "codeHash": "ddaead9bb827fd7000541f6e9a1bfd016183d1a239f678f6f8c45d784a12c484",
+      "spec": {
+        "template": "compare",
+        "title": "Common vulnerability scoring exploitability and impact metric dimensions",
+        "left": {
+          "title": "Exploitability Metrics",
+          "items": [
+            "Network Attack Vector",
+            "Low Attack Complexity",
+            "Privileges Required",
+            "User Interaction"
+          ]
+        },
+        "right": {
+          "title": "Impact Metrics",
+          "items": [
+            "Scope Evaluation",
+            "Confidentiality Impact",
+            "Integrity Impact",
+            "Availability Impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Exploitability metrics evaluate attack vector and user interaction.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Impact metrics quantify damage to confidentiality integrity and availability.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Common vulnerability scoring exploitability and impact metric dimensions",
+        "left": {
+          "title": "Exploitability Metrics",
+          "items": [
+            "Network Attack Vector",
+            "Low Attack Complexity",
+            "Privileges Required",
+            "User Interaction"
+          ]
+        },
+        "right": {
+          "title": "Impact Metrics",
+          "items": [
+            "Scope Evaluation",
+            "Confidentiality Impact",
+            "Integrity Impact",
+            "Availability Impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Exploitability metrics evaluate attack vector and user interaction.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Impact metrics quantify damage to confidentiality integrity and availability.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Qualitative Severity Ratings & Base Score Calculation",
+      "codeHash": "376c3dd35f249e59feb6b726fb0000521c205b0a8e565e7050c4166e4aa78995",
+      "spec": {
+        "template": "table",
+        "title": "Standardized qualitative severity ratings and operational response tiers",
+        "columns": [
+          "Severity Rating",
+          "Score Range",
+          "Operational Response"
+        ],
+        "rows": [
+          [
+            "Critical",
+            "Nine to Ten",
+            "Immediate Emergency Response"
+          ],
+          [
+            "High",
+            "Seven to Eight",
+            "Expedited Remediation SLA"
+          ],
+          [
+            "Medium",
+            "Four to Six",
+            "Standard Sprint Backlog"
+          ],
+          [
+            "Low",
+            "One to Three",
+            "Routine Maintenance Window"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "High severity ratings encompass remote flaws with significant impact.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Critical severity vulnerabilities require immediate incident response.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Standardized qualitative severity ratings and operational response tiers",
+        "columns": [
+          "Severity Rating",
+          "Score Range",
+          "Operational Response"
+        ],
+        "rows": [
+          [
+            "Critical",
+            "Nine to Ten",
+            "Immediate Emergency Response"
+          ],
+          [
+            "High",
+            "Seven to Eight",
+            "Expedited Remediation SLA"
+          ],
+          [
+            "Medium",
+            "Four to Six",
+            "Standard Sprint Backlog"
+          ],
+          [
+            "Low",
+            "One to Three",
+            "Routine Maintenance Window"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "High severity ratings encompass remote flaws with significant impact.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Critical severity vulnerabilities require immediate incident response.",
+            "activeRowIndex": 0,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CVSS v3.1 Vector Strings & Automated Triage Parsing",
+      "codeHash": "b316f16f4d8d438f3169aead2ef7d6508e2c8e53e0b6cfeddff6c5b183c3c4ab",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Responsible Disclosure, Remediation SLAs & Coordinated Response",
+      "codeHash": "5e6b019805fd7aef4fae0aba24e52b185ef0e78bdcd78bce2471ea84b8b1793f",
+      "spec": {
+        "template": "flow",
+        "title": "Coordinated vulnerability disclosure and remediation service level agreement pipeline",
+        "nodes": [
+          {
+            "id": "discovery",
+            "label": "Vulnerability Discovered",
+            "tappable": false
+          },
+          {
+            "id": "cvd",
+            "label": "Private Vendor Disclosure",
+            "tappable": false
+          },
+          {
+            "id": "patch",
+            "label": "Patch Development Window",
+            "tappable": false
+          },
+          {
+            "id": "release",
+            "label": "Public Security Advisory",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "discovery",
+            "to": "cvd",
+            "label": "CVD Report"
+          },
+          {
+            "from": "cvd",
+            "to": "patch",
+            "label": "Remediation SLA"
+          },
+          {
+            "from": "patch",
+            "to": "release",
+            "label": "Public Advisory"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Responsible disclosure establishes coordinated vulnerability reporting.",
+            "activeNodes": [
+              "discovery",
+              "cvd"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Remediation agreements establish deadlines tied directly to severity ratings.",
+            "activeNodes": [
+              "patch",
+              "release"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Coordinated vulnerability disclosure and remediation service level agreement pipeline",
+        "nodes": [
+          {
+            "id": "discovery",
+            "label": "Vulnerability Discovered",
+            "tappable": false
+          },
+          {
+            "id": "cvd",
+            "label": "Private Vendor Disclosure",
+            "tappable": false
+          },
+          {
+            "id": "patch",
+            "label": "Patch Development Window",
+            "tappable": false
+          },
+          {
+            "id": "release",
+            "label": "Public Security Advisory",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "discovery",
+            "to": "cvd",
+            "label": "CVD Report"
+          },
+          {
+            "from": "cvd",
+            "to": "patch",
+            "label": "Remediation SLA"
+          },
+          {
+            "from": "patch",
+            "to": "release",
+            "label": "Public Advisory"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Responsible disclosure establishes coordinated vulnerability reporting.",
+            "activeNodes": [
+              "discovery",
+              "cvd"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Remediation agreements establish deadlines tied directly to severity ratings.",
+            "activeNodes": [
+              "patch",
+              "release"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temporal & Environmental Metric Adjustments in CVSS v3.1",
+      "codeHash": "a0856cc74e9b9cacb833d8fa17638fe2321778199b802b61551e4ab7e10404c1",
+      "spec": {
+        "template": "states",
+        "title": "Temporal exploit code maturity score adjustments and remediation lifecycle",
+        "states": [
+          {
+            "id": "unproven",
+            "label": "Unproven Exploit"
+          },
+          {
+            "id": "poc",
+            "label": "Proof of Concept"
+          },
+          {
+            "id": "functional",
+            "label": "Functional Weaponized"
+          },
+          {
+            "id": "patched",
+            "label": "Remediated Vendor Patch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exploit code maturity adjusts temporal vulnerability scores.",
+            "activeStateId": "functional",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Applying an official vendor patch lowers the temporal vulnerability score.",
+            "activeStateId": "patched",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Temporal exploit code maturity score adjustments and remediation lifecycle",
+        "states": [
+          {
+            "id": "unproven",
+            "label": "Unproven Exploit"
+          },
+          {
+            "id": "poc",
+            "label": "Proof of Concept"
+          },
+          {
+            "id": "functional",
+            "label": "Functional Weaponized"
+          },
+          {
+            "id": "patched",
+            "label": "Remediated Vendor Patch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exploit code maturity adjusts temporal vulnerability scores.",
+            "activeStateId": "functional",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Applying an official vendor patch lowers the temporal vulnerability score.",
+            "activeStateId": "patched",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Penetration Testing Scopes: Black Box, White Box & Gray Box Methodologies",
+      "codeHash": "1cf95dd253db91c13787bcac3254aa5762a90065897fde7a7ac9857030db63ec",
+      "spec": {
+        "template": "compare",
+        "title": "Penetration testing methodology scoping comparison and access boundaries",
+        "left": {
+          "title": "Black Box Engagement",
+          "items": [
+            "Zero internal system knowledge",
+            "Simulates opportunistic external adversaries",
+            "Focuses on perimeter reconnaissance",
+            "Relies on unauthenticated network probes"
+          ]
+        },
+        "right": {
+          "title": "White Box Engagement",
+          "items": [
+            "Complete architectural transparency provided",
+            "Source code and administrative API schemas",
+            "Identifies deep structural logic vulnerabilities",
+            "Maximizes engineering testing efficiency"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Black box engagements provide zero insider knowledge to testers.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "White box testers receive complete architectural transparency.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Penetration testing methodology scoping comparison and access boundaries",
+        "left": {
+          "title": "Black Box Engagement",
+          "items": [
+            "Zero internal system knowledge",
+            "Simulates opportunistic external adversaries",
+            "Focuses on perimeter reconnaissance",
+            "Relies on unauthenticated network probes"
+          ]
+        },
+        "right": {
+          "title": "White Box Engagement",
+          "items": [
+            "Complete architectural transparency provided",
+            "Source code and administrative API schemas",
+            "Identifies deep structural logic vulnerabilities",
+            "Maximizes engineering testing efficiency"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Black box engagements provide zero insider knowledge to testers.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "White box testers receive complete architectural transparency.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
