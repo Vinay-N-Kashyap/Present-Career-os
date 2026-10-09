@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 7,
+  "promptSha": "275d6c0c4238b83d54c83f0b63d24bfe60e7afc8c2ca99d276c4810466bfc6fd",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Non-Root Invariant & User Namespaces",
+      "codeHash": "e154c34d9394d8856e00d555ee0cafd0e8ca228fad3d0af0964fa06b5a0bdc30",
+      "spec": {
+        "template": "compare",
+        "title": "Default root versus unprivileged container user execution",
+        "leftLabel": "Default Root Execution",
+        "rightLabel": "Hardened Appuser Execution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Default processes inside container execute as root unless configured otherwise.",
+            "left": {
+              "code": "evaluateSecurityContext(0, 'root')",
+              "result": {
+                "text": "root"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "evaluateSecurityContext(10001, 'appuser')",
+              "result": {
+                "text": "appuser"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Dedicated unprivileged user and group switch using instruction in dockerfile.",
+            "left": {
+              "code": "isPrivileged: true",
+              "result": {
+                "text": "root"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "isPrivileged: false",
+              "result": {
+                "text": "appuser"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Default root versus unprivileged container user execution",
+        "leftLabel": "Default Root Execution",
+        "rightLabel": "Hardened Appuser Execution",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Default processes inside container execute as root unless configured otherwise.",
+            "left": {
+              "code": "evaluateSecurityContext(0, 'root')",
+              "result": {
+                "text": "root"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "evaluateSecurityContext(10001, 'appuser')",
+              "result": {
+                "text": "appuser"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Dedicated unprivileged user and group switch using instruction in dockerfile.",
+            "left": {
+              "code": "isPrivileged: true",
+              "result": {
+                "text": "root"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "isPrivileged: false",
+              "result": {
+                "text": "appuser"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux Capabilities: Dropping Privileges with Least Privilege",
+      "codeHash": "58cb9c94575abc000fdce42271d675cdd96da315a93f679f234fdd3755e96a58",
+      "spec": {
+        "template": "compare",
+        "title": "Linux capabilities default grant versus least privilege filter",
+        "leftLabel": "Default Capabilities",
+        "rightLabel": "Hardened Capabilities",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Default runtime grants containers broad default capabilities across system.",
+            "left": {
+              "code": "defaultCapabilities",
+              "result": {
+                "text": "CAP_CHOWN"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "applyCapabilityFilter",
+              "result": {
+                "text": "CAP_NET_BIND_SERVICE"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Applying principle of least privilege drops all capabilities adding minimal.",
+            "left": {
+              "code": "dropAll: false",
+              "result": {
+                "text": "CAP_CHOWN"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "dropAll: true",
+              "result": {
+                "text": "CAP_NET_BIND_SERVICE"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Linux capabilities default grant versus least privilege filter",
+        "leftLabel": "Default Capabilities",
+        "rightLabel": "Hardened Capabilities",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Default runtime grants containers broad default capabilities across system.",
+            "left": {
+              "code": "defaultCapabilities",
+              "result": {
+                "text": "CAP_CHOWN"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "applyCapabilityFilter",
+              "result": {
+                "text": "CAP_NET_BIND_SERVICE"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Applying principle of least privilege drops all capabilities adding minimal.",
+            "left": {
+              "code": "dropAll: false",
+              "result": {
+                "text": "CAP_CHOWN"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "dropAll: true",
+              "result": {
+                "text": "CAP_NET_BIND_SERVICE"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Immutable Containers: Read-Only Root Filesystems & tmpfs",
+      "codeHash": "fac94c7b4d3e5f6bed8d9da950f54464db4b9d865a2437f83a4b1905ca931315",
+      "spec": {
+        "template": "compare",
+        "title": "Root filesystem read-only immutability versus writable mounts",
+        "leftLabel": "Insecure Writable Mounts",
+        "rightLabel": "Secure Read-Only Mounts",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mounting container root filesystem strictly read-only protects integrity.",
+            "left": {
+              "code": "mountPoint: '/', readOnly: false",
+              "result": {
+                "text": "rootfs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "mountPoint: '/', readOnly: true",
+              "result": {
+                "text": "rootfs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ephemeral in-memory disks support temporary writes without immutability risk.",
+            "left": {
+              "code": "type: 'rootfs'",
+              "result": {
+                "text": "/tmp"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "type: 'tmpfs'",
+              "result": {
+                "text": "/tmp"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Root filesystem read-only immutability versus writable mounts",
+        "leftLabel": "Insecure Writable Mounts",
+        "rightLabel": "Secure Read-Only Mounts",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mounting container root filesystem strictly read-only protects integrity.",
+            "left": {
+              "code": "mountPoint: '/', readOnly: false",
+              "result": {
+                "text": "rootfs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "mountPoint: '/', readOnly: true",
+              "result": {
+                "text": "rootfs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Ephemeral in-memory disks support temporary writes without immutability risk.",
+            "left": {
+              "code": "type: 'rootfs'",
+              "result": {
+                "text": "/tmp"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "type: 'tmpfs'",
+              "result": {
+                "text": "/tmp"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rootless Docker Daemons: Mitigating Host Compromise",
+      "codeHash": "2144fb53df3bba47d1b02625ab4846fa5af1fff1a59eb1238fa18c361e40fc7b",
+      "spec": {
+        "template": "compare",
+        "title": "Rootful versus rootless docker daemon breakout blast radius",
+        "leftLabel": "Rootful Daemon",
+        "rightLabel": "Rootless Daemon",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard daemon setups run as root on the host operating system.",
+            "left": {
+              "code": "mode: 'Rootful'",
+              "result": {
+                "text": "Rootful"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "mode: 'Rootless'",
+              "result": {
+                "text": "Rootless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Rootless mode runs containers completely inside unprivileged namespace.",
+            "left": {
+              "code": "socketPath: '/var/run/docker.sock'",
+              "result": {
+                "text": "Rootful"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "socketPath: '/run/user/1000/docker.sock'",
+              "result": {
+                "text": "Rootless"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Rootful versus rootless docker daemon breakout blast radius",
+        "leftLabel": "Rootful Daemon",
+        "rightLabel": "Rootless Daemon",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard daemon setups run as root on the host operating system.",
+            "left": {
+              "code": "mode: 'Rootful'",
+              "result": {
+                "text": "Rootful"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "mode: 'Rootless'",
+              "result": {
+                "text": "Rootless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Rootless mode runs containers completely inside unprivileged namespace.",
+            "left": {
+              "code": "socketPath: '/var/run/docker.sock'",
+              "result": {
+                "text": "Rootful"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "socketPath: '/run/user/1000/docker.sock'",
+              "result": {
+                "text": "Rootless"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Seccomp Syscall Filtering & AppArmor Profiles",
+      "codeHash": "424d098ea5c20fa07b3cd88605c85b835b8b2eab972a96c4d6edbd479a492d37",
+      "spec": {
+        "template": "states",
+        "title": "Seccomp system call filtering interception states",
+        "states": [
+          {
+            "id": "allow",
+            "label": "ALLOW"
+          },
+          {
+            "id": "block",
+            "label": "BLOCK"
+          },
+          {
+            "id": "log",
+            "label": "LOG"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kernel seccomp intercepts and filters system calls made by container.",
+            "currentState": "allow",
+            "transition": {
+              "from": "allow",
+              "to": "allow",
+              "label": "read"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Default security profile blocks dangerous system calls from execution.",
+            "currentState": "block",
+            "transition": {
+              "from": "allow",
+              "to": "block",
+              "label": "reboot"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Seccomp system call filtering interception states",
+        "states": [
+          {
+            "id": "allow",
+            "label": "ALLOW"
+          },
+          {
+            "id": "block",
+            "label": "BLOCK"
+          },
+          {
+            "id": "log",
+            "label": "LOG"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Kernel seccomp intercepts and filters system calls made by container.",
+            "currentState": "allow",
+            "transition": {
+              "from": "allow",
+              "to": "allow",
+              "label": "read"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Default security profile blocks dangerous system calls from execution.",
+            "currentState": "block",
+            "transition": {
+              "from": "allow",
+              "to": "block",
+              "label": "reboot"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardened Dockerfile Checklist & Security Linting",
+      "codeHash": "0b13ef507f42d889311f0577e81110a30eb4f50a20dbc4f2131522d8f307c2a2",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
