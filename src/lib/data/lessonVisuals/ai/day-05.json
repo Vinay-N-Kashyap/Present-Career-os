@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 5,
+  "promptSha": "e80ac991028970d60b16d9a895260737f20d214b8736289b907ef4b70a3185ef",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Unstructured Data Challenge: Why Raw LLM Text Fails in Enterprise APIs",
+      "codeHash": "143586753fb8ba62e63ffd59e4eb9b3c2193128e258fd58f45afefcf51ec32a4",
+      "spec": {
+        "template": "compare",
+        "title": "Unstructured natural language completions versus deterministic schema contracts",
+        "left": {
+          "title": "Raw LLM Text Generation",
+          "items": [
+            "Prefixes responses with conversational filler text",
+            "Wraps JSON in markdown code fence delimiters",
+            "Leaves trailing commas that break standard parsers",
+            "Causes unhandled runtime exceptions in backends"
+          ]
+        },
+        "right": {
+          "title": "Structured Schema Contracts",
+          "items": [
+            "Enforces deterministic JSON schemas and types",
+            "Guarantees valid JSON without markdown wrapping",
+            "Validates fields and data types before ingestion",
+            "Eliminates unhandled parsing exceptions completely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Conversational pleasantries break automated downstream JSON parsing.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Structured validation layers enforce strict schema adherence for data.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unstructured natural language completions versus deterministic schema contracts",
+        "left": {
+          "title": "Raw LLM Text Generation",
+          "items": [
+            "Prefixes responses with conversational filler text",
+            "Wraps JSON in markdown code fence delimiters",
+            "Leaves trailing commas that break standard parsers",
+            "Causes unhandled runtime exceptions in backends"
+          ]
+        },
+        "right": {
+          "title": "Structured Schema Contracts",
+          "items": [
+            "Enforces deterministic JSON schemas and types",
+            "Guarantees valid JSON without markdown wrapping",
+            "Validates fields and data types before ingestion",
+            "Eliminates unhandled parsing exceptions completely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Conversational pleasantries break automated downstream JSON parsing.",
+            "highlightSide": "left",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say8",
+            "caption": "Structured validation layers enforce strict schema adherence for data.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JSON Schema Contracts & Constrained Decoding Mechanics",
+      "codeHash": "b0a8ee4a180e7116306c563398f186baccca462f8c4e4119dd349a700518d81e",
+      "spec": {
+        "template": "table",
+        "title": "Constrained decoding grammar state transitions and vocabulary logit masking",
+        "columns": [
+          "Parser Grammar State",
+          "Expected Token Type",
+          "Logit Masking Action",
+          "Grammar Transition"
+        ],
+        "rows": [
+          [
+            "Object Initiation",
+            "Opening Curly Bracket",
+            "Mask All Non-Brace Tokens",
+            "Advance to Key State"
+          ],
+          [
+            "Key Expectation",
+            "Quotation Mark String",
+            "Mask All Non-Quote Tokens",
+            "Advance to Colon State"
+          ],
+          [
+            "Value Expectation",
+            "Integer Number or String",
+            "Mask Invalid Syntax Types",
+            "Advance to Comma State"
+          ],
+          [
+            "Terminal Boundary",
+            "Closing Curly Bracket",
+            "Permit Terminal Syntax",
+            "Complete JSON Object"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Inference engines modify vocabulary logits using context-free grammars.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Grammar masking guarantees generated outputs conform to JSON schemas.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Constrained decoding grammar state transitions and vocabulary logit masking",
+        "columns": [
+          "Parser Grammar State",
+          "Expected Token Type",
+          "Logit Masking Action",
+          "Grammar Transition"
+        ],
+        "rows": [
+          [
+            "Object Initiation",
+            "Opening Curly Bracket",
+            "Mask All Non-Brace Tokens",
+            "Advance to Key State"
+          ],
+          [
+            "Key Expectation",
+            "Quotation Mark String",
+            "Mask All Non-Quote Tokens",
+            "Advance to Colon State"
+          ],
+          [
+            "Value Expectation",
+            "Integer Number or String",
+            "Mask Invalid Syntax Types",
+            "Advance to Comma State"
+          ],
+          [
+            "Terminal Boundary",
+            "Closing Curly Bracket",
+            "Permit Terminal Syntax",
+            "Complete JSON Object"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Inference engines modify vocabulary logits using context-free grammars.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Grammar masking guarantees generated outputs conform to JSON schemas.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zod Schema Definition & Runtime Validation Pipeline",
+      "codeHash": "b619ff6e14970ec56b04ac93ef2480944b3df8c3cf78bc04cdd35d5a47931f0d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Automated Self-Healing Retry Loops for Schema Validation Failures",
+      "codeHash": "445b836c6eab6e0f958c24e718318ec71f6fe0507e98ebd0bbecb5107fbaa3b6",
+      "spec": {
+        "template": "flow",
+        "title": "Automated self-healing JSON repair loop and feedback error handling",
+        "nodes": [
+          {
+            "id": "initialJson",
+            "label": "Initial LLM Extraction",
+            "tappable": false
+          },
+          {
+            "id": "schemaValidator",
+            "label": "Zod Schema Validator",
+            "tappable": false
+          },
+          {
+            "id": "repairFeedback",
+            "label": "Targeted Feedback Prompt",
+            "tappable": false
+          },
+          {
+            "id": "healedOutput",
+            "label": "Self-Healed Validated Object",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "initialJson",
+            "to": "schemaValidator",
+            "label": "Validate Fields"
+          },
+          {
+            "from": "schemaValidator",
+            "to": "repairFeedback",
+            "label": "Validation Error"
+          },
+          {
+            "from": "repairFeedback",
+            "to": "healedOutput",
+            "label": "Execute Repair"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Self-healing pipelines feed validation errors back to the model for repair.",
+            "activeNodes": [
+              "initialJson",
+              "schemaValidator"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Automated repair feedback loops successfully resolve extraction failures.",
+            "activeNodes": [
+              "repairFeedback",
+              "healedOutput"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Automated self-healing JSON repair loop and feedback error handling",
+        "nodes": [
+          {
+            "id": "initialJson",
+            "label": "Initial LLM Extraction",
+            "tappable": false
+          },
+          {
+            "id": "schemaValidator",
+            "label": "Zod Schema Validator",
+            "tappable": false
+          },
+          {
+            "id": "repairFeedback",
+            "label": "Targeted Feedback Prompt",
+            "tappable": false
+          },
+          {
+            "id": "healedOutput",
+            "label": "Self-Healed Validated Object",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "initialJson",
+            "to": "schemaValidator",
+            "label": "Validate Fields"
+          },
+          {
+            "from": "schemaValidator",
+            "to": "repairFeedback",
+            "label": "Validation Error"
+          },
+          {
+            "from": "repairFeedback",
+            "to": "healedOutput",
+            "label": "Execute Repair"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Self-healing pipelines feed validation errors back to the model for repair.",
+            "activeNodes": [
+              "initialJson",
+              "schemaValidator"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Automated repair feedback loops successfully resolve extraction failures.",
+            "activeNodes": [
+              "repairFeedback",
+              "healedOutput"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting Nested Entities, Temporal Dates, and Monetary Values",
+      "codeHash": "c126eb8b9613bc398d676a6edc72b350149546c76790d3e3683ba9cc21fd8f30",
+      "spec": {
+        "template": "table",
+        "title": "Extracting nested entities temporal dates and integer monetary values",
+        "columns": [
+          "Entity Field Type",
+          "Schema Strategy",
+          "Coercion Transform",
+          "Storage Invariant"
+        ],
+        "rows": [
+          [
+            "Monetary Values",
+            "Integer Cents",
+            "Convert Dollar Strings",
+            "Eliminates Rounding Errors"
+          ],
+          [
+            "Temporal Dates",
+            "ISO UTC Strings",
+            "Parse Relative Dates",
+            "Avoids Timezone Discrepancies"
+          ],
+          [
+            "Nested Line Items",
+            "Array of Objects",
+            "Validate Subtotals",
+            "Structured Row Ingestion"
+          ],
+          [
+            "Tax Identification",
+            "Regex Pattern",
+            "Clean Alphanumeric",
+            "Deterministic Schema"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Extract money as integer cents to eliminate floating-point rounding errors.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Dates must be coerced into standardized strings to avoid discrepancies.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Extracting nested entities temporal dates and integer monetary values",
+        "columns": [
+          "Entity Field Type",
+          "Schema Strategy",
+          "Coercion Transform",
+          "Storage Invariant"
+        ],
+        "rows": [
+          [
+            "Monetary Values",
+            "Integer Cents",
+            "Convert Dollar Strings",
+            "Eliminates Rounding Errors"
+          ],
+          [
+            "Temporal Dates",
+            "ISO UTC Strings",
+            "Parse Relative Dates",
+            "Avoids Timezone Discrepancies"
+          ],
+          [
+            "Nested Line Items",
+            "Array of Objects",
+            "Validate Subtotals",
+            "Structured Row Ingestion"
+          ],
+          [
+            "Tax Identification",
+            "Regex Pattern",
+            "Clean Alphanumeric",
+            "Deterministic Schema"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Extract money as integer cents to eliminate floating-point rounding errors.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Dates must be coerced into standardized strings to avoid discrepancies.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Production Document Extraction Pipeline with Self-Healing Validation",
+      "codeHash": "c96177a8ccb7c46cdeb7e3c094066da89bd2502113d5320effa12d2a938664ae",
+      "spec": {
+        "template": "sequence",
+        "title": "Enterprise document extraction pipeline with automated self-healing repair",
+        "actors": [
+          {
+            "id": "docStream",
+            "label": "Contract Document Stream"
+          },
+          {
+            "id": "jsonExtractor",
+            "label": "LLM Extraction Service"
+          },
+          {
+            "id": "zodValidator",
+            "label": "Zod Validator Engine"
+          },
+          {
+            "id": "enterpriseDb",
+            "label": "Enterprise Database"
+          }
+        ],
+        "messages": [
+          {
+            "from": "docStream",
+            "to": "jsonExtractor",
+            "label": "Submit Unstructured Contract Text",
+            "tone": "data"
+          },
+          {
+            "from": "jsonExtractor",
+            "to": "zodValidator",
+            "label": "Emit Initial Extracted JSON Payload",
+            "tone": "data"
+          },
+          {
+            "from": "zodValidator",
+            "to": "jsonExtractor",
+            "label": "Trigger Automated Self-Healing Feedback Turn",
+            "tone": "danger"
+          },
+          {
+            "from": "zodValidator",
+            "to": "enterpriseDb",
+            "label": "Persist Validated Contract Document Object",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pipeline extracts JSON from contracts and validates business rules.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The pipeline returns typed document results with extraction status metrics.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Enterprise document extraction pipeline with automated self-healing repair",
+        "actors": [
+          {
+            "id": "docStream",
+            "label": "Contract Document Stream"
+          },
+          {
+            "id": "jsonExtractor",
+            "label": "LLM Extraction Service"
+          },
+          {
+            "id": "zodValidator",
+            "label": "Zod Validator Engine"
+          },
+          {
+            "id": "enterpriseDb",
+            "label": "Enterprise Database"
+          }
+        ],
+        "messages": [
+          {
+            "from": "docStream",
+            "to": "jsonExtractor",
+            "label": "Submit Unstructured Contract Text",
+            "tone": "data"
+          },
+          {
+            "from": "jsonExtractor",
+            "to": "zodValidator",
+            "label": "Emit Initial Extracted JSON Payload",
+            "tone": "data"
+          },
+          {
+            "from": "zodValidator",
+            "to": "jsonExtractor",
+            "label": "Trigger Automated Self-Healing Feedback Turn",
+            "tone": "danger"
+          },
+          {
+            "from": "zodValidator",
+            "to": "enterpriseDb",
+            "label": "Persist Validated Contract Document Object",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The pipeline extracts JSON from contracts and validates business rules.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The pipeline returns typed document results with extraction status metrics.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
