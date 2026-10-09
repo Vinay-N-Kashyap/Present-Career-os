@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 23,
+  "promptSha": "0f9cd425e0facb9534f8688961fa0f3b4d6effc0391c0e3d01b07b5ab494a580",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "L4 Transport Layer vs L7 Application Layer Load Balancing",
+      "codeHash": "bd58bab6df56f17d906ce00e52b6f26f4e150376659826031a7775ce7ee52dfc",
+      "spec": {
+        "template": "compare",
+        "title": "Layer 4 transport balancing versus layer 7 application balancing",
+        "left": {
+          "title": "Layer 4 Transport Balancer",
+          "items": [
+            "Operates on IP address and TCP UDP port",
+            "No TLS decryption or payload inspection",
+            "Ultra-low microsecond forwarding latency"
+          ]
+        },
+        "right": {
+          "title": "Layer 7 Application Balancer",
+          "items": [
+            "Terminates TLS and inspects HTTP payloads",
+            "Evaluates paths headers cookies and methods",
+            "Enables content-based intelligent routing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A layer four load balancer operates at the transport layer.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Layer seven balancers evaluate paths parameters and headers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Layer 4 transport balancing versus layer 7 application balancing",
+        "left": {
+          "title": "Layer 4 Transport Balancer",
+          "items": [
+            "Operates on IP address and TCP UDP port",
+            "No TLS decryption or payload inspection",
+            "Ultra-low microsecond forwarding latency"
+          ]
+        },
+        "right": {
+          "title": "Layer 7 Application Balancer",
+          "items": [
+            "Terminates TLS and inspects HTTP payloads",
+            "Evaluates paths headers cookies and methods",
+            "Enables content-based intelligent routing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A layer four load balancer operates at the transport layer.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Layer seven balancers evaluate paths parameters and headers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted Round-Robin: Handling Heterogeneous Server Capacity",
+      "codeHash": "1fc42a6cf100351facb842624bb364fd7b888d04317dd84b7807324de8137ded",
+      "spec": {
+        "template": "table",
+        "title": "Weighted round-robin server capacity and selection ratio table",
+        "columns": [
+          "Server Instance",
+          "Capacity Weight",
+          "Interleaved State",
+          "Dispatched Ratio"
+        ],
+        "rows": [
+          [
+            "Primary Host Alpha",
+            "Three Units Weight",
+            "Smooth Interleaved Schedule",
+            "Seventy-Five Percent Traffic"
+          ],
+          [
+            "Secondary Host Beta",
+            "One Unit Weight",
+            "Proportional Load Share",
+            "Twenty-Five Percent Traffic"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Weighted round robin assigns positive integer weights to each server.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Smooth weighted round robin interleaves requests across servers.",
+            "highlightRow": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Weighted round-robin server capacity and selection ratio table",
+        "columns": [
+          "Server Instance",
+          "Capacity Weight",
+          "Interleaved State",
+          "Dispatched Ratio"
+        ],
+        "rows": [
+          [
+            "Primary Host Alpha",
+            "Three Units Weight",
+            "Smooth Interleaved Schedule",
+            "Seventy-Five Percent Traffic"
+          ],
+          [
+            "Secondary Host Beta",
+            "One Unit Weight",
+            "Proportional Load Share",
+            "Twenty-Five Percent Traffic"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Weighted round robin assigns positive integer weights to each server.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Smooth weighted round robin interleaves requests across servers.",
+            "highlightRow": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Least Connections & Peak EWMA (Exponential Weighted Moving Average)",
+      "codeHash": "c41ddd45d86338b8702e72865586a6e7ee4c7359fca90aa3f7be8a6f64c82715",
+      "spec": {
+        "template": "workflow",
+        "title": "Peak EWMA dynamic load scoring and routing pipeline",
+        "workflow": [
+          {
+            "id": "monitorPool",
+            "label": "Monitor Inflight Active Connection Counts",
+            "status": "completed"
+          },
+          {
+            "id": "calculateScore",
+            "label": "Calculate Peak EWMA Metric Multiplying Latency",
+            "status": "active"
+          },
+          {
+            "id": "routeTraffic",
+            "label": "Route Inbound Request to Lowest Scored Host",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Least connections routes requests to servers with fewest active calls.",
+            "activeWorkflowId": "monitorPool",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "Peak score calculates active connections multiplied by latency.",
+            "activeWorkflowId": "calculateScore",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Peak EWMA dynamic load scoring and routing pipeline",
+        "workflow": [
+          {
+            "id": "monitorPool",
+            "label": "Monitor Inflight Active Connection Counts",
+            "status": "completed"
+          },
+          {
+            "id": "calculateScore",
+            "label": "Calculate Peak EWMA Metric Multiplying Latency",
+            "status": "active"
+          },
+          {
+            "id": "routeTraffic",
+            "label": "Route Inbound Request to Lowest Scored Host",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Least connections routes requests to servers with fewest active calls.",
+            "activeWorkflowId": "monitorPool",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say8",
+            "caption": "Peak score calculates active connections multiplied by latency.",
+            "activeWorkflowId": "calculateScore",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Hashing & The Virtual Node Ring",
+      "codeHash": "a216d263da563bbf73534e999508dd1b1bc6f7f1dccc4233d834e5e382161d09",
+      "spec": {
+        "template": "cells",
+        "title": "Consistent hash ring virtual nodes distribution layout",
+        "cells": [
+          {
+            "id": "vnode1",
+            "label": "Server Alpha VNode Zero Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode2",
+            "label": "Server Beta VNode Ninety Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode3",
+            "label": "Server Alpha VNode One-Eighty Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode4",
+            "label": "Server Beta VNode Two-Seventy Degrees",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consistent hashing maps servers and keys onto a circular hash ring.",
+            "activeCellId": "vnode1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Each physical machine is assigned virtual nodes across the ring.",
+            "activeCellId": "vnode3",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Consistent hash ring virtual nodes distribution layout",
+        "cells": [
+          {
+            "id": "vnode1",
+            "label": "Server Alpha VNode Zero Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode2",
+            "label": "Server Beta VNode Ninety Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode3",
+            "label": "Server Alpha VNode One-Eighty Degrees",
+            "tone": "ok"
+          },
+          {
+            "id": "vnode4",
+            "label": "Server Beta VNode Two-Seventy Degrees",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Consistent hashing maps servers and keys onto a circular hash ring.",
+            "activeCellId": "vnode1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Each physical machine is assigned virtual nodes across the ring.",
+            "activeCellId": "vnode3",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sticky Sessions & Session Affinity Trade-offs",
+      "codeHash": "c9d4b8143184d9373264a7b055951979cd842e01996d07c7ef122fa47acfb007",
+      "spec": {
+        "template": "states",
+        "title": "Sticky sessions load imbalance and stateless evolution states",
+        "states": [
+          {
+            "id": "affinityPinned",
+            "label": "User Pinned to Server by Session Cookie"
+          },
+          {
+            "id": "loadImbalance",
+            "label": "Uneven Traffic Drowns Single Pinned Host"
+          },
+          {
+            "id": "serverCrash",
+            "label": "Server Crash Destroys User Session Memory"
+          },
+          {
+            "id": "statelessMigrated",
+            "label": "Stateless Backends with Centralized Cache"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sticky sessions route all requests from the same user to one server.",
+            "activeStateId": "affinityPinned",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "If a server crashes users stuck to that server lose session state.",
+            "activeStateId": "serverCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Sticky sessions load imbalance and stateless evolution states",
+        "states": [
+          {
+            "id": "affinityPinned",
+            "label": "User Pinned to Server by Session Cookie"
+          },
+          {
+            "id": "loadImbalance",
+            "label": "Uneven Traffic Drowns Single Pinned Host"
+          },
+          {
+            "id": "serverCrash",
+            "label": "Server Crash Destroys User Session Memory"
+          },
+          {
+            "id": "statelessMigrated",
+            "label": "Stateless Backends with Centralized Cache"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sticky sessions route all requests from the same user to one server.",
+            "activeStateId": "affinityPinned",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "If a server crashes users stuck to that server lose session state.",
+            "activeStateId": "serverCrash",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Algorithm Load Balancer Benchmark Engine",
+      "codeHash": "5eb0af48481b9fcc5b1a44553701ef41f90b772a02fa14037d7c81ed3db7c79e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
