@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 24,
+  "promptSha": "289954d170c03a3559398fd4c8dd5431ea2b9045d8d018a55595482db2d63c9c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Infrastructure as Code (IaC) & Terraform Fundamentals",
+      "codeHash": "e579cf576b8f5ad2f1ad51a251364b85df20e8706d4aff1f3c4c2f036f6ffe0a",
+      "spec": {
+        "template": "compare",
+        "title": "Imperative scripts compared to declarative Terraform HCL",
+        "leftLabel": "Imperative Script (Bash/CLI)",
+        "rightLabel": "Declarative IaC (Terraform HCL)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Infrastructure as code defines cloud resources in declarative text files.",
+            "left": {
+              "code": "Step-by-Step API Calls",
+              "result": {
+                "text": "Brittle Execution"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Desired State Definition",
+              "result": {
+                "text": "Idempotent Converge"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Declarative HCL allows you to specify the desired state of infrastructure.",
+            "left": {
+              "code": "Manual Drift Detection",
+              "result": {
+                "text": "Zero Auditability"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Delta Calculation",
+              "result": {
+                "text": "Version-Controlled"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Imperative scripts compared to declarative Terraform HCL",
+        "leftLabel": "Imperative Script (Bash/CLI)",
+        "rightLabel": "Declarative IaC (Terraform HCL)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Infrastructure as code defines cloud resources in declarative text files.",
+            "left": {
+              "code": "Step-by-Step API Calls",
+              "result": {
+                "text": "Brittle Execution"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Desired State Definition",
+              "result": {
+                "text": "Idempotent Converge"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Declarative HCL allows you to specify the desired state of infrastructure.",
+            "left": {
+              "code": "Manual Drift Detection",
+              "result": {
+                "text": "Zero Auditability"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated Delta Calculation",
+              "result": {
+                "text": "Version-Controlled"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Terraform Core Workflow: Init, Plan, Apply & Destroy",
+      "codeHash": "c25575862b0d3e21c2ea226730464aa94c5e802c57998d6123f9d7ead0232c2a",
+      "spec": {
+        "template": "workflow",
+        "title": "Terraform core lifecycle execution workflow",
+        "stages": [
+          {
+            "id": "init",
+            "name": "terraform init",
+            "subtext": "Provider Plugins"
+          },
+          {
+            "id": "plan",
+            "name": "terraform plan",
+            "subtext": "Preview Delta Diff"
+          },
+          {
+            "id": "apply",
+            "name": "terraform apply",
+            "subtext": "Execute Changes"
+          },
+          {
+            "id": "destroy",
+            "name": "terraform destroy",
+            "subtext": "Teardown Resources"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Terraform init initializes the working directory and downloads plugins.",
+            "activeStageId": "init",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform plan compares live state against code and outputs a plan.",
+            "activeStageId": "plan",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Terraform core lifecycle execution workflow",
+        "stages": [
+          {
+            "id": "init",
+            "name": "terraform init",
+            "subtext": "Provider Plugins"
+          },
+          {
+            "id": "plan",
+            "name": "terraform plan",
+            "subtext": "Preview Delta Diff"
+          },
+          {
+            "id": "apply",
+            "name": "terraform apply",
+            "subtext": "Execute Changes"
+          },
+          {
+            "id": "destroy",
+            "name": "terraform destroy",
+            "subtext": "Teardown Resources"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Terraform init initializes the working directory and downloads plugins.",
+            "activeStageId": "init",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Terraform plan compares live state against code and outputs a plan.",
+            "activeStageId": "plan",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Terraform State (`terraform.tfstate`) & Resource Mapping",
+      "codeHash": "5f091ffb5e3d4f31b481d2d66b50e05bec502bf082efd255841e25c5f589de7e",
+      "spec": {
+        "template": "table",
+        "title": "Terraform state file resource ID mapping and caching attributes",
+        "columns": [
+          "HCL Resource Block",
+          "State Metadata ID",
+          "Provider Type",
+          "Cached Sync State"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The state file is a document that maps code declarations to resource IDs.",
+            "rows": [
+              [
+                {
+                  "text": "aws_vpc.main",
+                  "tone": "data"
+                },
+                {
+                  "text": "vpc-0a8b9c1d2e3f",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "aws_subnet.public",
+                  "tone": "data"
+                },
+                {
+                  "text": "subnet-11223344",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Cached state attributes improve plan performance by avoiding API calls.",
+            "rows": [
+              [
+                {
+                  "text": "aws_s3_bucket.data",
+                  "tone": "data"
+                },
+                {
+                  "text": "prod-storage-bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "aws_dynamodb_table.lock",
+                  "tone": "data"
+                },
+                {
+                  "text": "tf-lock-table",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "State Lock Target",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Terraform state file resource ID mapping and caching attributes",
+        "columns": [
+          "HCL Resource Block",
+          "State Metadata ID",
+          "Provider Type",
+          "Cached Sync State"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The state file is a document that maps code declarations to resource IDs.",
+            "rows": [
+              [
+                {
+                  "text": "aws_vpc.main",
+                  "tone": "data"
+                },
+                {
+                  "text": "vpc-0a8b9c1d2e3f",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "aws_subnet.public",
+                  "tone": "data"
+                },
+                {
+                  "text": "subnet-11223344",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Cached state attributes improve plan performance by avoiding API calls.",
+            "rows": [
+              [
+                {
+                  "text": "aws_s3_bucket.data",
+                  "tone": "data"
+                },
+                {
+                  "text": "prod-storage-bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Managed In Sync",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "aws_dynamodb_table.lock",
+                  "tone": "data"
+                },
+                {
+                  "text": "tf-lock-table",
+                  "tone": "ok"
+                },
+                {
+                  "text": "hashicorp/aws",
+                  "tone": "ok"
+                },
+                {
+                  "text": "State Lock Target",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Remote State S3 Backend & DynamoDB State Locking",
+      "codeHash": "75d09b3e4edbd1a64ef758761525b95696d0b96fa2f60d3691914d96f1df0edb",
+      "spec": {
+        "template": "states",
+        "title": "S3 remote state backend and DynamoDB distributed locking states",
+        "states": [
+          {
+            "id": "unlockedState",
+            "label": "Remote State Unlocked"
+          },
+          {
+            "id": "lockAcquired",
+            "label": "DynamoDB Lock Acquired"
+          },
+          {
+            "id": "concurrentHalted",
+            "label": "Concurrent Collision Blocked"
+          },
+          {
+            "id": "lockReleased",
+            "label": "State Flushed & Lock Released"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Amazon S3 acts as the remote storage repository for the state file.",
+            "active": "unlockedState"
+          },
+          {
+            "at": "say8",
+            "caption": "Terraform detects the active lock and halts concurrent operations.",
+            "active": "lockAcquired"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "S3 remote state backend and DynamoDB distributed locking states",
+        "states": [
+          {
+            "id": "unlockedState",
+            "label": "Remote State Unlocked"
+          },
+          {
+            "id": "lockAcquired",
+            "label": "DynamoDB Lock Acquired"
+          },
+          {
+            "id": "concurrentHalted",
+            "label": "Concurrent Collision Blocked"
+          },
+          {
+            "id": "lockReleased",
+            "label": "State Flushed & Lock Released"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Amazon S3 acts as the remote storage repository for the state file.",
+            "active": "unlockedState"
+          },
+          {
+            "at": "say8",
+            "caption": "Terraform detects the active lock and halts concurrent operations.",
+            "active": "lockAcquired"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Terraform Modules, Variables & Workspaces",
+      "codeHash": "bc0309af1f9308cf76f0fba498cb7e805d920596812517e3a74cdb89adb7ee3f",
+      "spec": {
+        "template": "bars",
+        "title": "Terraform workspace state isolation and module reusability",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A module is a container for multiple resources used together.",
+            "bars": [
+              {
+                "label": "Development Workspace",
+                "value": 1,
+                "max": 3,
+                "tone": "data"
+              },
+              {
+                "label": "Module Code Reusability",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Terraform workspaces allow managing distinct states with identical code.",
+            "bars": [
+              {
+                "label": "Production Workspace",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "Isolated State Partitions",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Terraform workspace state isolation and module reusability",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A module is a container for multiple resources used together.",
+            "bars": [
+              {
+                "label": "Development Workspace",
+                "value": 1,
+                "max": 3,
+                "tone": "data"
+              },
+              {
+                "label": "Module Code Reusability",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Terraform workspaces allow managing distinct states with identical code.",
+            "bars": [
+              {
+                "label": "Production Workspace",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              },
+              {
+                "label": "Isolated State Partitions",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise IaC Deployment & State Lock Verification",
+      "codeHash": "9d947b85f2fb9e7919861733e81d104e1e0616689fda9e9eeeba301526afa8d0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
