@@ -10305,6 +10305,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-cloud-D01",
+      "title": "cloud day 1: Cloud Computing Models (IaaS, PaaS, SaaS) & Shared Responsibility visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 1,
+      "keys": [
+        "cloud:1:0",
+        "cloud:1:1",
+        "cloud:1:2",
+        "cloud:1:3",
+        "cloud:1:4",
+        "cloud:1:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D02",
+      "title": "cloud day 2: AWS Global Infrastructure, Regions & Availability Zones visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 2,
+      "keys": [
+        "cloud:2:0",
+        "cloud:2:1",
+        "cloud:2:2",
+        "cloud:2:3",
+        "cloud:2:4",
+        "cloud:2:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D03",
+      "title": "cloud day 3: Virtual Private Cloud (VPC) Architecture & CIDR Subnetting visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 3,
+      "keys": [
+        "cloud:3:0",
+        "cloud:3:1",
+        "cloud:3:2",
+        "cloud:3:3",
+        "cloud:3:4",
+        "cloud:3:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D04",
+      "title": "cloud day 4: Security Groups vs Network Access Control Lists (NACLs) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 4,
+      "keys": [
+        "cloud:4:0",
+        "cloud:4:1",
+        "cloud:4:2",
+        "cloud:4:3",
+        "cloud:4:4",
+        "cloud:4:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D05",
+      "title": "cloud day 5: ⭐ MILESTONE 1: High-Availability Multi-AZ VPC Network Topology & Bastion Host visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 5,
+      "keys": [
+        "cloud:5:0",
+        "cloud:5:1",
+        "cloud:5:2",
+        "cloud:5:3",
+        "cloud:5:4",
+        "cloud:5:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D06",
+      "title": "cloud day 6: IAM Role Least-Privilege, Policies & Principal Trust visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 6,
+      "keys": [
+        "cloud:6:0",
+        "cloud:6:1",
+        "cloud:6:2",
+        "cloud:6:3",
+        "cloud:6:4",
+        "cloud:6:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D07",
+      "title": "cloud day 7: EC2 Compute Classes, Spot Instances & Auto-Scaling Groups visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 7,
+      "keys": [
+        "cloud:7:0",
+        "cloud:7:1",
+        "cloud:7:2",
+        "cloud:7:3",
+        "cloud:7:4",
+        "cloud:7:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D08",
+      "title": "cloud day 8: Application Load Balancer (ALB), Target Groups & Health Probes visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 8,
+      "keys": [
+        "cloud:8:0",
+        "cloud:8:1",
+        "cloud:8:2",
+        "cloud:8:3",
+        "cloud:8:4",
+        "cloud:8:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D09",
+      "title": "cloud day 9: Amazon S3 Object Storage & Lifecycle Management Tiering visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 9,
+      "keys": [
+        "cloud:9:0",
+        "cloud:9:1",
+        "cloud:9:2",
+        "cloud:9:3",
+        "cloud:9:4",
+        "cloud:9:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D10",
+      "title": "cloud day 10: Amazon S3 Security, Block Public Access & Bucket Policies visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 10,
+      "keys": [
+        "cloud:10:0",
+        "cloud:10:1",
+        "cloud:10:2",
+        "cloud:10:3",
+        "cloud:10:4",
+        "cloud:10:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D11",
+      "title": "cloud day 11: Serverless AWS Lambda: Concurrency, Memory & Cold Starts visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 11,
+      "keys": [
+        "cloud:11:0",
+        "cloud:11:1",
+        "cloud:11:2",
+        "cloud:11:3",
+        "cloud:11:4",
+        "cloud:11:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D12",
+      "title": "cloud day 12: Amazon API Gateway V2 HTTP & Lambda Authorizers visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 12,
+      "keys": [
+        "cloud:12:0",
+        "cloud:12:1",
+        "cloud:12:2",
+        "cloud:12:3",
+        "cloud:12:4",
+        "cloud:12:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D13",
+      "title": "cloud day 13: Amazon DynamoDB Partition Keys & Global Secondary Indexes (GSI) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 13,
+      "keys": [
+        "cloud:13:0",
+        "cloud:13:1",
+        "cloud:13:2",
+        "cloud:13:3",
+        "cloud:13:4",
+        "cloud:13:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D14",
+      "title": "cloud day 14: Amazon RDS Multi-AZ High Availability & Read Replicas visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 14,
+      "keys": [
+        "cloud:14:0",
+        "cloud:14:1",
+        "cloud:14:2",
+        "cloud:14:3",
+        "cloud:14:4",
+        "cloud:14:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D15",
+      "title": "cloud day 15: ⭐ MILESTONE 2: Serverless Event-Driven Video Processing Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 15,
+      "keys": [
+        "cloud:15:0",
+        "cloud:15:1",
+        "cloud:15:2",
+        "cloud:15:3",
+        "cloud:15:4",
+        "cloud:15:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D16",
+      "title": "cloud day 16: Amazon CloudFront Global CDN & Edge Functions (Lambda@Edge) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 16,
+      "keys": [
+        "cloud:16:0",
+        "cloud:16:1",
+        "cloud:16:2",
+        "cloud:16:3",
+        "cloud:16:4",
+        "cloud:16:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D17",
+      "title": "cloud day 17: Amazon Route 53 DNS Routing Policies & Health Checks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 17,
+      "keys": [
+        "cloud:17:0",
+        "cloud:17:1",
+        "cloud:17:2",
+        "cloud:17:3",
+        "cloud:17:4",
+        "cloud:17:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D18",
+      "title": "cloud day 18: Amazon SQS: Standard vs FIFO Queues & Visibility Timeouts visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 18,
+      "keys": [
+        "cloud:18:0",
+        "cloud:18:1",
+        "cloud:18:2",
+        "cloud:18:3",
+        "cloud:18:4",
+        "cloud:18:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D19",
+      "title": "cloud day 19: Amazon SNS: Pub/Sub Topic Fanout & Push Notifications visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 19,
+      "keys": [
+        "cloud:19:0",
+        "cloud:19:1",
+        "cloud:19:2",
+        "cloud:19:3",
+        "cloud:19:4",
+        "cloud:19:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D20",
+      "title": "cloud day 20: Amazon EventBridge: Serverless Event Bus & Schema Registry visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 20,
+      "keys": [
+        "cloud:20:0",
+        "cloud:20:1",
+        "cloud:20:2",
+        "cloud:20:3",
+        "cloud:20:4",
+        "cloud:20:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D21",
+      "title": "cloud day 21: ⭐ MILESTONE 3: High-Scale E-Commerce Microservices Event Bus with SQS/SNS Fanout visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 21,
+      "keys": [
+        "cloud:21:0",
+        "cloud:21:1",
+        "cloud:21:2",
+        "cloud:21:3",
+        "cloud:21:4",
+        "cloud:21:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D22",
+      "title": "cloud day 22: AWS ECS & AWS Fargate Serverless Container Architecture visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 22,
+      "keys": [
+        "cloud:22:0",
+        "cloud:22:1",
+        "cloud:22:2",
+        "cloud:22:3",
+        "cloud:22:4",
+        "cloud:22:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D23",
+      "title": "cloud day 23: AWS Step Functions & Distributed Saga Pattern Orchestration visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 23,
+      "keys": [
+        "cloud:23:0",
+        "cloud:23:1",
+        "cloud:23:2",
+        "cloud:23:3",
+        "cloud:23:4",
+        "cloud:23:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D24",
+      "title": "cloud day 24: Infrastructure as Code (IaC) with Terraform & State Management visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 24,
+      "keys": [
+        "cloud:24:0",
+        "cloud:24:1",
+        "cloud:24:2",
+        "cloud:24:3",
+        "cloud:24:4",
+        "cloud:24:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D25",
+      "title": "cloud day 25: Amazon CloudWatch Metrics, Log Insights & Alarms visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 25,
+      "keys": [
+        "cloud:25:0",
+        "cloud:25:1",
+        "cloud:25:2",
+        "cloud:25:3",
+        "cloud:25:4",
+        "cloud:25:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D26",
+      "title": "cloud day 26: AWS Key Management Service (KMS) & Envelope Encryption visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 26,
+      "keys": [
+        "cloud:26:0",
+        "cloud:26:1",
+        "cloud:26:2",
+        "cloud:26:3",
+        "cloud:26:4",
+        "cloud:26:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D27",
+      "title": "cloud day 27: AWS WAF & AWS Shield: DDoS & SQLi/XSS Protection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 27,
+      "keys": [
+        "cloud:27:0",
+        "cloud:27:1",
+        "cloud:27:2",
+        "cloud:27:3",
+        "cloud:27:4",
+        "cloud:27:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D28",
+      "title": "cloud day 28: AWS FinOps: Cost Optimization, Compute Savings Plans & Cost Allocation Tags visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 28,
+      "keys": [
+        "cloud:28:0",
+        "cloud:28:1",
+        "cloud:28:2",
+        "cloud:28:3",
+        "cloud:28:4",
+        "cloud:28:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D29",
+      "title": "cloud day 29: Disaster Recovery (DR) Strategies: Backup, Pilot Light & Warm Standby visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 29,
+      "keys": [
+        "cloud:29:0",
+        "cloud:29:1",
+        "cloud:29:2",
+        "cloud:29:3",
+        "cloud:29:4",
+        "cloud:29:5"
+      ]
+    },
+    {
+      "id": "C-cloud-D30",
+      "title": "cloud day 30: 🏆 FINAL CAPSTONE: Global Resilient Multi-Region FinTech Banking Infrastructure with Active-Active Failover visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cloud/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cloud",
+      "day": 30,
+      "keys": [
+        "cloud:30:0",
+        "cloud:30:1",
+        "cloud:30:2",
+        "cloud:30:3",
+        "cloud:30:4",
+        "cloud:30:5"
+      ]
+    },
+    {
+      "id": "R-cloud-1-5",
+      "title": "Checkpoint cloud days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cloud-6-10",
+      "title": "Checkpoint cloud days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cloud-11-15",
+      "title": "Checkpoint cloud days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cloud-16-20",
+      "title": "Checkpoint cloud days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cloud-21-25",
+      "title": "Checkpoint cloud days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cloud-26-30",
+      "title": "Checkpoint cloud days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-cloud",
+      "title": "Release visuals for cloud",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
