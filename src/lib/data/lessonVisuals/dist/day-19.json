@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 19,
+  "promptSha": "d55e38acbc9ba92b9cab53298fdeb0c9207becef9d1f7ba54bc5cf590517f56f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Read-Heavy Workloads & The Read Replica Architecture",
+      "codeHash": "40ca163200c525720e69ff75b54cebd04a7aa31a274eefc4315b853a8b7b5c94",
+      "spec": {
+        "template": "workflow",
+        "title": "Primary-replica write replication and load-balanced reads",
+        "workflow": [
+          {
+            "id": "primaryWrite",
+            "label": "Primary Database Accepts Writes and Appends WAL",
+            "status": "completed"
+          },
+          {
+            "id": "walStream",
+            "label": "Asynchronous WAL Stream Transport to Replicas",
+            "status": "active"
+          },
+          {
+            "id": "replicaRead",
+            "label": "Read Queries Load-Balanced Across Replicas",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The primary database writes mutations and appends to the log.",
+            "activeWorkflowId": "primaryWrite",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "Application read queries are load balanced across replicas.",
+            "activeWorkflowId": "replicaRead",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Primary-replica write replication and load-balanced reads",
+        "workflow": [
+          {
+            "id": "primaryWrite",
+            "label": "Primary Database Accepts Writes and Appends WAL",
+            "status": "completed"
+          },
+          {
+            "id": "walStream",
+            "label": "Asynchronous WAL Stream Transport to Replicas",
+            "status": "active"
+          },
+          {
+            "id": "replicaRead",
+            "label": "Read Queries Load-Balanced Across Replicas",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The primary database writes mutations and appends to the log.",
+            "activeWorkflowId": "primaryWrite",
+            "statusBadge": "completed"
+          },
+          {
+            "at": "say6",
+            "caption": "Application read queries are load balanced across replicas.",
+            "activeWorkflowId": "replicaRead",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Replication Lag & Causal Inconsistency Anomalies",
+      "codeHash": "a2793455b71cc481a78951638efd9710cfdfb48169f7c449e9e438a88cb726e8",
+      "spec": {
+        "template": "states",
+        "title": "Replication lag causal anomalies and vanishing update states",
+        "states": [
+          {
+            "id": "writeCommittedPrimary",
+            "label": "Write Committed on Primary Database"
+          },
+          {
+            "id": "laggingReplica",
+            "label": "Replica Lagging Behind by Milliseconds"
+          },
+          {
+            "id": "vanishingPostGlitch",
+            "label": "Vanishing Post Read Anomaly Triggered"
+          },
+          {
+            "id": "timeTravelGlitch",
+            "label": "Time Travel Reverse Reading Inconsistency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Replication lag occurs between primary commit and replica update.",
+            "activeStateId": "laggingReplica",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "The vanishing post glitch happens when reads hit lagging replicas.",
+            "activeStateId": "vanishingPostGlitch",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Replication lag causal anomalies and vanishing update states",
+        "states": [
+          {
+            "id": "writeCommittedPrimary",
+            "label": "Write Committed on Primary Database"
+          },
+          {
+            "id": "laggingReplica",
+            "label": "Replica Lagging Behind by Milliseconds"
+          },
+          {
+            "id": "vanishingPostGlitch",
+            "label": "Vanishing Post Read Anomaly Triggered"
+          },
+          {
+            "id": "timeTravelGlitch",
+            "label": "Time Travel Reverse Reading Inconsistency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Replication lag occurs between primary commit and replica update.",
+            "activeStateId": "laggingReplica",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say7",
+            "caption": "The vanishing post glitch happens when reads hit lagging replicas.",
+            "activeStateId": "vanishingPostGlitch",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read-Your-Own-Writes (RYOW) Consistency Guarantee",
+      "codeHash": "9b3aa7394b6d9b1dc810ff78c3a0a120e22d43dba7d20d29a776109f1fad6ceb",
+      "spec": {
+        "template": "compare",
+        "title": "Read-your-own-writes session isolation versus passive reader pool",
+        "left": {
+          "title": "Author User Session",
+          "items": [
+            "Queries routed to primary database during lag window",
+            "Sees newly committed mutations immediately",
+            "Eliminates vanishing post confusion"
+          ]
+        },
+        "right": {
+          "title": "Passive Readers Pool",
+          "items": [
+            "Load balanced across distributed read replicas",
+            "Tolerates slight replication lag",
+            "Preserves horizontal read cluster capacity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Guarantees that a user will observe updates from their own writes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Intelligent routing balances queries between primary and read replicas.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Read-your-own-writes session isolation versus passive reader pool",
+        "left": {
+          "title": "Author User Session",
+          "items": [
+            "Queries routed to primary database during lag window",
+            "Sees newly committed mutations immediately",
+            "Eliminates vanishing post confusion"
+          ]
+        },
+        "right": {
+          "title": "Passive Readers Pool",
+          "items": [
+            "Load balanced across distributed read replicas",
+            "Tolerates slight replication lag",
+            "Preserves horizontal read cluster capacity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Guarantees that a user will observe updates from their own writes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Intelligent routing balances queries between primary and read replicas.",
+            "highlightSide": "left",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Implementation Patterns for RYOW: Time-Based Window & Replication LSN Cookies",
+      "codeHash": "da873e96ead077bbe5f2903ca6297bc1f4375920ac656a55ed8030fad731c425",
+      "spec": {
+        "template": "table",
+        "title": "Comparison of RYOW implementation mechanisms",
+        "columns": [
+          "Implementation Pattern",
+          "Tracking Token",
+          "Routing Decision Rule",
+          "Primary Node Impact"
+        ],
+        "rows": [
+          [
+            "Time Window Routing",
+            "Session Cookie Timestamp",
+            "Route to Primary for Five Seconds",
+            "Temporary Primary Read Load"
+          ],
+          [
+            "Replication LSN Cookie",
+            "Commit Log Sequence Cookie",
+            "Route to Replica If Replica Caught Up",
+            "Minimal Primary Read Overhead"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "User read queries route directly to the primary database.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The router checks if a replica has applied the required commit log.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Comparison of RYOW implementation mechanisms",
+        "columns": [
+          "Implementation Pattern",
+          "Tracking Token",
+          "Routing Decision Rule",
+          "Primary Node Impact"
+        ],
+        "rows": [
+          [
+            "Time Window Routing",
+            "Session Cookie Timestamp",
+            "Route to Primary for Five Seconds",
+            "Temporary Primary Read Load"
+          ],
+          [
+            "Replication LSN Cookie",
+            "Commit Log Sequence Cookie",
+            "Route to Replica If Replica Caught Up",
+            "Minimal Primary Read Overhead"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "User read queries route directly to the primary database.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The router checks if a replica has applied the required commit log.",
+            "highlightRow": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic Reads Guarantee: Preventing Time-Travel Glitches",
+      "codeHash": "884dc1ee1e8fb8bc63cad6d9953944f7452db8b6bc660930bd3d138430566a07",
+      "spec": {
+        "template": "sequence",
+        "title": "Sticky replica routing enforcing monotonic reads guarantee",
+        "actors": [
+          {
+            "id": "userSession",
+            "label": "User Client Session"
+          },
+          {
+            "id": "gateway",
+            "label": "Routing Gateway"
+          },
+          {
+            "id": "replicaPinned",
+            "label": "Pinned Sticky Replica"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userSession",
+            "to": "gateway",
+            "label": "Query Messages Request",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "replicaPinned",
+            "label": "Sticky Route to Pinned Replica",
+            "tone": "ok"
+          },
+          {
+            "from": "replicaPinned",
+            "to": "userSession",
+            "label": "Return Monotonically Fresh Data",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Monotonic reads consistency prevents data from rolling backwards.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Sticky replica routing pins the user session to a designated replica.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Sticky replica routing enforcing monotonic reads guarantee",
+        "actors": [
+          {
+            "id": "userSession",
+            "label": "User Client Session"
+          },
+          {
+            "id": "gateway",
+            "label": "Routing Gateway"
+          },
+          {
+            "id": "replicaPinned",
+            "label": "Pinned Sticky Replica"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userSession",
+            "to": "gateway",
+            "label": "Query Messages Request",
+            "tone": "data"
+          },
+          {
+            "from": "gateway",
+            "to": "replicaPinned",
+            "label": "Sticky Route to Pinned Replica",
+            "tone": "ok"
+          },
+          {
+            "from": "replicaPinned",
+            "to": "userSession",
+            "label": "Return Monotonically Fresh Data",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Monotonic reads consistency prevents data from rolling backwards.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Sticky replica routing pins the user session to a designated replica.",
+            "activeMessageIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Replica Gateway Simulator with RYOW & Lag Detection",
+      "codeHash": "ba344809daf40ac1082b13c5dcf46887b476f687d00686b12ddcba7792f2afdb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
