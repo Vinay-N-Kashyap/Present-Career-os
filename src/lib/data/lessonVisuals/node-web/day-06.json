@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 6,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Request-Response Lifecycle & Message Format",
+      "codeHash": "61af860500620321444e7b83705dfbaa08a737d0657b3e2190a15617178754ba",
+      "spec": {
+        "template": "boxes",
+        "title": "HTTP message structure components",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          },
+          {
+            "id": "version",
+            "label": "httpVersion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An HTTP request message consists of three distinct sections.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/v1/jobs?limit=10"
+              },
+              "version": {
+                "text": "HTTP/1.1"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "path": "idle",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The server parses the incoming byte stream and processes the payload.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/v1/jobs?limit=10"
+              },
+              "version": {
+                "text": "HTTP/1.1"
+              }
+            },
+            "tones": {
+              "method": "idle",
+              "path": "data",
+              "version": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Because HTTP is fundamentally text-based over TCP debugging is simple.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "path": {
+                "text": "/api/v1/jobs?limit=10"
+              },
+              "version": {
+                "text": "HTTP/1.1"
+              }
+            },
+            "tones": {
+              "method": "ok",
+              "path": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "HTTP message structure components",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          },
+          {
+            "id": "version",
+            "label": "httpVersion"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An HTTP request message consists of three distinct sections.",
+            "values": {
+              "method": "GET",
+              "path": "/api/v1/jobs?limit=10",
+              "version": "HTTP/1.1"
+            },
+            "tones": {
+              "method": "data",
+              "path": "idle",
+              "version": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The server parses the incoming byte stream and processes the payload.",
+            "values": {
+              "method": "GET",
+              "path": "/api/v1/jobs?limit=10",
+              "version": "HTTP/1.1"
+            },
+            "tones": {
+              "method": "idle",
+              "path": "data",
+              "version": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Because HTTP is fundamentally text-based over TCP debugging is simple.",
+            "values": {
+              "method": "GET",
+              "path": "/api/v1/jobs?limit=10",
+              "version": "HTTP/1.1"
+            },
+            "tones": {
+              "method": "ok",
+              "path": "ok",
+              "version": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe vs Idempotent HTTP Methods",
+      "codeHash": "527d8457c01e5c4bfd53f3481e83ae3c261c0baed9100925e6efe33a4425002e",
+      "spec": {
+        "template": "table",
+        "title": "HTTP method idempotency semantics",
+        "columns": [
+          "HTTP Method",
+          "Safe Operation",
+          "Idempotent"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A method is considered safe if calling it does not alter server state.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "true"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "false"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A method is idempotent if making the request produces the exact same result.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "true"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "false"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Designing endpoints to honor method idempotency allows client automatic retry.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "true"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "false"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "HTTP method idempotency semantics",
+        "columns": [
+          "HTTP Method",
+          "Safe Operation",
+          "Idempotent"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A method is considered safe if calling it does not alter server state.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "true",
+                  "true"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "false",
+                  "false"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "A method is idempotent if making the request produces the exact same result.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "true",
+                  "true"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "false",
+                  "false"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Designing endpoints to honor method idempotency allows client automatic retry.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "true",
+                  "true"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "false",
+                  "false"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Status Codes: 2xx Success and 3xx Redirection Semantics",
+      "codeHash": "effcfe0a314620fa76a763737a7fd9e51a613a0e33ba356f0c6af432973d3292",
+      "spec": {
+        "template": "states",
+        "title": "Status code category distribution",
+        "states": [
+          {
+            "id": "s200",
+            "label": "200"
+          },
+          {
+            "id": "s201",
+            "label": "201"
+          },
+          {
+            "id": "s204",
+            "label": "204"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The 2xx class indicates that the client request was successfully received.",
+            "currentState": "s200",
+            "transition": {
+              "from": "s204",
+              "to": "s200",
+              "label": {
+                "text": "200 OK - Standard Success"
+              }
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say3",
+            "caption": "The 3xx class indicates that the client must take additional action.",
+            "currentState": "s201",
+            "transition": {
+              "from": "s200",
+              "to": "s201",
+              "label": {
+                "text": "201 Created - Resource Persisted"
+              }
+            },
+            "tone": "error"
+          },
+          {
+            "at": "say8",
+            "caption": "Using precise status codes instead of generic responses improves caching.",
+            "currentState": "s204",
+            "transition": {
+              "from": "s201",
+              "to": "s204",
+              "label": {
+                "text": "204 No Content - Deletion Completed"
+              }
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Status code category distribution",
+        "states": [
+          {
+            "id": "s200",
+            "label": "200"
+          },
+          {
+            "id": "s201",
+            "label": "201"
+          },
+          {
+            "id": "s204",
+            "label": "204"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The 2xx class indicates that the client request was successfully received.",
+            "currentState": "s200",
+            "transition": {
+              "from": "s204",
+              "to": "s200",
+              "label": "200 OK - Standard Success"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "say3",
+            "caption": "The 3xx class indicates that the client must take additional action.",
+            "currentState": "s201",
+            "transition": {
+              "from": "s200",
+              "to": "s201",
+              "label": "201 Created - Resource Persisted"
+            },
+            "tone": "error"
+          },
+          {
+            "at": "say8",
+            "caption": "Using precise status codes instead of generic responses improves caching.",
+            "currentState": "s204",
+            "transition": {
+              "from": "s201",
+              "to": "s204",
+              "label": "204 No Content - Deletion Completed"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Status Codes: 4xx Client Errors vs 5xx Server Errors",
+      "codeHash": "3102b97823170b6a66f747fb0f44ee999175259e2eb2002a2597adebea336ac2",
+      "spec": {
+        "template": "boxes",
+        "title": "HTTP status error classification",
+        "boxes": [
+          {
+            "id": "c404",
+            "label": "CLIENT_FAULT"
+          },
+          {
+            "id": "c503",
+            "label": "SERVER_FAULT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The 4xx class indicates the client sent an invalid request.",
+            "values": {
+              "c404": {
+                "text": "CLIENT_FAULT"
+              },
+              "c503": {
+                "text": "SERVER_FAULT"
+              }
+            },
+            "tones": {
+              "c404": "data",
+              "c503": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The 5xx class indicates the server encountered an unexpected error.",
+            "values": {
+              "c404": {
+                "text": "CLIENT_FAULT"
+              },
+              "c503": {
+                "text": "SERVER_FAULT"
+              }
+            },
+            "tones": {
+              "c404": "idle",
+              "c503": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Never return 500 when a user provides invalid input.",
+            "values": {
+              "c404": {
+                "text": "CLIENT_FAULT"
+              },
+              "c503": {
+                "text": "SERVER_FAULT"
+              }
+            },
+            "tones": {
+              "c404": "ok",
+              "c503": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "HTTP status error classification",
+        "boxes": [
+          {
+            "id": "c404",
+            "label": "CLIENT_FAULT"
+          },
+          {
+            "id": "c503",
+            "label": "SERVER_FAULT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The 4xx class indicates the client sent an invalid request.",
+            "values": {
+              "c404": "CLIENT_FAULT",
+              "c503": "SERVER_FAULT"
+            },
+            "tones": {
+              "c404": "data",
+              "c503": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The 5xx class indicates the server encountered an unexpected error.",
+            "values": {
+              "c404": "CLIENT_FAULT",
+              "c503": "SERVER_FAULT"
+            },
+            "tones": {
+              "c404": "idle",
+              "c503": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Never return 500 when a user provides invalid input.",
+            "values": {
+              "c404": "CLIENT_FAULT",
+              "c503": "SERVER_FAULT"
+            },
+            "tones": {
+              "c404": "ok",
+              "c503": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Critical HTTP Headers: Content-Type, Authorization, and Cache-Control",
+      "codeHash": "72f269777b2d0f66f5e430dedb2e710f4e8b3a6c19cf6326c694c29931202cee",
+      "spec": {
+        "template": "boxes",
+        "title": "Critical HTTP header parameters",
+        "boxes": [
+          {
+            "id": "auth",
+            "label": "authorization"
+          },
+          {
+            "id": "cache",
+            "label": "cache-control"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Content-Type is the most important payload header.",
+            "values": {
+              "auth": {
+                "text": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+              },
+              "cache": {
+                "text": "no-store, private"
+              }
+            },
+            "tones": {
+              "auth": "data",
+              "cache": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The Authorization header carries authentication credentials.",
+            "values": {
+              "auth": {
+                "text": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+              },
+              "cache": {
+                "text": "no-store, private"
+              }
+            },
+            "tones": {
+              "auth": "idle",
+              "cache": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Correct header management also underpins modern API security.",
+            "values": {
+              "auth": {
+                "text": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+              },
+              "cache": {
+                "text": "no-store, private"
+              }
+            },
+            "tones": {
+              "auth": "ok",
+              "cache": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Critical HTTP header parameters",
+        "boxes": [
+          {
+            "id": "auth",
+            "label": "authorization"
+          },
+          {
+            "id": "cache",
+            "label": "cache-control"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Content-Type is the most important payload header.",
+            "values": {
+              "auth": "Bearer eyJhbGciOiJIUzI1NiJ9...",
+              "cache": "no-store, private"
+            },
+            "tones": {
+              "auth": "data",
+              "cache": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The Authorization header carries authentication credentials.",
+            "values": {
+              "auth": "Bearer eyJhbGciOiJIUzI1NiJ9...",
+              "cache": "no-store, private"
+            },
+            "tones": {
+              "auth": "idle",
+              "cache": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Correct header management also underpins modern API security.",
+            "values": {
+              "auth": "Bearer eyJhbGciOiJIUzI1NiJ9...",
+              "cache": "no-store, private"
+            },
+            "tones": {
+              "auth": "ok",
+              "cache": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Content Negotiation with the Accept Header",
+      "codeHash": "a5fa76209dfa10c0c02d813c657c3fa711eb40271cb9ac79b33f5527010fabe0",
+      "spec": {
+        "template": "none",
+        "reason": "Architecture discussion of content negotiation algorithms and media type quality factor weighting"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Architecture discussion of content negotiation algorithms and media type quality factor weighting"
+      }
+    }
+  ]
+}
