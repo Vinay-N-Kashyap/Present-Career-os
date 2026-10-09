@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 3,
+  "promptSha": "ec1c57f13e8b04972946ddf264b5c0007fc4d4056b3a9710d2975b973b9c96a1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Text Protocols (JSON/REST) vs Compact Binary RPC (Protobuf/gRPC)",
+      "codeHash": "99a20bce929d36fd16cdab03ffca55b11ccc47580f24d51fb6eaa22e0a731d52",
+      "spec": {
+        "template": "compare",
+        "title": "Text JSON REST serialization compared to binary Protobuf gRPC framing",
+        "leftLabel": "Text JSON REST Payload",
+        "rightLabel": "Compact Binary Protobuf Payload",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Parsing textual representations consumes substantial processor cycles.",
+            "left": {
+              "code": "jsonBytes: 58 bytes",
+              "result": {
+                "text": "58"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "mockProtobufBytes: 22 bytes",
+              "result": {
+                "text": "22"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Fields are mapped to integer tags rather than repeating field names.",
+            "left": {
+              "code": "Bandwidth Reduction: 62%",
+              "result": {
+                "text": "62%"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Tag 1 (2 bytes) + Tag 2 (18 bytes)",
+              "result": {
+                "text": "22 bytes"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Text JSON REST serialization compared to binary Protobuf gRPC framing",
+        "leftLabel": "Text JSON REST Payload",
+        "rightLabel": "Compact Binary Protobuf Payload",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Parsing textual representations consumes substantial processor cycles.",
+            "left": {
+              "code": "jsonBytes: 58 bytes",
+              "result": {
+                "text": "58"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "mockProtobufBytes: 22 bytes",
+              "result": {
+                "text": "22"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Fields are mapped to integer tags rather than repeating field names.",
+            "left": {
+              "code": "Bandwidth Reduction: 62%",
+              "result": {
+                "text": "62%"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Tag 1 (2 bytes) + Tag 2 (18 bytes)",
+              "result": {
+                "text": "22 bytes"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Varint Encoding & 7-Bit Payloads with MSB Continuation Bits",
+      "codeHash": "e06ef7531c7a9d3e4e5741d1e378ec7cde62da9429a566808811761f7f4f3242",
+      "spec": {
+        "template": "cells",
+        "title": "Varint 7-bit chunk layout and MSB continuation bit encoding",
+        "cells": [
+          {
+            "id": "b0",
+            "label": "Byte 0: MSB=1 (Continuation)",
+            "value": "172 (0xAC)",
+            "tone": "warn"
+          },
+          {
+            "id": "b1",
+            "label": "Byte 1: MSB=0 (Terminal)",
+            "value": "2 (0x02)",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Varints serialize integers using bytes depending on numerical magnitude.",
+            "highlightIds": [
+              "b0"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The continuation bit signals that subsequent bytes contain further bits.",
+            "highlightIds": [
+              "b0",
+              "b1"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Varint 7-bit chunk layout and MSB continuation bit encoding",
+        "cells": [
+          {
+            "id": "b0",
+            "label": "Byte 0: MSB=1 (Continuation)",
+            "value": "172 (0xAC)",
+            "tone": "warn"
+          },
+          {
+            "id": "b1",
+            "label": "Byte 1: MSB=0 (Terminal)",
+            "value": "2 (0x02)",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Varints serialize integers using bytes depending on numerical magnitude.",
+            "highlightIds": [
+              "b0"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The continuation bit signals that subsequent bytes contain further bits.",
+            "highlightIds": [
+              "b0",
+              "b1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Protobuf Wire Types, Tag Fields & Backward-Compatible Schema Evolution",
+      "codeHash": "7d23d9d6c959647f2bcd9d33ef2a7cd885d7d5d05062fbd3082e9a527055dcef",
+      "spec": {
+        "template": "table",
+        "title": "Protocol buffer wire types and tag parsing rules",
+        "columns": [
+          "Wire Type ID",
+          "Wire Representation",
+          "Supported Data Types",
+          "Length Encoding Rule"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Varints correspond to integers and boolean primitive fields.",
+            "rows": [
+              [
+                "Type 0",
+                "Varint",
+                "int32, int64, uint32, bool, enum",
+                "Variable 1 to 10 bytes with MSB flags"
+              ],
+              [
+                "Type 1",
+                "64-bit Fixed",
+                "fixed64, sfixed64, double",
+                "Always 8 bytes little-endian"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Architectural design enables backward and forward schema evolution.",
+            "rows": [
+              [
+                "Type 0",
+                "Varint",
+                "int32, int64, uint32, bool, enum",
+                "Variable 1 to 10 bytes with MSB flags"
+              ],
+              [
+                "Type 1",
+                "64-bit Fixed",
+                "fixed64, sfixed64, double",
+                "Always 8 bytes little-endian"
+              ],
+              [
+                "Type 2",
+                "Length-Delimited",
+                "string, bytes, embedded message, repeated",
+                "Varint length prefix followed by data payload"
+              ],
+              [
+                "Type 5",
+                "32-bit Fixed",
+                "fixed32, sfixed32, float",
+                "Always 4 bytes little-endian"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Protocol buffer wire types and tag parsing rules",
+        "columns": [
+          "Wire Type ID",
+          "Wire Representation",
+          "Supported Data Types",
+          "Length Encoding Rule"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Varints correspond to integers and boolean primitive fields.",
+            "rows": [
+              [
+                "Type 0",
+                "Varint",
+                "int32, int64, uint32, bool, enum",
+                "Variable 1 to 10 bytes with MSB flags"
+              ],
+              [
+                "Type 1",
+                "64-bit Fixed",
+                "fixed64, sfixed64, double",
+                "Always 8 bytes little-endian"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Architectural design enables backward and forward schema evolution.",
+            "rows": [
+              [
+                "Type 0",
+                "Varint",
+                "int32, int64, uint32, bool, enum",
+                "Variable 1 to 10 bytes with MSB flags"
+              ],
+              [
+                "Type 1",
+                "64-bit Fixed",
+                "fixed64, sfixed64, double",
+                "Always 8 bytes little-endian"
+              ],
+              [
+                "Type 2",
+                "Length-Delimited",
+                "string, bytes, embedded message, repeated",
+                "Varint length prefix followed by data payload"
+              ],
+              [
+                "Type 5",
+                "32-bit Fixed",
+                "fixed32, sfixed32, float",
+                "Always 4 bytes little-endian"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP/2 Framing, Multiplexing & Stream Prioritization",
+      "codeHash": "8fe3d1efd5cad838579bac68c5b3898b0782fccd6b712f20a35b9026fd1a086d",
+      "spec": {
+        "template": "workflow",
+        "title": "HTTP/2 binary framing layer and multiplexed TCP stream pipeline",
+        "stages": [
+          {
+            "id": "framingLayer",
+            "name": "Binary Framing",
+            "subtext": "Dissecting Messages"
+          },
+          {
+            "id": "streamMultiplex",
+            "name": "Single TCP Socket",
+            "subtext": "Interleaved Frames"
+          },
+          {
+            "id": "streamDemux",
+            "name": "Stream Reassembly",
+            "subtext": "Stream ID Dispatch"
+          },
+          {
+            "id": "hpackCompress",
+            "name": "HPACK Compression",
+            "subtext": "Header Deduplication"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Multiple logical streams multiplex simultaneously over a single connection.",
+            "activeStageId": "streamMultiplex",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Stream prioritization allows urgent calls to take precedence over bulk data.",
+            "activeStageId": "streamDemux",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "HTTP/2 binary framing layer and multiplexed TCP stream pipeline",
+        "stages": [
+          {
+            "id": "framingLayer",
+            "name": "Binary Framing",
+            "subtext": "Dissecting Messages"
+          },
+          {
+            "id": "streamMultiplex",
+            "name": "Single TCP Socket",
+            "subtext": "Interleaved Frames"
+          },
+          {
+            "id": "streamDemux",
+            "name": "Stream Reassembly",
+            "subtext": "Stream ID Dispatch"
+          },
+          {
+            "id": "hpackCompress",
+            "name": "HPACK Compression",
+            "subtext": "Header Deduplication"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Multiple logical streams multiplex simultaneously over a single connection.",
+            "activeStageId": "streamMultiplex",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Stream prioritization allows urgent calls to take precedence over bulk data.",
+            "activeStageId": "streamDemux",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "gRPC 4 Interaction Modes: Unary, Server Stream, Client Stream & Bidirectional",
+      "codeHash": "9efeb7adce7bc8ba1d6fa0b81c36d0898029ba6244b8b2d1e8be83c1d1db4b59",
+      "spec": {
+        "template": "sequence",
+        "title": "gRPC four interaction modes across client and server streams",
+        "actors": [
+          {
+            "id": "grpcClient",
+            "label": "gRPC Client"
+          },
+          {
+            "id": "grpcServer",
+            "label": "gRPC Service Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Unary mode sends a single request message and receives one response.",
+            "messages": [
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Unary Request (GetUser id=101)"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Unary Response (User Profile)"
+              }
+            ],
+            "activeActorId": "grpcServer"
+          },
+          {
+            "at": "say7",
+            "caption": "Bidirectional streaming allows client and server to write concurrently.",
+            "messages": [
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Stream Payload Frame A"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Stream Response Frame X"
+              },
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Stream Payload Frame B"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Stream Response Frame Y"
+              }
+            ],
+            "activeActorId": "grpcClient"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "gRPC four interaction modes across client and server streams",
+        "actors": [
+          {
+            "id": "grpcClient",
+            "label": "gRPC Client"
+          },
+          {
+            "id": "grpcServer",
+            "label": "gRPC Service Backend"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Unary mode sends a single request message and receives one response.",
+            "messages": [
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Unary Request (GetUser id=101)"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Unary Response (User Profile)"
+              }
+            ],
+            "activeActorId": "grpcServer"
+          },
+          {
+            "at": "say7",
+            "caption": "Bidirectional streaming allows client and server to write concurrently.",
+            "messages": [
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Stream Payload Frame A"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Stream Response Frame X"
+              },
+              {
+                "from": "grpcClient",
+                "to": "grpcServer",
+                "label": "Stream Payload Frame B"
+              },
+              {
+                "from": "grpcServer",
+                "to": "grpcClient",
+                "label": "Stream Response Frame Y"
+              }
+            ],
+            "activeActorId": "grpcClient"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Protobuf Binary Serializer & RPC Request Dispatcher",
+      "codeHash": "ddb24d5a578e9abf087d3c47f542692178cffc19943292bb2e645967ee47a21e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
