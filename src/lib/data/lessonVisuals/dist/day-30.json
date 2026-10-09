@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 30,
+  "promptSha": "7f844092ed040a0990abeab076f8735863655d7caf386c8769994f12e57c339f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Architecture of a High-Frequency Financial Exchange",
+      "codeHash": "dbfd8c533e1d6174ca72dd736a8e573982b19c28a0843bd18fa68f08df3f5c48",
+      "spec": {
+        "template": "workflow",
+        "title": "High-frequency electronic financial exchange order lifecycle pipeline",
+        "workflow": [
+          {
+            "id": "orderIngress",
+            "label": "Trader Ingress Gateway Receives Order",
+            "status": "completed"
+          },
+          {
+            "id": "riskValidation",
+            "label": "Pre-Trade Risk and Margin Verification",
+            "status": "completed"
+          },
+          {
+            "id": "matchingEngine",
+            "label": "In-Memory Limit Order Book Matching",
+            "status": "active"
+          },
+          {
+            "id": "raftLedger",
+            "label": "Raft Replicated Write-Ahead Log Persistence",
+            "status": "pending"
+          },
+          {
+            "id": "clearingSettlement",
+            "label": "Multilateral Clearing and Balance Settlement",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The core computational kernel is the limit order book matching engine.",
+            "activeWorkflowId": "matchingEngine",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "State is persisted asynchronously via raft replicated write ahead logs.",
+            "activeWorkflowId": "raftLedger",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "High-frequency electronic financial exchange order lifecycle pipeline",
+        "workflow": [
+          {
+            "id": "orderIngress",
+            "label": "Trader Ingress Gateway Receives Order",
+            "status": "completed"
+          },
+          {
+            "id": "riskValidation",
+            "label": "Pre-Trade Risk and Margin Verification",
+            "status": "completed"
+          },
+          {
+            "id": "matchingEngine",
+            "label": "In-Memory Limit Order Book Matching",
+            "status": "active"
+          },
+          {
+            "id": "raftLedger",
+            "label": "Raft Replicated Write-Ahead Log Persistence",
+            "status": "pending"
+          },
+          {
+            "id": "clearingSettlement",
+            "label": "Multilateral Clearing and Balance Settlement",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The core computational kernel is the limit order book matching engine.",
+            "activeWorkflowId": "matchingEngine",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "State is persisted asynchronously via raft replicated write ahead logs.",
+            "activeWorkflowId": "raftLedger",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Hash Ring Order Partitioning",
+      "codeHash": "052732da7149de20e49ebf4bf2a5bd5b15bb2bb29f4b1b3f82ce1a20a10f318f",
+      "spec": {
+        "template": "cells",
+        "title": "Consistent hash ring trading symbol shard partition distribution",
+        "cells": [
+          {
+            "id": "shardOne",
+            "label": "Matching Shard One (BTC-USD, SOL)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardTwo",
+            "label": "Matching Shard Two (ETH-USD, AVAX)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardThree",
+            "label": "Matching Shard Three (AAPL, MSFT)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardFour",
+            "label": "Matching Shard Four (EUR-USD, JPY)",
+            "value": "Active Shard"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The gateway routes incoming orders using a consistent hash ring.",
+            "activeCellId": "shardOne",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only a fraction of trading symbols are rebalanced when adding shards.",
+            "activeCellId": "shardTwo",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Consistent hash ring trading symbol shard partition distribution",
+        "cells": [
+          {
+            "id": "shardOne",
+            "label": "Matching Shard One (BTC-USD, SOL)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardTwo",
+            "label": "Matching Shard Two (ETH-USD, AVAX)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardThree",
+            "label": "Matching Shard Three (AAPL, MSFT)",
+            "value": "Active Shard"
+          },
+          {
+            "id": "shardFour",
+            "label": "Matching Shard Four (EUR-USD, JPY)",
+            "value": "Active Shard"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The gateway routes incoming orders using a consistent hash ring.",
+            "activeCellId": "shardOne",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only a fraction of trading symbols are rebalanced when adding shards.",
+            "activeCellId": "shardTwo",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft-Inspired Replicated State Machine Ledger",
+      "codeHash": "cb13a0df194f41037d24fd0b8d76c3ad4503a86ea21a8279d87c3ae4c74237a2",
+      "spec": {
+        "template": "states",
+        "title": "Replicated state machine ledger consensus and balance update states",
+        "states": [
+          {
+            "id": "logAppended",
+            "label": "Trade Entry Appended to Leader Log"
+          },
+          {
+            "id": "rpcBroadcast",
+            "label": "AppendEntries RPC Broadcast to Followers"
+          },
+          {
+            "id": "quorumAchieved",
+            "label": "Majority Quorum Write Acknowledged"
+          },
+          {
+            "id": "stateCommitted",
+            "label": "State Machine Balance Updates Committed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The trade commits when a majority quorum acknowledges writing the log.",
+            "activeStateId": "quorumAchieved",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The new leader contains all committed entries preventing lost trades.",
+            "activeStateId": "stateCommitted",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Replicated state machine ledger consensus and balance update states",
+        "states": [
+          {
+            "id": "logAppended",
+            "label": "Trade Entry Appended to Leader Log"
+          },
+          {
+            "id": "rpcBroadcast",
+            "label": "AppendEntries RPC Broadcast to Followers"
+          },
+          {
+            "id": "quorumAchieved",
+            "label": "Majority Quorum Write Acknowledged"
+          },
+          {
+            "id": "stateCommitted",
+            "label": "State Machine Balance Updates Committed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The trade commits when a majority quorum acknowledges writing the log.",
+            "activeStateId": "quorumAchieved",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The new leader contains all committed entries preventing lost trades.",
+            "activeStateId": "stateCommitted",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Saga Pattern for Multi-Leg Asset Transfers",
+      "codeHash": "b48bd508f1f7b629234269409fe663f8d5ce910e8fb49fb80b7420de1339e1bb",
+      "spec": {
+        "template": "sequence",
+        "title": "Distributed saga multi-leg asset transfer and compensation sequence",
+        "actors": [
+          {
+            "id": "orchestrator",
+            "label": "Saga Orchestrator"
+          },
+          {
+            "id": "usdBank",
+            "label": "USD Banking Service"
+          },
+          {
+            "id": "cryptoCustody",
+            "label": "Crypto Custody"
+          },
+          {
+            "id": "eurBank",
+            "label": "EUR Banking Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orchestrator",
+            "to": "usdBank",
+            "label": "Execute Forward Debit USD Source Account",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "cryptoCustody",
+            "label": "Execute Forward Credit Intermediary BTC",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "eurBank",
+            "label": "Compliance Check Fails EUR Deposit",
+            "tone": "error"
+          },
+          {
+            "from": "orchestrator",
+            "to": "usdBank",
+            "label": "Execute Compensating Refund USD to User",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A saga executes a sequence of local transactions across services.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The saga orchestrator triggers compensating rollbacks when steps fail.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Distributed saga multi-leg asset transfer and compensation sequence",
+        "actors": [
+          {
+            "id": "orchestrator",
+            "label": "Saga Orchestrator"
+          },
+          {
+            "id": "usdBank",
+            "label": "USD Banking Service"
+          },
+          {
+            "id": "cryptoCustody",
+            "label": "Crypto Custody"
+          },
+          {
+            "id": "eurBank",
+            "label": "EUR Banking Service"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orchestrator",
+            "to": "usdBank",
+            "label": "Execute Forward Debit USD Source Account",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "cryptoCustody",
+            "label": "Execute Forward Credit Intermediary BTC",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "eurBank",
+            "label": "Compliance Check Fails EUR Deposit",
+            "tone": "error"
+          },
+          {
+            "from": "orchestrator",
+            "to": "usdBank",
+            "label": "Execute Compensating Refund USD to User",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A saga executes a sequence of local transactions across services.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The saga orchestrator triggers compensating rollbacks when steps fail.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic Fencing Tokens & Double-Spend Protection",
+      "codeHash": "da0d4f9776abe229d791dbff393998e0f7cd6e7935730c94e28bf0437593afd0",
+      "spec": {
+        "template": "table",
+        "title": "Optimistic concurrency version tokens and double-spend protection matrix",
+        "columns": [
+          "Account ID",
+          "Expected Version",
+          "Requested Withdrawal",
+          "Transaction Outcome"
+        ],
+        "rows": [
+          [
+            "Account One",
+            "Version Forty-Two",
+            "One Hundred Dollars",
+            "Success (Version increments to 43)"
+          ],
+          [
+            "Account One",
+            "Version Forty-Two",
+            "One Hundred Dollars",
+            "Rejected (Stale version conflict)"
+          ],
+          [
+            "Account Two",
+            "Version Ten",
+            "Fifty Dollars",
+            "Success (Version increments to 11)"
+          ],
+          [
+            "Account Two",
+            "Version Nine",
+            "Fifty Dollars",
+            "Rejected (Stale fencing token)"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The exchange prevents attacks using monotonic fencing tokens.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent transactions against identical versions fail safely.",
+            "activeRowIndex": 1,
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Optimistic concurrency version tokens and double-spend protection matrix",
+        "columns": [
+          "Account ID",
+          "Expected Version",
+          "Requested Withdrawal",
+          "Transaction Outcome"
+        ],
+        "rows": [
+          [
+            "Account One",
+            "Version Forty-Two",
+            "One Hundred Dollars",
+            "Success (Version increments to 43)"
+          ],
+          [
+            "Account One",
+            "Version Forty-Two",
+            "One Hundred Dollars",
+            "Rejected (Stale version conflict)"
+          ],
+          [
+            "Account Two",
+            "Version Ten",
+            "Fifty Dollars",
+            "Success (Version increments to 11)"
+          ],
+          [
+            "Account Two",
+            "Version Nine",
+            "Fifty Dollars",
+            "Rejected (Stale fencing token)"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The exchange prevents attacks using monotonic fencing tokens.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Concurrent transactions against identical versions fail safely.",
+            "activeRowIndex": 1,
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capstone Synthesis: The Global Financial Exchange & Ledger Engine Simulator",
+      "codeHash": "459389eba91c08d2c1692983c137d26e5390aa75cbc213adacde98d7a04f4cd7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
