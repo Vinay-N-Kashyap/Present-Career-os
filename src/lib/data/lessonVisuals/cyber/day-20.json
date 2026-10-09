@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 20,
+  "promptSha": "66fb74bcb5f5837637882445e3d3d18366890ab93443e3da31688b2d7a67de7b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "API Abuse Vectors & The Token Bucket Rate Limiting Algorithm",
+      "codeHash": "d373de1e2d309ef50686ea86b681744b5c6267e16ee4b31aec8b72e62767b989",
+      "spec": {
+        "template": "states",
+        "title": "Token bucket rate limiting traffic shaping and request evaluation states",
+        "states": [
+          {
+            "id": "bucketRefilled",
+            "label": "Continuous Token Refill at Rate R"
+          },
+          {
+            "id": "requestArrived",
+            "label": "Incoming Request Requests Token"
+          },
+          {
+            "id": "tokenDeducted",
+            "label": "Tokens Available and Deducted"
+          },
+          {
+            "id": "limitExceeded",
+            "label": "Bucket Empty Yields Rate Limit Error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Available tokens are deducted and requests proceed without penalty.",
+            "activeStateId": "tokenDeducted",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If the bucket is empty requests are dropped with rate limit headers.",
+            "activeStateId": "limitExceeded",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Token bucket rate limiting traffic shaping and request evaluation states",
+        "states": [
+          {
+            "id": "bucketRefilled",
+            "label": "Continuous Token Refill at Rate R"
+          },
+          {
+            "id": "requestArrived",
+            "label": "Incoming Request Requests Token"
+          },
+          {
+            "id": "tokenDeducted",
+            "label": "Tokens Available and Deducted"
+          },
+          {
+            "id": "limitExceeded",
+            "label": "Bucket Empty Yields Rate Limit Error"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Available tokens are deducted and requests proceed without penalty.",
+            "activeStateId": "tokenDeducted",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If the bucket is empty requests are dropped with rate limit headers.",
+            "activeStateId": "limitExceeded",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Client Sliding Window & IP Rate Limiting Engine",
+      "codeHash": "099ab03845c7648df3bf2c419595c19a11c1b59a6bacb6b51f45595da7f4e723",
+      "spec": {
+        "template": "table",
+        "title": "RFC rate limit response headers and automated client backoff policies",
+        "columns": [
+          "Response Header",
+          "Semantic Purpose",
+          "Example Header Payload",
+          "Client Behavior"
+        ],
+        "rows": [
+          [
+            "X-RateLimit-Limit",
+            "Total Window Quota Limit",
+            "One Hundred Requests per Minute",
+            "Establishes Client Baseline"
+          ],
+          [
+            "X-RateLimit-Remaining",
+            "Current Available Token Count",
+            "Forty Two Requests Remaining",
+            "Monitors Remaining Capacity"
+          ],
+          [
+            "Retry-After Header",
+            "Seconds Until Next Refill Window",
+            "Thirty Seconds Remaining",
+            "Triggers Exponential Backoff"
+          ],
+          [
+            "Quarantine Block",
+            "Dynamic Threshold Enforcement",
+            "Firewall IP Drop Injected",
+            "Terminates Volumetric Abuse"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway extracts the client address and evaluates their individual quota.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Emitting rate limit headers enables clients to back off automatically.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RFC rate limit response headers and automated client backoff policies",
+        "columns": [
+          "Response Header",
+          "Semantic Purpose",
+          "Example Header Payload",
+          "Client Behavior"
+        ],
+        "rows": [
+          [
+            "X-RateLimit-Limit",
+            "Total Window Quota Limit",
+            "One Hundred Requests per Minute",
+            "Establishes Client Baseline"
+          ],
+          [
+            "X-RateLimit-Remaining",
+            "Current Available Token Count",
+            "Forty Two Requests Remaining",
+            "Monitors Remaining Capacity"
+          ],
+          [
+            "Retry-After Header",
+            "Seconds Until Next Refill Window",
+            "Thirty Seconds Remaining",
+            "Triggers Exponential Backoff"
+          ],
+          [
+            "Quarantine Block",
+            "Dynamic Threshold Enforcement",
+            "Firewall IP Drop Injected",
+            "Terminates Volumetric Abuse"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway extracts the client address and evaluates their individual quota.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Emitting rate limit headers enables clients to back off automatically.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OAuth 2.0 PKCE Flow: Code Verifier & SHA-256 Code Challenge",
+      "codeHash": "3994866639c4bdc38d762ac9793f30aef1ddde5d248eb1c14756ec7f66f3832f",
+      "spec": {
+        "template": "sequence",
+        "title": "OAuth 2.0 PKCE code challenge initiation and verification exchange",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Public Client Application"
+          },
+          {
+            "id": "authServer",
+            "label": "OAuth Authorization Server"
+          },
+          {
+            "id": "api",
+            "label": "Protected Resource API"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "authServer",
+            "label": "Initiate Auth with SHA-256 Code Challenge",
+            "tone": "data"
+          },
+          {
+            "from": "authServer",
+            "to": "client",
+            "label": "Issue Temporary Authorization Code",
+            "tone": "ok"
+          },
+          {
+            "from": "client",
+            "to": "authServer",
+            "label": "Exchange Code and Plaintext Code Verifier",
+            "tone": "data"
+          },
+          {
+            "from": "authServer",
+            "to": "client",
+            "label": "Validate Challenge and Issue Access Tokens",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The client computes the challenge by hashing the verifier with SHA.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The client presents the secret verifier to prove authorization initiation.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "OAuth 2.0 PKCE code challenge initiation and verification exchange",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Public Client Application"
+          },
+          {
+            "id": "authServer",
+            "label": "OAuth Authorization Server"
+          },
+          {
+            "id": "api",
+            "label": "Protected Resource API"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "authServer",
+            "label": "Initiate Auth with SHA-256 Code Challenge",
+            "tone": "data"
+          },
+          {
+            "from": "authServer",
+            "to": "client",
+            "label": "Issue Temporary Authorization Code",
+            "tone": "ok"
+          },
+          {
+            "from": "client",
+            "to": "authServer",
+            "label": "Exchange Code and Plaintext Code Verifier",
+            "tone": "data"
+          },
+          {
+            "from": "authServer",
+            "to": "client",
+            "label": "Validate Challenge and Issue Access Tokens",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The client computes the challenge by hashing the verifier with SHA.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The client presents the secret verifier to prove authorization initiation.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive API Gateway Security Pipeline",
+      "codeHash": "cbb79507629aad73ebd679e297a1fc3932345f1f820e7a08e5e1b9e5b33eadfe",
+      "spec": {
+        "template": "flow",
+        "title": "Multi-stage API gateway defense-in-depth security inspection pipeline",
+        "nodes": [
+          {
+            "id": "gatewayEntry",
+            "label": "API Gateway Edge Listener",
+            "tappable": false
+          },
+          {
+            "id": "rateLimiter",
+            "label": "Token Bucket Rate Guard",
+            "tappable": false
+          },
+          {
+            "id": "authzGate",
+            "label": "OAuth PKCE Token Verifier",
+            "tappable": false
+          },
+          {
+            "id": "sanitizerGate",
+            "label": "Payload Sanitization Filter",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "gatewayEntry",
+            "to": "rateLimiter",
+            "label": "Enforces"
+          },
+          {
+            "from": "rateLimiter",
+            "to": "authzGate",
+            "label": "Authenticates"
+          },
+          {
+            "from": "authzGate",
+            "to": "sanitizerGate",
+            "label": "Proxies"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway checks clients against rate limiters rejecting volumetric abuse.",
+            "activeNodes": [
+              "gatewayEntry",
+              "rateLimiter"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only when all security gates pass does the gateway proxy the request.",
+            "activeNodes": [
+              "authzGate",
+              "sanitizerGate"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Multi-stage API gateway defense-in-depth security inspection pipeline",
+        "nodes": [
+          {
+            "id": "gatewayEntry",
+            "label": "API Gateway Edge Listener",
+            "tappable": false
+          },
+          {
+            "id": "rateLimiter",
+            "label": "Token Bucket Rate Guard",
+            "tappable": false
+          },
+          {
+            "id": "authzGate",
+            "label": "OAuth PKCE Token Verifier",
+            "tappable": false
+          },
+          {
+            "id": "sanitizerGate",
+            "label": "Payload Sanitization Filter",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "gatewayEntry",
+            "to": "rateLimiter",
+            "label": "Enforces"
+          },
+          {
+            "from": "rateLimiter",
+            "to": "authzGate",
+            "label": "Authenticates"
+          },
+          {
+            "from": "authzGate",
+            "to": "sanitizerGate",
+            "label": "Proxies"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The gateway checks clients against rate limiters rejecting volumetric abuse.",
+            "activeNodes": [
+              "gatewayEntry",
+              "rateLimiter"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only when all security gates pass does the gateway proxy the request.",
+            "activeNodes": [
+              "authzGate",
+              "sanitizerGate"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Leaky Bucket vs Sliding Window Log Rate Limiting Algorithms",
+      "codeHash": "d8ba1c816a87f204040f3d05958d16170ca45813d27a749f587878c946ea669c",
+      "spec": {
+        "template": "compare",
+        "title": "Token bucket burst accommodation versus sliding window log precision",
+        "left": {
+          "title": "Token Bucket Burst Allowance",
+          "items": [
+            "Permits temporary bursts of requests up to capacity limit",
+            "Smooth replenishment at constant refill rate over time",
+            "Very low memory consumption with only two numeric values"
+          ]
+        },
+        "right": {
+          "title": "Sliding Window Log Precision",
+          "items": [
+            "Records timestamp for every individual request in cache",
+            "Eliminates boundary burst flaws with absolute precision",
+            "High memory overhead storing logs for millions of users"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Uniform rate algorithms process requests smoothing erratic traffic spikes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Sliding window logs eliminate boundary vulnerabilities with precision.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Token bucket burst accommodation versus sliding window log precision",
+        "left": {
+          "title": "Token Bucket Burst Allowance",
+          "items": [
+            "Permits temporary bursts of requests up to capacity limit",
+            "Smooth replenishment at constant refill rate over time",
+            "Very low memory consumption with only two numeric values"
+          ]
+        },
+        "right": {
+          "title": "Sliding Window Log Precision",
+          "items": [
+            "Records timestamp for every individual request in cache",
+            "Eliminates boundary burst flaws with absolute precision",
+            "High memory overhead storing logs for millions of users"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Uniform rate algorithms process requests smoothing erratic traffic spikes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Sliding window logs eliminate boundary vulnerabilities with precision.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OAuth 2.0 PKCE Code Challenge Derivation & Verification Mechanics",
+      "codeHash": "2c7f5b09d288af9a31b51b1cb2151182a99b0317897fa2bb9fd95b2ac2ec1b1d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
