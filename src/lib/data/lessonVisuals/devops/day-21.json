@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 21,
+  "promptSha": "d8421160062856595c2db073b63a001facb1a25ffe5fdb26b1483ef0d04ad496",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 3 Architecture: The Highly Available Enterprise Cluster",
+      "codeHash": "cdebb25aeb830902956179c8cb2c68d9b43779530166aebd638ea9383c754bf3",
+      "spec": {
+        "template": "compare",
+        "title": "High availability cluster topology and scaling blueprint",
+        "leftLabel": "Availability Zones Topology",
+        "rightLabel": "Autoscaling Replicas Range",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production architecture brings together enterprise high availability pillars.",
+            "left": {
+              "code": "ingressController: 'ingress-nginx (TLS Automated)'",
+              "result": {
+                "text": "ingress-nginx (TLS Automated)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availabilityZones: ['us-east-1a']",
+              "result": {
+                "text": "us-east-1a"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Autonomous elasticity expands cluster capacity driven by real time metrics.",
+            "left": {
+              "code": "minReplicas",
+              "result": {
+                "text": "minReplicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxReplicas",
+              "result": {
+                "text": "maxReplicas"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "High availability cluster topology and scaling blueprint",
+        "leftLabel": "Availability Zones Topology",
+        "rightLabel": "Autoscaling Replicas Range",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production architecture brings together enterprise high availability pillars.",
+            "left": {
+              "code": "ingressController: 'ingress-nginx (TLS Automated)'",
+              "result": {
+                "text": "ingress-nginx (TLS Automated)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "availabilityZones: ['us-east-1a']",
+              "result": {
+                "text": "us-east-1a"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Autonomous elasticity expands cluster capacity driven by real time metrics.",
+            "left": {
+              "code": "minReplicas",
+              "result": {
+                "text": "minReplicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxReplicas",
+              "result": {
+                "text": "maxReplicas"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pod Anti-Affinity & Multi-Availability Zone Scheduling",
+      "codeHash": "9c1d9b3ae2de8245049ce7737de7f4cd104548afbed7c1f6edffd7e293d88951",
+      "spec": {
+        "template": "compare",
+        "title": "Pod anti-affinity placement across physical cloud zones",
+        "leftLabel": "First Node Placement",
+        "rightLabel": "Second Node Placement",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Operational scheduling modes specify hard and soft affinity behaviors.",
+            "left": {
+              "code": "nodeName: 'node-1'",
+              "result": {
+                "text": "node-1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zone: 'us-east-1a'",
+              "result": {
+                "text": "us-east-1a"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Multi-zone scheduling protects cluster workloads from single datacenter loss.",
+            "left": {
+              "code": "nodeName: 'node-2'",
+              "result": {
+                "text": "node-2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zone: 'us-east-1b'",
+              "result": {
+                "text": "us-east-1b"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Pod anti-affinity placement across physical cloud zones",
+        "leftLabel": "First Node Placement",
+        "rightLabel": "Second Node Placement",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Operational scheduling modes specify hard and soft affinity behaviors.",
+            "left": {
+              "code": "nodeName: 'node-1'",
+              "result": {
+                "text": "node-1"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zone: 'us-east-1a'",
+              "result": {
+                "text": "us-east-1a"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Multi-zone scheduling protects cluster workloads from single datacenter loss.",
+            "left": {
+              "code": "nodeName: 'node-2'",
+              "result": {
+                "text": "node-2"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "zone: 'us-east-1b'",
+              "result": {
+                "text": "us-east-1b"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Horizontal Pod Autoscaler (HPA) & Metrics Server",
+      "codeHash": "7f304be19dea81061c05effa867077bbac6dc8bb8043a4fda91f9e721ae4723b",
+      "spec": {
+        "template": "compare",
+        "title": "Horizontal pod autoscaler utilization metrics comparison",
+        "leftLabel": "Observed CPU Metric",
+        "rightLabel": "Target Utilization Goal",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics server periodically queries container resource consumption.",
+            "left": {
+              "code": "currentCpuUtilizationPercent",
+              "result": {
+                "text": "currentCpuUtilizationPercent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCpuUtilizationPercent",
+              "result": {
+                "text": "targetCpuUtilizationPercent"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Autoscaler controller calculates required replica expansion to meet targets.",
+            "left": {
+              "code": "currentReplicas",
+              "result": {
+                "text": "currentReplicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minReplicas",
+              "result": {
+                "text": "minReplicas"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Horizontal pod autoscaler utilization metrics comparison",
+        "leftLabel": "Observed CPU Metric",
+        "rightLabel": "Target Utilization Goal",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Metrics server periodically queries container resource consumption.",
+            "left": {
+              "code": "currentCpuUtilizationPercent",
+              "result": {
+                "text": "currentCpuUtilizationPercent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCpuUtilizationPercent",
+              "result": {
+                "text": "targetCpuUtilizationPercent"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Autoscaler controller calculates required replica expansion to meet targets.",
+            "left": {
+              "code": "currentReplicas",
+              "result": {
+                "text": "currentReplicas"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "minReplicas",
+              "result": {
+                "text": "minReplicas"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning Autoscaling Behavior & Stabilization Windows",
+      "codeHash": "68e270d435ca2568b03ac5164824096819bf227fac08157ba34c7123ddfff500",
+      "spec": {
+        "template": "compare",
+        "title": "Autoscaling velocity policies and stabilization windows",
+        "leftLabel": "Surge Scale-Up Cadence",
+        "rightLabel": "Scale-Down Stabilization",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Flapping occurs when momentary bursts trigger repeated scaling thrashing.",
+            "left": {
+              "code": "scaleUpPeriodSec",
+              "result": {
+                "text": "scaleUpPeriodSec"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scaleDownStabilizationWindowSec",
+              "result": {
+                "text": "scaleDownStabilizationWindowSec"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Continuous cooldown smoothing observes lower metric before terminating pods.",
+            "left": {
+              "code": "maxScaleDownPercent",
+              "result": {
+                "text": "maxScaleDownPercent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scaleDownStabilizationWindowSec",
+              "result": {
+                "text": "scaleDownStabilizationWindowSec"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autoscaling velocity policies and stabilization windows",
+        "leftLabel": "Surge Scale-Up Cadence",
+        "rightLabel": "Scale-Down Stabilization",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Flapping occurs when momentary bursts trigger repeated scaling thrashing.",
+            "left": {
+              "code": "scaleUpPeriodSec",
+              "result": {
+                "text": "scaleUpPeriodSec"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scaleDownStabilizationWindowSec",
+              "result": {
+                "text": "scaleDownStabilizationWindowSec"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Continuous cooldown smoothing observes lower metric before terminating pods.",
+            "left": {
+              "code": "maxScaleDownPercent",
+              "result": {
+                "text": "maxScaleDownPercent"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "scaleDownStabilizationWindowSec",
+              "result": {
+                "text": "scaleDownStabilizationWindowSec"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ingress Integration with TLS & Sticky Sessions",
+      "codeHash": "3bf63ec31559ec4ac1989577cdb7c178f5675c91b6fcaa7a653ba968475a9024",
+      "spec": {
+        "template": "compare",
+        "title": "Ingress traffic routing with cookie session affinity",
+        "leftLabel": "Client Session State",
+        "rightLabel": "Backend Pod Target",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Controller sets encrypted session affinity cookie for downstream routing.",
+            "left": {
+              "code": "hasSessionCookie",
+              "result": {
+                "text": "hasSessionCookie"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "selectedPod: 'pod-api-node-1'",
+              "result": {
+                "text": "pod-api-node-1"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Subsequent requests route deterministically toward healthy backend instances.",
+            "left": {
+              "code": "tlsTerminated: true",
+              "result": {
+                "text": "tlsTerminated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "selectedPod: 'pod-api-node-2'",
+              "result": {
+                "text": "pod-api-node-2"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ingress traffic routing with cookie session affinity",
+        "leftLabel": "Client Session State",
+        "rightLabel": "Backend Pod Target",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Controller sets encrypted session affinity cookie for downstream routing.",
+            "left": {
+              "code": "hasSessionCookie",
+              "result": {
+                "text": "hasSessionCookie"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "selectedPod: 'pod-api-node-1'",
+              "result": {
+                "text": "pod-api-node-1"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Subsequent requests route deterministically toward healthy backend instances.",
+            "left": {
+              "code": "tlsTerminated: true",
+              "result": {
+                "text": "tlsTerminated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "selectedPod: 'pod-api-node-2'",
+              "result": {
+                "text": "pod-api-node-2"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cluster Stress Testing & Autoscaling Verification",
+      "codeHash": "a8a199f1e9a41657e448f4e6d3f7bdc62e2272feaeaa1c3e8d5255389312a044",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
