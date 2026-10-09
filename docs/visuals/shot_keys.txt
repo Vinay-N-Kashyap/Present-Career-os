@@ -1,6 +1,6 @@
-dsa-optim:16:2
-dsa-optim:16:3
-dsa-optim:18:1
-dsa-optim:19:3
-dsa-optim:20:2
-dsa-optim:20:3
+dsa-optim:21:3
+dsa-optim:21:4
+dsa-optim:23:0
+dsa-optim:23:4
+dsa-optim:24:0
+dsa-optim:24:2
