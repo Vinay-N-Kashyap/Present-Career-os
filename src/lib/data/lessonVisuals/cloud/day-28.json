@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 28,
+  "promptSha": "9003dde22302d1fe287dd062049b17800136aa3c27afbf8c3a9a5b05e675a6c3",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The FinOps Framework: Inform, Optimize, Operate",
+      "codeHash": "e2bffd4b1d5b639fba7643071a33f233ada5a313efe68d87c814470b9bde184a",
+      "spec": {
+        "template": "workflow",
+        "title": "FinOps framework continuous optimization lifecycle",
+        "stages": [
+          {
+            "id": "inform",
+            "name": "Inform Phase",
+            "subtext": "Tagging & Cost Explorer"
+          },
+          {
+            "id": "optimize",
+            "name": "Optimize Phase",
+            "subtext": "Right-Sizing & Savings"
+          },
+          {
+            "id": "operate",
+            "name": "Operate Phase",
+            "subtext": "Budgets & Governance"
+          },
+          {
+            "id": "reinvest",
+            "name": "Reinvest Savings",
+            "subtext": "Innovation Velocity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Infrastructure shifted toward operational expenditure.",
+            "activeStageId": "inform",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Teams evaluate business objectives against cloud spending in the framework.",
+            "activeStageId": "operate",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "FinOps framework continuous optimization lifecycle",
+        "stages": [
+          {
+            "id": "inform",
+            "name": "Inform Phase",
+            "subtext": "Tagging & Cost Explorer"
+          },
+          {
+            "id": "optimize",
+            "name": "Optimize Phase",
+            "subtext": "Right-Sizing & Savings"
+          },
+          {
+            "id": "operate",
+            "name": "Operate Phase",
+            "subtext": "Budgets & Governance"
+          },
+          {
+            "id": "reinvest",
+            "name": "Reinvest Savings",
+            "subtext": "Innovation Velocity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Infrastructure shifted toward operational expenditure.",
+            "activeStageId": "inform",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Teams evaluate business objectives against cloud spending in the framework.",
+            "activeStageId": "operate",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost Allocation Tags & Departmental Chargeback",
+      "codeHash": "c437685d616e846becf2fa56512cb9839eac3a80f2260e9f9d214be1db4f3f11",
+      "spec": {
+        "template": "table",
+        "title": "Mandatory cost allocation tag taxonomy and chargeback rules",
+        "columns": [
+          "Mandatory Tag Key",
+          "Example Value",
+          "Activation Requirement",
+          "Reporting Mechanism"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Organizations enforce mandatory tag sets for cost allocation governance.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Cost Explorer Breakdown",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "CC-FINTECH-900",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Departmental Chargeback",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Chargeback models bill each department for their actual cloud consumption.",
+            "rows": [
+              [
+                {
+                  "text": "Project",
+                  "tone": "data"
+                },
+                {
+                  "text": "global-banking-v2",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Cost Attribution",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Owner",
+                  "tone": "data"
+                },
+                {
+                  "text": "platform-team",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Accountability Audit",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Mandatory cost allocation tag taxonomy and chargeback rules",
+        "columns": [
+          "Mandatory Tag Key",
+          "Example Value",
+          "Activation Requirement",
+          "Reporting Mechanism"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Organizations enforce mandatory tag sets for cost allocation governance.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Cost Explorer Breakdown",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "CC-FINTECH-900",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Departmental Chargeback",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Chargeback models bill each department for their actual cloud consumption.",
+            "rows": [
+              [
+                {
+                  "text": "Project",
+                  "tone": "data"
+                },
+                {
+                  "text": "global-banking-v2",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Cost Attribution",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Owner",
+                  "tone": "data"
+                },
+                {
+                  "text": "platform-team",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Active in Billing Console",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Accountability Audit",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Compute Savings Plans vs Reserved Instances",
+      "codeHash": "527e3d889b43207505b854c13f269501b11055caefdf7244d5f4cdd7decb36c9",
+      "spec": {
+        "template": "compare",
+        "title": "Reserved Instances compared to Compute Savings Plans",
+        "leftLabel": "Standard Reserved Instance (RI)",
+        "rightLabel": "Compute Savings Plan",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Compute savings plans offer discount rates with flexibility on spend.",
+            "left": {
+              "code": "Locked to Instance Type & Region",
+              "result": {
+                "text": "Inflexible Right-Sizing"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Flexible Dollar-Per-Hour Spend",
+              "result": {
+                "text": "Applies to Any Family"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Flexibility allows changing instance families while discounts still apply.",
+            "left": {
+              "code": "EC2 Compute Only",
+              "result": {
+                "text": "No Fargate or Lambda Discount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Universal Compute Discount",
+              "result": {
+                "text": "Covers EC2, Fargate & Lambda"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Reserved Instances compared to Compute Savings Plans",
+        "leftLabel": "Standard Reserved Instance (RI)",
+        "rightLabel": "Compute Savings Plan",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Compute savings plans offer discount rates with flexibility on spend.",
+            "left": {
+              "code": "Locked to Instance Type & Region",
+              "result": {
+                "text": "Inflexible Right-Sizing"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Flexible Dollar-Per-Hour Spend",
+              "result": {
+                "text": "Applies to Any Family"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Flexibility allows changing instance families while discounts still apply.",
+            "left": {
+              "code": "EC2 Compute Only",
+              "result": {
+                "text": "No Fargate or Lambda Discount"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Universal Compute Discount",
+              "result": {
+                "text": "Covers EC2, Fargate & Lambda"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EC2 Right-Sizing & Idle Resource Detection",
+      "codeHash": "24c5ab451913387c755cedb3670a9cadebf64a109e78487bf61b1f447ded1ac6",
+      "spec": {
+        "template": "bars",
+        "title": "EC2 instance right-sizing analysis and cost savings impact",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Instances with low average utilization are candidates for downsizing.",
+            "bars": [
+              {
+                "label": "Over-Provisioned m5.xlarge",
+                "value": 160,
+                "max": 160,
+                "tone": "data"
+              },
+              {
+                "label": "Right-Sized m5.large Target",
+                "value": 80,
+                "max": 160,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Idle resources include unattached volumes and detached addresses.",
+            "bars": [
+              {
+                "label": "Unattached Idle EBS Volumes",
+                "value": 50,
+                "max": 100,
+                "tone": "error"
+              },
+              {
+                "label": "Immediate Cost Savings Realized",
+                "value": 50,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "EC2 instance right-sizing analysis and cost savings impact",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Instances with low average utilization are candidates for downsizing.",
+            "bars": [
+              {
+                "label": "Over-Provisioned m5.xlarge",
+                "value": 160,
+                "max": 160,
+                "tone": "data"
+              },
+              {
+                "label": "Right-Sized m5.large Target",
+                "value": 80,
+                "max": 160,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Idle resources include unattached volumes and detached addresses.",
+            "bars": [
+              {
+                "label": "Unattached Idle EBS Volumes",
+                "value": 50,
+                "max": 100,
+                "tone": "error"
+              },
+              {
+                "label": "Immediate Cost Savings Realized",
+                "value": 50,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS Budgets & Automated Cost Governance",
+      "codeHash": "0437492bbbfd40aa52ac97d108b6a16b049c405af43db66d4eff0ffac39a3c7a",
+      "spec": {
+        "template": "states",
+        "title": "AWS Budgets spend monitoring and automated policy triggers",
+        "states": [
+          {
+            "id": "budgetNormal",
+            "label": "Budget Actual Within 50%"
+          },
+          {
+            "id": "warningThreshold",
+            "label": "80% Actual Warning Alert"
+          },
+          {
+            "id": "forecastedExceeded",
+            "label": "100% Forecasted Breach (Action Triggered)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A budget strategy includes alert thresholds for early warning.",
+            "active": "budgetNormal"
+          },
+          {
+            "at": "say5",
+            "caption": "Automated lambda functions can stop instances when thresholds breach.",
+            "active": "forecastedExceeded"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "AWS Budgets spend monitoring and automated policy triggers",
+        "states": [
+          {
+            "id": "budgetNormal",
+            "label": "Budget Actual Within 50%"
+          },
+          {
+            "id": "warningThreshold",
+            "label": "80% Actual Warning Alert"
+          },
+          {
+            "id": "forecastedExceeded",
+            "label": "100% Forecasted Breach (Action Triggered)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A budget strategy includes alert thresholds for early warning.",
+            "active": "budgetNormal"
+          },
+          {
+            "at": "say5",
+            "caption": "Automated lambda functions can stop instances when thresholds breach.",
+            "active": "forecastedExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise FinOps Maturity Assessment",
+      "codeHash": "91140043c3ef991fcc32da6ada0d11a99b017c10d84eeebb257e4cd82ad3d0f5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
