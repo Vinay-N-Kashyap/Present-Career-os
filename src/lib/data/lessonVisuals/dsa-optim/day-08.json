@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 8,
+  "promptSha": "b82a5ed370ba5ce294b9ee3f050407038195adff9144feac4a6e3f7963864838",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Opposite-Direction Convergence Pattern",
+      "codeHash": "a12f00ce242b5e26d36697176fd5d9f65a3846af8eed88cbb1fd718375675e46",
+      "spec": {
+        "template": "cells",
+        "title": "Two pointers converging on target sum",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Small sum advances left pointer to increase total.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "11"
+              },
+              {
+                "text": "15"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Large sum retreats right pointer to decrease total.",
+            "items": [
+              {
+                "text": "1"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "5"
+              },
+              {
+                "text": "7"
+              },
+              {
+                "text": "11"
+              },
+              {
+                "text": "15"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Two pointers converging on target sum",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Small sum advances left pointer to increase total.",
+            "items": [
+              "1",
+              "3",
+              "5",
+              "7",
+              "11",
+              "15"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Large sum retreats right pointer to decrease total.",
+            "items": [
+              "1",
+              "3",
+              "5",
+              "7",
+              "11",
+              "15"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container With Most Water (Greedy Pointer Movement)",
+      "codeHash": "a62d6e1342b61a8497436f64793bbad59132c2691d5b799e8b9adc0d7902ed56",
+      "spec": {
+        "template": "bars",
+        "title": "Container with most water height bounds",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Greedy pointer moves inward from shorter line.",
+            "bars": [
+              {
+                "label": "1",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "8",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "7",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Greedy decision rule preserves optimal configuration.",
+            "bars": [
+              {
+                "label": "8",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "6",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "7",
+                "value": {
+                  "text": "7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Container with most water height bounds",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Greedy pointer moves inward from shorter line.",
+            "bars": [
+              {
+                "label": "1",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "8",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "7",
+                "value": 7,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Greedy decision rule preserves optimal configuration.",
+            "bars": [
+              {
+                "label": "8",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "6",
+                "value": 6,
+                "tone": "data"
+              },
+              {
+                "label": "7",
+                "value": 7,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Palindrome Verification with Two Pointers",
+      "codeHash": "b7defa88e72e08786bfac93c2ee5b1aabb8d1a88a46c61f2e925b3d339a3945c",
+      "spec": {
+        "template": "cells",
+        "title": "Two pointer palindrome verification",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Compare opposite characters to check palindrome symmetry.",
+            "items": [
+              {
+                "text": "r"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "e"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "r"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Advance left forward and right backward toward center.",
+            "items": [
+              {
+                "text": "r"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "e"
+              },
+              {
+                "text": "c"
+              },
+              {
+                "text": "a"
+              },
+              {
+                "text": "r"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Two pointer palindrome verification",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Compare opposite characters to check palindrome symmetry.",
+            "items": [
+              "r",
+              "a",
+              "c",
+              "e",
+              "c",
+              "a",
+              "r"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 6,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Advance left forward and right backward toward center.",
+            "items": [
+              "r",
+              "a",
+              "c",
+              "e",
+              "c",
+              "a",
+              "r"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast & Slow Pointers (Floyd's Cycle Detection)",
+      "codeHash": "14e458d9cf83ba8a5fe35dce04c62c383e086b6217218fb75354f25c9332aa8b",
+      "spec": {
+        "template": "compare",
+        "title": "Fast and slow pointer cycle detection",
+        "leftLabel": "Slow Pointer",
+        "rightLabel": "Fast Pointer",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Slow pointer advances while fast pointer advances faster.",
+            "left": {
+              "code": "slow = slow!.next",
+              "result": {
+                "text": "1"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "fast = fast.next.next",
+              "result": {
+                "text": "2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fast pointer eventually laps slow pointer inside cycle.",
+            "left": {
+              "code": "slow === fast",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "fast === null",
+              "result": {
+                "text": "false"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Fast and slow pointer cycle detection",
+        "leftLabel": "Slow Pointer",
+        "rightLabel": "Fast Pointer",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Slow pointer advances while fast pointer advances faster.",
+            "left": {
+              "code": "slow = slow!.next",
+              "result": "1",
+              "tone": "data"
+            },
+            "right": {
+              "code": "fast = fast.next.next",
+              "result": "2",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fast pointer eventually laps slow pointer inside cycle.",
+            "left": {
+              "code": "slow === fast",
+              "result": "true",
+              "tone": "ok"
+            },
+            "right": {
+              "code": "fast === null",
+              "result": "false",
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Three Sum Problem with Sorted Two Pointers",
+      "codeHash": "943936701e741ed3bc1bf48ed1a93c168bf88491d93736c544f08eac86a95836",
+      "spec": {
+        "template": "cells",
+        "title": "Three sum fixed element and two pointer scan",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Iterating index i scans remaining subarray with pointers.",
+            "items": [
+              {
+                "text": "-4"
+              },
+              {
+                "text": "-1"
+              },
+              {
+                "text": "-1"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Skip duplicate values to avoid duplicate triplets.",
+            "items": [
+              {
+                "text": "-4"
+              },
+              {
+                "text": "-1"
+              },
+              {
+                "text": "-1"
+              },
+              {
+                "text": "0"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Three sum fixed element and two pointer scan",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Iterating index i scans remaining subarray with pointers.",
+            "items": [
+              "-4",
+              "-1",
+              "-1",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "right",
+                "index": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Skip duplicate values to avoid duplicate triplets.",
+            "items": [
+              "-4",
+              "-1",
+              "-1",
+              "0",
+              "1",
+              "2"
+            ],
+            "pointers": [
+              {
+                "name": "left",
+                "index": 2,
+                "tone": "ok"
+              },
+              {
+                "name": "right",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trapping Rain Water with Two Pointers",
+      "codeHash": "ebedc78791d609017e2db93607f3e14236abd4528d4bf67b1d3d9505f3d07ada",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
