@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 18,
+  "promptSha": "fd2ff4c4a3f190ac05dde283104e7fb2f1c7cd1338521c65e590d724e06b1ca1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Decoupling Microservices with Amazon SQS",
+      "codeHash": "bfcb06a66b04b96e3a160111c636da0b7e7ccb24993c66f4763535cce6a4d7aa",
+      "spec": {
+        "template": "workflow",
+        "title": "Decoupled asynchronous queue producer-consumer architecture",
+        "stages": [
+          {
+            "id": "producer",
+            "name": "Producer Service",
+            "subtext": "Enqueues Message"
+          },
+          {
+            "id": "sqs",
+            "name": "SQS Managed Queue",
+            "subtext": "Shock Absorber"
+          },
+          {
+            "id": "consumer",
+            "name": "Consumer Service",
+            "subtext": "Pulls at Own Pace"
+          },
+          {
+            "id": "storage",
+            "name": "Persistent Storage",
+            "subtext": "Processed State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The producer writes a message to an SQS queue and returns immediately.",
+            "activeStageId": "sqs",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The consumer polls the queue asynchronously at its own processing pace.",
+            "activeStageId": "consumer",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Decoupled asynchronous queue producer-consumer architecture",
+        "stages": [
+          {
+            "id": "producer",
+            "name": "Producer Service",
+            "subtext": "Enqueues Message"
+          },
+          {
+            "id": "sqs",
+            "name": "SQS Managed Queue",
+            "subtext": "Shock Absorber"
+          },
+          {
+            "id": "consumer",
+            "name": "Consumer Service",
+            "subtext": "Pulls at Own Pace"
+          },
+          {
+            "id": "storage",
+            "name": "Persistent Storage",
+            "subtext": "Processed State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The producer writes a message to an SQS queue and returns immediately.",
+            "activeStageId": "sqs",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The consumer polls the queue asynchronously at its own processing pace.",
+            "activeStageId": "consumer",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standard Queues vs FIFO Queues: Guarantees & Throughput",
+      "codeHash": "7180470d4e84aeef1128d47222a75e1dbadc9fa20c843d6e2a7c067fce4e99ab",
+      "spec": {
+        "template": "compare",
+        "title": "Standard queue throughput compared to FIFO queue ordering",
+        "leftLabel": "Standard SQS Queue",
+        "rightLabel": "FIFO SQS Queue (.fifo)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard queues guarantee delivery at least once with unlimited throughput.",
+            "left": {
+              "code": "At-Least-Once Delivery",
+              "result": {
+                "text": "Nearly Unlimited TPS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Exactly-Once Processing",
+              "result": {
+                "text": "Capped 300 TPS"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "FIFO queues preserve strict message ordering and guarantee processing.",
+            "left": {
+              "code": "guaranteesOrder: false",
+              "result": {
+                "text": "Best-Effort Ordering"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "guaranteesOrder: true",
+              "result": {
+                "text": "Strict First-In-First-Out"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Standard queue throughput compared to FIFO queue ordering",
+        "leftLabel": "Standard SQS Queue",
+        "rightLabel": "FIFO SQS Queue (.fifo)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard queues guarantee delivery at least once with unlimited throughput.",
+            "left": {
+              "code": "At-Least-Once Delivery",
+              "result": {
+                "text": "Nearly Unlimited TPS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Exactly-Once Processing",
+              "result": {
+                "text": "Capped 300 TPS"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "FIFO queues preserve strict message ordering and guarantee processing.",
+            "left": {
+              "code": "guaranteesOrder: false",
+              "result": {
+                "text": "Best-Effort Ordering"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "guaranteesOrder: true",
+              "result": {
+                "text": "Strict First-In-First-Out"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SQS Visibility Timeout & Heartbeating",
+      "codeHash": "9f944e4f82cfc91f707b1f213f9a95fdbf65a07f241357870948df83e09b0a4a",
+      "spec": {
+        "template": "states",
+        "title": "Message visibility lifecycle and retry timeout states",
+        "states": [
+          {
+            "id": "visible",
+            "label": "Message Visible in Queue"
+          },
+          {
+            "id": "inFlight",
+            "label": "In-Flight (Visibility Timeout Clock)"
+          },
+          {
+            "id": "deleted",
+            "label": "Processed & Deleted"
+          },
+          {
+            "id": "timeoutExpired",
+            "label": "Timeout Expired (Re-queued)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "During the visibility timeout the message is rendered invisible to consumers.",
+            "active": "inFlight"
+          },
+          {
+            "at": "say6",
+            "caption": "Deleting the message purges it permanently from the queue.",
+            "active": "deleted"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Message visibility lifecycle and retry timeout states",
+        "states": [
+          {
+            "id": "visible",
+            "label": "Message Visible in Queue"
+          },
+          {
+            "id": "inFlight",
+            "label": "In-Flight (Visibility Timeout Clock)"
+          },
+          {
+            "id": "deleted",
+            "label": "Processed & Deleted"
+          },
+          {
+            "id": "timeoutExpired",
+            "label": "Timeout Expired (Re-queued)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "During the visibility timeout the message is rendered invisible to consumers.",
+            "active": "inFlight"
+          },
+          {
+            "at": "say6",
+            "caption": "Deleting the message purges it permanently from the queue.",
+            "active": "deleted"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Short Polling vs Long Polling (WaitTimeSeconds)",
+      "codeHash": "aafce0a0e878a377795b7039093dd906ad4c3d52151ef0ba3c773c600c5c39f9",
+      "spec": {
+        "template": "table",
+        "title": "Short polling efficiency compared to long polling",
+        "columns": [
+          "Polling Mode",
+          "Wait Time Seconds",
+          "Connection Behavior",
+          "Cost & Latency Impact"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In short polling SQS queries a subset of servers and returns immediately.",
+            "rows": [
+              [
+                {
+                  "text": "Short Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 0",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Immediate Empty Return",
+                  "tone": "error"
+                },
+                {
+                  "text": "High Request Cost",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Long Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 20",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Connection Held Open",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Low API Invocations",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Long polling drastically reduces empty responses and slashes request costs.",
+            "rows": [
+              [
+                {
+                  "text": "Short Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 0",
+                  "tone": "idle"
+                },
+                {
+                  "text": "False Empty Responses",
+                  "tone": "error"
+                },
+                {
+                  "text": "High Billing Overhead",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Long Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 20",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Immediate Delivery",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Optimal Efficiency",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Short polling efficiency compared to long polling",
+        "columns": [
+          "Polling Mode",
+          "Wait Time Seconds",
+          "Connection Behavior",
+          "Cost & Latency Impact"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In short polling SQS queries a subset of servers and returns immediately.",
+            "rows": [
+              [
+                {
+                  "text": "Short Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 0",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Immediate Empty Return",
+                  "tone": "error"
+                },
+                {
+                  "text": "High Request Cost",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Long Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 20",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Connection Held Open",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Low API Invocations",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Long polling drastically reduces empty responses and slashes request costs.",
+            "rows": [
+              [
+                {
+                  "text": "Short Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 0",
+                  "tone": "idle"
+                },
+                {
+                  "text": "False Empty Responses",
+                  "tone": "error"
+                },
+                {
+                  "text": "High Billing Overhead",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Long Polling",
+                  "tone": "data"
+                },
+                {
+                  "text": "waitTimeSeconds: 20",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Immediate Delivery",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Optimal Efficiency",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dead Letter Queues (DLQ) & Redrive Policies",
+      "codeHash": "d53dfdb64a096b63fff212794015100e9e28ae3aa4865d8cd27d258458535e90",
+      "spec": {
+        "template": "bars",
+        "title": "Message receive count and redrive policy quarantine threshold",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The maximum receive count defines delivery attempts before quarantine.",
+            "bars": [
+              {
+                "label": "Receive Count Attempt",
+                "value": 1,
+                "max": 3,
+                "tone": "data"
+              },
+              {
+                "label": "Max Receive Threshold",
+                "value": 3,
+                "max": 3,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "SQS automatically isolates failed messages into the dead letter queue.",
+            "bars": [
+              {
+                "label": "Receive Count Attempt",
+                "value": 3,
+                "max": 3,
+                "tone": "error"
+              },
+              {
+                "label": "DLQ Isolation Triggered",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Message receive count and redrive policy quarantine threshold",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The maximum receive count defines delivery attempts before quarantine.",
+            "bars": [
+              {
+                "label": "Receive Count Attempt",
+                "value": 1,
+                "max": 3,
+                "tone": "data"
+              },
+              {
+                "label": "Max Receive Threshold",
+                "value": 3,
+                "max": 3,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "SQS automatically isolates failed messages into the dead letter queue.",
+            "bars": [
+              {
+                "label": "Receive Count Attempt",
+                "value": 3,
+                "max": 3,
+                "tone": "error"
+              },
+              {
+                "label": "DLQ Isolation Triggered",
+                "value": 3,
+                "max": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Distributed Queue Consumer Verification",
+      "codeHash": "99acef8029d5c2cc6f99b8a6bfa582cf244aa17b9d2fe7b927ab0068a7948c7f",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
