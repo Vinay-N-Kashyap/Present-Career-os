@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 3,
+  "promptSha": "251f55a8400bd00f2e5aa9880aedcb2186295bf7c780910ae3639e18a4452a06",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Virtual Machines vs Containers",
+      "codeHash": "2f2dcddae5b927a10c404b59162274ea130dd10acf39a3f2db1ebe47ddcb90e6",
+      "spec": {
+        "template": "compare",
+        "title": "Virtual machines hypervisor vs container architecture",
+        "leftLabel": "Virtual Machines (Hypervisor)",
+        "rightLabel": "Containers (Shared Kernel)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Virtual machine architecture hypervisor virtualizes physical hardware.",
+            "left": {
+              "code": "Hypervisor + Guest OS",
+              "result": {
+                "text": "HEAVY_OVERHEAD"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared Host Kernel",
+              "result": {
+                "text": "ZERO_OVERHEAD"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Containers launch in milliseconds consuming virtually zero overhead.",
+            "left": {
+              "code": "Boot Time: 45s",
+              "result": {
+                "text": "SLOW_BOOT"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Boot Time: 0.2s",
+              "result": {
+                "text": "FAST_BOOT"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Virtual machines hypervisor vs container architecture",
+        "leftLabel": "Virtual Machines (Hypervisor)",
+        "rightLabel": "Containers (Shared Kernel)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Virtual machine architecture hypervisor virtualizes physical hardware.",
+            "left": {
+              "code": "Hypervisor + Guest OS",
+              "result": {
+                "text": "HEAVY_OVERHEAD"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared Host Kernel",
+              "result": {
+                "text": "ZERO_OVERHEAD"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Containers launch in milliseconds consuming virtually zero overhead.",
+            "left": {
+              "code": "Boot Time: 45s",
+              "result": {
+                "text": "SLOW_BOOT"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Boot Time: 0.2s",
+              "result": {
+                "text": "FAST_BOOT"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux Namespaces: Virtualizing What a Process Can See",
+      "codeHash": "60c2bc3c162aeae178926849e3fa8597ff67dda1364d3a58231f1af3fc11dd92",
+      "spec": {
+        "template": "workflow",
+        "title": "Linux kernel namespaces resource isolation view",
+        "stages": [
+          {
+            "id": "pid",
+            "name": "PID",
+            "subtext": "Process Tree"
+          },
+          {
+            "id": "net",
+            "name": "NET",
+            "subtext": "Network Stack"
+          },
+          {
+            "id": "mnt",
+            "name": "MNT",
+            "subtext": "Mount Points"
+          },
+          {
+            "id": "user",
+            "name": "USER",
+            "subtext": "UID/GID Mapping"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Namespaces provide illusion of dedicated resources to process.",
+            "activeStageId": "pid",
+            "statusBadge": "isolated"
+          },
+          {
+            "at": "say5",
+            "caption": "Network namespace provides isolated interfaces and routing tables.",
+            "activeStageId": "net",
+            "statusBadge": "virtualized"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Linux kernel namespaces resource isolation view",
+        "stages": [
+          {
+            "id": "pid",
+            "name": "PID",
+            "subtext": "Process Tree"
+          },
+          {
+            "id": "net",
+            "name": "NET",
+            "subtext": "Network Stack"
+          },
+          {
+            "id": "mnt",
+            "name": "MNT",
+            "subtext": "Mount Points"
+          },
+          {
+            "id": "user",
+            "name": "USER",
+            "subtext": "UID/GID Mapping"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Namespaces provide illusion of dedicated resources to process.",
+            "activeStageId": "pid",
+            "statusBadge": "isolated"
+          },
+          {
+            "at": "say5",
+            "caption": "Network namespace provides isolated interfaces and routing tables.",
+            "activeStageId": "net",
+            "statusBadge": "virtualized"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux Control Groups (Cgroups): Limiting Resource Usage",
+      "codeHash": "68999b2b80ef318743655af345e505e9c2a22f547fa7c4e371ed8de3bb869969",
+      "spec": {
+        "template": "compare",
+        "title": "Linux cgroups CPU and memory quota limits",
+        "leftLabel": "Safe Container (Within Limits)",
+        "rightLabel": "Leaking Container (OOM Risk)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Memory cgroup sets hard memory limits preventing host exhaustion.",
+            "left": {
+              "code": "usage: 256MB / 512MB",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "usage: 495MB / 512MB",
+              "result": {
+                "text": "OOM_WARNING"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Processor time allocated using fair scheduler quota mechanism.",
+            "left": {
+              "code": "quota: 2.0 cores",
+              "result": {
+                "text": "OPTIMAL"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "quota: 1.0 cores",
+              "result": {
+                "text": "THROTTLED"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Linux cgroups CPU and memory quota limits",
+        "leftLabel": "Safe Container (Within Limits)",
+        "rightLabel": "Leaking Container (OOM Risk)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Memory cgroup sets hard memory limits preventing host exhaustion.",
+            "left": {
+              "code": "usage: 256MB / 512MB",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "usage: 495MB / 512MB",
+              "result": {
+                "text": "OOM_WARNING"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Processor time allocated using fair scheduler quota mechanism.",
+            "left": {
+              "code": "quota: 2.0 cores",
+              "result": {
+                "text": "OPTIMAL"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "quota: 1.0 cores",
+              "result": {
+                "text": "THROTTLED"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Union Filesystems & Copy-on-Write (Overlay2)",
+      "codeHash": "62e065b6c6124892847e42aa10b55ffb3d5720725e8be81f1b4b03dcc8fc16f5",
+      "spec": {
+        "template": "workflow",
+        "title": "Overlay2 union mount lowerdir upperdir merging",
+        "stages": [
+          {
+            "id": "base",
+            "name": "BaseImage",
+            "subtext": "lowerdir-0"
+          },
+          {
+            "id": "app",
+            "name": "AppLayers",
+            "subtext": "lowerdir-1"
+          },
+          {
+            "id": "container",
+            "name": "ReadWrite",
+            "subtext": "upperdir"
+          },
+          {
+            "id": "merged",
+            "name": "MergedView",
+            "subtext": "Union Mount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Image layers represent read-only filesystem known as lowerdir.",
+            "activeStageId": "base",
+            "statusBadge": "read-only"
+          },
+          {
+            "at": "say5",
+            "caption": "Docker mounts ephemeral read-write layer directly on top as upperdir.",
+            "activeStageId": "container",
+            "statusBadge": "writeable"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Overlay2 union mount lowerdir upperdir merging",
+        "stages": [
+          {
+            "id": "base",
+            "name": "BaseImage",
+            "subtext": "lowerdir-0"
+          },
+          {
+            "id": "app",
+            "name": "AppLayers",
+            "subtext": "lowerdir-1"
+          },
+          {
+            "id": "container",
+            "name": "ReadWrite",
+            "subtext": "upperdir"
+          },
+          {
+            "id": "merged",
+            "name": "MergedView",
+            "subtext": "Union Mount"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Image layers represent read-only filesystem known as lowerdir.",
+            "activeStageId": "base",
+            "statusBadge": "read-only"
+          },
+          {
+            "at": "say5",
+            "caption": "Docker mounts ephemeral read-write layer directly on top as upperdir.",
+            "activeStageId": "container",
+            "statusBadge": "writeable"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Docker Image Layer Caching Mechanics",
+      "codeHash": "4ed1d71313a6806629f4ebe015ecba1409437ff89a544d4939dcc89d6bc39172",
+      "spec": {
+        "template": "workflow",
+        "title": "Sequential Dockerfile layer cache cascading evaluation",
+        "stages": [
+          {
+            "id": "base",
+            "name": "BaseImage",
+            "subtext": "FROM node"
+          },
+          {
+            "id": "deps",
+            "name": "Deps",
+            "subtext": "COPY package"
+          },
+          {
+            "id": "install",
+            "name": "Install",
+            "subtext": "RUN npm ci"
+          },
+          {
+            "id": "src",
+            "name": "Source",
+            "subtext": "COPY src"
+          },
+          {
+            "id": "build",
+            "name": "Build",
+            "subtext": "RUN build"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Docker outputs cached and skips instruction when matching cache entry.",
+            "activeStageId": "install",
+            "statusBadge": "cached"
+          },
+          {
+            "at": "say7",
+            "caption": "Cache miss forces all subsequent downstream layers to recompute.",
+            "activeStageId": "src",
+            "statusBadge": "recomputed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Sequential Dockerfile layer cache cascading evaluation",
+        "stages": [
+          {
+            "id": "base",
+            "name": "BaseImage",
+            "subtext": "FROM node"
+          },
+          {
+            "id": "deps",
+            "name": "Deps",
+            "subtext": "COPY package"
+          },
+          {
+            "id": "install",
+            "name": "Install",
+            "subtext": "RUN npm ci"
+          },
+          {
+            "id": "src",
+            "name": "Source",
+            "subtext": "COPY src"
+          },
+          {
+            "id": "build",
+            "name": "Build",
+            "subtext": "RUN build"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Docker outputs cached and skips instruction when matching cache entry.",
+            "activeStageId": "install",
+            "statusBadge": "cached"
+          },
+          {
+            "at": "say7",
+            "caption": "Cache miss forces all subsequent downstream layers to recompute.",
+            "activeStageId": "src",
+            "statusBadge": "recomputed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Optimizing Dockerfile Instruction Ordering",
+      "codeHash": "79add047fc068eb57e9a512a6fea9d7c69dc1edbe10537af382f637f38002b9d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
