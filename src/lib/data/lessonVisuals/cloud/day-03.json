@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 3,
+  "promptSha": "c1a1a0d3409a5045535182056cb1d5327b7687fef26b81ca46a78702db9362b1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "VPC Foundations and RFC 1918 Private IPv4 Address Spaces",
+      "codeHash": "46f5a601aa232213a370fd28e0196cf2b5a99e88acfb957285f38983353c2dfd",
+      "spec": {
+        "template": "table",
+        "title": "VPC CIDR prefix capacity and address allocations",
+        "columns": [
+          "CIDR Notation",
+          "Host Bits",
+          "Usable Addresses"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Virtual private clouds allocate isolated private networks to your account.",
+            "rows": [
+              [
+                {
+                  "text": "/16 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "16 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "65536 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/24 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "8 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "256 Hosts",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standard provisioning assigns slash sixteen blocks providing addresses.",
+            "rows": [
+              [
+                {
+                  "text": "/16 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "16 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "65536 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/20 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "12 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "4096 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/24 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "8 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "256 Hosts",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "VPC CIDR prefix capacity and address allocations",
+        "columns": [
+          "CIDR Notation",
+          "Host Bits",
+          "Usable Addresses"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Virtual private clouds allocate isolated private networks to your account.",
+            "rows": [
+              [
+                {
+                  "text": "/16 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "16 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "65536 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/24 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "8 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "256 Hosts",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Standard provisioning assigns slash sixteen blocks providing addresses.",
+            "rows": [
+              [
+                {
+                  "text": "/16 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "16 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "65536 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/20 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "12 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "4096 Hosts",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/24 Prefix",
+                  "tone": "data"
+                },
+                {
+                  "text": "8 Bits",
+                  "tone": "idle"
+                },
+                {
+                  "text": "256 Hosts",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS Reserved IP Addresses per Subnet",
+      "codeHash": "8b4a249b2f0a03fa88d6a5d58e66be59832e0e7e7539c3d4fa1b03090418225f",
+      "spec": {
+        "template": "table",
+        "title": "AWS reserved IP address offsets within VPC subnets",
+        "columns": [
+          "Address Offset",
+          "AWS Role",
+          "Networking Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every provisioned subnet reserves addresses for internal networking.",
+            "rows": [
+              [
+                {
+                  "text": "Offset 0",
+                  "tone": "data"
+                },
+                {
+                  "text": "Network Address",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Routing Identification",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 1",
+                  "tone": "data"
+                },
+                {
+                  "text": "VPC Router",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Default Gateway",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The third address is reserved to provide DNS resolution via Route resolver.",
+            "rows": [
+              [
+                {
+                  "text": "Offset 0",
+                  "tone": "data"
+                },
+                {
+                  "text": "Network Address",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Routing Identification",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 1",
+                  "tone": "data"
+                },
+                {
+                  "text": "VPC Router",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Default Gateway",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 2",
+                  "tone": "data"
+                },
+                {
+                  "text": "DNS Server",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Amazon Route 53 Resolver",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AWS reserved IP address offsets within VPC subnets",
+        "columns": [
+          "Address Offset",
+          "AWS Role",
+          "Networking Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every provisioned subnet reserves addresses for internal networking.",
+            "rows": [
+              [
+                {
+                  "text": "Offset 0",
+                  "tone": "data"
+                },
+                {
+                  "text": "Network Address",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Routing Identification",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 1",
+                  "tone": "data"
+                },
+                {
+                  "text": "VPC Router",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Default Gateway",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "The third address is reserved to provide DNS resolution via Route resolver.",
+            "rows": [
+              [
+                {
+                  "text": "Offset 0",
+                  "tone": "data"
+                },
+                {
+                  "text": "Network Address",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Routing Identification",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 1",
+                  "tone": "data"
+                },
+                {
+                  "text": "VPC Router",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Default Gateway",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Offset 2",
+                  "tone": "data"
+                },
+                {
+                  "text": "DNS Server",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Amazon Route 53 Resolver",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Public Subnet Architecture and the Internet Gateway (IGW)",
+      "codeHash": "ee8ed85be8278254aa387bc365a34d43db6032442ba7fa729d531b027694cec8",
+      "spec": {
+        "template": "sequence",
+        "title": "Public subnet internet gateway routing and translation",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Public Internet"
+          },
+          {
+            "id": "igw",
+            "name": "Internet Gateway"
+          },
+          {
+            "id": "instance",
+            "name": "Public Instance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Public subnets allow direct inbound connectivity to public internet.",
+            "from": "client",
+            "to": "igw",
+            "label": "Inbound Ingress",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Internet gateway performs network address translation for assigned instances.",
+            "from": "igw",
+            "to": "instance",
+            "label": "NAT Routing",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Public subnet internet gateway routing and translation",
+        "actors": [
+          {
+            "id": "client",
+            "name": "Public Internet"
+          },
+          {
+            "id": "igw",
+            "name": "Internet Gateway"
+          },
+          {
+            "id": "instance",
+            "name": "Public Instance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Public subnets allow direct inbound connectivity to public internet.",
+            "from": "client",
+            "to": "igw",
+            "label": "Inbound Ingress",
+            "tone": "data"
+          },
+          {
+            "at": "say6",
+            "caption": "Internet gateway performs network address translation for assigned instances.",
+            "from": "igw",
+            "to": "instance",
+            "label": "NAT Routing",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Private Subnet Architecture and NAT Gateways",
+      "codeHash": "fb1fd8524a6ee0a63a4ad4d682ab19c5506cf0b7520e09010c1541ed300c0ff4",
+      "spec": {
+        "template": "workflow",
+        "title": "Private subnet outbound routing via NAT gateway",
+        "stages": [
+          {
+            "id": "privateSubnet",
+            "name": "Private Subnet",
+            "subtext": "Backend Workloads"
+          },
+          {
+            "id": "natGateway",
+            "name": "NAT Gateway",
+            "subtext": "Public Subnet"
+          },
+          {
+            "id": "internetGateway",
+            "name": "Internet Gateway",
+            "subtext": "Edge Ingress"
+          },
+          {
+            "id": "externalApis",
+            "name": "External APIs",
+            "subtext": "Public Internet"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Private subnet route tables lack direct routes to internet gateway.",
+            "activeStageId": "privateSubnet",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "NAT gateway allows private instances to initiate outbound connections.",
+            "activeStageId": "natGateway",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Private subnet outbound routing via NAT gateway",
+        "stages": [
+          {
+            "id": "privateSubnet",
+            "name": "Private Subnet",
+            "subtext": "Backend Workloads"
+          },
+          {
+            "id": "natGateway",
+            "name": "NAT Gateway",
+            "subtext": "Public Subnet"
+          },
+          {
+            "id": "internetGateway",
+            "name": "Internet Gateway",
+            "subtext": "Edge Ingress"
+          },
+          {
+            "id": "externalApis",
+            "name": "External APIs",
+            "subtext": "Public Internet"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Private subnet route tables lack direct routes to internet gateway.",
+            "activeStageId": "privateSubnet",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "NAT gateway allows private instances to initiate outbound connections.",
+            "activeStageId": "natGateway",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tier Subnet Segmentation (Web, App, Data)",
+      "codeHash": "784ed381c8e8972bdbabc9f847d09e208c00a6b0d606bb80b9e584773a6cf5e4",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-tier subnet security isolation hierarchy",
+        "stages": [
+          {
+            "id": "webTier",
+            "name": "Web Tier",
+            "subtext": "Load Balancers"
+          },
+          {
+            "id": "appTier",
+            "name": "App Tier",
+            "subtext": "Private Microservices"
+          },
+          {
+            "id": "dataTier",
+            "name": "Data Tier",
+            "subtext": "Aurora & Redis"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Production VPCs structure three distinct subnet tiers across zones.",
+            "activeStageId": "webTier",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Data tiers host relational databases like Aurora in isolated subnets.",
+            "activeStageId": "dataTier",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-tier subnet security isolation hierarchy",
+        "stages": [
+          {
+            "id": "webTier",
+            "name": "Web Tier",
+            "subtext": "Load Balancers"
+          },
+          {
+            "id": "appTier",
+            "name": "App Tier",
+            "subtext": "Private Microservices"
+          },
+          {
+            "id": "dataTier",
+            "name": "Data Tier",
+            "subtext": "Aurora & Redis"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Production VPCs structure three distinct subnet tiers across zones.",
+            "activeStageId": "webTier",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Data tiers host relational databases like Aurora in isolated subnets.",
+            "activeStageId": "dataTier",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "VPC Peering & Transit Gateway Scalability",
+      "codeHash": "3311e6e04e661c0715ef64088d2d3c223a434ff6b91915dc72d8f546ca918a4d",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
