@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 21,
+  "promptSha": "7fffecdee795e8051f34933754832a2bf536aed1f0d2478e4aa7a0509741246e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 3 Architecture & Enterprise Event Choreography",
+      "codeHash": "08547ab432075f0014e68fd6aef7794d46dfeafc46328000b16122b553fee073",
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 3 event-driven choreography architecture",
+        "stages": [
+          {
+            "id": "api",
+            "name": "Order Ingestion API",
+            "subtext": "HTTP 202 Accepted"
+          },
+          {
+            "id": "bus",
+            "name": "EventBridge Bus",
+            "subtext": "ecommerce-bus"
+          },
+          {
+            "id": "sqs",
+            "name": "SQS Worker Queues",
+            "subtext": "Inventory & Payment"
+          },
+          {
+            "id": "sns",
+            "name": "SNS VIP Topic",
+            "subtext": "Notification Fanout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "API Gateway invokes an order ingestion lambda that validates the cart.",
+            "activeStageId": "api",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Rule routes the event to an inventory queue for stock allocation.",
+            "activeStageId": "sqs",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Milestone 3 event-driven choreography architecture",
+        "stages": [
+          {
+            "id": "api",
+            "name": "Order Ingestion API",
+            "subtext": "HTTP 202 Accepted"
+          },
+          {
+            "id": "bus",
+            "name": "EventBridge Bus",
+            "subtext": "ecommerce-bus"
+          },
+          {
+            "id": "sqs",
+            "name": "SQS Worker Queues",
+            "subtext": "Inventory & Payment"
+          },
+          {
+            "id": "sns",
+            "name": "SNS VIP Topic",
+            "subtext": "Notification Fanout"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "API Gateway invokes an order ingestion lambda that validates the cart.",
+            "activeStageId": "api",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Rule routes the event to an inventory queue for stock allocation.",
+            "activeStageId": "sqs",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EventBridge Custom Event Bus & Rule Topologies",
+      "codeHash": "8d3632d41a8f47fdfe588f3227fe8ec7e7f530204ba045af5892c19e06319068",
+      "spec": {
+        "template": "table",
+        "title": "EventBridge custom rule routing topology specifications",
+        "columns": [
+          "Rule Name",
+          "Source Pattern",
+          "Detail Type Event",
+          "Target Destination"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The inventory rule matches order placed and order cancelled events.",
+            "rows": [
+              [
+                {
+                  "text": "inventory-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "inventory-queue",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "payment-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "payment-queue",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The order fanout rule matches high value orders using numeric patterns.",
+            "rows": [
+              [
+                {
+                  "text": "inventory-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "inventory-queue",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "vip-fanout-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "amount >= 500",
+                  "tone": "ok"
+                },
+                {
+                  "text": "vip-sns-topic",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EventBridge custom rule routing topology specifications",
+        "columns": [
+          "Rule Name",
+          "Source Pattern",
+          "Detail Type Event",
+          "Target Destination"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The inventory rule matches order placed and order cancelled events.",
+            "rows": [
+              [
+                {
+                  "text": "inventory-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "inventory-queue",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "payment-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "payment-queue",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The order fanout rule matches high value orders using numeric patterns.",
+            "rows": [
+              [
+                {
+                  "text": "inventory-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "OrderPlaced",
+                  "tone": "ok"
+                },
+                {
+                  "text": "inventory-queue",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "vip-fanout-rule",
+                  "tone": "data"
+                },
+                {
+                  "text": "com.pinit.ecommerce",
+                  "tone": "ok"
+                },
+                {
+                  "text": "amount >= 500",
+                  "tone": "ok"
+                },
+                {
+                  "text": "vip-sns-topic",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SQS Queue Decoupling & Dead Letter Queue Hardening",
+      "codeHash": "cf5b00e70caa41b5f74f8bc88b3950678c158abc08b2381bbeba26fd5c59d62b",
+      "spec": {
+        "template": "states",
+        "title": "Primary queue processing and dead letter queue isolation states",
+        "states": [
+          {
+            "id": "primaryQueue",
+            "label": "In Primary Payment Queue"
+          },
+          {
+            "id": "retrying",
+            "label": "Retrying In-Flight Attempt"
+          },
+          {
+            "id": "dlqQuarantined",
+            "label": "Quarantined into Payment DLQ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "We configure the redrive policy on both primary queues.",
+            "active": "primaryQueue"
+          },
+          {
+            "at": "say8",
+            "caption": "SQS isolates the poison pill into payment dlq after repeated failures.",
+            "active": "dlqQuarantined"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Primary queue processing and dead letter queue isolation states",
+        "states": [
+          {
+            "id": "primaryQueue",
+            "label": "In Primary Payment Queue"
+          },
+          {
+            "id": "retrying",
+            "label": "Retrying In-Flight Attempt"
+          },
+          {
+            "id": "dlqQuarantined",
+            "label": "Quarantined into Payment DLQ"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "We configure the redrive policy on both primary queues.",
+            "active": "primaryQueue"
+          },
+          {
+            "at": "say8",
+            "caption": "SQS isolates the poison pill into payment dlq after repeated failures.",
+            "active": "dlqQuarantined"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SNS Fanout to Heterogeneous Notification Channels",
+      "codeHash": "1338afa3532f436ba4e6a4610f4802f8ffa54d701616c86b046b71568295d18a",
+      "spec": {
+        "template": "sequence",
+        "title": "SNS fanout to email, SMS, and webhook notification channels",
+        "actors": [
+          {
+            "id": "sns",
+            "name": "VIP SNS Topic"
+          },
+          {
+            "id": "lambda",
+            "name": "SES Email Lambda"
+          },
+          {
+            "id": "sms",
+            "name": "Mobile SMS Gateway"
+          },
+          {
+            "id": "slack",
+            "name": "Merchant Webhook"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A lambda function formats receipts and sends email via simple service.",
+            "from": "sns",
+            "to": "lambda",
+            "label": "Email Receipt Fanout",
+            "tone": "ok"
+          },
+          {
+            "at": "say6",
+            "caption": "A webhook endpoint notifies the merchant private channel.",
+            "from": "sns",
+            "to": "slack",
+            "label": "Webhook Alert Fanout",
+            "tone": "data"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "SNS fanout to email, SMS, and webhook notification channels",
+        "actors": [
+          {
+            "id": "sns",
+            "name": "VIP SNS Topic"
+          },
+          {
+            "id": "lambda",
+            "name": "SES Email Lambda"
+          },
+          {
+            "id": "sms",
+            "name": "Mobile SMS Gateway"
+          },
+          {
+            "id": "slack",
+            "name": "Merchant Webhook"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A lambda function formats receipts and sends email via simple service.",
+            "from": "sns",
+            "to": "lambda",
+            "label": "Email Receipt Fanout",
+            "tone": "ok"
+          },
+          {
+            "at": "say6",
+            "caption": "A webhook endpoint notifies the merchant private channel.",
+            "from": "sns",
+            "to": "slack",
+            "label": "Webhook Alert Fanout",
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Distributed Tracing with AWS X-Ray",
+      "codeHash": "c70db83350869378ebadc5dafcc5af3d7fc10f68879c4e1a89671c52ac04a9ff",
+      "spec": {
+        "template": "bars",
+        "title": "Distributed tracing latency breakdown across services",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a request hits API Gateway the trace header is generated.",
+            "bars": [
+              {
+                "label": "API Gateway Ingress",
+                "value": 25,
+                "max": 200,
+                "tone": "ok"
+              },
+              {
+                "label": "EventBridge Routing",
+                "value": 5,
+                "max": 200,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "X-Ray generates a visual service map displaying nodes and traffic lines.",
+            "bars": [
+              {
+                "label": "SQS Queue Dwell Time",
+                "value": 40,
+                "max": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Lambda Execution Total",
+                "value": 120,
+                "max": 200,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Distributed tracing latency breakdown across services",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When a request hits API Gateway the trace header is generated.",
+            "bars": [
+              {
+                "label": "API Gateway Ingress",
+                "value": 25,
+                "max": 200,
+                "tone": "ok"
+              },
+              {
+                "label": "EventBridge Routing",
+                "value": 5,
+                "max": 200,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "X-Ray generates a visual service map displaying nodes and traffic lines.",
+            "bars": [
+              {
+                "label": "SQS Queue Dwell Time",
+                "value": 40,
+                "max": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Lambda Execution Total",
+                "value": 120,
+                "max": 200,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 3 High-Throughput Stress Test & Resilience Audit",
+      "codeHash": "2ae19656c6ca72cfb522bb71e29dea71ed48db9ecb580b3327da01c00df421e1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
