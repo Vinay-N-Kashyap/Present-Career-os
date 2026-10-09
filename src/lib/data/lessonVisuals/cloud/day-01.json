@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 1,
+  "promptSha": "42209bdcc58e1dd4523660c4d64d3c5413fa7a17d13d786107b42bd32104b3a2",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Infrastructure as a Service (IaaS) Mechanics",
+      "codeHash": "c19b5669acc8c4ba678b0c5399aa3bfedc40119b5fa612daf48d0a357ff272a7",
+      "spec": {
+        "template": "workflow",
+        "title": "Infrastructure as a Service layered control model",
+        "stages": [
+          {
+            "id": "datacenter",
+            "name": "Datacenter",
+            "subtext": "Physical"
+          },
+          {
+            "id": "hypervisor",
+            "name": "Hypervisor",
+            "subtext": "Virtualization"
+          },
+          {
+            "id": "virtualmachine",
+            "name": "Virtual Machine",
+            "subtext": "Guest OS"
+          },
+          {
+            "id": "runtime",
+            "name": "Runtime",
+            "subtext": "Binaries"
+          },
+          {
+            "id": "application",
+            "name": "Application",
+            "subtext": "Customer Code"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Customer maintains guest operating systems while vendor manages hardware.",
+            "activeStageId": "virtualmachine",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vendors assume no responsibility for operating system vulnerabilities.",
+            "activeStageId": "runtime",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Infrastructure as a Service layered control model",
+        "stages": [
+          {
+            "id": "datacenter",
+            "name": "Datacenter",
+            "subtext": "Physical"
+          },
+          {
+            "id": "hypervisor",
+            "name": "Hypervisor",
+            "subtext": "Virtualization"
+          },
+          {
+            "id": "virtualmachine",
+            "name": "Virtual Machine",
+            "subtext": "Guest OS"
+          },
+          {
+            "id": "runtime",
+            "name": "Runtime",
+            "subtext": "Binaries"
+          },
+          {
+            "id": "application",
+            "name": "Application",
+            "subtext": "Customer Code"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Customer maintains guest operating systems while vendor manages hardware.",
+            "activeStageId": "virtualmachine",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Vendors assume no responsibility for operating system vulnerabilities.",
+            "activeStageId": "runtime",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Platform as a Service (PaaS) & Abstraction",
+      "codeHash": "306c8f4e69cac5cf51e670e343f83eb3a0639926d57fd911e9b61b2a005b4f66",
+      "spec": {
+        "template": "workflow",
+        "title": "Platform as a Service developer deployment abstraction",
+        "stages": [
+          {
+            "id": "repository",
+            "name": "Repository",
+            "subtext": "Source Code"
+          },
+          {
+            "id": "platform",
+            "name": "Platform",
+            "subtext": "Managed Runtime"
+          },
+          {
+            "id": "loadbalancer",
+            "name": "Load Balancer",
+            "subtext": "TLS Termination"
+          },
+          {
+            "id": "instances",
+            "name": "Instances",
+            "subtext": "Auto Scaling"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Developers supply application source code directly to managed runtime.",
+            "activeStageId": "repository",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Platform automatically manages load balancing and horizontal container scaling.",
+            "activeStageId": "loadbalancer",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Platform as a Service developer deployment abstraction",
+        "stages": [
+          {
+            "id": "repository",
+            "name": "Repository",
+            "subtext": "Source Code"
+          },
+          {
+            "id": "platform",
+            "name": "Platform",
+            "subtext": "Managed Runtime"
+          },
+          {
+            "id": "loadbalancer",
+            "name": "Load Balancer",
+            "subtext": "TLS Termination"
+          },
+          {
+            "id": "instances",
+            "name": "Instances",
+            "subtext": "Auto Scaling"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Developers supply application source code directly to managed runtime.",
+            "activeStageId": "repository",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Platform automatically manages load balancing and horizontal container scaling.",
+            "activeStageId": "loadbalancer",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Software as a Service (SaaS) in Cloud Ecosystems",
+      "codeHash": "6173130922f08b6dc2b43b2f0c5cab31d29ef687268273257b206514ee615580",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "The AWS Shared Responsibility Model",
+      "codeHash": "8491a4b0bdfbd0cabb53773186ad194c83bf43b2eb0aa615cc77111ee434de16",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud security shared responsibility boundaries",
+        "leftLabel": "Security OF Cloud (AWS)",
+        "rightLabel": "Security IN Cloud (Customer)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Boundary separates security of cloud from security within cloud.",
+            "left": {
+              "code": "AWS Responsibility",
+              "result": {
+                "text": "Security OF the Cloud"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Customer Responsibility",
+              "result": {
+                "text": "Security IN the Cloud"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Customers assume accountability for identity policies and firewalls.",
+            "left": {
+              "code": "Physical Datacenters",
+              "result": {
+                "text": "AWS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Identity Access Management",
+              "result": {
+                "text": "Customer"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cloud security shared responsibility boundaries",
+        "leftLabel": "Security OF Cloud (AWS)",
+        "rightLabel": "Security IN Cloud (Customer)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Boundary separates security of cloud from security within cloud.",
+            "left": {
+              "code": "AWS Responsibility",
+              "result": {
+                "text": "Security OF the Cloud"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Customer Responsibility",
+              "result": {
+                "text": "Security IN the Cloud"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Customers assume accountability for identity policies and firewalls.",
+            "left": {
+              "code": "Physical Datacenters",
+              "result": {
+                "text": "AWS"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Identity Access Management",
+              "result": {
+                "text": "Customer"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Total Cost of Ownership: CapEx vs OpEx",
+      "codeHash": "7f37a14358badf4b9bd5baf7c39b9a3756b2098bad0b02060390723ee9891e9f",
+      "spec": {
+        "template": "compare",
+        "title": "Capital expenditure compared to operational expenditure",
+        "leftLabel": "CapEx Model",
+        "rightLabel": "OpEx Model",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Traditional models require purchasing physical servers upfront.",
+            "left": {
+              "code": "CapEx Model",
+              "result": {
+                "text": "Capital Expenditure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "OpEx Model",
+              "result": {
+                "text": "Operational Expenditure"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Elastic cloud compute scales capacity dynamically to match traffic surges.",
+            "left": {
+              "code": "Fixed Capacity Overprovisioning",
+              "result": {
+                "text": "CapEx"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Auto Scaling Capacity",
+              "result": {
+                "text": "OpEx"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capital expenditure compared to operational expenditure",
+        "leftLabel": "CapEx Model",
+        "rightLabel": "OpEx Model",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Traditional models require purchasing physical servers upfront.",
+            "left": {
+              "code": "CapEx Model",
+              "result": {
+                "text": "Capital Expenditure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "OpEx Model",
+              "result": {
+                "text": "Operational Expenditure"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Elastic cloud compute scales capacity dynamically to match traffic surges.",
+            "left": {
+              "code": "Fixed Capacity Overprovisioning",
+              "result": {
+                "text": "CapEx"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Auto Scaling Capacity",
+              "result": {
+                "text": "OpEx"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost Allocation & AWS Billing Dimensions",
+      "codeHash": "7e639ed247854ae2e1b3963cfcc66e9f97c4228a695f99fbf6cd07b14278638a",
+      "spec": {
+        "template": "table",
+        "title": "Cloud cost allocation resource tagging dimensions",
+        "columns": [
+          "Tag Key",
+          "Production Value",
+          "Billing Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Resource tags provide metadata pairs affixed to cloud infrastructure.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Deployment Tier",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "finance",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Budget Tracking",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consolidated billing enables organizations to aggregate volume discounts.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Deployment Tier",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "finance",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Budget Tracking",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Project",
+                  "tone": "data"
+                },
+                {
+                  "text": "auth-service",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Service Allocation",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cloud cost allocation resource tagging dimensions",
+        "columns": [
+          "Tag Key",
+          "Production Value",
+          "Billing Purpose"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Resource tags provide metadata pairs affixed to cloud infrastructure.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Deployment Tier",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "finance",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Budget Tracking",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Consolidated billing enables organizations to aggregate volume discounts.",
+            "rows": [
+              [
+                {
+                  "text": "Environment",
+                  "tone": "data"
+                },
+                {
+                  "text": "production",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Deployment Tier",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "CostCenter",
+                  "tone": "data"
+                },
+                {
+                  "text": "finance",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Budget Tracking",
+                  "tone": "idle"
+                }
+              ],
+              [
+                {
+                  "text": "Project",
+                  "tone": "data"
+                },
+                {
+                  "text": "auth-service",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Service Allocation",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
