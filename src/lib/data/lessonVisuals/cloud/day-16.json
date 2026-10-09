@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 16,
+  "promptSha": "7095d04c1b655548ea4244c57182c96c1cfc164334d786af7c2084295343c0b0",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "CloudFront Global Infrastructure & Edge Locations",
+      "codeHash": "fc477b50902d89ac219843328e3b3baa615f93f4963ba476384e69d01c97f487",
+      "spec": {
+        "template": "workflow",
+        "title": "CloudFront global content delivery caching tiers",
+        "stages": [
+          {
+            "id": "edge",
+            "name": "Edge Location",
+            "subtext": "Point of Presence"
+          },
+          {
+            "id": "rec",
+            "name": "Regional Edge Cache",
+            "subtext": "Intermediate Cache"
+          },
+          {
+            "id": "origin",
+            "name": "Origin Server",
+            "subtext": "S3 Bucket Origin"
+          },
+          {
+            "id": "client",
+            "name": "End User",
+            "subtext": "Low Latency Delivery"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Regional edge caches sit between edge locations and origin servers.",
+            "activeStageId": "rec",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic to origins flows across private dedicated global network backbones.",
+            "activeStageId": "origin",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "CloudFront global content delivery caching tiers",
+        "stages": [
+          {
+            "id": "edge",
+            "name": "Edge Location",
+            "subtext": "Point of Presence"
+          },
+          {
+            "id": "rec",
+            "name": "Regional Edge Cache",
+            "subtext": "Intermediate Cache"
+          },
+          {
+            "id": "origin",
+            "name": "Origin Server",
+            "subtext": "S3 Bucket Origin"
+          },
+          {
+            "id": "client",
+            "name": "End User",
+            "subtext": "Low Latency Delivery"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Regional edge caches sit between edge locations and origin servers.",
+            "activeStageId": "rec",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic to origins flows across private dedicated global network backbones.",
+            "activeStageId": "origin",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Behaviors, Path Patterns & Origin Request Policies",
+      "codeHash": "7c5cc58dbcccfc7a9a592160ad2d2c4d460d2df2bba90b79ecc41fbe4824e51d",
+      "spec": {
+        "template": "table",
+        "title": "CloudFront cache behavior path routing rules",
+        "columns": [
+          "Path Pattern",
+          "Target Origin",
+          "Viewer Protocol",
+          "Cache Hit Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A cache behavior routes incoming requests to specific origins.",
+            "rows": [
+              [
+                {
+                  "text": "/images/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-Media-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "High Hit Ratio",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/api/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALB-Node-Backend",
+                  "tone": "idle"
+                },
+                {
+                  "text": "https-only",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Bypass Cache",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Viewer protocol policy enforces https to guarantee encryption.",
+            "rows": [
+              [
+                {
+                  "text": "/images/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-Media-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "High Hit Ratio",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-SPA-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Origin Fallback",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CloudFront cache behavior path routing rules",
+        "columns": [
+          "Path Pattern",
+          "Target Origin",
+          "Viewer Protocol",
+          "Cache Hit Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A cache behavior routes incoming requests to specific origins.",
+            "rows": [
+              [
+                {
+                  "text": "/images/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-Media-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "High Hit Ratio",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "/api/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALB-Node-Backend",
+                  "tone": "idle"
+                },
+                {
+                  "text": "https-only",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Bypass Cache",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Viewer protocol policy enforces https to guarantee encryption.",
+            "rows": [
+              [
+                {
+                  "text": "/images/*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-Media-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "High Hit Ratio",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "*",
+                  "tone": "data"
+                },
+                {
+                  "text": "S3-SPA-Bucket",
+                  "tone": "ok"
+                },
+                {
+                  "text": "redirect-to-https",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Origin Fallback",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TTL Hierarchy, Cache-Control Headers & Invalidation",
+      "codeHash": "bdb527d10a7305f5a3af1ad057150a4f933214fb6d840a03e712b25d42aef13e",
+      "spec": {
+        "template": "bars",
+        "title": "CloudFront cache policy TTL duration boundaries",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "CloudFront cache policies configure minimum and maximum boundary values.",
+            "bars": [
+              {
+                "label": "Minimum TTL Boundary",
+                "value": 0,
+                "max": 86400,
+                "tone": "idle"
+              },
+              {
+                "label": "Default TTL Fallback",
+                "value": 3600,
+                "max": 86400,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Invalidations purge stale assets immediately before expiration.",
+            "bars": [
+              {
+                "label": "Default TTL Fallback",
+                "value": 3600,
+                "max": 86400,
+                "tone": "data"
+              },
+              {
+                "label": "Maximum TTL Boundary",
+                "value": 86400,
+                "max": 86400,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "CloudFront cache policy TTL duration boundaries",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "CloudFront cache policies configure minimum and maximum boundary values.",
+            "bars": [
+              {
+                "label": "Minimum TTL Boundary",
+                "value": 0,
+                "max": 86400,
+                "tone": "idle"
+              },
+              {
+                "label": "Default TTL Fallback",
+                "value": 3600,
+                "max": 86400,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Invalidations purge stale assets immediately before expiration.",
+            "bars": [
+              {
+                "label": "Default TTL Fallback",
+                "value": 3600,
+                "max": 86400,
+                "tone": "data"
+              },
+              {
+                "label": "Maximum TTL Boundary",
+                "value": 86400,
+                "max": 86400,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Compute: CloudFront Functions vs Lambda@Edge",
+      "codeHash": "1ffe6f51e24647820f70b258d167232656e1a52659a1d101802c7c18587e4a72",
+      "spec": {
+        "template": "compare",
+        "title": "CloudFront Functions compared to Lambda@Edge capabilities",
+        "leftLabel": "CloudFront Functions (Edge PoP)",
+        "rightLabel": "Lambda@Edge (Regional Edge)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "CloudFront functions execute with no network access at low execution time.",
+            "left": {
+              "code": "maxExecutionMs: 1",
+              "result": {
+                "text": "Sub-Millisecond V8"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxExecutionMs: 5000",
+              "result": {
+                "text": "Full Node.js Runtime"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Lambda at Edge provides complete network access to external databases.",
+            "left": {
+              "code": "requiresNetworkAccess: false",
+              "result": {
+                "text": "No Network Socket"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "requiresNetworkAccess: true",
+              "result": {
+                "text": "Full Network Access"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CloudFront Functions compared to Lambda@Edge capabilities",
+        "leftLabel": "CloudFront Functions (Edge PoP)",
+        "rightLabel": "Lambda@Edge (Regional Edge)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "CloudFront functions execute with no network access at low execution time.",
+            "left": {
+              "code": "maxExecutionMs: 1",
+              "result": {
+                "text": "Sub-Millisecond V8"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "maxExecutionMs: 5000",
+              "result": {
+                "text": "Full Node.js Runtime"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Lambda at Edge provides complete network access to external databases.",
+            "left": {
+              "code": "requiresNetworkAccess: false",
+              "result": {
+                "text": "No Network Socket"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "requiresNetworkAccess: true",
+              "result": {
+                "text": "Full Network Access"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Signed URLs, Signed Cookies & Origin Access Control (OAC)",
+      "codeHash": "fec15d40942322451dba267eed38af6908588b432c163330db058700cea6e8b5",
+      "spec": {
+        "template": "states",
+        "title": "Origin Access Control and signed URL request authorization states",
+        "states": [
+          {
+            "id": "publicDirect",
+            "label": "Direct S3 Access Rejected"
+          },
+          {
+            "id": "oacVerified",
+            "label": "OAC SigV4 Signature Verified"
+          },
+          {
+            "id": "signedUrlGranted",
+            "label": "Signed URL Authorization Granted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Direct public requests to the bucket are rejected with forbidden errors.",
+            "active": "publicDirect"
+          },
+          {
+            "at": "say8",
+            "caption": "CloudFront verifies the signature before serving the cached asset.",
+            "active": "signedUrlGranted"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Origin Access Control and signed URL request authorization states",
+        "states": [
+          {
+            "id": "publicDirect",
+            "label": "Direct S3 Access Rejected"
+          },
+          {
+            "id": "oacVerified",
+            "label": "OAC SigV4 Signature Verified"
+          },
+          {
+            "id": "signedUrlGranted",
+            "label": "Signed URL Authorization Granted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Direct public requests to the bucket are rejected with forbidden errors.",
+            "active": "publicDirect"
+          },
+          {
+            "at": "say8",
+            "caption": "CloudFront verifies the signature before serving the cached asset.",
+            "active": "signedUrlGranted"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance Edge Architecture Verification",
+      "codeHash": "2c212730765e090ddb8c700f9e4769d19d98ff588c8769e6bf5c8e4d51442592",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
