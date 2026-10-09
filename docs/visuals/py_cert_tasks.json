@@ -10931,6 +10931,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-dist-D01",
+      "title": "dist day 1: Distributed Systems Foundations & Fallacies visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 1,
+      "keys": [
+        "dist:1:0",
+        "dist:1:1",
+        "dist:1:2",
+        "dist:1:3",
+        "dist:1:4",
+        "dist:1:5"
+      ]
+    },
+    {
+      "id": "C-dist-D02",
+      "title": "dist day 2: The CAP Theorem & PACELC Theorem visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 2,
+      "keys": [
+        "dist:2:0",
+        "dist:2:1",
+        "dist:2:2",
+        "dist:2:3",
+        "dist:2:4",
+        "dist:2:5"
+      ]
+    },
+    {
+      "id": "C-dist-D03",
+      "title": "dist day 3: RPC Communication & Protocol Buffers Binary Serialization visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 3,
+      "keys": [
+        "dist:3:0",
+        "dist:3:1",
+        "dist:3:2",
+        "dist:3:3",
+        "dist:3:4",
+        "dist:3:5"
+      ]
+    },
+    {
+      "id": "C-dist-D04",
+      "title": "dist day 4: Consistent Hashing & Virtual Nodes Distribution visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 4,
+      "keys": [
+        "dist:4:0",
+        "dist:4:1",
+        "dist:4:2",
+        "dist:4:3",
+        "dist:4:4",
+        "dist:4:5"
+      ]
+    },
+    {
+      "id": "C-dist-D05",
+      "title": "dist day 5: ⭐ MILESTONE 1: High-Performance Distributed Cache with Cache-Aside & Thundering Herd Defense visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 5,
+      "keys": [
+        "dist:5:0",
+        "dist:5:1",
+        "dist:5:2",
+        "dist:5:3",
+        "dist:5:4",
+        "dist:5:5"
+      ]
+    },
+    {
+      "id": "C-dist-D06",
+      "title": "dist day 6: Distributed Locks: Redis Redlock & Fencing Tokens visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 6,
+      "keys": [
+        "dist:6:0",
+        "dist:6:1",
+        "dist:6:2",
+        "dist:6:3",
+        "dist:6:4",
+        "dist:6:5"
+      ]
+    },
+    {
+      "id": "C-dist-D07",
+      "title": "dist day 7: Leader Election: Bully Algorithm & Raft Heartbeats visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 7,
+      "keys": [
+        "dist:7:0",
+        "dist:7:1",
+        "dist:7:2",
+        "dist:7:3",
+        "dist:7:4",
+        "dist:7:5"
+      ]
+    },
+    {
+      "id": "C-dist-D08",
+      "title": "dist day 8: Distributed Unique ID Generation: Twitter Snowflake & ULID visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 8,
+      "keys": [
+        "dist:8:0",
+        "dist:8:1",
+        "dist:8:2",
+        "dist:8:3",
+        "dist:8:4",
+        "dist:8:5"
+      ]
+    },
+    {
+      "id": "C-dist-D09",
+      "title": "dist day 9: Consensus Protocols: Raft Log Replication & Quorum Mathematics visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 9,
+      "keys": [
+        "dist:9:0",
+        "dist:9:1",
+        "dist:9:2",
+        "dist:9:3",
+        "dist:9:4",
+        "dist:9:5"
+      ]
+    },
+    {
+      "id": "C-dist-D10",
+      "title": "dist day 10: Two-Phase Commit (2PC) vs Three-Phase Commit (3PC) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 10,
+      "keys": [
+        "dist:10:0",
+        "dist:10:1",
+        "dist:10:2",
+        "dist:10:3",
+        "dist:10:4",
+        "dist:10:5"
+      ]
+    },
+    {
+      "id": "C-dist-D11",
+      "title": "dist day 11: The Saga Pattern: Orchestration vs Choreography & Compensating Actions visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 11,
+      "keys": [
+        "dist:11:0",
+        "dist:11:1",
+        "dist:11:2",
+        "dist:11:3",
+        "dist:11:4",
+        "dist:11:5"
+      ]
+    },
+    {
+      "id": "C-dist-D12",
+      "title": "dist day 12: Event-Driven Messaging: Kafka Partitions & Consumer Group Rebalancing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 12,
+      "keys": [
+        "dist:12:0",
+        "dist:12:1",
+        "dist:12:2",
+        "dist:12:3",
+        "dist:12:4",
+        "dist:12:5"
+      ]
+    },
+    {
+      "id": "C-dist-D13",
+      "title": "dist day 13: Message Delivery Guarantees: At-Least-Once, At-Most-Once & Exactly-Once Idempotency visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 13,
+      "keys": [
+        "dist:13:0",
+        "dist:13:1",
+        "dist:13:2",
+        "dist:13:3",
+        "dist:13:4",
+        "dist:13:5"
+      ]
+    },
+    {
+      "id": "C-dist-D14",
+      "title": "dist day 14: Dead Letter Queues (DLQ), Exponential Backoff & Poison Pill Handling visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 14,
+      "keys": [
+        "dist:14:0",
+        "dist:14:1",
+        "dist:14:2",
+        "dist:14:3",
+        "dist:14:4",
+        "dist:14:5"
+      ]
+    },
+    {
+      "id": "C-dist-D15",
+      "title": "dist day 15: ⭐ MILESTONE 2: Resilient Event-Driven Transaction Engine with Sagas & Idempotency Keys visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 15,
+      "keys": [
+        "dist:15:0",
+        "dist:15:1",
+        "dist:15:2",
+        "dist:15:3",
+        "dist:15:4",
+        "dist:15:5"
+      ]
+    },
+    {
+      "id": "C-dist-D16",
+      "title": "dist day 16: Physical Clocks, NTP Drift, Lamport Timestamps & Vector Clocks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 16,
+      "keys": [
+        "dist:16:0",
+        "dist:16:1",
+        "dist:16:2",
+        "dist:16:3",
+        "dist:16:4",
+        "dist:16:5"
+      ]
+    },
+    {
+      "id": "C-dist-D17",
+      "title": "dist day 17: Conflict-Free Replicated Data Types (CRDTs): G-Counter, PN-Counter & LWW-Set visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 17,
+      "keys": [
+        "dist:17:0",
+        "dist:17:1",
+        "dist:17:2",
+        "dist:17:3",
+        "dist:17:4",
+        "dist:17:5"
+      ]
+    },
+    {
+      "id": "C-dist-D18",
+      "title": "dist day 18: Database Sharding Strategies: Range, Hash & Directory Sharding visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 18,
+      "keys": [
+        "dist:18:0",
+        "dist:18:1",
+        "dist:18:2",
+        "dist:18:3",
+        "dist:18:4",
+        "dist:18:5"
+      ]
+    },
+    {
+      "id": "C-dist-D19",
+      "title": "dist day 19: Read Replicas, Replication Lag & Read-Your-Own-Writes Consistency visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 19,
+      "keys": [
+        "dist:19:0",
+        "dist:19:1",
+        "dist:19:2",
+        "dist:19:3",
+        "dist:19:4",
+        "dist:19:5"
+      ]
+    },
+    {
+      "id": "C-dist-D20",
+      "title": "dist day 20: Circuit Breakers (Resilience4j / Envoy) & Bulkhead Isolation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 20,
+      "keys": [
+        "dist:20:0",
+        "dist:20:1",
+        "dist:20:2",
+        "dist:20:3",
+        "dist:20:4",
+        "dist:20:5"
+      ]
+    },
+    {
+      "id": "C-dist-D21",
+      "title": "dist day 21: ⭐ MILESTONE 3: Distributed Rate Limiter & Circuit Breaker API Gateway visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 21,
+      "keys": [
+        "dist:21:0",
+        "dist:21:1",
+        "dist:21:2",
+        "dist:21:3",
+        "dist:21:4",
+        "dist:21:5"
+      ]
+    },
+    {
+      "id": "C-dist-D22",
+      "title": "dist day 22: Gossip Protocols: SWIM Failure Detection & Cluster Membership visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 22,
+      "keys": [
+        "dist:22:0",
+        "dist:22:1",
+        "dist:22:2",
+        "dist:22:3",
+        "dist:22:4",
+        "dist:22:5"
+      ]
+    },
+    {
+      "id": "C-dist-D23",
+      "title": "dist day 23: Load Balancing Algorithms: Weighted Round-Robin, Least Connections & Consistent Hash Ring visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 23,
+      "keys": [
+        "dist:23:0",
+        "dist:23:1",
+        "dist:23:2",
+        "dist:23:3",
+        "dist:23:4",
+        "dist:23:5"
+      ]
+    },
+    {
+      "id": "C-dist-D24",
+      "title": "dist day 24: Service Discovery & Heartbeat Health Checking (Consul / Zookeeper) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 24,
+      "keys": [
+        "dist:24:0",
+        "dist:24:1",
+        "dist:24:2",
+        "dist:24:3",
+        "dist:24:4",
+        "dist:24:5"
+      ]
+    },
+    {
+      "id": "C-dist-D25",
+      "title": "dist day 25: API Gateways & Backend-For-Frontend (BFF) Pattern visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 25,
+      "keys": [
+        "dist:25:0",
+        "dist:25:1",
+        "dist:25:2",
+        "dist:25:3",
+        "dist:25:4",
+        "dist:25:5"
+      ]
+    },
+    {
+      "id": "C-dist-D26",
+      "title": "dist day 26: Distributed Tracing: OpenTelemetry, W3C TraceContext & Span Propagation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 26,
+      "keys": [
+        "dist:26:0",
+        "dist:26:1",
+        "dist:26:2",
+        "dist:26:3",
+        "dist:26:4",
+        "dist:26:5"
+      ]
+    },
+    {
+      "id": "C-dist-D27",
+      "title": "dist day 27: Data Consistency Models: Linearizable vs Sequential vs Eventual Consistency visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 27,
+      "keys": [
+        "dist:27:0",
+        "dist:27:1",
+        "dist:27:2",
+        "dist:27:3",
+        "dist:27:4",
+        "dist:27:5"
+      ]
+    },
+    {
+      "id": "C-dist-D28",
+      "title": "dist day 28: Reverse Proxies & CDN Edge Caching with Cache-Control Invalidation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 28,
+      "keys": [
+        "dist:28:0",
+        "dist:28:1",
+        "dist:28:2",
+        "dist:28:3",
+        "dist:28:4",
+        "dist:28:5"
+      ]
+    },
+    {
+      "id": "C-dist-D29",
+      "title": "dist day 29: Disaster Recovery: Multi-Region Active-Passive vs Active-Active Deployments visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 29,
+      "keys": [
+        "dist:29:0",
+        "dist:29:1",
+        "dist:29:2",
+        "dist:29:3",
+        "dist:29:4",
+        "dist:29:5"
+      ]
+    },
+    {
+      "id": "C-dist-D30",
+      "title": "dist day 30: 🏆 FINAL CAPSTONE: Enterprise Global Real-Time Financial Trading & Ledger Exchange Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/dist/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "dist",
+      "day": 30,
+      "keys": [
+        "dist:30:0",
+        "dist:30:1",
+        "dist:30:2",
+        "dist:30:3",
+        "dist:30:4",
+        "dist:30:5"
+      ]
+    },
+    {
+      "id": "R-dist-1-5",
+      "title": "Checkpoint dist days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-dist-6-10",
+      "title": "Checkpoint dist days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-dist-11-15",
+      "title": "Checkpoint dist days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-dist-16-20",
+      "title": "Checkpoint dist days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-dist-21-25",
+      "title": "Checkpoint dist days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-dist-26-30",
+      "title": "Checkpoint dist days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-dist",
+      "title": "Release visuals for dist",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
