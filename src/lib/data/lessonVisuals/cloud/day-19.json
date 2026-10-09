@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 19,
+  "promptSha": "0a88514e1b18dbc7f377126bdca7cc89c4c262bee4cca466f967f1c4e7c94e23",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Publish/Subscribe Paradigm & Amazon SNS",
+      "codeHash": "8afca23570de543687f09abb64580457e365c8e061284b8f2aaa98dd7a3f126a",
+      "spec": {
+        "template": "workflow",
+        "title": "Publish subscribe topic fanout distribution pipeline",
+        "stages": [
+          {
+            "id": "publisher",
+            "name": "Publisher Service",
+            "subtext": "Broadcast Event"
+          },
+          {
+            "id": "snsTopic",
+            "name": "SNS Central Topic",
+            "subtext": "Managed Pub/Sub"
+          },
+          {
+            "id": "endpoints",
+            "name": "Subscribed Targets",
+            "subtext": "Parallel Delivery"
+          },
+          {
+            "id": "receivers",
+            "name": "Downstream Clients",
+            "subtext": "Microservice Handlers"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Publishers publish messages to an SNS topic without knowledge of listeners.",
+            "activeStageId": "snsTopic",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "SNS automatically replicates and delivers messages to subscribed endpoints.",
+            "activeStageId": "endpoints",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Publish subscribe topic fanout distribution pipeline",
+        "stages": [
+          {
+            "id": "publisher",
+            "name": "Publisher Service",
+            "subtext": "Broadcast Event"
+          },
+          {
+            "id": "snsTopic",
+            "name": "SNS Central Topic",
+            "subtext": "Managed Pub/Sub"
+          },
+          {
+            "id": "endpoints",
+            "name": "Subscribed Targets",
+            "subtext": "Parallel Delivery"
+          },
+          {
+            "id": "receivers",
+            "name": "Downstream Clients",
+            "subtext": "Microservice Handlers"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Publishers publish messages to an SNS topic without knowledge of listeners.",
+            "activeStageId": "snsTopic",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "SNS automatically replicates and delivers messages to subscribed endpoints.",
+            "activeStageId": "endpoints",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SNS Protocol Endpoints & Mobile Push Notifications",
+      "codeHash": "c638bcb3ef4ba11c7bec563b5270e75c0877e92c3ba441d795051ecc335e9f9d",
+      "spec": {
+        "template": "table",
+        "title": "SNS heterogeneous protocol subscriber endpoints",
+        "columns": [
+          "Protocol Type",
+          "Target Endpoint Format",
+          "Integration Scope",
+          "Retry Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SNS delivers messages to SQS queues, Lambda functions, and webhooks.",
+            "rows": [
+              [
+                {
+                  "text": "protocol: \"sqs\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:sqs:...",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Machine-to-Machine",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Immediate Durable Delivery",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "protocol: \"lambda\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:lambda:...",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Serverless Compute",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Asynchronous Invocation",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If an endpoint is unreachable SNS applies exponential backoff retries.",
+            "rows": [
+              [
+                {
+                  "text": "protocol: \"https\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "https://api.pinit.com/hook",
+                  "tone": "idle"
+                },
+                {
+                  "text": "External Webhook",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Exponential Backoff Retries",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "protocol: \"sms\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "+12065550100",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Mobile Push SMS",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Direct Carrier Dispatch",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SNS heterogeneous protocol subscriber endpoints",
+        "columns": [
+          "Protocol Type",
+          "Target Endpoint Format",
+          "Integration Scope",
+          "Retry Behavior"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SNS delivers messages to SQS queues, Lambda functions, and webhooks.",
+            "rows": [
+              [
+                {
+                  "text": "protocol: \"sqs\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:sqs:...",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Machine-to-Machine",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Immediate Durable Delivery",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "protocol: \"lambda\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "arn:aws:lambda:...",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Serverless Compute",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Asynchronous Invocation",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "If an endpoint is unreachable SNS applies exponential backoff retries.",
+            "rows": [
+              [
+                {
+                  "text": "protocol: \"https\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "https://api.pinit.com/hook",
+                  "tone": "idle"
+                },
+                {
+                  "text": "External Webhook",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Exponential Backoff Retries",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "protocol: \"sms\"",
+                  "tone": "data"
+                },
+                {
+                  "text": "+12065550100",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Mobile Push SMS",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Direct Carrier Dispatch",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The SNS + SQS Fanout Architectural Pattern",
+      "codeHash": "61d3c717829ae82c005806ca7dba5bd1f41dc3cd08695dccba9309403a119c96",
+      "spec": {
+        "template": "sequence",
+        "title": "SNS fanout to multiple isolated SQS worker queues sequence",
+        "actors": [
+          {
+            "id": "pub",
+            "name": "Order Service"
+          },
+          {
+            "id": "sns",
+            "name": "Orders SNS Topic"
+          },
+          {
+            "id": "inv",
+            "name": "Inventory Queue"
+          },
+          {
+            "id": "bill",
+            "name": "Billing Queue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "SNS immediately replicates the published event into every subscribed queue.",
+            "from": "pub",
+            "to": "sns",
+            "label": "Publish OrderPlaced",
+            "tone": "data"
+          },
+          {
+            "at": "say7",
+            "caption": "Each microservice pulls messages from its dedicated SQS queue.",
+            "from": "sns",
+            "to": "inv",
+            "label": "Parallel Fanout Replica",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "SNS fanout to multiple isolated SQS worker queues sequence",
+        "actors": [
+          {
+            "id": "pub",
+            "name": "Order Service"
+          },
+          {
+            "id": "sns",
+            "name": "Orders SNS Topic"
+          },
+          {
+            "id": "inv",
+            "name": "Inventory Queue"
+          },
+          {
+            "id": "bill",
+            "name": "Billing Queue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "SNS immediately replicates the published event into every subscribed queue.",
+            "from": "pub",
+            "to": "sns",
+            "label": "Publish OrderPlaced",
+            "tone": "data"
+          },
+          {
+            "at": "say7",
+            "caption": "Each microservice pulls messages from its dedicated SQS queue.",
+            "from": "sns",
+            "to": "inv",
+            "label": "Parallel Fanout Replica",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SNS Subscription Filter Policies",
+      "codeHash": "c5eb96dc6c8eafe172ee91e3809f5e9e238b97f7d2442544c20897ebee14c925",
+      "spec": {
+        "template": "compare",
+        "title": "Unfiltered topic broadcast compared to subscription filter policy",
+        "leftLabel": "Unfiltered Subscription",
+        "rightLabel": "Filtered Subscription Policy",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "SNS evaluates the filter policy before delivering messages to endpoints.",
+            "left": {
+              "code": "No Filter Policy",
+              "result": {
+                "text": "100% Messages Ingested"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "shippingType: [\"express\"]",
+              "result": {
+                "text": "Targeted Ingestion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "If attributes match the policy SNS delivers otherwise it discards them.",
+            "left": {
+              "code": "Unfiltered Waste",
+              "result": {
+                "text": "Downstream Discard Cost"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Server-Side Discard",
+              "result": {
+                "text": "Zero Waste Delivery"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Unfiltered topic broadcast compared to subscription filter policy",
+        "leftLabel": "Unfiltered Subscription",
+        "rightLabel": "Filtered Subscription Policy",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "SNS evaluates the filter policy before delivering messages to endpoints.",
+            "left": {
+              "code": "No Filter Policy",
+              "result": {
+                "text": "100% Messages Ingested"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "shippingType: [\"express\"]",
+              "result": {
+                "text": "Targeted Ingestion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "If attributes match the policy SNS delivers otherwise it discards them.",
+            "left": {
+              "code": "Unfiltered Waste",
+              "result": {
+                "text": "Downstream Discard Cost"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Server-Side Discard",
+              "result": {
+                "text": "Zero Waste Delivery"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Message Deduplication & FIFO SNS Topics",
+      "codeHash": "92fdb42bccbd4ff440b5ae98fa5d4605d96585b373fd6c525136aae436acafc1",
+      "spec": {
+        "template": "states",
+        "title": "FIFO topic deduplication and group ordering states",
+        "states": [
+          {
+            "id": "published",
+            "label": "Message Ingested by FIFO Topic"
+          },
+          {
+            "id": "dedupChecked",
+            "label": "Deduplication ID Checked in Window"
+          },
+          {
+            "id": "deliveredOrdered",
+            "label": "Delivered in Strict Sequence"
+          },
+          {
+            "id": "duplicateDiscarded",
+            "label": "Duplicate Message Suppressed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Publishing to a FIFO topic requires a message group and deduplication id.",
+            "active": "published"
+          },
+          {
+            "at": "say7",
+            "caption": "Duplicate messages with identical ids are suppressed within the window.",
+            "active": "duplicateDiscarded"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "FIFO topic deduplication and group ordering states",
+        "states": [
+          {
+            "id": "published",
+            "label": "Message Ingested by FIFO Topic"
+          },
+          {
+            "id": "dedupChecked",
+            "label": "Deduplication ID Checked in Window"
+          },
+          {
+            "id": "deliveredOrdered",
+            "label": "Delivered in Strict Sequence"
+          },
+          {
+            "id": "duplicateDiscarded",
+            "label": "Duplicate Message Suppressed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Publishing to a FIFO topic requires a message group and deduplication id.",
+            "active": "published"
+          },
+          {
+            "at": "say7",
+            "caption": "Duplicate messages with identical ids are suppressed within the window.",
+            "active": "duplicateDiscarded"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Pub/Sub Fanout Engine Verification",
+      "codeHash": "763aad88e7199718feb761a0c6996f26dd4316018aaac6e6c6b366095811e41e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
