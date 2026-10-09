@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 27,
+  "promptSha": "01f5c5e5a2126a053940e4718efcef2f95391ae606fea9da7217f029b105c75b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Longest Common Subsequence (LCS) Grid Mechanics",
+      "codeHash": "1ec198bfc0405a476ca665dbe7946ef4006cfc41813c40440338c6fe25c763f5",
+      "spec": {
+        "template": "table",
+        "title": "Longest common subsequence grid transition matrix",
+        "columns": [
+          "Index",
+          "CharA",
+          "CharB",
+          "LCS"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Matching character extends diagonal cell in matrix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "row-one"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Characters do not match take best result from adjacent cells.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "row-one"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row-two"
+                  },
+                  {
+                    "text": "b"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row-three"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Longest common subsequence grid transition matrix",
+        "columns": [
+          "Index",
+          "CharA",
+          "CharB",
+          "LCS"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Matching character extends diagonal cell in matrix.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "row-one"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Characters do not match take best result from adjacent cells.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "row-one"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "a"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row-two"
+                  },
+                  {
+                    "text": "b"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "row-three"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "c"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reconstructing the Actual LCS String",
+      "codeHash": "df7502bc59c15b56dbeb468ac49019c156f1ed88a68bbccf387b114547bec04c",
+      "spec": {
+        "template": "cells",
+        "title": "Backtracking path subsequence extraction array",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Reconstruct string by backtracking through table starting from corner.",
+            "items": [
+              {
+                "text": "B"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Matching character moves diagonally to prepend common sequence.",
+            "items": [
+              {
+                "text": "G"
+              },
+              {
+                "text": "T"
+              },
+              {
+                "text": "A"
+              },
+              {
+                "text": "B"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Backtracking path subsequence extraction array",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Reconstruct string by backtracking through table starting from corner.",
+            "items": [
+              {
+                "text": "B"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Matching character moves diagonally to prepend common sequence.",
+            "items": [
+              {
+                "text": "G"
+              },
+              {
+                "text": "T"
+              },
+              {
+                "text": "A"
+              },
+              {
+                "text": "B"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Levenshtein Edit Distance Formulation",
+      "codeHash": "a4fe71b3a7e72c602b7c7e9705c8b22166ca92ddf4d5e9802f5e61a3ce99dc99",
+      "spec": {
+        "template": "table",
+        "title": "Levenshtein edit operations cost matrix",
+        "columns": [
+          "Source",
+          "Target",
+          "Op",
+          "Cost"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Three distinct operations permitted insert delete or replace character.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h"
+                  },
+                  {
+                    "text": "r"
+                  },
+                  {
+                    "text": "replace"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Characters match with zero cost incurred diagonally.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h"
+                  },
+                  {
+                    "text": "r"
+                  },
+                  {
+                    "text": "replace"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "o"
+                  },
+                  {
+                    "text": "o"
+                  },
+                  {
+                    "text": "match"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Levenshtein edit operations cost matrix",
+        "columns": [
+          "Source",
+          "Target",
+          "Op",
+          "Cost"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Three distinct operations permitted insert delete or replace character.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h"
+                  },
+                  {
+                    "text": "r"
+                  },
+                  {
+                    "text": "replace"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Characters match with zero cost incurred diagonally.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "h"
+                  },
+                  {
+                    "text": "r"
+                  },
+                  {
+                    "text": "replace"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "o"
+                  },
+                  {
+                    "text": "o"
+                  },
+                  {
+                    "text": "match"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diff Patch Generation Mechanics",
+      "codeHash": "d1e6aae5726b42ae429d022ac28eb690522d5f0138b4558bef1e0990f41adcd9",
+      "spec": {
+        "template": "cells",
+        "title": "Unified diff patch character tokens list",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Moving down outputs character as deletion from original string.",
+            "items": [
+              {
+                "text": "del-c"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Moving right outputs character as insertion into modified string.",
+            "items": [
+              {
+                "text": "del-c"
+              },
+              {
+                "text": "ins-h"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Unified diff patch character tokens list",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Moving down outputs character as deletion from original string.",
+            "items": [
+              {
+                "text": "del-c"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Moving right outputs character as insertion into modified string.",
+            "items": [
+              {
+                "text": "del-c"
+              },
+              {
+                "text": "ins-h"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Space Optimization for 2D Grid DP (Two Rows)",
+      "codeHash": "b2a583b62e5ed3bc1a3e354e282e05b57249fbb8b11b4597263f94782125650f",
+      "spec": {
+        "template": "table",
+        "title": "Space optimization two alternating row table",
+        "columns": [
+          "Col",
+          "PrevRow",
+          "CurrRow"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Optimize space down by maintaining only two rows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-one"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Computing current row from previous row and swap references.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-two"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Space optimization two alternating row table",
+        "columns": [
+          "Col",
+          "PrevRow",
+          "CurrRow"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Optimize space down by maintaining only two rows.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-one"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Computing current row from previous row and swap references.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "c-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "c-two"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Fuzzy String Matcher & Autocorrect Engine",
+      "codeHash": "a4a61426b28baa54bffb15999ccd9d794257b1b5ecd11a3ed02b9f32bb7568d3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
