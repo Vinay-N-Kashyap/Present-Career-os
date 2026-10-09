@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 29,
+  "promptSha": "2f70f9cd4421b0f7bc44e936328a93c8de1c8a2aa2a0b95a62a9dc21f14494b5",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Bitwise Operators & Binary Representation Fundamentals",
+      "codeHash": "9fb17d2ab034de769ecc042a84d602178abae5e851d3ca6b22b4555d6c3165e8",
+      "spec": {
+        "template": "table",
+        "title": "Bitwise operators binary evaluation table",
+        "columns": [
+          "Expression",
+          "BinaryA",
+          "BinaryB",
+          "Result"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bitwise AND returns value for masking specific bit flags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "and-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bitwise XOR returns value if bits are different.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "and-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "xor-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "six"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bitwise operators binary evaluation table",
+        "columns": [
+          "Expression",
+          "BinaryA",
+          "BinaryB",
+          "Result"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Bitwise AND returns value for masking specific bit flags.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "and-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Bitwise XOR returns value if bits are different.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "and-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "xor-op"
+                  },
+                  {
+                    "text": "0101"
+                  },
+                  {
+                    "text": "0011"
+                  },
+                  {
+                    "text": "six"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "XOR Properties & Single Number Detection",
+      "codeHash": "e1c4b19fd0443af047439d6fca29b9e3d6a1845420a4a3c5b18eb22c43443363",
+      "spec": {
+        "template": "cells",
+        "title": "Duplicate pair cancellation solitary element array",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Number with itself equals zero cancelling duplicate values.",
+            "items": [
+              {
+                "text": "val-four"
+              },
+              {
+                "text": "val-one"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Duplicate pairs cancel each other leaving unique solitary element.",
+            "items": [
+              {
+                "text": "unique-four"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Duplicate pair cancellation solitary element array",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Number with itself equals zero cancelling duplicate values.",
+            "items": [
+              {
+                "text": "val-four"
+              },
+              {
+                "text": "val-one"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Duplicate pairs cancel each other leaving unique solitary element.",
+            "items": [
+              {
+                "text": "unique-four"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Brian Kernighan's Algorithm (Counting Set Bits)",
+      "codeHash": "7f864cd7cd7a729a8219cb68269c3b587ea31093c2baffba6511831e7f60daf8",
+      "spec": {
+        "template": "table",
+        "title": "Brian Kernighan lowest set bit clearance table",
+        "columns": [
+          "Step",
+          "ValueN",
+          "MinusOne",
+          "BitwiseAnd"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Bitwise AND between values cleanly clears lowest set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-one"
+                  },
+                  {
+                    "text": "1011"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Every single execution strips exactly one set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-one"
+                  },
+                  {
+                    "text": "1011"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-two"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1001"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-three"
+                  },
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "0111"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Brian Kernighan lowest set bit clearance table",
+        "columns": [
+          "Step",
+          "ValueN",
+          "MinusOne",
+          "BitwiseAnd"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Bitwise AND between values cleanly clears lowest set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-one"
+                  },
+                  {
+                    "text": "1011"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Every single execution strips exactly one set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-one"
+                  },
+                  {
+                    "text": "1011"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1010"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-two"
+                  },
+                  {
+                    "text": "1010"
+                  },
+                  {
+                    "text": "1001"
+                  },
+                  {
+                    "text": "1000"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-three"
+                  },
+                  {
+                    "text": "1000"
+                  },
+                  {
+                    "text": "0111"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Power of Two Detection & Bit Tricks",
+      "codeHash": "2c37138f4b6d1be4498c7709e9c4fbfd1a51da91b97b83d2ed096ce0fb3bbfbd",
+      "spec": {
+        "template": "table",
+        "title": "Power of two bit test evaluation table",
+        "columns": [
+          "Number",
+          "Binary",
+          "Formula",
+          "IsPower"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Power of two in binary contains exactly one set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "num-sixteen"
+                  },
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "check"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Integer is power of two if clearing bit leaves zero.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "num-sixteen"
+                  },
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "num-eighteen"
+                  },
+                  {
+                    "text": "10010"
+                  },
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Power of two bit test evaluation table",
+        "columns": [
+          "Number",
+          "Binary",
+          "Formula",
+          "IsPower"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Power of two in binary contains exactly one set bit.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "num-sixteen"
+                  },
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "check"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Integer is power of two if clearing bit leaves zero.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "num-sixteen"
+                  },
+                  {
+                    "text": "10000"
+                  },
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "true"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "num-eighteen"
+                  },
+                  {
+                    "text": "10010"
+                  },
+                  {
+                    "text": "mask"
+                  },
+                  {
+                    "text": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bitmask State Representation for Subsets & DP",
+      "codeHash": "7e0f17236d554937be8fa65900e57a8221d1e3bc00747ba3aa8614d32311eb03",
+      "spec": {
+        "template": "cells",
+        "title": "Bitmask binary subset membership list",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Item is included in subset or item is excluded.",
+            "items": [
+              {
+                "text": "empty"
+              },
+              {
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adding item to subset using bitwise shift and mask.",
+            "items": [
+              {
+                "text": "empty"
+              },
+              {
+                "text": "A"
+              },
+              {
+                "text": "B"
+              },
+              {
+                "text": "A-B"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Bitmask binary subset membership list",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Item is included in subset or item is excluded.",
+            "items": [
+              {
+                "text": "empty"
+              },
+              {
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Adding item to subset using bitwise shift and mask.",
+            "items": [
+              {
+                "text": "empty"
+              },
+              {
+                "text": "A"
+              },
+              {
+                "text": "B"
+              },
+              {
+                "text": "A-B"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production BitSet & Bloom Filter Preview",
+      "codeHash": "4b78098e11dda58743c320ec4174ac243ddb25a3663e1b0e17b69e797533e881",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
