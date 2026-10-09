@@ -11557,6 +11557,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-cyber-D01",
+      "title": "cyber day 1: Information Security Core: CIA Triad & STRIDE Threat Modeling visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 1,
+      "keys": [
+        "cyber:1:0",
+        "cyber:1:1",
+        "cyber:1:2",
+        "cyber:1:3",
+        "cyber:1:4",
+        "cyber:1:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D02",
+      "title": "cyber day 2: Web Security: SQL Injection (SQLi) & Parameterized Queries visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 2,
+      "keys": [
+        "cyber:2:0",
+        "cyber:2:1",
+        "cyber:2:2",
+        "cyber:2:3",
+        "cyber:2:4",
+        "cyber:2:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D03",
+      "title": "cyber day 3: Client-Side Security: Cross-Site Scripting (XSS) & Content Security Policy (CSP) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 3,
+      "keys": [
+        "cyber:3:0",
+        "cyber:3:1",
+        "cyber:3:2",
+        "cyber:3:3",
+        "cyber:3:4",
+        "cyber:3:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D04",
+      "title": "cyber day 4: Request Forgery: Cross-Site Request Forgery (CSRF) & SameSite Cookies visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 4,
+      "keys": [
+        "cyber:4:0",
+        "cyber:4:1",
+        "cyber:4:2",
+        "cyber:4:3",
+        "cyber:4:4",
+        "cyber:4:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D05",
+      "title": "cyber day 5: ⭐ MILESTONE 1: Complete Web Application Firewall & Input Sanitization Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 5,
+      "keys": [
+        "cyber:5:0",
+        "cyber:5:1",
+        "cyber:5:2",
+        "cyber:5:3",
+        "cyber:5:4",
+        "cyber:5:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D06",
+      "title": "cyber day 6: Cryptographic Primitives: Symmetric Encryption (AES-GCM) vs Asymmetric (RSA/ECC) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 6,
+      "keys": [
+        "cyber:6:0",
+        "cyber:6:1",
+        "cyber:6:2",
+        "cyber:6:3",
+        "cyber:6:4",
+        "cyber:6:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D07",
+      "title": "cyber day 7: Password Hashing & Key Derivation: Argon2id, Bcrypt & Salt Invariants visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 7,
+      "keys": [
+        "cyber:7:0",
+        "cyber:7:1",
+        "cyber:7:2",
+        "cyber:7:3",
+        "cyber:7:4",
+        "cyber:7:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D08",
+      "title": "cyber day 8: Public Key Infrastructure (PKI): X.509 Digital Certificates & TLS 1.3 visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 8,
+      "keys": [
+        "cyber:8:0",
+        "cyber:8:1",
+        "cyber:8:2",
+        "cyber:8:3",
+        "cyber:8:4",
+        "cyber:8:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D09",
+      "title": "cyber day 9: Identity & Access Management: JWT Vulnerabilities & Alg 'none' Attacks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 9,
+      "keys": [
+        "cyber:9:0",
+        "cyber:9:1",
+        "cyber:9:2",
+        "cyber:9:3",
+        "cyber:9:4",
+        "cyber:9:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D10",
+      "title": "cyber day 10: Authentication: Multi-Factor Authentication & TOTP (RFC 6238) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 10,
+      "keys": [
+        "cyber:10:0",
+        "cyber:10:1",
+        "cyber:10:2",
+        "cyber:10:3",
+        "cyber:10:4",
+        "cyber:10:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D11",
+      "title": "cyber day 11: Authorization: Role-Based (RBAC) & Attribute-Based Access Control (ABAC) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 11,
+      "keys": [
+        "cyber:11:0",
+        "cyber:11:1",
+        "cyber:11:2",
+        "cyber:11:3",
+        "cyber:11:4",
+        "cyber:11:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D12",
+      "title": "cyber day 12: Broken Object Level Authorization (BOLA / IDOR) Defense visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 12,
+      "keys": [
+        "cyber:12:0",
+        "cyber:12:1",
+        "cyber:12:2",
+        "cyber:12:3",
+        "cyber:12:4",
+        "cyber:12:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D13",
+      "title": "cyber day 13: Network Security: TCP SYN Flood, Port Scanning & Stateful Firewalls visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 13,
+      "keys": [
+        "cyber:13:0",
+        "cyber:13:1",
+        "cyber:13:2",
+        "cyber:13:3",
+        "cyber:13:4",
+        "cyber:13:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D14",
+      "title": "cyber day 14: Secure HTTP Headers: HSTS, X-Content-Type-Options & Frame-Options visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 14,
+      "keys": [
+        "cyber:14:0",
+        "cyber:14:1",
+        "cyber:14:2",
+        "cyber:14:3",
+        "cyber:14:4",
+        "cyber:14:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D15",
+      "title": "cyber day 15: ⭐ MILESTONE 2: Complete PKI Certificate Validation, Argon2id & TOTP MFA Auth Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 15,
+      "keys": [
+        "cyber:15:0",
+        "cyber:15:1",
+        "cyber:15:2",
+        "cyber:15:3",
+        "cyber:15:4",
+        "cyber:15:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D16",
+      "title": "cyber day 16: Server-Side Request Forgery (SSRF) & Cloud Metadata Protection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 16,
+      "keys": [
+        "cyber:16:0",
+        "cyber:16:1",
+        "cyber:16:2",
+        "cyber:16:3",
+        "cyber:16:4",
+        "cyber:16:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D17",
+      "title": "cyber day 17: Insecure Deserialization & Remote Code Execution (RCE) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 17,
+      "keys": [
+        "cyber:17:0",
+        "cyber:17:1",
+        "cyber:17:2",
+        "cyber:17:3",
+        "cyber:17:4",
+        "cyber:17:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D18",
+      "title": "cyber day 18: Security Misconfiguration & Hardcoded Secrets Auditing: Shannon Entropy visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 18,
+      "keys": [
+        "cyber:18:0",
+        "cyber:18:1",
+        "cyber:18:2",
+        "cyber:18:3",
+        "cyber:18:4",
+        "cyber:18:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D19",
+      "title": "cyber day 19: Dependency Vulnerabilities: Software Bill of Materials (SBOM) & CVE Auditing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 19,
+      "keys": [
+        "cyber:19:0",
+        "cyber:19:1",
+        "cyber:19:2",
+        "cyber:19:3",
+        "cyber:19:4",
+        "cyber:19:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D20",
+      "title": "cyber day 20: API Security: Token Bucket Rate Limiting & OAuth 2.0 PKCE Flow visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 20,
+      "keys": [
+        "cyber:20:0",
+        "cyber:20:1",
+        "cyber:20:2",
+        "cyber:20:3",
+        "cyber:20:4",
+        "cyber:20:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D21",
+      "title": "cyber day 21: ⭐ MILESTONE 3: Complete SSRF Metadata Defense & Token Bucket API Rate Limiter visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 21,
+      "keys": [
+        "cyber:21:0",
+        "cyber:21:1",
+        "cyber:21:2",
+        "cyber:21:3",
+        "cyber:21:4",
+        "cyber:21:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D22",
+      "title": "cyber day 22: Binary Exploitation: Buffer Overflows, Stack Canaries & ASLR visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 22,
+      "keys": [
+        "cyber:22:0",
+        "cyber:22:1",
+        "cyber:22:2",
+        "cyber:22:3",
+        "cyber:22:4",
+        "cyber:22:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D23",
+      "title": "cyber day 23: Memory Safety: Use-After-Free, Dangling Pointers & Spatial/Temporal Safety visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 23,
+      "keys": [
+        "cyber:23:0",
+        "cyber:23:1",
+        "cyber:23:2",
+        "cyber:23:3",
+        "cyber:23:4",
+        "cyber:23:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D24",
+      "title": "cyber day 24: Security Information & Event Management (SIEM): Log Analysis & IOC Detection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 24,
+      "keys": [
+        "cyber:24:0",
+        "cyber:24:1",
+        "cyber:24:2",
+        "cyber:24:3",
+        "cyber:24:4",
+        "cyber:24:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D25",
+      "title": "cyber day 25: Intrusion Detection & Prevention Systems (IDS/IPS): Snort & Suricata Rules visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 25,
+      "keys": [
+        "cyber:25:0",
+        "cyber:25:1",
+        "cyber:25:2",
+        "cyber:25:3",
+        "cyber:25:4",
+        "cyber:25:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D26",
+      "title": "cyber day 26: Penetration Testing & Vulnerability Assessment: CVSS v3.1 Scoring visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 26,
+      "keys": [
+        "cyber:26:0",
+        "cyber:26:1",
+        "cyber:26:2",
+        "cyber:26:3",
+        "cyber:26:4",
+        "cyber:26:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D27",
+      "title": "cyber day 27: Zero Trust Architecture (ZTA): BeyondCorp & Continuous Verification visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 27,
+      "keys": [
+        "cyber:27:0",
+        "cyber:27:1",
+        "cyber:27:2",
+        "cyber:27:3",
+        "cyber:27:4",
+        "cyber:27:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D28",
+      "title": "cyber day 28: Cloud Security: AWS IAM Least Privilege, S3 Bucket Policies & KMS visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 28,
+      "keys": [
+        "cyber:28:0",
+        "cyber:28:1",
+        "cyber:28:2",
+        "cyber:28:3",
+        "cyber:28:4",
+        "cyber:28:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D29",
+      "title": "cyber day 29: Incident Response: Forensic Chain of Custody & Containment Strategy visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 29,
+      "keys": [
+        "cyber:29:0",
+        "cyber:29:1",
+        "cyber:29:2",
+        "cyber:29:3",
+        "cyber:29:4",
+        "cyber:29:5"
+      ]
+    },
+    {
+      "id": "C-cyber-D30",
+      "title": "cyber day 30: 🏆 FINAL CAPSTONE: Sovereign Defensive & Offensive Cybersecurity Operations Suite visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/cyber/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "cyber",
+      "day": 30,
+      "keys": [
+        "cyber:30:0",
+        "cyber:30:1",
+        "cyber:30:2",
+        "cyber:30:3",
+        "cyber:30:4",
+        "cyber:30:5"
+      ]
+    },
+    {
+      "id": "R-cyber-1-5",
+      "title": "Checkpoint cyber days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cyber-6-10",
+      "title": "Checkpoint cyber days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cyber-11-15",
+      "title": "Checkpoint cyber days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cyber-16-20",
+      "title": "Checkpoint cyber days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cyber-21-25",
+      "title": "Checkpoint cyber days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "R-cyber-26-30",
+      "title": "Checkpoint cyber days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-cyber",
+      "title": "Release visuals for cyber",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
