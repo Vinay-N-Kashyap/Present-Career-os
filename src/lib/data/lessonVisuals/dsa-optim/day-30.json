@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 30,
+  "promptSha": "17aed6de1b934ec414340ccb5ace905be1933f5c3b23263717adfb2271f03e4b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Global Aviation Network Architecture & Multi-Constraint Routing",
+      "codeHash": "eff9213ac38f4ad5e5314a664a13434d073d4885202220d86865b784315b51cd",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Global aviation weighted route network topology",
+        "nodes": [
+          {
+            "id": "SFO",
+            "label": "SFO"
+          },
+          {
+            "id": "HND",
+            "label": "HND"
+          },
+          {
+            "id": "SEA",
+            "label": "SEA"
+          }
+        ],
+        "edges": [
+          [
+            "SFO",
+            "HND"
+          ],
+          [
+            "SFO",
+            "SEA"
+          ],
+          [
+            "SEA",
+            "HND"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Weighted directed graph vertices represent airport codes.",
+            "activeNodeId": "SFO",
+            "visitedNodeIds": [
+              "SFO"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Edges represent scheduled flights carrying composite weights.",
+            "activeNodeId": "HND",
+            "visitedNodeIds": [
+              "SFO",
+              "HND"
+            ],
+            "activeEdge": [
+              "SFO",
+              "HND"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Global aviation weighted route network topology",
+        "nodes": [
+          {
+            "id": "SFO",
+            "label": "SFO"
+          },
+          {
+            "id": "HND",
+            "label": "HND"
+          },
+          {
+            "id": "SEA",
+            "label": "SEA"
+          }
+        ],
+        "edges": [
+          [
+            "SFO",
+            "HND"
+          ],
+          [
+            "SFO",
+            "SEA"
+          ],
+          [
+            "SEA",
+            "HND"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Weighted directed graph vertices represent airport codes.",
+            "activeNodeId": "SFO",
+            "visitedNodeIds": [
+              "SFO"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Edges represent scheduled flights carrying composite weights.",
+            "activeNodeId": "HND",
+            "visitedNodeIds": [
+              "SFO",
+              "HND"
+            ],
+            "activeEdge": [
+              "SFO",
+              "HND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cheapest Flights Within K Stops (Bellman-Ford / 2D DP)",
+      "codeHash": "f2fb673e57a4121d2506c2e246d90cf578d0d84c7c0eed90f4b41712638ff484",
+      "spec": {
+        "template": "table",
+        "title": "Bounded layover iterations cost table",
+        "columns": [
+          "Airport",
+          "RoundZero",
+          "RoundOne",
+          "BestCost"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each round relaxes all flights using costs from previous round.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "node-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-one"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "hundred"
+                  },
+                  {
+                    "text": "hundred"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Cloning prevents single relaxation chain from chaining multiple flights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "node-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-one"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "hundred"
+                  },
+                  {
+                    "text": "hundred"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-three"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "two-hundred"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bounded layover iterations cost table",
+        "columns": [
+          "Airport",
+          "RoundZero",
+          "RoundOne",
+          "BestCost"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Each round relaxes all flights using costs from previous round.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "node-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-one"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "hundred"
+                  },
+                  {
+                    "text": "hundred"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Cloning prevents single relaxation chain from chaining multiple flights.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "node-zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "zero"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-one"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "hundred"
+                  },
+                  {
+                    "text": "hundred"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "node-three"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "inf"
+                  },
+                  {
+                    "text": "two-hundred"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Airport Alliance Connectivity with Disjoint Set Union",
+      "codeHash": "cb5bf3714b2a3c16518319aba53a588e26c173c960dce2e9fe6fff60a03e461d",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Airline alliance disjoint connected components",
+        "nodes": [
+          {
+            "id": "JFK",
+            "label": "JFK"
+          },
+          {
+            "id": "FRA",
+            "label": "FRA"
+          },
+          {
+            "id": "SIN",
+            "label": "SIN"
+          },
+          {
+            "id": "NRT",
+            "label": "NRT"
+          },
+          {
+            "id": "ITM",
+            "label": "ITM"
+          }
+        ],
+        "edges": [
+          [
+            "JFK",
+            "FRA"
+          ],
+          [
+            "FRA",
+            "SIN"
+          ],
+          [
+            "NRT",
+            "ITM"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each airport starts as component route triggers union.",
+            "activeNodeId": "JFK",
+            "visitedNodeIds": [
+              "JFK"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Alliance flights connectivity test resolves in near-instant time.",
+            "activeNodeId": "SIN",
+            "visitedNodeIds": [
+              "JFK",
+              "FRA",
+              "SIN"
+            ],
+            "activeEdge": [
+              "FRA",
+              "SIN"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Airline alliance disjoint connected components",
+        "nodes": [
+          {
+            "id": "JFK",
+            "label": "JFK"
+          },
+          {
+            "id": "FRA",
+            "label": "FRA"
+          },
+          {
+            "id": "SIN",
+            "label": "SIN"
+          },
+          {
+            "id": "NRT",
+            "label": "NRT"
+          },
+          {
+            "id": "ITM",
+            "label": "ITM"
+          }
+        ],
+        "edges": [
+          [
+            "JFK",
+            "FRA"
+          ],
+          [
+            "FRA",
+            "SIN"
+          ],
+          [
+            "NRT",
+            "ITM"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each airport starts as component route triggers union.",
+            "activeNodeId": "JFK",
+            "visitedNodeIds": [
+              "JFK"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Alliance flights connectivity test resolves in near-instant time.",
+            "activeNodeId": "SIN",
+            "visitedNodeIds": [
+              "JFK",
+              "FRA",
+              "SIN"
+            ],
+            "activeEdge": [
+              "FRA",
+              "SIN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fastest vs Cheapest Pareto-Optimal Navigation",
+      "codeHash": "28ce9d916d226d4da920720f49a888ddf1a286243ea4d389396dac83ff97bcd9",
+      "spec": {
+        "template": "table",
+        "title": "Pareto-optimal flight routing comparison",
+        "columns": [
+          "Criteria",
+          "Route",
+          "Price",
+          "Duration"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Multi-objective search evaluates routes along both dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cheapest"
+                  },
+                  {
+                    "text": "connecting"
+                  },
+                  {
+                    "text": "low-cost"
+                  },
+                  {
+                    "text": "high-time"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engine returns fastest direct flight alongside cheapest connecting flight.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cheapest"
+                  },
+                  {
+                    "text": "connecting"
+                  },
+                  {
+                    "text": "low-cost"
+                  },
+                  {
+                    "text": "high-time"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fastest"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "high-cost"
+                  },
+                  {
+                    "text": "low-time"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Pareto-optimal flight routing comparison",
+        "columns": [
+          "Criteria",
+          "Route",
+          "Price",
+          "Duration"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Multi-objective search evaluates routes along both dimensions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cheapest"
+                  },
+                  {
+                    "text": "connecting"
+                  },
+                  {
+                    "text": "low-cost"
+                  },
+                  {
+                    "text": "high-time"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engine returns fastest direct flight alongside cheapest connecting flight.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "cheapest"
+                  },
+                  {
+                    "text": "connecting"
+                  },
+                  {
+                    "text": "low-cost"
+                  },
+                  {
+                    "text": "high-time"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fastest"
+                  },
+                  {
+                    "text": "direct"
+                  },
+                  {
+                    "text": "high-cost"
+                  },
+                  {
+                    "text": "low-time"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Disruption Recovery (Dynamic Rerouting)",
+      "codeHash": "6c06083cb6dd78b97b38fd3218f37901752e14fa0d674e34e523a4f79b485a8b",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Real-time airport disruption dynamic rerouting",
+        "nodes": [
+          {
+            "id": "SFO",
+            "label": "SFO"
+          },
+          {
+            "id": "DEN",
+            "label": "DEN"
+          },
+          {
+            "id": "PHX",
+            "label": "PHX"
+          },
+          {
+            "id": "JFK",
+            "label": "JFK"
+          }
+        ],
+        "edges": [
+          [
+            "SFO",
+            "DEN"
+          ],
+          [
+            "DEN",
+            "JFK"
+          ],
+          [
+            "SFO",
+            "PHX"
+          ],
+          [
+            "PHX",
+            "JFK"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Airport disruption marks vertex deactivated to avoid closure.",
+            "activeNodeId": "DEN",
+            "visitedNodeIds": [
+              "DEN"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Search automatically steers around deactivated node through alternate hub.",
+            "activeNodeId": "PHX",
+            "visitedNodeIds": [
+              "SFO",
+              "PHX",
+              "JFK"
+            ],
+            "activeEdge": [
+              "SFO",
+              "PHX"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Real-time airport disruption dynamic rerouting",
+        "nodes": [
+          {
+            "id": "SFO",
+            "label": "SFO"
+          },
+          {
+            "id": "DEN",
+            "label": "DEN"
+          },
+          {
+            "id": "PHX",
+            "label": "PHX"
+          },
+          {
+            "id": "JFK",
+            "label": "JFK"
+          }
+        ],
+        "edges": [
+          [
+            "SFO",
+            "DEN"
+          ],
+          [
+            "DEN",
+            "JFK"
+          ],
+          [
+            "SFO",
+            "PHX"
+          ],
+          [
+            "PHX",
+            "JFK"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Airport disruption marks vertex deactivated to avoid closure.",
+            "activeNodeId": "DEN",
+            "visitedNodeIds": [
+              "DEN"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Search automatically steers around deactivated node through alternate hub.",
+            "activeNodeId": "PHX",
+            "visitedNodeIds": [
+              "SFO",
+              "PHX",
+              "JFK"
+            ],
+            "activeEdge": [
+              "SFO",
+              "PHX"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Complete Flight Navigation Operating System Synthesis",
+      "codeHash": "c417f84f13f273e4427d53b450543c141b3e10225ff194b7233af89e579620d5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
