@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 22,
+  "promptSha": "e705591174e134e9f4fa43be611f0c0ba9d9f15b35ac3ad485668a4c5e6bda16",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Weighted Graphs & The Shortest Path Problem",
+      "codeHash": "32f66b7a26658e0c32d9a4918adc65e14350d634e0fcd5525341f8bfdf8714bc",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Weighted graph adjacency list topology",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Adjacency list maps each vertex to weighted neighbor pairs.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Algorithm operates greedily expanding vertex with smallest distance.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Weighted graph adjacency list topology",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Adjacency list maps each vertex to weighted neighbor pairs.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Algorithm operates greedily expanding vertex with smallest distance.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Greedy Edge Relaxation Invariants",
+      "codeHash": "b6733be1a051d8b9d3c83fe007a9ff0d6c41f2bf3c919dbe24b8c45ff305fa3c",
+      "spec": {
+        "template": "table",
+        "title": "Greedy edge relaxation distance update table",
+        "columns": [
+          "Vertex",
+          "Dist",
+          "Parent"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Edge relaxation updates distance and records predecessor for path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "origin"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "unrelaxed"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "C"
+                  },
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Edge relaxation tightens upper bounds on shortest distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "origin"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "relaxed"
+                  },
+                  {
+                    "text": "C"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "C"
+                  },
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Greedy edge relaxation distance update table",
+        "columns": [
+          "Vertex",
+          "Dist",
+          "Parent"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Edge relaxation updates distance and records predecessor for path.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "origin"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "unrelaxed"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "C"
+                  },
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Edge relaxation tightens upper bounds on shortest distance.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "A"
+                  },
+                  {
+                    "text": "start"
+                  },
+                  {
+                    "text": "origin"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "B"
+                  },
+                  {
+                    "text": "relaxed"
+                  },
+                  {
+                    "text": "C"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "C"
+                  },
+                  {
+                    "text": "visited"
+                  },
+                  {
+                    "text": "A"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Priority Queue / Min-Heap Distance Tracking",
+      "codeHash": "e3f036451653855d23237b6b598fda964c1cd508c8ca16d7e9da22ae585e7c0a",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Priority queue tentative distance ordering",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Priority queue tracks tentative distances for next vertex.",
+            "action": "push",
+            "actionItem": {
+              "text": "Node-C"
+            },
+            "items": [
+              {
+                "text": "Node-C"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Pairs enter queue ordered ascending by distance.",
+            "action": "push",
+            "actionItem": {
+              "text": "Node-B"
+            },
+            "items": [
+              {
+                "text": "Node-C"
+              },
+              {
+                "text": "Node-B"
+              },
+              {
+                "text": "Node-D"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Priority queue tentative distance ordering",
+        "mode": "queue",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Priority queue tracks tentative distances for next vertex.",
+            "action": "push",
+            "actionItem": {
+              "text": "Node-C"
+            },
+            "items": [
+              {
+                "text": "Node-C"
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Pairs enter queue ordered ascending by distance.",
+            "action": "push",
+            "actionItem": {
+              "text": "Node-B"
+            },
+            "items": [
+              {
+                "text": "Node-C"
+              },
+              {
+                "text": "Node-B"
+              },
+              {
+                "text": "Node-D"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Dijkstra Algorithm Implementation",
+      "codeHash": "b9ca2a98941b5ba8c3823ebfd6a05ebd4c4b0b80d84772395a62fffae45f63bd",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Dijkstra shortest path network expansion",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Source vertex enters priority queue with tentative distance.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Iterating through outgoing edges relaxes neighbor distances.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Dijkstra shortest path network expansion",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A"
+          },
+          {
+            "id": "B",
+            "label": "B"
+          },
+          {
+            "id": "C",
+            "label": "C"
+          },
+          {
+            "id": "D",
+            "label": "D"
+          }
+        ],
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Source vertex enters priority queue with tentative distance.",
+            "activeNodeId": "A",
+            "visitedNodeIds": [
+              "A"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Iterating through outgoing edges relaxes neighbor distances.",
+            "activeNodeId": "C",
+            "visitedNodeIds": [
+              "A",
+              "C"
+            ],
+            "activeEdge": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Path Reconstruction via Predecessor Pointers",
+      "codeHash": "8d90cf20317aa07830b6f0ea32e30f95ebd805e970616d7c1756c0fd3c560577",
+      "spec": {
+        "template": "cells",
+        "title": "Predecessor pointer backward path reconstruction",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Path reconstruction follows parent pointers backward to source.",
+            "items": [
+              {
+                "text": "D"
+              },
+              {
+                "text": "B"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Reversing visited array produces path in forward chronological order.",
+            "items": [
+              {
+                "text": "A"
+              },
+              {
+                "text": "C"
+              },
+              {
+                "text": "B"
+              },
+              {
+                "text": "D"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Predecessor pointer backward path reconstruction",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Path reconstruction follows parent pointers backward to source.",
+            "items": [
+              {
+                "text": "D"
+              },
+              {
+                "text": "B"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Reversing visited array produces path in forward chronological order.",
+            "items": [
+              {
+                "text": "A"
+              },
+              {
+                "text": "C"
+              },
+              {
+                "text": "B"
+              },
+              {
+                "text": "D"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dense vs Sparse Networks & Real-World Latency Routing",
+      "codeHash": "792038019bfd7247f81cca05dc8083d87abb0ef2759b872e15327fd615294c19",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
