@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 10,
+  "promptSha": "a87f5071ee4da373393ad1e2a88050b0a410c20b956f5e950028550f7c450125",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Distributed Transactions: The Atomic All-or-Nothing Challenge",
+      "codeHash": "2589251967fafa3057fe3281e37629954dfaaa7dd17a1f5c57564ea45dd491dc",
+      "spec": {
+        "template": "compare",
+        "title": "Uncoordinated distributed database mutations compared to atomic consensus",
+        "leftLabel": "Uncoordinated Multi-DB Mutation (Hazard)",
+        "rightLabel": "Coordinated Atomic Transaction",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Uncoordinated failures leave distributed data in an inconsistent state.",
+            "left": {
+              "code": "Unsafe Transfer Succeeded?: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "Atomic 2PC Transaction: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "A centralized coordinator node manages transaction lifecycles across nodes.",
+            "left": {
+              "code": "User B Balance: 200 (Uncredited)",
+              "result": {
+                "text": "200"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "User B Balance: 300 (Credited)",
+              "result": {
+                "text": "300"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Uncoordinated distributed database mutations compared to atomic consensus",
+        "leftLabel": "Uncoordinated Multi-DB Mutation (Hazard)",
+        "rightLabel": "Coordinated Atomic Transaction",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Uncoordinated failures leave distributed data in an inconsistent state.",
+            "left": {
+              "code": "Unsafe Transfer Succeeded?: false",
+              "result": {
+                "text": "false"
+              },
+              "tone": "failed"
+            },
+            "right": {
+              "code": "Atomic 2PC Transaction: true",
+              "result": {
+                "text": "true"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "A centralized coordinator node manages transaction lifecycles across nodes.",
+            "left": {
+              "code": "User B Balance: 200 (Uncredited)",
+              "result": {
+                "text": "200"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "User B Balance: 300 (Credited)",
+              "result": {
+                "text": "300"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Phase 1 (Prepare / Voting Phase): Can Everyone Commit?",
+      "codeHash": "79b50c334eaa47e553347fc90a01493b8b23846d8abdb18a448699e319187529",
+      "spec": {
+        "template": "sequence",
+        "title": "Two-phase commit Phase 1 prepare and voting sequence",
+        "actors": [
+          {
+            "id": "coordinator",
+            "label": "Transaction Coordinator"
+          },
+          {
+            "id": "dbPayment",
+            "label": "Payment Database"
+          },
+          {
+            "id": "dbInventory",
+            "label": "Inventory Database"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The coordinator broadcasts prepare queries to all distributed participants.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "dbPayment",
+                "label": "PREPARE (XID: 9001)"
+              },
+              {
+                "from": "coordinator",
+                "to": "dbInventory",
+                "label": "PREPARE (XID: 9001)"
+              }
+            ],
+            "activeActorId": "dbPayment"
+          },
+          {
+            "at": "say7",
+            "caption": "Voting commit surrenders participant autonomy to unilaterally abort.",
+            "messages": [
+              {
+                "from": "dbPayment",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT (Locks Held)"
+              },
+              {
+                "from": "dbInventory",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT (Locks Held)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Two-phase commit Phase 1 prepare and voting sequence",
+        "actors": [
+          {
+            "id": "coordinator",
+            "label": "Transaction Coordinator"
+          },
+          {
+            "id": "dbPayment",
+            "label": "Payment Database"
+          },
+          {
+            "id": "dbInventory",
+            "label": "Inventory Database"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The coordinator broadcasts prepare queries to all distributed participants.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "dbPayment",
+                "label": "PREPARE (XID: 9001)"
+              },
+              {
+                "from": "coordinator",
+                "to": "dbInventory",
+                "label": "PREPARE (XID: 9001)"
+              }
+            ],
+            "activeActorId": "dbPayment"
+          },
+          {
+            "at": "say7",
+            "caption": "Voting commit surrenders participant autonomy to unilaterally abort.",
+            "messages": [
+              {
+                "from": "dbPayment",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT (Locks Held)"
+              },
+              {
+                "from": "dbInventory",
+                "to": "coordinator",
+                "label": "VOTE_COMMIT (Locks Held)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Phase 2 (Commit / Rollback Phase): Executing the Global Verdict",
+      "codeHash": "4aa19f16651d72f628473450c3c7e110981ab15a44c0217d0a06028b285d95d0",
+      "spec": {
+        "template": "workflow",
+        "title": "Two-phase commit Phase 2 global commit execution pipeline",
+        "stages": [
+          {
+            "id": "tallyVotes",
+            "name": "Tally Votes",
+            "subtext": "Unanimity Check"
+          },
+          {
+            "id": "writeWal",
+            "name": "Log Global Verdict",
+            "subtext": "Persist to WAL"
+          },
+          {
+            "id": "broadcastCommit",
+            "name": "Broadcast Verdict",
+            "subtext": "Global Commit/Rollback"
+          },
+          {
+            "id": "releaseLocks",
+            "name": "Release Locks",
+            "subtext": "Transaction Done"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unanimous voting prompts the coordinator to write commit records to disk.",
+            "activeStageId": "writeWal",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The coordinator instructs participants to undo staged changes and release locks.",
+            "activeStageId": "releaseLocks",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Two-phase commit Phase 2 global commit execution pipeline",
+        "stages": [
+          {
+            "id": "tallyVotes",
+            "name": "Tally Votes",
+            "subtext": "Unanimity Check"
+          },
+          {
+            "id": "writeWal",
+            "name": "Log Global Verdict",
+            "subtext": "Persist to WAL"
+          },
+          {
+            "id": "broadcastCommit",
+            "name": "Broadcast Verdict",
+            "subtext": "Global Commit/Rollback"
+          },
+          {
+            "id": "releaseLocks",
+            "name": "Release Locks",
+            "subtext": "Transaction Done"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unanimous voting prompts the coordinator to write commit records to disk.",
+            "activeStageId": "writeWal",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The coordinator instructs participants to undo staged changes and release locks.",
+            "activeStageId": "releaseLocks",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Coordinator Blocking Flaw: The 2PC Achilles' Heel",
+      "codeHash": "e15077afa0a8dd1221db90af2f769c1b9b313fa63cc30af6bf9466711e199d44",
+      "spec": {
+        "template": "states",
+        "title": "Coordinator failure and stranded participant blocking states",
+        "states": [
+          {
+            "id": "readyVote",
+            "label": "Initial Ready State (Autonomy Preserved)"
+          },
+          {
+            "id": "preparedLocks",
+            "label": "Prepared State (Local Locks Held Open)"
+          },
+          {
+            "id": "blockedStranded",
+            "label": "Blocked State (Coordinator Dead - Indefinite Wait)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Vulnerabilities occur when the coordinator crashes before broadcasting verdicts.",
+            "activeStateId": "preparedLocks",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Participants are completely blocked holding database locks until recovery.",
+            "activeStateId": "blockedStranded",
+            "statusBadge": "failed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Coordinator failure and stranded participant blocking states",
+        "states": [
+          {
+            "id": "readyVote",
+            "label": "Initial Ready State (Autonomy Preserved)"
+          },
+          {
+            "id": "preparedLocks",
+            "label": "Prepared State (Local Locks Held Open)"
+          },
+          {
+            "id": "blockedStranded",
+            "label": "Blocked State (Coordinator Dead - Indefinite Wait)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Vulnerabilities occur when the coordinator crashes before broadcasting verdicts.",
+            "activeStateId": "preparedLocks",
+            "statusBadge": "pending"
+          },
+          {
+            "at": "say6",
+            "caption": "Participants are completely blocked holding database locks until recovery.",
+            "activeStateId": "blockedStranded",
+            "statusBadge": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Three-Phase Commit (3PC): The Non-Blocking Theoretical Alternative",
+      "codeHash": "1b65805fd709a8066bc9f30dc421b4e4a03bb10e4e48ccf0f2ca7ed6ef0adbc1",
+      "spec": {
+        "template": "table",
+        "title": "Two-phase commit compared to three-phase commit protocols",
+        "columns": [
+          "Commit Protocol",
+          "Phase Progression Steps",
+          "Blocking Characteristic",
+          "Partition Safety Model"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The protocol divides commitment into intermediate verification phases.",
+            "rows": [
+              [
+                "Two-Phase Commit (2PC)",
+                "Prepare -> Commit / Rollback",
+                "Synchronously blocking on coordinator crash",
+                "Guarantees atomic safety under partitions"
+              ],
+              [
+                "Three-Phase Commit (3PC)",
+                "CanCommit -> PreCommit -> DoCommit",
+                "Non-blocking under fail-stop assumptions",
+                "Vulnerable to split-brain under real network splits"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Removing ambiguous states prevents blocking under crash stop assumptions.",
+            "rows": [
+              [
+                "Two-Phase Commit (2PC)",
+                "Prepare -> Commit / Rollback",
+                "Synchronously blocking on coordinator crash",
+                "Guarantees atomic safety under partitions"
+              ],
+              [
+                "Three-Phase Commit (3PC)",
+                "CanCommit -> PreCommit -> DoCommit",
+                "Non-blocking under fail-stop assumptions",
+                "Vulnerable to split-brain under real network splits"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Two-phase commit compared to three-phase commit protocols",
+        "columns": [
+          "Commit Protocol",
+          "Phase Progression Steps",
+          "Blocking Characteristic",
+          "Partition Safety Model"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The protocol divides commitment into intermediate verification phases.",
+            "rows": [
+              [
+                "Two-Phase Commit (2PC)",
+                "Prepare -> Commit / Rollback",
+                "Synchronously blocking on coordinator crash",
+                "Guarantees atomic safety under partitions"
+              ],
+              [
+                "Three-Phase Commit (3PC)",
+                "CanCommit -> PreCommit -> DoCommit",
+                "Non-blocking under fail-stop assumptions",
+                "Vulnerable to split-brain under real network splits"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Removing ambiguous states prevents blocking under crash stop assumptions.",
+            "rows": [
+              [
+                "Two-Phase Commit (2PC)",
+                "Prepare -> Commit / Rollback",
+                "Synchronously blocking on coordinator crash",
+                "Guarantees atomic safety under partitions"
+              ],
+              [
+                "Three-Phase Commit (3PC)",
+                "CanCommit -> PreCommit -> DoCommit",
+                "Non-blocking under fail-stop assumptions",
+                "Vulnerable to split-brain under real network splits"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Two-Phase Commit Distributed Transaction Coordinator",
+      "codeHash": "0ca8a61ff1f7b59c4f7c8ab589fe102314a0818f93ae0dfacc644e06f3a339b5",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
