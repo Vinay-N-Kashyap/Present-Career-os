@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 29,
+  "promptSha": "39837fd5c06db4d46ea352302d06456795aeeba5b2356965006ee21c419e3be1",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The DR Metrics: RPO (Recovery Point Objective) & RTO (Recovery Time Objective)",
+      "codeHash": "cdb24e191db83e9bf7848edd3c4ca2c7ad2f9281fbcfbffa29ccf0bb2108cdee",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery metrics classification and operational targets",
+        "columns": [
+          "Metric",
+          "Measurement Unit",
+          "Business Meaning",
+          "Target Threshold"
+        ],
+        "rows": [
+          [
+            "RPO",
+            "Backward time loss",
+            "Acceptable volume of committed data loss",
+            "Near Zero in Tier Zero"
+          ],
+          [
+            "RTO",
+            "Forward downtime",
+            "Duration before operations resume normally",
+            "Under One Minute"
+          ],
+          [
+            "MTTR",
+            "Mean time to repair",
+            "Average duration required to resolve outages",
+            "Continuous Tracking"
+          ],
+          [
+            "MTBF",
+            "Mean time between failures",
+            "Operational reliability of cloud infrastructure",
+            "High Availability"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recovery point objective dictates the acceptable volume of data loss.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Recovery time objective dictates acceptable duration of downtime.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery metrics classification and operational targets",
+        "columns": [
+          "Metric",
+          "Measurement Unit",
+          "Business Meaning",
+          "Target Threshold"
+        ],
+        "rows": [
+          [
+            "RPO",
+            "Backward time loss",
+            "Acceptable volume of committed data loss",
+            "Near Zero in Tier Zero"
+          ],
+          [
+            "RTO",
+            "Forward downtime",
+            "Duration before operations resume normally",
+            "Under One Minute"
+          ],
+          [
+            "MTTR",
+            "Mean time to repair",
+            "Average duration required to resolve outages",
+            "Continuous Tracking"
+          ],
+          [
+            "MTBF",
+            "Mean time between failures",
+            "Operational reliability of cloud infrastructure",
+            "High Availability"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Recovery point objective dictates the acceptable volume of data loss.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Recovery time objective dictates acceptable duration of downtime.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Region Topologies: Backup & Restore vs Pilot Light vs Warm Standby",
+      "codeHash": "75183716b77969d432ab2996730597e6823d48b3805e7f97358f87bb5fdb321f",
+      "spec": {
+        "template": "compare",
+        "title": "Multi-region disaster recovery deployment topologies comparison",
+        "left": {
+          "title": "Warm Standby",
+          "items": [
+            "Scaled-down functional copy running continuously",
+            "Minutes to autoscale secondary region",
+            "Moderate operational cloud cost"
+          ]
+        },
+        "right": {
+          "title": "Active-Active Global",
+          "items": [
+            "Both regions actively handle live production traffic",
+            "Zero downtime failover via DNS routing",
+            "Highest infrastructure cost with complex conflict rules"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Warm standby runs a scaled down functional copy in secondary regions.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Active active deployments handle live production traffic simultaneously.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multi-region disaster recovery deployment topologies comparison",
+        "left": {
+          "title": "Warm Standby",
+          "items": [
+            "Scaled-down functional copy running continuously",
+            "Minutes to autoscale secondary region",
+            "Moderate operational cloud cost"
+          ]
+        },
+        "right": {
+          "title": "Active-Active Global",
+          "items": [
+            "Both regions actively handle live production traffic",
+            "Zero downtime failover via DNS routing",
+            "Highest infrastructure cost with complex conflict rules"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Warm standby runs a scaled down functional copy in secondary regions.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Active active deployments handle live production traffic simultaneously.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Region Active-Passive: DNS Failover & Database Promotion",
+      "codeHash": "ba3f184773a0689a55c7b6560413d45f1f970bf9703cf2423a7dc88f13de91de",
+      "spec": {
+        "template": "workflow",
+        "title": "Active-passive automated regional failover and promotion workflow",
+        "workflow": [
+          {
+            "id": "healthProbe",
+            "label": "Route Fifty-Three Probes Monitor Primary",
+            "status": "completed"
+          },
+          {
+            "id": "failureDetected",
+            "label": "Consecutive Health Checks Fail",
+            "status": "failed"
+          },
+          {
+            "id": "dbPromotion",
+            "label": "Standby Database Promoted to Master",
+            "status": "active"
+          },
+          {
+            "id": "dnsShift",
+            "label": "Global DNS Points Traffic to Secondary",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Automated recovery orchestrators initiate failover when probes fail.",
+            "activeWorkflowId": "failureDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "The standby database is promoted to master accepting writes.",
+            "activeWorkflowId": "dbPromotion",
+            "statusBadge": "active"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Active-passive automated regional failover and promotion workflow",
+        "workflow": [
+          {
+            "id": "healthProbe",
+            "label": "Route Fifty-Three Probes Monitor Primary",
+            "status": "completed"
+          },
+          {
+            "id": "failureDetected",
+            "label": "Consecutive Health Checks Fail",
+            "status": "failed"
+          },
+          {
+            "id": "dbPromotion",
+            "label": "Standby Database Promoted to Master",
+            "status": "active"
+          },
+          {
+            "id": "dnsShift",
+            "label": "Global DNS Points Traffic to Secondary",
+            "status": "pending"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Automated recovery orchestrators initiate failover when probes fail.",
+            "activeWorkflowId": "failureDetected",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "The standby database is promoted to master accepting writes.",
+            "activeWorkflowId": "dbPromotion",
+            "statusBadge": "active"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Region Active-Active: Bi-Directional Replication & Conflict Resolution",
+      "codeHash": "91fa3d697a6280ba7bbb163f9e1b9123bf31440a01ef63df49398870eae73f2f",
+      "spec": {
+        "template": "sequence",
+        "title": "Active-active bi-directional cross-region replication sequence",
+        "actors": [
+          {
+            "id": "regionEurope",
+            "label": "Region Europe"
+          },
+          {
+            "id": "syncBus",
+            "label": "WAN Replication Bus"
+          },
+          {
+            "id": "regionUs",
+            "label": "Region US West"
+          }
+        ],
+        "messages": [
+          {
+            "from": "regionEurope",
+            "to": "syncBus",
+            "label": "Publish Local Write Mutation with Timestamp",
+            "tone": "data"
+          },
+          {
+            "from": "regionUs",
+            "to": "syncBus",
+            "label": "Publish Concurrent Local Write Mutation",
+            "tone": "data"
+          },
+          {
+            "from": "syncBus",
+            "to": "regionEurope",
+            "label": "Apply Last-Write-Wins Deterministic Resolution",
+            "tone": "ok"
+          },
+          {
+            "from": "syncBus",
+            "to": "regionUs",
+            "label": "Reconcile Clocks and Converge Global State",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Distributed databases replicate mutations bi-directionally across regions.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Last write wins strategies resolve conflicts using synchronized clocks.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Active-active bi-directional cross-region replication sequence",
+        "actors": [
+          {
+            "id": "regionEurope",
+            "label": "Region Europe"
+          },
+          {
+            "id": "syncBus",
+            "label": "WAN Replication Bus"
+          },
+          {
+            "id": "regionUs",
+            "label": "Region US West"
+          }
+        ],
+        "messages": [
+          {
+            "from": "regionEurope",
+            "to": "syncBus",
+            "label": "Publish Local Write Mutation with Timestamp",
+            "tone": "data"
+          },
+          {
+            "from": "regionUs",
+            "to": "syncBus",
+            "label": "Publish Concurrent Local Write Mutation",
+            "tone": "data"
+          },
+          {
+            "from": "syncBus",
+            "to": "regionEurope",
+            "label": "Apply Last-Write-Wins Deterministic Resolution",
+            "tone": "ok"
+          },
+          {
+            "from": "syncBus",
+            "to": "regionUs",
+            "label": "Reconcile Clocks and Converge Global State",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Distributed databases replicate mutations bi-directionally across regions.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Last write wins strategies resolve conflicts using synchronized clocks.",
+            "activeMessageIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Split-Brain Hazards & Fencing in Regional Outages",
+      "codeHash": "06e01066abd1ef5e203cf6d520378f3ec858d13b2b0c0a96c5be920a72e50499",
+      "spec": {
+        "template": "states",
+        "title": "Regional split-brain prevention and monotonic fencing token states",
+        "states": [
+          {
+            "id": "normalEpoch",
+            "label": "Valid Master Operating in Epoch N"
+          },
+          {
+            "id": "partitionIsolated",
+            "label": "Network Partition Cuts Inter-Region Link"
+          },
+          {
+            "id": "arbiterQuorum",
+            "label": "Arbiter Elects New Master in Epoch N+1"
+          },
+          {
+            "id": "zombieFenced",
+            "label": "Isolated Zombie Master Writes Fenced and Rejected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Regions lose their network link during an undersea fiber cut.",
+            "activeStateId": "partitionIsolated",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Monotonic fencing tokens reject writes from isolated zombie masters.",
+            "activeStateId": "zombieFenced",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Regional split-brain prevention and monotonic fencing token states",
+        "states": [
+          {
+            "id": "normalEpoch",
+            "label": "Valid Master Operating in Epoch N"
+          },
+          {
+            "id": "partitionIsolated",
+            "label": "Network Partition Cuts Inter-Region Link"
+          },
+          {
+            "id": "arbiterQuorum",
+            "label": "Arbiter Elects New Master in Epoch N+1"
+          },
+          {
+            "id": "zombieFenced",
+            "label": "Isolated Zombie Master Writes Fenced and Rejected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Regions lose their network link during an undersea fiber cut.",
+            "activeStateId": "partitionIsolated",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say9",
+            "caption": "Monotonic fencing tokens reject writes from isolated zombie masters.",
+            "activeStateId": "zombieFenced",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Region Disaster Recovery Orchestrator Simulator",
+      "codeHash": "111791743182f825db6baebd00e72e36ae5185010c3eaf8da5dede5b4a9785f7",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
