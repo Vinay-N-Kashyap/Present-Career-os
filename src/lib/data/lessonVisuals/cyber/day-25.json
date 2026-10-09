@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 25,
+  "promptSha": "4a5178bbc42a0dc4c187393dc30b4104d5e5ff07e7da5fc99c7ce8b6f0663b36",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Network-Based IDS (NIDS) vs Host-Based IDS (HIDS)",
+      "codeHash": "9e90a8834428b2111647657919b8b29a8c794f1f4b6da51ce0db079da9efbe0a",
+      "spec": {
+        "template": "compare",
+        "title": "Network-based promiscuous sniffing versus host-based operating system IDS",
+        "left": {
+          "title": "Network Intrusion Detection (NIDS)",
+          "items": [
+            "Operates promiscuously on network taps and switch SPAN ports",
+            "Analyzes raw Ethernet frames across entire network subnets",
+            "Inspects unencrypted packet headers without host overhead"
+          ]
+        },
+        "right": {
+          "title": "Host Intrusion Detection (HIDS)",
+          "items": [
+            "Resides directly on individual endpoints and servers",
+            "Monitors local system calls authentication logs and rootkits",
+            "Inspects decrypted payload contents directly at the endpoint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Network sensors analyze raw packets across subnets without host burdens.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Host monitors inspect local system calls and authentication logs.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Network-based promiscuous sniffing versus host-based operating system IDS",
+        "left": {
+          "title": "Network Intrusion Detection (NIDS)",
+          "items": [
+            "Operates promiscuously on network taps and switch SPAN ports",
+            "Analyzes raw Ethernet frames across entire network subnets",
+            "Inspects unencrypted packet headers without host overhead"
+          ]
+        },
+        "right": {
+          "title": "Host Intrusion Detection (HIDS)",
+          "items": [
+            "Resides directly on individual endpoints and servers",
+            "Monitors local system calls authentication logs and rootkits",
+            "Inspects decrypted payload contents directly at the endpoint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Network sensors analyze raw packets across subnets without host burdens.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Host monitors inspect local system calls and authentication logs.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Snort & Suricata Rule Syntax Anatomy",
+      "codeHash": "0e919b468055c3168268b05ec38044b995e3090c99488111ae3c9a65349bc96f",
+      "spec": {
+        "template": "table",
+        "title": "Snort and Suricata rule header components and payload options syntax",
+        "columns": [
+          "Rule Component",
+          "Component Function",
+          "Syntax Keyword",
+          "Example Value"
+        ],
+        "rows": [
+          [
+            "Rule Action",
+            "Defines Response Action",
+            "Action Declaration",
+            "Alert or Drop"
+          ],
+          [
+            "Rule Protocol",
+            "Transport Protocol Target",
+            "Protocol Keyword",
+            "TCP UDP or ICMP"
+          ],
+          [
+            "Direction Operator",
+            "Traffic Flow Orientation",
+            "Direction Symbol",
+            "Unidirectional Arrow"
+          ],
+          [
+            "Payload Content",
+            "Pattern Search String",
+            "Content Option",
+            "Exact Byte Sequence"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The rule header specifies the action and transport protocol.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Options define exact byte patterns to search for within payloads.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Snort and Suricata rule header components and payload options syntax",
+        "columns": [
+          "Rule Component",
+          "Component Function",
+          "Syntax Keyword",
+          "Example Value"
+        ],
+        "rows": [
+          [
+            "Rule Action",
+            "Defines Response Action",
+            "Action Declaration",
+            "Alert or Drop"
+          ],
+          [
+            "Rule Protocol",
+            "Transport Protocol Target",
+            "Protocol Keyword",
+            "TCP UDP or ICMP"
+          ],
+          [
+            "Direction Operator",
+            "Traffic Flow Orientation",
+            "Direction Symbol",
+            "Unidirectional Arrow"
+          ],
+          [
+            "Payload Content",
+            "Pattern Search String",
+            "Content Option",
+            "Exact Byte Sequence"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The rule header specifies the action and transport protocol.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Options define exact byte patterns to search for within payloads.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Signature-Based Matching vs Protocol Anomaly Detection",
+      "codeHash": "3bfbc8ef02d39bcdde56e275dbd1f6736fb9dd521a954e208c210af03a992cfa",
+      "spec": {
+        "template": "compare",
+        "title": "Signature-based pattern matching versus protocol anomaly detection",
+        "left": {
+          "title": "Signature-Based Pattern Matching",
+          "items": [
+            "Searches packet payloads for documented exploit byte patterns",
+            "Extremely efficient with near zero false positive rates",
+            "Blind to unknown zero-day attacks and polymorphic payloads"
+          ]
+        },
+        "right": {
+          "title": "Protocol Anomaly Detection",
+          "items": [
+            "Models normal protocol standards and RFC specifications",
+            "Flags unexpected deviations illegal headers and port abuse",
+            "Catches novel zero-day attacks and evasive techniques"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Signatures search packet payloads for specific byte sequences.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Anomaly detection models normal specifications and flags deviations.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Signature-based pattern matching versus protocol anomaly detection",
+        "left": {
+          "title": "Signature-Based Pattern Matching",
+          "items": [
+            "Searches packet payloads for documented exploit byte patterns",
+            "Extremely efficient with near zero false positive rates",
+            "Blind to unknown zero-day attacks and polymorphic payloads"
+          ]
+        },
+        "right": {
+          "title": "Protocol Anomaly Detection",
+          "items": [
+            "Models normal protocol standards and RFC specifications",
+            "Flags unexpected deviations illegal headers and port abuse",
+            "Catches novel zero-day attacks and evasive techniques"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Signatures search packet payloads for specific byte sequences.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Anomaly detection models normal specifications and flags deviations.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inline Intrusion Prevention (IPS) & Automated Packet Dropping",
+      "codeHash": "b832899868f31466cbbb0265550beb67e74bf4b035455de7dd76b07da68c7dab",
+      "spec": {
+        "template": "states",
+        "title": "Inline IPS packet inspection stream interception and dropping stages",
+        "states": [
+          {
+            "id": "packetInspected",
+            "label": "Packet Traverses Inline Inspection Engine"
+          },
+          {
+            "id": "signatureMatched",
+            "label": "Exploit Signature Detected in Payload"
+          },
+          {
+            "id": "packetDropped",
+            "label": "Packet Discarded at Network Interface"
+          },
+          {
+            "id": "tcpResetEmitted",
+            "label": "TCP Reset Sent to Client and Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When an exploit signature matches the system drops the packet immediately.",
+            "activeStateId": "signatureMatched",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "An IPS can reset connections by sending reset packets to both hosts.",
+            "activeStateId": "tcpResetEmitted",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Inline IPS packet inspection stream interception and dropping stages",
+        "states": [
+          {
+            "id": "packetInspected",
+            "label": "Packet Traverses Inline Inspection Engine"
+          },
+          {
+            "id": "signatureMatched",
+            "label": "Exploit Signature Detected in Payload"
+          },
+          {
+            "id": "packetDropped",
+            "label": "Packet Discarded at Network Interface"
+          },
+          {
+            "id": "tcpResetEmitted",
+            "label": "TCP Reset Sent to Client and Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When an exploit signature matches the system drops the packet immediately.",
+            "activeStateId": "signatureMatched",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "An IPS can reset connections by sending reset packets to both hosts.",
+            "activeStateId": "tcpResetEmitted",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deep Packet Inspection: Offset, Depth & PCRE Regular Expressions",
+      "codeHash": "d9f06c14a2cd64f7d8dc78b388575a6f4c892290ced27083972eb51d06ab9494",
+      "spec": {
+        "template": "table",
+        "title": "Deep packet inspection bounded search modifiers and PCRE options",
+        "columns": [
+          "Search Modifier",
+          "Inspection Scope",
+          "Optimization Rationale",
+          "Rule Example"
+        ],
+        "rows": [
+          [
+            "Depth Option",
+            "Bytes from Payload Start",
+            "Bounds Search Window Size",
+            "Limits CPU Search Cost"
+          ],
+          [
+            "Offset Option",
+            "Bytes into Payload to Skip",
+            "Bypasses Known Static Headers",
+            "Skips Ethernet and IP Bytes"
+          ],
+          [
+            "Distance Modifier",
+            "Relative Bytes from Last Match",
+            "Constrains Subsequent Strings",
+            "Enforces Sequence Constraints"
+          ],
+          [
+            "PCRE Evaluation",
+            "Perl Regular Expression",
+            "Evaluates Complex Payload Variants",
+            "Executed After Fast Literals"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The depth option specifies how many bytes of the payload to search.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Efficient rules combine fast string matches before executing evaluations.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Deep packet inspection bounded search modifiers and PCRE options",
+        "columns": [
+          "Search Modifier",
+          "Inspection Scope",
+          "Optimization Rationale",
+          "Rule Example"
+        ],
+        "rows": [
+          [
+            "Depth Option",
+            "Bytes from Payload Start",
+            "Bounds Search Window Size",
+            "Limits CPU Search Cost"
+          ],
+          [
+            "Offset Option",
+            "Bytes into Payload to Skip",
+            "Bypasses Known Static Headers",
+            "Skips Ethernet and IP Bytes"
+          ],
+          [
+            "Distance Modifier",
+            "Relative Bytes from Last Match",
+            "Constrains Subsequent Strings",
+            "Enforces Sequence Constraints"
+          ],
+          [
+            "PCRE Evaluation",
+            "Perl Regular Expression",
+            "Evaluates Complex Payload Variants",
+            "Executed After Fast Literals"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The depth option specifies how many bytes of the payload to search.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Efficient rules combine fast string matches before executing evaluations.",
+            "activeRowIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TCP Stream Reassembly & Protocol Evasion Countermeasures",
+      "codeHash": "4e20ff8cebea2d0154ff8a3290120d0d5be22faed89629fb4bbcba2e374d669e",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
