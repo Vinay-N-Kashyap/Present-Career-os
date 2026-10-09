@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 15,
+  "promptSha": "caa903ca02d51db64b69163d5d65bf7184af0f0676ba75bb3bf6e443c2a509cf",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 2 Architecture & Event-Driven Patterns",
+      "codeHash": "1dd4e6db26beef8cbdb1d9c3fbad2c220a08e82c762006f45f566ebdab056075",
+      "spec": {
+        "template": "workflow",
+        "title": "Serverless event-driven video processing architecture blueprint",
+        "stages": [
+          {
+            "id": "s3Upload",
+            "name": "S3 Ingest Bucket",
+            "subtext": "MP4 Upload"
+          },
+          {
+            "id": "s3Event",
+            "name": "S3 Event Notification",
+            "subtext": "ObjectCreated"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Transcoder",
+            "subtext": "Processing Logic"
+          },
+          {
+            "id": "dynamo",
+            "name": "DynamoDB Table",
+            "subtext": "Video Metadata"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traditional applications upload raw video files directly to web servers.",
+            "activeStageId": "s3Event",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The client uploads the raw video file directly to an Amazon ingest bucket.",
+            "activeStageId": "lambda",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Serverless event-driven video processing architecture blueprint",
+        "stages": [
+          {
+            "id": "s3Upload",
+            "name": "S3 Ingest Bucket",
+            "subtext": "MP4 Upload"
+          },
+          {
+            "id": "s3Event",
+            "name": "S3 Event Notification",
+            "subtext": "ObjectCreated"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Transcoder",
+            "subtext": "Processing Logic"
+          },
+          {
+            "id": "dynamo",
+            "name": "DynamoDB Table",
+            "subtext": "Video Metadata"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Traditional applications upload raw video files directly to web servers.",
+            "activeStageId": "s3Event",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The client uploads the raw video file directly to an Amazon ingest bucket.",
+            "activeStageId": "lambda",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "S3 Event Notifications & ObjectCreated Trigger Binding",
+      "codeHash": "7181b1fe6ba39dfd9b8343e850708bf959e8fbbad91766e9f1a70e0da53098cb",
+      "spec": {
+        "template": "sequence",
+        "title": "S3 ObjectCreated event notification trigger sequence",
+        "actors": [
+          {
+            "id": "uploader",
+            "name": "Video Client"
+          },
+          {
+            "id": "s3",
+            "name": "S3 Bucket"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Engine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "S3 event notifications enable buckets to publish messages automatically.",
+            "from": "uploader",
+            "to": "s3",
+            "label": "PUT Video Upload",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "S3 generates events asynchronously invoking our processing Lambda.",
+            "from": "s3",
+            "to": "lambda",
+            "label": "ObjectCreated Event",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "S3 ObjectCreated event notification trigger sequence",
+        "actors": [
+          {
+            "id": "uploader",
+            "name": "Video Client"
+          },
+          {
+            "id": "s3",
+            "name": "S3 Bucket"
+          },
+          {
+            "id": "lambda",
+            "name": "Lambda Engine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "S3 event notifications enable buckets to publish messages automatically.",
+            "from": "uploader",
+            "to": "s3",
+            "label": "PUT Video Upload",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "S3 generates events asynchronously invoking our processing Lambda.",
+            "from": "s3",
+            "to": "lambda",
+            "label": "ObjectCreated Event",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotency in Distributed Event Processing",
+      "codeHash": "81e7d9fbd13f0470a7893340fae18b5b9374ce60f3b4be70fedceb19e131818d",
+      "spec": {
+        "template": "states",
+        "title": "Distributed event processing idempotency verification states",
+        "states": [
+          {
+            "id": "received",
+            "label": "Event Received"
+          },
+          {
+            "id": "checked",
+            "label": "Idempotency Key Checked"
+          },
+          {
+            "id": "executed",
+            "label": "State Recorded & Executed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "At-least-once delivery means duplicate events can occasionally arrive.",
+            "active": "received"
+          },
+          {
+            "at": "say6",
+            "caption": "Lambda attempts to insert an initial status record into DynamoDB.",
+            "active": "executed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Distributed event processing idempotency verification states",
+        "states": [
+          {
+            "id": "received",
+            "label": "Event Received"
+          },
+          {
+            "id": "checked",
+            "label": "Idempotency Key Checked"
+          },
+          {
+            "id": "executed",
+            "label": "State Recorded & Executed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "At-least-once delivery means duplicate events can occasionally arrive.",
+            "active": "received"
+          },
+          {
+            "at": "say6",
+            "caption": "Lambda attempts to insert an initial status record into DynamoDB.",
+            "active": "executed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dead Letter Queue (DLQ) & Poison Pill Payload Handling",
+      "codeHash": "34df657e3c7f80884a686a0df921ce681ad482e8b949cadecb5b058fb191be83",
+      "spec": {
+        "template": "compare",
+        "title": "Poison pill failure handling compared to Dead Letter Queue isolation",
+        "leftLabel": "Poison Pill Payload",
+        "rightLabel": "Dead Letter Queue (DLQ)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Malformed payloads and corrupted files crash processing functions.",
+            "left": {
+              "code": "Corrupted MP4 Payload",
+              "result": {
+                "text": "Crash on Retry"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Isolated SQS Dead Letter",
+              "result": {
+                "text": "Captured for Analysis"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Routing failed events to a dead letter queue prevents pipeline stalls.",
+            "left": {
+              "code": "Retries Exhausted",
+              "result": {
+                "text": "Pipeline Blocked"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Forwarded to DLQ",
+              "result": {
+                "text": "Pipeline Healthy"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Poison pill failure handling compared to Dead Letter Queue isolation",
+        "leftLabel": "Poison Pill Payload",
+        "rightLabel": "Dead Letter Queue (DLQ)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Malformed payloads and corrupted files crash processing functions.",
+            "left": {
+              "code": "Corrupted MP4 Payload",
+              "result": {
+                "text": "Crash on Retry"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Isolated SQS Dead Letter",
+              "result": {
+                "text": "Captured for Analysis"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Routing failed events to a dead letter queue prevents pipeline stalls.",
+            "left": {
+              "code": "Retries Exhausted",
+              "result": {
+                "text": "Pipeline Blocked"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Forwarded to DLQ",
+              "result": {
+                "text": "Pipeline Healthy"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DynamoDB Video Metadata Store & Status Tracking",
+      "codeHash": "b2bd1648cf6212ca20c980cc65856b7d9ed167930a73a8e4f928b9591a2b699d",
+      "spec": {
+        "template": "table",
+        "title": "DynamoDB video processing metadata status records",
+        "columns": [
+          "Video ID (PK)",
+          "Metadata Type (SK)",
+          "Processing Status",
+          "Output Location"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We define a videometadata table with a designated partition key.",
+            "rows": [
+              [
+                {
+                  "text": "VID#2026_01",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "PROCESSING",
+                  "tone": "idle"
+                },
+                {
+                  "text": "s3://out/vid_01",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "VID#2026_02",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "PENDING",
+                  "tone": "idle"
+                },
+                {
+                  "text": "s3://out/vid_02",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Transcoding succeeded and output attributes are saved upon completion.",
+            "rows": [
+              [
+                {
+                  "text": "VID#2026_01",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "COMPLETED",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3://out/vid_01",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "VID#2026_02",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "COMPLETED",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3://out/vid_02",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "DynamoDB video processing metadata status records",
+        "columns": [
+          "Video ID (PK)",
+          "Metadata Type (SK)",
+          "Processing Status",
+          "Output Location"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "We define a videometadata table with a designated partition key.",
+            "rows": [
+              [
+                {
+                  "text": "VID#2026_01",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "PROCESSING",
+                  "tone": "idle"
+                },
+                {
+                  "text": "s3://out/vid_01",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "VID#2026_02",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "PENDING",
+                  "tone": "idle"
+                },
+                {
+                  "text": "s3://out/vid_02",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Transcoding succeeded and output attributes are saved upon completion.",
+            "rows": [
+              [
+                {
+                  "text": "VID#2026_01",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "COMPLETED",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3://out/vid_01",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "VID#2026_02",
+                  "tone": "data"
+                },
+                {
+                  "text": "METADATA",
+                  "tone": "idle"
+                },
+                {
+                  "text": "COMPLETED",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3://out/vid_02",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 2 Pipeline Verification & Stress Test",
+      "codeHash": "024337383609ad108536d94c1b38908e09057a16aa89599af3f06bfffbcafb40",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
