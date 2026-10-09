@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 24,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Why Caching is Essential for High-Scale APIs",
+      "codeHash": "7194c905507bc8f75b422827e0d7213ecb11263e3a260e90aa5caa152c366687",
+      "spec": {
+        "template": "boxes",
+        "title": "Cache efficiency hits and misses",
+        "boxes": [
+          {
+            "id": "hits",
+            "label": "hits"
+          },
+          {
+            "id": "misses",
+            "label": "misses"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Querying databases repeatedly for identical records wastes CPU resources.",
+            "values": {
+              "hits": {
+                "text": "920"
+              },
+              "misses": {
+                "text": "80"
+              }
+            },
+            "tones": {
+              "hits": "data",
+              "misses": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Subsequent requests retrieve cached data directly from RAM in microseconds.",
+            "values": {
+              "hits": {
+                "text": "920"
+              },
+              "misses": {
+                "text": "80"
+              }
+            },
+            "tones": {
+              "hits": "ok",
+              "misses": "idle"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Strategic caching reduces database load by lowering API response latencies.",
+            "values": {
+              "hits": {
+                "text": "920"
+              },
+              "misses": {
+                "text": "80"
+              }
+            },
+            "tones": {
+              "hits": "ok",
+              "misses": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Cache efficiency hits and misses",
+        "boxes": [
+          {
+            "id": "hits",
+            "label": "hits"
+          },
+          {
+            "id": "misses",
+            "label": "misses"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Querying databases repeatedly for identical records wastes CPU resources.",
+            "values": {
+              "hits": "920",
+              "misses": "80"
+            },
+            "tones": {
+              "hits": "data",
+              "misses": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Subsequent requests retrieve cached data directly from RAM in microseconds.",
+            "values": {
+              "hits": "920",
+              "misses": "80"
+            },
+            "tones": {
+              "hits": "ok",
+              "misses": "idle"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Strategic caching reduces database load by lowering API response latencies.",
+            "values": {
+              "hits": "920",
+              "misses": "80"
+            },
+            "tones": {
+              "hits": "ok",
+              "misses": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cache-Aside (Lazy Loading) Pattern",
+      "codeHash": "e0c1241c89ecb331fbfbd4ad40d2c6ca70c4a0e24807dfeb7b305fcd481ff4d9",
+      "spec": {
+        "template": "boxes",
+        "title": "Cache-aside data retrieval resolution",
+        "boxes": [
+          {
+            "id": "jobId",
+            "label": "jobId"
+          },
+          {
+            "id": "source",
+            "label": "source"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In cache aside application code sits between the cache and the database.",
+            "values": {
+              "jobId": {
+                "text": "job_101"
+              },
+              "source": {
+                "text": "DATABASE"
+              }
+            },
+            "tones": {
+              "jobId": "data",
+              "source": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If the key exists the application returns the cached data immediately.",
+            "values": {
+              "jobId": {
+                "text": "job_101"
+              },
+              "source": {
+                "text": "CACHE"
+              }
+            },
+            "tones": {
+              "jobId": "ok",
+              "source": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Cache aside ensures only actively requested data is stored in memory.",
+            "values": {
+              "jobId": {
+                "text": "job_101"
+              },
+              "source": {
+                "text": "CACHE"
+              }
+            },
+            "tones": {
+              "jobId": "ok",
+              "source": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Cache-aside data retrieval resolution",
+        "boxes": [
+          {
+            "id": "jobId",
+            "label": "jobId"
+          },
+          {
+            "id": "source",
+            "label": "source"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In cache aside application code sits between the cache and the database.",
+            "values": {
+              "jobId": "job_101",
+              "source": "DATABASE"
+            },
+            "tones": {
+              "jobId": "data",
+              "source": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "If the key exists the application returns the cached data immediately.",
+            "values": {
+              "jobId": "job_101",
+              "source": "CACHE"
+            },
+            "tones": {
+              "jobId": "ok",
+              "source": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Cache aside ensures only actively requested data is stored in memory.",
+            "values": {
+              "jobId": "job_101",
+              "source": "CACHE"
+            },
+            "tones": {
+              "jobId": "ok",
+              "source": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TTL (Time-To-Live) Eviction Mechanics and Expiration",
+      "codeHash": "74bf567a85431e0481bbd80d2fda0778d04af02ded95f10a940285eae42dcdd9",
+      "spec": {
+        "template": "boxes",
+        "title": "TTL cache entry expiration timestamp",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "expires",
+            "label": "expiresAt"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "TTL specifies the lifespan of a cache entry in milliseconds.",
+            "values": {
+              "key": {
+                "text": "stats"
+              },
+              "expires": {
+                "text": "expiresAt"
+              }
+            },
+            "tones": {
+              "key": "data",
+              "expires": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "When an item is stored the cache calculates its expiration timestamp.",
+            "values": {
+              "key": {
+                "text": "stats"
+              },
+              "expires": {
+                "text": "expiresAt"
+              }
+            },
+            "tones": {
+              "key": "data",
+              "expires": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "In passive eviction the cache deletes the key when expiration has passed.",
+            "values": {
+              "key": {
+                "text": "stats"
+              },
+              "expires": {
+                "text": "expiresAt"
+              }
+            },
+            "tones": {
+              "key": "ok",
+              "expires": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "TTL cache entry expiration timestamp",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "expires",
+            "label": "expiresAt"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "TTL specifies the lifespan of a cache entry in milliseconds.",
+            "values": {
+              "key": "stats",
+              "expires": "expiresAt"
+            },
+            "tones": {
+              "key": "data",
+              "expires": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "When an item is stored the cache calculates its expiration timestamp.",
+            "values": {
+              "key": "stats",
+              "expires": "expiresAt"
+            },
+            "tones": {
+              "key": "data",
+              "expires": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "In passive eviction the cache deletes the key when expiration has passed.",
+            "values": {
+              "key": "stats",
+              "expires": "expiresAt"
+            },
+            "tones": {
+              "key": "ok",
+              "expires": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Key Design and Namespace Partitioning",
+      "codeHash": "99cacaa38acc2aefd09c8f7a36f5b439ba968d3b1e3d434683926812fe7b695b",
+      "spec": {
+        "template": "boxes",
+        "title": "Hierarchical cache key components",
+        "boxes": [
+          {
+            "id": "ns",
+            "label": "namespace"
+          },
+          {
+            "id": "entity",
+            "label": "entity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Professional backend architectures adopt strict cache key namespacing.",
+            "values": {
+              "ns": {
+                "text": "pinit"
+              },
+              "entity": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "ns": "data",
+              "entity": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Standardized cache keys follow a colon delimited hierarchical format.",
+            "values": {
+              "ns": {
+                "text": "pinit"
+              },
+              "entity": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "ns": "data",
+              "entity": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Namespacing prevents key collisions between different entity types.",
+            "values": {
+              "ns": {
+                "text": "pinit"
+              },
+              "entity": {
+                "text": "jobs"
+              }
+            },
+            "tones": {
+              "ns": "ok",
+              "entity": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Hierarchical cache key components",
+        "boxes": [
+          {
+            "id": "ns",
+            "label": "namespace"
+          },
+          {
+            "id": "entity",
+            "label": "entity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Professional backend architectures adopt strict cache key namespacing.",
+            "values": {
+              "ns": "pinit",
+              "entity": "jobs"
+            },
+            "tones": {
+              "ns": "data",
+              "entity": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Standardized cache keys follow a colon delimited hierarchical format.",
+            "values": {
+              "ns": "pinit",
+              "entity": "jobs"
+            },
+            "tones": {
+              "ns": "data",
+              "entity": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Namespacing prevents key collisions between different entity types.",
+            "values": {
+              "ns": "pinit",
+              "entity": "jobs"
+            },
+            "tones": {
+              "ns": "ok",
+              "entity": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation Strategies Upon Mutation (Write-Through vs Evict)",
+      "codeHash": "f5962276563884ee3a5ba85be8f26d020309c3f92da10a29c5121e55f0a73c4f",
+      "spec": {
+        "template": "boxes",
+        "title": "Cache eviction on database record update",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "val",
+            "label": "newDbValue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The central danger of caching is stale data persisting until expiration.",
+            "values": {
+              "key": {
+                "text": "job_1"
+              },
+              "val": {
+                "text": "Senior Engineer"
+              }
+            },
+            "tones": {
+              "key": "data",
+              "val": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "In eviction the server deletes the cache key when updating records.",
+            "values": {
+              "key": {
+                "text": "job_1"
+              },
+              "val": {
+                "text": "Staff Engineer"
+              }
+            },
+            "tones": {
+              "key": "data",
+              "val": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Eviction is preferred in distributed systems to prevent update races.",
+            "values": {
+              "key": {
+                "text": "job_1"
+              },
+              "val": {
+                "text": "Staff Engineer"
+              }
+            },
+            "tones": {
+              "key": "ok",
+              "val": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Cache eviction on database record update",
+        "boxes": [
+          {
+            "id": "key",
+            "label": "key"
+          },
+          {
+            "id": "val",
+            "label": "newDbValue"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The central danger of caching is stale data persisting until expiration.",
+            "values": {
+              "key": "job_1",
+              "val": "Senior Engineer"
+            },
+            "tones": {
+              "key": "data",
+              "val": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "In eviction the server deletes the cache key when updating records.",
+            "values": {
+              "key": "job_1",
+              "val": "Staff Engineer"
+            },
+            "tones": {
+              "key": "data",
+              "val": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Eviction is preferred in distributed systems to prevent update races.",
+            "values": {
+              "key": "job_1",
+              "val": "Staff Engineer"
+            },
+            "tones": {
+              "key": "ok",
+              "val": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a High-Performance In-Memory Cache with Hit/Miss Metrics",
+      "codeHash": "79967522f080c86a991381fa1a442a7b02d4ea01e0249545b74ea5a41a3087c3",
+      "spec": {
+        "template": "none",
+        "reason": "Building a high-performance in-memory cache with hit miss metrics"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building a high-performance in-memory cache with hit miss metrics"
+      }
+    }
+  ]
+}
