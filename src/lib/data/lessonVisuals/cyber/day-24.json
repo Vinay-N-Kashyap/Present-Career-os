@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cyber",
+  "day": 24,
+  "promptSha": "d60cb67cc1ceb13af5e89bdda4d3b8e64e91237f56ccbed16f7df68623b1eefb",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Enterprise Security Telemetry & SIEM Architecture",
+      "codeHash": "0c3db29639ca079c9faceb1869165f2ac5c2d08c65194ef972137fd2007af897",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise security telemetry ingestion and schema normalization pipeline",
+        "nodes": [
+          {
+            "id": "logCollector",
+            "label": "Endpoint Telemetry Agent",
+            "tappable": false
+          },
+          {
+            "id": "logParser",
+            "label": "ECS Schema Normalization Parser",
+            "tappable": false
+          },
+          {
+            "id": "indexEngine",
+            "label": "Search Indexing Engine",
+            "tappable": false
+          },
+          {
+            "id": "detectionRules",
+            "label": "Continuous Detection Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "logCollector",
+            "to": "logParser",
+            "label": "Streams"
+          },
+          {
+            "from": "logParser",
+            "to": "indexEngine",
+            "label": "Indexes"
+          },
+          {
+            "from": "indexEngine",
+            "to": "detectionRules",
+            "label": "Queries"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Log parsers normalize disparate events into standardized schemas.",
+            "activeNodes": [
+              "logCollector",
+              "logParser"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The SIEM executes search queries and continuous detection rules across logs.",
+            "activeNodes": [
+              "indexEngine",
+              "detectionRules"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Enterprise security telemetry ingestion and schema normalization pipeline",
+        "nodes": [
+          {
+            "id": "logCollector",
+            "label": "Endpoint Telemetry Agent",
+            "tappable": false
+          },
+          {
+            "id": "logParser",
+            "label": "ECS Schema Normalization Parser",
+            "tappable": false
+          },
+          {
+            "id": "indexEngine",
+            "label": "Search Indexing Engine",
+            "tappable": false
+          },
+          {
+            "id": "detectionRules",
+            "label": "Continuous Detection Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "logCollector",
+            "to": "logParser",
+            "label": "Streams"
+          },
+          {
+            "from": "logParser",
+            "to": "indexEngine",
+            "label": "Indexes"
+          },
+          {
+            "from": "indexEngine",
+            "to": "detectionRules",
+            "label": "Queries"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Log parsers normalize disparate events into standardized schemas.",
+            "activeNodes": [
+              "logCollector",
+              "logParser"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The SIEM executes search queries and continuous detection rules across logs.",
+            "activeNodes": [
+              "indexEngine",
+              "detectionRules"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Indicators of Compromise (IOC) Matching & Threat Intelligence",
+      "codeHash": "04fc8663056b80a97ff3bc560977ca7586ad726c1f83b79927431901d154099e",
+      "spec": {
+        "template": "table",
+        "title": "Threat intelligence Indicator of Compromise matching and detection rules",
+        "columns": [
+          "IOC Category",
+          "Threat Telemetry Source",
+          "Observed Artifact",
+          "Automated SOC Action"
+        ],
+        "rows": [
+          [
+            "Malicious IP Address",
+            "Threat Intelligence Feed",
+            "Outbound Host Connection",
+            "Firewall Block Rule Injected"
+          ],
+          [
+            "Malware File Hash",
+            "Threat Intelligence Feed",
+            "SHA Hash Executed on Host",
+            "Quarantine Process Immediately"
+          ],
+          [
+            "Command Domain Name",
+            "Threat Intelligence Feed",
+            "DNS Query from Workstation",
+            "Sinkhole Domain Resolution"
+          ],
+          [
+            "Phishing URL Link",
+            "Threat Intelligence Feed",
+            "Inbound Email Attachment",
+            "Purge Email Across Mailboxes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Common categories include malicious addresses and malware file hashes.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Matching malicious file hashes triggers automated containment actions.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Threat intelligence Indicator of Compromise matching and detection rules",
+        "columns": [
+          "IOC Category",
+          "Threat Telemetry Source",
+          "Observed Artifact",
+          "Automated SOC Action"
+        ],
+        "rows": [
+          [
+            "Malicious IP Address",
+            "Threat Intelligence Feed",
+            "Outbound Host Connection",
+            "Firewall Block Rule Injected"
+          ],
+          [
+            "Malware File Hash",
+            "Threat Intelligence Feed",
+            "SHA Hash Executed on Host",
+            "Quarantine Process Immediately"
+          ],
+          [
+            "Command Domain Name",
+            "Threat Intelligence Feed",
+            "DNS Query from Workstation",
+            "Sinkhole Domain Resolution"
+          ],
+          [
+            "Phishing URL Link",
+            "Threat Intelligence Feed",
+            "Inbound Email Attachment",
+            "Purge Email Across Mailboxes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Common categories include malicious addresses and malware file hashes.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Matching malicious file hashes triggers automated containment actions.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Event Correlation Engine: Detecting Brute Force to Privilege Escalation",
+      "codeHash": "56c5b18351eb23cb572fc263af0a2face23d434ad62793a1b9f7dab952b07a55",
+      "spec": {
+        "template": "states",
+        "title": "Multi-event correlation window detecting brute-force to privilege escalation",
+        "states": [
+          {
+            "id": "sshFailures",
+            "label": "Multiple Failed Authentication Attempts"
+          },
+          {
+            "id": "thresholdReached",
+            "label": "Threshold Exceeded in Sliding Window"
+          },
+          {
+            "id": "loginSucceeded",
+            "label": "Single Successful Login Occurs"
+          },
+          {
+            "id": "escalationCorrelated",
+            "label": "Immediate Sudo Privilege Escalation Detected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Correlation patterns detect failed logins followed by successful access.",
+            "activeStateId": "sshFailures",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Satisfying rule conditions creates high priority incidents in the window.",
+            "activeStateId": "escalationCorrelated",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Multi-event correlation window detecting brute-force to privilege escalation",
+        "states": [
+          {
+            "id": "sshFailures",
+            "label": "Multiple Failed Authentication Attempts"
+          },
+          {
+            "id": "thresholdReached",
+            "label": "Threshold Exceeded in Sliding Window"
+          },
+          {
+            "id": "loginSucceeded",
+            "label": "Single Successful Login Occurs"
+          },
+          {
+            "id": "escalationCorrelated",
+            "label": "Immediate Sudo Privilege Escalation Detected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Correlation patterns detect failed logins followed by successful access.",
+            "activeStateId": "sshFailures",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Satisfying rule conditions creates high priority incidents in the window.",
+            "activeStateId": "escalationCorrelated",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MITRE ATT&CK Framework Mapping & Automated Incident Triage",
+      "codeHash": "bb4a0e61bf96074cab031d4a437e945ca9eb520b99f68b5907ce01bcda7a4357",
+      "spec": {
+        "template": "table",
+        "title": "MITRE ATT&CK framework tactical matrix and technique classification",
+        "columns": [
+          "Adversary Tactic",
+          "Tactical Objective",
+          "Technique Identifier",
+          "Example Enterprise Activity"
+        ],
+        "rows": [
+          [
+            "Credential Access",
+            "Steal User Passwords",
+            "T1110 Brute Force",
+            "SSH Password Spraying Attempts"
+          ],
+          [
+            "Privilege Escalation",
+            "Acquire Administrator Rights",
+            "T1548 Sudo Abuse",
+            "Unauthorized Elevation Commands"
+          ],
+          [
+            "Defense Evasion",
+            "Hide Malicious Activity",
+            "T1070 Indicator Removal",
+            "Clearing Security Audit Logs"
+          ],
+          [
+            "Lateral Movement",
+            "Traverse Internal Network",
+            "T1021 Remote Services",
+            "RDP and SSH Internal Pivoting"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The framework organizes adversary activity into tactical phases.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Rules annotate incidents with corresponding technique and tactic names.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "MITRE ATT&CK framework tactical matrix and technique classification",
+        "columns": [
+          "Adversary Tactic",
+          "Tactical Objective",
+          "Technique Identifier",
+          "Example Enterprise Activity"
+        ],
+        "rows": [
+          [
+            "Credential Access",
+            "Steal User Passwords",
+            "T1110 Brute Force",
+            "SSH Password Spraying Attempts"
+          ],
+          [
+            "Privilege Escalation",
+            "Acquire Administrator Rights",
+            "T1548 Sudo Abuse",
+            "Unauthorized Elevation Commands"
+          ],
+          [
+            "Defense Evasion",
+            "Hide Malicious Activity",
+            "T1070 Indicator Removal",
+            "Clearing Security Audit Logs"
+          ],
+          [
+            "Lateral Movement",
+            "Traverse Internal Network",
+            "T1021 Remote Services",
+            "RDP and SSH Internal Pivoting"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The framework organizes adversary activity into tactical phases.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Rules annotate incidents with corresponding technique and tactic names.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sigma Detection Rules & Multi-SIEM Query Translation",
+      "codeHash": "0d7b29c15e25bb44105fae5c041ad14e7a79c40523847cf8f7cf3082d671011f",
+      "spec": {
+        "template": "compare",
+        "title": "Proprietary SIEM query lock-in versus open portable Sigma signatures",
+        "left": {
+          "title": "Vendor Proprietary Queries",
+          "items": [
+            "Locked into vendor specific query syntax and platforms",
+            "Migrating SIEM solutions requires rewriting thousands of rules",
+            "Incompatible across external threat intelligence communities"
+          ]
+        },
+        "right": {
+          "title": "Generic Open Sigma Rules",
+          "items": [
+            "YAML standardized syntax describing vendor neutral attacks",
+            "Compiler translates rules to Splunk Elastic and Sentinel",
+            "Decouples detection logic from underlying data stores"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sigma provides an open format for generic SIEM detection rules.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The compiler converts generic rules into native target query languages.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Proprietary SIEM query lock-in versus open portable Sigma signatures",
+        "left": {
+          "title": "Vendor Proprietary Queries",
+          "items": [
+            "Locked into vendor specific query syntax and platforms",
+            "Migrating SIEM solutions requires rewriting thousands of rules",
+            "Incompatible across external threat intelligence communities"
+          ]
+        },
+        "right": {
+          "title": "Generic Open Sigma Rules",
+          "items": [
+            "YAML standardized syntax describing vendor neutral attacks",
+            "Compiler translates rules to Splunk Elastic and Sentinel",
+            "Decouples detection logic from underlying data stores"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sigma provides an open format for generic SIEM detection rules.",
+            "highlightSide": "right",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The compiler converts generic rules into native target query languages.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Incident Alert Prioritization & SOAR Playbook Execution",
+      "codeHash": "476d843c52bac34d65b00a477a2625a52cfdbc609848e7b6e3b734a605f1af46",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
