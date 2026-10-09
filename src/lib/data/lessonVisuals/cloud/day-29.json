@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 29,
+  "promptSha": "fed2605b286ba0c2a3453c4149a789ec664f1607a6c2ff81943ae8faae76fd6f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "RTO vs RPO: Defining Recovery Objectives",
+      "codeHash": "471211e3c7ccbe1acd484b0ab2eccce8341e12880a088c18b4c01a4dfd05425d",
+      "spec": {
+        "template": "compare",
+        "title": "Recovery Time Objective (RTO) compared to Recovery Point Objective (RPO)",
+        "leftLabel": "Recovery Time Objective (RTO)",
+        "rightLabel": "Recovery Point Objective (RPO)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recovery time objective defines acceptable duration of downtime.",
+            "left": {
+              "code": "Focus: Downtime Duration",
+              "result": {
+                "text": "Time Until Restored"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Focus: Data Loss Age",
+              "result": {
+                "text": "Last Backup Timestamp"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Recovery point objective defines acceptable amount of data loss.",
+            "left": {
+              "code": "kpi: \"Hours to Minutes\"",
+              "result": {
+                "text": "System Availability Target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kpi: \"Zero to Hours\"",
+              "result": {
+                "text": "Data Persistence Target"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recovery Time Objective (RTO) compared to Recovery Point Objective (RPO)",
+        "leftLabel": "Recovery Time Objective (RTO)",
+        "rightLabel": "Recovery Point Objective (RPO)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recovery time objective defines acceptable duration of downtime.",
+            "left": {
+              "code": "Focus: Downtime Duration",
+              "result": {
+                "text": "Time Until Restored"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Focus: Data Loss Age",
+              "result": {
+                "text": "Last Backup Timestamp"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Recovery point objective defines acceptable amount of data loss.",
+            "left": {
+              "code": "kpi: \"Hours to Minutes\"",
+              "result": {
+                "text": "System Availability Target"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kpi: \"Zero to Hours\"",
+              "result": {
+                "text": "Data Persistence Target"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backup & Restore: The Foundation DR Strategy",
+      "codeHash": "fc1cb2da3bb681ff0ed520a7cff3c0ba12e37ba5e379bdbbb36c167b91a0f930",
+      "spec": {
+        "template": "workflow",
+        "title": "Backup and restore disaster recovery orchestration pipeline",
+        "stages": [
+          {
+            "id": "prodRegion",
+            "name": "Primary Region Active",
+            "subtext": "Running Workloads"
+          },
+          {
+            "id": "snapshotS3",
+            "name": "Automated Snapshots",
+            "subtext": "Cross-Region S3 Copy"
+          },
+          {
+            "id": "disasterTrigger",
+            "name": "Disaster Detected",
+            "subtext": "Initiate Restore Runbook"
+          },
+          {
+            "id": "drRestore",
+            "name": "Restore DB & AMIs",
+            "subtext": "Boot Cold Instances"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "During normal operations no infrastructure runs in the disaster region.",
+            "activeStageId": "snapshotS3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "AWS Backup automates scheduling, retention, and cross-region copies.",
+            "activeStageId": "drRestore",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Backup and restore disaster recovery orchestration pipeline",
+        "stages": [
+          {
+            "id": "prodRegion",
+            "name": "Primary Region Active",
+            "subtext": "Running Workloads"
+          },
+          {
+            "id": "snapshotS3",
+            "name": "Automated Snapshots",
+            "subtext": "Cross-Region S3 Copy"
+          },
+          {
+            "id": "disasterTrigger",
+            "name": "Disaster Detected",
+            "subtext": "Initiate Restore Runbook"
+          },
+          {
+            "id": "drRestore",
+            "name": "Restore DB & AMIs",
+            "subtext": "Boot Cold Instances"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "During normal operations no infrastructure runs in the disaster region.",
+            "activeStageId": "snapshotS3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "AWS Backup automates scheduling, retention, and cross-region copies.",
+            "activeStageId": "drRestore",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pilot Light: Core Services Always Running",
+      "codeHash": "754a1ec751c5f146a131fe79f9482c35ca7103455275c0edf81fe86c18861fb5",
+      "spec": {
+        "template": "states",
+        "title": "Pilot light core database replication and compute promotion states",
+        "states": [
+          {
+            "id": "dbReplicating",
+            "label": "Aurora Database Continuously Replicating"
+          },
+          {
+            "id": "computeCold",
+            "label": "Compute Layer Scaled to Zero"
+          },
+          {
+            "id": "dbPromoted",
+            "label": "Aurora Promoted to Standalone Primary"
+          },
+          {
+            "id": "computeBooted",
+            "label": "Compute Instances Spun Up"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In pilot light core database services are kept running with replication.",
+            "active": "dbReplicating"
+          },
+          {
+            "at": "say5",
+            "caption": "The recovery process provisions compute and promotes the replica to primary.",
+            "active": "dbPromoted"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Pilot light core database replication and compute promotion states",
+        "states": [
+          {
+            "id": "dbReplicating",
+            "label": "Aurora Database Continuously Replicating"
+          },
+          {
+            "id": "computeCold",
+            "label": "Compute Layer Scaled to Zero"
+          },
+          {
+            "id": "dbPromoted",
+            "label": "Aurora Promoted to Standalone Primary"
+          },
+          {
+            "id": "computeBooted",
+            "label": "Compute Instances Spun Up"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In pilot light core database services are kept running with replication.",
+            "active": "dbReplicating"
+          },
+          {
+            "at": "say5",
+            "caption": "The recovery process provisions compute and promotes the replica to primary.",
+            "active": "dbPromoted"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Warm Standby: Scaled-Down Live Replica",
+      "codeHash": "ff32a32436e4288fef9ac49bcf160f15ddba53d8ca7a64b7b688328f77e340d7",
+      "spec": {
+        "template": "bars",
+        "title": "Warm standby scaled-down replica capacity and failover scaling",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The warm standby region maintains a fraction of production capacity.",
+            "bars": [
+              {
+                "label": "Primary Production Fleet",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              },
+              {
+                "label": "Warm Standby Minimal Fleet",
+                "value": 4,
+                "max": 20,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Recovery involves scaling the compute fleet and switching traffic.",
+            "bars": [
+              {
+                "label": "Scaled Warm Standby Fleet",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              },
+              {
+                "label": "Failover Traffic Handled",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Warm standby scaled-down replica capacity and failover scaling",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The warm standby region maintains a fraction of production capacity.",
+            "bars": [
+              {
+                "label": "Primary Production Fleet",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              },
+              {
+                "label": "Warm Standby Minimal Fleet",
+                "value": 4,
+                "max": 20,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Recovery involves scaling the compute fleet and switching traffic.",
+            "bars": [
+              {
+                "label": "Scaled Warm Standby Fleet",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              },
+              {
+                "label": "Failover Traffic Handled",
+                "value": 20,
+                "max": 20,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Site Active-Active & Route 53 Automated Failover",
+      "codeHash": "73f8ee453283af5d1f1c88eb56ab1c609ed1dc1d10ec9f544661a31cfe472a47",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise disaster recovery strategy tier comparisons",
+        "columns": [
+          "DR Strategy Tier",
+          "Typical RTO",
+          "Typical RPO",
+          "Relative Infrastructure Cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In active active both regions serve live traffic with distributed routing.",
+            "rows": [
+              [
+                {
+                  "text": "Backup & Restore",
+                  "tone": "data"
+                },
+                {
+                  "text": "2 to 24 Hours",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Hours to 1 Day",
+                  "tone": "idle"
+                },
+                {
+                  "text": "< 10% Production Cost",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Pilot Light",
+                  "tone": "data"
+                },
+                {
+                  "text": "10 to 30 Minutes",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Sub-Second DB Lag",
+                  "tone": "ok"
+                },
+                {
+                  "text": "10% to 25% Production Cost",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Health checks detect outages and automatically stop routing traffic.",
+            "rows": [
+              [
+                {
+                  "text": "Warm Standby",
+                  "tone": "data"
+                },
+                {
+                  "text": "1 to 5 Minutes",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Sub-Second DB Lag",
+                  "tone": "ok"
+                },
+                {
+                  "text": "25% to 50% Production Cost",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Active-Active",
+                  "tone": "data"
+                },
+                {
+                  "text": "Near-Zero (< 1 Min)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Zero (Global Tables)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "100% to 200% Cost",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise disaster recovery strategy tier comparisons",
+        "columns": [
+          "DR Strategy Tier",
+          "Typical RTO",
+          "Typical RPO",
+          "Relative Infrastructure Cost"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "In active active both regions serve live traffic with distributed routing.",
+            "rows": [
+              [
+                {
+                  "text": "Backup & Restore",
+                  "tone": "data"
+                },
+                {
+                  "text": "2 to 24 Hours",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Hours to 1 Day",
+                  "tone": "idle"
+                },
+                {
+                  "text": "< 10% Production Cost",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Pilot Light",
+                  "tone": "data"
+                },
+                {
+                  "text": "10 to 30 Minutes",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Sub-Second DB Lag",
+                  "tone": "ok"
+                },
+                {
+                  "text": "10% to 25% Production Cost",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Health checks detect outages and automatically stop routing traffic.",
+            "rows": [
+              [
+                {
+                  "text": "Warm Standby",
+                  "tone": "data"
+                },
+                {
+                  "text": "1 to 5 Minutes",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Sub-Second DB Lag",
+                  "tone": "ok"
+                },
+                {
+                  "text": "25% to 50% Production Cost",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Active-Active",
+                  "tone": "data"
+                },
+                {
+                  "text": "Near-Zero (< 1 Min)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Zero (Global Tables)",
+                  "tone": "ok"
+                },
+                {
+                  "text": "100% to 200% Cost",
+                  "tone": "idle"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise DR Strategy Comparison & Selection Framework",
+      "codeHash": "36806e09d6d30cbe527468be7c36b61f2ab3029076b57d0f203e45db0dc4bde4",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
