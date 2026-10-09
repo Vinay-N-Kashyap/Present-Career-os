@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 2,
+  "promptSha": "7e70ee0d56bda38c6629bcf8906199a6bf8a19e19811e821cae9246eac70e0dd",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AWS Regions and Data Sovereignty",
+      "codeHash": "d7d4c59a37f37832ab12b151e678b3e1d7b72b464279673d542f3bccb16ec850",
+      "spec": {
+        "template": "workflow",
+        "title": "AWS Region geographic architecture and zone clustering",
+        "stages": [
+          {
+            "id": "geography",
+            "name": "Geography",
+            "subtext": "Continent"
+          },
+          {
+            "id": "region",
+            "name": "Target Region",
+            "subtext": "Jurisdiction"
+          },
+          {
+            "id": "zoneA",
+            "name": "Zone A",
+            "subtext": "Datacenter"
+          },
+          {
+            "id": "zoneB",
+            "name": "Zone B",
+            "subtext": "Datacenter"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS regions comprise isolated datacenters within separate territory.",
+            "activeStageId": "region",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Compliance mandates data sovereignty requiring citizen data stay in Europe.",
+            "activeStageId": "zoneA",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "AWS Region geographic architecture and zone clustering",
+        "stages": [
+          {
+            "id": "geography",
+            "name": "Geography",
+            "subtext": "Continent"
+          },
+          {
+            "id": "region",
+            "name": "Target Region",
+            "subtext": "Jurisdiction"
+          },
+          {
+            "id": "zoneA",
+            "name": "Zone A",
+            "subtext": "Datacenter"
+          },
+          {
+            "id": "zoneB",
+            "name": "Zone B",
+            "subtext": "Datacenter"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "AWS regions comprise isolated datacenters within separate territory.",
+            "activeStageId": "region",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Compliance mandates data sovereignty requiring citizen data stay in Europe.",
+            "activeStageId": "zoneA",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Availability Zones: The Building Blocks of High Availability",
+      "codeHash": "ac7ece069841bc597de71ed1a4b741a66d83709a425d2c51f61f60bcd2d1b137",
+      "spec": {
+        "template": "workflow",
+        "title": "Availability zone physical separation and metro fiber connectivity",
+        "stages": [
+          {
+            "id": "datacenter1",
+            "name": "Zone Primary",
+            "subtext": "Redundant Power"
+          },
+          {
+            "id": "metrofiber",
+            "name": "Metro Fiber",
+            "subtext": "Ultra Low Latency"
+          },
+          {
+            "id": "datacenter2",
+            "name": "Zone Secondary",
+            "subtext": "Flood Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Availability zones consist of physical datacenters with redundant power.",
+            "activeStageId": "datacenter1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Availability zones interconnect through private dark fiber optical networks.",
+            "activeStageId": "metrofiber",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Availability zone physical separation and metro fiber connectivity",
+        "stages": [
+          {
+            "id": "datacenter1",
+            "name": "Zone Primary",
+            "subtext": "Redundant Power"
+          },
+          {
+            "id": "metrofiber",
+            "name": "Metro Fiber",
+            "subtext": "Ultra Low Latency"
+          },
+          {
+            "id": "datacenter2",
+            "name": "Zone Secondary",
+            "subtext": "Flood Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Availability zones consist of physical datacenters with redundant power.",
+            "activeStageId": "datacenter1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Availability zones interconnect through private dark fiber optical networks.",
+            "activeStageId": "metrofiber",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Locations and the AWS Global Backbone",
+      "codeHash": "0c94e7be88a257646e2b062d9765efdf93026df5c2661c5e7965bf3aa5624878",
+      "spec": {
+        "template": "sequence",
+        "title": "Edge location request routing across AWS global backbone",
+        "actors": [
+          {
+            "id": "client",
+            "name": "End User"
+          },
+          {
+            "id": "edge",
+            "name": "Edge Location"
+          },
+          {
+            "id": "origin",
+            "name": "Origin Datacenter"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Requests terminate at nearest edge location caching static distributions.",
+            "from": "client",
+            "to": "edge",
+            "label": "HTTP Request",
+            "tone": "data"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic travels over private fiber optic backbone rather than public internet.",
+            "from": "edge",
+            "to": "origin",
+            "label": "Backbone Fiber",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Edge location request routing across AWS global backbone",
+        "actors": [
+          {
+            "id": "client",
+            "name": "End User"
+          },
+          {
+            "id": "edge",
+            "name": "Edge Location"
+          },
+          {
+            "id": "origin",
+            "name": "Origin Datacenter"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Requests terminate at nearest edge location caching static distributions.",
+            "from": "client",
+            "to": "edge",
+            "label": "HTTP Request",
+            "tone": "data"
+          },
+          {
+            "at": "say8",
+            "caption": "Traffic travels over private fiber optic backbone rather than public internet.",
+            "from": "edge",
+            "to": "origin",
+            "label": "Backbone Fiber",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-AZ High Availability vs Single-AZ Vulnerability",
+      "codeHash": "1a57d7c94361d84f5d9111b3fb41f528824a5512795a7d15134dc5f539d3f8a8",
+      "spec": {
+        "template": "compare",
+        "title": "Single availability zone compared to multi zone architecture",
+        "leftLabel": "Single-AZ Architecture",
+        "rightLabel": "Multi-AZ Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deploying within single availability zone creates unacceptable failure point.",
+            "left": {
+              "code": "Single Zone Deployment",
+              "result": {
+                "text": "Single Point of Failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multi Zone Redundancy",
+              "result": {
+                "text": "Fault Tolerant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Load balancer detects unhealthy targets steering traffic to healthy zones.",
+            "left": {
+              "code": "Outage Downtime Risk",
+              "result": {
+                "text": "Outage"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Application Load Balancer",
+              "result": {
+                "text": "Healthy Targets"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single availability zone compared to multi zone architecture",
+        "leftLabel": "Single-AZ Architecture",
+        "rightLabel": "Multi-AZ Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deploying within single availability zone creates unacceptable failure point.",
+            "left": {
+              "code": "Single Zone Deployment",
+              "result": {
+                "text": "Single Point of Failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multi Zone Redundancy",
+              "result": {
+                "text": "Fault Tolerant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Load balancer detects unhealthy targets steering traffic to healthy zones.",
+            "left": {
+              "code": "Outage Downtime Risk",
+              "result": {
+                "text": "Outage"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Application Load Balancer",
+              "result": {
+                "text": "Healthy Targets"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Region Replication & Disaster Recovery Topology",
+      "codeHash": "01500140166313d89917afc85e80c9f18701781ed641f0317d9f8cbe62ea9e21",
+      "spec": {
+        "template": "states",
+        "title": "Cross-region replication disaster recovery lifecycle states",
+        "states": [
+          {
+            "id": "primary",
+            "label": "Primary Region Active"
+          },
+          {
+            "id": "sync",
+            "label": "Cross Region Sync"
+          },
+          {
+            "id": "failover",
+            "label": "Disaster Recovery Failover"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Architects implement cross region replication satisfying continuity mandates.",
+            "active": "sync"
+          },
+          {
+            "at": "say8",
+            "caption": "Maximum acceptable duration of downtime defines recovery time objectives.",
+            "active": "failover"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Cross-region replication disaster recovery lifecycle states",
+        "states": [
+          {
+            "id": "primary",
+            "label": "Primary Region Active"
+          },
+          {
+            "id": "sync",
+            "label": "Cross Region Sync"
+          },
+          {
+            "id": "failover",
+            "label": "Disaster Recovery Failover"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Architects implement cross region replication satisfying continuity mandates.",
+            "active": "sync"
+          },
+          {
+            "at": "say8",
+            "caption": "Maximum acceptable duration of downtime defines recovery time objectives.",
+            "active": "failover"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regional Service Scopes vs Global AWS Services",
+      "codeHash": "e990f70c2b38757c3bf84555b9f5ea7512c33b307427451991ed385841eb8f29",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
