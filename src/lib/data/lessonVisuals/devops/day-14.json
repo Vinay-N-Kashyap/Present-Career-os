@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 14,
+  "promptSha": "9f63435b5cc915e1068f7f1cf40ce422a4a4d22647161d3555e2bdabfd7e0eb2",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Post-Deployment Verification: The Role of Smoke Testing",
+      "codeHash": "012f7ff76c57a6f7c90e289b4b999bdb5f9d6cdaec73dd0503658ad72a5fb9bd",
+      "spec": {
+        "template": "compare",
+        "title": "Post-deployment HTTP smoke test verification probes",
+        "leftLabel": "Health Endpoint (/healthz)",
+        "rightLabel": "Status Endpoint (/api/v1/status)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Smoke tests execute minimal end-to-end checks immediately after deployment.",
+            "left": {
+              "code": "endpoint: '/healthz'",
+              "result": {
+                "text": "/healthz"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: '/api/v1/status'",
+              "result": {
+                "text": "/api/v1/status"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Failed smoke test suites immediately trigger automated fast rollbacks.",
+            "left": {
+              "code": "endpoint: '/ready'",
+              "result": {
+                "text": "/ready"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "runSmokeTest",
+              "result": {
+                "text": "/healthz"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Post-deployment HTTP smoke test verification probes",
+        "leftLabel": "Health Endpoint (/healthz)",
+        "rightLabel": "Status Endpoint (/api/v1/status)",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Smoke tests execute minimal end-to-end checks immediately after deployment.",
+            "left": {
+              "code": "endpoint: '/healthz'",
+              "result": {
+                "text": "/healthz"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: '/api/v1/status'",
+              "result": {
+                "text": "/api/v1/status"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Failed smoke test suites immediately trigger automated fast rollbacks.",
+            "left": {
+              "code": "endpoint: '/ready'",
+              "result": {
+                "text": "/ready"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "runSmokeTest",
+              "result": {
+                "text": "/healthz"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shallow vs Deep Healthchecks: Avoiding Cascades",
+      "codeHash": "f31168848a4d38a97844cc2eda4710d35568a3c2b5ff714782d50bb8d5156690",
+      "spec": {
+        "template": "compare",
+        "title": "Shallow process liveness versus deep downstream readiness",
+        "leftLabel": "Healthy Downstream State",
+        "rightLabel": "Degraded Dependency State",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Shallow probes verify that application process event loops remain unblocked.",
+            "left": {
+              "code": "checks.postgres: 'HEALTHY'",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "checks.postgres: 'UNHEALTHY'",
+              "result": {
+                "text": "UNHEALTHY"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Deep probes validate downstream database and cache connection readiness.",
+            "left": {
+              "code": "overallStatus: 200",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overallStatus: 503",
+              "result": {
+                "text": "UNHEALTHY"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Shallow process liveness versus deep downstream readiness",
+        "leftLabel": "Healthy Downstream State",
+        "rightLabel": "Degraded Dependency State",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Shallow probes verify that application process event loops remain unblocked.",
+            "left": {
+              "code": "checks.postgres: 'HEALTHY'",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "checks.postgres: 'UNHEALTHY'",
+              "result": {
+                "text": "UNHEALTHY"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Deep probes validate downstream database and cache connection readiness.",
+            "left": {
+              "code": "overallStatus: 200",
+              "result": {
+                "text": "HEALTHY"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overallStatus: 503",
+              "result": {
+                "text": "UNHEALTHY"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synthetic User Transactions: Simulating Critical Paths",
+      "codeHash": "9e57c1e18aec876cc7e60b66468c9fc65c876db0890318dcfd8c44aa6f999357",
+      "spec": {
+        "template": "workflow",
+        "title": "Synthetic end-to-end user transaction critical path stages",
+        "stages": [
+          {
+            "id": "auth",
+            "name": "Auth",
+            "subtext": "Authenticate User"
+          },
+          {
+            "id": "query",
+            "name": "Catalog",
+            "subtext": "Query Inventory"
+          },
+          {
+            "id": "cart",
+            "name": "Cart",
+            "subtext": "Add Item"
+          },
+          {
+            "id": "checkout",
+            "name": "Checkout",
+            "subtext": "Sandbox Payment"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Synthetic probes simulate complete end-to-end user transactions on staging.",
+            "activeStageId": "auth",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say9",
+            "caption": "Transaction completion confirms live environment is functional for users.",
+            "activeStageId": "checkout",
+            "statusBadge": "passed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Synthetic end-to-end user transaction critical path stages",
+        "stages": [
+          {
+            "id": "auth",
+            "name": "Auth",
+            "subtext": "Authenticate User"
+          },
+          {
+            "id": "query",
+            "name": "Catalog",
+            "subtext": "Query Inventory"
+          },
+          {
+            "id": "cart",
+            "name": "Cart",
+            "subtext": "Add Item"
+          },
+          {
+            "id": "checkout",
+            "name": "Checkout",
+            "subtext": "Sandbox Payment"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Synthetic probes simulate complete end-to-end user transactions on staging.",
+            "activeStageId": "auth",
+            "statusBadge": "passed"
+          },
+          {
+            "at": "say9",
+            "caption": "Transaction completion confirms live environment is functional for users.",
+            "activeStageId": "checkout",
+            "statusBadge": "passed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast-Abort Rollback Triggers & Automated Recovery",
+      "codeHash": "c8472f89c08a7babf3495bb9aefff5dfe5fbe30525a7947bbdb3d9fa6d7a5f8e",
+      "spec": {
+        "template": "states",
+        "title": "Automated post-deployment recovery fast-abort rollback states",
+        "states": [
+          {
+            "id": "confirmed",
+            "label": "CONFIRMED"
+          },
+          {
+            "id": "rolled_back",
+            "label": "ROLLED_BACK"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pipeline monitors post-deployment smoke test outcomes within evaluation window.",
+            "currentState": "confirmed",
+            "transition": {
+              "from": "confirmed",
+              "to": "confirmed",
+              "label": "CONFIRMED"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Failing smoke tests abort rollout immediately executing fast recovery.",
+            "currentState": "rolled_back",
+            "transition": {
+              "from": "confirmed",
+              "to": "rolled_back",
+              "label": "ROLLED_BACK"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Automated post-deployment recovery fast-abort rollback states",
+        "states": [
+          {
+            "id": "confirmed",
+            "label": "CONFIRMED"
+          },
+          {
+            "id": "rolled_back",
+            "label": "ROLLED_BACK"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pipeline monitors post-deployment smoke test outcomes within evaluation window.",
+            "currentState": "confirmed",
+            "transition": {
+              "from": "confirmed",
+              "to": "confirmed",
+              "label": "CONFIRMED"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Failing smoke tests abort rollout immediately executing fast recovery.",
+            "currentState": "rolled_back",
+            "transition": {
+              "from": "confirmed",
+              "to": "rolled_back",
+              "label": "ROLLED_BACK"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Canary Traffic Verification & Error Rate Comparisons",
+      "codeHash": "bff9fb7b73a56f3fa9be716d668b8aa1442e942624bc98c083b960ea44297573",
+      "spec": {
+        "template": "compare",
+        "title": "Baseline production cohort versus canary deployment traffic evaluation",
+        "leftLabel": "Baseline Cohort (95%)",
+        "rightLabel": "Canary Cohort (5%)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Canary versions receive small traffic fractions limiting potential disruption.",
+            "left": {
+              "code": "cohort: 'Baseline (v1.0)'",
+              "result": {
+                "text": "Baseline (v1.0)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cohort: 'Canary (v1.1)'",
+              "result": {
+                "text": "Canary (v1.1)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Error rates within bounds allow gradual traffic promotion toward all servers.",
+            "left": {
+              "code": "evaluateCanarySafety",
+              "result": {
+                "text": "Baseline (v1.0)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "decision.promote",
+              "result": {
+                "text": "Canary (v1.1)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Baseline production cohort versus canary deployment traffic evaluation",
+        "leftLabel": "Baseline Cohort (95%)",
+        "rightLabel": "Canary Cohort (5%)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Canary versions receive small traffic fractions limiting potential disruption.",
+            "left": {
+              "code": "cohort: 'Baseline (v1.0)'",
+              "result": {
+                "text": "Baseline (v1.0)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "cohort: 'Canary (v1.1)'",
+              "result": {
+                "text": "Canary (v1.1)"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Error rates within bounds allow gradual traffic promotion toward all servers.",
+            "left": {
+              "code": "evaluateCanarySafety",
+              "result": {
+                "text": "Baseline (v1.0)"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "decision.promote",
+              "result": {
+                "text": "Canary (v1.1)"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Incident Notification & Webhook Dispatch Automation",
+      "codeHash": "0e0aeadfdf137cf7aabce2bc7d35c3092a77220214ae18464f04749d6cceeca0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
