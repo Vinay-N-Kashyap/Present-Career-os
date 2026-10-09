@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 4,
+  "promptSha": "cd96fa390e499b544a6a5e5ed74d878d632b665081eb95d06b16101e4f8d4672",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Security Groups: Stateful Instance-Level Firewalls",
+      "codeHash": "ad7efcf599a3f1268846550f9dab29a6577c5ae5643bfb2dc819377746aa2bbe",
+      "spec": {
+        "template": "states",
+        "title": "Stateful firewall connection tracking lifecycle",
+        "states": [
+          {
+            "id": "inbound",
+            "label": "Inbound Evaluation"
+          },
+          {
+            "id": "tracked",
+            "label": "Connection State Tracked"
+          },
+          {
+            "id": "outbound",
+            "label": "Automatic Outbound Return"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Security groups inspect network traffic directly at interface layers.",
+            "active": "inbound"
+          },
+          {
+            "at": "say6",
+            "caption": "Stateful firewalls automatically allow response traffic return.",
+            "active": "outbound"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Stateful firewall connection tracking lifecycle",
+        "states": [
+          {
+            "id": "inbound",
+            "label": "Inbound Evaluation"
+          },
+          {
+            "id": "tracked",
+            "label": "Connection State Tracked"
+          },
+          {
+            "id": "outbound",
+            "label": "Automatic Outbound Return"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Security groups inspect network traffic directly at interface layers.",
+            "active": "inbound"
+          },
+          {
+            "at": "say6",
+            "caption": "Stateful firewalls automatically allow response traffic return.",
+            "active": "outbound"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Security Group Chaining and Source Referencing",
+      "codeHash": "c005d9ee630932bde993aa52fbccd78148f9e46ed6bcb4f15cf1287dcfece1e7",
+      "spec": {
+        "template": "workflow",
+        "title": "Security group chaining and source group referencing",
+        "stages": [
+          {
+            "id": "internetClient",
+            "name": "External Client",
+            "subtext": "Public Traffic"
+          },
+          {
+            "id": "albSg",
+            "name": "ALB Security Group",
+            "subtext": "Inbound Port 443"
+          },
+          {
+            "id": "appSg",
+            "name": "App Security Group",
+            "subtext": "Referenced Source"
+          },
+          {
+            "id": "dbSg",
+            "name": "DB Security Group",
+            "subtext": "Restricted Port 5432"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Security group chaining specifies source security groups cleanly.",
+            "activeStageId": "appSg",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Database security groups set inbound source rules referencing web groups.",
+            "activeStageId": "dbSg",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Security group chaining and source group referencing",
+        "stages": [
+          {
+            "id": "internetClient",
+            "name": "External Client",
+            "subtext": "Public Traffic"
+          },
+          {
+            "id": "albSg",
+            "name": "ALB Security Group",
+            "subtext": "Inbound Port 443"
+          },
+          {
+            "id": "appSg",
+            "name": "App Security Group",
+            "subtext": "Referenced Source"
+          },
+          {
+            "id": "dbSg",
+            "name": "DB Security Group",
+            "subtext": "Restricted Port 5432"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Security group chaining specifies source security groups cleanly.",
+            "activeStageId": "appSg",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Database security groups set inbound source rules referencing web groups.",
+            "activeStageId": "dbSg",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Access Control Lists (NACLs): Stateless Subnet Firewalls",
+      "codeHash": "0e69b22e997782af9c8ccb298dcf6af763fcae6329e1f199efc8ef1003f95f55",
+      "spec": {
+        "template": "compare",
+        "title": "Instance security groups compared to subnet NACLs",
+        "leftLabel": "Security Groups (Stateful)",
+        "rightLabel": "NACLs (Stateless)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "NACL operates as perimeter packet filter at subnet boundaries.",
+            "left": {
+              "code": "Stateful Instance Firewall",
+              "result": {
+                "text": "Security Group"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Stateless Perimeter Filter",
+              "result": {
+                "text": "NACL"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Stateless firewalls must explicitly permit return response traffic.",
+            "left": {
+              "code": "Implicit Return Allowed",
+              "result": {
+                "text": "State Tracked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Explicit Outbound Required",
+              "result": {
+                "text": "Stateless"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Instance security groups compared to subnet NACLs",
+        "leftLabel": "Security Groups (Stateful)",
+        "rightLabel": "NACLs (Stateless)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "NACL operates as perimeter packet filter at subnet boundaries.",
+            "left": {
+              "code": "Stateful Instance Firewall",
+              "result": {
+                "text": "Security Group"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Stateless Perimeter Filter",
+              "result": {
+                "text": "NACL"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Stateless firewalls must explicitly permit return response traffic.",
+            "left": {
+              "code": "Implicit Return Allowed",
+              "result": {
+                "text": "State Tracked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Explicit Outbound Required",
+              "result": {
+                "text": "Stateless"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NACL Rule Evaluation and Numbered Priority",
+      "codeHash": "6c9379339e7a2f600cf6f738eee7a5f981fd80691cc97ee546c00c0d0ff3d790",
+      "spec": {
+        "template": "table",
+        "title": "NACL numbered rule priority and evaluation order",
+        "columns": [
+          "Rule Number",
+          "Traffic Protocol",
+          "Port Range",
+          "Rule Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "NACL rules evaluate in strict ascending numerical order from lowest.",
+            "rows": [
+              [
+                {
+                  "text": "Rule 100",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 443",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Rule 200",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 80",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "First rule that matches packet immediately decides outcome.",
+            "rows": [
+              [
+                {
+                  "text": "Rule 50",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "DENY (Malicious IP)",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Rule 100",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 443",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Rule Asterisk",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "DENY",
+                  "tone": "error"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "NACL numbered rule priority and evaluation order",
+        "columns": [
+          "Rule Number",
+          "Traffic Protocol",
+          "Port Range",
+          "Rule Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "NACL rules evaluate in strict ascending numerical order from lowest.",
+            "rows": [
+              [
+                {
+                  "text": "Rule 100",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 443",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Rule 200",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 80",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "First rule that matches packet immediately decides outcome.",
+            "rows": [
+              [
+                {
+                  "text": "Rule 50",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "DENY (Malicious IP)",
+                  "tone": "error"
+                }
+              ],
+              [
+                {
+                  "text": "Rule 100",
+                  "tone": "data"
+                },
+                {
+                  "text": "TCP",
+                  "tone": "idle"
+                },
+                {
+                  "text": "Port 443",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALLOW",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "Rule Asterisk",
+                  "tone": "data"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "ALL",
+                  "tone": "idle"
+                },
+                {
+                  "text": "DENY",
+                  "tone": "error"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ephemeral Port Management in Stateless Firewalls",
+      "codeHash": "9b3f6777c6a221628507191d47c66c2508a1ea6bb63564c59cd79020b476ef21",
+      "spec": {
+        "template": "sequence",
+        "title": "Stateless firewall ephemeral port communication lifecycle",
+        "actors": [
+          {
+            "id": "browser",
+            "name": "Web Client"
+          },
+          {
+            "id": "nacl",
+            "name": "Subnet NACL"
+          },
+          {
+            "id": "webserver",
+            "name": "Web Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Client initiates HTTPS connection to web server receiving response back.",
+            "from": "browser",
+            "to": "webserver",
+            "label": "Inbound Port 443",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Subnet outbound NACL must explicitly allow traffic to ephemeral ports.",
+            "from": "webserver",
+            "to": "browser",
+            "label": "Ephemeral Return",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Stateless firewall ephemeral port communication lifecycle",
+        "actors": [
+          {
+            "id": "browser",
+            "name": "Web Client"
+          },
+          {
+            "id": "nacl",
+            "name": "Subnet NACL"
+          },
+          {
+            "id": "webserver",
+            "name": "Web Server"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Client initiates HTTPS connection to web server receiving response back.",
+            "from": "browser",
+            "to": "webserver",
+            "label": "Inbound Port 443",
+            "tone": "data"
+          },
+          {
+            "at": "say5",
+            "caption": "Subnet outbound NACL must explicitly allow traffic to ephemeral ports.",
+            "from": "webserver",
+            "to": "browser",
+            "label": "Ephemeral Return",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defense-in-Depth: Combining NACLs and Security Groups",
+      "codeHash": "78803a1c1311bc73f95ee59db06a81adb016db0c8f8b59af3e377b82e643521a",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
