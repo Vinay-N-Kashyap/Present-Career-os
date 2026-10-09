@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "prefix": "devops",
+  "day": 8,
+  "promptSha": "57237acf96d3e9c32093b10234b01b11628c2e8c587859143edd0f48c33b07aa",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Docker HEALTHCHECK Instruction Lifecycle",
+      "codeHash": "0d5bcfe25b49d4255fa698cb96a3d92d8a682f24c44b58a80dc78e69aab28f45",
+      "spec": {
+        "template": "states",
+        "title": "Container health status evaluation lifecycle states",
+        "states": [
+          {
+            "id": "starting",
+            "label": "starting"
+          },
+          {
+            "id": "healthy",
+            "label": "healthy"
+          },
+          {
+            "id": "unhealthy",
+            "label": "unhealthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Initial container boot enters starting state during grace window.",
+            "currentState": "starting",
+            "transition": {
+              "from": "starting",
+              "to": "healthy",
+              "label": "healthy"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Consecutive probe failures mark container unhealthy alerting orchestrators.",
+            "currentState": "unhealthy",
+            "transition": {
+              "from": "healthy",
+              "to": "unhealthy",
+              "label": "unhealthy"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Container health status evaluation lifecycle states",
+        "states": [
+          {
+            "id": "starting",
+            "label": "starting"
+          },
+          {
+            "id": "healthy",
+            "label": "healthy"
+          },
+          {
+            "id": "unhealthy",
+            "label": "unhealthy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Initial container boot enters starting state during grace window.",
+            "currentState": "starting",
+            "transition": {
+              "from": "starting",
+              "to": "healthy",
+              "label": "healthy"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Consecutive probe failures mark container unhealthy alerting orchestrators.",
+            "currentState": "unhealthy",
+            "transition": {
+              "from": "healthy",
+              "to": "unhealthy",
+              "label": "unhealthy"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing Resilient Healthcheck Endpoints",
+      "codeHash": "73ba67602c97f89c42d4def6bfd00091762ef1ab5ec5103bfa6e01043383048a",
+      "spec": {
+        "template": "compare",
+        "title": "Liveness probe versus readiness probe verification endpoints",
+        "leftLabel": "Liveness Probe (/live)",
+        "rightLabel": "Readiness Probe (/ready)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Liveness checks whether the application process is alive and responding.",
+            "left": {
+              "code": "endpoint: '/live'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: '/ready'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Readiness validates downstream database connections before accepting traffic.",
+            "left": {
+              "code": "status: 200",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status: 503",
+              "result": {
+                "text": "DOWN"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Liveness probe versus readiness probe verification endpoints",
+        "leftLabel": "Liveness Probe (/live)",
+        "rightLabel": "Readiness Probe (/ready)",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Liveness checks whether the application process is alive and responding.",
+            "left": {
+              "code": "endpoint: '/live'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "endpoint: '/ready'",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Readiness validates downstream database connections before accepting traffic.",
+            "left": {
+              "code": "status: 200",
+              "result": {
+                "text": "UP"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "status: 503",
+              "result": {
+                "text": "DOWN"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Restart Policies: Self-Healing and Crash Loop Avoidance",
+      "codeHash": "fb9d578116ff4965f122087c00a7f224b01af1bbf2e538d62914b8068075806a",
+      "spec": {
+        "template": "compare",
+        "title": "On-failure error retry versus unless-stopped container policy",
+        "leftLabel": "On-Failure Policy",
+        "rightLabel": "Unless-Stopped Policy",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Policy restarts container only when exiting with non-zero error status.",
+            "left": {
+              "code": "policy: 'on-failure'",
+              "result": {
+                "text": "on-failure"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "policy: 'unless-stopped'",
+              "result": {
+                "text": "unless-stopped"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Production web servers rely on unless-stopped as safe standard policy.",
+            "left": {
+              "code": "shouldRestart: true",
+              "result": {
+                "text": "on-failure"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "shouldRestart: false",
+              "result": {
+                "text": "unless-stopped"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "On-failure error retry versus unless-stopped container policy",
+        "leftLabel": "On-Failure Policy",
+        "rightLabel": "Unless-Stopped Policy",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Policy restarts container only when exiting with non-zero error status.",
+            "left": {
+              "code": "policy: 'on-failure'",
+              "result": {
+                "text": "on-failure"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "policy: 'unless-stopped'",
+              "result": {
+                "text": "unless-stopped"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Production web servers rely on unless-stopped as safe standard policy.",
+            "left": {
+              "code": "shouldRestart: true",
+              "result": {
+                "text": "on-failure"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "shouldRestart: false",
+              "result": {
+                "text": "unless-stopped"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cgroups v2 & Memory Constraints: Avoiding the OOM Killer",
+      "codeHash": "437cf7d7d7faafe6209c5b35a21dfc5c829ae28e14334b873c74af0af9846f24",
+      "spec": {
+        "template": "compare",
+        "title": "Memory quota constraint compliance versus out of memory kill",
+        "leftLabel": "Compliant Usage",
+        "rightLabel": "Leaked Usage Out Of Memory",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Linux kernel memory management triggers when host RAM is exhausted.",
+            "left": {
+              "code": "currentUsageMb: 240",
+              "result": {
+                "text": "Memory"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "currentUsageMb: 580",
+              "result": {
+                "text": "SIGKILL"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Container exceeding memory limit terminates cleanly preventing host crash.",
+            "left": {
+              "code": "willOomKill: false",
+              "result": {
+                "text": "Memory"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "willOomKill: true",
+              "result": {
+                "text": "SIGKILL"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Memory quota constraint compliance versus out of memory kill",
+        "leftLabel": "Compliant Usage",
+        "rightLabel": "Leaked Usage Out Of Memory",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Linux kernel memory management triggers when host RAM is exhausted.",
+            "left": {
+              "code": "currentUsageMb: 240",
+              "result": {
+                "text": "Memory"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "currentUsageMb: 580",
+              "result": {
+                "text": "SIGKILL"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Container exceeding memory limit terminates cleanly preventing host crash.",
+            "left": {
+              "code": "willOomKill: false",
+              "result": {
+                "text": "Memory"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "willOomKill: true",
+              "result": {
+                "text": "SIGKILL"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU Quotas & CFS Bandwidth Throttling",
+      "codeHash": "ae4868c6cd8d786dca17af8473261054957faff0468e972bf7926f0103bd0244",
+      "spec": {
+        "template": "compare",
+        "title": "Completely fair scheduler CPU bandwidth quota allocation",
+        "leftLabel": "Small Tier (0.5 CPUs)",
+        "rightLabel": "Standard Tier (2.0 CPUs)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Completely fair scheduler manages processor time across processes.",
+            "left": {
+              "code": "calculateCfsQuota({ cpus: 0.5, periodUs: 100000 })",
+              "result": {
+                "text": "cpus"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "calculateCfsQuota({ cpus: 2.0, periodUs: 100000 })",
+              "result": {
+                "text": "cpus"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Exhausted quota throttles container execution until the next period.",
+            "left": {
+              "code": "periodUs: 100000",
+              "result": {
+                "text": "description"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "quotaUs",
+              "result": {
+                "text": "description"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Completely fair scheduler CPU bandwidth quota allocation",
+        "leftLabel": "Small Tier (0.5 CPUs)",
+        "rightLabel": "Standard Tier (2.0 CPUs)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Completely fair scheduler manages processor time across processes.",
+            "left": {
+              "code": "calculateCfsQuota({ cpus: 0.5, periodUs: 100000 })",
+              "result": {
+                "text": "cpus"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "calculateCfsQuota({ cpus: 2.0, periodUs: 100000 })",
+              "result": {
+                "text": "cpus"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say6",
+            "caption": "Exhausted quota throttles container execution until the next period.",
+            "left": {
+              "code": "periodUs: 100000",
+              "result": {
+                "text": "description"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "quotaUs",
+              "result": {
+                "text": "description"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Docker Compose Self-Healing Stack",
+      "codeHash": "a0e7021747e6cc8d10ab8855079a7b9de17cec7485909018037bfdaca778d7c3",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
