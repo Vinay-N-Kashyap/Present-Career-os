@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "cloud",
+  "day": 22,
+  "promptSha": "791753f28c80118b0b4ab7220d41178f405f4c33418bee2086f97908893a8ff9",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Containers on AWS & The ECS Architecture",
+      "codeHash": "bb455a23e506fb5eb6fdfdb079c8bd2ff0ba72442fc8a8bd009a0bcc158dd4ed",
+      "spec": {
+        "template": "workflow",
+        "title": "ECS container deployment hierarchy and orchestration model",
+        "stages": [
+          {
+            "id": "cluster",
+            "name": "ECS Cluster",
+            "subtext": "Compute Capacity"
+          },
+          {
+            "id": "taskDef",
+            "name": "Task Definition",
+            "subtext": "JSON Blueprint"
+          },
+          {
+            "id": "service",
+            "name": "ECS Service",
+            "subtext": "Desired Count & ALB"
+          },
+          {
+            "id": "tasks",
+            "name": "Running Tasks",
+            "subtext": "Container Replicas"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An ECS cluster is a logical grouping of compute capacity.",
+            "activeStageId": "cluster",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "An ECS service maintains running tasks and registers with load balancers.",
+            "activeStageId": "service",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "ECS container deployment hierarchy and orchestration model",
+        "stages": [
+          {
+            "id": "cluster",
+            "name": "ECS Cluster",
+            "subtext": "Compute Capacity"
+          },
+          {
+            "id": "taskDef",
+            "name": "Task Definition",
+            "subtext": "JSON Blueprint"
+          },
+          {
+            "id": "service",
+            "name": "ECS Service",
+            "subtext": "Desired Count & ALB"
+          },
+          {
+            "id": "tasks",
+            "name": "Running Tasks",
+            "subtext": "Container Replicas"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An ECS cluster is a logical grouping of compute capacity.",
+            "activeStageId": "cluster",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "An ECS service maintains running tasks and registers with load balancers.",
+            "activeStageId": "service",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EC2 Launch Type vs AWS Fargate Serverless Compute",
+      "codeHash": "1cd8a0c771d9fe9093855c6d6ff39f76c6f8886172419907a3606d1ae32b4741",
+      "spec": {
+        "template": "compare",
+        "title": "EC2 launch type compared to AWS Fargate serverless containers",
+        "leftLabel": "EC2 Launch Type",
+        "rightLabel": "AWS Fargate Serverless",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "EC2 launch types require managing operating system patches and agents.",
+            "left": {
+              "code": "serverManagement: true",
+              "result": {
+                "text": "OS Patching Required"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "serverManagement: false",
+              "result": {
+                "text": "Zero Server Overhead"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Fargate eliminates operational server management and capacity planning.",
+            "left": {
+              "code": "idleCostRisk: true",
+              "result": {
+                "text": "Pay for Idle Instances"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "idleCostRisk: false",
+              "result": {
+                "text": "Pay Per Task Second"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "EC2 launch type compared to AWS Fargate serverless containers",
+        "leftLabel": "EC2 Launch Type",
+        "rightLabel": "AWS Fargate Serverless",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "EC2 launch types require managing operating system patches and agents.",
+            "left": {
+              "code": "serverManagement: true",
+              "result": {
+                "text": "OS Patching Required"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "serverManagement: false",
+              "result": {
+                "text": "Zero Server Overhead"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Fargate eliminates operational server management and capacity planning.",
+            "left": {
+              "code": "idleCostRisk: true",
+              "result": {
+                "text": "Pay for Idle Instances"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "idleCostRisk: false",
+              "result": {
+                "text": "Pay Per Task Second"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Task Networking with `awsvpc` & Elastic Network Interfaces",
+      "codeHash": "de2a356fc1c4ac868ecffd2219b2f9898b4000964759ee98cc26ec1b8d6c5e64",
+      "spec": {
+        "template": "states",
+        "title": "awsvpc network mode task interface provisioning states",
+        "states": [
+          {
+            "id": "eniAllocated",
+            "label": "Dedicated ENI Allocated"
+          },
+          {
+            "id": "privateIpBound",
+            "label": "Subnet Private IP Bound"
+          },
+          {
+            "id": "secGroupAttached",
+            "label": "Task Security Group Attached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "In awsvpc mode each task receives a dedicated network interface.",
+            "active": "eniAllocated"
+          },
+          {
+            "at": "say7",
+            "caption": "Security groups can be attached directly to individual tasks.",
+            "active": "secGroupAttached"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "awsvpc network mode task interface provisioning states",
+        "states": [
+          {
+            "id": "eniAllocated",
+            "label": "Dedicated ENI Allocated"
+          },
+          {
+            "id": "privateIpBound",
+            "label": "Subnet Private IP Bound"
+          },
+          {
+            "id": "secGroupAttached",
+            "label": "Task Security Group Attached"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "In awsvpc mode each task receives a dedicated network interface.",
+            "active": "eniAllocated"
+          },
+          {
+            "at": "say7",
+            "caption": "Security groups can be attached directly to individual tasks.",
+            "active": "secGroupAttached"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IAM Task Execution Role vs IAM Task Role",
+      "codeHash": "6cc1aaf9e9cffce98a52b77b601c49460c54f026b77452562f7159a44d99815c",
+      "spec": {
+        "template": "table",
+        "title": "Task execution role compared to application task role permissions",
+        "columns": [
+          "Role Identifier",
+          "Assumed Principal Entity",
+          "Granted API Actions",
+          "Security Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The task execution role grants permissions to pull container images.",
+            "rows": [
+              [
+                {
+                  "text": "executionRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "ECS Container Agent",
+                  "tone": "ok"
+                },
+                {
+                  "text": "ecr:BatchGetImage",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Infrastructure Boot",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "taskRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "Application Container",
+                  "tone": "ok"
+                },
+                {
+                  "text": "dynamodb:GetItem",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Data",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The task role grants permissions for application business logic.",
+            "rows": [
+              [
+                {
+                  "text": "executionRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "ECS Container Agent",
+                  "tone": "ok"
+                },
+                {
+                  "text": "logs:PutLogEvents",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Infrastructure Boot",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "taskRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "Application Container",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Data",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Task execution role compared to application task role permissions",
+        "columns": [
+          "Role Identifier",
+          "Assumed Principal Entity",
+          "Granted API Actions",
+          "Security Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The task execution role grants permissions to pull container images.",
+            "rows": [
+              [
+                {
+                  "text": "executionRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "ECS Container Agent",
+                  "tone": "ok"
+                },
+                {
+                  "text": "ecr:BatchGetImage",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Infrastructure Boot",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "taskRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "Application Container",
+                  "tone": "ok"
+                },
+                {
+                  "text": "dynamodb:GetItem",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Data",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "The task role grants permissions for application business logic.",
+            "rows": [
+              [
+                {
+                  "text": "executionRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "ECS Container Agent",
+                  "tone": "ok"
+                },
+                {
+                  "text": "logs:PutLogEvents",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Infrastructure Boot",
+                  "tone": "ok"
+                }
+              ],
+              [
+                {
+                  "text": "taskRoleArn",
+                  "tone": "data"
+                },
+                {
+                  "text": "Application Container",
+                  "tone": "ok"
+                },
+                {
+                  "text": "s3:GetObject",
+                  "tone": "ok"
+                },
+                {
+                  "text": "Application Data",
+                  "tone": "ok"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Auto Scaling & Target Tracking Policies",
+      "codeHash": "344095998816e50196b718bed85c2a5eb104f04c8cf826d084e730dd5bd286a8",
+      "spec": {
+        "template": "bars",
+        "title": "Target tracking auto scaling task capacity allocation",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Target tracking specifies metric values such as average utilization.",
+            "bars": [
+              {
+                "label": "Baseline Task Count",
+                "value": 2,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Target Metric Utilization",
+                "value": 50,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "ECS automatically increases task counts during traffic spikes.",
+            "bars": [
+              {
+                "label": "Scaled Task Count",
+                "value": 8,
+                "max": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Spike Metric Utilization",
+                "value": 70,
+                "max": 100,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Target tracking auto scaling task capacity allocation",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Target tracking specifies metric values such as average utilization.",
+            "bars": [
+              {
+                "label": "Baseline Task Count",
+                "value": 2,
+                "max": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Target Metric Utilization",
+                "value": 50,
+                "max": 100,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "ECS automatically increases task counts during traffic spikes.",
+            "bars": [
+              {
+                "label": "Scaled Task Count",
+                "value": 8,
+                "max": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Spike Metric Utilization",
+                "value": 70,
+                "max": 100,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Fargate Cluster Deployment & Health Verification",
+      "codeHash": "d7ffd47d3a9efcf60c3ac9329c5dbd880d562a406c4ba0b72ef8dc4c6179c8dd",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
