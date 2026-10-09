@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 4,
+  "promptSha": "521a2ef8fa43e157451927e9ba88a8ab8f098d1c2f42e3adae24f31c0566f5f2",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stack LIFO Invariants & Call Stack Analogies",
+      "codeHash": "c05a43b1d02a0691a5389c03d64abc4a011f8115b201deb7d7927527af715819",
+      "spec": {
+        "template": "stack-queue",
+        "title": "LIFO stack operations",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Push places item on top of stack.",
+            "action": "push",
+            "actionItem": {
+              "text": "Page 3"
+            },
+            "items": [
+              {
+                "text": "Page 1"
+              },
+              {
+                "text": "Page 2"
+              },
+              {
+                "text": "Page 3"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Pop removes top item from execution stack.",
+            "action": "pop",
+            "actionItem": {
+              "text": "Page 3"
+            },
+            "items": [
+              {
+                "text": "Page 1"
+              },
+              {
+                "text": "Page 2"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "LIFO stack operations",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Push places item on top of stack.",
+            "action": "push",
+            "actionItem": "Page 3",
+            "items": [
+              "Page 1",
+              "Page 2",
+              "Page 3"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Pop removes top item from execution stack.",
+            "action": "pop",
+            "actionItem": "Page 3",
+            "items": [
+              "Page 1",
+              "Page 2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Valid Parentheses & Compiler Bracket Matching",
+      "codeHash": "16ca6658547e81d32781b86a061b0f0d842562fbe72e9ff73dd58d8c1b968e7c",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Bracket delimiter matching on stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Opening delimiter pushes onto verification stack.",
+            "action": "push",
+            "actionItem": {
+              "text": "("
+            },
+            "items": [
+              {
+                "text": "("
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Closing delimiter pops matching opening delimiter.",
+            "action": "pop",
+            "actionItem": {
+              "text": "("
+            },
+            "items": []
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Bracket delimiter matching on stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Opening delimiter pushes onto verification stack.",
+            "action": "push",
+            "actionItem": "(",
+            "items": [
+              "("
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Closing delimiter pops matching opening delimiter.",
+            "action": "pop",
+            "actionItem": "(",
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic Stack Architecture (Next Greater Element)",
+      "codeHash": "92407112f93aa4c601708b9957dee56121f5a211ee6a61626bb9411e59287de0",
+      "spec": {
+        "template": "cells",
+        "title": "Monotonic stack scanning indices",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Monotonic stack maintains decreasing indices during scan.",
+            "items": [
+              {
+                "text": "2"
+              },
+              {
+                "text": "1"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "3"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "stack",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Current number resolves answers for popped indices.",
+            "items": [
+              {
+                "text": "4"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "-1"
+              },
+              {
+                "text": "-1"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "stack",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Monotonic stack scanning indices",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Monotonic stack maintains decreasing indices during scan.",
+            "items": [
+              "2",
+              "1",
+              "2",
+              "4",
+              "3"
+            ],
+            "pointers": [
+              {
+                "name": "stack",
+                "index": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Current number resolves answers for popped indices.",
+            "items": [
+              "4",
+              "2",
+              "4",
+              "-1",
+              "-1"
+            ],
+            "pointers": [
+              {
+                "name": "stack",
+                "index": 3,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MinStack with Auxiliary Minimum Tracking",
+      "codeHash": "637220f9aff94b2dccbd809a3baf73168017d7f15e6fb45230f38f4558a06304",
+      "spec": {
+        "template": "compare",
+        "title": "Main stack vs auxiliary minimum stack",
+        "leftLabel": "Main Stack",
+        "rightLabel": "Min Stack",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Auxiliary minStack tracks historical minimum values.",
+            "left": {
+              "code": "this.stack.push(val)",
+              "result": {
+                "text": "8"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.minStack.push(curMin)",
+              "result": {
+                "text": "2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Popping element restores prior minimum effortlessly.",
+            "left": {
+              "code": "this.stack.pop()",
+              "result": {
+                "text": "1"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.minStack.pop()",
+              "result": {
+                "text": "2"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Main stack vs auxiliary minimum stack",
+        "leftLabel": "Main Stack",
+        "rightLabel": "Min Stack",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Auxiliary minStack tracks historical minimum values.",
+            "left": {
+              "code": "this.stack.push(val)",
+              "result": "8",
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.minStack.push(curMin)",
+              "result": "2",
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Popping element restores prior minimum effortlessly.",
+            "left": {
+              "code": "this.stack.pop()",
+              "result": "1",
+              "tone": "data"
+            },
+            "right": {
+              "code": "this.minStack.pop()",
+              "result": "2",
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Infix Evaluation & Reverse Polish Notation (RPN)",
+      "codeHash": "9dfcdccdd8d980395904429dfc389f13c0054c9f4fe01a84fd177d31e1a09fc7",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Reverse Polish Notation operand stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Numeric operands push directly onto evaluation stack.",
+            "action": "push",
+            "actionItem": {
+              "text": "2"
+            },
+            "items": [
+              {
+                "text": "2"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Arithmetic operator pops operands and pushes result.",
+            "action": "pop",
+            "actionItem": {
+              "text": "2"
+            },
+            "items": [
+              {
+                "text": "3"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "stack-queue",
+        "title": "Reverse Polish Notation operand stack",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Numeric operands push directly onto evaluation stack.",
+            "action": "push",
+            "actionItem": "2",
+            "items": [
+              "2"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Arithmetic operator pops operands and pushes result.",
+            "action": "pop",
+            "actionItem": "2",
+            "items": [
+              "3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Daily Temperatures (Monotonic Stack Distance)",
+      "codeHash": "9979d93155da380bb6a5c6725f0349967f51c08a7e0355e7dab70d47eff13ad0",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
