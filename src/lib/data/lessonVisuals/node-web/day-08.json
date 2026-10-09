@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "prefix": "node-web",
+  "day": 8,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Anatomy of an HTTP Router: Method and Path Pattern Matching",
+      "codeHash": "3a1b5f0277caf436cf4f3f6fa079f745bbafcacf2d68ac85f0e2c77627d1ea33",
+      "spec": {
+        "template": "table",
+        "title": "Declarative routing table entries",
+        "columns": [
+          "Method",
+          "Path Pattern",
+          "Handler Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A router lookup table maps method and path patterns to handler functions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "/health"
+                  },
+                  {
+                    "text": "healthCheck"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "/login"
+                  },
+                  {
+                    "text": "authenticateUser"
+                  }
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When incoming requests arrive the router scans registered route definitions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "/health"
+                  },
+                  {
+                    "text": "healthCheck"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "/login"
+                  },
+                  {
+                    "text": "authenticateUser"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Production routers normalize paths to prevent duplicate matching keys.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "GET"
+                  },
+                  {
+                    "text": "/health"
+                  },
+                  {
+                    "text": "healthCheck"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "POST"
+                  },
+                  {
+                    "text": "/login"
+                  },
+                  {
+                    "text": "authenticateUser"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Declarative routing table entries",
+        "columns": [
+          "Method",
+          "Path Pattern",
+          "Handler Action"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A router lookup table maps method and path patterns to handler functions.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "/health",
+                  "healthCheck"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "/login",
+                  "authenticateUser"
+                ],
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When incoming requests arrive the router scans registered route definitions.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "/health",
+                  "healthCheck"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "/login",
+                  "authenticateUser"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Production routers normalize paths to prevent duplicate matching keys.",
+            "rows": [
+              {
+                "cells": [
+                  "GET",
+                  "/health",
+                  "healthCheck"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "POST",
+                  "/login",
+                  "authenticateUser"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parsing Dynamic Path Segments (e.g. /users/:id)",
+      "codeHash": "f5b97cbca25311ab098ad4ee26ceeec437e4aab10b9a8f98a4f64df3351e3b10",
+      "spec": {
+        "template": "boxes",
+        "title": "Dynamic path segment parameter mapping",
+        "boxes": [
+          {
+            "id": "pattern",
+            "label": "pattern"
+          },
+          {
+            "id": "params",
+            "label": "params"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A dynamic path pattern uses a colon prefix to match variable segments.",
+            "values": {
+              "pattern": {
+                "text": "/jobs/:jobId"
+              },
+              "params": {
+                "text": "jobId"
+              }
+            },
+            "tones": {
+              "pattern": "data",
+              "params": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The router extracts dynamic tokens into key-value parameter dictionaries.",
+            "values": {
+              "pattern": {
+                "text": "/jobs/:jobId"
+              },
+              "params": {
+                "text": "jobId"
+              }
+            },
+            "tones": {
+              "pattern": "idle",
+              "params": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Extracting parameters safely maps keys into an immutable params object.",
+            "values": {
+              "pattern": {
+                "text": "/jobs/:jobId"
+              },
+              "params": {
+                "text": "jobId"
+              }
+            },
+            "tones": {
+              "pattern": "ok",
+              "params": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Dynamic path segment parameter mapping",
+        "boxes": [
+          {
+            "id": "pattern",
+            "label": "pattern"
+          },
+          {
+            "id": "params",
+            "label": "params"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A dynamic path pattern uses a colon prefix to match variable segments.",
+            "values": {
+              "pattern": "/jobs/:jobId",
+              "params": "jobId"
+            },
+            "tones": {
+              "pattern": "data",
+              "params": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The router extracts dynamic tokens into key-value parameter dictionaries.",
+            "values": {
+              "pattern": "/jobs/:jobId",
+              "params": "jobId"
+            },
+            "tones": {
+              "pattern": "idle",
+              "params": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Extracting parameters safely maps keys into an immutable params object.",
+            "values": {
+              "pattern": "/jobs/:jobId",
+              "params": "jobId"
+            },
+            "tones": {
+              "pattern": "ok",
+              "params": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Route Specificity and Collision Resolution",
+      "codeHash": "90d01a88efb4ad2fa71915206cc9039233a254874466b12a80fd262d855bc7f0",
+      "spec": {
+        "template": "flow",
+        "title": "Route specificity collision resolution",
+        "nodes": [
+          {
+            "id": "rule",
+            "label": "RouteRule"
+          },
+          {
+            "id": "pattern",
+            "label": "pattern"
+          },
+          {
+            "id": "isStatic",
+            "label": "isStatic"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Visiting users endpoints tests whether dynamic parameters collide.",
+            "values": {
+              "rule": {
+                "text": "/users/me"
+              },
+              "pattern": {
+                "text": "/users/:id"
+              },
+              "isStatic": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "rule": "data",
+              "pattern": "idle",
+              "isStatic": "idle"
+            },
+            "arrows": [
+              [
+                "rule",
+                "pattern"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Route specificity rules give static literal segments precedence.",
+            "values": {
+              "rule": {
+                "text": "/users/me"
+              },
+              "pattern": {
+                "text": "/users/:id"
+              },
+              "isStatic": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "rule": "idle",
+              "pattern": "data",
+              "isStatic": "ok"
+            },
+            "arrows": [
+              [
+                "pattern",
+                "isStatic"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing explicit specificity sorting during route registration is vital.",
+            "values": {
+              "rule": {
+                "text": "/users/me"
+              },
+              "pattern": {
+                "text": "/users/:id"
+              },
+              "isStatic": {
+                "text": "true"
+              }
+            },
+            "tones": {
+              "rule": "ok",
+              "pattern": "ok",
+              "isStatic": "ok"
+            },
+            "arrows": [
+              [
+                "rule",
+                "isStatic"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Route specificity collision resolution",
+        "nodes": [
+          {
+            "id": "rule",
+            "label": "RouteRule"
+          },
+          {
+            "id": "pattern",
+            "label": "pattern"
+          },
+          {
+            "id": "isStatic",
+            "label": "isStatic"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Visiting users endpoints tests whether dynamic parameters collide.",
+            "values": {
+              "rule": "/users/me",
+              "pattern": "/users/:id",
+              "isStatic": "true"
+            },
+            "tones": {
+              "rule": "data",
+              "pattern": "idle",
+              "isStatic": "idle"
+            },
+            "arrows": [
+              [
+                "rule",
+                "pattern"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Route specificity rules give static literal segments precedence.",
+            "values": {
+              "rule": "/users/me",
+              "pattern": "/users/:id",
+              "isStatic": "true"
+            },
+            "tones": {
+              "rule": "idle",
+              "pattern": "data",
+              "isStatic": "ok"
+            },
+            "arrows": [
+              [
+                "pattern",
+                "isStatic"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Enforcing explicit specificity sorting during route registration is vital.",
+            "values": {
+              "rule": "/users/me",
+              "pattern": "/users/:id",
+              "isStatic": "true"
+            },
+            "tones": {
+              "rule": "ok",
+              "pattern": "ok",
+              "isStatic": "ok"
+            },
+            "arrows": [
+              [
+                "rule",
+                "isStatic"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling 404 Not Found vs 405 Method Not Allowed",
+      "codeHash": "0bad0303f3d59e284aa78fa39a3be9c83e8f7da75c7a32f6f3629889b8fed387",
+      "spec": {
+        "template": "boxes",
+        "title": "HTTP routing outcome status codes",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "status",
+            "label": "status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The specification draws a distinction between routing failure modes.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "status": {
+                "text": "200"
+              }
+            },
+            "tones": {
+              "method": "data",
+              "status": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A 404 status indicates that the requested path does not exist on the server.",
+            "values": {
+              "method": {
+                "text": "GET"
+              },
+              "status": {
+                "text": "404"
+              }
+            },
+            "tones": {
+              "method": "idle",
+              "status": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Returning the Allow header lets clients proceed securely without boilerplate.",
+            "values": {
+              "method": {
+                "text": "DELETE"
+              },
+              "status": {
+                "text": "405"
+              }
+            },
+            "tones": {
+              "method": "ok",
+              "status": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "HTTP routing outcome status codes",
+        "boxes": [
+          {
+            "id": "method",
+            "label": "method"
+          },
+          {
+            "id": "status",
+            "label": "status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The specification draws a distinction between routing failure modes.",
+            "values": {
+              "method": "GET",
+              "status": "200"
+            },
+            "tones": {
+              "method": "data",
+              "status": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A 404 status indicates that the requested path does not exist on the server.",
+            "values": {
+              "method": "GET",
+              "status": "404"
+            },
+            "tones": {
+              "method": "idle",
+              "status": "error"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Returning the Allow header lets clients proceed securely without boilerplate.",
+            "values": {
+              "method": "DELETE",
+              "status": "405"
+            },
+            "tones": {
+              "method": "ok",
+              "status": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Nested Routing Tables and Feature Prefixes",
+      "codeHash": "ee105be0efa7bf8a4faec38ed8697a493b5240527ea99389682a1b7dffb95d90",
+      "spec": {
+        "template": "boxes",
+        "title": "Modular sub-router mount configuration",
+        "boxes": [
+          {
+            "id": "prefix",
+            "label": "prefix"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Modern backend frameworks organize routes into modular sub-routers.",
+            "values": {
+              "prefix": {
+                "text": "/api/v1/jobs"
+              },
+              "path": {
+                "text": "/"
+              }
+            },
+            "tones": {
+              "prefix": "data",
+              "path": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The main application router mounts sub-routers under common path prefixes.",
+            "values": {
+              "prefix": {
+                "text": "/api/v1/jobs"
+              },
+              "path": {
+                "text": "/:id"
+              }
+            },
+            "tones": {
+              "prefix": "idle",
+              "path": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Isolating route sub-trees allows unit testing feature domains in isolation.",
+            "values": {
+              "prefix": {
+                "text": "/api/v1/jobs"
+              },
+              "path": {
+                "text": "/:id"
+              }
+            },
+            "tones": {
+              "prefix": "ok",
+              "path": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Modular sub-router mount configuration",
+        "boxes": [
+          {
+            "id": "prefix",
+            "label": "prefix"
+          },
+          {
+            "id": "path",
+            "label": "path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Modern backend frameworks organize routes into modular sub-routers.",
+            "values": {
+              "prefix": "/api/v1/jobs",
+              "path": "/"
+            },
+            "tones": {
+              "prefix": "data",
+              "path": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The main application router mounts sub-routers under common path prefixes.",
+            "values": {
+              "prefix": "/api/v1/jobs",
+              "path": "/:id"
+            },
+            "tones": {
+              "prefix": "idle",
+              "path": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Isolating route sub-trees allows unit testing feature domains in isolation.",
+            "values": {
+              "prefix": "/api/v1/jobs",
+              "path": "/:id"
+            },
+            "tones": {
+              "prefix": "ok",
+              "path": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Fast Pattern-Matching Router Class",
+      "codeHash": "00929abfff3974f19ab7edcc6e0e72a3143e8d17dd18693d5c5fa734d5542a53",
+      "spec": {
+        "template": "none",
+        "reason": "Building a unified pattern-matching router class and handling edge cases"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Building a unified pattern-matching router class and handling edge cases"
+      }
+    }
+  ]
+}
