@@ -3,7 +3,7 @@ __pycache__/
 node_modules/
 .next/
 out/
-dist/
+/dist/
 coverage/
 .firebase/
 .idea/  
