@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dist",
+  "day": 2,
+  "promptSha": "84eadf1280d283754851520e6ed5c8d472fc00543eac90855e7c608c9f1b6618",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The CAP Theorem Proof & Brewer's Conjecture",
+      "codeHash": "08a13427ef6f7b1be38468214d9bfe7572ea5f679d9f4d5b0b1cea582b1a71b0",
+      "spec": {
+        "template": "compare",
+        "title": "Consistency under partition compared to availability under partition",
+        "leftLabel": "Consistency Choice Under Partition (CP)",
+        "rightLabel": "Availability Choice Under Partition (AP)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Consistency denotes that every read returns the most recent write.",
+            "left": {
+              "code": "policy: \"CP\"",
+              "result": {
+                "text": "ERROR_503_PARTITION_CONSISTENCY_LOCKED"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "policy: \"AP\"",
+              "result": {
+                "text": "WRITE_ACCEPTED_LOCAL_DIVERGENCE_ALLOWED: v2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Divided partitions must refuse writes or accept divergence risks.",
+            "left": {
+              "code": "scenario.policy === \"CP\"",
+              "result": {
+                "text": "CP"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "scenario.policy === \"AP\"",
+              "result": {
+                "text": "AP"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Consistency under partition compared to availability under partition",
+        "leftLabel": "Consistency Choice Under Partition (CP)",
+        "rightLabel": "Availability Choice Under Partition (AP)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Consistency denotes that every read returns the most recent write.",
+            "left": {
+              "code": "policy: \"CP\"",
+              "result": {
+                "text": "ERROR_503_PARTITION_CONSISTENCY_LOCKED"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "policy: \"AP\"",
+              "result": {
+                "text": "WRITE_ACCEPTED_LOCAL_DIVERGENCE_ALLOWED: v2"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Divided partitions must refuse writes or accept divergence risks.",
+            "left": {
+              "code": "scenario.policy === \"CP\"",
+              "result": {
+                "text": "CP"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "scenario.policy === \"AP\"",
+              "result": {
+                "text": "AP"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Partitions (P): Choosing Consistency (CP) vs Availability (AP)",
+      "codeHash": "1edbe4bab28546fee5c569dd9fb75125cc2146a6d1dfbc9a8f2be36571aa7247",
+      "spec": {
+        "template": "states",
+        "title": "Partition quorum majority consensus and split-brain resolution states",
+        "states": [
+          {
+            "id": "majority",
+            "label": "Quorum Majority Subnet (3/5 Nodes - Active)"
+          },
+          {
+            "id": "minority",
+            "label": "Quorum Minority Subnet (2/5 Nodes - Blocked)"
+          },
+          {
+            "id": "reconciled",
+            "label": "Healed Network (Conflict Reconciled)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Nodes lacking a quorum majority reject all incoming client writes.",
+            "activeStateId": "minority",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "When the network heals systems employ conflict resolution mechanisms.",
+            "activeStateId": "reconciled",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Partition quorum majority consensus and split-brain resolution states",
+        "states": [
+          {
+            "id": "majority",
+            "label": "Quorum Majority Subnet (3/5 Nodes - Active)"
+          },
+          {
+            "id": "minority",
+            "label": "Quorum Minority Subnet (2/5 Nodes - Blocked)"
+          },
+          {
+            "id": "reconciled",
+            "label": "Healed Network (Conflict Reconciled)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Nodes lacking a quorum majority reject all incoming client writes.",
+            "activeStateId": "minority",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "When the network heals systems employ conflict resolution mechanisms.",
+            "activeStateId": "reconciled",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PACELC Theorem: Latency (L) vs Consistency (C) in Normal Operation",
+      "codeHash": "fa34f3ac3489797a3c1e4412aafaf8b64194d3ffc1aeac801d14bf8cefb23a7d",
+      "spec": {
+        "template": "workflow",
+        "title": "PACELC theorem distributed architecture decision tree",
+        "stages": [
+          {
+            "id": "detectPartition",
+            "name": "Partition Check",
+            "subtext": "Network Split State"
+          },
+          {
+            "id": "partitionChoice",
+            "name": "Tradeoff A vs C",
+            "subtext": "Availability vs Consistency"
+          },
+          {
+            "id": "normalChoice",
+            "name": "Normal Runtime",
+            "subtext": "Else Clause Decision"
+          },
+          {
+            "id": "latencyConsistency",
+            "name": "Tradeoff L vs C",
+            "subtext": "Latency vs Consistency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Abadi formulated the theorem trading consistency and latency in normal times.",
+            "activeStageId": "partitionChoice",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Synchronous replication across regions introduces measurable network latency.",
+            "activeStageId": "latencyConsistency",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "PACELC theorem distributed architecture decision tree",
+        "stages": [
+          {
+            "id": "detectPartition",
+            "name": "Partition Check",
+            "subtext": "Network Split State"
+          },
+          {
+            "id": "partitionChoice",
+            "name": "Tradeoff A vs C",
+            "subtext": "Availability vs Consistency"
+          },
+          {
+            "id": "normalChoice",
+            "name": "Normal Runtime",
+            "subtext": "Else Clause Decision"
+          },
+          {
+            "id": "latencyConsistency",
+            "name": "Tradeoff L vs C",
+            "subtext": "Latency vs Consistency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Abadi formulated the theorem trading consistency and latency in normal times.",
+            "activeStageId": "partitionChoice",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Synchronous replication across regions introduces measurable network latency.",
+            "activeStageId": "latencyConsistency",
+            "statusBadge": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-World Database Classification: DynamoDB, Spanner, Cassandra & MongoDB",
+      "codeHash": "2af7f790766ab8f6e27934a96ab080dc29cbd621415e92bb7e6827193c7abe6a",
+      "spec": {
+        "template": "table",
+        "title": "Production distributed databases categorized by PACELC tradeoffs",
+        "columns": [
+          "Database Engine",
+          "PACELC Category",
+          "Architectural Tradeoff",
+          "Optimal Workload Fit"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Google Spanner provides external consistency and linearizability globally.",
+            "rows": [
+              [
+                "Google Spanner",
+                "PC/EC",
+                "External consistency via TrueTime atomic clocks",
+                "Financial Ledgers, Global Invariants"
+              ],
+              [
+                "MongoDB (ReplicaSet)",
+                "PC/EC",
+                "Strict primary routing with majority write concern",
+                "Document Models, Strong Primary Writes"
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Engines replicate asynchronously to local nodes for minimal latency.",
+            "rows": [
+              [
+                "Google Spanner",
+                "PC/EC",
+                "External consistency via TrueTime atomic clocks",
+                "Financial Ledgers, Global Invariants"
+              ],
+              [
+                "MongoDB (ReplicaSet)",
+                "PC/EC",
+                "Strict primary routing with majority write concern",
+                "Document Models, Strong Primary Writes"
+              ],
+              [
+                "Apache Cassandra",
+                "PA/EL",
+                "Asynchronous peer gossip with tunable quorums",
+                "High-Throughput Time-Series, IoT"
+              ],
+              [
+                "Amazon DynamoDB",
+                "PA/EL",
+                "Multi-AZ replication with single-digit millisecond SLA",
+                "Serverless Microservices, Session State"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production distributed databases categorized by PACELC tradeoffs",
+        "columns": [
+          "Database Engine",
+          "PACELC Category",
+          "Architectural Tradeoff",
+          "Optimal Workload Fit"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Google Spanner provides external consistency and linearizability globally.",
+            "rows": [
+              [
+                "Google Spanner",
+                "PC/EC",
+                "External consistency via TrueTime atomic clocks",
+                "Financial Ledgers, Global Invariants"
+              ],
+              [
+                "MongoDB (ReplicaSet)",
+                "PC/EC",
+                "Strict primary routing with majority write concern",
+                "Document Models, Strong Primary Writes"
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Engines replicate asynchronously to local nodes for minimal latency.",
+            "rows": [
+              [
+                "Google Spanner",
+                "PC/EC",
+                "External consistency via TrueTime atomic clocks",
+                "Financial Ledgers, Global Invariants"
+              ],
+              [
+                "MongoDB (ReplicaSet)",
+                "PC/EC",
+                "Strict primary routing with majority write concern",
+                "Document Models, Strong Primary Writes"
+              ],
+              [
+                "Apache Cassandra",
+                "PA/EL",
+                "Asynchronous peer gossip with tunable quorums",
+                "High-Throughput Time-Series, IoT"
+              ],
+              [
+                "Amazon DynamoDB",
+                "PA/EL",
+                "Multi-AZ replication with single-digit millisecond SLA",
+                "Serverless Microservices, Session State"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tunable Consistency Levels: Quorum Math (R + W > N)",
+      "codeHash": "ecc53bd547ba5aedfc32b70a62516e6fc59f23623639401861a5e5f5697bff93",
+      "spec": {
+        "template": "cells",
+        "title": "Tunable consistency quorum overlap matrix across replica nodes",
+        "cells": [
+          {
+            "id": "node1",
+            "label": "Replica Node A",
+            "value": "W1",
+            "tone": "ok"
+          },
+          {
+            "id": "node2",
+            "label": "Replica Node B (Overlap)",
+            "value": "W2 & R1",
+            "tone": "data"
+          },
+          {
+            "id": "node3",
+            "label": "Replica Node C",
+            "value": "R2",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The quorum intersection rule dictates that read and write sets must overlap.",
+            "highlightIds": [
+              "node2"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Balanced quorum configurations guarantee strong consistency across operations.",
+            "highlightIds": [
+              "node1",
+              "node2",
+              "node3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Tunable consistency quorum overlap matrix across replica nodes",
+        "cells": [
+          {
+            "id": "node1",
+            "label": "Replica Node A",
+            "value": "W1",
+            "tone": "ok"
+          },
+          {
+            "id": "node2",
+            "label": "Replica Node B (Overlap)",
+            "value": "W2 & R1",
+            "tone": "data"
+          },
+          {
+            "id": "node3",
+            "label": "Replica Node C",
+            "value": "R2",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The quorum intersection rule dictates that read and write sets must overlap.",
+            "highlightIds": [
+              "node2"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Balanced quorum configurations guarantee strong consistency across operations.",
+            "highlightIds": [
+              "node1",
+              "node2",
+              "node3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production PACELC Cluster Policy Router & Health Evaluator",
+      "codeHash": "568cb32dc1197eaff98b9c1b300613cd8e40fb13c6d8241cb6b1be2c441fa46b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
