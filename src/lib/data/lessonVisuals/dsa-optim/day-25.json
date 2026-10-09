@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "prefix": "dsa-optim",
+  "day": 25,
+  "promptSha": "0200be130140db81fe04123ac1018b51e700cae2b613aaf46136743d609d2d7b",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Overlapping Subproblems & Optimal Substructure",
+      "codeHash": "311a47ab6931a3ac0f5f684795a0faeef060f6d19a6c3366d279511983786e08",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Overlapping subproblems recursive call tree",
+        "nodes": [
+          {
+            "id": "f6",
+            "label": "fib6"
+          },
+          {
+            "id": "f5",
+            "label": "fib5"
+          },
+          {
+            "id": "f4",
+            "label": "fib4"
+          },
+          {
+            "id": "f3",
+            "label": "fib3"
+          }
+        ],
+        "edges": [
+          [
+            "f6",
+            "f5"
+          ],
+          [
+            "f6",
+            "f4"
+          ],
+          [
+            "f5",
+            "f4"
+          ],
+          [
+            "f5",
+            "f3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recursive space visits overlapping subproblems repeatedly.",
+            "activeNodeId": "f6",
+            "visitedNodeIds": [
+              "f6"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Dynamic programming solves unique subproblem and stores result.",
+            "activeNodeId": "f4",
+            "visitedNodeIds": [
+              "f6",
+              "f5",
+              "f4"
+            ],
+            "activeEdge": [
+              "f6",
+              "f4"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Overlapping subproblems recursive call tree",
+        "nodes": [
+          {
+            "id": "f6",
+            "label": "fib6"
+          },
+          {
+            "id": "f5",
+            "label": "fib5"
+          },
+          {
+            "id": "f4",
+            "label": "fib4"
+          },
+          {
+            "id": "f3",
+            "label": "fib3"
+          }
+        ],
+        "edges": [
+          [
+            "f6",
+            "f5"
+          ],
+          [
+            "f6",
+            "f4"
+          ],
+          [
+            "f5",
+            "f4"
+          ],
+          [
+            "f5",
+            "f3"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Recursive space visits overlapping subproblems repeatedly.",
+            "activeNodeId": "f6",
+            "visitedNodeIds": [
+              "f6"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Dynamic programming solves unique subproblem and stores result.",
+            "activeNodeId": "f4",
+            "visitedNodeIds": [
+              "f6",
+              "f5",
+              "f4"
+            ],
+            "activeEdge": [
+              "f6",
+              "f4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Top-Down DP: Memoization with Cache",
+      "codeHash": "799e90b1d8fbe8fc8f6357bdcedc8c4d4df3918d78407d3e57e8086ad3e4dcf9",
+      "spec": {
+        "template": "table",
+        "title": "Top-down memoization subproblem cache map",
+        "columns": [
+          "State",
+          "Value",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Function checks cache to see whether computed answer already exists.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fib0"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib1"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function executes recursive calculation and writes result to cache.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fib0"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib1"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib2"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Top-down memoization subproblem cache map",
+        "columns": [
+          "State",
+          "Value",
+          "Status"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Function checks cache to see whether computed answer already exists.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fib0"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib1"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Function executes recursive calculation and writes result to cache.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "fib0"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib1"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "fib2"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "cached"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bottom-Up DP: Iterative Tabulation",
+      "codeHash": "9d4625a670452c9d2e1b633030986ba4df56c205eb3326c755de85571eec81e6",
+      "spec": {
+        "template": "cells",
+        "title": "Bottom-up tabulated state array computation",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Table array pre-populates base cases before iteration.",
+            "items": [
+              {
+                "text": "base-0"
+              },
+              {
+                "text": "base-1"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Iterative loop computes entry using previously filled table entries.",
+            "items": [
+              {
+                "text": "dp-0"
+              },
+              {
+                "text": "dp-1"
+              },
+              {
+                "text": "dp-2"
+              },
+              {
+                "text": "dp-3"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Bottom-up tabulated state array computation",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Table array pre-populates base cases before iteration.",
+            "items": [
+              {
+                "text": "base-0"
+              },
+              {
+                "text": "base-1"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Iterative loop computes entry using previously filled table entries.",
+            "items": [
+              {
+                "text": "dp-0"
+              },
+              {
+                "text": "dp-1"
+              },
+              {
+                "text": "dp-2"
+              },
+              {
+                "text": "dp-3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Space Optimization: Rolling Variables in O(1) Memory",
+      "codeHash": "d46ef0e626f26bce0bf99e1516f45986af69518609392374bdcd20799769c09c",
+      "spec": {
+        "template": "table",
+        "title": "Rolling variables constant space state shifting",
+        "columns": [
+          "Step",
+          "Prev2",
+          "Prev1",
+          "Curr"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Maintain rolling variables prev2 and prev1 for past states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "init"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Calculate curr from previous variables and shift values forward.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-first"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-second"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Rolling variables constant space state shifting",
+        "columns": [
+          "Step",
+          "Prev2",
+          "Prev1",
+          "Curr"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Maintain rolling variables prev2 and prev1 for past states.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "init"
+                  },
+                  {
+                    "text": "zero"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "none"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Calculate curr from previous variables and shift values forward.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "step-first"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "one"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "step-second"
+                  },
+                  {
+                    "text": "one"
+                  },
+                  {
+                    "text": "two"
+                  },
+                  {
+                    "text": "two"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Climbing Stairs & House Robber (1D DP Formulations)",
+      "codeHash": "edb76e0a12c560de3f42e8a7253a2b26b45816d387e8f288aec10873d80fdc63",
+      "spec": {
+        "template": "table",
+        "title": "House robber state transition recurrence table",
+        "columns": [
+          "House",
+          "Loot",
+          "MaxRob"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Two mutually exclusive choices determine maximum loot per house.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "house-first"
+                  },
+                  {
+                    "text": "loot-a"
+                  },
+                  {
+                    "text": "loot-a"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-second"
+                  },
+                  {
+                    "text": "loot-b"
+                  },
+                  {
+                    "text": "loot-b"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "State transition equation selects optimal loot combination.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "house-first"
+                  },
+                  {
+                    "text": "loot-a"
+                  },
+                  {
+                    "text": "loot-a"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-second"
+                  },
+                  {
+                    "text": "loot-b"
+                  },
+                  {
+                    "text": "loot-b"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-third"
+                  },
+                  {
+                    "text": "loot-c"
+                  },
+                  {
+                    "text": "loot-max"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "House robber state transition recurrence table",
+        "columns": [
+          "House",
+          "Loot",
+          "MaxRob"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Two mutually exclusive choices determine maximum loot per house.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "house-first"
+                  },
+                  {
+                    "text": "loot-a"
+                  },
+                  {
+                    "text": "loot-a"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-second"
+                  },
+                  {
+                    "text": "loot-b"
+                  },
+                  {
+                    "text": "loot-b"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "State transition equation selects optimal loot combination.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "house-first"
+                  },
+                  {
+                    "text": "loot-a"
+                  },
+                  {
+                    "text": "loot-a"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-second"
+                  },
+                  {
+                    "text": "loot-b"
+                  },
+                  {
+                    "text": "loot-b"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "house-third"
+                  },
+                  {
+                    "text": "loot-c"
+                  },
+                  {
+                    "text": "loot-max"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Longest Increasing Subsequence (O(N^2) Tabulation & O(N log N) Patience)",
+      "codeHash": "0730aa9b3e836618658fce152df0013325db9ffa2d583b564ea2b946b2d2a0b1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
