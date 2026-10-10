@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { chromium } from '@playwright/test';
+import { JAVA_MONTH_1_SPECS, JAVA_MONTH_2_SPECS } from './java-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -900,6 +901,135 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
   };
 }
 
+
+function renderJavaDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #2563eb; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0369a1; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #15803d; font-weight: 600;">Invariant:</span> ${day.conceptInvariant}
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">💡 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function buildJavaHtml(): string {
+  let h = `
+  <!-- PART V: DEEP MASTERCLASS BLUEPRINT — JAVA CORE & ENTERPRISE SYSTEMS (DAYS 1–60 / 222 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #0f172a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part V: Deep Masterclass Blueprint — Java Core &amp; Enterprise Systems</h1>
+        <span style="font-size: 8.2pt; color: #94a3b8;">Course ID: <code>course-java-logic</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>222 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #2563eb; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #67e8f9;">Month 1 (111 Quests) &bull; Month 2 (111 Quests)</span>
+      </div>
+    </div>
+
+    <h2>5.1 Pedagogical Philosophy &amp; Invariants: Why Month 1 Has Zero OOP &amp; Zero Multithreading</h2>
+    <p>
+      The greatest crime of modern programming bootcamps is introducing Classes, Inheritance, and Multithreading before a novice understands how a single byte moves through the CPU stack frame. In PinIT Career OS, <strong>Month 1 is strictly procedural and computational logic</strong>:
+    </p>
+    <div class="quote-box">
+      &bull; <strong>Month 1 (Days 1–30 / 111 Quests):</strong> JVM Memory Model (Stack vs Heap), Primitive Types, Scopes, Conditional Branching, Loop Progress, Stack Frames, 1D Contiguous Arrays, In-Place Reversal, and Binary Search.<br>
+      &bull; <strong>Month 2 (Days 31–60 / 111 Quests):</strong> Heap Object Allocation, Encapsulation Invariants, Dynamic Method Dispatch (vtable), Exception Hierarchies, Dynamic Collections (HashMap/ArrayList), Intrinsic Locks (synchronized), Memory Barriers (volatile), and NIO Fast I/O.
+    </div>
+
+    <h2>5.2 Month 1 Masterclass Blueprint (Days 1–30 &bull; 111 Quests: Computational Foundations)</h2>
+  `;
+
+  JAVA_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderJavaDayCard(day);
+  });
+
+  h += `
+    <div class="page-break"></div>
+    <h2>5.3 Month 2 Masterclass Blueprint (Days 31–60 &bull; 111 Quests: Object Architecture &amp; Concurrency)</h2>
+  `;
+
+  JAVA_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderJavaDayCard(day);
+  });
+
+  h += `
+    <div class="page-break"></div>
+    <h2>5.4 Java Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Milestone</th>
+          <th style="width: 10%;">Day</th>
+          <th style="width: 28%;">Milestone Gate Title</th>
+          <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Milestone 1</strong></td><td>Day 07</td><td>Interactive CLI State Machine</td><td>Multi-option menu state machine with zero fall-through switch guards.</td></tr>
+        <tr><td><strong>Milestone 2</strong></td><td>Day 14</td><td>Financial Tax Ledger Engine</td><td>Progressive marginal tax calculator with scope isolation and no overflow.</td></tr>
+        <tr><td><strong>Milestone 3</strong></td><td>Day 21</td><td>Fast Contiguous Data Buffer</td><td>Fixed-capacity ring buffer for streaming sensor data with boundary checks.</td></tr>
+        <tr><td><strong>Milestone 4</strong></td><td>Day 28</td><td>Multi-Pass Transaction Engine</td><td>Sort-and-sweep deduplicator collapsing O(N^2) search to O(N log N).</td></tr>
+        <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td>Audited Banking Transaction Validator defended before Senior Architect Board.</td></tr>
+        <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Bank Account Domain Model</td><td>Encapsulated domain model with private fields, invariant guards, and static counters.</td></tr>
+        <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Pluggable Payment Gateway</td><td>Dependency Inversion Engine supporting Stripe, PayPal, and Mock via interfaces.</td></tr>
+        <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Resilient Batch File Ingestion</td><td>Transactional CSV batch ingestor with try-with-resources and auto-rollback.</td></tr>
+        <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>In-Memory Limit Order Book</td><td>High-throughput composite matching engine (HashMap O(1) + TreeMap O(log N)).</td></tr>
+        <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Thread-Safe Blocking Queue</td><td>Bounded producer-consumer queue with wait() in while loops and notifyAll().</td></tr>
+        <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>LedgerCore Settlement Engine:</strong> 100k concurrent transfer stress test + live viva defense.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  `;
+
+  return h;
+}
+
 async function generateMasterSrsPdf() {
   console.log('Building Masterclass SRS Document (Target: 500+ Pages, v6.0 True 9.8 Standard)...');
 
@@ -1169,6 +1299,155 @@ async function generateMasterSrsPdf() {
       <strong>Author:</strong> Principal Systems Architect &amp; Chief Learning Officer Directorate<br>
       <strong>Release Standard:</strong> Gate v2 Verification &bull; Rules R1–R14 Enforced &bull; Production v6.0 (9.8/10 Standard)<br>
       <strong>Target Publication Volume:</strong> 500+ Dense Technical Specification Pages
+    </div>
+  </div>
+
+  
+  <!-- PART 0: THE COLD-BLOODED AUDIT SCORECARD & STRATEGIC EXECUTION PLAN -->
+  <div class="page-break">
+    <div style="background: #b91c1c; color: #ffffff; padding: 6pt 10pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <strong style="font-size: 11pt; letter-spacing: 1px;">CRITICAL AUDIT REPORT &bull; UNVARNISHED REALITY CHECK</strong>
+      <span style="font-size: 8pt; background: #ffffff; color: #b91c1c; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Current Build Readiness: 5.8 / 10</span>
+    </div>
+
+    <h1>Part 0: The Cold-Blooded Audit Scorecard &amp; Strategic Execution Plan</h1>
+
+    <div class="header-box" style="border-left-color: #b91c1c;">
+      <table>
+        <tr>
+          <td class="label">Audit Objective</td>
+          <td class="val">Brutal, uncompromised evaluation of codebase vs pedagogical vision (eliminating all superficial marketing claims).</td>
+        </tr>
+        <tr>
+          <td class="label">Target Benchmark</td>
+          <td class="val"><strong>True 9.8 / 10 Masterclass Standard:</strong> Even in the worst-case scenario (exhausted novice), student never feels stuck or abandoned.</td>
+        </tr>
+        <tr>
+          <td class="label">Major Finding</td>
+          <td class="val"><strong style="color: #b91c1c;">The 23-Course Pilot Trap:</strong> 23 standalone courses currently have only 10 concept lessons in code (~6 min/day) and 0 visual files.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>0.1 The Cold-Blooded Audit Scorecard</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Curriculum &amp; Platform Dimension</th>
+          <th style="width: 15%;">Current Codebase State</th>
+          <th style="width: 15%;">Honest Score</th>
+          <th style="width: 45%;">The Cold-Blooded Reality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pedagogical Vision &amp; Design</strong></td>
+          <td>Socratic Hint Ladders, 110+ Quests, Intuition Bridges</td>
+          <td><strong style="color: #15803d;">9.9 / 10</strong></td>
+          <td>The conceptual architecture is world-class on paper, solving the fatal flaws of Coursera and Udemy.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 1 Planning (All 37 Courses)</strong></td>
+          <td>14 LongLesson courses (~30m) vs 23 Pilot courses (~6m)</td>
+          <td><strong style="color: #b45309;">5.5 / 10</strong></td>
+          <td>23 courses in repo still use legacy 3-4 block pilot days (only 10 concept lessons stretched over 30 days).</td>
+        </tr>
+        <tr>
+          <td><strong>Month 2 Planning Depth</strong></td>
+          <td>Roadmap &amp; domain syllabi defined; daily specs pending</td>
+          <td><strong style="color: #b91c1c;">4.0 / 10</strong></td>
+          <td>High-level architectural syllabus exists, but Days 31–60 daily lessons and code challenges are unwritten.</td>
+        </tr>
+        <tr>
+          <td><strong>Visual Engine Diagram Coverage</strong></td>
+          <td>24 certification tracks built; 23 standalone courses missing</td>
+          <td><strong style="color: #b45309;">4.5 / 10</strong></td>
+          <td>720 visual day files exist on disk, but 1,830 visual day files are completely unbuilt (0 for standalone courses).</td>
+        </tr>
+        <tr>
+          <td><strong>12-Month Certification Sequence</strong></td>
+          <td>Month 1 crams React &amp; FastAPI into 30 days</td>
+          <td><strong style="color: #b45309;">6.0 / 10</strong></td>
+          <td>Suffers from the classic "Bootcamp Cramming Trap". Must decouple Month 1 to pure Vanilla JS / Python logic.</td>
+        </tr>
+        <tr style="background: #fef2f2; font-weight: 700;">
+          <td>OVERALL CURRENT BUILD READINESS</td>
+          <td>What a student actually experiences today</td>
+          <td><strong style="color: #b91c1c;">5.8 / 10</strong></td>
+          <td>A massive gap exists between our 9.8 vision and our current 5.8 codebase execution.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>0.2 The Brutal Truth About Month 1 &amp; Month 2</h2>
+    <div class="quote-box" style="border-left-color: #b91c1c; color: #7f1d1d; background: #fff5f5;">
+      <strong>1. The Fatal Month 1 Flaw in 12-Month Tracks:</strong><br>
+      In <code>reactLongLessons.ts</code>, complete beginners get 6 days of basic JS before being thrown into React JSX, <code>useState</code>, and <code>useEffect</code>. In <code>pythonLongLessons.ts</code>, novices reach FastAPI and Cloud Deployments in 3 weeks. Beginners cannot build computational mental models under this velocity; they experience cognitive collapse by Week 3.<br><br>
+      <strong>2. The 23-Course "Pilot Trap":</strong><br>
+      In <code>scripts/course-curriculum-summary.json</code>, courses like Java, Flutter, Embedded C, and 10 B.Com courses only feature 10 concept days, stretching each lesson over 3 days of practice. Crucial topics (Arrays, OOP, Exceptions, Multithreading) were completely omitted.<br><br>
+      <strong>3. The Visual Void:</strong><br>
+      While 24 certification modules have 100% Gate v2 verified visual files, the 23 standalone courses have ZERO visual files. A student taking Java currently gets zero interactive stack frame diagrams!
+    </div>
+
+    <h2>0.3 The Unified Master Architecture Blueprint (The Solution)</h2>
+    <p>
+      To bridge the gap from 5.8 to 9.8, the curriculum is synthesized into a single authoritative architecture:
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 20%;">Blueprint Volume</th>
+          <th style="width: 35%;">Architectural Scope</th>
+          <th style="width: 45%;">The Guaranteed 9.8 Student Standard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Volume I: Core Engine</strong></td>
+          <td>Pedagogical Standards &amp; Worst-Case Protections</td>
+          <td>3-Tier Socratic Ladder, Physical Intuition Bridges, AST Semantic Test Tolerances.</td>
+        </tr>
+        <tr>
+          <td><strong>Volume II: 12M Cert Overhaul</strong></td>
+          <td>Web Full-Stack &amp; Python AI Recalibration</td>
+          <td>Decouple Month 1 into pure Vanilla JS / Python Logic (110+ Quests). Zero frameworks in Month 1.</td>
+        </tr>
+        <tr>
+          <td><strong>Volume III: Standalone Tracks</strong></td>
+          <td>24 Standalone Courses across 5 Domains</td>
+          <td>Universal 2-Month Structure (Month 1: 111 Quests &rarr; Month 2: 111 Quests = 222 Quests per course).</td>
+        </tr>
+        <tr>
+          <td><strong>Volume IV: Visual Engines</strong></td>
+          <td>14 Visual Engines across all 37 Courses</td>
+          <td>Gate v2 deterministic bindings for Stack Frames, Register Bitmasks, and Ledger Sheets.</td>
+        </tr>
+        <tr>
+          <td><strong>Volume V: Deep Masterclasses</strong></td>
+          <td>Exhaustive 60-Day Lesson Specifications</td>
+          <td>Starting with Java: 60 Days, 222 Quests, line-by-line tryIt friction, and outage puzzles.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>0.4 The 4-Step Master Execution Plan to Reach True 9.8 / 10</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; font-size: 7.8pt;">
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4pt; padding: 6pt;">
+        <strong style="color: #0369a1; font-size: 8.5pt;">Step 1: Planning Perfection (Current Step)</strong><br>
+        Synthesize all audits, syllabi, and 60-day specs into this single, publication-grade Master Blueprint PDF. Never start building on an ambiguous or incomplete plan.
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4pt; padding: 6pt;">
+        <strong style="color: #15803d; font-size: 8.5pt;">Step 2: Recalibrate Month 1 Across 23 Courses</strong><br>
+        Expand all 23 legacy pilot courses from 6-minute short days into 28–31 minute 6-part LongLessons (30 daily masterclasses, 111 quests each).
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4pt; padding: 6pt;">
+        <strong style="color: #b45309; font-size: 8.5pt;">Step 3: Flesh Out Month 2 (Days 31–60) in Code</strong><br>
+        Author the concrete lesson files, starter code repositories, and automated test assertions for Days 31–60 across all tracks.
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4pt; padding: 6pt;">
+        <strong style="color: #6b21a8; font-size: 8.5pt;">Step 4: Author Standalone &amp; Month 2 Visuals</strong><br>
+        Generate visual suites for the 23 standalone courses and Month 2, enforcing Gate v2 validation with 100% zero-hallucination compliance.
+      </div>
     </div>
   </div>
 
