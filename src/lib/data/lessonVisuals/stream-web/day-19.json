@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 19,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Session Windows: Dynamic Activity-Driven Intervals",
+      "codeHash": "2ec216f531748bd0f0525e372d804b36bc4e4566b3c32072e22f7b378f48dda1",
+      "spec": {
+        "template": "flow",
+        "title": "summarizeSession grouping user u-12 actions into a 1100ms dynamic session window",
+        "nodes": [
+          {
+            "id": "act1",
+            "label": "view_home (1000ms)",
+            "tappable": false
+          },
+          {
+            "id": "act2",
+            "label": "search_shoes (1400ms)",
+            "tappable": false
+          },
+          {
+            "id": "act3",
+            "label": "add_to_cart (2100ms)",
+            "tappable": false
+          },
+          {
+            "id": "summary",
+            "label": "Session [1000..2100] (1100ms, 3 actions)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "act1",
+            "to": "act2",
+            "label": "+400ms"
+          },
+          {
+            "from": "act2",
+            "to": "act3",
+            "label": "+700ms"
+          },
+          {
+            "from": "act3",
+            "to": "summary",
+            "label": "summarizeSession"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A Session Window is a dynamic window demarcated by periods of user activity.",
+            "activeNodes": [
+              "act1",
+              "act2",
+              "act3"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When idle period exceeds the gap threshold, the session is closed.",
+            "activeNodes": [
+              "act3",
+              "summary"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "summarizeSession grouping user u-12 actions into a 1100ms dynamic session window",
+        "nodes": [
+          {
+            "id": "act1",
+            "label": "view_home (1000ms)",
+            "tappable": false
+          },
+          {
+            "id": "act2",
+            "label": "search_shoes (1400ms)",
+            "tappable": false
+          },
+          {
+            "id": "act3",
+            "label": "add_to_cart (2100ms)",
+            "tappable": false
+          },
+          {
+            "id": "summary",
+            "label": "Session [1000..2100] (1100ms, 3 actions)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "act1",
+            "to": "act2",
+            "label": "+400ms"
+          },
+          {
+            "from": "act2",
+            "to": "act3",
+            "label": "+700ms"
+          },
+          {
+            "from": "act3",
+            "to": "summary",
+            "label": "summarizeSession"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A Session Window is a dynamic window demarcated by periods of user activity.",
+            "activeNodes": [
+              "act1",
+              "act2",
+              "act3"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When idle period exceeds the gap threshold, the session is closed.",
+            "activeNodes": [
+              "act3",
+              "summary"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Inactivity Gap Threshold & Online Segmentation",
+      "codeHash": "8efa535951f8f61a0e4e69bfe2d7a27dd87d3ffbbaf68b66f893f3cf30f62189",
+      "spec": {
+        "template": "table",
+        "title": "segmentIntoSessions(clicks, 200) splitting 5 clicks across a 390ms inactivity gap",
+        "columns": [
+          "Session",
+          "Start (ms)",
+          "End (ms)",
+          "Length / Events"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Events arriving within gapMs (200ms) extend the current session end boundary.",
+            "rows": [
+              [
+                "Session 1",
+                "100",
+                "210",
+                "110ms (3 events)"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When elapsed time (390ms at 600ms) exceeds gapMs (200ms), Session 1 terminates.",
+            "rows": [
+              [
+                "Session 1",
+                "100",
+                "210",
+                "110ms (3 events)"
+              ],
+              [
+                "Session 2",
+                "600",
+                "650",
+                "50ms (2 events)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "segmentIntoSessions(clicks, 200) splitting 5 clicks across a 390ms inactivity gap",
+        "columns": [
+          "Session",
+          "Start (ms)",
+          "End (ms)",
+          "Length / Events"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Events arriving within gapMs (200ms) extend the current session end boundary.",
+            "rows": [
+              [
+                "Session 1",
+                "100",
+                "210",
+                "110ms (3 events)"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "When elapsed time (390ms at 600ms) exceeds gapMs (200ms), Session 1 terminates.",
+            "rows": [
+              [
+                "Session 1",
+                "100",
+                "210",
+                "110ms (3 events)"
+              ],
+              [
+                "Session 2",
+                "600",
+                "650",
+                "50ms (2 events)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stateful Session State Machine Architecture",
+      "codeHash": "a07a1aeec18941f5e6f9b8115cca8262d780f7e7b99ef71ea05a4d36e54f93ff",
+      "spec": {
+        "template": "states",
+        "title": "SessionStateMachine(300) transitions across NEW_SESSION and EXTENDED states",
+        "states": [
+          {
+            "id": "s1New",
+            "label": "NEW_SESSION (100ms: home)"
+          },
+          {
+            "id": "s1Ext",
+            "label": "EXTENDED (250ms: home, pricing)"
+          },
+          {
+            "id": "s2New",
+            "label": "NEW_SESSION (650ms: checkout)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When timestamp minus lastSeen is within gapMs (300ms), the session is extended.",
+            "activeState": "s1Ext",
+            "transition": {
+              "from": "s1New",
+              "to": "s1Ext",
+              "label": "delta: 150ms <= 300ms"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "When the previous session times out (650 - 250 > 300), a new session starts.",
+            "activeState": "s2New",
+            "transition": {
+              "from": "s1Ext",
+              "to": "s2New",
+              "label": "idle: 400ms > 300ms"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "SessionStateMachine(300) transitions across NEW_SESSION and EXTENDED states",
+        "states": [
+          {
+            "id": "s1New",
+            "label": "NEW_SESSION (100ms: home)"
+          },
+          {
+            "id": "s1Ext",
+            "label": "EXTENDED (250ms: home, pricing)"
+          },
+          {
+            "id": "s2New",
+            "label": "NEW_SESSION (650ms: checkout)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When timestamp minus lastSeen is within gapMs (300ms), the session is extended.",
+            "activeState": "s1Ext",
+            "transition": {
+              "from": "s1New",
+              "to": "s1Ext",
+              "label": "delta: 150ms <= 300ms"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "When the previous session times out (650 - 250 > 300), a new session starts.",
+            "activeState": "s2New",
+            "transition": {
+              "from": "s1Ext",
+              "to": "s2New",
+              "label": "idle: 400ms > 300ms"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Out-Of-Order Event Arrival & Session Bridging",
+      "codeHash": "6176afb36f4e64b18a5977a197612dfa459f4bfdc6b669c342dbfb14faaa49b4",
+      "spec": {
+        "template": "cells",
+        "title": "canBridgeSessions evaluating late event ts=350 across s-1 [100,200] and s-2 [500,600]",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two separate sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
+            "items": [
+              {
+                "text": "s-1 [100..200]"
+              },
+              {
+                "text": "Gap (300ms > 200ms)"
+              },
+              {
+                "text": "s-2 [500..600]"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "unbridged",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Late event 350ms bridges both sessions into a unified session [100, 600].",
+            "items": [
+              {
+                "text": "s-1 [100..200]"
+              },
+              {
+                "text": "Bridge (ts:350)"
+              },
+              {
+                "text": "Merged [100..600]"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "bridged:true",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "canBridgeSessions evaluating late event ts=350 across s-1 [100,200] and s-2 [500,600]",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Two separate sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
+            "items": [
+              "s-1 [100..200]",
+              "Gap (300ms > 200ms)",
+              "s-2 [500..600]"
+            ],
+            "pointers": [
+              {
+                "name": "unbridged",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Late event 350ms bridges both sessions into a unified session [100, 600].",
+            "items": [
+              "s-1 [100..200]",
+              "Bridge (ts:350)",
+              "Merged [100..600]"
+            ],
+            "pointers": [
+              {
+                "name": "bridged:true",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Session Window Merging Algorithm",
+      "codeHash": "1c7a06d139dae4b802c851f97208766c03463a06abe35dbd33fd29499b955e61",
+      "spec": {
+        "template": "table",
+        "title": "mergeSessionWindows greedy O(N log N) interval consolidation with gapMs = 15",
+        "columns": [
+          "Input Spans",
+          "Gap Check (<= prev.end + 15)",
+          "Merged Span",
+          "Duration"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When cur.start (40) is within prev.end + 15 (45), the sessions merge to [10, 60].",
+            "rows": [
+              [
+                "[10, 30] + [40, 60]",
+                "40 <= 30 + 15 (true)",
+                "[10, 60]",
+                "50 ms"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When the inactivity gap is not bridged (100 > 75), a new session is finalized.",
+            "rows": [
+              [
+                "[10, 30] + [40, 60]",
+                "40 <= 30 + 15 (true)",
+                "[10, 60]",
+                "50 ms"
+              ],
+              [
+                "[100, 120]",
+                "100 <= 60 + 15 (false)",
+                "[100, 120]",
+                "20 ms"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "mergeSessionWindows greedy O(N log N) interval consolidation with gapMs = 15",
+        "columns": [
+          "Input Spans",
+          "Gap Check (<= prev.end + 15)",
+          "Merged Span",
+          "Duration"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When cur.start (40) is within prev.end + 15 (45), the sessions merge to [10, 60].",
+            "rows": [
+              [
+                "[10, 30] + [40, 60]",
+                "40 <= 30 + 15 (true)",
+                "[10, 60]",
+                "50 ms"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When the inactivity gap is not bridged (100 > 75), a new session is finalized.",
+            "rows": [
+              [
+                "[10, 30] + [40, 60]",
+                "40 <= 30 + 15 (true)",
+                "[10, 60]",
+                "50 ms"
+              ],
+              [
+                "[100, 120]",
+                "100 <= 60 + 15 (false)",
+                "[100, 120]",
+                "20 ms"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full User Journey Sessionizer Engine",
+      "codeHash": "5e6c34d4ca3b43682f6a497c3ce9fd79eabd3dfcf976513c799fdec5018dc6ac",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
