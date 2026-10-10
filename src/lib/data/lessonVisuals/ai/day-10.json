@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 10,
+  "promptSha": "27e78438a5984ed55f58bdcebcb5eb394957902bb2c932defe778dc3fc762c2d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Blind Spots of Naive Vector RAG: Why Embeddings Miss Exact Keywords",
+      "codeHash": "d2370cd833cea578447e879a44984e81f02cc63c115fdbbe059b19afd9e3711d",
+      "spec": {
+        "template": "compare",
+        "title": "Dense semantic vector retrieval versus sparse BM25 exact lexical matching",
+        "left": {
+          "title": "Dense Vector Search",
+          "items": [
+            "High conceptual semantic recall",
+            "Maps synonyms to close points",
+            "Fails on exact serial numbers",
+            "Misses precise error code strings"
+          ]
+        },
+        "right": {
+          "title": "Sparse BM25 Search",
+          "items": [
+            "Exact lexical token precision",
+            "Matches error codes and part numbers",
+            "Handles alphanumeric identifiers",
+            "Zero semantic synonym recall"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Embedding models excel at conceptual meaning but struggle on strings.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "We combine dense semantic understanding with precision of keyword search.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dense semantic vector retrieval versus sparse BM25 exact lexical matching",
+        "left": {
+          "title": "Dense Vector Search",
+          "items": [
+            "High conceptual semantic recall",
+            "Maps synonyms to close points",
+            "Fails on exact serial numbers",
+            "Misses precise error code strings"
+          ]
+        },
+        "right": {
+          "title": "Sparse BM25 Search",
+          "items": [
+            "Exact lexical token precision",
+            "Matches error codes and part numbers",
+            "Handles alphanumeric identifiers",
+            "Zero semantic synonym recall"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Embedding models excel at conceptual meaning but struggle on strings.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "We combine dense semantic understanding with precision of keyword search.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BM25 Sparse Retrieval Mechanics: TF-IDF on Steroids",
+      "codeHash": "ae69f250db0aaa3bce5652688d5c9e2564451ea36695c0413bfeb35bf4ae01f0",
+      "spec": {
+        "template": "boxes",
+        "title": "Best matching twenty-five probabilistic ranking core mathematical factors",
+        "boxes": [
+          {
+            "id": "termFreq",
+            "title": "Term Frequency Saturation",
+            "items": [
+              "Counts term occurrences",
+              "Non-linear logarithmic curve",
+              "Prevents keyword stuffing skew"
+            ]
+          },
+          {
+            "id": "invDocFreq",
+            "title": "Inverse Document Frequency",
+            "items": [
+              "Rewards rare topical terms",
+              "Penalizes common stop words",
+              "High information content scoring"
+            ]
+          },
+          {
+            "id": "lengthNorm",
+            "title": "Length Normalization",
+            "items": [
+              "Penalizes bloated documents",
+              "Standardizes scoring scale",
+              "Fair multi-document comparison"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Term frequency measures appearances with non-linear saturation curves.",
+            "activeBoxId": "termFreq",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Document length normalization penalizes overly verbose documents.",
+            "activeBoxId": "lengthNorm",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Best matching twenty-five probabilistic ranking core mathematical factors",
+        "boxes": [
+          {
+            "id": "termFreq",
+            "title": "Term Frequency Saturation",
+            "items": [
+              "Counts term occurrences",
+              "Non-linear logarithmic curve",
+              "Prevents keyword stuffing skew"
+            ]
+          },
+          {
+            "id": "invDocFreq",
+            "title": "Inverse Document Frequency",
+            "items": [
+              "Rewards rare topical terms",
+              "Penalizes common stop words",
+              "High information content scoring"
+            ]
+          },
+          {
+            "id": "lengthNorm",
+            "title": "Length Normalization",
+            "items": [
+              "Penalizes bloated documents",
+              "Standardizes scoring scale",
+              "Fair multi-document comparison"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Term frequency measures appearances with non-linear saturation curves.",
+            "activeBoxId": "termFreq",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Document length normalization penalizes overly verbose documents.",
+            "activeBoxId": "lengthNorm",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Search Architecture: Two Parallel Retrieval Engines",
+      "codeHash": "0ce5254e2c76768fa3786f35994fce17c8bdb0bc13684d5b375fe75929ffee37",
+      "spec": {
+        "template": "flow",
+        "title": "Parallel dual retrieval engine execution and candidate candidate aggregation",
+        "nodes": [
+          {
+            "id": "queryOrch",
+            "label": "Query Search Orchestrator",
+            "tappable": false
+          },
+          {
+            "id": "denseEngine",
+            "label": "Dense Vector HNSW Index",
+            "tappable": false
+          },
+          {
+            "id": "sparseEngine",
+            "label": "Sparse BM25 Inverted Index",
+            "tappable": false
+          },
+          {
+            "id": "fusionCore",
+            "label": "Reciprocal Rank Fusion",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "queryOrch",
+            "to": "denseEngine",
+            "label": "Dispatch Query Vector"
+          },
+          {
+            "from": "queryOrch",
+            "to": "sparseEngine",
+            "label": "Dispatch Exact Keyword Query"
+          },
+          {
+            "from": "denseEngine",
+            "to": "fusionCore",
+            "label": "Top N Semantic Candidates"
+          },
+          {
+            "from": "sparseEngine",
+            "to": "fusionCore",
+            "label": "Top N Keyword Candidates"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The orchestrator dispatches incoming query terms to both search engines.",
+            "activeNodes": [
+              "queryOrch",
+              "denseEngine"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "A sound ranking fusion technique unites both lists into superior results.",
+            "activeNodes": [
+              "sparseEngine",
+              "fusionCore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Parallel dual retrieval engine execution and candidate candidate aggregation",
+        "nodes": [
+          {
+            "id": "queryOrch",
+            "label": "Query Search Orchestrator",
+            "tappable": false
+          },
+          {
+            "id": "denseEngine",
+            "label": "Dense Vector HNSW Index",
+            "tappable": false
+          },
+          {
+            "id": "sparseEngine",
+            "label": "Sparse BM25 Inverted Index",
+            "tappable": false
+          },
+          {
+            "id": "fusionCore",
+            "label": "Reciprocal Rank Fusion",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "queryOrch",
+            "to": "denseEngine",
+            "label": "Dispatch Query Vector"
+          },
+          {
+            "from": "queryOrch",
+            "to": "sparseEngine",
+            "label": "Dispatch Exact Keyword Query"
+          },
+          {
+            "from": "denseEngine",
+            "to": "fusionCore",
+            "label": "Top N Semantic Candidates"
+          },
+          {
+            "from": "sparseEngine",
+            "to": "fusionCore",
+            "label": "Top N Keyword Candidates"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The orchestrator dispatches incoming query terms to both search engines.",
+            "activeNodes": [
+              "queryOrch",
+              "denseEngine"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "A sound ranking fusion technique unites both lists into superior results.",
+            "activeNodes": [
+              "sparseEngine",
+              "fusionCore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reciprocal Rank Fusion (RRF): The Mathematics of Rank Combination",
+      "codeHash": "77fcbba35cda7946443011a9243641f5a0572f52380013120e13cdf116584f2d",
+      "spec": {
+        "template": "table",
+        "title": "Reciprocal rank fusion ordinal positions and calculated composite score",
+        "columns": [
+          "Document Candidate",
+          "Dense Rank Position",
+          "BM25 Rank Position",
+          "Calculated RRF Score"
+        ],
+        "rows": [
+          [
+            "Incident Post Error",
+            "Rank Position Four",
+            "Rank Position One",
+            "Highest Fused Score"
+          ],
+          [
+            "Network Overview Guide",
+            "Rank Position One",
+            "Unranked Zero",
+            "Moderate Score"
+          ],
+          [
+            "Database Config Sheet",
+            "Rank Position Two",
+            "Rank Position Six",
+            "Strong Fused Score"
+          ],
+          [
+            "Generic Help Article",
+            "Unranked Zero",
+            "Rank Position Two",
+            "Moderate Score"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Rank fusion operates exclusively on the ordinal positions of documents.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Documents appearing near the top of both lists receive huge score boosts.",
+            "activeRowIndex": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reciprocal rank fusion ordinal positions and calculated composite score",
+        "columns": [
+          "Document Candidate",
+          "Dense Rank Position",
+          "BM25 Rank Position",
+          "Calculated RRF Score"
+        ],
+        "rows": [
+          [
+            "Incident Post Error",
+            "Rank Position Four",
+            "Rank Position One",
+            "Highest Fused Score"
+          ],
+          [
+            "Network Overview Guide",
+            "Rank Position One",
+            "Unranked Zero",
+            "Moderate Score"
+          ],
+          [
+            "Database Config Sheet",
+            "Rank Position Two",
+            "Rank Position Six",
+            "Strong Fused Score"
+          ],
+          [
+            "Generic Help Article",
+            "Unranked Zero",
+            "Rank Position Two",
+            "Moderate Score"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Rank fusion operates exclusively on the ordinal positions of documents.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Documents appearing near the top of both lists receive huge score boosts.",
+            "activeRowIndex": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Score Normalization Alternatives vs Rank Fusion",
+      "codeHash": "deec478b93936f5056e2b8deae243223af8f66f8a56b830c00c980486d0a5bfd",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Hybrid Search Engine with Reciprocal Rank Fusion",
+      "codeHash": "174ebd43cd8e36c642354aba5e972886aa7c456f54f24f5494dd80f5530c78fc",
+      "spec": {
+        "template": "sequence",
+        "title": "Hybrid search engine dual retrieval execution and reciprocal rank fusion",
+        "actors": [
+          {
+            "id": "searchClient",
+            "label": "Enterprise Search Query"
+          },
+          {
+            "id": "denseRetriever",
+            "label": "Dense HNSW Vector Search"
+          },
+          {
+            "id": "bm25Retriever",
+            "label": "Sparse BM25 Keyword Search"
+          },
+          {
+            "id": "rrfAggregator",
+            "label": "Reciprocal Rank Fusion Core"
+          }
+        ],
+        "messages": [
+          {
+            "from": "searchClient",
+            "to": "denseRetriever",
+            "label": "Submit Query for Semantic Similarity",
+            "tone": "data"
+          },
+          {
+            "from": "searchClient",
+            "to": "bm25Retriever",
+            "label": "Submit Exact Alphanumeric Query",
+            "tone": "data"
+          },
+          {
+            "from": "denseRetriever",
+            "to": "rrfAggregator",
+            "label": "Emit Top Dense Candidate Rankings",
+            "tone": "data"
+          },
+          {
+            "from": "bm25Retriever",
+            "to": "rrfAggregator",
+            "label": "Emit Top Sparse Candidate Rankings",
+            "tone": "data"
+          },
+          {
+            "from": "rrfAggregator",
+            "to": "searchClient",
+            "label": "Return Fused Search Results",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine executes both dense vector search and sparse keyword search.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The exact incident report surges because it satisfies keyword requirements.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Hybrid search engine dual retrieval execution and reciprocal rank fusion",
+        "actors": [
+          {
+            "id": "searchClient",
+            "label": "Enterprise Search Query"
+          },
+          {
+            "id": "denseRetriever",
+            "label": "Dense HNSW Vector Search"
+          },
+          {
+            "id": "bm25Retriever",
+            "label": "Sparse BM25 Keyword Search"
+          },
+          {
+            "id": "rrfAggregator",
+            "label": "Reciprocal Rank Fusion Core"
+          }
+        ],
+        "messages": [
+          {
+            "from": "searchClient",
+            "to": "denseRetriever",
+            "label": "Submit Query for Semantic Similarity",
+            "tone": "data"
+          },
+          {
+            "from": "searchClient",
+            "to": "bm25Retriever",
+            "label": "Submit Exact Alphanumeric Query",
+            "tone": "data"
+          },
+          {
+            "from": "denseRetriever",
+            "to": "rrfAggregator",
+            "label": "Emit Top Dense Candidate Rankings",
+            "tone": "data"
+          },
+          {
+            "from": "bm25Retriever",
+            "to": "rrfAggregator",
+            "label": "Emit Top Sparse Candidate Rankings",
+            "tone": "data"
+          },
+          {
+            "from": "rrfAggregator",
+            "to": "searchClient",
+            "label": "Return Fused Search Results",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine executes both dense vector search and sparse keyword search.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The exact incident report surges because it satisfies keyword requirements.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
