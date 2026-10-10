@@ -11,54 +11,300 @@
       "spec": {
         "template": "table",
         "title": "Ordered Multi-Provider Redundancy Chain",
-        "columns": ["Priority", "Provider ID", "Provider Name", "Failover Role"],
-        "rows": [
-          { "Priority": { "text": "1" }, "Provider ID": { "text": "openai" }, "Provider Name": { "text": "OpenAI Primary" }, "Failover Role": { "text": "Active primary provider" } },
-          { "Priority": { "text": "2" }, "Provider ID": { "text": "anthropic" }, "Provider Name": { "text": "Anthropic Secondary" }, "Failover Role": { "text": "Automatic secondary failover" } },
-          { "Priority": { "text": "3" }, "Provider ID": { "text": "gemini" }, "Provider Name": { "text": "Google Tertiary" }, "Failover Role": { "text": "Emergency tertiary fallback" } }
+        "columns": [
+          "Priority",
+          "Provider ID",
+          "Provider Name",
+          "Failover Role"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Architectures enforce multi-provider redundancy across platforms.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "1"
+                  },
+                  "Provider ID": {
+                    "text": "openai"
+                  },
+                  "Provider Name": {
+                    "text": "OpenAI Primary"
+                  },
+                  "Failover Role": {
+                    "text": "Active primary provider"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "2"
+                  },
+                  "Provider ID": {
+                    "text": "anthropic"
+                  },
+                  "Provider Name": {
+                    "text": "Anthropic Secondary"
+                  },
+                  "Failover Role": {
+                    "text": "Automatic secondary failover"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "3"
+                  },
+                  "Provider ID": {
+                    "text": "gemini"
+                  },
+                  "Provider Name": {
+                    "text": "Google Tertiary"
+                  },
+                  "Failover Role": {
+                    "text": "Emergency tertiary fallback"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Configurations define an ordered fallback priority chain across vendors.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "1"
+                  },
+                  "Provider ID": {
+                    "text": "openai"
+                  },
+                  "Provider Name": {
+                    "text": "OpenAI Primary"
+                  },
+                  "Failover Role": {
+                    "text": "Active primary provider"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "2"
+                  },
+                  "Provider ID": {
+                    "text": "anthropic"
+                  },
+                  "Provider Name": {
+                    "text": "Anthropic Secondary"
+                  },
+                  "Failover Role": {
+                    "text": "Automatic secondary failover"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "3"
+                  },
+                  "Provider ID": {
+                    "text": "gemini"
+                  },
+                  "Provider Name": {
+                    "text": "Google Tertiary"
+                  },
+                  "Failover Role": {
+                    "text": "Emergency tertiary fallback"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Gateways shift traffic seamlessly when primary providers encounter failures.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "1"
+                  },
+                  "Provider ID": {
+                    "text": "openai"
+                  },
+                  "Provider Name": {
+                    "text": "OpenAI Primary"
+                  },
+                  "Failover Role": {
+                    "text": "Active primary provider"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "2"
+                  },
+                  "Provider ID": {
+                    "text": "anthropic"
+                  },
+                  "Provider Name": {
+                    "text": "Anthropic Secondary"
+                  },
+                  "Failover Role": {
+                    "text": "Automatic secondary failover"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": {
+                    "text": "3"
+                  },
+                  "Provider ID": {
+                    "text": "gemini"
+                  },
+                  "Provider Name": {
+                    "text": "Google Tertiary"
+                  },
+                  "Failover Role": {
+                    "text": "Emergency tertiary fallback"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Ordered Multi-Provider Redundancy Chain",
-        "columns": ["Priority", "Provider ID", "Provider Name", "Failover Role"],
-        "rows": [
-          { "Priority": "1", "Provider ID": "openai", "Provider Name": "OpenAI Primary", "Failover Role": "Active primary provider" },
-          { "Priority": "2", "Provider ID": "anthropic", "Provider Name": "Anthropic Secondary", "Failover Role": "Automatic secondary failover" },
-          { "Priority": "3", "Provider ID": "gemini", "Provider Name": "Google Tertiary", "Failover Role": "Emergency tertiary fallback" }
+        "columns": [
+          "Priority",
+          "Provider ID",
+          "Provider Name",
+          "Failover Role"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Architectures enforce multi-provider redundancy across platforms.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": "1",
+                  "Provider ID": "openai",
+                  "Provider Name": "OpenAI Primary",
+                  "Failover Role": "Active primary provider"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "2",
+                  "Provider ID": "anthropic",
+                  "Provider Name": "Anthropic Secondary",
+                  "Failover Role": "Automatic secondary failover"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "3",
+                  "Provider ID": "gemini",
+                  "Provider Name": "Google Tertiary",
+                  "Failover Role": "Emergency tertiary fallback"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Configurations define an ordered fallback priority chain across vendors.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": "1",
+                  "Provider ID": "openai",
+                  "Provider Name": "OpenAI Primary",
+                  "Failover Role": "Active primary provider"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "2",
+                  "Provider ID": "anthropic",
+                  "Provider Name": "Anthropic Secondary",
+                  "Failover Role": "Automatic secondary failover"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "3",
+                  "Provider ID": "gemini",
+                  "Provider Name": "Google Tertiary",
+                  "Failover Role": "Emergency tertiary fallback"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Gateways shift traffic seamlessly when primary providers encounter failures.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Priority": "1",
+                  "Provider ID": "openai",
+                  "Provider Name": "OpenAI Primary",
+                  "Failover Role": "Active primary provider"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "2",
+                  "Provider ID": "anthropic",
+                  "Provider Name": "Anthropic Secondary",
+                  "Failover Role": "Automatic secondary failover"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Priority": "3",
+                  "Provider ID": "gemini",
+                  "Provider Name": "Google Tertiary",
+                  "Failover Role": "Emergency tertiary fallback"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,28 +316,46 @@
         "template": "states",
         "title": "Circuit Breaker Finite State Machine",
         "states": [
-          { "id": "closed", "label": "CLOSED (Normal Flow)" },
-          { "id": "open", "label": "OPEN (Fail Fast & Block)" },
-          { "id": "half_open", "label": "HALF_OPEN (Canary Probe)" }
+          {
+            "id": "closed",
+            "label": "CLOSED (Normal Flow)"
+          },
+          {
+            "id": "open",
+            "label": "OPEN (Fail Fast & Block)"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN (Canary Probe)"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "In closed states requests flow freely while consecutive failures are tracked.",
             "current": "closed",
-            "visited": ["closed"]
+            "visited": [
+              "closed"
+            ]
           },
           {
             "at": "say5",
             "caption": "When failures breach configured thresholds circuits trip to open states.",
             "current": "open",
-            "visited": ["closed", "open"]
+            "visited": [
+              "closed",
+              "open"
+            ]
           },
           {
             "at": "say7",
             "caption": "Circuits transition to half-open dispatching small canary probes.",
             "current": "half_open",
-            "visited": ["closed", "open", "half_open"]
+            "visited": [
+              "closed",
+              "open",
+              "half_open"
+            ]
           }
         ]
       },
@@ -99,28 +363,46 @@
         "template": "states",
         "title": "Circuit Breaker Finite State Machine",
         "states": [
-          { "id": "closed", "label": "CLOSED (Normal Flow)" },
-          { "id": "open", "label": "OPEN (Fail Fast & Block)" },
-          { "id": "half_open", "label": "HALF_OPEN (Canary Probe)" }
+          {
+            "id": "closed",
+            "label": "CLOSED (Normal Flow)"
+          },
+          {
+            "id": "open",
+            "label": "OPEN (Fail Fast & Block)"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN (Canary Probe)"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "In closed states requests flow freely while consecutive failures are tracked.",
             "current": "closed",
-            "visited": ["closed"]
+            "visited": [
+              "closed"
+            ]
           },
           {
             "at": "say5",
             "caption": "When failures breach configured thresholds circuits trip to open states.",
             "current": "open",
-            "visited": ["closed", "open"]
+            "visited": [
+              "closed",
+              "open"
+            ]
           },
           {
             "at": "say7",
             "caption": "Circuits transition to half-open dispatching small canary probes.",
             "current": "half_open",
-            "visited": ["closed", "open", "half_open"]
+            "visited": [
+              "closed",
+              "open",
+              "half_open"
+            ]
           }
         ]
       }
@@ -132,10 +414,26 @@
         "template": "workflow",
         "title": "Circuit Breaker Cooldown and Self-Healing Stages",
         "stages": [
-          { "id": "failures", "name": "Failure Tracking", "subtext": "Count consecutive 5xx errors" },
-          { "id": "trip", "name": "Trip to OPEN", "subtext": "Record timestamp of opening" },
-          { "id": "cooldown", "name": "Cooldown Window", "subtext": "Block traffic for 5000ms" },
-          { "id": "canary", "name": "Canary Evaluation", "subtext": "Probe and restore CLOSED" }
+          {
+            "id": "failures",
+            "name": "Failure Tracking",
+            "subtext": "Count consecutive 5xx errors"
+          },
+          {
+            "id": "trip",
+            "name": "Trip to OPEN",
+            "subtext": "Record timestamp of opening"
+          },
+          {
+            "id": "cooldown",
+            "name": "Cooldown Window",
+            "subtext": "Block traffic for 5000ms"
+          },
+          {
+            "id": "canary",
+            "name": "Canary Evaluation",
+            "subtext": "Probe and restore CLOSED"
+          }
         ],
         "steps": [
           {
@@ -162,10 +460,26 @@
         "template": "workflow",
         "title": "Circuit Breaker Cooldown and Self-Healing Stages",
         "stages": [
-          { "id": "failures", "name": "Failure Tracking", "subtext": "Count consecutive 5xx errors" },
-          { "id": "trip", "name": "Trip to OPEN", "subtext": "Record timestamp of opening" },
-          { "id": "cooldown", "name": "Cooldown Window", "subtext": "Block traffic for 5000ms" },
-          { "id": "canary", "name": "Canary Evaluation", "subtext": "Probe and restore CLOSED" }
+          {
+            "id": "failures",
+            "name": "Failure Tracking",
+            "subtext": "Count consecutive 5xx errors"
+          },
+          {
+            "id": "trip",
+            "name": "Trip to OPEN",
+            "subtext": "Record timestamp of opening"
+          },
+          {
+            "id": "cooldown",
+            "name": "Cooldown Window",
+            "subtext": "Block traffic for 5000ms"
+          },
+          {
+            "id": "canary",
+            "name": "Canary Evaluation",
+            "subtext": "Probe and restore CLOSED"
+          }
         ],
         "steps": [
           {
@@ -196,35 +510,77 @@
         "template": "flow",
         "title": "Sequential Fallback Traversal Architecture",
         "nodes": [
-          { "id": "ingress", "label": "Inference Ingress", "tappable": false },
-          { "id": "primary", "label": "Primary API (Fails)", "tappable": false },
-          { "id": "error", "label": "Catch Exception", "tappable": false },
-          { "id": "secondary", "label": "Secondary API (Healthy)", "tappable": false },
-          { "id": "success", "label": "Success Response", "tappable": false }
+          {
+            "id": "ingress",
+            "label": "Inference Ingress",
+            "tappable": false
+          },
+          {
+            "id": "primary",
+            "label": "Primary API (Fails)",
+            "tappable": false
+          },
+          {
+            "id": "error",
+            "label": "Catch Exception",
+            "tappable": false
+          },
+          {
+            "id": "secondary",
+            "label": "Secondary API (Healthy)",
+            "tappable": false
+          },
+          {
+            "id": "success",
+            "label": "Success Response",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "ingress", "to": "primary" },
-          { "from": "primary", "to": "error" },
-          { "from": "error", "to": "secondary" },
-          { "from": "secondary", "to": "success" }
+          {
+            "from": "ingress",
+            "to": "primary"
+          },
+          {
+            "from": "primary",
+            "to": "error"
+          },
+          {
+            "from": "error",
+            "to": "secondary"
+          },
+          {
+            "from": "secondary",
+            "to": "success"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Dispatchers wrap provider chains in sequential traversal loops.",
-            "activeNodes": ["ingress", "primary"],
+            "activeNodes": [
+              "ingress",
+              "primary"
+            ],
             "statusBadge": "dispatching"
           },
           {
             "at": "say4",
             "caption": "Dispatchers record failure metrics and failover to secondary providers.",
-            "activeNodes": ["primary", "error", "secondary"],
+            "activeNodes": [
+              "primary",
+              "error",
+              "secondary"
+            ],
             "statusBadge": "failing_over"
           },
           {
             "at": "say7",
             "caption": "Tracking servicing providers gives real-time visibility into health.",
-            "activeNodes": ["secondary", "success"],
+            "activeNodes": [
+              "secondary",
+              "success"
+            ],
             "statusBadge": "serviced"
           }
         ]
@@ -233,35 +589,77 @@
         "template": "flow",
         "title": "Sequential Fallback Traversal Architecture",
         "nodes": [
-          { "id": "ingress", "label": "Inference Ingress", "tappable": false },
-          { "id": "primary", "label": "Primary API (Fails)", "tappable": false },
-          { "id": "error", "label": "Catch Exception", "tappable": false },
-          { "id": "secondary", "label": "Secondary API (Healthy)", "tappable": false },
-          { "id": "success", "label": "Success Response", "tappable": false }
+          {
+            "id": "ingress",
+            "label": "Inference Ingress",
+            "tappable": false
+          },
+          {
+            "id": "primary",
+            "label": "Primary API (Fails)",
+            "tappable": false
+          },
+          {
+            "id": "error",
+            "label": "Catch Exception",
+            "tappable": false
+          },
+          {
+            "id": "secondary",
+            "label": "Secondary API (Healthy)",
+            "tappable": false
+          },
+          {
+            "id": "success",
+            "label": "Success Response",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "ingress", "to": "primary" },
-          { "from": "primary", "to": "error" },
-          { "from": "error", "to": "secondary" },
-          { "from": "secondary", "to": "success" }
+          {
+            "from": "ingress",
+            "to": "primary"
+          },
+          {
+            "from": "primary",
+            "to": "error"
+          },
+          {
+            "from": "error",
+            "to": "secondary"
+          },
+          {
+            "from": "secondary",
+            "to": "success"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Dispatchers wrap provider chains in sequential traversal loops.",
-            "activeNodes": ["ingress", "primary"],
+            "activeNodes": [
+              "ingress",
+              "primary"
+            ],
             "statusBadge": "dispatching"
           },
           {
             "at": "say4",
             "caption": "Dispatchers record failure metrics and failover to secondary providers.",
-            "activeNodes": ["primary", "error", "secondary"],
+            "activeNodes": [
+              "primary",
+              "error",
+              "secondary"
+            ],
             "statusBadge": "failing_over"
           },
           {
             "at": "say7",
             "caption": "Tracking servicing providers gives real-time visibility into health.",
-            "activeNodes": ["secondary", "success"],
+            "activeNodes": [
+              "secondary",
+              "success"
+            ],
             "statusBadge": "serviced"
           }
         ]

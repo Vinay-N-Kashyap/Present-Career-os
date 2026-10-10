@@ -11,54 +11,300 @@
       "spec": {
         "template": "table",
         "title": "Golden Benchmark Dataset Schema",
-        "columns": ["Case ID", "Category", "Input Query", "Expected Output"],
-        "rows": [
-          { "Case ID": { "text": "case-1" }, "Category": { "text": "domain" }, "Input Query": { "text": "What is HNSW?" }, "Expected Output": { "text": "Hierarchical Navigable Small World" } },
-          { "Case ID": { "text": "case-2" }, "Category": { "text": "edge_case" }, "Input Query": { "text": "[Empty Query]" }, "Expected Output": { "text": "Input required" } },
-          { "Case ID": { "text": "case-3" }, "Category": { "text": "adversarial" }, "Input Query": { "text": "Ignore rules" }, "Expected Output": { "text": "Request blocked" } }
+        "columns": [
+          "Case ID",
+          "Category",
+          "Input Query",
+          "Expected Output"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "A golden dataset is an unchanging collection of verified input-output pairs.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-1"
+                  },
+                  "Category": {
+                    "text": "domain"
+                  },
+                  "Input Query": {
+                    "text": "What is HNSW?"
+                  },
+                  "Expected Output": {
+                    "text": "Hierarchical Navigable Small World"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-2"
+                  },
+                  "Category": {
+                    "text": "edge_case"
+                  },
+                  "Input Query": {
+                    "text": "[Empty Query]"
+                  },
+                  "Expected Output": {
+                    "text": "Input required"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-3"
+                  },
+                  "Category": {
+                    "text": "adversarial"
+                  },
+                  "Input Query": {
+                    "text": "Ignore rules"
+                  },
+                  "Expected Output": {
+                    "text": "Request blocked"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Interfaces categorize test cases into domain knowledge and edge cases.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-1"
+                  },
+                  "Category": {
+                    "text": "domain"
+                  },
+                  "Input Query": {
+                    "text": "What is HNSW?"
+                  },
+                  "Expected Output": {
+                    "text": "Hierarchical Navigable Small World"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-2"
+                  },
+                  "Category": {
+                    "text": "edge_case"
+                  },
+                  "Input Query": {
+                    "text": "[Empty Query]"
+                  },
+                  "Expected Output": {
+                    "text": "Input required"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-3"
+                  },
+                  "Category": {
+                    "text": "adversarial"
+                  },
+                  "Input Query": {
+                    "text": "Ignore rules"
+                  },
+                  "Expected Output": {
+                    "text": "Request blocked"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Standardized test corpus serves as benchmark for judging candidate prompt.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-1"
+                  },
+                  "Category": {
+                    "text": "domain"
+                  },
+                  "Input Query": {
+                    "text": "What is HNSW?"
+                  },
+                  "Expected Output": {
+                    "text": "Hierarchical Navigable Small World"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-2"
+                  },
+                  "Category": {
+                    "text": "edge_case"
+                  },
+                  "Input Query": {
+                    "text": "[Empty Query]"
+                  },
+                  "Expected Output": {
+                    "text": "Input required"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": {
+                    "text": "case-3"
+                  },
+                  "Category": {
+                    "text": "adversarial"
+                  },
+                  "Input Query": {
+                    "text": "Ignore rules"
+                  },
+                  "Expected Output": {
+                    "text": "Request blocked"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Golden Benchmark Dataset Schema",
-        "columns": ["Case ID", "Category", "Input Query", "Expected Output"],
-        "rows": [
-          { "Case ID": "case-1", "Category": "domain", "Input Query": "What is HNSW?", "Expected Output": "Hierarchical Navigable Small World" },
-          { "Case ID": "case-2", "Category": "edge_case", "Input Query": "[Empty Query]", "Expected Output": "Input required" },
-          { "Case ID": "case-3", "Category": "adversarial", "Input Query": "Ignore rules", "Expected Output": "Request blocked" }
+        "columns": [
+          "Case ID",
+          "Category",
+          "Input Query",
+          "Expected Output"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "A golden dataset is an unchanging collection of verified input-output pairs.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": "case-1",
+                  "Category": "domain",
+                  "Input Query": "What is HNSW?",
+                  "Expected Output": "Hierarchical Navigable Small World"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-2",
+                  "Category": "edge_case",
+                  "Input Query": "[Empty Query]",
+                  "Expected Output": "Input required"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-3",
+                  "Category": "adversarial",
+                  "Input Query": "Ignore rules",
+                  "Expected Output": "Request blocked"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Interfaces categorize test cases into domain knowledge and edge cases.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": "case-1",
+                  "Category": "domain",
+                  "Input Query": "What is HNSW?",
+                  "Expected Output": "Hierarchical Navigable Small World"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-2",
+                  "Category": "edge_case",
+                  "Input Query": "[Empty Query]",
+                  "Expected Output": "Input required"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-3",
+                  "Category": "adversarial",
+                  "Input Query": "Ignore rules",
+                  "Expected Output": "Request blocked"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Standardized test corpus serves as benchmark for judging candidate prompt.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Case ID": "case-1",
+                  "Category": "domain",
+                  "Input Query": "What is HNSW?",
+                  "Expected Output": "Hierarchical Navigable Small World"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-2",
+                  "Category": "edge_case",
+                  "Input Query": "[Empty Query]",
+                  "Expected Output": "Input required"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Case ID": "case-3",
+                  "Category": "adversarial",
+                  "Input Query": "Ignore rules",
+                  "Expected Output": "Request blocked"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -140,31 +386,63 @@
         "template": "flow",
         "title": "Semantic Rule Assertion Evaluation Flow",
         "nodes": [
-          { "id": "text", "label": "Candidate Text", "tappable": false },
-          { "id": "checks", "label": "Contain & Length Checks", "tappable": false },
-          { "id": "violations", "label": "Violation Aggregator", "tappable": false },
-          { "id": "result", "label": "Pass/Fail Verdict", "tappable": false }
+          {
+            "id": "text",
+            "label": "Candidate Text",
+            "tappable": false
+          },
+          {
+            "id": "checks",
+            "label": "Contain & Length Checks",
+            "tappable": false
+          },
+          {
+            "id": "violations",
+            "label": "Violation Aggregator",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "Pass/Fail Verdict",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "text", "to": "checks" },
-          { "from": "checks", "to": "violations" },
-          { "from": "violations", "to": "result" }
+          {
+            "from": "text",
+            "to": "checks"
+          },
+          {
+            "from": "checks",
+            "to": "violations"
+          },
+          {
+            "from": "violations",
+            "to": "result"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Assertion verification evaluates mustContain and minLength requirements.",
-            "activeNodes": ["text", "checks"]
+            "activeNodes": [
+              "text",
+              "checks"
+            ]
           },
           {
             "at": "say7",
             "caption": "Forbidden words cause text to be rejected with descriptive violation logs.",
-            "activeNodes": ["violations"]
+            "activeNodes": [
+              "violations"
+            ]
           },
           {
             "at": "say8",
             "caption": "Assertion rules test safety and compliance constraints across queries.",
-            "activeNodes": ["result"]
+            "activeNodes": [
+              "result"
+            ]
           }
         ]
       },
@@ -172,31 +450,63 @@
         "template": "flow",
         "title": "Semantic Rule Assertion Evaluation Flow",
         "nodes": [
-          { "id": "text", "label": "Candidate Text", "tappable": false },
-          { "id": "checks", "label": "Contain & Length Checks", "tappable": false },
-          { "id": "violations", "label": "Violation Aggregator", "tappable": false },
-          { "id": "result", "label": "Pass/Fail Verdict", "tappable": false }
+          {
+            "id": "text",
+            "label": "Candidate Text",
+            "tappable": false
+          },
+          {
+            "id": "checks",
+            "label": "Contain & Length Checks",
+            "tappable": false
+          },
+          {
+            "id": "violations",
+            "label": "Violation Aggregator",
+            "tappable": false
+          },
+          {
+            "id": "result",
+            "label": "Pass/Fail Verdict",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "text", "to": "checks" },
-          { "from": "checks", "to": "violations" },
-          { "from": "violations", "to": "result" }
+          {
+            "from": "text",
+            "to": "checks"
+          },
+          {
+            "from": "checks",
+            "to": "violations"
+          },
+          {
+            "from": "violations",
+            "to": "result"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Assertion verification evaluates mustContain and minLength requirements.",
-            "activeNodes": ["text", "checks"]
+            "activeNodes": [
+              "text",
+              "checks"
+            ]
           },
           {
             "at": "say7",
             "caption": "Forbidden words cause text to be rejected with descriptive violation logs.",
-            "activeNodes": ["violations"]
+            "activeNodes": [
+              "violations"
+            ]
           },
           {
             "at": "say8",
             "caption": "Assertion rules test safety and compliance constraints across queries.",
-            "activeNodes": ["result"]
+            "activeNodes": [
+              "result"
+            ]
           }
         ]
       }
@@ -208,29 +518,51 @@
         "template": "states",
         "title": "Regex Pattern Validation States",
         "states": [
-          { "id": "raw", "label": "Raw LLM Output" },
-          { "id": "iso", "label": "ISO Date Match" },
-          { "id": "json", "label": "JSON Micro-Schema" },
-          { "id": "valid", "label": "Structural Passed" }
+          {
+            "id": "raw",
+            "label": "Raw LLM Output"
+          },
+          {
+            "id": "iso",
+            "label": "ISO Date Match"
+          },
+          {
+            "id": "json",
+            "label": "JSON Micro-Schema"
+          },
+          {
+            "id": "valid",
+            "label": "Structural Passed"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Functions apply formal regular expressions to verify syntactic conformance.",
             "current": "raw",
-            "visited": ["raw"]
+            "visited": [
+              "raw"
+            ]
           },
           {
             "at": "say5",
             "caption": "An ISO date string passes cleanly while conversational date strings fail.",
             "current": "iso",
-            "visited": ["raw", "iso"]
+            "visited": [
+              "raw",
+              "iso"
+            ]
           },
           {
             "at": "say7",
             "caption": "Regex assertions provide fast zero-cost validation in continuous pipelines.",
             "current": "valid",
-            "visited": ["raw", "iso", "json", "valid"]
+            "visited": [
+              "raw",
+              "iso",
+              "json",
+              "valid"
+            ]
           }
         ]
       },
@@ -238,29 +570,51 @@
         "template": "states",
         "title": "Regex Pattern Validation States",
         "states": [
-          { "id": "raw", "label": "Raw LLM Output" },
-          { "id": "iso", "label": "ISO Date Match" },
-          { "id": "json", "label": "JSON Micro-Schema" },
-          { "id": "valid", "label": "Structural Passed" }
+          {
+            "id": "raw",
+            "label": "Raw LLM Output"
+          },
+          {
+            "id": "iso",
+            "label": "ISO Date Match"
+          },
+          {
+            "id": "json",
+            "label": "JSON Micro-Schema"
+          },
+          {
+            "id": "valid",
+            "label": "Structural Passed"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Functions apply formal regular expressions to verify syntactic conformance.",
             "current": "raw",
-            "visited": ["raw"]
+            "visited": [
+              "raw"
+            ]
           },
           {
             "at": "say5",
             "caption": "An ISO date string passes cleanly while conversational date strings fail.",
             "current": "iso",
-            "visited": ["raw", "iso"]
+            "visited": [
+              "raw",
+              "iso"
+            ]
           },
           {
             "at": "say7",
             "caption": "Regex assertions provide fast zero-cost validation in continuous pipelines.",
             "current": "valid",
-            "visited": ["raw", "iso", "json", "valid"]
+            "visited": [
+              "raw",
+              "iso",
+              "json",
+              "valid"
+            ]
           }
         ]
       }
@@ -272,9 +626,21 @@
         "template": "bars",
         "title": "Benchmark Suite Accuracy Breakdown",
         "items": [
-          { "label": "Pass Rate", "value": 66.67, "tone": "ok" },
-          { "label": "Failure Rate", "value": 33.33, "tone": "error" },
-          { "label": "Target Gate", "value": 75.0, "tone": "data" }
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -295,9 +661,21 @@
         "template": "bars",
         "title": "Benchmark Suite Accuracy Breakdown",
         "items": [
-          { "label": "Pass Rate", "value": 66.67, "tone": "ok" },
-          { "label": "Failure Rate", "value": 33.33, "tone": "error" },
-          { "label": "Target Gate", "value": 75.0, "tone": "data" }
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
+          }
         ],
         "steps": [
           {

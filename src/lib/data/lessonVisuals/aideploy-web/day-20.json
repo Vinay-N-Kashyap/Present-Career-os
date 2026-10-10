@@ -11,54 +11,262 @@
       "spec": {
         "template": "table",
         "title": "Prompt Injection Signature Taxonomy",
-        "columns": ["Pattern Name", "Detection Signature", "Threat Category"],
-        "rows": [
-          { "Pattern Name": { "text": "Instruction Override" }, "Detection Signature": { "text": "ignore previous instructions" }, "Threat Category": { "text": "Context Hijack" } },
-          { "Pattern Name": { "text": "System Leak" }, "Detection Signature": { "text": "reveal internal system prompt" }, "Threat Category": { "text": "Exfiltration" } },
-          { "Pattern Name": { "text": "Persona Shift" }, "Detection Signature": { "text": "you are now a dan mode" }, "Threat Category": { "text": "Jailbreak" } }
+        "columns": [
+          "Pattern Name",
+          "Detection Signature",
+          "Threat Category"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "The first line of defense is heuristic signature scanning for triggers.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Instruction Override"
+                  },
+                  "Detection Signature": {
+                    "text": "ignore previous instructions"
+                  },
+                  "Threat Category": {
+                    "text": "Context Hijack"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "System Leak"
+                  },
+                  "Detection Signature": {
+                    "text": "reveal internal system prompt"
+                  },
+                  "Threat Category": {
+                    "text": "Exfiltration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Persona Shift"
+                  },
+                  "Detection Signature": {
+                    "text": "you are now a dan mode"
+                  },
+                  "Threat Category": {
+                    "text": "Jailbreak"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions inspect incoming text for phrases like ignore previous instructions.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Instruction Override"
+                  },
+                  "Detection Signature": {
+                    "text": "ignore previous instructions"
+                  },
+                  "Threat Category": {
+                    "text": "Context Hijack"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "System Leak"
+                  },
+                  "Detection Signature": {
+                    "text": "reveal internal system prompt"
+                  },
+                  "Threat Category": {
+                    "text": "Exfiltration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Persona Shift"
+                  },
+                  "Detection Signature": {
+                    "text": "you are now a dan mode"
+                  },
+                  "Threat Category": {
+                    "text": "Jailbreak"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Adversarial prompts matching signatures are flagged with suspicion.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Instruction Override"
+                  },
+                  "Detection Signature": {
+                    "text": "ignore previous instructions"
+                  },
+                  "Threat Category": {
+                    "text": "Context Hijack"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "System Leak"
+                  },
+                  "Detection Signature": {
+                    "text": "reveal internal system prompt"
+                  },
+                  "Threat Category": {
+                    "text": "Exfiltration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": {
+                    "text": "Persona Shift"
+                  },
+                  "Detection Signature": {
+                    "text": "you are now a dan mode"
+                  },
+                  "Threat Category": {
+                    "text": "Jailbreak"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Prompt Injection Signature Taxonomy",
-        "columns": ["Pattern Name", "Detection Signature", "Threat Category"],
-        "rows": [
-          { "Pattern Name": "Instruction Override", "Detection Signature": "ignore previous instructions", "Threat Category": "Context Hijack" },
-          { "Pattern Name": "System Leak", "Detection Signature": "reveal internal system prompt", "Threat Category": "Exfiltration" },
-          { "Pattern Name": "Persona Shift", "Detection Signature": "you are now a dan mode", "Threat Category": "Jailbreak" }
+        "columns": [
+          "Pattern Name",
+          "Detection Signature",
+          "Threat Category"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "The first line of defense is heuristic signature scanning for triggers.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": "Instruction Override",
+                  "Detection Signature": "ignore previous instructions",
+                  "Threat Category": "Context Hijack"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "System Leak",
+                  "Detection Signature": "reveal internal system prompt",
+                  "Threat Category": "Exfiltration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "Persona Shift",
+                  "Detection Signature": "you are now a dan mode",
+                  "Threat Category": "Jailbreak"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions inspect incoming text for phrases like ignore previous instructions.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": "Instruction Override",
+                  "Detection Signature": "ignore previous instructions",
+                  "Threat Category": "Context Hijack"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "System Leak",
+                  "Detection Signature": "reveal internal system prompt",
+                  "Threat Category": "Exfiltration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "Persona Shift",
+                  "Detection Signature": "you are now a dan mode",
+                  "Threat Category": "Jailbreak"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Adversarial prompts matching signatures are flagged with suspicion.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Pattern Name": "Instruction Override",
+                  "Detection Signature": "ignore previous instructions",
+                  "Threat Category": "Context Hijack"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "System Leak",
+                  "Detection Signature": "reveal internal system prompt",
+                  "Threat Category": "Exfiltration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pattern Name": "Persona Shift",
+                  "Detection Signature": "you are now a dan mode",
+                  "Threat Category": "Jailbreak"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,29 +278,52 @@
         "template": "states",
         "title": "Multi-Tiered Injection Risk Scoring States",
         "states": [
-          { "id": "low", "label": "Low Risk Level" },
-          { "id": "medium", "label": "Medium Risk Level" },
-          { "id": "high", "label": "High Risk Level" },
-          { "id": "quarantined", "label": "Quarantined Gate" }
+          {
+            "id": "low",
+            "label": "Low Risk Level"
+          },
+          {
+            "id": "medium",
+            "label": "Medium Risk Level"
+          },
+          {
+            "id": "high",
+            "label": "High Risk Level"
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Gate"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Risk scoring functions evaluate multiple regex patterns with varying weights.",
             "current": "low",
-            "visited": ["low"]
+            "visited": [
+              "low"
+            ]
           },
           {
             "at": "say6",
             "caption": "Multiple hits trigger high risk classification quarantining the request.",
             "current": "high",
-            "visited": ["low", "medium", "high"]
+            "visited": [
+              "low",
+              "medium",
+              "high"
+            ]
           },
           {
             "at": "say8",
             "caption": "Tiered architectures apply progressive friction rather than blanket bans.",
             "current": "quarantined",
-            "visited": ["low", "medium", "high", "quarantined"]
+            "visited": [
+              "low",
+              "medium",
+              "high",
+              "quarantined"
+            ]
           }
         ]
       },
@@ -100,29 +331,52 @@
         "template": "states",
         "title": "Multi-Tiered Injection Risk Scoring States",
         "states": [
-          { "id": "low", "label": "Low Risk Level" },
-          { "id": "medium", "label": "Medium Risk Level" },
-          { "id": "high", "label": "High Risk Level" },
-          { "id": "quarantined", "label": "Quarantined Gate" }
+          {
+            "id": "low",
+            "label": "Low Risk Level"
+          },
+          {
+            "id": "medium",
+            "label": "Medium Risk Level"
+          },
+          {
+            "id": "high",
+            "label": "High Risk Level"
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Gate"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Risk scoring functions evaluate multiple regex patterns with varying weights.",
             "current": "low",
-            "visited": ["low"]
+            "visited": [
+              "low"
+            ]
           },
           {
             "at": "say6",
             "caption": "Multiple hits trigger high risk classification quarantining the request.",
             "current": "high",
-            "visited": ["low", "medium", "high"]
+            "visited": [
+              "low",
+              "medium",
+              "high"
+            ]
           },
           {
             "at": "say8",
             "caption": "Tiered architectures apply progressive friction rather than blanket bans.",
             "current": "quarantined",
-            "visited": ["low", "medium", "high", "quarantined"]
+            "visited": [
+              "low",
+              "medium",
+              "high",
+              "quarantined"
+            ]
           }
         ]
       }
@@ -134,31 +388,63 @@
         "template": "flow",
         "title": "Email Redaction Pipeline Flow",
         "nodes": [
-          { "id": "raw", "label": "Raw Inbound Text", "tappable": false },
-          { "id": "regex", "label": "Email Regex Matcher", "tappable": false },
-          { "id": "mask", "label": "Redacted Email Masking", "tappable": false },
-          { "id": "clean", "label": "Sanitized Output Text", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Inbound Text",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Email Regex Matcher",
+            "tappable": false
+          },
+          {
+            "id": "mask",
+            "label": "Redacted Email Masking",
+            "tappable": false
+          },
+          {
+            "id": "clean",
+            "label": "Sanitized Output Text",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "regex" },
-          { "from": "regex", "to": "mask" },
-          { "from": "mask", "to": "clean" }
+          {
+            "from": "raw",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "mask"
+          },
+          {
+            "from": "mask",
+            "to": "clean"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Transmitting customer email addresses to external providers risks fines.",
-            "activeNodes": ["raw"]
+            "activeNodes": [
+              "raw"
+            ]
           },
           {
             "at": "say4",
             "caption": "Redaction functions apply standard email regular expressions across text.",
-            "activeNodes": ["regex"]
+            "activeNodes": [
+              "regex"
+            ]
           },
           {
             "at": "say7",
             "caption": "Corporate emails are replaced while preserving surrounding sentence structure.",
-            "activeNodes": ["mask", "clean"]
+            "activeNodes": [
+              "mask",
+              "clean"
+            ]
           }
         ]
       },
@@ -166,31 +452,63 @@
         "template": "flow",
         "title": "Email Redaction Pipeline Flow",
         "nodes": [
-          { "id": "raw", "label": "Raw Inbound Text", "tappable": false },
-          { "id": "regex", "label": "Email Regex Matcher", "tappable": false },
-          { "id": "mask", "label": "Redacted Email Masking", "tappable": false },
-          { "id": "clean", "label": "Sanitized Output Text", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Inbound Text",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Email Regex Matcher",
+            "tappable": false
+          },
+          {
+            "id": "mask",
+            "label": "Redacted Email Masking",
+            "tappable": false
+          },
+          {
+            "id": "clean",
+            "label": "Sanitized Output Text",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "regex" },
-          { "from": "regex", "to": "mask" },
-          { "from": "mask", "to": "clean" }
+          {
+            "from": "raw",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "mask"
+          },
+          {
+            "from": "mask",
+            "to": "clean"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Transmitting customer email addresses to external providers risks fines.",
-            "activeNodes": ["raw"]
+            "activeNodes": [
+              "raw"
+            ]
           },
           {
             "at": "say4",
             "caption": "Redaction functions apply standard email regular expressions across text.",
-            "activeNodes": ["regex"]
+            "activeNodes": [
+              "regex"
+            ]
           },
           {
             "at": "say7",
             "caption": "Corporate emails are replaced while preserving surrounding sentence structure.",
-            "activeNodes": ["mask", "clean"]
+            "activeNodes": [
+              "mask",
+              "clean"
+            ]
           }
         ]
       }
@@ -272,10 +590,26 @@
         "template": "workflow",
         "title": "Bidirectional Guardrail Pipeline Lifecycle",
         "stages": [
-          { "id": "ingress", "name": "Inbound Ingress", "subtext": "Receive client prompt" },
-          { "id": "screen", "name": "Injection Screen", "subtext": "Inspect adversarial input" },
-          { "id": "inference", "name": "Model Inference", "subtext": "Execute model generation" },
-          { "id": "scrub", "name": "Outbound Egress Scrub", "subtext": "Redact sensitive PII" }
+          {
+            "id": "ingress",
+            "name": "Inbound Ingress",
+            "subtext": "Receive client prompt"
+          },
+          {
+            "id": "screen",
+            "name": "Injection Screen",
+            "subtext": "Inspect adversarial input"
+          },
+          {
+            "id": "inference",
+            "name": "Model Inference",
+            "subtext": "Execute model generation"
+          },
+          {
+            "id": "scrub",
+            "name": "Outbound Egress Scrub",
+            "subtext": "Redact sensitive PII"
+          }
         ],
         "steps": [
           {
@@ -299,10 +633,26 @@
         "template": "workflow",
         "title": "Bidirectional Guardrail Pipeline Lifecycle",
         "stages": [
-          { "id": "ingress", "name": "Inbound Ingress", "subtext": "Receive client prompt" },
-          { "id": "screen", "name": "Injection Screen", "subtext": "Inspect adversarial input" },
-          { "id": "inference", "name": "Model Inference", "subtext": "Execute model generation" },
-          { "id": "scrub", "name": "Outbound Egress Scrub", "subtext": "Redact sensitive PII" }
+          {
+            "id": "ingress",
+            "name": "Inbound Ingress",
+            "subtext": "Receive client prompt"
+          },
+          {
+            "id": "screen",
+            "name": "Injection Screen",
+            "subtext": "Inspect adversarial input"
+          },
+          {
+            "id": "inference",
+            "name": "Model Inference",
+            "subtext": "Execute model generation"
+          },
+          {
+            "id": "scrub",
+            "name": "Outbound Egress Scrub",
+            "subtext": "Redact sensitive PII"
+          }
         ],
         "steps": [
           {

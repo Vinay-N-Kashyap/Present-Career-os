@@ -76,22 +76,87 @@
         "template": "table",
         "title": "PricingRegistry Multi-Tier Model Catalog (4000 in / 1000 out)",
         "subtitle": "Centralized rate lookup across nano, balanced, and frontier tiers",
-        "columns": ["Model ID", "Tier", "Rates (In / Out per 1M)", "Query Cost (4k/1k)"],
-        "rows": [
-          ["gpt-4o-mini", "nano", "$0.15 / $0.60", "$0.00120 (1x baseline)"],
-          ["gpt-4o", "balanced", "$2.50 / $10.00", "$0.02000 (17x)"],
-          ["o1", "frontier", "$15.00 / $60.00", "$0.12000 (100x multiplier)"]
+        "columns": [
+          "Model ID",
+          "Tier",
+          "Rates (In / Out per 1M)",
+          "Query Cost (4k/1k)"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Model portfolios span fast nano, balanced general-purpose, and frontier tiers.",
-            "highlightRows": [0, 1, 2]
+            "highlightRows": [
+              0,
+              1,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "nano",
+                  "$0.15 / $0.60",
+                  "$0.00120 (1x baseline)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpt-4o",
+                  "balanced",
+                  "$2.50 / $10.00",
+                  "$0.02000 (17x)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "o1",
+                  "frontier",
+                  "$15.00 / $60.00",
+                  "$0.12000 (100x multiplier)"
+                ],
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Centralized Pricing Registry encapsulates pricing tables behind lookups.",
-            "highlightRows": [0, 2]
+            "highlightRows": [
+              0,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "nano",
+                  "$0.15 / $0.60",
+                  "$0.00120 (1x baseline)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpt-4o",
+                  "balanced",
+                  "$2.50 / $10.00",
+                  "$0.02000 (17x)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "o1",
+                  "frontier",
+                  "$15.00 / $60.00",
+                  "$0.12000 (100x multiplier)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -99,22 +164,87 @@
         "template": "table",
         "title": "PricingRegistry Multi-Tier Model Catalog (4000 in / 1000 out)",
         "subtitle": "Centralized rate lookup across nano, balanced, and frontier tiers",
-        "columns": ["Model ID", "Tier", "Rates (In / Out per 1M)", "Query Cost (4k/1k)"],
-        "rows": [
-          ["gpt-4o-mini", "nano", "$0.15 / $0.60", "$0.00120 (1x baseline)"],
-          ["gpt-4o", "balanced", "$2.50 / $10.00", "$0.02000 (17x)"],
-          ["o1", "frontier", "$15.00 / $60.00", "$0.12000 (100x multiplier)"]
+        "columns": [
+          "Model ID",
+          "Tier",
+          "Rates (In / Out per 1M)",
+          "Query Cost (4k/1k)"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Model portfolios span fast nano, balanced general-purpose, and frontier tiers.",
-            "highlightRows": [0, 1, 2]
+            "highlightRows": [
+              0,
+              1,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "nano",
+                  "$0.15 / $0.60",
+                  "$0.00120 (1x baseline)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpt-4o",
+                  "balanced",
+                  "$2.50 / $10.00",
+                  "$0.02000 (17x)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "o1",
+                  "frontier",
+                  "$15.00 / $60.00",
+                  "$0.12000 (100x multiplier)"
+                ],
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Centralized Pricing Registry encapsulates pricing tables behind lookups.",
-            "highlightRows": [0, 2]
+            "highlightRows": [
+              0,
+              2
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "nano",
+                  "$0.15 / $0.60",
+                  "$0.00120 (1x baseline)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "gpt-4o",
+                  "balanced",
+                  "$2.50 / $10.00",
+                  "$0.02000 (17x)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "o1",
+                  "frontier",
+                  "$15.00 / $60.00",
+                  "$0.12000 (100x multiplier)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -127,10 +257,26 @@
         "title": "Per-Query Unit Economics & Gross Margin Pipeline (req-901)",
         "subtitle": "Retail Price = $0.05 vs Raw Inference Cost = $0.007 -> 86% Gross Margin",
         "stages": [
-          { "id": "s1", "name": "Input Expense", "subtext": "1200t @ $2.50/M = $0.003" },
-          { "id": "s2", "name": "Output Expense", "subtext": "400t @ $10.00/M = $0.004" },
-          { "id": "s3", "name": "Blended COGS", "subtext": "rawCost = $0.007" },
-          { "id": "s4", "name": "Gross Margin", "subtext": "$0.043 (86% Margin)" }
+          {
+            "id": "s1",
+            "name": "Input Expense",
+            "subtext": "1200t @ $2.50/M = $0.003"
+          },
+          {
+            "id": "s2",
+            "name": "Output Expense",
+            "subtext": "400t @ $10.00/M = $0.004"
+          },
+          {
+            "id": "s3",
+            "name": "Blended COGS",
+            "subtext": "rawCost = $0.007"
+          },
+          {
+            "id": "s4",
+            "name": "Gross Margin",
+            "subtext": "$0.043 (86% Margin)"
+          }
         ],
         "steps": [
           {
@@ -152,10 +298,26 @@
         "title": "Per-Query Unit Economics & Gross Margin Pipeline (req-901)",
         "subtitle": "Retail Price = $0.05 vs Raw Inference Cost = $0.007 -> 86% Gross Margin",
         "stages": [
-          { "id": "s1", "name": "Input Expense", "subtext": "1200t @ $2.50/M = $0.003" },
-          { "id": "s2", "name": "Output Expense", "subtext": "400t @ $10.00/M = $0.004" },
-          { "id": "s3", "name": "Blended COGS", "subtext": "rawCost = $0.007" },
-          { "id": "s4", "name": "Gross Margin", "subtext": "$0.043 (86% Margin)" }
+          {
+            "id": "s1",
+            "name": "Input Expense",
+            "subtext": "1200t @ $2.50/M = $0.003"
+          },
+          {
+            "id": "s2",
+            "name": "Output Expense",
+            "subtext": "400t @ $10.00/M = $0.004"
+          },
+          {
+            "id": "s3",
+            "name": "Blended COGS",
+            "subtext": "rawCost = $0.007"
+          },
+          {
+            "id": "s4",
+            "name": "Gross Margin",
+            "subtext": "$0.043 (86% Margin)"
+          }
         ],
         "steps": [
           {
@@ -187,18 +349,42 @@
             "at": "say2",
             "caption": "Usage metering tracks total prompt tokens and completion tokens per tenant.",
             "bars": [
-              { "label": "Corp A Prompt (3500)", "value": 3500, "tone": "data" },
-              { "label": "Corp A Completion (1300)", "value": 1300, "tone": "data" },
-              { "label": "Corp B Total (600)", "value": 600, "tone": "ok" }
+              {
+                "label": "Corp A Prompt (3500)",
+                "value": 3500,
+                "tone": "data"
+              },
+              {
+                "label": "Corp A Completion (1300)",
+                "value": 1300,
+                "tone": "data"
+              },
+              {
+                "label": "Corp B Total (600)",
+                "value": 600,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "The usage meter increments counters atomically on every completed transaction.",
             "bars": [
-              { "label": "Corp A Call 1 (2500t)", "value": 2500, "tone": "data" },
-              { "label": "Corp A Call 1+2 (4800t)", "value": 4800, "tone": "ok" },
-              { "label": "Corp B Call 1 (600t)", "value": 600, "tone": "ok" }
+              {
+                "label": "Corp A Call 1 (2500t)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Corp A Call 1+2 (4800t)",
+                "value": 4800,
+                "tone": "ok"
+              },
+              {
+                "label": "Corp B Call 1 (600t)",
+                "value": 600,
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -214,18 +400,42 @@
             "at": "say2",
             "caption": "Usage metering tracks total prompt tokens and completion tokens per tenant.",
             "bars": [
-              { "label": "Corp A Prompt (3500)", "value": 3500, "tone": "data" },
-              { "label": "Corp A Completion (1300)", "value": 1300, "tone": "data" },
-              { "label": "Corp B Total (600)", "value": 600, "tone": "ok" }
+              {
+                "label": "Corp A Prompt (3500)",
+                "value": 3500,
+                "tone": "data"
+              },
+              {
+                "label": "Corp A Completion (1300)",
+                "value": 1300,
+                "tone": "data"
+              },
+              {
+                "label": "Corp B Total (600)",
+                "value": 600,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "The usage meter increments counters atomically on every completed transaction.",
             "bars": [
-              { "label": "Corp A Call 1 (2500t)", "value": 2500, "tone": "data" },
-              { "label": "Corp A Call 1+2 (4800t)", "value": 4800, "tone": "ok" },
-              { "label": "Corp B Call 1 (600t)", "value": 600, "tone": "ok" }
+              {
+                "label": "Corp A Call 1 (2500t)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Corp A Call 1+2 (4800t)",
+                "value": 4800,
+                "tone": "ok"
+              },
+              {
+                "label": "Corp B Call 1 (600t)",
+                "value": 600,
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -239,26 +449,48 @@
         "title": "Multi-Stage Financial Circuit Breaker ($80 Soft / $100 Hard)",
         "subtitle": "Evaluating tenant spend utilization against soft warning and hard blocking caps",
         "states": [
-          { "id": "s1", "label": "NORMAL ($45 -> 45% util, Allowed)" },
-          { "id": "s2", "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)" },
-          { "id": "s3", "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)" }
+          {
+            "id": "s1",
+            "label": "NORMAL ($45 -> 45% util, Allowed)"
+          },
+          {
+            "id": "s2",
+            "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)"
+          },
+          {
+            "id": "s3",
+            "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "spend >= $80" },
-          { "from": "s2", "to": "s3", "label": "spend >= $100" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "spend >= $80"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "spend >= $100"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Entering the soft warning zone allows requests while triggering notifications.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say6",
             "caption": "Breaching the hard cap trips the financial circuit breaker and blocks calls.",
             "current": "s3",
-            "visited": ["s1", "s2"]
+            "visited": [
+              "s1",
+              "s2"
+            ]
           }
         ]
       },
@@ -267,26 +499,48 @@
         "title": "Multi-Stage Financial Circuit Breaker ($80 Soft / $100 Hard)",
         "subtitle": "Evaluating tenant spend utilization against soft warning and hard blocking caps",
         "states": [
-          { "id": "s1", "label": "NORMAL ($45 -> 45% util, Allowed)" },
-          { "id": "s2", "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)" },
-          { "id": "s3", "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)" }
+          {
+            "id": "s1",
+            "label": "NORMAL ($45 -> 45% util, Allowed)"
+          },
+          {
+            "id": "s2",
+            "label": "WARNING_SOFT_CAP ($85.5 -> 86% util, Alert)"
+          },
+          {
+            "id": "s3",
+            "label": "BLOCKED_HARD_CAP ($101.2 -> 101% util, Blocked)"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "spend >= $80" },
-          { "from": "s2", "to": "s3", "label": "spend >= $100" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "spend >= $80"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "spend >= $100"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Entering the soft warning zone allows requests while triggering notifications.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say6",
             "caption": "Breaching the hard cap trips the financial circuit breaker and blocks calls.",
             "current": "s3",
-            "visited": ["s1", "s2"]
+            "visited": [
+              "s1",
+              "s2"
+            ]
           }
         ]
       }

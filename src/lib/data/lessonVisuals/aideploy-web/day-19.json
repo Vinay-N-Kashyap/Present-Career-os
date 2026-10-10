@@ -76,33 +76,66 @@
         "template": "flow",
         "title": "Regex Trailing Comma Repair Pipeline",
         "nodes": [
-          { "id": "malformed", "label": "Malformed JSON (,\n})", "tappable": false },
-          { "id": "regex", "label": "Regex Match (,\\s*[}\\]])", "tappable": false },
-          { "id": "erase", "label": "Erase Trailing Comma", "tappable": false },
-          { "id": "parse", "label": "Successful JSON.parse", "tappable": false }
+          {
+            "id": "malformed",
+            "label": "Malformed JSON (,\n})",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Regex Match (,\\s*[}\\]])",
+            "tappable": false
+          },
+          {
+            "id": "erase",
+            "label": "Erase Trailing Comma",
+            "tappable": false
+          },
+          {
+            "id": "parse",
+            "label": "Successful JSON.parse",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "malformed", "to": "regex" },
-          { "from": "regex", "to": "erase" },
-          { "from": "erase", "to": "parse" }
+          {
+            "from": "malformed",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "erase"
+          },
+          {
+            "from": "erase",
+            "to": "parse"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Models insert illegal trailing commas influenced by language syntax.",
-            "activeNodes": ["malformed"],
+            "activeNodes": [
+              "malformed"
+            ],
             "statusBadge": "malformed"
           },
           {
             "at": "say4",
             "caption": "Regex targets commas followed by closing delimiters to erase them.",
-            "activeNodes": ["malformed", "regex"],
+            "activeNodes": [
+              "malformed",
+              "regex"
+            ],
             "statusBadge": "repairing"
           },
           {
             "at": "say7",
             "caption": "Cleaned strings parse smoothly into valid JavaScript objects.",
-            "activeNodes": ["erase", "parse"],
+            "activeNodes": [
+              "erase",
+              "parse"
+            ],
             "statusBadge": "parsed"
           }
         ]
@@ -111,33 +144,66 @@
         "template": "flow",
         "title": "Regex Trailing Comma Repair Pipeline",
         "nodes": [
-          { "id": "malformed", "label": "Malformed JSON (,\n})", "tappable": false },
-          { "id": "regex", "label": "Regex Match (,\\s*[}\\]])", "tappable": false },
-          { "id": "erase", "label": "Erase Trailing Comma", "tappable": false },
-          { "id": "parse", "label": "Successful JSON.parse", "tappable": false }
+          {
+            "id": "malformed",
+            "label": "Malformed JSON (,\n})",
+            "tappable": false
+          },
+          {
+            "id": "regex",
+            "label": "Regex Match (,\\s*[}\\]])",
+            "tappable": false
+          },
+          {
+            "id": "erase",
+            "label": "Erase Trailing Comma",
+            "tappable": false
+          },
+          {
+            "id": "parse",
+            "label": "Successful JSON.parse",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "malformed", "to": "regex" },
-          { "from": "regex", "to": "erase" },
-          { "from": "erase", "to": "parse" }
+          {
+            "from": "malformed",
+            "to": "regex"
+          },
+          {
+            "from": "regex",
+            "to": "erase"
+          },
+          {
+            "from": "erase",
+            "to": "parse"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Models insert illegal trailing commas influenced by language syntax.",
-            "activeNodes": ["malformed"],
+            "activeNodes": [
+              "malformed"
+            ],
             "statusBadge": "malformed"
           },
           {
             "at": "say4",
             "caption": "Regex targets commas followed by closing delimiters to erase them.",
-            "activeNodes": ["malformed", "regex"],
+            "activeNodes": [
+              "malformed",
+              "regex"
+            ],
             "statusBadge": "repairing"
           },
           {
             "at": "say7",
             "caption": "Cleaned strings parse smoothly into valid JavaScript objects.",
-            "activeNodes": ["erase", "parse"],
+            "activeNodes": [
+              "erase",
+              "parse"
+            ],
             "statusBadge": "parsed"
           }
         ]
@@ -150,29 +216,51 @@
         "template": "states",
         "title": "Truncated JSON Delimiter Balancing States",
         "states": [
-          { "id": "trunc", "label": "Truncated String Detected" },
-          { "id": "scan", "label": "Open Braces/Brackets Counted" },
-          { "id": "counted", "label": "Unclosed Delimiters Identified" },
-          { "id": "appended", "label": "Missing Delimiters Appended" }
+          {
+            "id": "trunc",
+            "label": "Truncated String Detected"
+          },
+          {
+            "id": "scan",
+            "label": "Open Braces/Brackets Counted"
+          },
+          {
+            "id": "counted",
+            "label": "Unclosed Delimiters Identified"
+          },
+          {
+            "id": "appended",
+            "label": "Missing Delimiters Appended"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Exhausting token limits cuts off generation without closing delimiters.",
             "current": "trunc",
-            "visited": ["trunc"]
+            "visited": [
+              "trunc"
+            ]
           },
           {
             "at": "say4",
             "caption": "Functions iterate raw strings tracking unclosed braces and brackets.",
             "current": "scan",
-            "visited": ["trunc", "scan"]
+            "visited": [
+              "trunc",
+              "scan"
+            ]
           },
           {
             "at": "say8",
             "caption": "Calling JSON parse on balanced strings succeeds retrieving data.",
             "current": "appended",
-            "visited": ["trunc", "scan", "counted", "appended"]
+            "visited": [
+              "trunc",
+              "scan",
+              "counted",
+              "appended"
+            ]
           }
         ]
       },
@@ -180,29 +268,51 @@
         "template": "states",
         "title": "Truncated JSON Delimiter Balancing States",
         "states": [
-          { "id": "trunc", "label": "Truncated String Detected" },
-          { "id": "scan", "label": "Open Braces/Brackets Counted" },
-          { "id": "counted", "label": "Unclosed Delimiters Identified" },
-          { "id": "appended", "label": "Missing Delimiters Appended" }
+          {
+            "id": "trunc",
+            "label": "Truncated String Detected"
+          },
+          {
+            "id": "scan",
+            "label": "Open Braces/Brackets Counted"
+          },
+          {
+            "id": "counted",
+            "label": "Unclosed Delimiters Identified"
+          },
+          {
+            "id": "appended",
+            "label": "Missing Delimiters Appended"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Exhausting token limits cuts off generation without closing delimiters.",
             "current": "trunc",
-            "visited": ["trunc"]
+            "visited": [
+              "trunc"
+            ]
           },
           {
             "at": "say4",
             "caption": "Functions iterate raw strings tracking unclosed braces and brackets.",
             "current": "scan",
-            "visited": ["trunc", "scan"]
+            "visited": [
+              "trunc",
+              "scan"
+            ]
           },
           {
             "at": "say8",
             "caption": "Calling JSON parse on balanced strings succeeds retrieving data.",
             "current": "appended",
-            "visited": ["trunc", "scan", "counted", "appended"]
+            "visited": [
+              "trunc",
+              "scan",
+              "counted",
+              "appended"
+            ]
           }
         ]
       }
@@ -213,54 +323,300 @@
       "spec": {
         "template": "table",
         "title": "Runtime Schema Type Verification Matrix",
-        "columns": ["Property Key", "Declared Type", "Observed Type", "Validation Verdict"],
-        "rows": [
-          { "Property Key": { "text": "id" }, "Declared Type": { "text": "string" }, "Observed Type": { "text": "string" }, "Validation Verdict": { "text": "Valid Match" } },
-          { "Property Key": { "text": "score" }, "Declared Type": { "text": "number" }, "Observed Type": { "text": "number" }, "Validation Verdict": { "text": "Valid Match" } },
-          { "Property Key": { "text": "score (invalid)" }, "Declared Type": { "text": "number" }, "Observed Type": { "text": "string" }, "Validation Verdict": { "text": "Rejected (wrongType)" } }
+        "columns": [
+          "Property Key",
+          "Declared Type",
+          "Observed Type",
+          "Validation Verdict"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Validation functions verify required properties exist on objects.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "id"
+                  },
+                  "Declared Type": {
+                    "text": "string"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "number"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score (invalid)"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Rejected (wrongType)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Validators check that property types strictly match declared schemas.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "id"
+                  },
+                  "Declared Type": {
+                    "text": "string"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "number"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score (invalid)"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Rejected (wrongType)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Validators record wrongType arrays providing exact error diagnostics.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "id"
+                  },
+                  "Declared Type": {
+                    "text": "string"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "number"
+                  },
+                  "Validation Verdict": {
+                    "text": "Valid Match"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": {
+                    "text": "score (invalid)"
+                  },
+                  "Declared Type": {
+                    "text": "number"
+                  },
+                  "Observed Type": {
+                    "text": "string"
+                  },
+                  "Validation Verdict": {
+                    "text": "Rejected (wrongType)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Runtime Schema Type Verification Matrix",
-        "columns": ["Property Key", "Declared Type", "Observed Type", "Validation Verdict"],
-        "rows": [
-          { "Property Key": "id", "Declared Type": "string", "Observed Type": "string", "Validation Verdict": "Valid Match" },
-          { "Property Key": "score", "Declared Type": "number", "Observed Type": "number", "Validation Verdict": "Valid Match" },
-          { "Property Key": "score (invalid)", "Declared Type": "number", "Observed Type": "string", "Validation Verdict": "Rejected (wrongType)" }
+        "columns": [
+          "Property Key",
+          "Declared Type",
+          "Observed Type",
+          "Validation Verdict"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Validation functions verify required properties exist on objects.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": "id",
+                  "Declared Type": "string",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score",
+                  "Declared Type": "number",
+                  "Observed Type": "number",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score (invalid)",
+                  "Declared Type": "number",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Rejected (wrongType)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Validators check that property types strictly match declared schemas.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": "id",
+                  "Declared Type": "string",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score",
+                  "Declared Type": "number",
+                  "Observed Type": "number",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score (invalid)",
+                  "Declared Type": "number",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Rejected (wrongType)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Validators record wrongType arrays providing exact error diagnostics.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Property Key": "id",
+                  "Declared Type": "string",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score",
+                  "Declared Type": "number",
+                  "Observed Type": "number",
+                  "Validation Verdict": "Valid Match"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Property Key": "score (invalid)",
+                  "Declared Type": "number",
+                  "Observed Type": "string",
+                  "Validation Verdict": "Rejected (wrongType)"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -272,10 +628,26 @@
         "template": "workflow",
         "title": "Automated Re-Prompt Self-Correction Workflow",
         "stages": [
-          { "id": "fail", "name": "Parse Failure", "subtext": "Local repair exhausted" },
-          { "id": "diag", "name": "Diagnostic Payload", "subtext": "Compile exact errors" },
-          { "id": "reprompt", "name": "RFC 8259 Directive", "subtext": "Demand strict JSON format" },
-          { "id": "correct", "name": "Self-Correction", "subtext": "Model repairs own syntax" }
+          {
+            "id": "fail",
+            "name": "Parse Failure",
+            "subtext": "Local repair exhausted"
+          },
+          {
+            "id": "diag",
+            "name": "Diagnostic Payload",
+            "subtext": "Compile exact errors"
+          },
+          {
+            "id": "reprompt",
+            "name": "RFC 8259 Directive",
+            "subtext": "Demand strict JSON format"
+          },
+          {
+            "id": "correct",
+            "name": "Self-Correction",
+            "subtext": "Model repairs own syntax"
+          }
         ],
         "steps": [
           {
@@ -302,10 +674,26 @@
         "template": "workflow",
         "title": "Automated Re-Prompt Self-Correction Workflow",
         "stages": [
-          { "id": "fail", "name": "Parse Failure", "subtext": "Local repair exhausted" },
-          { "id": "diag", "name": "Diagnostic Payload", "subtext": "Compile exact errors" },
-          { "id": "reprompt", "name": "RFC 8259 Directive", "subtext": "Demand strict JSON format" },
-          { "id": "correct", "name": "Self-Correction", "subtext": "Model repairs own syntax" }
+          {
+            "id": "fail",
+            "name": "Parse Failure",
+            "subtext": "Local repair exhausted"
+          },
+          {
+            "id": "diag",
+            "name": "Diagnostic Payload",
+            "subtext": "Compile exact errors"
+          },
+          {
+            "id": "reprompt",
+            "name": "RFC 8259 Directive",
+            "subtext": "Demand strict JSON format"
+          },
+          {
+            "id": "correct",
+            "name": "Self-Correction",
+            "subtext": "Model repairs own syntax"
+          }
         ],
         "steps": [
           {

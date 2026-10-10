@@ -12,28 +12,46 @@
         "template": "states",
         "title": "Incident Operating Mode Controller States",
         "states": [
-          { "id": "normal", "label": "NORMAL Mode (1.0x)" },
-          { "id": "degraded", "label": "DEGRADED Mode (0.5x)" },
-          { "id": "kill_switch", "label": "KILL_SWITCH Fallback" }
+          {
+            "id": "normal",
+            "label": "NORMAL Mode (1.0x)"
+          },
+          {
+            "id": "degraded",
+            "label": "DEGRADED Mode (0.5x)"
+          },
+          {
+            "id": "kill_switch",
+            "label": "KILL_SWITCH Fallback"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Controllers manage distinct modes: NORMAL, DEGRADED, and KILL_SWITCH.",
             "current": "normal",
-            "visited": ["normal"]
+            "visited": [
+              "normal"
+            ]
           },
           {
             "at": "say7",
             "caption": "In DEGRADED mode, expensive frontier models are disabled to relieve pressure.",
             "current": "degraded",
-            "visited": ["normal", "degraded"]
+            "visited": [
+              "normal",
+              "degraded"
+            ]
           },
           {
             "at": "say8",
             "caption": "In KILL_SWITCH mode live invocations halt in favor of deterministic replies.",
             "current": "kill_switch",
-            "visited": ["normal", "degraded", "kill_switch"]
+            "visited": [
+              "normal",
+              "degraded",
+              "kill_switch"
+            ]
           }
         ]
       },
@@ -41,28 +59,46 @@
         "template": "states",
         "title": "Incident Operating Mode Controller States",
         "states": [
-          { "id": "normal", "label": "NORMAL Mode (1.0x)" },
-          { "id": "degraded", "label": "DEGRADED Mode (0.5x)" },
-          { "id": "kill_switch", "label": "KILL_SWITCH Fallback" }
+          {
+            "id": "normal",
+            "label": "NORMAL Mode (1.0x)"
+          },
+          {
+            "id": "degraded",
+            "label": "DEGRADED Mode (0.5x)"
+          },
+          {
+            "id": "kill_switch",
+            "label": "KILL_SWITCH Fallback"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Controllers manage distinct modes: NORMAL, DEGRADED, and KILL_SWITCH.",
             "current": "normal",
-            "visited": ["normal"]
+            "visited": [
+              "normal"
+            ]
           },
           {
             "at": "say7",
             "caption": "In DEGRADED mode, expensive frontier models are disabled to relieve pressure.",
             "current": "degraded",
-            "visited": ["normal", "degraded"]
+            "visited": [
+              "normal",
+              "degraded"
+            ]
           },
           {
             "at": "say8",
             "caption": "In KILL_SWITCH mode live invocations halt in favor of deterministic replies.",
             "current": "kill_switch",
-            "visited": ["normal", "degraded", "kill_switch"]
+            "visited": [
+              "normal",
+              "degraded",
+              "kill_switch"
+            ]
           }
         ]
       }
@@ -144,31 +180,65 @@
         "template": "flow",
         "title": "Suspicious Request Quarantine Architecture",
         "nodes": [
-          { "id": "ingress", "label": "Inbound Request Batch", "tappable": false },
-          { "id": "scorer", "label": "Risk Score Evaluator", "tappable": false },
-          { "id": "allowed", "label": "Allowed Execution Queue", "tappable": false },
-          { "id": "quarantined", "label": "Quarantined Threat Queue", "tappable": false }
+          {
+            "id": "ingress",
+            "label": "Inbound Request Batch",
+            "tappable": false
+          },
+          {
+            "id": "scorer",
+            "label": "Risk Score Evaluator",
+            "tappable": false
+          },
+          {
+            "id": "allowed",
+            "label": "Allowed Execution Queue",
+            "tappable": false
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Threat Queue",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "ingress", "to": "scorer" },
-          { "from": "scorer", "to": "allowed" },
-          { "from": "scorer", "to": "quarantined" }
+          {
+            "from": "ingress",
+            "to": "scorer"
+          },
+          {
+            "from": "scorer",
+            "to": "allowed"
+          },
+          {
+            "from": "scorer",
+            "to": "quarantined"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Functions screen batches of requests using evaluated risk scores.",
-            "activeNodes": ["ingress", "scorer"]
+            "activeNodes": [
+              "ingress",
+              "scorer"
+            ]
           },
           {
             "at": "say4",
             "caption": "Requests with high risk scores are shunted into quarantinedIds queues.",
-            "activeNodes": ["scorer", "quarantined"]
+            "activeNodes": [
+              "scorer",
+              "quarantined"
+            ]
           },
           {
             "at": "say7",
             "caption": "Quarantined requests are blocked at perimeters without consuming tokens.",
-            "activeNodes": ["allowed", "quarantined"]
+            "activeNodes": [
+              "allowed",
+              "quarantined"
+            ]
           }
         ]
       },
@@ -176,31 +246,65 @@
         "template": "flow",
         "title": "Suspicious Request Quarantine Architecture",
         "nodes": [
-          { "id": "ingress", "label": "Inbound Request Batch", "tappable": false },
-          { "id": "scorer", "label": "Risk Score Evaluator", "tappable": false },
-          { "id": "allowed", "label": "Allowed Execution Queue", "tappable": false },
-          { "id": "quarantined", "label": "Quarantined Threat Queue", "tappable": false }
+          {
+            "id": "ingress",
+            "label": "Inbound Request Batch",
+            "tappable": false
+          },
+          {
+            "id": "scorer",
+            "label": "Risk Score Evaluator",
+            "tappable": false
+          },
+          {
+            "id": "allowed",
+            "label": "Allowed Execution Queue",
+            "tappable": false
+          },
+          {
+            "id": "quarantined",
+            "label": "Quarantined Threat Queue",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "ingress", "to": "scorer" },
-          { "from": "scorer", "to": "allowed" },
-          { "from": "scorer", "to": "quarantined" }
+          {
+            "from": "ingress",
+            "to": "scorer"
+          },
+          {
+            "from": "scorer",
+            "to": "allowed"
+          },
+          {
+            "from": "scorer",
+            "to": "quarantined"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Functions screen batches of requests using evaluated risk scores.",
-            "activeNodes": ["ingress", "scorer"]
+            "activeNodes": [
+              "ingress",
+              "scorer"
+            ]
           },
           {
             "at": "say4",
             "caption": "Requests with high risk scores are shunted into quarantinedIds queues.",
-            "activeNodes": ["scorer", "quarantined"]
+            "activeNodes": [
+              "scorer",
+              "quarantined"
+            ]
           },
           {
             "at": "say7",
             "caption": "Quarantined requests are blocked at perimeters without consuming tokens.",
-            "activeNodes": ["allowed", "quarantined"]
+            "activeNodes": [
+              "allowed",
+              "quarantined"
+            ]
           }
         ]
       }
@@ -211,54 +315,262 @@
       "spec": {
         "template": "table",
         "title": "Dynamic Jailbreak Firewall Rule Registry",
-        "columns": ["Rule Identifier", "Blocked Signature", "Runtime Action"],
-        "rows": [
-          { "Rule Identifier": { "text": "FW-01" }, "Blocked Signature": { "text": "dan mode" }, "Runtime Action": { "text": "Instant Quarantine Intercept" } },
-          { "Rule Identifier": { "text": "FW-02" }, "Blocked Signature": { "text": "ignore guidelines" }, "Runtime Action": { "text": "Security Violation Block" } },
-          { "Rule Identifier": { "text": "FW-03" }, "Blocked Signature": { "text": "base64 wrapper" }, "Runtime Action": { "text": "Decoder Inspection Reject" } }
+        "columns": [
+          "Rule Identifier",
+          "Blocked Signature",
+          "Runtime Action"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Firewalls allow security teams to register new signatures dynamically.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-01"
+                  },
+                  "Blocked Signature": {
+                    "text": "dan mode"
+                  },
+                  "Runtime Action": {
+                    "text": "Instant Quarantine Intercept"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-02"
+                  },
+                  "Blocked Signature": {
+                    "text": "ignore guidelines"
+                  },
+                  "Runtime Action": {
+                    "text": "Security Violation Block"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-03"
+                  },
+                  "Blocked Signature": {
+                    "text": "base64 wrapper"
+                  },
+                  "Runtime Action": {
+                    "text": "Decoder Inspection Reject"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Registering dan mode immediately catches and neutralizes attack queries.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-01"
+                  },
+                  "Blocked Signature": {
+                    "text": "dan mode"
+                  },
+                  "Runtime Action": {
+                    "text": "Instant Quarantine Intercept"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-02"
+                  },
+                  "Blocked Signature": {
+                    "text": "ignore guidelines"
+                  },
+                  "Runtime Action": {
+                    "text": "Security Violation Block"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-03"
+                  },
+                  "Blocked Signature": {
+                    "text": "base64 wrapper"
+                  },
+                  "Runtime Action": {
+                    "text": "Decoder Inspection Reject"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Dynamic signature updates empower security teams to neutralize threats.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-01"
+                  },
+                  "Blocked Signature": {
+                    "text": "dan mode"
+                  },
+                  "Runtime Action": {
+                    "text": "Instant Quarantine Intercept"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-02"
+                  },
+                  "Blocked Signature": {
+                    "text": "ignore guidelines"
+                  },
+                  "Runtime Action": {
+                    "text": "Security Violation Block"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": {
+                    "text": "FW-03"
+                  },
+                  "Blocked Signature": {
+                    "text": "base64 wrapper"
+                  },
+                  "Runtime Action": {
+                    "text": "Decoder Inspection Reject"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Dynamic Jailbreak Firewall Rule Registry",
-        "columns": ["Rule Identifier", "Blocked Signature", "Runtime Action"],
-        "rows": [
-          { "Rule Identifier": "FW-01", "Blocked Signature": "dan mode", "Runtime Action": "Instant Quarantine Intercept" },
-          { "Rule Identifier": "FW-02", "Blocked Signature": "ignore guidelines", "Runtime Action": "Security Violation Block" },
-          { "Rule Identifier": "FW-03", "Blocked Signature": "base64 wrapper", "Runtime Action": "Decoder Inspection Reject" }
+        "columns": [
+          "Rule Identifier",
+          "Blocked Signature",
+          "Runtime Action"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Firewalls allow security teams to register new signatures dynamically.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": "FW-01",
+                  "Blocked Signature": "dan mode",
+                  "Runtime Action": "Instant Quarantine Intercept"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-02",
+                  "Blocked Signature": "ignore guidelines",
+                  "Runtime Action": "Security Violation Block"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-03",
+                  "Blocked Signature": "base64 wrapper",
+                  "Runtime Action": "Decoder Inspection Reject"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Registering dan mode immediately catches and neutralizes attack queries.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": "FW-01",
+                  "Blocked Signature": "dan mode",
+                  "Runtime Action": "Instant Quarantine Intercept"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-02",
+                  "Blocked Signature": "ignore guidelines",
+                  "Runtime Action": "Security Violation Block"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-03",
+                  "Blocked Signature": "base64 wrapper",
+                  "Runtime Action": "Decoder Inspection Reject"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Dynamic signature updates empower security teams to neutralize threats.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Rule Identifier": "FW-01",
+                  "Blocked Signature": "dan mode",
+                  "Runtime Action": "Instant Quarantine Intercept"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-02",
+                  "Blocked Signature": "ignore guidelines",
+                  "Runtime Action": "Security Violation Block"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Rule Identifier": "FW-03",
+                  "Blocked Signature": "base64 wrapper",
+                  "Runtime Action": "Decoder Inspection Reject"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -270,9 +582,21 @@
         "template": "bars",
         "title": "Incident Request Quarantine Breakdown",
         "items": [
-          { "label": "Allowed Queries", "value": 50.0, "tone": "ok" },
-          { "label": "Quarantined Attacks", "value": 50.0, "tone": "error" },
-          { "label": "Forensic Audit Spans", "value": 100.0, "tone": "data" }
+          {
+            "label": "Allowed Queries",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Quarantined Attacks",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Forensic Audit Spans",
+            "value": 100,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -293,9 +617,21 @@
         "template": "bars",
         "title": "Incident Request Quarantine Breakdown",
         "items": [
-          { "label": "Allowed Queries", "value": 50.0, "tone": "ok" },
-          { "label": "Quarantined Attacks", "value": 50.0, "tone": "error" },
-          { "label": "Forensic Audit Spans", "value": 100.0, "tone": "data" }
+          {
+            "label": "Allowed Queries",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Quarantined Attacks",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Forensic Audit Spans",
+            "value": 100,
+            "tone": "data"
+          }
         ],
         "steps": [
           {

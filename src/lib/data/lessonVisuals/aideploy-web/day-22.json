@@ -11,54 +11,262 @@
       "spec": {
         "template": "table",
         "title": "Evaluator Rubric Dimension Allocation",
-        "columns": ["Dimension Name", "Weight Allocation", "Evaluation Focus"],
-        "rows": [
-          { "Dimension Name": { "text": "Faithfulness" }, "Weight Allocation": { "text": "0.5 (50%)" }, "Evaluation Focus": { "text": "Factual grounding in reference context" } },
-          { "Dimension Name": { "text": "Relevance" }, "Weight Allocation": { "text": "0.3 (30%)" }, "Evaluation Focus": { "text": "Directly addressing user intent" } },
-          { "Dimension Name": { "text": "Coherence" }, "Weight Allocation": { "text": "0.2 (20%)" }, "Evaluation Focus": { "text": "Logical structural flow and fluency" } }
+        "columns": [
+          "Dimension Name",
+          "Weight Allocation",
+          "Evaluation Focus"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Rubrics prevent arbitrary scoring by dividing quality into dimensions.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Faithfulness"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.5 (50%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Factual grounding in reference context"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Relevance"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.3 (30%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Directly addressing user intent"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Coherence"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.2 (20%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Logical structural flow and fluency"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Faithfulness ensures grounding while Relevance ensures answering queries.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Faithfulness"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.5 (50%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Factual grounding in reference context"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Relevance"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.3 (30%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Directly addressing user intent"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Coherence"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.2 (20%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Logical structural flow and fluency"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Rubric definitions transform impressions into repeatable benchmarks.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Faithfulness"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.5 (50%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Factual grounding in reference context"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Relevance"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.3 (30%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Directly addressing user intent"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": {
+                    "text": "Coherence"
+                  },
+                  "Weight Allocation": {
+                    "text": "0.2 (20%)"
+                  },
+                  "Evaluation Focus": {
+                    "text": "Logical structural flow and fluency"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Evaluator Rubric Dimension Allocation",
-        "columns": ["Dimension Name", "Weight Allocation", "Evaluation Focus"],
-        "rows": [
-          { "Dimension Name": "Faithfulness", "Weight Allocation": "0.5 (50%)", "Evaluation Focus": "Factual grounding in reference context" },
-          { "Dimension Name": "Relevance", "Weight Allocation": "0.3 (30%)", "Evaluation Focus": "Directly addressing user intent" },
-          { "Dimension Name": "Coherence", "Weight Allocation": "0.2 (20%)", "Evaluation Focus": "Logical structural flow and fluency" }
+        "columns": [
+          "Dimension Name",
+          "Weight Allocation",
+          "Evaluation Focus"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Rubrics prevent arbitrary scoring by dividing quality into dimensions.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": "Faithfulness",
+                  "Weight Allocation": "0.5 (50%)",
+                  "Evaluation Focus": "Factual grounding in reference context"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Relevance",
+                  "Weight Allocation": "0.3 (30%)",
+                  "Evaluation Focus": "Directly addressing user intent"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Coherence",
+                  "Weight Allocation": "0.2 (20%)",
+                  "Evaluation Focus": "Logical structural flow and fluency"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Faithfulness ensures grounding while Relevance ensures answering queries.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": "Faithfulness",
+                  "Weight Allocation": "0.5 (50%)",
+                  "Evaluation Focus": "Factual grounding in reference context"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Relevance",
+                  "Weight Allocation": "0.3 (30%)",
+                  "Evaluation Focus": "Directly addressing user intent"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Coherence",
+                  "Weight Allocation": "0.2 (20%)",
+                  "Evaluation Focus": "Logical structural flow and fluency"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Rubric definitions transform impressions into repeatable benchmarks.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension Name": "Faithfulness",
+                  "Weight Allocation": "0.5 (50%)",
+                  "Evaluation Focus": "Factual grounding in reference context"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Relevance",
+                  "Weight Allocation": "0.3 (30%)",
+                  "Evaluation Focus": "Directly addressing user intent"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension Name": "Coherence",
+                  "Weight Allocation": "0.2 (20%)",
+                  "Evaluation Focus": "Logical structural flow and fluency"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,9 +278,21 @@
         "template": "bars",
         "title": "Weighted Rubric Dimension Contributions",
         "items": [
-          { "label": "Faithfulness", "value": 50.0, "tone": "ok" },
-          { "label": "Relevance", "value": 24.0, "tone": "data" },
-          { "label": "Coherence", "value": 12.0, "tone": "idle" }
+          {
+            "label": "Faithfulness",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Relevance",
+            "value": 24,
+            "tone": "data"
+          },
+          {
+            "label": "Coherence",
+            "value": 12,
+            "tone": "idle"
+          }
         ],
         "steps": [
           {
@@ -93,9 +313,21 @@
         "template": "bars",
         "title": "Weighted Rubric Dimension Contributions",
         "items": [
-          { "label": "Faithfulness", "value": 50.0, "tone": "ok" },
-          { "label": "Relevance", "value": 24.0, "tone": "data" },
-          { "label": "Coherence", "value": 12.0, "tone": "idle" }
+          {
+            "label": "Faithfulness",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Relevance",
+            "value": 24,
+            "tone": "data"
+          },
+          {
+            "label": "Coherence",
+            "value": 12,
+            "tone": "idle"
+          }
         ],
         "steps": [
           {
@@ -190,29 +422,51 @@
         "template": "states",
         "title": "Position Bias Detection Pipeline",
         "states": [
-          { "id": "normal", "label": "Trial (A vs B)" },
-          { "id": "swapped", "label": "Trial (B vs A)" },
-          { "id": "delta", "label": "Position Delta Calc" },
-          { "id": "verdict", "label": "Impartial Verdict" }
+          {
+            "id": "normal",
+            "label": "Trial (A vs B)"
+          },
+          {
+            "id": "swapped",
+            "label": "Trial (B vs A)"
+          },
+          {
+            "id": "delta",
+            "label": "Position Delta Calc"
+          },
+          {
+            "id": "verdict",
+            "label": "Impartial Verdict"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Pairwise evaluations execute in both directions to detect position bias.",
             "current": "normal",
-            "visited": ["normal"]
+            "visited": [
+              "normal"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions calculate the average score awarded to the first position.",
             "current": "swapped",
-            "visited": ["normal", "swapped"]
+            "visited": [
+              "normal",
+              "swapped"
+            ]
           },
           {
             "at": "say11",
             "caption": "Order swapping is essential for impartial benchmark integrity.",
             "current": "verdict",
-            "visited": ["normal", "swapped", "delta", "verdict"]
+            "visited": [
+              "normal",
+              "swapped",
+              "delta",
+              "verdict"
+            ]
           }
         ]
       },
@@ -220,29 +474,51 @@
         "template": "states",
         "title": "Position Bias Detection Pipeline",
         "states": [
-          { "id": "normal", "label": "Trial (A vs B)" },
-          { "id": "swapped", "label": "Trial (B vs A)" },
-          { "id": "delta", "label": "Position Delta Calc" },
-          { "id": "verdict", "label": "Impartial Verdict" }
+          {
+            "id": "normal",
+            "label": "Trial (A vs B)"
+          },
+          {
+            "id": "swapped",
+            "label": "Trial (B vs A)"
+          },
+          {
+            "id": "delta",
+            "label": "Position Delta Calc"
+          },
+          {
+            "id": "verdict",
+            "label": "Impartial Verdict"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Pairwise evaluations execute in both directions to detect position bias.",
             "current": "normal",
-            "visited": ["normal"]
+            "visited": [
+              "normal"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions calculate the average score awarded to the first position.",
             "current": "swapped",
-            "visited": ["normal", "swapped"]
+            "visited": [
+              "normal",
+              "swapped"
+            ]
           },
           {
             "at": "say11",
             "caption": "Order swapping is essential for impartial benchmark integrity.",
             "current": "verdict",
-            "visited": ["normal", "swapped", "delta", "verdict"]
+            "visited": [
+              "normal",
+              "swapped",
+              "delta",
+              "verdict"
+            ]
           }
         ]
       }
@@ -254,31 +530,63 @@
         "template": "flow",
         "title": "Verbosity Penalty Normalization Flow",
         "nodes": [
-          { "id": "raw", "label": "Raw Score", "tappable": false },
-          { "id": "length", "label": "Char Budget Check", "tappable": false },
-          { "id": "penalty", "label": "Verbosity Penalty", "tappable": false },
-          { "id": "calibrated", "label": "Normalized Score", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Score",
+            "tappable": false
+          },
+          {
+            "id": "length",
+            "label": "Char Budget Check",
+            "tappable": false
+          },
+          {
+            "id": "penalty",
+            "label": "Verbosity Penalty",
+            "tappable": false
+          },
+          {
+            "id": "calibrated",
+            "label": "Normalized Score",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "length" },
-          { "from": "length", "to": "penalty" },
-          { "from": "penalty", "to": "calibrated" }
+          {
+            "from": "raw",
+            "to": "length"
+          },
+          {
+            "from": "length",
+            "to": "penalty"
+          },
+          {
+            "from": "penalty",
+            "to": "calibrated"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Mitigating verbosity bias introduces length normalization penalties.",
-            "activeNodes": ["raw"]
+            "activeNodes": [
+              "raw"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions check if an answer exceeds ideal length limits for tasks.",
-            "activeNodes": ["length", "penalty"]
+            "activeNodes": [
+              "length",
+              "penalty"
+            ]
           },
           {
             "at": "say8",
             "caption": "Penalties ensure models are rewarded for efficiency rather than padding.",
-            "activeNodes": ["calibrated"]
+            "activeNodes": [
+              "calibrated"
+            ]
           }
         ]
       },
@@ -286,31 +594,63 @@
         "template": "flow",
         "title": "Verbosity Penalty Normalization Flow",
         "nodes": [
-          { "id": "raw", "label": "Raw Score", "tappable": false },
-          { "id": "length", "label": "Char Budget Check", "tappable": false },
-          { "id": "penalty", "label": "Verbosity Penalty", "tappable": false },
-          { "id": "calibrated", "label": "Normalized Score", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Score",
+            "tappable": false
+          },
+          {
+            "id": "length",
+            "label": "Char Budget Check",
+            "tappable": false
+          },
+          {
+            "id": "penalty",
+            "label": "Verbosity Penalty",
+            "tappable": false
+          },
+          {
+            "id": "calibrated",
+            "label": "Normalized Score",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "length" },
-          { "from": "length", "to": "penalty" },
-          { "from": "penalty", "to": "calibrated" }
+          {
+            "from": "raw",
+            "to": "length"
+          },
+          {
+            "from": "length",
+            "to": "penalty"
+          },
+          {
+            "from": "penalty",
+            "to": "calibrated"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Mitigating verbosity bias introduces length normalization penalties.",
-            "activeNodes": ["raw"]
+            "activeNodes": [
+              "raw"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions check if an answer exceeds ideal length limits for tasks.",
-            "activeNodes": ["length", "penalty"]
+            "activeNodes": [
+              "length",
+              "penalty"
+            ]
           },
           {
             "at": "say8",
             "caption": "Penalties ensure models are rewarded for efficiency rather than padding.",
-            "activeNodes": ["calibrated"]
+            "activeNodes": [
+              "calibrated"
+            ]
           }
         ]
       }

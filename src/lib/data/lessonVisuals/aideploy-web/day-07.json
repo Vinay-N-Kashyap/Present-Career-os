@@ -76,29 +76,50 @@
         "template": "states",
         "title": "Dual Trigger Batch Flushing States",
         "states": [
-          { "id": "accumulating", "label": "Queue Accumulating" },
-          { "id": "size_flush", "label": "Max Size Triggered" },
-          { "id": "linger_flush", "label": "Linger Timer Expired" },
-          { "id": "flushed", "label": "Batch Dispatched" }
+          {
+            "id": "accumulating",
+            "label": "Queue Accumulating"
+          },
+          {
+            "id": "size_flush",
+            "label": "Max Size Triggered"
+          },
+          {
+            "id": "linger_flush",
+            "label": "Linger Timer Expired"
+          },
+          {
+            "id": "flushed",
+            "label": "Batch Dispatched"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Batch engines employ dual triggering criteria for size and linger windows.",
             "current": "accumulating",
-            "visited": ["accumulating"]
+            "visited": [
+              "accumulating"
+            ]
           },
           {
             "at": "say4",
             "caption": "Linger timers trigger a batch flush when oldest items exceed deadlines.",
             "current": "linger_flush",
-            "visited": ["accumulating", "linger_flush"]
+            "visited": [
+              "accumulating",
+              "linger_flush"
+            ]
           },
           {
             "at": "say9",
             "caption": "Bounded linger windows balance batch density and deterministic latency.",
             "current": "flushed",
-            "visited": ["accumulating", "linger_flush", "flushed"]
+            "visited": [
+              "accumulating",
+              "linger_flush",
+              "flushed"
+            ]
           }
         ]
       },
@@ -106,29 +127,50 @@
         "template": "states",
         "title": "Dual Trigger Batch Flushing States",
         "states": [
-          { "id": "accumulating", "label": "Queue Accumulating" },
-          { "id": "size_flush", "label": "Max Size Triggered" },
-          { "id": "linger_flush", "label": "Linger Timer Expired" },
-          { "id": "flushed", "label": "Batch Dispatched" }
+          {
+            "id": "accumulating",
+            "label": "Queue Accumulating"
+          },
+          {
+            "id": "size_flush",
+            "label": "Max Size Triggered"
+          },
+          {
+            "id": "linger_flush",
+            "label": "Linger Timer Expired"
+          },
+          {
+            "id": "flushed",
+            "label": "Batch Dispatched"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Batch engines employ dual triggering criteria for size and linger windows.",
             "current": "accumulating",
-            "visited": ["accumulating"]
+            "visited": [
+              "accumulating"
+            ]
           },
           {
             "at": "say4",
             "caption": "Linger timers trigger a batch flush when oldest items exceed deadlines.",
             "current": "linger_flush",
-            "visited": ["accumulating", "linger_flush"]
+            "visited": [
+              "accumulating",
+              "linger_flush"
+            ]
           },
           {
             "at": "say9",
             "caption": "Bounded linger windows balance batch density and deterministic latency.",
             "current": "flushed",
-            "visited": ["accumulating", "linger_flush", "flushed"]
+            "visited": [
+              "accumulating",
+              "linger_flush",
+              "flushed"
+            ]
           }
         ]
       }
@@ -140,35 +182,76 @@
         "template": "flow",
         "title": "Promise Demultiplexing Architecture",
         "nodes": [
-          { "id": "caller", "label": "Caller Promise", "tappable": false },
-          { "id": "registry", "label": "Deferred Registry", "tappable": false },
-          { "id": "batch", "label": "Unified Batch Request", "tappable": false },
-          { "id": "results", "label": "Upstream Results", "tappable": false },
-          { "id": "resolve", "label": "Demux & Resolve", "tappable": false }
+          {
+            "id": "caller",
+            "label": "Caller Promise",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Deferred Registry",
+            "tappable": false
+          },
+          {
+            "id": "batch",
+            "label": "Unified Batch Request",
+            "tappable": false
+          },
+          {
+            "id": "results",
+            "label": "Upstream Results",
+            "tappable": false
+          },
+          {
+            "id": "resolve",
+            "label": "Demux & Resolve",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "caller", "to": "registry" },
-          { "from": "registry", "to": "batch" },
-          { "from": "batch", "to": "results" },
-          { "from": "results", "to": "resolve" }
+          {
+            "from": "caller",
+            "to": "registry"
+          },
+          {
+            "from": "registry",
+            "to": "batch"
+          },
+          {
+            "from": "batch",
+            "to": "results"
+          },
+          {
+            "from": "results",
+            "to": "resolve"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Gateways decouple batch collection using an asynchronous Promise demuxer.",
-            "activeNodes": ["caller", "registry"],
+            "activeNodes": [
+              "caller",
+              "registry"
+            ],
             "statusBadge": "registered"
           },
           {
             "at": "say5",
             "caption": "Internal maps store handlers indexed by unique request correlation IDs.",
-            "activeNodes": ["registry", "batch"],
+            "activeNodes": [
+              "registry",
+              "batch"
+            ],
             "statusBadge": "mapped"
           },
           {
             "at": "say7",
             "caption": "Demuxers resolve caller promises using correlation IDs from batch answers.",
-            "activeNodes": ["results", "resolve"],
+            "activeNodes": [
+              "results",
+              "resolve"
+            ],
             "statusBadge": "resolved"
           }
         ]
@@ -177,35 +260,76 @@
         "template": "flow",
         "title": "Promise Demultiplexing Architecture",
         "nodes": [
-          { "id": "caller", "label": "Caller Promise", "tappable": false },
-          { "id": "registry", "label": "Deferred Registry", "tappable": false },
-          { "id": "batch", "label": "Unified Batch Request", "tappable": false },
-          { "id": "results", "label": "Upstream Results", "tappable": false },
-          { "id": "resolve", "label": "Demux & Resolve", "tappable": false }
+          {
+            "id": "caller",
+            "label": "Caller Promise",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Deferred Registry",
+            "tappable": false
+          },
+          {
+            "id": "batch",
+            "label": "Unified Batch Request",
+            "tappable": false
+          },
+          {
+            "id": "results",
+            "label": "Upstream Results",
+            "tappable": false
+          },
+          {
+            "id": "resolve",
+            "label": "Demux & Resolve",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "caller", "to": "registry" },
-          { "from": "registry", "to": "batch" },
-          { "from": "batch", "to": "results" },
-          { "from": "results", "to": "resolve" }
+          {
+            "from": "caller",
+            "to": "registry"
+          },
+          {
+            "from": "registry",
+            "to": "batch"
+          },
+          {
+            "from": "batch",
+            "to": "results"
+          },
+          {
+            "from": "results",
+            "to": "resolve"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Gateways decouple batch collection using an asynchronous Promise demuxer.",
-            "activeNodes": ["caller", "registry"],
+            "activeNodes": [
+              "caller",
+              "registry"
+            ],
             "statusBadge": "registered"
           },
           {
             "at": "say5",
             "caption": "Internal maps store handlers indexed by unique request correlation IDs.",
-            "activeNodes": ["registry", "batch"],
+            "activeNodes": [
+              "registry",
+              "batch"
+            ],
             "statusBadge": "mapped"
           },
           {
             "at": "say7",
             "caption": "Demuxers resolve caller promises using correlation IDs from batch answers.",
-            "activeNodes": ["results", "resolve"],
+            "activeNodes": [
+              "results",
+              "resolve"
+            ],
             "statusBadge": "resolved"
           }
         ]
@@ -217,54 +341,300 @@
       "spec": {
         "template": "table",
         "title": "Per-Item Batch Result Partitioning",
-        "columns": ["Item ID", "Status", "Payload / Reason", "Action Taken"],
-        "rows": [
-          { "Item ID": { "text": "1" }, "Status": { "text": "Success" }, "Payload / Reason": { "text": "OK 1" }, "Action Taken": { "text": "Resolve caller promise" } },
-          { "Item ID": { "text": "2" }, "Status": { "text": "Failed" }, "Payload / Reason": { "text": "ContextExceeded" }, "Action Taken": { "text": "Reject caller promise" } },
-          { "Item ID": { "text": "3" }, "Status": { "text": "Success" }, "Payload / Reason": { "text": "OK 3" }, "Action Taken": { "text": "Resolve caller promise" } }
+        "columns": [
+          "Item ID",
+          "Status",
+          "Payload / Reason",
+          "Action Taken"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Resilient batch gateways enforce strict partial batch error isolation.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "1"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 1"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "2"
+                  },
+                  "Status": {
+                    "text": "Failed"
+                  },
+                  "Payload / Reason": {
+                    "text": "ContextExceeded"
+                  },
+                  "Action Taken": {
+                    "text": "Reject caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "3"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 3"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Results partition into successful arrays and failed arrays for isolation.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "1"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 1"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "2"
+                  },
+                  "Status": {
+                    "text": "Failed"
+                  },
+                  "Payload / Reason": {
+                    "text": "ContextExceeded"
+                  },
+                  "Action Taken": {
+                    "text": "Reject caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "3"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 3"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Failed items reject only their specific promises with granular errors.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "1"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 1"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "2"
+                  },
+                  "Status": {
+                    "text": "Failed"
+                  },
+                  "Payload / Reason": {
+                    "text": "ContextExceeded"
+                  },
+                  "Action Taken": {
+                    "text": "Reject caller promise"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": {
+                    "text": "3"
+                  },
+                  "Status": {
+                    "text": "Success"
+                  },
+                  "Payload / Reason": {
+                    "text": "OK 3"
+                  },
+                  "Action Taken": {
+                    "text": "Resolve caller promise"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Per-Item Batch Result Partitioning",
-        "columns": ["Item ID", "Status", "Payload / Reason", "Action Taken"],
-        "rows": [
-          { "Item ID": "1", "Status": "Success", "Payload / Reason": "OK 1", "Action Taken": "Resolve caller promise" },
-          { "Item ID": "2", "Status": "Failed", "Payload / Reason": "ContextExceeded", "Action Taken": "Reject caller promise" },
-          { "Item ID": "3", "Status": "Success", "Payload / Reason": "OK 3", "Action Taken": "Resolve caller promise" }
+        "columns": [
+          "Item ID",
+          "Status",
+          "Payload / Reason",
+          "Action Taken"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Resilient batch gateways enforce strict partial batch error isolation.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": "1",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 1",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "2",
+                  "Status": "Failed",
+                  "Payload / Reason": "ContextExceeded",
+                  "Action Taken": "Reject caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "3",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 3",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Results partition into successful arrays and failed arrays for isolation.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": "1",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 1",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "2",
+                  "Status": "Failed",
+                  "Payload / Reason": "ContextExceeded",
+                  "Action Taken": "Reject caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "3",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 3",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Failed items reject only their specific promises with granular errors.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Item ID": "1",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 1",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "2",
+                  "Status": "Failed",
+                  "Payload / Reason": "ContextExceeded",
+                  "Action Taken": "Reject caller promise"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Item ID": "3",
+                  "Status": "Success",
+                  "Payload / Reason": "OK 3",
+                  "Action Taken": "Resolve caller promise"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -276,10 +646,26 @@
         "template": "workflow",
         "title": "Backpressure Admission Control Stages",
         "stages": [
-          { "id": "ingress", "name": "Ingress Request", "subtext": "Incoming inference task" },
-          { "id": "check", "name": "Capacity Check", "subtext": "Queue length vs max ceiling" },
-          { "id": "accept", "name": "Queue Admission", "subtext": "Added to in-memory batch" },
-          { "id": "reject", "name": "Backpressure Signal", "subtext": "HTTP 429 / fail fast" }
+          {
+            "id": "ingress",
+            "name": "Ingress Request",
+            "subtext": "Incoming inference task"
+          },
+          {
+            "id": "check",
+            "name": "Capacity Check",
+            "subtext": "Queue length vs max ceiling"
+          },
+          {
+            "id": "accept",
+            "name": "Queue Admission",
+            "subtext": "Added to in-memory batch"
+          },
+          {
+            "id": "reject",
+            "name": "Backpressure Signal",
+            "subtext": "HTTP 429 / fail fast"
+          }
         ],
         "steps": [
           {
@@ -306,10 +692,26 @@
         "template": "workflow",
         "title": "Backpressure Admission Control Stages",
         "stages": [
-          { "id": "ingress", "name": "Ingress Request", "subtext": "Incoming inference task" },
-          { "id": "check", "name": "Capacity Check", "subtext": "Queue length vs max ceiling" },
-          { "id": "accept", "name": "Queue Admission", "subtext": "Added to in-memory batch" },
-          { "id": "reject", "name": "Backpressure Signal", "subtext": "HTTP 429 / fail fast" }
+          {
+            "id": "ingress",
+            "name": "Ingress Request",
+            "subtext": "Incoming inference task"
+          },
+          {
+            "id": "check",
+            "name": "Capacity Check",
+            "subtext": "Queue length vs max ceiling"
+          },
+          {
+            "id": "accept",
+            "name": "Queue Admission",
+            "subtext": "Added to in-memory batch"
+          },
+          {
+            "id": "reject",
+            "name": "Backpressure Signal",
+            "subtext": "HTTP 429 / fail fast"
+          }
         ],
         "steps": [
           {

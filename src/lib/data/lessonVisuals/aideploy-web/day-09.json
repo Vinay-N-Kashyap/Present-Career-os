@@ -75,54 +75,262 @@
       "spec": {
         "template": "table",
         "title": "Cosine Similarity Threshold Calibration",
-        "columns": ["Threshold Band", "Cache Decision", "Trade-Off Profile"],
-        "rows": [
-          { "Threshold Band": { "text": "< 0.85 (Too Low)" }, "Cache Decision": { "text": "Aggressive HIT" }, "Trade-Off Profile": { "text": "High risk of false positives on different questions" } },
-          { "Threshold Band": { "text": "0.90 - 0.94 (Optimal)" }, "Cache Decision": { "text": "Calibrated HIT" }, "Trade-Off Profile": { "text": "Sweet spot: catches phrasing variations accurately" } },
-          { "Threshold Band": { "text": "> 0.98 (Too High)" }, "Cache Decision": { "text": "Frequent MISS" }, "Trade-Off Profile": { "text": "Misses valid synonyms; hit rate drops sharply" } }
+        "columns": [
+          "Threshold Band",
+          "Cache Decision",
+          "Trade-Off Profile"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Low thresholds cause false positives returning answers to wrong questions.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "< 0.85 (Too Low)"
+                  },
+                  "Cache Decision": {
+                    "text": "Aggressive HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "High risk of false positives on different questions"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "0.90 - 0.94 (Optimal)"
+                  },
+                  "Cache Decision": {
+                    "text": "Calibrated HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Sweet spot: catches phrasing variations accurately"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "> 0.98 (Too High)"
+                  },
+                  "Cache Decision": {
+                    "text": "Frequent MISS"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Misses valid synonyms; hit rate drops sharply"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Calibrated similarity thresholds represent the optimal sweet spot for caches.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "< 0.85 (Too Low)"
+                  },
+                  "Cache Decision": {
+                    "text": "Aggressive HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "High risk of false positives on different questions"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "0.90 - 0.94 (Optimal)"
+                  },
+                  "Cache Decision": {
+                    "text": "Calibrated HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Sweet spot: catches phrasing variations accurately"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "> 0.98 (Too High)"
+                  },
+                  "Cache Decision": {
+                    "text": "Frequent MISS"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Misses valid synonyms; hit rate drops sharply"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Sensitive domain applications configure stricter thresholds for accuracy.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "< 0.85 (Too Low)"
+                  },
+                  "Cache Decision": {
+                    "text": "Aggressive HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "High risk of false positives on different questions"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "0.90 - 0.94 (Optimal)"
+                  },
+                  "Cache Decision": {
+                    "text": "Calibrated HIT"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Sweet spot: catches phrasing variations accurately"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": {
+                    "text": "> 0.98 (Too High)"
+                  },
+                  "Cache Decision": {
+                    "text": "Frequent MISS"
+                  },
+                  "Trade-Off Profile": {
+                    "text": "Misses valid synonyms; hit rate drops sharply"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Cosine Similarity Threshold Calibration",
-        "columns": ["Threshold Band", "Cache Decision", "Trade-Off Profile"],
-        "rows": [
-          { "Threshold Band": "< 0.85 (Too Low)", "Cache Decision": "Aggressive HIT", "Trade-Off Profile": "High risk of false positives on different questions" },
-          { "Threshold Band": "0.90 - 0.94 (Optimal)", "Cache Decision": "Calibrated HIT", "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately" },
-          { "Threshold Band": "> 0.98 (Too High)", "Cache Decision": "Frequent MISS", "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply" }
+        "columns": [
+          "Threshold Band",
+          "Cache Decision",
+          "Trade-Off Profile"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Low thresholds cause false positives returning answers to wrong questions.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": "< 0.85 (Too Low)",
+                  "Cache Decision": "Aggressive HIT",
+                  "Trade-Off Profile": "High risk of false positives on different questions"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "0.90 - 0.94 (Optimal)",
+                  "Cache Decision": "Calibrated HIT",
+                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "> 0.98 (Too High)",
+                  "Cache Decision": "Frequent MISS",
+                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Calibrated similarity thresholds represent the optimal sweet spot for caches.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": "< 0.85 (Too Low)",
+                  "Cache Decision": "Aggressive HIT",
+                  "Trade-Off Profile": "High risk of false positives on different questions"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "0.90 - 0.94 (Optimal)",
+                  "Cache Decision": "Calibrated HIT",
+                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "> 0.98 (Too High)",
+                  "Cache Decision": "Frequent MISS",
+                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Sensitive domain applications configure stricter thresholds for accuracy.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Threshold Band": "< 0.85 (Too Low)",
+                  "Cache Decision": "Aggressive HIT",
+                  "Trade-Off Profile": "High risk of false positives on different questions"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "0.90 - 0.94 (Optimal)",
+                  "Cache Decision": "Calibrated HIT",
+                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Threshold Band": "> 0.98 (Too High)",
+                  "Cache Decision": "Frequent MISS",
+                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -134,35 +342,76 @@
         "template": "flow",
         "title": "Semantic Cache Lookup and Evaluation Flow",
         "nodes": [
-          { "id": "query", "label": "Incoming Query", "tappable": false },
-          { "id": "embed", "label": "Query Embedding", "tappable": false },
-          { "id": "scan", "label": "Store Dot Products", "tappable": false },
-          { "id": "hit", "label": "Cache HIT (Sub-10ms)", "tappable": false },
-          { "id": "miss", "label": "Cache MISS -> LLM", "tappable": false }
+          {
+            "id": "query",
+            "label": "Incoming Query",
+            "tappable": false
+          },
+          {
+            "id": "embed",
+            "label": "Query Embedding",
+            "tappable": false
+          },
+          {
+            "id": "scan",
+            "label": "Store Dot Products",
+            "tappable": false
+          },
+          {
+            "id": "hit",
+            "label": "Cache HIT (Sub-10ms)",
+            "tappable": false
+          },
+          {
+            "id": "miss",
+            "label": "Cache MISS -> LLM",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "query", "to": "embed" },
-          { "from": "embed", "to": "scan" },
-          { "from": "scan", "to": "hit" },
-          { "from": "scan", "to": "miss" }
+          {
+            "from": "query",
+            "to": "embed"
+          },
+          {
+            "from": "embed",
+            "to": "scan"
+          },
+          {
+            "from": "scan",
+            "to": "hit"
+          },
+          {
+            "from": "scan",
+            "to": "miss"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Applications generate query embeddings and invoke cache store lookups.",
-            "activeNodes": ["query", "embed"],
+            "activeNodes": [
+              "query",
+              "embed"
+            ],
             "statusBadge": "embedding"
           },
           {
             "at": "say4",
             "caption": "Candidate embeddings meeting thresholds return cached completions immediately.",
-            "activeNodes": ["embed", "scan", "hit"],
+            "activeNodes": [
+              "embed",
+              "scan",
+              "hit"
+            ],
             "statusBadge": "hit"
           },
           {
             "at": "say5",
             "caption": "Returning cached answers bypasses upstream models reducing latency to sub-10ms.",
-            "activeNodes": ["hit"],
+            "activeNodes": [
+              "hit"
+            ],
             "statusBadge": "bypassed"
           }
         ]
@@ -171,35 +420,76 @@
         "template": "flow",
         "title": "Semantic Cache Lookup and Evaluation Flow",
         "nodes": [
-          { "id": "query", "label": "Incoming Query", "tappable": false },
-          { "id": "embed", "label": "Query Embedding", "tappable": false },
-          { "id": "scan", "label": "Store Dot Products", "tappable": false },
-          { "id": "hit", "label": "Cache HIT (Sub-10ms)", "tappable": false },
-          { "id": "miss", "label": "Cache MISS -> LLM", "tappable": false }
+          {
+            "id": "query",
+            "label": "Incoming Query",
+            "tappable": false
+          },
+          {
+            "id": "embed",
+            "label": "Query Embedding",
+            "tappable": false
+          },
+          {
+            "id": "scan",
+            "label": "Store Dot Products",
+            "tappable": false
+          },
+          {
+            "id": "hit",
+            "label": "Cache HIT (Sub-10ms)",
+            "tappable": false
+          },
+          {
+            "id": "miss",
+            "label": "Cache MISS -> LLM",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "query", "to": "embed" },
-          { "from": "embed", "to": "scan" },
-          { "from": "scan", "to": "hit" },
-          { "from": "scan", "to": "miss" }
+          {
+            "from": "query",
+            "to": "embed"
+          },
+          {
+            "from": "embed",
+            "to": "scan"
+          },
+          {
+            "from": "scan",
+            "to": "hit"
+          },
+          {
+            "from": "scan",
+            "to": "miss"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Applications generate query embeddings and invoke cache store lookups.",
-            "activeNodes": ["query", "embed"],
+            "activeNodes": [
+              "query",
+              "embed"
+            ],
             "statusBadge": "embedding"
           },
           {
             "at": "say4",
             "caption": "Candidate embeddings meeting thresholds return cached completions immediately.",
-            "activeNodes": ["embed", "scan", "hit"],
+            "activeNodes": [
+              "embed",
+              "scan",
+              "hit"
+            ],
             "statusBadge": "hit"
           },
           {
             "at": "say5",
             "caption": "Returning cached answers bypasses upstream models reducing latency to sub-10ms.",
-            "activeNodes": ["hit"],
+            "activeNodes": [
+              "hit"
+            ],
             "statusBadge": "bypassed"
           }
         ]
@@ -212,29 +502,52 @@
         "template": "states",
         "title": "LRU Eviction & Lifecycle States",
         "states": [
-          { "id": "inserted", "label": "Entry Stored (Most Recent)" },
-          { "id": "accessed", "label": "Entry Promoted on Read" },
-          { "id": "capacity", "label": "Capacity Limit Reached" },
-          { "id": "evicted", "label": "Oldest Entry Evicted" }
+          {
+            "id": "inserted",
+            "label": "Entry Stored (Most Recent)"
+          },
+          {
+            "id": "accessed",
+            "label": "Entry Promoted on Read"
+          },
+          {
+            "id": "capacity",
+            "label": "Capacity Limit Reached"
+          },
+          {
+            "id": "evicted",
+            "label": "Oldest Entry Evicted"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "LRU caches promote accessed entries to the most recent position in memory.",
             "current": "inserted",
-            "visited": ["inserted"]
+            "visited": [
+              "inserted"
+            ]
           },
           {
             "at": "say4",
             "caption": "Reaching capacity ceilings triggers eviction of the least recently used key.",
             "current": "capacity",
-            "visited": ["inserted", "accessed", "capacity"]
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity"
+            ]
           },
           {
             "at": "say7",
             "caption": "Time-to-live policies purge expired entries to prevent stale cached answers.",
             "current": "evicted",
-            "visited": ["inserted", "accessed", "capacity", "evicted"]
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity",
+              "evicted"
+            ]
           }
         ]
       },
@@ -242,29 +555,52 @@
         "template": "states",
         "title": "LRU Eviction & Lifecycle States",
         "states": [
-          { "id": "inserted", "label": "Entry Stored (Most Recent)" },
-          { "id": "accessed", "label": "Entry Promoted on Read" },
-          { "id": "capacity", "label": "Capacity Limit Reached" },
-          { "id": "evicted", "label": "Oldest Entry Evicted" }
+          {
+            "id": "inserted",
+            "label": "Entry Stored (Most Recent)"
+          },
+          {
+            "id": "accessed",
+            "label": "Entry Promoted on Read"
+          },
+          {
+            "id": "capacity",
+            "label": "Capacity Limit Reached"
+          },
+          {
+            "id": "evicted",
+            "label": "Oldest Entry Evicted"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "LRU caches promote accessed entries to the most recent position in memory.",
             "current": "inserted",
-            "visited": ["inserted"]
+            "visited": [
+              "inserted"
+            ]
           },
           {
             "at": "say4",
             "caption": "Reaching capacity ceilings triggers eviction of the least recently used key.",
             "current": "capacity",
-            "visited": ["inserted", "accessed", "capacity"]
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity"
+            ]
           },
           {
             "at": "say7",
             "caption": "Time-to-live policies purge expired entries to prevent stale cached answers.",
             "current": "evicted",
-            "visited": ["inserted", "accessed", "capacity", "evicted"]
+            "visited": [
+              "inserted",
+              "accessed",
+              "capacity",
+              "evicted"
+            ]
           }
         ]
       }
@@ -276,10 +612,26 @@
         "template": "workflow",
         "title": "Domain-Partitioned Cache Invalidation",
         "stages": [
-          { "id": "tag", "name": "Domain Tagging", "subtext": "pricing_v1 or auth" },
-          { "id": "index", "name": "Partitioned Storage", "subtext": "Scoped vector lookup" },
-          { "id": "event", "name": "Invalidation Hook", "subtext": "Doc or price updated" },
-          { "id": "purge", "name": "Targeted Purge", "subtext": "Drop entries for tag" }
+          {
+            "id": "tag",
+            "name": "Domain Tagging",
+            "subtext": "pricing_v1 or auth"
+          },
+          {
+            "id": "index",
+            "name": "Partitioned Storage",
+            "subtext": "Scoped vector lookup"
+          },
+          {
+            "id": "event",
+            "name": "Invalidation Hook",
+            "subtext": "Doc or price updated"
+          },
+          {
+            "id": "purge",
+            "name": "Targeted Purge",
+            "subtext": "Drop entries for tag"
+          }
         ],
         "steps": [
           {
@@ -306,10 +658,26 @@
         "template": "workflow",
         "title": "Domain-Partitioned Cache Invalidation",
         "stages": [
-          { "id": "tag", "name": "Domain Tagging", "subtext": "pricing_v1 or auth" },
-          { "id": "index", "name": "Partitioned Storage", "subtext": "Scoped vector lookup" },
-          { "id": "event", "name": "Invalidation Hook", "subtext": "Doc or price updated" },
-          { "id": "purge", "name": "Targeted Purge", "subtext": "Drop entries for tag" }
+          {
+            "id": "tag",
+            "name": "Domain Tagging",
+            "subtext": "pricing_v1 or auth"
+          },
+          {
+            "id": "index",
+            "name": "Partitioned Storage",
+            "subtext": "Scoped vector lookup"
+          },
+          {
+            "id": "event",
+            "name": "Invalidation Hook",
+            "subtext": "Doc or price updated"
+          },
+          {
+            "id": "purge",
+            "name": "Targeted Purge",
+            "subtext": "Drop entries for tag"
+          }
         ],
         "steps": [
           {

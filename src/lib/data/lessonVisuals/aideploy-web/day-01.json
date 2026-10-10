@@ -13,27 +13,66 @@
         "title": "ProductionAiClient Header & Endpoint Builder",
         "subtitle": "Encapsulating Bearer token auth, organization tags, and trace correlation IDs",
         "nodes": [
-          { "id": "n1", "label": "ClientConfig", "sublabel": "baseUrl, apiKey, orgId", "tappable": false },
-          { "id": "n2", "label": "buildHeaders()", "sublabel": "Bearer + X-Correlation-ID", "tappable": false },
-          { "id": "n3", "label": "X-Organization-ID", "sublabel": "org-enterprise-corp", "tappable": false },
-          { "id": "n4", "label": "getEndpoint()", "sublabel": "/v1/chat/completions", "tappable": false }
+          {
+            "id": "n1",
+            "label": "ClientConfig",
+            "sublabel": "baseUrl, apiKey, orgId",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "buildHeaders()",
+            "sublabel": "Bearer + X-Correlation-ID",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "X-Organization-ID",
+            "sublabel": "org-enterprise-corp",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "getEndpoint()",
+            "sublabel": "/v1/chat/completions",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "req-trace-001" },
-          { "from": "n2", "to": "n3", "label": "tenant tag" },
-          { "from": "n3", "to": "n4", "label": "dispatch" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "req-trace-001"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "tenant tag"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "dispatch"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Production AI client abstracts authentication token headers and correlation IDs.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say6",
             "caption": "Multi-tenant requests include organization identifiers for billing and tracing.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -43,27 +82,66 @@
         "title": "ProductionAiClient Header & Endpoint Builder",
         "subtitle": "Encapsulating Bearer token auth, organization tags, and trace correlation IDs",
         "nodes": [
-          { "id": "n1", "label": "ClientConfig", "sublabel": "baseUrl, apiKey, orgId", "tappable": false },
-          { "id": "n2", "label": "buildHeaders()", "sublabel": "Bearer + X-Correlation-ID", "tappable": false },
-          { "id": "n3", "label": "X-Organization-ID", "sublabel": "org-enterprise-corp", "tappable": false },
-          { "id": "n4", "label": "getEndpoint()", "sublabel": "/v1/chat/completions", "tappable": false }
+          {
+            "id": "n1",
+            "label": "ClientConfig",
+            "sublabel": "baseUrl, apiKey, orgId",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "buildHeaders()",
+            "sublabel": "Bearer + X-Correlation-ID",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "X-Organization-ID",
+            "sublabel": "org-enterprise-corp",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "getEndpoint()",
+            "sublabel": "/v1/chat/completions",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "req-trace-001" },
-          { "from": "n2", "to": "n3", "label": "tenant tag" },
-          { "from": "n3", "to": "n4", "label": "dispatch" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "req-trace-001"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "tenant tag"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "dispatch"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Production AI client abstracts authentication token headers and correlation IDs.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say6",
             "caption": "Multi-tenant requests include organization identifiers for billing and tracing.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -76,22 +154,85 @@
         "template": "table",
         "title": "Task-Specific Inference Sampling Profiles",
         "subtitle": "Tuning temperature, topP, and repetition penalties by workload type",
-        "columns": ["Workload Task", "Temperature", "Top-P", "Max Tokens / Penalties"],
-        "rows": [
-          ["extraction / classification", "0.0 (Greedy)", "1.0", "500 tokens (0.0 / 0.0)"],
-          ["code generation", "0.1 (Focused)", "0.95", "2000 tokens (0.0 / 0.1)"],
-          ["creative copywriting", "0.8 (Diverse)", "0.95", "1500 tokens (0.3 / 0.3)"]
+        "columns": [
+          "Workload Task",
+          "Temperature",
+          "Top-P",
+          "Max Tokens / Penalties"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Zero temperature transforms softmax into deterministic greedy token decoding.",
-            "highlightRows": [0]
+            "highlightRows": [
+              0
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "extraction / classification",
+                  "0.0 (Greedy)",
+                  "1.0",
+                  "500 tokens (0.0 / 0.0)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code generation",
+                  "0.1 (Focused)",
+                  "0.95",
+                  "2000 tokens (0.0 / 0.1)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "creative copywriting",
+                  "0.8 (Diverse)",
+                  "0.95",
+                  "1500 tokens (0.3 / 0.3)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Structured data extraction and code generation maximize fidelity to schemas.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "extraction / classification",
+                  "0.0 (Greedy)",
+                  "1.0",
+                  "500 tokens (0.0 / 0.0)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code generation",
+                  "0.1 (Focused)",
+                  "0.95",
+                  "2000 tokens (0.0 / 0.1)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "creative copywriting",
+                  "0.8 (Diverse)",
+                  "0.95",
+                  "1500 tokens (0.3 / 0.3)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -99,22 +240,85 @@
         "template": "table",
         "title": "Task-Specific Inference Sampling Profiles",
         "subtitle": "Tuning temperature, topP, and repetition penalties by workload type",
-        "columns": ["Workload Task", "Temperature", "Top-P", "Max Tokens / Penalties"],
-        "rows": [
-          ["extraction / classification", "0.0 (Greedy)", "1.0", "500 tokens (0.0 / 0.0)"],
-          ["code generation", "0.1 (Focused)", "0.95", "2000 tokens (0.0 / 0.1)"],
-          ["creative copywriting", "0.8 (Diverse)", "0.95", "1500 tokens (0.3 / 0.3)"]
+        "columns": [
+          "Workload Task",
+          "Temperature",
+          "Top-P",
+          "Max Tokens / Penalties"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Zero temperature transforms softmax into deterministic greedy token decoding.",
-            "highlightRows": [0]
+            "highlightRows": [
+              0
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "extraction / classification",
+                  "0.0 (Greedy)",
+                  "1.0",
+                  "500 tokens (0.0 / 0.0)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code generation",
+                  "0.1 (Focused)",
+                  "0.95",
+                  "2000 tokens (0.0 / 0.1)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "creative copywriting",
+                  "0.8 (Diverse)",
+                  "0.95",
+                  "1500 tokens (0.3 / 0.3)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Structured data extraction and code generation maximize fidelity to schemas.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "extraction / classification",
+                  "0.0 (Greedy)",
+                  "1.0",
+                  "500 tokens (0.0 / 0.0)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code generation",
+                  "0.1 (Focused)",
+                  "0.95",
+                  "2000 tokens (0.0 / 0.1)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "creative copywriting",
+                  "0.8 (Diverse)",
+                  "0.95",
+                  "1500 tokens (0.3 / 0.3)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -127,10 +331,26 @@
         "title": "TimeoutGovernor Signal & Timer Lifecycle",
         "subtitle": "Enforcing strict client deadline ceilings and deterministic timer cleanup",
         "stages": [
-          { "id": "s1", "name": "Budget Signal", "subtext": "createBudgetedSignal(50)" },
-          { "id": "s2", "name": "Deadline Timer", "subtext": "setTimeout(timeoutMs)" },
-          { "id": "s3", "name": "Abort Trigger", "subtext": "mockController.abort()" },
-          { "id": "s4", "name": "Timer Cleanup", "subtext": "clearTimeout(timerId)" }
+          {
+            "id": "s1",
+            "name": "Budget Signal",
+            "subtext": "createBudgetedSignal(50)"
+          },
+          {
+            "id": "s2",
+            "name": "Deadline Timer",
+            "subtext": "setTimeout(timeoutMs)"
+          },
+          {
+            "id": "s3",
+            "name": "Abort Trigger",
+            "subtext": "mockController.abort()"
+          },
+          {
+            "id": "s4",
+            "name": "Timer Cleanup",
+            "subtext": "clearTimeout(timerId)"
+          }
         ],
         "steps": [
           {
@@ -152,10 +372,26 @@
         "title": "TimeoutGovernor Signal & Timer Lifecycle",
         "subtitle": "Enforcing strict client deadline ceilings and deterministic timer cleanup",
         "stages": [
-          { "id": "s1", "name": "Budget Signal", "subtext": "createBudgetedSignal(50)" },
-          { "id": "s2", "name": "Deadline Timer", "subtext": "setTimeout(timeoutMs)" },
-          { "id": "s3", "name": "Abort Trigger", "subtext": "mockController.abort()" },
-          { "id": "s4", "name": "Timer Cleanup", "subtext": "clearTimeout(timerId)" }
+          {
+            "id": "s1",
+            "name": "Budget Signal",
+            "subtext": "createBudgetedSignal(50)"
+          },
+          {
+            "id": "s2",
+            "name": "Deadline Timer",
+            "subtext": "setTimeout(timeoutMs)"
+          },
+          {
+            "id": "s3",
+            "name": "Abort Trigger",
+            "subtext": "mockController.abort()"
+          },
+          {
+            "id": "s4",
+            "name": "Timer Cleanup",
+            "subtext": "clearTimeout(timerId)"
+          }
         ],
         "steps": [
           {
@@ -251,20 +487,52 @@
             "at": "say4",
             "caption": "Exponential backoff doubles delay after each attempt up to ceiling clamp.",
             "bars": [
-              { "label": "Attempt 0 (100ms)", "value": 100, "tone": "ok" },
-              { "label": "Attempt 1 (150ms)", "value": 150, "tone": "ok" },
-              { "label": "Attempt 2 (300ms)", "value": 300, "tone": "data" },
-              { "label": "Attempt 3 (600ms)", "value": 600, "tone": "data" }
+              {
+                "label": "Attempt 0 (100ms)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 1 (150ms)",
+                "value": 150,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 2 (300ms)",
+                "value": 300,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 3 (600ms)",
+                "value": 600,
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Full jitter scales the capped exponential backoff ceiling across time.",
             "bars": [
-              { "label": "Attempt 2 Jittered", "value": 300, "tone": "ok" },
-              { "label": "Attempt 3 Jittered", "value": 600, "tone": "ok" },
-              { "label": "Attempt 6 Jittered (2400ms)", "value": 2400, "tone": "data" },
-              { "label": "Max Ceiling Clamp (3200ms)", "value": 3200, "tone": "error" }
+              {
+                "label": "Attempt 2 Jittered",
+                "value": 300,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 3 Jittered",
+                "value": 600,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 6 Jittered (2400ms)",
+                "value": 2400,
+                "tone": "data"
+              },
+              {
+                "label": "Max Ceiling Clamp (3200ms)",
+                "value": 3200,
+                "tone": "error"
+              }
             ]
           }
         ]
@@ -280,20 +548,52 @@
             "at": "say4",
             "caption": "Exponential backoff doubles delay after each attempt up to ceiling clamp.",
             "bars": [
-              { "label": "Attempt 0 (100ms)", "value": 100, "tone": "ok" },
-              { "label": "Attempt 1 (150ms)", "value": 150, "tone": "ok" },
-              { "label": "Attempt 2 (300ms)", "value": 300, "tone": "data" },
-              { "label": "Attempt 3 (600ms)", "value": 600, "tone": "data" }
+              {
+                "label": "Attempt 0 (100ms)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 1 (150ms)",
+                "value": 150,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 2 (300ms)",
+                "value": 300,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 3 (600ms)",
+                "value": 600,
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Full jitter scales the capped exponential backoff ceiling across time.",
             "bars": [
-              { "label": "Attempt 2 Jittered", "value": 300, "tone": "ok" },
-              { "label": "Attempt 3 Jittered", "value": 600, "tone": "ok" },
-              { "label": "Attempt 6 Jittered (2400ms)", "value": 2400, "tone": "data" },
-              { "label": "Max Ceiling Clamp (3200ms)", "value": 3200, "tone": "error" }
+              {
+                "label": "Attempt 2 Jittered",
+                "value": 300,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 3 Jittered",
+                "value": 600,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 6 Jittered (2400ms)",
+                "value": 2400,
+                "tone": "data"
+              },
+              {
+                "label": "Max Ceiling Clamp (3200ms)",
+                "value": 3200,
+                "tone": "error"
+              }
             ]
           }
         ]

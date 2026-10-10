@@ -11,54 +11,262 @@
       "spec": {
         "template": "table",
         "title": "Production Readiness Audit Schema",
-        "columns": ["Check Name", "Severity Class", "Audit Verdict"],
-        "rows": [
-          { "Check Name": { "text": "PII Redaction" }, "Severity Class": { "text": "Critical Blocker" }, "Audit Verdict": { "text": "PASS (Masking operational)" } },
-          { "Check Name": { "text": "Rate Limiting" }, "Severity Class": { "text": "Critical Blocker" }, "Audit Verdict": { "text": "PASS (Token bucket active)" } },
-          { "Check Name": { "text": "Prometheus Alerts" }, "Severity Class": { "text": "Non-Critical Advisory" }, "Audit Verdict": { "text": "FAIL (Deferred to next sprint)" } }
+        "columns": [
+          "Check Name",
+          "Severity Class",
+          "Audit Verdict"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Interfaces distinguish between critical blockers and non-critical items.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "PII Redaction"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Masking operational)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Rate Limiting"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Token bucket active)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Prometheus Alerts"
+                  },
+                  "Severity Class": {
+                    "text": "Non-Critical Advisory"
+                  },
+                  "Audit Verdict": {
+                    "text": "FAIL (Deferred to next sprint)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Critical checks like PII Redaction cannot be bypassed under circumstances.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "PII Redaction"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Masking operational)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Rate Limiting"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Token bucket active)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Prometheus Alerts"
+                  },
+                  "Severity Class": {
+                    "text": "Non-Critical Advisory"
+                  },
+                  "Audit Verdict": {
+                    "text": "FAIL (Deferred to next sprint)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Differentiating blockers ensures standards are never compromised.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "PII Redaction"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Masking operational)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Rate Limiting"
+                  },
+                  "Severity Class": {
+                    "text": "Critical Blocker"
+                  },
+                  "Audit Verdict": {
+                    "text": "PASS (Token bucket active)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": {
+                    "text": "Prometheus Alerts"
+                  },
+                  "Severity Class": {
+                    "text": "Non-Critical Advisory"
+                  },
+                  "Audit Verdict": {
+                    "text": "FAIL (Deferred to next sprint)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Production Readiness Audit Schema",
-        "columns": ["Check Name", "Severity Class", "Audit Verdict"],
-        "rows": [
-          { "Check Name": "PII Redaction", "Severity Class": "Critical Blocker", "Audit Verdict": "PASS (Masking operational)" },
-          { "Check Name": "Rate Limiting", "Severity Class": "Critical Blocker", "Audit Verdict": "PASS (Token bucket active)" },
-          { "Check Name": "Prometheus Alerts", "Severity Class": "Non-Critical Advisory", "Audit Verdict": "FAIL (Deferred to next sprint)" }
+        "columns": [
+          "Check Name",
+          "Severity Class",
+          "Audit Verdict"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Interfaces distinguish between critical blockers and non-critical items.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": "PII Redaction",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Masking operational)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Rate Limiting",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Token bucket active)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Prometheus Alerts",
+                  "Severity Class": "Non-Critical Advisory",
+                  "Audit Verdict": "FAIL (Deferred to next sprint)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Critical checks like PII Redaction cannot be bypassed under circumstances.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": "PII Redaction",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Masking operational)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Rate Limiting",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Token bucket active)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Prometheus Alerts",
+                  "Severity Class": "Non-Critical Advisory",
+                  "Audit Verdict": "FAIL (Deferred to next sprint)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Differentiating blockers ensures standards are never compromised.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Check Name": "PII Redaction",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Masking operational)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Rate Limiting",
+                  "Severity Class": "Critical Blocker",
+                  "Audit Verdict": "PASS (Token bucket active)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Check Name": "Prometheus Alerts",
+                  "Severity Class": "Non-Critical Advisory",
+                  "Audit Verdict": "FAIL (Deferred to next sprint)"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -140,10 +348,26 @@
         "template": "workflow",
         "title": "Reliability and Fault Tolerance Verification",
         "stages": [
-          { "id": "timeout", "name": "Timeout Bounds", "subtext": "Strict network timeouts" },
-          { "id": "retries", "name": "Retry Caps", "subtext": "Prevent retry storm" },
-          { "id": "circuit", "name": "Circuit Breaker", "subtext": "Active trip fallbacks" },
-          { "id": "certified", "name": "Resilience Pass", "subtext": "Ready for deployment" }
+          {
+            "id": "timeout",
+            "name": "Timeout Bounds",
+            "subtext": "Strict network timeouts"
+          },
+          {
+            "id": "retries",
+            "name": "Retry Caps",
+            "subtext": "Prevent retry storm"
+          },
+          {
+            "id": "circuit",
+            "name": "Circuit Breaker",
+            "subtext": "Active trip fallbacks"
+          },
+          {
+            "id": "certified",
+            "name": "Resilience Pass",
+            "subtext": "Ready for deployment"
+          }
         ],
         "steps": [
           {
@@ -167,10 +391,26 @@
         "template": "workflow",
         "title": "Reliability and Fault Tolerance Verification",
         "stages": [
-          { "id": "timeout", "name": "Timeout Bounds", "subtext": "Strict network timeouts" },
-          { "id": "retries", "name": "Retry Caps", "subtext": "Prevent retry storm" },
-          { "id": "circuit", "name": "Circuit Breaker", "subtext": "Active trip fallbacks" },
-          { "id": "certified", "name": "Resilience Pass", "subtext": "Ready for deployment" }
+          {
+            "id": "timeout",
+            "name": "Timeout Bounds",
+            "subtext": "Strict network timeouts"
+          },
+          {
+            "id": "retries",
+            "name": "Retry Caps",
+            "subtext": "Prevent retry storm"
+          },
+          {
+            "id": "circuit",
+            "name": "Circuit Breaker",
+            "subtext": "Active trip fallbacks"
+          },
+          {
+            "id": "certified",
+            "name": "Resilience Pass",
+            "subtext": "Ready for deployment"
+          }
         ],
         "steps": [
           {
@@ -198,9 +438,21 @@
         "template": "bars",
         "title": "Endpoint Health Score and Status Tiers",
         "items": [
-          { "label": "Endpoint 1 (Healthy)", "value": 100.0, "tone": "ok" },
-          { "label": "Warning Threshold", "value": 50.0, "tone": "idle" },
-          { "label": "Endpoint 2 (Critical)", "value": 20.0, "tone": "error" }
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -221,9 +473,21 @@
         "template": "bars",
         "title": "Endpoint Health Score and Status Tiers",
         "items": [
-          { "label": "Endpoint 1 (Healthy)", "value": 100.0, "tone": "ok" },
-          { "label": "Warning Threshold", "value": 50.0, "tone": "idle" },
-          { "label": "Endpoint 2 (Critical)", "value": 20.0, "tone": "error" }
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -248,29 +512,52 @@
         "template": "states",
         "title": "Production Go-Live Blocker Gate Flow",
         "states": [
-          { "id": "checks", "label": "Audit Checks Evaluated" },
-          { "id": "critical_eval", "label": "Critical Blockers Scan" },
-          { "id": "blocked", "label": "Launch Blocked" },
-          { "id": "authorized", "label": "Authorized for Go-Live" }
+          {
+            "id": "checks",
+            "label": "Audit Checks Evaluated"
+          },
+          {
+            "id": "critical_eval",
+            "label": "Critical Blockers Scan"
+          },
+          {
+            "id": "blocked",
+            "label": "Launch Blocked"
+          },
+          {
+            "id": "authorized",
+            "label": "Authorized for Go-Live"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Verifying failedCriticalChecks is completely empty before authorizing launch.",
             "current": "critical_eval",
-            "visited": ["checks", "critical_eval"]
+            "visited": [
+              "checks",
+              "critical_eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "When all critical checks pass deployments are authorized without blockers.",
             "current": "authorized",
-            "visited": ["checks", "critical_eval", "authorized"]
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
           },
           {
             "at": "say8",
             "caption": "Automated go-live blockers prevent deployments until conditions are satisfied.",
             "current": "authorized",
-            "visited": ["checks", "critical_eval", "authorized"]
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
           }
         ]
       },
@@ -278,29 +565,52 @@
         "template": "states",
         "title": "Production Go-Live Blocker Gate Flow",
         "states": [
-          { "id": "checks", "label": "Audit Checks Evaluated" },
-          { "id": "critical_eval", "label": "Critical Blockers Scan" },
-          { "id": "blocked", "label": "Launch Blocked" },
-          { "id": "authorized", "label": "Authorized for Go-Live" }
+          {
+            "id": "checks",
+            "label": "Audit Checks Evaluated"
+          },
+          {
+            "id": "critical_eval",
+            "label": "Critical Blockers Scan"
+          },
+          {
+            "id": "blocked",
+            "label": "Launch Blocked"
+          },
+          {
+            "id": "authorized",
+            "label": "Authorized for Go-Live"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Verifying failedCriticalChecks is completely empty before authorizing launch.",
             "current": "critical_eval",
-            "visited": ["checks", "critical_eval"]
+            "visited": [
+              "checks",
+              "critical_eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "When all critical checks pass deployments are authorized without blockers.",
             "current": "authorized",
-            "visited": ["checks", "critical_eval", "authorized"]
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
           },
           {
             "at": "say8",
             "caption": "Automated go-live blockers prevent deployments until conditions are satisfied.",
             "current": "authorized",
-            "visited": ["checks", "critical_eval", "authorized"]
+            "visited": [
+              "checks",
+              "critical_eval",
+              "authorized"
+            ]
           }
         ]
       }

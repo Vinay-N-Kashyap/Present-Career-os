@@ -13,27 +13,66 @@
         "title": "Vendor-Agnostic Completion Normalization Adapter",
         "subtitle": "Isolating OpenAI/Anthropic/Gemini payload shapes behind NormalizedCompletion",
         "nodes": [
-          { "id": "n1", "label": "Vendor HTTP JSON", "sublabel": "choices[0].message", "tappable": false },
-          { "id": "n2", "label": "Adapter Validation", "sublabel": "normalizeVendorPayload()", "tappable": false },
-          { "id": "n3", "label": "NormalizedCompletion", "sublabel": "id, text, finishReason, model", "tappable": false },
-          { "id": "n4", "label": "Domain Services", "sublabel": "Vendor-agnostic contract", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Vendor HTTP JSON",
+            "sublabel": "choices[0].message",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Adapter Validation",
+            "sublabel": "normalizeVendorPayload()",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "NormalizedCompletion",
+            "sublabel": "id, text, finishReason, model",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Domain Services",
+            "sublabel": "Vendor-agnostic contract",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "chatcmpl-992" },
-          { "from": "n2", "to": "n3", "label": "extract choice" },
-          { "from": "n3", "to": "n4", "label": "typed envelope" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "chatcmpl-992"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "extract choice"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "typed envelope"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "An adapter layer parses the vendor payload into an internal envelope.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say6",
             "caption": "The envelope standardizes generated text and finish reason into a contract.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -43,27 +82,66 @@
         "title": "Vendor-Agnostic Completion Normalization Adapter",
         "subtitle": "Isolating OpenAI/Anthropic/Gemini payload shapes behind NormalizedCompletion",
         "nodes": [
-          { "id": "n1", "label": "Vendor HTTP JSON", "sublabel": "choices[0].message", "tappable": false },
-          { "id": "n2", "label": "Adapter Validation", "sublabel": "normalizeVendorPayload()", "tappable": false },
-          { "id": "n3", "label": "NormalizedCompletion", "sublabel": "id, text, finishReason, model", "tappable": false },
-          { "id": "n4", "label": "Domain Services", "sublabel": "Vendor-agnostic contract", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Vendor HTTP JSON",
+            "sublabel": "choices[0].message",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Adapter Validation",
+            "sublabel": "normalizeVendorPayload()",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "NormalizedCompletion",
+            "sublabel": "id, text, finishReason, model",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Domain Services",
+            "sublabel": "Vendor-agnostic contract",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "chatcmpl-992" },
-          { "from": "n2", "to": "n3", "label": "extract choice" },
-          { "from": "n3", "to": "n4", "label": "typed envelope" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "chatcmpl-992"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "extract choice"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "typed envelope"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "An adapter layer parses the vendor payload into an internal envelope.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say6",
             "caption": "The envelope standardizes generated text and finish reason into a contract.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -141,10 +219,26 @@
         "title": "Resilient JSON Fence & Brace Extractor",
         "subtitle": "Stripping markdown code blocks and conversational prose prior to JSON.parse",
         "stages": [
-          { "id": "s1", "name": "Raw LLM Output", "subtext": "Prose + ```json block" },
-          { "id": "s2", "name": "Fence Regex", "subtext": "Match ```(?:json)?...```" },
-          { "id": "s3", "name": "Brace Fallback", "subtext": "indexOf('{')..lastIndexOf('}')" },
-          { "id": "s4", "name": "Clean JSON", "subtext": "Ready for JSON.parse()" }
+          {
+            "id": "s1",
+            "name": "Raw LLM Output",
+            "subtext": "Prose + ```json block"
+          },
+          {
+            "id": "s2",
+            "name": "Fence Regex",
+            "subtext": "Match ```(?:json)?...```"
+          },
+          {
+            "id": "s3",
+            "name": "Brace Fallback",
+            "subtext": "indexOf('{')..lastIndexOf('}')"
+          },
+          {
+            "id": "s4",
+            "name": "Clean JSON",
+            "subtext": "Ready for JSON.parse()"
+          }
         ],
         "steps": [
           {
@@ -166,10 +260,26 @@
         "title": "Resilient JSON Fence & Brace Extractor",
         "subtitle": "Stripping markdown code blocks and conversational prose prior to JSON.parse",
         "stages": [
-          { "id": "s1", "name": "Raw LLM Output", "subtext": "Prose + ```json block" },
-          { "id": "s2", "name": "Fence Regex", "subtext": "Match ```(?:json)?...```" },
-          { "id": "s3", "name": "Brace Fallback", "subtext": "indexOf('{')..lastIndexOf('}')" },
-          { "id": "s4", "name": "Clean JSON", "subtext": "Ready for JSON.parse()" }
+          {
+            "id": "s1",
+            "name": "Raw LLM Output",
+            "subtext": "Prose + ```json block"
+          },
+          {
+            "id": "s2",
+            "name": "Fence Regex",
+            "subtext": "Match ```(?:json)?...```"
+          },
+          {
+            "id": "s3",
+            "name": "Brace Fallback",
+            "subtext": "indexOf('{')..lastIndexOf('}')"
+          },
+          {
+            "id": "s4",
+            "name": "Clean JSON",
+            "subtext": "Ready for JSON.parse()"
+          }
         ],
         "steps": [
           {
@@ -195,28 +305,58 @@
         "title": "safeExtractMessageContent Null-Safety State Machine",
         "subtitle": "Handling normal completions, content_filter redactions, and empty payloads",
         "states": [
-          { "id": "s1", "label": "Inspect choice & finish_reason" },
-          { "id": "s2", "label": "FILTERED (finish_reason === 'content_filter')" },
-          { "id": "s3", "label": "OK (Non-empty trimmed string)" },
-          { "id": "s4", "label": "EMPTY (Fallback: 'Content unavailable')" }
+          {
+            "id": "s1",
+            "label": "Inspect choice & finish_reason"
+          },
+          {
+            "id": "s2",
+            "label": "FILTERED (finish_reason === 'content_filter')"
+          },
+          {
+            "id": "s3",
+            "label": "OK (Non-empty trimmed string)"
+          },
+          {
+            "id": "s4",
+            "label": "EMPTY (Fallback: 'Content unavailable')"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "content_filter" },
-          { "from": "s1", "to": "s3", "label": "valid string" },
-          { "from": "s1", "to": "s4", "label": "null / empty" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "content_filter"
+          },
+          {
+            "from": "s1",
+            "to": "s3",
+            "label": "valid string"
+          },
+          {
+            "from": "s1",
+            "to": "s4",
+            "label": "null / empty"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Triggering a content safety filter returns content_filter with a null body.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say6",
             "caption": "When extracted content is null or empty, the function returns a typed fallback.",
             "current": "s4",
-            "visited": ["s1", "s2", "s3"]
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
           }
         ]
       },
@@ -225,28 +365,58 @@
         "title": "safeExtractMessageContent Null-Safety State Machine",
         "subtitle": "Handling normal completions, content_filter redactions, and empty payloads",
         "states": [
-          { "id": "s1", "label": "Inspect choice & finish_reason" },
-          { "id": "s2", "label": "FILTERED (finish_reason === 'content_filter')" },
-          { "id": "s3", "label": "OK (Non-empty trimmed string)" },
-          { "id": "s4", "label": "EMPTY (Fallback: 'Content unavailable')" }
+          {
+            "id": "s1",
+            "label": "Inspect choice & finish_reason"
+          },
+          {
+            "id": "s2",
+            "label": "FILTERED (finish_reason === 'content_filter')"
+          },
+          {
+            "id": "s3",
+            "label": "OK (Non-empty trimmed string)"
+          },
+          {
+            "id": "s4",
+            "label": "EMPTY (Fallback: 'Content unavailable')"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "content_filter" },
-          { "from": "s1", "to": "s3", "label": "valid string" },
-          { "from": "s1", "to": "s4", "label": "null / empty" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "content_filter"
+          },
+          {
+            "from": "s1",
+            "to": "s3",
+            "label": "valid string"
+          },
+          {
+            "from": "s1",
+            "to": "s4",
+            "label": "null / empty"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Triggering a content safety filter returns content_filter with a null body.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say6",
             "caption": "When extracted content is null or empty, the function returns a typed fallback.",
             "current": "s4",
-            "visited": ["s1", "s2", "s3"]
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
           }
         ]
       }
@@ -265,18 +435,42 @@
             "at": "say5",
             "caption": "A finish reason of stop indicates natural model termination within budget.",
             "bars": [
-              { "label": "Normal Prompt (150)", "value": 150, "tone": "data" },
-              { "label": "Normal Completion (50)", "value": 50, "tone": "ok" },
-              { "label": "Normal Total (stop)", "value": 200, "tone": "ok" }
+              {
+                "label": "Normal Prompt (150)",
+                "value": 150,
+                "tone": "data"
+              },
+              {
+                "label": "Normal Completion (50)",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Normal Total (stop)",
+                "value": 200,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "A finish reason of length reveals generation was cut off by token budget.",
             "bars": [
-              { "label": "Cutoff Prompt (200)", "value": 200, "tone": "data" },
-              { "label": "Cutoff Completion (800)", "value": 800, "tone": "error" },
-              { "label": "Cutoff Total (length!)", "value": 1000, "tone": "error" }
+              {
+                "label": "Cutoff Prompt (200)",
+                "value": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Cutoff Completion (800)",
+                "value": 800,
+                "tone": "error"
+              },
+              {
+                "label": "Cutoff Total (length!)",
+                "value": 1000,
+                "tone": "error"
+              }
             ]
           }
         ]
@@ -292,18 +486,42 @@
             "at": "say5",
             "caption": "A finish reason of stop indicates natural model termination within budget.",
             "bars": [
-              { "label": "Normal Prompt (150)", "value": 150, "tone": "data" },
-              { "label": "Normal Completion (50)", "value": 50, "tone": "ok" },
-              { "label": "Normal Total (stop)", "value": 200, "tone": "ok" }
+              {
+                "label": "Normal Prompt (150)",
+                "value": 150,
+                "tone": "data"
+              },
+              {
+                "label": "Normal Completion (50)",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Normal Total (stop)",
+                "value": 200,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "A finish reason of length reveals generation was cut off by token budget.",
             "bars": [
-              { "label": "Cutoff Prompt (200)", "value": 200, "tone": "data" },
-              { "label": "Cutoff Completion (800)", "value": 800, "tone": "error" },
-              { "label": "Cutoff Total (length!)", "value": 1000, "tone": "error" }
+              {
+                "label": "Cutoff Prompt (200)",
+                "value": 200,
+                "tone": "data"
+              },
+              {
+                "label": "Cutoff Completion (800)",
+                "value": 800,
+                "tone": "error"
+              },
+              {
+                "label": "Cutoff Total (length!)",
+                "value": 1000,
+                "tone": "error"
+              }
             ]
           }
         ]

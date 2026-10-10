@@ -11,54 +11,300 @@
       "spec": {
         "template": "table",
         "title": "Foundation Model Pricing Tiers and Workloads",
-        "columns": ["Model Tier", "Input Cost / 1M", "Output Cost / 1M", "Target Workload"],
-        "rows": [
-          { "Model Tier": { "text": "nano" }, "Input Cost / 1M": { "text": "$0.15" }, "Output Cost / 1M": { "text": "$0.60" }, "Target Workload": { "text": "Classification & Extraction" } },
-          { "Model Tier": { "text": "balanced" }, "Input Cost / 1M": { "text": "$2.50" }, "Output Cost / 1M": { "text": "$10.00" }, "Target Workload": { "text": "Coding & General Prose" } },
-          { "Model Tier": { "text": "frontier" }, "Input Cost / 1M": { "text": "$15.00" }, "Output Cost / 1M": { "text": "$60.00" }, "Target Workload": { "text": "Multi-Step Complex Reasoning" } }
+        "columns": [
+          "Model Tier",
+          "Input Cost / 1M",
+          "Output Cost / 1M",
+          "Target Workload"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Most prompts represent simple conversational tasks and extraction.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "nano"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$0.15"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$0.60"
+                  },
+                  "Target Workload": {
+                    "text": "Classification & Extraction"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "balanced"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$2.50"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$10.00"
+                  },
+                  "Target Workload": {
+                    "text": "Coding & General Prose"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "frontier"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$15.00"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$60.00"
+                  },
+                  "Target Workload": {
+                    "text": "Multi-Step Complex Reasoning"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Tiered architectures partition models into nano, balanced, and frontier tiers.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "nano"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$0.15"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$0.60"
+                  },
+                  "Target Workload": {
+                    "text": "Classification & Extraction"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "balanced"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$2.50"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$10.00"
+                  },
+                  "Target Workload": {
+                    "text": "Coding & General Prose"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "frontier"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$15.00"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$60.00"
+                  },
+                  "Target Workload": {
+                    "text": "Multi-Step Complex Reasoning"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Frontier models are reserved for complex proofs and multi-step reasoning.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "nano"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$0.15"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$0.60"
+                  },
+                  "Target Workload": {
+                    "text": "Classification & Extraction"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "balanced"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$2.50"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$10.00"
+                  },
+                  "Target Workload": {
+                    "text": "Coding & General Prose"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": {
+                    "text": "frontier"
+                  },
+                  "Input Cost / 1M": {
+                    "text": "$15.00"
+                  },
+                  "Output Cost / 1M": {
+                    "text": "$60.00"
+                  },
+                  "Target Workload": {
+                    "text": "Multi-Step Complex Reasoning"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Foundation Model Pricing Tiers and Workloads",
-        "columns": ["Model Tier", "Input Cost / 1M", "Output Cost / 1M", "Target Workload"],
-        "rows": [
-          { "Model Tier": "nano", "Input Cost / 1M": "$0.15", "Output Cost / 1M": "$0.60", "Target Workload": "Classification & Extraction" },
-          { "Model Tier": "balanced", "Input Cost / 1M": "$2.50", "Output Cost / 1M": "$10.00", "Target Workload": "Coding & General Prose" },
-          { "Model Tier": "frontier", "Input Cost / 1M": "$15.00", "Output Cost / 1M": "$60.00", "Target Workload": "Multi-Step Complex Reasoning" }
+        "columns": [
+          "Model Tier",
+          "Input Cost / 1M",
+          "Output Cost / 1M",
+          "Target Workload"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Most prompts represent simple conversational tasks and extraction.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": "nano",
+                  "Input Cost / 1M": "$0.15",
+                  "Output Cost / 1M": "$0.60",
+                  "Target Workload": "Classification & Extraction"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "balanced",
+                  "Input Cost / 1M": "$2.50",
+                  "Output Cost / 1M": "$10.00",
+                  "Target Workload": "Coding & General Prose"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "frontier",
+                  "Input Cost / 1M": "$15.00",
+                  "Output Cost / 1M": "$60.00",
+                  "Target Workload": "Multi-Step Complex Reasoning"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Tiered architectures partition models into nano, balanced, and frontier tiers.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": "nano",
+                  "Input Cost / 1M": "$0.15",
+                  "Output Cost / 1M": "$0.60",
+                  "Target Workload": "Classification & Extraction"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "balanced",
+                  "Input Cost / 1M": "$2.50",
+                  "Output Cost / 1M": "$10.00",
+                  "Target Workload": "Coding & General Prose"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "frontier",
+                  "Input Cost / 1M": "$15.00",
+                  "Output Cost / 1M": "$60.00",
+                  "Target Workload": "Multi-Step Complex Reasoning"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Frontier models are reserved for complex proofs and multi-step reasoning.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Model Tier": "nano",
+                  "Input Cost / 1M": "$0.15",
+                  "Output Cost / 1M": "$0.60",
+                  "Target Workload": "Classification & Extraction"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "balanced",
+                  "Input Cost / 1M": "$2.50",
+                  "Output Cost / 1M": "$10.00",
+                  "Target Workload": "Coding & General Prose"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Model Tier": "frontier",
+                  "Input Cost / 1M": "$15.00",
+                  "Output Cost / 1M": "$60.00",
+                  "Target Workload": "Multi-Step Complex Reasoning"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -134,29 +380,53 @@
         "template": "states",
         "title": "Cognitive Reasoning Intent States",
         "states": [
-          { "id": "ingest", "label": "Prompt Ingested" },
-          { "id": "scan", "label": "Reasoning Terms Scanned" },
-          { "id": "scored", "label": "Cognitive Depth Scored" },
-          { "id": "qualified", "label": "Frontier Tier Qualified" }
+          {
+            "id": "ingest",
+            "label": "Prompt Ingested"
+          },
+          {
+            "id": "scan",
+            "label": "Reasoning Terms Scanned"
+          },
+          {
+            "id": "scored",
+            "label": "Cognitive Depth Scored"
+          },
+          {
+            "id": "qualified",
+            "label": "Frontier Tier Qualified"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Phrases like derive or step by step signal heavy cognitive depth.",
             "current": "scan",
-            "visited": ["ingest", "scan"]
+            "visited": [
+              "ingest",
+              "scan"
+            ]
           },
           {
             "at": "say6",
             "caption": "Detected reasoning terms increment prompt cognitive difficulty scores.",
             "current": "scored",
-            "visited": ["ingest", "scan", "scored"]
+            "visited": [
+              "ingest",
+              "scan",
+              "scored"
+            ]
           },
           {
             "at": "say8",
             "caption": "Filtering conversational queries protects costly reasoning models.",
             "current": "qualified",
-            "visited": ["ingest", "scan", "scored", "qualified"]
+            "visited": [
+              "ingest",
+              "scan",
+              "scored",
+              "qualified"
+            ]
           }
         ]
       },
@@ -164,29 +434,53 @@
         "template": "states",
         "title": "Cognitive Reasoning Intent States",
         "states": [
-          { "id": "ingest", "label": "Prompt Ingested" },
-          { "id": "scan", "label": "Reasoning Terms Scanned" },
-          { "id": "scored", "label": "Cognitive Depth Scored" },
-          { "id": "qualified", "label": "Frontier Tier Qualified" }
+          {
+            "id": "ingest",
+            "label": "Prompt Ingested"
+          },
+          {
+            "id": "scan",
+            "label": "Reasoning Terms Scanned"
+          },
+          {
+            "id": "scored",
+            "label": "Cognitive Depth Scored"
+          },
+          {
+            "id": "qualified",
+            "label": "Frontier Tier Qualified"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Phrases like derive or step by step signal heavy cognitive depth.",
             "current": "scan",
-            "visited": ["ingest", "scan"]
+            "visited": [
+              "ingest",
+              "scan"
+            ]
           },
           {
             "at": "say6",
             "caption": "Detected reasoning terms increment prompt cognitive difficulty scores.",
             "current": "scored",
-            "visited": ["ingest", "scan", "scored"]
+            "visited": [
+              "ingest",
+              "scan",
+              "scored"
+            ]
           },
           {
             "at": "say8",
             "caption": "Filtering conversational queries protects costly reasoning models.",
             "current": "qualified",
-            "visited": ["ingest", "scan", "scored", "qualified"]
+            "visited": [
+              "ingest",
+              "scan",
+              "scored",
+              "qualified"
+            ]
           }
         ]
       }
@@ -198,9 +492,27 @@
         "template": "bars",
         "title": "Token Context Threshold Boundaries",
         "bars": [
-          { "label": "Nano Cap", "value": { "text": "500" }, "tone": "ok" },
-          { "label": "Balanced Cap", "value": { "text": "4000" }, "tone": "data" },
-          { "label": "Frontier Deep", "value": { "text": "8000" }, "tone": "data" }
+          {
+            "label": "Nano Cap",
+            "value": {
+              "text": "500"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "Balanced Cap",
+            "value": {
+              "text": "4000"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Frontier Deep",
+            "value": {
+              "text": "8000"
+            },
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -224,9 +536,21 @@
         "template": "bars",
         "title": "Token Context Threshold Boundaries",
         "bars": [
-          { "label": "Nano Cap", "value": 500, "tone": "ok" },
-          { "label": "Balanced Cap", "value": 4000, "tone": "data" },
-          { "label": "Frontier Deep", "value": 8000, "tone": "data" }
+          {
+            "label": "Nano Cap",
+            "value": 500,
+            "tone": "ok"
+          },
+          {
+            "label": "Balanced Cap",
+            "value": 4000,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier Deep",
+            "value": 8000,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -254,10 +578,26 @@
         "template": "workflow",
         "title": "Weighted Multi-Factor Router Evaluation",
         "stages": [
-          { "id": "struct", "name": "Structural (40%)", "subtext": "Code & schema weight" },
-          { "id": "intent", "name": "Reasoning (40%)", "subtext": "Cognitive depth weight" },
-          { "id": "length", "name": "Length (20%)", "subtext": "Context token weight" },
-          { "id": "composite", "name": "Tier Selection", "subtext": "Nano vs Balanced vs Frontier" }
+          {
+            "id": "struct",
+            "name": "Structural (40%)",
+            "subtext": "Code & schema weight"
+          },
+          {
+            "id": "intent",
+            "name": "Reasoning (40%)",
+            "subtext": "Cognitive depth weight"
+          },
+          {
+            "id": "length",
+            "name": "Length (20%)",
+            "subtext": "Context token weight"
+          },
+          {
+            "id": "composite",
+            "name": "Tier Selection",
+            "subtext": "Nano vs Balanced vs Frontier"
+          }
         ],
         "steps": [
           {
@@ -284,10 +624,26 @@
         "template": "workflow",
         "title": "Weighted Multi-Factor Router Evaluation",
         "stages": [
-          { "id": "struct", "name": "Structural (40%)", "subtext": "Code & schema weight" },
-          { "id": "intent", "name": "Reasoning (40%)", "subtext": "Cognitive depth weight" },
-          { "id": "length", "name": "Length (20%)", "subtext": "Context token weight" },
-          { "id": "composite", "name": "Tier Selection", "subtext": "Nano vs Balanced vs Frontier" }
+          {
+            "id": "struct",
+            "name": "Structural (40%)",
+            "subtext": "Code & schema weight"
+          },
+          {
+            "id": "intent",
+            "name": "Reasoning (40%)",
+            "subtext": "Cognitive depth weight"
+          },
+          {
+            "id": "length",
+            "name": "Length (20%)",
+            "subtext": "Context token weight"
+          },
+          {
+            "id": "composite",
+            "name": "Tier Selection",
+            "subtext": "Nano vs Balanced vs Frontier"
+          }
         ],
         "steps": [
           {

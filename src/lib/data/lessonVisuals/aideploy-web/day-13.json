@@ -12,9 +12,27 @@
         "template": "bars",
         "title": "Latency Distribution Percentiles (ms)",
         "bars": [
-          { "label": "P50 Median", "value": { "text": "140" }, "tone": "ok" },
-          { "label": "P95 Threshold", "value": { "text": "800" }, "tone": "data" },
-          { "label": "P99 Tail Latency", "value": { "text": "1500" }, "tone": "error" }
+          {
+            "label": "P50 Median",
+            "value": {
+              "text": "140"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "P95 Threshold",
+            "value": {
+              "text": "800"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "P99 Tail Latency",
+            "value": {
+              "text": "1500"
+            },
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -38,9 +56,21 @@
         "template": "bars",
         "title": "Latency Distribution Percentiles (ms)",
         "bars": [
-          { "label": "P50 Median", "value": 140, "tone": "ok" },
-          { "label": "P95 Threshold", "value": 800, "tone": "data" },
-          { "label": "P99 Tail Latency", "value": 1500, "tone": "error" }
+          {
+            "label": "P50 Median",
+            "value": 140,
+            "tone": "ok"
+          },
+          {
+            "label": "P95 Threshold",
+            "value": 800,
+            "tone": "data"
+          },
+          {
+            "label": "P99 Tail Latency",
+            "value": 1500,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -67,56 +97,328 @@
       "spec": {
         "template": "table",
         "title": "Inference Latency Stage Breakdown",
-        "columns": ["Pipeline Stage", "Duration (ms)", "Primary Root Cause"],
-        "rows": [
-          { "Pipeline Stage": { "text": "DNS & TCP Handshake" }, "Duration (ms)": { "text": "50" }, "Primary Root Cause": { "text": "Connection pooling and keepalive sockets" } },
-          { "Pipeline Stage": { "text": "TTFT (Prefill)" }, "Duration (ms)": { "text": "250" }, "Primary Root Cause": { "text": "Upstream queue wait time and matrix prefill" } },
-          { "Pipeline Stage": { "text": "Generation Decoding" }, "Duration (ms)": { "text": "700" }, "Primary Root Cause": { "text": "Auto-regressive token emissions and verbosity" } },
-          { "Pipeline Stage": { "text": "Total End-to-End" }, "Duration (ms)": { "text": "1000" }, "Primary Root Cause": { "text": "Cumulative round-trip user experience" } }
+        "columns": [
+          "Pipeline Stage",
+          "Duration (ms)",
+          "Primary Root Cause"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Total end-to-end latency breaks into distinct sequential pipeline phases.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "DNS & TCP Handshake"
+                  },
+                  "Duration (ms)": {
+                    "text": "50"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Connection pooling and keepalive sockets"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "TTFT (Prefill)"
+                  },
+                  "Duration (ms)": {
+                    "text": "250"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Upstream queue wait time and matrix prefill"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Generation Decoding"
+                  },
+                  "Duration (ms)": {
+                    "text": "700"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Auto-regressive token emissions and verbosity"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Total End-to-End"
+                  },
+                  "Duration (ms)": {
+                    "text": "1000"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Cumulative round-trip user experience"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Time-to-First-Token measures queue wait time and GPU prompt prefill.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "DNS & TCP Handshake"
+                  },
+                  "Duration (ms)": {
+                    "text": "50"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Connection pooling and keepalive sockets"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "TTFT (Prefill)"
+                  },
+                  "Duration (ms)": {
+                    "text": "250"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Upstream queue wait time and matrix prefill"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Generation Decoding"
+                  },
+                  "Duration (ms)": {
+                    "text": "700"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Auto-regressive token emissions and verbosity"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Total End-to-End"
+                  },
+                  "Duration (ms)": {
+                    "text": "1000"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Cumulative round-trip user experience"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "High generation times indicate output token lengths are too long.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "DNS & TCP Handshake"
+                  },
+                  "Duration (ms)": {
+                    "text": "50"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Connection pooling and keepalive sockets"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "TTFT (Prefill)"
+                  },
+                  "Duration (ms)": {
+                    "text": "250"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Upstream queue wait time and matrix prefill"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Generation Decoding"
+                  },
+                  "Duration (ms)": {
+                    "text": "700"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Auto-regressive token emissions and verbosity"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": {
+                    "text": "Total End-to-End"
+                  },
+                  "Duration (ms)": {
+                    "text": "1000"
+                  },
+                  "Primary Root Cause": {
+                    "text": "Cumulative round-trip user experience"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Inference Latency Stage Breakdown",
-        "columns": ["Pipeline Stage", "Duration (ms)", "Primary Root Cause"],
-        "rows": [
-          { "Pipeline Stage": "DNS & TCP Handshake", "Duration (ms)": "50", "Primary Root Cause": "Connection pooling and keepalive sockets" },
-          { "Pipeline Stage": "TTFT (Prefill)", "Duration (ms)": "250", "Primary Root Cause": "Upstream queue wait time and matrix prefill" },
-          { "Pipeline Stage": "Generation Decoding", "Duration (ms)": "700", "Primary Root Cause": "Auto-regressive token emissions and verbosity" },
-          { "Pipeline Stage": "Total End-to-End", "Duration (ms)": "1000", "Primary Root Cause": "Cumulative round-trip user experience" }
+        "columns": [
+          "Pipeline Stage",
+          "Duration (ms)",
+          "Primary Root Cause"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Total end-to-end latency breaks into distinct sequential pipeline phases.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": "DNS & TCP Handshake",
+                  "Duration (ms)": "50",
+                  "Primary Root Cause": "Connection pooling and keepalive sockets"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "TTFT (Prefill)",
+                  "Duration (ms)": "250",
+                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Generation Decoding",
+                  "Duration (ms)": "700",
+                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Total End-to-End",
+                  "Duration (ms)": "1000",
+                  "Primary Root Cause": "Cumulative round-trip user experience"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Time-to-First-Token measures queue wait time and GPU prompt prefill.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": "DNS & TCP Handshake",
+                  "Duration (ms)": "50",
+                  "Primary Root Cause": "Connection pooling and keepalive sockets"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "TTFT (Prefill)",
+                  "Duration (ms)": "250",
+                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Generation Decoding",
+                  "Duration (ms)": "700",
+                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Total End-to-End",
+                  "Duration (ms)": "1000",
+                  "Primary Root Cause": "Cumulative round-trip user experience"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "High generation times indicate output token lengths are too long.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Pipeline Stage": "DNS & TCP Handshake",
+                  "Duration (ms)": "50",
+                  "Primary Root Cause": "Connection pooling and keepalive sockets"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "TTFT (Prefill)",
+                  "Duration (ms)": "250",
+                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Generation Decoding",
+                  "Duration (ms)": "700",
+                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Pipeline Stage": "Total End-to-End",
+                  "Duration (ms)": "1000",
+                  "Primary Root Cause": "Cumulative round-trip user experience"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -128,29 +430,50 @@
         "template": "states",
         "title": "SLA Latency Compliance and Degradation States",
         "states": [
-          { "id": "monitored", "label": "Latency Monitored" },
-          { "id": "compliant", "label": "P95 <= 2000ms (Compliant)" },
-          { "id": "breached", "label": "P95 > 2000ms (SLA Breached)" },
-          { "id": "degraded", "label": "Degradation Policies Active" }
+          {
+            "id": "monitored",
+            "label": "Latency Monitored"
+          },
+          {
+            "id": "compliant",
+            "label": "P95 <= 2000ms (Compliant)"
+          },
+          {
+            "id": "breached",
+            "label": "P95 > 2000ms (SLA Breached)"
+          },
+          {
+            "id": "degraded",
+            "label": "Degradation Policies Active"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Interactive chat mandates that P95 latency remain strictly below targets.",
             "current": "monitored",
-            "visited": ["monitored"]
+            "visited": [
+              "monitored"
+            ]
           },
           {
             "at": "say4",
             "caption": "Breaching SLA targets flags non-compliant states and triggers degradation.",
             "current": "breached",
-            "visited": ["monitored", "breached"]
+            "visited": [
+              "monitored",
+              "breached"
+            ]
           },
           {
             "at": "say5",
             "caption": "Graceful degradation sheds non-critical features to preserve core targets.",
             "current": "degraded",
-            "visited": ["monitored", "breached", "degraded"]
+            "visited": [
+              "monitored",
+              "breached",
+              "degraded"
+            ]
           }
         ]
       },
@@ -158,29 +481,50 @@
         "template": "states",
         "title": "SLA Latency Compliance and Degradation States",
         "states": [
-          { "id": "monitored", "label": "Latency Monitored" },
-          { "id": "compliant", "label": "P95 <= 2000ms (Compliant)" },
-          { "id": "breached", "label": "P95 > 2000ms (SLA Breached)" },
-          { "id": "degraded", "label": "Degradation Policies Active" }
+          {
+            "id": "monitored",
+            "label": "Latency Monitored"
+          },
+          {
+            "id": "compliant",
+            "label": "P95 <= 2000ms (Compliant)"
+          },
+          {
+            "id": "breached",
+            "label": "P95 > 2000ms (SLA Breached)"
+          },
+          {
+            "id": "degraded",
+            "label": "Degradation Policies Active"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Interactive chat mandates that P95 latency remain strictly below targets.",
             "current": "monitored",
-            "visited": ["monitored"]
+            "visited": [
+              "monitored"
+            ]
           },
           {
             "at": "say4",
             "caption": "Breaching SLA targets flags non-compliant states and triggers degradation.",
             "current": "breached",
-            "visited": ["monitored", "breached"]
+            "visited": [
+              "monitored",
+              "breached"
+            ]
           },
           {
             "at": "say5",
             "caption": "Graceful degradation sheds non-critical features to preserve core targets.",
             "current": "degraded",
-            "visited": ["monitored", "breached", "degraded"]
+            "visited": [
+              "monitored",
+              "breached",
+              "degraded"
+            ]
           }
         ]
       }
@@ -256,10 +600,26 @@
         "template": "workflow",
         "title": "Rolling Window Latency Anomaly Detection",
         "stages": [
-          { "id": "sample", "name": "Duration Sample", "subtext": "Record completed request" },
-          { "id": "buffer", "name": "Rolling Window", "subtext": "Bounded sliding queue" },
-          { "id": "avg", "name": "Moving Average", "subtext": "Calculate active health" },
-          { "id": "anomaly", "name": "Spike Anomaly", "subtext": "Flag >50% abrupt jumps" }
+          {
+            "id": "sample",
+            "name": "Duration Sample",
+            "subtext": "Record completed request"
+          },
+          {
+            "id": "buffer",
+            "name": "Rolling Window",
+            "subtext": "Bounded sliding queue"
+          },
+          {
+            "id": "avg",
+            "name": "Moving Average",
+            "subtext": "Calculate active health"
+          },
+          {
+            "id": "anomaly",
+            "name": "Spike Anomaly",
+            "subtext": "Flag >50% abrupt jumps"
+          }
         ],
         "steps": [
           {
@@ -286,10 +646,26 @@
         "template": "workflow",
         "title": "Rolling Window Latency Anomaly Detection",
         "stages": [
-          { "id": "sample", "name": "Duration Sample", "subtext": "Record completed request" },
-          { "id": "buffer", "name": "Rolling Window", "subtext": "Bounded sliding queue" },
-          { "id": "avg", "name": "Moving Average", "subtext": "Calculate active health" },
-          { "id": "anomaly", "name": "Spike Anomaly", "subtext": "Flag >50% abrupt jumps" }
+          {
+            "id": "sample",
+            "name": "Duration Sample",
+            "subtext": "Record completed request"
+          },
+          {
+            "id": "buffer",
+            "name": "Rolling Window",
+            "subtext": "Bounded sliding queue"
+          },
+          {
+            "id": "avg",
+            "name": "Moving Average",
+            "subtext": "Calculate active health"
+          },
+          {
+            "id": "anomaly",
+            "name": "Spike Anomaly",
+            "subtext": "Flag >50% abrupt jumps"
+          }
         ],
         "steps": [
           {

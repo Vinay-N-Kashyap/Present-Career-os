@@ -11,54 +11,300 @@
       "spec": {
         "template": "table",
         "title": "Fixed-Window Character Slicing Dissection",
-        "columns": ["Chunk ID", "Start Offset", "Slice Text", "Semantic Risk"],
-        "rows": [
-          { "Chunk ID": { "text": "Chunk 1" }, "Start Offset": { "text": "0" }, "Slice Text": { "text": "The quick brown" }, "Semantic Risk": { "text": "Clean start" } },
-          { "Chunk ID": { "text": "Chunk 2" }, "Start Offset": { "text": "15" }, "Slice Text": { "text": " fox jumps over" }, "Semantic Risk": { "text": "Leading whitespace" } },
-          { "Chunk ID": { "text": "Chunk 3" }, "Start Offset": { "text": "30" }, "Slice Text": { "text": " the lazy dog" }, "Semantic Risk": { "text": "Mid-phrase truncation" } }
+        "columns": [
+          "Chunk ID",
+          "Start Offset",
+          "Slice Text",
+          "Semantic Risk"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Fixed-window chunking steps across documents in constant increments.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 1"
+                  },
+                  "Start Offset": {
+                    "text": "0"
+                  },
+                  "Slice Text": {
+                    "text": "The quick brown"
+                  },
+                  "Semantic Risk": {
+                    "text": "Clean start"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 2"
+                  },
+                  "Start Offset": {
+                    "text": "15"
+                  },
+                  "Slice Text": {
+                    "text": " fox jumps over"
+                  },
+                  "Semantic Risk": {
+                    "text": "Leading whitespace"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 3"
+                  },
+                  "Start Offset": {
+                    "text": "30"
+                  },
+                  "Slice Text": {
+                    "text": " the lazy dog"
+                  },
+                  "Semantic Risk": {
+                    "text": "Mid-phrase truncation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Notice where phrase breaks occur across fixed character windows.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 1"
+                  },
+                  "Start Offset": {
+                    "text": "0"
+                  },
+                  "Slice Text": {
+                    "text": "The quick brown"
+                  },
+                  "Semantic Risk": {
+                    "text": "Clean start"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 2"
+                  },
+                  "Start Offset": {
+                    "text": "15"
+                  },
+                  "Slice Text": {
+                    "text": " fox jumps over"
+                  },
+                  "Semantic Risk": {
+                    "text": "Leading whitespace"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 3"
+                  },
+                  "Start Offset": {
+                    "text": "30"
+                  },
+                  "Slice Text": {
+                    "text": " the lazy dog"
+                  },
+                  "Semantic Risk": {
+                    "text": "Mid-phrase truncation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Naive slices degrade the semantic similarity of embedding vectors.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 1"
+                  },
+                  "Start Offset": {
+                    "text": "0"
+                  },
+                  "Slice Text": {
+                    "text": "The quick brown"
+                  },
+                  "Semantic Risk": {
+                    "text": "Clean start"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 2"
+                  },
+                  "Start Offset": {
+                    "text": "15"
+                  },
+                  "Slice Text": {
+                    "text": " fox jumps over"
+                  },
+                  "Semantic Risk": {
+                    "text": "Leading whitespace"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": {
+                    "text": "Chunk 3"
+                  },
+                  "Start Offset": {
+                    "text": "30"
+                  },
+                  "Slice Text": {
+                    "text": " the lazy dog"
+                  },
+                  "Semantic Risk": {
+                    "text": "Mid-phrase truncation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Fixed-Window Character Slicing Dissection",
-        "columns": ["Chunk ID", "Start Offset", "Slice Text", "Semantic Risk"],
-        "rows": [
-          { "Chunk ID": "Chunk 1", "Start Offset": "0", "Slice Text": "The quick brown", "Semantic Risk": "Clean start" },
-          { "Chunk ID": "Chunk 2", "Start Offset": "15", "Slice Text": " fox jumps over", "Semantic Risk": "Leading whitespace" },
-          { "Chunk ID": "Chunk 3", "Start Offset": "30", "Slice Text": " the lazy dog", "Semantic Risk": "Mid-phrase truncation" }
+        "columns": [
+          "Chunk ID",
+          "Start Offset",
+          "Slice Text",
+          "Semantic Risk"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Fixed-window chunking steps across documents in constant increments.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 1",
+                  "Start Offset": "0",
+                  "Slice Text": "The quick brown",
+                  "Semantic Risk": "Clean start"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 2",
+                  "Start Offset": "15",
+                  "Slice Text": " fox jumps over",
+                  "Semantic Risk": "Leading whitespace"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 3",
+                  "Start Offset": "30",
+                  "Slice Text": " the lazy dog",
+                  "Semantic Risk": "Mid-phrase truncation"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Notice where phrase breaks occur across fixed character windows.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 1",
+                  "Start Offset": "0",
+                  "Slice Text": "The quick brown",
+                  "Semantic Risk": "Clean start"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 2",
+                  "Start Offset": "15",
+                  "Slice Text": " fox jumps over",
+                  "Semantic Risk": "Leading whitespace"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 3",
+                  "Start Offset": "30",
+                  "Slice Text": " the lazy dog",
+                  "Semantic Risk": "Mid-phrase truncation"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Naive slices degrade the semantic similarity of embedding vectors.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 1",
+                  "Start Offset": "0",
+                  "Slice Text": "The quick brown",
+                  "Semantic Risk": "Clean start"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 2",
+                  "Start Offset": "15",
+                  "Slice Text": " fox jumps over",
+                  "Semantic Risk": "Leading whitespace"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Chunk ID": "Chunk 3",
+                  "Start Offset": "30",
+                  "Slice Text": " the lazy dog",
+                  "Semantic Risk": "Mid-phrase truncation"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,33 +316,67 @@
         "template": "flow",
         "title": "Sliding Window Overlap Stride Mechanism",
         "nodes": [
-          { "id": "doc", "label": "Document Text", "tappable": false },
-          { "id": "stride", "label": "Step Size (chunkSize - overlap)", "tappable": false },
-          { "id": "overlap", "label": "Shared Semantic Buffer", "tappable": false },
-          { "id": "passage", "label": "Continuous Emitted Passage", "tappable": false }
+          {
+            "id": "doc",
+            "label": "Document Text",
+            "tappable": false
+          },
+          {
+            "id": "stride",
+            "label": "Step Size (chunkSize - overlap)",
+            "tappable": false
+          },
+          {
+            "id": "overlap",
+            "label": "Shared Semantic Buffer",
+            "tappable": false
+          },
+          {
+            "id": "passage",
+            "label": "Continuous Emitted Passage",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "doc", "to": "stride" },
-          { "from": "stride", "to": "overlap" },
-          { "from": "overlap", "to": "passage" }
+          {
+            "from": "doc",
+            "to": "stride"
+          },
+          {
+            "from": "stride",
+            "to": "overlap"
+          },
+          {
+            "from": "overlap",
+            "to": "passage"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Step size is defined as chunk size minus designated overlap size.",
-            "activeNodes": ["doc", "stride"],
+            "activeNodes": [
+              "doc",
+              "stride"
+            ],
             "statusBadge": "calculating"
           },
           {
             "at": "say5",
             "caption": "Shared semantic buffers ensure entities near borders are preserved.",
-            "activeNodes": ["stride", "overlap"],
+            "activeNodes": [
+              "stride",
+              "overlap"
+            ],
             "statusBadge": "buffered"
           },
           {
             "at": "say9",
             "caption": "Maintaining an exact stride preserves semantic transitions.",
-            "activeNodes": ["overlap", "passage"],
+            "activeNodes": [
+              "overlap",
+              "passage"
+            ],
             "statusBadge": "complete"
           }
         ]
@@ -105,33 +385,67 @@
         "template": "flow",
         "title": "Sliding Window Overlap Stride Mechanism",
         "nodes": [
-          { "id": "doc", "label": "Document Text", "tappable": false },
-          { "id": "stride", "label": "Step Size (chunkSize - overlap)", "tappable": false },
-          { "id": "overlap", "label": "Shared Semantic Buffer", "tappable": false },
-          { "id": "passage", "label": "Continuous Emitted Passage", "tappable": false }
+          {
+            "id": "doc",
+            "label": "Document Text",
+            "tappable": false
+          },
+          {
+            "id": "stride",
+            "label": "Step Size (chunkSize - overlap)",
+            "tappable": false
+          },
+          {
+            "id": "overlap",
+            "label": "Shared Semantic Buffer",
+            "tappable": false
+          },
+          {
+            "id": "passage",
+            "label": "Continuous Emitted Passage",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "doc", "to": "stride" },
-          { "from": "stride", "to": "overlap" },
-          { "from": "overlap", "to": "passage" }
+          {
+            "from": "doc",
+            "to": "stride"
+          },
+          {
+            "from": "stride",
+            "to": "overlap"
+          },
+          {
+            "from": "overlap",
+            "to": "passage"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Step size is defined as chunk size minus designated overlap size.",
-            "activeNodes": ["doc", "stride"],
+            "activeNodes": [
+              "doc",
+              "stride"
+            ],
             "statusBadge": "calculating"
           },
           {
             "at": "say5",
             "caption": "Shared semantic buffers ensure entities near borders are preserved.",
-            "activeNodes": ["stride", "overlap"],
+            "activeNodes": [
+              "stride",
+              "overlap"
+            ],
             "statusBadge": "buffered"
           },
           {
             "at": "say9",
             "caption": "Maintaining an exact stride preserves semantic transitions.",
-            "activeNodes": ["overlap", "passage"],
+            "activeNodes": [
+              "overlap",
+              "passage"
+            ],
             "statusBadge": "complete"
           }
         ]
@@ -144,10 +458,26 @@
         "template": "workflow",
         "title": "Markdown Structural Section Parsing",
         "stages": [
-          { "id": "ingest", "name": "Line Scanner", "subtext": "Stream lines sequentially" },
-          { "id": "detect", "name": "Heading Match", "subtext": "Regex # to ######" },
-          { "id": "flush", "name": "Flush Buffer", "subtext": "Record preceding body" },
-          { "id": "output", "name": "Metadata Tagging", "subtext": "Store heading & level" }
+          {
+            "id": "ingest",
+            "name": "Line Scanner",
+            "subtext": "Stream lines sequentially"
+          },
+          {
+            "id": "detect",
+            "name": "Heading Match",
+            "subtext": "Regex # to ######"
+          },
+          {
+            "id": "flush",
+            "name": "Flush Buffer",
+            "subtext": "Record preceding body"
+          },
+          {
+            "id": "output",
+            "name": "Metadata Tagging",
+            "subtext": "Store heading & level"
+          }
         ],
         "steps": [
           {
@@ -174,10 +504,26 @@
         "template": "workflow",
         "title": "Markdown Structural Section Parsing",
         "stages": [
-          { "id": "ingest", "name": "Line Scanner", "subtext": "Stream lines sequentially" },
-          { "id": "detect", "name": "Heading Match", "subtext": "Regex # to ######" },
-          { "id": "flush", "name": "Flush Buffer", "subtext": "Record preceding body" },
-          { "id": "output", "name": "Metadata Tagging", "subtext": "Store heading & level" }
+          {
+            "id": "ingest",
+            "name": "Line Scanner",
+            "subtext": "Stream lines sequentially"
+          },
+          {
+            "id": "detect",
+            "name": "Heading Match",
+            "subtext": "Regex # to ######"
+          },
+          {
+            "id": "flush",
+            "name": "Flush Buffer",
+            "subtext": "Record preceding body"
+          },
+          {
+            "id": "output",
+            "name": "Metadata Tagging",
+            "subtext": "Store heading & level"
+          }
         ],
         "steps": [
           {
@@ -272,29 +618,51 @@
         "template": "states",
         "title": "Code Block Delimiter Parsing States",
         "states": [
-          { "id": "scan", "label": "Document Scanning" },
-          { "id": "fence", "label": "Triple Backtick Fence" },
-          { "id": "code", "label": "Code Segment Preserved" },
-          { "id": "prose", "label": "Prose Segment Tagged" }
+          {
+            "id": "scan",
+            "label": "Document Scanning"
+          },
+          {
+            "id": "fence",
+            "label": "Triple Backtick Fence"
+          },
+          {
+            "id": "code",
+            "label": "Code Segment Preserved"
+          },
+          {
+            "id": "prose",
+            "label": "Prose Segment Tagged"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Parsers inspect fenced code blocks delimited by triple backticks.",
             "current": "scan",
-            "visited": ["scan"]
+            "visited": [
+              "scan"
+            ]
           },
           {
             "at": "say6",
             "caption": "Segments wrap into block objects tagged with explicit content types.",
             "current": "fence",
-            "visited": ["scan", "fence"]
+            "visited": [
+              "scan",
+              "fence"
+            ]
           },
           {
             "at": "say9",
             "caption": "Separating code blocks from prose prevents semantic confusion.",
             "current": "prose",
-            "visited": ["scan", "fence", "code", "prose"]
+            "visited": [
+              "scan",
+              "fence",
+              "code",
+              "prose"
+            ]
           }
         ]
       },
@@ -302,29 +670,51 @@
         "template": "states",
         "title": "Code Block Delimiter Parsing States",
         "states": [
-          { "id": "scan", "label": "Document Scanning" },
-          { "id": "fence", "label": "Triple Backtick Fence" },
-          { "id": "code", "label": "Code Segment Preserved" },
-          { "id": "prose", "label": "Prose Segment Tagged" }
+          {
+            "id": "scan",
+            "label": "Document Scanning"
+          },
+          {
+            "id": "fence",
+            "label": "Triple Backtick Fence"
+          },
+          {
+            "id": "code",
+            "label": "Code Segment Preserved"
+          },
+          {
+            "id": "prose",
+            "label": "Prose Segment Tagged"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Parsers inspect fenced code blocks delimited by triple backticks.",
             "current": "scan",
-            "visited": ["scan"]
+            "visited": [
+              "scan"
+            ]
           },
           {
             "at": "say6",
             "caption": "Segments wrap into block objects tagged with explicit content types.",
             "current": "fence",
-            "visited": ["scan", "fence"]
+            "visited": [
+              "scan",
+              "fence"
+            ]
           },
           {
             "at": "say9",
             "caption": "Separating code blocks from prose prevents semantic confusion.",
             "current": "prose",
-            "visited": ["scan", "fence", "code", "prose"]
+            "visited": [
+              "scan",
+              "fence",
+              "code",
+              "prose"
+            ]
           }
         ]
       }

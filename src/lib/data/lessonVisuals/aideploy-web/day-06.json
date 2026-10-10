@@ -11,56 +11,328 @@
       "spec": {
         "template": "table",
         "title": "SSE Protocol Framing Fields",
-        "columns": ["Field Prefix", "Protocol Purpose", "Framing Rule"],
-        "rows": [
-          { "Field Prefix": { "text": "data:" }, "Protocol Purpose": { "text": "Message Payload" }, "Framing Rule": { "text": "Stripped and parsed as JSON" } },
-          { "Field Prefix": { "text": "event:" }, "Protocol Purpose": { "text": "Custom Event Type" }, "Framing Rule": { "text": "Dispatches to typed listeners" } },
-          { "Field Prefix": { "text": ": (colon)" }, "Protocol Purpose": { "text": "Comment / Heartbeat" }, "Framing Rule": { "text": "Ignored by application parser" } },
-          { "Field Prefix": { "text": "\\n\\n" }, "Protocol Purpose": { "text": "Event Terminator" }, "Framing Rule": { "text": "Flushes completed event chunk" } }
+        "columns": [
+          "Field Prefix",
+          "Protocol Purpose",
+          "Framing Rule"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "An SSE response stream uses text/event-stream and keeps connections open.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "data:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Message Payload"
+                  },
+                  "Framing Rule": {
+                    "text": "Stripped and parsed as JSON"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "event:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Custom Event Type"
+                  },
+                  "Framing Rule": {
+                    "text": "Dispatches to typed listeners"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": ": (colon)"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Comment / Heartbeat"
+                  },
+                  "Framing Rule": {
+                    "text": "Ignored by application parser"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "\\n\\n"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Event Terminator"
+                  },
+                  "Framing Rule": {
+                    "text": "Flushes completed event chunk"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "SSE events format payload text lines using prefixes like data and event.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "data:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Message Payload"
+                  },
+                  "Framing Rule": {
+                    "text": "Stripped and parsed as JSON"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "event:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Custom Event Type"
+                  },
+                  "Framing Rule": {
+                    "text": "Dispatches to typed listeners"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": ": (colon)"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Comment / Heartbeat"
+                  },
+                  "Framing Rule": {
+                    "text": "Ignored by application parser"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "\\n\\n"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Event Terminator"
+                  },
+                  "Framing Rule": {
+                    "text": "Flushes completed event chunk"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Lines beginning with a colon character represent keep-alive heartbeat comments.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "data:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Message Payload"
+                  },
+                  "Framing Rule": {
+                    "text": "Stripped and parsed as JSON"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "event:"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Custom Event Type"
+                  },
+                  "Framing Rule": {
+                    "text": "Dispatches to typed listeners"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": ": (colon)"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Comment / Heartbeat"
+                  },
+                  "Framing Rule": {
+                    "text": "Ignored by application parser"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": {
+                    "text": "\\n\\n"
+                  },
+                  "Protocol Purpose": {
+                    "text": "Event Terminator"
+                  },
+                  "Framing Rule": {
+                    "text": "Flushes completed event chunk"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "SSE Protocol Framing Fields",
-        "columns": ["Field Prefix", "Protocol Purpose", "Framing Rule"],
-        "rows": [
-          { "Field Prefix": "data:", "Protocol Purpose": "Message Payload", "Framing Rule": "Stripped and parsed as JSON" },
-          { "Field Prefix": "event:", "Protocol Purpose": "Custom Event Type", "Framing Rule": "Dispatches to typed listeners" },
-          { "Field Prefix": ": (colon)", "Protocol Purpose": "Comment / Heartbeat", "Framing Rule": "Ignored by application parser" },
-          { "Field Prefix": "\\n\\n", "Protocol Purpose": "Event Terminator", "Framing Rule": "Flushes completed event chunk" }
+        "columns": [
+          "Field Prefix",
+          "Protocol Purpose",
+          "Framing Rule"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "An SSE response stream uses text/event-stream and keeps connections open.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": "data:",
+                  "Protocol Purpose": "Message Payload",
+                  "Framing Rule": "Stripped and parsed as JSON"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "event:",
+                  "Protocol Purpose": "Custom Event Type",
+                  "Framing Rule": "Dispatches to typed listeners"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": ": (colon)",
+                  "Protocol Purpose": "Comment / Heartbeat",
+                  "Framing Rule": "Ignored by application parser"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "\\n\\n",
+                  "Protocol Purpose": "Event Terminator",
+                  "Framing Rule": "Flushes completed event chunk"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "SSE events format payload text lines using prefixes like data and event.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": "data:",
+                  "Protocol Purpose": "Message Payload",
+                  "Framing Rule": "Stripped and parsed as JSON"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "event:",
+                  "Protocol Purpose": "Custom Event Type",
+                  "Framing Rule": "Dispatches to typed listeners"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": ": (colon)",
+                  "Protocol Purpose": "Comment / Heartbeat",
+                  "Framing Rule": "Ignored by application parser"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "\\n\\n",
+                  "Protocol Purpose": "Event Terminator",
+                  "Framing Rule": "Flushes completed event chunk"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Lines beginning with a colon character represent keep-alive heartbeat comments.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Field Prefix": "data:",
+                  "Protocol Purpose": "Message Payload",
+                  "Framing Rule": "Stripped and parsed as JSON"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "event:",
+                  "Protocol Purpose": "Custom Event Type",
+                  "Framing Rule": "Dispatches to typed listeners"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": ": (colon)",
+                  "Protocol Purpose": "Comment / Heartbeat",
+                  "Framing Rule": "Ignored by application parser"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Field Prefix": "\\n\\n",
+                  "Protocol Purpose": "Event Terminator",
+                  "Framing Rule": "Flushes completed event chunk"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -72,35 +344,76 @@
         "template": "flow",
         "title": "Stream Line Buffering & Packet Slicing",
         "nodes": [
-          { "id": "chunk", "label": "Network Chunk", "tappable": false },
-          { "id": "combine", "label": "Prepend Remainder", "tappable": false },
-          { "id": "split", "label": "Newline Split", "tappable": false },
-          { "id": "emit", "label": "Emit Full Lines", "tappable": false },
-          { "id": "save", "label": "Retain Remainder", "tappable": false }
+          {
+            "id": "chunk",
+            "label": "Network Chunk",
+            "tappable": false
+          },
+          {
+            "id": "combine",
+            "label": "Prepend Remainder",
+            "tappable": false
+          },
+          {
+            "id": "split",
+            "label": "Newline Split",
+            "tappable": false
+          },
+          {
+            "id": "emit",
+            "label": "Emit Full Lines",
+            "tappable": false
+          },
+          {
+            "id": "save",
+            "label": "Retain Remainder",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "chunk", "to": "combine" },
-          { "from": "combine", "to": "split" },
-          { "from": "split", "to": "emit" },
-          { "from": "split", "to": "save" }
+          {
+            "from": "chunk",
+            "to": "combine"
+          },
+          {
+            "from": "combine",
+            "to": "split"
+          },
+          {
+            "from": "split",
+            "to": "emit"
+          },
+          {
+            "from": "split",
+            "to": "save"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "A single JSON line may be fragmented across physical network packets.",
-            "activeNodes": ["chunk", "combine"],
+            "activeNodes": [
+              "chunk",
+              "combine"
+            ],
             "statusBadge": "fragmented"
           },
           {
             "at": "say5",
             "caption": "Incoming chunks are prepended with trailing remainder text from the buffer.",
-            "activeNodes": ["combine", "split"],
+            "activeNodes": [
+              "combine",
+              "split"
+            ],
             "statusBadge": "reassembling"
           },
           {
             "at": "say8",
             "caption": "Defensive buffer slicing guarantees parsers handle arbitrary fragmentation.",
-            "activeNodes": ["emit", "save"],
+            "activeNodes": [
+              "emit",
+              "save"
+            ],
             "statusBadge": "buffered"
           }
         ]
@@ -109,35 +422,76 @@
         "template": "flow",
         "title": "Stream Line Buffering & Packet Slicing",
         "nodes": [
-          { "id": "chunk", "label": "Network Chunk", "tappable": false },
-          { "id": "combine", "label": "Prepend Remainder", "tappable": false },
-          { "id": "split", "label": "Newline Split", "tappable": false },
-          { "id": "emit", "label": "Emit Full Lines", "tappable": false },
-          { "id": "save", "label": "Retain Remainder", "tappable": false }
+          {
+            "id": "chunk",
+            "label": "Network Chunk",
+            "tappable": false
+          },
+          {
+            "id": "combine",
+            "label": "Prepend Remainder",
+            "tappable": false
+          },
+          {
+            "id": "split",
+            "label": "Newline Split",
+            "tappable": false
+          },
+          {
+            "id": "emit",
+            "label": "Emit Full Lines",
+            "tappable": false
+          },
+          {
+            "id": "save",
+            "label": "Retain Remainder",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "chunk", "to": "combine" },
-          { "from": "combine", "to": "split" },
-          { "from": "split", "to": "emit" },
-          { "from": "split", "to": "save" }
+          {
+            "from": "chunk",
+            "to": "combine"
+          },
+          {
+            "from": "combine",
+            "to": "split"
+          },
+          {
+            "from": "split",
+            "to": "emit"
+          },
+          {
+            "from": "split",
+            "to": "save"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "A single JSON line may be fragmented across physical network packets.",
-            "activeNodes": ["chunk", "combine"],
+            "activeNodes": [
+              "chunk",
+              "combine"
+            ],
             "statusBadge": "fragmented"
           },
           {
             "at": "say5",
             "caption": "Incoming chunks are prepended with trailing remainder text from the buffer.",
-            "activeNodes": ["combine", "split"],
+            "activeNodes": [
+              "combine",
+              "split"
+            ],
             "statusBadge": "reassembling"
           },
           {
             "at": "say8",
             "caption": "Defensive buffer slicing guarantees parsers handle arbitrary fragmentation.",
-            "activeNodes": ["emit", "save"],
+            "activeNodes": [
+              "emit",
+              "save"
+            ],
             "statusBadge": "buffered"
           }
         ]
@@ -150,10 +504,26 @@
         "template": "workflow",
         "title": "Delta Extraction and Assembly Pipeline",
         "stages": [
-          { "id": "payload", "name": "Chunk Payload", "subtext": "Raw SSE JSON line" },
-          { "id": "extract", "name": "Delta Extract", "subtext": "choices[0].delta.content" },
-          { "id": "dispatch", "name": "UI Dispatch", "subtext": "Live token callback" },
-          { "id": "accumulate", "name": "Cumulative Buffer", "subtext": "Full text aggregation" }
+          {
+            "id": "payload",
+            "name": "Chunk Payload",
+            "subtext": "Raw SSE JSON line"
+          },
+          {
+            "id": "extract",
+            "name": "Delta Extract",
+            "subtext": "choices[0].delta.content"
+          },
+          {
+            "id": "dispatch",
+            "name": "UI Dispatch",
+            "subtext": "Live token callback"
+          },
+          {
+            "id": "accumulate",
+            "name": "Cumulative Buffer",
+            "subtext": "Full text aggregation"
+          }
         ],
         "steps": [
           {
@@ -180,10 +550,26 @@
         "template": "workflow",
         "title": "Delta Extraction and Assembly Pipeline",
         "stages": [
-          { "id": "payload", "name": "Chunk Payload", "subtext": "Raw SSE JSON line" },
-          { "id": "extract", "name": "Delta Extract", "subtext": "choices[0].delta.content" },
-          { "id": "dispatch", "name": "UI Dispatch", "subtext": "Live token callback" },
-          { "id": "accumulate", "name": "Cumulative Buffer", "subtext": "Full text aggregation" }
+          {
+            "id": "payload",
+            "name": "Chunk Payload",
+            "subtext": "Raw SSE JSON line"
+          },
+          {
+            "id": "extract",
+            "name": "Delta Extract",
+            "subtext": "choices[0].delta.content"
+          },
+          {
+            "id": "dispatch",
+            "name": "UI Dispatch",
+            "subtext": "Live token callback"
+          },
+          {
+            "id": "accumulate",
+            "name": "Cumulative Buffer",
+            "subtext": "Full text aggregation"
+          }
         ],
         "steps": [
           {
@@ -214,29 +600,51 @@
         "template": "states",
         "title": "Stream Lifecycle and Termination States",
         "states": [
-          { "id": "streaming", "label": "Streaming Active" },
-          { "id": "inspecting", "label": "Inspect Sentinel" },
-          { "id": "sentinel", "label": "[DONE] Detected" },
-          { "id": "closed", "label": "Stream Finalized" }
+          {
+            "id": "streaming",
+            "label": "Streaming Active"
+          },
+          {
+            "id": "inspecting",
+            "label": "Inspect Sentinel"
+          },
+          {
+            "id": "sentinel",
+            "label": "[DONE] Detected"
+          },
+          {
+            "id": "closed",
+            "label": "Stream Finalized"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Stream termination is signaled by the literal sentinel string data DONE.",
             "current": "streaming",
-            "visited": ["streaming"]
+            "visited": [
+              "streaming"
+            ]
           },
           {
             "at": "say5",
             "caption": "Consumers inspect payloads for the DONE marker before JSON deserialization.",
             "current": "inspecting",
-            "visited": ["streaming", "inspecting"]
+            "visited": [
+              "streaming",
+              "inspecting"
+            ]
           },
           {
             "at": "say8",
             "caption": "Capturing final finish reason indicators confirms generation ended cleanly.",
             "current": "closed",
-            "visited": ["streaming", "inspecting", "sentinel", "closed"]
+            "visited": [
+              "streaming",
+              "inspecting",
+              "sentinel",
+              "closed"
+            ]
           }
         ]
       },
@@ -244,29 +652,51 @@
         "template": "states",
         "title": "Stream Lifecycle and Termination States",
         "states": [
-          { "id": "streaming", "label": "Streaming Active" },
-          { "id": "inspecting", "label": "Inspect Sentinel" },
-          { "id": "sentinel", "label": "[DONE] Detected" },
-          { "id": "closed", "label": "Stream Finalized" }
+          {
+            "id": "streaming",
+            "label": "Streaming Active"
+          },
+          {
+            "id": "inspecting",
+            "label": "Inspect Sentinel"
+          },
+          {
+            "id": "sentinel",
+            "label": "[DONE] Detected"
+          },
+          {
+            "id": "closed",
+            "label": "Stream Finalized"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Stream termination is signaled by the literal sentinel string data DONE.",
             "current": "streaming",
-            "visited": ["streaming"]
+            "visited": [
+              "streaming"
+            ]
           },
           {
             "at": "say5",
             "caption": "Consumers inspect payloads for the DONE marker before JSON deserialization.",
             "current": "inspecting",
-            "visited": ["streaming", "inspecting"]
+            "visited": [
+              "streaming",
+              "inspecting"
+            ]
           },
           {
             "at": "say8",
             "caption": "Capturing final finish reason indicators confirms generation ended cleanly.",
             "current": "closed",
-            "visited": ["streaming", "inspecting", "sentinel", "closed"]
+            "visited": [
+              "streaming",
+              "inspecting",
+              "sentinel",
+              "closed"
+            ]
           }
         ]
       }
@@ -278,9 +708,27 @@
         "template": "bars",
         "title": "Streaming Latency Breakdown (ms)",
         "bars": [
-          { "label": "TTFT Latency", "value": { "text": "250" }, "tone": "ok" },
-          { "label": "Token Generation", "value": { "text": "750" }, "tone": "data" },
-          { "label": "Total Duration", "value": { "text": "1000" }, "tone": "data" }
+          {
+            "label": "TTFT Latency",
+            "value": {
+              "text": "250"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "Token Generation",
+            "value": {
+              "text": "750"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Total Duration",
+            "value": {
+              "text": "1000"
+            },
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -304,9 +752,21 @@
         "template": "bars",
         "title": "Streaming Latency Breakdown (ms)",
         "bars": [
-          { "label": "TTFT Latency", "value": 250, "tone": "ok" },
-          { "label": "Token Generation", "value": 750, "tone": "data" },
-          { "label": "Total Duration", "value": 1000, "tone": "data" }
+          {
+            "label": "TTFT Latency",
+            "value": 250,
+            "tone": "ok"
+          },
+          {
+            "label": "Token Generation",
+            "value": 750,
+            "tone": "data"
+          },
+          {
+            "label": "Total Duration",
+            "value": 1000,
+            "tone": "data"
+          }
         ],
         "steps": [
           {

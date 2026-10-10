@@ -12,10 +12,26 @@
         "template": "workflow",
         "title": "Enterprise Production AI Gateway Lifecycle",
         "stages": [
-          { "id": "client", "name": "Client Ingress", "subtext": "Receive GatewayQuery" },
-          { "id": "perimeter", "name": "Security Perimeter", "subtext": "Firewall & cache lookup" },
-          { "id": "routing", "name": "Model Routing", "subtext": "Small vs Frontier dispatch" },
-          { "id": "delivery", "name": "Audited Delivery", "subtext": "GatewayResponse payload" }
+          {
+            "id": "client",
+            "name": "Client Ingress",
+            "subtext": "Receive GatewayQuery"
+          },
+          {
+            "id": "perimeter",
+            "name": "Security Perimeter",
+            "subtext": "Firewall & cache lookup"
+          },
+          {
+            "id": "routing",
+            "name": "Model Routing",
+            "subtext": "Small vs Frontier dispatch"
+          },
+          {
+            "id": "delivery",
+            "name": "Audited Delivery",
+            "subtext": "GatewayResponse payload"
+          }
         ],
         "steps": [
           {
@@ -39,10 +55,26 @@
         "template": "workflow",
         "title": "Enterprise Production AI Gateway Lifecycle",
         "stages": [
-          { "id": "client", "name": "Client Ingress", "subtext": "Receive GatewayQuery" },
-          { "id": "perimeter", "name": "Security Perimeter", "subtext": "Firewall & cache lookup" },
-          { "id": "routing", "name": "Model Routing", "subtext": "Small vs Frontier dispatch" },
-          { "id": "delivery", "name": "Audited Delivery", "subtext": "GatewayResponse payload" }
+          {
+            "id": "client",
+            "name": "Client Ingress",
+            "subtext": "Receive GatewayQuery"
+          },
+          {
+            "id": "perimeter",
+            "name": "Security Perimeter",
+            "subtext": "Firewall & cache lookup"
+          },
+          {
+            "id": "routing",
+            "name": "Model Routing",
+            "subtext": "Small vs Frontier dispatch"
+          },
+          {
+            "id": "delivery",
+            "name": "Audited Delivery",
+            "subtext": "GatewayResponse payload"
+          }
         ],
         "steps": [
           {
@@ -70,31 +102,64 @@
         "template": "flow",
         "title": "Multi-Layer Defensive Perimeter Architecture",
         "nodes": [
-          { "id": "prompt", "label": "Inbound Prompt", "tappable": false },
-          { "id": "firewall", "label": "Injection Firewall", "tappable": false },
-          { "id": "cache", "label": "Semantic Cache Lookup", "tappable": false },
-          { "id": "pass", "label": "Model Routing Pass", "tappable": false }
+          {
+            "id": "prompt",
+            "label": "Inbound Prompt",
+            "tappable": false
+          },
+          {
+            "id": "firewall",
+            "label": "Injection Firewall",
+            "tappable": false
+          },
+          {
+            "id": "cache",
+            "label": "Semantic Cache Lookup",
+            "tappable": false
+          },
+          {
+            "id": "pass",
+            "label": "Model Routing Pass",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "prompt", "to": "firewall" },
-          { "from": "firewall", "to": "cache" },
-          { "from": "cache", "to": "pass" }
+          {
+            "from": "prompt",
+            "to": "firewall"
+          },
+          {
+            "from": "firewall",
+            "to": "cache"
+          },
+          {
+            "from": "cache",
+            "to": "pass"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Methods test for adversarial prompt injection signatures at the perimeter.",
-            "activeNodes": ["prompt", "firewall"]
+            "activeNodes": [
+              "prompt",
+              "firewall"
+            ]
           },
           {
             "at": "say4",
             "caption": "When attacks are detected gateways immediately return BLOCK to terminate.",
-            "activeNodes": ["firewall"]
+            "activeNodes": [
+              "firewall"
+            ]
           },
           {
             "at": "say6",
             "caption": "Cache matches return CACHE_HIT with pre-computed responses in sub-milliseconds.",
-            "activeNodes": ["cache", "pass"]
+            "activeNodes": [
+              "cache",
+              "pass"
+            ]
           }
         ]
       },
@@ -102,31 +167,64 @@
         "template": "flow",
         "title": "Multi-Layer Defensive Perimeter Architecture",
         "nodes": [
-          { "id": "prompt", "label": "Inbound Prompt", "tappable": false },
-          { "id": "firewall", "label": "Injection Firewall", "tappable": false },
-          { "id": "cache", "label": "Semantic Cache Lookup", "tappable": false },
-          { "id": "pass", "label": "Model Routing Pass", "tappable": false }
+          {
+            "id": "prompt",
+            "label": "Inbound Prompt",
+            "tappable": false
+          },
+          {
+            "id": "firewall",
+            "label": "Injection Firewall",
+            "tappable": false
+          },
+          {
+            "id": "cache",
+            "label": "Semantic Cache Lookup",
+            "tappable": false
+          },
+          {
+            "id": "pass",
+            "label": "Model Routing Pass",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "prompt", "to": "firewall" },
-          { "from": "firewall", "to": "cache" },
-          { "from": "cache", "to": "pass" }
+          {
+            "from": "prompt",
+            "to": "firewall"
+          },
+          {
+            "from": "firewall",
+            "to": "cache"
+          },
+          {
+            "from": "cache",
+            "to": "pass"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Methods test for adversarial prompt injection signatures at the perimeter.",
-            "activeNodes": ["prompt", "firewall"]
+            "activeNodes": [
+              "prompt",
+              "firewall"
+            ]
           },
           {
             "at": "say4",
             "caption": "When attacks are detected gateways immediately return BLOCK to terminate.",
-            "activeNodes": ["firewall"]
+            "activeNodes": [
+              "firewall"
+            ]
           },
           {
             "at": "say6",
             "caption": "Cache matches return CACHE_HIT with pre-computed responses in sub-milliseconds.",
-            "activeNodes": ["cache", "pass"]
+            "activeNodes": [
+              "cache",
+              "pass"
+            ]
           }
         ]
       }
@@ -208,29 +306,50 @@
         "template": "states",
         "title": "Production Gateway Query State Machine",
         "states": [
-          { "id": "ingress", "label": "Inbound Query" },
-          { "id": "screen", "label": "Safety Screening" },
-          { "id": "cached", "label": "CACHE_HIT Served" },
-          { "id": "routed", "label": "Inference Routed" }
+          {
+            "id": "ingress",
+            "label": "Inbound Query"
+          },
+          {
+            "id": "screen",
+            "label": "Safety Screening"
+          },
+          {
+            "id": "cached",
+            "label": "CACHE_HIT Served"
+          },
+          {
+            "id": "routed",
+            "label": "Inference Routed"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Gateway methods orchestrate the complete request lifecycle cleanly in sequence.",
             "current": "ingress",
-            "visited": ["ingress"]
+            "visited": [
+              "ingress"
+            ]
           },
           {
             "at": "say3",
             "caption": "Pipelines screen for prompt injections and evaluate prompt complexity.",
             "current": "screen",
-            "visited": ["ingress", "screen"]
+            "visited": [
+              "ingress",
+              "screen"
+            ]
           },
           {
             "at": "say5",
             "caption": "Execution paths return strongly typed result envelopes carrying status.",
             "current": "routed",
-            "visited": ["ingress", "screen", "routed"]
+            "visited": [
+              "ingress",
+              "screen",
+              "routed"
+            ]
           }
         ]
       },
@@ -238,29 +357,50 @@
         "template": "states",
         "title": "Production Gateway Query State Machine",
         "states": [
-          { "id": "ingress", "label": "Inbound Query" },
-          { "id": "screen", "label": "Safety Screening" },
-          { "id": "cached", "label": "CACHE_HIT Served" },
-          { "id": "routed", "label": "Inference Routed" }
+          {
+            "id": "ingress",
+            "label": "Inbound Query"
+          },
+          {
+            "id": "screen",
+            "label": "Safety Screening"
+          },
+          {
+            "id": "cached",
+            "label": "CACHE_HIT Served"
+          },
+          {
+            "id": "routed",
+            "label": "Inference Routed"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Gateway methods orchestrate the complete request lifecycle cleanly in sequence.",
             "current": "ingress",
-            "visited": ["ingress"]
+            "visited": [
+              "ingress"
+            ]
           },
           {
             "at": "say3",
             "caption": "Pipelines screen for prompt injections and evaluate prompt complexity.",
             "current": "screen",
-            "visited": ["ingress", "screen"]
+            "visited": [
+              "ingress",
+              "screen"
+            ]
           },
           {
             "at": "say5",
             "caption": "Execution paths return strongly typed result envelopes carrying status.",
             "current": "routed",
-            "visited": ["ingress", "screen", "routed"]
+            "visited": [
+              "ingress",
+              "screen",
+              "routed"
+            ]
           }
         ]
       }
@@ -272,10 +412,26 @@
         "template": "bars",
         "title": "End-of-Day Traffic and Cost Breakdown",
         "items": [
-          { "label": "Cache Hits (400)", "value": 40.0, "tone": "ok" },
-          { "label": "Small Model (500)", "value": 50.0, "tone": "data" },
-          { "label": "Frontier (50)", "value": 5.0, "tone": "idle" },
-          { "label": "Blocked Attacks (50)", "value": 5.0, "tone": "error" }
+          {
+            "label": "Cache Hits (400)",
+            "value": 40,
+            "tone": "ok"
+          },
+          {
+            "label": "Small Model (500)",
+            "value": 50,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier (50)",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Blocked Attacks (50)",
+            "value": 5,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -296,10 +452,26 @@
         "template": "bars",
         "title": "End-of-Day Traffic and Cost Breakdown",
         "items": [
-          { "label": "Cache Hits (400)", "value": 40.0, "tone": "ok" },
-          { "label": "Small Model (500)", "value": 50.0, "tone": "data" },
-          { "label": "Frontier (50)", "value": 5.0, "tone": "idle" },
-          { "label": "Blocked Attacks (50)", "value": 5.0, "tone": "error" }
+          {
+            "label": "Cache Hits (400)",
+            "value": 40,
+            "tone": "ok"
+          },
+          {
+            "label": "Small Model (500)",
+            "value": 50,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier (50)",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Blocked Attacks (50)",
+            "value": 5,
+            "tone": "error"
+          }
         ],
         "steps": [
           {

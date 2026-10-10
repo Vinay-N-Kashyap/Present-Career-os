@@ -12,29 +12,51 @@
         "template": "states",
         "title": "OpenTelemetry Span Lifecycle States",
         "states": [
-          { "id": "created", "label": "Span Initialized" },
-          { "id": "active", "label": "Timing In-Progress" },
-          { "id": "ended", "label": "Duration Computed" },
-          { "id": "flushed", "label": "Flushed to Buffer" }
+          {
+            "id": "created",
+            "label": "Span Initialized"
+          },
+          {
+            "id": "active",
+            "label": "Timing In-Progress"
+          },
+          {
+            "id": "ended",
+            "label": "Duration Computed"
+          },
+          {
+            "id": "flushed",
+            "label": "Flushed to Buffer"
+          }
         ],
         "steps": [
           {
             "at": "say6",
             "caption": "Collector classes model the core lifecycle of OpenTelemetry spans.",
             "current": "created",
-            "visited": ["created"]
+            "visited": [
+              "created"
+            ]
           },
           {
             "at": "say7",
             "caption": "Starting spans records timestamps and returns unique span identifiers.",
             "current": "active",
-            "visited": ["created", "active"]
+            "visited": [
+              "created",
+              "active"
+            ]
           },
           {
             "at": "say8",
             "caption": "Ending spans calculates elapsed duration and flushes spans to audit buffers.",
             "current": "flushed",
-            "visited": ["created", "active", "ended", "flushed"]
+            "visited": [
+              "created",
+              "active",
+              "ended",
+              "flushed"
+            ]
           }
         ]
       },
@@ -42,29 +64,51 @@
         "template": "states",
         "title": "OpenTelemetry Span Lifecycle States",
         "states": [
-          { "id": "created", "label": "Span Initialized" },
-          { "id": "active", "label": "Timing In-Progress" },
-          { "id": "ended", "label": "Duration Computed" },
-          { "id": "flushed", "label": "Flushed to Buffer" }
+          {
+            "id": "created",
+            "label": "Span Initialized"
+          },
+          {
+            "id": "active",
+            "label": "Timing In-Progress"
+          },
+          {
+            "id": "ended",
+            "label": "Duration Computed"
+          },
+          {
+            "id": "flushed",
+            "label": "Flushed to Buffer"
+          }
         ],
         "steps": [
           {
             "at": "say6",
             "caption": "Collector classes model the core lifecycle of OpenTelemetry spans.",
             "current": "created",
-            "visited": ["created"]
+            "visited": [
+              "created"
+            ]
           },
           {
             "at": "say7",
             "caption": "Starting spans records timestamps and returns unique span identifiers.",
             "current": "active",
-            "visited": ["created", "active"]
+            "visited": [
+              "created",
+              "active"
+            ]
           },
           {
             "at": "say8",
             "caption": "Ending spans calculates elapsed duration and flushes spans to audit buffers.",
             "current": "flushed",
-            "visited": ["created", "active", "ended", "flushed"]
+            "visited": [
+              "created",
+              "active",
+              "ended",
+              "flushed"
+            ]
           }
         ]
       }
@@ -76,10 +120,26 @@
         "template": "workflow",
         "title": "Nested Pipeline Trace Waterfall Stages",
         "stages": [
-          { "id": "auth", "name": "Authentication", "subtext": "15ms client verification" },
-          { "id": "retrieval", "name": "Vector Retrieval", "subtext": "75ms top-k search" },
-          { "id": "llm", "name": "LLM Inference", "subtext": "450ms model generation" },
-          { "id": "repair", "name": "Output Repair", "subtext": "25ms JSON sanitizer" }
+          {
+            "id": "auth",
+            "name": "Authentication",
+            "subtext": "15ms client verification"
+          },
+          {
+            "id": "retrieval",
+            "name": "Vector Retrieval",
+            "subtext": "75ms top-k search"
+          },
+          {
+            "id": "llm",
+            "name": "LLM Inference",
+            "subtext": "450ms model generation"
+          },
+          {
+            "id": "repair",
+            "name": "Output Repair",
+            "subtext": "25ms JSON sanitizer"
+          }
         ],
         "steps": [
           {
@@ -103,10 +163,26 @@
         "template": "workflow",
         "title": "Nested Pipeline Trace Waterfall Stages",
         "stages": [
-          { "id": "auth", "name": "Authentication", "subtext": "15ms client verification" },
-          { "id": "retrieval", "name": "Vector Retrieval", "subtext": "75ms top-k search" },
-          { "id": "llm", "name": "LLM Inference", "subtext": "450ms model generation" },
-          { "id": "repair", "name": "Output Repair", "subtext": "25ms JSON sanitizer" }
+          {
+            "id": "auth",
+            "name": "Authentication",
+            "subtext": "15ms client verification"
+          },
+          {
+            "id": "retrieval",
+            "name": "Vector Retrieval",
+            "subtext": "75ms top-k search"
+          },
+          {
+            "id": "llm",
+            "name": "LLM Inference",
+            "subtext": "450ms model generation"
+          },
+          {
+            "id": "repair",
+            "name": "Output Repair",
+            "subtext": "25ms JSON sanitizer"
+          }
         ],
         "steps": [
           {
@@ -133,56 +209,328 @@
       "spec": {
         "template": "table",
         "title": "Inference Span Metadata Enrichment Schema",
-        "columns": ["Metadata Key", "Observed Value", "Telemetry Purpose"],
-        "rows": [
-          { "Metadata Key": { "text": "modelId" }, "Observed Value": { "text": "gpt-4o-mini" }, "Telemetry Purpose": { "text": "Identify deployed model version" } },
-          { "Metadata Key": { "text": "promptTokens" }, "Observed Value": { "text": "450 tokens" }, "Telemetry Purpose": { "text": "Input context token count" } },
-          { "Metadata Key": { "text": "completionTokens" }, "Observed Value": { "text": "85 tokens" }, "Telemetry Purpose": { "text": "Generated output length" } },
-          { "Metadata Key": { "text": "cacheHit" }, "Observed Value": { "text": "false" }, "Telemetry Purpose": { "text": "Semantic cache lookup verdict" } }
+        "columns": [
+          "Metadata Key",
+          "Observed Value",
+          "Telemetry Purpose"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Interfaces tag inference spans with model ID, token counts, and cache status.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "modelId"
+                  },
+                  "Observed Value": {
+                    "text": "gpt-4o-mini"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Identify deployed model version"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "promptTokens"
+                  },
+                  "Observed Value": {
+                    "text": "450 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Input context token count"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "completionTokens"
+                  },
+                  "Observed Value": {
+                    "text": "85 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Generated output length"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "cacheHit"
+                  },
+                  "Observed Value": {
+                    "text": "false"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Semantic cache lookup verdict"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Spans record model names prompt tokens and completion tokens.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "modelId"
+                  },
+                  "Observed Value": {
+                    "text": "gpt-4o-mini"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Identify deployed model version"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "promptTokens"
+                  },
+                  "Observed Value": {
+                    "text": "450 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Input context token count"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "completionTokens"
+                  },
+                  "Observed Value": {
+                    "text": "85 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Generated output length"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "cacheHit"
+                  },
+                  "Observed Value": {
+                    "text": "false"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Semantic cache lookup verdict"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Enriching spans with metadata allows teams to filter traces in dashboards.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "modelId"
+                  },
+                  "Observed Value": {
+                    "text": "gpt-4o-mini"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Identify deployed model version"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "promptTokens"
+                  },
+                  "Observed Value": {
+                    "text": "450 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Input context token count"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "completionTokens"
+                  },
+                  "Observed Value": {
+                    "text": "85 tokens"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Generated output length"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "cacheHit"
+                  },
+                  "Observed Value": {
+                    "text": "false"
+                  },
+                  "Telemetry Purpose": {
+                    "text": "Semantic cache lookup verdict"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Inference Span Metadata Enrichment Schema",
-        "columns": ["Metadata Key", "Observed Value", "Telemetry Purpose"],
-        "rows": [
-          { "Metadata Key": "modelId", "Observed Value": "gpt-4o-mini", "Telemetry Purpose": "Identify deployed model version" },
-          { "Metadata Key": "promptTokens", "Observed Value": "450 tokens", "Telemetry Purpose": "Input context token count" },
-          { "Metadata Key": "completionTokens", "Observed Value": "85 tokens", "Telemetry Purpose": "Generated output length" },
-          { "Metadata Key": "cacheHit", "Observed Value": "false", "Telemetry Purpose": "Semantic cache lookup verdict" }
+        "columns": [
+          "Metadata Key",
+          "Observed Value",
+          "Telemetry Purpose"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Interfaces tag inference spans with model ID, token counts, and cache status.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "modelId",
+                  "Observed Value": "gpt-4o-mini",
+                  "Telemetry Purpose": "Identify deployed model version"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "promptTokens",
+                  "Observed Value": "450 tokens",
+                  "Telemetry Purpose": "Input context token count"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "completionTokens",
+                  "Observed Value": "85 tokens",
+                  "Telemetry Purpose": "Generated output length"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "cacheHit",
+                  "Observed Value": "false",
+                  "Telemetry Purpose": "Semantic cache lookup verdict"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Spans record model names prompt tokens and completion tokens.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "modelId",
+                  "Observed Value": "gpt-4o-mini",
+                  "Telemetry Purpose": "Identify deployed model version"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "promptTokens",
+                  "Observed Value": "450 tokens",
+                  "Telemetry Purpose": "Input context token count"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "completionTokens",
+                  "Observed Value": "85 tokens",
+                  "Telemetry Purpose": "Generated output length"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "cacheHit",
+                  "Observed Value": "false",
+                  "Telemetry Purpose": "Semantic cache lookup verdict"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Enriching spans with metadata allows teams to filter traces in dashboards.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "modelId",
+                  "Observed Value": "gpt-4o-mini",
+                  "Telemetry Purpose": "Identify deployed model version"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "promptTokens",
+                  "Observed Value": "450 tokens",
+                  "Telemetry Purpose": "Input context token count"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "completionTokens",
+                  "Observed Value": "85 tokens",
+                  "Telemetry Purpose": "Generated output length"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "cacheHit",
+                  "Observed Value": "false",
+                  "Telemetry Purpose": "Semantic cache lookup verdict"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -194,10 +542,26 @@
         "template": "bars",
         "title": "Pipeline Latency Share by Stage",
         "items": [
-          { "label": "LLM Call (700ms)", "value": 70.0, "tone": "error" },
-          { "label": "Output Repair (200ms)", "value": 20.0, "tone": "data" },
-          { "label": "Vector Search (80ms)", "value": 8.0, "tone": "ok" },
-          { "label": "Auth (20ms)", "value": 2.0, "tone": "idle" }
+          {
+            "label": "LLM Call (700ms)",
+            "value": 70,
+            "tone": "error"
+          },
+          {
+            "label": "Output Repair (200ms)",
+            "value": 20,
+            "tone": "data"
+          },
+          {
+            "label": "Vector Search (80ms)",
+            "value": 8,
+            "tone": "ok"
+          },
+          {
+            "label": "Auth (20ms)",
+            "value": 2,
+            "tone": "idle"
+          }
         ],
         "steps": [
           {
@@ -218,10 +582,26 @@
         "template": "bars",
         "title": "Pipeline Latency Share by Stage",
         "items": [
-          { "label": "LLM Call (700ms)", "value": 70.0, "tone": "error" },
-          { "label": "Output Repair (200ms)", "value": 20.0, "tone": "data" },
-          { "label": "Vector Search (80ms)", "value": 8.0, "tone": "ok" },
-          { "label": "Auth (20ms)", "value": 2.0, "tone": "idle" }
+          {
+            "label": "LLM Call (700ms)",
+            "value": 70,
+            "tone": "error"
+          },
+          {
+            "label": "Output Repair (200ms)",
+            "value": 20,
+            "tone": "data"
+          },
+          {
+            "label": "Vector Search (80ms)",
+            "value": 8,
+            "tone": "ok"
+          },
+          {
+            "label": "Auth (20ms)",
+            "value": 2,
+            "tone": "idle"
+          }
         ],
         "steps": [
           {

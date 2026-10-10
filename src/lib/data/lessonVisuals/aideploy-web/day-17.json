@@ -12,9 +12,27 @@
         "template": "bars",
         "title": "Cosine Similarity Alignment Scores (%)",
         "bars": [
-          { "label": "Identical (v1-v1)", "value": { "text": "100" }, "tone": "ok" },
-          { "label": "45-Deg Angle (v1-v2)", "value": { "text": "71" }, "tone": "data" },
-          { "label": "Orthogonal (v1-v3)", "value": { "text": "0" }, "tone": "error" }
+          {
+            "label": "Identical (v1-v1)",
+            "value": {
+              "text": "100"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "45-Deg Angle (v1-v2)",
+            "value": {
+              "text": "71"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Orthogonal (v1-v3)",
+            "value": {
+              "text": "0"
+            },
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -38,9 +56,21 @@
         "template": "bars",
         "title": "Cosine Similarity Alignment Scores (%)",
         "bars": [
-          { "label": "Identical (v1-v1)", "value": 100, "tone": "ok" },
-          { "label": "45-Deg Angle (v1-v2)", "value": 71, "tone": "data" },
-          { "label": "Orthogonal (v1-v3)", "value": 0, "tone": "error" }
+          {
+            "label": "Identical (v1-v1)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "45-Deg Angle (v1-v2)",
+            "value": 71,
+            "tone": "data"
+          },
+          {
+            "label": "Orthogonal (v1-v3)",
+            "value": 0,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -67,54 +97,300 @@
       "spec": {
         "template": "table",
         "title": "Top-K Scored Candidates vs Query Vector",
-        "columns": ["Document ID", "Vector Coordinates", "Dot Score", "Selection Status"],
-        "rows": [
-          { "Document ID": { "text": "doc-1" }, "Vector Coordinates": { "text": "[0.9, 0.1]" }, "Dot Score": { "text": "0.90" }, "Selection Status": { "text": "Top-1 Selected" } },
-          { "Document ID": { "text": "doc-3" }, "Vector Coordinates": { "text": "[0.8, 0.3]" }, "Dot Score": { "text": "0.80" }, "Selection Status": { "text": "Top-2 Selected" } },
-          { "Document ID": { "text": "doc-2" }, "Vector Coordinates": { "text": "[0.1, 0.9]" }, "Dot Score": { "text": "0.10" }, "Selection Status": { "text": "Filtered Out" } }
+        "columns": [
+          "Document ID",
+          "Vector Coordinates",
+          "Dot Score",
+          "Selection Status"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Candidates are scored using dot products against normalized vectors.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-1"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.9, 0.1]"
+                  },
+                  "Dot Score": {
+                    "text": "0.90"
+                  },
+                  "Selection Status": {
+                    "text": "Top-1 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-3"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.8, 0.3]"
+                  },
+                  "Dot Score": {
+                    "text": "0.80"
+                  },
+                  "Selection Status": {
+                    "text": "Top-2 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-2"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.1, 0.9]"
+                  },
+                  "Dot Score": {
+                    "text": "0.10"
+                  },
+                  "Selection Status": {
+                    "text": "Filtered Out"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Scored arrays sort descending by score to slice the top K elements.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-1"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.9, 0.1]"
+                  },
+                  "Dot Score": {
+                    "text": "0.90"
+                  },
+                  "Selection Status": {
+                    "text": "Top-1 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-3"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.8, 0.3]"
+                  },
+                  "Dot Score": {
+                    "text": "0.80"
+                  },
+                  "Selection Status": {
+                    "text": "Top-2 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-2"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.1, 0.9]"
+                  },
+                  "Dot Score": {
+                    "text": "0.10"
+                  },
+                  "Selection Status": {
+                    "text": "Filtered Out"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Top-K filtering protects downstream context windows from clutter.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-1"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.9, 0.1]"
+                  },
+                  "Dot Score": {
+                    "text": "0.90"
+                  },
+                  "Selection Status": {
+                    "text": "Top-1 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-3"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.8, 0.3]"
+                  },
+                  "Dot Score": {
+                    "text": "0.80"
+                  },
+                  "Selection Status": {
+                    "text": "Top-2 Selected"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": {
+                    "text": "doc-2"
+                  },
+                  "Vector Coordinates": {
+                    "text": "[0.1, 0.9]"
+                  },
+                  "Dot Score": {
+                    "text": "0.10"
+                  },
+                  "Selection Status": {
+                    "text": "Filtered Out"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Top-K Scored Candidates vs Query Vector",
-        "columns": ["Document ID", "Vector Coordinates", "Dot Score", "Selection Status"],
-        "rows": [
-          { "Document ID": "doc-1", "Vector Coordinates": "[0.9, 0.1]", "Dot Score": "0.90", "Selection Status": "Top-1 Selected" },
-          { "Document ID": "doc-3", "Vector Coordinates": "[0.8, 0.3]", "Dot Score": "0.80", "Selection Status": "Top-2 Selected" },
-          { "Document ID": "doc-2", "Vector Coordinates": "[0.1, 0.9]", "Dot Score": "0.10", "Selection Status": "Filtered Out" }
+        "columns": [
+          "Document ID",
+          "Vector Coordinates",
+          "Dot Score",
+          "Selection Status"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Candidates are scored using dot products against normalized vectors.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": "doc-1",
+                  "Vector Coordinates": "[0.9, 0.1]",
+                  "Dot Score": "0.90",
+                  "Selection Status": "Top-1 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-3",
+                  "Vector Coordinates": "[0.8, 0.3]",
+                  "Dot Score": "0.80",
+                  "Selection Status": "Top-2 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-2",
+                  "Vector Coordinates": "[0.1, 0.9]",
+                  "Dot Score": "0.10",
+                  "Selection Status": "Filtered Out"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Scored arrays sort descending by score to slice the top K elements.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": "doc-1",
+                  "Vector Coordinates": "[0.9, 0.1]",
+                  "Dot Score": "0.90",
+                  "Selection Status": "Top-1 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-3",
+                  "Vector Coordinates": "[0.8, 0.3]",
+                  "Dot Score": "0.80",
+                  "Selection Status": "Top-2 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-2",
+                  "Vector Coordinates": "[0.1, 0.9]",
+                  "Dot Score": "0.10",
+                  "Selection Status": "Filtered Out"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Top-K filtering protects downstream context windows from clutter.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Document ID": "doc-1",
+                  "Vector Coordinates": "[0.9, 0.1]",
+                  "Dot Score": "0.90",
+                  "Selection Status": "Top-1 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-3",
+                  "Vector Coordinates": "[0.8, 0.3]",
+                  "Dot Score": "0.80",
+                  "Selection Status": "Top-2 Selected"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Document ID": "doc-2",
+                  "Vector Coordinates": "[0.1, 0.9]",
+                  "Dot Score": "0.10",
+                  "Selection Status": "Filtered Out"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -126,33 +402,68 @@
         "template": "flow",
         "title": "Reciprocal Rank Fusion Architecture",
         "nodes": [
-          { "id": "dense", "label": "Dense Vector Rank", "tappable": false },
-          { "id": "sparse", "label": "Sparse BM25 Rank", "tappable": false },
-          { "id": "rrf", "label": "RRF Sum 1 / (60 + r)", "tappable": false },
-          { "id": "fused", "label": "Fused Candidate Top", "tappable": false }
+          {
+            "id": "dense",
+            "label": "Dense Vector Rank",
+            "tappable": false
+          },
+          {
+            "id": "sparse",
+            "label": "Sparse BM25 Rank",
+            "tappable": false
+          },
+          {
+            "id": "rrf",
+            "label": "RRF Sum 1 / (60 + r)",
+            "tappable": false
+          },
+          {
+            "id": "fused",
+            "label": "Fused Candidate Top",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "dense", "to": "rrf" },
-          { "from": "sparse", "to": "rrf" },
-          { "from": "rrf", "to": "fused" }
+          {
+            "from": "dense",
+            "to": "rrf"
+          },
+          {
+            "from": "sparse",
+            "to": "rrf"
+          },
+          {
+            "from": "rrf",
+            "to": "fused"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "RRF operates purely on ordinal ranks avoiding uncalibrated score skew.",
-            "activeNodes": ["dense", "sparse"],
+            "activeNodes": [
+              "dense",
+              "sparse"
+            ],
             "statusBadge": "ranking"
           },
           {
             "at": "say6",
             "caption": "Document rank contributes reciprocal scores to cumulative totals.",
-            "activeNodes": ["dense", "sparse", "rrf"],
+            "activeNodes": [
+              "dense",
+              "sparse",
+              "rrf"
+            ],
             "statusBadge": "fusing"
           },
           {
             "at": "say9",
             "caption": "Reciprocal Rank Fusion delivers ranking stability across modalities.",
-            "activeNodes": ["rrf", "fused"],
+            "activeNodes": [
+              "rrf",
+              "fused"
+            ],
             "statusBadge": "fused"
           }
         ]
@@ -161,33 +472,68 @@
         "template": "flow",
         "title": "Reciprocal Rank Fusion Architecture",
         "nodes": [
-          { "id": "dense", "label": "Dense Vector Rank", "tappable": false },
-          { "id": "sparse", "label": "Sparse BM25 Rank", "tappable": false },
-          { "id": "rrf", "label": "RRF Sum 1 / (60 + r)", "tappable": false },
-          { "id": "fused", "label": "Fused Candidate Top", "tappable": false }
+          {
+            "id": "dense",
+            "label": "Dense Vector Rank",
+            "tappable": false
+          },
+          {
+            "id": "sparse",
+            "label": "Sparse BM25 Rank",
+            "tappable": false
+          },
+          {
+            "id": "rrf",
+            "label": "RRF Sum 1 / (60 + r)",
+            "tappable": false
+          },
+          {
+            "id": "fused",
+            "label": "Fused Candidate Top",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "dense", "to": "rrf" },
-          { "from": "sparse", "to": "rrf" },
-          { "from": "rrf", "to": "fused" }
+          {
+            "from": "dense",
+            "to": "rrf"
+          },
+          {
+            "from": "sparse",
+            "to": "rrf"
+          },
+          {
+            "from": "rrf",
+            "to": "fused"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "RRF operates purely on ordinal ranks avoiding uncalibrated score skew.",
-            "activeNodes": ["dense", "sparse"],
+            "activeNodes": [
+              "dense",
+              "sparse"
+            ],
             "statusBadge": "ranking"
           },
           {
             "at": "say6",
             "caption": "Document rank contributes reciprocal scores to cumulative totals.",
-            "activeNodes": ["dense", "sparse", "rrf"],
+            "activeNodes": [
+              "dense",
+              "sparse",
+              "rrf"
+            ],
             "statusBadge": "fusing"
           },
           {
             "at": "say9",
             "caption": "Reciprocal Rank Fusion delivers ranking stability across modalities.",
-            "activeNodes": ["rrf", "fused"],
+            "activeNodes": [
+              "rrf",
+              "fused"
+            ],
             "statusBadge": "fused"
           }
         ]
@@ -264,29 +610,52 @@
         "template": "states",
         "title": "Content Hash Deduplication Lifecycle",
         "states": [
-          { "id": "ingest", "label": "Candidate Ingested" },
-          { "id": "lookup", "label": "Hash Set Lookup" },
-          { "id": "seen", "label": "Duplicate Skipped" },
-          { "id": "unique", "label": "Unique Passage Retained" }
+          {
+            "id": "ingest",
+            "label": "Candidate Ingested"
+          },
+          {
+            "id": "lookup",
+            "label": "Hash Set Lookup"
+          },
+          {
+            "id": "seen",
+            "label": "Duplicate Skipped"
+          },
+          {
+            "id": "unique",
+            "label": "Unique Passage Retained"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Deduplication functions track unique content hashes within sets.",
             "current": "lookup",
-            "visited": ["ingest", "lookup"]
+            "visited": [
+              "ingest",
+              "lookup"
+            ]
           },
           {
             "at": "say5",
             "caption": "Entries matching observed hashes are skipped to avoid redundant tokens.",
             "current": "seen",
-            "visited": ["ingest", "lookup", "seen"]
+            "visited": [
+              "ingest",
+              "lookup",
+              "seen"
+            ]
           },
           {
             "at": "say9",
             "caption": "Hash collapsing prevents duplicate passages from saturating context.",
             "current": "unique",
-            "visited": ["ingest", "lookup", "unique"]
+            "visited": [
+              "ingest",
+              "lookup",
+              "unique"
+            ]
           }
         ]
       },
@@ -294,29 +663,52 @@
         "template": "states",
         "title": "Content Hash Deduplication Lifecycle",
         "states": [
-          { "id": "ingest", "label": "Candidate Ingested" },
-          { "id": "lookup", "label": "Hash Set Lookup" },
-          { "id": "seen", "label": "Duplicate Skipped" },
-          { "id": "unique", "label": "Unique Passage Retained" }
+          {
+            "id": "ingest",
+            "label": "Candidate Ingested"
+          },
+          {
+            "id": "lookup",
+            "label": "Hash Set Lookup"
+          },
+          {
+            "id": "seen",
+            "label": "Duplicate Skipped"
+          },
+          {
+            "id": "unique",
+            "label": "Unique Passage Retained"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Deduplication functions track unique content hashes within sets.",
             "current": "lookup",
-            "visited": ["ingest", "lookup"]
+            "visited": [
+              "ingest",
+              "lookup"
+            ]
           },
           {
             "at": "say5",
             "caption": "Entries matching observed hashes are skipped to avoid redundant tokens.",
             "current": "seen",
-            "visited": ["ingest", "lookup", "seen"]
+            "visited": [
+              "ingest",
+              "lookup",
+              "seen"
+            ]
           },
           {
             "at": "say9",
             "caption": "Hash collapsing prevents duplicate passages from saturating context.",
             "current": "unique",
-            "visited": ["ingest", "lookup", "unique"]
+            "visited": [
+              "ingest",
+              "lookup",
+              "unique"
+            ]
           }
         ]
       }

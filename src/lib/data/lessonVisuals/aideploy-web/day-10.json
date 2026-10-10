@@ -76,35 +76,76 @@
         "template": "flow",
         "title": "Token Bucket Continuous Refill and Consumption",
         "nodes": [
-          { "id": "bucket", "label": "Bucket Capacity (Max Burst)", "tappable": false },
-          { "id": "refill", "label": "Lazy Elapsed Refill", "tappable": false },
-          { "id": "check", "label": "Check Token Balance", "tappable": false },
-          { "id": "permit", "label": "Authorize & Decrement", "tappable": false },
-          { "id": "reject", "label": "Reject (Burst Exceeded)", "tappable": false }
+          {
+            "id": "bucket",
+            "label": "Bucket Capacity (Max Burst)",
+            "tappable": false
+          },
+          {
+            "id": "refill",
+            "label": "Lazy Elapsed Refill",
+            "tappable": false
+          },
+          {
+            "id": "check",
+            "label": "Check Token Balance",
+            "tappable": false
+          },
+          {
+            "id": "permit",
+            "label": "Authorize & Decrement",
+            "tappable": false
+          },
+          {
+            "id": "reject",
+            "label": "Reject (Burst Exceeded)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "bucket", "to": "refill" },
-          { "from": "refill", "to": "check" },
-          { "from": "check", "to": "permit" },
-          { "from": "check", "to": "reject" }
+          {
+            "from": "bucket",
+            "to": "refill"
+          },
+          {
+            "from": "refill",
+            "to": "check"
+          },
+          {
+            "from": "check",
+            "to": "permit"
+          },
+          {
+            "from": "check",
+            "to": "reject"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Tokens accumulate into buckets at continuous refill rates over elapsed time.",
-            "activeNodes": ["bucket", "refill"],
+            "activeNodes": [
+              "bucket",
+              "refill"
+            ],
             "statusBadge": "refilling"
           },
           {
             "at": "say4",
             "caption": "Incoming requests check if buckets contain enough tokens for consumption.",
-            "activeNodes": ["refill", "check"],
+            "activeNodes": [
+              "refill",
+              "check"
+            ],
             "statusBadge": "checking"
           },
           {
             "at": "say8",
             "caption": "Continuous refill is calculated lazily without background timers.",
-            "activeNodes": ["check", "permit"],
+            "activeNodes": [
+              "check",
+              "permit"
+            ],
             "statusBadge": "authorized"
           }
         ]
@@ -113,35 +154,76 @@
         "template": "flow",
         "title": "Token Bucket Continuous Refill and Consumption",
         "nodes": [
-          { "id": "bucket", "label": "Bucket Capacity (Max Burst)", "tappable": false },
-          { "id": "refill", "label": "Lazy Elapsed Refill", "tappable": false },
-          { "id": "check", "label": "Check Token Balance", "tappable": false },
-          { "id": "permit", "label": "Authorize & Decrement", "tappable": false },
-          { "id": "reject", "label": "Reject (Burst Exceeded)", "tappable": false }
+          {
+            "id": "bucket",
+            "label": "Bucket Capacity (Max Burst)",
+            "tappable": false
+          },
+          {
+            "id": "refill",
+            "label": "Lazy Elapsed Refill",
+            "tappable": false
+          },
+          {
+            "id": "check",
+            "label": "Check Token Balance",
+            "tappable": false
+          },
+          {
+            "id": "permit",
+            "label": "Authorize & Decrement",
+            "tappable": false
+          },
+          {
+            "id": "reject",
+            "label": "Reject (Burst Exceeded)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "bucket", "to": "refill" },
-          { "from": "refill", "to": "check" },
-          { "from": "check", "to": "permit" },
-          { "from": "check", "to": "reject" }
+          {
+            "from": "bucket",
+            "to": "refill"
+          },
+          {
+            "from": "refill",
+            "to": "check"
+          },
+          {
+            "from": "check",
+            "to": "permit"
+          },
+          {
+            "from": "check",
+            "to": "reject"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Tokens accumulate into buckets at continuous refill rates over elapsed time.",
-            "activeNodes": ["bucket", "refill"],
+            "activeNodes": [
+              "bucket",
+              "refill"
+            ],
             "statusBadge": "refilling"
           },
           {
             "at": "say4",
             "caption": "Incoming requests check if buckets contain enough tokens for consumption.",
-            "activeNodes": ["refill", "check"],
+            "activeNodes": [
+              "refill",
+              "check"
+            ],
             "statusBadge": "checking"
           },
           {
             "at": "say8",
             "caption": "Continuous refill is calculated lazily without background timers.",
-            "activeNodes": ["check", "permit"],
+            "activeNodes": [
+              "check",
+              "permit"
+            ],
             "statusBadge": "authorized"
           }
         ]
@@ -154,29 +236,50 @@
         "template": "states",
         "title": "Sliding Window Log Lifecycle States",
         "states": [
-          { "id": "recorded", "label": "Timestamp Recorded" },
-          { "id": "purged", "label": "Expired Entries Purged" },
-          { "id": "authorized", "label": "Within Rate Limit" },
-          { "id": "throttled", "label": "Limit Exceeded (Blocked)" }
+          {
+            "id": "recorded",
+            "label": "Timestamp Recorded"
+          },
+          {
+            "id": "purged",
+            "label": "Expired Entries Purged"
+          },
+          {
+            "id": "authorized",
+            "label": "Within Rate Limit"
+          },
+          {
+            "id": "throttled",
+            "label": "Limit Exceeded (Blocked)"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Sliding window logs eliminate boundary spikes across rolling time windows.",
             "current": "recorded",
-            "visited": ["recorded"]
+            "visited": [
+              "recorded"
+            ]
           },
           {
             "at": "say5",
             "caption": "Limiters purge expired timestamps rolling out of active duration windows.",
             "current": "purged",
-            "visited": ["recorded", "purged"]
+            "visited": [
+              "recorded",
+              "purged"
+            ]
           },
           {
             "at": "say7",
             "caption": "Continuous sliding windows ensure clients never exceed ceiling rates.",
             "current": "authorized",
-            "visited": ["recorded", "purged", "authorized"]
+            "visited": [
+              "recorded",
+              "purged",
+              "authorized"
+            ]
           }
         ]
       },
@@ -184,29 +287,50 @@
         "template": "states",
         "title": "Sliding Window Log Lifecycle States",
         "states": [
-          { "id": "recorded", "label": "Timestamp Recorded" },
-          { "id": "purged", "label": "Expired Entries Purged" },
-          { "id": "authorized", "label": "Within Rate Limit" },
-          { "id": "throttled", "label": "Limit Exceeded (Blocked)" }
+          {
+            "id": "recorded",
+            "label": "Timestamp Recorded"
+          },
+          {
+            "id": "purged",
+            "label": "Expired Entries Purged"
+          },
+          {
+            "id": "authorized",
+            "label": "Within Rate Limit"
+          },
+          {
+            "id": "throttled",
+            "label": "Limit Exceeded (Blocked)"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Sliding window logs eliminate boundary spikes across rolling time windows.",
             "current": "recorded",
-            "visited": ["recorded"]
+            "visited": [
+              "recorded"
+            ]
           },
           {
             "at": "say5",
             "caption": "Limiters purge expired timestamps rolling out of active duration windows.",
             "current": "purged",
-            "visited": ["recorded", "purged"]
+            "visited": [
+              "recorded",
+              "purged"
+            ]
           },
           {
             "at": "say7",
             "caption": "Continuous sliding windows ensure clients never exceed ceiling rates.",
             "current": "authorized",
-            "visited": ["recorded", "purged", "authorized"]
+            "visited": [
+              "recorded",
+              "purged",
+              "authorized"
+            ]
           }
         ]
       }
@@ -218,10 +342,26 @@
         "template": "workflow",
         "title": "Hierarchical Multi-Tenant Quota Evaluation",
         "stages": [
-          { "id": "user", "name": "User Quota", "subtext": "Max per-user RPM limit" },
-          { "id": "user_ok", "name": "User Pass", "subtext": "Within individual budget" },
-          { "id": "tenant", "name": "Tenant Quota", "subtext": "Max organization limit" },
-          { "id": "authorize", "name": "Authorize Request", "subtext": "Both tiers satisfied" }
+          {
+            "id": "user",
+            "name": "User Quota",
+            "subtext": "Max per-user RPM limit"
+          },
+          {
+            "id": "user_ok",
+            "name": "User Pass",
+            "subtext": "Within individual budget"
+          },
+          {
+            "id": "tenant",
+            "name": "Tenant Quota",
+            "subtext": "Max organization limit"
+          },
+          {
+            "id": "authorize",
+            "name": "Authorize Request",
+            "subtext": "Both tiers satisfied"
+          }
         ],
         "steps": [
           {
@@ -248,10 +388,26 @@
         "template": "workflow",
         "title": "Hierarchical Multi-Tenant Quota Evaluation",
         "stages": [
-          { "id": "user", "name": "User Quota", "subtext": "Max per-user RPM limit" },
-          { "id": "user_ok", "name": "User Pass", "subtext": "Within individual budget" },
-          { "id": "tenant", "name": "Tenant Quota", "subtext": "Max organization limit" },
-          { "id": "authorize", "name": "Authorize Request", "subtext": "Both tiers satisfied" }
+          {
+            "id": "user",
+            "name": "User Quota",
+            "subtext": "Max per-user RPM limit"
+          },
+          {
+            "id": "user_ok",
+            "name": "User Pass",
+            "subtext": "Within individual budget"
+          },
+          {
+            "id": "tenant",
+            "name": "Tenant Quota",
+            "subtext": "Max organization limit"
+          },
+          {
+            "id": "authorize",
+            "name": "Authorize Request",
+            "subtext": "Both tiers satisfied"
+          }
         ],
         "steps": [
           {
@@ -281,54 +437,262 @@
       "spec": {
         "template": "table",
         "title": "IETF Standard RateLimit Headers",
-        "columns": ["Header Name", "Sample Value", "Client Behavior"],
-        "rows": [
-          { "Header Name": { "text": "X-RateLimit-Limit" }, "Sample Value": { "text": "60" }, "Client Behavior": { "text": "Total requests permitted in window" } },
-          { "Header Name": { "text": "X-RateLimit-Remaining" }, "Sample Value": { "text": "0" }, "Client Behavior": { "text": "Immediate calls will be blocked" } },
-          { "Header Name": { "text": "Retry-After" }, "Sample Value": { "text": "15" }, "Client Behavior": { "text": "Seconds client must pause before retry" } }
+        "columns": [
+          "Header Name",
+          "Sample Value",
+          "Client Behavior"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Standard headers communicate active limits and remaining quota balances.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Limit"
+                  },
+                  "Sample Value": {
+                    "text": "60"
+                  },
+                  "Client Behavior": {
+                    "text": "Total requests permitted in window"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Remaining"
+                  },
+                  "Sample Value": {
+                    "text": "0"
+                  },
+                  "Client Behavior": {
+                    "text": "Immediate calls will be blocked"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "Retry-After"
+                  },
+                  "Sample Value": {
+                    "text": "15"
+                  },
+                  "Client Behavior": {
+                    "text": "Seconds client must pause before retry"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Throttled responses return Retry-After headers indicating pause duration.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Limit"
+                  },
+                  "Sample Value": {
+                    "text": "60"
+                  },
+                  "Client Behavior": {
+                    "text": "Total requests permitted in window"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Remaining"
+                  },
+                  "Sample Value": {
+                    "text": "0"
+                  },
+                  "Client Behavior": {
+                    "text": "Immediate calls will be blocked"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "Retry-After"
+                  },
+                  "Sample Value": {
+                    "text": "15"
+                  },
+                  "Client Behavior": {
+                    "text": "Seconds client must pause before retry"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Honoring Retry-After headers eliminates speculative polling retries.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Limit"
+                  },
+                  "Sample Value": {
+                    "text": "60"
+                  },
+                  "Client Behavior": {
+                    "text": "Total requests permitted in window"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "X-RateLimit-Remaining"
+                  },
+                  "Sample Value": {
+                    "text": "0"
+                  },
+                  "Client Behavior": {
+                    "text": "Immediate calls will be blocked"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": {
+                    "text": "Retry-After"
+                  },
+                  "Sample Value": {
+                    "text": "15"
+                  },
+                  "Client Behavior": {
+                    "text": "Seconds client must pause before retry"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "IETF Standard RateLimit Headers",
-        "columns": ["Header Name", "Sample Value", "Client Behavior"],
-        "rows": [
-          { "Header Name": "X-RateLimit-Limit", "Sample Value": "60", "Client Behavior": "Total requests permitted in window" },
-          { "Header Name": "X-RateLimit-Remaining", "Sample Value": "0", "Client Behavior": "Immediate calls will be blocked" },
-          { "Header Name": "Retry-After", "Sample Value": "15", "Client Behavior": "Seconds client must pause before retry" }
+        "columns": [
+          "Header Name",
+          "Sample Value",
+          "Client Behavior"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Standard headers communicate active limits and remaining quota balances.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Limit",
+                  "Sample Value": "60",
+                  "Client Behavior": "Total requests permitted in window"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Remaining",
+                  "Sample Value": "0",
+                  "Client Behavior": "Immediate calls will be blocked"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "Retry-After",
+                  "Sample Value": "15",
+                  "Client Behavior": "Seconds client must pause before retry"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Throttled responses return Retry-After headers indicating pause duration.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Limit",
+                  "Sample Value": "60",
+                  "Client Behavior": "Total requests permitted in window"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Remaining",
+                  "Sample Value": "0",
+                  "Client Behavior": "Immediate calls will be blocked"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "Retry-After",
+                  "Sample Value": "15",
+                  "Client Behavior": "Seconds client must pause before retry"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Honoring Retry-After headers eliminates speculative polling retries.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Limit",
+                  "Sample Value": "60",
+                  "Client Behavior": "Total requests permitted in window"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "X-RateLimit-Remaining",
+                  "Sample Value": "0",
+                  "Client Behavior": "Immediate calls will be blocked"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Header Name": "Retry-After",
+                  "Sample Value": "15",
+                  "Client Behavior": "Seconds client must pause before retry"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

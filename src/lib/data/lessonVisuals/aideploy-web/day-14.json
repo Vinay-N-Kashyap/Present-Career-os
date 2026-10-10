@@ -11,56 +11,378 @@
       "spec": {
         "template": "table",
         "title": "Numerical Precision Formats and Memory Sizing",
-        "columns": ["Precision Format", "Bits / Param", "Bytes / Param", "70B Weight Memory"],
-        "rows": [
-          { "Precision Format": { "text": "FP32 (Single)" }, "Bits / Param": { "text": "32 bits" }, "Bytes / Param": { "text": "4.0 bytes" }, "70B Weight Memory": { "text": "280 GB (Exceeds single node)" } },
-          { "Precision Format": { "text": "FP16 / BF16 (Half)" }, "Bits / Param": { "text": "16 bits" }, "Bytes / Param": { "text": "2.0 bytes" }, "70B Weight Memory": { "text": "140 GB (Requires 2x 80GB GPUs)" } },
-          { "Precision Format": { "text": "INT8 (Quantized)" }, "Bits / Param": { "text": "8 bits" }, "Bytes / Param": { "text": "1.0 byte" }, "70B Weight Memory": { "text": "70 GB (Fits 1x 80GB GPU)" } },
-          { "Precision Format": { "text": "INT4 (Compressed)" }, "Bits / Param": { "text": "4 bits" }, "Bytes / Param": { "text": "0.5 bytes" }, "70B Weight Memory": { "text": "35 GB (Fits comfortably)" } }
+        "columns": [
+          "Precision Format",
+          "Bits / Param",
+          "Bytes / Param",
+          "70B Weight Memory"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Single precision FP32 consumes four bytes for every model parameter.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP32 (Single)"
+                  },
+                  "Bits / Param": {
+                    "text": "32 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "4.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "280 GB (Exceeds single node)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP16 / BF16 (Half)"
+                  },
+                  "Bits / Param": {
+                    "text": "16 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "2.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "140 GB (Requires 2x 80GB GPUs)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT8 (Quantized)"
+                  },
+                  "Bits / Param": {
+                    "text": "8 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "1.0 byte"
+                  },
+                  "70B Weight Memory": {
+                    "text": "70 GB (Fits 1x 80GB GPU)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT4 (Compressed)"
+                  },
+                  "Bits / Param": {
+                    "text": "4 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "0.5 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "35 GB (Fits comfortably)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Modern inference uses FP16 reducing memory consumption to two bytes.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP32 (Single)"
+                  },
+                  "Bits / Param": {
+                    "text": "32 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "4.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "280 GB (Exceeds single node)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP16 / BF16 (Half)"
+                  },
+                  "Bits / Param": {
+                    "text": "16 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "2.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "140 GB (Requires 2x 80GB GPUs)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT8 (Quantized)"
+                  },
+                  "Bits / Param": {
+                    "text": "8 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "1.0 byte"
+                  },
+                  "70B Weight Memory": {
+                    "text": "70 GB (Fits 1x 80GB GPU)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT4 (Compressed)"
+                  },
+                  "Bits / Param": {
+                    "text": "4 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "0.5 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "35 GB (Fits comfortably)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Quantization compresses weights to one byte in INT8 and half byte in INT4.",
-            "highlightRow": 3
+            "highlightRow": 3,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP32 (Single)"
+                  },
+                  "Bits / Param": {
+                    "text": "32 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "4.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "280 GB (Exceeds single node)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "FP16 / BF16 (Half)"
+                  },
+                  "Bits / Param": {
+                    "text": "16 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "2.0 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "140 GB (Requires 2x 80GB GPUs)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT8 (Quantized)"
+                  },
+                  "Bits / Param": {
+                    "text": "8 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "1.0 byte"
+                  },
+                  "70B Weight Memory": {
+                    "text": "70 GB (Fits 1x 80GB GPU)"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": {
+                    "text": "INT4 (Compressed)"
+                  },
+                  "Bits / Param": {
+                    "text": "4 bits"
+                  },
+                  "Bytes / Param": {
+                    "text": "0.5 bytes"
+                  },
+                  "70B Weight Memory": {
+                    "text": "35 GB (Fits comfortably)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Numerical Precision Formats and Memory Sizing",
-        "columns": ["Precision Format", "Bits / Param", "Bytes / Param", "70B Weight Memory"],
-        "rows": [
-          { "Precision Format": "FP32 (Single)", "Bits / Param": "32 bits", "Bytes / Param": "4.0 bytes", "70B Weight Memory": "280 GB (Exceeds single node)" },
-          { "Precision Format": "FP16 / BF16 (Half)", "Bits / Param": "16 bits", "Bytes / Param": "2.0 bytes", "70B Weight Memory": "140 GB (Requires 2x 80GB GPUs)" },
-          { "Precision Format": "INT8 (Quantized)", "Bits / Param": "8 bits", "Bytes / Param": "1.0 byte", "70B Weight Memory": "70 GB (Fits 1x 80GB GPU)" },
-          { "Precision Format": "INT4 (Compressed)", "Bits / Param": "4 bits", "Bytes / Param": "0.5 bytes", "70B Weight Memory": "35 GB (Fits comfortably)" }
+        "columns": [
+          "Precision Format",
+          "Bits / Param",
+          "Bytes / Param",
+          "70B Weight Memory"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Single precision FP32 consumes four bytes for every model parameter.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": "FP32 (Single)",
+                  "Bits / Param": "32 bits",
+                  "Bytes / Param": "4.0 bytes",
+                  "70B Weight Memory": "280 GB (Exceeds single node)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "FP16 / BF16 (Half)",
+                  "Bits / Param": "16 bits",
+                  "Bytes / Param": "2.0 bytes",
+                  "70B Weight Memory": "140 GB (Requires 2x 80GB GPUs)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT8 (Quantized)",
+                  "Bits / Param": "8 bits",
+                  "Bytes / Param": "1.0 byte",
+                  "70B Weight Memory": "70 GB (Fits 1x 80GB GPU)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT4 (Compressed)",
+                  "Bits / Param": "4 bits",
+                  "Bytes / Param": "0.5 bytes",
+                  "70B Weight Memory": "35 GB (Fits comfortably)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Modern inference uses FP16 reducing memory consumption to two bytes.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": "FP32 (Single)",
+                  "Bits / Param": "32 bits",
+                  "Bytes / Param": "4.0 bytes",
+                  "70B Weight Memory": "280 GB (Exceeds single node)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "FP16 / BF16 (Half)",
+                  "Bits / Param": "16 bits",
+                  "Bytes / Param": "2.0 bytes",
+                  "70B Weight Memory": "140 GB (Requires 2x 80GB GPUs)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT8 (Quantized)",
+                  "Bits / Param": "8 bits",
+                  "Bytes / Param": "1.0 byte",
+                  "70B Weight Memory": "70 GB (Fits 1x 80GB GPU)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT4 (Compressed)",
+                  "Bits / Param": "4 bits",
+                  "Bytes / Param": "0.5 bytes",
+                  "70B Weight Memory": "35 GB (Fits comfortably)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Quantization compresses weights to one byte in INT8 and half byte in INT4.",
-            "highlightRow": 3
+            "highlightRow": 3,
+            "rows": [
+              {
+                "cells": {
+                  "Precision Format": "FP32 (Single)",
+                  "Bits / Param": "32 bits",
+                  "Bytes / Param": "4.0 bytes",
+                  "70B Weight Memory": "280 GB (Exceeds single node)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "FP16 / BF16 (Half)",
+                  "Bits / Param": "16 bits",
+                  "Bytes / Param": "2.0 bytes",
+                  "70B Weight Memory": "140 GB (Requires 2x 80GB GPUs)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT8 (Quantized)",
+                  "Bits / Param": "8 bits",
+                  "Bytes / Param": "1.0 byte",
+                  "70B Weight Memory": "70 GB (Fits 1x 80GB GPU)"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Precision Format": "INT4 (Compressed)",
+                  "Bits / Param": "4 bits",
+                  "Bytes / Param": "0.5 bytes",
+                  "70B Weight Memory": "35 GB (Fits comfortably)"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -72,9 +394,27 @@
         "template": "bars",
         "title": "Model Weight VRAM Footprint with Overhead (GB)",
         "bars": [
-          { "label": "7B Model (FP16)", "value": { "text": "16" }, "tone": "data" },
-          { "label": "7B Model (INT4)", "value": { "text": "4" }, "tone": "ok" },
-          { "label": "70B Model (INT4)", "value": { "text": "39" }, "tone": "data" }
+          {
+            "label": "7B Model (FP16)",
+            "value": {
+              "text": "16"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "7B Model (INT4)",
+            "value": {
+              "text": "4"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "70B Model (INT4)",
+            "value": {
+              "text": "39"
+            },
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -98,9 +438,21 @@
         "template": "bars",
         "title": "Model Weight VRAM Footprint with Overhead (GB)",
         "bars": [
-          { "label": "7B Model (FP16)", "value": 16, "tone": "data" },
-          { "label": "7B Model (INT4)", "value": 4, "tone": "ok" },
-          { "label": "70B Model (INT4)", "value": 39, "tone": "data" }
+          {
+            "label": "7B Model (FP16)",
+            "value": 16,
+            "tone": "data"
+          },
+          {
+            "label": "7B Model (INT4)",
+            "value": 4,
+            "tone": "ok"
+          },
+          {
+            "label": "70B Model (INT4)",
+            "value": 39,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -128,35 +480,77 @@
         "template": "flow",
         "title": "Dynamic KV-Cache Memory Expansion Architecture",
         "nodes": [
-          { "id": "attention", "label": "Transformer Attention", "tappable": false },
-          { "id": "cache", "label": "Key & Value Cache", "tappable": false },
-          { "id": "scaling", "label": "Layers * Dim * Context", "tappable": false },
-          { "id": "concurrency", "label": "Batch Concurrency (16x)", "tappable": false },
-          { "id": "vram", "label": "KV VRAM (32 GB Demand)", "tappable": false }
+          {
+            "id": "attention",
+            "label": "Transformer Attention",
+            "tappable": false
+          },
+          {
+            "id": "cache",
+            "label": "Key & Value Cache",
+            "tappable": false
+          },
+          {
+            "id": "scaling",
+            "label": "Layers * Dim * Context",
+            "tappable": false
+          },
+          {
+            "id": "concurrency",
+            "label": "Batch Concurrency (16x)",
+            "tappable": false
+          },
+          {
+            "id": "vram",
+            "label": "KV VRAM (32 GB Demand)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "attention", "to": "cache" },
-          { "from": "cache", "to": "scaling" },
-          { "from": "scaling", "to": "concurrency" },
-          { "from": "concurrency", "to": "vram" }
+          {
+            "from": "attention",
+            "to": "cache"
+          },
+          {
+            "from": "cache",
+            "to": "scaling"
+          },
+          {
+            "from": "scaling",
+            "to": "concurrency"
+          },
+          {
+            "from": "concurrency",
+            "to": "vram"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "The dynamic Key-Value cache often consumes more VRAM than static weights.",
-            "activeNodes": ["attention", "cache"],
+            "activeNodes": [
+              "attention",
+              "cache"
+            ],
             "statusBadge": "caching"
           },
           {
             "at": "say5",
             "caption": "KV cache memory scales with layers, dimension, context length, and batch size.",
-            "activeNodes": ["cache", "scaling", "concurrency"],
+            "activeNodes": [
+              "cache",
+              "scaling",
+              "concurrency"
+            ],
             "statusBadge": "scaling"
           },
           {
             "at": "say9",
             "caption": "Failing to model cache growth causes GPU Out-Of-Memory crashes during spikes.",
-            "activeNodes": ["concurrency", "vram"],
+            "activeNodes": [
+              "concurrency",
+              "vram"
+            ],
             "statusBadge": "monitoring"
           }
         ]
@@ -165,35 +559,77 @@
         "template": "flow",
         "title": "Dynamic KV-Cache Memory Expansion Architecture",
         "nodes": [
-          { "id": "attention", "label": "Transformer Attention", "tappable": false },
-          { "id": "cache", "label": "Key & Value Cache", "tappable": false },
-          { "id": "scaling", "label": "Layers * Dim * Context", "tappable": false },
-          { "id": "concurrency", "label": "Batch Concurrency (16x)", "tappable": false },
-          { "id": "vram", "label": "KV VRAM (32 GB Demand)", "tappable": false }
+          {
+            "id": "attention",
+            "label": "Transformer Attention",
+            "tappable": false
+          },
+          {
+            "id": "cache",
+            "label": "Key & Value Cache",
+            "tappable": false
+          },
+          {
+            "id": "scaling",
+            "label": "Layers * Dim * Context",
+            "tappable": false
+          },
+          {
+            "id": "concurrency",
+            "label": "Batch Concurrency (16x)",
+            "tappable": false
+          },
+          {
+            "id": "vram",
+            "label": "KV VRAM (32 GB Demand)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "attention", "to": "cache" },
-          { "from": "cache", "to": "scaling" },
-          { "from": "scaling", "to": "concurrency" },
-          { "from": "concurrency", "to": "vram" }
+          {
+            "from": "attention",
+            "to": "cache"
+          },
+          {
+            "from": "cache",
+            "to": "scaling"
+          },
+          {
+            "from": "scaling",
+            "to": "concurrency"
+          },
+          {
+            "from": "concurrency",
+            "to": "vram"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "The dynamic Key-Value cache often consumes more VRAM than static weights.",
-            "activeNodes": ["attention", "cache"],
+            "activeNodes": [
+              "attention",
+              "cache"
+            ],
             "statusBadge": "caching"
           },
           {
             "at": "say5",
             "caption": "KV cache memory scales with layers, dimension, context length, and batch size.",
-            "activeNodes": ["cache", "scaling", "concurrency"],
+            "activeNodes": [
+              "cache",
+              "scaling",
+              "concurrency"
+            ],
             "statusBadge": "scaling"
           },
           {
             "at": "say9",
             "caption": "Failing to model cache growth causes GPU Out-Of-Memory crashes during spikes.",
-            "activeNodes": ["concurrency", "vram"],
+            "activeNodes": [
+              "concurrency",
+              "vram"
+            ],
             "statusBadge": "monitoring"
           }
         ]
@@ -206,10 +642,26 @@
         "template": "workflow",
         "title": "Total GPU VRAM Allocation Pipeline",
         "stages": [
-          { "id": "weight", "name": "Static Weights", "subtext": "Quantized model parameters" },
-          { "id": "kv", "name": "Dynamic KV Cache", "subtext": "Context attention tensors" },
-          { "id": "cuda", "name": "CUDA Runtime", "subtext": "Driver context (~1.5 GB)" },
-          { "id": "act", "name": "Activation Buffers", "subtext": "Forward pass tensor memory" }
+          {
+            "id": "weight",
+            "name": "Static Weights",
+            "subtext": "Quantized model parameters"
+          },
+          {
+            "id": "kv",
+            "name": "Dynamic KV Cache",
+            "subtext": "Context attention tensors"
+          },
+          {
+            "id": "cuda",
+            "name": "CUDA Runtime",
+            "subtext": "Driver context (~1.5 GB)"
+          },
+          {
+            "id": "act",
+            "name": "Activation Buffers",
+            "subtext": "Forward pass tensor memory"
+          }
         ],
         "steps": [
           {
@@ -236,10 +688,26 @@
         "template": "workflow",
         "title": "Total GPU VRAM Allocation Pipeline",
         "stages": [
-          { "id": "weight", "name": "Static Weights", "subtext": "Quantized model parameters" },
-          { "id": "kv", "name": "Dynamic KV Cache", "subtext": "Context attention tensors" },
-          { "id": "cuda", "name": "CUDA Runtime", "subtext": "Driver context (~1.5 GB)" },
-          { "id": "act", "name": "Activation Buffers", "subtext": "Forward pass tensor memory" }
+          {
+            "id": "weight",
+            "name": "Static Weights",
+            "subtext": "Quantized model parameters"
+          },
+          {
+            "id": "kv",
+            "name": "Dynamic KV Cache",
+            "subtext": "Context attention tensors"
+          },
+          {
+            "id": "cuda",
+            "name": "CUDA Runtime",
+            "subtext": "Driver context (~1.5 GB)"
+          },
+          {
+            "id": "act",
+            "name": "Activation Buffers",
+            "subtext": "Forward pass tensor memory"
+          }
         ],
         "steps": [
           {

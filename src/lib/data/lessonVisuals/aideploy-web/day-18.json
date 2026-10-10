@@ -11,56 +11,328 @@
       "spec": {
         "template": "table",
         "title": "Document Provenance Envelope Fields",
-        "columns": ["Metadata Key", "Sample Value", "Grounding Purpose"],
-        "rows": [
-          { "Metadata Key": { "text": "docId" }, "Sample Value": { "text": "sla-spec-2024" }, "Grounding Purpose": { "text": "Canonical document identifier" } },
-          { "Metadata Key": { "text": "title" }, "Sample Value": { "text": "Cluster SLA Specifications" }, "Grounding Purpose": { "text": "Human-readable source title" } },
-          { "Metadata Key": { "text": "page" }, "Sample Value": { "text": "14" }, "Grounding Purpose": { "text": "Exact page number for audit" } },
-          { "Metadata Key": { "text": "chunkIndex" }, "Sample Value": { "text": "3" }, "Grounding Purpose": { "text": "Deterministic chunk sequence" } }
+        "columns": [
+          "Metadata Key",
+          "Sample Value",
+          "Grounding Purpose"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Provenance tracking allows users to verify whether facts are real.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "docId"
+                  },
+                  "Sample Value": {
+                    "text": "sla-spec-2024"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Canonical document identifier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "title"
+                  },
+                  "Sample Value": {
+                    "text": "Cluster SLA Specifications"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Human-readable source title"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "page"
+                  },
+                  "Sample Value": {
+                    "text": "14"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Exact page number for audit"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "chunkIndex"
+                  },
+                  "Sample Value": {
+                    "text": "3"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Deterministic chunk sequence"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Provenance chunks capture document ID, title, page, and chunk index.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "docId"
+                  },
+                  "Sample Value": {
+                    "text": "sla-spec-2024"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Canonical document identifier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "title"
+                  },
+                  "Sample Value": {
+                    "text": "Cluster SLA Specifications"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Human-readable source title"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "page"
+                  },
+                  "Sample Value": {
+                    "text": "14"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Exact page number for audit"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "chunkIndex"
+                  },
+                  "Sample Value": {
+                    "text": "3"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Deterministic chunk sequence"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Structured formats allow models to cite specific pages and titles.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "docId"
+                  },
+                  "Sample Value": {
+                    "text": "sla-spec-2024"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Canonical document identifier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "title"
+                  },
+                  "Sample Value": {
+                    "text": "Cluster SLA Specifications"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Human-readable source title"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "page"
+                  },
+                  "Sample Value": {
+                    "text": "14"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Exact page number for audit"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": {
+                    "text": "chunkIndex"
+                  },
+                  "Sample Value": {
+                    "text": "3"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Deterministic chunk sequence"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Document Provenance Envelope Fields",
-        "columns": ["Metadata Key", "Sample Value", "Grounding Purpose"],
-        "rows": [
-          { "Metadata Key": "docId", "Sample Value": "sla-spec-2024", "Grounding Purpose": "Canonical document identifier" },
-          { "Metadata Key": "title", "Sample Value": "Cluster SLA Specifications", "Grounding Purpose": "Human-readable source title" },
-          { "Metadata Key": "page", "Sample Value": "14", "Grounding Purpose": "Exact page number for audit" },
-          { "Metadata Key": "chunkIndex", "Sample Value": "3", "Grounding Purpose": "Deterministic chunk sequence" }
+        "columns": [
+          "Metadata Key",
+          "Sample Value",
+          "Grounding Purpose"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Provenance tracking allows users to verify whether facts are real.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "docId",
+                  "Sample Value": "sla-spec-2024",
+                  "Grounding Purpose": "Canonical document identifier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "title",
+                  "Sample Value": "Cluster SLA Specifications",
+                  "Grounding Purpose": "Human-readable source title"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "page",
+                  "Sample Value": "14",
+                  "Grounding Purpose": "Exact page number for audit"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "chunkIndex",
+                  "Sample Value": "3",
+                  "Grounding Purpose": "Deterministic chunk sequence"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Provenance chunks capture document ID, title, page, and chunk index.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "docId",
+                  "Sample Value": "sla-spec-2024",
+                  "Grounding Purpose": "Canonical document identifier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "title",
+                  "Sample Value": "Cluster SLA Specifications",
+                  "Grounding Purpose": "Human-readable source title"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "page",
+                  "Sample Value": "14",
+                  "Grounding Purpose": "Exact page number for audit"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "chunkIndex",
+                  "Sample Value": "3",
+                  "Grounding Purpose": "Deterministic chunk sequence"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Structured formats allow models to cite specific pages and titles.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Metadata Key": "docId",
+                  "Sample Value": "sla-spec-2024",
+                  "Grounding Purpose": "Canonical document identifier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "title",
+                  "Sample Value": "Cluster SLA Specifications",
+                  "Grounding Purpose": "Human-readable source title"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "page",
+                  "Sample Value": "14",
+                  "Grounding Purpose": "Exact page number for audit"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Metadata Key": "chunkIndex",
+                  "Sample Value": "3",
+                  "Grounding Purpose": "Deterministic chunk sequence"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -72,33 +344,67 @@
         "template": "flow",
         "title": "Numeral Citation Prompt Formatting Pipeline",
         "nodes": [
-          { "id": "sources", "label": "Retrieved Document Chunks", "tappable": false },
-          { "id": "indexing", "label": "One-Based Index Sequence", "tappable": false },
-          { "id": "tag", "label": "Bracketed Citation Tag [N]", "tappable": false },
-          { "id": "context", "label": "Structured Grounded Prompt", "tappable": false }
+          {
+            "id": "sources",
+            "label": "Retrieved Document Chunks",
+            "tappable": false
+          },
+          {
+            "id": "indexing",
+            "label": "One-Based Index Sequence",
+            "tappable": false
+          },
+          {
+            "id": "tag",
+            "label": "Bracketed Citation Tag [N]",
+            "tappable": false
+          },
+          {
+            "id": "context",
+            "label": "Structured Grounded Prompt",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "sources", "to": "indexing" },
-          { "from": "indexing", "to": "tag" },
-          { "from": "tag", "to": "context" }
+          {
+            "from": "sources",
+            "to": "indexing"
+          },
+          {
+            "from": "indexing",
+            "to": "tag"
+          },
+          {
+            "from": "tag",
+            "to": "context"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Sequential bracketed numerals guide models to cite sources accurately.",
-            "activeNodes": ["sources", "indexing"],
+            "activeNodes": [
+              "sources",
+              "indexing"
+            ],
             "statusBadge": "formatting"
           },
           {
             "at": "say5",
             "caption": "Numbering context passages sequentially simplifies citing evidence.",
-            "activeNodes": ["indexing", "tag"],
+            "activeNodes": [
+              "indexing",
+              "tag"
+            ],
             "statusBadge": "numbered"
           },
           {
             "at": "say7",
             "caption": "Predictable formatting enables programmatic verification downstream.",
-            "activeNodes": ["tag", "context"],
+            "activeNodes": [
+              "tag",
+              "context"
+            ],
             "statusBadge": "verified"
           }
         ]
@@ -107,33 +413,67 @@
         "template": "flow",
         "title": "Numeral Citation Prompt Formatting Pipeline",
         "nodes": [
-          { "id": "sources", "label": "Retrieved Document Chunks", "tappable": false },
-          { "id": "indexing", "label": "One-Based Index Sequence", "tappable": false },
-          { "id": "tag", "label": "Bracketed Citation Tag [N]", "tappable": false },
-          { "id": "context", "label": "Structured Grounded Prompt", "tappable": false }
+          {
+            "id": "sources",
+            "label": "Retrieved Document Chunks",
+            "tappable": false
+          },
+          {
+            "id": "indexing",
+            "label": "One-Based Index Sequence",
+            "tappable": false
+          },
+          {
+            "id": "tag",
+            "label": "Bracketed Citation Tag [N]",
+            "tappable": false
+          },
+          {
+            "id": "context",
+            "label": "Structured Grounded Prompt",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "sources", "to": "indexing" },
-          { "from": "indexing", "to": "tag" },
-          { "from": "tag", "to": "context" }
+          {
+            "from": "sources",
+            "to": "indexing"
+          },
+          {
+            "from": "indexing",
+            "to": "tag"
+          },
+          {
+            "from": "tag",
+            "to": "context"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Sequential bracketed numerals guide models to cite sources accurately.",
-            "activeNodes": ["sources", "indexing"],
+            "activeNodes": [
+              "sources",
+              "indexing"
+            ],
             "statusBadge": "formatting"
           },
           {
             "at": "say5",
             "caption": "Numbering context passages sequentially simplifies citing evidence.",
-            "activeNodes": ["indexing", "tag"],
+            "activeNodes": [
+              "indexing",
+              "tag"
+            ],
             "statusBadge": "numbered"
           },
           {
             "at": "say7",
             "caption": "Predictable formatting enables programmatic verification downstream.",
-            "activeNodes": ["tag", "context"],
+            "activeNodes": [
+              "tag",
+              "context"
+            ],
             "statusBadge": "verified"
           }
         ]
@@ -146,10 +486,26 @@
         "template": "workflow",
         "title": "Inline Citation Parsing Pipeline",
         "stages": [
-          { "id": "text", "name": "Model Completion", "subtext": "Raw generated response" },
-          { "id": "regex", "name": "Regex Extraction", "subtext": "Match bracketed numerals" },
-          { "id": "dedup", "name": "Set Deduplication", "subtext": "Collapse repeated references" },
-          { "id": "array", "name": "Ascending Indices", "subtext": "Sorted citation array" }
+          {
+            "id": "text",
+            "name": "Model Completion",
+            "subtext": "Raw generated response"
+          },
+          {
+            "id": "regex",
+            "name": "Regex Extraction",
+            "subtext": "Match bracketed numerals"
+          },
+          {
+            "id": "dedup",
+            "name": "Set Deduplication",
+            "subtext": "Collapse repeated references"
+          },
+          {
+            "id": "array",
+            "name": "Ascending Indices",
+            "subtext": "Sorted citation array"
+          }
         ],
         "steps": [
           {
@@ -176,10 +532,26 @@
         "template": "workflow",
         "title": "Inline Citation Parsing Pipeline",
         "stages": [
-          { "id": "text", "name": "Model Completion", "subtext": "Raw generated response" },
-          { "id": "regex", "name": "Regex Extraction", "subtext": "Match bracketed numerals" },
-          { "id": "dedup", "name": "Set Deduplication", "subtext": "Collapse repeated references" },
-          { "id": "array", "name": "Ascending Indices", "subtext": "Sorted citation array" }
+          {
+            "id": "text",
+            "name": "Model Completion",
+            "subtext": "Raw generated response"
+          },
+          {
+            "id": "regex",
+            "name": "Regex Extraction",
+            "subtext": "Match bracketed numerals"
+          },
+          {
+            "id": "dedup",
+            "name": "Set Deduplication",
+            "subtext": "Collapse repeated references"
+          },
+          {
+            "id": "array",
+            "name": "Ascending Indices",
+            "subtext": "Sorted citation array"
+          }
         ],
         "steps": [
           {
@@ -274,29 +646,53 @@
         "template": "states",
         "title": "Bibliography Footnote Assembly States",
         "states": [
-          { "id": "citations", "label": "Valid Indices Extracted" },
-          { "id": "bounds", "label": "Bounds Check Passed" },
-          { "id": "joined", "label": "Document Metadata Mapped" },
-          { "id": "rendered", "label": "Footnote Entries Built" }
+          {
+            "id": "citations",
+            "label": "Valid Indices Extracted"
+          },
+          {
+            "id": "bounds",
+            "label": "Bounds Check Passed"
+          },
+          {
+            "id": "joined",
+            "label": "Document Metadata Mapped"
+          },
+          {
+            "id": "rendered",
+            "label": "Footnote Entries Built"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Index mapping pairs cited numbers with source document collections.",
             "current": "bounds",
-            "visited": ["citations", "bounds"]
+            "visited": [
+              "citations",
+              "bounds"
+            ]
           },
           {
             "at": "say5",
             "caption": "Structured entries pair citation markers with document titles and IDs.",
             "current": "joined",
-            "visited": ["citations", "bounds", "joined"]
+            "visited": [
+              "citations",
+              "bounds",
+              "joined"
+            ]
           },
           {
             "at": "say9",
             "caption": "Compiling bibliography footnotes satisfies regulatory requirements.",
             "current": "rendered",
-            "visited": ["citations", "bounds", "joined", "rendered"]
+            "visited": [
+              "citations",
+              "bounds",
+              "joined",
+              "rendered"
+            ]
           }
         ]
       },
@@ -304,29 +700,53 @@
         "template": "states",
         "title": "Bibliography Footnote Assembly States",
         "states": [
-          { "id": "citations", "label": "Valid Indices Extracted" },
-          { "id": "bounds", "label": "Bounds Check Passed" },
-          { "id": "joined", "label": "Document Metadata Mapped" },
-          { "id": "rendered", "label": "Footnote Entries Built" }
+          {
+            "id": "citations",
+            "label": "Valid Indices Extracted"
+          },
+          {
+            "id": "bounds",
+            "label": "Bounds Check Passed"
+          },
+          {
+            "id": "joined",
+            "label": "Document Metadata Mapped"
+          },
+          {
+            "id": "rendered",
+            "label": "Footnote Entries Built"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Index mapping pairs cited numbers with source document collections.",
             "current": "bounds",
-            "visited": ["citations", "bounds"]
+            "visited": [
+              "citations",
+              "bounds"
+            ]
           },
           {
             "at": "say5",
             "caption": "Structured entries pair citation markers with document titles and IDs.",
             "current": "joined",
-            "visited": ["citations", "bounds", "joined"]
+            "visited": [
+              "citations",
+              "bounds",
+              "joined"
+            ]
           },
           {
             "at": "say9",
             "caption": "Compiling bibliography footnotes satisfies regulatory requirements.",
             "current": "rendered",
-            "visited": ["citations", "bounds", "joined", "rendered"]
+            "visited": [
+              "citations",
+              "bounds",
+              "joined",
+              "rendered"
+            ]
           }
         ]
       }

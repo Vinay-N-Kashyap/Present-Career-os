@@ -11,54 +11,262 @@
       "spec": {
         "template": "table",
         "title": "Feedback Telemetry Capture Channels",
-        "columns": ["Telemetry Channel", "Signal Type", "Grounding Purpose"],
-        "rows": [
-          { "Telemetry Channel": { "text": "Explicit Rating" }, "Signal Type": { "text": "Thumbs Up / Down" }, "Grounding Purpose": { "text": "Direct binary satisfaction verdict" } },
-          { "Telemetry Channel": { "text": "Implicit Dwell Time" }, "Signal Type": { "text": "Observation Seconds" }, "Grounding Purpose": { "text": "Engagement and reading duration" } },
-          { "Telemetry Channel": { "text": "Clipboard Action" }, "Signal Type": { "text": "Copy Event Boolean" }, "Grounding Purpose": { "text": "Utility and adoption confirmation" } }
+        "columns": [
+          "Telemetry Channel",
+          "Signal Type",
+          "Grounding Purpose"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Monitoring production captures explicit and implicit interaction telemetry.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Explicit Rating"
+                  },
+                  "Signal Type": {
+                    "text": "Thumbs Up / Down"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Direct binary satisfaction verdict"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Implicit Dwell Time"
+                  },
+                  "Signal Type": {
+                    "text": "Observation Seconds"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Engagement and reading duration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Clipboard Action"
+                  },
+                  "Signal Type": {
+                    "text": "Copy Event Boolean"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Utility and adoption confirmation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Explicit feedback includes deliberate user actions like clicking thumbs.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Explicit Rating"
+                  },
+                  "Signal Type": {
+                    "text": "Thumbs Up / Down"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Direct binary satisfaction verdict"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Implicit Dwell Time"
+                  },
+                  "Signal Type": {
+                    "text": "Observation Seconds"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Engagement and reading duration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Clipboard Action"
+                  },
+                  "Signal Type": {
+                    "text": "Copy Event Boolean"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Utility and adoption confirmation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Capturing both explicit ratings and implicit cues shows satisfaction.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Explicit Rating"
+                  },
+                  "Signal Type": {
+                    "text": "Thumbs Up / Down"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Direct binary satisfaction verdict"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Implicit Dwell Time"
+                  },
+                  "Signal Type": {
+                    "text": "Observation Seconds"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Engagement and reading duration"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": {
+                    "text": "Clipboard Action"
+                  },
+                  "Signal Type": {
+                    "text": "Copy Event Boolean"
+                  },
+                  "Grounding Purpose": {
+                    "text": "Utility and adoption confirmation"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Feedback Telemetry Capture Channels",
-        "columns": ["Telemetry Channel", "Signal Type", "Grounding Purpose"],
-        "rows": [
-          { "Telemetry Channel": "Explicit Rating", "Signal Type": "Thumbs Up / Down", "Grounding Purpose": "Direct binary satisfaction verdict" },
-          { "Telemetry Channel": "Implicit Dwell Time", "Signal Type": "Observation Seconds", "Grounding Purpose": "Engagement and reading duration" },
-          { "Telemetry Channel": "Clipboard Action", "Signal Type": "Copy Event Boolean", "Grounding Purpose": "Utility and adoption confirmation" }
+        "columns": [
+          "Telemetry Channel",
+          "Signal Type",
+          "Grounding Purpose"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Monitoring production captures explicit and implicit interaction telemetry.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": "Explicit Rating",
+                  "Signal Type": "Thumbs Up / Down",
+                  "Grounding Purpose": "Direct binary satisfaction verdict"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Implicit Dwell Time",
+                  "Signal Type": "Observation Seconds",
+                  "Grounding Purpose": "Engagement and reading duration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Clipboard Action",
+                  "Signal Type": "Copy Event Boolean",
+                  "Grounding Purpose": "Utility and adoption confirmation"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Explicit feedback includes deliberate user actions like clicking thumbs.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": "Explicit Rating",
+                  "Signal Type": "Thumbs Up / Down",
+                  "Grounding Purpose": "Direct binary satisfaction verdict"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Implicit Dwell Time",
+                  "Signal Type": "Observation Seconds",
+                  "Grounding Purpose": "Engagement and reading duration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Clipboard Action",
+                  "Signal Type": "Copy Event Boolean",
+                  "Grounding Purpose": "Utility and adoption confirmation"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Capturing both explicit ratings and implicit cues shows satisfaction.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Telemetry Channel": "Explicit Rating",
+                  "Signal Type": "Thumbs Up / Down",
+                  "Grounding Purpose": "Direct binary satisfaction verdict"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Implicit Dwell Time",
+                  "Signal Type": "Observation Seconds",
+                  "Grounding Purpose": "Engagement and reading duration"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Telemetry Channel": "Clipboard Action",
+                  "Signal Type": "Copy Event Boolean",
+                  "Grounding Purpose": "Utility and adoption confirmation"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,9 +278,21 @@
         "template": "bars",
         "title": "User Engagement and Satisfaction Rates",
         "items": [
-          { "label": "Satisfaction Rate", "value": 66.67, "tone": "ok" },
-          { "label": "Target SLA", "value": 80.0, "tone": "data" },
-          { "label": "Disapproval Rate", "value": 33.33, "tone": "error" }
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -93,9 +313,21 @@
         "template": "bars",
         "title": "User Engagement and Satisfaction Rates",
         "items": [
-          { "label": "Satisfaction Rate", "value": 66.67, "tone": "ok" },
-          { "label": "Target SLA", "value": 80.0, "tone": "data" },
-          { "label": "Disapproval Rate", "value": 33.33, "tone": "error" }
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -120,31 +352,64 @@
         "template": "flow",
         "title": "Embedding Centroid Calculation Pipeline",
         "nodes": [
-          { "id": "queries", "label": "Query Embeddings", "tappable": false },
-          { "id": "sum", "label": "Coordinate Summation", "tappable": false },
-          { "id": "average", "label": "Element-wise Division", "tappable": false },
-          { "id": "centroid", "label": "Geometric Centroid", "tappable": false }
+          {
+            "id": "queries",
+            "label": "Query Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "sum",
+            "label": "Coordinate Summation",
+            "tappable": false
+          },
+          {
+            "id": "average",
+            "label": "Element-wise Division",
+            "tappable": false
+          },
+          {
+            "id": "centroid",
+            "label": "Geometric Centroid",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "queries", "to": "sum" },
-          { "from": "sum", "to": "average" },
-          { "from": "average", "to": "centroid" }
+          {
+            "from": "queries",
+            "to": "sum"
+          },
+          {
+            "from": "sum",
+            "to": "average"
+          },
+          {
+            "from": "average",
+            "to": "centroid"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Centroids are element-wise average coordinates across sample query vectors.",
-            "activeNodes": ["queries", "sum"]
+            "activeNodes": [
+              "queries",
+              "sum"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions sum coordinates across all vectors in batches by sample size.",
-            "activeNodes": ["sum", "average"]
+            "activeNodes": [
+              "sum",
+              "average"
+            ]
           },
           {
             "at": "say7",
             "caption": "Centroids represent topical centers of gravity for user queries in windows.",
-            "activeNodes": ["centroid"]
+            "activeNodes": [
+              "centroid"
+            ]
           }
         ]
       },
@@ -152,31 +417,64 @@
         "template": "flow",
         "title": "Embedding Centroid Calculation Pipeline",
         "nodes": [
-          { "id": "queries", "label": "Query Embeddings", "tappable": false },
-          { "id": "sum", "label": "Coordinate Summation", "tappable": false },
-          { "id": "average", "label": "Element-wise Division", "tappable": false },
-          { "id": "centroid", "label": "Geometric Centroid", "tappable": false }
+          {
+            "id": "queries",
+            "label": "Query Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "sum",
+            "label": "Coordinate Summation",
+            "tappable": false
+          },
+          {
+            "id": "average",
+            "label": "Element-wise Division",
+            "tappable": false
+          },
+          {
+            "id": "centroid",
+            "label": "Geometric Centroid",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "queries", "to": "sum" },
-          { "from": "sum", "to": "average" },
-          { "from": "average", "to": "centroid" }
+          {
+            "from": "queries",
+            "to": "sum"
+          },
+          {
+            "from": "sum",
+            "to": "average"
+          },
+          {
+            "from": "average",
+            "to": "centroid"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Centroids are element-wise average coordinates across sample query vectors.",
-            "activeNodes": ["queries", "sum"]
+            "activeNodes": [
+              "queries",
+              "sum"
+            ]
           },
           {
             "at": "say5",
             "caption": "Functions sum coordinates across all vectors in batches by sample size.",
-            "activeNodes": ["sum", "average"]
+            "activeNodes": [
+              "sum",
+              "average"
+            ]
           },
           {
             "at": "say7",
             "caption": "Centroids represent topical centers of gravity for user queries in windows.",
-            "activeNodes": ["centroid"]
+            "activeNodes": [
+              "centroid"
+            ]
           }
         ]
       }
@@ -258,29 +556,52 @@
         "template": "states",
         "title": "Semantic Drift Alert Audit States",
         "states": [
-          { "id": "eval", "label": "Distance Calculation" },
-          { "id": "threshold", "label": "Threshold Comparison" },
-          { "id": "stable", "label": "Stable Distribution" },
-          { "id": "alert", "label": "Drift Alert Triggered" }
+          {
+            "id": "eval",
+            "label": "Distance Calculation"
+          },
+          {
+            "id": "threshold",
+            "label": "Threshold Comparison"
+          },
+          {
+            "id": "stable",
+            "label": "Stable Distribution"
+          },
+          {
+            "id": "alert",
+            "label": "Drift Alert Triggered"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Auditing functions compare centroid distance against empirical drift limits.",
             "current": "eval",
-            "visited": ["eval"]
+            "visited": [
+              "eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "Distance checks exceeding limits instantly fire drift alert status.",
             "current": "alert",
-            "visited": ["eval", "threshold", "alert"]
+            "visited": [
+              "eval",
+              "threshold",
+              "alert"
+            ]
           },
           {
             "at": "say7",
             "caption": "Drift alerts signal retrieval documents and prompt examples must be updated.",
             "current": "stable",
-            "visited": ["eval", "threshold", "alert", "stable"]
+            "visited": [
+              "eval",
+              "threshold",
+              "alert",
+              "stable"
+            ]
           }
         ]
       },
@@ -288,29 +609,52 @@
         "template": "states",
         "title": "Semantic Drift Alert Audit States",
         "states": [
-          { "id": "eval", "label": "Distance Calculation" },
-          { "id": "threshold", "label": "Threshold Comparison" },
-          { "id": "stable", "label": "Stable Distribution" },
-          { "id": "alert", "label": "Drift Alert Triggered" }
+          {
+            "id": "eval",
+            "label": "Distance Calculation"
+          },
+          {
+            "id": "threshold",
+            "label": "Threshold Comparison"
+          },
+          {
+            "id": "stable",
+            "label": "Stable Distribution"
+          },
+          {
+            "id": "alert",
+            "label": "Drift Alert Triggered"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Auditing functions compare centroid distance against empirical drift limits.",
             "current": "eval",
-            "visited": ["eval"]
+            "visited": [
+              "eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "Distance checks exceeding limits instantly fire drift alert status.",
             "current": "alert",
-            "visited": ["eval", "threshold", "alert"]
+            "visited": [
+              "eval",
+              "threshold",
+              "alert"
+            ]
           },
           {
             "at": "say7",
             "caption": "Drift alerts signal retrieval documents and prompt examples must be updated.",
             "current": "stable",
-            "visited": ["eval", "threshold", "alert", "stable"]
+            "visited": [
+              "eval",
+              "threshold",
+              "alert",
+              "stable"
+            ]
           }
         ]
       }

@@ -12,33 +12,66 @@
         "template": "flow",
         "title": "User Traffic to Token Throughput Demand Flow",
         "nodes": [
-          { "id": "pcu", "label": "Peak Concurrent Users (100)", "tappable": false },
-          { "id": "freq", "label": "Query Frequency (2/min)", "tappable": false },
-          { "id": "tokens", "label": "Tokens per Query (300)", "tappable": false },
-          { "id": "demand", "label": "Aggregate Demand (1,000 tok/s)", "tappable": false }
+          {
+            "id": "pcu",
+            "label": "Peak Concurrent Users (100)",
+            "tappable": false
+          },
+          {
+            "id": "freq",
+            "label": "Query Frequency (2/min)",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Tokens per Query (300)",
+            "tappable": false
+          },
+          {
+            "id": "demand",
+            "label": "Aggregate Demand (1,000 tok/s)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "pcu", "to": "freq" },
-          { "from": "freq", "to": "tokens" },
-          { "from": "tokens", "to": "demand" }
+          {
+            "from": "pcu",
+            "to": "freq"
+          },
+          {
+            "from": "freq",
+            "to": "tokens"
+          },
+          {
+            "from": "tokens",
+            "to": "demand"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Peak Concurrent Users models active users querying simultaneously.",
-            "activeNodes": ["pcu"],
+            "activeNodes": [
+              "pcu"
+            ],
             "statusBadge": "modeling"
           },
           {
             "at": "say4",
             "caption": "Multiplying concurrent users by query frequency yields token demand.",
-            "activeNodes": ["pcu", "freq", "tokens"],
+            "activeNodes": [
+              "pcu",
+              "freq",
+              "tokens"
+            ],
             "statusBadge": "multiplying"
           },
           {
             "at": "say7",
             "caption": "Inference clusters must deliver aggregate token throughput continuously.",
-            "activeNodes": ["demand"],
+            "activeNodes": [
+              "demand"
+            ],
             "statusBadge": "continuous"
           }
         ]
@@ -47,33 +80,66 @@
         "template": "flow",
         "title": "User Traffic to Token Throughput Demand Flow",
         "nodes": [
-          { "id": "pcu", "label": "Peak Concurrent Users (100)", "tappable": false },
-          { "id": "freq", "label": "Query Frequency (2/min)", "tappable": false },
-          { "id": "tokens", "label": "Tokens per Query (300)", "tappable": false },
-          { "id": "demand", "label": "Aggregate Demand (1,000 tok/s)", "tappable": false }
+          {
+            "id": "pcu",
+            "label": "Peak Concurrent Users (100)",
+            "tappable": false
+          },
+          {
+            "id": "freq",
+            "label": "Query Frequency (2/min)",
+            "tappable": false
+          },
+          {
+            "id": "tokens",
+            "label": "Tokens per Query (300)",
+            "tappable": false
+          },
+          {
+            "id": "demand",
+            "label": "Aggregate Demand (1,000 tok/s)",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "pcu", "to": "freq" },
-          { "from": "freq", "to": "tokens" },
-          { "from": "tokens", "to": "demand" }
+          {
+            "from": "pcu",
+            "to": "freq"
+          },
+          {
+            "from": "freq",
+            "to": "tokens"
+          },
+          {
+            "from": "tokens",
+            "to": "demand"
+          }
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Peak Concurrent Users models active users querying simultaneously.",
-            "activeNodes": ["pcu"],
+            "activeNodes": [
+              "pcu"
+            ],
             "statusBadge": "modeling"
           },
           {
             "at": "say4",
             "caption": "Multiplying concurrent users by query frequency yields token demand.",
-            "activeNodes": ["pcu", "freq", "tokens"],
+            "activeNodes": [
+              "pcu",
+              "freq",
+              "tokens"
+            ],
             "statusBadge": "multiplying"
           },
           {
             "at": "say7",
             "caption": "Inference clusters must deliver aggregate token throughput continuously.",
-            "activeNodes": ["demand"],
+            "activeNodes": [
+              "demand"
+            ],
             "statusBadge": "continuous"
           }
         ]
@@ -86,9 +152,27 @@
         "template": "bars",
         "title": "GPU Physical VRAM Partitioning (GB)",
         "bars": [
-          { "label": "Total VRAM", "value": { "text": "24" }, "tone": "data" },
-          { "label": "Weights & CUDA", "value": { "text": "8" }, "tone": "data" },
-          { "label": "Available KV Pool", "value": { "text": "16" }, "tone": "ok" }
+          {
+            "label": "Total VRAM",
+            "value": {
+              "text": "24"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Weights & CUDA",
+            "value": {
+              "text": "8"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Available KV Pool",
+            "value": {
+              "text": "16"
+            },
+            "tone": "ok"
+          }
         ],
         "steps": [
           {
@@ -112,9 +196,21 @@
         "template": "bars",
         "title": "GPU Physical VRAM Partitioning (GB)",
         "bars": [
-          { "label": "Total VRAM", "value": 24, "tone": "data" },
-          { "label": "Weights & CUDA", "value": 8, "tone": "data" },
-          { "label": "Available KV Pool", "value": 16, "tone": "ok" }
+          {
+            "label": "Total VRAM",
+            "value": 24,
+            "tone": "data"
+          },
+          {
+            "label": "Weights & CUDA",
+            "value": 8,
+            "tone": "data"
+          },
+          {
+            "label": "Available KV Pool",
+            "value": 16,
+            "tone": "ok"
+          }
         ],
         "steps": [
           {
@@ -205,54 +301,262 @@
       "spec": {
         "template": "table",
         "title": "GPU Replica Capacity Sizing Matrix",
-        "columns": ["Cluster Metric", "Raw Baseline", "Budgeted (+25% Headroom)"],
-        "rows": [
-          { "Cluster Metric": { "text": "Aggregate Demand" }, "Raw Baseline": { "text": "2,000 tok/s" }, "Budgeted (+25% Headroom)": { "text": "2,000 tok/s" } },
-          { "Cluster Metric": { "text": "Single Node Output" }, "Raw Baseline": { "text": "500 tok/s" }, "Budgeted (+25% Headroom)": { "text": "500 tok/s" } },
-          { "Cluster Metric": { "text": "Required GPU Replicas" }, "Raw Baseline": { "text": "4 GPUs (100% load)" }, "Budgeted (+25% Headroom)": { "text": "5 GPUs (Safety buffer)" } }
+        "columns": [
+          "Cluster Metric",
+          "Raw Baseline",
+          "Budgeted (+25% Headroom)"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Dividing demand by node throughput yields raw minimum GPU replicas needed.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Aggregate Demand"
+                  },
+                  "Raw Baseline": {
+                    "text": "2,000 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "2,000 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Single Node Output"
+                  },
+                  "Raw Baseline": {
+                    "text": "500 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "500 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Required GPU Replicas"
+                  },
+                  "Raw Baseline": {
+                    "text": "4 GPUs (100% load)"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "5 GPUs (Safety buffer)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Production clusters maintain an operational headroom safety buffer.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Aggregate Demand"
+                  },
+                  "Raw Baseline": {
+                    "text": "2,000 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "2,000 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Single Node Output"
+                  },
+                  "Raw Baseline": {
+                    "text": "500 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "500 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Required GPU Replicas"
+                  },
+                  "Raw Baseline": {
+                    "text": "4 GPUs (100% load)"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "5 GPUs (Safety buffer)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Applying safety margins increases budgeted replica counts for stability.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Aggregate Demand"
+                  },
+                  "Raw Baseline": {
+                    "text": "2,000 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "2,000 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Single Node Output"
+                  },
+                  "Raw Baseline": {
+                    "text": "500 tok/s"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "500 tok/s"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": {
+                    "text": "Required GPU Replicas"
+                  },
+                  "Raw Baseline": {
+                    "text": "4 GPUs (100% load)"
+                  },
+                  "Budgeted (+25% Headroom)": {
+                    "text": "5 GPUs (Safety buffer)"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "GPU Replica Capacity Sizing Matrix",
-        "columns": ["Cluster Metric", "Raw Baseline", "Budgeted (+25% Headroom)"],
-        "rows": [
-          { "Cluster Metric": "Aggregate Demand", "Raw Baseline": "2,000 tok/s", "Budgeted (+25% Headroom)": "2,000 tok/s" },
-          { "Cluster Metric": "Single Node Output", "Raw Baseline": "500 tok/s", "Budgeted (+25% Headroom)": "500 tok/s" },
-          { "Cluster Metric": "Required GPU Replicas", "Raw Baseline": "4 GPUs (100% load)", "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)" }
+        "columns": [
+          "Cluster Metric",
+          "Raw Baseline",
+          "Budgeted (+25% Headroom)"
         ],
         "steps": [
           {
             "at": "say2",
             "caption": "Dividing demand by node throughput yields raw minimum GPU replicas needed.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": "Aggregate Demand",
+                  "Raw Baseline": "2,000 tok/s",
+                  "Budgeted (+25% Headroom)": "2,000 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Single Node Output",
+                  "Raw Baseline": "500 tok/s",
+                  "Budgeted (+25% Headroom)": "500 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Required GPU Replicas",
+                  "Raw Baseline": "4 GPUs (100% load)",
+                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Production clusters maintain an operational headroom safety buffer.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": "Aggregate Demand",
+                  "Raw Baseline": "2,000 tok/s",
+                  "Budgeted (+25% Headroom)": "2,000 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Single Node Output",
+                  "Raw Baseline": "500 tok/s",
+                  "Budgeted (+25% Headroom)": "500 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Required GPU Replicas",
+                  "Raw Baseline": "4 GPUs (100% load)",
+                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Applying safety margins increases budgeted replica counts for stability.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Cluster Metric": "Aggregate Demand",
+                  "Raw Baseline": "2,000 tok/s",
+                  "Budgeted (+25% Headroom)": "2,000 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Single Node Output",
+                  "Raw Baseline": "500 tok/s",
+                  "Budgeted (+25% Headroom)": "500 tok/s"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Cluster Metric": "Required GPU Replicas",
+                  "Raw Baseline": "4 GPUs (100% load)",
+                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -264,29 +568,50 @@
         "template": "states",
         "title": "Horizontal Pod Autoscaler Lifecycle States",
         "states": [
-          { "id": "maintain", "label": "MAINTAIN (Normal Load)" },
-          { "id": "scale_up", "label": "SCALE_UP (Surge Detected)" },
-          { "id": "scale_down", "label": "SCALE_DOWN (Idle Lull)" },
-          { "id": "cooldown", "label": "Cooldown Window (5 Min)" }
+          {
+            "id": "maintain",
+            "label": "MAINTAIN (Normal Load)"
+          },
+          {
+            "id": "scale_up",
+            "label": "SCALE_UP (Surge Detected)"
+          },
+          {
+            "id": "scale_down",
+            "label": "SCALE_DOWN (Idle Lull)"
+          },
+          {
+            "id": "cooldown",
+            "label": "Cooldown Window (5 Min)"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Autoscaling signals monitor batch memory utilization and queue wait times.",
             "current": "maintain",
-            "visited": ["maintain"]
+            "visited": [
+              "maintain"
+            ]
           },
           {
             "at": "say5",
             "caption": "Exceeding utilization thresholds triggers immediate scale up actions.",
             "current": "scale_up",
-            "visited": ["maintain", "scale_up"]
+            "visited": [
+              "maintain",
+              "scale_up"
+            ]
           },
           {
             "at": "say7",
             "caption": "Autoscalers enforce cooldown stabilization windows preventing flapping.",
             "current": "cooldown",
-            "visited": ["maintain", "scale_up", "cooldown"]
+            "visited": [
+              "maintain",
+              "scale_up",
+              "cooldown"
+            ]
           }
         ]
       },
@@ -294,29 +619,50 @@
         "template": "states",
         "title": "Horizontal Pod Autoscaler Lifecycle States",
         "states": [
-          { "id": "maintain", "label": "MAINTAIN (Normal Load)" },
-          { "id": "scale_up", "label": "SCALE_UP (Surge Detected)" },
-          { "id": "scale_down", "label": "SCALE_DOWN (Idle Lull)" },
-          { "id": "cooldown", "label": "Cooldown Window (5 Min)" }
+          {
+            "id": "maintain",
+            "label": "MAINTAIN (Normal Load)"
+          },
+          {
+            "id": "scale_up",
+            "label": "SCALE_UP (Surge Detected)"
+          },
+          {
+            "id": "scale_down",
+            "label": "SCALE_DOWN (Idle Lull)"
+          },
+          {
+            "id": "cooldown",
+            "label": "Cooldown Window (5 Min)"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Autoscaling signals monitor batch memory utilization and queue wait times.",
             "current": "maintain",
-            "visited": ["maintain"]
+            "visited": [
+              "maintain"
+            ]
           },
           {
             "at": "say5",
             "caption": "Exceeding utilization thresholds triggers immediate scale up actions.",
             "current": "scale_up",
-            "visited": ["maintain", "scale_up"]
+            "visited": [
+              "maintain",
+              "scale_up"
+            ]
           },
           {
             "at": "say7",
             "caption": "Autoscalers enforce cooldown stabilization windows preventing flapping.",
             "current": "cooldown",
-            "visited": ["maintain", "scale_up", "cooldown"]
+            "visited": [
+              "maintain",
+              "scale_up",
+              "cooldown"
+            ]
           }
         ]
       }

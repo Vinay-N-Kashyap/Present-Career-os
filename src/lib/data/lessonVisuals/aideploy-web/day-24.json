@@ -12,31 +12,64 @@
         "template": "flow",
         "title": "DJB2 Deterministic Hashing Pipeline",
         "nodes": [
-          { "id": "user", "label": "User & Salt String", "tappable": false },
-          { "id": "hash", "label": "DJB2 Bitwise Hash", "tappable": false },
-          { "id": "mod", "label": "Modulo 100 Calc", "tappable": false },
-          { "id": "bucket", "label": "Assigned Bucket", "tappable": false }
+          {
+            "id": "user",
+            "label": "User & Salt String",
+            "tappable": false
+          },
+          {
+            "id": "hash",
+            "label": "DJB2 Bitwise Hash",
+            "tappable": false
+          },
+          {
+            "id": "mod",
+            "label": "Modulo 100 Calc",
+            "tappable": false
+          },
+          {
+            "id": "bucket",
+            "label": "Assigned Bucket",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "user", "to": "hash" },
-          { "from": "hash", "to": "mod" },
-          { "from": "mod", "to": "bucket" }
+          {
+            "from": "user",
+            "to": "hash"
+          },
+          {
+            "from": "hash",
+            "to": "mod"
+          },
+          {
+            "from": "mod",
+            "to": "bucket"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Architectures use deterministic hashing algorithms like DJB2 for routing.",
-            "activeNodes": ["user", "hash"]
+            "activeNodes": [
+              "user",
+              "hash"
+            ]
           },
           {
             "at": "say7",
             "caption": "Hashing the exact same user string twice yields identical values.",
-            "activeNodes": ["hash"]
+            "activeNodes": [
+              "hash"
+            ]
           },
           {
             "at": "say9",
             "caption": "Deterministic hashing ensures users receive the exact same prompt variant.",
-            "activeNodes": ["mod", "bucket"]
+            "activeNodes": [
+              "mod",
+              "bucket"
+            ]
           }
         ]
       },
@@ -44,31 +77,64 @@
         "template": "flow",
         "title": "DJB2 Deterministic Hashing Pipeline",
         "nodes": [
-          { "id": "user", "label": "User & Salt String", "tappable": false },
-          { "id": "hash", "label": "DJB2 Bitwise Hash", "tappable": false },
-          { "id": "mod", "label": "Modulo 100 Calc", "tappable": false },
-          { "id": "bucket", "label": "Assigned Bucket", "tappable": false }
+          {
+            "id": "user",
+            "label": "User & Salt String",
+            "tappable": false
+          },
+          {
+            "id": "hash",
+            "label": "DJB2 Bitwise Hash",
+            "tappable": false
+          },
+          {
+            "id": "mod",
+            "label": "Modulo 100 Calc",
+            "tappable": false
+          },
+          {
+            "id": "bucket",
+            "label": "Assigned Bucket",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "user", "to": "hash" },
-          { "from": "hash", "to": "mod" },
-          { "from": "mod", "to": "bucket" }
+          {
+            "from": "user",
+            "to": "hash"
+          },
+          {
+            "from": "hash",
+            "to": "mod"
+          },
+          {
+            "from": "mod",
+            "to": "bucket"
+          }
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Architectures use deterministic hashing algorithms like DJB2 for routing.",
-            "activeNodes": ["user", "hash"]
+            "activeNodes": [
+              "user",
+              "hash"
+            ]
           },
           {
             "at": "say7",
             "caption": "Hashing the exact same user string twice yields identical values.",
-            "activeNodes": ["hash"]
+            "activeNodes": [
+              "hash"
+            ]
           },
           {
             "at": "say9",
             "caption": "Deterministic hashing ensures users receive the exact same prompt variant.",
-            "activeNodes": ["mod", "bucket"]
+            "activeNodes": [
+              "mod",
+              "bucket"
+            ]
           }
         ]
       }
@@ -150,10 +216,26 @@
         "template": "workflow",
         "title": "Shadow Dark Traffic Dispatch Lifecycle",
         "stages": [
-          { "id": "ingress", "name": "Inbound Request", "subtext": "Receive live prompt" },
-          { "id": "primary", "name": "Primary Model Sync", "subtext": "Fast user response" },
-          { "id": "shadow", "name": "Shadow Model Async", "subtext": "Candidate model test" },
-          { "id": "telemetry", "name": "Audit Telemetry", "subtext": "Compare latency & tokens" }
+          {
+            "id": "ingress",
+            "name": "Inbound Request",
+            "subtext": "Receive live prompt"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Model Sync",
+            "subtext": "Fast user response"
+          },
+          {
+            "id": "shadow",
+            "name": "Shadow Model Async",
+            "subtext": "Candidate model test"
+          },
+          {
+            "id": "telemetry",
+            "name": "Audit Telemetry",
+            "subtext": "Compare latency & tokens"
+          }
         ],
         "steps": [
           {
@@ -177,10 +259,26 @@
         "template": "workflow",
         "title": "Shadow Dark Traffic Dispatch Lifecycle",
         "stages": [
-          { "id": "ingress", "name": "Inbound Request", "subtext": "Receive live prompt" },
-          { "id": "primary", "name": "Primary Model Sync", "subtext": "Fast user response" },
-          { "id": "shadow", "name": "Shadow Model Async", "subtext": "Candidate model test" },
-          { "id": "telemetry", "name": "Audit Telemetry", "subtext": "Compare latency & tokens" }
+          {
+            "id": "ingress",
+            "name": "Inbound Request",
+            "subtext": "Receive live prompt"
+          },
+          {
+            "id": "primary",
+            "name": "Primary Model Sync",
+            "subtext": "Fast user response"
+          },
+          {
+            "id": "shadow",
+            "name": "Shadow Model Async",
+            "subtext": "Candidate model test"
+          },
+          {
+            "id": "telemetry",
+            "name": "Audit Telemetry",
+            "subtext": "Compare latency & tokens"
+          }
         ],
         "steps": [
           {
@@ -208,9 +306,21 @@
         "template": "bars",
         "title": "A/B Experiment Conversion & Lift Rates",
         "items": [
-          { "label": "Control Rate", "value": 5.0, "tone": "idle" },
-          { "label": "Treatment Rate", "value": 7.5, "tone": "ok" },
-          { "label": "Relative Lift", "value": 50.0, "tone": "data" }
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -231,9 +341,21 @@
         "template": "bars",
         "title": "A/B Experiment Conversion & Lift Rates",
         "items": [
-          { "label": "Control Rate", "value": 5.0, "tone": "idle" },
-          { "label": "Treatment Rate", "value": 7.5, "tone": "ok" },
-          { "label": "Relative Lift", "value": 50.0, "tone": "data" }
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
+          }
         ],
         "steps": [
           {
@@ -258,29 +380,52 @@
         "template": "states",
         "title": "Experiment Statistical Power States",
         "states": [
-          { "id": "collect", "label": "Traffic Collection" },
-          { "id": "threshold", "label": "Sample Minima Check" },
-          { "id": "deficit", "label": "Under-Powered Deficit" },
-          { "id": "powered", "label": "Statistically Robust" }
+          {
+            "id": "collect",
+            "label": "Traffic Collection"
+          },
+          {
+            "id": "threshold",
+            "label": "Sample Minima Check"
+          },
+          {
+            "id": "deficit",
+            "label": "Under-Powered Deficit"
+          },
+          {
+            "id": "powered",
+            "label": "Statistically Robust"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Verifying cohort sample size ensures sufficient traffic volume accumulates.",
             "current": "collect",
-            "visited": ["collect"]
+            "visited": [
+              "collect"
+            ]
           },
           {
             "at": "say7",
             "caption": "Under-powered experiments must continue collecting data before decisions.",
             "current": "deficit",
-            "visited": ["collect", "threshold", "deficit"]
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit"
+            ]
           },
           {
             "at": "say11",
             "caption": "Minimum sample sizes ensure decisions are made on statistically robust data.",
             "current": "powered",
-            "visited": ["collect", "threshold", "deficit", "powered"]
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit",
+              "powered"
+            ]
           }
         ]
       },
@@ -288,29 +433,52 @@
         "template": "states",
         "title": "Experiment Statistical Power States",
         "states": [
-          { "id": "collect", "label": "Traffic Collection" },
-          { "id": "threshold", "label": "Sample Minima Check" },
-          { "id": "deficit", "label": "Under-Powered Deficit" },
-          { "id": "powered", "label": "Statistically Robust" }
+          {
+            "id": "collect",
+            "label": "Traffic Collection"
+          },
+          {
+            "id": "threshold",
+            "label": "Sample Minima Check"
+          },
+          {
+            "id": "deficit",
+            "label": "Under-Powered Deficit"
+          },
+          {
+            "id": "powered",
+            "label": "Statistically Robust"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Verifying cohort sample size ensures sufficient traffic volume accumulates.",
             "current": "collect",
-            "visited": ["collect"]
+            "visited": [
+              "collect"
+            ]
           },
           {
             "at": "say7",
             "caption": "Under-powered experiments must continue collecting data before decisions.",
             "current": "deficit",
-            "visited": ["collect", "threshold", "deficit"]
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit"
+            ]
           },
           {
             "at": "say11",
             "caption": "Minimum sample sizes ensure decisions are made on statistically robust data.",
             "current": "powered",
-            "visited": ["collect", "threshold", "deficit", "powered"]
+            "visited": [
+              "collect",
+              "threshold",
+              "deficit",
+              "powered"
+            ]
           }
         ]
       }

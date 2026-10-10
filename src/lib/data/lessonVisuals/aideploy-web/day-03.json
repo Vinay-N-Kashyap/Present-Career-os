@@ -13,10 +13,26 @@
         "title": "Byte-Pair Encoding (BPE) Iterative Subword Merge",
         "subtitle": "Compressing 7 base characters ['t','h','e',' ','c','a','t'] into 3 tokens",
         "stages": [
-          { "id": "s1", "name": "Base Chars (7)", "subtext": "['t','h','e',' ','c','a','t']" },
-          { "id": "s2", "name": "Bigram Merges", "subtext": "('t','h')->'th', ('c','a')->'ca'" },
-          { "id": "s3", "name": "Word Merges", "subtext": "('th','e')->'the', ('ca','t')->'cat'" },
-          { "id": "s4", "name": "Final Tokens (3)", "subtext": "['the', ' ', 'cat']" }
+          {
+            "id": "s1",
+            "name": "Base Chars (7)",
+            "subtext": "['t','h','e',' ','c','a','t']"
+          },
+          {
+            "id": "s2",
+            "name": "Bigram Merges",
+            "subtext": "('t','h')->'th', ('c','a')->'ca'"
+          },
+          {
+            "id": "s3",
+            "name": "Word Merges",
+            "subtext": "('th','e')->'the', ('ca','t')->'cat'"
+          },
+          {
+            "id": "s4",
+            "name": "Final Tokens (3)",
+            "subtext": "['the', ' ', 'cat']"
+          }
         ],
         "steps": [
           {
@@ -38,10 +54,26 @@
         "title": "Byte-Pair Encoding (BPE) Iterative Subword Merge",
         "subtitle": "Compressing 7 base characters ['t','h','e',' ','c','a','t'] into 3 tokens",
         "stages": [
-          { "id": "s1", "name": "Base Chars (7)", "subtext": "['t','h','e',' ','c','a','t']" },
-          { "id": "s2", "name": "Bigram Merges", "subtext": "('t','h')->'th', ('c','a')->'ca'" },
-          { "id": "s3", "name": "Word Merges", "subtext": "('th','e')->'the', ('ca','t')->'cat'" },
-          { "id": "s4", "name": "Final Tokens (3)", "subtext": "['the', ' ', 'cat']" }
+          {
+            "id": "s1",
+            "name": "Base Chars (7)",
+            "subtext": "['t','h','e',' ','c','a','t']"
+          },
+          {
+            "id": "s2",
+            "name": "Bigram Merges",
+            "subtext": "('t','h')->'th', ('c','a')->'ca'"
+          },
+          {
+            "id": "s3",
+            "name": "Word Merges",
+            "subtext": "('th','e')->'the', ('ca','t')->'cat'"
+          },
+          {
+            "id": "s4",
+            "name": "Final Tokens (3)",
+            "subtext": "['the', ' ', 'cat']"
+          }
         ],
         "steps": [
           {
@@ -66,23 +98,105 @@
         "template": "table",
         "title": "Domain Character-to-Token Heuristic Ratios (+15% Buffer)",
         "subtitle": "estimateTokenCount(text, kind) = ceil((text.length / ratio) * 1.15)",
-        "columns": ["Content Kind", "Chars / Token Ratio", "Safety Multiplier", "Sample Result"],
-        "rows": [
-          ["prose", "4.0 chars/tok", "1.15x", "66 chars -> 19 tokens"],
-          ["code", "3.0 chars/tok", "1.15x", "Higher density symbols"],
-          ["json", "2.8 chars/tok", "1.15x", "70 chars -> 29 tokens"],
-          ["multilingual", "1.8 chars/tok", "1.15x", "Multi-byte UTF-8 scripts"]
+        "columns": [
+          "Content Kind",
+          "Chars / Token Ratio",
+          "Safety Multiplier",
+          "Sample Result"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Standard English prose averages four characters per token while code uses fewer.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Applying a domain ratio with a safety buffer delivers upper-bound estimates.",
-            "highlightRows": [0, 2, 3]
+            "highlightRows": [
+              0,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -90,23 +204,105 @@
         "template": "table",
         "title": "Domain Character-to-Token Heuristic Ratios (+15% Buffer)",
         "subtitle": "estimateTokenCount(text, kind) = ceil((text.length / ratio) * 1.15)",
-        "columns": ["Content Kind", "Chars / Token Ratio", "Safety Multiplier", "Sample Result"],
-        "rows": [
-          ["prose", "4.0 chars/tok", "1.15x", "66 chars -> 19 tokens"],
-          ["code", "3.0 chars/tok", "1.15x", "Higher density symbols"],
-          ["json", "2.8 chars/tok", "1.15x", "70 chars -> 29 tokens"],
-          ["multilingual", "1.8 chars/tok", "1.15x", "Multi-byte UTF-8 scripts"]
+        "columns": [
+          "Content Kind",
+          "Chars / Token Ratio",
+          "Safety Multiplier",
+          "Sample Result"
         ],
         "steps": [
           {
             "at": "say5",
             "caption": "Standard English prose averages four characters per token while code uses fewer.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Applying a domain ratio with a safety buffer delivers upper-bound estimates.",
-            "highlightRows": [0, 2, 3]
+            "highlightRows": [
+              0,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "prose",
+                  "4.0 chars/tok",
+                  "1.15x",
+                  "66 chars -> 19 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "code",
+                  "3.0 chars/tok",
+                  "1.15x",
+                  "Higher density symbols"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "json",
+                  "2.8 chars/tok",
+                  "1.15x",
+                  "70 chars -> 29 tokens"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "multilingual",
+                  "1.8 chars/tok",
+                  "1.15x",
+                  "Multi-byte UTF-8 scripts"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -125,20 +321,52 @@
             "at": "say4",
             "caption": "Primary compartments govern system persona, few-shot examples, and history.",
             "bars": [
-              { "label": "System Prompt (800)", "value": 800, "tone": "ok" },
-              { "label": "Few-Shot Examples (1200)", "value": 1200, "tone": "data" },
-              { "label": "Conversation History (2500)", "value": 2500, "tone": "data" },
-              { "label": "User Query (450)", "value": 450, "tone": "ok" }
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Few-Shot Examples (1200)",
+                "value": 1200,
+                "tone": "data"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "User Query (450)",
+                "value": 450,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "A generous slice of the context window is reserved for completion headroom.",
             "bars": [
-              { "label": "System Prompt (800)", "value": 800, "tone": "ok" },
-              { "label": "Conversation History (2500)", "value": 2500, "tone": "data" },
-              { "label": "Reserved Output (2000)", "value": 2000, "tone": "ok" },
-              { "label": "Unallocated Margin (1242)", "value": 1242, "tone": "ok" }
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Reserved Output (2000)",
+                "value": 2000,
+                "tone": "ok"
+              },
+              {
+                "label": "Unallocated Margin (1242)",
+                "value": 1242,
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -154,20 +382,52 @@
             "at": "say4",
             "caption": "Primary compartments govern system persona, few-shot examples, and history.",
             "bars": [
-              { "label": "System Prompt (800)", "value": 800, "tone": "ok" },
-              { "label": "Few-Shot Examples (1200)", "value": 1200, "tone": "data" },
-              { "label": "Conversation History (2500)", "value": 2500, "tone": "data" },
-              { "label": "User Query (450)", "value": 450, "tone": "ok" }
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Few-Shot Examples (1200)",
+                "value": 1200,
+                "tone": "data"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "User Query (450)",
+                "value": 450,
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "A generous slice of the context window is reserved for completion headroom.",
             "bars": [
-              { "label": "System Prompt (800)", "value": 800, "tone": "ok" },
-              { "label": "Conversation History (2500)", "value": 2500, "tone": "data" },
-              { "label": "Reserved Output (2000)", "value": 2000, "tone": "ok" },
-              { "label": "Unallocated Margin (1242)", "value": 1242, "tone": "ok" }
+              {
+                "label": "System Prompt (800)",
+                "value": 800,
+                "tone": "ok"
+              },
+              {
+                "label": "Conversation History (2500)",
+                "value": 2500,
+                "tone": "data"
+              },
+              {
+                "label": "Reserved Output (2000)",
+                "value": 2000,
+                "tone": "ok"
+              },
+              {
+                "label": "Unallocated Margin (1242)",
+                "value": 1242,
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -245,27 +505,67 @@
         "title": "Reverse-Chronological Sliding History Pruner (350t Budget)",
         "subtitle": "Pinning system prompt (50t) while retaining newest turns (150t + 90t = 290t)",
         "nodes": [
-          { "id": "n1", "label": "Index 0: System (50t)", "sublabel": "Always pinned", "tappable": false },
-          { "id": "n2", "label": "Turn 4 & 3 (150t + 90t)", "sublabel": "Retained (290t <= 350t)", "tappable": false },
-          { "id": "n3", "label": "Turn 2 & 1 (120t + 80t)", "sublabel": "Pruned (exceeds 350t)", "tappable": false },
-          { "id": "n4", "label": "Pruned Array (3 msgs)", "sublabel": "[system, user, assistant]", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Index 0: System (50t)",
+            "sublabel": "Always pinned",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Turn 4 & 3 (150t + 90t)",
+            "sublabel": "Retained (290t <= 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Turn 2 & 1 (120t + 80t)",
+            "sublabel": "Pruned (exceeds 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Pruned Array (3 msgs)",
+            "sublabel": "[system, user, assistant]",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "walk backwards" },
-          { "from": "n2", "to": "n3", "label": "budget full" },
-          { "from": "n2", "to": "n4", "label": "unshift retained" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "walk backwards"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "budget full"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "unshift retained"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "The pruning algorithm preserves system instructions and traverses backwards.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say5",
             "caption": "Older dialog turns accumulate in reverse order until the token budget fills.",
-            "activeNodes": ["n1", "n2", "n3", "n4"],
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -275,27 +575,67 @@
         "title": "Reverse-Chronological Sliding History Pruner (350t Budget)",
         "subtitle": "Pinning system prompt (50t) while retaining newest turns (150t + 90t = 290t)",
         "nodes": [
-          { "id": "n1", "label": "Index 0: System (50t)", "sublabel": "Always pinned", "tappable": false },
-          { "id": "n2", "label": "Turn 4 & 3 (150t + 90t)", "sublabel": "Retained (290t <= 350t)", "tappable": false },
-          { "id": "n3", "label": "Turn 2 & 1 (120t + 80t)", "sublabel": "Pruned (exceeds 350t)", "tappable": false },
-          { "id": "n4", "label": "Pruned Array (3 msgs)", "sublabel": "[system, user, assistant]", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Index 0: System (50t)",
+            "sublabel": "Always pinned",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Turn 4 & 3 (150t + 90t)",
+            "sublabel": "Retained (290t <= 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Turn 2 & 1 (120t + 80t)",
+            "sublabel": "Pruned (exceeds 350t)",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Pruned Array (3 msgs)",
+            "sublabel": "[system, user, assistant]",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "walk backwards" },
-          { "from": "n2", "to": "n3", "label": "budget full" },
-          { "from": "n2", "to": "n4", "label": "unshift retained" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "walk backwards"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "budget full"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "unshift retained"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "The pruning algorithm preserves system instructions and traverses backwards.",
-            "activeNodes": ["n1", "n2"],
+            "activeNodes": [
+              "n1",
+              "n2"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say5",
             "caption": "Older dialog turns accumulate in reverse order until the token budget fills.",
-            "activeNodes": ["n1", "n2", "n3", "n4"],
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]

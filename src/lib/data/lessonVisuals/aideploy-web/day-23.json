@@ -82,29 +82,51 @@
         "template": "states",
         "title": "Accuracy Delta Gate Verification States",
         "states": [
-          { "id": "eval", "label": "Accuracy Evaluated" },
-          { "id": "delta", "label": "Delta Calculation" },
-          { "id": "tolerance", "label": "Within Tolerance" },
-          { "id": "exceeded", "label": "Regression Exceeded" }
+          {
+            "id": "eval",
+            "label": "Accuracy Evaluated"
+          },
+          {
+            "id": "delta",
+            "label": "Delta Calculation"
+          },
+          {
+            "id": "tolerance",
+            "label": "Within Tolerance"
+          },
+          {
+            "id": "exceeded",
+            "label": "Regression Exceeded"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Teams establish configurable tolerance budgets for allowable accuracy drops.",
             "current": "eval",
-            "visited": ["eval"]
+            "visited": [
+              "eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "Candidate scores passing within tolerance proceed through deployment gates.",
             "current": "tolerance",
-            "visited": ["eval", "delta", "tolerance"]
+            "visited": [
+              "eval",
+              "delta",
+              "tolerance"
+            ]
           },
           {
             "at": "say6",
             "caption": "When candidate drops exceed tolerance the gate fails with regression status.",
             "current": "exceeded",
-            "visited": ["eval", "delta", "exceeded"]
+            "visited": [
+              "eval",
+              "delta",
+              "exceeded"
+            ]
           }
         ]
       },
@@ -112,29 +134,51 @@
         "template": "states",
         "title": "Accuracy Delta Gate Verification States",
         "states": [
-          { "id": "eval", "label": "Accuracy Evaluated" },
-          { "id": "delta", "label": "Delta Calculation" },
-          { "id": "tolerance", "label": "Within Tolerance" },
-          { "id": "exceeded", "label": "Regression Exceeded" }
+          {
+            "id": "eval",
+            "label": "Accuracy Evaluated"
+          },
+          {
+            "id": "delta",
+            "label": "Delta Calculation"
+          },
+          {
+            "id": "tolerance",
+            "label": "Within Tolerance"
+          },
+          {
+            "id": "exceeded",
+            "label": "Regression Exceeded"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Teams establish configurable tolerance budgets for allowable accuracy drops.",
             "current": "eval",
-            "visited": ["eval"]
+            "visited": [
+              "eval"
+            ]
           },
           {
             "at": "say5",
             "caption": "Candidate scores passing within tolerance proceed through deployment gates.",
             "current": "tolerance",
-            "visited": ["eval", "delta", "tolerance"]
+            "visited": [
+              "eval",
+              "delta",
+              "tolerance"
+            ]
           },
           {
             "at": "say6",
             "caption": "When candidate drops exceed tolerance the gate fails with regression status.",
             "current": "exceeded",
-            "visited": ["eval", "delta", "exceeded"]
+            "visited": [
+              "eval",
+              "delta",
+              "exceeded"
+            ]
           }
         ]
       }
@@ -146,9 +190,21 @@
         "template": "bars",
         "title": "Latency P95 SLA Delta Comparison",
         "items": [
-          { "label": "Baseline P95", "value": 200, "tone": "idle" },
-          { "label": "Trial 1 (+15ms)", "value": 215, "tone": "ok" },
-          { "label": "Trial 2 (+60ms)", "value": 260, "tone": "error" }
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -169,9 +225,21 @@
         "template": "bars",
         "title": "Latency P95 SLA Delta Comparison",
         "items": [
-          { "label": "Baseline P95", "value": 200, "tone": "idle" },
-          { "label": "Trial 1 (+15ms)", "value": 215, "tone": "ok" },
-          { "label": "Trial 2 (+60ms)", "value": 260, "tone": "error" }
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -195,54 +263,300 @@
       "spec": {
         "template": "table",
         "title": "Token Consumption and Cost Regression Bounds",
-        "columns": ["Candidate Profile", "Avg Tokens / Query", "Cost / 1k Queries", "Gate Verdict"],
-        "rows": [
-          { "Candidate Profile": { "text": "Base Profile" }, "Avg Tokens / Query": { "text": "350 tokens" }, "Cost / 1k Queries": { "text": "$0.50" }, "Gate Verdict": { "text": "Baseline Approved" } },
-          { "Candidate Profile": { "text": "Candidate 1 (Modest)" }, "Avg Tokens / Query": { "text": "380 tokens" }, "Cost / 1k Queries": { "text": "$0.55" }, "Gate Verdict": { "text": "Within 1.25x Multiplier" } },
-          { "Candidate Profile": { "text": "Candidate 2 (Bloated)" }, "Avg Tokens / Query": { "text": "1200 tokens" }, "Cost / 1k Queries": { "text": "$1.80" }, "Gate Verdict": { "text": "Blocked Cost Surge" } }
+        "columns": [
+          "Candidate Profile",
+          "Avg Tokens / Query",
+          "Cost / 1k Queries",
+          "Gate Verdict"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Functions compare cost per thousand queries between candidate profiles.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Base Profile"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "350 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.50"
+                  },
+                  "Gate Verdict": {
+                    "text": "Baseline Approved"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 1 (Modest)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "380 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.55"
+                  },
+                  "Gate Verdict": {
+                    "text": "Within 1.25x Multiplier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 2 (Bloated)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "1200 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$1.80"
+                  },
+                  "Gate Verdict": {
+                    "text": "Blocked Cost Surge"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Candidate one stayed within multiplier limits with modest token usage.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Base Profile"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "350 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.50"
+                  },
+                  "Gate Verdict": {
+                    "text": "Baseline Approved"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 1 (Modest)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "380 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.55"
+                  },
+                  "Gate Verdict": {
+                    "text": "Within 1.25x Multiplier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 2 (Bloated)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "1200 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$1.80"
+                  },
+                  "Gate Verdict": {
+                    "text": "Blocked Cost Surge"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Gating builds on cost bounds protects operating margins from token bloat.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Base Profile"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "350 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.50"
+                  },
+                  "Gate Verdict": {
+                    "text": "Baseline Approved"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 1 (Modest)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "380 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$0.55"
+                  },
+                  "Gate Verdict": {
+                    "text": "Within 1.25x Multiplier"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": {
+                    "text": "Candidate 2 (Bloated)"
+                  },
+                  "Avg Tokens / Query": {
+                    "text": "1200 tokens"
+                  },
+                  "Cost / 1k Queries": {
+                    "text": "$1.80"
+                  },
+                  "Gate Verdict": {
+                    "text": "Blocked Cost Surge"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Token Consumption and Cost Regression Bounds",
-        "columns": ["Candidate Profile", "Avg Tokens / Query", "Cost / 1k Queries", "Gate Verdict"],
-        "rows": [
-          { "Candidate Profile": "Base Profile", "Avg Tokens / Query": "350 tokens", "Cost / 1k Queries": "$0.50", "Gate Verdict": "Baseline Approved" },
-          { "Candidate Profile": "Candidate 1 (Modest)", "Avg Tokens / Query": "380 tokens", "Cost / 1k Queries": "$0.55", "Gate Verdict": "Within 1.25x Multiplier" },
-          { "Candidate Profile": "Candidate 2 (Bloated)", "Avg Tokens / Query": "1200 tokens", "Cost / 1k Queries": "$1.80", "Gate Verdict": "Blocked Cost Surge" }
+        "columns": [
+          "Candidate Profile",
+          "Avg Tokens / Query",
+          "Cost / 1k Queries",
+          "Gate Verdict"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Functions compare cost per thousand queries between candidate profiles.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": "Base Profile",
+                  "Avg Tokens / Query": "350 tokens",
+                  "Cost / 1k Queries": "$0.50",
+                  "Gate Verdict": "Baseline Approved"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 1 (Modest)",
+                  "Avg Tokens / Query": "380 tokens",
+                  "Cost / 1k Queries": "$0.55",
+                  "Gate Verdict": "Within 1.25x Multiplier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 2 (Bloated)",
+                  "Avg Tokens / Query": "1200 tokens",
+                  "Cost / 1k Queries": "$1.80",
+                  "Gate Verdict": "Blocked Cost Surge"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Candidate one stayed within multiplier limits with modest token usage.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": "Base Profile",
+                  "Avg Tokens / Query": "350 tokens",
+                  "Cost / 1k Queries": "$0.50",
+                  "Gate Verdict": "Baseline Approved"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 1 (Modest)",
+                  "Avg Tokens / Query": "380 tokens",
+                  "Cost / 1k Queries": "$0.55",
+                  "Gate Verdict": "Within 1.25x Multiplier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 2 (Bloated)",
+                  "Avg Tokens / Query": "1200 tokens",
+                  "Cost / 1k Queries": "$1.80",
+                  "Gate Verdict": "Blocked Cost Surge"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Gating builds on cost bounds protects operating margins from token bloat.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Candidate Profile": "Base Profile",
+                  "Avg Tokens / Query": "350 tokens",
+                  "Cost / 1k Queries": "$0.50",
+                  "Gate Verdict": "Baseline Approved"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 1 (Modest)",
+                  "Avg Tokens / Query": "380 tokens",
+                  "Cost / 1k Queries": "$0.55",
+                  "Gate Verdict": "Within 1.25x Multiplier"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Candidate Profile": "Candidate 2 (Bloated)",
+                  "Avg Tokens / Query": "1200 tokens",
+                  "Cost / 1k Queries": "$1.80",
+                  "Gate Verdict": "Blocked Cost Surge"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -254,10 +568,26 @@
         "template": "workflow",
         "title": "Automated Pull Request CI Gate Pipeline",
         "stages": [
-          { "id": "ingress", "name": "PR Ingress", "subtext": "Receive pull request commit" },
-          { "id": "accuracy", "name": "Accuracy Check", "subtext": "Verify 90.0% min threshold" },
-          { "id": "latency", "name": "Latency SLA Check", "subtext": "Verify 500ms max ceiling" },
-          { "id": "decision", "name": "Merge Verdict", "subtext": "Authorize or block merge" }
+          {
+            "id": "ingress",
+            "name": "PR Ingress",
+            "subtext": "Receive pull request commit"
+          },
+          {
+            "id": "accuracy",
+            "name": "Accuracy Check",
+            "subtext": "Verify 90.0% min threshold"
+          },
+          {
+            "id": "latency",
+            "name": "Latency SLA Check",
+            "subtext": "Verify 500ms max ceiling"
+          },
+          {
+            "id": "decision",
+            "name": "Merge Verdict",
+            "subtext": "Authorize or block merge"
+          }
         ],
         "steps": [
           {
@@ -281,10 +611,26 @@
         "template": "workflow",
         "title": "Automated Pull Request CI Gate Pipeline",
         "stages": [
-          { "id": "ingress", "name": "PR Ingress", "subtext": "Receive pull request commit" },
-          { "id": "accuracy", "name": "Accuracy Check", "subtext": "Verify 90.0% min threshold" },
-          { "id": "latency", "name": "Latency SLA Check", "subtext": "Verify 500ms max ceiling" },
-          { "id": "decision", "name": "Merge Verdict", "subtext": "Authorize or block merge" }
+          {
+            "id": "ingress",
+            "name": "PR Ingress",
+            "subtext": "Receive pull request commit"
+          },
+          {
+            "id": "accuracy",
+            "name": "Accuracy Check",
+            "subtext": "Verify 90.0% min threshold"
+          },
+          {
+            "id": "latency",
+            "name": "Latency SLA Check",
+            "subtext": "Verify 500ms max ceiling"
+          },
+          {
+            "id": "decision",
+            "name": "Merge Verdict",
+            "subtext": "Authorize or block merge"
+          }
         ],
         "steps": [
           {

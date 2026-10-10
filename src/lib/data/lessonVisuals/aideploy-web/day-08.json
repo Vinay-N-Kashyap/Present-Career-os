@@ -11,54 +11,262 @@
       "spec": {
         "template": "table",
         "title": "Keyword Search vs Dense Latent Embeddings",
-        "columns": ["Dimension", "Lexical Keyword Matching", "Dense Vector Representation"],
-        "rows": [
-          { "Dimension": { "text": "Representation" }, "Lexical Keyword Matching": { "text": "Sparse vocabulary tokens" }, "Dense Vector Representation": { "text": "Continuous 768-3072 floats" } },
-          { "Dimension": { "text": "Synonyms" }, "Lexical Keyword Matching": { "text": "Exact character match only" }, "Dense Vector Representation": { "text": "Puppy and dog share cluster" } },
-          { "Dimension": { "text": "Geometry" }, "Lexical Keyword Matching": { "text": "Inverted index posting lists" }, "Dense Vector Representation": { "text": "Euclidean length in latent space" } }
+        "columns": [
+          "Dimension",
+          "Lexical Keyword Matching",
+          "Dense Vector Representation"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Dense vector embeddings capture semantic meaning rather than exact characters.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Representation"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Sparse vocabulary tokens"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Continuous 768-3072 floats"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Synonyms"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Exact character match only"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Puppy and dog share cluster"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Geometry"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Inverted index posting lists"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Euclidean length in latent space"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Different sentences occupy near identical coordinates in latent space.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Representation"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Sparse vocabulary tokens"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Continuous 768-3072 floats"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Synonyms"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Exact character match only"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Puppy and dog share cluster"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Geometry"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Inverted index posting lists"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Euclidean length in latent space"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Analyzing vectors begins by computing Euclidean magnitude using geometry.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Representation"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Sparse vocabulary tokens"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Continuous 768-3072 floats"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Synonyms"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Exact character match only"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Puppy and dog share cluster"
+                  }
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": {
+                    "text": "Geometry"
+                  },
+                  "Lexical Keyword Matching": {
+                    "text": "Inverted index posting lists"
+                  },
+                  "Dense Vector Representation": {
+                    "text": "Euclidean length in latent space"
+                  }
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
       "filled": {
         "template": "table",
         "title": "Keyword Search vs Dense Latent Embeddings",
-        "columns": ["Dimension", "Lexical Keyword Matching", "Dense Vector Representation"],
-        "rows": [
-          { "Dimension": "Representation", "Lexical Keyword Matching": "Sparse vocabulary tokens", "Dense Vector Representation": "Continuous 768-3072 floats" },
-          { "Dimension": "Synonyms", "Lexical Keyword Matching": "Exact character match only", "Dense Vector Representation": "Puppy and dog share cluster" },
-          { "Dimension": "Geometry", "Lexical Keyword Matching": "Inverted index posting lists", "Dense Vector Representation": "Euclidean length in latent space" }
+        "columns": [
+          "Dimension",
+          "Lexical Keyword Matching",
+          "Dense Vector Representation"
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Dense vector embeddings capture semantic meaning rather than exact characters.",
-            "highlightRow": 0
+            "highlightRow": 0,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": "Representation",
+                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
+                  "Dense Vector Representation": "Continuous 768-3072 floats"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Synonyms",
+                  "Lexical Keyword Matching": "Exact character match only",
+                  "Dense Vector Representation": "Puppy and dog share cluster"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Geometry",
+                  "Lexical Keyword Matching": "Inverted index posting lists",
+                  "Dense Vector Representation": "Euclidean length in latent space"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Different sentences occupy near identical coordinates in latent space.",
-            "highlightRow": 1
+            "highlightRow": 1,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": "Representation",
+                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
+                  "Dense Vector Representation": "Continuous 768-3072 floats"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Synonyms",
+                  "Lexical Keyword Matching": "Exact character match only",
+                  "Dense Vector Representation": "Puppy and dog share cluster"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Geometry",
+                  "Lexical Keyword Matching": "Inverted index posting lists",
+                  "Dense Vector Representation": "Euclidean length in latent space"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Analyzing vectors begins by computing Euclidean magnitude using geometry.",
-            "highlightRow": 2
+            "highlightRow": 2,
+            "rows": [
+              {
+                "cells": {
+                  "Dimension": "Representation",
+                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
+                  "Dense Vector Representation": "Continuous 768-3072 floats"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Synonyms",
+                  "Lexical Keyword Matching": "Exact character match only",
+                  "Dense Vector Representation": "Puppy and dog share cluster"
+                },
+                "tone": "data"
+              },
+              {
+                "cells": {
+                  "Dimension": "Geometry",
+                  "Lexical Keyword Matching": "Inverted index posting lists",
+                  "Dense Vector Representation": "Euclidean length in latent space"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -70,33 +278,67 @@
         "template": "flow",
         "title": "L2 Vector Normalization Pipeline",
         "nodes": [
-          { "id": "raw", "label": "Raw Vector [3, 4]", "tappable": false },
-          { "id": "mag", "label": "Magnitude ||v|| = 5", "tappable": false },
-          { "id": "div", "label": "Divide by Mag", "tappable": false },
-          { "id": "unit", "label": "Unit Vector [0.6, 0.8]", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Vector [3, 4]",
+            "tappable": false
+          },
+          {
+            "id": "mag",
+            "label": "Magnitude ||v|| = 5",
+            "tappable": false
+          },
+          {
+            "id": "div",
+            "label": "Divide by Mag",
+            "tappable": false
+          },
+          {
+            "id": "unit",
+            "label": "Unit Vector [0.6, 0.8]",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "mag" },
-          { "from": "mag", "to": "div" },
-          { "from": "div", "to": "unit" }
+          {
+            "from": "raw",
+            "to": "mag"
+          },
+          {
+            "from": "mag",
+            "to": "div"
+          },
+          {
+            "from": "div",
+            "to": "unit"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Vector systems normalize vectors to unit length using the L2 Euclidean norm.",
-            "activeNodes": ["raw", "mag"],
+            "activeNodes": [
+              "raw",
+              "mag"
+            ],
             "statusBadge": "unnormalized"
           },
           {
             "at": "say5",
             "caption": "Normalization divides dimension components by overall vector magnitude.",
-            "activeNodes": ["mag", "div"],
+            "activeNodes": [
+              "mag",
+              "div"
+            ],
             "statusBadge": "scaling"
           },
           {
             "at": "say7",
             "caption": "On normalized vectors cosine similarity simplifies to a pure dot product.",
-            "activeNodes": ["div", "unit"],
+            "activeNodes": [
+              "div",
+              "unit"
+            ],
             "statusBadge": "normalized"
           }
         ]
@@ -105,33 +347,67 @@
         "template": "flow",
         "title": "L2 Vector Normalization Pipeline",
         "nodes": [
-          { "id": "raw", "label": "Raw Vector [3, 4]", "tappable": false },
-          { "id": "mag", "label": "Magnitude ||v|| = 5", "tappable": false },
-          { "id": "div", "label": "Divide by Mag", "tappable": false },
-          { "id": "unit", "label": "Unit Vector [0.6, 0.8]", "tappable": false }
+          {
+            "id": "raw",
+            "label": "Raw Vector [3, 4]",
+            "tappable": false
+          },
+          {
+            "id": "mag",
+            "label": "Magnitude ||v|| = 5",
+            "tappable": false
+          },
+          {
+            "id": "div",
+            "label": "Divide by Mag",
+            "tappable": false
+          },
+          {
+            "id": "unit",
+            "label": "Unit Vector [0.6, 0.8]",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "raw", "to": "mag" },
-          { "from": "mag", "to": "div" },
-          { "from": "div", "to": "unit" }
+          {
+            "from": "raw",
+            "to": "mag"
+          },
+          {
+            "from": "mag",
+            "to": "div"
+          },
+          {
+            "from": "div",
+            "to": "unit"
+          }
         ],
         "steps": [
           {
             "at": "say3",
             "caption": "Vector systems normalize vectors to unit length using the L2 Euclidean norm.",
-            "activeNodes": ["raw", "mag"],
+            "activeNodes": [
+              "raw",
+              "mag"
+            ],
             "statusBadge": "unnormalized"
           },
           {
             "at": "say5",
             "caption": "Normalization divides dimension components by overall vector magnitude.",
-            "activeNodes": ["mag", "div"],
+            "activeNodes": [
+              "mag",
+              "div"
+            ],
             "statusBadge": "scaling"
           },
           {
             "at": "say7",
             "caption": "On normalized vectors cosine similarity simplifies to a pure dot product.",
-            "activeNodes": ["div", "unit"],
+            "activeNodes": [
+              "div",
+              "unit"
+            ],
             "statusBadge": "normalized"
           }
         ]
@@ -144,9 +420,27 @@
         "template": "bars",
         "title": "Cosine Similarity Scores vs Threshold",
         "bars": [
-          { "label": "Semantic Match", "value": { "text": "95" }, "tone": "ok" },
-          { "label": "Relevance Cutoff", "value": { "text": "85" }, "tone": "data" },
-          { "label": "Unrelated Document", "value": { "text": "0" }, "tone": "error" }
+          {
+            "label": "Semantic Match",
+            "value": {
+              "text": "95"
+            },
+            "tone": "ok"
+          },
+          {
+            "label": "Relevance Cutoff",
+            "value": {
+              "text": "85"
+            },
+            "tone": "data"
+          },
+          {
+            "label": "Unrelated Document",
+            "value": {
+              "text": "0"
+            },
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -170,9 +464,21 @@
         "template": "bars",
         "title": "Cosine Similarity Scores vs Threshold",
         "bars": [
-          { "label": "Semantic Match", "value": 95, "tone": "ok" },
-          { "label": "Relevance Cutoff", "value": 85, "tone": "data" },
-          { "label": "Unrelated Document", "value": 0, "tone": "error" }
+          {
+            "label": "Semantic Match",
+            "value": 95,
+            "tone": "ok"
+          },
+          {
+            "label": "Relevance Cutoff",
+            "value": 85,
+            "tone": "data"
+          },
+          {
+            "label": "Unrelated Document",
+            "value": 0,
+            "tone": "error"
+          }
         ],
         "steps": [
           {
@@ -264,10 +570,26 @@
         "template": "workflow",
         "title": "Top-K Nearest Neighbor Ranking Pipeline",
         "stages": [
-          { "id": "query", "name": "Query Vector", "subtext": "Embedded user question" },
-          { "id": "similarity", "name": "Similarity Scoring", "subtext": "Dot product vs corpus" },
-          { "id": "sort", "name": "Descending Sort", "subtext": "Highest relevance first" },
-          { "id": "slice", "name": "Top-K Slicing", "subtext": "Extract top K documents" }
+          {
+            "id": "query",
+            "name": "Query Vector",
+            "subtext": "Embedded user question"
+          },
+          {
+            "id": "similarity",
+            "name": "Similarity Scoring",
+            "subtext": "Dot product vs corpus"
+          },
+          {
+            "id": "sort",
+            "name": "Descending Sort",
+            "subtext": "Highest relevance first"
+          },
+          {
+            "id": "slice",
+            "name": "Top-K Slicing",
+            "subtext": "Extract top K documents"
+          }
         ],
         "steps": [
           {
@@ -294,10 +616,26 @@
         "template": "workflow",
         "title": "Top-K Nearest Neighbor Ranking Pipeline",
         "stages": [
-          { "id": "query", "name": "Query Vector", "subtext": "Embedded user question" },
-          { "id": "similarity", "name": "Similarity Scoring", "subtext": "Dot product vs corpus" },
-          { "id": "sort", "name": "Descending Sort", "subtext": "Highest relevance first" },
-          { "id": "slice", "name": "Top-K Slicing", "subtext": "Extract top K documents" }
+          {
+            "id": "query",
+            "name": "Query Vector",
+            "subtext": "Embedded user question"
+          },
+          {
+            "id": "similarity",
+            "name": "Similarity Scoring",
+            "subtext": "Dot product vs corpus"
+          },
+          {
+            "id": "sort",
+            "name": "Descending Sort",
+            "subtext": "Highest relevance first"
+          },
+          {
+            "id": "slice",
+            "name": "Top-K Slicing",
+            "subtext": "Extract top K documents"
+          }
         ],
         "steps": [
           {
