@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 16,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Multi-Turn Context Dilemma & Token Scaling",
+      "codeHash": "48236fac971fff320c16c2b57b03fa7bfc2a620b894c9171a9292544527262b5",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to conversational token scaling and memory trade-offs"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to conversational token scaling and memory trade-offs"
+      }
+    },
+    {
+      "partTitle": "ConversationBufferMemory: Raw Multi-Turn History Tracking",
+      "codeHash": "066beef59288357dbe41fbfd59a7317d0999e3892cf2efe50e1c7b4f2634954c",
+      "spec": {
+        "template": "table",
+        "title": "Conversation buffer message sequence transcript tracking",
+        "columns": [
+          "Message Role",
+          "Transcript Content",
+          "Memory Status"
+        ],
+        "rows": [
+          [
+            "system",
+            "You are an expert AI assistant.",
+            "Permanent Directive"
+          ],
+          [
+            "user",
+            "How do I optimize SQL queries?",
+            "Active Context"
+          ],
+          [
+            "assistant",
+            "Analyze query execution plans.",
+            "Active Context"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The memory buffer serializes messages into an interleaved transcript.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Raw buffer memory preserves complete conversational fidelity without distortion.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Conversation buffer message sequence transcript tracking",
+        "columns": [
+          "Message Role",
+          "Transcript Content",
+          "Memory Status"
+        ],
+        "rows": [
+          [
+            "system",
+            "You are an expert AI assistant.",
+            "Permanent Directive"
+          ],
+          [
+            "user",
+            "How do I optimize SQL queries?",
+            "Active Context"
+          ],
+          [
+            "assistant",
+            "Analyze query execution plans.",
+            "Active Context"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The memory buffer serializes messages into an interleaved transcript.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Raw buffer memory preserves complete conversational fidelity without distortion.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ConversationBufferWindowMemory: The Sliding Window Technique",
+      "codeHash": "b546ddf71a04df3d1c1f161d0db5233a82d2a561c21c83e0f0b27b110fc79e1b",
+      "spec": {
+        "template": "compare",
+        "title": "Sliding window memory retention versus evicted turn amnesia",
+        "left": {
+          "title": "Active Window History",
+          "items": [
+            "Retains most recent exchanges",
+            "Strict bounded token ceiling",
+            "Immediate prompt context",
+            "High recency relevance"
+          ]
+        },
+        "right": {
+          "title": "Evicted Pruned Context",
+          "items": [
+            "Old turns discarded automatically",
+            "Zero token overhead",
+            "Complete factual amnesia",
+            "Permanent context loss"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A sliding window retains only the most recent interaction turns.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Older interaction context suffers from complete conversational amnesia.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Sliding window memory retention versus evicted turn amnesia",
+        "left": {
+          "title": "Active Window History",
+          "items": [
+            "Retains most recent exchanges",
+            "Strict bounded token ceiling",
+            "Immediate prompt context",
+            "High recency relevance"
+          ]
+        },
+        "right": {
+          "title": "Evicted Pruned Context",
+          "items": [
+            "Old turns discarded automatically",
+            "Zero token overhead",
+            "Complete factual amnesia",
+            "Permanent context loss"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A sliding window retains only the most recent interaction turns.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Older interaction context suffers from complete conversational amnesia.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ConversationSummaryMemory: Progressive History Condensation",
+      "codeHash": "e456c0a43722f0c01fbe31efb3b452594e510af518b6e9d7c95dcc130da1a495",
+      "spec": {
+        "template": "flow",
+        "title": "Progressive conversation summary condensation workflow",
+        "nodes": [
+          {
+            "id": "dialogue",
+            "label": "New Dialogue Exchange",
+            "tappable": false
+          },
+          {
+            "id": "summarizer",
+            "label": "LLM Condensation Prompt",
+            "tappable": false
+          },
+          {
+            "id": "summary",
+            "label": "Rolling Text Summary",
+            "tappable": false
+          },
+          {
+            "id": "context",
+            "label": "Bounded Prompt Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "dialogue",
+            "to": "summarizer",
+            "label": "Raw Dialogue Inputs"
+          },
+          {
+            "from": "summarizer",
+            "to": "summary",
+            "label": "Distilled Factual State"
+          },
+          {
+            "from": "summary",
+            "to": "context",
+            "label": "Compact Prompt Injection"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each new exchange passes to a summarization prompt.",
+            "activeNodes": [
+              "dialogue",
+              "summarizer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The compact summary stabilizes token consumption over long sessions.",
+            "activeNodes": [
+              "summary",
+              "context"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Progressive conversation summary condensation workflow",
+        "nodes": [
+          {
+            "id": "dialogue",
+            "label": "New Dialogue Exchange",
+            "tappable": false
+          },
+          {
+            "id": "summarizer",
+            "label": "LLM Condensation Prompt",
+            "tappable": false
+          },
+          {
+            "id": "summary",
+            "label": "Rolling Text Summary",
+            "tappable": false
+          },
+          {
+            "id": "context",
+            "label": "Bounded Prompt Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "dialogue",
+            "to": "summarizer",
+            "label": "Raw Dialogue Inputs"
+          },
+          {
+            "from": "summarizer",
+            "to": "summary",
+            "label": "Distilled Factual State"
+          },
+          {
+            "from": "summary",
+            "to": "context",
+            "label": "Compact Prompt Injection"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Each new exchange passes to a summarization prompt.",
+            "activeNodes": [
+              "dialogue",
+              "summarizer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The compact summary stabilizes token consumption over long sessions.",
+            "activeNodes": [
+              "summary",
+              "context"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ConversationSummaryBufferMemory: The Enterprise Hybrid Memory Pattern",
+      "codeHash": "8a256cbde180211244e7ef0250dcd39fe5991205914cbc9cda5289d773961d84",
+      "spec": {
+        "template": "boxes",
+        "title": "Enterprise hybrid conversation summary buffer memory architecture",
+        "boxes": [
+          {
+            "id": "verbatim",
+            "title": "Verbatim Window",
+            "items": [
+              "Recent dialogue turns",
+              "Exact user phrasing",
+              "Preserves nuance"
+            ]
+          },
+          {
+            "id": "flushed",
+            "title": "Flushed Messages",
+            "items": [
+              "Exceeds token budget",
+              "Triggered automatically",
+              "Sent to summarizer"
+            ]
+          },
+          {
+            "id": "summary",
+            "title": "Historical Summary",
+            "items": [
+              "Accumulated context",
+              "Condensed background",
+              "Constant token size"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "This hybrid architecture maintains verbatim dialogue alongside summary.",
+            "activeBoxId": "verbatim",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Flushed messages merge into a running historical summary.",
+            "activeBoxId": "summary",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Enterprise hybrid conversation summary buffer memory architecture",
+        "boxes": [
+          {
+            "id": "verbatim",
+            "title": "Verbatim Window",
+            "items": [
+              "Recent dialogue turns",
+              "Exact user phrasing",
+              "Preserves nuance"
+            ]
+          },
+          {
+            "id": "flushed",
+            "title": "Flushed Messages",
+            "items": [
+              "Exceeds token budget",
+              "Triggered automatically",
+              "Sent to summarizer"
+            ]
+          },
+          {
+            "id": "summary",
+            "title": "Historical Summary",
+            "items": [
+              "Accumulated context",
+              "Condensed background",
+              "Constant token size"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "This hybrid architecture maintains verbatim dialogue alongside summary.",
+            "activeBoxId": "verbatim",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Flushed messages merge into a running historical summary.",
+            "activeBoxId": "summary",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Entity Memory Store: Extracting & Retaining Persistent User Facts",
+      "codeHash": "2606b174d940d028afaaed9aff2efc9b1d50a45ac13369dd26c4ad897941e25a",
+      "spec": {
+        "template": "sequence",
+        "title": "Entity memory knowledge graph state extraction transaction",
+        "actors": [
+          {
+            "id": "user",
+            "label": "User Session"
+          },
+          {
+            "id": "agent",
+            "label": "Conversational Agent"
+          },
+          {
+            "id": "extractor",
+            "label": "Entity Extraction Engine"
+          },
+          {
+            "id": "store",
+            "label": "Key-Value Fact Store"
+          }
+        ],
+        "messages": [
+          {
+            "from": "user",
+            "to": "agent",
+            "label": "Provide User Database Fact",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "extractor",
+            "label": "Dispatch Utterance for Analysis",
+            "tone": "data"
+          },
+          {
+            "from": "extractor",
+            "to": "store",
+            "label": "Persist Primary Database Attribute",
+            "tone": "ok"
+          },
+          {
+            "from": "store",
+            "to": "agent",
+            "label": "Inject Entity State into System Prompt",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An entity extraction routine identifies critical persistent attributes.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Critical user attributes persist indefinitely across multi-turn sessions.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Entity memory knowledge graph state extraction transaction",
+        "actors": [
+          {
+            "id": "user",
+            "label": "User Session"
+          },
+          {
+            "id": "agent",
+            "label": "Conversational Agent"
+          },
+          {
+            "id": "extractor",
+            "label": "Entity Extraction Engine"
+          },
+          {
+            "id": "store",
+            "label": "Key-Value Fact Store"
+          }
+        ],
+        "messages": [
+          {
+            "from": "user",
+            "to": "agent",
+            "label": "Provide User Database Fact",
+            "tone": "data"
+          },
+          {
+            "from": "agent",
+            "to": "extractor",
+            "label": "Dispatch Utterance for Analysis",
+            "tone": "data"
+          },
+          {
+            "from": "extractor",
+            "to": "store",
+            "label": "Persist Primary Database Attribute",
+            "tone": "ok"
+          },
+          {
+            "from": "store",
+            "to": "agent",
+            "label": "Inject Entity State into System Prompt",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An entity extraction routine identifies critical persistent attributes.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Critical user attributes persist indefinitely across multi-turn sessions.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
