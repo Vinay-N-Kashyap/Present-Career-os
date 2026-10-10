@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 26,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Multimodal Shift: Beyond Plain Text Encoders",
+      "codeHash": "ab31ff3d54e9c8293118d93ad87a4b2a06afee02150e465dd73ddea3324232bf",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to multimodal token unification"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to multimodal token unification"
+      }
+    },
+    {
+      "partTitle": "Vision Transformers (ViT) & Patch Tokenization",
+      "codeHash": "78d0f9157ea787d35753f726b01bc5b0c93ec1eecb5bff487296fb3b18ffccb0",
+      "spec": {
+        "template": "flow",
+        "title": "Vision transformer patch slicing and positional encoding pipeline",
+        "nodes": [
+          {
+            "id": "rawImage",
+            "label": "Raw Input Image",
+            "tappable": false
+          },
+          {
+            "id": "patchGrid",
+            "label": "Non-Overlapping Patches",
+            "tappable": false
+          },
+          {
+            "id": "linearProj",
+            "label": "Linear Vector Projection",
+            "tappable": false
+          },
+          {
+            "id": "posEncoding",
+            "label": "Spatial Position Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "transformerBlocks",
+            "label": "Transformer Self-Attention",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawImage",
+            "to": "patchGrid",
+            "label": "Slice into Fixed Grid"
+          },
+          {
+            "from": "patchGrid",
+            "to": "linearProj",
+            "label": "Flatten Pixel Values"
+          },
+          {
+            "from": "linearProj",
+            "to": "posEncoding",
+            "label": "Add 1D Spatial Coordinates"
+          },
+          {
+            "from": "posEncoding",
+            "to": "transformerBlocks",
+            "label": "Interleave with Token Stream"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The network slices images into grids of non-overlapping square patches.",
+            "activeNodes": [
+              "rawImage",
+              "patchGrid"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Adding learnable position embeddings retains spatial geometric context.",
+            "activeNodes": [
+              "linearProj",
+              "posEncoding",
+              "transformerBlocks"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Vision transformer patch slicing and positional encoding pipeline",
+        "nodes": [
+          {
+            "id": "rawImage",
+            "label": "Raw Input Image",
+            "tappable": false
+          },
+          {
+            "id": "patchGrid",
+            "label": "Non-Overlapping Patches",
+            "tappable": false
+          },
+          {
+            "id": "linearProj",
+            "label": "Linear Vector Projection",
+            "tappable": false
+          },
+          {
+            "id": "posEncoding",
+            "label": "Spatial Position Embeddings",
+            "tappable": false
+          },
+          {
+            "id": "transformerBlocks",
+            "label": "Transformer Self-Attention",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawImage",
+            "to": "patchGrid",
+            "label": "Slice into Fixed Grid"
+          },
+          {
+            "from": "patchGrid",
+            "to": "linearProj",
+            "label": "Flatten Pixel Values"
+          },
+          {
+            "from": "linearProj",
+            "to": "posEncoding",
+            "label": "Add 1D Spatial Coordinates"
+          },
+          {
+            "from": "posEncoding",
+            "to": "transformerBlocks",
+            "label": "Interleave with Token Stream"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The network slices images into grids of non-overlapping square patches.",
+            "activeNodes": [
+              "rawImage",
+              "patchGrid"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Adding learnable position embeddings retains spatial geometric context.",
+            "activeNodes": [
+              "linearProj",
+              "posEncoding",
+              "transformerBlocks"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Contrastive Language-Image Pretraining (CLIP) & Cross-Modal Vectors",
+      "codeHash": "c811bc8626ee30f1d5e8e4a8a01438bcdba7074953649fc78c8ae26cca49a8e3",
+      "spec": {
+        "template": "compare",
+        "title": "Dual encoder cross-modal alignment into unified vector embedding space",
+        "left": {
+          "title": "Vision Encoder Branch (ViT)",
+          "items": [
+            "Encodes raw 2D pixel patches",
+            "Outputs dense visual vector",
+            "Captures scene composition",
+            "Normalizes to unit hypersphere"
+          ]
+        },
+        "right": {
+          "title": "Text Encoder Branch (Transformer)",
+          "items": [
+            "Encodes natural language tokens",
+            "Outputs dense text vector",
+            "Captures conceptual semantics",
+            "Aligns via contrastive loss"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CLIP consists of two separate neural encoders trained jointly in parallel.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The revolutionary result is cross-modal semantic retrieval across modalities.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dual encoder cross-modal alignment into unified vector embedding space",
+        "left": {
+          "title": "Vision Encoder Branch (ViT)",
+          "items": [
+            "Encodes raw 2D pixel patches",
+            "Outputs dense visual vector",
+            "Captures scene composition",
+            "Normalizes to unit hypersphere"
+          ]
+        },
+        "right": {
+          "title": "Text Encoder Branch (Transformer)",
+          "items": [
+            "Encodes natural language tokens",
+            "Outputs dense text vector",
+            "Captures conceptual semantics",
+            "Aligns via contrastive loss"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "CLIP剪 consists of two separate neural encoders trained jointly in parallel.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The revolutionary result is cross-modal semantic retrieval across modalities.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Modal Prompt Payloads & Base64 Image Ingestion",
+      "codeHash": "5bd4226b68b84652763d0d8855f0361cba8f279a085f9ec88728dd9158bd89a2",
+      "spec": {
+        "template": "boxes",
+        "title": "Production multimodal HTTP prompt payload structure and validation",
+        "boxes": [
+          {
+            "id": "textPart",
+            "title": "Text Instruction Part",
+            "items": [
+              "type: text",
+              "User analysis question",
+              "Structured extraction schema"
+            ]
+          },
+          {
+            "id": "imagePart",
+            "title": "Image Data Payload",
+            "items": [
+              "type: image_url",
+              "Inline Base64 data string",
+              "Defensive MIME validation"
+            ]
+          },
+          {
+            "id": "detailMode",
+            "title": "Resolution Setting",
+            "items": [
+              "detail: low (fast token mode)",
+              "detail: high (tiled inspection)",
+              "Bounds token expenditure"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-modal endpoints accept structured content arrays containing parts.",
+            "activeBoxId": "textPart",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Configuring the detail parameter bounds token costs and inspection fidelity.",
+            "activeBoxId": "detailMode",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Production multimodal HTTP prompt payload structure and validation",
+        "boxes": [
+          {
+            "id": "textPart",
+            "title": "Text Instruction Part",
+            "items": [
+              "type: text",
+              "User analysis question",
+              "Structured extraction schema"
+            ]
+          },
+          {
+            "id": "imagePart",
+            "title": "Image Data Payload",
+            "items": [
+              "type: image_url",
+              "Inline Base64 data string",
+              "Defensive MIME validation"
+            ]
+          },
+          {
+            "id": "detailMode",
+            "title": "Resolution Setting",
+            "items": [
+              "detail: low (fast token mode)",
+              "detail: high (tiled inspection)",
+              "Bounds token expenditure"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-modal endpoints accept structured content arrays containing parts.",
+            "activeBoxId": "textPart",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Configuring the detail parameter bounds token costs and inspection fidelity.",
+            "activeBoxId": "detailMode",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Document Visual Question Answering (DocVQA) & Chart Parsing",
+      "codeHash": "adbbe81118702eb6eb00c178558ef10feabc040b373b0fbd7dd73cb3e823a205",
+      "spec": {
+        "template": "table",
+        "title": "Document extraction paradigm comparison between legacy OCR and modern VLMs",
+        "columns": [
+          "Document Aspect",
+          "Traditional OCR Pipeline",
+          "Modern Multimodal VLM",
+          "Enterprise Impact"
+        ],
+        "rows": [
+          [
+            "Table Geometries",
+            "Fails on borderless cells",
+            "Understands 2D alignment",
+            "Flawless Financial Extraction"
+          ],
+          [
+            "Chart Visuals",
+            "Cannot interpret graphics",
+            "Estimates bar heights",
+            "Automated Metric Analytics"
+          ],
+          [
+            "Diagram Flows",
+            "Outputs scattered words",
+            "Traces arrows and symbols",
+            "Accurate System Comprehension"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Modern vision models approach documents holistically reading text and layout.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Vision models can read bar charts estimating values from visual bar heights.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Document extraction paradigm comparison between legacy OCR and modern VLMs",
+        "columns": [
+          "Document Aspect",
+          "Traditional OCR Pipeline",
+          "Modern Multimodal VLM",
+          "Enterprise Impact"
+        ],
+        "rows": [
+          [
+            "Table Geometries",
+            "Fails on borderless cells",
+            "Understands 2D alignment",
+            "Flawless Financial Extraction"
+          ],
+          [
+            "Chart Visuals",
+            "Cannot interpret graphics",
+            "Estimates bar heights",
+            "Automated Metric Analytics"
+          ],
+          [
+            "Diagram Flows",
+            "Outputs scattered words",
+            "Traces arrows and symbols",
+            "Accurate System Comprehension"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Modern vision models approach documents holistically reading text and layout.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Vision models can read bar charts estimating values from visual bar heights.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multimodal Pipeline: Visual Chart Reasoning Engine",
+      "codeHash": "597792aba38cebddbbbbb6700d50f0ff6c930411d4156c38f2fa47cc196373d7",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end multimodal business chart reasoning pipeline transaction",
+        "actors": [
+          {
+            "id": "analyst",
+            "label": "Financial Analyst"
+          },
+          {
+            "id": "validator",
+            "label": "Payload Validator"
+          },
+          {
+            "id": "visionEngine",
+            "label": "Multimodal Vision VLM"
+          },
+          {
+            "id": "synthesizer",
+            "label": "Executive Synthesizer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "analyst",
+            "to": "validator",
+            "label": "Submit Spending Chart Image",
+            "tone": "data"
+          },
+          {
+            "from": "validator",
+            "to": "visionEngine",
+            "label": "Dispatch Validated Base64 Payload",
+            "tone": "data"
+          },
+          {
+            "from": "visionEngine",
+            "to": "synthesizer",
+            "label": "Return Extracted Quarterly Metrics",
+            "tone": "ok"
+          },
+          {
+            "from": "synthesizer",
+            "to": "analyst",
+            "label": "Deliver Executive Trend Analysis",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine accepts business charts and performs coordinated processing stages.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The engine extracts data with high fidelity and produces an executive summary.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end multimodal business chart reasoning pipeline transaction",
+        "actors": [
+          {
+            "id": "analyst",
+            "label": "Financial Analyst"
+          },
+          {
+            "id": "validator",
+            "label": "Payload Validator"
+          },
+          {
+            "id": "visionEngine",
+            "label": "Multimodal Vision VLM"
+          },
+          {
+            "id": "synthesizer",
+            "label": "Executive Synthesizer"
+          }
+        ],
+        "messages": [
+          {
+            "from": "analyst",
+            "to": "validator",
+            "label": "Submit Spending Chart Image",
+            "tone": "data"
+          },
+          {
+            "from": "validator",
+            "to": "visionEngine",
+            "label": "Dispatch Validated Base64 Payload",
+            "tone": "data"
+          },
+          {
+            "from": "visionEngine",
+            "to": "synthesizer",
+            "label": "Return Extracted Quarterly Metrics",
+            "tone": "ok"
+          },
+          {
+            "from": "synthesizer",
+            "to": "analyst",
+            "label": "Deliver Executive Trend Analysis",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine accepts business charts and performs coordinated processing stages.",
+            "activeMessageIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The engine extracts data with high fidelity and produces an executive summary.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
