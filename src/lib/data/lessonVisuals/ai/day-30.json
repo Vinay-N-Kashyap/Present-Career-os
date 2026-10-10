@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 30,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture: The 7 Pillars of Enterprise Generative AI",
+      "codeHash": "f95c561bf14fff9d54f698c3986b0eabdfe14f8b9ba6e4bcf018c3f8711efcf6",
+      "spec": {
+        "template": "boxes",
+        "title": "Seven architectural pillars of enterprise generative AI platforms",
+        "boxes": [
+          {
+            "id": "pSecurity",
+            "label": "Pillar 1: Security",
+            "detail": "PII & Injection Shields",
+            "tappable": false
+          },
+          {
+            "id": "pCache",
+            "label": "Pillar 2: Caching",
+            "detail": "L1 Exact & L2 Semantic",
+            "tappable": false
+          },
+          {
+            "id": "pRetrieval",
+            "label": "Pillar 3: Hybrid RAG",
+            "detail": "Dense + BM25 via RRF",
+            "tappable": false
+          },
+          {
+            "id": "pRerank",
+            "label": "Pillar 4: Reranking",
+            "detail": "Cross-Encoder Attention",
+            "tappable": false
+          },
+          {
+            "id": "pAgent",
+            "label": "Pillar 5: ReAct Agent",
+            "detail": "Multi-Tool Execution",
+            "tappable": false
+          },
+          {
+            "id": "pTelemetry",
+            "label": "Pillars 6-7: Telemetry",
+            "detail": "Tracing & Audit Sinks",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unifying foundational capabilities into enterprise platform architecture.",
+            "activeBoxes": [
+              "pSecurity",
+              "pCache",
+              "pRetrieval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Security guardrails shield the platform from prompt injection.",
+            "activeBoxes": [
+              "pRerank",
+              "pAgent",
+              "pTelemetry"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Seven architectural pillars of enterprise generative AI platforms",
+        "boxes": [
+          {
+            "id": "pSecurity",
+            "label": "Pillar 1: Security",
+            "detail": "PII & Injection Shields",
+            "tappable": false
+          },
+          {
+            "id": "pCache",
+            "label": "Pillar 2: Caching",
+            "detail": "L1 Exact & L2 Semantic",
+            "tappable": false
+          },
+          {
+            "id": "pRetrieval",
+            "label": "Pillar 3: Hybrid RAG",
+            "detail": "Dense + BM25 via RRF",
+            "tappable": false
+          },
+          {
+            "id": "pRerank",
+            "label": "Pillar 4: Reranking",
+            "detail": "Cross-Encoder Attention",
+            "tappable": false
+          },
+          {
+            "id": "pAgent",
+            "label": "Pillar 5: ReAct Agent",
+            "detail": "Multi-Tool Execution",
+            "tappable": false
+          },
+          {
+            "id": "pTelemetry",
+            "label": "Pillars 6-7: Telemetry",
+            "detail": "Tracing & Audit Sinks",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Unifying foundational capabilities into enterprise platform architecture.",
+            "activeBoxes": [
+              "pSecurity",
+              "pCache",
+              "pRetrieval"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Security guardrails shield the platform from prompt injection.",
+            "activeBoxes": [
+              "pRerank",
+              "pAgent",
+              "pTelemetry"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Security & Guardrails: PII Redaction & Prompt Injection Defense",
+      "codeHash": "70ce4c10ecbb48e83cc401febe0c5460af8619dd7ece3658b7e38cd67946fc2e",
+      "spec": {
+        "template": "flow",
+        "title": "Edge security and guardrail inspection flow",
+        "nodes": [
+          {
+            "id": "rawQuery",
+            "label": "Raw User Query",
+            "tappable": false
+          },
+          {
+            "id": "injectionCheck",
+            "label": "Injection Shield",
+            "tappable": false
+          },
+          {
+            "id": "piiScanner",
+            "label": "PII Sanitizer",
+            "tappable": false
+          },
+          {
+            "id": "safePrompt",
+            "label": "Sanitized Prompt",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawQuery",
+            "to": "injectionCheck",
+            "label": "Inspect Adversarial Signatures"
+          },
+          {
+            "from": "injectionCheck",
+            "to": "piiScanner",
+            "label": "Passed Security Scan"
+          },
+          {
+            "from": "piiScanner",
+            "to": "safePrompt",
+            "label": "Mask Sensitive Values"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incoming query passes strict automated inspection at the boundary.",
+            "activeNodes": [
+              "rawQuery",
+              "injectionCheck"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sanitizer scans incoming prompt replacing sensitive information with tokens.",
+            "activeNodes": [
+              "piiScanner",
+              "safePrompt"
+            ],
+            "activeEdges": [
+              "from-injectionCheck-to-piiScanner",
+              "from-piiScanner-to-safePrompt"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Edge security and guardrail inspection flow",
+        "nodes": [
+          {
+            "id": "rawQuery",
+            "label": "Raw User Query",
+            "tappable": false
+          },
+          {
+            "id": "injectionCheck",
+            "label": "Injection Shield",
+            "tappable": false
+          },
+          {
+            "id": "piiScanner",
+            "label": "PII Sanitizer",
+            "tappable": false
+          },
+          {
+            "id": "safePrompt",
+            "label": "Sanitized Prompt",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawQuery",
+            "to": "injectionCheck",
+            "label": "Inspect Adversarial Signatures"
+          },
+          {
+            "from": "injectionCheck",
+            "to": "piiScanner",
+            "label": "Passed Security Scan"
+          },
+          {
+            "from": "piiScanner",
+            "to": "safePrompt",
+            "label": "Mask Sensitive Values"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incoming query passes strict automated inspection at the boundary.",
+            "activeNodes": [
+              "rawQuery",
+              "injectionCheck"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Sanitizer scans incoming prompt replacing sensitive information with tokens.",
+            "activeNodes": [
+              "piiScanner",
+              "safePrompt"
+            ],
+            "activeEdges": [
+              "from-injectionCheck-to-piiScanner",
+              "from-piiScanner-to-safePrompt"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sub-Millisecond L1/L2 Semantic Prompt Caching Layer",
+      "codeHash": "602b915361182ccd9f116ed67fec0fe01f969dfe62558724213c3991f614fc75",
+      "spec": {
+        "template": "sequence",
+        "title": "Hierarchical two-tier prompt cache lookup cascade",
+        "actors": [
+          "API Gateway",
+          "L1 Exact Cache",
+          "L2 Semantic Cache",
+          "RAG Pipeline"
+        ],
+        "messages": [
+          {
+            "from": "API Gateway",
+            "to": "L1 Exact Cache",
+            "label": "Check Exact Hash"
+          },
+          {
+            "from": "L1 Exact Cache",
+            "to": "API Gateway",
+            "label": "L1 Cache Miss"
+          },
+          {
+            "from": "API Gateway",
+            "to": "L2 Semantic Cache",
+            "label": "Evaluate Cosine Vector"
+          },
+          {
+            "from": "L2 Semantic Cache",
+            "to": "API Gateway",
+            "label": "L2 Hit Answer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Exact cache normalizes prompt text for instant retrieval.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Query falls through to semantic cache calculating cosine similarity.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Hierarchical two-tier prompt cache lookup cascade",
+        "actors": [
+          "API Gateway",
+          "L1 Exact Cache",
+          "L2 Semantic Cache",
+          "RAG Pipeline"
+        ],
+        "messages": [
+          {
+            "from": "API Gateway",
+            "to": "L1 Exact Cache",
+            "label": "Check Exact Hash"
+          },
+          {
+            "from": "L1 Exact Cache",
+            "to": "API Gateway",
+            "label": "L1 Cache Miss"
+          },
+          {
+            "from": "API Gateway",
+            "to": "L2 Semantic Cache",
+            "label": "Evaluate Cosine Vector"
+          },
+          {
+            "from": "L2 Semantic Cache",
+            "to": "API Gateway",
+            "label": "L2 Hit Answer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Exact cache normalizes prompt text for instant retrieval.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Query falls through to semantic cache calculating cosine similarity.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Retrieval Engine: Reciprocal Rank Fusion & Cross-Encoder Reranking",
+      "codeHash": "eb35cd77d8016fa59c7157990c09a1e9ab200f1892eaaa26954cf36682e9646c",
+      "spec": {
+        "template": "compare",
+        "title": "Reciprocal rank fusion versus cross-encoder reranking",
+        "leftLabel": "Rank Fusion (RRF)",
+        "rightLabel": "Cross-Encoder Reranker",
+        "leftItems": [
+          "Fuses BM25 and vector candidate rankings",
+          "Balances lexical precision and semantics",
+          "Scalable rank scoring formula",
+          "Outputs top candidate pool"
+        ],
+        "rightItems": [
+          "Full cross-attention query passage scoring",
+          "Deep contextual semantic verification",
+          "Re-orders top candidates by true relevance",
+          "Isolates winning passage for synthesis"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Candidate lists are merged using reciprocal rank fusion.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Cross encoder performs full attention generating relevance score.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Reciprocal rank fusion versus cross-encoder reranking",
+        "leftLabel": "Rank Fusion (RRF)",
+        "rightLabel": "Cross-Encoder Reranker",
+        "leftItems": [
+          "Fuses BM25 and vector candidate rankings",
+          "Balances lexical precision and semantics",
+          "Scalable rank scoring formula",
+          "Outputs top candidate pool"
+        ],
+        "rightItems": [
+          "Full cross-attention query passage scoring",
+          "Deep contextual semantic verification",
+          "Re-orders top candidates by true relevance",
+          "Isolates winning passage for synthesis"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Candidate lists are merged using reciprocal rank fusion.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Cross encoder performs full attention generating relevance score.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous ReAct Agent & Multi-Tool Execution Loop",
+      "codeHash": "3a51e7678bea598037069efb5f3d937591999e5ccf3de45c177d169668e721e7",
+      "spec": {
+        "template": "table",
+        "title": "Autonomous ReAct reasoning and tool invocation stages",
+        "columns": [
+          "Reasoning Phase",
+          "Agent State",
+          "Executed Action",
+          "Grounded Fact"
+        ],
+        "rows": [
+          [
+            "Thought Step",
+            "Active Reasoning",
+            "Inspect Context",
+            "Retrieved Policy Context"
+          ],
+          [
+            "Action Step",
+            "Tool Invocation",
+            "match_calculator",
+            "Salary Parameters Set"
+          ],
+          [
+            "Observation Step",
+            "Ingest Feedback",
+            "Parse Output",
+            "Calculated Dollar Match"
+          ],
+          [
+            "Synthesis Step",
+            "Final Answer",
+            "Formulate Output",
+            "Grounded Response Complete"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Autonomous agent operates in iterative reasoning loop.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Execution sandbox executes calculation and feeds observation back.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Autonomous ReAct reasoning and tool invocation stages",
+        "columns": [
+          "Reasoning Phase",
+          "Agent State",
+          "Executed Action",
+          "Grounded Fact"
+        ],
+        "rows": [
+          [
+            "Thought Step",
+            "Active Reasoning",
+            "Inspect Context",
+            "Retrieved Policy Context"
+          ],
+          [
+            "Action Step",
+            "Tool Invocation",
+            "match_calculator",
+            "Salary Parameters Set"
+          ],
+          [
+            "Observation Step",
+            "Ingest Feedback",
+            "Parse Output",
+            "Calculated Dollar Match"
+          ],
+          [
+            "Synthesis Step",
+            "Final Answer",
+            "Formulate Output",
+            "Grounded Response Complete"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Autonomous agent operates in iterative reasoning loop.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Execution sandbox executes calculation and feeds observation back.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Master Capstone: Complete Enterprise Agentic RAG Platform",
+      "codeHash": "1a5ca55573c843183b6bc66359da433894484563573f65bafca106c93380becc",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
