@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 1,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Production LLM API Client Architecture & Auth",
+      "codeHash": "c68c93ac4308abe4d1f4661ad83023566d2f86081513f3600cf2558fa05ae583",
+      "spec": {
+        "template": "flow",
+        "title": "ProductionAiClient Header & Endpoint Builder",
+        "subtitle": "Encapsulating Bearer token auth, organization tags, and trace correlation IDs",
+        "nodes": [
+          { "id": "n1", "label": "ClientConfig", "sublabel": "baseUrl, apiKey, orgId", "tappable": false },
+          { "id": "n2", "label": "buildHeaders()", "sublabel": "Bearer + X-Correlation-ID", "tappable": false },
+          { "id": "n3", "label": "X-Organization-ID", "sublabel": "org-enterprise-corp", "tappable": false },
+          { "id": "n4", "label": "getEndpoint()", "sublabel": "/v1/chat/completions", "tappable": false }
+        ],
+        "edges": [
+          { "from": "n1", "to": "n2", "label": "req-trace-001" },
+          { "from": "n2", "to": "n3", "label": "tenant tag" },
+          { "from": "n3", "to": "n4", "label": "dispatch" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production AI client abstracts authentication token headers and correlation IDs.",
+            "activeNodes": ["n1", "n2"],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Multi-tenant requests include organization identifiers for billing and tracing.",
+            "activeNodes": ["n2", "n3", "n4"],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ProductionAiClient Header & Endpoint Builder",
+        "subtitle": "Encapsulating Bearer token auth, organization tags, and trace correlation IDs",
+        "nodes": [
+          { "id": "n1", "label": "ClientConfig", "sublabel": "baseUrl, apiKey, orgId", "tappable": false },
+          { "id": "n2", "label": "buildHeaders()", "sublabel": "Bearer + X-Correlation-ID", "tappable": false },
+          { "id": "n3", "label": "X-Organization-ID", "sublabel": "org-enterprise-corp", "tappable": false },
+          { "id": "n4", "label": "getEndpoint()", "sublabel": "/v1/chat/completions", "tappable": false }
+        ],
+        "edges": [
+          { "from": "n1", "to": "n2", "label": "req-trace-001" },
+          { "from": "n2", "to": "n3", "label": "tenant tag" },
+          { "from": "n3", "to": "n4", "label": "dispatch" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Production AI client abstracts authentication token headers and correlation IDs.",
+            "activeNodes": ["n1", "n2"],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Multi-tenant requests include organization identifiers for billing and tracing.",
+            "activeNodes": ["n2", "n3", "n4"],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inference Hyperparameters: Temperature, Top-P & Penalty Mechanics",
+      "codeHash": "5fc71e6a9e4b83dcb48172227e12620b891820b47f793f6ea344a26249cdae52",
+      "spec": {
+        "template": "table",
+        "title": "Task-Specific Inference Sampling Profiles",
+        "subtitle": "Tuning temperature, topP, and repetition penalties by workload type",
+        "columns": ["Workload Task", "Temperature", "Top-P", "Max Tokens / Penalties"],
+        "rows": [
+          ["extraction / classification", "0.0 (Greedy)", "1.0", "500 tokens (0.0 / 0.0)"],
+          ["code generation", "0.1 (Focused)", "0.95", "2000 tokens (0.0 / 0.1)"],
+          ["creative copywriting", "0.8 (Diverse)", "0.95", "1500 tokens (0.3 / 0.3)"]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Zero temperature transforms softmax into deterministic greedy token decoding.",
+            "highlightRows": [0]
+          },
+          {
+            "at": "say8",
+            "caption": "Structured data extraction and code generation maximize fidelity to schemas.",
+            "highlightRows": [0, 1]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Task-Specific Inference Sampling Profiles",
+        "subtitle": "Tuning temperature, topP, and repetition penalties by workload type",
+        "columns": ["Workload Task", "Temperature", "Top-P", "Max Tokens / Penalties"],
+        "rows": [
+          ["extraction / classification", "0.0 (Greedy)", "1.0", "500 tokens (0.0 / 0.0)"],
+          ["code generation", "0.1 (Focused)", "0.95", "2000 tokens (0.0 / 0.1)"],
+          ["creative copywriting", "0.8 (Diverse)", "0.95", "1500 tokens (0.3 / 0.3)"]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Zero temperature transforms softmax into deterministic greedy token decoding.",
+            "highlightRows": [0]
+          },
+          {
+            "at": "say8",
+            "caption": "Structured data extraction and code generation maximize fidelity to schemas.",
+            "highlightRows": [0, 1]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Timeout Ceilings & AbortController Signal Handling",
+      "codeHash": "b9d387ccbc6ca0ce8c588a16467fa480f96a17ab0261384c583efa7d56fd2a38",
+      "spec": {
+        "template": "workflow",
+        "title": "TimeoutGovernor Signal & Timer Lifecycle",
+        "subtitle": "Enforcing strict client deadline ceilings and deterministic timer cleanup",
+        "stages": [
+          { "id": "s1", "name": "Budget Signal", "subtext": "createBudgetedSignal(50)" },
+          { "id": "s2", "name": "Deadline Timer", "subtext": "setTimeout(timeoutMs)" },
+          { "id": "s3", "name": "Abort Trigger", "subtext": "mockController.abort()" },
+          { "id": "s4", "name": "Timer Cleanup", "subtext": "clearTimeout(timerId)" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When inference exceeds its configured deadline, the timer triggers abort.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Always clear active timeout timers so event loops do not remain pinned.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "TimeoutGovernor Signal & Timer Lifecycle",
+        "subtitle": "Enforcing strict client deadline ceilings and deterministic timer cleanup",
+        "stages": [
+          { "id": "s1", "name": "Budget Signal", "subtext": "createBudgetedSignal(50)" },
+          { "id": "s2", "name": "Deadline Timer", "subtext": "setTimeout(timeoutMs)" },
+          { "id": "s3", "name": "Abort Trigger", "subtext": "mockController.abort()" },
+          { "id": "s4", "name": "Timer Cleanup", "subtext": "clearTimeout(timerId)" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When inference exceeds its configured deadline, the timer triggers abort.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Always clear active timeout timers so event loops do not remain pinned.",
+            "activeStageId": "s4",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transient Failure Classification: 429s, 500s & 503s",
+      "codeHash": "466af446003dc8ce7b3ae7444125f919813c68e3452b332dc3b84c95d46ac6db",
+      "spec": {
+        "template": "compare",
+        "title": "Permanent 4xx Errors vs Transient 429/5xx Failures",
+        "leftLabel": "Permanent Failures (Fail Fast)",
+        "rightLabel": "Transient Failures (Retryable)",
+        "leftItems": [
+          "401 / 403 -> AUTH_ERROR (shouldRetry: false)",
+          "400 / 404 / 422 -> BAD_REQUEST",
+          "Immediate abort saves quota and sockets",
+          "Requires credential or payload fix"
+        ],
+        "rightItems": [
+          "429 -> RATE_LIMIT (honors Retry-After: 3s)",
+          "500..599 -> SERVER_ERROR (503 Unavailable)",
+          "isTransient: true, shouldRetry: true",
+          "Recovers via jittered exponential backoff"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Client errors like Unauthorized represent permanent auth or code failures.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Internal Server Error and Service Unavailable are classic transient errors.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Permanent 4xx Errors vs Transient 429/5xx Failures",
+        "leftLabel": "Permanent Failures (Fail Fast)",
+        "rightLabel": "Transient Failures (Retryable)",
+        "leftItems": [
+          "401 / 403 -> AUTH_ERROR (shouldRetry: false)",
+          "400 / 404 / 422 -> BAD_REQUEST",
+          "Immediate abort saves quota and sockets",
+          "Requires credential or payload fix"
+        ],
+        "rightItems": [
+          "429 -> RATE_LIMIT (honors Retry-After: 3s)",
+          "500..599 -> SERVER_ERROR (503 Unavailable)",
+          "isTransient: true, shouldRetry: true",
+          "Recovers via jittered exponential backoff"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Client errors like Unauthorized represent permanent auth or code failures.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Internal Server Error and Service Unavailable are classic transient errors.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential Backoff with Decorrelated Full Jitter",
+      "codeHash": "3b538d3ac5e3fa74160c3a79c0d175d7ec537da3620ddded6be405562ebe3045",
+      "spec": {
+        "template": "bars",
+        "title": "Jittered Backoff Schedule (base = 100ms, cap = 3200ms)",
+        "subtitle": "calculateJitteredBackoff with ratio 0.75 across attempts 0, 1, 2, 3, and 6",
+        "unit": "ms",
+        "max": 3200,
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff doubles delay after each attempt up to ceiling clamp.",
+            "bars": [
+              { "label": "Attempt 0 (100ms)", "value": 100, "tone": "ok" },
+              { "label": "Attempt 1 (150ms)", "value": 150, "tone": "ok" },
+              { "label": "Attempt 2 (300ms)", "value": 300, "tone": "data" },
+              { "label": "Attempt 3 (600ms)", "value": 600, "tone": "data" }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Full jitter scales the capped exponential backoff ceiling across time.",
+            "bars": [
+              { "label": "Attempt 2 Jittered", "value": 300, "tone": "ok" },
+              { "label": "Attempt 3 Jittered", "value": 600, "tone": "ok" },
+              { "label": "Attempt 6 Jittered (2400ms)", "value": 2400, "tone": "data" },
+              { "label": "Max Ceiling Clamp (3200ms)", "value": 3200, "tone": "error" }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Jittered Backoff Schedule (base = 100ms, cap = 3200ms)",
+        "subtitle": "calculateJitteredBackoff with ratio 0.75 across attempts 0, 1, 2, 3, and 6",
+        "unit": "ms",
+        "max": 3200,
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff doubles delay after each attempt up to ceiling clamp.",
+            "bars": [
+              { "label": "Attempt 0 (100ms)", "value": 100, "tone": "ok" },
+              { "label": "Attempt 1 (150ms)", "value": 150, "tone": "ok" },
+              { "label": "Attempt 2 (300ms)", "value": 300, "tone": "data" },
+              { "label": "Attempt 3 (600ms)", "value": 600, "tone": "data" }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Full jitter scales the capped exponential backoff ceiling across time.",
+            "bars": [
+              { "label": "Attempt 2 Jittered", "value": 300, "tone": "ok" },
+              { "label": "Attempt 3 Jittered", "value": 600, "tone": "ok" },
+              { "label": "Attempt 6 Jittered (2400ms)", "value": 2400, "tone": "data" },
+              { "label": "Max Ceiling Clamp (3200ms)", "value": 3200, "tone": "error" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Resilient Inference Dispatcher",
+      "codeHash": "3b39fb0dded5069307bd2d2ae496c08f349aa7b5cd53fa4f78b025a9d56f00ed",
+      "spec": {
+        "template": "none",
+        "reason": "Capstone synthesis combining retry loops, transient status classification, and backoff delays"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Capstone synthesis combining retry loops, transient status classification, and backoff delays"
+      }
+    }
+  ]
+}
