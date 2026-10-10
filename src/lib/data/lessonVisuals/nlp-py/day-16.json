@@ -309,7 +309,7 @@
                     "text": "lost"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -337,7 +337,7 @@
                     "text": "lost"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -376,7 +376,7 @@
                     "text": "lost"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -441,7 +441,7 @@
                   "sentence",
                   "lost"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -461,7 +461,7 @@
                   "sentence",
                   "lost"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -488,7 +488,7 @@
                   "sentence",
                   "lost"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

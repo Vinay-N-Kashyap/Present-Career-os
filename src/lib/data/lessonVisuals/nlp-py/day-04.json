@@ -650,7 +650,7 @@
                     "text": "long"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "short",
                   "long"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -852,7 +852,7 @@
                     "text": "word"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -891,7 +891,7 @@
                     "text": "word"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -972,7 +972,7 @@
                   "cloud",
                   "word"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -999,7 +999,7 @@
                   "cloud",
                   "word"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

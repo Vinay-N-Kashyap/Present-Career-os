@@ -600,7 +600,7 @@
                     "text": "prev"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -639,7 +639,7 @@
                     "text": "prev"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -720,7 +720,7 @@
                   "first_problem",
                   "prev"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -747,7 +747,7 @@
                   "first_problem",
                   "prev"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

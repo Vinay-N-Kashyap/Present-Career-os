@@ -146,7 +146,7 @@
                     "text": "sentences"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -250,7 +250,7 @@
                   "fuel",
                   "sentences"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

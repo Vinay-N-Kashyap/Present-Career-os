@@ -146,7 +146,7 @@
                     "text": "running"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -250,7 +250,7 @@
                   "run",
                   "running"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -650,7 +650,7 @@
                     "text": "rice"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "cooking",
                   "rice"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -902,7 +902,7 @@
                     "text": "run"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -1006,7 +1006,7 @@
                   "cost",
                   "run"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

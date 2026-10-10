@@ -57,7 +57,7 @@
                     "text": "clean"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -85,7 +85,7 @@
                     "text": "clean"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -96,7 +96,7 @@
                     "text": "the"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -124,7 +124,7 @@
                     "text": "clean"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -135,7 +135,7 @@
                     "text": "the"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -189,7 +189,7 @@
                   "raw",
                   "clean"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -209,14 +209,14 @@
                   "raw",
                   "clean"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "The",
                   "the"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -236,14 +236,14 @@
                   "raw",
                   "clean"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "The",
                   "the"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -309,7 +309,7 @@
                     "text": "e"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -337,7 +337,7 @@
                     "text": "e"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -376,7 +376,7 @@
                     "text": "e"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -441,7 +441,7 @@
                   "one",
                   "e"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -461,7 +461,7 @@
                   "one",
                   "e"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -488,7 +488,7 @@
                   "one",
                   "e"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -650,7 +650,7 @@
                     "text": "word"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "text",
                   "word"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

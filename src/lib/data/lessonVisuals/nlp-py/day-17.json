@@ -348,7 +348,7 @@
                     "text": "round"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -387,7 +387,7 @@
                     "text": "round"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -468,7 +468,7 @@
                   "naive_softmax",
                   "round"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -495,7 +495,7 @@
                   "naive_softmax",
                   "round"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

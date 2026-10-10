@@ -348,7 +348,7 @@
                     "text": "boring"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -387,7 +387,7 @@
                     "text": "boring"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -468,7 +468,7 @@
                   "like",
                   "boring"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -495,7 +495,7 @@
                   "like",
                   "boring"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

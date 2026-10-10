@@ -96,7 +96,7 @@
                     "text": "other"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -135,7 +135,7 @@
                     "text": "other"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -216,7 +216,7 @@
                   "dist",
                   "other"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -243,7 +243,7 @@
                   "dist",
                   "other"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -822,7 +822,7 @@
                     "text": "automobile"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -850,7 +850,7 @@
                     "text": "automobile"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -861,7 +861,7 @@
                     "text": "quickly"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -889,7 +889,7 @@
                     "text": "automobile"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -900,7 +900,7 @@
                     "text": "quickly"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -954,7 +954,7 @@
                   "car",
                   "automobile"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -974,14 +974,14 @@
                   "car",
                   "automobile"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "fast",
                   "quickly"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -1001,14 +1001,14 @@
                   "car",
                   "automobile"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "fast",
                   "quickly"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

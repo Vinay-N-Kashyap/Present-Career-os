@@ -309,7 +309,7 @@
                     "text": "es"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -337,7 +337,7 @@
                     "text": "es"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -348,7 +348,7 @@
                     "text": "ly"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -376,7 +376,7 @@
                     "text": "es"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -387,7 +387,7 @@
                     "text": "ly"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -441,7 +441,7 @@
                   "studi",
                   "es"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -461,14 +461,14 @@
                   "studi",
                   "es"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "universal",
                   "ly"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -488,14 +488,14 @@
                   "studi",
                   "es"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "universal",
                   "ly"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -650,7 +650,7 @@
                     "text": "NOUN"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "saw",
                   "NOUN"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

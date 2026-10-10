@@ -650,7 +650,7 @@
                     "text": "cardinal"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "banana",
                   "cardinal"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

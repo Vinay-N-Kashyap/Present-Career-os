@@ -600,7 +600,7 @@
                     "text": "tanh"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -639,7 +639,7 @@
                     "text": "tanh"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -720,7 +720,7 @@
                   "math",
                   "tanh"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -747,7 +747,7 @@
                   "math",
                   "tanh"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -852,7 +852,7 @@
                     "text": "row"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -891,7 +891,7 @@
                     "text": "row"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -972,7 +972,7 @@
                   "steps",
                   "row"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -999,7 +999,7 @@
                   "steps",
                   "row"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

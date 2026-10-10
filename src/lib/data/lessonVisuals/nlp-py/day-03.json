@@ -600,7 +600,7 @@
                     "text": "possible"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -639,7 +639,7 @@
                     "text": "possible"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -720,7 +720,7 @@
                   "seen",
                   "possible"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -747,7 +747,7 @@
                   "seen",
                   "possible"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -902,7 +902,7 @@
                     "text": "V"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -1006,7 +1006,7 @@
                   "laplace",
                   "V"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
