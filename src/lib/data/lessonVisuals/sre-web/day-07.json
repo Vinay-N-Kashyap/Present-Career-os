@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 7,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Problem of Infrastructure Drift in Modern Cloud",
+      "codeHash": "fe4297095a9734a4c726ce26b7de75cb05609207549ef5661ea88f6c110fb82d",
+      "spec": {
+        "template": "compare",
+        "title": "Declared version controlled state versus live drifted cloud reality",
+        "left": {
+          "title": "Declared Git State",
+          "items": [
+            "Disciplined version-controlled code",
+            "Security group port 443 on internal CIDR",
+            "Database class db.t3.large",
+            "Single source of truth"
+          ]
+        },
+        "right": {
+          "title": "Live Cloud Reality (Drifted)",
+          "items": [
+            "Manual out-of-band console edits",
+            "Security group opened to 0.0.0.0/0",
+            "Database resized to db.m5.2xlarge",
+            "Invalidates reproducible deploys"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "All cloud infrastructure changes should pass through disciplined Git pipelines.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "When live infrastructure diverges from declared code the system enters drift.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declared version controlled state versus live drifted cloud reality",
+        "left": {
+          "title": "Declared Git State",
+          "items": [
+            "Disciplined version-controlled code",
+            "Security group port 443 on internal CIDR",
+            "Database class db.t3.large",
+            "Single source of truth"
+          ]
+        },
+        "right": {
+          "title": "Live Cloud Reality (Drifted)",
+          "items": [
+            "Manual out-of-band console edits",
+            "Security group opened to 0.0.0.0/0",
+            "Database resized to db.m5.2xlarge",
+            "Invalidates reproducible deploys"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "All cloud infrastructure changes should pass through disciplined Git pipelines.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "When live infrastructure diverges from declared code the system enters drift.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Field-by-Field Recursive Drift Detection Engine",
+      "codeHash": "7cf8c76bcb5eb62004008efeb57a0e2c8b5ec9461f1149bf4035bd10dd2055fc",
+      "spec": {
+        "template": "table",
+        "title": "Structural field by field property comparison and drift extraction",
+        "columns": [
+          "Property Path",
+          "Declared Value",
+          "Live Scanned Value",
+          "Drift Status"
+        ],
+        "rows": [
+          [
+            "sg-web.port",
+            "443",
+            "443",
+            "Clean Match"
+          ],
+          [
+            "sg-web.cidr",
+            "10.0.0.0/8",
+            "0.0.0.0/0",
+            "Drift Detected"
+          ],
+          [
+            "sg-web.protocol",
+            "tcp",
+            "tcp",
+            "Clean Match"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The SRE engine performs field by field property comparisons systematically.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When a mismatch is uncovered the engine records the path and live value.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structural field by field property comparison and drift extraction",
+        "columns": [
+          "Property Path",
+          "Declared Value",
+          "Live Scanned Value",
+          "Drift Status"
+        ],
+        "rows": [
+          [
+            "sg-web.port",
+            "443",
+            "443",
+            "Clean Match"
+          ],
+          [
+            "sg-web.cidr",
+            "10.0.0.0/8",
+            "0.0.0.0/0",
+            "Drift Detected"
+          ],
+          [
+            "sg-web.protocol",
+            "tcp",
+            "tcp",
+            "Clean Match"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The SRE engine performs field by field property comparisons systematically.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When a mismatch is uncovered the engine records the path and live value.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Drift Classification: Cosmetic, Functional & Security-Critical",
+      "codeHash": "bf9bbbbe363bad5aa76ad7e398fe3c1972cffc53243cdca8c9277c225dfb0edf",
+      "spec": {
+        "template": "bars",
+        "title": "Configuration drift counts by severity classification tier",
+        "bars": [
+          {
+            "id": "cosmetic",
+            "label": "Cosmetic Drift",
+            "value": 1
+          },
+          {
+            "id": "functional",
+            "label": "Functional Drift",
+            "value": 1
+          },
+          {
+            "id": "critical",
+            "label": "Security Critical",
+            "value": 1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An SRE platform classifies configuration drift into three severity tiers.",
+            "activeBars": [
+              "cosmetic",
+              "functional"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Security critical drift introduces severe compliance and vulnerability risks.",
+            "activeBars": [
+              "cosmetic",
+              "functional",
+              "critical"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Configuration drift counts by severity classification tier",
+        "bars": [
+          {
+            "id": "cosmetic",
+            "label": "Cosmetic Drift",
+            "value": 1
+          },
+          {
+            "id": "functional",
+            "label": "Functional Drift",
+            "value": 1
+          },
+          {
+            "id": "critical",
+            "label": "Security Critical",
+            "value": 1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An SRE platform classifies configuration drift into three severity tiers.",
+            "activeBars": [
+              "cosmetic",
+              "functional"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Security critical drift introduces severe compliance and vulnerability risks.",
+            "activeBars": [
+              "cosmetic",
+              "functional",
+              "critical"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Reconciliation Policies: Overwrite vs Alert",
+      "codeHash": "bf8d39fa58eb4beb78cdaebb33f0660d9dbc32222a08d7f9fba7b60b11ad0365",
+      "spec": {
+        "template": "states",
+        "title": "Reconciliation policy decision states and remediation workflows",
+        "states": [
+          {
+            "id": "overwrite",
+            "label": "AUTO_OVERWRITE Enforcement"
+          },
+          {
+            "id": "review_pr",
+            "label": "CREATE_REVIEW_PR Queue"
+          },
+          {
+            "id": "page_oncall",
+            "label": "PAGE_SECURITY_ONCALL Alert"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The automated reconciler continuously overwrites live drift to declared config.",
+            "activeStateId": "overwrite",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Architectures employ conditional reconciliation auto correcting security drift.",
+            "activeStateId": "review_pr",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Reconciliation policy decision states and remediation workflows",
+        "states": [
+          {
+            "id": "overwrite",
+            "label": "AUTO_OVERWRITE Enforcement"
+          },
+          {
+            "id": "review_pr",
+            "label": "CREATE_REVIEW_PR Queue"
+          },
+          {
+            "id": "page_oncall",
+            "label": "PAGE_SECURITY_ONCALL Alert"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The automated reconciler continuously overwrites live drift to declared config.",
+            "activeStateId": "overwrite",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Architectures employ conditional reconciliation auto correcting security drift.",
+            "activeStateId": "review_pr",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe Convergence: Generating Reconciliation Patch Operations",
+      "codeHash": "fb470781d48b6daebd043ed4bea09918011f1f4fe9d02b4d5e75a34b18af0489",
+      "spec": {
+        "template": "workflow",
+        "title": "Automated patch generation and safe convergence execution flow",
+        "stages": [
+          {
+            "id": "detect",
+            "name": "Drift Report",
+            "subtext": "Mismatched Fields"
+          },
+          {
+            "id": "synth",
+            "name": "Patch Synthesizer",
+            "subtext": "In-Place Mutations"
+          },
+          {
+            "id": "audit",
+            "name": "Audit Logger",
+            "subtext": "Provenance Trail"
+          },
+          {
+            "id": "converge",
+            "name": "Convergence Apply",
+            "subtext": "Idempotent Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The reconciler synthesizes targeted in place cloud patch operations.",
+            "activeStageId": "synth",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each patch must be idempotent producing the identical desired end state.",
+            "activeStageId": "converge",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Automated patch generation and safe convergence execution flow",
+        "stages": [
+          {
+            "id": "detect",
+            "name": "Drift Report",
+            "subtext": "Mismatched Fields"
+          },
+          {
+            "id": "synth",
+            "name": "Patch Synthesizer",
+            "subtext": "In-Place Mutations"
+          },
+          {
+            "id": "audit",
+            "name": "Audit Logger",
+            "subtext": "Provenance Trail"
+          },
+          {
+            "id": "converge",
+            "name": "Convergence Apply",
+            "subtext": "Idempotent Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The reconciler synthesizes targeted in place cloud patch operations.",
+            "activeStageId": "synth",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each patch must be idempotent producing the identical desired end state.",
+            "activeStageId": "converge",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Drift Auditing & Fleet Drift Metrics",
+      "codeHash": "fc16e18f53c94d298b2b3257cbe711f255f187e16fe68bf49f1a0c20bab506d8",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
