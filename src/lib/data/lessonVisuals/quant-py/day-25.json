@@ -283,7 +283,7 @@
                     "text": "300"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -360,7 +360,7 @@
                   "20",
                   "300"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -458,7 +458,7 @@
                     "text": "DOWN"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -528,7 +528,7 @@
                   "30.0",
                   "DOWN"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -626,7 +626,7 @@
                     "text": "0"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -696,7 +696,7 @@
                   "100000",
                   "0"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

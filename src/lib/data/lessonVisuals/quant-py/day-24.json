@@ -96,7 +96,7 @@
                     "text": "150_000"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -166,7 +166,7 @@
                   "Mumbai to Pune (fibre)",
                   "150_000"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -264,7 +264,7 @@
                     "text": "100"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -334,7 +334,7 @@
                   "office",
                   "100"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -393,7 +393,7 @@
                     "text": "5.0"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -421,7 +421,7 @@
                     "text": "5.0"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -432,7 +432,7 @@
                     "text": "150.0"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -475,7 +475,7 @@
                   "layer 1 switch",
                   "5.0"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -495,14 +495,14 @@
                   "layer 1 switch",
                   "5.0"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "exchange handoff",
                   "150.0"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -619,7 +619,7 @@
                     "text": "micro"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -696,7 +696,7 @@
                   "straight_fibre",
                   "micro"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

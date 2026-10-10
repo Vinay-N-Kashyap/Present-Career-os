@@ -302,7 +302,7 @@
                     "text": "side"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -386,7 +386,7 @@
                   "periods",
                   "side"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -522,7 +522,7 @@
                     "text": "short_liq"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -606,7 +606,7 @@
                   "long_liq",
                   "short_liq"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

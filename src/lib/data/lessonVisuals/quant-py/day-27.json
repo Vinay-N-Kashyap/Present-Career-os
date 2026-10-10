@@ -134,7 +134,7 @@
                     "text": "loss"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           }
@@ -218,7 +218,7 @@
                   "60",
                   "loss"
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           }
@@ -510,7 +510,7 @@
                     "text": "total"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -580,7 +580,7 @@
                   "150_000",
                   "total"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

@@ -134,7 +134,7 @@
                     "text": "ask_qty"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -218,7 +218,7 @@
                   "ask",
                   "ask_qty"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -354,7 +354,7 @@
                     "text": "0.5"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -438,7 +438,7 @@
                   "0.1",
                   "0.5"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -555,7 +555,7 @@
                     "text": "max_inventory"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -632,7 +632,7 @@
                   "collar_pct",
                   "max_inventory"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -749,7 +749,7 @@
                     "text": "failed"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           }
@@ -826,7 +826,7 @@
                   "budget_ns",
                   "failed"
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           }

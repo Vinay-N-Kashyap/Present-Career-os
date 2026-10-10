@@ -354,7 +354,7 @@
                     "text": "2"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -438,7 +438,7 @@
                   "cycles",
                   "2"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -555,7 +555,7 @@
                     "text": "TIGHT"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -632,7 +632,7 @@
                   "1_000_000",
                   "TIGHT"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

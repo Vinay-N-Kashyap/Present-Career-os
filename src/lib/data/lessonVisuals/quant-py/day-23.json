@@ -115,7 +115,7 @@
                     "text": "100"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -192,7 +192,7 @@
                   "99.995",
                   "100"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -309,7 +309,7 @@
                     "text": "0.001"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -386,7 +386,7 @@
                   "99.995",
                   "0.001"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -522,7 +522,7 @@
                     "text": "cost"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -606,7 +606,7 @@
                   "left",
                   "cost"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -742,7 +742,7 @@
                     "text": "shares"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -826,7 +826,7 @@
                   "mid",
                   "shares"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

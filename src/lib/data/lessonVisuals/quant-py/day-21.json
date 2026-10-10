@@ -77,7 +77,7 @@
                     "text": "0.5"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -117,7 +117,7 @@
                     "text": "0.5"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -134,7 +134,7 @@
                     "text": "0.0"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -185,7 +185,7 @@
                   "0.3",
                   "0.5"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -209,7 +209,7 @@
                   "0.3",
                   "0.5"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -218,7 +218,7 @@
                   "1.0",
                   "0.0"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -354,7 +354,7 @@
                     "text": "gamma_gap"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -438,7 +438,7 @@
                   "full_pnl",
                   "gamma_gap"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -507,7 +507,7 @@
                     "text": "tail"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -541,7 +541,7 @@
                     "text": "tail"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -555,7 +555,7 @@
                     "text": "tail"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -602,7 +602,7 @@
                   "k",
                   "tail"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -624,7 +624,7 @@
                   "k",
                   "tail"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -632,7 +632,7 @@
                   "k",
                   "tail"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

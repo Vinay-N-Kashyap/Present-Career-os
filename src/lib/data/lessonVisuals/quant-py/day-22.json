@@ -96,7 +96,7 @@
                     "text": "pnl"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -166,7 +166,7 @@
                   "0.52",
                   "pnl"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -283,7 +283,7 @@
                     "text": "beta"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -360,7 +360,7 @@
                   "106.1",
                   "beta"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -439,7 +439,7 @@
                     "text": "z"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -479,7 +479,7 @@
                     "text": "z"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -496,7 +496,7 @@
                     "text": "z"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -547,7 +547,7 @@
                   "1.2",
                   "z"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -571,7 +571,7 @@
                   "1.2",
                   "z"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -580,7 +580,7 @@
                   "1.2",
                   "z"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -678,7 +678,7 @@
                     "text": "gap"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -748,7 +748,7 @@
                   "0.1",
                   "gap"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
