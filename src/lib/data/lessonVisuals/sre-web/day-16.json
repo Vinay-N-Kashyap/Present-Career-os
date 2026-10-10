@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 16,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Three Pillars of Metrics: Types and Dimensional Modeling",
+      "codeHash": "a1b88ddc8d5cbaa3c7f850832a301be0e0558404dc6154e2506fbf88b52e101e",
+      "spec": {
+        "template": "table",
+        "title": "Prometheus metric types behavior and mathematical operations matrix",
+        "columns": [
+          "Metric Type",
+          "Behavior",
+          "Mathematical Operations",
+          "Production Examples"
+        ],
+        "rows": [
+          [
+            "COUNTER",
+            "Monotonically increasing",
+            "Rate, Increase, Resets",
+            "http_requests_total"
+          ],
+          [
+            "GAUGE",
+            "Arbitrary fluctuation",
+            "Average, Min, Max",
+            "memory_bytes, active_conns"
+          ],
+          [
+            "HISTOGRAM",
+            "Bucketed distributions",
+            "Percentiles, Quantiles",
+            "duration_seconds, sizes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Counters record cumulative values that increase monotonically over time.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Gauges record instantaneous numeric snapshots that fluctuate up or down.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 1
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Prometheus metric types behavior and mathematical operations matrix",
+        "columns": [
+          "Metric Type",
+          "Behavior",
+          "Mathematical Operations",
+          "Production Examples"
+        ],
+        "rows": [
+          [
+            "COUNTER",
+            "Monotonically increasing",
+            "Rate, Increase, Resets",
+            "http_requests_total"
+          ],
+          [
+            "GAUGE",
+            "Arbitrary fluctuation",
+            "Average, Min, Max",
+            "memory_bytes, active_conns"
+          ],
+          [
+            "HISTOGRAM",
+            "Bucketed distributions",
+            "Percentiles, Quantiles",
+            "duration_seconds, sizes"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Counters record cumulative values that increase monotonically over time.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Gauges record instantaneous numeric snapshots that fluctuate up or down.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic Counters: Rates, Deltas & Reset Handling",
+      "codeHash": "84e9124932ae3115d933676f34cf08a925d84fedbadac36893e82ad0f9e3519d",
+      "spec": {
+        "template": "sequence",
+        "title": "Counter rate calculation and process restart reset handling",
+        "actors": [
+          "Prometheus Scraper",
+          "Counter Engine",
+          "Time Series Store"
+        ],
+        "messages": [
+          {
+            "from": "Prometheus Scraper",
+            "to": "Counter Engine",
+            "label": "Scrape sample 1 at t=0s"
+          },
+          {
+            "from": "Counter Engine",
+            "to": "Time Series Store",
+            "label": "Record counter value 100"
+          },
+          {
+            "from": "Prometheus Scraper",
+            "to": "Counter Engine",
+            "label": "Scrape sample 2 at t=10s"
+          },
+          {
+            "from": "Counter Engine",
+            "to": "Time Series Store",
+            "label": "Compute delta rate 50 req/s"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Per second rates are computed by dividing counter deltas by elapsed time.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Engines treat counter resets as new baselines preventing negative spikes.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Counter rate calculation and process restart reset handling",
+        "actors": [
+          "Prometheus Scraper",
+          "Counter Engine",
+          "Time Series Store"
+        ],
+        "messages": [
+          {
+            "from": "Prometheus Scraper",
+            "to": "Counter Engine",
+            "label": "Scrape sample 1 at t=0s"
+          },
+          {
+            "from": "Counter Engine",
+            "to": "Time Series Store",
+            "label": "Record counter value 100"
+          },
+          {
+            "from": "Prometheus Scraper",
+            "to": "Counter Engine",
+            "label": "Scrape sample 2 at t=10s"
+          },
+          {
+            "from": "Counter Engine",
+            "to": "Time Series Store",
+            "label": "Compute delta rate 50 req/s"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Per second rates are computed by dividing counter deltas by elapsed time.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Engines treat counter resets as new baselines preventing negative spikes.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Gauges: Resource Saturation & State Tracking",
+      "codeHash": "db4a9e9ed6d6f3578bc9b4ad59ee3af0db9afcca0a82823cbdfe854ebd2a2c15",
+      "spec": {
+        "template": "bars",
+        "title": "Connection pool active gauge utilization and saturation levels",
+        "bars": [
+          {
+            "id": "normal",
+            "label": "Initial Acquires",
+            "value": 30
+          },
+          {
+            "id": "saturated",
+            "label": "High Concurrency Saturated",
+            "value": 90
+          },
+          {
+            "id": "released",
+            "label": "Post Release Stabilized",
+            "value": 70
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Gauges reflect real time conditions essential for detecting saturation.",
+            "activeBars": [
+              "normal"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Connection pool gauges report active saturation when nearing exhaustion.",
+            "activeBars": [
+              "normal",
+              "saturated",
+              "released"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Connection pool active gauge utilization and saturation levels",
+        "bars": [
+          {
+            "id": "normal",
+            "label": "Initial Acquires",
+            "value": 30
+          },
+          {
+            "id": "saturated",
+            "label": "High Concurrency Saturated",
+            "value": 90
+          },
+          {
+            "id": "released",
+            "label": "Post Release Stabilized",
+            "value": 70
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Gauges reflect real time conditions essential for detecting saturation.",
+            "activeBars": [
+              "normal"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Connection pool gauges report active saturation when nearing exhaustion.",
+            "activeBars": [
+              "normal",
+              "saturated",
+              "released"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Histograms & Percentile Approximations (p50, p90, p99)",
+      "codeHash": "f818f166a54f6e8e2a3a10e7740c77735b36100a77af5f71c87abdc18e0d8dc4",
+      "spec": {
+        "template": "workflow",
+        "title": "Histogram request duration observation and percentile estimation",
+        "nodes": [
+          {
+            "id": "request",
+            "label": "Request Duration Sample"
+          },
+          {
+            "id": "bucket1",
+            "label": "Fast Bucket (<=20ms)"
+          },
+          {
+            "id": "bucket2",
+            "label": "Median Bucket (<=100ms)"
+          },
+          {
+            "id": "bucket3",
+            "label": "Tail Bucket (<=500ms)"
+          },
+          {
+            "id": "percentile",
+            "label": "Compute Tail Latency"
+          }
+        ],
+        "edges": [
+          {
+            "from": "request",
+            "to": "bucket1",
+            "label": "Under 20ms"
+          },
+          {
+            "from": "request",
+            "to": "bucket2",
+            "label": "Under 100ms"
+          },
+          {
+            "from": "request",
+            "to": "bucket3",
+            "label": "Under 500ms"
+          },
+          {
+            "from": "bucket3",
+            "to": "percentile",
+            "label": "Aggregate Tail"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Histograms and percentiles capture the true distribution of user latency.",
+            "activeNodes": [
+              "request",
+              "bucket1",
+              "bucket2"
+            ],
+            "activeEdges": [
+              "request->bucket1",
+              "request->bucket2"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tail percentiles isolate latency spikes from cold caches or database locks.",
+            "activeNodes": [
+              "bucket3",
+              "percentile"
+            ],
+            "activeEdges": [
+              "request->bucket3",
+              "bucket3->percentile"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Histogram request duration observation and percentile estimation",
+        "nodes": [
+          {
+            "id": "request",
+            "label": "Request Duration Sample"
+          },
+          {
+            "id": "bucket1",
+            "label": "Fast Bucket (<=20ms)"
+          },
+          {
+            "id": "bucket2",
+            "label": "Median Bucket (<=100ms)"
+          },
+          {
+            "id": "bucket3",
+            "label": "Tail Bucket (<=500ms)"
+          },
+          {
+            "id": "percentile",
+            "label": "Compute Tail Latency"
+          }
+        ],
+        "edges": [
+          {
+            "from": "request",
+            "to": "bucket1",
+            "label": "Under 20ms"
+          },
+          {
+            "from": "request",
+            "to": "bucket2",
+            "label": "Under 100ms"
+          },
+          {
+            "from": "request",
+            "to": "bucket3",
+            "label": "Under 500ms"
+          },
+          {
+            "from": "bucket3",
+            "to": "percentile",
+            "label": "Aggregate Tail"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Histograms and percentiles capture the true distribution of user latency.",
+            "activeNodes": [
+              "request",
+              "bucket1",
+              "bucket2"
+            ],
+            "activeEdges": [
+              "request->bucket1",
+              "request->bucket2"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Tail percentiles isolate latency spikes from cold caches or database locks.",
+            "activeNodes": [
+              "bucket3",
+              "percentile"
+            ],
+            "activeEdges": [
+              "request->bucket3",
+              "bucket3->percentile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential and Linear Bucket Boundaries",
+      "codeHash": "6abcf1950413b31e6722b0074a005889569f9c32c97150882633a1b648aea25f",
+      "spec": {
+        "template": "compare",
+        "title": "Linear fixed step boundaries versus exponential scaling buckets",
+        "left": {
+          "title": "Linear Bucket Generator",
+          "items": [
+            "Fixed step size between boundaries",
+            "Uniform granularity across entire range",
+            "Ideal for tightly bounded operations",
+            "Inefficient across orders of magnitude"
+          ]
+        },
+        "right": {
+          "title": "Exponential Bucket Generator",
+          "items": [
+            "Multiplies boundary by constant factor",
+            "Fine granularity at low latencies",
+            "Spans multiple orders of magnitude",
+            "Standard pattern for web request tracing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Linear buckets use fixed step sizes between boundaries for narrow ranges.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Exponential buckets provide fine resolution across orders of magnitude.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Linear fixed step boundaries versus exponential scaling buckets",
+        "left": {
+          "title": "Linear Bucket Generator",
+          "items": [
+            "Fixed step size between boundaries",
+            "Uniform granularity across entire range",
+            "Ideal for tightly bounded operations",
+            "Inefficient across orders of magnitude"
+          ]
+        },
+        "right": {
+          "title": "Exponential Bucket Generator",
+          "items": [
+            "Multiplies boundary by constant factor",
+            "Fine granularity at low latencies",
+            "Spans multiple orders of magnitude",
+            "Standard pattern for web request tracing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Linear buckets use fixed step sizes between boundaries for narrow ranges.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Exponential buckets provide fine resolution across orders of magnitude.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Prometheus-Compatible Metrics Registry",
+      "codeHash": "63353fa2373565641a465f54838d76c7954a1f5147430218e2003ed074aa4304",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
