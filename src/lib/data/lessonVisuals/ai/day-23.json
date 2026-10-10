@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 23,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The VRAM Wall: Full Fine-Tuning vs Parameter-Efficient Fine-Tuning",
+      "codeHash": "f752e18cfe1ef7c98ce23073f7fb148765d78c27276b1058ff7f783927f629af",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to VRAM training overhead and parameter efficiency"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to VRAM training overhead and parameter efficiency"
+      }
+    },
+    {
+      "partTitle": "Mathematical Foundations of LoRA: Low-Rank Decomposition",
+      "codeHash": "32786e23b35e3925c7fb6b5cdfaa6061a81a4f17bc1c77ab9c044a6b2ebf888c",
+      "spec": {
+        "template": "flow",
+        "title": "Low-rank adaptation matrix decomposition forward computation graph",
+        "nodes": [
+          {
+            "id": "inputTensor",
+            "label": "Input Activations X",
+            "tappable": false
+          },
+          {
+            "id": "frozenW0",
+            "label": "Frozen Base Weights W0",
+            "tappable": false
+          },
+          {
+            "id": "adapterBA",
+            "label": "Low-Rank Matrices B and A",
+            "tappable": false
+          },
+          {
+            "id": "scaledSum",
+            "label": "Scaled Output Summation Y",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inputTensor",
+            "to": "frozenW0",
+            "label": "Base Linear Projection"
+          },
+          {
+            "from": "inputTensor",
+            "to": "adapterBA",
+            "label": "Rank R Bottleneck Projection"
+          },
+          {
+            "from": "frozenW0",
+            "to": "scaledSum",
+            "label": "W0 Multiplied by X"
+          },
+          {
+            "from": "adapterBA",
+            "to": "scaledSum",
+            "label": "Alpha Scaled Adapter Delta"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "LoRA decomposes weight updates into the product of two low-rank matrices.",
+            "activeNodes": [
+              "inputTensor",
+              "adapterBA"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "During forward computation inputs are multiplied across base and adapters.",
+            "activeNodes": [
+              "frozenW0",
+              "scaledSum"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Low-rank adaptation matrix decomposition forward computation graph",
+        "nodes": [
+          {
+            "id": "inputTensor",
+            "label": "Input Activations X",
+            "tappable": false
+          },
+          {
+            "id": "frozenW0",
+            "label": "Frozen Base Weights W0",
+            "tappable": false
+          },
+          {
+            "id": "adapterBA",
+            "label": "Low-Rank Matrices B and A",
+            "tappable": false
+          },
+          {
+            "id": "scaledSum",
+            "label": "Scaled Output Summation Y",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "inputTensor",
+            "to": "frozenW0",
+            "label": "Base Linear Projection"
+          },
+          {
+            "from": "inputTensor",
+            "to": "adapterBA",
+            "label": "Rank R Bottleneck Projection"
+          },
+          {
+            "from": "frozenW0",
+            "to": "scaledSum",
+            "label": "W0 Multiplied by X"
+          },
+          {
+            "from": "adapterBA",
+            "to": "scaledSum",
+            "label": "Alpha Scaled Adapter Delta"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "LoRA decomposes weight updates into the product of two low-rank matrices.",
+            "activeNodes": [
+              "inputTensor",
+              "adapterBA"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "During forward computation inputs are multiplied across base and adapters.",
+            "activeNodes": [
+              "frozenW0",
+              "scaledSum"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "QLoRA: 4-bit NormalFloat (NF4) & Double Quantization",
+      "codeHash": "a81c5faf31eeefa286ac91941f7c1dfe05f112273c7d129e4bd7e94176af5a3e",
+      "spec": {
+        "template": "table",
+        "title": "Precision format memory footprints and hardware tier requirements",
+        "columns": [
+          "Precision Format",
+          "Bits Per Weight",
+          "Base Weight Memory",
+          "Hardware Tier"
+        ],
+        "rows": [
+          [
+            "FP32 Precision",
+            "32 bits",
+            "280 Gigabytes",
+            "Multi-Node Cluster"
+          ],
+          [
+            "FP16 BrainFloat",
+            "16 bits",
+            "140 Gigabytes",
+            "Dual A100 GPUs"
+          ],
+          [
+            "4-bit NormalFloat",
+            "4 bits",
+            "35 Gigabytes",
+            "Single 48GB GPU"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Merely loading frozen weights into GPU memory consumes substantial memory.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "NormalFloat is an optimal quantile data type for normally distributed weights.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Precision format memory footprints and hardware tier requirements",
+        "columns": [
+          "Precision Format",
+          "Bits Per Weight",
+          "Base Weight Memory",
+          "Hardware Tier"
+        ],
+        "rows": [
+          [
+            "FP32 Precision",
+            "32 bits",
+            "280 Gigabytes",
+            "Multi-Node Cluster"
+          ],
+          [
+            "FP16 BrainFloat",
+            "16 bits",
+            "140 Gigabytes",
+            "Dual A100 GPUs"
+          ],
+          [
+            "4-bit NormalFloat",
+            "4 bits",
+            "35 Gigabytes",
+            "Single 48GB GPU"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Merely loading frozen weights into GPU memory consumes substantial memory.",
+            "activeRowIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "NormalFloat is an optimal quantile data type for normally distributed weights.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Targeting Transformer Attention Projections (q, k, v, o)",
+      "codeHash": "a075ff5d19357e5abaaa24dbaa0069d78650b1f1a93f9490d450c1edb5c459d6",
+      "spec": {
+        "template": "boxes",
+        "title": "Target transformer attention projections and multi-tenant adapter sharing",
+        "boxes": [
+          {
+            "id": "attentionProj",
+            "title": "Self-Attention Projections",
+            "items": [
+              "Query (q_proj) adapter",
+              "Key (k_proj) adapter",
+              "Value (v_proj) adapter"
+            ]
+          },
+          {
+            "id": "feedforwardProj",
+            "title": "Feedforward Blocks",
+            "items": [
+              "Gate projection adapter",
+              "Up projection adapter",
+              "Down projection adapter"
+            ]
+          },
+          {
+            "id": "domainAdapters",
+            "title": "Hot-Swap Adapters",
+            "items": [
+              "Coding domain adapter",
+              "Medical domain adapter",
+              "Legal compliance adapter"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Adapting all linear projections yields significantly higher adaptation quality.",
+            "activeBoxId": "attentionProj",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "A company can serve one base model and dynamically hot-swap domain adapters.",
+            "activeBoxId": "domainAdapters",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Target transformer attention projections and multi-tenant adapter sharing",
+        "boxes": [
+          {
+            "id": "attentionProj",
+            "title": "Self-Attention Projections",
+            "items": [
+              "Query (q_proj) adapter",
+              "Key (k_proj) adapter",
+              "Value (v_proj) adapter"
+            ]
+          },
+          {
+            "id": "feedforwardProj",
+            "title": "Feedforward Blocks",
+            "items": [
+              "Gate projection adapter",
+              "Up projection adapter",
+              "Down projection adapter"
+            ]
+          },
+          {
+            "id": "domainAdapters",
+            "title": "Hot-Swap Adapters",
+            "items": [
+              "Coding domain adapter",
+              "Medical domain adapter",
+              "Legal compliance adapter"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Adapting all linear projections yields significantly higher adaptation quality.",
+            "activeBoxId": "attentionProj",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "A company can serve one base model and dynamically hot-swap domain adapters.",
+            "activeBoxId": "domainAdapters",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adapter Weight Merging for Zero-Latency Production Serving",
+      "codeHash": "ad8a196f80641f365d96779e6ed35dd0c08f46dee621bab3c02c6d098ceeab10",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic branched adapter inference versus merged zero-latency weights",
+        "left": {
+          "title": "Branched Dynamic Adapter",
+          "items": [
+            "Evaluates base W0 and adapter",
+            "Performs runtime addition",
+            "Small forward latency penalty",
+            "Supports dynamic hot-swapping"
+          ]
+        },
+        "right": {
+          "title": "Fused Merged Single Matrix",
+          "items": [
+            "Pre-computed W_merged matrix",
+            "Zero extra forward operations",
+            "Native hardware execution speed",
+            "Zero inference latency overhead"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every token step must compute both the base branch and the adapter branch.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The resulting merged model executes at native speed with zero latency penalty.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dynamic branched adapter inference versus merged zero-latency weights",
+        "left": {
+          "title": "Branched Dynamic Adapter",
+          "items": [
+            "Evaluates base W0 and adapter",
+            "Performs runtime addition",
+            "Small forward latency penalty",
+            "Supports dynamic hot-swapping"
+          ]
+        },
+        "right": {
+          "title": "Fused Merged Single Matrix",
+          "items": [
+            "Pre-computed W_merged matrix",
+            "Zero extra forward operations",
+            "Native hardware execution speed",
+            "Zero inference latency overhead"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Every token step must compute both the base branch and the adapter branch.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The resulting merged model executes at native speed with zero latency penalty.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End LoRA Training Loop & Convergence Simulation",
+      "codeHash": "488a41bf545e6c61646724da99e6cf52e2423620cfa5ac9b269a9455ef8140a8",
+      "spec": {
+        "template": "bars",
+        "title": "LoRA training loss convergence across domain adaptation iterations",
+        "bars": [
+          {
+            "label": "Iteration One Loss",
+            "value": 142
+          },
+          {
+            "label": "Iteration Two Loss",
+            "value": 86
+          },
+          {
+            "label": "Iteration Three Loss",
+            "value": 34
+          },
+          {
+            "label": "Iteration Four Loss",
+            "value": 12
+          },
+          {
+            "label": "Iteration Five Loss",
+            "value": 8
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine feeds domain inputs and updates only adapter weights via gradients.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Merging the trained adapter weights yields a production-ready model artifact.",
+            "activeBarIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "LoRA training loss convergence across domain adaptation iterations",
+        "bars": [
+          {
+            "label": "Iteration One Loss",
+            "value": 142
+          },
+          {
+            "label": "Iteration Two Loss",
+            "value": 86
+          },
+          {
+            "label": "Iteration Three Loss",
+            "value": 34
+          },
+          {
+            "label": "Iteration Four Loss",
+            "value": 12
+          },
+          {
+            "label": "Iteration Five Loss",
+            "value": 8
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine feeds domain inputs and updates only adapter weights via gradients.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Merging the trained adapter weights yields a production-ready model artifact.",
+            "activeBarIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
