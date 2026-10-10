@@ -291,7 +291,7 @@
                     "text": "CONFIRMED"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -319,7 +319,7 @@
                     "text": "CONFIRMED"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -358,7 +358,7 @@
                     "text": "CONFIRMED"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -423,7 +423,7 @@
                   "old-q",
                   "CONFIRMED"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -443,7 +443,7 @@
                   "old-q",
                   "CONFIRMED"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -470,7 +470,7 @@
                   "old-q",
                   "CONFIRMED"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -543,7 +543,7 @@
                     "text": "IN"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -571,7 +571,7 @@
                     "text": "IN"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -610,7 +610,7 @@
                     "text": "IN"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -675,7 +675,7 @@
                   "BASIC",
                   "IN"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -695,7 +695,7 @@
                   "BASIC",
                   "IN"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -722,7 +722,7 @@
                   "BASIC",
                   "IN"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -795,7 +795,7 @@
                     "text": "4"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -823,7 +823,7 @@
                     "text": "4"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -851,7 +851,7 @@
                     "text": "4"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }
@@ -894,7 +894,7 @@
                   "99",
                   "4"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -914,7 +914,7 @@
                   "99",
                   "4"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -934,7 +934,7 @@
                   "99",
                   "4"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }

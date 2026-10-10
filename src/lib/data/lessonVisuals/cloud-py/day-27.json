@@ -57,7 +57,7 @@
                     "text": "user_input"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -85,7 +85,7 @@
                     "text": "user_input"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -96,7 +96,7 @@
                     "text": "query"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -124,7 +124,7 @@
                     "text": "user_input"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -135,7 +135,7 @@
                     "text": "query"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -189,7 +189,7 @@
                   "unsafe",
                   "user_input"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -209,14 +209,14 @@
                   "unsafe",
                   "user_input"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "database",
                   "query"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -236,14 +236,14 @@
                   "unsafe",
                   "user_input"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "database",
                   "query"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -281,7 +281,7 @@
                     "text": "IP_BLOCK"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -298,7 +298,7 @@
                     "text": "IP_BLOCK"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -309,7 +309,7 @@
                     "text": "SQLI"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -326,7 +326,7 @@
                     "text": "IP_BLOCK"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -337,7 +337,7 @@
                     "text": "SQLI"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -365,7 +365,7 @@
                     "text": "IP_BLOCK"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -376,7 +376,7 @@
                     "text": "SQLI"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -421,7 +421,7 @@
                   "BLOCK",
                   "IP_BLOCK"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -434,14 +434,14 @@
                   "BLOCK",
                   "IP_BLOCK"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "BLOCK",
                   "SQLI"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -454,14 +454,14 @@
                   "BLOCK",
                   "IP_BLOCK"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "BLOCK",
                   "SQLI"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -481,14 +481,14 @@
                   "BLOCK",
                   "IP_BLOCK"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "BLOCK",
                   "SQLI"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -561,7 +561,7 @@
                     "text": "/login"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -589,7 +589,7 @@
                     "text": "/login"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -628,7 +628,7 @@
                     "text": "/login"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -639,7 +639,7 @@
                     "text": "/login"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -682,7 +682,7 @@
                   "203.0.113.9",
                   "/login"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -702,7 +702,7 @@
                   "203.0.113.9",
                   "/login"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -729,14 +729,14 @@
                   "203.0.113.9",
                   "/login"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "49.36.7.7",
                   "/login"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -834,7 +834,7 @@
                     "text": "10.0.0.5/24"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -873,7 +873,7 @@
                     "text": "10.0.0.5/24"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -884,7 +884,7 @@
                     "text": "10.0.0.1"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -954,7 +954,7 @@
                   "10.0.0.5/24",
                   "10.0.0.5/24"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -981,14 +981,14 @@
                   "10.0.0.5/24",
                   "10.0.0.5/24"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "10.0.0.1",
                   "10.0.0.1"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

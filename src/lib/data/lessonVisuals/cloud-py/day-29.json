@@ -57,7 +57,7 @@
                     "text": "rto"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -85,7 +85,7 @@
                     "text": "rto"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -96,7 +96,7 @@
                     "text": "rpo"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -124,7 +124,7 @@
                     "text": "rto"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -135,7 +135,7 @@
                     "text": "rpo"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -189,7 +189,7 @@
                   "disaster_at",
                   "rto"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -209,14 +209,14 @@
                   "disaster_at",
                   "rto"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "disaster_at",
                   "rpo"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -236,14 +236,14 @@
                   "disaster_at",
                   "rto"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "disaster_at",
                   "rpo"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -398,7 +398,7 @@
                     "text": "minutes"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -502,7 +502,7 @@
                   "Warm standby",
                   "minutes"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -650,7 +650,7 @@
                     "text": "MultiSiteActiveActive"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -754,7 +754,7 @@
                   "MultiSiteActiveActive",
                   "MultiSiteActiveActive"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -813,7 +813,7 @@
                     "text": "per_minute"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -841,7 +841,7 @@
                     "text": "per_minute"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -852,7 +852,7 @@
                     "text": "per_minute"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -880,7 +880,7 @@
                     "text": "per_minute"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -891,7 +891,7 @@
                     "text": "per_minute"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -945,7 +945,7 @@
                   "lost_sales",
                   "per_minute"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -965,14 +965,14 @@
                   "lost_sales",
                   "per_minute"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "lost_data",
                   "per_minute"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -992,14 +992,14 @@
                   "lost_sales",
                   "per_minute"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "lost_data",
                   "per_minute"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [

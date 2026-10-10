@@ -291,7 +291,7 @@
                     "text": "CNAME"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -319,7 +319,7 @@
                     "text": "CNAME"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -358,7 +358,7 @@
                     "text": "CNAME"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -423,7 +423,7 @@
                   "www.example.com",
                   "CNAME"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -443,7 +443,7 @@
                   "www.example.com",
                   "CNAME"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -470,7 +470,7 @@
                   "www.example.com",
                   "CNAME"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -543,7 +543,7 @@
                     "text": "eu-west-1-alb"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           },
@@ -571,7 +571,7 @@
                     "text": "eu-west-1-alb"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -582,7 +582,7 @@
                     "text": "us-east-1-alb"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -621,7 +621,7 @@
                     "text": "us-east-1-alb"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }
@@ -664,7 +664,7 @@
                   "us-east-1 down",
                   "eu-west-1-alb"
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           },
@@ -684,14 +684,14 @@
                   "us-east-1 down",
                   "eu-west-1-alb"
                 ],
-                "tone": "warn"
+                "tone": "error"
               },
               {
                 "cells": [
                   "both down",
                   "us-east-1-alb"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -718,7 +718,7 @@
                   "both down",
                   "us-east-1-alb"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }
@@ -777,7 +777,7 @@
                     "text": "10"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -805,7 +805,7 @@
                     "text": "10"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -876,7 +876,7 @@
                   "v2-canary",
                   "10"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -896,7 +896,7 @@
                   "v2-canary",
                   "10"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },

@@ -337,7 +337,7 @@
                     "text": "kms:*"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -428,7 +428,7 @@
                   "arn:aws:iam::111122223333:root",
                   "kms:*"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -759,7 +759,7 @@
                     "text": "Allow"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -787,7 +787,7 @@
                     "text": "Allow"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -826,7 +826,7 @@
                     "text": "Allow"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -848,7 +848,7 @@
                     "text": "kms:*"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -891,7 +891,7 @@
                   "PUBLIC_PRINCIPAL",
                   "Allow"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -911,7 +911,7 @@
                   "PUBLIC_PRINCIPAL",
                   "Allow"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -938,7 +938,7 @@
                   "PUBLIC_PRINCIPAL",
                   "Allow"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -952,7 +952,7 @@
                   "KMS_WILDCARD",
                   "kms:*"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

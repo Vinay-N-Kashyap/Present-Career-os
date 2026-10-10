@@ -96,7 +96,7 @@
                     "text": "email"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           },
@@ -135,7 +135,7 @@
                     "text": "email"
                   }
                 ],
-                "tone": "warn"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -216,7 +216,7 @@
                   "PaymentFailed",
                   "email"
                 ],
-                "tone": "warn"
+                "tone": "error"
               }
             ]
           },
@@ -243,7 +243,7 @@
                   "PaymentFailed",
                   "email"
                 ],
-                "tone": "warn"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -348,7 +348,7 @@
                     "text": "NO_MATCH"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -387,7 +387,7 @@
                     "text": "NO_MATCH"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -457,7 +457,7 @@
                   "loyalty-q",
                   "NO_MATCH"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -484,7 +484,7 @@
                   "loyalty-q",
                   "NO_MATCH"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -543,7 +543,7 @@
                     "text": "True"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -571,7 +571,7 @@
                     "text": "True"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -610,7 +610,7 @@
                     "text": "True"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -664,7 +664,7 @@
                   "bad-7",
                   "True"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -684,7 +684,7 @@
                   "bad-7",
                   "True"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -711,7 +711,7 @@
                   "bad-7",
                   "True"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -794,7 +794,7 @@
                     "text": "duplicate ignored"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -878,7 +878,7 @@
                   "evt-555",
                   "duplicate ignored"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },

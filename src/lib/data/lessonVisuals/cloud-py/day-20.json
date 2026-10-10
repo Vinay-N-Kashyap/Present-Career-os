@@ -201,7 +201,7 @@
                     "text": "INR"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -229,7 +229,7 @@
                     "text": "INR"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -240,7 +240,7 @@
                     "text": "USD"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -322,7 +322,7 @@
                   "pinit.billing",
                   "INR"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -342,14 +342,14 @@
                   "pinit.billing",
                   "INR"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "pinit.auth",
                   "USD"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -435,7 +435,7 @@
                     "text": "X"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -463,7 +463,7 @@
                     "text": "X"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -474,7 +474,7 @@
                     "text": "X"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -502,7 +502,7 @@
                     "text": "X"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -513,7 +513,7 @@
                     "text": "X"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }
@@ -556,7 +556,7 @@
                   "orders",
                   "X"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -576,14 +576,14 @@
                   "orders",
                   "X"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
                   "aws.s3",
                   "X"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -603,14 +603,14 @@
                   "orders",
                   "X"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "aws.s3",
                   "X"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           }

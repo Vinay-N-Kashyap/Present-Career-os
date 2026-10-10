@@ -348,7 +348,7 @@
                     "text": "plan_rate"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -387,7 +387,7 @@
                     "text": "plan_rate"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -468,7 +468,7 @@
                   "committed_hours",
                   "plan_rate"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -495,7 +495,7 @@
                   "committed_hours",
                   "plan_rate"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -533,7 +533,7 @@
                     "text": "vol-old"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -550,7 +550,7 @@
                     "text": "vol-old"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -561,7 +561,7 @@
                     "text": "i-web-1"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -578,7 +578,7 @@
                     "text": "vol-old"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -589,7 +589,7 @@
                     "text": "i-web-1"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -617,7 +617,7 @@
                     "text": "vol-old"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -628,7 +628,7 @@
                     "text": "i-web-1"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -673,7 +673,7 @@
                   "ebs-unattached",
                   "vol-old"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -686,14 +686,14 @@
                   "ebs-unattached",
                   "vol-old"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "m5.2xlarge",
                   "i-web-1"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -706,14 +706,14 @@
                   "ebs-unattached",
                   "vol-old"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "m5.2xlarge",
                   "i-web-1"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -733,14 +733,14 @@
                   "ebs-unattached",
                   "vol-old"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "m5.2xlarge",
                   "i-web-1"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -852,7 +852,7 @@
                     "text": "cost"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -891,7 +891,7 @@
                     "text": "cost"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -972,7 +972,7 @@
                   "UNALLOCATED",
                   "cost"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -999,7 +999,7 @@
                   "UNALLOCATED",
                   "cost"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [

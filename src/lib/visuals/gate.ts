@@ -515,6 +515,14 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
             }
           }
         }
+        if (Array.isArray(step.rows)) {
+          for (let r = 0; r < step.rows.length; r++) {
+            const tone = step.rows[r]?.tone;
+            if (tone && !VALID_TONES.has(tone)) {
+              errors.push(`R9: Entry [${i}] step [${s}] row [${r}] invalid tone "${tone}"`);
+            }
+          }
+        }
       }
     }
   }

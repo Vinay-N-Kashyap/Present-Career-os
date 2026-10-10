@@ -348,7 +348,7 @@
                     "text": "region"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -387,7 +387,7 @@
                     "text": "region"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -468,7 +468,7 @@
                   "healthy",
                   "region"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -495,7 +495,7 @@
                   "healthy",
                   "region"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -561,7 +561,7 @@
                     "text": "declined"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -589,7 +589,7 @@
                     "text": "declined"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -628,7 +628,7 @@
                     "text": "declined"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -693,7 +693,7 @@
                   "frankfurt",
                   "declined"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -713,7 +713,7 @@
                   "frankfurt",
                   "declined"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -740,7 +740,7 @@
                   "frankfurt",
                   "declined"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -813,7 +813,7 @@
                     "text": "traffic"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -841,7 +841,7 @@
                     "text": "traffic"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -852,7 +852,7 @@
                     "text": "capacity"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -880,7 +880,7 @@
                     "text": "traffic"
                   }
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
@@ -891,7 +891,7 @@
                     "text": "capacity"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -945,7 +945,7 @@
                   "failed",
                   "traffic"
                 ],
-                "tone": "crit"
+                "tone": "error"
               }
             ]
           },
@@ -965,14 +965,14 @@
                   "failed",
                   "traffic"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "eu-west-1",
                   "capacity"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -992,14 +992,14 @@
                   "failed",
                   "traffic"
                 ],
-                "tone": "crit"
+                "tone": "error"
               },
               {
                 "cells": [
                   "eu-west-1",
                   "capacity"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [

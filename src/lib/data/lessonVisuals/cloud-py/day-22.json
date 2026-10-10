@@ -726,7 +726,7 @@
                     "text": "arn:aws:secretsmanager:ap-south-1:1:secret:db"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -835,7 +835,7 @@
                   "DB_PASS",
                   "arn:aws:secretsmanager:ap-south-1:1:secret:db"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },

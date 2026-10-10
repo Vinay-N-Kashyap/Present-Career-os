@@ -469,7 +469,7 @@
                     "text": "pinit-media-prod"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -549,7 +549,7 @@
                   "aws_s3_bucket.media",
                   "pinit-media-prod"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -632,7 +632,7 @@
                     "text": "pinit-tf-state/prod/terraform.tfstate"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
@@ -716,7 +716,7 @@
                   "ravi",
                   "pinit-tf-state/prod/terraform.tfstate"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           },
