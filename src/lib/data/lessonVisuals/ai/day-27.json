@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 27,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The LLMOps Capacity Crisis: TPM, RPM, and Provider Limits",
+      "codeHash": "86f38456f77633c6addfa46058bff4eaa6325e861bed2bd622caa2546323123d",
+      "spec": {
+        "template": "table",
+        "title": "Dual-constraint rate limiting evaluation matrix",
+        "columns": [
+          "Metric Dimension",
+          "Tier Ceiling",
+          "Current Load",
+          "Capacity Status"
+        ],
+        "rows": [
+          [
+            "Request Volume",
+            "500",
+            "498",
+            "Near Capacity"
+          ],
+          [
+            "Token Throughput",
+            "100000",
+            "85000",
+            "Buffer Available"
+          ],
+          [
+            "Incoming Batch",
+            "1",
+            "500",
+            "Allowed"
+          ],
+          [
+            "Heavy Query",
+            "1",
+            "25000",
+            "Throttled"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Providers enforce strict limits on requests and tokens.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "An upstream provider terminates the connection with a rate limit error.",
+            "highlightCells": [
+              {
+                "row": 3,
+                "col": 2
+              },
+              {
+                "row": 3,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dual-constraint rate limiting evaluation matrix",
+        "columns": [
+          "Metric Dimension",
+          "Tier Ceiling",
+          "Current Load",
+          "Capacity Status"
+        ],
+        "rows": [
+          [
+            "Request Volume",
+            "500",
+            "498",
+            "Near Capacity"
+          ],
+          [
+            "Token Throughput",
+            "100000",
+            "85000",
+            "Buffer Available"
+          ],
+          [
+            "Incoming Batch",
+            "1",
+            "500",
+            "Allowed"
+          ],
+          [
+            "Heavy Query",
+            "1",
+            "25000",
+            "Throttled"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Providers enforce strict limits on requests and tokens.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "An upstream provider terminates the connection with a rate limit error.",
+            "highlightCells": [
+              {
+                "row": 3,
+                "col": 2
+              },
+              {
+                "row": 3,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Token Bucket Algorithm for LLM Streaming",
+      "codeHash": "fdd1c6b83bc3cbd4eb88eb8ee5938254140d826cf609afaf7d70a8130b0e915b",
+      "spec": {
+        "template": "flow",
+        "title": "Token bucket continuous refill and burst deduction pipeline",
+        "nodes": [
+          {
+            "id": "refillStream",
+            "label": "Refill Stream",
+            "tappable": false
+          },
+          {
+            "id": "tokenBucket",
+            "label": "Token Bucket",
+            "tappable": false
+          },
+          {
+            "id": "incomingCall",
+            "label": "Incoming Request",
+            "tappable": false
+          },
+          {
+            "id": "capacityCheck",
+            "label": "Capacity Gate",
+            "tappable": false
+          },
+          {
+            "id": "modelDispatch",
+            "label": "Model Dispatch",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "refillStream",
+            "to": "tokenBucket",
+            "label": "Refill Rate Addition"
+          },
+          {
+            "from": "incomingCall",
+            "to": "capacityCheck",
+            "label": "Requested Tokens"
+          },
+          {
+            "from": "tokenBucket",
+            "to": "capacityCheck",
+            "label": "Available Tokens"
+          },
+          {
+            "from": "capacityCheck",
+            "to": "modelDispatch",
+            "label": "Deduct and Forward"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Steady refill stream continuously replenishes tokens up to fixed capacity.",
+            "activeNodes": [
+              "refillStream",
+              "tokenBucket"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Incoming request proceeds immediately when sufficient tokens are present.",
+            "activeNodes": [
+              "incomingCall",
+              "capacityCheck",
+              "modelDispatch"
+            ],
+            "activeEdges": [
+              "from-incomingCall-to-capacityCheck",
+              "from-tokenBucket-to-capacityCheck",
+              "from-capacityCheck-to-modelDispatch"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Token bucket continuous refill and burst deduction pipeline",
+        "nodes": [
+          {
+            "id": "refillStream",
+            "label": "Refill Stream",
+            "tappable": false
+          },
+          {
+            "id": "tokenBucket",
+            "label": "Token Bucket",
+            "tappable": false
+          },
+          {
+            "id": "incomingCall",
+            "label": "Incoming Request",
+            "tappable": false
+          },
+          {
+            "id": "capacityCheck",
+            "label": "Capacity Gate",
+            "tappable": false
+          },
+          {
+            "id": "modelDispatch",
+            "label": "Model Dispatch",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "refillStream",
+            "to": "tokenBucket",
+            "label": "Refill Rate Addition"
+          },
+          {
+            "from": "incomingCall",
+            "to": "capacityCheck",
+            "label": "Requested Tokens"
+          },
+          {
+            "from": "tokenBucket",
+            "to": "capacityCheck",
+            "label": "Available Tokens"
+          },
+          {
+            "from": "capacityCheck",
+            "to": "modelDispatch",
+            "label": "Deduct and Forward"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Steady refill stream continuously replenishes tokens up to fixed capacity.",
+            "activeNodes": [
+              "refillStream",
+              "tokenBucket"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Incoming request proceeds immediately when sufficient tokens are present.",
+            "activeNodes": [
+              "incomingCall",
+              "capacityCheck",
+              "modelDispatch"
+            ],
+            "activeEdges": [
+              "from-incomingCall-to-capacityCheck",
+              "from-tokenBucket-to-capacityCheck",
+              "from-capacityCheck-to-modelDispatch"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Window Log vs Token Bucket Rate Limiting",
+      "codeHash": "69e51ca9100d447bc66081614c3182a7bdf267550679778031a5752743931128",
+      "spec": {
+        "template": "compare",
+        "title": "Rate limiting algorithm trade-off comparison",
+        "leftLabel": "Token Bucket Algorithm",
+        "rightLabel": "Sliding Window Log",
+        "leftItems": [
+          "Memory footprint is minimal storing only count and timestamp",
+          "Smoothly absorbs sudden bursts up to maximum capacity",
+          "Computationally lightweight with basic arithmetic refill",
+          "Cannot audit exact granular history of prior timestamps"
+        ],
+        "rightItems": [
+          "Memory scales linearly storing individual request timestamps",
+          "Prevents boundary reset spikes across sliding intervals",
+          "Filters and purges expired historical records on each check",
+          "Guarantees exact mathematical precision across sliding window"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Token bucket requires negligible memory storing minimal tenant state.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Sliding window algorithm purges older log entries and sums active tokens.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Rate limiting algorithm trade-off comparison",
+        "leftLabel": "Token Bucket Algorithm",
+        "rightLabel": "Sliding Window Log",
+        "leftItems": [
+          "Memory footprint is minimal storing only count and timestamp",
+          "Smoothly absorbs sudden bursts up to maximum capacity",
+          "Computationally lightweight with basic arithmetic refill",
+          "Cannot audit exact granular history of prior timestamps"
+        ],
+        "rightItems": [
+          "Memory scales linearly storing individual request timestamps",
+          "Prevents boundary reset spikes across sliding intervals",
+          "Filters and purges expired historical records on each check",
+          "Guarantees exact mathematical precision across sliding window"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Token bucket requires negligible memory storing minimal tenant state.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Sliding window algorithm purges older log entries and sums active tokens.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tenant Quota Management & Team Budget Pools",
+      "codeHash": "a10ab28ac0050ec093b5b7d17c31d891006d464db6e5720fad5c01a769f13d34",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-tenant team budget utilization comparison",
+        "bars": [
+          {
+            "id": "teamSupport",
+            "label": "Support Team",
+            "value": 45
+          },
+          {
+            "id": "teamAnalytics",
+            "label": "Analytics Team",
+            "value": 85
+          },
+          {
+            "id": "teamGrowth",
+            "label": "Growth Team",
+            "value": 105
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "System tracks cumulative dollar spend in real time across teams.",
+            "activeBars": [
+              "teamSupport",
+              "teamAnalytics"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hard budget cap instantly locks tenant access upon exceeding allowance.",
+            "activeBars": [
+              "teamGrowth"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-tenant team budget utilization comparison",
+        "bars": [
+          {
+            "id": "teamSupport",
+            "label": "Support Team",
+            "value": 45
+          },
+          {
+            "id": "teamAnalytics",
+            "label": "Analytics Team",
+            "value": 85
+          },
+          {
+            "id": "teamGrowth",
+            "label": "Growth Team",
+            "value": 105
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "System tracks cumulative dollar spend in real time across teams.",
+            "activeBars": [
+              "teamSupport",
+              "teamAnalytics"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Hard budget cap instantly locks tenant access upon exceeding allowance.",
+            "activeBars": [
+              "teamGrowth"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graceful Degradation: Exponential Backoff & Fallback Model Routing",
+      "codeHash": "9178257ae87c95ae76febe4dfec404d518fca73c77dbee1c757684f6e300cac6",
+      "spec": {
+        "template": "sequence",
+        "title": "Resilient retry and fallback model routing flow",
+        "actors": [
+          "App Client",
+          "LLMOps Gateway",
+          "Primary Model",
+          "Fallback Model"
+        ],
+        "messages": [
+          {
+            "from": "App Client",
+            "to": "LLMOps Gateway",
+            "label": "Submit Prompt"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "Primary Model",
+            "label": "Forward Request"
+          },
+          {
+            "from": "Primary Model",
+            "to": "LLMOps Gateway",
+            "label": "HTTP 429 Throttled"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "Fallback Model",
+            "label": "Reroute Secondary"
+          },
+          {
+            "from": "Fallback Model",
+            "to": "LLMOps Gateway",
+            "label": "HTTP 200 Stream"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "App Client",
+            "label": "Deliver Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Upstream rate limit errors trigger resilient gateway handling.",
+            "activeMessages": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gateway automatically degrades to secondary provider upon primary failure.",
+            "activeMessages": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Resilient retry and fallback model routing flow",
+        "actors": [
+          "App Client",
+          "LLMOps Gateway",
+          "Primary Model",
+          "Fallback Model"
+        ],
+        "messages": [
+          {
+            "from": "App Client",
+            "to": "LLMOps Gateway",
+            "label": "Submit Prompt"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "Primary Model",
+            "label": "Forward Request"
+          },
+          {
+            "from": "Primary Model",
+            "to": "LLMOps Gateway",
+            "label": "HTTP 429 Throttled"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "Fallback Model",
+            "label": "Reroute Secondary"
+          },
+          {
+            "from": "Fallback Model",
+            "to": "LLMOps Gateway",
+            "label": "HTTP 200 Stream"
+          },
+          {
+            "from": "LLMOps Gateway",
+            "to": "App Client",
+            "label": "Deliver Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Upstream rate limit errors trigger resilient gateway handling.",
+            "activeMessages": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Gateway automatically degrades to secondary provider upon primary failure.",
+            "activeMessages": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production LLMOps Gateway: Multi-Tenant Rate Limiting Engine",
+      "codeHash": "66a94d424ca6f43d90e95c74b7f6e6c0ba6007916677554128b7c981adcafa2b",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
