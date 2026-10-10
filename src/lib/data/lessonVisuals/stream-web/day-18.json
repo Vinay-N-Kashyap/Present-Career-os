@@ -354,7 +354,7 @@
           },
           {
             "at": "say5",
-            "caption": "When value 80 leaves expired windows, window [200, 400) updates max to 10.",
+            "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
             "rows": [
               [
                 "[0, 200)",
@@ -408,7 +408,7 @@
           },
           {
             "at": "say5",
-            "caption": "When value 80 leaves expired windows, window [200, 400) updates max to 10.",
+            "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
             "rows": [
               [
                 "[0, 200)",

@@ -48,7 +48,7 @@
                 "value": {
                   "text": "1000"
                 },
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "label": "Stall Audit Depth",
@@ -93,7 +93,7 @@
               {
                 "label": "Critical Threshold",
                 "value": 1000,
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "label": "Stall Audit Depth",

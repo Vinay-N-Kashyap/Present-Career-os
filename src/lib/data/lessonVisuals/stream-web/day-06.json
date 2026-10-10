@@ -322,7 +322,7 @@
                 "value": {
                   "text": "0"
                 },
-                "tone": "muted"
+                "tone": "idle"
               }
             ]
           },
@@ -342,7 +342,7 @@
                 "value": {
                   "text": "2"
                 },
-                "tone": "accent"
+                "tone": "idle"
               },
               {
                 "label": "Total Deployed",
@@ -371,7 +371,7 @@
               {
                 "label": "Scenario A Idle",
                 "value": 0,
-                "tone": "muted"
+                "tone": "idle"
               }
             ]
           },
@@ -387,7 +387,7 @@
               {
                 "label": "Scenario B Idle",
                 "value": 2,
-                "tone": "accent"
+                "tone": "idle"
               },
               {
                 "label": "Total Deployed",

@@ -213,7 +213,7 @@
                 "value": {
                   "text": "2"
                 },
-                "tone": "accent"
+                "tone": "idle"
               },
               {
                 "label": "Moderate (500 msg/s)",
@@ -260,7 +260,7 @@
               {
                 "label": "Low (50 msg/s)",
                 "value": 2,
-                "tone": "accent"
+                "tone": "idle"
               },
               {
                 "label": "Moderate (500 msg/s)",

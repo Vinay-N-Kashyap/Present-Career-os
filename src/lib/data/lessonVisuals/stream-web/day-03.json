@@ -237,14 +237,14 @@
                 "value": {
                   "text": "3"
                 },
-                "tone": "muted"
+                "tone": "idle"
               },
               {
                 "label": "highWaterMark",
                 "value": {
                   "text": "3"
                 },
-                "tone": "accent"
+                "tone": "ok"
               }
             ]
           },
@@ -305,12 +305,12 @@
               {
                 "label": "broker-3 LEO",
                 "value": 3,
-                "tone": "muted"
+                "tone": "idle"
               },
               {
                 "label": "highWaterMark",
                 "value": 3,
-                "tone": "accent"
+                "tone": "ok"
               }
             ]
           },

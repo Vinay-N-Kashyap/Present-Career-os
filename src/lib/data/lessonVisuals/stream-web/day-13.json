@@ -373,7 +373,7 @@
                 "value": {
                   "text": "4"
                 },
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -416,7 +416,7 @@
               {
                 "label": "Available Cores",
                 "value": 4,
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

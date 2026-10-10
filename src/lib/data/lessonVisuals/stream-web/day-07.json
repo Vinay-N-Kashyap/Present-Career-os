@@ -204,7 +204,7 @@
                 "value": {
                   "text": "12"
                 },
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           },
@@ -246,7 +246,7 @@
               {
                 "label": "Total Partitions",
                 "value": 12,
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           },

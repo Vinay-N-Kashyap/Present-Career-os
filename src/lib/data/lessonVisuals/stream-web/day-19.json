@@ -247,6 +247,11 @@
         ],
         "steps": [
           {
+            "at": "say5",
+            "caption": "When no active session exists, a new session state record is allocated.",
+            "activeState": "s1New"
+          },
+          {
             "at": "say6",
             "caption": "When timestamp minus lastSeen is within gapMs (300ms), the session is extended.",
             "activeState": "s1Ext",
@@ -254,16 +259,6 @@
               "from": "s1New",
               "to": "s1Ext",
               "label": "delta: 150ms <= 300ms"
-            }
-          },
-          {
-            "at": "say5",
-            "caption": "When the previous session times out (650 - 250 > 300), a new session starts.",
-            "activeState": "s2New",
-            "transition": {
-              "from": "s1Ext",
-              "to": "s2New",
-              "label": "idle: 400ms > 300ms"
             }
           }
         ]
@@ -287,6 +282,11 @@
         ],
         "steps": [
           {
+            "at": "say5",
+            "caption": "When no active session exists, a new session state record is allocated.",
+            "activeState": "s1New"
+          },
+          {
             "at": "say6",
             "caption": "When timestamp minus lastSeen is within gapMs (300ms), the session is extended.",
             "activeState": "s1Ext",
@@ -294,16 +294,6 @@
               "from": "s1New",
               "to": "s1Ext",
               "label": "delta: 150ms <= 300ms"
-            }
-          },
-          {
-            "at": "say5",
-            "caption": "When the previous session times out (650 - 250 > 300), a new session starts.",
-            "activeState": "s2New",
-            "transition": {
-              "from": "s1Ext",
-              "to": "s2New",
-              "label": "idle: 400ms > 300ms"
             }
           }
         ]
@@ -318,7 +308,7 @@
         "steps": [
           {
             "at": "say2",
-            "caption": "Two separate sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
+            "caption": "Two sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
             "items": [
               {
                 "text": "s-1 [100..200]"
@@ -368,7 +358,7 @@
         "steps": [
           {
             "at": "say2",
-            "caption": "Two separate sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
+            "caption": "Two sessions are recorded: Session 1 [100, 200] and Session 2 [500, 600].",
             "items": [
               "s-1 [100..200]",
               "Gap (300ms > 200ms)",
@@ -416,7 +406,7 @@
         "steps": [
           {
             "at": "say6",
-            "caption": "When cur.start (40) is within prev.end + 15 (45), the sessions merge to [10, 60].",
+            "caption": "If true, the sessions overlap or bridge: we extend the span to [10, 60].",
             "rows": [
               [
                 "[10, 30] + [40, 60]",
@@ -428,7 +418,7 @@
           },
           {
             "at": "say7",
-            "caption": "When the inactivity gap is not bridged (100 > 75), a new session is finalized.",
+            "caption": "If false, the inactivity gap was not bridged: the working session is finalized.",
             "rows": [
               [
                 "[10, 30] + [40, 60]",
@@ -458,7 +448,7 @@
         "steps": [
           {
             "at": "say6",
-            "caption": "When cur.start (40) is within prev.end + 15 (45), the sessions merge to [10, 60].",
+            "caption": "If true, the sessions overlap or bridge: we extend the span to [10, 60].",
             "rows": [
               [
                 "[10, 30] + [40, 60]",
@@ -470,7 +460,7 @@
           },
           {
             "at": "say7",
-            "caption": "When the inactivity gap is not bridged (100 > 75), a new session is finalized.",
+            "caption": "If false, the inactivity gap was not bridged: the working session is finalized.",
             "rows": [
               [
                 "[10, 30] + [40, 60]",

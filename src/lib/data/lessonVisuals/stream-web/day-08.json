@@ -130,7 +130,7 @@
                 "value": {
                   "text": "9"
                 },
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           },
@@ -172,7 +172,7 @@
               {
                 "label": "Auto-Committed Offset",
                 "value": 9,
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           },

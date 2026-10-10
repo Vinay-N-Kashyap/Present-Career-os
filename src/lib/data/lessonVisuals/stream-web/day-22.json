@@ -212,7 +212,7 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Log compaction retains the latest record for each key across 6 raw offsets.",
+            "caption": "Log compaction retains the latest record for each key across changelog offsets.",
             "items": [
               {
                 "text": "#0 AAPL=150"
@@ -270,7 +270,7 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Log compaction retains the latest record for each key across 6 raw offsets.",
+            "caption": "Log compaction retains the latest record for each key across changelog offsets.",
             "items": [
               "#0 AAPL=150",
               "#2 AAPL=152.5",

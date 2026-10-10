@@ -348,7 +348,7 @@
           },
           {
             "at": "say7",
-            "caption": "When AAPL at 210ms arrives, it opens a new AAPL:200 window accumulator.",
+            "caption": "When a trade event arrives, it updates the dedicated key-window accumulator.",
             "bars": [
               {
                 "label": "AAPL:100 (2 trades)",
@@ -397,7 +397,7 @@
           },
           {
             "at": "say7",
-            "caption": "When AAPL at 210ms arrives, it opens a new AAPL:200 window accumulator.",
+            "caption": "When a trade event arrives, it updates the dedicated key-window accumulator.",
             "bars": [
               {
                 "label": "AAPL:100 (2 trades)",
@@ -442,7 +442,7 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "At watermark 2000ms, Window [1000, 2000) closes and emits Vol: 40.",
+            "caption": "When the trigger fires at watermark 2000ms, accumulated state is published.",
             "messages": [
               {
                 "from": "clock",
@@ -496,7 +496,7 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "At watermark 2000ms, Window [1000, 2000) closes and emits Vol: 40.",
+            "caption": "When the trigger fires at watermark 2000ms, accumulated state is published.",
             "messages": [
               {
                 "from": "clock",

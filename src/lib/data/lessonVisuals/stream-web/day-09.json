@@ -370,7 +370,7 @@
                 "value": {
                   "text": "5"
                 },
-                "tone": "accent"
+                "tone": "error"
               }
             ]
           },
@@ -390,7 +390,7 @@
                 "value": {
                   "text": "5"
                 },
-                "tone": "accent"
+                "tone": "error"
               },
               {
                 "label": "rebalanceTimeouts",
@@ -426,7 +426,7 @@
               {
                 "label": "consumerCrashes",
                 "value": 5,
-                "tone": "accent"
+                "tone": "error"
               }
             ]
           },
@@ -442,7 +442,7 @@
               {
                 "label": "consumerCrashes",
                 "value": 5,
-                "tone": "accent"
+                "tone": "error"
               },
               {
                 "label": "rebalanceTimeouts",
