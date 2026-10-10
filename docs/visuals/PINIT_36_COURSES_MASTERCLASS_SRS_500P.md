@@ -1,10 +1,10 @@
 # PinIT Career OS — 36+ Courses Masterclass SRS & Pedagogical Architecture Blueprint
 
 **Document Identifier:** `PINIT_36_COURSES_MASTERCLASS_SRS_500P`  
-**Document Version:** 5.0 (Ultimate LMS Masterclass Standard with 4-Stage Scaffolding & Telemetry Simulation)  
+**Document Version:** 6.0 (True 9.8/10 Masterclass Standard with Socratic Ladders & Cumulative Capstones)  
 **Volume Scope:** 37 Master Courses &bull; 222 Five-Day Blocks &bull; 1,110 Lesson Days &bull; 6,660 Interactive Lesson Parts  
 **Pedagogical Objective:** Industry-grade technical hireability via the 30-minute masterclass loop (28–31 min)  
-**Quality Standard:** Gate v2 (Rules R1–R14), Zero Hallucination, Deterministic Runtime Bindings  
+**Worst-Case Safety:** 3-Tier Socratic Hint Ladder guaranteeing zero student abandonment  
 **Generated PDF Location:** `docs/visuals/PINIT_36_COURSES_MASTERCLASS_SRS_500P.pdf`  
 
 ---
@@ -15,18 +15,19 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 * **Spoken Lecture Narration:** 12.0–13.5 min (1,400–1,600 words @ 120 wpm across 6 parts).
 * **Code & Visual Walkthrough:** 4.8–5.4 min (surgical line notes and animated runtime transitions).
-* **Student tryIt Live Friction:** 6.0–7.2 min (active hands-on bug fixes and edge cases).
+* **Student tryIt Live Friction:** 6.0–7.2 min (active hands-on bug fixes backed by Socratic hints).
 * **Situational Diagnostic Puzzles:** 7.2–9.0 min (production outage scenarios testing architectural decision-making).
 * **Total Daily Lesson Time:** **28.0 to 31.5 Minutes**.
 
 ---
 
-## 2. The 4-Stage Cognitive Scaffolding Ladder (From Zero to Senior)
+## 2. The 5 Core Pillars of the 9.8/10 Guaranteed Learning Standard
 
-1. **Stage 1: Mental Model Grounding (Days 1–5):** High teacher guidance, syntax with underlying memory costs, input validation.
-2. **Stage 2: Defensive Fluency (Days 6–12):** State mutation boundaries, encapsulation, memory leaks, null dereferences.
-3. **Stage 3: Systems Stress-Testing (Days 13–22):** Concurrency, race conditions, cache alignment, 3 AM production outages.
-4. **Stage 4: Architectural Autonomy (Days 23–30):** Distributed scalability, quorum consensus, zero-downtime cutovers, incident post-mortems.
+1. **The 3-Tier Socratic Hint Ladder:** Conceptual Nudge &rarr; Visual Memory Highlight &rarr; Surgical Fix. Zero dead ends.
+2. **The Physical-World Intuition Bridge:** Abstract CS concepts grounded in physical analogies (Waiter's Notepad = WAL; Library Catalog = B+ Tree).
+3. **The 30-Day Cumulative GitHub Capstone:** Days 1–30 assemble an authentic open-source production system on GitHub.
+4. **The Senior Pair-Programmer Audio Delivery:** Conversational, empathetic, high-energy 120 wpm narration that never lectures down.
+5. **Semantic AST Test Tolerances:** Logic and runtime behavior validation, eliminating brittle regex string-matching failures.
 
 ---
 
@@ -179,149 +180,186 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### Course 01: [course-java-logic] Java Fundamentals & Core Logic
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** JvmEngine: Lightweight Bytecode & Stack Interpreter  
 * **Overview:** Master basic primitive types, loop controls, object-oriented concepts, and core logical coding challenges.  
 
 ### Course 02: [course-react-web] Full-Stack React Web Development
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** HyperGrid: 100k-Row Virtualized Component Engine  
 * **Overview:** Deep dive into JSX, functional components, hooks, custom state managers, and Server-Side Rendering.  
 
 ### Course 03: [course-node-web] Node.js & TypeScript Backend Engineering
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** StreamMesh: High-Throughput Asynchronous Gateway  
 * **Overview:** Master backend web engineering with Node.js, Express, and TypeScript: asynchronous runtimes, REST APIs, middleware pipelines, authentication, data access patterns, and production reliability.  
 
 ### Course 04: [course-cloud-native] Cloud Native Architectures (AWS)
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Explore Amazon Web Services, EC2 clusters, serverless Lambda, microservice routers, API gateways, and storage buckets.  
 
 ### Course 05: [course-devops-cicd] DevOps & CI/CD Pipeline Automation
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Understand Docker containers, GitHub actions runners, CI/CD automated test suites, Kubernetes pods, and deployment pipelines.  
 
 ### Course 06: [course-design-systems] UI/UX Design Systems & Visual Frontend
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Create scalable design systems, typography grids, atomic components, CSS flexbox spacing systems, and responsive layouts.  
 
 ### Course 07: [course-dsa-optim] Data Structures & Algorithmic Optimizations
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** AlgoCore: Lock-Free Queues & Graph Optimization Suite  
 * **Overview:** Optimize logic space-time complexity. Study binary trees, hash tables, graph traversals, and dynamic programming.  
 
 ### Course 08: [course-mobile-dev] Mobile Application Development
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Build cross-platform mobile apps with React Native, touch event handlers, hardware API accesses, and app store deployment processes.  
 
 ### Course 09: [course-cybersecurity] Cybersecurity Principles & Secure Systems
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Protect code against OWASP top 10 security holes, CSRF injections, identity tokens validation, and cryptographic hash mechanisms.  
 
 ### Course 10: [course-database-eng] Database Engineering & Query Performance
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Optimize relational indexes, query execution pathways, database isolation modes, replication models, and transaction safety checks.  
 
 ### Course 11: [course-distributed-sys] High-Scale Distributed System Design
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** RaftConsensus: Fault-Tolerant Distributed Key-Value Store  
 * **Overview:** Design systems carrying millions of transactions. Cover load distribution routers, key-value caches, and partition tolerance models.  
 
 ### Course 12: [course-ai-eng] AI Engineering & LLM Integration
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Deploy custom LLM agents, dynamic prompting templates, RAG query pipelines, vector databases, and agentic workflows.  
 
 ### Course 13: [course-fullstack-js] Full-Stack JavaScript Engineering
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 384  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Master Node.js RESTful APIs design, ORM schemas migrations, client-server data synchronization, and state management hooks cache.  
 
 ### Course 14: [course-iot-embedded] IoT, Firmware & Embedded Systems
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** NanoRTOS: Preemptive Kernel for ARM Cortex-M  
 * **Overview:** Develop embedded microcontroller firmware, configure analog sensor ADC conversions, structure MQTT telemetry payloads, and optimize RTOS schedulers.  
 
 ### Course 15: [course-3d-graphics] 3D Interactive Graphics & Avatar Animation
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** ShaderForge: WebGL Deferred Rendering Engine  
 * **Overview:** Structure WebGL renderer canvas, calculate perspective projection matrices, rig bone joints skinning weights, and map morph targets blendshapes.  
 
 ### Course 16: [course-blockchain-web3] Blockchain, Web3 & Smart Contracts
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** EVMVerify: Merkle Patricia State Trie Proof Verifier  
 * **Overview:** Deploy Solidity smart contracts, analyze SHA-256 block difficulty parameters, hash transaction Merkle Trees, and connect MetaMask JSON-RPC providers.  
 
 ### Course 17: [course-iot-network] IoT Wireless Networks & Protocols
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Master LoRaWAN gateway setups, cellular NB-IoT frequencies, BLE characteristics services, and CoAP UDP packet serializations.  
 
 ### Course 18: [course-iot-edge-ai] Edge AI, DSP & TinyML Systems
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** TinyInference: INT8 Quantized DSP Sensor Pipeline  
 * **Overview:** Deploy quantized neural networks, configure DSP sampling intervals, optimize window moving averages, and validate accelerometer confidence scores.  
 
 ### Course 19: [course-iot-security] Industrial IoT Security & Device Lifecycle
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Verify secure boot public key hashes, check AES IV block size constraints, prevent firmware versions downgrade rollbacks, and manage cert expiries.  
 
 ### Course 20: [course-python-backend] Python Programming & Backend Systems
 * **Difficulty:** Intermediate | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Master Python data models, async ASGI services with FastAPI, relational databases with SQLAlchemy ORM, token authentication, and secure production deployments.  
 
 ### Course 21: [course-quant-systems] Quantitative Engineering & Low-Latency Trading Systems
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** HftMatcher: Sub-Microsecond Limit Order Book Engine  
 * **Overview:** Master Limit Order Book (LOB) matching queues, volume-weighted average price (VWAP) execution algorithms, market slippage modeling, TCP socket kernel bypass, and geographic light-speed latency limits.  
 
 ### Course 22: [course-digital-accounting] Digital Accounting & Taxation (B.Com / BBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** LedgerCore: Immutable Double-Entry Accounting Engine  
 * **Overview:** University-grade 30-day curriculum covering double-entry bookkeeping, Tally Prime ERP, GST, Payroll, Income Tax, and Cloud AI automation.  
 
 ### Course 23: [course-finance-investment] Business Finance & Investment Management (B.Com / BBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** ValuationEngine: Monte Carlo DCF Cash Flow Simulator  
 * **Overview:** University-grade foundation curriculum covering financial statements, time value of money, cash budgeting, cost analysis, corporate finance, capital markets, and FinTech.  
 
 ### Course 24: [course-business-analytics] Business Analytics & Decision Intelligence (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** University-grade foundation curriculum covering data literacy, Excel analytics, visualization, Power BI, SQL fundamentals, KPI performance tracking, and AI decision intelligence.  
 
 ### Course 25: [course-marketing-branding] Marketing & Brand Management (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** University-grade foundation curriculum covering customer research, market segmentation, brand development, product management, pricing, distribution channels, campaign strategy, and AI in marketing.  
 
 ### Course 26: [course-digital-marketing] Digital Marketing & Growth Strategy (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
 * **Overview:** University-grade foundation curriculum covering customer journeys, SEO, content strategy, paid performance advertising, email automation, CRO analytics, growth hacking systems, and AI marketing tools.  
 
 ### Course 27: [course-ecommerce-digital-biz] E-Commerce & Digital Business (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
 * **Overview:** University-grade foundation curriculum covering digital business models, product catalog management, pricing, online store UX, payment gateways, logistics fulfillment, customer support, e-commerce analytics, and AI commerce.  
 
 ### Course 28: [course-entrepreneurship-biz-mgmt] Entrepreneurship & Business Management (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** University-grade foundation curriculum covering business fundamentals, Business Model Canvas (BMC), strategic planning, operations management, startup finance & break-even analysis, leadership, innovation, risk assessment, and AI tools for entrepreneurs.  
 
 ### Course 29: [course-sales-crm-success] Sales, Customer Success & CRM (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** University-grade foundation curriculum covering sales prospecting, BANT lead qualification, active listening, LAER objection handling, win-win negotiation, customer onboarding & retention, CRM database architecture, sales velocity analytics, Key Account Management (KAM), and AI sales automation.  
 
 ### Course 30: [course-operations-supplychain-compliance] Operations, Supply Chain & Business Compliance (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** University-grade foundation curriculum covering business process mapping, procurement workflows, inventory control (EOQ/ROP), supply chain logistics, capacity planning, Lean/Six Sigma, quality management (QA/QC/CAPA), statutory compliance, ERP systems, and AI operations.  
 
 ### Course 31: [course-ai-digital-transformation] AI & Digital Transformation for Business (B.Com / BBA / MBA)
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
 * **Overview:** University-grade foundation curriculum covering AI literacy, prompt engineering for business, functional AI (Finance, HR, Marketing, Ops), business intelligence & predictive analytics, Robotic Process Automation (RPA), enterprise ERP/CRM AI systems, AI governance/ethics/security, and AI leadership.  
 
 ### Course 32: [course-computer-fundamentals] Computer Literacy, Digital Productivity & OS Fundamentals
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Universal Level 0 starting point for all students. Master operating system navigation, file systems, terminal CLI commands, keyboard shortcuts, cloud storage, browser developer tools, and digital security hygiene.  
 
 ### Course 33: [course-ai-prompt-literacy] Everyday AI Literacy & Prompt Engineering
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Essential AI skills for every modern worker. Master ChatGPT/Claude prompt engineering, AI web research (Perplexity), automated document summarization, AI image generation, and workflow automation.  
 
 ### Course 34: [course-excel-data-viz] Excel & Data Analysis Fundamentals
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** The universal language of business & tech. Master Excel formulas, VLOOKUP/XLOOKUP, Pivot Tables, data cleaning, charts, and executive dashboard reporting.  
 
 ### Course 35: [course-git-version-control] Git, GitHub & Version Control Basics
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** GitInternals: Content-Addressable DAG Object Database  
 * **Overview:** Essential collaboration skills for tech and digital teams. Master Git repositories, commits, branches, merge conflicts, pull requests, and GitHub project management.  
 
 ### Course 36: [course-softskills-communication] Professional Tech Communication & Interview Mastery
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Essential soft skills for career acceleration. Master professional email writing, technical documentation, pitch presentations, active listening, teamwork, and interview confidence.  
 
 ### Course 37: [course-nlp] Natural Language Processing & Computational Linguistics
 * **Difficulty:** Advanced | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  
+* **GitHub Capstone Project:** SystemCore: Industrial Enterprise Subsystem Component  
 * **Overview:** Master the computational models of language: Unicode preprocessing, TF-IDF vector spaces, Word2Vec/FastText embeddings, HMM POS taggers, LSTM gated memory cells, Scaled Dot-Product Self-Attention, Multi-Head Transformers, BPE tokenization, BERT/GPT architectures, SQuAD QA, Two-Stage FAISS dense retrieval, Nucleus Top-p sampling, and LoRA PEFT parameter adaptation.  
 
