@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 13,
+  "promptSha": "9cc59b45159a7dbf4e791921498b81874b57f97e8aa3f28246135b58974abc94",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Latency Distribution & Tail Latency (P95/P99)",
+      "codeHash": "9cc59b45159a7dbf4e791921498b81874b57f97e8aa3f28246135b58974abc94",
+      "spec": {
+        "template": "bars",
+        "title": "Latency Distribution Percentiles (ms)",
+        "bars": [
+          { "label": "P50 Median", "value": { "text": "140" }, "tone": "ok" },
+          { "label": "P95 Threshold", "value": { "text": "800" }, "tone": "data" },
+          { "label": "P99 Tail Latency", "value": { "text": "1500" }, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Observability focuses on median and tail latency percentile metrics.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "The P95 percentile isolates the slowest five percent of user experiences.",
+            "highlightBar": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Tail latency is volatile due to cold starts and GPU queueing contention.",
+            "highlightBar": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Latency Distribution Percentiles (ms)",
+        "bars": [
+          { "label": "P50 Median", "value": 140, "tone": "ok" },
+          { "label": "P95 Threshold", "value": 800, "tone": "data" },
+          { "label": "P99 Tail Latency", "value": 1500, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Observability focuses on median and tail latency percentile metrics.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "The P95 percentile isolates the slowest five percent of user experiences.",
+            "highlightBar": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Tail latency is volatile due to cold starts and GPU queueing contention.",
+            "highlightBar": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dissecting Inference Stage Latencies",
+      "codeHash": "0ab3d67a7647bf3ff1fffa0bba7d4b2b22ca8bde7129eb5f76c66dba2bd89f6a",
+      "spec": {
+        "template": "table",
+        "title": "Inference Latency Stage Breakdown",
+        "columns": ["Pipeline Stage", "Duration (ms)", "Primary Root Cause"],
+        "rows": [
+          { "Pipeline Stage": { "text": "DNS & TCP Handshake" }, "Duration (ms)": { "text": "50" }, "Primary Root Cause": { "text": "Connection pooling and keepalive sockets" } },
+          { "Pipeline Stage": { "text": "TTFT (Prefill)" }, "Duration (ms)": { "text": "250" }, "Primary Root Cause": { "text": "Upstream queue wait time and matrix prefill" } },
+          { "Pipeline Stage": { "text": "Generation Decoding" }, "Duration (ms)": { "text": "700" }, "Primary Root Cause": { "text": "Auto-regressive token emissions and verbosity" } },
+          { "Pipeline Stage": { "text": "Total End-to-End" }, "Duration (ms)": { "text": "1000" }, "Primary Root Cause": { "text": "Cumulative round-trip user experience" } }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Total end-to-end latency breaks into distinct sequential pipeline phases.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Time-to-First-Token measures queue wait time and GPU prompt prefill.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "High generation times indicate output token lengths are too long.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inference Latency Stage Breakdown",
+        "columns": ["Pipeline Stage", "Duration (ms)", "Primary Root Cause"],
+        "rows": [
+          { "Pipeline Stage": "DNS & TCP Handshake", "Duration (ms)": "50", "Primary Root Cause": "Connection pooling and keepalive sockets" },
+          { "Pipeline Stage": "TTFT (Prefill)", "Duration (ms)": "250", "Primary Root Cause": "Upstream queue wait time and matrix prefill" },
+          { "Pipeline Stage": "Generation Decoding", "Duration (ms)": "700", "Primary Root Cause": "Auto-regressive token emissions and verbosity" },
+          { "Pipeline Stage": "Total End-to-End", "Duration (ms)": "1000", "Primary Root Cause": "Cumulative round-trip user experience" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Total end-to-end latency breaks into distinct sequential pipeline phases.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Time-to-First-Token measures queue wait time and GPU prompt prefill.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "High generation times indicate output token lengths are too long.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SLA Budget Ceilings & Degradation Policies",
+      "codeHash": "a8760f570aaf08cfc4677b6a9d120432a026354ba9374b07f25ad2a80f3badb2",
+      "spec": {
+        "template": "states",
+        "title": "SLA Latency Compliance and Degradation States",
+        "states": [
+          { "id": "monitored", "label": "Latency Monitored" },
+          { "id": "compliant", "label": "P95 <= 2000ms (Compliant)" },
+          { "id": "breached", "label": "P95 > 2000ms (SLA Breached)" },
+          { "id": "degraded", "label": "Degradation Policies Active" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Interactive chat mandates that P95 latency remain strictly below targets.",
+            "current": "monitored",
+            "visited": ["monitored"]
+          },
+          {
+            "at": "say4",
+            "caption": "Breaching SLA targets flags non-compliant states and triggers degradation.",
+            "current": "breached",
+            "visited": ["monitored", "breached"]
+          },
+          {
+            "at": "say5",
+            "caption": "Graceful degradation sheds non-critical features to preserve core targets.",
+            "current": "degraded",
+            "visited": ["monitored", "breached", "degraded"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "SLA Latency Compliance and Degradation States",
+        "states": [
+          { "id": "monitored", "label": "Latency Monitored" },
+          { "id": "compliant", "label": "P95 <= 2000ms (Compliant)" },
+          { "id": "breached", "label": "P95 > 2000ms (SLA Breached)" },
+          { "id": "degraded", "label": "Degradation Policies Active" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Interactive chat mandates that P95 latency remain strictly below targets.",
+            "current": "monitored",
+            "visited": ["monitored"]
+          },
+          {
+            "at": "say4",
+            "caption": "Breaching SLA targets flags non-compliant states and triggers degradation.",
+            "current": "breached",
+            "visited": ["monitored", "breached"]
+          },
+          {
+            "at": "say5",
+            "caption": "Graceful degradation sheds non-critical features to preserve core targets.",
+            "current": "degraded",
+            "visited": ["monitored", "breached", "degraded"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hedged Requests & Speculative Parallelism",
+      "codeHash": "cafd6bd2883842471fe5055ed7e65a901556787c1de1f5b100dca20c7e3a998d",
+      "spec": {
+        "template": "compare",
+        "title": "Single Provider Dispatch vs Speculative Hedged Race",
+        "leftLabel": "Single Provider Dispatch",
+        "rightLabel": "Speculative Hedged Race",
+        "leftItems": [
+          "Waits indefinitely on hung provider",
+          "Vulnerable to worker GC pauses",
+          "Tail latency spikes to 3000ms+",
+          "Zero token redundancy cost"
+        ],
+        "rightItems": [
+          "Dispatches hedge request after deadline",
+          "Races primary against alternate region",
+          "Reduces P99 latency by up to 75%",
+          "Incurs modest 2% token hedge cost"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Clients fire speculative hedge requests when primaries exceed deadlines.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Clients race requests and accept whichever response arrives first.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single Provider Dispatch vs Speculative Hedged Race",
+        "leftLabel": "Single Provider Dispatch",
+        "rightLabel": "Speculative Hedged Race",
+        "leftItems": [
+          "Waits indefinitely on hung provider",
+          "Vulnerable to worker GC pauses",
+          "Tail latency spikes to 3000ms+",
+          "Zero token redundancy cost"
+        ],
+        "rightItems": [
+          "Dispatches hedge request after deadline",
+          "Races primary against alternate region",
+          "Reduces P99 latency by up to 75%",
+          "Incurs modest 2% token hedge cost"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Clients fire speculative hedge requests when primaries exceed deadlines.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Clients race requests and accept whichever response arrives first.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rolling Latency Windows & Spike Anomaly Detection",
+      "codeHash": "9a1bf466b31af4ffef88b79bfc53b31b38f4bcf88ba66995adcb22fc080bf0cf",
+      "spec": {
+        "template": "workflow",
+        "title": "Rolling Window Latency Anomaly Detection",
+        "stages": [
+          { "id": "sample", "name": "Duration Sample", "subtext": "Record completed request" },
+          { "id": "buffer", "name": "Rolling Window", "subtext": "Bounded sliding queue" },
+          { "id": "avg", "name": "Moving Average", "subtext": "Calculate active health" },
+          { "id": "anomaly", "name": "Spike Anomaly", "subtext": "Flag >50% abrupt jumps" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Observability uses rolling sample windows to evaluate real-time health.",
+            "activeStageId": "buffer",
+            "statusBadge": "sampling"
+          },
+          {
+            "at": "say5",
+            "caption": "Moving averages over rolling windows snapshot current network conditions.",
+            "activeStageId": "avg",
+            "statusBadge": "computing"
+          },
+          {
+            "at": "say6",
+            "caption": "Abrupt rolling average increases flag latency spike anomaly events.",
+            "activeStageId": "anomaly",
+            "statusBadge": "spiking"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Rolling Window Latency Anomaly Detection",
+        "stages": [
+          { "id": "sample", "name": "Duration Sample", "subtext": "Record completed request" },
+          { "id": "buffer", "name": "Rolling Window", "subtext": "Bounded sliding queue" },
+          { "id": "avg", "name": "Moving Average", "subtext": "Calculate active health" },
+          { "id": "anomaly", "name": "Spike Anomaly", "subtext": "Flag >50% abrupt jumps" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Observability uses rolling sample windows to evaluate real-time health.",
+            "activeStageId": "buffer",
+            "statusBadge": "sampling"
+          },
+          {
+            "at": "say5",
+            "caption": "Moving averages over rolling windows snapshot current network conditions.",
+            "activeStageId": "avg",
+            "statusBadge": "computing"
+          },
+          {
+            "at": "say6",
+            "caption": "Abrupt rolling average increases flag latency spike anomaly events.",
+            "activeStageId": "anomaly",
+            "statusBadge": "spiking"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Latency SLA Governance Suite",
+      "codeHash": "9f7afc6524100d838678be2b83e0c1b1f95be4536c6460337365ac7504738754",
+      "spec": {
+        "template": "none",
+        "reason": "Production Latency SLA Governance Suite capstone synthesizing percentile tracking, stage profiling, degradation policies, and hedged racing"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Latency SLA Governance Suite capstone synthesizing percentile tracking, stage profiling, degradation policies, and hedged racing"
+      }
+    }
+  ]
+}
