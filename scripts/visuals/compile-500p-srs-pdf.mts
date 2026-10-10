@@ -11,6 +11,8 @@ import { DESIGN_SYSTEMS_MONTH_1_SPECS, DESIGN_SYSTEMS_MONTH_2_SPECS } from './de
 import { DSA_MONTH_1_SPECS, DSA_MONTH_2_SPECS } from './dsa-masterclass-spec';
 import { CYBERSECURITY_MONTH_1_SPECS, CYBERSECURITY_MONTH_2_SPECS } from './cybersecurity-masterclass-spec';
 import { DATABASE_MONTH_1_SPECS, DATABASE_MONTH_2_SPECS } from './database-masterclass-spec';
+import { DISTRIBUTED_MONTH_1_SPECS, DISTRIBUTED_MONTH_2_SPECS } from './distributed-masterclass-spec';
+import { AI_MONTH_1_SPECS, AI_MONTH_2_SPECS } from './ai-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1364,6 +1366,118 @@ function renderDatabaseDayCard(day: any): string {
   `;
 }
 
+function renderDistributedDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #4f46e5;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #4f46e5; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0e7ff; color: #3730a3;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #4f46e5; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #3730a3; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #3730a3;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #4338ca;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #5b21b6;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #4c1d95;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAIDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #7c3aed;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #7c3aed; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #f3e8ff; color: #6b21a8;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #7c3aed; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #6b21a8; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #6b21a8;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #7c3aed;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderCybersecurityDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -2284,6 +2398,172 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Vectorized Columnar Analytics Engine</td><td>Column-oriented engine with Dictionary/RLE compression, 1024-tuple SIMD batches, and selection vector filtering.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Autonomous Database SRE Watchdog Engine</td><td>Real-time telemetry monitor identifying lock dependency trees, killing root blockers, and preventing XID wraparound.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>TitanDB Globally Distributed Sovereign Database Engine:</strong> Complete sovereign distributed database engine uniting LSM storage, Raft consensus, consistent hashing, columnar SIMD execution, TrueTime commit wait, and oral defense before Faculty Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XV: DEEP MASTERCLASS BLUEPRINT - HIGH-SCALE DISTRIBUTED SYSTEM DESIGN (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #1e1b4b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XV: Deep Masterclass Blueprint — High-Scale Distributed System Design</h1>
+        <span style="font-size: 8.2pt; color: #c7d2fe;">Course ID: <code>course-distributed-sys</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #4f46e5; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #a5b4fc;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>15.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Distributed systems are defined by partial failures, unbounded network latencies, and independent failure domains. In PinIT Career OS, <strong>Course 11: High-Scale Distributed System Design</strong> elevates students from single-node software developers into Staff Distributed Systems Architects across 60 rigorous days:
+    </p>
+    <div class="quote-box" style="border-left-color: #4f46e5;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Core Fallacies, Transport, Consensus, Ingress Gateways &amp; Resilience:</strong><br>
+      Fallacies of Distributed Computing &amp; Speed-of-Light Latency Physics, Zero-Copy TCP vs UDP &amp; gRPC Protobuf Buffering, Connection Pooling, HTTP/2 Multiplexing &amp; Head-of-Line Blocking, Timeout Budgets, Exponential Backoff &amp; Full Jitter, <strong>Milestone 1: Zero-Copy RPC Transport &amp; Circuit Breaker Engine</strong>, Consistent Hashing Rings &amp; Uniform Distribution Math, Virtual Nodes &amp; Heterogeneous Weight Balancing, Distributed Caching Topologies &amp; Cache Stampede Mitigation (XFetch), Distributed Invalidation Protocols &amp; Write-Through Pipelines, <strong>Milestone 2: Distributed Consistent Hashing Ring with VNodes</strong>, Physical Clock Drift, NTP Synchronization &amp; Leap Seconds, Lamport Logical Clocks &amp; Partial Happens-Before Ordering, Vector Clocks &amp; Concurrent Branch Divergence, Hybrid Logical Clocks (HLC) &amp; Bounded Clock Skew &epsilon;, <strong>Milestone 3: Hybrid Logical Clock (HLC) &amp; Causality Engine</strong>, Distributed Mutual Exclusion &amp; Martin Kleppmann Fencing Tokens, Redlock Verification &amp; Asymmetric Split-Brain Hazards, Leader Election via Leases &amp; Heartbeat Failover, Distributed 64-Bit ID Generation (Snowflake Architecture), <strong>Milestone 4: Distributed Lock Manager with Fencing Tokens</strong>, Paxos Synod &amp; Multi-Paxos Consensus Internals, Raft Leader Election, Term Monotonicity &amp; Heartbeats, Raft Log Replication &amp; Safety Invariants, Distributed Coordination via ZooKeeper/etcd &amp; Watchers, <strong>Milestone 5: Raft Consensus State Machine &amp; Membership Manager</strong>, Client-Side Load Balancing &amp; Power of Two Choices (P2C), Distributed Rate Limiting (Token Bucket &amp; Redis Sliding Window), Circuit Breakers &amp; Outlier Ejection Protocols, Distributed Tracing &amp; W3C TraceContext Context Propagation, and the <strong>NexusMesh Resilient Distributed Service Mesh Gateway Viva Gate</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): Event Streaming Logs, Peered Storage, Multi-Region &amp; ApexGrid Master Capstone:</strong><br>
+      Distributed Commit Logs &amp; Apache Kafka Storage Physics (Zero-Copy sendfile), Partition Topologies &amp; High-Water Mark Invariants, Consumer Group Cooperative Rebalancing &amp; Static Membership, Exactly-Once Semantics (EOS), Idempotent Producers &amp; Transactions, Stream Processing Physics, Event-Time Watermarks &amp; Windowing, <strong>Milestone 6: Event-Driven Streaming Log Engine &amp; Idempotent Consumer</strong>, Peered Dynamo-Style Storage Architecture &amp; Sloppy Quorums, Quorum Math (R + W &gt; N) &amp; Read Repair vs Hinted Handoff, Conflict-Free Replicated Data Types (CRDTs: PN-Counters, OR-Sets, LWW-Registers), Anti-Entropy Synchronization via Merkle Trees, <strong>Milestone 7: Dynamo-Style Peered Storage Cluster with CRDTs</strong>, Two-Phase Commit (2PC) Protocol &amp; Coordinator Single-Point-of-Failure Blocking, Three-Phase Commit (3PC) &amp; Non-Blocking Quorum Commit, Saga Orchestration vs Choreography &amp; Compensating Workflows, Transactional Outbox Pattern &amp; Change Data Capture (Debezium), Distributed Sharding Topologies &amp; Scatter-Gather Aggregations, <strong>Milestone 8: Distributed Saga Orchestrator &amp; Outbox Pipeline</strong>, Active-Active Multi-Region Architectures &amp; Cross-DC Replication, Anycast Edge Routing, Geo-DNS &amp; Global Server Load Balancing (GSLB), Geo-Partitioned Distributed SQL (CockroachDB Raft Ranges), Distributed Blob Storage Physics &amp; Erasure Coding (Reed-Solomon 8+4), <strong>Milestone 9: Active-Active Multi-Region Geo-Distributed Service Mesh</strong>, Distributed Observability, Tail-Based Tracing &amp; Exemplars, The Tail at Scale: Hedged Requests &amp; Speculative Retries, 3 AM SRE War Room: Cascading Timeouts &amp; Retry Storm Remediation, 3 AM SRE War Room: Distributed Rebalance Storms &amp; Split-Brain Partitions, <strong>Milestone 10: Autonomous Distributed SRE Chaos Engine</strong>, Geospatial Distributed Dispatch at Scale (Uber H3 Discrete Hexagonal Grid), Real-Time Distributed Social Timelines (Twitter Hybrid Fan-Out Architecture), Principal Distributed Systems RFC &amp; Architectural Trade-Off Analysis, Chaos Engineering at Scale (Jepsen Network Partition &amp; Split-Brain Validation), and the <strong>ApexGrid Globally Distributed Sovereign Microservice Grid Master Capstone Viva Gate</strong>.
+    </div>
+
+    <h2>15.2 Distributed Systems Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DISTRIBUTED_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDistributedDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #1e1b4b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XV: Distributed Systems Month 2 — Distributed Storage, Event Streaming, Multi-Region &amp; ApexGrid Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #c7d2fe;">Course ID: <code>course-distributed-sys</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #4f46e5; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Principal Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #a5b4fc;">Staff Distributed Architect Target</span>
+      </div>
+    </div>
+
+    <h2>15.3 Distributed Systems Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DISTRIBUTED_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDistributedDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>15.4 Distributed Systems Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Zero-Copy RPC Transport &amp; Circuit Breaker Engine</td><td>Zero-copy TCP buffer ring with gRPC Protobuf serialization, timeout budgets, and exponential backoff jitter.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Distributed Consistent Hashing Ring with VNodes</td><td>Ketama consistent hashing ring with 256 virtual nodes per server and XFetch probabilistic early cache expiration.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Hybrid Logical Clock (HLC) &amp; Causal Ordering Causality Engine</td><td>Causality tracking engine combining physical NTP clock readings with Lamport counters bounded by max clock drift epsilon.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Distributed Lock Manager with Fencing Tokens</td><td>Lock manager with monotonically incrementing fencing tokens and Martin Kleppmann split-brain storage validation.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Raft Consensus State Machine &amp; Membership Manager</td><td>Raft state machine with leader election, term validation, log replication, and safe dynamic membership transitions.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>NexusMesh Resilient Distributed Service Mesh Gateway:</strong> Production service mesh gateway uniting P2C load balancing, Redis sliding window rate limiting, circuit breaker outlier ejection, and live defense before Principal Architects.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Event-Driven Streaming Log Engine &amp; Idempotent Consumer</td><td>Partitioned commit log with zero-copy sendfile I/O, cooperative consumer rebalancing, and exactly-once transactional consumer.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Dynamo-Style Peered Storage Cluster with CRDTs</td><td>Leaderless key-value cluster with sloppy quorums, state-based CRDT resolution, and Merkle tree anti-entropy exchange.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Distributed Saga Orchestrator &amp; Debezium Outbox Pipeline</td><td>Multi-service transaction coordinator with forward recovery, compensating transactions, and Debezium CDC outbox ingestion.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Active-Active Multi-Region Geo-Distributed Service Mesh</td><td>Cross-datacenter service mesh with Anycast BGP routing, geo-partitioned Raft ranges, and Reed-Solomon erasure coding.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Autonomous Distributed SRE Chaos Engine</td><td>Real-time chaos engineering engine injecting network partitions, jitter, and packet drop, verifying automatic hedged request stabilization.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexGrid Globally Distributed Sovereign Microservice Grid:</strong> Complete sovereign distributed microservice platform uniting Raft consensus, H3 geospatial routing, Kafka event streaming, multi-region failover, Jepsen partition tolerance, and oral defense before Faculty Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XVI: DEEP MASTERCLASS BLUEPRINT - AI ENGINEERING & LLM INTEGRATION (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #2e1065; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XVI: Deep Masterclass Blueprint — AI Engineering &amp; LLM Integration</h1>
+        <span style="font-size: 8.2pt; color: #e9d5ff;">Course ID: <code>course-ai-eng</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #7c3aed; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #c084fc;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>16.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Generative AI and Large Language Models represent the most profound shift in enterprise software architecture in decades, yet most engineers remain trapped at the surface level of simple chat prompts. In PinIT Career OS, <strong>Course 12: AI Engineering &amp; LLM Integration</strong> elevates students into Staff AI Systems Engineers across 60 intensive days:
+    </p>
+    <div class="quote-box" style="border-left-color: #7c3aed;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Transformers, RAG Pipelines, Vector Retrieval &amp; Autonomous Agents:</strong><br>
+      Byte-Pair Encoding (BPE) &amp; Tokenization Context Boundaries, Scaled Dot-Product Attention &amp; O(N^2) Softmax Math, KV-Cache Memory Bandwidth Bounds (MHA, MQA, GQA), Rotary Position Embeddings (RoPE) &amp; NTK-Aware Context Extrapolation, <strong>Milestone 1: Minimalist Transformer Attention &amp; KV-Cache Engine</strong>, In-Context Learning (ICL) Mechanics &amp; Demonstration Recency Calibration, Chain-of-Thought (CoT), Self-Consistency &amp; Tree-of-Thoughts Search, Constrained Decoding via Grammar DFAs &amp; Logit Masking, Tool Use Protocols &amp; Parallel Function Calling, <strong>Milestone 2: Constrained Grammar-Guided Structured Extraction Engine</strong>, Contrastive Embeddings (InfoNCE), Pooling &amp; Anisotropy Collapse, High-Dimensional Metric Spaces &amp; Matryoshka Representation Learning (MRL), Hierarchical Navigable Small World (HNSW) Multi-Layer Skip Graphs, Vector Quantization (IVF-PQ &amp; SQ8) with Two-Stage Rescoring, <strong>Milestone 3: In-Memory HNSW Vector Index &amp; Search Engine</strong>, Recursive Character &amp; Parent-Child Document Chunking, Hybrid Search (Dense Vectors + Sparse BM25 / Okapi) via Reciprocal Rank Fusion (RRF), Cross-Encoder Re-Ranking Models &amp; Lost-in-the-Middle Context Pruning, Hypothetical Document Embeddings (HyDE) &amp; Sub-Query Decomposition, <strong>Milestone 4: Production Hybrid RAG Pipeline with Cross-Encoder Re-Ranking</strong>, RAG Triad Algorithmic Evaluation (Context Relevance, Faithfulness, Answer Relevance), Synthetic Dataset Generation (Evol-Instruct) &amp; CI/CD Regression Gates, Multi-Stage LLM Guardrails (Canary Tokens, Input Rails, Output PII Filtering), Semantic Caching (GPTCache) &amp; Sliding Window Token Buckets, <strong>Milestone 5: Enterprise LLM Evaluation Harness &amp; Guardrail Firewall</strong>, ReAct (Reason + Act) Finite State Machine Architecture, Hierarchical Agent Memory (Scratchpads, Sliding Summaries, Episodic Vectors), Reflexion Architecture (Verbal Self-Correction &amp; Multi-Trial Memory), Production Server-Sent Events (SSE) Streaming with AbortController Cancellation, and the <strong>CogniMesh Enterprise RAG &amp; Autonomous Agent Gateway Capstone Viva Gate</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): PEFT Fine-Tuning, Multi-Agent Swarms, vLLM Serving &amp; ApexIntelligence Master Capstone:</strong><br>
+      Full Fine-Tuning vs PEFT &amp; AdamW Optimizer State Memory Bounds (16N bytes), Low-Rank Adaptation (LoRA) Matrix Factorization Delta W = B * A &amp; Zero-Latency Weight Merging, QLoRA Mechanics: 4-bit NormalFloat (NF4), Double Quantization &amp; Paged Optimizers, ChatML Formatting, Special Role Tokens &amp; Masked Cross-Entropy Loss (-100 labels), <strong>Milestone 6: Distributed Parameter-Efficient Fine-Tuning Engine</strong>, Multi-Agent Topologies (Router, Orchestrator-Workers, Hierarchical Swarms) &amp; Context Isolation, Typed Message Passing Envelopes &amp; Asynchronous Agent Event Buses, Multi-Agent Debate Protocols, Sycophancy Mitigation &amp; Consensus Voting, Distributed Agent Task Queues (BullMQ/Redis) with Durable Step Checkpointing, <strong>Milestone 7: Multi-Agent Consensus &amp; Hierarchical Swarm Engine</strong>, Continuous Iteration-Level Batching (Orca) &amp; Dynamic Cell Allocation, PagedAttention (vLLM Architecture): Virtual Memory, Block Tables &amp; Copy-on-Write Sharing, Speculative Decoding: Fast Drafters, Target Verification &amp; Exact Rejection Sampling, Model Parallelism: Megatron-LM Tensor Parallelism (All-Reduce NVLink) vs Pipeline Parallelism, <strong>Milestone 8: High-Throughput PagedAttention Serving Engine</strong>, Vision Transformers (ViT): 16x16 Patch Embeddings &amp; 2D Spatial Positional Encodings, CLIP Cross-Modal Alignment &amp; Symmetric InfoNCE Hyperspheres, Multimodal Visual Projectors (2-Layer MLPs &amp; Perceiver Resamplers in LLaVA), Audio &amp; Speech: Log-Mel Spectrograms, Whisper ASR &amp; Streaming TTS Latency Budgets, <strong>Milestone 9: Multimodal Vision-Language Inference Engine</strong>, Human Preference Modeling: Bradley-Terry Logistic Formulation &amp; Reward Hacking, Direct Preference Optimization (DPO): Implicit Closed-Form Rewards &amp; Eliminating RL Loops, RLHF with PPO: Actor-Critic Architectures &amp; Adaptive KL Penalties, Automated Adversarial Red Teaming: Greedy Coordinate Gradients (GCG) &amp; Roleplay Jailbreak Probes, <strong>Milestone 10: Autonomous AI Red Teaming &amp; DPO Alignment Harness</strong>, Distributed Training Infrastructure: ZeRO Stages 1-3 &amp; Fully Sharded Data Parallel (FSDP), Real-World AI Code Assistants: Tree-sitter AST Slicing &amp; PageRank RepoMaps, Voice-Native Real-Time AI: WebRTC Bidirectional Streaming, Neural VAD &amp; Barge-In Interruption, Principal AI Architecture RFC: Build vs Buy, Open vs Closed Weights &amp; TCO Crossover Economics, and the <strong>ApexIntelligence Globally Distributed Autonomous AI Foundation Platform Master Capstone Viva Gate</strong>.
+    </div>
+
+    <h2>16.2 AI Engineering Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  AI_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderAIDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #2e1065; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XVI: AI Engineering Month 2 — LoRA Fine-Tuning, Multi-Agent Swarms, vLLM Serving &amp; ApexIntelligence Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #e9d5ff;">Course ID: <code>course-ai-eng</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #7c3aed; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced AI Systems</span><br>
+        <span style="font-size: 7.5pt; color: #c084fc;">Staff AI Systems Architect Target</span>
+      </div>
+    </div>
+
+    <h2>16.3 AI Engineering Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  AI_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderAIDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>16.4 AI Engineering Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Minimalist Transformer Attention &amp; KV-Cache Engine</td><td>Autoregressive self-attention module with RoPE relative rotation, causal masking, and dynamic KV-cache ring buffer.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Constrained Grammar-Guided Structured Extraction Engine</td><td>Deterministic JSON extractor compiling Zod schemas into logit-masking DFAs with zero parsing errors or retries.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>In-Memory HNSW Vector Index &amp; Search Engine</td><td>Hierarchical small-world vector database with logarithmic skip-graph routing and > 98% recall@10 under 5ms.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Production Hybrid RAG Pipeline with Cross-Encoder Re-Ranking</td><td>Two-stage retrieval pipeline combining HNSW, BM25, Reciprocal Rank Fusion, cross-encoders, and verified source citations.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Enterprise LLM Evaluation Harness &amp; Guardrail Firewall</td><td>Multi-stage security gateway featuring canary leak detection, input injection filtering, semantic caching, and RAG Triad scoring.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>CogniMesh Enterprise RAG &amp; Autonomous Agent Gateway:</strong> Production AI platform uniting HNSW vector search, hybrid RRF, ReAct state machine, guardrails, and live defense before Staff AI Architects.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Distributed Parameter-Efficient Fine-Tuning Engine (PEFT/LoRA)</td><td>Low-rank adapter training loop with ChatML loss masking, gradient backpropagation, and zero-latency weight merging.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Multi-Agent Consensus &amp; Hierarchical Swarm Engine</td><td>Distributed multi-agent system on BullMQ queues featuring role specialization, structured debate, and durable checkpoint recovery.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>High-Throughput PagedAttention Serving Engine (vLLM)</td><td>Inference serving engine with continuous iteration-level batching, virtual memory block tables, and speculative decoding.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Multimodal Vision-Language Inference Engine</td><td>Unified multimodal pipeline ingesting 16x16 image patches, MLP projection, and cross-modal autoregressive VQA.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Autonomous AI Red Teaming &amp; DPO Alignment Harness</td><td>Automated adversarial fuzzer generating synthetic preference datasets and executing Direct Preference Optimization.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexIntelligence Globally Distributed Autonomous AI Foundation Platform:</strong> Complete sovereign AI ecosystem uniting PagedAttention serving, DPO alignment, multi-agent swarms, multimodal reasoning, and oral defense before Faculty Review Board.</td></tr>
     </tbody>
   </table>
   `;
