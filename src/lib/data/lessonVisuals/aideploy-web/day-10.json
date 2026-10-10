@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 10,
+  "promptSha": "22d46493f9d3308e3ce23e575fa25b1329fa2776e85dfc6557b4b30a0f99adc6",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "RPM vs TPM Dual-Metering Architecture",
+      "codeHash": "22d46493f9d3308e3ce23e575fa25b1329fa2776e85dfc6557b4b30a0f99adc6",
+      "spec": {
+        "template": "compare",
+        "title": "Single Metric RPM vs Dual RPM & TPM Metering",
+        "leftLabel": "RPM-Only Metering (Vulnerable)",
+        "rightLabel": "Dual RPM & TPM Quota (Protected)",
+        "leftItems": [
+          "Only counts raw request volume",
+          "Ignores prompt and generation sizes",
+          "1 query consuming 64k tokens passes",
+          "Permits GPU monopolization and cost spikes"
+        ],
+        "rightItems": [
+          "Meters Requests Per Minute (RPM)",
+          "Enforces Tokens Per Minute (TPM) cap",
+          "Calculates projected token consumption",
+          "Guarantees multi-tenant fairness and budget"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Request volume alone is a misleading indicator of model resource usage.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Production gateways implement dual-quota metering for requests and tokens.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Single Metric RPM vs Dual RPM & TPM Metering",
+        "leftLabel": "RPM-Only Metering (Vulnerable)",
+        "rightLabel": "Dual RPM & TPM Quota (Protected)",
+        "leftItems": [
+          "Only counts raw request volume",
+          "Ignores prompt and generation sizes",
+          "1 query consuming 64k tokens passes",
+          "Permits GPU monopolization and cost spikes"
+        ],
+        "rightItems": [
+          "Meters Requests Per Minute (RPM)",
+          "Enforces Tokens Per Minute (TPM) cap",
+          "Calculates projected token consumption",
+          "Guarantees multi-tenant fairness and budget"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Request volume alone is a misleading indicator of model resource usage.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "Production gateways implement dual-quota metering for requests and tokens.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Bucket Algorithm: Refill Rates & Burst Capacity",
+      "codeHash": "519f2d03b588a2e48993d1817b09cc931056ef0fd27a7bc535b51ba1a295929c",
+      "spec": {
+        "template": "flow",
+        "title": "Token Bucket Continuous Refill and Consumption",
+        "nodes": [
+          { "id": "bucket", "label": "Bucket Capacity (Max Burst)", "tappable": false },
+          { "id": "refill", "label": "Lazy Elapsed Refill", "tappable": false },
+          { "id": "check", "label": "Check Token Balance", "tappable": false },
+          { "id": "permit", "label": "Authorize & Decrement", "tappable": false },
+          { "id": "reject", "label": "Reject (Burst Exceeded)", "tappable": false }
+        ],
+        "edges": [
+          { "from": "bucket", "to": "refill" },
+          { "from": "refill", "to": "check" },
+          { "from": "check", "to": "permit" },
+          { "from": "check", "to": "reject" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tokens accumulate into buckets at continuous refill rates over elapsed time.",
+            "activeNodes": ["bucket", "refill"],
+            "statusBadge": "refilling"
+          },
+          {
+            "at": "say4",
+            "caption": "Incoming requests check if buckets contain enough tokens for consumption.",
+            "activeNodes": ["refill", "check"],
+            "statusBadge": "checking"
+          },
+          {
+            "at": "say8",
+            "caption": "Continuous refill is calculated lazily without background timers.",
+            "activeNodes": ["check", "permit"],
+            "statusBadge": "authorized"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Token Bucket Continuous Refill and Consumption",
+        "nodes": [
+          { "id": "bucket", "label": "Bucket Capacity (Max Burst)", "tappable": false },
+          { "id": "refill", "label": "Lazy Elapsed Refill", "tappable": false },
+          { "id": "check", "label": "Check Token Balance", "tappable": false },
+          { "id": "permit", "label": "Authorize & Decrement", "tappable": false },
+          { "id": "reject", "label": "Reject (Burst Exceeded)", "tappable": false }
+        ],
+        "edges": [
+          { "from": "bucket", "to": "refill" },
+          { "from": "refill", "to": "check" },
+          { "from": "check", "to": "permit" },
+          { "from": "check", "to": "reject" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Tokens accumulate into buckets at continuous refill rates over elapsed time.",
+            "activeNodes": ["bucket", "refill"],
+            "statusBadge": "refilling"
+          },
+          {
+            "at": "say4",
+            "caption": "Incoming requests check if buckets contain enough tokens for consumption.",
+            "activeNodes": ["refill", "check"],
+            "statusBadge": "checking"
+          },
+          {
+            "at": "say8",
+            "caption": "Continuous refill is calculated lazily without background timers.",
+            "activeNodes": ["check", "permit"],
+            "statusBadge": "authorized"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Window Log for Exact Window Metering",
+      "codeHash": "3d85827763704871d068592e8a84d556b5b4679b84c3855ec8a1e3451956a7a6",
+      "spec": {
+        "template": "states",
+        "title": "Sliding Window Log Lifecycle States",
+        "states": [
+          { "id": "recorded", "label": "Timestamp Recorded" },
+          { "id": "purged", "label": "Expired Entries Purged" },
+          { "id": "authorized", "label": "Within Rate Limit" },
+          { "id": "throttled", "label": "Limit Exceeded (Blocked)" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sliding window logs eliminate boundary spikes across rolling time windows.",
+            "current": "recorded",
+            "visited": ["recorded"]
+          },
+          {
+            "at": "say5",
+            "caption": "Limiters purge expired timestamps rolling out of active duration windows.",
+            "current": "purged",
+            "visited": ["recorded", "purged"]
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous sliding windows ensure clients never exceed ceiling rates.",
+            "current": "authorized",
+            "visited": ["recorded", "purged", "authorized"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Sliding Window Log Lifecycle States",
+        "states": [
+          { "id": "recorded", "label": "Timestamp Recorded" },
+          { "id": "purged", "label": "Expired Entries Purged" },
+          { "id": "authorized", "label": "Within Rate Limit" },
+          { "id": "throttled", "label": "Limit Exceeded (Blocked)" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Sliding window logs eliminate boundary spikes across rolling time windows.",
+            "current": "recorded",
+            "visited": ["recorded"]
+          },
+          {
+            "at": "say5",
+            "caption": "Limiters purge expired timestamps rolling out of active duration windows.",
+            "current": "purged",
+            "visited": ["recorded", "purged"]
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous sliding windows ensure clients never exceed ceiling rates.",
+            "current": "authorized",
+            "visited": ["recorded", "purged", "authorized"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tenant Hierarchical Rate Limiting",
+      "codeHash": "a3a6d373047be3a6941fdcbce7676abd9b1fc806e5a466758da5243b5d1071d1",
+      "spec": {
+        "template": "workflow",
+        "title": "Hierarchical Multi-Tenant Quota Evaluation",
+        "stages": [
+          { "id": "user", "name": "User Quota", "subtext": "Max per-user RPM limit" },
+          { "id": "user_ok", "name": "User Pass", "subtext": "Within individual budget" },
+          { "id": "tenant", "name": "Tenant Quota", "subtext": "Max organization limit" },
+          { "id": "authorize", "name": "Authorize Request", "subtext": "Both tiers satisfied" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hierarchical rate limiting evaluates user quotas and organization tiers.",
+            "activeStageId": "user",
+            "statusBadge": "evaluating"
+          },
+          {
+            "at": "say6",
+            "caption": "Limiters verify parent organizations aggregate quotas after user checks.",
+            "activeStageId": "tenant",
+            "statusBadge": "checking"
+          },
+          {
+            "at": "say8",
+            "caption": "Multi-tier enforcement guarantees internal fair-share and compliance.",
+            "activeStageId": "authorize",
+            "statusBadge": "authorized"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Hierarchical Multi-Tenant Quota Evaluation",
+        "stages": [
+          { "id": "user", "name": "User Quota", "subtext": "Max per-user RPM limit" },
+          { "id": "user_ok", "name": "User Pass", "subtext": "Within individual budget" },
+          { "id": "tenant", "name": "Tenant Quota", "subtext": "Max organization limit" },
+          { "id": "authorize", "name": "Authorize Request", "subtext": "Both tiers satisfied" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Hierarchical rate limiting evaluates user quotas and organization tiers.",
+            "activeStageId": "user",
+            "statusBadge": "evaluating"
+          },
+          {
+            "at": "say6",
+            "caption": "Limiters verify parent organizations aggregate quotas after user checks.",
+            "activeStageId": "tenant",
+            "statusBadge": "checking"
+          },
+          {
+            "at": "say8",
+            "caption": "Multi-tier enforcement guarantees internal fair-share and compliance.",
+            "activeStageId": "authorize",
+            "statusBadge": "authorized"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP 429 Header Generation & Retry-After Math",
+      "codeHash": "8cfbbe6f6ff8eb874c3d7bb7d864d6110691c3f8168429fd2dad7616a31950e0",
+      "spec": {
+        "template": "table",
+        "title": "IETF Standard RateLimit Headers",
+        "columns": ["Header Name", "Sample Value", "Client Behavior"],
+        "rows": [
+          { "Header Name": { "text": "X-RateLimit-Limit" }, "Sample Value": { "text": "60" }, "Client Behavior": { "text": "Total requests permitted in window" } },
+          { "Header Name": { "text": "X-RateLimit-Remaining" }, "Sample Value": { "text": "0" }, "Client Behavior": { "text": "Immediate calls will be blocked" } },
+          { "Header Name": { "text": "Retry-After" }, "Sample Value": { "text": "15" }, "Client Behavior": { "text": "Seconds client must pause before retry" } }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard headers communicate active limits and remaining quota balances.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Throttled responses return Retry-After headers indicating pause duration.",
+            "highlightRow": 2
+          },
+          {
+            "at": "say7",
+            "caption": "Honoring Retry-After headers eliminates speculative polling retries.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "IETF Standard RateLimit Headers",
+        "columns": ["Header Name", "Sample Value", "Client Behavior"],
+        "rows": [
+          { "Header Name": "X-RateLimit-Limit", "Sample Value": "60", "Client Behavior": "Total requests permitted in window" },
+          { "Header Name": "X-RateLimit-Remaining", "Sample Value": "0", "Client Behavior": "Immediate calls will be blocked" },
+          { "Header Name": "Retry-After", "Sample Value": "15", "Client Behavior": "Seconds client must pause before retry" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Standard headers communicate active limits and remaining quota balances.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Throttled responses return Retry-After headers indicating pause duration.",
+            "highlightRow": 2
+          },
+          {
+            "at": "say7",
+            "caption": "Honoring Retry-After headers eliminates speculative polling retries.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Dual-Quota Rate Limiting Gateway",
+      "codeHash": "00ebccea78c6970ebef86026de1b45d49deea3b5a653de04a01b3dec4a5cdcb9",
+      "spec": {
+        "template": "none",
+        "reason": "Enterprise Dual-Quota Rate Limiting Gateway capstone synthesizing dual RPM/TPM metering, token bucket refills, and HTTP 429 headers"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Enterprise Dual-Quota Rate Limiting Gateway capstone synthesizing dual RPM/TPM metering, token bucket refills, and HTTP 429 headers"
+      }
+    }
+  ]
+}
