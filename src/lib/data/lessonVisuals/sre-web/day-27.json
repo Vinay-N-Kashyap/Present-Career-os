@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 27,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Deployment Spectrum: Architectural Trade-offs",
+      "codeHash": "24d9aa4a76bd80f9dd32aba95c95c1436fbb0c3d771788f8314aa91b1becff9c",
+      "spec": {
+        "template": "table",
+        "title": "Zero-Downtime Deployment Strategy Trade-Off Matrix",
+        "headers": [
+          "Strategy",
+          "Cost Multiplier",
+          "Rollback Speed",
+          "Blast Radius"
+        ],
+        "rows": [
+          [
+            "BLUE_GREEN",
+            "2.0x",
+            "2s",
+            "100%"
+          ],
+          [
+            "ROLLING_UPDATE",
+            "1.25x",
+            "180s",
+            "50%"
+          ],
+          [
+            "CANARY",
+            "1.10x",
+            "5s",
+            "2%"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Identical production environments switch router traffic atomically.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Canary deployments expose software to tiny user cohorts before promotion.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Zero-Downtime Deployment Strategy Trade-Off Matrix",
+        "headers": [
+          "Strategy",
+          "Cost Multiplier",
+          "Rollback Speed",
+          "Blast Radius"
+        ],
+        "rows": [
+          [
+            "BLUE_GREEN",
+            "2.0x",
+            "2s",
+            "100%"
+          ],
+          [
+            "ROLLING_UPDATE",
+            "1.25x",
+            "180s",
+            "50%"
+          ],
+          [
+            "CANARY",
+            "1.10x",
+            "5s",
+            "2%"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Identical production environments switch router traffic atomically.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Canary deployments expose software to tiny user cohorts before promotion.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blue/Green Deployments & Atomic Traffic Switching",
+      "codeHash": "e68659c2ed61e324bc95223167b9b1d26cd5371afdfc631ec2a8f0e73e146e8d",
+      "spec": {
+        "template": "sequence",
+        "title": "Blue/Green Atomic Traffic Cutover and Rollback",
+        "actors": [
+          {
+            "id": "ci",
+            "label": "CI Orchestrator"
+          },
+          {
+            "id": "green",
+            "label": "Green Idle Env"
+          },
+          {
+            "id": "router",
+            "label": "Traffic Router"
+          },
+          {
+            "id": "blue",
+            "label": "Blue Live Env"
+          }
+        ],
+        "messages": [
+          {
+            "from": "ci",
+            "to": "green",
+            "label": "Deploy v2.0.0 & verify probes"
+          },
+          {
+            "from": "ci",
+            "to": "router",
+            "label": "Execute atomic cutover"
+          },
+          {
+            "from": "router",
+            "to": "green",
+            "label": "Route live traffic"
+          },
+          {
+            "from": "router",
+            "to": "blue",
+            "label": "Instant rollback if degraded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "New software revisions deploy to green while blue serves customer traffic.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "If unexpected errors appear on green, the router flips back to blue.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Blue/Green Atomic Traffic Cutover and Rollback",
+        "actors": [
+          {
+            "id": "ci",
+            "label": "CI Orchestrator"
+          },
+          {
+            "id": "green",
+            "label": "Green Idle Env"
+          },
+          {
+            "id": "router",
+            "label": "Traffic Router"
+          },
+          {
+            "id": "blue",
+            "label": "Blue Live Env"
+          }
+        ],
+        "messages": [
+          {
+            "from": "ci",
+            "to": "green",
+            "label": "Deploy v2.0.0 & verify probes"
+          },
+          {
+            "from": "ci",
+            "to": "router",
+            "label": "Execute atomic cutover"
+          },
+          {
+            "from": "router",
+            "to": "green",
+            "label": "Route live traffic"
+          },
+          {
+            "from": "router",
+            "to": "blue",
+            "label": "Instant rollback if degraded"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "New software revisions deploy to green while blue serves customer traffic.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "If unexpected errors appear on green, the router flips back to blue.",
+            "highlightMessage": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rolling Updates with maxSurge & maxUnavailable",
+      "codeHash": "ff1e4563ce9c66eb230fa16732cef0bf153ecf2643ae138a71718ffb362f1896",
+      "spec": {
+        "template": "compare",
+        "title": "Rolling Update Parameters: maxSurge versus maxUnavailable",
+        "left": {
+          "title": "maxSurge Parameter",
+          "items": [
+            "Specifies extra pods added above desired count",
+            "Provisions new v2.0 replicas before deleting old",
+            "Preserves full cluster throughput during rollout",
+            "Requires readiness probe pass before cutover"
+          ]
+        },
+        "right": {
+          "title": "maxUnavailable Parameter",
+          "items": [
+            "Specifies max pods taken offline simultaneously",
+            "Setting to 0% prevents capacity reduction",
+            "Protects in-flight traffic during pod replacement",
+            "Halts rollout if new pod fails readiness check"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Surge settings specify how many additional pods provision during rollout.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Orchestrators wait for new pods to pass readiness probes before deletion.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Rolling Update Parameters: maxSurge versus maxUnavailable",
+        "left": {
+          "title": "maxSurge Parameter",
+          "items": [
+            "Specifies extra pods added above desired count",
+            "Provisions new v2.0 replicas before deleting old",
+            "Preserves full cluster throughput during rollout",
+            "Requires readiness probe pass before cutover"
+          ]
+        },
+        "right": {
+          "title": "maxUnavailable Parameter",
+          "items": [
+            "Specifies max pods taken offline simultaneously",
+            "Setting to 0% prevents capacity reduction",
+            "Protects in-flight traffic during pod replacement",
+            "Halts rollout if new pod fails readiness check"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Surge settings specify how many additional pods provision during rollout.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Orchestrators wait for new pods to pass readiness probes before deletion.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Progressive Canary Traffic Shifting",
+      "codeHash": "12d1587f572ba08ded2309457661e527c16aeb110af5a6ae6564f695a9763cc6",
+      "spec": {
+        "template": "bars",
+        "title": "Progressive Canary Stepwise Traffic Schedule",
+        "bars": [
+          {
+            "label": "Stage 1 Canary Weight",
+            "value": 1,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 2 Canary Weight",
+            "value": 5,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 3 Canary Weight",
+            "value": 25,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 4 Full Promotion",
+            "value": 100,
+            "unit": "%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Canary deployments route a small controlled fraction of live traffic.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each stage pauses for a configurable soak duration to gather telemetry.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Progressive Canary Stepwise Traffic Schedule",
+        "bars": [
+          {
+            "label": "Stage 1 Canary Weight",
+            "value": 1,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 2 Canary Weight",
+            "value": 5,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 3 Canary Weight",
+            "value": 25,
+            "unit": "%"
+          },
+          {
+            "label": "Stage 4 Full Promotion",
+            "value": 100,
+            "unit": "%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Canary deployments route a small controlled fraction of live traffic.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Each stage pauses for a configurable soak duration to gather telemetry.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Rollback Mechanics & Safety Circuit Breakers",
+      "codeHash": "1a1a4cf3c382f5538ed2a1019d126d88259b0b6990fe75b04bf233e642c0e482",
+      "spec": {
+        "template": "workflow",
+        "title": "Automated Deployment Rollback and Pipeline Circuit Breaker",
+        "nodes": [
+          {
+            "id": "monitor",
+            "label": "Telemetry Monitor",
+            "description": "Watches error rate, latency, and crashes"
+          },
+          {
+            "id": "trip",
+            "label": "Trigger Tripped",
+            "description": "Detects error spike above limit"
+          },
+          {
+            "id": "rollback",
+            "label": "Automated Rollback",
+            "description": "Routes traffic back to baseline"
+          },
+          {
+            "id": "lock",
+            "label": "Safety Breaker",
+            "description": "Locks pipeline against retry loops"
+          }
+        ],
+        "edges": [
+          {
+            "from": "monitor",
+            "to": "trip",
+            "label": "Breach"
+          },
+          {
+            "from": "trip",
+            "to": "rollback",
+            "label": "Abort"
+          },
+          {
+            "from": "rollback",
+            "to": "lock",
+            "label": "Lock Pipeline"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Controllers watch for error rate spikes, latency, and crash loops.",
+            "activeNode": "monitor",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Safety circuit breakers lock deployment pipelines against retry loops.",
+            "activeNode": "lock",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Automated Deployment Rollback and Pipeline Circuit Breaker",
+        "nodes": [
+          {
+            "id": "monitor",
+            "label": "Telemetry Monitor",
+            "description": "Watches error rate, latency, and crashes"
+          },
+          {
+            "id": "trip",
+            "label": "Trigger Tripped",
+            "description": "Detects error spike above limit"
+          },
+          {
+            "id": "rollback",
+            "label": "Automated Rollback",
+            "description": "Routes traffic back to baseline"
+          },
+          {
+            "id": "lock",
+            "label": "Safety Breaker",
+            "description": "Locks pipeline against retry loops"
+          }
+        ],
+        "edges": [
+          {
+            "from": "monitor",
+            "to": "trip",
+            "label": "Breach"
+          },
+          {
+            "from": "trip",
+            "to": "rollback",
+            "label": "Abort"
+          },
+          {
+            "from": "rollback",
+            "to": "lock",
+            "label": "Lock Pipeline"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Controllers watch for error rate spikes, latency, and crash loops.",
+            "activeNode": "monitor",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Safety circuit breakers lock deployment pipelines against retry loops.",
+            "activeNode": "lock",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multi-Strategy Deployment Orchestrator",
+      "codeHash": "33a157f3e7e0bb4f82a418becd0756ae54d34140efca33adc4d9d2a3c311f4ef",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
