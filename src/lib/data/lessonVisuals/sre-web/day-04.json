@@ -15,7 +15,7 @@
           {
             "id": "nine2",
             "label": "2 Nines (99%)",
-            "value": 99.0
+            "value": 99
           },
           {
             "id": "nine3",
@@ -54,7 +54,7 @@
           {
             "id": "nine2",
             "label": "2 Nines (99%)",
-            "value": 99.0
+            "value": 99
           },
           {
             "id": "nine3",
@@ -99,26 +99,6 @@
           "Allowed Breakdown",
           "Automation Rule"
         ],
-        "rows": [
-          [
-            "99.0%",
-            "432 Minutes",
-            "7h 12m",
-            "Standard Monitoring"
-          ],
-          [
-            "99.9%",
-            "43.2 Minutes",
-            "43m 12s",
-            "Automated Alerting"
-          ],
-          [
-            "99.99%",
-            "4.32 Minutes",
-            "4m 19s",
-            "Instant Self-Healing"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -131,6 +111,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "99.0%",
+                  "432 Minutes",
+                  "7h 12m",
+                  "Standard Monitoring"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.9%",
+                  "43.2 Minutes",
+                  "43m 12s",
+                  "Automated Alerting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.99%",
+                  "4.32 Minutes",
+                  "4m 19s",
+                  "Instant Self-Healing"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -145,6 +154,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "99.0%",
+                  "432 Minutes",
+                  "7h 12m",
+                  "Standard Monitoring"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.9%",
+                  "43.2 Minutes",
+                  "43m 12s",
+                  "Automated Alerting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.99%",
+                  "4.32 Minutes",
+                  "4m 19s",
+                  "Instant Self-Healing"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -159,26 +197,6 @@
           "Allowed Breakdown",
           "Automation Rule"
         ],
-        "rows": [
-          [
-            "99.0%",
-            "432 Minutes",
-            "7h 12m",
-            "Standard Monitoring"
-          ],
-          [
-            "99.9%",
-            "43.2 Minutes",
-            "43m 12s",
-            "Automated Alerting"
-          ],
-          [
-            "99.99%",
-            "4.32 Minutes",
-            "4m 19s",
-            "Instant Self-Healing"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -191,6 +209,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "99.0%",
+                  "432 Minutes",
+                  "7h 12m",
+                  "Standard Monitoring"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.9%",
+                  "43.2 Minutes",
+                  "43m 12s",
+                  "Automated Alerting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.99%",
+                  "4.32 Minutes",
+                  "4m 19s",
+                  "Instant Self-Healing"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -205,6 +252,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "99.0%",
+                  "432 Minutes",
+                  "7h 12m",
+                  "Standard Monitoring"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.9%",
+                  "43.2 Minutes",
+                  "43m 12s",
+                  "Automated Alerting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "99.99%",
+                  "4.32 Minutes",
+                  "4m 19s",
+                  "Instant Self-Healing"
+                ],
+                "tone": "data"
               }
             ]
           }

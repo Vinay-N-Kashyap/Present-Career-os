@@ -303,42 +303,86 @@
           "Operation",
           "Logged Event"
         ],
-        "rows": [
-          [
-            {
-              "text": "access('A', 1)"
-            },
-            {
-              "text": "Stored A=1"
-            }
-          ],
-          [
-            {
-              "text": "access('B', 2)"
-            },
-            {
-              "text": "Stored B=2"
-            }
-          ],
-          [
-            {
-              "text": "access('C', 3)"
-            },
-            {
-              "text": "Evicted A"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Updating existing key updates value without eviction.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "access('A', 1)"
+                  },
+                  {
+                    "text": "Stored A=1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('B', 2)"
+                  },
+                  {
+                    "text": "Stored B=2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('C', 3)"
+                  },
+                  {
+                    "text": "Evicted A"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Exceeding capacity evicts oldest key immediately.",
-            "activeRow": 2
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "access('A', 1)"
+                  },
+                  {
+                    "text": "Stored A=1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('B', 2)"
+                  },
+                  {
+                    "text": "Stored B=2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "access('C', 3)"
+                  },
+                  {
+                    "text": "Evicted A"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -349,30 +393,62 @@
           "Operation",
           "Logged Event"
         ],
-        "rows": [
-          [
-            "access('A', 1)",
-            "Stored A=1"
-          ],
-          [
-            "access('B', 2)",
-            "Stored B=2"
-          ],
-          [
-            "access('C', 3)",
-            "Evicted A"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Updating existing key updates value without eviction.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "access('A', 1)",
+                  "Stored A=1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('B', 2)",
+                  "Stored B=2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('C', 3)",
+                  "Evicted A"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Exceeding capacity evicts oldest key immediately.",
-            "activeRow": 2
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "access('A', 1)",
+                  "Stored A=1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('B', 2)",
+                  "Stored B=2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "access('C', 3)",
+                  "Evicted A"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

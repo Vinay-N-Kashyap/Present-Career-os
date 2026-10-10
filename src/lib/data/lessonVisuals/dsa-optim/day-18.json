@@ -414,40 +414,76 @@
           "Priority Weight",
           "Execution Order"
         ],
-        "rows": [
-          [
-            {
-              "text": "Fix prod crash"
-            },
-            {
-              "text": "1"
-            },
-            {
-              "text": "Processed First"
-            }
-          ],
-          [
-            {
-              "text": "Write code"
-            },
-            {
-              "text": "5"
-            },
-            {
-              "text": "Processed Second"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Priority queue processes elements strictly by priority rather than arrival.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix prod crash"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Processed First"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write code"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Processed Second"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Comparing object priority field bridges gap to practical utility.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fix prod crash"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "Processed First"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Write code"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "Processed Second"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -459,28 +495,52 @@
           "Priority Weight",
           "Execution Order"
         ],
-        "rows": [
-          [
-            "Fix prod crash",
-            "1",
-            "Processed First"
-          ],
-          [
-            "Write code",
-            "5",
-            "Processed Second"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Priority queue processes elements strictly by priority rather than arrival.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Fix prod crash",
+                  "1",
+                  "Processed First"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write code",
+                  "5",
+                  "Processed Second"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Comparing object priority field bridges gap to practical utility.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Fix prod crash",
+                  "1",
+                  "Processed First"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write code",
+                  "5",
+                  "Processed Second"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

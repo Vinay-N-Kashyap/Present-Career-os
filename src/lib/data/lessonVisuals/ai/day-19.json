@@ -159,38 +159,76 @@
           "Telemetry Source",
           "Diagnostic Value"
         ],
-        "rows": [
-          [
-            "exceptionName",
-            "TypeError: Null dereference",
-            "V8 Runtime Engine",
-            "Identifies bug category"
-          ],
-          [
-            "lineNumber",
-            "recordTransformer.ts line 24",
-            "Stack Trace Analyzer",
-            "Pinpoints exact bug site"
-          ],
-          [
-            "stdoutSnapshot",
-            "Processed 14 records safely",
-            "Standard Out Buffer",
-            "Reveals prior state"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The execution sandbox captures comprehensive diagnostic telemetry information.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Standard output reveals intermediate variable values before crashes occur.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -203,38 +241,76 @@
           "Telemetry Source",
           "Diagnostic Value"
         ],
-        "rows": [
-          [
-            "exceptionName",
-            "TypeError: Null dereference",
-            "V8 Runtime Engine",
-            "Identifies bug category"
-          ],
-          [
-            "lineNumber",
-            "recordTransformer.ts line 24",
-            "Stack Trace Analyzer",
-            "Pinpoints exact bug site"
-          ],
-          [
-            "stdoutSnapshot",
-            "Processed 14 records safely",
-            "Standard Out Buffer",
-            "Reveals prior state"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The execution sandbox captures comprehensive diagnostic telemetry information.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Standard output reveals intermediate variable values before crashes occur.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exceptionName",
+                  "TypeError: Null dereference",
+                  "V8 Runtime Engine",
+                  "Identifies bug category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "lineNumber",
+                  "recordTransformer.ts line 24",
+                  "Stack Trace Analyzer",
+                  "Pinpoints exact bug site"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "stdoutSnapshot",
+                  "Processed 14 records safely",
+                  "Standard Out Buffer",
+                  "Reveals prior state"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

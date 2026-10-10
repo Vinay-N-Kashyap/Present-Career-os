@@ -249,44 +249,94 @@
           "Write Quorum W",
           "Guaranteed Consistency"
         ],
-        "rows": [
-          [
-            "Three Replicas",
-            "One Replica",
-            "One Replica",
-            "Eventual Consistency (Weak)"
-          ],
-          [
-            "Three Replicas",
-            "Two Replicas",
-            "Two Replicas",
-            "Strong Consistency (R+W > N)"
-          ],
-          [
-            "Five Replicas",
-            "Three Replicas",
-            "Three Replicas",
-            "Strong Consistency (Majority)"
-          ],
-          [
-            "Five Replicas",
-            "One Replica",
-            "Five Replicas",
-            "Fast Reads, Heavy Writes"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "The quorum intersection theorem guarantees strong consistency.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Lagged replicas can return stale data under weak consistency.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -299,44 +349,94 @@
           "Write Quorum W",
           "Guaranteed Consistency"
         ],
-        "rows": [
-          [
-            "Three Replicas",
-            "One Replica",
-            "One Replica",
-            "Eventual Consistency (Weak)"
-          ],
-          [
-            "Three Replicas",
-            "Two Replicas",
-            "Two Replicas",
-            "Strong Consistency (R+W > N)"
-          ],
-          [
-            "Five Replicas",
-            "Three Replicas",
-            "Three Replicas",
-            "Strong Consistency (Majority)"
-          ],
-          [
-            "Five Replicas",
-            "One Replica",
-            "Five Replicas",
-            "Fast Reads, Heavy Writes"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "The quorum intersection theorem guarantees strong consistency.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Lagged replicas can return stale data under weak consistency.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Three Replicas",
+                  "One Replica",
+                  "One Replica",
+                  "Eventual Consistency (Weak)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Three Replicas",
+                  "Two Replicas",
+                  "Two Replicas",
+                  "Strong Consistency (R+W > N)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "Three Replicas",
+                  "Three Replicas",
+                  "Strong Consistency (Majority)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Five Replicas",
+                  "One Replica",
+                  "Five Replicas",
+                  "Fast Reads, Heavy Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

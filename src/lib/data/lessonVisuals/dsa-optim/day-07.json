@@ -15,34 +15,64 @@
           "Key Input",
           "Hash Bucket"
         ],
-        "rows": [
-          [
-            {
-              "text": "hello"
-            },
-            {
-              "text": "2"
-            }
-          ],
-          [
-            {
-              "text": "world"
-            },
-            {
-              "text": "7"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Deterministic hash function maps keys to table indices.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hello"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "world"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Uniform distribution minimizes clustering and collisions.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "hello"
+                  },
+                  {
+                    "text": "2"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "world"
+                  },
+                  {
+                    "text": "7"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -53,26 +83,48 @@
           "Key Input",
           "Hash Bucket"
         ],
-        "rows": [
-          [
-            "hello",
-            "2"
-          ],
-          [
-            "world",
-            "7"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Deterministic hash function maps keys to table indices.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "hello",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "world",
+                  "7"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Uniform distribution minimizes clustering and collisions.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "hello",
+                  "2"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "world",
+                  "7"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

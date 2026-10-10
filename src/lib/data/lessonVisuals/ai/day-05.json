@@ -93,44 +93,94 @@
           "Logit Masking Action",
           "Grammar Transition"
         ],
-        "rows": [
-          [
-            "Object Initiation",
-            "Opening Curly Bracket",
-            "Mask All Non-Brace Tokens",
-            "Advance to Key State"
-          ],
-          [
-            "Key Expectation",
-            "Quotation Mark String",
-            "Mask All Non-Quote Tokens",
-            "Advance to Colon State"
-          ],
-          [
-            "Value Expectation",
-            "Integer Number or String",
-            "Mask Invalid Syntax Types",
-            "Advance to Comma State"
-          ],
-          [
-            "Terminal Boundary",
-            "Closing Curly Bracket",
-            "Permit Terminal Syntax",
-            "Complete JSON Object"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Inference engines modify vocabulary logits using context-free grammars.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Object Initiation",
+                  "Opening Curly Bracket",
+                  "Mask All Non-Brace Tokens",
+                  "Advance to Key State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Key Expectation",
+                  "Quotation Mark String",
+                  "Mask All Non-Quote Tokens",
+                  "Advance to Colon State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Value Expectation",
+                  "Integer Number or String",
+                  "Mask Invalid Syntax Types",
+                  "Advance to Comma State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Boundary",
+                  "Closing Curly Bracket",
+                  "Permit Terminal Syntax",
+                  "Complete JSON Object"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Grammar masking guarantees generated outputs conform to JSON schemas.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Object Initiation",
+                  "Opening Curly Bracket",
+                  "Mask All Non-Brace Tokens",
+                  "Advance to Key State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Key Expectation",
+                  "Quotation Mark String",
+                  "Mask All Non-Quote Tokens",
+                  "Advance to Colon State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Value Expectation",
+                  "Integer Number or String",
+                  "Mask Invalid Syntax Types",
+                  "Advance to Comma State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Boundary",
+                  "Closing Curly Bracket",
+                  "Permit Terminal Syntax",
+                  "Complete JSON Object"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -143,44 +193,94 @@
           "Logit Masking Action",
           "Grammar Transition"
         ],
-        "rows": [
-          [
-            "Object Initiation",
-            "Opening Curly Bracket",
-            "Mask All Non-Brace Tokens",
-            "Advance to Key State"
-          ],
-          [
-            "Key Expectation",
-            "Quotation Mark String",
-            "Mask All Non-Quote Tokens",
-            "Advance to Colon State"
-          ],
-          [
-            "Value Expectation",
-            "Integer Number or String",
-            "Mask Invalid Syntax Types",
-            "Advance to Comma State"
-          ],
-          [
-            "Terminal Boundary",
-            "Closing Curly Bracket",
-            "Permit Terminal Syntax",
-            "Complete JSON Object"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Inference engines modify vocabulary logits using context-free grammars.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Object Initiation",
+                  "Opening Curly Bracket",
+                  "Mask All Non-Brace Tokens",
+                  "Advance to Key State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Key Expectation",
+                  "Quotation Mark String",
+                  "Mask All Non-Quote Tokens",
+                  "Advance to Colon State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Value Expectation",
+                  "Integer Number or String",
+                  "Mask Invalid Syntax Types",
+                  "Advance to Comma State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Boundary",
+                  "Closing Curly Bracket",
+                  "Permit Terminal Syntax",
+                  "Complete JSON Object"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Grammar masking guarantees generated outputs conform to JSON schemas.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Object Initiation",
+                  "Opening Curly Bracket",
+                  "Mask All Non-Brace Tokens",
+                  "Advance to Key State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Key Expectation",
+                  "Quotation Mark String",
+                  "Mask All Non-Quote Tokens",
+                  "Advance to Colon State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Value Expectation",
+                  "Integer Number or String",
+                  "Mask Invalid Syntax Types",
+                  "Advance to Comma State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Boundary",
+                  "Closing Curly Bracket",
+                  "Permit Terminal Syntax",
+                  "Complete JSON Object"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -337,44 +437,94 @@
           "Coercion Transform",
           "Storage Invariant"
         ],
-        "rows": [
-          [
-            "Monetary Values",
-            "Integer Cents",
-            "Convert Dollar Strings",
-            "Eliminates Rounding Errors"
-          ],
-          [
-            "Temporal Dates",
-            "ISO UTC Strings",
-            "Parse Relative Dates",
-            "Avoids Timezone Discrepancies"
-          ],
-          [
-            "Nested Line Items",
-            "Array of Objects",
-            "Validate Subtotals",
-            "Structured Row Ingestion"
-          ],
-          [
-            "Tax Identification",
-            "Regex Pattern",
-            "Clean Alphanumeric",
-            "Deterministic Schema"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Extract money as integer cents to eliminate floating-point rounding errors.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Monetary Values",
+                  "Integer Cents",
+                  "Convert Dollar Strings",
+                  "Eliminates Rounding Errors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Temporal Dates",
+                  "ISO UTC Strings",
+                  "Parse Relative Dates",
+                  "Avoids Timezone Discrepancies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Nested Line Items",
+                  "Array of Objects",
+                  "Validate Subtotals",
+                  "Structured Row Ingestion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tax Identification",
+                  "Regex Pattern",
+                  "Clean Alphanumeric",
+                  "Deterministic Schema"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Dates must be coerced into standardized strings to avoid discrepancies.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Monetary Values",
+                  "Integer Cents",
+                  "Convert Dollar Strings",
+                  "Eliminates Rounding Errors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Temporal Dates",
+                  "ISO UTC Strings",
+                  "Parse Relative Dates",
+                  "Avoids Timezone Discrepancies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Nested Line Items",
+                  "Array of Objects",
+                  "Validate Subtotals",
+                  "Structured Row Ingestion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tax Identification",
+                  "Regex Pattern",
+                  "Clean Alphanumeric",
+                  "Deterministic Schema"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -387,44 +537,94 @@
           "Coercion Transform",
           "Storage Invariant"
         ],
-        "rows": [
-          [
-            "Monetary Values",
-            "Integer Cents",
-            "Convert Dollar Strings",
-            "Eliminates Rounding Errors"
-          ],
-          [
-            "Temporal Dates",
-            "ISO UTC Strings",
-            "Parse Relative Dates",
-            "Avoids Timezone Discrepancies"
-          ],
-          [
-            "Nested Line Items",
-            "Array of Objects",
-            "Validate Subtotals",
-            "Structured Row Ingestion"
-          ],
-          [
-            "Tax Identification",
-            "Regex Pattern",
-            "Clean Alphanumeric",
-            "Deterministic Schema"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Extract money as integer cents to eliminate floating-point rounding errors.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Monetary Values",
+                  "Integer Cents",
+                  "Convert Dollar Strings",
+                  "Eliminates Rounding Errors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Temporal Dates",
+                  "ISO UTC Strings",
+                  "Parse Relative Dates",
+                  "Avoids Timezone Discrepancies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Nested Line Items",
+                  "Array of Objects",
+                  "Validate Subtotals",
+                  "Structured Row Ingestion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tax Identification",
+                  "Regex Pattern",
+                  "Clean Alphanumeric",
+                  "Deterministic Schema"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Dates must be coerced into standardized strings to avoid discrepancies.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Monetary Values",
+                  "Integer Cents",
+                  "Convert Dollar Strings",
+                  "Eliminates Rounding Errors"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Temporal Dates",
+                  "ISO UTC Strings",
+                  "Parse Relative Dates",
+                  "Avoids Timezone Discrepancies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Nested Line Items",
+                  "Array of Objects",
+                  "Validate Subtotals",
+                  "Structured Row Ingestion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tax Identification",
+                  "Regex Pattern",
+                  "Clean Alphanumeric",
+                  "Deterministic Schema"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

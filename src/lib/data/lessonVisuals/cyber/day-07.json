@@ -17,44 +17,94 @@
           "Time to Crack Password",
           "Suitability for Credentials"
         ],
-        "rows": [
-          [
-            "MD5",
-            "Fifty Billion Hashes per Sec",
-            "Under Five Seconds",
-            "Broken and Forbidden"
-          ],
-          [
-            "SHA-256",
-            "Ten Billion Hashes per Sec",
-            "Under Ten Minutes",
-            "Insecure for Credentials (Fast)"
-          ],
-          [
-            "Bcrypt Cost 12",
-            "Four Hashes per Second",
-            "Decades of Compute",
-            "Strong CPU Key Stretching"
-          ],
-          [
-            "Argon2id",
-            "Two Hashes per Second",
-            "Centuries of Memory Compute",
-            "Supreme Modern Gold Standard"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Graphics cards compute billions of general hashes per second.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Password hashes require slow functions engineered to resist attacks.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -67,44 +117,94 @@
           "Time to Crack Password",
           "Suitability for Credentials"
         ],
-        "rows": [
-          [
-            "MD5",
-            "Fifty Billion Hashes per Sec",
-            "Under Five Seconds",
-            "Broken and Forbidden"
-          ],
-          [
-            "SHA-256",
-            "Ten Billion Hashes per Sec",
-            "Under Ten Minutes",
-            "Insecure for Credentials (Fast)"
-          ],
-          [
-            "Bcrypt Cost 12",
-            "Four Hashes per Second",
-            "Decades of Compute",
-            "Strong CPU Key Stretching"
-          ],
-          [
-            "Argon2id",
-            "Two Hashes per Second",
-            "Centuries of Memory Compute",
-            "Supreme Modern Gold Standard"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Graphics cards compute billions of general hashes per second.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Password hashes require slow functions engineered to resist attacks.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "MD5",
+                  "Fifty Billion Hashes per Sec",
+                  "Under Five Seconds",
+                  "Broken and Forbidden"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SHA-256",
+                  "Ten Billion Hashes per Sec",
+                  "Under Ten Minutes",
+                  "Insecure for Credentials (Fast)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Bcrypt Cost 12",
+                  "Four Hashes per Second",
+                  "Decades of Compute",
+                  "Strong CPU Key Stretching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Argon2id",
+                  "Two Hashes per Second",
+                  "Centuries of Memory Compute",
+                  "Supreme Modern Gold Standard"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -341,44 +441,94 @@
           "Recommended Baseline",
           "Operational Role"
         ],
-        "rows": [
-          [
-            "Memory Cost",
-            "m",
-            "64 MiB (65,536 KiB)",
-            "Allocates RAM matrix defeating ASIC farms"
-          ],
-          [
-            "Time Cost",
-            "t",
-            "3 Iteration Passes",
-            "Executes sequential passes over memory matrix"
-          ],
-          [
-            "Parallelism",
-            "p",
-            "4 Concurrent Threads",
-            "Utilizes independent CPU execution lanes"
-          ],
-          [
-            "Output Length",
-            "hash_len",
-            "32 Bytes (256 bits)",
-            "Length of derived credential verification hash"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The memory cost defines memory allocation in kibibytes for verification.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Hash strings follow the modular crypt format encoding parameters.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -391,44 +541,94 @@
           "Recommended Baseline",
           "Operational Role"
         ],
-        "rows": [
-          [
-            "Memory Cost",
-            "m",
-            "64 MiB (65,536 KiB)",
-            "Allocates RAM matrix defeating ASIC farms"
-          ],
-          [
-            "Time Cost",
-            "t",
-            "3 Iteration Passes",
-            "Executes sequential passes over memory matrix"
-          ],
-          [
-            "Parallelism",
-            "p",
-            "4 Concurrent Threads",
-            "Utilizes independent CPU execution lanes"
-          ],
-          [
-            "Output Length",
-            "hash_len",
-            "32 Bytes (256 bits)",
-            "Length of derived credential verification hash"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The memory cost defines memory allocation in kibibytes for verification.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Hash strings follow the modular crypt format encoding parameters.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Memory Cost",
+                  "m",
+                  "64 MiB (65,536 KiB)",
+                  "Allocates RAM matrix defeating ASIC farms"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time Cost",
+                  "t",
+                  "3 Iteration Passes",
+                  "Executes sequential passes over memory matrix"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallelism",
+                  "p",
+                  "4 Concurrent Threads",
+                  "Utilizes independent CPU execution lanes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Output Length",
+                  "hash_len",
+                  "32 Bytes (256 bits)",
+                  "Length of derived credential verification hash"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

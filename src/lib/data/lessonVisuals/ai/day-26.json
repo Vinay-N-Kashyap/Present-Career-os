@@ -355,38 +355,76 @@
           "Modern Multimodal VLM",
           "Enterprise Impact"
         ],
-        "rows": [
-          [
-            "Table Geometries",
-            "Fails on borderless cells",
-            "Understands 2D alignment",
-            "Flawless Financial Extraction"
-          ],
-          [
-            "Chart Visuals",
-            "Cannot interpret graphics",
-            "Estimates bar heights",
-            "Automated Metric Analytics"
-          ],
-          [
-            "Diagram Flows",
-            "Outputs scattered words",
-            "Traces arrows and symbols",
-            "Accurate System Comprehension"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Modern vision models approach documents holistically reading text and layout.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Table Geometries",
+                  "Fails on borderless cells",
+                  "Understands 2D alignment",
+                  "Flawless Financial Extraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chart Visuals",
+                  "Cannot interpret graphics",
+                  "Estimates bar heights",
+                  "Automated Metric Analytics"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Diagram Flows",
+                  "Outputs scattered words",
+                  "Traces arrows and symbols",
+                  "Accurate System Comprehension"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Vision models can read bar charts estimating values from visual bar heights.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Table Geometries",
+                  "Fails on borderless cells",
+                  "Understands 2D alignment",
+                  "Flawless Financial Extraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chart Visuals",
+                  "Cannot interpret graphics",
+                  "Estimates bar heights",
+                  "Automated Metric Analytics"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Diagram Flows",
+                  "Outputs scattered words",
+                  "Traces arrows and symbols",
+                  "Accurate System Comprehension"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -399,38 +437,76 @@
           "Modern Multimodal VLM",
           "Enterprise Impact"
         ],
-        "rows": [
-          [
-            "Table Geometries",
-            "Fails on borderless cells",
-            "Understands 2D alignment",
-            "Flawless Financial Extraction"
-          ],
-          [
-            "Chart Visuals",
-            "Cannot interpret graphics",
-            "Estimates bar heights",
-            "Automated Metric Analytics"
-          ],
-          [
-            "Diagram Flows",
-            "Outputs scattered words",
-            "Traces arrows and symbols",
-            "Accurate System Comprehension"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Modern vision models approach documents holistically reading text and layout.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Table Geometries",
+                  "Fails on borderless cells",
+                  "Understands 2D alignment",
+                  "Flawless Financial Extraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chart Visuals",
+                  "Cannot interpret graphics",
+                  "Estimates bar heights",
+                  "Automated Metric Analytics"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Diagram Flows",
+                  "Outputs scattered words",
+                  "Traces arrows and symbols",
+                  "Accurate System Comprehension"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Vision models can read bar charts estimating values from visual bar heights.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Table Geometries",
+                  "Fails on borderless cells",
+                  "Understands 2D alignment",
+                  "Flawless Financial Extraction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chart Visuals",
+                  "Cannot interpret graphics",
+                  "Estimates bar heights",
+                  "Automated Metric Analytics"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Diagram Flows",
+                  "Outputs scattered words",
+                  "Traces arrows and symbols",
+                  "Accurate System Comprehension"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

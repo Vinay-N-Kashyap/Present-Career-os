@@ -16,40 +16,76 @@
           "Comparison Min Ops",
           "Non-Comparison Linear Ops"
         ],
-        "rows": [
-          [
-            {
-              "text": "10"
-            },
-            {
-              "text": "19"
-            },
-            {
-              "text": "10"
-            }
-          ],
-          [
-            {
-              "text": "100"
-            },
-            {
-              "text": "520"
-            },
-            {
-              "text": "100"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Comparison sorting modeled as binary decision tree with leaves.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "19"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "520"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Mapping values directly to index buckets achieves linear time.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "19"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "100"
+                  },
+                  {
+                    "text": "520"
+                  },
+                  {
+                    "text": "100"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,28 +97,52 @@
           "Comparison Min Ops",
           "Non-Comparison Linear Ops"
         ],
-        "rows": [
-          [
-            "10",
-            "19",
-            "10"
-          ],
-          [
-            "100",
-            "520",
-            "100"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Comparison sorting modeled as binary decision tree with leaves.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "19",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "100",
+                  "520",
+                  "100"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Mapping values directly to index buckets achieves linear time.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "10",
+                  "19",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "100",
+                  "520",
+                  "100"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -338,40 +398,76 @@
           "Units Pass",
           "Tens Pass"
         ],
-        "rows": [
-          [
-            {
-              "text": "170"
-            },
-            {
-              "text": "170"
-            },
-            {
-              "text": "802"
-            }
-          ],
-          [
-            {
-              "text": "802"
-            },
-            {
-              "text": "802"
-            },
-            {
-              "text": "024"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Radix sort sorts numbers digit by digit from units upward.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "170"
+                  },
+                  {
+                    "text": "170"
+                  },
+                  {
+                    "text": "802"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "802"
+                  },
+                  {
+                    "text": "802"
+                  },
+                  {
+                    "text": "024"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Stable sub sorting preserves ordering of identical digit values.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "170"
+                  },
+                  {
+                    "text": "170"
+                  },
+                  {
+                    "text": "802"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "802"
+                  },
+                  {
+                    "text": "802"
+                  },
+                  {
+                    "text": "024"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -383,28 +479,52 @@
           "Units Pass",
           "Tens Pass"
         ],
-        "rows": [
-          [
-            "170",
-            "170",
-            "802"
-          ],
-          [
-            "802",
-            "802",
-            "024"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Radix sort sorts numbers digit by digit from units upward.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "170",
+                  "170",
+                  "802"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "802",
+                  "802",
+                  "024"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Stable sub sorting preserves ordering of identical digit values.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "170",
+                  "170",
+                  "802"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "802",
+                  "802",
+                  "024"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

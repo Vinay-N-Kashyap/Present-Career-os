@@ -93,26 +93,6 @@
           "Sorted Latency",
           "Operational Significance"
         ],
-        "rows": [
-          [
-            "Median Tier",
-            "Middle observation",
-            "42ms",
-            "Typical user experience"
-          ],
-          [
-            "High Percentile",
-            "Rank at 95%",
-            "150ms",
-            "Service SLA boundary"
-          ],
-          [
-            "Tail Percentile",
-            "Top 1% rank",
-            "950ms",
-            "Worst case tail latency"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -125,6 +105,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -139,6 +148,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -153,26 +191,6 @@
           "Sorted Latency",
           "Operational Significance"
         ],
-        "rows": [
-          [
-            "Median Tier",
-            "Middle observation",
-            "42ms",
-            "Typical user experience"
-          ],
-          [
-            "High Percentile",
-            "Rank at 95%",
-            "150ms",
-            "Service SLA boundary"
-          ],
-          [
-            "Tail Percentile",
-            "Top 1% rank",
-            "950ms",
-            "Worst case tail latency"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -185,6 +203,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -199,6 +246,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Median Tier",
+                  "Middle observation",
+                  "42ms",
+                  "Typical user experience"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Percentile",
+                  "Rank at 95%",
+                  "150ms",
+                  "Service SLA boundary"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tail Percentile",
+                  "Top 1% rank",
+                  "950ms",
+                  "Worst case tail latency"
+                ],
+                "tone": "data"
               }
             ]
           }

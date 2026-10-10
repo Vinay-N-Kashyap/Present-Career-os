@@ -92,40 +92,86 @@
           "Evidence Artifact",
           "Preservation Urgency"
         ],
-        "rows": [
-          [
-            "Tier One",
-            "CPU Registers and Cache",
-            "Immediate In-Memory Capture"
-          ],
-          [
-            "Tier Two",
-            "Volatile System RAM",
-            "Capture Prior to Machine Shutdown"
-          ],
-          [
-            "Tier Three",
-            "Network State and Sockets",
-            "Extract Active Process Connections"
-          ],
-          [
-            "Tier Four",
-            "Hard Disk Raw Image",
-            "Bit for Bit Cryptographic Hash"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Order of volatility mandates capturing memory prior to hard disk storage.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Tier One",
+                  "CPU Registers and Cache",
+                  "Immediate In-Memory Capture"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Two",
+                  "Volatile System RAM",
+                  "Capture Prior to Machine Shutdown"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Three",
+                  "Network State and Sockets",
+                  "Extract Active Process Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Four",
+                  "Hard Disk Raw Image",
+                  "Bit for Bit Cryptographic Hash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Cryptographic hash algorithms verify evidence integrity bit for bit in court.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Tier One",
+                  "CPU Registers and Cache",
+                  "Immediate In-Memory Capture"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Two",
+                  "Volatile System RAM",
+                  "Capture Prior to Machine Shutdown"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Three",
+                  "Network State and Sockets",
+                  "Extract Active Process Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Four",
+                  "Hard Disk Raw Image",
+                  "Bit for Bit Cryptographic Hash"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -137,40 +183,86 @@
           "Evidence Artifact",
           "Preservation Urgency"
         ],
-        "rows": [
-          [
-            "Tier One",
-            "CPU Registers and Cache",
-            "Immediate In-Memory Capture"
-          ],
-          [
-            "Tier Two",
-            "Volatile System RAM",
-            "Capture Prior to Machine Shutdown"
-          ],
-          [
-            "Tier Three",
-            "Network State and Sockets",
-            "Extract Active Process Connections"
-          ],
-          [
-            "Tier Four",
-            "Hard Disk Raw Image",
-            "Bit for Bit Cryptographic Hash"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Order of volatility mandates capturing memory prior to hard disk storage.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Tier One",
+                  "CPU Registers and Cache",
+                  "Immediate In-Memory Capture"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Two",
+                  "Volatile System RAM",
+                  "Capture Prior to Machine Shutdown"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Three",
+                  "Network State and Sockets",
+                  "Extract Active Process Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Four",
+                  "Hard Disk Raw Image",
+                  "Bit for Bit Cryptographic Hash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Cryptographic hash algorithms verify evidence integrity bit for bit in court.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Tier One",
+                  "CPU Registers and Cache",
+                  "Immediate In-Memory Capture"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Two",
+                  "Volatile System RAM",
+                  "Capture Prior to Machine Shutdown"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Three",
+                  "Network State and Sockets",
+                  "Extract Active Process Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tier Four",
+                  "Hard Disk Raw Image",
+                  "Bit for Bit Cryptographic Hash"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

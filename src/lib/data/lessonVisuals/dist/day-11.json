@@ -347,32 +347,58 @@
           "System Action",
           "Outcome State"
         ],
-        "rows": [
-          [
-            "Backward Recovery",
-            "Business Rule Rejection",
-            "Compensating Rollback",
-            "Original State Restored"
-          ],
-          [
-            "Forward Recovery",
-            "Transient Network Timeout",
-            "Exponential Backoff Retries",
-            "Transaction Completed"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Backward recovery triggers compensating actions to reverse prior steps.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Backward Recovery",
+                  "Business Rule Rejection",
+                  "Compensating Rollback",
+                  "Original State Restored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Forward Recovery",
+                  "Transient Network Timeout",
+                  "Exponential Backoff Retries",
+                  "Transaction Completed"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Forward recovery retries failing steps until successful completion.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Backward Recovery",
+                  "Business Rule Rejection",
+                  "Compensating Rollback",
+                  "Original State Restored"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Recovery",
+                  "Transient Network Timeout",
+                  "Exponential Backoff Retries",
+                  "Transaction Completed"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -385,32 +411,58 @@
           "System Action",
           "Outcome State"
         ],
-        "rows": [
-          [
-            "Backward Recovery",
-            "Business Rule Rejection",
-            "Compensating Rollback",
-            "Original State Restored"
-          ],
-          [
-            "Forward Recovery",
-            "Transient Network Timeout",
-            "Exponential Backoff Retries",
-            "Transaction Completed"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Backward recovery triggers compensating actions to reverse prior steps.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Backward Recovery",
+                  "Business Rule Rejection",
+                  "Compensating Rollback",
+                  "Original State Restored"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Forward Recovery",
+                  "Transient Network Timeout",
+                  "Exponential Backoff Retries",
+                  "Transaction Completed"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Forward recovery retries failing steps until successful completion.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Backward Recovery",
+                  "Business Rule Rejection",
+                  "Compensating Rollback",
+                  "Original State Restored"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Recovery",
+                  "Transient Network Timeout",
+                  "Exponential Backoff Retries",
+                  "Transaction Completed"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

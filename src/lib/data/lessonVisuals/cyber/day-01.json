@@ -17,38 +17,76 @@
           "Primary Threat",
           "Protective Control"
         ],
-        "rows": [
-          [
-            "Confidentiality",
-            "Prevent unauthorized disclosure",
-            "Data snooping and credential theft",
-            "AES Encryption and RBAC"
-          ],
-          [
-            "Integrity",
-            "Guarantee information accuracy",
-            "Tampering and unauthorized edits",
-            "HMAC Signatures and Hash Digests"
-          ],
-          [
-            "Availability",
-            "Ensure timely reliable access",
-            "Denial of service outages",
-            "Rate Limiting and CDN Redundancy"
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
             "caption": "Information security engineering rests on confidentiality and integrity.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Confidentiality",
+                  "Prevent unauthorized disclosure",
+                  "Data snooping and credential theft",
+                  "AES Encryption and RBAC"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Integrity",
+                  "Guarantee information accuracy",
+                  "Tampering and unauthorized edits",
+                  "HMAC Signatures and Hash Digests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Availability",
+                  "Ensure timely reliable access",
+                  "Denial of service outages",
+                  "Rate Limiting and CDN Redundancy"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Availability mandates dependable unimpeded access to computing resources.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Confidentiality",
+                  "Prevent unauthorized disclosure",
+                  "Data snooping and credential theft",
+                  "AES Encryption and RBAC"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Integrity",
+                  "Guarantee information accuracy",
+                  "Tampering and unauthorized edits",
+                  "HMAC Signatures and Hash Digests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Availability",
+                  "Ensure timely reliable access",
+                  "Denial of service outages",
+                  "Rate Limiting and CDN Redundancy"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Primary Threat",
           "Protective Control"
         ],
-        "rows": [
-          [
-            "Confidentiality",
-            "Prevent unauthorized disclosure",
-            "Data snooping and credential theft",
-            "AES Encryption and RBAC"
-          ],
-          [
-            "Integrity",
-            "Guarantee information accuracy",
-            "Tampering and unauthorized edits",
-            "HMAC Signatures and Hash Digests"
-          ],
-          [
-            "Availability",
-            "Ensure timely reliable access",
-            "Denial of service outages",
-            "Rate Limiting and CDN Redundancy"
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
             "caption": "Information security engineering rests on confidentiality and integrity.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Confidentiality",
+                  "Prevent unauthorized disclosure",
+                  "Data snooping and credential theft",
+                  "AES Encryption and RBAC"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Integrity",
+                  "Guarantee information accuracy",
+                  "Tampering and unauthorized edits",
+                  "HMAC Signatures and Hash Digests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Availability",
+                  "Ensure timely reliable access",
+                  "Denial of service outages",
+                  "Rate Limiting and CDN Redundancy"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Availability mandates dependable unimpeded access to computing resources.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Confidentiality",
+                  "Prevent unauthorized disclosure",
+                  "Data snooping and credential theft",
+                  "AES Encryption and RBAC"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Integrity",
+                  "Guarantee information accuracy",
+                  "Tampering and unauthorized edits",
+                  "HMAC Signatures and Hash Digests"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Availability",
+                  "Ensure timely reliable access",
+                  "Denial of service outages",
+                  "Rate Limiting and CDN Redundancy"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -257,38 +333,76 @@
           "Attack Impact",
           "Primary Mitigation"
         ],
-        "rows": [
-          [
-            "Repudiation",
-            "Banking Wire Transfer",
-            "Denies transaction authorship",
-            "Immutable Write-Once Audit Logs"
-          ],
-          [
-            "Information Disclosure",
-            "Customer PII and Database",
-            "Leaks confidential credentials",
-            "TLS and Column-Level Encryption"
-          ],
-          [
-            "Denial of Service",
-            "Public Edge Ingress API",
-            "Exhausts memory and compute bandwidth",
-            "Rate Limiting and CDN Buffering"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Non-repudiation is enforced through immutable audit logs.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Repudiation",
+                  "Banking Wire Transfer",
+                  "Denies transaction authorship",
+                  "Immutable Write-Once Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Information Disclosure",
+                  "Customer PII and Database",
+                  "Leaks confidential credentials",
+                  "TLS and Column-Level Encryption"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Denial of Service",
+                  "Public Edge Ingress API",
+                  "Exhausts memory and compute bandwidth",
+                  "Rate Limiting and CDN Buffering"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Denial of service attacks seek to render systems unusable.",
             "activeRowIndex": 2,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Repudiation",
+                  "Banking Wire Transfer",
+                  "Denies transaction authorship",
+                  "Immutable Write-Once Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Information Disclosure",
+                  "Customer PII and Database",
+                  "Leaks confidential credentials",
+                  "TLS and Column-Level Encryption"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Denial of Service",
+                  "Public Edge Ingress API",
+                  "Exhausts memory and compute bandwidth",
+                  "Rate Limiting and CDN Buffering"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -301,38 +415,76 @@
           "Attack Impact",
           "Primary Mitigation"
         ],
-        "rows": [
-          [
-            "Repudiation",
-            "Banking Wire Transfer",
-            "Denies transaction authorship",
-            "Immutable Write-Once Audit Logs"
-          ],
-          [
-            "Information Disclosure",
-            "Customer PII and Database",
-            "Leaks confidential credentials",
-            "TLS and Column-Level Encryption"
-          ],
-          [
-            "Denial of Service",
-            "Public Edge Ingress API",
-            "Exhausts memory and compute bandwidth",
-            "Rate Limiting and CDN Buffering"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Non-repudiation is enforced through immutable audit logs.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Repudiation",
+                  "Banking Wire Transfer",
+                  "Denies transaction authorship",
+                  "Immutable Write-Once Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Information Disclosure",
+                  "Customer PII and Database",
+                  "Leaks confidential credentials",
+                  "TLS and Column-Level Encryption"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Denial of Service",
+                  "Public Edge Ingress API",
+                  "Exhausts memory and compute bandwidth",
+                  "Rate Limiting and CDN Buffering"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Denial of service attacks seek to render systems unusable.",
             "activeRowIndex": 2,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Repudiation",
+                  "Banking Wire Transfer",
+                  "Denies transaction authorship",
+                  "Immutable Write-Once Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Information Disclosure",
+                  "Customer PII and Database",
+                  "Leaks confidential credentials",
+                  "TLS and Column-Level Encryption"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Denial of Service",
+                  "Public Edge Ingress API",
+                  "Exhausts memory and compute bandwidth",
+                  "Rate Limiting and CDN Buffering"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

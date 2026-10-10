@@ -321,38 +321,76 @@
           "Latency Impact",
           "Payload Structure"
         ],
-        "rows": [
-          [
-            "Serial Calling",
-            "Sequential Synchronous",
-            "High Cumulative Latency",
-            "Chained Tool Turns"
-          ],
-          [
-            "Parallel Calling",
-            "Batch Concurrent Calls",
-            "Minimal Wall Clock Delay",
-            "Multi Tool Message Array"
-          ],
-          [
-            "Async Polling",
-            "Non Blocking Handlers",
-            "Event Loop Efficient",
-            "Streamed Tool Responses"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Serial execution multiplies latency by chaining external queries.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Serial Calling",
+                  "Sequential Synchronous",
+                  "High Cumulative Latency",
+                  "Chained Tool Turns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallel Calling",
+                  "Batch Concurrent Calls",
+                  "Minimal Wall Clock Delay",
+                  "Multi Tool Message Array"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Polling",
+                  "Non Blocking Handlers",
+                  "Event Loop Efficient",
+                  "Streamed Tool Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Executing tools in parallel reduces latency to the single slowest request.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Serial Calling",
+                  "Sequential Synchronous",
+                  "High Cumulative Latency",
+                  "Chained Tool Turns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallel Calling",
+                  "Batch Concurrent Calls",
+                  "Minimal Wall Clock Delay",
+                  "Multi Tool Message Array"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Polling",
+                  "Non Blocking Handlers",
+                  "Event Loop Efficient",
+                  "Streamed Tool Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -365,38 +403,76 @@
           "Latency Impact",
           "Payload Structure"
         ],
-        "rows": [
-          [
-            "Serial Calling",
-            "Sequential Synchronous",
-            "High Cumulative Latency",
-            "Chained Tool Turns"
-          ],
-          [
-            "Parallel Calling",
-            "Batch Concurrent Calls",
-            "Minimal Wall Clock Delay",
-            "Multi Tool Message Array"
-          ],
-          [
-            "Async Polling",
-            "Non Blocking Handlers",
-            "Event Loop Efficient",
-            "Streamed Tool Responses"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Serial execution multiplies latency by chaining external queries.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Serial Calling",
+                  "Sequential Synchronous",
+                  "High Cumulative Latency",
+                  "Chained Tool Turns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallel Calling",
+                  "Batch Concurrent Calls",
+                  "Minimal Wall Clock Delay",
+                  "Multi Tool Message Array"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Polling",
+                  "Non Blocking Handlers",
+                  "Event Loop Efficient",
+                  "Streamed Tool Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Executing tools in parallel reduces latency to the single slowest request.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Serial Calling",
+                  "Sequential Synchronous",
+                  "High Cumulative Latency",
+                  "Chained Tool Turns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Parallel Calling",
+                  "Batch Concurrent Calls",
+                  "Minimal Wall Clock Delay",
+                  "Multi Tool Message Array"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Polling",
+                  "Non Blocking Handlers",
+                  "Event Loop Efficient",
+                  "Streamed Tool Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

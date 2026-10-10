@@ -16,40 +16,76 @@
           "Tree Levels",
           "Total Operations"
         ],
-        "rows": [
-          [
-            {
-              "text": "8"
-            },
-            {
-              "text": "3"
-            },
-            {
-              "text": "24"
-            }
-          ],
-          [
-            {
-              "text": "16"
-            },
-            {
-              "text": "4"
-            },
-            {
-              "text": "64"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Paradigm divides problem into subproblems and conquers recursively.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "24"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "64"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Recurrence relation evaluates divide and conquer merge operations.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "24"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "64"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,28 +97,52 @@
           "Tree Levels",
           "Total Operations"
         ],
-        "rows": [
-          [
-            "8",
-            "3",
-            "24"
-          ],
-          [
-            "16",
-            "4",
-            "64"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Paradigm divides problem into subproblems and conquers recursively.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "3",
+                  "24"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "4",
+                  "64"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Recurrence relation evaluates divide and conquer merge operations.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "8",
+                  "3",
+                  "24"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "4",
+                  "64"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -326,40 +386,76 @@
           "Score Value",
           "Relative Stability"
         ],
-        "rows": [
-          [
-            {
-              "text": "Alice-First"
-            },
-            {
-              "text": "90"
-            },
-            {
-              "text": "Rank 1"
-            }
-          ],
-          [
-            {
-              "text": "Charlie-Second"
-            },
-            {
-              "text": "90"
-            },
-            {
-              "text": "Rank 2"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
             "caption": "Stable sorting maintains relative order for identical keys.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Alice-First"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "Rank 1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Charlie-Second"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "Rank 2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Standard array merge sort requires auxiliary memory buffer.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Alice-First"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "Rank 1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Charlie-Second"
+                  },
+                  {
+                    "text": "90"
+                  },
+                  {
+                    "text": "Rank 2"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -371,28 +467,52 @@
           "Score Value",
           "Relative Stability"
         ],
-        "rows": [
-          [
-            "Alice-First",
-            "90",
-            "Rank 1"
-          ],
-          [
-            "Charlie-Second",
-            "90",
-            "Rank 2"
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
             "caption": "Stable sorting maintains relative order for identical keys.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Alice-First",
+                  "90",
+                  "Rank 1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Charlie-Second",
+                  "90",
+                  "Rank 2"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Standard array merge sort requires auxiliary memory buffer.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Alice-First",
+                  "90",
+                  "Rank 1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Charlie-Second",
+                  "90",
+                  "Rank 2"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

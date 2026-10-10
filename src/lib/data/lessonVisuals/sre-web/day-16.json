@@ -17,26 +17,6 @@
           "Mathematical Operations",
           "Production Examples"
         ],
-        "rows": [
-          [
-            "COUNTER",
-            "Monotonically increasing",
-            "Rate, Increase, Resets",
-            "http_requests_total"
-          ],
-          [
-            "GAUGE",
-            "Arbitrary fluctuation",
-            "Average, Min, Max",
-            "memory_bytes, active_conns"
-          ],
-          [
-            "HISTOGRAM",
-            "Bucketed distributions",
-            "Percentiles, Quantiles",
-            "duration_seconds, sizes"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -49,6 +29,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "COUNTER",
+                  "Monotonically increasing",
+                  "Rate, Increase, Resets",
+                  "http_requests_total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GAUGE",
+                  "Arbitrary fluctuation",
+                  "Average, Min, Max",
+                  "memory_bytes, active_conns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HISTOGRAM",
+                  "Bucketed distributions",
+                  "Percentiles, Quantiles",
+                  "duration_seconds, sizes"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -63,6 +72,35 @@
               {
                 "row": 1,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "COUNTER",
+                  "Monotonically increasing",
+                  "Rate, Increase, Resets",
+                  "http_requests_total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GAUGE",
+                  "Arbitrary fluctuation",
+                  "Average, Min, Max",
+                  "memory_bytes, active_conns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HISTOGRAM",
+                  "Bucketed distributions",
+                  "Percentiles, Quantiles",
+                  "duration_seconds, sizes"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -77,26 +115,6 @@
           "Mathematical Operations",
           "Production Examples"
         ],
-        "rows": [
-          [
-            "COUNTER",
-            "Monotonically increasing",
-            "Rate, Increase, Resets",
-            "http_requests_total"
-          ],
-          [
-            "GAUGE",
-            "Arbitrary fluctuation",
-            "Average, Min, Max",
-            "memory_bytes, active_conns"
-          ],
-          [
-            "HISTOGRAM",
-            "Bucketed distributions",
-            "Percentiles, Quantiles",
-            "duration_seconds, sizes"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -109,6 +127,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "COUNTER",
+                  "Monotonically increasing",
+                  "Rate, Increase, Resets",
+                  "http_requests_total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GAUGE",
+                  "Arbitrary fluctuation",
+                  "Average, Min, Max",
+                  "memory_bytes, active_conns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HISTOGRAM",
+                  "Bucketed distributions",
+                  "Percentiles, Quantiles",
+                  "duration_seconds, sizes"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -123,6 +170,35 @@
               {
                 "row": 1,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "COUNTER",
+                  "Monotonically increasing",
+                  "Rate, Increase, Resets",
+                  "http_requests_total"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GAUGE",
+                  "Arbitrary fluctuation",
+                  "Average, Min, Max",
+                  "memory_bytes, active_conns"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HISTOGRAM",
+                  "Bucketed distributions",
+                  "Percentiles, Quantiles",
+                  "duration_seconds, sizes"
+                ],
+                "tone": "data"
               }
             ]
           }

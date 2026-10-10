@@ -231,44 +231,94 @@
           "Freshness Level",
           "User Impact"
         ],
-        "rows": [
-          [
-            "Cached Fallback",
-            "Return Stale Cache or Local Memory",
-            "Near Real-Time Data",
-            "Fully Transparent View"
-          ],
-          [
-            "Static Default",
-            "Return Hardcoded Sensible Value",
-            "Generic Preset",
-            "Core Navigation Preserved"
-          ],
-          [
-            "Feature Degradation",
-            "Hide Failing Non-Critical Widget",
-            "Partial Page Render",
-            "Primary Article Remains Readable"
-          ],
-          [
-            "Async Queueing",
-            "Buffer Mutation to Queue for Replay",
-            "Eventual Consistency",
-            "Confirmation Acknowledged"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Resilient systems execute fallback strategies for graceful degradation.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cached Fallback",
+                  "Return Stale Cache or Local Memory",
+                  "Near Real-Time Data",
+                  "Fully Transparent View"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Static Default",
+                  "Return Hardcoded Sensible Value",
+                  "Generic Preset",
+                  "Core Navigation Preserved"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Feature Degradation",
+                  "Hide Failing Non-Critical Widget",
+                  "Partial Page Render",
+                  "Primary Article Remains Readable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Queueing",
+                  "Buffer Mutation to Queue for Replay",
+                  "Eventual Consistency",
+                  "Confirmation Acknowledged"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cached fallback returns the last successfully cached version of data.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cached Fallback",
+                  "Return Stale Cache or Local Memory",
+                  "Near Real-Time Data",
+                  "Fully Transparent View"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Static Default",
+                  "Return Hardcoded Sensible Value",
+                  "Generic Preset",
+                  "Core Navigation Preserved"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Feature Degradation",
+                  "Hide Failing Non-Critical Widget",
+                  "Partial Page Render",
+                  "Primary Article Remains Readable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Queueing",
+                  "Buffer Mutation to Queue for Replay",
+                  "Eventual Consistency",
+                  "Confirmation Acknowledged"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -281,44 +331,94 @@
           "Freshness Level",
           "User Impact"
         ],
-        "rows": [
-          [
-            "Cached Fallback",
-            "Return Stale Cache or Local Memory",
-            "Near Real-Time Data",
-            "Fully Transparent View"
-          ],
-          [
-            "Static Default",
-            "Return Hardcoded Sensible Value",
-            "Generic Preset",
-            "Core Navigation Preserved"
-          ],
-          [
-            "Feature Degradation",
-            "Hide Failing Non-Critical Widget",
-            "Partial Page Render",
-            "Primary Article Remains Readable"
-          ],
-          [
-            "Async Queueing",
-            "Buffer Mutation to Queue for Replay",
-            "Eventual Consistency",
-            "Confirmation Acknowledged"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Resilient systems execute fallback strategies for graceful degradation.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cached Fallback",
+                  "Return Stale Cache or Local Memory",
+                  "Near Real-Time Data",
+                  "Fully Transparent View"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Static Default",
+                  "Return Hardcoded Sensible Value",
+                  "Generic Preset",
+                  "Core Navigation Preserved"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Feature Degradation",
+                  "Hide Failing Non-Critical Widget",
+                  "Partial Page Render",
+                  "Primary Article Remains Readable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Queueing",
+                  "Buffer Mutation to Queue for Replay",
+                  "Eventual Consistency",
+                  "Confirmation Acknowledged"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cached fallback returns the last successfully cached version of data.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cached Fallback",
+                  "Return Stale Cache or Local Memory",
+                  "Near Real-Time Data",
+                  "Fully Transparent View"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Static Default",
+                  "Return Hardcoded Sensible Value",
+                  "Generic Preset",
+                  "Core Navigation Preserved"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Feature Degradation",
+                  "Hide Failing Non-Critical Widget",
+                  "Partial Page Render",
+                  "Primary Article Remains Readable"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Async Queueing",
+                  "Buffer Mutation to Queue for Replay",
+                  "Eventual Consistency",
+                  "Confirmation Acknowledged"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -235,38 +235,76 @@
           "Hardware Target",
           "Production Fit"
         ],
-        "rows": [
-          [
-            "GGUF Binary",
-            "Block-wise k-quant integer",
-            "CPU and Apple Silicon Metal",
-            "Local Desktop and Edge"
-          ],
-          [
-            "AWQ Format",
-            "Activation-aware salient weights",
-            "Nvidia CUDA Tensor Cores",
-            "High-Throughput Cloud vLLM"
-          ],
-          [
-            "GPTQ Format",
-            "Second-order Taylor optimization",
-            "Nvidia GPU GEMM Kernels",
-            "Dedicated GPU Microservices"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "GGUF is designed by llama.cpp for CPU and local desktop execution.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "GGUF Binary",
+                  "Block-wise k-quant integer",
+                  "CPU and Apple Silicon Metal",
+                  "Local Desktop and Edge"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "AWQ Format",
+                  "Activation-aware salient weights",
+                  "Nvidia CUDA Tensor Cores",
+                  "High-Throughput Cloud vLLM"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GPTQ Format",
+                  "Second-order Taylor optimization",
+                  "Nvidia GPU GEMM Kernels",
+                  "Dedicated GPU Microservices"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "AWQ optimizes for Nvidia GPUs by protecting salient weights from loss.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "GGUF Binary",
+                  "Block-wise k-quant integer",
+                  "CPU and Apple Silicon Metal",
+                  "Local Desktop and Edge"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "AWQ Format",
+                  "Activation-aware salient weights",
+                  "Nvidia CUDA Tensor Cores",
+                  "High-Throughput Cloud vLLM"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GPTQ Format",
+                  "Second-order Taylor optimization",
+                  "Nvidia GPU GEMM Kernels",
+                  "Dedicated GPU Microservices"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -279,38 +317,76 @@
           "Hardware Target",
           "Production Fit"
         ],
-        "rows": [
-          [
-            "GGUF Binary",
-            "Block-wise k-quant integer",
-            "CPU and Apple Silicon Metal",
-            "Local Desktop and Edge"
-          ],
-          [
-            "AWQ Format",
-            "Activation-aware salient weights",
-            "Nvidia CUDA Tensor Cores",
-            "High-Throughput Cloud vLLM"
-          ],
-          [
-            "GPTQ Format",
-            "Second-order Taylor optimization",
-            "Nvidia GPU GEMM Kernels",
-            "Dedicated GPU Microservices"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "GGUF is designed by llama.cpp for CPU and local desktop execution.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "GGUF Binary",
+                  "Block-wise k-quant integer",
+                  "CPU and Apple Silicon Metal",
+                  "Local Desktop and Edge"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "AWQ Format",
+                  "Activation-aware salient weights",
+                  "Nvidia CUDA Tensor Cores",
+                  "High-Throughput Cloud vLLM"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GPTQ Format",
+                  "Second-order Taylor optimization",
+                  "Nvidia GPU GEMM Kernels",
+                  "Dedicated GPU Microservices"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "AWQ optimizes for Nvidia GPUs by protecting salient weights from loss.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "GGUF Binary",
+                  "Block-wise k-quant integer",
+                  "CPU and Apple Silicon Metal",
+                  "Local Desktop and Edge"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "AWQ Format",
+                  "Activation-aware salient weights",
+                  "Nvidia CUDA Tensor Cores",
+                  "High-Throughput Cloud vLLM"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GPTQ Format",
+                  "Second-order Taylor optimization",
+                  "Nvidia GPU GEMM Kernels",
+                  "Dedicated GPU Microservices"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

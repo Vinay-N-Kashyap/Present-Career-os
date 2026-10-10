@@ -335,38 +335,76 @@
           "Mitigation Strategy",
           "Technical Mechanism"
         ],
-        "rows": [
-          [
-            "Temporal Drift",
-            "Serving stale or obsolete facts",
-            "Time-To-Live Expiration",
-            "Automated TTL Eviction"
-          ],
-          [
-            "Multi-Tenant Leak",
-            "Private data served across users",
-            "Namespace Partitioning",
-            "Tenant ID Compound Keys"
-          ],
-          [
-            "Knowledge Base Update",
-            "Desynchronized documentation",
-            "Explicit Webhook Purge",
-            "Targeted Vector Deletion"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "To mitigate temporal drift cache entries enforce strict expiration times.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Temporal Drift",
+                  "Serving stale or obsolete facts",
+                  "Time-To-Live Expiration",
+                  "Automated TTL Eviction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Multi-Tenant Leak",
+                  "Private data served across users",
+                  "Namespace Partitioning",
+                  "Tenant ID Compound Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Knowledge Base Update",
+                  "Desynchronized documentation",
+                  "Explicit Webhook Purge",
+                  "Targeted Vector Deletion"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "To enforce isolation cache keys partition entries by tenant namespace.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Temporal Drift",
+                  "Serving stale or obsolete facts",
+                  "Time-To-Live Expiration",
+                  "Automated TTL Eviction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Multi-Tenant Leak",
+                  "Private data served across users",
+                  "Namespace Partitioning",
+                  "Tenant ID Compound Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Knowledge Base Update",
+                  "Desynchronized documentation",
+                  "Explicit Webhook Purge",
+                  "Targeted Vector Deletion"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -379,38 +417,76 @@
           "Mitigation Strategy",
           "Technical Mechanism"
         ],
-        "rows": [
-          [
-            "Temporal Drift",
-            "Serving stale or obsolete facts",
-            "Time-To-Live Expiration",
-            "Automated TTL Eviction"
-          ],
-          [
-            "Multi-Tenant Leak",
-            "Private data served across users",
-            "Namespace Partitioning",
-            "Tenant ID Compound Keys"
-          ],
-          [
-            "Knowledge Base Update",
-            "Desynchronized documentation",
-            "Explicit Webhook Purge",
-            "Targeted Vector Deletion"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "To mitigate temporal drift cache entries enforce strict expiration times.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Temporal Drift",
+                  "Serving stale or obsolete facts",
+                  "Time-To-Live Expiration",
+                  "Automated TTL Eviction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Multi-Tenant Leak",
+                  "Private data served across users",
+                  "Namespace Partitioning",
+                  "Tenant ID Compound Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Knowledge Base Update",
+                  "Desynchronized documentation",
+                  "Explicit Webhook Purge",
+                  "Targeted Vector Deletion"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "To enforce isolation cache keys partition entries by tenant namespace.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Temporal Drift",
+                  "Serving stale or obsolete facts",
+                  "Time-To-Live Expiration",
+                  "Automated TTL Eviction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Multi-Tenant Leak",
+                  "Private data served across users",
+                  "Namespace Partitioning",
+                  "Tenant ID Compound Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Knowledge Base Update",
+                  "Desynchronized documentation",
+                  "Explicit Webhook Purge",
+                  "Targeted Vector Deletion"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

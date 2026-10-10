@@ -17,38 +17,76 @@
           "Injection Source",
           "Remediation Strategy"
         ],
-        "rows": [
-          [
-            "Reflected XSS",
-            "Transient Request",
-            "HTTP query parameters and search forms",
-            "Contextual Output Encoding"
-          ],
-          [
-            "Stored XSS",
-            "Database Persistent",
-            "Comments, bios, and support tickets",
-            "Input Sanitization and CSP"
-          ],
-          [
-            "DOM-Based XSS",
-            "Client State Only",
-            "location.hash and document.referrer",
-            "Eliminate Dangerous Sinks"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Vulnerabilities are classified into three distinct categories.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reflected XSS",
+                  "Transient Request",
+                  "HTTP query parameters and search forms",
+                  "Contextual Output Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Stored XSS",
+                  "Database Persistent",
+                  "Comments, bios, and support tickets",
+                  "Input Sanitization and CSP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DOM-Based XSS",
+                  "Client State Only",
+                  "location.hash and document.referrer",
+                  "Eliminate Dangerous Sinks"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Consequences include session hijacking credential theft and logging.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Reflected XSS",
+                  "Transient Request",
+                  "HTTP query parameters and search forms",
+                  "Contextual Output Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Stored XSS",
+                  "Database Persistent",
+                  "Comments, bios, and support tickets",
+                  "Input Sanitization and CSP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DOM-Based XSS",
+                  "Client State Only",
+                  "location.hash and document.referrer",
+                  "Eliminate Dangerous Sinks"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Injection Source",
           "Remediation Strategy"
         ],
-        "rows": [
-          [
-            "Reflected XSS",
-            "Transient Request",
-            "HTTP query parameters and search forms",
-            "Contextual Output Encoding"
-          ],
-          [
-            "Stored XSS",
-            "Database Persistent",
-            "Comments, bios, and support tickets",
-            "Input Sanitization and CSP"
-          ],
-          [
-            "DOM-Based XSS",
-            "Client State Only",
-            "location.hash and document.referrer",
-            "Eliminate Dangerous Sinks"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Vulnerabilities are classified into three distinct categories.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reflected XSS",
+                  "Transient Request",
+                  "HTTP query parameters and search forms",
+                  "Contextual Output Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Stored XSS",
+                  "Database Persistent",
+                  "Comments, bios, and support tickets",
+                  "Input Sanitization and CSP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DOM-Based XSS",
+                  "Client State Only",
+                  "location.hash and document.referrer",
+                  "Eliminate Dangerous Sinks"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Consequences include session hijacking credential theft and logging.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Reflected XSS",
+                  "Transient Request",
+                  "HTTP query parameters and search forms",
+                  "Contextual Output Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Stored XSS",
+                  "Database Persistent",
+                  "Comments, bios, and support tickets",
+                  "Input Sanitization and CSP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DOM-Based XSS",
+                  "Client State Only",
+                  "location.hash and document.referrer",
+                  "Eliminate Dangerous Sinks"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -377,44 +453,94 @@
           "Safe Encoding Entity",
           "Defensive Rule"
         ],
-        "rows": [
-          [
-            "HTML Body",
-            "< and >",
-            "&lt; and &gt;",
-            "HTML Entity Encoding"
-          ],
-          [
-            "HTML Attribute",
-            "Double and single quotes",
-            "&quot; and &#x27;",
-            "Strict Attribute Quoting"
-          ],
-          [
-            "JavaScript Variable",
-            "Quotes and backslashes",
-            "Hex character escapes",
-            "JSON Serialization"
-          ],
-          [
-            "URL Href Attribute",
-            "javascript: pseudo-protocol",
-            "Allowlist http and https",
-            "Protocol Allowlisting"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Escaping for the body converts characters into standard named entities.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "HTML Body",
+                  "< and >",
+                  "&lt; and &gt;",
+                  "HTML Entity Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HTML Attribute",
+                  "Double and single quotes",
+                  "&quot; and &#x27;",
+                  "Strict Attribute Quoting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "JavaScript Variable",
+                  "Quotes and backslashes",
+                  "Hex character escapes",
+                  "JSON Serialization"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "URL Href Attribute",
+                  "javascript: pseudo-protocol",
+                  "Allowlist http and https",
+                  "Protocol Allowlisting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Applications must enforce an explicit allowlist permitting protocols.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "HTML Body",
+                  "< and >",
+                  "&lt; and &gt;",
+                  "HTML Entity Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HTML Attribute",
+                  "Double and single quotes",
+                  "&quot; and &#x27;",
+                  "Strict Attribute Quoting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "JavaScript Variable",
+                  "Quotes and backslashes",
+                  "Hex character escapes",
+                  "JSON Serialization"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "URL Href Attribute",
+                  "javascript: pseudo-protocol",
+                  "Allowlist http and https",
+                  "Protocol Allowlisting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -427,44 +553,94 @@
           "Safe Encoding Entity",
           "Defensive Rule"
         ],
-        "rows": [
-          [
-            "HTML Body",
-            "< and >",
-            "&lt; and &gt;",
-            "HTML Entity Encoding"
-          ],
-          [
-            "HTML Attribute",
-            "Double and single quotes",
-            "&quot; and &#x27;",
-            "Strict Attribute Quoting"
-          ],
-          [
-            "JavaScript Variable",
-            "Quotes and backslashes",
-            "Hex character escapes",
-            "JSON Serialization"
-          ],
-          [
-            "URL Href Attribute",
-            "javascript: pseudo-protocol",
-            "Allowlist http and https",
-            "Protocol Allowlisting"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Escaping for the body converts characters into standard named entities.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "HTML Body",
+                  "< and >",
+                  "&lt; and &gt;",
+                  "HTML Entity Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HTML Attribute",
+                  "Double and single quotes",
+                  "&quot; and &#x27;",
+                  "Strict Attribute Quoting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "JavaScript Variable",
+                  "Quotes and backslashes",
+                  "Hex character escapes",
+                  "JSON Serialization"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "URL Href Attribute",
+                  "javascript: pseudo-protocol",
+                  "Allowlist http and https",
+                  "Protocol Allowlisting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Applications must enforce an explicit allowlist permitting protocols.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "HTML Body",
+                  "< and >",
+                  "&lt; and &gt;",
+                  "HTML Entity Encoding"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "HTML Attribute",
+                  "Double and single quotes",
+                  "&quot; and &#x27;",
+                  "Strict Attribute Quoting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "JavaScript Variable",
+                  "Quotes and backslashes",
+                  "Hex character escapes",
+                  "JSON Serialization"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "URL Href Attribute",
+                  "javascript: pseudo-protocol",
+                  "Allowlist http and https",
+                  "Protocol Allowlisting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

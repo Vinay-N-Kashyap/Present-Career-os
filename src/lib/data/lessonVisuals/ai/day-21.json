@@ -29,38 +29,76 @@
           "Snippet Extraction",
           "Verification Status"
         ],
-        "rows": [
-          [
-            "CIT-1",
-            "Advanced Energy Materials 2024",
-            "Solid-state cell density reaches 480 Wh/kg",
-            "Verified Primary Source"
-          ],
-          [
-            "CIT-2",
-            "Automotive Engineering Review",
-            "Pack mass reduction averages 116 kg",
-            "Verified Industry Benchmark"
-          ],
-          [
-            "CIT-3",
-            "Global Battery Supply Index",
-            "Pilot line volume starts Q4 2026",
-            "Verified Market Analysis"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The subagent discovers authoritative information and extracts citations.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "CIT-1",
+                  "Advanced Energy Materials 2024",
+                  "Solid-state cell density reaches 480 Wh/kg",
+                  "Verified Primary Source"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-2",
+                  "Automotive Engineering Review",
+                  "Pack mass reduction averages 116 kg",
+                  "Verified Industry Benchmark"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-3",
+                  "Global Battery Supply Index",
+                  "Pilot line volume starts Q4 2026",
+                  "Verified Market Analysis"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Source deduplication ensures context windows avoid redundant articles.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "CIT-1",
+                  "Advanced Energy Materials 2024",
+                  "Solid-state cell density reaches 480 Wh/kg",
+                  "Verified Primary Source"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-2",
+                  "Automotive Engineering Review",
+                  "Pack mass reduction averages 116 kg",
+                  "Verified Industry Benchmark"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-3",
+                  "Global Battery Supply Index",
+                  "Pilot line volume starts Q4 2026",
+                  "Verified Market Analysis"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -73,38 +111,76 @@
           "Snippet Extraction",
           "Verification Status"
         ],
-        "rows": [
-          [
-            "CIT-1",
-            "Advanced Energy Materials 2024",
-            "Solid-state cell density reaches 480 Wh/kg",
-            "Verified Primary Source"
-          ],
-          [
-            "CIT-2",
-            "Automotive Engineering Review",
-            "Pack mass reduction averages 116 kg",
-            "Verified Industry Benchmark"
-          ],
-          [
-            "CIT-3",
-            "Global Battery Supply Index",
-            "Pilot line volume starts Q4 2026",
-            "Verified Market Analysis"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The subagent discovers authoritative information and extracts citations.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "CIT-1",
+                  "Advanced Energy Materials 2024",
+                  "Solid-state cell density reaches 480 Wh/kg",
+                  "Verified Primary Source"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-2",
+                  "Automotive Engineering Review",
+                  "Pack mass reduction averages 116 kg",
+                  "Verified Industry Benchmark"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-3",
+                  "Global Battery Supply Index",
+                  "Pilot line volume starts Q4 2026",
+                  "Verified Market Analysis"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Source deduplication ensures context windows avoid redundant articles.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "CIT-1",
+                  "Advanced Energy Materials 2024",
+                  "Solid-state cell density reaches 480 Wh/kg",
+                  "Verified Primary Source"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-2",
+                  "Automotive Engineering Review",
+                  "Pack mass reduction averages 116 kg",
+                  "Verified Industry Benchmark"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CIT-3",
+                  "Global Battery Supply Index",
+                  "Pilot line volume starts Q4 2026",
+                  "Verified Market Analysis"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

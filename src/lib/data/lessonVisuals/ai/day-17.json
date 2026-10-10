@@ -189,38 +189,76 @@
           "Execution Sandbox",
           "Error Contract"
         ],
-        "rows": [
-          [
-            "cluster_storage",
-            "Inspect disk capacity across clusters",
-            "Isolated Async Runtime",
-            "Returns Exception Payload"
-          ],
-          [
-            "calculator",
-            "Evaluate arithmetic expressions safely",
-            "In-Memory Evaluator",
-            "Returns Syntax Error"
-          ],
-          [
-            "database_query",
-            "Read replica relational database",
-            "Read-Only Replica Gateway",
-            "Returns Query Error"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A tool registry manages registration and sandboxed execution of functions.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "When tools throw errors the sandbox catches failures safely as observations.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -233,38 +271,76 @@
           "Execution Sandbox",
           "Error Contract"
         ],
-        "rows": [
-          [
-            "cluster_storage",
-            "Inspect disk capacity across clusters",
-            "Isolated Async Runtime",
-            "Returns Exception Payload"
-          ],
-          [
-            "calculator",
-            "Evaluate arithmetic expressions safely",
-            "In-Memory Evaluator",
-            "Returns Syntax Error"
-          ],
-          [
-            "database_query",
-            "Read replica relational database",
-            "Read-Only Replica Gateway",
-            "Returns Query Error"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A tool registry manages registration and sandboxed execution of functions.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "When tools throw errors the sandbox catches failures safely as observations.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "cluster_storage",
+                  "Inspect disk capacity across clusters",
+                  "Isolated Async Runtime",
+                  "Returns Exception Payload"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "calculator",
+                  "Evaluate arithmetic expressions safely",
+                  "In-Memory Evaluator",
+                  "Returns Syntax Error"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "database_query",
+                  "Read replica relational database",
+                  "Read-Only Replica Gateway",
+                  "Returns Query Error"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

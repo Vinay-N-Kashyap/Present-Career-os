@@ -17,26 +17,6 @@
           "Data Structure",
           "Visualization Type"
         ],
-        "rows": [
-          [
-            "Traces",
-            "Latency breakdown across service boundaries",
-            "Directed Acyclic Graph (DAG)",
-            "Gantt Waterfall Chart"
-          ],
-          [
-            "Metrics",
-            "Numeric aggregations over rolling time windows",
-            "Counters, Gauges, Histograms",
-            "Time Series Line Charts"
-          ],
-          [
-            "Logs",
-            "Discrete contextual narrative event records",
-            "Structured JSON Documents",
-            "Search & Filter Tables"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -49,6 +29,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -63,6 +72,35 @@
               {
                 "row": 2,
                 "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -77,26 +115,6 @@
           "Data Structure",
           "Visualization Type"
         ],
-        "rows": [
-          [
-            "Traces",
-            "Latency breakdown across service boundaries",
-            "Directed Acyclic Graph (DAG)",
-            "Gantt Waterfall Chart"
-          ],
-          [
-            "Metrics",
-            "Numeric aggregations over rolling time windows",
-            "Counters, Gauges, Histograms",
-            "Time Series Line Charts"
-          ],
-          [
-            "Logs",
-            "Discrete contextual narrative event records",
-            "Structured JSON Documents",
-            "Search & Filter Tables"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -109,6 +127,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -123,6 +170,35 @@
               {
                 "row": 2,
                 "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Traces",
+                  "Latency breakdown across service boundaries",
+                  "Directed Acyclic Graph (DAG)",
+                  "Gantt Waterfall Chart"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Metrics",
+                  "Numeric aggregations over rolling time windows",
+                  "Counters, Gauges, Histograms",
+                  "Time Series Line Charts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Logs",
+                  "Discrete contextual narrative event records",
+                  "Structured JSON Documents",
+                  "Search & Filter Tables"
+                ],
+                "tone": "data"
               }
             ]
           }

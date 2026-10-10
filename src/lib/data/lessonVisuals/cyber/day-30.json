@@ -436,40 +436,86 @@
           "Certified Controls",
           "Audit Verification"
         ],
-        "rows": [
-          [
-            "Application Shielding",
-            "Twelve Controls",
-            "Input Sanitization and CSRF"
-          ],
-          [
-            "Cryptographic Identity",
-            "Fourteen Controls",
-            "Argon2id and Multi Factor"
-          ],
-          [
-            "Supply Chain Security",
-            "Ten Controls",
-            "SBOM Scans and SSRF Filters"
-          ],
-          [
-            "Zero Trust Governance",
-            "Sixteen Controls",
-            "Device Attestation and mTLS"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Compliance certification manifests verify security across all system domains.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Shielding",
+                  "Twelve Controls",
+                  "Input Sanitization and CSRF"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cryptographic Identity",
+                  "Fourteen Controls",
+                  "Argon2id and Multi Factor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supply Chain Security",
+                  "Ten Controls",
+                  "SBOM Scans and SSRF Filters"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Zero Trust Governance",
+                  "Sixteen Controls",
+                  "Device Attestation and mTLS"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Certifications prove that every defense satisfies enterprise standards.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Shielding",
+                  "Twelve Controls",
+                  "Input Sanitization and CSRF"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cryptographic Identity",
+                  "Fourteen Controls",
+                  "Argon2id and Multi Factor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supply Chain Security",
+                  "Ten Controls",
+                  "SBOM Scans and SSRF Filters"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Zero Trust Governance",
+                  "Sixteen Controls",
+                  "Device Attestation and mTLS"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -481,40 +527,86 @@
           "Certified Controls",
           "Audit Verification"
         ],
-        "rows": [
-          [
-            "Application Shielding",
-            "Twelve Controls",
-            "Input Sanitization and CSRF"
-          ],
-          [
-            "Cryptographic Identity",
-            "Fourteen Controls",
-            "Argon2id and Multi Factor"
-          ],
-          [
-            "Supply Chain Security",
-            "Ten Controls",
-            "SBOM Scans and SSRF Filters"
-          ],
-          [
-            "Zero Trust Governance",
-            "Sixteen Controls",
-            "Device Attestation and mTLS"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Compliance certification manifests verify security across all system domains.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Shielding",
+                  "Twelve Controls",
+                  "Input Sanitization and CSRF"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cryptographic Identity",
+                  "Fourteen Controls",
+                  "Argon2id and Multi Factor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supply Chain Security",
+                  "Ten Controls",
+                  "SBOM Scans and SSRF Filters"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Zero Trust Governance",
+                  "Sixteen Controls",
+                  "Device Attestation and mTLS"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Certifications prove that every defense satisfies enterprise standards.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Shielding",
+                  "Twelve Controls",
+                  "Input Sanitization and CSRF"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cryptographic Identity",
+                  "Fourteen Controls",
+                  "Argon2id and Multi Factor"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supply Chain Security",
+                  "Ten Controls",
+                  "SBOM Scans and SSRF Filters"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Zero Trust Governance",
+                  "Sixteen Controls",
+                  "Device Attestation and mTLS"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

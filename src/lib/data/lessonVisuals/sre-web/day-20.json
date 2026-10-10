@@ -93,26 +93,6 @@
           "Monthly Budget Consumed",
           "Exhaustion Window"
         ],
-        "rows": [
-          [
-            "Critical Paging",
-            "14.4x Burn",
-            "2% Budget in 1 hour",
-            "50 Hours to Total Depletion"
-          ],
-          [
-            "Severe Warning",
-            "6.0x Burn",
-            "5% Budget in 6 hours",
-            "120 Hours to Total Depletion"
-          ],
-          [
-            "Moderate Ticket",
-            "1.0x Burn",
-            "10% Budget in 3 days",
-            "720 Hours to Total Depletion"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -125,6 +105,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Critical Paging",
+                  "14.4x Burn",
+                  "2% Budget in 1 hour",
+                  "50 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe Warning",
+                  "6.0x Burn",
+                  "5% Budget in 6 hours",
+                  "120 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Moderate Ticket",
+                  "1.0x Burn",
+                  "10% Budget in 3 days",
+                  "720 Hours to Total Depletion"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -139,6 +148,35 @@
               {
                 "row": 1,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Critical Paging",
+                  "14.4x Burn",
+                  "2% Budget in 1 hour",
+                  "50 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe Warning",
+                  "6.0x Burn",
+                  "5% Budget in 6 hours",
+                  "120 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Moderate Ticket",
+                  "1.0x Burn",
+                  "10% Budget in 3 days",
+                  "720 Hours to Total Depletion"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -153,26 +191,6 @@
           "Monthly Budget Consumed",
           "Exhaustion Window"
         ],
-        "rows": [
-          [
-            "Critical Paging",
-            "14.4x Burn",
-            "2% Budget in 1 hour",
-            "50 Hours to Total Depletion"
-          ],
-          [
-            "Severe Warning",
-            "6.0x Burn",
-            "5% Budget in 6 hours",
-            "120 Hours to Total Depletion"
-          ],
-          [
-            "Moderate Ticket",
-            "1.0x Burn",
-            "10% Budget in 3 days",
-            "720 Hours to Total Depletion"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -185,6 +203,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Critical Paging",
+                  "14.4x Burn",
+                  "2% Budget in 1 hour",
+                  "50 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe Warning",
+                  "6.0x Burn",
+                  "5% Budget in 6 hours",
+                  "120 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Moderate Ticket",
+                  "1.0x Burn",
+                  "10% Budget in 3 days",
+                  "720 Hours to Total Depletion"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -199,6 +246,35 @@
               {
                 "row": 1,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Critical Paging",
+                  "14.4x Burn",
+                  "2% Budget in 1 hour",
+                  "50 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe Warning",
+                  "6.0x Burn",
+                  "5% Budget in 6 hours",
+                  "120 Hours to Total Depletion"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Moderate Ticket",
+                  "1.0x Burn",
+                  "10% Budget in 3 days",
+                  "720 Hours to Total Depletion"
+                ],
+                "tone": "data"
               }
             ]
           }

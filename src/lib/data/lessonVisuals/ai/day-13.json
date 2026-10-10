@@ -331,44 +331,94 @@
           "Primary Metric",
           "Target Threshold"
         ],
-        "rows": [
-          [
-            "Context Relevance",
-            "Query and Retrieved Chunks",
-            "Relevant Chunk Percentage",
-            "GreaterThan Eighty Percent"
-          ],
-          [
-            "Grounded Faithfulness",
-            "Context and Generated Answer",
-            "Verified Statement Ratio",
-            "GreaterThan Ninety-Five Percent"
-          ],
-          [
-            "Answer Relevance",
-            "Query and Generated Answer",
-            "Reverse Question Embedding Cosine",
-            "GreaterThan Eighty-Five Percent"
-          ],
-          [
-            "Context Recall",
-            "Context and Reference Truth",
-            "Retrieved Ground Fact Coverage",
-            "GreaterThan Ninety Percent"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Context recall evaluates retrievers against gold-standard benchmarks.",
             "activeRowIndex": 3,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Measuring recall helps engineers optimize chunk sizes and thresholds.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -381,44 +431,94 @@
           "Primary Metric",
           "Target Threshold"
         ],
-        "rows": [
-          [
-            "Context Relevance",
-            "Query and Retrieved Chunks",
-            "Relevant Chunk Percentage",
-            "GreaterThan Eighty Percent"
-          ],
-          [
-            "Grounded Faithfulness",
-            "Context and Generated Answer",
-            "Verified Statement Ratio",
-            "GreaterThan Ninety-Five Percent"
-          ],
-          [
-            "Answer Relevance",
-            "Query and Generated Answer",
-            "Reverse Question Embedding Cosine",
-            "GreaterThan Eighty-Five Percent"
-          ],
-          [
-            "Context Recall",
-            "Context and Reference Truth",
-            "Retrieved Ground Fact Coverage",
-            "GreaterThan Ninety Percent"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Context recall evaluates retrievers against gold-standard benchmarks.",
             "activeRowIndex": 3,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Measuring recall helps engineers optimize chunk sizes and thresholds.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Context Relevance",
+                  "Query and Retrieved Chunks",
+                  "Relevant Chunk Percentage",
+                  "GreaterThan Eighty Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Grounded Faithfulness",
+                  "Context and Generated Answer",
+                  "Verified Statement Ratio",
+                  "GreaterThan Ninety-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Answer Relevance",
+                  "Query and Generated Answer",
+                  "Reverse Question Embedding Cosine",
+                  "GreaterThan Eighty-Five Percent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Context Recall",
+                  "Context and Reference Truth",
+                  "Retrieved Ground Fact Coverage",
+                  "GreaterThan Ninety Percent"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

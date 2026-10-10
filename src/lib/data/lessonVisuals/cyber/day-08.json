@@ -93,44 +93,94 @@
           "Standard Content",
           "Security Role"
         ],
-        "rows": [
-          [
-            "Version",
-            "Integer v3",
-            "RFC 5280 Specification",
-            "Enables modern extensions and SANs"
-          ],
-          [
-            "Subject Alternative Name",
-            "Extension SAN",
-            "DNS:*.enterprise.io",
-            "Defines authoritative domain coverage"
-          ],
-          [
-            "Validity Period",
-            "UTCTime Range",
-            "NotBefore to NotAfter",
-            "Enforces strict expiration boundaries"
-          ],
-          [
-            "Basic Constraints",
-            "Extension Boolean",
-            "CA:FALSE for End-Entity",
-            "Prevents leaf certificates signing others"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "The extension specifies all valid domain names covered by certificates.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Basic constraints declare whether the certificate is an authorized ca.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -143,44 +193,94 @@
           "Standard Content",
           "Security Role"
         ],
-        "rows": [
-          [
-            "Version",
-            "Integer v3",
-            "RFC 5280 Specification",
-            "Enables modern extensions and SANs"
-          ],
-          [
-            "Subject Alternative Name",
-            "Extension SAN",
-            "DNS:*.enterprise.io",
-            "Defines authoritative domain coverage"
-          ],
-          [
-            "Validity Period",
-            "UTCTime Range",
-            "NotBefore to NotAfter",
-            "Enforces strict expiration boundaries"
-          ],
-          [
-            "Basic Constraints",
-            "Extension Boolean",
-            "CA:FALSE for End-Entity",
-            "Prevents leaf certificates signing others"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "The extension specifies all valid domain names covered by certificates.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Basic constraints declare whether the certificate is an authorized ca.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Version",
+                  "Integer v3",
+                  "RFC 5280 Specification",
+                  "Enables modern extensions and SANs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Subject Alternative Name",
+                  "Extension SAN",
+                  "DNS:*.enterprise.io",
+                  "Defines authoritative domain coverage"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Validity Period",
+                  "UTCTime Range",
+                  "NotBefore to NotAfter",
+                  "Enforces strict expiration boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Basic Constraints",
+                  "Extension Boolean",
+                  "CA:FALSE for End-Entity",
+                  "Prevents leaf certificates signing others"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -397,44 +497,94 @@
           "Modern TLS 1.3 Standard",
           "Architectural Advantage"
         ],
-        "rows": [
-          [
-            "Handshake Round-Trips",
-            "Two Round-Trips (2-RTT)",
-            "Single Round-Trip (1-RTT)",
-            "Halves connection setup latency"
-          ],
-          [
-            "Forward Secrecy",
-            "Optional (Static RSA Allowed)",
-            "Mandatory (ECDHE Only)",
-            "Guarantees past sessions stay safe"
-          ],
-          [
-            "Supported Ciphers",
-            "Weak CBC and RC4 Permitted",
-            "AEAD Ciphers Exclusively",
-            "Eliminates padding oracle exploits"
-          ],
-          [
-            "Handshake Encryption",
-            "Cleartext Server Certificate",
-            "Encrypted Handshake Extensions",
-            "Prevents passive identity sniffing"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Protocol upgrades reduce connection latency to a single round trip.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "All modern cipher suites mandate authenticated encryption algorithms.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -447,44 +597,94 @@
           "Modern TLS 1.3 Standard",
           "Architectural Advantage"
         ],
-        "rows": [
-          [
-            "Handshake Round-Trips",
-            "Two Round-Trips (2-RTT)",
-            "Single Round-Trip (1-RTT)",
-            "Halves connection setup latency"
-          ],
-          [
-            "Forward Secrecy",
-            "Optional (Static RSA Allowed)",
-            "Mandatory (ECDHE Only)",
-            "Guarantees past sessions stay safe"
-          ],
-          [
-            "Supported Ciphers",
-            "Weak CBC and RC4 Permitted",
-            "AEAD Ciphers Exclusively",
-            "Eliminates padding oracle exploits"
-          ],
-          [
-            "Handshake Encryption",
-            "Cleartext Server Certificate",
-            "Encrypted Handshake Extensions",
-            "Prevents passive identity sniffing"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Protocol upgrades reduce connection latency to a single round trip.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "All modern cipher suites mandate authenticated encryption algorithms.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Handshake Round-Trips",
+                  "Two Round-Trips (2-RTT)",
+                  "Single Round-Trip (1-RTT)",
+                  "Halves connection setup latency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Secrecy",
+                  "Optional (Static RSA Allowed)",
+                  "Mandatory (ECDHE Only)",
+                  "Guarantees past sessions stay safe"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Supported Ciphers",
+                  "Weak CBC and RC4 Permitted",
+                  "AEAD Ciphers Exclusively",
+                  "Eliminates padding oracle exploits"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Handshake Encryption",
+                  "Cleartext Server Certificate",
+                  "Encrypted Handshake Extensions",
+                  "Prevents passive identity sniffing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

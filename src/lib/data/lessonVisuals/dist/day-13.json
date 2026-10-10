@@ -359,38 +359,76 @@
           "Action Performed",
           "Consistency Guarantee"
         ],
-        "rows": [
-          [
-            "Application Layer",
-            "Orders Table",
-            "Insert Business Record",
-            "Local ACID Transaction"
-          ],
-          [
-            "Application Layer",
-            "Outbox Table",
-            "Insert Pending Event",
-            "Local ACID Transaction"
-          ],
-          [
-            "Message Relay",
-            "Kafka Topic",
-            "Publish and Mark Done",
-            "At-Least-Once Delivery"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The application inserts order and pending message into local outbox.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The background relay reads outbox rows and publishes to the broker.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -403,38 +441,76 @@
           "Action Performed",
           "Consistency Guarantee"
         ],
-        "rows": [
-          [
-            "Application Layer",
-            "Orders Table",
-            "Insert Business Record",
-            "Local ACID Transaction"
-          ],
-          [
-            "Application Layer",
-            "Outbox Table",
-            "Insert Pending Event",
-            "Local ACID Transaction"
-          ],
-          [
-            "Message Relay",
-            "Kafka Topic",
-            "Publish and Mark Done",
-            "At-Least-Once Delivery"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The application inserts order and pending message into local outbox.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The background relay reads outbox rows and publishes to the broker.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Application Layer",
+                  "Orders Table",
+                  "Insert Business Record",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Application Layer",
+                  "Outbox Table",
+                  "Insert Pending Event",
+                  "Local ACID Transaction"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Relay",
+                  "Kafka Topic",
+                  "Publish and Mark Done",
+                  "At-Least-Once Delivery"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

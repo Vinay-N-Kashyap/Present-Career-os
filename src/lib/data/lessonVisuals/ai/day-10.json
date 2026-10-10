@@ -331,44 +331,94 @@
           "BM25 Rank Position",
           "Calculated RRF Score"
         ],
-        "rows": [
-          [
-            "Incident Post Error",
-            "Rank Position Four",
-            "Rank Position One",
-            "Highest Fused Score"
-          ],
-          [
-            "Network Overview Guide",
-            "Rank Position One",
-            "Unranked Zero",
-            "Moderate Score"
-          ],
-          [
-            "Database Config Sheet",
-            "Rank Position Two",
-            "Rank Position Six",
-            "Strong Fused Score"
-          ],
-          [
-            "Generic Help Article",
-            "Unranked Zero",
-            "Rank Position Two",
-            "Moderate Score"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Rank fusion operates exclusively on the ordinal positions of documents.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Incident Post Error",
+                  "Rank Position Four",
+                  "Rank Position One",
+                  "Highest Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Network Overview Guide",
+                  "Rank Position One",
+                  "Unranked Zero",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Database Config Sheet",
+                  "Rank Position Two",
+                  "Rank Position Six",
+                  "Strong Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Generic Help Article",
+                  "Unranked Zero",
+                  "Rank Position Two",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Documents appearing near the top of both lists receive huge score boosts.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Incident Post Error",
+                  "Rank Position Four",
+                  "Rank Position One",
+                  "Highest Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Network Overview Guide",
+                  "Rank Position One",
+                  "Unranked Zero",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Database Config Sheet",
+                  "Rank Position Two",
+                  "Rank Position Six",
+                  "Strong Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Generic Help Article",
+                  "Unranked Zero",
+                  "Rank Position Two",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -381,44 +431,94 @@
           "BM25 Rank Position",
           "Calculated RRF Score"
         ],
-        "rows": [
-          [
-            "Incident Post Error",
-            "Rank Position Four",
-            "Rank Position One",
-            "Highest Fused Score"
-          ],
-          [
-            "Network Overview Guide",
-            "Rank Position One",
-            "Unranked Zero",
-            "Moderate Score"
-          ],
-          [
-            "Database Config Sheet",
-            "Rank Position Two",
-            "Rank Position Six",
-            "Strong Fused Score"
-          ],
-          [
-            "Generic Help Article",
-            "Unranked Zero",
-            "Rank Position Two",
-            "Moderate Score"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Rank fusion operates exclusively on the ordinal positions of documents.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Incident Post Error",
+                  "Rank Position Four",
+                  "Rank Position One",
+                  "Highest Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Network Overview Guide",
+                  "Rank Position One",
+                  "Unranked Zero",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Database Config Sheet",
+                  "Rank Position Two",
+                  "Rank Position Six",
+                  "Strong Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Generic Help Article",
+                  "Unranked Zero",
+                  "Rank Position Two",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Documents appearing near the top of both lists receive huge score boosts.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Incident Post Error",
+                  "Rank Position Four",
+                  "Rank Position One",
+                  "Highest Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Network Overview Guide",
+                  "Rank Position One",
+                  "Unranked Zero",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Database Config Sheet",
+                  "Rank Position Two",
+                  "Rank Position Six",
+                  "Strong Fused Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Generic Help Article",
+                  "Unranked Zero",
+                  "Rank Position Two",
+                  "Moderate Score"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

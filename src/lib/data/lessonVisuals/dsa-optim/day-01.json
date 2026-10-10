@@ -15,42 +15,86 @@
           "Function",
           "Growth Ratio"
         ],
-        "rows": [
-          [
-            {
-              "text": "constantFn"
-            },
-            {
-              "text": "1.0"
-            }
-          ],
-          [
-            {
-              "text": "linearFn"
-            },
-            {
-              "text": "2.0"
-            }
-          ],
-          [
-            {
-              "text": "quadraticFn"
-            },
-            {
-              "text": "4.0"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Constant time algorithm maintains identical execution ratio.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "constantFn"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "linearFn"
+                  },
+                  {
+                    "text": "2.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quadraticFn"
+                  },
+                  {
+                    "text": "4.0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Linear algorithm doubles operations when input doubles.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "constantFn"
+                  },
+                  {
+                    "text": "1.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "linearFn"
+                  },
+                  {
+                    "text": "2.0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "quadraticFn"
+                  },
+                  {
+                    "text": "4.0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,30 +105,62 @@
           "Function",
           "Growth Ratio"
         ],
-        "rows": [
-          [
-            "constantFn",
-            "1.0"
-          ],
-          [
-            "linearFn",
-            "2.0"
-          ],
-          [
-            "quadraticFn",
-            "4.0"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Constant time algorithm maintains identical execution ratio.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "constantFn",
+                  "1.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "linearFn",
+                  "2.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "quadraticFn",
+                  "4.0"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Linear algorithm doubles operations when input doubles.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "constantFn",
+                  "1.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "linearFn",
+                  "2.0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "quadraticFn",
+                  "4.0"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -307,42 +383,86 @@
           "Input Size",
           "Halving Steps"
         ],
-        "rows": [
-          [
-            {
-              "text": "16"
-            },
-            {
-              "text": "4"
-            }
-          ],
-          [
-            {
-              "text": "1024"
-            },
-            {
-              "text": "10"
-            }
-          ],
-          [
-            {
-              "text": "1048576"
-            },
-            {
-              "text": "20"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Halving sixteen elements takes four operations to reach one.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1048576"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Binary search requires ten comparisons for one thousand items.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "4"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1024"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "1048576"
+                  },
+                  {
+                    "text": "20"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -353,30 +473,62 @@
           "Input Size",
           "Halving Steps"
         ],
-        "rows": [
-          [
-            "16",
-            "4"
-          ],
-          [
-            "1024",
-            "10"
-          ],
-          [
-            "1048576",
-            "20"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Halving sixteen elements takes four operations to reach one.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "4"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1048576",
+                  "20"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Binary search requires ten comparisons for one thousand items.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "16",
+                  "4"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1024",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "1048576",
+                  "20"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

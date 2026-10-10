@@ -93,26 +93,6 @@
           "Scheduled Action",
           "Risk Level"
         ],
-        "rows": [
-          [
-            "To Create",
-            "2 Resources",
-            "Schedule Creation",
-            "Low"
-          ],
-          [
-            "To Retain",
-            "1 Resource",
-            "Inspect Attributes",
-            "Low"
-          ],
-          [
-            "To Destroy",
-            "1 Resource",
-            "Schedule Deletion",
-            "Elevated"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -125,6 +105,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -139,6 +148,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -153,26 +191,6 @@
           "Scheduled Action",
           "Risk Level"
         ],
-        "rows": [
-          [
-            "To Create",
-            "2 Resources",
-            "Schedule Creation",
-            "Low"
-          ],
-          [
-            "To Retain",
-            "1 Resource",
-            "Inspect Attributes",
-            "Low"
-          ],
-          [
-            "To Destroy",
-            "1 Resource",
-            "Schedule Deletion",
-            "Elevated"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -185,6 +203,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -199,6 +246,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "To Create",
+                  "2 Resources",
+                  "Schedule Creation",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Retain",
+                  "1 Resource",
+                  "Inspect Attributes",
+                  "Low"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "To Destroy",
+                  "1 Resource",
+                  "Schedule Deletion",
+                  "Elevated"
+                ],
+                "tone": "data"
               }
             ]
           }

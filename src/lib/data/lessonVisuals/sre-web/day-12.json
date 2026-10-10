@@ -345,26 +345,6 @@
           "Debounced State",
           "Traffic Routing"
         ],
-        "rows": [
-          [
-            "Single Failure",
-            "Transient packet drop",
-            "HEALTHY",
-            "Routing Active"
-          ],
-          [
-            "Triple Failures",
-            "Sustained failure",
-            "UNHEALTHY",
-            "Traffic Detached"
-          ],
-          [
-            "Double Successes",
-            "Sustained recovery",
-            "HEALTHY",
-            "Traffic Restored"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -377,6 +357,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -391,6 +400,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -405,26 +443,6 @@
           "Debounced State",
           "Traffic Routing"
         ],
-        "rows": [
-          [
-            "Single Failure",
-            "Transient packet drop",
-            "HEALTHY",
-            "Routing Active"
-          ],
-          [
-            "Triple Failures",
-            "Sustained failure",
-            "UNHEALTHY",
-            "Traffic Detached"
-          ],
-          [
-            "Double Successes",
-            "Sustained recovery",
-            "HEALTHY",
-            "Traffic Restored"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -437,6 +455,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -451,6 +498,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Single Failure",
+                  "Transient packet drop",
+                  "HEALTHY",
+                  "Routing Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Triple Failures",
+                  "Sustained failure",
+                  "UNHEALTHY",
+                  "Traffic Detached"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Double Successes",
+                  "Sustained recovery",
+                  "HEALTHY",
+                  "Traffic Restored"
+                ],
+                "tone": "data"
               }
             ]
           }

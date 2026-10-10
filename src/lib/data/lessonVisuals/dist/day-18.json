@@ -167,32 +167,58 @@
           "Range Query Speed",
           "Hot Spot Vulnerability"
         ],
-        "rows": [
-          [
-            "Range Sharding",
-            "Prone to Severe Data Skew",
-            "Fast Single Shard Execution",
-            "High Write Hot Spot Risk"
-          ],
-          [
-            "Hash Sharding",
-            "Uniform Cryptographic Entropy",
-            "Requires Scatter Gather Broadcast",
-            "Virtually Zero Hot Spot Risk"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Hash functions scatter keys uniformly across all cluster shards.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Range queries require scatter gather queries across every shard.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -205,32 +231,58 @@
           "Range Query Speed",
           "Hot Spot Vulnerability"
         ],
-        "rows": [
-          [
-            "Range Sharding",
-            "Prone to Severe Data Skew",
-            "Fast Single Shard Execution",
-            "High Write Hot Spot Risk"
-          ],
-          [
-            "Hash Sharding",
-            "Uniform Cryptographic Entropy",
-            "Requires Scatter Gather Broadcast",
-            "Virtually Zero Hot Spot Risk"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Hash functions scatter keys uniformly across all cluster shards.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Range queries require scatter gather queries across every shard.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Range Sharding",
+                  "Prone to Severe Data Skew",
+                  "Fast Single Shard Execution",
+                  "High Write Hot Spot Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Hash Sharding",
+                  "Uniform Cryptographic Entropy",
+                  "Requires Scatter Gather Broadcast",
+                  "Virtually Zero Hot Spot Risk"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

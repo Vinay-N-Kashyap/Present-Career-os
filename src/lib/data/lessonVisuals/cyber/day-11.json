@@ -193,44 +193,94 @@
           "Representative Parameters",
           "Evaluation Scope"
         ],
-        "rows": [
-          [
-            "Subject Attributes",
-            "Requesting Actor",
-            "Department and Clearance Level",
-            "Identity Claims"
-          ],
-          [
-            "Resource Attributes",
-            "Target Object",
-            "Classification and Owner Identifier",
-            "Data Governance"
-          ],
-          [
-            "Action Attributes",
-            "Operation Type",
-            "Read Write and Export Requests",
-            "Operational Intent"
-          ],
-          [
-            "Environment Attributes",
-            "Runtime Posture",
-            "Subnet Geolocation and Device Health",
-            "Zero Trust Posture"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Subject attributes describe characteristics of the requesting actor.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Subject Attributes",
+                  "Requesting Actor",
+                  "Department and Clearance Level",
+                  "Identity Claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Resource Attributes",
+                  "Target Object",
+                  "Classification and Owner Identifier",
+                  "Data Governance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Attributes",
+                  "Operation Type",
+                  "Read Write and Export Requests",
+                  "Operational Intent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Environment Attributes",
+                  "Runtime Posture",
+                  "Subnet Geolocation and Device Health",
+                  "Zero Trust Posture"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Policy rules combine attributes into mathematical predicates.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Subject Attributes",
+                  "Requesting Actor",
+                  "Department and Clearance Level",
+                  "Identity Claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Resource Attributes",
+                  "Target Object",
+                  "Classification and Owner Identifier",
+                  "Data Governance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Attributes",
+                  "Operation Type",
+                  "Read Write and Export Requests",
+                  "Operational Intent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Environment Attributes",
+                  "Runtime Posture",
+                  "Subnet Geolocation and Device Health",
+                  "Zero Trust Posture"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -243,44 +293,94 @@
           "Representative Parameters",
           "Evaluation Scope"
         ],
-        "rows": [
-          [
-            "Subject Attributes",
-            "Requesting Actor",
-            "Department and Clearance Level",
-            "Identity Claims"
-          ],
-          [
-            "Resource Attributes",
-            "Target Object",
-            "Classification and Owner Identifier",
-            "Data Governance"
-          ],
-          [
-            "Action Attributes",
-            "Operation Type",
-            "Read Write and Export Requests",
-            "Operational Intent"
-          ],
-          [
-            "Environment Attributes",
-            "Runtime Posture",
-            "Subnet Geolocation and Device Health",
-            "Zero Trust Posture"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Subject attributes describe characteristics of the requesting actor.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Subject Attributes",
+                  "Requesting Actor",
+                  "Department and Clearance Level",
+                  "Identity Claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Resource Attributes",
+                  "Target Object",
+                  "Classification and Owner Identifier",
+                  "Data Governance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Attributes",
+                  "Operation Type",
+                  "Read Write and Export Requests",
+                  "Operational Intent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Environment Attributes",
+                  "Runtime Posture",
+                  "Subnet Geolocation and Device Health",
+                  "Zero Trust Posture"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Policy rules combine attributes into mathematical predicates.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Subject Attributes",
+                  "Requesting Actor",
+                  "Department and Clearance Level",
+                  "Identity Claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Resource Attributes",
+                  "Target Object",
+                  "Classification and Owner Identifier",
+                  "Data Governance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Attributes",
+                  "Operation Type",
+                  "Read Write and Export Requests",
+                  "Operational Intent"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Environment Attributes",
+                  "Runtime Posture",
+                  "Subnet Geolocation and Device Health",
+                  "Zero Trust Posture"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

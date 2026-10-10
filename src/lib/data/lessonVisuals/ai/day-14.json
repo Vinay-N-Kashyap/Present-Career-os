@@ -331,38 +331,76 @@
           "Tool Privileges",
           "Operational Responsibility"
         ],
-        "rows": [
-          [
-            "Executive Agent",
-            "Frontier LLM (GPT-4 / Claude)",
-            "Database Tools and APIs",
-            "Drafts Complex Workflows"
-          ],
-          [
-            "Guardrail Judge",
-            "Sandboxed Auditing Model",
-            "Zero Tools and Zero Network",
-            "Policy Violation Check"
-          ],
-          [
-            "Security Broker",
-            "Deterministic Middleware",
-            "Execution Gatekeeper",
-            "Aborts Flagged Actions"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The executive model executes reasoning calls tools and prepares answers.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Executive Agent",
+                  "Frontier LLM (GPT-4 / Claude)",
+                  "Database Tools and APIs",
+                  "Drafts Complex Workflows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Guardrail Judge",
+                  "Sandboxed Auditing Model",
+                  "Zero Tools and Zero Network",
+                  "Policy Violation Check"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Security Broker",
+                  "Deterministic Middleware",
+                  "Execution Gatekeeper",
+                  "Aborts Flagged Actions"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The judge model evaluates proposed actions for security policy violations.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Executive Agent",
+                  "Frontier LLM (GPT-4 / Claude)",
+                  "Database Tools and APIs",
+                  "Drafts Complex Workflows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Guardrail Judge",
+                  "Sandboxed Auditing Model",
+                  "Zero Tools and Zero Network",
+                  "Policy Violation Check"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Security Broker",
+                  "Deterministic Middleware",
+                  "Execution Gatekeeper",
+                  "Aborts Flagged Actions"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -375,38 +413,76 @@
           "Tool Privileges",
           "Operational Responsibility"
         ],
-        "rows": [
-          [
-            "Executive Agent",
-            "Frontier LLM (GPT-4 / Claude)",
-            "Database Tools and APIs",
-            "Drafts Complex Workflows"
-          ],
-          [
-            "Guardrail Judge",
-            "Sandboxed Auditing Model",
-            "Zero Tools and Zero Network",
-            "Policy Violation Check"
-          ],
-          [
-            "Security Broker",
-            "Deterministic Middleware",
-            "Execution Gatekeeper",
-            "Aborts Flagged Actions"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The executive model executes reasoning calls tools and prepares answers.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Executive Agent",
+                  "Frontier LLM (GPT-4 / Claude)",
+                  "Database Tools and APIs",
+                  "Drafts Complex Workflows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Guardrail Judge",
+                  "Sandboxed Auditing Model",
+                  "Zero Tools and Zero Network",
+                  "Policy Violation Check"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Security Broker",
+                  "Deterministic Middleware",
+                  "Execution Gatekeeper",
+                  "Aborts Flagged Actions"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The judge model evaluates proposed actions for security policy violations.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Executive Agent",
+                  "Frontier LLM (GPT-4 / Claude)",
+                  "Database Tools and APIs",
+                  "Drafts Complex Workflows"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Guardrail Judge",
+                  "Sandboxed Auditing Model",
+                  "Zero Tools and Zero Network",
+                  "Policy Violation Check"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Security Broker",
+                  "Deterministic Middleware",
+                  "Execution Gatekeeper",
+                  "Aborts Flagged Actions"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -285,44 +285,94 @@
           "Server Response",
           "Resulting Port Status"
         ],
-        "rows": [
-          [
-            "SYN Stealth Probe",
-            "Raw SYN Packet",
-            "SYN-ACK Packet Arrives",
-            "Open Port (Scanner Sends RST)"
-          ],
-          [
-            "Closed Port Probe",
-            "Raw SYN Packet",
-            "RST Reset Packet Arrives",
-            "Closed Port (Service Inactive)"
-          ],
-          [
-            "Filtered Port Probe",
-            "Raw SYN Packet",
-            "No Packet Response Arrives",
-            "Filtered Port (Firewall Dropped)"
-          ],
-          [
-            "Connect Scan Probe",
-            "Full Three-Way Handshake",
-            "Full Connection Established",
-            "Open Port (Logged by Daemon)"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Attackers utilize the stealth scan to probe ports without logging.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SYN Stealth Probe",
+                  "Raw SYN Packet",
+                  "SYN-ACK Packet Arrives",
+                  "Open Port (Scanner Sends RST)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Closed Port Probe",
+                  "Raw SYN Packet",
+                  "RST Reset Packet Arrives",
+                  "Closed Port (Service Inactive)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Filtered Port Probe",
+                  "Raw SYN Packet",
+                  "No Packet Response Arrives",
+                  "Filtered Port (Firewall Dropped)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Connect Scan Probe",
+                  "Full Three-Way Handshake",
+                  "Full Connection Established",
+                  "Open Port (Logged by Daemon)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The scanner immediately sends a reset packet to tear down connections.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SYN Stealth Probe",
+                  "Raw SYN Packet",
+                  "SYN-ACK Packet Arrives",
+                  "Open Port (Scanner Sends RST)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Closed Port Probe",
+                  "Raw SYN Packet",
+                  "RST Reset Packet Arrives",
+                  "Closed Port (Service Inactive)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Filtered Port Probe",
+                  "Raw SYN Packet",
+                  "No Packet Response Arrives",
+                  "Filtered Port (Firewall Dropped)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Connect Scan Probe",
+                  "Full Three-Way Handshake",
+                  "Full Connection Established",
+                  "Open Port (Logged by Daemon)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -335,44 +385,94 @@
           "Server Response",
           "Resulting Port Status"
         ],
-        "rows": [
-          [
-            "SYN Stealth Probe",
-            "Raw SYN Packet",
-            "SYN-ACK Packet Arrives",
-            "Open Port (Scanner Sends RST)"
-          ],
-          [
-            "Closed Port Probe",
-            "Raw SYN Packet",
-            "RST Reset Packet Arrives",
-            "Closed Port (Service Inactive)"
-          ],
-          [
-            "Filtered Port Probe",
-            "Raw SYN Packet",
-            "No Packet Response Arrives",
-            "Filtered Port (Firewall Dropped)"
-          ],
-          [
-            "Connect Scan Probe",
-            "Full Three-Way Handshake",
-            "Full Connection Established",
-            "Open Port (Logged by Daemon)"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Attackers utilize the stealth scan to probe ports without logging.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SYN Stealth Probe",
+                  "Raw SYN Packet",
+                  "SYN-ACK Packet Arrives",
+                  "Open Port (Scanner Sends RST)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Closed Port Probe",
+                  "Raw SYN Packet",
+                  "RST Reset Packet Arrives",
+                  "Closed Port (Service Inactive)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Filtered Port Probe",
+                  "Raw SYN Packet",
+                  "No Packet Response Arrives",
+                  "Filtered Port (Firewall Dropped)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Connect Scan Probe",
+                  "Full Three-Way Handshake",
+                  "Full Connection Established",
+                  "Open Port (Logged by Daemon)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The scanner immediately sends a reset packet to tear down connections.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SYN Stealth Probe",
+                  "Raw SYN Packet",
+                  "SYN-ACK Packet Arrives",
+                  "Open Port (Scanner Sends RST)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Closed Port Probe",
+                  "Raw SYN Packet",
+                  "RST Reset Packet Arrives",
+                  "Closed Port (Service Inactive)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Filtered Port Probe",
+                  "Raw SYN Packet",
+                  "No Packet Response Arrives",
+                  "Filtered Port (Firewall Dropped)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Connect Scan Probe",
+                  "Full Three-Way Handshake",
+                  "Full Connection Established",
+                  "Open Port (Logged by Daemon)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

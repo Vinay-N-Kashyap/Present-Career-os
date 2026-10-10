@@ -137,44 +137,94 @@
           "Designated Purpose",
           "SSRF Filter Policy"
         ],
-        "rows": [
-          [
-            "Host Loopback Network",
-            "Standard Loopback Space",
-            "Internal Host IPC",
-            "Drop Immediately"
-          ],
-          [
-            "Class A Private Subnet",
-            "Enterprise VPC Allocation",
-            "Internal Corporate Network",
-            "Drop Immediately"
-          ],
-          [
-            "Class B Private Subnet",
-            "Enterprise VPC Allocation",
-            "Internal Staging Network",
-            "Drop Immediately"
-          ],
-          [
-            "Link-Local Cloud Metadata",
-            "Instance Metadata IP",
-            "Cloud Runtime Tokens",
-            "Drop Immediately"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Reserved ranges include loopback networks and private address allocations.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Requests resolving to private addresses must be discarded immediately.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -187,44 +237,94 @@
           "Designated Purpose",
           "SSRF Filter Policy"
         ],
-        "rows": [
-          [
-            "Host Loopback Network",
-            "Standard Loopback Space",
-            "Internal Host IPC",
-            "Drop Immediately"
-          ],
-          [
-            "Class A Private Subnet",
-            "Enterprise VPC Allocation",
-            "Internal Corporate Network",
-            "Drop Immediately"
-          ],
-          [
-            "Class B Private Subnet",
-            "Enterprise VPC Allocation",
-            "Internal Staging Network",
-            "Drop Immediately"
-          ],
-          [
-            "Link-Local Cloud Metadata",
-            "Instance Metadata IP",
-            "Cloud Runtime Tokens",
-            "Drop Immediately"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Reserved ranges include loopback networks and private address allocations.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Requests resolving to private addresses must be discarded immediately.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Host Loopback Network",
+                  "Standard Loopback Space",
+                  "Internal Host IPC",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class A Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Corporate Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Class B Private Subnet",
+                  "Enterprise VPC Allocation",
+                  "Internal Staging Network",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Link-Local Cloud Metadata",
+                  "Instance Metadata IP",
+                  "Cloud Runtime Tokens",
+                  "Drop Immediately"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

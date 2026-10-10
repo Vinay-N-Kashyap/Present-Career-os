@@ -17,44 +17,94 @@
           "Mitigated Vulnerability",
           "Severity If Missing"
         ],
-        "rows": [
-          [
-            "Strict-Transport-Security",
-            "max-age=31536000; preload",
-            "SSL Stripping & Downgrades",
-            "Critical Risk"
-          ],
-          [
-            "X-Frame-Options",
-            "DENY / SAMEORIGIN",
-            "UI Redressing & Clickjacking",
-            "High Risk"
-          ],
-          [
-            "X-Content-Type-Options",
-            "nosniff",
-            "MIME-Type Sniffing Attacks",
-            "High Risk"
-          ],
-          [
-            "Referrer-Policy",
-            "strict-origin-when-cross-origin",
-            "Credential & URL Token Leakage",
-            "Medium Risk"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Setting defensive headers allows systems to enforce transport encryption.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "max-age=31536000; preload",
+                  "SSL Stripping & Downgrades",
+                  "Critical Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Frame-Options",
+                  "DENY / SAMEORIGIN",
+                  "UI Redressing & Clickjacking",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "nosniff",
+                  "MIME-Type Sniffing Attacks",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Referrer-Policy",
+                  "strict-origin-when-cross-origin",
+                  "Credential & URL Token Leakage",
+                  "Medium Risk"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The suite includes transport security and frame options directives.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "max-age=31536000; preload",
+                  "SSL Stripping & Downgrades",
+                  "Critical Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Frame-Options",
+                  "DENY / SAMEORIGIN",
+                  "UI Redressing & Clickjacking",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "nosniff",
+                  "MIME-Type Sniffing Attacks",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Referrer-Policy",
+                  "strict-origin-when-cross-origin",
+                  "Credential & URL Token Leakage",
+                  "Medium Risk"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -67,44 +117,94 @@
           "Mitigated Vulnerability",
           "Severity If Missing"
         ],
-        "rows": [
-          [
-            "Strict-Transport-Security",
-            "max-age=31536000; preload",
-            "SSL Stripping & Downgrades",
-            "Critical Risk"
-          ],
-          [
-            "X-Frame-Options",
-            "DENY / SAMEORIGIN",
-            "UI Redressing & Clickjacking",
-            "High Risk"
-          ],
-          [
-            "X-Content-Type-Options",
-            "nosniff",
-            "MIME-Type Sniffing Attacks",
-            "High Risk"
-          ],
-          [
-            "Referrer-Policy",
-            "strict-origin-when-cross-origin",
-            "Credential & URL Token Leakage",
-            "Medium Risk"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Setting defensive headers allows systems to enforce transport encryption.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "max-age=31536000; preload",
+                  "SSL Stripping & Downgrades",
+                  "Critical Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Frame-Options",
+                  "DENY / SAMEORIGIN",
+                  "UI Redressing & Clickjacking",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "nosniff",
+                  "MIME-Type Sniffing Attacks",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Referrer-Policy",
+                  "strict-origin-when-cross-origin",
+                  "Credential & URL Token Leakage",
+                  "Medium Risk"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The suite includes transport security and frame options directives.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "max-age=31536000; preload",
+                  "SSL Stripping & Downgrades",
+                  "Critical Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Frame-Options",
+                  "DENY / SAMEORIGIN",
+                  "UI Redressing & Clickjacking",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "nosniff",
+                  "MIME-Type Sniffing Attacks",
+                  "High Risk"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Referrer-Policy",
+                  "strict-origin-when-cross-origin",
+                  "Credential & URL Token Leakage",
+                  "Medium Risk"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -399,44 +499,94 @@
           "Enforced Capability",
           "Security Impact"
         ],
-        "rows": [
-          [
-            "No Referrer Directive",
-            "Referrer-Policy",
-            "Never Transmit Previous URL",
-            "Eliminates URL Secret Token Leaks"
-          ],
-          [
-            "Strict Origin Policy",
-            "Referrer-Policy",
-            "Origin Only on Cross-Origin HTTPS",
-            "Protects Private Query Path Data"
-          ],
-          [
-            "Disable Hardware Features",
-            "Permissions-Policy",
-            "Disable Camera and Microphone",
-            "Prevents Malicious Device Hijacks"
-          ],
-          [
-            "Disable Geolocation",
-            "Permissions-Policy",
-            "Deny Geographic Position Probing",
-            "Guarantees User Privacy Boundary"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Query parameters containing secret tokens can leak to external websites.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "No Referrer Directive",
+                  "Referrer-Policy",
+                  "Never Transmit Previous URL",
+                  "Eliminates URL Secret Token Leaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Strict Origin Policy",
+                  "Referrer-Policy",
+                  "Origin Only on Cross-Origin HTTPS",
+                  "Protects Private Query Path Data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Hardware Features",
+                  "Permissions-Policy",
+                  "Disable Camera and Microphone",
+                  "Prevents Malicious Device Hijacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Geolocation",
+                  "Permissions-Policy",
+                  "Deny Geographic Position Probing",
+                  "Guarantees User Privacy Boundary"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Policy rules guarantee third party scripts cannot activate device cameras.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "No Referrer Directive",
+                  "Referrer-Policy",
+                  "Never Transmit Previous URL",
+                  "Eliminates URL Secret Token Leaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Strict Origin Policy",
+                  "Referrer-Policy",
+                  "Origin Only on Cross-Origin HTTPS",
+                  "Protects Private Query Path Data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Hardware Features",
+                  "Permissions-Policy",
+                  "Disable Camera and Microphone",
+                  "Prevents Malicious Device Hijacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Geolocation",
+                  "Permissions-Policy",
+                  "Deny Geographic Position Probing",
+                  "Guarantees User Privacy Boundary"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -449,44 +599,94 @@
           "Enforced Capability",
           "Security Impact"
         ],
-        "rows": [
-          [
-            "No Referrer Directive",
-            "Referrer-Policy",
-            "Never Transmit Previous URL",
-            "Eliminates URL Secret Token Leaks"
-          ],
-          [
-            "Strict Origin Policy",
-            "Referrer-Policy",
-            "Origin Only on Cross-Origin HTTPS",
-            "Protects Private Query Path Data"
-          ],
-          [
-            "Disable Hardware Features",
-            "Permissions-Policy",
-            "Disable Camera and Microphone",
-            "Prevents Malicious Device Hijacks"
-          ],
-          [
-            "Disable Geolocation",
-            "Permissions-Policy",
-            "Deny Geographic Position Probing",
-            "Guarantees User Privacy Boundary"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Query parameters containing secret tokens can leak to external websites.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "No Referrer Directive",
+                  "Referrer-Policy",
+                  "Never Transmit Previous URL",
+                  "Eliminates URL Secret Token Leaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Strict Origin Policy",
+                  "Referrer-Policy",
+                  "Origin Only on Cross-Origin HTTPS",
+                  "Protects Private Query Path Data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Hardware Features",
+                  "Permissions-Policy",
+                  "Disable Camera and Microphone",
+                  "Prevents Malicious Device Hijacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Geolocation",
+                  "Permissions-Policy",
+                  "Deny Geographic Position Probing",
+                  "Guarantees User Privacy Boundary"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Policy rules guarantee third party scripts cannot activate device cameras.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "No Referrer Directive",
+                  "Referrer-Policy",
+                  "Never Transmit Previous URL",
+                  "Eliminates URL Secret Token Leaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Strict Origin Policy",
+                  "Referrer-Policy",
+                  "Origin Only on Cross-Origin HTTPS",
+                  "Protects Private Query Path Data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Hardware Features",
+                  "Permissions-Policy",
+                  "Disable Camera and Microphone",
+                  "Prevents Malicious Device Hijacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Disable Geolocation",
+                  "Permissions-Policy",
+                  "Deny Geographic Position Probing",
+                  "Guarantees User Privacy Boundary"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

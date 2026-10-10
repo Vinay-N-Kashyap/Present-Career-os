@@ -277,26 +277,6 @@
           "Active Connections",
           "Normalized Load"
         ],
-        "rows": [
-          [
-            "srv-1",
-            "1 Weight",
-            "2 Connections",
-            "2.0 Load"
-          ],
-          [
-            "srv-2",
-            "2 Weight",
-            "1 Connection",
-            "0.5 Load (Best)"
-          ],
-          [
-            "srv-3",
-            "2 Weight",
-            "3 Connections",
-            "1.5 Load"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -309,6 +289,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "srv-1",
+                  "1 Weight",
+                  "2 Connections",
+                  "2.0 Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-2",
+                  "2 Weight",
+                  "1 Connection",
+                  "0.5 Load (Best)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-3",
+                  "2 Weight",
+                  "3 Connections",
+                  "1.5 Load"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -323,6 +332,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "srv-1",
+                  "1 Weight",
+                  "2 Connections",
+                  "2.0 Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-2",
+                  "2 Weight",
+                  "1 Connection",
+                  "0.5 Load (Best)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-3",
+                  "2 Weight",
+                  "3 Connections",
+                  "1.5 Load"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -337,26 +375,6 @@
           "Active Connections",
           "Normalized Load"
         ],
-        "rows": [
-          [
-            "srv-1",
-            "1 Weight",
-            "2 Connections",
-            "2.0 Load"
-          ],
-          [
-            "srv-2",
-            "2 Weight",
-            "1 Connection",
-            "0.5 Load (Best)"
-          ],
-          [
-            "srv-3",
-            "2 Weight",
-            "3 Connections",
-            "1.5 Load"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -369,6 +387,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "srv-1",
+                  "1 Weight",
+                  "2 Connections",
+                  "2.0 Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-2",
+                  "2 Weight",
+                  "1 Connection",
+                  "0.5 Load (Best)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-3",
+                  "2 Weight",
+                  "3 Connections",
+                  "1.5 Load"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -383,6 +430,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "srv-1",
+                  "1 Weight",
+                  "2 Connections",
+                  "2.0 Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-2",
+                  "2 Weight",
+                  "1 Connection",
+                  "0.5 Load (Best)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "srv-3",
+                  "2 Weight",
+                  "3 Connections",
+                  "1.5 Load"
+                ],
+                "tone": "data"
               }
             ]
           }

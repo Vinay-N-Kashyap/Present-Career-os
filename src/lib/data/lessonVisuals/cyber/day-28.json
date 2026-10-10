@@ -146,40 +146,86 @@
           "Protection Scope",
           "Enforcement Impact"
         ],
-        "rows": [
-          [
-            "BlockPublicAcls",
-            "Bucket and Object ACLs",
-            "Rejects New Public ACL Permissions"
-          ],
-          [
-            "IgnorePublicAcls",
-            "Existing Public ACLs",
-            "Disables All System Public ACLs"
-          ],
-          [
-            "BlockPublicPolicy",
-            "Resource Bucket Policies",
-            "Rejects Public Bucket Policy Rules"
-          ],
-          [
-            "RestrictPublicBuckets",
-            "Cross Account Access",
-            "Restricts Access to Account Users"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Public access block settings protect cloud storage buckets from data leaks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "BlockPublicAcls",
+                  "Bucket and Object ACLs",
+                  "Rejects New Public ACL Permissions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "IgnorePublicAcls",
+                  "Existing Public ACLs",
+                  "Disables All System Public ACLs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BlockPublicPolicy",
+                  "Resource Bucket Policies",
+                  "Rejects Public Bucket Policy Rules"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RestrictPublicBuckets",
+                  "Cross Account Access",
+                  "Restricts Access to Account Users"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Bucket policies mandate transport encryption to protect sensitive archives.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "BlockPublicAcls",
+                  "Bucket and Object ACLs",
+                  "Rejects New Public ACL Permissions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "IgnorePublicAcls",
+                  "Existing Public ACLs",
+                  "Disables All System Public ACLs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BlockPublicPolicy",
+                  "Resource Bucket Policies",
+                  "Rejects Public Bucket Policy Rules"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RestrictPublicBuckets",
+                  "Cross Account Access",
+                  "Restricts Access to Account Users"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -191,40 +237,86 @@
           "Protection Scope",
           "Enforcement Impact"
         ],
-        "rows": [
-          [
-            "BlockPublicAcls",
-            "Bucket and Object ACLs",
-            "Rejects New Public ACL Permissions"
-          ],
-          [
-            "IgnorePublicAcls",
-            "Existing Public ACLs",
-            "Disables All System Public ACLs"
-          ],
-          [
-            "BlockPublicPolicy",
-            "Resource Bucket Policies",
-            "Rejects Public Bucket Policy Rules"
-          ],
-          [
-            "RestrictPublicBuckets",
-            "Cross Account Access",
-            "Restricts Access to Account Users"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Public access block settings protect cloud storage buckets from data leaks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "BlockPublicAcls",
+                  "Bucket and Object ACLs",
+                  "Rejects New Public ACL Permissions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "IgnorePublicAcls",
+                  "Existing Public ACLs",
+                  "Disables All System Public ACLs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BlockPublicPolicy",
+                  "Resource Bucket Policies",
+                  "Rejects Public Bucket Policy Rules"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RestrictPublicBuckets",
+                  "Cross Account Access",
+                  "Restricts Access to Account Users"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Bucket policies mandate transport encryption to protect sensitive archives.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "BlockPublicAcls",
+                  "Bucket and Object ACLs",
+                  "Rejects New Public ACL Permissions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "IgnorePublicAcls",
+                  "Existing Public ACLs",
+                  "Disables All System Public ACLs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BlockPublicPolicy",
+                  "Resource Bucket Policies",
+                  "Rejects Public Bucket Policy Rules"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RestrictPublicBuckets",
+                  "Cross Account Access",
+                  "Restricts Access to Account Users"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

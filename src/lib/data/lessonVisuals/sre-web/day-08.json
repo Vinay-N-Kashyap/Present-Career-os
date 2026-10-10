@@ -93,20 +93,6 @@
           "Target RPO",
           "Compliance Status"
         ],
-        "rows": [
-          [
-            "US-East / EU-West",
-            "450ms",
-            "5000ms",
-            "Compliant"
-          ],
-          [
-            "US-East / AP-South",
-            "8200ms",
-            "5000ms",
-            "Degraded"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -119,6 +105,26 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "US-East / EU-West",
+                  "450ms",
+                  "5000ms",
+                  "Compliant"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "US-East / AP-South",
+                  "8200ms",
+                  "5000ms",
+                  "Degraded"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -133,6 +139,26 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "US-East / EU-West",
+                  "450ms",
+                  "5000ms",
+                  "Compliant"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "US-East / AP-South",
+                  "8200ms",
+                  "5000ms",
+                  "Degraded"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -147,20 +173,6 @@
           "Target RPO",
           "Compliance Status"
         ],
-        "rows": [
-          [
-            "US-East / EU-West",
-            "450ms",
-            "5000ms",
-            "Compliant"
-          ],
-          [
-            "US-East / AP-South",
-            "8200ms",
-            "5000ms",
-            "Degraded"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -173,6 +185,26 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "US-East / EU-West",
+                  "450ms",
+                  "5000ms",
+                  "Compliant"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "US-East / AP-South",
+                  "8200ms",
+                  "5000ms",
+                  "Degraded"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -187,6 +219,26 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "US-East / EU-West",
+                  "450ms",
+                  "5000ms",
+                  "Compliant"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "US-East / AP-South",
+                  "8200ms",
+                  "5000ms",
+                  "Degraded"
+                ],
+                "tone": "data"
               }
             ]
           }

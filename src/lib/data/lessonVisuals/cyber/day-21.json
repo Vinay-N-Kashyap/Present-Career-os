@@ -243,44 +243,94 @@
           "Runtime Target",
           "Defense Action"
         ],
-        "rows": [
-          [
-            "Java Deserialization",
-            "ObjectInputStream Magic Bytes",
-            "Java Virtual Machine",
-            "Reject and Quarantine"
-          ],
-          [
-            "Python Pickle Opcode",
-            "Reduce Magic Byte Function",
-            "Python Runtime Stack",
-            "Reject and Quarantine"
-          ],
-          [
-            "Prototype Pollution",
-            "Proto and Constructor Keys",
-            "Node JavaScript Engine",
-            "Strip Dangerous Keys"
-          ],
-          [
-            "Declarative JSON Data",
-            "Strict Typed Primitive Schema",
-            "Clean Application Domain",
-            "Permit Clean Processing"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Signatures associated with notorious gadget libraries are intercepted.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Java Deserialization",
+                  "ObjectInputStream Magic Bytes",
+                  "Java Virtual Machine",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Python Pickle Opcode",
+                  "Reduce Magic Byte Function",
+                  "Python Runtime Stack",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Prototype Pollution",
+                  "Proto and Constructor Keys",
+                  "Node JavaScript Engine",
+                  "Strip Dangerous Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Declarative JSON Data",
+                  "Strict Typed Primitive Schema",
+                  "Clean Application Domain",
+                  "Permit Clean Processing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Benign data is parsed using schema validation limiting primitive types.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Java Deserialization",
+                  "ObjectInputStream Magic Bytes",
+                  "Java Virtual Machine",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Python Pickle Opcode",
+                  "Reduce Magic Byte Function",
+                  "Python Runtime Stack",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Prototype Pollution",
+                  "Proto and Constructor Keys",
+                  "Node JavaScript Engine",
+                  "Strip Dangerous Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Declarative JSON Data",
+                  "Strict Typed Primitive Schema",
+                  "Clean Application Domain",
+                  "Permit Clean Processing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -293,44 +343,94 @@
           "Runtime Target",
           "Defense Action"
         ],
-        "rows": [
-          [
-            "Java Deserialization",
-            "ObjectInputStream Magic Bytes",
-            "Java Virtual Machine",
-            "Reject and Quarantine"
-          ],
-          [
-            "Python Pickle Opcode",
-            "Reduce Magic Byte Function",
-            "Python Runtime Stack",
-            "Reject and Quarantine"
-          ],
-          [
-            "Prototype Pollution",
-            "Proto and Constructor Keys",
-            "Node JavaScript Engine",
-            "Strip Dangerous Keys"
-          ],
-          [
-            "Declarative JSON Data",
-            "Strict Typed Primitive Schema",
-            "Clean Application Domain",
-            "Permit Clean Processing"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Signatures associated with notorious gadget libraries are intercepted.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Java Deserialization",
+                  "ObjectInputStream Magic Bytes",
+                  "Java Virtual Machine",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Python Pickle Opcode",
+                  "Reduce Magic Byte Function",
+                  "Python Runtime Stack",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Prototype Pollution",
+                  "Proto and Constructor Keys",
+                  "Node JavaScript Engine",
+                  "Strip Dangerous Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Declarative JSON Data",
+                  "Strict Typed Primitive Schema",
+                  "Clean Application Domain",
+                  "Permit Clean Processing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Benign data is parsed using schema validation limiting primitive types.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Java Deserialization",
+                  "ObjectInputStream Magic Bytes",
+                  "Java Virtual Machine",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Python Pickle Opcode",
+                  "Reduce Magic Byte Function",
+                  "Python Runtime Stack",
+                  "Reject and Quarantine"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Prototype Pollution",
+                  "Proto and Constructor Keys",
+                  "Node JavaScript Engine",
+                  "Strip Dangerous Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Declarative JSON Data",
+                  "Strict Typed Primitive Schema",
+                  "Clean Application Domain",
+                  "Permit Clean Processing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

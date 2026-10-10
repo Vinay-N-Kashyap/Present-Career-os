@@ -104,7 +104,7 @@
           {
             "id": "latency",
             "label": "Latency SLI (P99)",
-            "value": 95.0
+            "value": 95
           }
         ],
         "steps": [
@@ -137,7 +137,7 @@
           {
             "id": "latency",
             "label": "Latency SLI (P99)",
-            "value": 95.0
+            "value": 95
           }
         ],
         "steps": [
@@ -171,26 +171,6 @@
           "Budget Impact",
           "Depletion Time"
         ],
-        "rows": [
-          [
-            "1.0x Rate",
-            "Nominal",
-            "Steady",
-            "30 Days"
-          ],
-          [
-            "2.0x Rate",
-            "Moderate",
-            "Elevated",
-            "15 Days"
-          ],
-          [
-            "10.0x Rate",
-            "Severe",
-            "Critical",
-            "3 Days"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -203,6 +183,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -217,6 +226,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -231,26 +269,6 @@
           "Budget Impact",
           "Depletion Time"
         ],
-        "rows": [
-          [
-            "1.0x Rate",
-            "Nominal",
-            "Steady",
-            "30 Days"
-          ],
-          [
-            "2.0x Rate",
-            "Moderate",
-            "Elevated",
-            "15 Days"
-          ],
-          [
-            "10.0x Rate",
-            "Severe",
-            "Critical",
-            "3 Days"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -263,6 +281,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -277,6 +324,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1.0x Rate",
+                  "Nominal",
+                  "Steady",
+                  "30 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2.0x Rate",
+                  "Moderate",
+                  "Elevated",
+                  "15 Days"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "10.0x Rate",
+                  "Severe",
+                  "Critical",
+                  "3 Days"
+                ],
+                "tone": "data"
               }
             ]
           }

@@ -329,38 +329,76 @@
           "Action Executed",
           "Consistency Outcome"
         ],
-        "rows": [
-          [
-            "Forward Execution",
-            "Payment Service",
-            "Charge User Balance",
-            "Committed Locally"
-          ],
-          [
-            "Forward Execution",
-            "Inventory Service",
-            "Allocate Stock Fails Out Of Stock",
-            "Step Failed Halted"
-          ],
-          [
-            "Backward Compensation",
-            "Payment Service",
-            "Refund Deducted Money Semantically",
-            "Compensated Abort"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "When forward steps fail the orchestrator halts execution immediately.",
             "highlightRow": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Payment Service",
+                  "Charge User Balance",
+                  "Committed Locally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Inventory Service",
+                  "Allocate Stock Fails Out Of Stock",
+                  "Step Failed Halted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backward Compensation",
+                  "Payment Service",
+                  "Refund Deducted Money Semantically",
+                  "Compensated Abort"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Compensating transactions execute in strict reverse order.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Payment Service",
+                  "Charge User Balance",
+                  "Committed Locally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Inventory Service",
+                  "Allocate Stock Fails Out Of Stock",
+                  "Step Failed Halted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Backward Compensation",
+                  "Payment Service",
+                  "Refund Deducted Money Semantically",
+                  "Compensated Abort"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -373,38 +411,76 @@
           "Action Executed",
           "Consistency Outcome"
         ],
-        "rows": [
-          [
-            "Forward Execution",
-            "Payment Service",
-            "Charge User Balance",
-            "Committed Locally"
-          ],
-          [
-            "Forward Execution",
-            "Inventory Service",
-            "Allocate Stock Fails Out Of Stock",
-            "Step Failed Halted"
-          ],
-          [
-            "Backward Compensation",
-            "Payment Service",
-            "Refund Deducted Money Semantically",
-            "Compensated Abort"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "When forward steps fail the orchestrator halts execution immediately.",
             "highlightRow": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Payment Service",
+                  "Charge User Balance",
+                  "Committed Locally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Inventory Service",
+                  "Allocate Stock Fails Out Of Stock",
+                  "Step Failed Halted"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Backward Compensation",
+                  "Payment Service",
+                  "Refund Deducted Money Semantically",
+                  "Compensated Abort"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Compensating transactions execute in strict reverse order.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Payment Service",
+                  "Charge User Balance",
+                  "Committed Locally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forward Execution",
+                  "Inventory Service",
+                  "Allocate Stock Fails Out Of Stock",
+                  "Step Failed Halted"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Backward Compensation",
+                  "Payment Service",
+                  "Refund Deducted Money Semantically",
+                  "Compensated Abort"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

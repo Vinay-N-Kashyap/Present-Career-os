@@ -435,42 +435,86 @@
           "Candidate x",
           "Predicate Valid"
         ],
-        "rows": [
-          [
-            {
-              "text": "1"
-            },
-            {
-              "text": "result"
-            }
-          ],
-          [
-            {
-              "text": "8"
-            },
-            {
-              "text": "right"
-            }
-          ],
-          [
-            {
-              "text": "16"
-            },
-            {
-              "text": "result"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Monotonic predicate is true up to threshold then false.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "right"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Record mid as candidate when answer could be larger.",
-            "activeRow": 2
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "8"
+                  },
+                  {
+                    "text": "right"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "16"
+                  },
+                  {
+                    "text": "result"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -481,30 +525,62 @@
           "Candidate x",
           "Predicate Valid"
         ],
-        "rows": [
-          [
-            "1",
-            "result"
-          ],
-          [
-            "8",
-            "right"
-          ],
-          [
-            "16",
-            "result"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Monotonic predicate is true up to threshold then false.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "result"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "8",
+                  "right"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "result"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Record mid as candidate when answer could be larger.",
-            "activeRow": 2
+            "activeRow": 2,
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "result"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "8",
+                  "right"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "16",
+                  "result"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -165,44 +165,94 @@
           "Root Cause Dynamic",
           "Industry Precedence"
         ],
-        "rows": [
-          [
-            "Double Free Error",
-            "Multiple Calls to Free",
-            "Free List Pointer Corruption",
-            "C and C++ Manual Management"
-          ],
-          [
-            "Use After Free",
-            "Dangling Pointer Dereference",
-            "Heap Chunk Reuse Confusion",
-            "Major Browser Vulnerabilities"
-          ],
-          [
-            "Buffer Overflow",
-            "Unbounded Memory Copy",
-            "Spatial Bound Failure",
-            "Classic Stack Smashing Flaws"
-          ],
-          [
-            "Safe Management",
-            "Automated Compile Ownership",
-            "Deterministic Drop Lifecycle",
-            "Memory Safe Language Model"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A double free occurs when an application calls free on the same pointer.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The majority of vulnerabilities addressed across decades are memory bugs.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -215,44 +265,94 @@
           "Root Cause Dynamic",
           "Industry Precedence"
         ],
-        "rows": [
-          [
-            "Double Free Error",
-            "Multiple Calls to Free",
-            "Free List Pointer Corruption",
-            "C and C++ Manual Management"
-          ],
-          [
-            "Use After Free",
-            "Dangling Pointer Dereference",
-            "Heap Chunk Reuse Confusion",
-            "Major Browser Vulnerabilities"
-          ],
-          [
-            "Buffer Overflow",
-            "Unbounded Memory Copy",
-            "Spatial Bound Failure",
-            "Classic Stack Smashing Flaws"
-          ],
-          [
-            "Safe Management",
-            "Automated Compile Ownership",
-            "Deterministic Drop Lifecycle",
-            "Memory Safe Language Model"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A double free occurs when an application calls free on the same pointer.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The majority of vulnerabilities addressed across decades are memory bugs.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Double Free Error",
+                  "Multiple Calls to Free",
+                  "Free List Pointer Corruption",
+                  "C and C++ Manual Management"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Use After Free",
+                  "Dangling Pointer Dereference",
+                  "Heap Chunk Reuse Confusion",
+                  "Major Browser Vulnerabilities"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Buffer Overflow",
+                  "Unbounded Memory Copy",
+                  "Spatial Bound Failure",
+                  "Classic Stack Smashing Flaws"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Safe Management",
+                  "Automated Compile Ownership",
+                  "Deterministic Drop Lifecycle",
+                  "Memory Safe Language Model"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

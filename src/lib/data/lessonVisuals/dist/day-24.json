@@ -239,32 +239,58 @@
           "Action on Failure",
           "Traffic Route Impact"
         ],
-        "rows": [
-          [
-            "Liveness Probe",
-            "Is Container Process Deadlocked",
-            "Kill and Restart Container",
-            "Reboot Clears Freeze"
-          ],
-          [
-            "Readiness Probe",
-            "Is Node Ready for User Requests",
-            "Detach from Load Balancer",
-            "Traffic Safely Diverted"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "If a liveness probe fails the orchestrator kills and restarts containers.",
             "highlightRow": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Liveness Probe",
+                  "Is Container Process Deadlocked",
+                  "Kill and Restart Container",
+                  "Reboot Clears Freeze"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Readiness Probe",
+                  "Is Node Ready for User Requests",
+                  "Detach from Load Balancer",
+                  "Traffic Safely Diverted"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "If readiness fails the orchestrator detaches the node from balancers.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Liveness Probe",
+                  "Is Container Process Deadlocked",
+                  "Kill and Restart Container",
+                  "Reboot Clears Freeze"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Readiness Probe",
+                  "Is Node Ready for User Requests",
+                  "Detach from Load Balancer",
+                  "Traffic Safely Diverted"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -277,32 +303,58 @@
           "Action on Failure",
           "Traffic Route Impact"
         ],
-        "rows": [
-          [
-            "Liveness Probe",
-            "Is Container Process Deadlocked",
-            "Kill and Restart Container",
-            "Reboot Clears Freeze"
-          ],
-          [
-            "Readiness Probe",
-            "Is Node Ready for User Requests",
-            "Detach from Load Balancer",
-            "Traffic Safely Diverted"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "If a liveness probe fails the orchestrator kills and restarts containers.",
             "highlightRow": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Liveness Probe",
+                  "Is Container Process Deadlocked",
+                  "Kill and Restart Container",
+                  "Reboot Clears Freeze"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Readiness Probe",
+                  "Is Node Ready for User Requests",
+                  "Detach from Load Balancer",
+                  "Traffic Safely Diverted"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "If readiness fails the orchestrator detaches the node from balancers.",
             "highlightRow": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Liveness Probe",
+                  "Is Container Process Deadlocked",
+                  "Kill and Restart Container",
+                  "Reboot Clears Freeze"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Readiness Probe",
+                  "Is Node Ready for User Requests",
+                  "Detach from Load Balancer",
+                  "Traffic Safely Diverted"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

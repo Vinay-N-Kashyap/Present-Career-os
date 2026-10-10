@@ -283,38 +283,76 @@
           "Attack Vector Defended",
           "Browser Behavior"
         ],
-        "rows": [
-          [
-            "Access-Control-Allow-Origin",
-            "Approved Whitelist Origins",
-            "Unauthorized Cross-Origin Fetch",
-            "Restricts Third-Party Script Access"
-          ],
-          [
-            "Strict-Transport-Security",
-            "Include Subdomains Preload",
-            "SSL Stripping and Downgrades",
-            "Forces Encrypted HTTPS Connections"
-          ],
-          [
-            "X-Content-Type-Options",
-            "Nosniff Header Directive",
-            "MIME Type Sniffing Attacks",
-            "Prevents Content Type Spoofing"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Browsers issue an options preflight request before cross-origin mutations.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The gateway verifies the origin and responds with allow origin headers.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -327,38 +365,76 @@
           "Attack Vector Defended",
           "Browser Behavior"
         ],
-        "rows": [
-          [
-            "Access-Control-Allow-Origin",
-            "Approved Whitelist Origins",
-            "Unauthorized Cross-Origin Fetch",
-            "Restricts Third-Party Script Access"
-          ],
-          [
-            "Strict-Transport-Security",
-            "Include Subdomains Preload",
-            "SSL Stripping and Downgrades",
-            "Forces Encrypted HTTPS Connections"
-          ],
-          [
-            "X-Content-Type-Options",
-            "Nosniff Header Directive",
-            "MIME Type Sniffing Attacks",
-            "Prevents Content Type Spoofing"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Browsers issue an options preflight request before cross-origin mutations.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The gateway verifies the origin and responds with allow origin headers.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Access-Control-Allow-Origin",
+                  "Approved Whitelist Origins",
+                  "Unauthorized Cross-Origin Fetch",
+                  "Restricts Third-Party Script Access"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Strict-Transport-Security",
+                  "Include Subdomains Preload",
+                  "SSL Stripping and Downgrades",
+                  "Forces Encrypted HTTPS Connections"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-Content-Type-Options",
+                  "Nosniff Header Directive",
+                  "MIME Type Sniffing Attacks",
+                  "Prevents Content Type Spoofing"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

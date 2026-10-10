@@ -239,38 +239,76 @@
           "Active Usage",
           "Degradation Impact"
         ],
-        "rows": [
-          [
-            "Recommendation Service",
-            "Twenty Semaphore Slots",
-            "Quota Saturated Limit Reached",
-            "Surplus Calls Rejected Instantly"
-          ],
-          [
-            "Checkout Service",
-            "Fifty Dedicated Threads",
-            "Five Active Workers",
-            "Zero Contention Unaffected"
-          ],
-          [
-            "Authentication Service",
-            "Thirty Dedicated Threads",
-            "Two Active Workers",
-            "Zero Contention Unaffected"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Bulkhead pattern partitions gateway resources into isolated pools.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Other critical services continue operating with zero degradation.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -283,38 +321,76 @@
           "Active Usage",
           "Degradation Impact"
         ],
-        "rows": [
-          [
-            "Recommendation Service",
-            "Twenty Semaphore Slots",
-            "Quota Saturated Limit Reached",
-            "Surplus Calls Rejected Instantly"
-          ],
-          [
-            "Checkout Service",
-            "Fifty Dedicated Threads",
-            "Five Active Workers",
-            "Zero Contention Unaffected"
-          ],
-          [
-            "Authentication Service",
-            "Thirty Dedicated Threads",
-            "Two Active Workers",
-            "Zero Contention Unaffected"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Bulkhead pattern partitions gateway resources into isolated pools.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say9",
             "caption": "Other critical services continue operating with zero degradation.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Recommendation Service",
+                  "Twenty Semaphore Slots",
+                  "Quota Saturated Limit Reached",
+                  "Surplus Calls Rejected Instantly"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Checkout Service",
+                  "Fifty Dedicated Threads",
+                  "Five Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Authentication Service",
+                  "Thirty Dedicated Threads",
+                  "Two Active Workers",
+                  "Zero Contention Unaffected"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

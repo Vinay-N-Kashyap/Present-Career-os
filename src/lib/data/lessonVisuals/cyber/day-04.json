@@ -405,38 +405,76 @@
           "Cross-Site POST Forms",
           "Default Browser Behavior"
         ],
-        "rows": [
-          [
-            "Strict",
-            "Withheld",
-            "Withheld",
-            "Maximum Protection (No cross-site cookies)"
-          ],
-          [
-            "Lax",
-            "Sent with Request",
-            "Withheld",
-            "Modern Browser Default for Session Cookies"
-          ],
-          [
-            "None",
-            "Sent with Request",
-            "Sent with Request",
-            "Requires Secure Flag over HTTPS Only"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Strict mode never sends cookies in cross site requests.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Strict",
+                  "Withheld",
+                  "Withheld",
+                  "Maximum Protection (No cross-site cookies)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lax",
+                  "Sent with Request",
+                  "Withheld",
+                  "Modern Browser Default for Session Cookies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "None",
+                  "Sent with Request",
+                  "Sent with Request",
+                  "Requires Secure Flag over HTTPS Only"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Lax is the default behavior in modern browsers when unspecified.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Strict",
+                  "Withheld",
+                  "Withheld",
+                  "Maximum Protection (No cross-site cookies)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lax",
+                  "Sent with Request",
+                  "Withheld",
+                  "Modern Browser Default for Session Cookies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "None",
+                  "Sent with Request",
+                  "Sent with Request",
+                  "Requires Secure Flag over HTTPS Only"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -449,38 +487,76 @@
           "Cross-Site POST Forms",
           "Default Browser Behavior"
         ],
-        "rows": [
-          [
-            "Strict",
-            "Withheld",
-            "Withheld",
-            "Maximum Protection (No cross-site cookies)"
-          ],
-          [
-            "Lax",
-            "Sent with Request",
-            "Withheld",
-            "Modern Browser Default for Session Cookies"
-          ],
-          [
-            "None",
-            "Sent with Request",
-            "Sent with Request",
-            "Requires Secure Flag over HTTPS Only"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Strict mode never sends cookies in cross site requests.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Strict",
+                  "Withheld",
+                  "Withheld",
+                  "Maximum Protection (No cross-site cookies)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lax",
+                  "Sent with Request",
+                  "Withheld",
+                  "Modern Browser Default for Session Cookies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "None",
+                  "Sent with Request",
+                  "Sent with Request",
+                  "Requires Secure Flag over HTTPS Only"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Lax is the default behavior in modern browsers when unspecified.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Strict",
+                  "Withheld",
+                  "Withheld",
+                  "Maximum Protection (No cross-site cookies)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lax",
+                  "Sent with Request",
+                  "Withheld",
+                  "Modern Browser Default for Session Cookies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "None",
+                  "Sent with Request",
+                  "Sent with Request",
+                  "Requires Secure Flag over HTTPS Only"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -17,38 +17,76 @@
           "Network Meaning",
           "Convergence Benefit"
         ],
-        "rows": [
-          [
-            "Commutativity",
-            "A Merge B Equals B Merge A",
-            "Packet Arrival Order Irrelevant",
-            "Network Reordering Tolerated"
-          ],
-          [
-            "Associativity",
-            "Grouping Does Not Alter Result",
-            "Arbitrary Multi-Hop Sync",
-            "Hierarchical Merges Valid"
-          ],
-          [
-            "Idempotency",
-            "A Merge A Equals A",
-            "Duplicate Messages Cause No Harm",
-            "Safe Network Retries"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "A crdt accepts local writes without requiring synchronous coordination.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Commutativity",
+                  "A Merge B Equals B Merge A",
+                  "Packet Arrival Order Irrelevant",
+                  "Network Reordering Tolerated"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Associativity",
+                  "Grouping Does Not Alter Result",
+                  "Arbitrary Multi-Hop Sync",
+                  "Hierarchical Merges Valid"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Idempotency",
+                  "A Merge A Equals A",
+                  "Duplicate Messages Cause No Harm",
+                  "Safe Network Retries"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Merge operators must satisfy associativity commutativity and idempotency.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Commutativity",
+                  "A Merge B Equals B Merge A",
+                  "Packet Arrival Order Irrelevant",
+                  "Network Reordering Tolerated"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Associativity",
+                  "Grouping Does Not Alter Result",
+                  "Arbitrary Multi-Hop Sync",
+                  "Hierarchical Merges Valid"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Idempotency",
+                  "A Merge A Equals A",
+                  "Duplicate Messages Cause No Harm",
+                  "Safe Network Retries"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Network Meaning",
           "Convergence Benefit"
         ],
-        "rows": [
-          [
-            "Commutativity",
-            "A Merge B Equals B Merge A",
-            "Packet Arrival Order Irrelevant",
-            "Network Reordering Tolerated"
-          ],
-          [
-            "Associativity",
-            "Grouping Does Not Alter Result",
-            "Arbitrary Multi-Hop Sync",
-            "Hierarchical Merges Valid"
-          ],
-          [
-            "Idempotency",
-            "A Merge A Equals A",
-            "Duplicate Messages Cause No Harm",
-            "Safe Network Retries"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "A crdt accepts local writes without requiring synchronous coordination.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Commutativity",
+                  "A Merge B Equals B Merge A",
+                  "Packet Arrival Order Irrelevant",
+                  "Network Reordering Tolerated"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Associativity",
+                  "Grouping Does Not Alter Result",
+                  "Arbitrary Multi-Hop Sync",
+                  "Hierarchical Merges Valid"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Idempotency",
+                  "A Merge A Equals A",
+                  "Duplicate Messages Cause No Harm",
+                  "Safe Network Retries"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Merge operators must satisfy associativity commutativity and idempotency.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Commutativity",
+                  "A Merge B Equals B Merge A",
+                  "Packet Arrival Order Irrelevant",
+                  "Network Reordering Tolerated"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Associativity",
+                  "Grouping Does Not Alter Result",
+                  "Arbitrary Multi-Hop Sync",
+                  "Hierarchical Merges Valid"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Idempotency",
+                  "A Merge A Equals A",
+                  "Duplicate Messages Cause No Harm",
+                  "Safe Network Retries"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

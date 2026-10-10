@@ -435,44 +435,94 @@
           "Observed Payload",
           "Validation Verdict"
         ],
-        "rows": [
-          [
-            "Cryptographic Algorithm",
-            "Asymmetric RS256 Only",
-            "Alg Claim Matches None",
-            "Rejected Signature Exploit"
-          ],
-          [
-            "Issuer Claim",
-            "Trusted Auth Authority",
-            "Matches Enterprise Issuer",
-            "Verified Issuer Authority"
-          ],
-          [
-            "Audience Claim",
-            "Target API Identifier",
-            "Matches Production Gateway",
-            "Verified Audience Scope"
-          ],
-          [
-            "Token Revocation",
-            "Active Unrevoked Session",
-            "Blacklist Store Inspection",
-            "Verified Active Credential"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The validator enforces an allowlist strictly rejecting algorithm bypass.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Cryptographic Algorithm",
+                  "Asymmetric RS256 Only",
+                  "Alg Claim Matches None",
+                  "Rejected Signature Exploit"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Issuer Claim",
+                  "Trusted Auth Authority",
+                  "Matches Enterprise Issuer",
+                  "Verified Issuer Authority"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Audience Claim",
+                  "Target API Identifier",
+                  "Matches Production Gateway",
+                  "Verified Audience Scope"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Revocation",
+                  "Active Unrevoked Session",
+                  "Blacklist Store Inspection",
+                  "Verified Active Credential"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The validator checks that the token does not appear in a revocation list.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cryptographic Algorithm",
+                  "Asymmetric RS256 Only",
+                  "Alg Claim Matches None",
+                  "Rejected Signature Exploit"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Issuer Claim",
+                  "Trusted Auth Authority",
+                  "Matches Enterprise Issuer",
+                  "Verified Issuer Authority"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Audience Claim",
+                  "Target API Identifier",
+                  "Matches Production Gateway",
+                  "Verified Audience Scope"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Revocation",
+                  "Active Unrevoked Session",
+                  "Blacklist Store Inspection",
+                  "Verified Active Credential"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -485,44 +535,94 @@
           "Observed Payload",
           "Validation Verdict"
         ],
-        "rows": [
-          [
-            "Cryptographic Algorithm",
-            "Asymmetric RS256 Only",
-            "Alg Claim Matches None",
-            "Rejected Signature Exploit"
-          ],
-          [
-            "Issuer Claim",
-            "Trusted Auth Authority",
-            "Matches Enterprise Issuer",
-            "Verified Issuer Authority"
-          ],
-          [
-            "Audience Claim",
-            "Target API Identifier",
-            "Matches Production Gateway",
-            "Verified Audience Scope"
-          ],
-          [
-            "Token Revocation",
-            "Active Unrevoked Session",
-            "Blacklist Store Inspection",
-            "Verified Active Credential"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The validator enforces an allowlist strictly rejecting algorithm bypass.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Cryptographic Algorithm",
+                  "Asymmetric RS256 Only",
+                  "Alg Claim Matches None",
+                  "Rejected Signature Exploit"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Issuer Claim",
+                  "Trusted Auth Authority",
+                  "Matches Enterprise Issuer",
+                  "Verified Issuer Authority"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Audience Claim",
+                  "Target API Identifier",
+                  "Matches Production Gateway",
+                  "Verified Audience Scope"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Revocation",
+                  "Active Unrevoked Session",
+                  "Blacklist Store Inspection",
+                  "Verified Active Credential"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "The validator checks that the token does not appear in a revocation list.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cryptographic Algorithm",
+                  "Asymmetric RS256 Only",
+                  "Alg Claim Matches None",
+                  "Rejected Signature Exploit"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Issuer Claim",
+                  "Trusted Auth Authority",
+                  "Matches Enterprise Issuer",
+                  "Verified Issuer Authority"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Audience Claim",
+                  "Target API Identifier",
+                  "Matches Production Gateway",
+                  "Verified Audience Scope"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Revocation",
+                  "Active Unrevoked Session",
+                  "Blacklist Store Inspection",
+                  "Verified Active Credential"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

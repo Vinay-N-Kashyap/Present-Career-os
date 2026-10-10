@@ -93,44 +93,94 @@
           "Example Header Payload",
           "Client Behavior"
         ],
-        "rows": [
-          [
-            "X-RateLimit-Limit",
-            "Total Window Quota Limit",
-            "One Hundred Requests per Minute",
-            "Establishes Client Baseline"
-          ],
-          [
-            "X-RateLimit-Remaining",
-            "Current Available Token Count",
-            "Forty Two Requests Remaining",
-            "Monitors Remaining Capacity"
-          ],
-          [
-            "Retry-After Header",
-            "Seconds Until Next Refill Window",
-            "Thirty Seconds Remaining",
-            "Triggers Exponential Backoff"
-          ],
-          [
-            "Quarantine Block",
-            "Dynamic Threshold Enforcement",
-            "Firewall IP Drop Injected",
-            "Terminates Volumetric Abuse"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The gateway extracts the client address and evaluates their individual quota.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "X-RateLimit-Limit",
+                  "Total Window Quota Limit",
+                  "One Hundred Requests per Minute",
+                  "Establishes Client Baseline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-RateLimit-Remaining",
+                  "Current Available Token Count",
+                  "Forty Two Requests Remaining",
+                  "Monitors Remaining Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Retry-After Header",
+                  "Seconds Until Next Refill Window",
+                  "Thirty Seconds Remaining",
+                  "Triggers Exponential Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Quarantine Block",
+                  "Dynamic Threshold Enforcement",
+                  "Firewall IP Drop Injected",
+                  "Terminates Volumetric Abuse"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Emitting rate limit headers enables clients to back off automatically.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "X-RateLimit-Limit",
+                  "Total Window Quota Limit",
+                  "One Hundred Requests per Minute",
+                  "Establishes Client Baseline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-RateLimit-Remaining",
+                  "Current Available Token Count",
+                  "Forty Two Requests Remaining",
+                  "Monitors Remaining Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Retry-After Header",
+                  "Seconds Until Next Refill Window",
+                  "Thirty Seconds Remaining",
+                  "Triggers Exponential Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Quarantine Block",
+                  "Dynamic Threshold Enforcement",
+                  "Firewall IP Drop Injected",
+                  "Terminates Volumetric Abuse"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -143,44 +193,94 @@
           "Example Header Payload",
           "Client Behavior"
         ],
-        "rows": [
-          [
-            "X-RateLimit-Limit",
-            "Total Window Quota Limit",
-            "One Hundred Requests per Minute",
-            "Establishes Client Baseline"
-          ],
-          [
-            "X-RateLimit-Remaining",
-            "Current Available Token Count",
-            "Forty Two Requests Remaining",
-            "Monitors Remaining Capacity"
-          ],
-          [
-            "Retry-After Header",
-            "Seconds Until Next Refill Window",
-            "Thirty Seconds Remaining",
-            "Triggers Exponential Backoff"
-          ],
-          [
-            "Quarantine Block",
-            "Dynamic Threshold Enforcement",
-            "Firewall IP Drop Injected",
-            "Terminates Volumetric Abuse"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The gateway extracts the client address and evaluates their individual quota.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "X-RateLimit-Limit",
+                  "Total Window Quota Limit",
+                  "One Hundred Requests per Minute",
+                  "Establishes Client Baseline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-RateLimit-Remaining",
+                  "Current Available Token Count",
+                  "Forty Two Requests Remaining",
+                  "Monitors Remaining Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Retry-After Header",
+                  "Seconds Until Next Refill Window",
+                  "Thirty Seconds Remaining",
+                  "Triggers Exponential Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Quarantine Block",
+                  "Dynamic Threshold Enforcement",
+                  "Firewall IP Drop Injected",
+                  "Terminates Volumetric Abuse"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Emitting rate limit headers enables clients to back off automatically.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "X-RateLimit-Limit",
+                  "Total Window Quota Limit",
+                  "One Hundred Requests per Minute",
+                  "Establishes Client Baseline"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "X-RateLimit-Remaining",
+                  "Current Available Token Count",
+                  "Forty Two Requests Remaining",
+                  "Monitors Remaining Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Retry-After Header",
+                  "Seconds Until Next Refill Window",
+                  "Thirty Seconds Remaining",
+                  "Triggers Exponential Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Quarantine Block",
+                  "Dynamic Threshold Enforcement",
+                  "Firewall IP Drop Injected",
+                  "Terminates Volumetric Abuse"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

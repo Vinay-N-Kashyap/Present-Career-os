@@ -159,60 +159,122 @@
           "Col 1",
           "Col 2"
         ],
-        "rows": [
-          [
-            {
-              "text": "Node 0"
-            },
-            {
-              "text": "0"
-            },
-            {
-              "text": "1"
-            },
-            {
-              "text": "0"
-            }
-          ],
-          [
-            {
-              "text": "Node 1"
-            },
-            {
-              "text": "1"
-            },
-            {
-              "text": "0"
-            },
-            {
-              "text": "1"
-            }
-          ],
-          [
-            {
-              "text": "Node 2"
-            },
-            {
-              "text": "0"
-            },
-            {
-              "text": "1"
-            },
-            {
-              "text": "0"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Grid cells record presence of edge between row and column nodes.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Matrix structure provides instantaneous lookup checking node connections.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Node 0"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 1"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Node 2"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "0"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -225,36 +287,74 @@
           "Col 1",
           "Col 2"
         ],
-        "rows": [
-          [
-            "Node 0",
-            "0",
-            "1",
-            "0"
-          ],
-          [
-            "Node 1",
-            "1",
-            "0",
-            "1"
-          ],
-          [
-            "Node 2",
-            "0",
-            "1",
-            "0"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Grid cells record presence of edge between row and column nodes.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Node 0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 1",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 2",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Matrix structure provides instantaneous lookup checking node connections.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Node 0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 1",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Node 2",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -270,40 +370,76 @@
           "Adjacency List Neighbors",
           "Storage Scaling"
         ],
-        "rows": [
-          [
-            {
-              "text": "Tokyo"
-            },
-            {
-              "text": "Dallas, Seoul"
-            },
-            {
-              "text": "O(degree)"
-            }
-          ],
-          [
-            {
-              "text": "Dallas"
-            },
-            {
-              "text": "Tokyo"
-            },
-            {
-              "text": "O(degree)"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Adjacency list stores neighboring vertices connected directly to node.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "Dallas, Seoul"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Dallas"
+                  },
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Adjacency list representation scales strictly with number of actual edges.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "Dallas, Seoul"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Dallas"
+                  },
+                  {
+                    "text": "Tokyo"
+                  },
+                  {
+                    "text": "O(degree)"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -315,28 +451,52 @@
           "Adjacency List Neighbors",
           "Storage Scaling"
         ],
-        "rows": [
-          [
-            "Tokyo",
-            "Dallas, Seoul",
-            "O(degree)"
-          ],
-          [
-            "Dallas",
-            "Tokyo",
-            "O(degree)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Adjacency list stores neighboring vertices connected directly to node.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Tokyo",
+                  "Dallas, Seoul",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dallas",
+                  "Tokyo",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Adjacency list representation scales strictly with number of actual edges.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Tokyo",
+                  "Dallas, Seoul",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dallas",
+                  "Tokyo",
+                  "O(degree)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -29,38 +29,76 @@
           "Rejected Loser Completion",
           "Alignment Criteria"
         ],
-        "rows": [
-          [
-            "Explain SQL injection",
-            "Safe educational explanation with parameterized query fix",
-            "Malicious exploit code without defensive guidance",
-            "Helpful and Harmless Guidance"
-          ],
-          [
-            "Calculate compound growth",
-            "Step-by-step arithmetic verification with exact formulas",
-            "Hallucinated inaccurate numerical values",
-            "Factual Truthfulness"
-          ],
-          [
-            "Write a React hook",
-            "Clean type-safe TypeScript code with cleanup handlers",
-            "Untyped code with memory leak vulnerabilities",
-            "Production Software Quality"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Each training record consists of a prompt with chosen and rejected completions.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Data hygiene is paramount to ensure training signals avoid noisy thrashing.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -73,38 +111,76 @@
           "Rejected Loser Completion",
           "Alignment Criteria"
         ],
-        "rows": [
-          [
-            "Explain SQL injection",
-            "Safe educational explanation with parameterized query fix",
-            "Malicious exploit code without defensive guidance",
-            "Helpful and Harmless Guidance"
-          ],
-          [
-            "Calculate compound growth",
-            "Step-by-step arithmetic verification with exact formulas",
-            "Hallucinated inaccurate numerical values",
-            "Factual Truthfulness"
-          ],
-          [
-            "Write a React hook",
-            "Clean type-safe TypeScript code with cleanup handlers",
-            "Untyped code with memory leak vulnerabilities",
-            "Production Software Quality"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Each training record consists of a prompt with chosen and rejected completions.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Data hygiene is paramount to ensure training signals avoid noisy thrashing.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Explain SQL injection",
+                  "Safe educational explanation with parameterized query fix",
+                  "Malicious exploit code without defensive guidance",
+                  "Helpful and Harmless Guidance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Calculate compound growth",
+                  "Step-by-step arithmetic verification with exact formulas",
+                  "Hallucinated inaccurate numerical values",
+                  "Factual Truthfulness"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Write a React hook",
+                  "Clean type-safe TypeScript code with cleanup handlers",
+                  "Untyped code with memory leak vulnerabilities",
+                  "Production Software Quality"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

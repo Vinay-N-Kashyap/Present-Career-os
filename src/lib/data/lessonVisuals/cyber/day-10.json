@@ -17,38 +17,76 @@
           "Representative Mechanism",
           "Inherent Security Strength"
         ],
-        "rows": [
-          [
-            "Something You Know",
-            "Knowledge",
-            "Passwords and Passphrases",
-            "Low (Phishable, Vulnerable to Dumps)"
-          ],
-          [
-            "Something You Have",
-            "Possession",
-            "Hardware FIDO Keys and TOTP Apps",
-            "High (Cryptographically Sound)"
-          ],
-          [
-            "Something You Are",
-            "Inherence",
-            "Fingerprint and Face Biometrics",
-            "Medium (Non-Revocable Credentials)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The three classic authentication factors encompass knowledge and possession.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Something You Know",
+                  "Knowledge",
+                  "Passwords and Passphrases",
+                  "Low (Phishable, Vulnerable to Dumps)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Have",
+                  "Possession",
+                  "Hardware FIDO Keys and TOTP Apps",
+                  "High (Cryptographically Sound)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Are",
+                  "Inherence",
+                  "Fingerprint and Face Biometrics",
+                  "Medium (Non-Revocable Credentials)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Time-based one-time passwords provide robust possession factors offline.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Something You Know",
+                  "Knowledge",
+                  "Passwords and Passphrases",
+                  "Low (Phishable, Vulnerable to Dumps)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Have",
+                  "Possession",
+                  "Hardware FIDO Keys and TOTP Apps",
+                  "High (Cryptographically Sound)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Are",
+                  "Inherence",
+                  "Fingerprint and Face Biometrics",
+                  "Medium (Non-Revocable Credentials)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Representative Mechanism",
           "Inherent Security Strength"
         ],
-        "rows": [
-          [
-            "Something You Know",
-            "Knowledge",
-            "Passwords and Passphrases",
-            "Low (Phishable, Vulnerable to Dumps)"
-          ],
-          [
-            "Something You Have",
-            "Possession",
-            "Hardware FIDO Keys and TOTP Apps",
-            "High (Cryptographically Sound)"
-          ],
-          [
-            "Something You Are",
-            "Inherence",
-            "Fingerprint and Face Biometrics",
-            "Medium (Non-Revocable Credentials)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The three classic authentication factors encompass knowledge and possession.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Something You Know",
+                  "Knowledge",
+                  "Passwords and Passphrases",
+                  "Low (Phishable, Vulnerable to Dumps)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Have",
+                  "Possession",
+                  "Hardware FIDO Keys and TOTP Apps",
+                  "High (Cryptographically Sound)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Are",
+                  "Inherence",
+                  "Fingerprint and Face Biometrics",
+                  "Medium (Non-Revocable Credentials)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Time-based one-time passwords provide robust possession factors offline.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Something You Know",
+                  "Knowledge",
+                  "Passwords and Passphrases",
+                  "Low (Phishable, Vulnerable to Dumps)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Have",
+                  "Possession",
+                  "Hardware FIDO Keys and TOTP Apps",
+                  "High (Cryptographically Sound)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Something You Are",
+                  "Inherence",
+                  "Fingerprint and Face Biometrics",
+                  "Medium (Non-Revocable Credentials)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -239,32 +239,58 @@
           "Routing Decision Rule",
           "Primary Node Impact"
         ],
-        "rows": [
-          [
-            "Time Window Routing",
-            "Session Cookie Timestamp",
-            "Route to Primary for Five Seconds",
-            "Temporary Primary Read Load"
-          ],
-          [
-            "Replication LSN Cookie",
-            "Commit Log Sequence Cookie",
-            "Route to Replica If Replica Caught Up",
-            "Minimal Primary Read Overhead"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "User read queries route directly to the primary database.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Time Window Routing",
+                  "Session Cookie Timestamp",
+                  "Route to Primary for Five Seconds",
+                  "Temporary Primary Read Load"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Replication LSN Cookie",
+                  "Commit Log Sequence Cookie",
+                  "Route to Replica If Replica Caught Up",
+                  "Minimal Primary Read Overhead"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "The router checks if a replica has applied the required commit log.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Time Window Routing",
+                  "Session Cookie Timestamp",
+                  "Route to Primary for Five Seconds",
+                  "Temporary Primary Read Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Replication LSN Cookie",
+                  "Commit Log Sequence Cookie",
+                  "Route to Replica If Replica Caught Up",
+                  "Minimal Primary Read Overhead"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -277,32 +303,58 @@
           "Routing Decision Rule",
           "Primary Node Impact"
         ],
-        "rows": [
-          [
-            "Time Window Routing",
-            "Session Cookie Timestamp",
-            "Route to Primary for Five Seconds",
-            "Temporary Primary Read Load"
-          ],
-          [
-            "Replication LSN Cookie",
-            "Commit Log Sequence Cookie",
-            "Route to Replica If Replica Caught Up",
-            "Minimal Primary Read Overhead"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "User read queries route directly to the primary database.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Time Window Routing",
+                  "Session Cookie Timestamp",
+                  "Route to Primary for Five Seconds",
+                  "Temporary Primary Read Load"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Replication LSN Cookie",
+                  "Commit Log Sequence Cookie",
+                  "Route to Replica If Replica Caught Up",
+                  "Minimal Primary Read Overhead"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "The router checks if a replica has applied the required commit log.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Time Window Routing",
+                  "Session Cookie Timestamp",
+                  "Route to Primary for Five Seconds",
+                  "Temporary Primary Read Load"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Replication LSN Cookie",
+                  "Commit Log Sequence Cookie",
+                  "Route to Replica If Replica Caught Up",
+                  "Minimal Primary Read Overhead"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

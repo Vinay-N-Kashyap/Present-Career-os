@@ -17,44 +17,94 @@
           "Information Density",
           "Audit Finding"
         ],
-        "rows": [
-          [
-            "Human Source Code",
-            "Low Entropy Bits",
-            "Predictable Natural Language Text",
-            "Benign Source Code"
-          ],
-          [
-            "Configuration Names",
-            "Low Entropy Bits",
-            "Repetitive Variable Identifiers",
-            "Benign Identifier"
-          ],
-          [
-            "Symmetric AES Keys",
-            "High Entropy Bits",
-            "Maximum Cryptographic Randomness",
-            "Critical Secret Leak"
-          ],
-          [
-            "Base64 Auth Tokens",
-            "High Entropy Bits",
-            "High Random Character Distribution",
-            "Critical Secret Leak"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "Natural languages and programming code exhibit low entropy.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Human Source Code",
+                  "Low Entropy Bits",
+                  "Predictable Natural Language Text",
+                  "Benign Source Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Configuration Names",
+                  "Low Entropy Bits",
+                  "Repetitive Variable Identifiers",
+                  "Benign Identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Symmetric AES Keys",
+                  "High Entropy Bits",
+                  "Maximum Cryptographic Randomness",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Auth Tokens",
+                  "High Entropy Bits",
+                  "High Random Character Distribution",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Cryptographic secrets and symmetric keys possess high randomness.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Human Source Code",
+                  "Low Entropy Bits",
+                  "Predictable Natural Language Text",
+                  "Benign Source Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Configuration Names",
+                  "Low Entropy Bits",
+                  "Repetitive Variable Identifiers",
+                  "Benign Identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Symmetric AES Keys",
+                  "High Entropy Bits",
+                  "Maximum Cryptographic Randomness",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Auth Tokens",
+                  "High Entropy Bits",
+                  "High Random Character Distribution",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -67,44 +117,94 @@
           "Information Density",
           "Audit Finding"
         ],
-        "rows": [
-          [
-            "Human Source Code",
-            "Low Entropy Bits",
-            "Predictable Natural Language Text",
-            "Benign Source Code"
-          ],
-          [
-            "Configuration Names",
-            "Low Entropy Bits",
-            "Repetitive Variable Identifiers",
-            "Benign Identifier"
-          ],
-          [
-            "Symmetric AES Keys",
-            "High Entropy Bits",
-            "Maximum Cryptographic Randomness",
-            "Critical Secret Leak"
-          ],
-          [
-            "Base64 Auth Tokens",
-            "High Entropy Bits",
-            "High Random Character Distribution",
-            "Critical Secret Leak"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "Natural languages and programming code exhibit low entropy.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Human Source Code",
+                  "Low Entropy Bits",
+                  "Predictable Natural Language Text",
+                  "Benign Source Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Configuration Names",
+                  "Low Entropy Bits",
+                  "Repetitive Variable Identifiers",
+                  "Benign Identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Symmetric AES Keys",
+                  "High Entropy Bits",
+                  "Maximum Cryptographic Randomness",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Auth Tokens",
+                  "High Entropy Bits",
+                  "High Random Character Distribution",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Cryptographic secrets and symmetric keys possess high randomness.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Human Source Code",
+                  "Low Entropy Bits",
+                  "Predictable Natural Language Text",
+                  "Benign Source Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Configuration Names",
+                  "Low Entropy Bits",
+                  "Repetitive Variable Identifiers",
+                  "Benign Identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Symmetric AES Keys",
+                  "High Entropy Bits",
+                  "Maximum Cryptographic Randomness",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Auth Tokens",
+                  "High Entropy Bits",
+                  "High Random Character Distribution",
+                  "Critical Secret Leak"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -399,38 +499,76 @@
           "Calibrated Threshold",
           "Representative Examples"
         ],
-        "rows": [
-          [
-            "Hexadecimal Alphabet",
-            "Four Bits per Symbol",
-            "Calibrated Low Threshold",
-            "Git Hashes and UUID Keys"
-          ],
-          [
-            "Base64 Alphabet",
-            "Six Bits per Symbol",
-            "Calibrated High Threshold",
-            "Binary Assets and Web Fonts"
-          ],
-          [
-            "Alphanumeric Vendor",
-            "Medium Bits per Symbol",
-            "Targeted Vendor Threshold",
-            "AWS Keys and API Credentials"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Hexadecimal strings exhibit lower maximum entropy than base sixty-four.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Hexadecimal Alphabet",
+                  "Four Bits per Symbol",
+                  "Calibrated Low Threshold",
+                  "Git Hashes and UUID Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Alphabet",
+                  "Six Bits per Symbol",
+                  "Calibrated High Threshold",
+                  "Binary Assets and Web Fonts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Alphanumeric Vendor",
+                  "Medium Bits per Symbol",
+                  "Targeted Vendor Threshold",
+                  "AWS Keys and API Credentials"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Calibrating entropy thresholds eliminates developer alert fatigue.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Hexadecimal Alphabet",
+                  "Four Bits per Symbol",
+                  "Calibrated Low Threshold",
+                  "Git Hashes and UUID Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Alphabet",
+                  "Six Bits per Symbol",
+                  "Calibrated High Threshold",
+                  "Binary Assets and Web Fonts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Alphanumeric Vendor",
+                  "Medium Bits per Symbol",
+                  "Targeted Vendor Threshold",
+                  "AWS Keys and API Credentials"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -443,38 +581,76 @@
           "Calibrated Threshold",
           "Representative Examples"
         ],
-        "rows": [
-          [
-            "Hexadecimal Alphabet",
-            "Four Bits per Symbol",
-            "Calibrated Low Threshold",
-            "Git Hashes and UUID Keys"
-          ],
-          [
-            "Base64 Alphabet",
-            "Six Bits per Symbol",
-            "Calibrated High Threshold",
-            "Binary Assets and Web Fonts"
-          ],
-          [
-            "Alphanumeric Vendor",
-            "Medium Bits per Symbol",
-            "Targeted Vendor Threshold",
-            "AWS Keys and API Credentials"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Hexadecimal strings exhibit lower maximum entropy than base sixty-four.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Hexadecimal Alphabet",
+                  "Four Bits per Symbol",
+                  "Calibrated Low Threshold",
+                  "Git Hashes and UUID Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Alphabet",
+                  "Six Bits per Symbol",
+                  "Calibrated High Threshold",
+                  "Binary Assets and Web Fonts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Alphanumeric Vendor",
+                  "Medium Bits per Symbol",
+                  "Targeted Vendor Threshold",
+                  "AWS Keys and API Credentials"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Calibrating entropy thresholds eliminates developer alert fatigue.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Hexadecimal Alphabet",
+                  "Four Bits per Symbol",
+                  "Calibrated Low Threshold",
+                  "Git Hashes and UUID Keys"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Base64 Alphabet",
+                  "Six Bits per Symbol",
+                  "Calibrated High Threshold",
+                  "Binary Assets and Web Fonts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Alphanumeric Vendor",
+                  "Medium Bits per Symbol",
+                  "Targeted Vendor Threshold",
+                  "AWS Keys and API Credentials"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

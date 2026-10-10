@@ -93,26 +93,6 @@
           "Standard Format",
           "Operational Purpose"
         ],
-        "rows": [
-          [
-            "@timestamp",
-            "String (ISO 8601)",
-            "UTC timezone string",
-            "Chronological sorting"
-          ],
-          [
-            "level",
-            "Enum String",
-            "DEBUG, INFO, WARN, ERROR",
-            "Severity alerting tier"
-          ],
-          [
-            "service",
-            "String Identifier",
-            "Unique microservice name",
-            "Service boundary isolation"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -125,6 +105,35 @@
               {
                 "row": 1,
                 "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -139,6 +148,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -153,26 +191,6 @@
           "Standard Format",
           "Operational Purpose"
         ],
-        "rows": [
-          [
-            "@timestamp",
-            "String (ISO 8601)",
-            "UTC timezone string",
-            "Chronological sorting"
-          ],
-          [
-            "level",
-            "Enum String",
-            "DEBUG, INFO, WARN, ERROR",
-            "Severity alerting tier"
-          ],
-          [
-            "service",
-            "String Identifier",
-            "Unique microservice name",
-            "Service boundary isolation"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -185,6 +203,35 @@
               {
                 "row": 1,
                 "col": 0
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -199,6 +246,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "@timestamp",
+                  "String (ISO 8601)",
+                  "UTC timezone string",
+                  "Chronological sorting"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "level",
+                  "Enum String",
+                  "DEBUG, INFO, WARN, ERROR",
+                  "Severity alerting tier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "service",
+                  "String Identifier",
+                  "Unique microservice name",
+                  "Service boundary isolation"
+                ],
+                "tone": "data"
               }
             ]
           }

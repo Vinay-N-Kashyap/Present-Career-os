@@ -89,38 +89,76 @@
           "Format Ecosystem",
           "Declared Metadata Attributes"
         ],
-        "rows": [
-          [
-            "CycloneDX",
-            "OWASP Community",
-            "JSON and XML Schema",
-            "Package URLs and Cryptographic Hashes"
-          ],
-          [
-            "SPDX Specification",
-            "Linux Foundation",
-            "ISO International Standard",
-            "Component Provenance and Licenses"
-          ],
-          [
-            "Syft Cataloger",
-            "Open Source Tooling",
-            "Container and Filesystem",
-            "Automatic Direct Component Catalog"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "An SBOM provides a machine readable inventory of software components.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "CycloneDX",
+                  "OWASP Community",
+                  "JSON and XML Schema",
+                  "Package URLs and Cryptographic Hashes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SPDX Specification",
+                  "Linux Foundation",
+                  "ISO International Standard",
+                  "Component Provenance and Licenses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Syft Cataloger",
+                  "Open Source Tooling",
+                  "Container and Filesystem",
+                  "Automatic Direct Component Catalog"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "An SBOM query identifies all impacted microservices in seconds.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "CycloneDX",
+                  "OWASP Community",
+                  "JSON and XML Schema",
+                  "Package URLs and Cryptographic Hashes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SPDX Specification",
+                  "Linux Foundation",
+                  "ISO International Standard",
+                  "Component Provenance and Licenses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Syft Cataloger",
+                  "Open Source Tooling",
+                  "Container and Filesystem",
+                  "Automatic Direct Component Catalog"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -133,38 +171,76 @@
           "Format Ecosystem",
           "Declared Metadata Attributes"
         ],
-        "rows": [
-          [
-            "CycloneDX",
-            "OWASP Community",
-            "JSON and XML Schema",
-            "Package URLs and Cryptographic Hashes"
-          ],
-          [
-            "SPDX Specification",
-            "Linux Foundation",
-            "ISO International Standard",
-            "Component Provenance and Licenses"
-          ],
-          [
-            "Syft Cataloger",
-            "Open Source Tooling",
-            "Container and Filesystem",
-            "Automatic Direct Component Catalog"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "An SBOM provides a machine readable inventory of software components.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "CycloneDX",
+                  "OWASP Community",
+                  "JSON and XML Schema",
+                  "Package URLs and Cryptographic Hashes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SPDX Specification",
+                  "Linux Foundation",
+                  "ISO International Standard",
+                  "Component Provenance and Licenses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Syft Cataloger",
+                  "Open Source Tooling",
+                  "Container and Filesystem",
+                  "Automatic Direct Component Catalog"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "An SBOM query identifies all impacted microservices in seconds.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "CycloneDX",
+                  "OWASP Community",
+                  "JSON and XML Schema",
+                  "Package URLs and Cryptographic Hashes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SPDX Specification",
+                  "Linux Foundation",
+                  "ISO International Standard",
+                  "Component Provenance and Licenses"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Syft Cataloger",
+                  "Open Source Tooling",
+                  "Container and Filesystem",
+                  "Automatic Direct Component Catalog"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -181,44 +257,94 @@
           "Typical Impact Vector",
           "CI/CD Build Policy"
         ],
-        "rows": [
-          [
-            "Critical Severity",
-            "Nine to Ten Points",
-            "Remote Code Execution Zero Day",
-            "Fail Build Immediately"
-          ],
-          [
-            "High Severity",
-            "Seven to Eight Points",
-            "Privilege Escalation Exploit",
-            "Fail Build If Patch Available"
-          ],
-          [
-            "Medium Severity",
-            "Four to Six Points",
-            "Information Disclosure Vulnerability",
-            "Emit Warning and Remediation Ticket"
-          ],
-          [
-            "Low Severity",
-            "Zero to Three Points",
-            "Minor Security Bypass Vector",
-            "Log Advisory for Regular Patch Cycle"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Scores are categorized into qualitative severity tiers for assessment.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Critical Severity",
+                  "Nine to Ten Points",
+                  "Remote Code Execution Zero Day",
+                  "Fail Build Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Severity",
+                  "Seven to Eight Points",
+                  "Privilege Escalation Exploit",
+                  "Fail Build If Patch Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium Severity",
+                  "Four to Six Points",
+                  "Information Disclosure Vulnerability",
+                  "Emit Warning and Remediation Ticket"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low Severity",
+                  "Zero to Three Points",
+                  "Minor Security Bypass Vector",
+                  "Log Advisory for Regular Patch Cycle"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Build gates enforce policies that fail builds when critical CVEs are found.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Critical Severity",
+                  "Nine to Ten Points",
+                  "Remote Code Execution Zero Day",
+                  "Fail Build Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Severity",
+                  "Seven to Eight Points",
+                  "Privilege Escalation Exploit",
+                  "Fail Build If Patch Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium Severity",
+                  "Four to Six Points",
+                  "Information Disclosure Vulnerability",
+                  "Emit Warning and Remediation Ticket"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low Severity",
+                  "Zero to Three Points",
+                  "Minor Security Bypass Vector",
+                  "Log Advisory for Regular Patch Cycle"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -231,44 +357,94 @@
           "Typical Impact Vector",
           "CI/CD Build Policy"
         ],
-        "rows": [
-          [
-            "Critical Severity",
-            "Nine to Ten Points",
-            "Remote Code Execution Zero Day",
-            "Fail Build Immediately"
-          ],
-          [
-            "High Severity",
-            "Seven to Eight Points",
-            "Privilege Escalation Exploit",
-            "Fail Build If Patch Available"
-          ],
-          [
-            "Medium Severity",
-            "Four to Six Points",
-            "Information Disclosure Vulnerability",
-            "Emit Warning and Remediation Ticket"
-          ],
-          [
-            "Low Severity",
-            "Zero to Three Points",
-            "Minor Security Bypass Vector",
-            "Log Advisory for Regular Patch Cycle"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Scores are categorized into qualitative severity tiers for assessment.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Critical Severity",
+                  "Nine to Ten Points",
+                  "Remote Code Execution Zero Day",
+                  "Fail Build Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Severity",
+                  "Seven to Eight Points",
+                  "Privilege Escalation Exploit",
+                  "Fail Build If Patch Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium Severity",
+                  "Four to Six Points",
+                  "Information Disclosure Vulnerability",
+                  "Emit Warning and Remediation Ticket"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low Severity",
+                  "Zero to Three Points",
+                  "Minor Security Bypass Vector",
+                  "Log Advisory for Regular Patch Cycle"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Build gates enforce policies that fail builds when critical CVEs are found.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Critical Severity",
+                  "Nine to Ten Points",
+                  "Remote Code Execution Zero Day",
+                  "Fail Build Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High Severity",
+                  "Seven to Eight Points",
+                  "Privilege Escalation Exploit",
+                  "Fail Build If Patch Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium Severity",
+                  "Four to Six Points",
+                  "Information Disclosure Vulnerability",
+                  "Emit Warning and Remediation Ticket"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low Severity",
+                  "Zero to Three Points",
+                  "Minor Security Bypass Vector",
+                  "Log Advisory for Regular Patch Cycle"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

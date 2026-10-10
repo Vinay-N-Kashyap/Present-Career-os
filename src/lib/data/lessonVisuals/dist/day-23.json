@@ -89,32 +89,58 @@
           "Interleaved State",
           "Dispatched Ratio"
         ],
-        "rows": [
-          [
-            "Primary Host Alpha",
-            "Three Units Weight",
-            "Smooth Interleaved Schedule",
-            "Seventy-Five Percent Traffic"
-          ],
-          [
-            "Secondary Host Beta",
-            "One Unit Weight",
-            "Proportional Load Share",
-            "Twenty-Five Percent Traffic"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Weighted round robin assigns positive integer weights to each server.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Primary Host Alpha",
+                  "Three Units Weight",
+                  "Smooth Interleaved Schedule",
+                  "Seventy-Five Percent Traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Secondary Host Beta",
+                  "One Unit Weight",
+                  "Proportional Load Share",
+                  "Twenty-Five Percent Traffic"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Smooth weighted round robin interleaves requests across servers.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Primary Host Alpha",
+                  "Three Units Weight",
+                  "Smooth Interleaved Schedule",
+                  "Seventy-Five Percent Traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Secondary Host Beta",
+                  "One Unit Weight",
+                  "Proportional Load Share",
+                  "Twenty-Five Percent Traffic"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -127,32 +153,58 @@
           "Interleaved State",
           "Dispatched Ratio"
         ],
-        "rows": [
-          [
-            "Primary Host Alpha",
-            "Three Units Weight",
-            "Smooth Interleaved Schedule",
-            "Seventy-Five Percent Traffic"
-          ],
-          [
-            "Secondary Host Beta",
-            "One Unit Weight",
-            "Proportional Load Share",
-            "Twenty-Five Percent Traffic"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Weighted round robin assigns positive integer weights to each server.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Primary Host Alpha",
+                  "Three Units Weight",
+                  "Smooth Interleaved Schedule",
+                  "Seventy-Five Percent Traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Secondary Host Beta",
+                  "One Unit Weight",
+                  "Proportional Load Share",
+                  "Twenty-Five Percent Traffic"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Smooth weighted round robin interleaves requests across servers.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Primary Host Alpha",
+                  "Three Units Weight",
+                  "Smooth Interleaved Schedule",
+                  "Seventy-Five Percent Traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Secondary Host Beta",
+                  "One Unit Weight",
+                  "Proportional Load Share",
+                  "Twenty-Five Percent Traffic"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

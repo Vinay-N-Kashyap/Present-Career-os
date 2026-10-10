@@ -445,20 +445,6 @@
           "Clustering Basis",
           "Executive Summary"
         ],
-        "rows": [
-          [
-            "Consensus Cluster",
-            "Raft, Paxos, Quorum",
-            "Leiden Modularity",
-            "State Machine Replication"
-          ],
-          [
-            "Vector Cluster",
-            "HNSW, Cosine, Pinecone",
-            "Leiden Modularity",
-            "Dense Semantic Retrieval"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -471,6 +457,26 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Consensus Cluster",
+                  "Raft, Paxos, Quorum",
+                  "Leiden Modularity",
+                  "State Machine Replication"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Vector Cluster",
+                  "HNSW, Cosine, Pinecone",
+                  "Leiden Modularity",
+                  "Dense Semantic Retrieval"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -485,6 +491,26 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Consensus Cluster",
+                  "Raft, Paxos, Quorum",
+                  "Leiden Modularity",
+                  "State Machine Replication"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Vector Cluster",
+                  "HNSW, Cosine, Pinecone",
+                  "Leiden Modularity",
+                  "Dense Semantic Retrieval"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -499,20 +525,6 @@
           "Clustering Basis",
           "Executive Summary"
         ],
-        "rows": [
-          [
-            "Consensus Cluster",
-            "Raft, Paxos, Quorum",
-            "Leiden Modularity",
-            "State Machine Replication"
-          ],
-          [
-            "Vector Cluster",
-            "HNSW, Cosine, Pinecone",
-            "Leiden Modularity",
-            "Dense Semantic Retrieval"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -525,6 +537,26 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Consensus Cluster",
+                  "Raft, Paxos, Quorum",
+                  "Leiden Modularity",
+                  "State Machine Replication"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Vector Cluster",
+                  "HNSW, Cosine, Pinecone",
+                  "Leiden Modularity",
+                  "Dense Semantic Retrieval"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -539,6 +571,26 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Consensus Cluster",
+                  "Raft, Paxos, Quorum",
+                  "Leiden Modularity",
+                  "State Machine Replication"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Vector Cluster",
+                  "HNSW, Cosine, Pinecone",
+                  "Leiden Modularity",
+                  "Dense Semantic Retrieval"
+                ],
+                "tone": "data"
               }
             ]
           }

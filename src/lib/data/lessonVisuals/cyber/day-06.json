@@ -89,38 +89,76 @@
           "Padding Required",
           "Authentication Guarantee"
         ],
-        "rows": [
-          [
-            "ECB Mode",
-            "Deterministic (Insecure)",
-            "PKCS Padding Required",
-            "None (Vulnerable to Pattern Leaks)"
-          ],
-          [
-            "CBC Mode",
-            "Randomized with IV",
-            "PKCS Padding Required",
-            "None (Vulnerable to Padding Oracles)"
-          ],
-          [
-            "GCM Mode",
-            "Counter Keystream Stream",
-            "Zero Padding Needed",
-            "Galois Field Cryptographic Tag"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Electronic codebook mode preserves visual patterns and structural leaks.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "ECB Mode",
+                  "Deterministic (Insecure)",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Pattern Leaks)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CBC Mode",
+                  "Randomized with IV",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Padding Oracles)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GCM Mode",
+                  "Counter Keystream Stream",
+                  "Zero Padding Needed",
+                  "Galois Field Cryptographic Tag"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Galois counter mode turns block ciphers into authenticated stream ciphers.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ECB Mode",
+                  "Deterministic (Insecure)",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Pattern Leaks)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CBC Mode",
+                  "Randomized with IV",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Padding Oracles)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GCM Mode",
+                  "Counter Keystream Stream",
+                  "Zero Padding Needed",
+                  "Galois Field Cryptographic Tag"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -133,38 +171,76 @@
           "Padding Required",
           "Authentication Guarantee"
         ],
-        "rows": [
-          [
-            "ECB Mode",
-            "Deterministic (Insecure)",
-            "PKCS Padding Required",
-            "None (Vulnerable to Pattern Leaks)"
-          ],
-          [
-            "CBC Mode",
-            "Randomized with IV",
-            "PKCS Padding Required",
-            "None (Vulnerable to Padding Oracles)"
-          ],
-          [
-            "GCM Mode",
-            "Counter Keystream Stream",
-            "Zero Padding Needed",
-            "Galois Field Cryptographic Tag"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Electronic codebook mode preserves visual patterns and structural leaks.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "ECB Mode",
+                  "Deterministic (Insecure)",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Pattern Leaks)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CBC Mode",
+                  "Randomized with IV",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Padding Oracles)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GCM Mode",
+                  "Counter Keystream Stream",
+                  "Zero Padding Needed",
+                  "Galois Field Cryptographic Tag"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Galois counter mode turns block ciphers into authenticated stream ciphers.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ECB Mode",
+                  "Deterministic (Insecure)",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Pattern Leaks)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CBC Mode",
+                  "Randomized with IV",
+                  "PKCS Padding Required",
+                  "None (Vulnerable to Padding Oracles)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GCM Mode",
+                  "Counter Keystream Stream",
+                  "Zero Padding Needed",
+                  "Galois Field Cryptographic Tag"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -377,38 +453,76 @@
           "Security Level",
           "Forward Secrecy Support"
         ],
-        "rows": [
-          [
-            "RSA-4096",
-            "512 bytes (Heavy)",
-            "128-bit Equivalent",
-            "Static Key Decryption Vulnerability"
-          ],
-          [
-            "NIST P-256",
-            "64 bytes (Compact)",
-            "128-bit Equivalent",
-            "Ephemeral ECDHE Forward Secrecy"
-          ],
-          [
-            "Curve25519",
-            "32 bytes (Ultra-Fast)",
-            "128-bit Equivalent",
-            "Optimal Ephemeral Handshake Security"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Large rsa keys incur severe performance penalties during handshakes.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "RSA-4096",
+                  "512 bytes (Heavy)",
+                  "128-bit Equivalent",
+                  "Static Key Decryption Vulnerability"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NIST P-256",
+                  "64 bytes (Compact)",
+                  "128-bit Equivalent",
+                  "Ephemeral ECDHE Forward Secrecy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Curve25519",
+                  "32 bytes (Ultra-Fast)",
+                  "128-bit Equivalent",
+                  "Optimal Ephemeral Handshake Security"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Elliptic curve diffie hellman enables parties to compute shared secrets.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "RSA-4096",
+                  "512 bytes (Heavy)",
+                  "128-bit Equivalent",
+                  "Static Key Decryption Vulnerability"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NIST P-256",
+                  "64 bytes (Compact)",
+                  "128-bit Equivalent",
+                  "Ephemeral ECDHE Forward Secrecy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Curve25519",
+                  "32 bytes (Ultra-Fast)",
+                  "128-bit Equivalent",
+                  "Optimal Ephemeral Handshake Security"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -421,38 +535,76 @@
           "Security Level",
           "Forward Secrecy Support"
         ],
-        "rows": [
-          [
-            "RSA-4096",
-            "512 bytes (Heavy)",
-            "128-bit Equivalent",
-            "Static Key Decryption Vulnerability"
-          ],
-          [
-            "NIST P-256",
-            "64 bytes (Compact)",
-            "128-bit Equivalent",
-            "Ephemeral ECDHE Forward Secrecy"
-          ],
-          [
-            "Curve25519",
-            "32 bytes (Ultra-Fast)",
-            "128-bit Equivalent",
-            "Optimal Ephemeral Handshake Security"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Large rsa keys incur severe performance penalties during handshakes.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "RSA-4096",
+                  "512 bytes (Heavy)",
+                  "128-bit Equivalent",
+                  "Static Key Decryption Vulnerability"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NIST P-256",
+                  "64 bytes (Compact)",
+                  "128-bit Equivalent",
+                  "Ephemeral ECDHE Forward Secrecy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Curve25519",
+                  "32 bytes (Ultra-Fast)",
+                  "128-bit Equivalent",
+                  "Optimal Ephemeral Handshake Security"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Elliptic curve diffie hellman enables parties to compute shared secrets.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "RSA-4096",
+                  "512 bytes (Heavy)",
+                  "128-bit Equivalent",
+                  "Static Key Decryption Vulnerability"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "NIST P-256",
+                  "64 bytes (Compact)",
+                  "128-bit Equivalent",
+                  "Ephemeral ECDHE Forward Secrecy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Curve25519",
+                  "32 bytes (Ultra-Fast)",
+                  "128-bit Equivalent",
+                  "Optimal Ephemeral Handshake Security"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

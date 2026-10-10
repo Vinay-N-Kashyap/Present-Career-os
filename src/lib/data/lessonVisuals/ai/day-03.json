@@ -16,40 +16,86 @@
           "Architectural Purpose",
           "Implementation Directives"
         ],
-        "rows": [
-          [
-            "Persona Identity",
-            "Defines Expertise and Authority",
-            "Staff Software Engineer Context"
-          ],
-          [
-            "Core Objectives",
-            "Establishes Mandatory Goals",
-            "Accurate Code Solutions"
-          ],
-          [
-            "Operating Scope",
-            "Restricts Authorized Domains",
-            "Cloud Platform Boundaries"
-          ],
-          [
-            "Tone Directives",
-            "Specifies Style and Brevity",
-            "Concise Professional Responses"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Production system prompts organize behavior into distinct sections.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Persona Identity",
+                  "Defines Expertise and Authority",
+                  "Staff Software Engineer Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Core Objectives",
+                  "Establishes Mandatory Goals",
+                  "Accurate Code Solutions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Operating Scope",
+                  "Restricts Authorized Domains",
+                  "Cloud Platform Boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Directives",
+                  "Specifies Style and Brevity",
+                  "Concise Professional Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Operating scope limits authorized domains to prevent unapproved guidance.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Persona Identity",
+                  "Defines Expertise and Authority",
+                  "Staff Software Engineer Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Core Objectives",
+                  "Establishes Mandatory Goals",
+                  "Accurate Code Solutions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Operating Scope",
+                  "Restricts Authorized Domains",
+                  "Cloud Platform Boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Directives",
+                  "Specifies Style and Brevity",
+                  "Concise Professional Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,40 +107,86 @@
           "Architectural Purpose",
           "Implementation Directives"
         ],
-        "rows": [
-          [
-            "Persona Identity",
-            "Defines Expertise and Authority",
-            "Staff Software Engineer Context"
-          ],
-          [
-            "Core Objectives",
-            "Establishes Mandatory Goals",
-            "Accurate Code Solutions"
-          ],
-          [
-            "Operating Scope",
-            "Restricts Authorized Domains",
-            "Cloud Platform Boundaries"
-          ],
-          [
-            "Tone Directives",
-            "Specifies Style and Brevity",
-            "Concise Professional Responses"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Production system prompts organize behavior into distinct sections.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Persona Identity",
+                  "Defines Expertise and Authority",
+                  "Staff Software Engineer Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Core Objectives",
+                  "Establishes Mandatory Goals",
+                  "Accurate Code Solutions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Operating Scope",
+                  "Restricts Authorized Domains",
+                  "Cloud Platform Boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Directives",
+                  "Specifies Style and Brevity",
+                  "Concise Professional Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Operating scope limits authorized domains to prevent unapproved guidance.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Persona Identity",
+                  "Defines Expertise and Authority",
+                  "Staff Software Engineer Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Core Objectives",
+                  "Establishes Mandatory Goals",
+                  "Accurate Code Solutions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Operating Scope",
+                  "Restricts Authorized Domains",
+                  "Cloud Platform Boundaries"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Directives",
+                  "Specifies Style and Brevity",
+                  "Concise Professional Responses"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -435,44 +527,94 @@
           "Expected Compiler Action",
           "Safety Verdict"
         ],
-        "rows": [
-          [
-            "Authorized Query",
-            "Kubernetes Deployment Help",
-            "Emit Authoritative SDE Advice",
-            "Permitted Response"
-          ],
-          [
-            "Forbidden Domain",
-            "Financial Investment Advice",
-            "Decline with Standard Refusal",
-            "Enforced Refusal"
-          ],
-          [
-            "Injection Payload",
-            "Ignore Constraints Tag",
-            "Enforce XML Data Boundary",
-            "Sanitized Isolation"
-          ],
-          [
-            "Tone Compliance",
-            "Concise Technical Request",
-            "Omit Conversational Filler",
-            "Compliant Formatting"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The compiler transforms structured configurations into system prompts.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Authorized Query",
+                  "Kubernetes Deployment Help",
+                  "Emit Authoritative SDE Advice",
+                  "Permitted Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forbidden Domain",
+                  "Financial Investment Advice",
+                  "Decline with Standard Refusal",
+                  "Enforced Refusal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Injection Payload",
+                  "Ignore Constraints Tag",
+                  "Enforce XML Data Boundary",
+                  "Sanitized Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Compliance",
+                  "Concise Technical Request",
+                  "Omit Conversational Filler",
+                  "Compliant Formatting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "XML isolation tags neutralize adversarial prompt injection attempts.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Authorized Query",
+                  "Kubernetes Deployment Help",
+                  "Emit Authoritative SDE Advice",
+                  "Permitted Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forbidden Domain",
+                  "Financial Investment Advice",
+                  "Decline with Standard Refusal",
+                  "Enforced Refusal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Injection Payload",
+                  "Ignore Constraints Tag",
+                  "Enforce XML Data Boundary",
+                  "Sanitized Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Compliance",
+                  "Concise Technical Request",
+                  "Omit Conversational Filler",
+                  "Compliant Formatting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -485,44 +627,94 @@
           "Expected Compiler Action",
           "Safety Verdict"
         ],
-        "rows": [
-          [
-            "Authorized Query",
-            "Kubernetes Deployment Help",
-            "Emit Authoritative SDE Advice",
-            "Permitted Response"
-          ],
-          [
-            "Forbidden Domain",
-            "Financial Investment Advice",
-            "Decline with Standard Refusal",
-            "Enforced Refusal"
-          ],
-          [
-            "Injection Payload",
-            "Ignore Constraints Tag",
-            "Enforce XML Data Boundary",
-            "Sanitized Isolation"
-          ],
-          [
-            "Tone Compliance",
-            "Concise Technical Request",
-            "Omit Conversational Filler",
-            "Compliant Formatting"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The compiler transforms structured configurations into system prompts.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Authorized Query",
+                  "Kubernetes Deployment Help",
+                  "Emit Authoritative SDE Advice",
+                  "Permitted Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forbidden Domain",
+                  "Financial Investment Advice",
+                  "Decline with Standard Refusal",
+                  "Enforced Refusal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Injection Payload",
+                  "Ignore Constraints Tag",
+                  "Enforce XML Data Boundary",
+                  "Sanitized Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Compliance",
+                  "Concise Technical Request",
+                  "Omit Conversational Filler",
+                  "Compliant Formatting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "XML isolation tags neutralize adversarial prompt injection attempts.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Authorized Query",
+                  "Kubernetes Deployment Help",
+                  "Emit Authoritative SDE Advice",
+                  "Permitted Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Forbidden Domain",
+                  "Financial Investment Advice",
+                  "Decline with Standard Refusal",
+                  "Enforced Refusal"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Injection Payload",
+                  "Ignore Constraints Tag",
+                  "Enforce XML Data Boundary",
+                  "Sanitized Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tone Compliance",
+                  "Concise Technical Request",
+                  "Omit Conversational Filler",
+                  "Compliant Formatting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

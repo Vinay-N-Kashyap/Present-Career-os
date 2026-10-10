@@ -235,26 +235,6 @@
           "Commercial Role",
           "Penalty Trigger"
         ],
-        "rows": [
-          [
-            "Internal SLO",
-            "99.9%",
-            "Engineering Target",
-            "Freeze Releases"
-          ],
-          [
-            "External SLA",
-            "99.5%",
-            "Legal Contract",
-            "Tier 1 Rebate"
-          ],
-          [
-            "Critical Breach",
-            "98.0%",
-            "Severe Outage",
-            "Tier 2 Credit"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -267,6 +247,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Internal SLO",
+                  "99.9%",
+                  "Engineering Target",
+                  "Freeze Releases"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "External SLA",
+                  "99.5%",
+                  "Legal Contract",
+                  "Tier 1 Rebate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Critical Breach",
+                  "98.0%",
+                  "Severe Outage",
+                  "Tier 2 Credit"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -281,6 +290,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Internal SLO",
+                  "99.9%",
+                  "Engineering Target",
+                  "Freeze Releases"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "External SLA",
+                  "99.5%",
+                  "Legal Contract",
+                  "Tier 1 Rebate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Critical Breach",
+                  "98.0%",
+                  "Severe Outage",
+                  "Tier 2 Credit"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -295,26 +333,6 @@
           "Commercial Role",
           "Penalty Trigger"
         ],
-        "rows": [
-          [
-            "Internal SLO",
-            "99.9%",
-            "Engineering Target",
-            "Freeze Releases"
-          ],
-          [
-            "External SLA",
-            "99.5%",
-            "Legal Contract",
-            "Tier 1 Rebate"
-          ],
-          [
-            "Critical Breach",
-            "98.0%",
-            "Severe Outage",
-            "Tier 2 Credit"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -327,6 +345,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Internal SLO",
+                  "99.9%",
+                  "Engineering Target",
+                  "Freeze Releases"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "External SLA",
+                  "99.5%",
+                  "Legal Contract",
+                  "Tier 1 Rebate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Critical Breach",
+                  "98.0%",
+                  "Severe Outage",
+                  "Tier 2 Credit"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -341,6 +388,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Internal SLO",
+                  "99.9%",
+                  "Engineering Target",
+                  "Freeze Releases"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "External SLA",
+                  "99.5%",
+                  "Legal Contract",
+                  "Tier 1 Rebate"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Critical Breach",
+                  "98.0%",
+                  "Severe Outage",
+                  "Tier 2 Credit"
+                ],
+                "tone": "data"
               }
             ]
           }

@@ -361,26 +361,6 @@
           "Contractual Target",
           "Compliance"
         ],
-        "rows": [
-          [
-            "RTO Recovery Time",
-            "42 Seconds",
-            "60 Seconds",
-            "Pass (Compliant)"
-          ],
-          [
-            "RPO Data Loss",
-            "4.2 Seconds",
-            "15 Seconds",
-            "Pass (Compliant)"
-          ],
-          [
-            "Overall SLA Audit",
-            "Full Success",
-            "Zero Breach",
-            "Pass (Compliant)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -393,6 +373,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "RTO Recovery Time",
+                  "42 Seconds",
+                  "60 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RPO Data Loss",
+                  "4.2 Seconds",
+                  "15 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Overall SLA Audit",
+                  "Full Success",
+                  "Zero Breach",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -407,6 +416,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "RTO Recovery Time",
+                  "42 Seconds",
+                  "60 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RPO Data Loss",
+                  "4.2 Seconds",
+                  "15 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Overall SLA Audit",
+                  "Full Success",
+                  "Zero Breach",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -421,26 +459,6 @@
           "Contractual Target",
           "Compliance"
         ],
-        "rows": [
-          [
-            "RTO Recovery Time",
-            "42 Seconds",
-            "60 Seconds",
-            "Pass (Compliant)"
-          ],
-          [
-            "RPO Data Loss",
-            "4.2 Seconds",
-            "15 Seconds",
-            "Pass (Compliant)"
-          ],
-          [
-            "Overall SLA Audit",
-            "Full Success",
-            "Zero Breach",
-            "Pass (Compliant)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -453,6 +471,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "RTO Recovery Time",
+                  "42 Seconds",
+                  "60 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RPO Data Loss",
+                  "4.2 Seconds",
+                  "15 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Overall SLA Audit",
+                  "Full Success",
+                  "Zero Breach",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -467,6 +514,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "RTO Recovery Time",
+                  "42 Seconds",
+                  "60 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RPO Data Loss",
+                  "4.2 Seconds",
+                  "15 Seconds",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Overall SLA Audit",
+                  "Full Success",
+                  "Zero Breach",
+                  "Pass (Compliant)"
+                ],
+                "tone": "data"
               }
             ]
           }

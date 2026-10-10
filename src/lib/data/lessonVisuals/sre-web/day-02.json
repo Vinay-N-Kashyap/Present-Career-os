@@ -169,26 +169,6 @@
           "Time to Depletion",
           "Operational Impact"
         ],
-        "rows": [
-          [
-            "Nominal",
-            "1.0x Rate",
-            "30 Days",
-            "Nominal State"
-          ],
-          [
-            "Elevated",
-            "5.0x Rate",
-            "6 Days",
-            "Investigation"
-          ],
-          [
-            "Severe",
-            "20.0x Rate",
-            "1.5 Days",
-            "Critical Outage"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -201,6 +181,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nominal",
+                  "1.0x Rate",
+                  "30 Days",
+                  "Nominal State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Elevated",
+                  "5.0x Rate",
+                  "6 Days",
+                  "Investigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe",
+                  "20.0x Rate",
+                  "1.5 Days",
+                  "Critical Outage"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -215,6 +224,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nominal",
+                  "1.0x Rate",
+                  "30 Days",
+                  "Nominal State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Elevated",
+                  "5.0x Rate",
+                  "6 Days",
+                  "Investigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe",
+                  "20.0x Rate",
+                  "1.5 Days",
+                  "Critical Outage"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -229,26 +267,6 @@
           "Time to Depletion",
           "Operational Impact"
         ],
-        "rows": [
-          [
-            "Nominal",
-            "1.0x Rate",
-            "30 Days",
-            "Nominal State"
-          ],
-          [
-            "Elevated",
-            "5.0x Rate",
-            "6 Days",
-            "Investigation"
-          ],
-          [
-            "Severe",
-            "20.0x Rate",
-            "1.5 Days",
-            "Critical Outage"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
@@ -261,6 +279,35 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nominal",
+                  "1.0x Rate",
+                  "30 Days",
+                  "Nominal State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Elevated",
+                  "5.0x Rate",
+                  "6 Days",
+                  "Investigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe",
+                  "20.0x Rate",
+                  "1.5 Days",
+                  "Critical Outage"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -275,6 +322,35 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nominal",
+                  "1.0x Rate",
+                  "30 Days",
+                  "Nominal State"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Elevated",
+                  "5.0x Rate",
+                  "6 Days",
+                  "Investigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Severe",
+                  "20.0x Rate",
+                  "1.5 Days",
+                  "Critical Outage"
+                ],
+                "tone": "data"
               }
             ]
           }

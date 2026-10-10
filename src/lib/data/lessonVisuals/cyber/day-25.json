@@ -89,44 +89,94 @@
           "Syntax Keyword",
           "Example Value"
         ],
-        "rows": [
-          [
-            "Rule Action",
-            "Defines Response Action",
-            "Action Declaration",
-            "Alert or Drop"
-          ],
-          [
-            "Rule Protocol",
-            "Transport Protocol Target",
-            "Protocol Keyword",
-            "TCP UDP or ICMP"
-          ],
-          [
-            "Direction Operator",
-            "Traffic Flow Orientation",
-            "Direction Symbol",
-            "Unidirectional Arrow"
-          ],
-          [
-            "Payload Content",
-            "Pattern Search String",
-            "Content Option",
-            "Exact Byte Sequence"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The rule header specifies the action and transport protocol.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rule Action",
+                  "Defines Response Action",
+                  "Action Declaration",
+                  "Alert or Drop"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rule Protocol",
+                  "Transport Protocol Target",
+                  "Protocol Keyword",
+                  "TCP UDP or ICMP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Direction Operator",
+                  "Traffic Flow Orientation",
+                  "Direction Symbol",
+                  "Unidirectional Arrow"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload Content",
+                  "Pattern Search String",
+                  "Content Option",
+                  "Exact Byte Sequence"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Options define exact byte patterns to search for within payloads.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rule Action",
+                  "Defines Response Action",
+                  "Action Declaration",
+                  "Alert or Drop"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rule Protocol",
+                  "Transport Protocol Target",
+                  "Protocol Keyword",
+                  "TCP UDP or ICMP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Direction Operator",
+                  "Traffic Flow Orientation",
+                  "Direction Symbol",
+                  "Unidirectional Arrow"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload Content",
+                  "Pattern Search String",
+                  "Content Option",
+                  "Exact Byte Sequence"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -139,44 +189,94 @@
           "Syntax Keyword",
           "Example Value"
         ],
-        "rows": [
-          [
-            "Rule Action",
-            "Defines Response Action",
-            "Action Declaration",
-            "Alert or Drop"
-          ],
-          [
-            "Rule Protocol",
-            "Transport Protocol Target",
-            "Protocol Keyword",
-            "TCP UDP or ICMP"
-          ],
-          [
-            "Direction Operator",
-            "Traffic Flow Orientation",
-            "Direction Symbol",
-            "Unidirectional Arrow"
-          ],
-          [
-            "Payload Content",
-            "Pattern Search String",
-            "Content Option",
-            "Exact Byte Sequence"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The rule header specifies the action and transport protocol.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rule Action",
+                  "Defines Response Action",
+                  "Action Declaration",
+                  "Alert or Drop"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rule Protocol",
+                  "Transport Protocol Target",
+                  "Protocol Keyword",
+                  "TCP UDP or ICMP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Direction Operator",
+                  "Traffic Flow Orientation",
+                  "Direction Symbol",
+                  "Unidirectional Arrow"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload Content",
+                  "Pattern Search String",
+                  "Content Option",
+                  "Exact Byte Sequence"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Options define exact byte patterns to search for within payloads.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rule Action",
+                  "Defines Response Action",
+                  "Action Declaration",
+                  "Alert or Drop"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rule Protocol",
+                  "Transport Protocol Target",
+                  "Protocol Keyword",
+                  "TCP UDP or ICMP"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Direction Operator",
+                  "Traffic Flow Orientation",
+                  "Direction Symbol",
+                  "Unidirectional Arrow"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload Content",
+                  "Pattern Search String",
+                  "Content Option",
+                  "Exact Byte Sequence"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -341,44 +441,94 @@
           "Optimization Rationale",
           "Rule Example"
         ],
-        "rows": [
-          [
-            "Depth Option",
-            "Bytes from Payload Start",
-            "Bounds Search Window Size",
-            "Limits CPU Search Cost"
-          ],
-          [
-            "Offset Option",
-            "Bytes into Payload to Skip",
-            "Bypasses Known Static Headers",
-            "Skips Ethernet and IP Bytes"
-          ],
-          [
-            "Distance Modifier",
-            "Relative Bytes from Last Match",
-            "Constrains Subsequent Strings",
-            "Enforces Sequence Constraints"
-          ],
-          [
-            "PCRE Evaluation",
-            "Perl Regular Expression",
-            "Evaluates Complex Payload Variants",
-            "Executed After Fast Literals"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The depth option specifies how many bytes of the payload to search.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Depth Option",
+                  "Bytes from Payload Start",
+                  "Bounds Search Window Size",
+                  "Limits CPU Search Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Offset Option",
+                  "Bytes into Payload to Skip",
+                  "Bypasses Known Static Headers",
+                  "Skips Ethernet and IP Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distance Modifier",
+                  "Relative Bytes from Last Match",
+                  "Constrains Subsequent Strings",
+                  "Enforces Sequence Constraints"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PCRE Evaluation",
+                  "Perl Regular Expression",
+                  "Evaluates Complex Payload Variants",
+                  "Executed After Fast Literals"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Efficient rules combine fast string matches before executing evaluations.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Depth Option",
+                  "Bytes from Payload Start",
+                  "Bounds Search Window Size",
+                  "Limits CPU Search Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Offset Option",
+                  "Bytes into Payload to Skip",
+                  "Bypasses Known Static Headers",
+                  "Skips Ethernet and IP Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distance Modifier",
+                  "Relative Bytes from Last Match",
+                  "Constrains Subsequent Strings",
+                  "Enforces Sequence Constraints"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PCRE Evaluation",
+                  "Perl Regular Expression",
+                  "Evaluates Complex Payload Variants",
+                  "Executed After Fast Literals"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -391,44 +541,94 @@
           "Optimization Rationale",
           "Rule Example"
         ],
-        "rows": [
-          [
-            "Depth Option",
-            "Bytes from Payload Start",
-            "Bounds Search Window Size",
-            "Limits CPU Search Cost"
-          ],
-          [
-            "Offset Option",
-            "Bytes into Payload to Skip",
-            "Bypasses Known Static Headers",
-            "Skips Ethernet and IP Bytes"
-          ],
-          [
-            "Distance Modifier",
-            "Relative Bytes from Last Match",
-            "Constrains Subsequent Strings",
-            "Enforces Sequence Constraints"
-          ],
-          [
-            "PCRE Evaluation",
-            "Perl Regular Expression",
-            "Evaluates Complex Payload Variants",
-            "Executed After Fast Literals"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The depth option specifies how many bytes of the payload to search.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Depth Option",
+                  "Bytes from Payload Start",
+                  "Bounds Search Window Size",
+                  "Limits CPU Search Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Offset Option",
+                  "Bytes into Payload to Skip",
+                  "Bypasses Known Static Headers",
+                  "Skips Ethernet and IP Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distance Modifier",
+                  "Relative Bytes from Last Match",
+                  "Constrains Subsequent Strings",
+                  "Enforces Sequence Constraints"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PCRE Evaluation",
+                  "Perl Regular Expression",
+                  "Evaluates Complex Payload Variants",
+                  "Executed After Fast Literals"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Efficient rules combine fast string matches before executing evaluations.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Depth Option",
+                  "Bytes from Payload Start",
+                  "Bounds Search Window Size",
+                  "Limits CPU Search Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Offset Option",
+                  "Bytes into Payload to Skip",
+                  "Bypasses Known Static Headers",
+                  "Skips Ethernet and IP Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distance Modifier",
+                  "Relative Bytes from Last Match",
+                  "Constrains Subsequent Strings",
+                  "Enforces Sequence Constraints"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "PCRE Evaluation",
+                  "Perl Regular Expression",
+                  "Evaluates Complex Payload Variants",
+                  "Executed After Fast Literals"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

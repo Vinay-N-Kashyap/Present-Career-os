@@ -17,38 +17,76 @@
           "Original Content",
           "Corrupted State Under Overflow"
         ],
-        "rows": [
-          [
-            "Local Buffer Array",
-            "Grows Downward Stack",
-            "User Input Storage Buffer",
-            "Oversized Input Exceeds Bounds"
-          ],
-          [
-            "Saved Frame Pointer",
-            "Higher Memory Address",
-            "Base Pointer Value",
-            "Overwritten with Attacker Bytes"
-          ],
-          [
-            "Saved Return Address",
-            "Higher Memory Address",
-            "Instruction Pointer EIP",
-            "Hijacked to Point to Shellcode"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Oversized input writes past allocated array boundaries on the stack.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Buffer Array",
+                  "Grows Downward Stack",
+                  "User Input Storage Buffer",
+                  "Oversized Input Exceeds Bounds"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Frame Pointer",
+                  "Higher Memory Address",
+                  "Base Pointer Value",
+                  "Overwritten with Attacker Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Return Address",
+                  "Higher Memory Address",
+                  "Instruction Pointer EIP",
+                  "Hijacked to Point to Shellcode"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "An attacker hijacks execution flow redirecting CPU control to shellcode.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Buffer Array",
+                  "Grows Downward Stack",
+                  "User Input Storage Buffer",
+                  "Oversized Input Exceeds Bounds"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Frame Pointer",
+                  "Higher Memory Address",
+                  "Base Pointer Value",
+                  "Overwritten with Attacker Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Return Address",
+                  "Higher Memory Address",
+                  "Instruction Pointer EIP",
+                  "Hijacked to Point to Shellcode"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Original Content",
           "Corrupted State Under Overflow"
         ],
-        "rows": [
-          [
-            "Local Buffer Array",
-            "Grows Downward Stack",
-            "User Input Storage Buffer",
-            "Oversized Input Exceeds Bounds"
-          ],
-          [
-            "Saved Frame Pointer",
-            "Higher Memory Address",
-            "Base Pointer Value",
-            "Overwritten with Attacker Bytes"
-          ],
-          [
-            "Saved Return Address",
-            "Higher Memory Address",
-            "Instruction Pointer EIP",
-            "Hijacked to Point to Shellcode"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Oversized input writes past allocated array boundaries on the stack.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Buffer Array",
+                  "Grows Downward Stack",
+                  "User Input Storage Buffer",
+                  "Oversized Input Exceeds Bounds"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Frame Pointer",
+                  "Higher Memory Address",
+                  "Base Pointer Value",
+                  "Overwritten with Attacker Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Return Address",
+                  "Higher Memory Address",
+                  "Instruction Pointer EIP",
+                  "Hijacked to Point to Shellcode"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "An attacker hijacks execution flow redirecting CPU control to shellcode.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Buffer Array",
+                  "Grows Downward Stack",
+                  "User Input Storage Buffer",
+                  "Oversized Input Exceeds Bounds"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Frame Pointer",
+                  "Higher Memory Address",
+                  "Base Pointer Value",
+                  "Overwritten with Attacker Bytes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Saved Return Address",
+                  "Higher Memory Address",
+                  "Instruction Pointer EIP",
+                  "Hijacked to Point to Shellcode"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -257,44 +333,94 @@
           "Executable Permission",
           "Policy Compliance"
         ],
-        "rows": [
-          [
-            "Call Stack Segment",
-            "Writable for Variables",
-            "Execution Strictly Disabled",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Heap Allocation Space",
-            "Writable for Dynamic Data",
-            "Execution Strictly Disabled",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Code Text Segment",
-            "Read Only Binary Data",
-            "Executable for Machine Code",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Corrupted Attack Page",
-            "Writable by Attacker",
-            "Executable Shellcode Target",
-            "Hardware Trap Halts Process"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Under this policy a page can be writable or executable but never both.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Call Stack Segment",
+                  "Writable for Variables",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heap Allocation Space",
+                  "Writable for Dynamic Data",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Code Text Segment",
+                  "Read Only Binary Data",
+                  "Executable for Machine Code",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Corrupted Attack Page",
+                  "Writable by Attacker",
+                  "Executable Shellcode Target",
+                  "Hardware Trap Halts Process"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Executing code from a marked memory page raises an immediate hardware trap.",
             "activeRowIndex": 3,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Call Stack Segment",
+                  "Writable for Variables",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heap Allocation Space",
+                  "Writable for Dynamic Data",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Code Text Segment",
+                  "Read Only Binary Data",
+                  "Executable for Machine Code",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Corrupted Attack Page",
+                  "Writable by Attacker",
+                  "Executable Shellcode Target",
+                  "Hardware Trap Halts Process"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -307,44 +433,94 @@
           "Executable Permission",
           "Policy Compliance"
         ],
-        "rows": [
-          [
-            "Call Stack Segment",
-            "Writable for Variables",
-            "Execution Strictly Disabled",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Heap Allocation Space",
-            "Writable for Dynamic Data",
-            "Execution Strictly Disabled",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Code Text Segment",
-            "Read Only Binary Data",
-            "Executable for Machine Code",
-            "Complies with Write XOR Execute"
-          ],
-          [
-            "Corrupted Attack Page",
-            "Writable by Attacker",
-            "Executable Shellcode Target",
-            "Hardware Trap Halts Process"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Under this policy a page can be writable or executable but never both.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Call Stack Segment",
+                  "Writable for Variables",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heap Allocation Space",
+                  "Writable for Dynamic Data",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Code Text Segment",
+                  "Read Only Binary Data",
+                  "Executable for Machine Code",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Corrupted Attack Page",
+                  "Writable by Attacker",
+                  "Executable Shellcode Target",
+                  "Hardware Trap Halts Process"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Executing code from a marked memory page raises an immediate hardware trap.",
             "activeRowIndex": 3,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Call Stack Segment",
+                  "Writable for Variables",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heap Allocation Space",
+                  "Writable for Dynamic Data",
+                  "Execution Strictly Disabled",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Code Text Segment",
+                  "Read Only Binary Data",
+                  "Executable for Machine Code",
+                  "Complies with Write XOR Execute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Corrupted Attack Page",
+                  "Writable by Attacker",
+                  "Executable Shellcode Target",
+                  "Hardware Trap Halts Process"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

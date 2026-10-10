@@ -101,38 +101,76 @@
           "STRIDE Category",
           "Mitigation Action"
         ],
-        "rows": [
-          [
-            "Admin Path Probing",
-            "Path contains /admin or /debug",
-            "Elevation of Privilege",
-            "Strict RBAC Verification"
-          ],
-          [
-            "Rapid Payload Bursts",
-            "High request rate from single IP",
-            "Denial of Service",
-            "Dynamic Rate Limiter Throttling"
-          ],
-          [
-            "Header Tampering",
-            "Mismatched authorization signature",
-            "Spoofing & Tampering",
-            "Honeypot Redirect & Drop"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Requests attempting to invoke hidden endpoints are tagged as risks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Admin Path Probing",
+                  "Path contains /admin or /debug",
+                  "Elevation of Privilege",
+                  "Strict RBAC Verification"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rapid Payload Bursts",
+                  "High request rate from single IP",
+                  "Denial of Service",
+                  "Dynamic Rate Limiter Throttling"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Header Tampering",
+                  "Mismatched authorization signature",
+                  "Spoofing & Tampering",
+                  "Honeypot Redirect & Drop"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Requests with high frequency bursts are tagged as denial of service.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Admin Path Probing",
+                  "Path contains /admin or /debug",
+                  "Elevation of Privilege",
+                  "Strict RBAC Verification"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rapid Payload Bursts",
+                  "High request rate from single IP",
+                  "Denial of Service",
+                  "Dynamic Rate Limiter Throttling"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Header Tampering",
+                  "Mismatched authorization signature",
+                  "Spoofing & Tampering",
+                  "Honeypot Redirect & Drop"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -145,38 +183,76 @@
           "STRIDE Category",
           "Mitigation Action"
         ],
-        "rows": [
-          [
-            "Admin Path Probing",
-            "Path contains /admin or /debug",
-            "Elevation of Privilege",
-            "Strict RBAC Verification"
-          ],
-          [
-            "Rapid Payload Bursts",
-            "High request rate from single IP",
-            "Denial of Service",
-            "Dynamic Rate Limiter Throttling"
-          ],
-          [
-            "Header Tampering",
-            "Mismatched authorization signature",
-            "Spoofing & Tampering",
-            "Honeypot Redirect & Drop"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Requests attempting to invoke hidden endpoints are tagged as risks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Admin Path Probing",
+                  "Path contains /admin or /debug",
+                  "Elevation of Privilege",
+                  "Strict RBAC Verification"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rapid Payload Bursts",
+                  "High request rate from single IP",
+                  "Denial of Service",
+                  "Dynamic Rate Limiter Throttling"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Header Tampering",
+                  "Mismatched authorization signature",
+                  "Spoofing & Tampering",
+                  "Honeypot Redirect & Drop"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Requests with high frequency bursts are tagged as denial of service.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Admin Path Probing",
+                  "Path contains /admin or /debug",
+                  "Elevation of Privilege",
+                  "Strict RBAC Verification"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rapid Payload Bursts",
+                  "High request rate from single IP",
+                  "Denial of Service",
+                  "Dynamic Rate Limiter Throttling"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Header Tampering",
+                  "Mismatched authorization signature",
+                  "Spoofing & Tampering",
+                  "Honeypot Redirect & Drop"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -385,44 +461,94 @@
           "CSRF Token Check",
           "Inspection Outcome"
         ],
-        "rows": [
-          [
-            "GET /products",
-            "Not Required (Safe Read)",
-            "Not Required (Idempotent)",
-            "Approved (Passes to Handler)"
-          ],
-          [
-            "POST /transfer",
-            "Matches Approved Origin",
-            "Valid Token Provided",
-            "Approved (Passes to Handler)"
-          ],
-          [
-            "POST /transfer",
-            "Unauthorized Origin evil.com",
-            "Missing or Invalid Token",
-            "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
-          ],
-          [
-            "POST /transfer",
-            "Absent Origin Header",
-            "Valid Referer and Valid Token",
-            "Approved (Fallback Permitted)"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The waf checks the origin or referer header against approved lists.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "GET /products",
+                  "Not Required (Safe Read)",
+                  "Not Required (Idempotent)",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Matches Approved Origin",
+                  "Valid Token Provided",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Unauthorized Origin evil.com",
+                  "Missing or Invalid Token",
+                  "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Absent Origin Header",
+                  "Valid Referer and Valid Token",
+                  "Approved (Fallback Permitted)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "If the origin is unauthorized the request is rejected immediately.",
             "activeRowIndex": 2,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "GET /products",
+                  "Not Required (Safe Read)",
+                  "Not Required (Idempotent)",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Matches Approved Origin",
+                  "Valid Token Provided",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Unauthorized Origin evil.com",
+                  "Missing or Invalid Token",
+                  "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Absent Origin Header",
+                  "Valid Referer and Valid Token",
+                  "Approved (Fallback Permitted)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -435,44 +561,94 @@
           "CSRF Token Check",
           "Inspection Outcome"
         ],
-        "rows": [
-          [
-            "GET /products",
-            "Not Required (Safe Read)",
-            "Not Required (Idempotent)",
-            "Approved (Passes to Handler)"
-          ],
-          [
-            "POST /transfer",
-            "Matches Approved Origin",
-            "Valid Token Provided",
-            "Approved (Passes to Handler)"
-          ],
-          [
-            "POST /transfer",
-            "Unauthorized Origin evil.com",
-            "Missing or Invalid Token",
-            "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
-          ],
-          [
-            "POST /transfer",
-            "Absent Origin Header",
-            "Valid Referer and Valid Token",
-            "Approved (Fallback Permitted)"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The waf checks the origin or referer header against approved lists.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "GET /products",
+                  "Not Required (Safe Read)",
+                  "Not Required (Idempotent)",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Matches Approved Origin",
+                  "Valid Token Provided",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Unauthorized Origin evil.com",
+                  "Missing or Invalid Token",
+                  "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Absent Origin Header",
+                  "Valid Referer and Valid Token",
+                  "Approved (Fallback Permitted)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "If the origin is unauthorized the request is rejected immediately.",
             "activeRowIndex": 2,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "GET /products",
+                  "Not Required (Safe Read)",
+                  "Not Required (Idempotent)",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Matches Approved Origin",
+                  "Valid Token Provided",
+                  "Approved (Passes to Handler)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Unauthorized Origin evil.com",
+                  "Missing or Invalid Token",
+                  "Rejected (STATUS_CSRF_ATTACK_PREVENTED)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "POST /transfer",
+                  "Absent Origin Header",
+                  "Valid Referer and Valid Token",
+                  "Approved (Fallback Permitted)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

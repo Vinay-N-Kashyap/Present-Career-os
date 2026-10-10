@@ -101,50 +101,112 @@
           "Duration Rule",
           "Purpose"
         ],
-        "rows": [
-          [
-            "public",
-            "Browsers and CDNs",
-            "Unrestricted",
-            "Permits caching at shared edge proxies"
-          ],
-          [
-            "private",
-            "Browser Only",
-            "User Device",
-            "Forbids CDN edge caching of private user data"
-          ],
-          [
-            "max-age",
-            "Browser Cache",
-            "Configured seconds",
-            "Specifies freshness lifetime for client"
-          ],
-          [
-            "s-maxage",
-            "CDN Edge Only",
-            "Overrides max-age",
-            "Controls CDN edge shared proxy retention"
-          ],
-          [
-            "ETag",
-            "Conditional Validator",
-            "Content checksum",
-            "Enables not modified cache revalidation"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Public cache directives permit intermediate proxies to store data.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Servers attach an etag checksum representing asset content.",
             "activeRowIndex": 4,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -157,50 +219,112 @@
           "Duration Rule",
           "Purpose"
         ],
-        "rows": [
-          [
-            "public",
-            "Browsers and CDNs",
-            "Unrestricted",
-            "Permits caching at shared edge proxies"
-          ],
-          [
-            "private",
-            "Browser Only",
-            "User Device",
-            "Forbids CDN edge caching of private user data"
-          ],
-          [
-            "max-age",
-            "Browser Cache",
-            "Configured seconds",
-            "Specifies freshness lifetime for client"
-          ],
-          [
-            "s-maxage",
-            "CDN Edge Only",
-            "Overrides max-age",
-            "Controls CDN edge shared proxy retention"
-          ],
-          [
-            "ETag",
-            "Conditional Validator",
-            "Content checksum",
-            "Enables not modified cache revalidation"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Public cache directives permit intermediate proxies to store data.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Servers attach an etag checksum representing asset content.",
             "activeRowIndex": 4,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "public",
+                  "Browsers and CDNs",
+                  "Unrestricted",
+                  "Permits caching at shared edge proxies"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "private",
+                  "Browser Only",
+                  "User Device",
+                  "Forbids CDN edge caching of private user data"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "max-age",
+                  "Browser Cache",
+                  "Configured seconds",
+                  "Specifies freshness lifetime for client"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "s-maxage",
+                  "CDN Edge Only",
+                  "Overrides max-age",
+                  "Controls CDN edge shared proxy retention"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ETag",
+                  "Conditional Validator",
+                  "Content checksum",
+                  "Enables not modified cache revalidation"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

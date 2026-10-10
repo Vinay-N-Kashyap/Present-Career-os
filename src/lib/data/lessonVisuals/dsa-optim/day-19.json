@@ -532,40 +532,76 @@
           "Traversed Subtree",
           "Suggested Completions"
         ],
-        "rows": [
-          [
-            {
-              "text": "ca"
-            },
-            {
-              "text": "Trie branch ca"
-            },
-            {
-              "text": "car, card, cat"
-            }
-          ],
-          [
-            {
-              "text": "do"
-            },
-            {
-              "text": "Trie branch do"
-            },
-            {
-              "text": "dog"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Recursive search discovers all descendants marked with word flag.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ca"
+                  },
+                  {
+                    "text": "Trie branch ca"
+                  },
+                  {
+                    "text": "car, card, cat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "do"
+                  },
+                  {
+                    "text": "Trie branch do"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Trie structure naturally returns suggestions in alphabetical order.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "ca"
+                  },
+                  {
+                    "text": "Trie branch ca"
+                  },
+                  {
+                    "text": "car, card, cat"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "do"
+                  },
+                  {
+                    "text": "Trie branch do"
+                  },
+                  {
+                    "text": "dog"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -577,28 +613,52 @@
           "Traversed Subtree",
           "Suggested Completions"
         ],
-        "rows": [
-          [
-            "ca",
-            "Trie branch ca",
-            "car, card, cat"
-          ],
-          [
-            "do",
-            "Trie branch do",
-            "dog"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Recursive search discovers all descendants marked with word flag.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "ca",
+                  "Trie branch ca",
+                  "car, card, cat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "do",
+                  "Trie branch do",
+                  "dog"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Trie structure naturally returns suggestions in alphabetical order.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "ca",
+                  "Trie branch ca",
+                  "car, card, cat"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "do",
+                  "Trie branch do",
+                  "dog"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

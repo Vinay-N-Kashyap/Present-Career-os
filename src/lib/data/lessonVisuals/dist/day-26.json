@@ -91,44 +91,94 @@
           "Length",
           "Purpose"
         ],
-        "rows": [
-          [
-            "version",
-            "00 hex",
-            "1 byte",
-            "Specification protocol version"
-          ],
-          [
-            "trace_id",
-            "32 hex digits",
-            "16 bytes",
-            "Distributed transaction identifier"
-          ],
-          [
-            "parent_id",
-            "16 hex digits",
-            "8 bytes",
-            "Originating caller span identifier"
-          ],
-          [
-            "trace_flags",
-            "01 flag",
-            "1 byte",
-            "Recorded trace sampling indicator"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The core transport mechanism is the standardized header.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The distributed transaction identifier identifies overall execution.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -141,44 +191,94 @@
           "Length",
           "Purpose"
         ],
-        "rows": [
-          [
-            "version",
-            "00 hex",
-            "1 byte",
-            "Specification protocol version"
-          ],
-          [
-            "trace_id",
-            "32 hex digits",
-            "16 bytes",
-            "Distributed transaction identifier"
-          ],
-          [
-            "parent_id",
-            "16 hex digits",
-            "8 bytes",
-            "Originating caller span identifier"
-          ],
-          [
-            "trace_flags",
-            "01 flag",
-            "1 byte",
-            "Recorded trace sampling indicator"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The core transport mechanism is the standardized header.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The distributed transaction identifier identifies overall execution.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "version",
+                  "00 hex",
+                  "1 byte",
+                  "Specification protocol version"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_id",
+                  "32 hex digits",
+                  "16 bytes",
+                  "Distributed transaction identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "parent_id",
+                  "16 hex digits",
+                  "8 bytes",
+                  "Originating caller span identifier"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "trace_flags",
+                  "01 flag",
+                  "1 byte",
+                  "Recorded trace sampling indicator"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

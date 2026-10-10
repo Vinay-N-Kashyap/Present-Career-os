@@ -223,44 +223,94 @@
           "Exponentiated Score",
           "Softmax Probability"
         ],
-        "rows": [
-          [
-            "Current Subject",
-            "High Positive Logit",
-            "Large Exponent Value",
-            "Primary Attention Weight"
-          ],
-          [
-            "Related Verb",
-            "Moderate Logit",
-            "Medium Exponent Value",
-            "Secondary Attention Weight"
-          ],
-          [
-            "Distant Adverb",
-            "Low Negative Logit",
-            "Near Zero Exponent",
-            "Minimal Attention Weight"
-          ],
-          [
-            "Future Causal Token",
-            "Negative Infinity Logit",
-            "Zero Exponent Value",
-            "Zero Attention Weight"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The softmax function converts scaled scores into positive probabilities.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Causal attention masks set future token scores to negative infinity.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -273,44 +323,94 @@
           "Exponentiated Score",
           "Softmax Probability"
         ],
-        "rows": [
-          [
-            "Current Subject",
-            "High Positive Logit",
-            "Large Exponent Value",
-            "Primary Attention Weight"
-          ],
-          [
-            "Related Verb",
-            "Moderate Logit",
-            "Medium Exponent Value",
-            "Secondary Attention Weight"
-          ],
-          [
-            "Distant Adverb",
-            "Low Negative Logit",
-            "Near Zero Exponent",
-            "Minimal Attention Weight"
-          ],
-          [
-            "Future Causal Token",
-            "Negative Infinity Logit",
-            "Zero Exponent Value",
-            "Zero Attention Weight"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The softmax function converts scaled scores into positive probabilities.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Causal attention masks set future token scores to negative infinity.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Current Subject",
+                  "High Positive Logit",
+                  "Large Exponent Value",
+                  "Primary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Related Verb",
+                  "Moderate Logit",
+                  "Medium Exponent Value",
+                  "Secondary Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Distant Adverb",
+                  "Low Negative Logit",
+                  "Near Zero Exponent",
+                  "Minimal Attention Weight"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Future Causal Token",
+                  "Negative Infinity Logit",
+                  "Zero Exponent Value",
+                  "Zero Attention Weight"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

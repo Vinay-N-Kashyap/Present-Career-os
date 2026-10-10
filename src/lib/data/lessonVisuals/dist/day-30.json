@@ -399,44 +399,94 @@
           "Requested Withdrawal",
           "Transaction Outcome"
         ],
-        "rows": [
-          [
-            "Account One",
-            "Version Forty-Two",
-            "One Hundred Dollars",
-            "Success (Version increments to 43)"
-          ],
-          [
-            "Account One",
-            "Version Forty-Two",
-            "One Hundred Dollars",
-            "Rejected (Stale version conflict)"
-          ],
-          [
-            "Account Two",
-            "Version Ten",
-            "Fifty Dollars",
-            "Success (Version increments to 11)"
-          ],
-          [
-            "Account Two",
-            "Version Nine",
-            "Fifty Dollars",
-            "Rejected (Stale fencing token)"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The exchange prevents attacks using monotonic fencing tokens.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Success (Version increments to 43)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Rejected (Stale version conflict)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Ten",
+                  "Fifty Dollars",
+                  "Success (Version increments to 11)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Nine",
+                  "Fifty Dollars",
+                  "Rejected (Stale fencing token)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Concurrent transactions against identical versions fail safely.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Success (Version increments to 43)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Rejected (Stale version conflict)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Ten",
+                  "Fifty Dollars",
+                  "Success (Version increments to 11)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Nine",
+                  "Fifty Dollars",
+                  "Rejected (Stale fencing token)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -449,44 +499,94 @@
           "Requested Withdrawal",
           "Transaction Outcome"
         ],
-        "rows": [
-          [
-            "Account One",
-            "Version Forty-Two",
-            "One Hundred Dollars",
-            "Success (Version increments to 43)"
-          ],
-          [
-            "Account One",
-            "Version Forty-Two",
-            "One Hundred Dollars",
-            "Rejected (Stale version conflict)"
-          ],
-          [
-            "Account Two",
-            "Version Ten",
-            "Fifty Dollars",
-            "Success (Version increments to 11)"
-          ],
-          [
-            "Account Two",
-            "Version Nine",
-            "Fifty Dollars",
-            "Rejected (Stale fencing token)"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "The exchange prevents attacks using monotonic fencing tokens.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Success (Version increments to 43)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Rejected (Stale version conflict)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Ten",
+                  "Fifty Dollars",
+                  "Success (Version increments to 11)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Nine",
+                  "Fifty Dollars",
+                  "Rejected (Stale fencing token)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Concurrent transactions against identical versions fail safely.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Success (Version increments to 43)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account One",
+                  "Version Forty-Two",
+                  "One Hundred Dollars",
+                  "Rejected (Stale version conflict)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Ten",
+                  "Fifty Dollars",
+                  "Success (Version increments to 11)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Account Two",
+                  "Version Nine",
+                  "Fifty Dollars",
+                  "Rejected (Stale fencing token)"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

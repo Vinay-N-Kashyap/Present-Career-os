@@ -331,38 +331,76 @@
           "Latency Overhead",
           "Cost Efficiency"
         ],
-        "rows": [
-          [
-            "Excessive Reranking",
-            "One Hundred Chunks",
-            "High Latency Spike",
-            "Expensive Cloud Cost"
-          ],
-          [
-            "Optimal Two-Stage",
-            "Twenty-Five Chunks",
-            "Sub Twenty Milliseconds",
-            "Balanced Budget Cost"
-          ],
-          [
-            "Minimal Funnel",
-            "Five Chunks",
-            "Ultra Fast Response",
-            "Risk of Missed Recall"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Exceeding maximum limits causes implementations to truncate documents.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Excessive Reranking",
+                  "One Hundred Chunks",
+                  "High Latency Spike",
+                  "Expensive Cloud Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Optimal Two-Stage",
+                  "Twenty-Five Chunks",
+                  "Sub Twenty Milliseconds",
+                  "Balanced Budget Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Minimal Funnel",
+                  "Five Chunks",
+                  "Ultra Fast Response",
+                  "Risk of Missed Recall"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Reranking optimal chunks strikes the ideal balance for cloud efficiency.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Excessive Reranking",
+                  "One Hundred Chunks",
+                  "High Latency Spike",
+                  "Expensive Cloud Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Optimal Two-Stage",
+                  "Twenty-Five Chunks",
+                  "Sub Twenty Milliseconds",
+                  "Balanced Budget Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Minimal Funnel",
+                  "Five Chunks",
+                  "Ultra Fast Response",
+                  "Risk of Missed Recall"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -375,38 +413,76 @@
           "Latency Overhead",
           "Cost Efficiency"
         ],
-        "rows": [
-          [
-            "Excessive Reranking",
-            "One Hundred Chunks",
-            "High Latency Spike",
-            "Expensive Cloud Cost"
-          ],
-          [
-            "Optimal Two-Stage",
-            "Twenty-Five Chunks",
-            "Sub Twenty Milliseconds",
-            "Balanced Budget Cost"
-          ],
-          [
-            "Minimal Funnel",
-            "Five Chunks",
-            "Ultra Fast Response",
-            "Risk of Missed Recall"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "Exceeding maximum limits causes implementations to truncate documents.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Excessive Reranking",
+                  "One Hundred Chunks",
+                  "High Latency Spike",
+                  "Expensive Cloud Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Optimal Two-Stage",
+                  "Twenty-Five Chunks",
+                  "Sub Twenty Milliseconds",
+                  "Balanced Budget Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Minimal Funnel",
+                  "Five Chunks",
+                  "Ultra Fast Response",
+                  "Risk of Missed Recall"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Reranking optimal chunks strikes the ideal balance for cloud efficiency.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Excessive Reranking",
+                  "One Hundred Chunks",
+                  "High Latency Spike",
+                  "Expensive Cloud Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Optimal Two-Stage",
+                  "Twenty-Five Chunks",
+                  "Sub Twenty Milliseconds",
+                  "Balanced Budget Cost"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Minimal Funnel",
+                  "Five Chunks",
+                  "Ultra Fast Response",
+                  "Risk of Missed Recall"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

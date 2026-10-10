@@ -183,38 +183,76 @@
           "Connection Range",
           "Routing Purpose"
         ],
-        "rows": [
-          [
-            "Layer Two Highway",
-            "Sparse Top Nodes",
-            "Long Range Proximity Links",
-            "Rapid Coarse Neighborhood Zoom"
-          ],
-          [
-            "Layer One Intermediate",
-            "Moderate Node Density",
-            "Medium Distance Links",
-            "Regional Space Convergence"
-          ],
-          [
-            "Layer Zero Ground",
-            "Complete Vector Corpus",
-            "Dense Local Nearest Links",
-            "Fine Grain Beam Search"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "The top layer contains sparse nodes with long-range highway connections.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Layer Two Highway",
+                  "Sparse Top Nodes",
+                  "Long Range Proximity Links",
+                  "Rapid Coarse Neighborhood Zoom"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer One Intermediate",
+                  "Moderate Node Density",
+                  "Medium Distance Links",
+                  "Regional Space Convergence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer Zero Ground",
+                  "Complete Vector Corpus",
+                  "Dense Local Nearest Links",
+                  "Fine Grain Beam Search"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The bottom layer contains every vector connected to nearest local neighbors.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Layer Two Highway",
+                  "Sparse Top Nodes",
+                  "Long Range Proximity Links",
+                  "Rapid Coarse Neighborhood Zoom"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer One Intermediate",
+                  "Moderate Node Density",
+                  "Medium Distance Links",
+                  "Regional Space Convergence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer Zero Ground",
+                  "Complete Vector Corpus",
+                  "Dense Local Nearest Links",
+                  "Fine Grain Beam Search"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -227,38 +265,76 @@
           "Connection Range",
           "Routing Purpose"
         ],
-        "rows": [
-          [
-            "Layer Two Highway",
-            "Sparse Top Nodes",
-            "Long Range Proximity Links",
-            "Rapid Coarse Neighborhood Zoom"
-          ],
-          [
-            "Layer One Intermediate",
-            "Moderate Node Density",
-            "Medium Distance Links",
-            "Regional Space Convergence"
-          ],
-          [
-            "Layer Zero Ground",
-            "Complete Vector Corpus",
-            "Dense Local Nearest Links",
-            "Fine Grain Beam Search"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
             "caption": "The top layer contains sparse nodes with long-range highway connections.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Layer Two Highway",
+                  "Sparse Top Nodes",
+                  "Long Range Proximity Links",
+                  "Rapid Coarse Neighborhood Zoom"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer One Intermediate",
+                  "Moderate Node Density",
+                  "Medium Distance Links",
+                  "Regional Space Convergence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer Zero Ground",
+                  "Complete Vector Corpus",
+                  "Dense Local Nearest Links",
+                  "Fine Grain Beam Search"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "The bottom layer contains every vector connected to nearest local neighbors.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Layer Two Highway",
+                  "Sparse Top Nodes",
+                  "Long Range Proximity Links",
+                  "Rapid Coarse Neighborhood Zoom"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer One Intermediate",
+                  "Moderate Node Density",
+                  "Medium Distance Links",
+                  "Regional Space Convergence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Layer Zero Ground",
+                  "Complete Vector Corpus",
+                  "Dense Local Nearest Links",
+                  "Fine Grain Beam Search"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

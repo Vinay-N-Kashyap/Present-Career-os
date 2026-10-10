@@ -93,26 +93,6 @@
           "Live Scanned Value",
           "Drift Status"
         ],
-        "rows": [
-          [
-            "sg-web.port",
-            "443",
-            "443",
-            "Clean Match"
-          ],
-          [
-            "sg-web.cidr",
-            "10.0.0.0/8",
-            "0.0.0.0/0",
-            "Drift Detected"
-          ],
-          [
-            "sg-web.protocol",
-            "tcp",
-            "tcp",
-            "Clean Match"
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
@@ -125,6 +105,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "sg-web.port",
+                  "443",
+                  "443",
+                  "Clean Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.cidr",
+                  "10.0.0.0/8",
+                  "0.0.0.0/0",
+                  "Drift Detected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.protocol",
+                  "tcp",
+                  "tcp",
+                  "Clean Match"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -139,6 +148,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "sg-web.port",
+                  "443",
+                  "443",
+                  "Clean Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.cidr",
+                  "10.0.0.0/8",
+                  "0.0.0.0/0",
+                  "Drift Detected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.protocol",
+                  "tcp",
+                  "tcp",
+                  "Clean Match"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -153,26 +191,6 @@
           "Live Scanned Value",
           "Drift Status"
         ],
-        "rows": [
-          [
-            "sg-web.port",
-            "443",
-            "443",
-            "Clean Match"
-          ],
-          [
-            "sg-web.cidr",
-            "10.0.0.0/8",
-            "0.0.0.0/0",
-            "Drift Detected"
-          ],
-          [
-            "sg-web.protocol",
-            "tcp",
-            "tcp",
-            "Clean Match"
-          ]
-        ],
         "steps": [
           {
             "at": "say1",
@@ -185,6 +203,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "sg-web.port",
+                  "443",
+                  "443",
+                  "Clean Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.cidr",
+                  "10.0.0.0/8",
+                  "0.0.0.0/0",
+                  "Drift Detected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.protocol",
+                  "tcp",
+                  "tcp",
+                  "Clean Match"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -199,6 +246,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "sg-web.port",
+                  "443",
+                  "443",
+                  "Clean Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.cidr",
+                  "10.0.0.0/8",
+                  "0.0.0.0/0",
+                  "Drift Detected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "sg-web.protocol",
+                  "tcp",
+                  "tcp",
+                  "Clean Match"
+                ],
+                "tone": "data"
               }
             ]
           }

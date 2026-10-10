@@ -295,38 +295,76 @@
           "Input Context",
           "Blackboard Output"
         ],
-        "rows": [
-          [
-            "Research Agent",
-            "Domain investigation and spec",
-            "User Goal Objective",
-            "Technical Notes"
-          ],
-          [
-            "Coder Agent",
-            "Type-safe software syntax",
-            "Technical Notes",
-            "TypeScript Code"
-          ],
-          [
-            "Reviewer Agent",
-            "Adversarial security audit",
-            "TypeScript Code",
-            "Audit Verdict"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The researcher produces technical specifications without writing code.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Research notes serve as the architectural blueprint for the coder.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -339,38 +377,76 @@
           "Input Context",
           "Blackboard Output"
         ],
-        "rows": [
-          [
-            "Research Agent",
-            "Domain investigation and spec",
-            "User Goal Objective",
-            "Technical Notes"
-          ],
-          [
-            "Coder Agent",
-            "Type-safe software syntax",
-            "Technical Notes",
-            "TypeScript Code"
-          ],
-          [
-            "Reviewer Agent",
-            "Adversarial security audit",
-            "TypeScript Code",
-            "Audit Verdict"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The researcher produces technical specifications without writing code.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Research notes serve as the architectural blueprint for the coder.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Research Agent",
+                  "Domain investigation and spec",
+                  "User Goal Objective",
+                  "Technical Notes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Coder Agent",
+                  "Type-safe software syntax",
+                  "Technical Notes",
+                  "TypeScript Code"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Reviewer Agent",
+                  "Adversarial security audit",
+                  "TypeScript Code",
+                  "Audit Verdict"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

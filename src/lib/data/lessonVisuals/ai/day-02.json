@@ -93,44 +93,94 @@
           "New Merged Token",
           "Corpus Frequency"
         ],
-        "rows": [
-          [
-            "Initial State",
-            "Individual Byte Characters",
-            "Base Character Vocabulary",
-            "High Frequency"
-          ],
-          [
-            "Merge Step One",
-            "Characters T and H",
-            "Merged Sub-Word TH",
-            "Highest Pair Count"
-          ],
-          [
-            "Merge Step Two",
-            "Merged TH and E",
-            "Common Word THE",
-            "Very High Frequency"
-          ],
-          [
-            "Terminal Vocabulary",
-            "Sub-Word Segments",
-            "Target Vocabulary Reached",
-            "Stable Vocabulary"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "BPE algorithms scan training text to merge frequent consecutive pairs.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Frequent words are compressed into single high-level token identifiers.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -143,44 +193,94 @@
           "New Merged Token",
           "Corpus Frequency"
         ],
-        "rows": [
-          [
-            "Initial State",
-            "Individual Byte Characters",
-            "Base Character Vocabulary",
-            "High Frequency"
-          ],
-          [
-            "Merge Step One",
-            "Characters T and H",
-            "Merged Sub-Word TH",
-            "Highest Pair Count"
-          ],
-          [
-            "Merge Step Two",
-            "Merged TH and E",
-            "Common Word THE",
-            "Very High Frequency"
-          ],
-          [
-            "Terminal Vocabulary",
-            "Sub-Word Segments",
-            "Target Vocabulary Reached",
-            "Stable Vocabulary"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "BPE algorithms scan training text to merge frequent consecutive pairs.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Frequent words are compressed into single high-level token identifiers.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Initial State",
+                  "Individual Byte Characters",
+                  "Base Character Vocabulary",
+                  "High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step One",
+                  "Characters T and H",
+                  "Merged Sub-Word TH",
+                  "Highest Pair Count"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Merge Step Two",
+                  "Merged TH and E",
+                  "Common Word THE",
+                  "Very High Frequency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Terminal Vocabulary",
+                  "Sub-Word Segments",
+                  "Target Vocabulary Reached",
+                  "Stable Vocabulary"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

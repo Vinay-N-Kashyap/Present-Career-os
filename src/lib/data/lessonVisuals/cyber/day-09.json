@@ -17,38 +17,76 @@
           "Typical Content",
           "Cryptographic Role"
         ],
-        "rows": [
-          [
-            "Header",
-            "Base64URL JSON",
-            "typ: JWT, alg: RS256",
-            "Specifies cryptographic signing algorithm"
-          ],
-          [
-            "Payload",
-            "Base64URL JSON",
-            "sub, role, exp claims",
-            "Transmits application identity claims"
-          ],
-          [
-            "Signature",
-            "Cryptographic Binary",
-            "HMAC or RSA signature",
-            "Validates token integrity and prevents edits"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A standard token consists of three distinct components separated by dots.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Header",
+                  "Base64URL JSON",
+                  "typ: JWT, alg: RS256",
+                  "Specifies cryptographic signing algorithm"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload",
+                  "Base64URL JSON",
+                  "sub, role, exp claims",
+                  "Transmits application identity claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Signature",
+                  "Cryptographic Binary",
+                  "HMAC or RSA signature",
+                  "Validates token integrity and prevents edits"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "The signature mathematically guarantees token integrity against tampering.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Header",
+                  "Base64URL JSON",
+                  "typ: JWT, alg: RS256",
+                  "Specifies cryptographic signing algorithm"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload",
+                  "Base64URL JSON",
+                  "sub, role, exp claims",
+                  "Transmits application identity claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Signature",
+                  "Cryptographic Binary",
+                  "HMAC or RSA signature",
+                  "Validates token integrity and prevents edits"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -61,38 +99,76 @@
           "Typical Content",
           "Cryptographic Role"
         ],
-        "rows": [
-          [
-            "Header",
-            "Base64URL JSON",
-            "typ: JWT, alg: RS256",
-            "Specifies cryptographic signing algorithm"
-          ],
-          [
-            "Payload",
-            "Base64URL JSON",
-            "sub, role, exp claims",
-            "Transmits application identity claims"
-          ],
-          [
-            "Signature",
-            "Cryptographic Binary",
-            "HMAC or RSA signature",
-            "Validates token integrity and prevents edits"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A standard token consists of three distinct components separated by dots.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Header",
+                  "Base64URL JSON",
+                  "typ: JWT, alg: RS256",
+                  "Specifies cryptographic signing algorithm"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload",
+                  "Base64URL JSON",
+                  "sub, role, exp claims",
+                  "Transmits application identity claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Signature",
+                  "Cryptographic Binary",
+                  "HMAC or RSA signature",
+                  "Validates token integrity and prevents edits"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "The signature mathematically guarantees token integrity against tampering.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Header",
+                  "Base64URL JSON",
+                  "typ: JWT, alg: RS256",
+                  "Specifies cryptographic signing algorithm"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Payload",
+                  "Base64URL JSON",
+                  "sub, role, exp claims",
+                  "Transmits application identity claims"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Signature",
+                  "Cryptographic Binary",
+                  "HMAC or RSA signature",
+                  "Validates token integrity and prevents edits"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -377,44 +453,94 @@
           "Evaluation Rule",
           "Vulnerability Mitigated"
         ],
-        "rows": [
-          [
-            "exp",
-            "Expiration Time",
-            "Reject if current time > exp",
-            "Token Lifetime Replay Attacks"
-          ],
-          [
-            "nbf",
-            "Not Before",
-            "Reject if current time < nbf",
-            "Pre-Activation Clock Attacks"
-          ],
-          [
-            "iss",
-            "Issuer Identity",
-            "Must match trusted auth server URL",
-            "Untrusted IdP Spoofing Attacks"
-          ],
-          [
-            "aud",
-            "Audience",
-            "Must match current service endpoint",
-            "Cross-Service Token Substitution"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Expired tokens must be rejected instantly after the timestamp.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "exp",
+                  "Expiration Time",
+                  "Reject if current time > exp",
+                  "Token Lifetime Replay Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nbf",
+                  "Not Before",
+                  "Reject if current time < nbf",
+                  "Pre-Activation Clock Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "iss",
+                  "Issuer Identity",
+                  "Must match trusted auth server URL",
+                  "Untrusted IdP Spoofing Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "aud",
+                  "Audience",
+                  "Must match current service endpoint",
+                  "Cross-Service Token Substitution"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Audience claims prevent cross service token substitution attacks.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exp",
+                  "Expiration Time",
+                  "Reject if current time > exp",
+                  "Token Lifetime Replay Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nbf",
+                  "Not Before",
+                  "Reject if current time < nbf",
+                  "Pre-Activation Clock Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "iss",
+                  "Issuer Identity",
+                  "Must match trusted auth server URL",
+                  "Untrusted IdP Spoofing Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "aud",
+                  "Audience",
+                  "Must match current service endpoint",
+                  "Cross-Service Token Substitution"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -427,44 +553,94 @@
           "Evaluation Rule",
           "Vulnerability Mitigated"
         ],
-        "rows": [
-          [
-            "exp",
-            "Expiration Time",
-            "Reject if current time > exp",
-            "Token Lifetime Replay Attacks"
-          ],
-          [
-            "nbf",
-            "Not Before",
-            "Reject if current time < nbf",
-            "Pre-Activation Clock Attacks"
-          ],
-          [
-            "iss",
-            "Issuer Identity",
-            "Must match trusted auth server URL",
-            "Untrusted IdP Spoofing Attacks"
-          ],
-          [
-            "aud",
-            "Audience",
-            "Must match current service endpoint",
-            "Cross-Service Token Substitution"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Expired tokens must be rejected instantly after the timestamp.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "exp",
+                  "Expiration Time",
+                  "Reject if current time > exp",
+                  "Token Lifetime Replay Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nbf",
+                  "Not Before",
+                  "Reject if current time < nbf",
+                  "Pre-Activation Clock Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "iss",
+                  "Issuer Identity",
+                  "Must match trusted auth server URL",
+                  "Untrusted IdP Spoofing Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "aud",
+                  "Audience",
+                  "Must match current service endpoint",
+                  "Cross-Service Token Substitution"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Audience claims prevent cross service token substitution attacks.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "exp",
+                  "Expiration Time",
+                  "Reject if current time > exp",
+                  "Token Lifetime Replay Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "nbf",
+                  "Not Before",
+                  "Reject if current time < nbf",
+                  "Pre-Activation Clock Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "iss",
+                  "Issuer Identity",
+                  "Must match trusted auth server URL",
+                  "Untrusted IdP Spoofing Attacks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "aud",
+                  "Audience",
+                  "Must match current service endpoint",
+                  "Cross-Service Token Substitution"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -17,44 +17,94 @@
           "Business Meaning",
           "Target Threshold"
         ],
-        "rows": [
-          [
-            "RPO",
-            "Backward time loss",
-            "Acceptable volume of committed data loss",
-            "Near Zero in Tier Zero"
-          ],
-          [
-            "RTO",
-            "Forward downtime",
-            "Duration before operations resume normally",
-            "Under One Minute"
-          ],
-          [
-            "MTTR",
-            "Mean time to repair",
-            "Average duration required to resolve outages",
-            "Continuous Tracking"
-          ],
-          [
-            "MTBF",
-            "Mean time between failures",
-            "Operational reliability of cloud infrastructure",
-            "High Availability"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Recovery point objective dictates the acceptable volume of data loss.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "RPO",
+                  "Backward time loss",
+                  "Acceptable volume of committed data loss",
+                  "Near Zero in Tier Zero"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RTO",
+                  "Forward downtime",
+                  "Duration before operations resume normally",
+                  "Under One Minute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTTR",
+                  "Mean time to repair",
+                  "Average duration required to resolve outages",
+                  "Continuous Tracking"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTBF",
+                  "Mean time between failures",
+                  "Operational reliability of cloud infrastructure",
+                  "High Availability"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Recovery time objective dictates acceptable duration of downtime.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "RPO",
+                  "Backward time loss",
+                  "Acceptable volume of committed data loss",
+                  "Near Zero in Tier Zero"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RTO",
+                  "Forward downtime",
+                  "Duration before operations resume normally",
+                  "Under One Minute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTTR",
+                  "Mean time to repair",
+                  "Average duration required to resolve outages",
+                  "Continuous Tracking"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTBF",
+                  "Mean time between failures",
+                  "Operational reliability of cloud infrastructure",
+                  "High Availability"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -67,44 +117,94 @@
           "Business Meaning",
           "Target Threshold"
         ],
-        "rows": [
-          [
-            "RPO",
-            "Backward time loss",
-            "Acceptable volume of committed data loss",
-            "Near Zero in Tier Zero"
-          ],
-          [
-            "RTO",
-            "Forward downtime",
-            "Duration before operations resume normally",
-            "Under One Minute"
-          ],
-          [
-            "MTTR",
-            "Mean time to repair",
-            "Average duration required to resolve outages",
-            "Continuous Tracking"
-          ],
-          [
-            "MTBF",
-            "Mean time between failures",
-            "Operational reliability of cloud infrastructure",
-            "High Availability"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Recovery point objective dictates the acceptable volume of data loss.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "RPO",
+                  "Backward time loss",
+                  "Acceptable volume of committed data loss",
+                  "Near Zero in Tier Zero"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RTO",
+                  "Forward downtime",
+                  "Duration before operations resume normally",
+                  "Under One Minute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTTR",
+                  "Mean time to repair",
+                  "Average duration required to resolve outages",
+                  "Continuous Tracking"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTBF",
+                  "Mean time between failures",
+                  "Operational reliability of cloud infrastructure",
+                  "High Availability"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Recovery time objective dictates acceptable duration of downtime.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "RPO",
+                  "Backward time loss",
+                  "Acceptable volume of committed data loss",
+                  "Near Zero in Tier Zero"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RTO",
+                  "Forward downtime",
+                  "Duration before operations resume normally",
+                  "Under One Minute"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTTR",
+                  "Mean time to repair",
+                  "Average duration required to resolve outages",
+                  "Continuous Tracking"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MTBF",
+                  "Mean time between failures",
+                  "Operational reliability of cloud infrastructure",
+                  "High Availability"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

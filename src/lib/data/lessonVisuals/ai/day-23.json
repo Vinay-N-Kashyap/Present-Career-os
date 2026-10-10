@@ -169,38 +169,76 @@
           "Base Weight Memory",
           "Hardware Tier"
         ],
-        "rows": [
-          [
-            "FP32 Precision",
-            "32 bits",
-            "280 Gigabytes",
-            "Multi-Node Cluster"
-          ],
-          [
-            "FP16 BrainFloat",
-            "16 bits",
-            "140 Gigabytes",
-            "Dual A100 GPUs"
-          ],
-          [
-            "4-bit NormalFloat",
-            "4 bits",
-            "35 Gigabytes",
-            "Single 48GB GPU"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Merely loading frozen weights into GPU memory consumes substantial memory.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "FP32 Precision",
+                  "32 bits",
+                  "280 Gigabytes",
+                  "Multi-Node Cluster"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "FP16 BrainFloat",
+                  "16 bits",
+                  "140 Gigabytes",
+                  "Dual A100 GPUs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "4-bit NormalFloat",
+                  "4 bits",
+                  "35 Gigabytes",
+                  "Single 48GB GPU"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "NormalFloat is an optimal quantile data type for normally distributed weights.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "FP32 Precision",
+                  "32 bits",
+                  "280 Gigabytes",
+                  "Multi-Node Cluster"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "FP16 BrainFloat",
+                  "16 bits",
+                  "140 Gigabytes",
+                  "Dual A100 GPUs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "4-bit NormalFloat",
+                  "4 bits",
+                  "35 Gigabytes",
+                  "Single 48GB GPU"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -213,38 +251,76 @@
           "Base Weight Memory",
           "Hardware Tier"
         ],
-        "rows": [
-          [
-            "FP32 Precision",
-            "32 bits",
-            "280 Gigabytes",
-            "Multi-Node Cluster"
-          ],
-          [
-            "FP16 BrainFloat",
-            "16 bits",
-            "140 Gigabytes",
-            "Dual A100 GPUs"
-          ],
-          [
-            "4-bit NormalFloat",
-            "4 bits",
-            "35 Gigabytes",
-            "Single 48GB GPU"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Merely loading frozen weights into GPU memory consumes substantial memory.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "FP32 Precision",
+                  "32 bits",
+                  "280 Gigabytes",
+                  "Multi-Node Cluster"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "FP16 BrainFloat",
+                  "16 bits",
+                  "140 Gigabytes",
+                  "Dual A100 GPUs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "4-bit NormalFloat",
+                  "4 bits",
+                  "35 Gigabytes",
+                  "Single 48GB GPU"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "NormalFloat is an optimal quantile data type for normally distributed weights.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "FP32 Precision",
+                  "32 bits",
+                  "280 Gigabytes",
+                  "Multi-Node Cluster"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "FP16 BrainFloat",
+                  "16 bits",
+                  "140 Gigabytes",
+                  "Dual A100 GPUs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "4-bit NormalFloat",
+                  "4 bits",
+                  "35 Gigabytes",
+                  "Single 48GB GPU"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

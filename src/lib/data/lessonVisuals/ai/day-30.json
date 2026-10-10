@@ -447,32 +447,6 @@
           "Executed Action",
           "Grounded Fact"
         ],
-        "rows": [
-          [
-            "Thought Step",
-            "Active Reasoning",
-            "Inspect Context",
-            "Retrieved Policy Context"
-          ],
-          [
-            "Action Step",
-            "Tool Invocation",
-            "match_calculator",
-            "Salary Parameters Set"
-          ],
-          [
-            "Observation Step",
-            "Ingest Feedback",
-            "Parse Output",
-            "Calculated Dollar Match"
-          ],
-          [
-            "Synthesis Step",
-            "Final Answer",
-            "Formulate Output",
-            "Grounded Response Complete"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -485,6 +459,44 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Thought Step",
+                  "Active Reasoning",
+                  "Inspect Context",
+                  "Retrieved Policy Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Step",
+                  "Tool Invocation",
+                  "match_calculator",
+                  "Salary Parameters Set"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Observation Step",
+                  "Ingest Feedback",
+                  "Parse Output",
+                  "Calculated Dollar Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Synthesis Step",
+                  "Final Answer",
+                  "Formulate Output",
+                  "Grounded Response Complete"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -499,6 +511,44 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Thought Step",
+                  "Active Reasoning",
+                  "Inspect Context",
+                  "Retrieved Policy Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Step",
+                  "Tool Invocation",
+                  "match_calculator",
+                  "Salary Parameters Set"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Observation Step",
+                  "Ingest Feedback",
+                  "Parse Output",
+                  "Calculated Dollar Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Synthesis Step",
+                  "Final Answer",
+                  "Formulate Output",
+                  "Grounded Response Complete"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -513,32 +563,6 @@
           "Executed Action",
           "Grounded Fact"
         ],
-        "rows": [
-          [
-            "Thought Step",
-            "Active Reasoning",
-            "Inspect Context",
-            "Retrieved Policy Context"
-          ],
-          [
-            "Action Step",
-            "Tool Invocation",
-            "match_calculator",
-            "Salary Parameters Set"
-          ],
-          [
-            "Observation Step",
-            "Ingest Feedback",
-            "Parse Output",
-            "Calculated Dollar Match"
-          ],
-          [
-            "Synthesis Step",
-            "Final Answer",
-            "Formulate Output",
-            "Grounded Response Complete"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -551,6 +575,44 @@
               {
                 "row": 0,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Thought Step",
+                  "Active Reasoning",
+                  "Inspect Context",
+                  "Retrieved Policy Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Step",
+                  "Tool Invocation",
+                  "match_calculator",
+                  "Salary Parameters Set"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Observation Step",
+                  "Ingest Feedback",
+                  "Parse Output",
+                  "Calculated Dollar Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Synthesis Step",
+                  "Final Answer",
+                  "Formulate Output",
+                  "Grounded Response Complete"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -565,6 +627,44 @@
               {
                 "row": 2,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Thought Step",
+                  "Active Reasoning",
+                  "Inspect Context",
+                  "Retrieved Policy Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Action Step",
+                  "Tool Invocation",
+                  "match_calculator",
+                  "Salary Parameters Set"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Observation Step",
+                  "Ingest Feedback",
+                  "Parse Output",
+                  "Calculated Dollar Match"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Synthesis Step",
+                  "Final Answer",
+                  "Formulate Output",
+                  "Grounded Response Complete"
+                ],
+                "tone": "data"
               }
             ]
           }

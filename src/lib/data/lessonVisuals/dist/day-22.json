@@ -371,38 +371,76 @@
           "Reconciliation Outcome",
           "Bandwidth Efficiency"
         ],
-        "rows": [
-          [
-            "Root Hash Match",
-            "Single Thirty-Two Byte Hash",
-            "Entire Key Space Identical",
-            "Zero Key Transmission Overhead"
-          ],
-          [
-            "Branch Traversal",
-            "Child Hashes at Each Depth",
-            "Pinpoint Diverging Subtree",
-            "Logarithmic Tree Navigation"
-          ],
-          [
-            "Leaf Reconciliation",
-            "Exact Key Value Triples",
-            "Exchange Missing Data Keys",
-            "Minimal Target Payload Sync"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "A merkle tree hierarchically combines parent hashes up to a root hash.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "If root hashes match then millions of keys are guaranteed identical.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -415,38 +453,76 @@
           "Reconciliation Outcome",
           "Bandwidth Efficiency"
         ],
-        "rows": [
-          [
-            "Root Hash Match",
-            "Single Thirty-Two Byte Hash",
-            "Entire Key Space Identical",
-            "Zero Key Transmission Overhead"
-          ],
-          [
-            "Branch Traversal",
-            "Child Hashes at Each Depth",
-            "Pinpoint Diverging Subtree",
-            "Logarithmic Tree Navigation"
-          ],
-          [
-            "Leaf Reconciliation",
-            "Exact Key Value Triples",
-            "Exchange Missing Data Keys",
-            "Minimal Target Payload Sync"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "A merkle tree hierarchically combines parent hashes up to a root hash.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "If root hashes match then millions of keys are guaranteed identical.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Root Hash Match",
+                  "Single Thirty-Two Byte Hash",
+                  "Entire Key Space Identical",
+                  "Zero Key Transmission Overhead"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Branch Traversal",
+                  "Child Hashes at Each Depth",
+                  "Pinpoint Diverging Subtree",
+                  "Logarithmic Tree Navigation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leaf Reconciliation",
+                  "Exact Key Value Triples",
+                  "Exchange Missing Data Keys",
+                  "Minimal Target Payload Sync"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

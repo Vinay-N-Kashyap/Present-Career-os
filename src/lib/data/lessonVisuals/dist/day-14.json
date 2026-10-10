@@ -165,38 +165,76 @@
           "Delay Ceiling",
           "Full Jitter Interval"
         ],
-        "rows": [
-          [
-            "Attempt One",
-            "Base Delay Times Two",
-            "Two Hundred MS",
-            "Random Between Zero And Two Hundred MS"
-          ],
-          [
-            "Attempt Two",
-            "Base Delay Times Four",
-            "Four Hundred MS",
-            "Random Between Zero And Four Hundred MS"
-          ],
-          [
-            "Attempt Three",
-            "Base Delay Times Eight",
-            "Eight Hundred MS",
-            "Random Between Zero And Eight Hundred MS"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Exponential backoff multiplies delay exponentially with each retry.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Applying jitter prevents all consumers from retrying simultaneously.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -209,38 +247,76 @@
           "Delay Ceiling",
           "Full Jitter Interval"
         ],
-        "rows": [
-          [
-            "Attempt One",
-            "Base Delay Times Two",
-            "Two Hundred MS",
-            "Random Between Zero And Two Hundred MS"
-          ],
-          [
-            "Attempt Two",
-            "Base Delay Times Four",
-            "Four Hundred MS",
-            "Random Between Zero And Four Hundred MS"
-          ],
-          [
-            "Attempt Three",
-            "Base Delay Times Eight",
-            "Eight Hundred MS",
-            "Random Between Zero And Eight Hundred MS"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Exponential backoff multiplies delay exponentially with each retry.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Applying jitter prevents all consumers from retrying simultaneously.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Attempt One",
+                  "Base Delay Times Two",
+                  "Two Hundred MS",
+                  "Random Between Zero And Two Hundred MS"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Attempt Two",
+                  "Base Delay Times Four",
+                  "Four Hundred MS",
+                  "Random Between Zero And Four Hundred MS"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Attempt Three",
+                  "Base Delay Times Eight",
+                  "Eight Hundred MS",
+                  "Random Between Zero And Eight Hundred MS"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

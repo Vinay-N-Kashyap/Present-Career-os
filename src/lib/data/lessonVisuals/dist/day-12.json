@@ -175,38 +175,76 @@
           "Idle Workers",
           "Concurrency Level"
         ],
-        "rows": [
-          [
-            "Two Consumers",
-            "Two Partitions Assigned",
-            "Zero Idle",
-            "Moderate Parallelism"
-          ],
-          [
-            "Four Consumers",
-            "One Partition Assigned",
-            "Zero Idle",
-            "Optimal Parallelism"
-          ],
-          [
-            "Six Consumers",
-            "Four Active Consumers",
-            "Two Idle",
-            "Hard Concurrency Ceiling"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Each partition is consumed by at most one worker in a consumer group.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Total partitions create the hard ceiling for concurrent consumer workers.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -219,38 +257,76 @@
           "Idle Workers",
           "Concurrency Level"
         ],
-        "rows": [
-          [
-            "Two Consumers",
-            "Two Partitions Assigned",
-            "Zero Idle",
-            "Moderate Parallelism"
-          ],
-          [
-            "Four Consumers",
-            "One Partition Assigned",
-            "Zero Idle",
-            "Optimal Parallelism"
-          ],
-          [
-            "Six Consumers",
-            "Four Active Consumers",
-            "Two Idle",
-            "Hard Concurrency Ceiling"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Each partition is consumed by at most one worker in a consumer group.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Total partitions create the hard ceiling for concurrent consumer workers.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Two Consumers",
+                  "Two Partitions Assigned",
+                  "Zero Idle",
+                  "Moderate Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Four Consumers",
+                  "One Partition Assigned",
+                  "Zero Idle",
+                  "Optimal Parallelism"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Six Consumers",
+                  "Four Active Consumers",
+                  "Two Idle",
+                  "Hard Concurrency Ceiling"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

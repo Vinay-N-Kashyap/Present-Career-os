@@ -28,35 +28,70 @@
           "Transcript Content",
           "Memory Status"
         ],
-        "rows": [
-          [
-            "system",
-            "You are an expert AI assistant.",
-            "Permanent Directive"
-          ],
-          [
-            "user",
-            "How do I optimize SQL queries?",
-            "Active Context"
-          ],
-          [
-            "assistant",
-            "Analyze query execution plans.",
-            "Active Context"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The memory buffer serializes messages into an interleaved transcript.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "You are an expert AI assistant.",
+                  "Permanent Directive"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "user",
+                  "How do I optimize SQL queries?",
+                  "Active Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "assistant",
+                  "Analyze query execution plans.",
+                  "Active Context"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Raw buffer memory preserves complete conversational fidelity without distortion.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "You are an expert AI assistant.",
+                  "Permanent Directive"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "user",
+                  "How do I optimize SQL queries?",
+                  "Active Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "assistant",
+                  "Analyze query execution plans.",
+                  "Active Context"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -68,35 +103,70 @@
           "Transcript Content",
           "Memory Status"
         ],
-        "rows": [
-          [
-            "system",
-            "You are an expert AI assistant.",
-            "Permanent Directive"
-          ],
-          [
-            "user",
-            "How do I optimize SQL queries?",
-            "Active Context"
-          ],
-          [
-            "assistant",
-            "Analyze query execution plans.",
-            "Active Context"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The memory buffer serializes messages into an interleaved transcript.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "You are an expert AI assistant.",
+                  "Permanent Directive"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "user",
+                  "How do I optimize SQL queries?",
+                  "Active Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "assistant",
+                  "Analyze query execution plans.",
+                  "Active Context"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Raw buffer memory preserves complete conversational fidelity without distortion.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "system",
+                  "You are an expert AI assistant.",
+                  "Permanent Directive"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "user",
+                  "How do I optimize SQL queries?",
+                  "Active Context"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "assistant",
+                  "Analyze query execution plans.",
+                  "Active Context"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

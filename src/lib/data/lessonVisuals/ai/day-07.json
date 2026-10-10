@@ -245,38 +245,76 @@
           "Output Range",
           "Semantic Meaning"
         ],
-        "rows": [
-          [
-            "Cosine Similarity",
-            "Dot Product Divided by Norms",
-            "Minus One to Plus One",
-            "Directional Semantic Alignment"
-          ],
-          [
-            "Dot Product",
-            "Sum of Component Products",
-            "Unbounded Scaling",
-            "Magnitude Dependent Score"
-          ],
-          [
-            "Euclidean Norm",
-            "Square Root Sum of Squares",
-            "Zero to Positive Infinity",
-            "Vector Magnitude Length"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Cosine similarity normalizes dot products by vector lengths.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Positive scores indicate identical directional orientation.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -289,38 +327,76 @@
           "Output Range",
           "Semantic Meaning"
         ],
-        "rows": [
-          [
-            "Cosine Similarity",
-            "Dot Product Divided by Norms",
-            "Minus One to Plus One",
-            "Directional Semantic Alignment"
-          ],
-          [
-            "Dot Product",
-            "Sum of Component Products",
-            "Unbounded Scaling",
-            "Magnitude Dependent Score"
-          ],
-          [
-            "Euclidean Norm",
-            "Square Root Sum of Squares",
-            "Zero to Positive Infinity",
-            "Vector Magnitude Length"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Cosine similarity normalizes dot products by vector lengths.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Positive scores indicate identical directional orientation.",
             "activeRowIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Cosine Similarity",
+                  "Dot Product Divided by Norms",
+                  "Minus One to Plus One",
+                  "Directional Semantic Alignment"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Dot Product",
+                  "Sum of Component Products",
+                  "Unbounded Scaling",
+                  "Magnitude Dependent Score"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Euclidean Norm",
+                  "Square Root Sum of Squares",
+                  "Zero to Positive Infinity",
+                  "Vector Magnitude Length"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

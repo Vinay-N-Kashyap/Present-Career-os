@@ -163,26 +163,6 @@
           "Downstream Requirement",
           "Topology Status"
         ],
-        "rows": [
-          [
-            "Edge Gateway",
-            "5000ms",
-            "Must exceed callee",
-            "Valid Hierarchy"
-          ],
-          [
-            "Order Microservice",
-            "3000ms",
-            "Must exceed database",
-            "Valid Hierarchy"
-          ],
-          [
-            "Postgres Database",
-            "1500ms",
-            "Leaf execution node",
-            "Valid Hierarchy"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -195,6 +175,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -209,6 +218,35 @@
               {
                 "row": 2,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -223,26 +261,6 @@
           "Downstream Requirement",
           "Topology Status"
         ],
-        "rows": [
-          [
-            "Edge Gateway",
-            "5000ms",
-            "Must exceed callee",
-            "Valid Hierarchy"
-          ],
-          [
-            "Order Microservice",
-            "3000ms",
-            "Must exceed database",
-            "Valid Hierarchy"
-          ],
-          [
-            "Postgres Database",
-            "1500ms",
-            "Leaf execution node",
-            "Valid Hierarchy"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
@@ -255,6 +273,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -269,6 +316,35 @@
               {
                 "row": 2,
                 "col": 1
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Edge Gateway",
+                  "5000ms",
+                  "Must exceed callee",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Order Microservice",
+                  "3000ms",
+                  "Must exceed database",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Postgres Database",
+                  "1500ms",
+                  "Leaf execution node",
+                  "Valid Hierarchy"
+                ],
+                "tone": "data"
               }
             ]
           }

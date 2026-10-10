@@ -243,38 +243,76 @@
           "Input Candidate Set",
           "Output Candidate Set"
         ],
-        "rows": [
-          [
-            "Rank Fusion",
-            "Reciprocal Rank Fusion k=60",
-            "Dual Disparate Ranked Lists",
-            "Unified Fused Pool"
-          ],
-          [
-            "Neural Reranker",
-            "Cross-Encoder All-to-All Attention",
-            "Fused Candidate Pool",
-            "Calibrated Top Chunks"
-          ],
-          [
-            "Threshold Gate",
-            "Relevance Score Cutoff",
-            "Calibrated Top Chunks",
-            "Filtered Authoritative Set"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Rank fusion merges both lists into a single candidate pool.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Authoritative documents are elevated to the top with high confidence.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -287,38 +325,76 @@
           "Input Candidate Set",
           "Output Candidate Set"
         ],
-        "rows": [
-          [
-            "Rank Fusion",
-            "Reciprocal Rank Fusion k=60",
-            "Dual Disparate Ranked Lists",
-            "Unified Fused Pool"
-          ],
-          [
-            "Neural Reranker",
-            "Cross-Encoder All-to-All Attention",
-            "Fused Candidate Pool",
-            "Calibrated Top Chunks"
-          ],
-          [
-            "Threshold Gate",
-            "Relevance Score Cutoff",
-            "Calibrated Top Chunks",
-            "Filtered Authoritative Set"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Rank fusion merges both lists into a single candidate pool.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Authoritative documents are elevated to the top with high confidence.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Rank Fusion",
+                  "Reciprocal Rank Fusion k=60",
+                  "Dual Disparate Ranked Lists",
+                  "Unified Fused Pool"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neural Reranker",
+                  "Cross-Encoder All-to-All Attention",
+                  "Fused Candidate Pool",
+                  "Calibrated Top Chunks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Threshold Gate",
+                  "Relevance Score Cutoff",
+                  "Calibrated Top Chunks",
+                  "Filtered Authoritative Set"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

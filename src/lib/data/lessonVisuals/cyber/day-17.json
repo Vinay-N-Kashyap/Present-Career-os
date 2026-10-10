@@ -275,44 +275,94 @@
           "Vulnerability Impact",
           "Sanitization Action"
         ],
-        "rows": [
-          [
-            "__proto__ Key",
-            "Global Object Prototype",
-            "Overwrites Base Object Properties",
-            "Strip Unconditionally"
-          ],
-          [
-            "constructor Key",
-            "Function Constructor Pointer",
-            "Arbitrary Code Execution Exploit",
-            "Strip Unconditionally"
-          ],
-          [
-            "prototype Key",
-            "Function Prototype Descriptor",
-            "Modifies Inherited Class Properties",
-            "Strip Unconditionally"
-          ],
-          [
-            "Clean Dictionary",
-            "Object Create Null Instance",
-            "Zero Prototype Inheritance Chain",
-            "Immune to Pollution"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Prototype pollution occurs when untrusted input is recursively merged.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "__proto__ Key",
+                  "Global Object Prototype",
+                  "Overwrites Base Object Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "constructor Key",
+                  "Function Constructor Pointer",
+                  "Arbitrary Code Execution Exploit",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prototype Key",
+                  "Function Prototype Descriptor",
+                  "Modifies Inherited Class Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Clean Dictionary",
+                  "Object Create Null Instance",
+                  "Zero Prototype Inheritance Chain",
+                  "Immune to Pollution"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Dangerous property keys must be stripped unconditionally before assignment.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "__proto__ Key",
+                  "Global Object Prototype",
+                  "Overwrites Base Object Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "constructor Key",
+                  "Function Constructor Pointer",
+                  "Arbitrary Code Execution Exploit",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prototype Key",
+                  "Function Prototype Descriptor",
+                  "Modifies Inherited Class Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Clean Dictionary",
+                  "Object Create Null Instance",
+                  "Zero Prototype Inheritance Chain",
+                  "Immune to Pollution"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -325,44 +375,94 @@
           "Vulnerability Impact",
           "Sanitization Action"
         ],
-        "rows": [
-          [
-            "__proto__ Key",
-            "Global Object Prototype",
-            "Overwrites Base Object Properties",
-            "Strip Unconditionally"
-          ],
-          [
-            "constructor Key",
-            "Function Constructor Pointer",
-            "Arbitrary Code Execution Exploit",
-            "Strip Unconditionally"
-          ],
-          [
-            "prototype Key",
-            "Function Prototype Descriptor",
-            "Modifies Inherited Class Properties",
-            "Strip Unconditionally"
-          ],
-          [
-            "Clean Dictionary",
-            "Object Create Null Instance",
-            "Zero Prototype Inheritance Chain",
-            "Immune to Pollution"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Prototype pollution occurs when untrusted input is recursively merged.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "__proto__ Key",
+                  "Global Object Prototype",
+                  "Overwrites Base Object Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "constructor Key",
+                  "Function Constructor Pointer",
+                  "Arbitrary Code Execution Exploit",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prototype Key",
+                  "Function Prototype Descriptor",
+                  "Modifies Inherited Class Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Clean Dictionary",
+                  "Object Create Null Instance",
+                  "Zero Prototype Inheritance Chain",
+                  "Immune to Pollution"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Dangerous property keys must be stripped unconditionally before assignment.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "__proto__ Key",
+                  "Global Object Prototype",
+                  "Overwrites Base Object Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "constructor Key",
+                  "Function Constructor Pointer",
+                  "Arbitrary Code Execution Exploit",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "prototype Key",
+                  "Function Prototype Descriptor",
+                  "Modifies Inherited Class Properties",
+                  "Strip Unconditionally"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Clean Dictionary",
+                  "Object Create Null Instance",
+                  "Zero Prototype Inheritance Chain",
+                  "Immune to Pollution"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

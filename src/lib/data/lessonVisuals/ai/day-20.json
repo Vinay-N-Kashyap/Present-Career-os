@@ -29,38 +29,76 @@
           "HTTP Standard",
           "Runtime Behavior"
         ],
-        "rows": [
-          [
-            "Content-Type",
-            "text/event-stream",
-            "W3C EventSource",
-            "Instructs streaming mode"
-          ],
-          [
-            "Cache-Control",
-            "no-cache",
-            "HTTP RFC Header",
-            "Prevents intermediate caching"
-          ],
-          [
-            "Frame Delimiter",
-            "Double Newline",
-            "SSE Stream Boundary",
-            "Marks complete event payload"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The server keeps the HTTP socket open and transmits streaming text chunks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Double newline delimiters inform the client that an event frame is complete.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -73,38 +111,76 @@
           "HTTP Standard",
           "Runtime Behavior"
         ],
-        "rows": [
-          [
-            "Content-Type",
-            "text/event-stream",
-            "W3C EventSource",
-            "Instructs streaming mode"
-          ],
-          [
-            "Cache-Control",
-            "no-cache",
-            "HTTP RFC Header",
-            "Prevents intermediate caching"
-          ],
-          [
-            "Frame Delimiter",
-            "Double Newline",
-            "SSE Stream Boundary",
-            "Marks complete event payload"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The server keeps the HTTP socket open and transmits UTF-8 text chunks.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Double newline delimiters inform the client that an event frame is complete.",
             "activeRowIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Content-Type",
+                  "text/event-stream",
+                  "W3C EventSource",
+                  "Instructs streaming mode"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cache-Control",
+                  "no-cache",
+                  "HTTP RFC Header",
+                  "Prevents intermediate caching"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Frame Delimiter",
+                  "Double Newline",
+                  "SSE Stream Boundary",
+                  "Marks complete event payload"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

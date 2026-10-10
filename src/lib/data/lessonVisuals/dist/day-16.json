@@ -93,38 +93,76 @@
           "Mathematical Rule",
           "System Meaning"
         ],
-        "rows": [
-          [
-            "Local Precedence",
-            "Event A To Event B",
-            "Same Process Sequential Order",
-            "Direct Causal Precedence"
-          ],
-          [
-            "Message Link",
-            "Message Sent To Received",
-            "Network Packet Transmission",
-            "Cross Node Causal Influence"
-          ],
-          [
-            "Concurrent Events",
-            "Event A Parallel Event B",
-            "Neither Event Causes The Other",
-            "Independent Concurrent Writes"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The happened before relation captures causal influence between events.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Concurrent events have no causal relationship between one another.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -137,38 +175,76 @@
           "Mathematical Rule",
           "System Meaning"
         ],
-        "rows": [
-          [
-            "Local Precedence",
-            "Event A To Event B",
-            "Same Process Sequential Order",
-            "Direct Causal Precedence"
-          ],
-          [
-            "Message Link",
-            "Message Sent To Received",
-            "Network Packet Transmission",
-            "Cross Node Causal Influence"
-          ],
-          [
-            "Concurrent Events",
-            "Event A Parallel Event B",
-            "Neither Event Causes The Other",
-            "Independent Concurrent Writes"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The happened before relation captures causal influence between events.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Concurrent events have no causal relationship between one another.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Local Precedence",
+                  "Event A To Event B",
+                  "Same Process Sequential Order",
+                  "Direct Causal Precedence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Message Link",
+                  "Message Sent To Received",
+                  "Network Packet Transmission",
+                  "Cross Node Causal Influence"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Concurrent Events",
+                  "Event A Parallel Event B",
+                  "Neither Event Causes The Other",
+                  "Independent Concurrent Writes"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

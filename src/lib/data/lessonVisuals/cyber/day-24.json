@@ -147,44 +147,94 @@
           "Observed Artifact",
           "Automated SOC Action"
         ],
-        "rows": [
-          [
-            "Malicious IP Address",
-            "Threat Intelligence Feed",
-            "Outbound Host Connection",
-            "Firewall Block Rule Injected"
-          ],
-          [
-            "Malware File Hash",
-            "Threat Intelligence Feed",
-            "SHA Hash Executed on Host",
-            "Quarantine Process Immediately"
-          ],
-          [
-            "Command Domain Name",
-            "Threat Intelligence Feed",
-            "DNS Query from Workstation",
-            "Sinkhole Domain Resolution"
-          ],
-          [
-            "Phishing URL Link",
-            "Threat Intelligence Feed",
-            "Inbound Email Attachment",
-            "Purge Email Across Mailboxes"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Common categories include malicious addresses and malware file hashes.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Malicious IP Address",
+                  "Threat Intelligence Feed",
+                  "Outbound Host Connection",
+                  "Firewall Block Rule Injected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Malware File Hash",
+                  "Threat Intelligence Feed",
+                  "SHA Hash Executed on Host",
+                  "Quarantine Process Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Command Domain Name",
+                  "Threat Intelligence Feed",
+                  "DNS Query from Workstation",
+                  "Sinkhole Domain Resolution"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Phishing URL Link",
+                  "Threat Intelligence Feed",
+                  "Inbound Email Attachment",
+                  "Purge Email Across Mailboxes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Matching malicious file hashes triggers automated containment actions.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Malicious IP Address",
+                  "Threat Intelligence Feed",
+                  "Outbound Host Connection",
+                  "Firewall Block Rule Injected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Malware File Hash",
+                  "Threat Intelligence Feed",
+                  "SHA Hash Executed on Host",
+                  "Quarantine Process Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Command Domain Name",
+                  "Threat Intelligence Feed",
+                  "DNS Query from Workstation",
+                  "Sinkhole Domain Resolution"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Phishing URL Link",
+                  "Threat Intelligence Feed",
+                  "Inbound Email Attachment",
+                  "Purge Email Across Mailboxes"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -197,44 +247,94 @@
           "Observed Artifact",
           "Automated SOC Action"
         ],
-        "rows": [
-          [
-            "Malicious IP Address",
-            "Threat Intelligence Feed",
-            "Outbound Host Connection",
-            "Firewall Block Rule Injected"
-          ],
-          [
-            "Malware File Hash",
-            "Threat Intelligence Feed",
-            "SHA Hash Executed on Host",
-            "Quarantine Process Immediately"
-          ],
-          [
-            "Command Domain Name",
-            "Threat Intelligence Feed",
-            "DNS Query from Workstation",
-            "Sinkhole Domain Resolution"
-          ],
-          [
-            "Phishing URL Link",
-            "Threat Intelligence Feed",
-            "Inbound Email Attachment",
-            "Purge Email Across Mailboxes"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Common categories include malicious addresses and malware file hashes.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Malicious IP Address",
+                  "Threat Intelligence Feed",
+                  "Outbound Host Connection",
+                  "Firewall Block Rule Injected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Malware File Hash",
+                  "Threat Intelligence Feed",
+                  "SHA Hash Executed on Host",
+                  "Quarantine Process Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Command Domain Name",
+                  "Threat Intelligence Feed",
+                  "DNS Query from Workstation",
+                  "Sinkhole Domain Resolution"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Phishing URL Link",
+                  "Threat Intelligence Feed",
+                  "Inbound Email Attachment",
+                  "Purge Email Across Mailboxes"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Matching malicious file hashes triggers automated containment actions.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Malicious IP Address",
+                  "Threat Intelligence Feed",
+                  "Outbound Host Connection",
+                  "Firewall Block Rule Injected"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Malware File Hash",
+                  "Threat Intelligence Feed",
+                  "SHA Hash Executed on Host",
+                  "Quarantine Process Immediately"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Command Domain Name",
+                  "Threat Intelligence Feed",
+                  "DNS Query from Workstation",
+                  "Sinkhole Domain Resolution"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Phishing URL Link",
+                  "Threat Intelligence Feed",
+                  "Inbound Email Attachment",
+                  "Purge Email Across Mailboxes"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
@@ -327,44 +427,94 @@
           "Technique Identifier",
           "Example Enterprise Activity"
         ],
-        "rows": [
-          [
-            "Credential Access",
-            "Steal User Passwords",
-            "T1110 Brute Force",
-            "SSH Password Spraying Attempts"
-          ],
-          [
-            "Privilege Escalation",
-            "Acquire Administrator Rights",
-            "T1548 Sudo Abuse",
-            "Unauthorized Elevation Commands"
-          ],
-          [
-            "Defense Evasion",
-            "Hide Malicious Activity",
-            "T1070 Indicator Removal",
-            "Clearing Security Audit Logs"
-          ],
-          [
-            "Lateral Movement",
-            "Traverse Internal Network",
-            "T1021 Remote Services",
-            "RDP and SSH Internal Pivoting"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The framework organizes adversary activity into tactical phases.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Credential Access",
+                  "Steal User Passwords",
+                  "T1110 Brute Force",
+                  "SSH Password Spraying Attempts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Privilege Escalation",
+                  "Acquire Administrator Rights",
+                  "T1548 Sudo Abuse",
+                  "Unauthorized Elevation Commands"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Defense Evasion",
+                  "Hide Malicious Activity",
+                  "T1070 Indicator Removal",
+                  "Clearing Security Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lateral Movement",
+                  "Traverse Internal Network",
+                  "T1021 Remote Services",
+                  "RDP and SSH Internal Pivoting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Rules annotate incidents with corresponding technique and tactic names.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Credential Access",
+                  "Steal User Passwords",
+                  "T1110 Brute Force",
+                  "SSH Password Spraying Attempts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Privilege Escalation",
+                  "Acquire Administrator Rights",
+                  "T1548 Sudo Abuse",
+                  "Unauthorized Elevation Commands"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Defense Evasion",
+                  "Hide Malicious Activity",
+                  "T1070 Indicator Removal",
+                  "Clearing Security Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lateral Movement",
+                  "Traverse Internal Network",
+                  "T1021 Remote Services",
+                  "RDP and SSH Internal Pivoting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -377,44 +527,94 @@
           "Technique Identifier",
           "Example Enterprise Activity"
         ],
-        "rows": [
-          [
-            "Credential Access",
-            "Steal User Passwords",
-            "T1110 Brute Force",
-            "SSH Password Spraying Attempts"
-          ],
-          [
-            "Privilege Escalation",
-            "Acquire Administrator Rights",
-            "T1548 Sudo Abuse",
-            "Unauthorized Elevation Commands"
-          ],
-          [
-            "Defense Evasion",
-            "Hide Malicious Activity",
-            "T1070 Indicator Removal",
-            "Clearing Security Audit Logs"
-          ],
-          [
-            "Lateral Movement",
-            "Traverse Internal Network",
-            "T1021 Remote Services",
-            "RDP and SSH Internal Pivoting"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "The framework organizes adversary activity into tactical phases.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Credential Access",
+                  "Steal User Passwords",
+                  "T1110 Brute Force",
+                  "SSH Password Spraying Attempts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Privilege Escalation",
+                  "Acquire Administrator Rights",
+                  "T1548 Sudo Abuse",
+                  "Unauthorized Elevation Commands"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Defense Evasion",
+                  "Hide Malicious Activity",
+                  "T1070 Indicator Removal",
+                  "Clearing Security Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lateral Movement",
+                  "Traverse Internal Network",
+                  "T1021 Remote Services",
+                  "RDP and SSH Internal Pivoting"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Rules annotate incidents with corresponding technique and tactic names.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Credential Access",
+                  "Steal User Passwords",
+                  "T1110 Brute Force",
+                  "SSH Password Spraying Attempts"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Privilege Escalation",
+                  "Acquire Administrator Rights",
+                  "T1548 Sudo Abuse",
+                  "Unauthorized Elevation Commands"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Defense Evasion",
+                  "Hide Malicious Activity",
+                  "T1070 Indicator Removal",
+                  "Clearing Security Audit Logs"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Lateral Movement",
+                  "Traverse Internal Network",
+                  "T1021 Remote Services",
+                  "RDP and SSH Internal Pivoting"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

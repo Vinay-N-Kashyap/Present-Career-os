@@ -289,26 +289,6 @@
           "Completion Pricing",
           "Latency Performance"
         ],
-        "rows": [
-          [
-            "gpt-4o",
-            "5.00 per M",
-            "15.00 per M",
-            "Standard Speed"
-          ],
-          [
-            "gpt-4o-mini",
-            "0.15 per M",
-            "0.60 per M",
-            "High Throughput"
-          ],
-          [
-            "claude-3-5",
-            "3.00 per M",
-            "15.00 per M",
-            "High Quality"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -321,6 +301,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -335,6 +344,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -349,26 +387,6 @@
           "Completion Pricing",
           "Latency Performance"
         ],
-        "rows": [
-          [
-            "gpt-4o",
-            "5.00 per M",
-            "15.00 per M",
-            "Standard Speed"
-          ],
-          [
-            "gpt-4o-mini",
-            "0.15 per M",
-            "0.60 per M",
-            "High Throughput"
-          ],
-          [
-            "claude-3-5",
-            "3.00 per M",
-            "15.00 per M",
-            "High Quality"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -381,6 +399,35 @@
               {
                 "row": 0,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -395,6 +442,35 @@
               {
                 "row": 1,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "gpt-4o",
+                  "5.00 per M",
+                  "15.00 per M",
+                  "Standard Speed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "gpt-4o-mini",
+                  "0.15 per M",
+                  "0.60 per M",
+                  "High Throughput"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "claude-3-5",
+                  "3.00 per M",
+                  "15.00 per M",
+                  "High Quality"
+                ],
+                "tone": "data"
               }
             ]
           }

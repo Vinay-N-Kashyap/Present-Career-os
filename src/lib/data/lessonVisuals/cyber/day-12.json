@@ -415,38 +415,76 @@
           "Internal Database Key",
           "Isolation Scope"
         ],
-        "rows": [
-          [
-            "Direct Numeric Reference",
-            "Sequential Integer Key",
-            "Exposed Internal Primary Key",
-            "Vulnerable to Global Enumeration"
-          ],
-          [
-            "Session Reference Map",
-            "Transient Reference Token",
-            "Private Session Cached Map",
-            "Strict User Session Isolation"
-          ],
-          [
-            "Opaque Capability Token",
-            "Signed Capability Macaroon",
-            "Encrypted Payload Structure",
-            "Cryptographic Proof of Access"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "An indirect reference map replaces true database keys with transient tokens.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Attackers cannot guess or substitute tokens outside an individual session.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -459,38 +497,76 @@
           "Internal Database Key",
           "Isolation Scope"
         ],
-        "rows": [
-          [
-            "Direct Numeric Reference",
-            "Sequential Integer Key",
-            "Exposed Internal Primary Key",
-            "Vulnerable to Global Enumeration"
-          ],
-          [
-            "Session Reference Map",
-            "Transient Reference Token",
-            "Private Session Cached Map",
-            "Strict User Session Isolation"
-          ],
-          [
-            "Opaque Capability Token",
-            "Signed Capability Macaroon",
-            "Encrypted Payload Structure",
-            "Cryptographic Proof of Access"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "An indirect reference map replaces true database keys with transient tokens.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Attackers cannot guess or substitute tokens outside an individual session.",
             "activeRowIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Direct Numeric Reference",
+                  "Sequential Integer Key",
+                  "Exposed Internal Primary Key",
+                  "Vulnerable to Global Enumeration"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Session Reference Map",
+                  "Transient Reference Token",
+                  "Private Session Cached Map",
+                  "Strict User Session Isolation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Opaque Capability Token",
+                  "Signed Capability Macaroon",
+                  "Encrypted Payload Structure",
+                  "Cryptographic Proof of Access"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

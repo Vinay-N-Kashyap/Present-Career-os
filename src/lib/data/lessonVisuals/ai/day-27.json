@@ -17,32 +17,6 @@
           "Current Load",
           "Capacity Status"
         ],
-        "rows": [
-          [
-            "Request Volume",
-            "500",
-            "498",
-            "Near Capacity"
-          ],
-          [
-            "Token Throughput",
-            "100000",
-            "85000",
-            "Buffer Available"
-          ],
-          [
-            "Incoming Batch",
-            "1",
-            "500",
-            "Allowed"
-          ],
-          [
-            "Heavy Query",
-            "1",
-            "25000",
-            "Throttled"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -55,6 +29,44 @@
               {
                 "row": 1,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Request Volume",
+                  "500",
+                  "498",
+                  "Near Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Throughput",
+                  "100000",
+                  "85000",
+                  "Buffer Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Incoming Batch",
+                  "1",
+                  "500",
+                  "Allowed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heavy Query",
+                  "1",
+                  "25000",
+                  "Throttled"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -69,6 +81,44 @@
               {
                 "row": 3,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Request Volume",
+                  "500",
+                  "498",
+                  "Near Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Throughput",
+                  "100000",
+                  "85000",
+                  "Buffer Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Incoming Batch",
+                  "1",
+                  "500",
+                  "Allowed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heavy Query",
+                  "1",
+                  "25000",
+                  "Throttled"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -83,32 +133,6 @@
           "Current Load",
           "Capacity Status"
         ],
-        "rows": [
-          [
-            "Request Volume",
-            "500",
-            "498",
-            "Near Capacity"
-          ],
-          [
-            "Token Throughput",
-            "100000",
-            "85000",
-            "Buffer Available"
-          ],
-          [
-            "Incoming Batch",
-            "1",
-            "500",
-            "Allowed"
-          ],
-          [
-            "Heavy Query",
-            "1",
-            "25000",
-            "Throttled"
-          ]
-        ],
         "steps": [
           {
             "at": "say5",
@@ -121,6 +145,44 @@
               {
                 "row": 1,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Request Volume",
+                  "500",
+                  "498",
+                  "Near Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Throughput",
+                  "100000",
+                  "85000",
+                  "Buffer Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Incoming Batch",
+                  "1",
+                  "500",
+                  "Allowed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heavy Query",
+                  "1",
+                  "25000",
+                  "Throttled"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -135,6 +197,44 @@
               {
                 "row": 3,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Request Volume",
+                  "500",
+                  "498",
+                  "Near Capacity"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Token Throughput",
+                  "100000",
+                  "85000",
+                  "Buffer Available"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Incoming Batch",
+                  "1",
+                  "500",
+                  "Allowed"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Heavy Query",
+                  "1",
+                  "25000",
+                  "Throttled"
+                ],
+                "tone": "data"
               }
             ]
           }

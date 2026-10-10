@@ -385,46 +385,88 @@
           "Min Root",
           "Output Median"
         ],
-        "rows": [
-          [
-            {
-              "text": "Odd count"
-            },
-            {
-              "text": "10"
-            },
-            {
-              "text": "15"
-            },
-            {
-              "text": "10"
-            }
-          ],
-          [
-            {
-              "text": "Even count"
-            },
-            {
-              "text": "10"
-            },
-            {
-              "text": "20"
-            },
-            {
-              "text": "15"
-            }
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Odd total count means max heap root holds exact stream median.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Odd count"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Even count"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Even total count calculates arithmetic mean of both heap roots.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Odd count"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "15"
+                  },
+                  {
+                    "text": "10"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Even count"
+                  },
+                  {
+                    "text": "10"
+                  },
+                  {
+                    "text": "20"
+                  },
+                  {
+                    "text": "15"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -437,30 +479,56 @@
           "Min Root",
           "Output Median"
         ],
-        "rows": [
-          [
-            "Odd count",
-            "10",
-            "15",
-            "10"
-          ],
-          [
-            "Even count",
-            "10",
-            "20",
-            "15"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Odd total count means max heap root holds exact stream median.",
-            "activeRow": 0
+            "activeRow": 0,
+            "rows": [
+              {
+                "cells": [
+                  "Odd count",
+                  "10",
+                  "15",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Even count",
+                  "10",
+                  "20",
+                  "15"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Even total count calculates arithmetic mean of both heap roots.",
-            "activeRow": 1
+            "activeRow": 1,
+            "rows": [
+              {
+                "cells": [
+                  "Odd count",
+                  "10",
+                  "15",
+                  "10"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Even count",
+                  "10",
+                  "20",
+                  "15"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -165,38 +165,76 @@
           "Objective",
           "Prevention Strategy"
         ],
-        "rows": [
-          [
-            "UNION SELECT",
-            "Appends secondary SELECT query",
-            "Extracts hidden credentials and schema",
-            "Parameterized Statements"
-          ],
-          [
-            "Piggybacked Query",
-            "Semicolon statement delimiter",
-            "Executes DROP or INSERT commands",
-            "Disable Multi-Statement Support"
-          ],
-          [
-            "Schema Mapping",
-            "Queries information_schema",
-            "Discovers table and column layouts",
-            "Least Privilege Database Grants"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A union based injection merges the result set with secondary queries.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "UNION SELECT",
+                  "Appends secondary SELECT query",
+                  "Extracts hidden credentials and schema",
+                  "Parameterized Statements"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Piggybacked Query",
+                  "Semicolon statement delimiter",
+                  "Executes DROP or INSERT commands",
+                  "Disable Multi-Statement Support"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Schema Mapping",
+                  "Queries information_schema",
+                  "Discovers table and column layouts",
+                  "Least Privilege Database Grants"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Attackers execute piggybacked queries separated by semicolons.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "UNION SELECT",
+                  "Appends secondary SELECT query",
+                  "Extracts hidden credentials and schema",
+                  "Parameterized Statements"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Piggybacked Query",
+                  "Semicolon statement delimiter",
+                  "Executes DROP or INSERT commands",
+                  "Disable Multi-Statement Support"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Schema Mapping",
+                  "Queries information_schema",
+                  "Discovers table and column layouts",
+                  "Least Privilege Database Grants"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -209,38 +247,76 @@
           "Objective",
           "Prevention Strategy"
         ],
-        "rows": [
-          [
-            "UNION SELECT",
-            "Appends secondary SELECT query",
-            "Extracts hidden credentials and schema",
-            "Parameterized Statements"
-          ],
-          [
-            "Piggybacked Query",
-            "Semicolon statement delimiter",
-            "Executes DROP or INSERT commands",
-            "Disable Multi-Statement Support"
-          ],
-          [
-            "Schema Mapping",
-            "Queries information_schema",
-            "Discovers table and column layouts",
-            "Least Privilege Database Grants"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "A union based injection merges the result set with secondary queries.",
             "activeRowIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "UNION SELECT",
+                  "Appends secondary SELECT query",
+                  "Extracts hidden credentials and schema",
+                  "Parameterized Statements"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Piggybacked Query",
+                  "Semicolon statement delimiter",
+                  "Executes DROP or INSERT commands",
+                  "Disable Multi-Statement Support"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Schema Mapping",
+                  "Queries information_schema",
+                  "Discovers table and column layouts",
+                  "Least Privilege Database Grants"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Attackers execute piggybacked queries separated by semicolons.",
             "activeRowIndex": 1,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "UNION SELECT",
+                  "Appends secondary SELECT query",
+                  "Extracts hidden credentials and schema",
+                  "Parameterized Statements"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Piggybacked Query",
+                  "Semicolon statement delimiter",
+                  "Executes DROP or INSERT commands",
+                  "Disable Multi-Statement Support"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Schema Mapping",
+                  "Queries information_schema",
+                  "Discovers table and column layouts",
+                  "Least Privilege Database Grants"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -17,26 +17,6 @@
           "Idempotency Requirement",
           "Retry Decision"
         ],
-        "rows": [
-          [
-            "400 Bad Request",
-            "Permanent client error",
-            "Not applicable",
-            "Fast Fail"
-          ],
-          [
-            "429 Too Many Requests",
-            "Transient rate limit",
-            "Idempotent or Keyed",
-            "Retry with Backoff"
-          ],
-          [
-            "503 Service Unavailable",
-            "Transient gateway failure",
-            "Idempotent safe",
-            "Retry with Backoff"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -49,6 +29,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "400 Bad Request",
+                  "Permanent client error",
+                  "Not applicable",
+                  "Fast Fail"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "429 Too Many Requests",
+                  "Transient rate limit",
+                  "Idempotent or Keyed",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "503 Service Unavailable",
+                  "Transient gateway failure",
+                  "Idempotent safe",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -63,6 +72,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "400 Bad Request",
+                  "Permanent client error",
+                  "Not applicable",
+                  "Fast Fail"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "429 Too Many Requests",
+                  "Transient rate limit",
+                  "Idempotent or Keyed",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "503 Service Unavailable",
+                  "Transient gateway failure",
+                  "Idempotent safe",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
               }
             ]
           }
@@ -77,26 +115,6 @@
           "Idempotency Requirement",
           "Retry Decision"
         ],
-        "rows": [
-          [
-            "400 Bad Request",
-            "Permanent client error",
-            "Not applicable",
-            "Fast Fail"
-          ],
-          [
-            "429 Too Many Requests",
-            "Transient rate limit",
-            "Idempotent or Keyed",
-            "Retry with Backoff"
-          ],
-          [
-            "503 Service Unavailable",
-            "Transient gateway failure",
-            "Idempotent safe",
-            "Retry with Backoff"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
@@ -109,6 +127,35 @@
               {
                 "row": 0,
                 "col": 3
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "400 Bad Request",
+                  "Permanent client error",
+                  "Not applicable",
+                  "Fast Fail"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "429 Too Many Requests",
+                  "Transient rate limit",
+                  "Idempotent or Keyed",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "503 Service Unavailable",
+                  "Transient gateway failure",
+                  "Idempotent safe",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
               }
             ]
           },
@@ -123,6 +170,35 @@
               {
                 "row": 2,
                 "col": 2
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "400 Bad Request",
+                  "Permanent client error",
+                  "Not applicable",
+                  "Fast Fail"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "429 Too Many Requests",
+                  "Transient rate limit",
+                  "Idempotent or Keyed",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "503 Service Unavailable",
+                  "Transient gateway failure",
+                  "Idempotent safe",
+                  "Retry with Backoff"
+                ],
+                "tone": "data"
               }
             ]
           }

@@ -341,44 +341,94 @@
           "Search Mechanism",
           "Target Task Complexity"
         ],
-        "rows": [
-          [
-            "Standard Chain of Thought",
-            "Linear Sequential Chain",
-            "Single Forward Pass",
-            "Basic Math and Logic"
-          ],
-          [
-            "Least to Most Prompting",
-            "Progressive Subproblems",
-            "Context Bootstrapping",
-            "Multi Step Dependency"
-          ],
-          [
-            "Tree of Thoughts BFS",
-            "Branching State Space",
-            "Breadth First Search",
-            "Exploratory Planning"
-          ],
-          [
-            "Tree of Thoughts DFS",
-            "Hierarchical Search Tree",
-            "Depth First Backtracking",
-            "Autonomous Code Generation"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Least-to-most prompting breaks complex challenges into simpler sub-problems.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Standard Chain of Thought",
+                  "Linear Sequential Chain",
+                  "Single Forward Pass",
+                  "Basic Math and Logic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Least to Most Prompting",
+                  "Progressive Subproblems",
+                  "Context Bootstrapping",
+                  "Multi Step Dependency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts BFS",
+                  "Branching State Space",
+                  "Breadth First Search",
+                  "Exploratory Planning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts DFS",
+                  "Hierarchical Search Tree",
+                  "Depth First Backtracking",
+                  "Autonomous Code Generation"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Search algorithms use backtracking to prune dead ends in decision trees.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Standard Chain of Thought",
+                  "Linear Sequential Chain",
+                  "Single Forward Pass",
+                  "Basic Math and Logic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Least to Most Prompting",
+                  "Progressive Subproblems",
+                  "Context Bootstrapping",
+                  "Multi Step Dependency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts BFS",
+                  "Branching State Space",
+                  "Breadth First Search",
+                  "Exploratory Planning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts DFS",
+                  "Hierarchical Search Tree",
+                  "Depth First Backtracking",
+                  "Autonomous Code Generation"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -391,44 +441,94 @@
           "Search Mechanism",
           "Target Task Complexity"
         ],
-        "rows": [
-          [
-            "Standard Chain of Thought",
-            "Linear Sequential Chain",
-            "Single Forward Pass",
-            "Basic Math and Logic"
-          ],
-          [
-            "Least to Most Prompting",
-            "Progressive Subproblems",
-            "Context Bootstrapping",
-            "Multi Step Dependency"
-          ],
-          [
-            "Tree of Thoughts BFS",
-            "Branching State Space",
-            "Breadth First Search",
-            "Exploratory Planning"
-          ],
-          [
-            "Tree of Thoughts DFS",
-            "Hierarchical Search Tree",
-            "Depth First Backtracking",
-            "Autonomous Code Generation"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Least-to-most prompting breaks complex challenges into simpler sub-problems.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Standard Chain of Thought",
+                  "Linear Sequential Chain",
+                  "Single Forward Pass",
+                  "Basic Math and Logic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Least to Most Prompting",
+                  "Progressive Subproblems",
+                  "Context Bootstrapping",
+                  "Multi Step Dependency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts BFS",
+                  "Branching State Space",
+                  "Breadth First Search",
+                  "Exploratory Planning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts DFS",
+                  "Hierarchical Search Tree",
+                  "Depth First Backtracking",
+                  "Autonomous Code Generation"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Search algorithms use backtracking to prune dead ends in decision trees.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Standard Chain of Thought",
+                  "Linear Sequential Chain",
+                  "Single Forward Pass",
+                  "Basic Math and Logic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Least to Most Prompting",
+                  "Progressive Subproblems",
+                  "Context Bootstrapping",
+                  "Multi Step Dependency"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts BFS",
+                  "Branching State Space",
+                  "Breadth First Search",
+                  "Exploratory Planning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Tree of Thoughts DFS",
+                  "Hierarchical Search Tree",
+                  "Depth First Backtracking",
+                  "Autonomous Code Generation"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

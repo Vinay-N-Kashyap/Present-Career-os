@@ -92,40 +92,86 @@
           "Score Range",
           "Operational Response"
         ],
-        "rows": [
-          [
-            "Critical",
-            "Nine to Ten",
-            "Immediate Emergency Response"
-          ],
-          [
-            "High",
-            "Seven to Eight",
-            "Expedited Remediation SLA"
-          ],
-          [
-            "Medium",
-            "Four to Six",
-            "Standard Sprint Backlog"
-          ],
-          [
-            "Low",
-            "One to Three",
-            "Routine Maintenance Window"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "High severity ratings encompass remote flaws with significant impact.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Critical",
+                  "Nine to Ten",
+                  "Immediate Emergency Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High",
+                  "Seven to Eight",
+                  "Expedited Remediation SLA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium",
+                  "Four to Six",
+                  "Standard Sprint Backlog"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low",
+                  "One to Three",
+                  "Routine Maintenance Window"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Critical severity vulnerabilities require immediate incident response.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Critical",
+                  "Nine to Ten",
+                  "Immediate Emergency Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High",
+                  "Seven to Eight",
+                  "Expedited Remediation SLA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium",
+                  "Four to Six",
+                  "Standard Sprint Backlog"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low",
+                  "One to Three",
+                  "Routine Maintenance Window"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -137,40 +183,86 @@
           "Score Range",
           "Operational Response"
         ],
-        "rows": [
-          [
-            "Critical",
-            "Nine to Ten",
-            "Immediate Emergency Response"
-          ],
-          [
-            "High",
-            "Seven to Eight",
-            "Expedited Remediation SLA"
-          ],
-          [
-            "Medium",
-            "Four to Six",
-            "Standard Sprint Backlog"
-          ],
-          [
-            "Low",
-            "One to Three",
-            "Routine Maintenance Window"
-          ]
-        ],
         "steps": [
           {
             "at": "say6",
             "caption": "High severity ratings encompass remote flaws with significant impact.",
             "activeRowIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Critical",
+                  "Nine to Ten",
+                  "Immediate Emergency Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High",
+                  "Seven to Eight",
+                  "Expedited Remediation SLA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium",
+                  "Four to Six",
+                  "Standard Sprint Backlog"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low",
+                  "One to Three",
+                  "Routine Maintenance Window"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Critical severity vulnerabilities require immediate incident response.",
             "activeRowIndex": 0,
-            "statusBadge": "failed"
+            "statusBadge": "failed",
+            "rows": [
+              {
+                "cells": [
+                  "Critical",
+                  "Nine to Ten",
+                  "Immediate Emergency Response"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "High",
+                  "Seven to Eight",
+                  "Expedited Remediation SLA"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Medium",
+                  "Four to Six",
+                  "Standard Sprint Backlog"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Low",
+                  "One to Three",
+                  "Routine Maintenance Window"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -331,44 +331,94 @@
           "Architectural Purpose",
           "RAG Pipeline Benefit"
         ],
-        "rows": [
-          [
-            "Chunk Identifier",
-            "UUID String",
-            "Unique Key in Vector Database",
-            "Precise Record Lookup"
-          ],
-          [
-            "Section Breadcrumb",
-            "String Array",
-            "Preserves Hierarchical Context",
-            "Grounds Vector Meaning"
-          ],
-          [
-            "Character Offsets",
-            "Number Interval",
-            "Source Document Text Pointers",
-            "Verifiable Citations"
-          ],
-          [
-            "Neighbor Pointers",
-            "String UUIDs",
-            "Adjacent Chunk Window Expansion",
-            "Broadens LLM Context"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Enterprise users demand verifiable citations for retrieved source text.",
             "activeRowIndex": 2,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Neighboring pointers enable window expansion when models need context.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -381,44 +431,94 @@
           "Architectural Purpose",
           "RAG Pipeline Benefit"
         ],
-        "rows": [
-          [
-            "Chunk Identifier",
-            "UUID String",
-            "Unique Key in Vector Database",
-            "Precise Record Lookup"
-          ],
-          [
-            "Section Breadcrumb",
-            "String Array",
-            "Preserves Hierarchical Context",
-            "Grounds Vector Meaning"
-          ],
-          [
-            "Character Offsets",
-            "Number Interval",
-            "Source Document Text Pointers",
-            "Verifiable Citations"
-          ],
-          [
-            "Neighbor Pointers",
-            "String UUIDs",
-            "Adjacent Chunk Window Expansion",
-            "Broadens LLM Context"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "Enterprise users demand verifiable citations for retrieved source text.",
             "activeRowIndex": 2,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Neighboring pointers enable window expansion when models need context.",
             "activeRowIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Chunk Identifier",
+                  "UUID String",
+                  "Unique Key in Vector Database",
+                  "Precise Record Lookup"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Section Breadcrumb",
+                  "String Array",
+                  "Preserves Hierarchical Context",
+                  "Grounds Vector Meaning"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Character Offsets",
+                  "Number Interval",
+                  "Source Document Text Pointers",
+                  "Verifiable Citations"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Neighbor Pointers",
+                  "String UUIDs",
+                  "Adjacent Chunk Window Expansion",
+                  "Broadens LLM Context"
+                ],
+                "tone": "data"
+              }
+            ]
           }
         ]
       }
