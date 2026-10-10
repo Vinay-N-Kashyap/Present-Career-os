@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 29,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Context Fragmentation Trap: Why Vector Search Fails Global Queries",
+      "codeHash": "d62efe19124cb6563e77dd4b53a1e28e33a5ffcdce87e04ce235ff062907174d",
+      "spec": {
+        "template": "compare",
+        "title": "Vector search versus knowledge graph RAG capabilities",
+        "leftLabel": "Vector Search RAG",
+        "rightLabel": "Knowledge Graph RAG",
+        "leftItems": [
+          "Localized passage similarity search",
+          "High performance on specific factual queries",
+          "Context fragmentation on holistic corpus queries",
+          "Cannot traverse disconnected source documents"
+        ],
+        "rightItems": [
+          "Explicit entity relationship connections",
+          "Traverses multi-hop relational paths",
+          "Holistic corpus synthesis and clustering",
+          "Structured schema reasoning across files"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector search suffers from context fragmentation on holistic questions.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Knowledge graphs structure information allowing holistic reasoning.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Vector search versus knowledge graph RAG capabilities",
+        "leftLabel": "Vector Search RAG",
+        "rightLabel": "Knowledge Graph RAG",
+        "leftItems": [
+          "Localized passage similarity search",
+          "High performance on specific factual queries",
+          "Context fragmentation on holistic corpus queries",
+          "Cannot traverse disconnected source documents"
+        ],
+        "rightItems": [
+          "Explicit entity relationship connections",
+          "Traverses multi-hop relational paths",
+          "Holistic corpus synthesis and clustering",
+          "Structured schema reasoning across files"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector search suffers from context fragmentation on holistic questions.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say8",
+            "caption": "Knowledge graphs structure information allowing holistic reasoning.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph Data Model: Entities, Relationships, and Cypher Querying",
+      "codeHash": "4d7132705248021a98dee1d2d4575d56de88f91f6fab0ed3fc6da447391b2cff",
+      "spec": {
+        "template": "flow",
+        "title": "Property graph entities and directed relationships",
+        "nodes": [
+          {
+            "id": "nodePerson",
+            "label": "Person: Sam Altman",
+            "tappable": false
+          },
+          {
+            "id": "relLeads",
+            "label": "LEADS Relationship",
+            "tappable": false
+          },
+          {
+            "id": "nodeTarget",
+            "label": "Company: OpenAI",
+            "tappable": false
+          },
+          {
+            "id": "relPartner",
+            "label": "PARTNERED Relation",
+            "tappable": false
+          },
+          {
+            "id": "nodePartner",
+            "label": "Company: Microsoft",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "nodePerson",
+            "to": "relLeads",
+            "label": "Direct Pointer"
+          },
+          {
+            "from": "relLeads",
+            "to": "nodeTarget",
+            "label": "Organization Target"
+          },
+          {
+            "from": "nodePartner",
+            "to": "relPartner",
+            "label": "Direct Pointer"
+          },
+          {
+            "from": "relPartner",
+            "to": "nodeTarget",
+            "label": "Enterprise Ally"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Graph nodes represent real world entities with properties.",
+            "activeNodes": [
+              "nodePerson",
+              "nodeTarget"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Relationships represent directed connections between nodes in the graph.",
+            "activeNodes": [
+              "relLeads",
+              "relPartner",
+              "nodePartner"
+            ],
+            "activeEdges": [
+              "from-nodePerson-to-relLeads",
+              "from-relLeads-to-nodeTarget",
+              "from-nodePartner-to-relPartner",
+              "from-relPartner-to-nodeTarget"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Property graph entities and directed relationships",
+        "nodes": [
+          {
+            "id": "nodePerson",
+            "label": "Person: Sam Altman",
+            "tappable": false
+          },
+          {
+            "id": "relLeads",
+            "label": "LEADS Relationship",
+            "tappable": false
+          },
+          {
+            "id": "nodeTarget",
+            "label": "Company: OpenAI",
+            "tappable": false
+          },
+          {
+            "id": "relPartner",
+            "label": "PARTNERED Relation",
+            "tappable": false
+          },
+          {
+            "id": "nodePartner",
+            "label": "Company: Microsoft",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "nodePerson",
+            "to": "relLeads",
+            "label": "Direct Pointer"
+          },
+          {
+            "from": "relLeads",
+            "to": "nodeTarget",
+            "label": "Organization Target"
+          },
+          {
+            "from": "nodePartner",
+            "to": "relPartner",
+            "label": "Direct Pointer"
+          },
+          {
+            "from": "relPartner",
+            "to": "nodeTarget",
+            "label": "Enterprise Ally"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Graph nodes represent real world entities with properties.",
+            "activeNodes": [
+              "nodePerson",
+              "nodeTarget"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Relationships represent directed connections between nodes in the graph.",
+            "activeNodes": [
+              "relLeads",
+              "relPartner",
+              "nodePartner"
+            ],
+            "activeEdges": [
+              "from-nodePerson-to-relLeads",
+              "from-relLeads-to-nodeTarget",
+              "from-nodePartner-to-relPartner",
+              "from-relPartner-to-nodeTarget"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LLM-Powered Entity & Relationship Extraction Pipeline",
+      "codeHash": "dee601f3300cd640b5a196345542d0e8974286060a3b9dd8cb637b5918255578",
+      "spec": {
+        "template": "boxes",
+        "title": "Automated knowledge graph triplet extraction stages",
+        "boxes": [
+          {
+            "id": "rawDoc",
+            "label": "Raw Text Passage",
+            "detail": "Unstructured Input Chunks",
+            "tappable": false
+          },
+          {
+            "id": "extractor",
+            "label": "LLM Triplet Extractor",
+            "detail": "Few-Shot Schema Parser",
+            "tappable": false
+          },
+          {
+            "id": "entityRes",
+            "label": "Entity Resolution",
+            "detail": "Synonym Canonicalization",
+            "tappable": false
+          },
+          {
+            "id": "graphWrite",
+            "label": "Graph Ingestion",
+            "detail": "Neo4j Persistent Store",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Documents pass into extraction prompt with structured instructions.",
+            "activeBoxes": [
+              "rawDoc",
+              "extractor"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Entity resolution merges duplicate mentions into canonical nodes.",
+            "activeBoxes": [
+              "entityRes",
+              "graphWrite"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Automated knowledge graph triplet extraction stages",
+        "boxes": [
+          {
+            "id": "rawDoc",
+            "label": "Raw Text Passage",
+            "detail": "Unstructured Input Chunks",
+            "tappable": false
+          },
+          {
+            "id": "extractor",
+            "label": "LLM Triplet Extractor",
+            "detail": "Few-Shot Schema Parser",
+            "tappable": false
+          },
+          {
+            "id": "entityRes",
+            "label": "Entity Resolution",
+            "detail": "Synonym Canonicalization",
+            "tappable": false
+          },
+          {
+            "id": "graphWrite",
+            "label": "Graph Ingestion",
+            "detail": "Neo4j Persistent Store",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Documents pass into extraction prompt with structured instructions.",
+            "activeBoxes": [
+              "rawDoc",
+              "extractor"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Entity resolution merges duplicate mentions into canonical nodes.",
+            "activeBoxes": [
+              "entityRes",
+              "graphWrite"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Hop Graph Traversal vs Vector Proximity",
+      "codeHash": "48a578eb8075c5d018039773fd73fb89488b970c05f9240af1068db9531e65cb",
+      "spec": {
+        "template": "sequence",
+        "title": "Multi-hop graph pathfinding across disconnected documents",
+        "actors": [
+          "Query Engine",
+          "LangChain Node",
+          "Langfuse Bridge",
+          "PostgreSQL Node"
+        ],
+        "messages": [
+          {
+            "from": "Query Engine",
+            "to": "LangChain Node",
+            "label": "Locate Target Concept"
+          },
+          {
+            "from": "LangChain Node",
+            "to": "Langfuse Bridge",
+            "label": "Traverse INTEGRATES_WITH"
+          },
+          {
+            "from": "Langfuse Bridge",
+            "to": "PostgreSQL Node",
+            "label": "Traverse STORES_TRACES_IN"
+          },
+          {
+            "from": "PostgreSQL Node",
+            "to": "Query Engine",
+            "label": "Return Grounded Path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Neither document mentions both entities in the same passage.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Graph traversal connects intermediate bridge nodes across documents.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Multi-hop graph pathfinding across disconnected documents",
+        "actors": [
+          "Query Engine",
+          "LangChain Node",
+          "Langfuse Bridge",
+          "PostgreSQL Node"
+        ],
+        "messages": [
+          {
+            "from": "Query Engine",
+            "to": "LangChain Node",
+            "label": "Locate Target Concept"
+          },
+          {
+            "from": "LangChain Node",
+            "to": "Langfuse Bridge",
+            "label": "Traverse INTEGRATES_WITH"
+          },
+          {
+            "from": "Langfuse Bridge",
+            "to": "PostgreSQL Node",
+            "label": "Traverse STORES_TRACES_IN"
+          },
+          {
+            "from": "PostgreSQL Node",
+            "to": "Query Engine",
+            "label": "Return Grounded Path"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Neither document mentions both entities in the same passage.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Graph traversal connects intermediate bridge nodes across documents.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Community Detection (Leiden Algorithm) & Hierarchical Summaries",
+      "codeHash": "06d6b93f29dff0e4de0d6d3591a994aff41248daccaba70581eb3a8152e574d3",
+      "spec": {
+        "template": "table",
+        "title": "Hierarchical community clusters and pre-computed summaries",
+        "columns": [
+          "Thematic Cluster",
+          "Member Entities",
+          "Clustering Basis",
+          "Executive Summary"
+        ],
+        "rows": [
+          [
+            "Consensus Cluster",
+            "Raft, Paxos, Quorum",
+            "Leiden Modularity",
+            "State Machine Replication"
+          ],
+          [
+            "Vector Cluster",
+            "HNSW, Cosine, Pinecone",
+            "Leiden Modularity",
+            "Dense Semantic Retrieval"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Leiden partitions the graph into densely connected thematic communities.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Community reports generate executive summaries for each thematic cluster.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hierarchical community clusters and pre-computed summaries",
+        "columns": [
+          "Thematic Cluster",
+          "Member Entities",
+          "Clustering Basis",
+          "Executive Summary"
+        ],
+        "rows": [
+          [
+            "Consensus Cluster",
+            "Raft, Paxos, Quorum",
+            "Leiden Modularity",
+            "State Machine Replication"
+          ],
+          [
+            "Vector Cluster",
+            "HNSW, Cosine, Pinecone",
+            "Leiden Modularity",
+            "Dense Semantic Retrieval"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Leiden partitions the graph into densely connected thematic communities.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Community reports generate executive summaries for each thematic cluster.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Hybrid GraphRAG Engine: Combining Vector & Graph Traversal",
+      "codeHash": "882418eae777c6aca25bef8b8431bf83c4e66cab0b57fb0ec4a14b5f0963ca97",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
