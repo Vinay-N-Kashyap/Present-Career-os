@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 12,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Micro-Batching Economics: Amortizing Network & Syscall Overhead",
+      "codeHash": "6a02fc26cf4f71873330b8fb72710654fb22c820d481abc03f471d5ccdbe25f2",
+      "spec": {
+        "template": "table",
+        "title": "Network packet and TCP header overhead for 1000 messages (batchSize: 50)",
+        "columns": [
+          "Transmission Mode",
+          "Packets Sent",
+          "Total Syscalls",
+          "Overhead Bytes"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Sending one thousand individual messages executes one thousand round-trips.",
+            "rows": [
+              [
+                "SINGLE_RECORD",
+                "1000",
+                "1000",
+                "54000"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A single network packet holds dozens of records, amortizing TCP headers.",
+            "rows": [
+              [
+                "SINGLE_RECORD",
+                "1000",
+                "1000",
+                "54000"
+              ],
+              [
+                "MICRO_BATCHED",
+                "20",
+                "20",
+                "1080"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Network packet and TCP header overhead for 1000 messages (batchSize: 50)",
+        "columns": [
+          "Transmission Mode",
+          "Packets Sent",
+          "Total Syscalls",
+          "Overhead Bytes"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Sending one thousand individual messages executes one thousand round-trips.",
+            "rows": [
+              [
+                "SINGLE_RECORD",
+                "1000",
+                "1000",
+                "54000"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "A single network packet holds dozens of records, amortizing TCP headers.",
+            "rows": [
+              [
+                "SINGLE_RECORD",
+                "1000",
+                "1000",
+                "54000"
+              ],
+              [
+                "MICRO_BATCHED",
+                "20",
+                "20",
+                "1080"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linger Time (linger.ms) & Batch Accumulation Mechanics",
+      "codeHash": "3ffe3689804049c139ab7551afcbf051875aaefbbc2e8937941b94c1a6354914",
+      "spec": {
+        "template": "states",
+        "title": "LingerBatchAccumulator (maxCapacity: 4, lingerMs: 20) timer evaluation",
+        "states": [
+          {
+            "id": "batchStart",
+            "label": "Batch Started (t=100, 2 Records)"
+          },
+          {
+            "id": "waitingMore",
+            "label": "WAITING_FOR_MORE (t=110, 10ms < 20ms)"
+          },
+          {
+            "id": "lingerDispatched",
+            "label": "LINGER_TIMEOUT Dispatched (t=125)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Linger time instructs the producer to pause and wait before sending a batch.",
+            "activeState": "waitingMore",
+            "transition": {
+              "from": "batchStart",
+              "to": "waitingMore",
+              "label": "evaluate(110)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Under low load, the linger timer ensures partially filled batches dispatch.",
+            "activeState": "lingerDispatched",
+            "transition": {
+              "from": "waitingMore",
+              "to": "lingerDispatched",
+              "label": "25ms >= 20ms"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "LingerBatchAccumulator (maxCapacity: 4, lingerMs: 20) timer evaluation",
+        "states": [
+          {
+            "id": "batchStart",
+            "label": "Batch Started (t=100, 2 Records)"
+          },
+          {
+            "id": "waitingMore",
+            "label": "WAITING_FOR_MORE (t=110, 10ms < 20ms)"
+          },
+          {
+            "id": "lingerDispatched",
+            "label": "LINGER_TIMEOUT Dispatched (t=125)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Linger time instructs the producer to pause and wait before sending a batch.",
+            "activeState": "waitingMore",
+            "transition": {
+              "from": "batchStart",
+              "to": "waitingMore",
+              "label": "evaluate(110)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Under low load, the linger timer ensures partially filled batches dispatch.",
+            "activeState": "lingerDispatched",
+            "transition": {
+              "from": "waitingMore",
+              "to": "lingerDispatched",
+              "label": "25ms >= 20ms"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Adaptive Batch Sizing for Variable Traffic Loads",
+      "codeHash": "54bc777d0d670f5ea0f021f261c3d0069cbd922b6245adc30aab6bad671227b6",
+      "spec": {
+        "template": "bars",
+        "title": "AdaptiveBatchTuner dynamic batch target across incoming traffic velocities",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When traffic spikes, the producer automatically scales up the batch size limit.",
+            "bars": [
+              {
+                "label": "Moderate (500 msg/s)",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Peak (2000 msg/s)",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When traffic subsides to a trickle, the producer scales down the batch limit.",
+            "bars": [
+              {
+                "label": "Low (50 msg/s)",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "accent"
+              },
+              {
+                "label": "Moderate (500 msg/s)",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Peak (2000 msg/s)",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "AdaptiveBatchTuner dynamic batch target across incoming traffic velocities",
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "When traffic spikes, the producer automatically scales up the batch size limit.",
+            "bars": [
+              {
+                "label": "Moderate (500 msg/s)",
+                "value": 6,
+                "tone": "data"
+              },
+              {
+                "label": "Peak (2000 msg/s)",
+                "value": 10,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When traffic subsides to a trickle, the producer scales down the batch limit.",
+            "bars": [
+              {
+                "label": "Low (50 msg/s)",
+                "value": 2,
+                "tone": "accent"
+              },
+              {
+                "label": "Moderate (500 msg/s)",
+                "value": 6,
+                "tone": "data"
+              },
+              {
+                "label": "Peak (2000 msg/s)",
+                "value": 10,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Immediate Flush Triggers: Memory Limits vs Linger Timeouts",
+      "codeHash": "ba91c1510bec0e2c9988d453ab70e1585f5648b919326317a5c02e47e0dfdd66",
+      "spec": {
+        "template": "flow",
+        "title": "MultiTriggerBatchEngine evaluation pipeline for explicit and size-limit flushes",
+        "nodes": [
+          {
+            "id": "appendRec",
+            "label": "append(bytesCount, now)",
+            "tappable": false
+          },
+          {
+            "id": "checkExplicit",
+            "label": "EXPLICIT_FLUSH Check",
+            "tappable": false
+          },
+          {
+            "id": "checkSize",
+            "label": "SIZE_LIMIT (110 >= 100)",
+            "tappable": false
+          },
+          {
+            "id": "flushNet",
+            "label": "Dispatch Batch to Network",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appendRec",
+            "to": "checkExplicit",
+            "label": "evaluate()"
+          },
+          {
+            "from": "checkExplicit",
+            "to": "checkSize",
+            "label": "Check Bytes"
+          },
+          {
+            "from": "checkSize",
+            "to": "flushNet",
+            "label": "shouldFlush: true"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When the addition of a record crosses batch.size, the batch closes immediately.",
+            "activeNodes": [
+              "appendRec",
+              "checkSize",
+              "flushNet"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Applications can issue an explicit flush call forcing batches to dispatch.",
+            "activeNodes": [
+              "checkExplicit",
+              "flushNet"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "MultiTriggerBatchEngine evaluation pipeline for explicit and size-limit flushes",
+        "nodes": [
+          {
+            "id": "appendRec",
+            "label": "append(bytesCount, now)",
+            "tappable": false
+          },
+          {
+            "id": "checkExplicit",
+            "label": "EXPLICIT_FLUSH Check",
+            "tappable": false
+          },
+          {
+            "id": "checkSize",
+            "label": "SIZE_LIMIT (110 >= 100)",
+            "tappable": false
+          },
+          {
+            "id": "flushNet",
+            "label": "Dispatch Batch to Network",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "appendRec",
+            "to": "checkExplicit",
+            "label": "evaluate()"
+          },
+          {
+            "from": "checkExplicit",
+            "to": "checkSize",
+            "label": "Check Bytes"
+          },
+          {
+            "from": "checkSize",
+            "to": "flushNet",
+            "label": "shouldFlush: true"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When the addition of a record crosses batch.size, the batch closes immediately.",
+            "activeNodes": [
+              "appendRec",
+              "checkSize",
+              "flushNet"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Applications can issue an explicit flush call forcing batches to dispatch.",
+            "activeNodes": [
+              "checkExplicit",
+              "flushNet"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring Batch Packing Density & TCP Packet Efficiency",
+      "codeHash": "f4c30bf3d99deb247e056f7e100d834200574f65d39e8309acbd67de873b9957",
+      "spec": {
+        "template": "cells",
+        "title": "BatchTelemetryTracker 5 dispatched batches of 20 records (94.9% wire efficiency)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Batch Packing Density is the average number of records in each dispatched batch.",
+            "items": [
+              {
+                "text": "B1: 20 recs"
+              },
+              {
+                "text": "B2: 20 recs"
+              },
+              {
+                "text": "B3: 20 recs"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "density:20.0",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Engineers track TCP packet efficiency as the ratio of payload to wire bytes.",
+            "items": [
+              {
+                "text": "B1: 1000B"
+              },
+              {
+                "text": "B2: 1000B"
+              },
+              {
+                "text": "B3: 1000B"
+              },
+              {
+                "text": "B4: 1000B"
+              },
+              {
+                "text": "B5: 1000B"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "wire:94.9%",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "BatchTelemetryTracker 5 dispatched batches of 20 records (94.9% wire efficiency)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Batch Packing Density is the average number of records in each dispatched batch.",
+            "items": [
+              "B1: 20 recs",
+              "B2: 20 recs",
+              "B3: 20 recs"
+            ],
+            "pointers": [
+              {
+                "name": "density:20.0",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Engineers track TCP packet efficiency as the ratio of payload to wire bytes.",
+            "items": [
+              "B1: 1000B",
+              "B2: 1000B",
+              "B3: 1000B",
+              "B4: 1000B",
+              "B5: 1000B"
+            ],
+            "pointers": [
+              {
+                "name": "wire:94.9%",
+                "index": 4,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Self-Tuning Micro-Batching Producer Engine",
+      "codeHash": "6a35a280108c0b83bde11dc7681eec4b16f41d7d693c68b4c511b70cf89f8047",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
