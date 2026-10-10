@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 1,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The SRE Philosophy & Eliminating Operational Toil",
+      "codeHash": "e1e3d6c29207f49041850d6912dd526b883e1b82580c307947ab7c672c837c4d",
+      "spec": {
+        "template": "bars",
+        "title": "Engineering workload versus operational toil distribution",
+        "bars": [
+          {
+            "id": "engineeringWork",
+            "label": "Engineering Work",
+            "value": 70
+          },
+          {
+            "id": "operationalToil",
+            "label": "Operational Toil",
+            "value": 30
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Guidelines mandate engineers spend time on engineering work rather than toil.",
+            "activeBars": [
+              "engineeringWork"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineering work creates enduring value through automated tooling.",
+            "activeBars": [
+              "engineeringWork",
+              "operationalToil"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Engineering workload versus operational toil distribution",
+        "bars": [
+          {
+            "id": "engineeringWork",
+            "label": "Engineering Work",
+            "value": 70
+          },
+          {
+            "id": "operationalToil",
+            "label": "Operational Toil",
+            "value": 30
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Guidelines mandate engineers spend time on engineering work rather than toil.",
+            "activeBars": [
+              "engineeringWork"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineering work creates enduring value through automated tooling.",
+            "activeBars": [
+              "engineeringWork",
+              "operationalToil"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Level Indicators (SLIs) in Practice",
+      "codeHash": "298e9452476b31d7f7904d0a5a875cff67c59755c87182af9325242ef92b7a36",
+      "spec": {
+        "template": "workflow",
+        "title": "Golden signals service level indicator measurement pipeline",
+        "stages": [
+          {
+            "id": "trafficIngress",
+            "name": "Traffic Demand",
+            "subtext": "Total Inbound"
+          },
+          {
+            "id": "latencyFilter",
+            "name": "Latency Filter",
+            "subtext": "Within Target"
+          },
+          {
+            "id": "statusFilter",
+            "name": "Status Gate",
+            "subtext": "HTTP Under 500"
+          },
+          {
+            "id": "sliRatio",
+            "name": "Golden Signal SLI",
+            "subtext": "Percentage Ratio"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Critical indicators track golden signals including latency and errors.",
+            "activeStageId": "latencyFilter",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Indicators are expressed as ratios of good events over valid total events.",
+            "activeStageId": "sliRatio",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Golden signals service level indicator measurement pipeline",
+        "stages": [
+          {
+            "id": "trafficIngress",
+            "name": "Traffic Demand",
+            "subtext": "Total Inbound"
+          },
+          {
+            "id": "latencyFilter",
+            "name": "Latency Filter",
+            "subtext": "Within Target"
+          },
+          {
+            "id": "statusFilter",
+            "name": "Status Gate",
+            "subtext": "HTTP Under 500"
+          },
+          {
+            "id": "sliRatio",
+            "name": "Golden Signal SLI",
+            "subtext": "Percentage Ratio"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Critical indicators track golden signals including latency and errors.",
+            "activeStageId": "latencyFilter",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Indicators are expressed as ratios of good events over valid total events.",
+            "activeStageId": "sliRatio",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Level Objectives (SLOs) & Reliability Targets",
+      "codeHash": "0a4406685f1f8dbbed89f3903048efb9049da4160e56ac5a18f613cacabdb2ac",
+      "spec": {
+        "template": "compare",
+        "title": "Targeting 100 percent uptime versus pragmatic service level objectives",
+        "leftLabel": "Targeting 100% Uptime",
+        "rightLabel": "Targeting Pragmatic SLO",
+        "leftItems": [
+          "Unrealistic engineering expectation",
+          "Exponential infrastructure expense",
+          "Halts product feature deployment velocity",
+          "Exceeds client device network reliability"
+        ],
+        "rightItems": [
+          "Pragmatic boundary of user satisfaction",
+          "Permits controlled feature release velocity",
+          "Defines explicit error budget allocation",
+          "Matches realistic customer network stability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SRE explicitly rejects complete perfection as counterproductive.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Objectives reflect the boundary where users notice service degradation.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Targeting 100 percent uptime versus pragmatic service level objectives",
+        "leftLabel": "Targeting 100% Uptime",
+        "rightLabel": "Targeting Pragmatic SLO",
+        "leftItems": [
+          "Unrealistic engineering expectation",
+          "Exponential infrastructure expense",
+          "Halts product feature deployment velocity",
+          "Exceeds client device network reliability"
+        ],
+        "rightItems": [
+          "Pragmatic boundary of user satisfaction",
+          "Permits controlled feature release velocity",
+          "Defines explicit error budget allocation",
+          "Matches realistic customer network stability"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "SRE explicitly rejects complete perfection as counterproductive.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say5",
+            "caption": "Objectives reflect the boundary where users notice service degradation.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Level Agreements (SLAs) & Contractual Penalties",
+      "codeHash": "c4f9d06c6ca9f0597850f8d70ba5545a829afc92b2992efa23c8c6726fbc0f48",
+      "spec": {
+        "template": "table",
+        "title": "Service level contract hierarchy and penalty triggers",
+        "columns": [
+          "Contract Tier",
+          "Availability Target",
+          "Commercial Role",
+          "Penalty Trigger"
+        ],
+        "rows": [
+          [
+            "Internal SLO",
+            "99.9%",
+            "Engineering Target",
+            "Freeze Releases"
+          ],
+          [
+            "External SLA",
+            "99.5%",
+            "Legal Contract",
+            "Tier 1 Rebate"
+          ],
+          [
+            "Critical Breach",
+            "98.0%",
+            "Severe Outage",
+            "Tier 2 Credit"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Agreements represent commercial business contracts with financial penalties.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Agreements are engineered looser than internal objectives.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Service level contract hierarchy and penalty triggers",
+        "columns": [
+          "Contract Tier",
+          "Availability Target",
+          "Commercial Role",
+          "Penalty Trigger"
+        ],
+        "rows": [
+          [
+            "Internal SLO",
+            "99.9%",
+            "Engineering Target",
+            "Freeze Releases"
+          ],
+          [
+            "External SLA",
+            "99.5%",
+            "Legal Contract",
+            "Tier 1 Rebate"
+          ],
+          [
+            "Critical Breach",
+            "98.0%",
+            "Severe Outage",
+            "Tier 2 Credit"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Agreements represent commercial business contracts with financial penalties.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Agreements are engineered looser than internal objectives.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The SLI/SLO/SLA Hierarchy & Mapping Rules",
+      "codeHash": "cfafef25c33b62360d74fdb52364fc421710cc6044994c5627b97cd90f57248a",
+      "spec": {
+        "template": "states",
+        "title": "Service level operational states from nominal to breach",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "Nominal Healthy State"
+          },
+          {
+            "id": "warning",
+            "label": "Internal SLO Warning State"
+          },
+          {
+            "id": "breach",
+            "label": "Commercial SLA Breach State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Hierarchy cascades downward from measured telemetry into objectives.",
+            "activeStateId": "healthy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Breaching internal objectives triggers defensive engineering posture.",
+            "activeStateId": "warning",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Service level operational states from nominal to breach",
+        "states": [
+          {
+            "id": "healthy",
+            "label": "Nominal Healthy State"
+          },
+          {
+            "id": "warning",
+            "label": "Internal SLO Warning State"
+          },
+          {
+            "id": "breach",
+            "label": "Commercial SLA Breach State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Hierarchy cascades downward from measured telemetry into objectives.",
+            "activeStateId": "healthy",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Breaching internal objectives triggers defensive engineering posture.",
+            "activeStateId": "warning",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring Multi-Window Availability SLIs",
+      "codeHash": "0cc403a728a6c15ec442fc72b948536674a3586b65881f3786d8cf310ac25adc",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
