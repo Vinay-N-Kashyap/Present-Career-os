@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 8,
+  "promptSha": "f88503b28bbd5c3fa208dad009bcbd75f2810297c163b54b786270e5cb91c29e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Scale Problem: Why Brute Force KNN Collapses at 10 Million Vectors",
+      "codeHash": "663c313164cf415d8c57b3a972cdc91503133c6b39e0a40809b04cd40547c869",
+      "spec": {
+        "template": "bars",
+        "title": "Brute force K-nearest neighbor search calculation complexity growth",
+        "bars": [
+          {
+            "label": "One Thousand Vectors",
+            "value": 2
+          },
+          {
+            "label": "One Hundred Thousand",
+            "value": 180
+          },
+          {
+            "label": "Ten Million Vectors",
+            "value": 15300
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Small knowledge bases complete brute force searches under milliseconds.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "A single search query requires operations causing multi-second latency.",
+            "activeBarIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Brute force K-nearest neighbor search calculation complexity growth",
+        "bars": [
+          {
+            "label": "One Thousand Vectors",
+            "value": 2
+          },
+          {
+            "label": "One Hundred Thousand",
+            "value": 180
+          },
+          {
+            "label": "Ten Million Vectors",
+            "value": 15300
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Small knowledge bases complete brute force searches under milliseconds.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "A single search query requires operations causing multi-second latency.",
+            "activeBarIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inverted File Index (IVF): Spatial Clustering and Voronoi Cells",
+      "codeHash": "40e89568bade9eb2e227b456e88c5ac3d53bae4c719e3095f3aaf016b104935b",
+      "spec": {
+        "template": "boxes",
+        "title": "Inverted file index spatial clustering centroids and Voronoi cell buckets",
+        "boxes": [
+          {
+            "id": "clustering",
+            "title": "Centroid Clustering",
+            "items": [
+              "K-means cluster centroids",
+              "Partitions vector hyperspace",
+              "Voronoi cell boundaries"
+            ]
+          },
+          {
+            "id": "invertedList",
+            "title": "Inverted Cluster Lists",
+            "items": [
+              "Assigns vectors to centroids",
+              "Grouped document buckets",
+              "Compressed vector storage"
+            ]
+          },
+          {
+            "id": "probeSearch",
+            "title": "Probe Query Traversal",
+            "items": [
+              "Compares query to centroids",
+              "Searches top candidate cells",
+              "Restricts linear scan range"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clustering partitions vector space into discrete geographic regions.",
+            "activeBoxId": "clustering",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The engine searches document vectors within top candidate clusters.",
+            "activeBoxId": "probeSearch",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Inverted file index spatial clustering centroids and Voronoi cell buckets",
+        "boxes": [
+          {
+            "id": "clustering",
+            "title": "Centroid Clustering",
+            "items": [
+              "K-means cluster centroids",
+              "Partitions vector hyperspace",
+              "Voronoi cell boundaries"
+            ]
+          },
+          {
+            "id": "invertedList",
+            "title": "Inverted Cluster Lists",
+            "items": [
+              "Assigns vectors to centroids",
+              "Grouped document buckets",
+              "Compressed vector storage"
+            ]
+          },
+          {
+            "id": "probeSearch",
+            "title": "Probe Query Traversal",
+            "items": [
+              "Compares query to centroids",
+              "Searches top candidate cells",
+              "Restricts linear scan range"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Clustering partitions vector space into discrete geographic regions.",
+            "activeBoxId": "clustering",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The engine searches document vectors within top candidate clusters.",
+            "activeBoxId": "probeSearch",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Navigable Small World (HNSW): The Gold Standard",
+      "codeHash": "f8a4615f8654bfedd4af1fc3f495b5f1854bdcf18a857d1b59a76e4b483448c1",
+      "spec": {
+        "template": "table",
+        "title": "Hierarchical navigable small world multi-layer graph skip-list structure",
+        "columns": [
+          "HNSW Graph Layer",
+          "Node Density",
+          "Connection Range",
+          "Routing Purpose"
+        ],
+        "rows": [
+          [
+            "Layer Two Highway",
+            "Sparse Top Nodes",
+            "Long Range Proximity Links",
+            "Rapid Coarse Neighborhood Zoom"
+          ],
+          [
+            "Layer One Intermediate",
+            "Moderate Node Density",
+            "Medium Distance Links",
+            "Regional Space Convergence"
+          ],
+          [
+            "Layer Zero Ground",
+            "Complete Vector Corpus",
+            "Dense Local Nearest Links",
+            "Fine Grain Beam Search"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The top layer contains sparse nodes with long-range highway connections.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The bottom layer contains every vector connected to nearest local neighbors.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hierarchical navigable small world multi-layer graph skip-list structure",
+        "columns": [
+          "HNSW Graph Layer",
+          "Node Density",
+          "Connection Range",
+          "Routing Purpose"
+        ],
+        "rows": [
+          [
+            "Layer Two Highway",
+            "Sparse Top Nodes",
+            "Long Range Proximity Links",
+            "Rapid Coarse Neighborhood Zoom"
+          ],
+          [
+            "Layer One Intermediate",
+            "Moderate Node Density",
+            "Medium Distance Links",
+            "Regional Space Convergence"
+          ],
+          [
+            "Layer Zero Ground",
+            "Complete Vector Corpus",
+            "Dense Local Nearest Links",
+            "Fine Grain Beam Search"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The top layer contains sparse nodes with long-range highway connections.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The bottom layer contains every vector connected to nearest local neighbors.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HNSW Greedy Search Traversal Simulation",
+      "codeHash": "8ad3e015bc10b7b72923b1633c743687bbabaec78810a522830a4ba40f8d1feb",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Metadata Filtering: Pre-Filtering, Post-Filtering & Single-Stage Search",
+      "codeHash": "275ba63fa8f84468e8cf7fe212df0de77d77929edabd512298ddcf6952a9a785",
+      "spec": {
+        "template": "compare",
+        "title": "Relational metadata post-filtering versus single-stage graph traversal filtering",
+        "left": {
+          "title": "Naive Post-Filtering",
+          "items": [
+            "Performs vector search first",
+            "Discards failing metadata rows",
+            "Can return zero valid results",
+            "Fails on selective tenant filters"
+          ]
+        },
+        "right": {
+          "title": "Single-Stage Search",
+          "items": [
+            "Inspects metadata during graph traversal",
+            "Bypasses invalid candidate nodes",
+            "Maintains high search recall",
+            "Guarantees tenant security isolation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Post-filtering performs vector search first and discards failing results.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Single-stage filtering checks candidate nodes during graph traversal.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Relational metadata post-filtering versus single-stage graph traversal filtering",
+        "left": {
+          "title": "Naive Post-Filtering",
+          "items": [
+            "Performs vector search first",
+            "Discards failing metadata rows",
+            "Can return zero valid results",
+            "Fails on selective tenant filters"
+          ]
+        },
+        "right": {
+          "title": "Single-Stage Search",
+          "items": [
+            "Inspects metadata during graph traversal",
+            "Bypasses invalid candidate nodes",
+            "Maintains high search recall",
+            "Guarantees tenant security isolation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Post-filtering performs vector search first and discards failing results.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Single-stage filtering checks candidate nodes during graph traversal.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Building a Production Filtered Vector Index",
+      "codeHash": "bc98269c7c7104e426349daab0e69bb688c782a4135db568475829100b92063c",
+      "spec": {
+        "template": "sequence",
+        "title": "Multi-tenant filtered vector search engine isolation query execution",
+        "actors": [
+          {
+            "id": "tenantClient",
+            "label": "Enterprise Client"
+          },
+          {
+            "id": "securityFilter",
+            "label": "Metadata Predicate Validator"
+          },
+          {
+            "id": "vectorIndex",
+            "label": "HNSW Traversal Engine"
+          },
+          {
+            "id": "secureStore",
+            "label": "Authorized Tenant Store"
+          }
+        ],
+        "messages": [
+          {
+            "from": "tenantClient",
+            "to": "securityFilter",
+            "label": "Submit Query with Tenant Predicate",
+            "tone": "data"
+          },
+          {
+            "from": "securityFilter",
+            "to": "vectorIndex",
+            "label": "Enforce Tenant Isolation Constraint",
+            "tone": "data"
+          },
+          {
+            "from": "vectorIndex",
+            "to": "vectorIndex",
+            "label": "Traverse Graph Matching Tenant ID",
+            "tone": "data"
+          },
+          {
+            "from": "vectorIndex",
+            "to": "secureStore",
+            "label": "Retrieve Top Authorized Candidate",
+            "tone": "success"
+          },
+          {
+            "from": "secureStore",
+            "to": "tenantClient",
+            "label": "Return Isolated Document Matches",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We calculate vector similarity only over satisfying documents.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Only documents matching authorized tenant access are evaluated and returned.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Multi-tenant filtered vector search engine isolation query execution",
+        "actors": [
+          {
+            "id": "tenantClient",
+            "label": "Enterprise Client"
+          },
+          {
+            "id": "securityFilter",
+            "label": "Metadata Predicate Validator"
+          },
+          {
+            "id": "vectorIndex",
+            "label": "HNSW Traversal Engine"
+          },
+          {
+            "id": "secureStore",
+            "label": "Authorized Tenant Store"
+          }
+        ],
+        "messages": [
+          {
+            "from": "tenantClient",
+            "to": "securityFilter",
+            "label": "Submit Query with Tenant Predicate",
+            "tone": "data"
+          },
+          {
+            "from": "securityFilter",
+            "to": "vectorIndex",
+            "label": "Enforce Tenant Isolation Constraint",
+            "tone": "data"
+          },
+          {
+            "from": "vectorIndex",
+            "to": "vectorIndex",
+            "label": "Traverse Graph Matching Tenant ID",
+            "tone": "data"
+          },
+          {
+            "from": "vectorIndex",
+            "to": "secureStore",
+            "label": "Retrieve Top Authorized Candidate",
+            "tone": "success"
+          },
+          {
+            "from": "secureStore",
+            "to": "tenantClient",
+            "label": "Return Isolated Document Matches",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We calculate vector similarity only over satisfying documents.",
+            "activeMessageIndex": 2,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Only documents matching authorized tenant access are evaluated and returned.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
