@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 2,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Error Budget Concept & Innovation Headroom",
+      "codeHash": "e347f4d7a98b975b9a43a0a2138aa5b2937a57ab4ad1eddb1709a63fe83a6dae",
+      "spec": {
+        "template": "bars",
+        "title": "Service level objective versus allowed error budget breakdown",
+        "bars": [
+          {
+            "id": "sloTarget",
+            "label": "Availability SLO",
+            "value": 99.95
+          },
+          {
+            "id": "errorBudget",
+            "label": "Error Budget",
+            "value": 0.05
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Error budget is mathematically defined as total minus target objective.",
+            "activeBars": [
+              "sloTarget"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Budget is spent on feature releases and infrastructure migrations.",
+            "activeBars": [
+              "errorBudget"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Service level objective versus allowed error budget breakdown",
+        "bars": [
+          {
+            "id": "sloTarget",
+            "label": "Availability SLO",
+            "value": 99.95
+          },
+          {
+            "id": "errorBudget",
+            "label": "Error Budget",
+            "value": 0.05
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Error budget is mathematically defined as total minus target objective.",
+            "activeBars": [
+              "sloTarget"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Budget is spent on feature releases and infrastructure migrations.",
+            "activeBars": [
+              "errorBudget"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantifying Error Budget Consumption in Real-Time",
+      "codeHash": "392889efd8e9ae3b4bc56ba886f56bb244595be58b48838fb67191370e881f32",
+      "spec": {
+        "template": "workflow",
+        "title": "Real-time error budget tracking and consumption stages",
+        "stages": [
+          {
+            "id": "totalPool",
+            "name": "Allowed Budget Pool",
+            "subtext": "Total Allowance"
+          },
+          {
+            "id": "incident",
+            "name": "Failover Incident",
+            "subtext": "Measured Errors"
+          },
+          {
+            "id": "consumed",
+            "name": "Consumed Fraction",
+            "subtext": "Burned Percentage"
+          },
+          {
+            "id": "remaining",
+            "name": "Remaining Budget",
+            "subtext": "Active Headroom"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Tracking budget consumption normalizes comparisons across services.",
+            "activeStageId": "consumed",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Automated warnings notify engineers when remaining budget drops.",
+            "activeStageId": "remaining",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Real-time error budget tracking and consumption stages",
+        "stages": [
+          {
+            "id": "totalPool",
+            "name": "Allowed Budget Pool",
+            "subtext": "Total Allowance"
+          },
+          {
+            "id": "incident",
+            "name": "Failover Incident",
+            "subtext": "Measured Errors"
+          },
+          {
+            "id": "consumed",
+            "name": "Consumed Fraction",
+            "subtext": "Burned Percentage"
+          },
+          {
+            "id": "remaining",
+            "name": "Remaining Budget",
+            "subtext": "Active Headroom"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Tracking budget consumption normalizes comparisons across services.",
+            "activeStageId": "consumed",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Automated warnings notify engineers when remaining budget drops.",
+            "activeStageId": "remaining",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Error Budget Burn Rates & Mathematical Multipliers",
+      "codeHash": "893c3dbbe05ea2c899649ff641b0ceec4547bb1d92f7e1ed414ac493a1a1f60c",
+      "spec": {
+        "template": "table",
+        "title": "Error budget burn rate tiers and time to total exhaustion",
+        "columns": [
+          "Burn Rate Tier",
+          "Consumption Multiplier",
+          "Time to Depletion",
+          "Operational Impact"
+        ],
+        "rows": [
+          [
+            "Nominal",
+            "1.0x Rate",
+            "30 Days",
+            "Nominal State"
+          ],
+          [
+            "Elevated",
+            "5.0x Rate",
+            "6 Days",
+            "Investigation"
+          ],
+          [
+            "Severe",
+            "20.0x Rate",
+            "1.5 Days",
+            "Critical Outage"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Burn rate measures how fast a service consumes its error budget.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Calculating burn rate allows monitoring systems to alert on trends.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Error budget burn rate tiers and time to total exhaustion",
+        "columns": [
+          "Burn Rate Tier",
+          "Consumption Multiplier",
+          "Time to Depletion",
+          "Operational Impact"
+        ],
+        "rows": [
+          [
+            "Nominal",
+            "1.0x Rate",
+            "30 Days",
+            "Nominal State"
+          ],
+          [
+            "Elevated",
+            "5.0x Rate",
+            "6 Days",
+            "Investigation"
+          ],
+          [
+            "Severe",
+            "20.0x Rate",
+            "1.5 Days",
+            "Critical Outage"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Burn rate measures how fast a service consumes its error budget.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Calculating burn rate allows monitoring systems to alert on trends.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Burn-Rate Alerting Windows",
+      "codeHash": "9199deee2b1146e5400e21e97bd27f27807b70221051bc0b95b2afdf0f0f6e38",
+      "spec": {
+        "template": "sequence",
+        "title": "Multi-window multi-burn-rate notification and alerting flow",
+        "actors": [
+          "Telemetry Stream",
+          "Window Evaluator",
+          "P1 On-Call Pager",
+          "P2 Ticket Queue"
+        ],
+        "messages": [
+          {
+            "from": "Telemetry Stream",
+            "to": "Window Evaluator",
+            "label": "Stream Request Status"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "Window Evaluator",
+            "label": "Correlate Short and Long Windows"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "P1 On-Call Pager",
+            "label": "Dispatch Urgent Page"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "P2 Ticket Queue",
+            "label": "Open Daytime Ticket"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Approach pairs severe thresholds with short time windows.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Requiring confirmation windows prevents transient bursts from waking engineers.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Multi-window multi-burn-rate notification and alerting flow",
+        "actors": [
+          "Telemetry Stream",
+          "Window Evaluator",
+          "P1 On-Call Pager",
+          "P2 Ticket Queue"
+        ],
+        "messages": [
+          {
+            "from": "Telemetry Stream",
+            "to": "Window Evaluator",
+            "label": "Stream Request Status"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "Window Evaluator",
+            "label": "Correlate Short and Long Windows"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "P1 On-Call Pager",
+            "label": "Dispatch Urgent Page"
+          },
+          {
+            "from": "Window Evaluator",
+            "to": "P2 Ticket Queue",
+            "label": "Open Daytime Ticket"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Approach pairs severe thresholds with short time windows.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Requiring confirmation windows prevents transient bursts from waking engineers.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Budget Exhaustion Policies: The Freeze Mechanism",
+      "codeHash": "0bf79d4c2537bda68bd3327cad6a8841df7b44406af3086965f0698b5052d990",
+      "spec": {
+        "template": "states",
+        "title": "Error budget exhaustion states and deployment gating policies",
+        "states": [
+          {
+            "id": "nominal",
+            "label": "Nominal Release Permitted"
+          },
+          {
+            "id": "freeze",
+            "label": "Feature Freeze Active"
+          },
+          {
+            "id": "exempt",
+            "label": "Security Hotfix Permitted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Deployment freeze blocks feature releases when error budget is exhausted.",
+            "activeStateId": "freeze",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Freezes do not block emergency security patches or reliability fixes.",
+            "activeStateId": "exempt",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Error budget exhaustion states and deployment gating policies",
+        "states": [
+          {
+            "id": "nominal",
+            "label": "Nominal Release Permitted"
+          },
+          {
+            "id": "freeze",
+            "label": "Feature Freeze Active"
+          },
+          {
+            "id": "exempt",
+            "label": "Security Hotfix Permitted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Deployment freeze blocks feature releases when error budget is exhausted.",
+            "activeStateId": "freeze",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say6",
+            "caption": "Freezes do not block emergency security patches or reliability fixes.",
+            "activeStateId": "exempt",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balancing Velocity & Reliability in Production",
+      "codeHash": "62328f0dbd876cedbc9f33d5a1d1ff2cf6664905a313d5c5c964f5fc9b7209ce",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
