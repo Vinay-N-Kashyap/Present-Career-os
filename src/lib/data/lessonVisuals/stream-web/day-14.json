@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 14,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Little's Law Applied to Distributed Stream Processing",
+      "codeHash": "417671ff7177d9afd8f6c0518fac8cec45dc95467c954a717f5aec7cc5624eea",
+      "spec": {
+        "template": "table",
+        "title": "Little's Law in-flight queue capacity and throughput across 50ms, 100ms, and 20ms latency",
+        "columns": [
+          "Scenario",
+          "Throughput",
+          "Latency",
+          "In-Flight Capacity"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In-Flight Messages equals Throughput multiplied by Average End-to-End Latency.",
+            "rows": [
+              [
+                "Baseline (50ms)",
+                "10000 msg/s",
+                "50 ms",
+                "500 msgs"
+              ],
+              [
+                "Latency Spike",
+                "10000 msg/s",
+                "100 ms",
+                "1000 msgs"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When buffer holds 500 messages and latency hits 100ms, throughput drops.",
+            "rows": [
+              [
+                "Baseline (50ms)",
+                "10000 msg/s",
+                "50 ms",
+                "500 msgs"
+              ],
+              [
+                "Latency Spike",
+                "10000 msg/s",
+                "100 ms",
+                "1000 msgs"
+              ],
+              [
+                "Fast Target (20ms)",
+                "25000 msg/s",
+                "20 ms",
+                "500 msgs"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Little's Law in-flight queue capacity and throughput across 50ms, 100ms, and 20ms latency",
+        "columns": [
+          "Scenario",
+          "Throughput",
+          "Latency",
+          "In-Flight Capacity"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "In-Flight Messages equals Throughput multiplied by Average End-to-End Latency.",
+            "rows": [
+              [
+                "Baseline (50ms)",
+                "10000 msg/s",
+                "50 ms",
+                "500 msgs"
+              ],
+              [
+                "Latency Spike",
+                "10000 msg/s",
+                "100 ms",
+                "1000 msgs"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When buffer holds 500 messages and latency hits 100ms, throughput drops.",
+            "rows": [
+              [
+                "Baseline (50ms)",
+                "10000 msg/s",
+                "50 ms",
+                "500 msgs"
+              ],
+              [
+                "Latency Spike",
+                "10000 msg/s",
+                "100 ms",
+                "1000 msgs"
+              ],
+              [
+                "Fast Target (20ms)",
+                "25000 msg/s",
+                "20 ms",
+                "500 msgs"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calculating Concurrency Capacity: In-Flight = Throughput × Latency",
+      "codeHash": "e5dc39a0ce5fb51fc73e9106bf685867720cc381e982d4a9b2f9a56f31a7b469",
+      "spec": {
+        "template": "bars",
+        "title": "Downstream DB concurrency demand at 200ms vs 500ms against 250-connection pool limit",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Applying Little's Law at 1000 msg/sec and 200ms yields 200 concurrent ops.",
+            "bars": [
+              {
+                "label": "Normal DB (200ms)",
+                "value": {
+                  "text": "200"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Pool Cap (250 conns)",
+                "value": {
+                  "text": "250"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Calculating exact concurrency targets lets engineers size bounded worker pools.",
+            "bars": [
+              {
+                "label": "Normal DB (200ms)",
+                "value": {
+                  "text": "200"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Pool Cap (250 conns)",
+                "value": {
+                  "text": "250"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Degraded DB (500ms)",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Downstream DB concurrency demand at 200ms vs 500ms against 250-connection pool limit",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Applying Little's Law at 1000 msg/sec and 200ms yields 200 concurrent ops.",
+            "bars": [
+              {
+                "label": "Normal DB (200ms)",
+                "value": 200,
+                "tone": "ok"
+              },
+              {
+                "label": "Pool Cap (250 conns)",
+                "value": 250,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Calculating exact concurrency targets lets engineers size bounded worker pools.",
+            "bars": [
+              {
+                "label": "Normal DB (200ms)",
+                "value": 200,
+                "tone": "ok"
+              },
+              {
+                "label": "Pool Cap (250 conns)",
+                "value": 250,
+                "tone": "data"
+              },
+              {
+                "label": "Degraded DB (500ms)",
+                "value": 500,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bandwidth-Delay Product (BDP) in Cloud Networking",
+      "codeHash": "c09fc8e9f2b79d5f61d8a079225870f7947d1bcca5e5c732204ab68f506d60bd",
+      "spec": {
+        "template": "flow",
+        "title": "Bandwidth-Delay Product (BDP) calculation for a 10 Gbps cross-region link at 60ms RTT",
+        "nodes": [
+          {
+            "id": "bwNode",
+            "label": "10 Gbps Bandwidth",
+            "tappable": false
+          },
+          {
+            "id": "rttNode",
+            "label": "Cross-Region 60ms RTT",
+            "tappable": false
+          },
+          {
+            "id": "bdpPipe",
+            "label": "71.5 MB In-Flight BDP",
+            "tappable": false
+          },
+          {
+            "id": "socketBuf",
+            "label": "73243 KB Socket Buffer",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "bwNode",
+            "to": "bdpPipe",
+            "label": "multiply"
+          },
+          {
+            "from": "rttNode",
+            "to": "bdpPipe",
+            "label": "60 ms"
+          },
+          {
+            "from": "bdpPipe",
+            "to": "socketBuf",
+            "label": "allocate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "BDP equals Network Bandwidth multiplied by Round-Trip Time in seconds.",
+            "activeNodes": [
+              "bwNode",
+              "rttNode",
+              "bdpPipe"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Calculating BDP sizes OS socket buffers to saturate high-bandwidth links.",
+            "activeNodes": [
+              "bdpPipe",
+              "socketBuf"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Bandwidth-Delay Product (BDP) calculation for a 10 Gbps cross-region link at 60ms RTT",
+        "nodes": [
+          {
+            "id": "bwNode",
+            "label": "10 Gbps Bandwidth",
+            "tappable": false
+          },
+          {
+            "id": "rttNode",
+            "label": "Cross-Region 60ms RTT",
+            "tappable": false
+          },
+          {
+            "id": "bdpPipe",
+            "label": "71.5 MB In-Flight BDP",
+            "tappable": false
+          },
+          {
+            "id": "socketBuf",
+            "label": "73243 KB Socket Buffer",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "bwNode",
+            "to": "bdpPipe",
+            "label": "multiply"
+          },
+          {
+            "from": "rttNode",
+            "to": "bdpPipe",
+            "label": "60 ms"
+          },
+          {
+            "from": "bdpPipe",
+            "to": "socketBuf",
+            "label": "allocate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "BDP equals Network Bandwidth multiplied by Round-Trip Time in seconds.",
+            "activeNodes": [
+              "bwNode",
+              "rttNode",
+              "bdpPipe"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Calculating BDP sizes OS socket buffers to saturate high-bandwidth links.",
+            "activeNodes": [
+              "bdpPipe",
+              "socketBuf"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sizing Producer and Consumer Socket Buffers",
+      "codeHash": "6aef31c614153a8bb827d19ce831f19dd9d26ed65f0a3becf7f886a5f9ec5fd9",
+      "spec": {
+        "template": "table",
+        "title": "OS kernel socket buffer RAM consumption across 20 replication links vs 5000 edge clients",
+        "columns": [
+          "Topology",
+          "Sockets",
+          "Buffer (Send+Recv)",
+          "Kernel RAM (64GB Host)"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Increasing send and receive buffers to 8 MB unleashes multi-gigabit throughput.",
+            "rows": [
+              [
+                "Replication Links",
+                "20",
+                "8 MB × 2",
+                "0.3 GB (Safe)"
+              ]
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "High-capacity socket buffers are reserved for inter-broker replication links.",
+            "rows": [
+              [
+                "Replication Links",
+                "20",
+                "8 MB × 2",
+                "0.3 GB (Safe)"
+              ],
+              [
+                "Edge Clients @ 8MB",
+                "5000",
+                "8 MB × 2",
+                "78.1 GB (Unsafe!)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "OS kernel socket buffer RAM consumption across 20 replication links vs 5000 edge clients",
+        "columns": [
+          "Topology",
+          "Sockets",
+          "Buffer (Send+Recv)",
+          "Kernel RAM (64GB Host)"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Increasing send and receive buffers to 8 MB unleashes multi-gigabit throughput.",
+            "rows": [
+              [
+                "Replication Links",
+                "20",
+                "8 MB × 2",
+                "0.3 GB (Safe)"
+              ]
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "High-capacity socket buffers are reserved for inter-broker replication links.",
+            "rows": [
+              [
+                "Replication Links",
+                "20",
+                "8 MB × 2",
+                "0.3 GB (Safe)"
+              ],
+              [
+                "Edge Clients @ 8MB",
+                "5000",
+                "8 MB × 2",
+                "78.1 GB (Unsafe!)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Micro-Batching Latency Budgets & p99 Tail Latency Compliance",
+      "codeHash": "72e81c0bbe6055ecd1cb5729d9989d50b29a974827766fd12733076c140298a1",
+      "spec": {
+        "template": "bars",
+        "title": "End-to-end p99 latency budget (100ms SLA ceiling) with 15ms vs 35ms producer linger",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network (20ms), consumer (30ms), and DB write (25ms) leave a 25ms linger budget.",
+            "bars": [
+              {
+                "label": "Budget 1 (15ms linger)",
+                "value": {
+                  "text": "90"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "p99 SLA Limit (ms)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A 15ms linger stays compliant, whereas a 35ms linger violates the 100ms SLA.",
+            "bars": [
+              {
+                "label": "Budget 1 (15ms linger)",
+                "value": {
+                  "text": "90"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "p99 SLA Limit (ms)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Budget 2 (35ms linger)",
+                "value": {
+                  "text": "110"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "End-to-end p99 latency budget (100ms SLA ceiling) with 15ms vs 35ms producer linger",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network (20ms), consumer (30ms), and DB write (25ms) leave a 25ms linger budget.",
+            "bars": [
+              {
+                "label": "Budget 1 (15ms linger)",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "p99 SLA Limit (ms)",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "A 15ms linger stays compliant, whereas a 35ms linger violates the 100ms SLA.",
+            "bars": [
+              {
+                "label": "Budget 1 (15ms linger)",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "p99 SLA Limit (ms)",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Budget 2 (35ms linger)",
+                "value": 110,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Stream Performance & Sizing Calculator",
+      "codeHash": "88a26e4249dcec687885cd38e019494ddb5c759c73d4895e42f42c7efff1eb52",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
