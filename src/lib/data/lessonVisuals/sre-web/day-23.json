@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 23,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Little's Law: In-Flight Concurrency & Resident Items",
+      "codeHash": "fda4944cdbaf91dd31649e29fd1791cf0b8833b2bf6efa5d1b7fb63b6cec0c08",
+      "spec": {
+        "template": "bars",
+        "title": "Little's Law: Concurrency and Memory under Latency Spikes",
+        "bars": [
+          {
+            "label": "Nominal Concurrency 50ms",
+            "value": 50,
+            "unit": "requests"
+          },
+          {
+            "label": "Slowdown Concurrency 400ms",
+            "value": 400,
+            "unit": "requests"
+          },
+          {
+            "label": "Buffer Memory 400ms",
+            "value": 24,
+            "unit": "MB"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Concurrent requests represent items residing inside the system concurrently.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream latency spikes surge in-flight concurrency tenfold in minutes.",
+            "highlightIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Little's Law: Concurrency and Memory under Latency Spikes",
+        "bars": [
+          {
+            "label": "Nominal Concurrency 50ms",
+            "value": 50,
+            "unit": "requests"
+          },
+          {
+            "label": "Slowdown Concurrency 400ms",
+            "value": 400,
+            "unit": "requests"
+          },
+          {
+            "label": "Buffer Memory 400ms",
+            "value": 24,
+            "unit": "MB"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Concurrent requests represent items residing inside the system concurrently.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Downstream latency spikes surge in-flight concurrency tenfold in minutes.",
+            "highlightIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Non-Linear Queuing Curve & The Utilization Cliff",
+      "codeHash": "0209ae6fa3974cd899be4ee2852df6dcd3612a897b815cc9c1383a577edcc8a1",
+      "spec": {
+        "template": "bars",
+        "title": "The Utilization Cliff and Non-Linear Queuing Wait Times",
+        "bars": [
+          {
+            "label": "Wait at 50% Utilization",
+            "value": 20,
+            "unit": "ms"
+          },
+          {
+            "label": "Wait at 80% Utilization",
+            "value": 80,
+            "unit": "ms"
+          },
+          {
+            "label": "Wait at 95% Utilization",
+            "value": 380,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Request latency increases exponentially with resource utilization.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The utilization cliff causes queue wait times to skyrocket near saturation.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The Utilization Cliff and Non-Linear Queuing Wait Times",
+        "bars": [
+          {
+            "label": "Wait at 50% Utilization",
+            "value": 20,
+            "unit": "ms"
+          },
+          {
+            "label": "Wait at 80% Utilization",
+            "value": 80,
+            "unit": "ms"
+          },
+          {
+            "label": "Wait at 95% Utilization",
+            "value": 380,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Request latency increases exponentially with resource utilization.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The utilization cliff causes queue wait times to skyrocket near saturation.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "M/M/c Multi-Server Queues & Service Rate Math",
+      "codeHash": "13e43eb1f6650267ed127d6101736c0d1c2c52e51727cf855969647231299eeb",
+      "spec": {
+        "template": "compare",
+        "title": "Isolated Single Queue versus Pooled Multi-Server Cluster",
+        "left": {
+          "title": "Isolated Single Queue",
+          "items": [
+            "Head-of-line blocking stalls all requests",
+            "Single instance saturation causes hard drops",
+            "Zero pooling advantage across worker nodes",
+            "High variance in request wait times"
+          ]
+        },
+        "right": {
+          "title": "Pooled M/M/c Cluster Queue",
+          "items": [
+            "Shared queue feeds parallel worker instances",
+            "Significantly shorter average wait times",
+            "Survives individual node failures smoothly",
+            "Scales aggregate capacity to match arrival rate"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-server architectures are modeled formally as multi-server queues.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Shared queues feeding worker nodes experience shorter average wait times.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Isolated Single Queue versus Pooled Multi-Server Cluster",
+        "left": {
+          "title": "Isolated Single Queue",
+          "items": [
+            "Head-of-line blocking stalls all requests",
+            "Single instance saturation causes hard drops",
+            "Zero pooling advantage across worker nodes",
+            "High variance in request wait times"
+          ]
+        },
+        "right": {
+          "title": "Pooled M/M/c Cluster Queue",
+          "items": [
+            "Shared queue feeds parallel worker instances",
+            "Significantly shorter average wait times",
+            "Survives individual node failures smoothly",
+            "Scales aggregate capacity to match arrival rate"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Multi-server architectures are modeled formally as multi-server queues.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Shared queues feeding worker nodes experience shorter average wait times.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capacity Headroom & Peak Surge Modeling",
+      "codeHash": "91368d866d19e36d4c14c7b0ec3d66ecfeff115f56e9612a3511c07b89177492",
+      "spec": {
+        "template": "table",
+        "title": "Capacity Headroom and Redundancy Models",
+        "headers": [
+          "Redundancy Model",
+          "Base Nodes",
+          "Extra Nodes",
+          "Failure Protection"
+        ],
+        "rows": [
+          [
+            "N+0 Baseline",
+            "25 nodes",
+            "0 nodes",
+            "Zero failure tolerance"
+          ],
+          [
+            "N+1 Resilience",
+            "25 nodes",
+            "1 node",
+            "Survives single node failure"
+          ],
+          [
+            "N+2 Enterprise",
+            "25 nodes",
+            "2 nodes",
+            "Survives rollout plus crash"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Capacity headroom maintains sufficient ratio above average operating traffic.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Enterprise redundancy protects against simultaneous deployment and crashes.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Capacity Headroom and Redundancy Models",
+        "headers": [
+          "Redundancy Model",
+          "Base Nodes",
+          "Extra Nodes",
+          "Failure Protection"
+        ],
+        "rows": [
+          [
+            "N+0 Baseline",
+            "25 nodes",
+            "0 nodes",
+            "Zero failure tolerance"
+          ],
+          [
+            "N+1 Resilience",
+            "25 nodes",
+            "1 node",
+            "Survives single node failure"
+          ],
+          [
+            "N+2 Enterprise",
+            "25 nodes",
+            "2 nodes",
+            "Survives rollout plus crash"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Capacity headroom maintains sufficient ratio above average operating traffic.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Enterprise redundancy protects against simultaneous deployment and crashes.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Signal Auto-Scaling Triggers",
+      "codeHash": "1c5a612cdebf6e42fb793d238c257284cb2c735e6d7435462afc629c8a56f317",
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-Signal Composite Auto-Scaling Architecture",
+        "nodes": [
+          {
+            "id": "queue",
+            "label": "Queue Depth",
+            "description": "Leading signal for in-flight requests"
+          },
+          {
+            "id": "latency",
+            "label": "p95 Latency",
+            "description": "Leading signal for processing delay"
+          },
+          {
+            "id": "cpu",
+            "label": "CPU & Memory",
+            "description": "Lagging signal for host saturation"
+          },
+          {
+            "id": "scaler",
+            "label": "Scale Engine",
+            "description": "Provisions target replica capacity"
+          }
+        ],
+        "edges": [
+          {
+            "from": "queue",
+            "to": "scaler",
+            "label": "Surge > 100"
+          },
+          {
+            "from": "latency",
+            "to": "scaler",
+            "label": "p95 > 250ms"
+          },
+          {
+            "from": "cpu",
+            "to": "scaler",
+            "label": "CPU > 75%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Relying solely on lagging CPU utilization creates unmitigated request queues.",
+            "activeNode": "cpu",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Evaluating queue depth alongside latency provisions capacity before pain.",
+            "activeNode": "scaler",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Multi-Signal Composite Auto-Scaling Architecture",
+        "nodes": [
+          {
+            "id": "queue",
+            "label": "Queue Depth",
+            "description": "Leading signal for in-flight requests"
+          },
+          {
+            "id": "latency",
+            "label": "p95 Latency",
+            "description": "Leading signal for processing delay"
+          },
+          {
+            "id": "cpu",
+            "label": "CPU & Memory",
+            "description": "Lagging signal for host saturation"
+          },
+          {
+            "id": "scaler",
+            "label": "Scale Engine",
+            "description": "Provisions target replica capacity"
+          }
+        ],
+        "edges": [
+          {
+            "from": "queue",
+            "to": "scaler",
+            "label": "Surge > 100"
+          },
+          {
+            "from": "latency",
+            "to": "scaler",
+            "label": "p95 > 250ms"
+          },
+          {
+            "from": "cpu",
+            "to": "scaler",
+            "label": "CPU > 75%"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Relying solely on lagging CPU utilization creates unmitigated request queues.",
+            "activeNode": "cpu",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Evaluating queue depth alongside latency provisions capacity before pain.",
+            "activeNode": "scaler",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise Capacity Planner & Sizing Engine",
+      "codeHash": "bcfe14f79b4e1f90222f3aec49203f1ddd2abab2cff1cc7d62c2352079959230",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
