@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 21,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Latency Wall: Why Remote Databases Cripple Streaming",
+      "codeHash": "9b1b37a9b172b5479200189f4e10faba6c1d68b8a813f417ef8271e422cc475f",
+      "spec": {
+        "template": "bars",
+        "title": "compareStoragePerformance lookup latency (µs) across Remote DB, RocksDB, and RAM",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network round-trips throttle remote database throughput to 2500 ops/sec.",
+            "bars": [
+              {
+                "label": "Remote DB Latency (µs)",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Local RocksDB Latency (µs)",
+                "value": {
+                  "text": "25"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Local key-value stores deliver sub-microsecond access times in RAM.",
+            "bars": [
+              {
+                "label": "Remote DB Latency (µs)",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Local RocksDB Latency (µs)",
+                "value": {
+                  "text": "25"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "In-Memory Hash Store (µs)",
+                "value": {
+                  "text": "0.8"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "compareStoragePerformance lookup latency (µs) across Remote DB, RocksDB, and RAM",
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Network round-trips throttle remote database throughput to 2500 ops/sec.",
+            "bars": [
+              {
+                "label": "Remote DB Latency (µs)",
+                "value": 4000,
+                "tone": "error"
+              },
+              {
+                "label": "Local RocksDB Latency (µs)",
+                "value": 25,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Local key-value stores deliver sub-microsecond access times in RAM.",
+            "bars": [
+              {
+                "label": "Remote DB Latency (µs)",
+                "value": 4000,
+                "tone": "error"
+              },
+              {
+                "label": "Local RocksDB Latency (µs)",
+                "value": 25,
+                "tone": "data"
+              },
+              {
+                "label": "In-Memory Hash Store (µs)",
+                "value": 0.8,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Embedded Key-Value State Stores: RocksDB & In-Memory Maps",
+      "codeHash": "f267005de22a68d5bd2b0dd57b3ee791cf52a7435496f2ca502126f601d7810d",
+      "spec": {
+        "template": "table",
+        "title": "InMemoryKeyValueStore embedded point lookups and mutations for customer profiles",
+        "columns": [
+          "Customer Key",
+          "Operation",
+          "Stored Value",
+          "Lookup Result"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Point lookups (get) and mutations (put) execute via direct pointer access.",
+            "rows": [
+              [
+                "cust-101",
+                "put / get",
+                "balance: 450, tier: gold",
+                "Hit ({balance:450})"
+              ],
+              [
+                "cust-102",
+                "put",
+                "balance: 120, tier: silver",
+                "Stored (size: 2)"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Hybrid memory-disk tiering manages state per node with predictable results.",
+            "rows": [
+              [
+                "cust-101",
+                "put / get",
+                "balance: 450, tier: gold",
+                "Hit ({balance:450})"
+              ],
+              [
+                "cust-102",
+                "put",
+                "balance: 120, tier: silver",
+                "Stored (size: 2)"
+              ],
+              [
+                "cust-999",
+                "get (missing)",
+                "none",
+                "null"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "InMemoryKeyValueStore embedded point lookups and mutations for customer profiles",
+        "columns": [
+          "Customer Key",
+          "Operation",
+          "Stored Value",
+          "Lookup Result"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Point lookups (get) and mutations (put) execute via direct pointer access.",
+            "rows": [
+              [
+                "cust-101",
+                "put / get",
+                "balance: 450, tier: gold",
+                "Hit ({balance:450})"
+              ],
+              [
+                "cust-102",
+                "put",
+                "balance: 120, tier: silver",
+                "Stored (size: 2)"
+              ]
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Hybrid memory-disk tiering manages state per node with predictable results.",
+            "rows": [
+              [
+                "cust-101",
+                "put / get",
+                "balance: 450, tier: gold",
+                "Hit ({balance:450})"
+              ],
+              [
+                "cust-102",
+                "put",
+                "balance: 120, tier: silver",
+                "Stored (size: 2)"
+              ],
+              [
+                "cust-999",
+                "get (missing)",
+                "none",
+                "null"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changelog Topic Backing: Replicating State Mutations",
+      "codeHash": "10448885819716e1067ecf85336e8df39ea98f0a69d1f7d67bfe08e195a77c95",
+      "spec": {
+        "template": "sequence",
+        "title": "ChangelogReplicationEngine writing state mutations to localState and changelogTopic",
+        "actors": [
+          {
+            "id": "worker",
+            "label": "Stream Worker"
+          },
+          {
+            "id": "localMap",
+            "label": "localState Map"
+          },
+          {
+            "id": "changelog",
+            "label": "Changelog Topic"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Whenever a worker performs a mutation, it writes to local store and changelog.",
+            "messages": [
+              {
+                "from": "worker",
+                "to": "localMap",
+                "label": "set('account-A', 'ACTIVE')"
+              },
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #0: account-A -> ACTIVE"
+              }
+            ],
+            "activeActorId": "worker"
+          },
+          {
+            "at": "say7",
+            "caption": "Every changelog entry captures the record key, mutated value, and offset.",
+            "messages": [
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #1: account-B -> PENDING"
+              },
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #2: account-A -> SUSPENDED"
+              }
+            ],
+            "activeActorId": "changelog"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "ChangelogReplicationEngine writing state mutations to localState and changelogTopic",
+        "actors": [
+          {
+            "id": "worker",
+            "label": "Stream Worker"
+          },
+          {
+            "id": "localMap",
+            "label": "localState Map"
+          },
+          {
+            "id": "changelog",
+            "label": "Changelog Topic"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Whenever a worker performs a mutation, it writes to local store and changelog.",
+            "messages": [
+              {
+                "from": "worker",
+                "to": "localMap",
+                "label": "set('account-A', 'ACTIVE')"
+              },
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #0: account-A -> ACTIVE"
+              }
+            ],
+            "activeActorId": "worker"
+          },
+          {
+            "at": "say7",
+            "caption": "Every changelog entry captures the record key, mutated value, and offset.",
+            "messages": [
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #1: account-B -> PENDING"
+              },
+              {
+                "from": "worker",
+                "to": "changelog",
+                "label": "append offset #2: account-A -> SUSPENDED"
+              }
+            ],
+            "activeActorId": "changelog"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tombstone Deletions & Log Purging",
+      "codeHash": "f361b0e8839b744e92a70167882edda045880cd9358f1c4a10ff3c19f37dfe92",
+      "spec": {
+        "template": "cells",
+        "title": "TombstoneStore append-only changelog entries with null tombstone payload at index 2",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A Tombstone is a special record with a valid key and payload set to null.",
+            "items": [
+              {
+                "text": "0: session-1=user-alice"
+              },
+              {
+                "text": "1: session-2=user-bob"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "active",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When the store deletes session-1, it emits a tombstone entry with value: null.",
+            "items": [
+              {
+                "text": "0: session-1=user-alice"
+              },
+              {
+                "text": "1: session-2=user-bob"
+              },
+              {
+                "text": "2: session-1=null"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "tombstone",
+                "index": 2,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "TombstoneStore append-only changelog entries with null tombstone payload at index 2",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A Tombstone is a special record with a valid key and payload set to null.",
+            "items": [
+              "0: session-1=user-alice",
+              "1: session-2=user-bob"
+            ],
+            "pointers": [
+              {
+                "name": "active",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "When the store deletes session-1, it emits a tombstone entry with value: null.",
+            "items": [
+              "0: session-1=user-alice",
+              "1: session-2=user-bob",
+              "2: session-1=null"
+            ],
+            "pointers": [
+              {
+                "name": "tombstone",
+                "index": 2,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changelog Replay & Crash Recovery State Restoration",
+      "codeHash": "8aa7fb76d8ec5cba13f6ebcafc9fc878e923eac83c8ddd041cd2552f5a50a246",
+      "spec": {
+        "template": "table",
+        "title": "replayChangelogToState sequentially replaying 5 changelog offsets after node crash",
+        "columns": [
+          "Offset",
+          "Key",
+          "Changelog Value",
+          "Reconstructed State"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The worker replays mutations, updating keys and deleting on tombstones.",
+            "rows": [
+              [
+                "0..2",
+                "user-1",
+                "Profile V2 (Updated)",
+                "user-1: Profile V2"
+              ],
+              [
+                "1..3",
+                "user-2",
+                "null (Tombstone)",
+                "Deleted (false)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Replaying the changelog in causal order reconstructs the exact state snapshot.",
+            "rows": [
+              [
+                "0..2",
+                "user-1",
+                "Profile V2 (Updated)",
+                "user-1: Profile V2"
+              ],
+              [
+                "1..3",
+                "user-2",
+                "null (Tombstone)",
+                "Deleted (false)"
+              ],
+              [
+                "4",
+                "user-3",
+                "Profile V1",
+                "user-3: Profile V1 (2 keys)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "replayChangelogToState sequentially replaying 5 changelog offsets after node crash",
+        "columns": [
+          "Offset",
+          "Key",
+          "Changelog Value",
+          "Reconstructed State"
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The worker replays mutations, updating keys and deleting on tombstones.",
+            "rows": [
+              [
+                "0..2",
+                "user-1",
+                "Profile V2 (Updated)",
+                "user-1: Profile V2"
+              ],
+              [
+                "1..3",
+                "user-2",
+                "null (Tombstone)",
+                "Deleted (false)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Replaying the changelog in causal order reconstructs the exact state snapshot.",
+            "rows": [
+              [
+                "0..2",
+                "user-1",
+                "Profile V2 (Updated)",
+                "user-1: Profile V2"
+              ],
+              [
+                "1..3",
+                "user-2",
+                "null (Tombstone)",
+                "Deleted (false)"
+              ],
+              [
+                "4",
+                "user-3",
+                "Profile V1",
+                "user-3: Profile V1 (2 keys)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Write-Through Caching & Read-Through Optimization",
+      "codeHash": "edcd8f1d6622719e9d24175bd18dfd413f88822d90f63b5446245d67cc19b0b9",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
