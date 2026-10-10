@@ -11,101 +11,201 @@
       "spec": {
         "template": "table",
         "title": "Incident Severity Classification Matrix and Response Escalations",
-        "headers": [
-          "Tier",
-          "Impact Level",
-          "Max SLA",
-          "Escalation Target"
-        ],
-        "rows": [
-          [
-            "SEV1",
-            "Critical core flow outage",
-            "5 min",
-            "VP Eng & All On-Call"
-          ],
-          [
-            "SEV2",
-            "Major flow impairment",
-            "15 min",
-            "Service On-Call Team"
-          ],
-          [
-            "SEV3",
-            "Moderate loss or redundancy",
-            "60 min",
-            "Team Slack Channel"
-          ],
-          [
-            "SEV4",
-            "Minor cosmetic defect",
-            "1440 min",
-            "Daytime Jira Queue"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Catastrophic outages downing primary services require immediate intervention.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Minor cosmetic defects and low-priority warnings are queued for daytime review.",
             "highlightRow": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Tier",
+          "Impact Level",
+          "Max SLA",
+          "Escalation Target"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Incident Severity Classification Matrix and Response Escalations",
-        "headers": [
-          "Tier",
-          "Impact Level",
-          "Max SLA",
-          "Escalation Target"
-        ],
-        "rows": [
-          [
-            "SEV1",
-            "Critical core flow outage",
-            "5 min",
-            "VP Eng & All On-Call"
-          ],
-          [
-            "SEV2",
-            "Major flow impairment",
-            "15 min",
-            "Service On-Call Team"
-          ],
-          [
-            "SEV3",
-            "Moderate loss or redundancy",
-            "60 min",
-            "Team Slack Channel"
-          ],
-          [
-            "SEV4",
-            "Minor cosmetic defect",
-            "1440 min",
-            "Daytime Jira Queue"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Catastrophic outages downing primary services require immediate intervention.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Minor cosmetic defects and low-priority warnings are queued for daytime review.",
             "highlightRow": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "SEV1",
+                  "Critical core flow outage",
+                  "5 min",
+                  "VP Eng & All On-Call"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV2",
+                  "Major flow impairment",
+                  "15 min",
+                  "Service On-Call Team"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV3",
+                  "Moderate loss or redundancy",
+                  "60 min",
+                  "Team Slack Channel"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "SEV4",
+                  "Minor cosmetic defect",
+                  "1440 min",
+                  "Daytime Jira Queue"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Tier",
+          "Impact Level",
+          "Max SLA",
+          "Escalation Target"
         ]
       }
     },

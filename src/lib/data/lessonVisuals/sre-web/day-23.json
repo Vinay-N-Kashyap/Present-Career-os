@@ -235,89 +235,165 @@
       "spec": {
         "template": "table",
         "title": "Capacity Headroom and Redundancy Models",
-        "headers": [
-          "Redundancy Model",
-          "Base Nodes",
-          "Extra Nodes",
-          "Failure Protection"
-        ],
-        "rows": [
-          [
-            "N+0 Baseline",
-            "25 nodes",
-            "0 nodes",
-            "Zero failure tolerance"
-          ],
-          [
-            "N+1 Resilience",
-            "25 nodes",
-            "1 node",
-            "Survives single node failure"
-          ],
-          [
-            "N+2 Enterprise",
-            "25 nodes",
-            "2 nodes",
-            "Survives rollout plus crash"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Capacity headroom maintains sufficient ratio above average operating traffic.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "N+0 Baseline",
+                  "25 nodes",
+                  "0 nodes",
+                  "Zero failure tolerance"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "N+1 Resilience",
+                  "25 nodes",
+                  "1 node",
+                  "Survives single node failure"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+2 Enterprise",
+                  "25 nodes",
+                  "2 nodes",
+                  "Survives rollout plus crash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Enterprise redundancy protects against simultaneous deployment and crashes.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "N+0 Baseline",
+                  "25 nodes",
+                  "0 nodes",
+                  "Zero failure tolerance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+1 Resilience",
+                  "25 nodes",
+                  "1 node",
+                  "Survives single node failure"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+2 Enterprise",
+                  "25 nodes",
+                  "2 nodes",
+                  "Survives rollout plus crash"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Redundancy Model",
+          "Base Nodes",
+          "Extra Nodes",
+          "Failure Protection"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Capacity Headroom and Redundancy Models",
-        "headers": [
-          "Redundancy Model",
-          "Base Nodes",
-          "Extra Nodes",
-          "Failure Protection"
-        ],
-        "rows": [
-          [
-            "N+0 Baseline",
-            "25 nodes",
-            "0 nodes",
-            "Zero failure tolerance"
-          ],
-          [
-            "N+1 Resilience",
-            "25 nodes",
-            "1 node",
-            "Survives single node failure"
-          ],
-          [
-            "N+2 Enterprise",
-            "25 nodes",
-            "2 nodes",
-            "Survives rollout plus crash"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Capacity headroom maintains sufficient ratio above average operating traffic.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "N+0 Baseline",
+                  "25 nodes",
+                  "0 nodes",
+                  "Zero failure tolerance"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "N+1 Resilience",
+                  "25 nodes",
+                  "1 node",
+                  "Survives single node failure"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+2 Enterprise",
+                  "25 nodes",
+                  "2 nodes",
+                  "Survives rollout plus crash"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Enterprise redundancy protects against simultaneous deployment and crashes.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "N+0 Baseline",
+                  "25 nodes",
+                  "0 nodes",
+                  "Zero failure tolerance"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+1 Resilience",
+                  "25 nodes",
+                  "1 node",
+                  "Survives single node failure"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "N+2 Enterprise",
+                  "25 nodes",
+                  "2 nodes",
+                  "Survives rollout plus crash"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Redundancy Model",
+          "Base Nodes",
+          "Extra Nodes",
+          "Failure Protection"
         ]
       }
     },

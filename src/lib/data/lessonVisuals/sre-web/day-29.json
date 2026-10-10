@@ -205,81 +205,151 @@
       "spec": {
         "template": "table",
         "title": "Automated Remediation Guardrails and Safety Controls",
-        "headers": [
-          "Guardrail",
-          "Safety Mechanism",
-          "Failure Prevented"
-        ],
-        "rows": [
-          [
-            "Idempotency",
-            "Produces identical target state",
-            "Compounding side effects"
-          ],
-          [
-            "Rate Limiting",
-            "Max 2 restarts per service/hour",
-            "Infinite restart loops"
-          ],
-          [
-            "Kill Switch",
-            "Instant cluster-wide disablement",
-            "Runaway automation storms"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Remediation guardrails enforce idempotency, rate limiting, and switches.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Idempotency",
+                  "Produces identical target state",
+                  "Compounding side effects"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Rate Limiting",
+                  "Max 2 restarts per service/hour",
+                  "Infinite restart loops"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Kill Switch",
+                  "Instant cluster-wide disablement",
+                  "Runaway automation storms"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Rate limiting restricts how frequently an action may execute per hour.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Idempotency",
+                  "Produces identical target state",
+                  "Compounding side effects"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rate Limiting",
+                  "Max 2 restarts per service/hour",
+                  "Infinite restart loops"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Kill Switch",
+                  "Instant cluster-wide disablement",
+                  "Runaway automation storms"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Guardrail",
+          "Safety Mechanism",
+          "Failure Prevented"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Automated Remediation Guardrails and Safety Controls",
-        "headers": [
-          "Guardrail",
-          "Safety Mechanism",
-          "Failure Prevented"
-        ],
-        "rows": [
-          [
-            "Idempotency",
-            "Produces identical target state",
-            "Compounding side effects"
-          ],
-          [
-            "Rate Limiting",
-            "Max 2 restarts per service/hour",
-            "Infinite restart loops"
-          ],
-          [
-            "Kill Switch",
-            "Instant cluster-wide disablement",
-            "Runaway automation storms"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Remediation guardrails enforce idempotency, rate limiting, and switches.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Idempotency",
+                  "Produces identical target state",
+                  "Compounding side effects"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Rate Limiting",
+                  "Max 2 restarts per service/hour",
+                  "Infinite restart loops"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Kill Switch",
+                  "Instant cluster-wide disablement",
+                  "Runaway automation storms"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Rate limiting restricts how frequently an action may execute per hour.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Idempotency",
+                  "Produces identical target state",
+                  "Compounding side effects"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Rate Limiting",
+                  "Max 2 restarts per service/hour",
+                  "Infinite restart loops"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Kill Switch",
+                  "Instant cluster-wide disablement",
+                  "Runaway automation storms"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Guardrail",
+          "Safety Mechanism",
+          "Failure Prevented"
         ]
       }
     },

@@ -11,89 +11,165 @@
       "spec": {
         "template": "table",
         "title": "Zero-Downtime Deployment Strategy Trade-Off Matrix",
-        "headers": [
-          "Strategy",
-          "Cost Multiplier",
-          "Rollback Speed",
-          "Blast Radius"
-        ],
-        "rows": [
-          [
-            "BLUE_GREEN",
-            "2.0x",
-            "2s",
-            "100%"
-          ],
-          [
-            "ROLLING_UPDATE",
-            "1.25x",
-            "180s",
-            "50%"
-          ],
-          [
-            "CANARY",
-            "1.10x",
-            "5s",
-            "2%"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Identical production environments switch router traffic atomically.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "BLUE_GREEN",
+                  "2.0x",
+                  "2s",
+                  "100%"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ROLLING_UPDATE",
+                  "1.25x",
+                  "180s",
+                  "50%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CANARY",
+                  "1.10x",
+                  "5s",
+                  "2%"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Canary deployments expose software to tiny user cohorts before promotion.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "BLUE_GREEN",
+                  "2.0x",
+                  "2s",
+                  "100%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ROLLING_UPDATE",
+                  "1.25x",
+                  "180s",
+                  "50%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CANARY",
+                  "1.10x",
+                  "5s",
+                  "2%"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Strategy",
+          "Cost Multiplier",
+          "Rollback Speed",
+          "Blast Radius"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Zero-Downtime Deployment Strategy Trade-Off Matrix",
-        "headers": [
-          "Strategy",
-          "Cost Multiplier",
-          "Rollback Speed",
-          "Blast Radius"
-        ],
-        "rows": [
-          [
-            "BLUE_GREEN",
-            "2.0x",
-            "2s",
-            "100%"
-          ],
-          [
-            "ROLLING_UPDATE",
-            "1.25x",
-            "180s",
-            "50%"
-          ],
-          [
-            "CANARY",
-            "1.10x",
-            "5s",
-            "2%"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Identical production environments switch router traffic atomically.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "BLUE_GREEN",
+                  "2.0x",
+                  "2s",
+                  "100%"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "ROLLING_UPDATE",
+                  "1.25x",
+                  "180s",
+                  "50%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CANARY",
+                  "1.10x",
+                  "5s",
+                  "2%"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Canary deployments expose software to tiny user cohorts before promotion.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "BLUE_GREEN",
+                  "2.0x",
+                  "2s",
+                  "100%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ROLLING_UPDATE",
+                  "1.25x",
+                  "180s",
+                  "50%"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "CANARY",
+                  "1.10x",
+                  "5s",
+                  "2%"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Strategy",
+          "Cost Multiplier",
+          "Rollback Speed",
+          "Blast Radius"
         ]
       }
     },

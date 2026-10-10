@@ -291,89 +291,165 @@
       "spec": {
         "template": "table",
         "title": "Hybrid Fleet Allocation and Risk Diversification",
-        "headers": [
-          "Tier",
-          "Allocation",
-          "Discount",
-          "Operational Role"
-        ],
-        "rows": [
-          [
-            "Reserved",
-            "40 instances",
-            "60% off",
-            "Runs steady 24/7 baseline traffic"
-          ],
-          [
-            "Spot",
-            "50 instances",
-            "75% off",
-            "Absorbs elastic daily surge peaks"
-          ],
-          [
-            "On-Demand",
-            "10 instances",
-            "Retail",
-            "Safety buffer during spot reclaim"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Baseline traffic running continuously is backed by reserved commitments.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "On-demand instances serve as fallback safety buffers when spot reclaims.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Tier",
+          "Allocation",
+          "Discount",
+          "Operational Role"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Hybrid Fleet Allocation and Risk Diversification",
-        "headers": [
-          "Tier",
-          "Allocation",
-          "Discount",
-          "Operational Role"
-        ],
-        "rows": [
-          [
-            "Reserved",
-            "40 instances",
-            "60% off",
-            "Runs steady 24/7 baseline traffic"
-          ],
-          [
-            "Spot",
-            "50 instances",
-            "75% off",
-            "Absorbs elastic daily surge peaks"
-          ],
-          [
-            "On-Demand",
-            "10 instances",
-            "Retail",
-            "Safety buffer during spot reclaim"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Baseline traffic running continuously is backed by reserved commitments.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "On-demand instances serve as fallback safety buffers when spot reclaims.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Reserved",
+                  "40 instances",
+                  "60% off",
+                  "Runs steady 24/7 baseline traffic"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Spot",
+                  "50 instances",
+                  "75% off",
+                  "Absorbs elastic daily surge peaks"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "On-Demand",
+                  "10 instances",
+                  "Retail",
+                  "Safety buffer during spot reclaim"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Tier",
+          "Allocation",
+          "Discount",
+          "Operational Role"
         ]
       }
     },

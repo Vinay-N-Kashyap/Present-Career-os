@@ -205,77 +205,129 @@
       "spec": {
         "template": "table",
         "title": "Chaos Engineering Resilience Audit Scorecard",
-        "headers": [
-          "Service",
-          "Experiment Type",
-          "Steady State",
-          "Resilience Score"
-        ],
-        "rows": [
-          [
-            "checkout-svc",
-            "NETWORK_LATENCY_INJECTION",
-            "Maintained",
-            "30 / 30 pts"
-          ],
-          [
-            "search-svc",
-            "REPLICA_DROP_CHAOS",
-            "Violated",
-            "0 / 30 pts"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Every production service undergoes weekly automated chaos experiments.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Maintaining the steady-state hypothesis throughout injection earns points.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Service",
+          "Experiment Type",
+          "Steady State",
+          "Resilience Score"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Chaos Engineering Resilience Audit Scorecard",
-        "headers": [
-          "Service",
-          "Experiment Type",
-          "Steady State",
-          "Resilience Score"
-        ],
-        "rows": [
-          [
-            "checkout-svc",
-            "NETWORK_LATENCY_INJECTION",
-            "Maintained",
-            "30 / 30 pts"
-          ],
-          [
-            "search-svc",
-            "REPLICA_DROP_CHAOS",
-            "Violated",
-            "0 / 30 pts"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Every production service undergoes weekly automated chaos experiments.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Maintaining the steady-state hypothesis throughout injection earns points.",
             "highlightRow": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "checkout-svc",
+                  "NETWORK_LATENCY_INJECTION",
+                  "Maintained",
+                  "30 / 30 pts"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "search-svc",
+                  "REPLICA_DROP_CHAOS",
+                  "Violated",
+                  "0 / 30 pts"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Service",
+          "Experiment Type",
+          "Steady State",
+          "Resilience Score"
         ]
       }
     },

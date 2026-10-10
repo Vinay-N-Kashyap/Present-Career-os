@@ -345,101 +345,215 @@
       "spec": {
         "template": "table",
         "title": "SMART Framework for Resilient Action Items",
-        "headers": [
-          "Attribute",
-          "SMART Meaning",
-          "Enforcement Rule"
-        ],
-        "rows": [
-          [
-            "Specific",
-            "Precise code or test deliverable",
-            "No vague descriptions"
-          ],
-          [
-            "Measurable",
-            "Verifiable quantitative criteria",
-            "Metric thresholds defined"
-          ],
-          [
-            "Achievable",
-            "Realistic engineering scope",
-            "Single named individual owner"
-          ],
-          [
-            "Relevant",
-            "Directly targets root cause",
-            "Linked to five whys discovery"
-          ],
-          [
-            "Time-Bound",
-            "Strict completion deadline",
-            "Enforced by priority SLA"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Every postmortem action item must adhere strictly to the SMART framework.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Specific",
+                  "Precise code or test deliverable",
+                  "No vague descriptions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Measurable",
+                  "Verifiable quantitative criteria",
+                  "Metric thresholds defined"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Achievable",
+                  "Realistic engineering scope",
+                  "Single named individual owner"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Relevant",
+                  "Directly targets root cause",
+                  "Linked to five whys discovery"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time-Bound",
+                  "Strict completion deadline",
+                  "Enforced by priority SLA"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Achievable items have realistic scope and a single named accountable owner.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Specific",
+                  "Precise code or test deliverable",
+                  "No vague descriptions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Measurable",
+                  "Verifiable quantitative criteria",
+                  "Metric thresholds defined"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Achievable",
+                  "Realistic engineering scope",
+                  "Single named individual owner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Relevant",
+                  "Directly targets root cause",
+                  "Linked to five whys discovery"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time-Bound",
+                  "Strict completion deadline",
+                  "Enforced by priority SLA"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Attribute",
+          "SMART Meaning",
+          "Enforcement Rule"
         ]
       },
       "filled": {
         "template": "table",
         "title": "SMART Framework for Resilient Action Items",
-        "headers": [
-          "Attribute",
-          "SMART Meaning",
-          "Enforcement Rule"
-        ],
-        "rows": [
-          [
-            "Specific",
-            "Precise code or test deliverable",
-            "No vague descriptions"
-          ],
-          [
-            "Measurable",
-            "Verifiable quantitative criteria",
-            "Metric thresholds defined"
-          ],
-          [
-            "Achievable",
-            "Realistic engineering scope",
-            "Single named individual owner"
-          ],
-          [
-            "Relevant",
-            "Directly targets root cause",
-            "Linked to five whys discovery"
-          ],
-          [
-            "Time-Bound",
-            "Strict completion deadline",
-            "Enforced by priority SLA"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Every postmortem action item must adhere strictly to the SMART framework.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Specific",
+                  "Precise code or test deliverable",
+                  "No vague descriptions"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Measurable",
+                  "Verifiable quantitative criteria",
+                  "Metric thresholds defined"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Achievable",
+                  "Realistic engineering scope",
+                  "Single named individual owner"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Relevant",
+                  "Directly targets root cause",
+                  "Linked to five whys discovery"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time-Bound",
+                  "Strict completion deadline",
+                  "Enforced by priority SLA"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Achievable items have realistic scope and a single named accountable owner.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Specific",
+                  "Precise code or test deliverable",
+                  "No vague descriptions"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Measurable",
+                  "Verifiable quantitative criteria",
+                  "Metric thresholds defined"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Achievable",
+                  "Realistic engineering scope",
+                  "Single named individual owner"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Relevant",
+                  "Directly targets root cause",
+                  "Linked to five whys discovery"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Time-Bound",
+                  "Strict completion deadline",
+                  "Enforced by priority SLA"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Attribute",
+          "SMART Meaning",
+          "Enforcement Rule"
         ]
       }
     },

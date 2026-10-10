@@ -87,89 +87,165 @@
       "spec": {
         "template": "table",
         "title": "Steady-State Hypothesis Evaluation Across Chaos Phases",
-        "headers": [
-          "Experiment Phase",
-          "Error Rate",
-          "p99 Latency",
-          "Hypothesis Status"
-        ],
-        "rows": [
-          [
-            "Baseline Nominal",
-            "0.02%",
-            "45ms",
-            "Maintained (Healthy)"
-          ],
-          [
-            "Chaos (Redis Down)",
-            "0.05%",
-            "180ms",
-            "Maintained (Resilient)"
-          ],
-          [
-            "Cascade Failure",
-            "3.4%",
-            "650ms",
-            "Disproven (Bug Found)"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The scientific method establishes quantifiable steady-state behavior.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Metrics degrading beyond tolerance boundaries disprove the hypothesis.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Experiment Phase",
+          "Error Rate",
+          "p99 Latency",
+          "Hypothesis Status"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Steady-State Hypothesis Evaluation Across Chaos Phases",
-        "headers": [
-          "Experiment Phase",
-          "Error Rate",
-          "p99 Latency",
-          "Hypothesis Status"
-        ],
-        "rows": [
-          [
-            "Baseline Nominal",
-            "0.02%",
-            "45ms",
-            "Maintained (Healthy)"
-          ],
-          [
-            "Chaos (Redis Down)",
-            "0.05%",
-            "180ms",
-            "Maintained (Resilient)"
-          ],
-          [
-            "Cascade Failure",
-            "3.4%",
-            "650ms",
-            "Disproven (Bug Found)"
-          ]
-        ],
         "steps": [
           {
             "at": "say2",
             "caption": "The scientific method establishes quantifiable steady-state behavior.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Metrics degrading beyond tolerance boundaries disprove the hypothesis.",
             "highlightRow": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "Baseline Nominal",
+                  "0.02%",
+                  "45ms",
+                  "Maintained (Healthy)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Chaos (Redis Down)",
+                  "0.05%",
+                  "180ms",
+                  "Maintained (Resilient)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Cascade Failure",
+                  "3.4%",
+                  "650ms",
+                  "Disproven (Bug Found)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Experiment Phase",
+          "Error Rate",
+          "p99 Latency",
+          "Hypothesis Status"
         ]
       }
     },

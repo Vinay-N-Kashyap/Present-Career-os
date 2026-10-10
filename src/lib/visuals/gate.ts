@@ -197,16 +197,13 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
           }
           break;
         case 'table':
-          if (spec.columns && (spec.columns.length < 2 || spec.columns.length > 5)) {
-            errors.push(`R3: Entry [${i}] table has ${spec.columns.length} columns, expected 2-5`);
-          }
-          if (spec.rows && spec.rows.length > 6) {
-            errors.push(`R3: Entry [${i}] table has ${spec.rows.length} rows, max 6`);
+          if (!Array.isArray(spec.columns) || spec.columns.length < 2 || spec.columns.length > 5) {
+            errors.push(`R3: Entry [${i}] table has ${spec.columns?.length ?? 0} columns, expected 2-5`);
           }
           if (Array.isArray(steps)) {
             for (let s = 0; s < steps.length; s++) {
-              if (steps[s].rows && steps[s].rows.length > 6) {
-                errors.push(`R3: Entry [${i}] step [${s}] table has ${steps[s].rows.length} rows, max 6`);
+              if (!Array.isArray(steps[s].rows) || steps[s].rows.length < 1 || steps[s].rows.length > 6) {
+                errors.push(`R3: Entry [${i}] step [${s}] table has ${steps[s].rows?.length ?? 0} rows, expected 1-6`);
               }
             }
           }

@@ -399,113 +399,237 @@
       "spec": {
         "template": "table",
         "title": "Chronological Milestones in Automated Incident Lifecycle",
-        "headers": [
-          "Milestone",
-          "Elapsed Time",
-          "Operational Action",
-          "Metric Tracked"
-        ],
-        "rows": [
-          [
-            "START",
-            "0 min",
-            "Customer degradation begins",
-            "Outage Start"
-          ],
-          [
-            "DETECT",
-            "2 min",
-            "Multi-window burn alert triggers",
-            "MTTD (2 min)"
-          ],
-          [
-            "ACK",
-            "5 min",
-            "On-call assumes incident command",
-            "MTTA (3 min)"
-          ],
-          [
-            "MITIGATE",
-            "17 min",
-            "Failover to healthy read replica",
-            "MTTR (17 min)"
-          ],
-          [
-            "RESOLVE",
-            "40 min",
-            "Connection pool drained and stable",
-            "Total Outage"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Operational milestones log to an immutable chronological timeline.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "START",
+                  "0 min",
+                  "Customer degradation begins",
+                  "Outage Start"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DETECT",
+                  "2 min",
+                  "Multi-window burn alert triggers",
+                  "MTTD (2 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ACK",
+                  "5 min",
+                  "On-call assumes incident command",
+                  "MTTA (3 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MITIGATE",
+                  "17 min",
+                  "Failover to healthy read replica",
+                  "MTTR (17 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RESOLVE",
+                  "40 min",
+                  "Connection pool drained and stable",
+                  "Total Outage"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Separating customer mitigation from resolution ensures accurate recovery.",
             "highlightRow": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "START",
+                  "0 min",
+                  "Customer degradation begins",
+                  "Outage Start"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DETECT",
+                  "2 min",
+                  "Multi-window burn alert triggers",
+                  "MTTD (2 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ACK",
+                  "5 min",
+                  "On-call assumes incident command",
+                  "MTTA (3 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MITIGATE",
+                  "17 min",
+                  "Failover to healthy read replica",
+                  "MTTR (17 min)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "RESOLVE",
+                  "40 min",
+                  "Connection pool drained and stable",
+                  "Total Outage"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Milestone",
+          "Elapsed Time",
+          "Operational Action",
+          "Metric Tracked"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Chronological Milestones in Automated Incident Lifecycle",
-        "headers": [
-          "Milestone",
-          "Elapsed Time",
-          "Operational Action",
-          "Metric Tracked"
-        ],
-        "rows": [
-          [
-            "START",
-            "0 min",
-            "Customer degradation begins",
-            "Outage Start"
-          ],
-          [
-            "DETECT",
-            "2 min",
-            "Multi-window burn alert triggers",
-            "MTTD (2 min)"
-          ],
-          [
-            "ACK",
-            "5 min",
-            "On-call assumes incident command",
-            "MTTA (3 min)"
-          ],
-          [
-            "MITIGATE",
-            "17 min",
-            "Failover to healthy read replica",
-            "MTTR (17 min)"
-          ],
-          [
-            "RESOLVE",
-            "40 min",
-            "Connection pool drained and stable",
-            "Total Outage"
-          ]
-        ],
         "steps": [
           {
             "at": "say4",
             "caption": "Operational milestones log to an immutable chronological timeline.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "START",
+                  "0 min",
+                  "Customer degradation begins",
+                  "Outage Start"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "DETECT",
+                  "2 min",
+                  "Multi-window burn alert triggers",
+                  "MTTD (2 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ACK",
+                  "5 min",
+                  "On-call assumes incident command",
+                  "MTTA (3 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MITIGATE",
+                  "17 min",
+                  "Failover to healthy read replica",
+                  "MTTR (17 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "RESOLVE",
+                  "40 min",
+                  "Connection pool drained and stable",
+                  "Total Outage"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Separating customer mitigation from resolution ensures accurate recovery.",
             "highlightRow": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "START",
+                  "0 min",
+                  "Customer degradation begins",
+                  "Outage Start"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "DETECT",
+                  "2 min",
+                  "Multi-window burn alert triggers",
+                  "MTTD (2 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "ACK",
+                  "5 min",
+                  "On-call assumes incident command",
+                  "MTTA (3 min)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "MITIGATE",
+                  "17 min",
+                  "Failover to healthy read replica",
+                  "MTTR (17 min)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "RESOLVE",
+                  "40 min",
+                  "Connection pool drained and stable",
+                  "Total Outage"
+                ],
+                "tone": "data"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Milestone",
+          "Elapsed Time",
+          "Operational Action",
+          "Metric Tracked"
         ]
       }
     },

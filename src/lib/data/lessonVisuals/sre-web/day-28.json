@@ -87,77 +87,129 @@
       "spec": {
         "template": "table",
         "title": "Canary Metric Delta Tolerance Threshold Evaluation",
-        "headers": [
-          "Metric",
-          "Max Allowed Increase",
-          "Category",
-          "Evaluation Verdict"
-        ],
-        "rows": [
-          [
-            "ErrorRate",
-            "+10%",
-            "Hard Blocker",
-            "Failed (+50% surge -> Rollback)"
-          ],
-          [
-            "p95Latency",
-            "+15%",
-            "Soft Warning",
-            "Passed (+7.5% within tolerance)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Tolerance thresholds are defined across hard failures and soft deviations.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Statistical bounds prevent rollbacks on tiny fractional variations.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Metric",
+          "Max Allowed Increase",
+          "Category",
+          "Evaluation Verdict"
         ]
       },
       "filled": {
         "template": "table",
         "title": "Canary Metric Delta Tolerance Threshold Evaluation",
-        "headers": [
-          "Metric",
-          "Max Allowed Increase",
-          "Category",
-          "Evaluation Verdict"
-        ],
-        "rows": [
-          [
-            "ErrorRate",
-            "+10%",
-            "Hard Blocker",
-            "Failed (+50% surge -> Rollback)"
-          ],
-          [
-            "p95Latency",
-            "+15%",
-            "Soft Warning",
-            "Passed (+7.5% within tolerance)"
-          ]
-        ],
         "steps": [
           {
             "at": "say3",
             "caption": "Tolerance thresholds are defined across hard failures and soft deviations.",
             "highlightRow": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Statistical bounds prevent rollbacks on tiny fractional variations.",
             "highlightRow": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "rows": [
+              {
+                "cells": [
+                  "ErrorRate",
+                  "+10%",
+                  "Hard Blocker",
+                  "Failed (+50% surge -> Rollback)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "p95Latency",
+                  "+15%",
+                  "Soft Warning",
+                  "Passed (+7.5% within tolerance)"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
+        ],
+        "columns": [
+          "Metric",
+          "Max Allowed Increase",
+          "Category",
+          "Evaluation Verdict"
         ]
       }
     },
