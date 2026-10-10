@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 5,
+  "promptSha": "eb2c17af0dcf895606f30cf45c5e0cfe9331dc0750d8cebe09f2325c24f25808",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Mustache Variable Extraction & AST Representation",
+      "codeHash": "eb2c17af0dcf895606f30cf45c5e0cfe9331dc0750d8cebe09f2325c24f25808",
+      "spec": {
+        "template": "flow",
+        "title": "Placeholder Scanning Pipeline",
+        "nodes": [
+          { "id": "template", "label": "Template String", "tappable": false },
+          { "id": "regex", "label": "Regex Scanner", "tappable": false },
+          { "id": "match", "label": "Match Extraction", "tappable": false },
+          { "id": "vars", "label": "TemplateVariable[]", "tappable": false }
+        ],
+        "edges": [
+          { "from": "template", "to": "regex" },
+          { "from": "regex", "to": "match" },
+          { "from": "match", "to": "vars" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mustache delimiters define dynamic insertion points in the template.",
+            "activeNodes": ["template", "regex"],
+            "statusBadge": "scanning"
+          },
+          {
+            "at": "say5",
+            "caption": "Scanner identifies variable names, start offsets, and raw placeholders.",
+            "activeNodes": ["regex", "match"],
+            "statusBadge": "extracting"
+          },
+          {
+            "at": "say7",
+            "caption": "Duplicate variable occurrences are deduplicated preserving locations.",
+            "activeNodes": ["match", "vars"],
+            "statusBadge": "deduplicating"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Placeholder Scanning Pipeline",
+        "nodes": [
+          { "id": "template", "label": "Template String", "tappable": false },
+          { "id": "regex", "label": "Regex Scanner", "tappable": false },
+          { "id": "match", "label": "Match Extraction", "tappable": false },
+          { "id": "vars", "label": "TemplateVariable[]", "tappable": false }
+        ],
+        "edges": [
+          { "from": "template", "to": "regex" },
+          { "from": "regex", "to": "match" },
+          { "from": "match", "to": "vars" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Mustache delimiters define dynamic insertion points in the template.",
+            "activeNodes": ["template", "regex"],
+            "statusBadge": "scanning"
+          },
+          {
+            "at": "say5",
+            "caption": "Scanner identifies variable names, start offsets, and raw placeholders.",
+            "activeNodes": ["regex", "match"],
+            "statusBadge": "extracting"
+          },
+          {
+            "at": "say7",
+            "caption": "Duplicate variable occurrences are deduplicated preserving locations.",
+            "activeNodes": ["match", "vars"],
+            "statusBadge": "deduplicating"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Strict Variable Type & Presence Validation",
+      "codeHash": "b3048cec60aeb14bd75a8f50a1777190e274903fdab0b2560e1647578a2d2655",
+      "spec": {
+        "template": "states",
+        "title": "Template Binding Validation States",
+        "states": [
+          { "id": "received", "label": "Bindings Received" },
+          { "id": "checking", "label": "Presence Check" },
+          { "id": "valid", "label": "All Keys Provided" },
+          { "id": "invalid", "label": "Missing Variables Detected" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Omitted arguments leave raw mustache placeholders in prompt output.",
+            "current": "received",
+            "visited": ["received"]
+          },
+          {
+            "at": "say5",
+            "caption": "Validator checks values are defined, non-null, and non-empty strings.",
+            "current": "checking",
+            "visited": ["received", "checking"]
+          },
+          {
+            "at": "say8",
+            "caption": "Strict validation eliminates silent prompt corruption at the boundary.",
+            "current": "valid",
+            "visited": ["received", "checking", "valid"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Template Binding Validation States",
+        "states": [
+          { "id": "received", "label": "Bindings Received" },
+          { "id": "checking", "label": "Presence Check" },
+          { "id": "valid", "label": "All Keys Provided" },
+          { "id": "invalid", "label": "Missing Variables Detected" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Omitted arguments leave raw mustache placeholders in prompt output.",
+            "current": "received",
+            "visited": ["received"]
+          },
+          {
+            "at": "say5",
+            "caption": "Validator checks values are defined, non-null, and non-empty strings.",
+            "current": "checking",
+            "visited": ["received", "checking"]
+          },
+          {
+            "at": "say8",
+            "caption": "Strict validation eliminates silent prompt corruption at the boundary.",
+            "current": "valid",
+            "visited": ["received", "checking", "valid"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prompt Injection Defense & Delimiter Neutralization",
+      "codeHash": "7df561d10519125e0bb1fac702c175de10a05dedf11368eab19c884cb6f96788",
+      "spec": {
+        "template": "compare",
+        "title": "Raw Malicious Input vs Sanitized Output",
+        "leftLabel": "Raw User Input (Dangerous)",
+        "rightLabel": "Sanitized Output (Neutralized)",
+        "leftItems": [
+          "Contains <|im_start|> control token",
+          "Fake System: header impersonates authority",
+          "Unescaped delimiters trick the tokenizer",
+          "Model interprets user text as system prompt"
+        ],
+        "rightItems": [
+          "Replaced with [ESC_IM_START] safe token",
+          "System: rewritten to [$1_del]: prefix",
+          "All injection delimiters fully neutralized",
+          "Model receives only intended user content"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Injection exploits special chat control delimiters like im_start.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Delimiters are escaped into harmless bracketed representations.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw Malicious Input vs Sanitized Output",
+        "leftLabel": "Raw User Input (Dangerous)",
+        "rightLabel": "Sanitized Output (Neutralized)",
+        "leftItems": [
+          "Contains <|im_start|> control token",
+          "Fake System: header impersonates authority",
+          "Unescaped delimiters trick the tokenizer",
+          "Model interprets user text as system prompt"
+        ],
+        "rightItems": [
+          "Replaced with [ESC_IM_START] safe token",
+          "System: rewritten to [$1_del]: prefix",
+          "All injection delimiters fully neutralized",
+          "Model receives only intended user content"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Injection exploits special chat control delimiters like im_start.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say7",
+            "caption": "Delimiters are escaped into harmless bracketed representations.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partial Application & Reusable Persona Currying",
+      "codeHash": "daea061bfb74399852bd5e6be8c1a0bede137e8221a496caa6c74c01e68a82ba",
+      "spec": {
+        "template": "workflow",
+        "title": "Prompt Currying Pipeline",
+        "stages": [
+          { "id": "base", "name": "Base Template", "subtext": "Raw template string" },
+          { "id": "bind", "name": "Bind Static Vars", "subtext": "Persona and tenant" },
+          { "id": "specialized", "name": "Specialized Instance", "subtext": "Pre-bound currier" },
+          { "id": "render", "name": "Render Output", "subtext": "Dynamic query merged" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Partial application curries static variables into the template engine.",
+            "activeStageId": "bind",
+            "statusBadge": "binding"
+          },
+          {
+            "at": "say6",
+            "caption": "Specialized instance retains pre-bound variables for runtime queries.",
+            "activeStageId": "specialized",
+            "statusBadge": "curried"
+          },
+          {
+            "at": "say8",
+            "caption": "Route handlers invoke pre-bound template with only the user query.",
+            "activeStageId": "render",
+            "statusBadge": "rendering"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Prompt Currying Pipeline",
+        "stages": [
+          { "id": "base", "name": "Base Template", "subtext": "Raw template string" },
+          { "id": "bind", "name": "Bind Static Vars", "subtext": "Persona and tenant" },
+          { "id": "specialized", "name": "Specialized Instance", "subtext": "Pre-bound currier" },
+          { "id": "render", "name": "Render Output", "subtext": "Dynamic query merged" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Partial application curries static variables into the template engine.",
+            "activeStageId": "bind",
+            "statusBadge": "binding"
+          },
+          {
+            "at": "say6",
+            "caption": "Specialized instance retains pre-bound variables for runtime queries.",
+            "activeStageId": "specialized",
+            "statusBadge": "curried"
+          },
+          {
+            "at": "say8",
+            "caption": "Route handlers invoke pre-bound template with only the user query.",
+            "activeStageId": "render",
+            "statusBadge": "rendering"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Section Prompt Composition",
+      "codeHash": "0b3258a780cfd504c639baf7bf770807eb9a4ee7c830682d6e83c263ff7d2fd1",
+      "spec": {
+        "template": "table",
+        "title": "Structured Message Array Sections",
+        "columns": ["Section", "Role", "Purpose"],
+        "rows": [
+          { "Section": { "text": "System Persona" }, "Role": { "text": "system" }, "Purpose": { "text": "Behavior, tone, safety guardrails" } },
+          { "Section": { "text": "Context Block" }, "Role": { "text": "system" }, "Purpose": { "text": "RAG documents, DB results" } },
+          { "Section": { "text": "Few-Shot Turns" }, "Role": { "text": "user/assistant" }, "Purpose": { "text": "Exemplary reasoning patterns" } },
+          { "Section": { "text": "User Query" }, "Role": { "text": "user" }, "Purpose": { "text": "Immediate instruction to evaluate" } }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt composer structures prompts into modular distinct sections.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Context blocks inject retrieved documents into the system context.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "PromptComposer provides fluent builder methods for a message array.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Structured Message Array Sections",
+        "columns": ["Section", "Role", "Purpose"],
+        "rows": [
+          { "Section": "System Persona", "Role": "system", "Purpose": "Behavior, tone, safety guardrails" },
+          { "Section": "Context Block", "Role": "system", "Purpose": "RAG documents, DB results" },
+          { "Section": "Few-Shot Turns", "Role": "user/assistant", "Purpose": "Exemplary reasoning patterns" },
+          { "Section": "User Query", "Role": "user", "Purpose": "Immediate instruction to evaluate" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Prompt composer structures prompts into modular distinct sections.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Context blocks inject retrieved documents into the system context.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "PromptComposer provides fluent builder methods for a message array.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Prompt Template Engine (Milestone 1)",
+      "codeHash": "3727e06e457601a0c5afb61093cc21653bb83242ddce7a08ce160dbba32511ed",
+      "spec": {
+        "template": "none",
+        "reason": "Production Prompt Template Engine milestone synthesizing scanner, validator, sanitizer, and currier"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Prompt Template Engine milestone synthesizing scanner, validator, sanitizer, and currier"
+      }
+    }
+  ]
+}
