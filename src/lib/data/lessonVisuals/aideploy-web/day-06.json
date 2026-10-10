@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 6,
+  "promptSha": "ae2a04a25ef243a74172544331fb6fb3c373c9b1e00790429bf0162d82555ba2",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "SSE Protocol Framing & Line Delimiters",
+      "codeHash": "ae2a04a25ef243a74172544331fb6fb3c373c9b1e00790429bf0162d82555ba2",
+      "spec": {
+        "template": "table",
+        "title": "SSE Protocol Framing Fields",
+        "columns": ["Field Prefix", "Protocol Purpose", "Framing Rule"],
+        "rows": [
+          { "Field Prefix": { "text": "data:" }, "Protocol Purpose": { "text": "Message Payload" }, "Framing Rule": { "text": "Stripped and parsed as JSON" } },
+          { "Field Prefix": { "text": "event:" }, "Protocol Purpose": { "text": "Custom Event Type" }, "Framing Rule": { "text": "Dispatches to typed listeners" } },
+          { "Field Prefix": { "text": ": (colon)" }, "Protocol Purpose": { "text": "Comment / Heartbeat" }, "Framing Rule": { "text": "Ignored by application parser" } },
+          { "Field Prefix": { "text": "\\n\\n" }, "Protocol Purpose": { "text": "Event Terminator" }, "Framing Rule": { "text": "Flushes completed event chunk" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An SSE response stream uses text/event-stream and keeps connections open.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "SSE events format payload text lines using prefixes like data and event.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Lines beginning with a colon character represent keep-alive heartbeat comments.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SSE Protocol Framing Fields",
+        "columns": ["Field Prefix", "Protocol Purpose", "Framing Rule"],
+        "rows": [
+          { "Field Prefix": "data:", "Protocol Purpose": "Message Payload", "Framing Rule": "Stripped and parsed as JSON" },
+          { "Field Prefix": "event:", "Protocol Purpose": "Custom Event Type", "Framing Rule": "Dispatches to typed listeners" },
+          { "Field Prefix": ": (colon)", "Protocol Purpose": "Comment / Heartbeat", "Framing Rule": "Ignored by application parser" },
+          { "Field Prefix": "\\n\\n", "Protocol Purpose": "Event Terminator", "Framing Rule": "Flushes completed event chunk" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "An SSE response stream uses text/event-stream and keeps connections open.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "SSE events format payload text lines using prefixes like data and event.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Lines beginning with a colon character represent keep-alive heartbeat comments.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Buffer Boundary Slicing & Partial Line Reconstruction",
+      "codeHash": "153586284a10b26306d7623346dba8ed37fcdeaf4a2590b11d13aaf708fa9c00",
+      "spec": {
+        "template": "flow",
+        "title": "Stream Line Buffering & Packet Slicing",
+        "nodes": [
+          { "id": "chunk", "label": "Network Chunk", "tappable": false },
+          { "id": "combine", "label": "Prepend Remainder", "tappable": false },
+          { "id": "split", "label": "Newline Split", "tappable": false },
+          { "id": "emit", "label": "Emit Full Lines", "tappable": false },
+          { "id": "save", "label": "Retain Remainder", "tappable": false }
+        ],
+        "edges": [
+          { "from": "chunk", "to": "combine" },
+          { "from": "combine", "to": "split" },
+          { "from": "split", "to": "emit" },
+          { "from": "split", "to": "save" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A single JSON line may be fragmented across physical network packets.",
+            "activeNodes": ["chunk", "combine"],
+            "statusBadge": "fragmented"
+          },
+          {
+            "at": "say5",
+            "caption": "Incoming chunks are prepended with trailing remainder text from the buffer.",
+            "activeNodes": ["combine", "split"],
+            "statusBadge": "reassembling"
+          },
+          {
+            "at": "say8",
+            "caption": "Defensive buffer slicing guarantees parsers handle arbitrary fragmentation.",
+            "activeNodes": ["emit", "save"],
+            "statusBadge": "buffered"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Stream Line Buffering & Packet Slicing",
+        "nodes": [
+          { "id": "chunk", "label": "Network Chunk", "tappable": false },
+          { "id": "combine", "label": "Prepend Remainder", "tappable": false },
+          { "id": "split", "label": "Newline Split", "tappable": false },
+          { "id": "emit", "label": "Emit Full Lines", "tappable": false },
+          { "id": "save", "label": "Retain Remainder", "tappable": false }
+        ],
+        "edges": [
+          { "from": "chunk", "to": "combine" },
+          { "from": "combine", "to": "split" },
+          { "from": "split", "to": "emit" },
+          { "from": "split", "to": "save" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A single JSON line may be fragmented across physical network packets.",
+            "activeNodes": ["chunk", "combine"],
+            "statusBadge": "fragmented"
+          },
+          {
+            "at": "say5",
+            "caption": "Incoming chunks are prepended with trailing remainder text from the buffer.",
+            "activeNodes": ["combine", "split"],
+            "statusBadge": "reassembling"
+          },
+          {
+            "at": "say8",
+            "caption": "Defensive buffer slicing guarantees parsers handle arbitrary fragmentation.",
+            "activeNodes": ["emit", "save"],
+            "statusBadge": "buffered"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream Delta Extraction & Cumulative Assembly",
+      "codeHash": "958ab4f4a683bc23e46ad1fe93827fc9679200649f3783898a190eff7c52cebb",
+      "spec": {
+        "template": "workflow",
+        "title": "Delta Extraction and Assembly Pipeline",
+        "stages": [
+          { "id": "payload", "name": "Chunk Payload", "subtext": "Raw SSE JSON line" },
+          { "id": "extract", "name": "Delta Extract", "subtext": "choices[0].delta.content" },
+          { "id": "dispatch", "name": "UI Dispatch", "subtext": "Live token callback" },
+          { "id": "accumulate", "name": "Cumulative Buffer", "subtext": "Full text aggregation" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Streaming schemas deliver token deltas inside choices array objects.",
+            "activeStageId": "payload",
+            "statusBadge": "parsed"
+          },
+          {
+            "at": "say4",
+            "caption": "A delta collector extracts content and appends it to accumulation buffers.",
+            "activeStageId": "extract",
+            "statusBadge": "accumulated"
+          },
+          {
+            "at": "say7",
+            "caption": "Cumulative text assembly ensures clients hold complete text in memory.",
+            "activeStageId": "accumulate",
+            "statusBadge": "complete"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Delta Extraction and Assembly Pipeline",
+        "stages": [
+          { "id": "payload", "name": "Chunk Payload", "subtext": "Raw SSE JSON line" },
+          { "id": "extract", "name": "Delta Extract", "subtext": "choices[0].delta.content" },
+          { "id": "dispatch", "name": "UI Dispatch", "subtext": "Live token callback" },
+          { "id": "accumulate", "name": "Cumulative Buffer", "subtext": "Full text aggregation" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Streaming schemas deliver token deltas inside choices array objects.",
+            "activeStageId": "payload",
+            "statusBadge": "parsed"
+          },
+          {
+            "at": "say4",
+            "caption": "A delta collector extracts content and appends it to accumulation buffers.",
+            "activeStageId": "extract",
+            "statusBadge": "accumulated"
+          },
+          {
+            "at": "say7",
+            "caption": "Cumulative text assembly ensures clients hold complete text in memory.",
+            "activeStageId": "accumulate",
+            "statusBadge": "complete"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream Termination & [DONE] Sentinel Protocol",
+      "codeHash": "9e72b7ecf7b25315e41b56491c96ccee25c1a1d85d2a1e442e6d33458ba1598b",
+      "spec": {
+        "template": "states",
+        "title": "Stream Lifecycle and Termination States",
+        "states": [
+          { "id": "streaming", "label": "Streaming Active" },
+          { "id": "inspecting", "label": "Inspect Sentinel" },
+          { "id": "sentinel", "label": "[DONE] Detected" },
+          { "id": "closed", "label": "Stream Finalized" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stream termination is signaled by the literal sentinel string data DONE.",
+            "current": "streaming",
+            "visited": ["streaming"]
+          },
+          {
+            "at": "say5",
+            "caption": "Consumers inspect payloads for the DONE marker before JSON deserialization.",
+            "current": "inspecting",
+            "visited": ["streaming", "inspecting"]
+          },
+          {
+            "at": "say8",
+            "caption": "Capturing final finish reason indicators confirms generation ended cleanly.",
+            "current": "closed",
+            "visited": ["streaming", "inspecting", "sentinel", "closed"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Stream Lifecycle and Termination States",
+        "states": [
+          { "id": "streaming", "label": "Streaming Active" },
+          { "id": "inspecting", "label": "Inspect Sentinel" },
+          { "id": "sentinel", "label": "[DONE] Detected" },
+          { "id": "closed", "label": "Stream Finalized" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stream termination is signaled by the literal sentinel string data DONE.",
+            "current": "streaming",
+            "visited": ["streaming"]
+          },
+          {
+            "at": "say5",
+            "caption": "Consumers inspect payloads for the DONE marker before JSON deserialization.",
+            "current": "inspecting",
+            "visited": ["streaming", "inspecting"]
+          },
+          {
+            "at": "say8",
+            "caption": "Capturing final finish reason indicators confirms generation ended cleanly.",
+            "current": "closed",
+            "visited": ["streaming", "inspecting", "sentinel", "closed"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Time-to-First-Token (TTFT) & Latency Telemetry",
+      "codeHash": "20fedb25d3e3e0a8b52ea995f0948e9af9968a1aec876e71c9ec50f9a3c2f6db",
+      "spec": {
+        "template": "bars",
+        "title": "Streaming Latency Breakdown (ms)",
+        "bars": [
+          { "label": "TTFT Latency", "value": { "text": "250" }, "tone": "ok" },
+          { "label": "Token Generation", "value": { "text": "750" }, "tone": "data" },
+          { "label": "Total Duration", "value": { "text": "1000" }, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Time-to-First-Token is the critical latency metric for user perception.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say3",
+            "caption": "Users perceive applications as fast when initial token delivery is swift.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Dividing tokens by total streaming time yields generation throughput rate.",
+            "highlightBar": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Streaming Latency Breakdown (ms)",
+        "bars": [
+          { "label": "TTFT Latency", "value": 250, "tone": "ok" },
+          { "label": "Token Generation", "value": 750, "tone": "data" },
+          { "label": "Total Duration", "value": 1000, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Time-to-First-Token is the critical latency metric for user perception.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say3",
+            "caption": "Users perceive applications as fast when initial token delivery is swift.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Dividing tokens by total streaming time yields generation throughput rate.",
+            "highlightBar": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Streaming Client Pipeline",
+      "codeHash": "7b429a035d03be5d0367ad8b8192c426034148b87f6dc7d79e61e6d46a9f2c8e",
+      "spec": {
+        "template": "none",
+        "reason": "Enterprise Streaming Client Pipeline capstone synthesizing line buffering, delta accumulation, and sentinel detection"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Enterprise Streaming Client Pipeline capstone synthesizing line buffering, delta accumulation, and sentinel detection"
+      }
+    }
+  ]
+}
