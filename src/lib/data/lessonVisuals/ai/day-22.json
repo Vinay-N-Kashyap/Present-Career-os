@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 22,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Economics of LLM Caching: Latency & Cost Optimization",
+      "codeHash": "7ed44f56507c1350b9a8841c781860f0e0ff6baa548aab07f67c90383024b2e8",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to LLM caching economics and latency metrics"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to LLM caching economics and latency metrics"
+      }
+    },
+    {
+      "partTitle": "Exact Key-Value Caching with SHA-256 Normalization",
+      "codeHash": "59d4cbbd687a39b94f0dd457479dbab03f3d6401b5c9375bd06397b3f9cdfee5",
+      "spec": {
+        "template": "flow",
+        "title": "Deterministic prompt normalization and SHA-256 key-value hashing pipeline",
+        "nodes": [
+          {
+            "id": "rawQuery",
+            "label": "Raw User Prompt",
+            "tappable": false
+          },
+          {
+            "id": "normalizer",
+            "label": "Normalization Pipeline",
+            "tappable": false
+          },
+          {
+            "id": "hasher",
+            "label": "SHA-256 Hash Digest",
+            "tappable": false
+          },
+          {
+            "id": "kvStore",
+            "label": "Key-Value Cache Store",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawQuery",
+            "to": "normalizer",
+            "label": "Strip Whitespace and Punctuation"
+          },
+          {
+            "from": "normalizer",
+            "to": "hasher",
+            "label": "Append Model Temperature Parameters"
+          },
+          {
+            "from": "hasher",
+            "to": "kvStore",
+            "label": "Sub-Millisecond Hash Key Lookup"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The system hashes exact prompt strings into deterministic keys.",
+            "activeNodes": [
+              "rawQuery",
+              "normalizer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Normalization trims whitespace and converts text to lowercase before hashing.",
+            "activeNodes": [
+              "normalizer",
+              "hasher",
+              "kvStore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Deterministic prompt normalization and SHA-256 key-value hashing pipeline",
+        "nodes": [
+          {
+            "id": "rawQuery",
+            "label": "Raw User Prompt",
+            "tappable": false
+          },
+          {
+            "id": "normalizer",
+            "label": "Normalization Pipeline",
+            "tappable": false
+          },
+          {
+            "id": "hasher",
+            "label": "SHA-256 Hash Digest",
+            "tappable": false
+          },
+          {
+            "id": "kvStore",
+            "label": "Key-Value Cache Store",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawQuery",
+            "to": "normalizer",
+            "label": "Strip Whitespace and Punctuation"
+          },
+          {
+            "from": "normalizer",
+            "to": "hasher",
+            "label": "Append Model Temperature Parameters"
+          },
+          {
+            "from": "hasher",
+            "to": "kvStore",
+            "label": "Sub-Millisecond Hash Key Lookup"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The system hashes exact prompt strings into deterministic keys.",
+            "activeNodes": [
+              "rawQuery",
+              "normalizer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Normalization trims whitespace and converts text to lowercase before hashing.",
+            "activeNodes": [
+              "normalizer",
+              "hasher",
+              "kvStore"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Semantic Caching Principles & Vector Similarity Thresholds",
+      "codeHash": "1517ec0f424165e78d3a4f0438499002c344fddfe1039f751026c6555d37107a",
+      "spec": {
+        "template": "compare",
+        "title": "Exact lexical string hashing versus semantic vector cosine similarity",
+        "left": {
+          "title": "Exact Key Hashing",
+          "items": [
+            "Fails on paraphrased phrasing",
+            "Zero semantic understanding",
+            "100% cache miss on synonyms",
+            "Rigid character-level lookup"
+          ]
+        },
+        "right": {
+          "title": "Dense Semantic Vector Cache",
+          "items": [
+            "Converts query to embeddings",
+            "Matches conceptual user intent",
+            "Cosine similarity threshold",
+            "High hit rate on variations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An exact key cache yields total misses when users express identical intent.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If cosine similarity exceeds strict threshold the system serves cached answers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Exact lexical string hashing versus semantic vector cosine similarity",
+        "left": {
+          "title": "Exact Key Hashing",
+          "items": [
+            "Fails on paraphrased phrasing",
+            "Zero semantic understanding",
+            "100% cache miss on synonyms",
+            "Rigid character-level lookup"
+          ]
+        },
+        "right": {
+          "title": "Dense Semantic Vector Cache",
+          "items": [
+            "Converts query to embeddings",
+            "Matches conceptual user intent",
+            "Cosine similarity threshold",
+            "High hit rate on variations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "An exact key cache yields total misses when users express identical intent.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "If cosine similarity exceeds strict threshold the system serves cached answers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tiered Multi-Level Cache Architecture: L1 Exact + L2 Semantic",
+      "codeHash": "c8ab88ca31f3d1c71e9750c10896ced9dab4c60f16067f5e94711dde483816d8",
+      "spec": {
+        "template": "boxes",
+        "title": "Production tiered multi-level caching cascade architecture",
+        "boxes": [
+          {
+            "id": "l1Cache",
+            "title": "Level 1 Exact Cache",
+            "items": [
+              "Sub-millisecond hash check",
+              "Zero embedding model cost",
+              "Handles popular verbatim queries"
+            ]
+          },
+          {
+            "id": "l2Cache",
+            "title": "Level 2 Semantic Cache",
+            "items": [
+              "Dense vector similarity index",
+              "15 millisecond retrieval time",
+              "Captures fuzzy paraphrased intent"
+            ]
+          },
+          {
+            "id": "modelFallback",
+            "title": "Primary LLM Engine",
+            "items": [
+              "Invoked only on double misses",
+              "Full generative inference",
+              "Updates L1 and L2 caches"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Level one is an ultra-fast exact cache operating in sub-millisecond time.",
+            "activeBoxId": "l1Cache",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only when level one misses does the system proceed to compute embeddings.",
+            "activeBoxId": "l2Cache",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Production tiered multi-level caching cascade architecture",
+        "boxes": [
+          {
+            "id": "l1Cache",
+            "title": "Level 1 Exact Cache",
+            "items": [
+              "Sub-millisecond hash check",
+              "Zero embedding model cost",
+              "Handles popular verbatim queries"
+            ]
+          },
+          {
+            "id": "l2Cache",
+            "title": "Level 2 Semantic Cache",
+            "items": [
+              "Dense vector similarity index",
+              "15 millisecond retrieval time",
+              "Captures fuzzy paraphrased intent"
+            ]
+          },
+          {
+            "id": "modelFallback",
+            "title": "Primary LLM Engine",
+            "items": [
+              "Invoked only on double misses",
+              "Full generative inference",
+              "Updates L1 and L2 caches"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Level one is an ultra-fast exact cache operating in sub-millisecond time.",
+            "activeBoxId": "l1Cache",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Only when level one misses does the system proceed to compute embeddings.",
+            "activeBoxId": "l2Cache",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation, Temporal Drift, and Multi-Tenant Isolation",
+      "codeHash": "06e7f5f42fb13a73c1b447276b8cffd1a16ac3ee7eb8cae6425cdde4183bdde8",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise cache invalidation risk management and namespace isolation",
+        "columns": [
+          "Invalidation Vector",
+          "Production Risk Factor",
+          "Mitigation Strategy",
+          "Technical Mechanism"
+        ],
+        "rows": [
+          [
+            "Temporal Drift",
+            "Serving stale or obsolete facts",
+            "Time-To-Live Expiration",
+            "Automated TTL Eviction"
+          ],
+          [
+            "Multi-Tenant Leak",
+            "Private data served across users",
+            "Namespace Partitioning",
+            "Tenant ID Compound Keys"
+          ],
+          [
+            "Knowledge Base Update",
+            "Desynchronized documentation",
+            "Explicit Webhook Purge",
+            "Targeted Vector Deletion"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "To mitigate temporal drift cache entries enforce strict expiration times.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "To enforce isolation cache keys partition entries by tenant namespace.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise cache invalidation risk management and namespace isolation",
+        "columns": [
+          "Invalidation Vector",
+          "Production Risk Factor",
+          "Mitigation Strategy",
+          "Technical Mechanism"
+        ],
+        "rows": [
+          [
+            "Temporal Drift",
+            "Serving stale or obsolete facts",
+            "Time-To-Live Expiration",
+            "Automated TTL Eviction"
+          ],
+          [
+            "Multi-Tenant Leak",
+            "Private data served across users",
+            "Namespace Partitioning",
+            "Tenant ID Compound Keys"
+          ],
+          [
+            "Knowledge Base Update",
+            "Desynchronized documentation",
+            "Explicit Webhook Purge",
+            "Targeted Vector Deletion"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "To mitigate temporal drift cache entries enforce strict expiration times.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "To enforce isolation cache keys partition entries by tenant namespace.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Semantic Caching Engine: High-Volume Benchmark",
+      "codeHash": "ba1cab15bfc207af2dbe24f6942a1f49fcc4b3a94f43c2347a76123b5c3ace66",
+      "spec": {
+        "template": "sequence",
+        "title": "Production semantic caching engine benchmark request flow transaction",
+        "actors": [
+          {
+            "id": "clientApp",
+            "label": "Client Application"
+          },
+          {
+            "id": "l1Exact",
+            "label": "L1 Exact Hash Cache"
+          },
+          {
+            "id": "l2Semantic",
+            "label": "L2 Vector Semantic Cache"
+          },
+          {
+            "id": "llmGateway",
+            "label": "Primary LLM Gateway"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientApp",
+            "to": "l1Exact",
+            "label": "Query Normalized Prompt Hash",
+            "tone": "data"
+          },
+          {
+            "from": "l1Exact",
+            "to": "l2Semantic",
+            "label": "L1 Cache Miss: Forward Vector Embedding",
+            "tone": "data"
+          },
+          {
+            "from": "l2Semantic",
+            "to": "clientApp",
+            "label": "L2 Semantic Hit: Return Cached Response",
+            "tone": "ok"
+          },
+          {
+            "from": "l2Semantic",
+            "to": "llmGateway",
+            "label": "L2 Cache Miss: Invoke Primary LLM",
+            "tone": "data"
+          },
+          {
+            "from": "llmGateway",
+            "to": "clientApp",
+            "label": "Emit Full Inference and Update Caches",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine brings together prompt normalization and vector similarity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Average query latency plummets across the entire customer service workload.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Production semantic caching engine benchmark request flow transaction",
+        "actors": [
+          {
+            "id": "clientApp",
+            "label": "Client Application"
+          },
+          {
+            "id": "l1Exact",
+            "label": "L1 Exact Hash Cache"
+          },
+          {
+            "id": "l2Semantic",
+            "label": "L2 Vector Semantic Cache"
+          },
+          {
+            "id": "llmGateway",
+            "label": "Primary LLM Gateway"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientApp",
+            "to": "l1Exact",
+            "label": "Query Normalized Prompt Hash",
+            "tone": "data"
+          },
+          {
+            "from": "l1Exact",
+            "to": "l2Semantic",
+            "label": "L1 Cache Miss: Forward Vector Embedding",
+            "tone": "data"
+          },
+          {
+            "from": "l2Semantic",
+            "to": "clientApp",
+            "label": "L2 Semantic Hit: Return Cached Response",
+            "tone": "ok"
+          },
+          {
+            "from": "l2Semantic",
+            "to": "llmGateway",
+            "label": "L2 Cache Miss: Invoke Primary LLM",
+            "tone": "data"
+          },
+          {
+            "from": "llmGateway",
+            "to": "clientApp",
+            "label": "Emit Full Inference and Update Caches",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine brings together prompt normalization and vector similarity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Average query latency plummets across the entire customer service workload.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
