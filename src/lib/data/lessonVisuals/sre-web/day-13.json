@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 13,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Transient Failures vs Permanent Errors & Idempotency",
+      "codeHash": "35ae2ad0e85aa7bcc8b07f145ee4cc52ce3e6623fbe38391ae41821496acb4e5",
+      "spec": {
+        "template": "table",
+        "title": "HTTP status code transient classification and idempotency matrix",
+        "columns": [
+          "HTTP Status",
+          "Error Classification",
+          "Idempotency Requirement",
+          "Retry Decision"
+        ],
+        "rows": [
+          [
+            "400 Bad Request",
+            "Permanent client error",
+            "Not applicable",
+            "Fast Fail"
+          ],
+          [
+            "429 Too Many Requests",
+            "Transient rate limit",
+            "Idempotent or Keyed",
+            "Retry with Backoff"
+          ],
+          [
+            "503 Service Unavailable",
+            "Transient gateway failure",
+            "Idempotent safe",
+            "Retry with Backoff"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Permanent client errors represent fatal conditions and fail fast immediately.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Retrying is safe only when underlying actions are strictly idempotent.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "HTTP status code transient classification and idempotency matrix",
+        "columns": [
+          "HTTP Status",
+          "Error Classification",
+          "Idempotency Requirement",
+          "Retry Decision"
+        ],
+        "rows": [
+          [
+            "400 Bad Request",
+            "Permanent client error",
+            "Not applicable",
+            "Fast Fail"
+          ],
+          [
+            "429 Too Many Requests",
+            "Transient rate limit",
+            "Idempotent or Keyed",
+            "Retry with Backoff"
+          ],
+          [
+            "503 Service Unavailable",
+            "Transient gateway failure",
+            "Idempotent safe",
+            "Retry with Backoff"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Permanent client errors represent fatal conditions and fail fast immediately.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Retrying is safe only when underlying actions are strictly idempotent.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 2
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential Backoff Mechanics & Truncation Ceilings",
+      "codeHash": "c34f2de71d891e7567a23398f4923a186325c0a65540f2c4781085072c794123",
+      "spec": {
+        "template": "bars",
+        "title": "Truncated exponential backoff progression with maximum delay ceiling",
+        "bars": [
+          {
+            "id": "att1",
+            "label": "Attempt 1 (100ms)",
+            "value": 100
+          },
+          {
+            "id": "att2",
+            "label": "Attempt 2 (200ms)",
+            "value": 200
+          },
+          {
+            "id": "att3",
+            "label": "Attempt 3 (400ms)",
+            "value": 400
+          },
+          {
+            "id": "att4",
+            "label": "Attempt 4 (800ms)",
+            "value": 800
+          },
+          {
+            "id": "att5",
+            "label": "Attempt 5 (1000ms Ceiling)",
+            "value": 1000
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff delays increase exponentially between consecutive attempts.",
+            "activeBars": [
+              "att1",
+              "att2",
+              "att3"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers apply truncation ceilings to prevent unbounded backoff delays.",
+            "activeBars": [
+              "att1",
+              "att2",
+              "att3",
+              "att4",
+              "att5"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Truncated exponential backoff progression with maximum delay ceiling",
+        "bars": [
+          {
+            "id": "att1",
+            "label": "Attempt 1 (100ms)",
+            "value": 100
+          },
+          {
+            "id": "att2",
+            "label": "Attempt 2 (200ms)",
+            "value": 200
+          },
+          {
+            "id": "att3",
+            "label": "Attempt 3 (400ms)",
+            "value": 400
+          },
+          {
+            "id": "att4",
+            "label": "Attempt 4 (800ms)",
+            "value": 800
+          },
+          {
+            "id": "att5",
+            "label": "Attempt 5 (1000ms Ceiling)",
+            "value": 1000
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Exponential backoff delays increase exponentially between consecutive attempts.",
+            "activeBars": [
+              "att1",
+              "att2",
+              "att3"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers apply truncation ceilings to prevent unbounded backoff delays.",
+            "activeBars": [
+              "att1",
+              "att2",
+              "att3",
+              "att4",
+              "att5"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Thundering Herd Problem & Full Jitter Decorrelation",
+      "codeHash": "b93d2cba1ccda713a6cb9481b663cbe436a214fb6fdd6ad5e87b6a72f4468c91",
+      "spec": {
+        "template": "sequence",
+        "title": "Client retry decorrelation across full jitter time distribution",
+        "actors": [
+          "Client Alpha",
+          "Client Beta",
+          "Gateway Service"
+        ],
+        "messages": [
+          {
+            "from": "Client Alpha",
+            "to": "Gateway Service",
+            "label": "Initial failed request"
+          },
+          {
+            "from": "Client Beta",
+            "to": "Gateway Service",
+            "label": "Initial failed request"
+          },
+          {
+            "from": "Client Alpha",
+            "to": "Gateway Service",
+            "label": "Decorrelated retry at 84ms"
+          },
+          {
+            "from": "Client Beta",
+            "to": "Gateway Service",
+            "label": "Decorrelated retry at 312ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Synchronized client retry waves cause severe recurring traffic spikes.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Full jitter decorrelates retry schedules smoothly across time intervals.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Client retry decorrelation across full jitter time distribution",
+        "actors": [
+          "Client Alpha",
+          "Client Beta",
+          "Gateway Service"
+        ],
+        "messages": [
+          {
+            "from": "Client Alpha",
+            "to": "Gateway Service",
+            "label": "Initial failed request"
+          },
+          {
+            "from": "Client Beta",
+            "to": "Gateway Service",
+            "label": "Initial failed request"
+          },
+          {
+            "from": "Client Alpha",
+            "to": "Gateway Service",
+            "label": "Decorrelated retry at 84ms"
+          },
+          {
+            "from": "Client Beta",
+            "to": "Gateway Service",
+            "label": "Decorrelated retry at 312ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Synchronized client retry waves cause severe recurring traffic spikes.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Full jitter decorrelates retry schedules smoothly across time intervals.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Equal Jitter vs Decorrelated Jitter Strategies",
+      "codeHash": "4b0c529a2c8afff1142468f57f4a06f0ec6fda03baea313ae311c61a34af507b",
+      "spec": {
+        "template": "compare",
+        "title": "Equal jitter floor guarantees versus decorrelated prior delay scaling",
+        "left": {
+          "title": "Equal Jitter Strategy",
+          "items": [
+            "Guarantees half ceiling deterministic floor",
+            "Randomizes remaining half duration",
+            "Prevents premature backoff attempts",
+            "Provides predictable floor delays"
+          ]
+        },
+        "right": {
+          "title": "Decorrelated Jitter Strategy",
+          "items": [
+            "Scales based on previous sleep delay",
+            "No explicit attempt counter required",
+            "Smoothly scales with queue pressure",
+            "Prevents multi-client synchronization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engineers use Equal Jitter to guarantee a minimum sleep floor duration.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Decorrelated Jitter computes random delays scaling from previous sleep times.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Equal jitter floor guarantees versus decorrelated prior delay scaling",
+        "left": {
+          "title": "Equal Jitter Strategy",
+          "items": [
+            "Guarantees half ceiling deterministic floor",
+            "Randomizes remaining half duration",
+            "Prevents premature backoff attempts",
+            "Provides predictable floor delays"
+          ]
+        },
+        "right": {
+          "title": "Decorrelated Jitter Strategy",
+          "items": [
+            "Scales based on previous sleep delay",
+            "No explicit attempt counter required",
+            "Smoothly scales with queue pressure",
+            "Prevents multi-client synchronization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Engineers use Equal Jitter to guarantee a minimum sleep floor duration.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Decorrelated Jitter computes random delays scaling from previous sleep times.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Bucket Retry Budgets & Preventing Retry Storms",
+      "codeHash": "47fc4555da1ca13ea7d8c31a7e2dde86962b6eeb5f173be0a2f189661d1a1bd9",
+      "spec": {
+        "template": "workflow",
+        "title": "Token bucket retry credit allocation and storm containment lifecycle",
+        "nodes": [
+          {
+            "id": "incoming",
+            "label": "Initial Request Ingress"
+          },
+          {
+            "id": "credit",
+            "label": "Award Fractional Credit"
+          },
+          {
+            "id": "failure",
+            "label": "Transient Failure"
+          },
+          {
+            "id": "check",
+            "label": "Token Budget Balance Check"
+          },
+          {
+            "id": "allowed",
+            "label": "Token Deducted: Retry Granted"
+          },
+          {
+            "id": "rejected",
+            "label": "Budget Empty: Fast Fail"
+          }
+        ],
+        "edges": [
+          {
+            "from": "incoming",
+            "to": "credit",
+            "label": "Success"
+          },
+          {
+            "from": "incoming",
+            "to": "failure",
+            "label": "Error"
+          },
+          {
+            "from": "failure",
+            "to": "check",
+            "label": "Evaluate"
+          },
+          {
+            "from": "check",
+            "to": "allowed",
+            "label": "Tokens Available"
+          },
+          {
+            "from": "check",
+            "to": "rejected",
+            "label": "Exhausted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Retry budgets implement token buckets to contain cascading failure storms.",
+            "activeNodes": [
+              "incoming",
+              "credit",
+              "failure"
+            ],
+            "activeEdges": [
+              "incoming->credit",
+              "incoming->failure"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "When token buckets empty retries are disallowed and fail fast immediately.",
+            "activeNodes": [
+              "check",
+              "rejected"
+            ],
+            "activeEdges": [
+              "failure->check",
+              "check->rejected"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Token bucket retry credit allocation and storm containment lifecycle",
+        "nodes": [
+          {
+            "id": "incoming",
+            "label": "Initial Request Ingress"
+          },
+          {
+            "id": "credit",
+            "label": "Award Fractional Credit"
+          },
+          {
+            "id": "failure",
+            "label": "Transient Failure"
+          },
+          {
+            "id": "check",
+            "label": "Token Budget Balance Check"
+          },
+          {
+            "id": "allowed",
+            "label": "Token Deducted: Retry Granted"
+          },
+          {
+            "id": "rejected",
+            "label": "Budget Empty: Fast Fail"
+          }
+        ],
+        "edges": [
+          {
+            "from": "incoming",
+            "to": "credit",
+            "label": "Success"
+          },
+          {
+            "from": "incoming",
+            "to": "failure",
+            "label": "Error"
+          },
+          {
+            "from": "failure",
+            "to": "check",
+            "label": "Evaluate"
+          },
+          {
+            "from": "check",
+            "to": "allowed",
+            "label": "Tokens Available"
+          },
+          {
+            "from": "check",
+            "to": "rejected",
+            "label": "Exhausted"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Retry budgets implement token buckets to contain cascading failure storms.",
+            "activeNodes": [
+              "incoming",
+              "credit",
+              "failure"
+            ],
+            "activeEdges": [
+              "incoming->credit",
+              "incoming->failure"
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "When token buckets empty retries are disallowed and fail fast immediately.",
+            "activeNodes": [
+              "check",
+              "rejected"
+            ],
+            "activeEdges": [
+              "failure->check",
+              "check->rejected"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Client Dispatcher with Exponential Backoff, Jitter & Retry Budget",
+      "codeHash": "ee134529deef57f6557c145cbeab3c6fc72a25ca66b460d1a066b1a2f7a806db",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
