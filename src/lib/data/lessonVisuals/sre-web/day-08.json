@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 8,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Multi-Region Topologies: Blast Radius Reduction & High Availability",
+      "codeHash": "69e27aac1aecd47b96241ad98b0f39e9ca695071c3eb57a940e658c2922dd1aa",
+      "spec": {
+        "template": "compare",
+        "title": "Active-passive failover topology versus active-active multi-peer routing",
+        "left": {
+          "title": "Active-Passive Topology",
+          "items": [
+            "Primary serves 100% user traffic",
+            "Secondary standby handles 0%",
+            "Asynchronous data replication",
+            "Simpler consistency guarantees"
+          ]
+        },
+        "right": {
+          "title": "Active-Active Topology",
+          "items": [
+            "Both regions serve active traffic",
+            "Traffic routed by proximity",
+            "Requires multi-master conflict logic",
+            "Zero idle infrastructure waste"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "There are two primary multi-region architectural paradigms.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The primary region handles traffic while the secondary stands by.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Active-passive failover topology versus active-active multi-peer routing",
+        "left": {
+          "title": "Active-Passive Topology",
+          "items": [
+            "Primary serves 100% user traffic",
+            "Secondary standby handles 0%",
+            "Asynchronous data replication",
+            "Simpler consistency guarantees"
+          ]
+        },
+        "right": {
+          "title": "Active-Active Topology",
+          "items": [
+            "Both regions serve active traffic",
+            "Traffic routed by proximity",
+            "Requires multi-master conflict logic",
+            "Zero idle infrastructure waste"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "There are two primary multi-region architectural paradigms.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The primary region handles traffic while the secondary stands by.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active-Passive Replication Dynamics & RPO / RTO Trade-offs",
+      "codeHash": "7ea8c9a91282e2a16891402d40cf26cc4d18236c1902869781c3b87a21a7e92a",
+      "spec": {
+        "template": "table",
+        "title": "Cross-region asynchronous replication lag and RPO compliance",
+        "columns": [
+          "Region Pair",
+          "Replication Lag",
+          "Target RPO",
+          "Compliance Status"
+        ],
+        "rows": [
+          [
+            "US-East / EU-West",
+            "450ms",
+            "5000ms",
+            "Compliant"
+          ],
+          [
+            "US-East / AP-South",
+            "8200ms",
+            "5000ms",
+            "Degraded"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Most active passive architectures rely on asynchronous database replication.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Lag dictates Recovery Point Objective measuring acceptable data loss.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cross-region asynchronous replication lag and RPO compliance",
+        "columns": [
+          "Region Pair",
+          "Replication Lag",
+          "Target RPO",
+          "Compliance Status"
+        ],
+        "rows": [
+          [
+            "US-East / EU-West",
+            "450ms",
+            "5000ms",
+            "Compliant"
+          ],
+          [
+            "US-East / AP-South",
+            "8200ms",
+            "5000ms",
+            "Degraded"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Most active passive architectures rely on asynchronous database replication.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Lag dictates Recovery Point Objective measuring acceptable data loss.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active-Active Topologies & Distributed Data Consistency",
+      "codeHash": "afdfdb0a3ac54e96fb29f48289908a519e9b0c6451ae4858eeecde8f913be7de",
+      "spec": {
+        "template": "bars",
+        "title": "Concurrent multi-region record mutation versions and resolution",
+        "bars": [
+          {
+            "id": "recUs",
+            "label": "US-East Version",
+            "value": 3
+          },
+          {
+            "id": "recEu",
+            "label": "EU-West Version",
+            "value": 4
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Distributed systems resolve conflicts using timestamp comparison rules.",
+            "activeBars": [
+              "recUs"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The record with the newer timestamp overwrites older concurrent versions.",
+            "activeBars": [
+              "recUs",
+              "recEu"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Concurrent multi-region record mutation versions and resolution",
+        "bars": [
+          {
+            "id": "recUs",
+            "label": "US-East Version",
+            "value": 3
+          },
+          {
+            "id": "recEu",
+            "label": "EU-West Version",
+            "value": 4
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Distributed systems resolve conflicts using timestamp comparison rules.",
+            "activeBars": [
+              "recUs"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The record with the newer timestamp overwrites older concurrent versions.",
+            "activeBars": [
+              "recUs",
+              "recEu"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Region Health Scoring",
+      "codeHash": "3c0c84ac1aea52d108e6282c425f163210232c4ecb9263f8ba3f2c79ad9a6129",
+      "spec": {
+        "template": "workflow",
+        "title": "Composite multi-signal regional health evaluation pipeline",
+        "stages": [
+          {
+            "id": "probe",
+            "name": "Telemetry Ingestion",
+            "subtext": "Multi-Region Probes"
+          },
+          {
+            "id": "pillars",
+            "name": "Golden Signal Normalization",
+            "subtext": "Avail, Error, Latency"
+          },
+          {
+            "id": "composite",
+            "name": "Weighted Score",
+            "subtext": "0-100 Rating"
+          },
+          {
+            "id": "decision",
+            "name": "Status Gate",
+            "subtext": "Healthy vs Critical"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Engineers construct a composite region health score combining golden signals.",
+            "activeStageId": "pillars",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Availability carries the highest weight followed by error rate and latency.",
+            "activeStageId": "composite",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Composite multi-signal regional health evaluation pipeline",
+        "stages": [
+          {
+            "id": "probe",
+            "name": "Telemetry Ingestion",
+            "subtext": "Multi-Region Probes"
+          },
+          {
+            "id": "pillars",
+            "name": "Golden Signal Normalization",
+            "subtext": "Avail, Error, Latency"
+          },
+          {
+            "id": "composite",
+            "name": "Weighted Score",
+            "subtext": "0-100 Rating"
+          },
+          {
+            "id": "decision",
+            "name": "Status Gate",
+            "subtext": "Healthy vs Critical"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Engineers construct a composite region health score combining golden signals.",
+            "activeStageId": "pillars",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Availability carries the highest weight followed by error rate and latency.",
+            "activeStageId": "composite",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Failover State Machine & Flapping Prevention",
+      "codeHash": "fd36928831c62c12aa9ca202bbd522027cd95d3730fdc454c1400d92d1426d2e",
+      "spec": {
+        "template": "states",
+        "title": "Multi-region failover state machine and flapping prevention lifecycle",
+        "states": [
+          {
+            "id": "normal",
+            "label": "NORMAL Healthy Operations"
+          },
+          {
+            "id": "suspect",
+            "label": "SUSPECT Evaluation State"
+          },
+          {
+            "id": "failing_over",
+            "label": "FAILING_OVER Active Shift"
+          },
+          {
+            "id": "failed_over",
+            "label": "FAILED_OVER Standby Active"
+          },
+          {
+            "id": "cooling_down",
+            "label": "COOLING_DOWN Stabilization"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The greatest danger in automated failover engineering is traffic flapping.",
+            "activeStateId": "suspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Once failover completes an enforced cooldown timer prevents failback.",
+            "activeStateId": "cooling_down",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Multi-region failover state machine and flapping prevention lifecycle",
+        "states": [
+          {
+            "id": "normal",
+            "label": "NORMAL Healthy Operations"
+          },
+          {
+            "id": "suspect",
+            "label": "SUSPECT Evaluation State"
+          },
+          {
+            "id": "failing_over",
+            "label": "FAILING_OVER Active Shift"
+          },
+          {
+            "id": "failed_over",
+            "label": "FAILED_OVER Standby Active"
+          },
+          {
+            "id": "cooling_down",
+            "label": "COOLING_DOWN Stabilization"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The greatest danger in automated failover engineering is traffic flapping.",
+            "activeStateId": "suspect",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Once failover completes an enforced cooldown timer prevents failback.",
+            "activeStateId": "cooling_down",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Split-Brain Mitigation & Consensus Heartbeats",
+      "codeHash": "369bc0fd903e34d7ebe01b21dcfb05de3dbdfa09192e9ee7496a3b798ab2db9f",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
