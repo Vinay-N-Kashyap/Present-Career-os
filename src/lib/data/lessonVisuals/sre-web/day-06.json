@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Imperative Provisioning",
+        "rightLabel": "Declarative Infrastructure"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Imperative Provisioning",
+        "rightLabel": "Declarative Infrastructure"
       }
     },
     {
@@ -463,6 +467,23 @@
             "activeBars": [
               "nodes",
               "edges"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -472,6 +493,23 @@
               "nodes",
               "edges",
               "cycles"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -503,6 +541,23 @@
             "activeBars": [
               "nodes",
               "edges"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -512,6 +567,23 @@
               "nodes",
               "edges",
               "cycles"
+            ],
+            "bars": [
+              {
+                "label": "Graph Nodes",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Directed Edges",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "Detected Cycles",
+                "value": 0,
+                "tone": "idle"
+              }
             ]
           }
         ]

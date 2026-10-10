@@ -358,7 +358,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Lamport Timestamps",
+        "rightLabel": "Vector Clocks"
       },
       "filled": {
         "template": "compare",
@@ -392,7 +394,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Lamport Timestamps",
+        "rightLabel": "Vector Clocks"
       }
     },
     {

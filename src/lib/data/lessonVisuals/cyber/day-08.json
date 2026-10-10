@@ -448,7 +448,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Certificate Revocation List",
+        "rightLabel": "OCSP Stapling (RFC 6066)"
       },
       "filled": {
         "template": "compare",
@@ -482,7 +484,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Certificate Revocation List",
+        "rightLabel": "OCSP Stapling (RFC 6066)"
       }
     },
     {

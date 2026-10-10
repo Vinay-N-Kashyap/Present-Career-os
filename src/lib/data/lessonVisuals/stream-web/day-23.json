@@ -244,30 +244,39 @@
             "at": "say3",
             "caption": "In an Inner Join, if the foreign key does not exist in the table, it is dropped.",
             "rows": [
-              [
-                "joinInner",
-                "Coffee Shop (Dining)",
-                "DROPPED",
-                "1 payment"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "In a Left Outer Join, missing foreign keys emit the event with null enrichment.",
             "rows": [
-              [
-                "joinInner",
-                "Coffee Shop (Dining)",
-                "DROPPED",
-                "1 payment"
-              ],
-              [
-                "joinLeftOuter",
-                "Coffee Shop (Dining)",
-                "merchantName: null",
-                "2 payments"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -286,30 +295,39 @@
             "at": "say3",
             "caption": "In an Inner Join, if the foreign key does not exist in the table, it is dropped.",
             "rows": [
-              [
-                "joinInner",
-                "Coffee Shop (Dining)",
-                "DROPPED",
-                "1 payment"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "In a Left Outer Join, missing foreign keys emit the event with null enrichment.",
             "rows": [
-              [
-                "joinInner",
-                "Coffee Shop (Dining)",
-                "DROPPED",
-                "1 payment"
-              ],
-              [
-                "joinLeftOuter",
-                "Coffee Shop (Dining)",
-                "merchantName: null",
-                "2 payments"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -332,42 +350,57 @@
             "at": "say6",
             "caption": "Each dimension record in the temporal table includes validFrom and validTo.",
             "rows": [
-              [
-                "e-1",
-                "150 ms",
-                "[100, 300)",
-                "STANDARD"
-              ],
-              [
-                "e-2",
-                "450 ms",
-                "[300, 600)",
-                "PREMIUM"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The joiner matches event E against version D where validFrom <= timestamp.",
             "rows": [
-              [
-                "e-1",
-                "150 ms",
-                "[100, 300)",
-                "STANDARD"
-              ],
-              [
-                "e-2",
-                "450 ms",
-                "[300, 600)",
-                "PREMIUM"
-              ],
-              [
-                "e-3",
-                "750 ms",
-                "[600, Infinity)",
-                "VIP"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -386,42 +419,57 @@
             "at": "say6",
             "caption": "Each dimension record in the temporal table includes validFrom and validTo.",
             "rows": [
-              [
-                "e-1",
-                "150 ms",
-                "[100, 300)",
-                "STANDARD"
-              ],
-              [
-                "e-2",
-                "450 ms",
-                "[300, 600)",
-                "PREMIUM"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The joiner matches event E against version D where validFrom <= timestamp.",
             "rows": [
-              [
-                "e-1",
-                "150 ms",
-                "[100, 300)",
-                "STANDARD"
-              ],
-              [
-                "e-2",
-                "450 ms",
-                "[300, 600)",
-                "PREMIUM"
-              ],
-              [
-                "e-3",
-                "750 ms",
-                "[600, Infinity)",
-                "VIP"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

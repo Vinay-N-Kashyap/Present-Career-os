@@ -266,48 +266,66 @@
             "at": "say2",
             "caption": "Google Spanner provides external consistency and linearizability globally.",
             "rows": [
-              [
-                "Google Spanner",
-                "PC/EC",
-                "External consistency via TrueTime atomic clocks",
-                "Financial Ledgers, Global Invariants"
-              ],
-              [
-                "MongoDB (ReplicaSet)",
-                "PC/EC",
-                "Strict primary routing with majority write concern",
-                "Document Models, Strong Primary Writes"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Engines replicate asynchronously to local nodes for minimal latency.",
             "rows": [
-              [
-                "Google Spanner",
-                "PC/EC",
-                "External consistency via TrueTime atomic clocks",
-                "Financial Ledgers, Global Invariants"
-              ],
-              [
-                "MongoDB (ReplicaSet)",
-                "PC/EC",
-                "Strict primary routing with majority write concern",
-                "Document Models, Strong Primary Writes"
-              ],
-              [
-                "Apache Cassandra",
-                "PA/EL",
-                "Asynchronous peer gossip with tunable quorums",
-                "High-Throughput Time-Series, IoT"
-              ],
-              [
-                "Amazon DynamoDB",
-                "PA/EL",
-                "Multi-AZ replication with single-digit millisecond SLA",
-                "Serverless Microservices, Session State"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -326,48 +344,66 @@
             "at": "say2",
             "caption": "Google Spanner provides external consistency and linearizability globally.",
             "rows": [
-              [
-                "Google Spanner",
-                "PC/EC",
-                "External consistency via TrueTime atomic clocks",
-                "Financial Ledgers, Global Invariants"
-              ],
-              [
-                "MongoDB (ReplicaSet)",
-                "PC/EC",
-                "Strict primary routing with majority write concern",
-                "Document Models, Strong Primary Writes"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Engines replicate asynchronously to local nodes for minimal latency.",
             "rows": [
-              [
-                "Google Spanner",
-                "PC/EC",
-                "External consistency via TrueTime atomic clocks",
-                "Financial Ledgers, Global Invariants"
-              ],
-              [
-                "MongoDB (ReplicaSet)",
-                "PC/EC",
-                "Strict primary routing with majority write concern",
-                "Document Models, Strong Primary Writes"
-              ],
-              [
-                "Apache Cassandra",
-                "PA/EL",
-                "Asynchronous peer gossip with tunable quorums",
-                "High-Throughput Time-Series, IoT"
-              ],
-              [
-                "Amazon DynamoDB",
-                "PA/EL",
-                "Multi-AZ replication with single-digit millisecond SLA",
-                "Serverless Microservices, Session State"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

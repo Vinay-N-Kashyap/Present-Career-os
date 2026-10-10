@@ -132,30 +132,39 @@
             "at": "say4",
             "caption": "The map operator projects fields, normalizes strings, and divides cents by 100.",
             "rows": [
-              [
-                "\"  aapl \"",
-                "18250",
-                "AAPL",
-                "$182.50"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Because mapping is one-to-one, the output stream preserves exact record count.",
             "rows": [
-              [
-                "\"  aapl \"",
-                "18250",
-                "AAPL",
-                "$182.50"
-              ],
-              [
-                "\"msft\"",
-                "41520",
-                "MSFT",
-                "$415.20"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -174,30 +183,39 @@
             "at": "say4",
             "caption": "The map operator projects fields, normalizes strings, and divides cents by 100.",
             "rows": [
-              [
-                "\"  aapl \"",
-                "18250",
-                "AAPL",
-                "$182.50"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Because mapping is one-to-one, the output stream preserves exact record count.",
             "rows": [
-              [
-                "\"  aapl \"",
-                "18250",
-                "AAPL",
-                "$182.50"
-              ],
-              [
-                "\"msft\"",
-                "41520",
-                "MSFT",
-                "$415.20"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -322,42 +340,57 @@
             "at": "say4",
             "caption": "flatMap maps ord-101 into 2 individual item records and flattens the array.",
             "rows": [
-              [
-                "ord-101",
-                "KEYBOARD-01",
-                "2",
-                "$150"
-              ],
-              [
-                "ord-101",
-                "MOUSE-02",
-                "1",
-                "$45"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The flatMap operator expands input events into multiple downstream records.",
             "rows": [
-              [
-                "ord-101",
-                "KEYBOARD-01",
-                "2",
-                "$150"
-              ],
-              [
-                "ord-101",
-                "MOUSE-02",
-                "1",
-                "$45"
-              ],
-              [
-                "ord-102",
-                "MONITOR-4K",
-                "1",
-                "$350"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -376,42 +409,57 @@
             "at": "say4",
             "caption": "flatMap maps ord-101 into 2 individual item records and flattens the array.",
             "rows": [
-              [
-                "ord-101",
-                "KEYBOARD-01",
-                "2",
-                "$150"
-              ],
-              [
-                "ord-101",
-                "MOUSE-02",
-                "1",
-                "$45"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The flatMap operator expands input events into multiple downstream records.",
             "rows": [
-              [
-                "ord-101",
-                "KEYBOARD-01",
-                "2",
-                "$150"
-              ],
-              [
-                "ord-101",
-                "MOUSE-02",
-                "1",
-                "$45"
-              ],
-              [
-                "ord-102",
-                "MONITOR-4K",
-                "1",
-                "$350"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

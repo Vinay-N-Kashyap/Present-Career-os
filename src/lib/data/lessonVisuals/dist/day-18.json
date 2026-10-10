@@ -430,7 +430,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Targeted Shard Query",
+        "rightLabel": "Scatter-Gather Query"
       },
       "filled": {
         "template": "compare",
@@ -464,7 +466,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Targeted Shard Query",
+        "rightLabel": "Scatter-Gather Query"
       }
     },
     {

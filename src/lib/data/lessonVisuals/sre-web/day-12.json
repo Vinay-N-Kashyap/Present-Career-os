@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Readiness Probe Gating",
+        "rightLabel": "Liveness Probe Restart"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Readiness Probe Gating",
+        "rightLabel": "Liveness Probe Restart"
       }
     },
     {
@@ -110,6 +114,23 @@
             "caption": "Startup probes disable operational checks until bootstrapping finishes.",
             "activeBars": [
               "tick1"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -119,6 +140,23 @@
               "tick1",
               "tick2",
               "tick3"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -149,6 +187,23 @@
             "caption": "Startup probes disable operational checks until bootstrapping finishes.",
             "activeBars": [
               "tick1"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -158,6 +213,23 @@
               "tick1",
               "tick2",
               "tick3"
+            ],
+            "bars": [
+              {
+                "label": "Initial Schema Init",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Connection Pool Warming",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Boot Complete",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           }
         ]

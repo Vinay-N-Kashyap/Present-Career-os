@@ -244,7 +244,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Warm Standby",
+        "rightLabel": "Active-Active Global"
       },
       "filled": {
         "template": "compare",
@@ -278,7 +280,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Warm Standby",
+        "rightLabel": "Active-Active Global"
       }
     },
     {

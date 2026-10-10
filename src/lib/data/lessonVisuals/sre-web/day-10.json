@@ -118,6 +118,23 @@
             "caption": "System saturation contributes to the composite evaluation.",
             "activeBars": [
               "saturation"
+            ],
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency Weight",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Saturation Weight",
+                "value": 25,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -127,6 +144,23 @@
               "error",
               "latency",
               "saturation"
+            ],
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency Weight",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Saturation Weight",
+                "value": 25,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -157,6 +191,23 @@
             "caption": "System saturation contributes to the composite evaluation.",
             "activeBars": [
               "saturation"
+            ],
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency Weight",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Saturation Weight",
+                "value": 25,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -166,6 +217,23 @@
               "error",
               "latency",
               "saturation"
+            ],
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency Weight",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Saturation Weight",
+                "value": 25,
+                "tone": "idle"
+              }
             ]
           }
         ]

@@ -114,7 +114,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Client-Side Discovery",
+        "rightLabel": "Server-Side Discovery"
       },
       "filled": {
         "template": "compare",
@@ -148,7 +150,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Client-Side Discovery",
+        "rightLabel": "Server-Side Discovery"
       }
     },
     {

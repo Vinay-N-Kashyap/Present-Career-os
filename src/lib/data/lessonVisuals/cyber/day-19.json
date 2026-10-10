@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "First-Party Application Code",
+        "rightLabel": "Third-Party Open Source Supply Chain"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "First-Party Application Code",
+        "rightLabel": "Third-Party Open Source Supply Chain"
       }
     },
     {

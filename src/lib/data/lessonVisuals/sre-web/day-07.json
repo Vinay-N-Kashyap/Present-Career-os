@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Declared Git State",
+        "rightLabel": "Live Cloud Reality (Drifted)"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Declared Git State",
+        "rightLabel": "Live Cloud Reality (Drifted)"
       }
     },
     {
@@ -311,6 +315,23 @@
             "activeBars": [
               "cosmetic",
               "functional"
+            ],
+            "bars": [
+              {
+                "label": "Cosmetic Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Functional Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Security Critical",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -320,6 +341,23 @@
               "cosmetic",
               "functional",
               "critical"
+            ],
+            "bars": [
+              {
+                "label": "Cosmetic Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Functional Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Security Critical",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -351,6 +389,23 @@
             "activeBars": [
               "cosmetic",
               "functional"
+            ],
+            "bars": [
+              {
+                "label": "Cosmetic Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Functional Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Security Critical",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -360,6 +415,23 @@
               "cosmetic",
               "functional",
               "critical"
+            ],
+            "bars": [
+              {
+                "label": "Cosmetic Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Functional Drift",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Security Critical",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           }
         ]

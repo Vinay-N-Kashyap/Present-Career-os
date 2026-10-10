@@ -151,13 +151,47 @@
             "at": "say3",
             "caption": "Monotonic counters maintain live traffic rates and error fractions.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Median Latency p50",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Tail Latency p95",
+                "value": 480,
+                "tone": "idle"
+              },
+              {
+                "label": "Worst Tail p99",
+                "value": 850,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cumulative histogram buckets derive median and worst-case tail percentiles.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Median Latency p50",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Tail Latency p95",
+                "value": 480,
+                "tone": "idle"
+              },
+              {
+                "label": "Worst Tail p99",
+                "value": 850,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -186,13 +220,47 @@
             "at": "say3",
             "caption": "Monotonic counters maintain live traffic rates and error fractions.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Median Latency p50",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Tail Latency p95",
+                "value": 480,
+                "tone": "idle"
+              },
+              {
+                "label": "Worst Tail p99",
+                "value": 850,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cumulative histogram buckets derive median and worst-case tail percentiles.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Median Latency p50",
+                "value": 35,
+                "tone": "idle"
+              },
+              {
+                "label": "Tail Latency p95",
+                "value": 480,
+                "tone": "idle"
+              },
+              {
+                "label": "Worst Tail p99",
+                "value": 850,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }
@@ -354,7 +422,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Multi-Window Burn Alerting",
+        "rightLabel": "Upstream Alert Inhibition"
       },
       "filled": {
         "template": "compare",
@@ -390,7 +460,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Multi-Window Burn Alerting",
+        "rightLabel": "Upstream Alert Inhibition"
       }
     },
     {

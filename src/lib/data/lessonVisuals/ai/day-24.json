@@ -482,7 +482,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Verbosity Exploit Vulnerability",
+        "rightLabel": "Length-Normalized DPO"
       },
       "filled": {
         "template": "compare",
@@ -518,7 +520,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Verbosity Exploit Vulnerability",
+        "rightLabel": "Length-Normalized DPO"
       }
     },
     {

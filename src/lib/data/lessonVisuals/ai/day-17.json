@@ -480,7 +480,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Bounded Protected Loop",
+        "rightLabel": "Unconstrained Rogue Loop"
       },
       "filled": {
         "template": "compare",
@@ -516,7 +518,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Bounded Protected Loop",
+        "rightLabel": "Unconstrained Rogue Loop"
       }
     },
     {

@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Exploitability Metrics",
+        "rightLabel": "Impact Metrics"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Exploitability Metrics",
+        "rightLabel": "Impact Metrics"
       }
     },
     {
@@ -520,7 +524,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Black Box Engagement",
+        "rightLabel": "White Box Engagement"
       },
       "filled": {
         "template": "compare",
@@ -556,7 +562,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Black Box Engagement",
+        "rightLabel": "White Box Engagement"
       }
     }
   ]

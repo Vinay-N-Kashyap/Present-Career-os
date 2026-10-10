@@ -337,82 +337,52 @@
             "at": "say2",
             "caption": "Traditional setups required dedicated load balancers multiplying costs.",
             "rows": [
-              [
-                {
-                  "text": "Rule 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /api/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "API Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /auth/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Auth Target Group",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Path conditions forward API requests to backend services directly.",
             "rows": [
-              [
-                {
-                  "text": "Rule 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /api/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "API Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /auth/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Auth Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Default Rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "Catch-All /*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Frontend UI Group",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -430,82 +400,52 @@
             "at": "say2",
             "caption": "Traditional setups required dedicated load balancers multiplying costs.",
             "rows": [
-              [
-                {
-                  "text": "Rule 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /api/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "API Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /auth/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Auth Target Group",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Path conditions forward API requests to backend services directly.",
             "rows": [
-              [
-                {
-                  "text": "Rule 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /api/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "API Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "Path /auth/*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Auth Target Group",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Default Rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "Catch-All /*",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Frontend UI Group",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

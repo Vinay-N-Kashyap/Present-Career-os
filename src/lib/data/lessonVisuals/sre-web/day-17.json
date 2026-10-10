@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Arithmetic Average (Mean)",
+        "rightLabel": "Tail Percentiles (p95, p99)"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Arithmetic Average (Mean)",
+        "rightLabel": "Tail Percentiles (p95, p99)"
       }
     },
     {
@@ -311,6 +315,23 @@
             "activeBars": [
               "p20",
               "p60"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -320,6 +341,23 @@
               "p20",
               "p60",
               "p100"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -351,6 +389,23 @@
             "activeBars": [
               "p20",
               "p60"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -360,6 +415,23 @@
               "p20",
               "p60",
               "p100"
+            ],
+            "bars": [
+              {
+                "label": "Fast Tier (<=20ms)",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Median Tier (<=60ms)",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Full Fleet (<=1200ms)",
+                "value": 100,
+                "tone": "idle"
+              }
             ]
           }
         ]

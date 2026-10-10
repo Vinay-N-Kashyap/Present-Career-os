@@ -87,45 +87,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "< 0.85 (Too Low)"
-                  },
-                  "Cache Decision": {
-                    "text": "Aggressive HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "High risk of false positives on different questions"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "0.90 - 0.94 (Optimal)"
-                  },
-                  "Cache Decision": {
-                    "text": "Calibrated HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Sweet spot: catches phrasing variations accurately"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "> 0.98 (Too High)"
-                  },
-                  "Cache Decision": {
-                    "text": "Frequent MISS"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Misses valid synonyms; hit rate drops sharply"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -136,45 +118,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "< 0.85 (Too Low)"
-                  },
-                  "Cache Decision": {
-                    "text": "Aggressive HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "High risk of false positives on different questions"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "0.90 - 0.94 (Optimal)"
-                  },
-                  "Cache Decision": {
-                    "text": "Calibrated HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Sweet spot: catches phrasing variations accurately"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "> 0.98 (Too High)"
-                  },
-                  "Cache Decision": {
-                    "text": "Frequent MISS"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Misses valid synonyms; hit rate drops sharply"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -185,45 +149,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "< 0.85 (Too Low)"
-                  },
-                  "Cache Decision": {
-                    "text": "Aggressive HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "High risk of false positives on different questions"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "0.90 - 0.94 (Optimal)"
-                  },
-                  "Cache Decision": {
-                    "text": "Calibrated HIT"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Sweet spot: catches phrasing variations accurately"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": {
-                    "text": "> 0.98 (Too High)"
-                  },
-                  "Cache Decision": {
-                    "text": "Frequent MISS"
-                  },
-                  "Trade-Off Profile": {
-                    "text": "Misses valid synonyms; hit rate drops sharply"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -245,27 +191,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": "< 0.85 (Too Low)",
-                  "Cache Decision": "Aggressive HIT",
-                  "Trade-Off Profile": "High risk of false positives on different questions"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "0.90 - 0.94 (Optimal)",
-                  "Cache Decision": "Calibrated HIT",
-                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "> 0.98 (Too High)",
-                  "Cache Decision": "Frequent MISS",
-                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -276,27 +222,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": "< 0.85 (Too Low)",
-                  "Cache Decision": "Aggressive HIT",
-                  "Trade-Off Profile": "High risk of false positives on different questions"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "0.90 - 0.94 (Optimal)",
-                  "Cache Decision": "Calibrated HIT",
-                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "> 0.98 (Too High)",
-                  "Cache Decision": "Frequent MISS",
-                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -307,27 +253,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Threshold Band": "< 0.85 (Too Low)",
-                  "Cache Decision": "Aggressive HIT",
-                  "Trade-Off Profile": "High risk of false positives on different questions"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "0.90 - 0.94 (Optimal)",
-                  "Cache Decision": "Calibrated HIT",
-                  "Trade-Off Profile": "Sweet spot: catches phrasing variations accurately"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Threshold Band": "> 0.98 (Too High)",
-                  "Cache Decision": "Frequent MISS",
-                  "Trade-Off Profile": "Misses valid synonyms; hit rate drops sharply"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

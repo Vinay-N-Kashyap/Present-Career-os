@@ -113,6 +113,18 @@
             "caption": "Availability SLI is computed as the percentage of valid requests.",
             "activeBars": [
               "avail"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -121,6 +133,18 @@
             "activeBars": [
               "avail",
               "latency"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -146,6 +170,18 @@
             "caption": "Availability SLI is computed as the percentage of valid requests.",
             "activeBars": [
               "avail"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -154,6 +190,18 @@
             "activeBars": [
               "avail",
               "latency"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLI",
+                "value": 99.8,
+                "tone": "idle"
+              },
+              {
+                "label": "Latency SLI (P99)",
+                "value": 95,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -464,7 +512,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "High-Performing Services",
+        "rightLabel": "Degraded Services (Remediation)"
       },
       "filled": {
         "template": "compare",
@@ -500,7 +550,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "High-Performing Services",
+        "rightLabel": "Degraded Services (Remediation)"
       }
     },
     {

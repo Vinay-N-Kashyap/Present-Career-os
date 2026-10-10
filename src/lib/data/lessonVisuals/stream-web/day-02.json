@@ -22,42 +22,57 @@
             "at": "say3",
             "caption": "Streaming systems partition topics into multiple independent sub-logs.",
             "rows": [
-              [
-                "user-telemetry",
-                "0",
-                "1",
-                "0"
-              ],
-              [
-                "user-telemetry",
-                "1",
-                "1",
-                "0"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Partitions distribute across physical broker nodes for horizontal scalability.",
             "rows": [
-              [
-                "user-telemetry",
-                "0",
-                "2",
-                "1"
-              ],
-              [
-                "user-telemetry",
-                "1",
-                "1",
-                "0"
-              ],
-              [
-                "user-telemetry",
-                "2",
-                "1",
-                "0"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -76,42 +91,57 @@
             "at": "say3",
             "caption": "Streaming systems partition topics into multiple independent sub-logs.",
             "rows": [
-              [
-                "user-telemetry",
-                "0",
-                "1",
-                "0"
-              ],
-              [
-                "user-telemetry",
-                "1",
-                "1",
-                "0"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Partitions distribute across physical broker nodes for horizontal scalability.",
             "rows": [
-              [
-                "user-telemetry",
-                "0",
-                "2",
-                "1"
-              ],
-              [
-                "user-telemetry",
-                "1",
-                "1",
-                "0"
-              ],
-              [
-                "user-telemetry",
-                "2",
-                "1",
-                "0"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

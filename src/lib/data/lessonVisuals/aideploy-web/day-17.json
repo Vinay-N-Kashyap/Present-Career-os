@@ -38,17 +38,86 @@
           {
             "at": "say3",
             "caption": "Cosine similarity evaluates directional orientation in vector spaces.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Comparing vectors to themselves yields identical alignment.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Orthogonal vectors yield zero reflecting no shared semantic components.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": {
+                  "text": "100"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": {
+                  "text": "71"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           }
         ]
       },
@@ -76,17 +145,68 @@
           {
             "at": "say3",
             "caption": "Cosine similarity evaluates directional orientation in vector spaces.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Comparing vectors to themselves yields identical alignment.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Orthogonal vectors yield zero reflecting no shared semantic components.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Identical (v1-v1)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "45-Deg Angle (v1-v2)",
+                "value": 71,
+                "tone": "data"
+              },
+              {
+                "label": "Orthogonal (v1-v3)",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           }
         ]
       }
@@ -110,54 +230,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-1"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.9, 0.1]"
-                  },
-                  "Dot Score": {
-                    "text": "0.90"
-                  },
-                  "Selection Status": {
-                    "text": "Top-1 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-3"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.8, 0.3]"
-                  },
-                  "Dot Score": {
-                    "text": "0.80"
-                  },
-                  "Selection Status": {
-                    "text": "Top-2 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-2"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.1, 0.9]"
-                  },
-                  "Dot Score": {
-                    "text": "0.10"
-                  },
-                  "Selection Status": {
-                    "text": "Filtered Out"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -168,54 +264,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-1"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.9, 0.1]"
-                  },
-                  "Dot Score": {
-                    "text": "0.90"
-                  },
-                  "Selection Status": {
-                    "text": "Top-1 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-3"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.8, 0.3]"
-                  },
-                  "Dot Score": {
-                    "text": "0.80"
-                  },
-                  "Selection Status": {
-                    "text": "Top-2 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-2"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.1, 0.9]"
-                  },
-                  "Dot Score": {
-                    "text": "0.10"
-                  },
-                  "Selection Status": {
-                    "text": "Filtered Out"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -226,54 +298,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-1"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.9, 0.1]"
-                  },
-                  "Dot Score": {
-                    "text": "0.90"
-                  },
-                  "Selection Status": {
-                    "text": "Top-1 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-3"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.8, 0.3]"
-                  },
-                  "Dot Score": {
-                    "text": "0.80"
-                  },
-                  "Selection Status": {
-                    "text": "Top-2 Selected"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": {
-                    "text": "doc-2"
-                  },
-                  "Vector Coordinates": {
-                    "text": "[0.1, 0.9]"
-                  },
-                  "Dot Score": {
-                    "text": "0.10"
-                  },
-                  "Selection Status": {
-                    "text": "Filtered Out"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -296,30 +344,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Document ID": "doc-1",
-                  "Vector Coordinates": "[0.9, 0.1]",
-                  "Dot Score": "0.90",
-                  "Selection Status": "Top-1 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-3",
-                  "Vector Coordinates": "[0.8, 0.3]",
-                  "Dot Score": "0.80",
-                  "Selection Status": "Top-2 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-2",
-                  "Vector Coordinates": "[0.1, 0.9]",
-                  "Dot Score": "0.10",
-                  "Selection Status": "Filtered Out"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -330,30 +378,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Document ID": "doc-1",
-                  "Vector Coordinates": "[0.9, 0.1]",
-                  "Dot Score": "0.90",
-                  "Selection Status": "Top-1 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-3",
-                  "Vector Coordinates": "[0.8, 0.3]",
-                  "Dot Score": "0.80",
-                  "Selection Status": "Top-2 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-2",
-                  "Vector Coordinates": "[0.1, 0.9]",
-                  "Dot Score": "0.10",
-                  "Selection Status": "Filtered Out"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -364,30 +412,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Document ID": "doc-1",
-                  "Vector Coordinates": "[0.9, 0.1]",
-                  "Dot Score": "0.90",
-                  "Selection Status": "Top-1 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-3",
-                  "Vector Coordinates": "[0.8, 0.3]",
-                  "Dot Score": "0.80",
-                  "Selection Status": "Top-2 Selected"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Document ID": "doc-2",
-                  "Vector Coordinates": "[0.1, 0.9]",
-                  "Dot Score": "0.10",
-                  "Selection Status": "Filtered Out"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

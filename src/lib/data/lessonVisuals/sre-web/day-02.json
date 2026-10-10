@@ -29,6 +29,18 @@
             "caption": "Error budget is mathematically defined as total minus target objective.",
             "activeBars": [
               "sloTarget"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLO",
+                "value": 99.95,
+                "tone": "idle"
+              },
+              {
+                "label": "Error Budget",
+                "value": 0.05,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -36,6 +48,18 @@
             "caption": "Budget is spent on feature releases and infrastructure migrations.",
             "activeBars": [
               "errorBudget"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLO",
+                "value": 99.95,
+                "tone": "idle"
+              },
+              {
+                "label": "Error Budget",
+                "value": 0.05,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -61,6 +85,18 @@
             "caption": "Error budget is mathematically defined as total minus target objective.",
             "activeBars": [
               "sloTarget"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLO",
+                "value": 99.95,
+                "tone": "idle"
+              },
+              {
+                "label": "Error Budget",
+                "value": 0.05,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -68,6 +104,18 @@
             "caption": "Budget is spent on feature releases and infrastructure migrations.",
             "activeBars": [
               "errorBudget"
+            ],
+            "bars": [
+              {
+                "label": "Availability SLO",
+                "value": 99.95,
+                "tone": "idle"
+              },
+              {
+                "label": "Error Budget",
+                "value": 0.05,
+                "tone": "idle"
+              }
             ]
           }
         ]

@@ -21,82 +21,52 @@
             "at": "say2",
             "caption": "Choosing the correct instance family achieves peak performance.",
             "rows": [
-              [
-                {
-                  "text": "M6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Balanced CPU/RAM",
-                  "tone": "idle"
-                },
-                {
-                  "text": "General Purpose Apps",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "C6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Compute Intensive",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Batch Processing & CI",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Memory optimized instances provide high memory ratios for caches and redis.",
             "rows": [
-              [
-                {
-                  "text": "M6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Balanced CPU/RAM",
-                  "tone": "idle"
-                },
-                {
-                  "text": "General Purpose Apps",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "C6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Compute Intensive",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Batch Processing & CI",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "R6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Memory Heavy",
-                  "tone": "idle"
-                },
-                {
-                  "text": "In-Memory Databases",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -114,82 +84,52 @@
             "at": "say2",
             "caption": "Choosing the correct instance family achieves peak performance.",
             "rows": [
-              [
-                {
-                  "text": "M6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Balanced CPU/RAM",
-                  "tone": "idle"
-                },
-                {
-                  "text": "General Purpose Apps",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "C6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Compute Intensive",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Batch Processing & CI",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Memory optimized instances provide high memory ratios for caches and redis.",
             "rows": [
-              [
-                {
-                  "text": "M6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Balanced CPU/RAM",
-                  "tone": "idle"
-                },
-                {
-                  "text": "General Purpose Apps",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "C6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Compute Intensive",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Batch Processing & CI",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "R6i Family",
-                  "tone": "data"
-                },
-                {
-                  "text": "Memory Heavy",
-                  "tone": "idle"
-                },
-                {
-                  "text": "In-Memory Databases",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

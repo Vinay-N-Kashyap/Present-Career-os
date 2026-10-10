@@ -106,84 +106,48 @@
             "at": "say2",
             "caption": "SNS delivers messages to SQS queues, Lambda functions, and webhooks.",
             "rows": [
-              [
-                {
-                  "text": "protocol: \"sqs\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:sqs:...",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Machine-to-Machine",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Immediate Durable Delivery",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "protocol: \"lambda\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:lambda:...",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Serverless Compute",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Asynchronous Invocation",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "If an endpoint is unreachable SNS applies exponential backoff retries.",
             "rows": [
-              [
-                {
-                  "text": "protocol: \"https\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "https://api.pinit.com/hook",
-                  "tone": "idle"
-                },
-                {
-                  "text": "External Webhook",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Exponential Backoff Retries",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "protocol: \"sms\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "+12065550100",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Mobile Push SMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Direct Carrier Dispatch",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -202,84 +166,48 @@
             "at": "say2",
             "caption": "SNS delivers messages to SQS queues, Lambda functions, and webhooks.",
             "rows": [
-              [
-                {
-                  "text": "protocol: \"sqs\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:sqs:...",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Machine-to-Machine",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Immediate Durable Delivery",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "protocol: \"lambda\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:lambda:...",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Serverless Compute",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Asynchronous Invocation",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "If an endpoint is unreachable SNS applies exponential backoff retries.",
             "rows": [
-              [
-                {
-                  "text": "protocol: \"https\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "https://api.pinit.com/hook",
-                  "tone": "idle"
-                },
-                {
-                  "text": "External Webhook",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Exponential Backoff Retries",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "protocol: \"sms\"",
-                  "tone": "data"
-                },
-                {
-                  "text": "+12065550100",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Mobile Push SMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Direct Carrier Dispatch",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

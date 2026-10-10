@@ -34,6 +34,23 @@
             "caption": "Availability is universally discussed in terms of nines of reliability.",
             "activeBars": [
               "nine2"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines (99%)",
+                "value": 99,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines (99.9%)",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines (99.99%)",
+                "value": 99.99,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -43,6 +60,23 @@
               "nine2",
               "nine3",
               "nine4"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines (99%)",
+                "value": 99,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines (99.9%)",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines (99.99%)",
+                "value": 99.99,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -73,6 +107,23 @@
             "caption": "Availability is universally discussed in terms of nines of reliability.",
             "activeBars": [
               "nine2"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines (99%)",
+                "value": 99,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines (99.9%)",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines (99.99%)",
+                "value": 99.99,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -82,6 +133,23 @@
               "nine2",
               "nine3",
               "nine4"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines (99%)",
+                "value": 99,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines (99.9%)",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines (99.99%)",
+                "value": 99.99,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -316,6 +384,23 @@
             "caption": "Moving between nines requires automated restarts and load balancers.",
             "activeBars": [
               "cost2"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines Tier",
+                "value": 5000,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines Tier",
+                "value": 22500,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines Tier",
+                "value": 101250,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -325,6 +410,23 @@
               "cost2",
               "cost3",
               "cost4"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines Tier",
+                "value": 5000,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines Tier",
+                "value": 22500,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines Tier",
+                "value": 101250,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -355,6 +457,23 @@
             "caption": "Moving between nines requires automated restarts and load balancers.",
             "activeBars": [
               "cost2"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines Tier",
+                "value": 5000,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines Tier",
+                "value": 22500,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines Tier",
+                "value": 101250,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -364,6 +483,23 @@
               "cost2",
               "cost3",
               "cost4"
+            ],
+            "bars": [
+              {
+                "label": "2 Nines Tier",
+                "value": 5000,
+                "tone": "idle"
+              },
+              {
+                "label": "3 Nines Tier",
+                "value": 22500,
+                "tone": "idle"
+              },
+              {
+                "label": "4 Nines Tier",
+                "value": 101250,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -406,7 +542,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Calendar Month Window",
+        "rightLabel": "Rolling 30-Day Window"
       },
       "filled": {
         "template": "compare",
@@ -442,7 +580,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Calendar Month Window",
+        "rightLabel": "Rolling 30-Day Window"
       }
     },
     {

@@ -23,45 +23,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Representation"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Sparse vocabulary tokens"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Continuous 768-3072 floats"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Synonyms"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Exact character match only"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Puppy and dog share cluster"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Geometry"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Inverted index posting lists"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Euclidean length in latent space"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -72,45 +54,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Representation"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Sparse vocabulary tokens"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Continuous 768-3072 floats"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Synonyms"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Exact character match only"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Puppy and dog share cluster"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Geometry"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Inverted index posting lists"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Euclidean length in latent space"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -121,45 +85,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Representation"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Sparse vocabulary tokens"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Continuous 768-3072 floats"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Synonyms"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Exact character match only"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Puppy and dog share cluster"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": {
-                    "text": "Geometry"
-                  },
-                  "Lexical Keyword Matching": {
-                    "text": "Inverted index posting lists"
-                  },
-                  "Dense Vector Representation": {
-                    "text": "Euclidean length in latent space"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -181,27 +127,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Dimension": "Representation",
-                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
-                  "Dense Vector Representation": "Continuous 768-3072 floats"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Synonyms",
-                  "Lexical Keyword Matching": "Exact character match only",
-                  "Dense Vector Representation": "Puppy and dog share cluster"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Geometry",
-                  "Lexical Keyword Matching": "Inverted index posting lists",
-                  "Dense Vector Representation": "Euclidean length in latent space"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -212,27 +158,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Dimension": "Representation",
-                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
-                  "Dense Vector Representation": "Continuous 768-3072 floats"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Synonyms",
-                  "Lexical Keyword Matching": "Exact character match only",
-                  "Dense Vector Representation": "Puppy and dog share cluster"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Geometry",
-                  "Lexical Keyword Matching": "Inverted index posting lists",
-                  "Dense Vector Representation": "Euclidean length in latent space"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -243,27 +189,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Dimension": "Representation",
-                  "Lexical Keyword Matching": "Sparse vocabulary tokens",
-                  "Dense Vector Representation": "Continuous 768-3072 floats"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Synonyms",
-                  "Lexical Keyword Matching": "Exact character match only",
-                  "Dense Vector Representation": "Puppy and dog share cluster"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Dimension": "Geometry",
-                  "Lexical Keyword Matching": "Inverted index posting lists",
-                  "Dense Vector Representation": "Euclidean length in latent space"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -446,17 +392,86 @@
           {
             "at": "say1",
             "caption": "Cosine similarity evaluates semantic resemblance between text embeddings.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": {
+                  "text": "95"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": {
+                  "text": "85"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cosine similarity produces bounded scores between minus one and plus one.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": {
+                  "text": "95"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": {
+                  "text": "85"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Scores above threshold indicate strong conceptual relevance between topics.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": {
+                  "text": "95"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": {
+                  "text": "85"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": {
+                  "text": "0"
+                },
+                "tone": "error"
+              }
+            ]
           }
         ]
       },
@@ -484,17 +499,68 @@
           {
             "at": "say1",
             "caption": "Cosine similarity evaluates semantic resemblance between text embeddings.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Cosine similarity produces bounded scores between minus one and plus one.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Scores above threshold indicate strong conceptual relevance between topics.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Semantic Match",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Relevance Cutoff",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Unrelated Document",
+                "value": 0,
+                "tone": "error"
+              }
+            ]
           }
         ]
       }

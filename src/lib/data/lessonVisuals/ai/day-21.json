@@ -320,7 +320,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Ungrounded Draft",
+        "rightLabel": "Certified Grounded Report"
       },
       "filled": {
         "template": "compare",
@@ -356,7 +358,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Ungrounded Draft",
+        "rightLabel": "Certified Grounded Report"
       }
     },
     {

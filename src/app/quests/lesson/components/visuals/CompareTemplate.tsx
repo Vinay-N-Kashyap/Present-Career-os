@@ -3,20 +3,25 @@ import type { CompareStep } from '@/lib/types/lessonVisual';
 import { getToneColor, getToneBg, getToneTextColor, RenderWithFaintSpaces } from './visualTokens';
 
 interface CompareTemplateProps {
-  leftLabel: string;
-  rightLabel: string;
+  leftLabel?: string;
+  rightLabel?: string;
   step: CompareStep;
   showSpaces?: boolean;
 }
 
 export function CompareTemplate({
-  leftLabel,
-  rightLabel,
+  leftLabel = 'Left',
+  rightLabel = 'Right',
   step,
   showSpaces,
 }: CompareTemplateProps): React.ReactElement {
-  const renderPanel = (label: string, panel: CompareStep['left']) => {
-    const tone = panel.tone || 'idle';
+  const renderPanel = (label: string, panel: CompareStep['left'] | undefined) => {
+    const tone = panel?.tone || 'idle';
+    const rawCode = panel?.code != null ? panel.code : '';
+    const code = typeof rawCode === 'string' ? rawCode : (rawCode as any)?.text ?? JSON.stringify(rawCode);
+
+    const rawResult = panel?.result != null ? panel.result : '';
+    const result = typeof rawResult === 'string' ? rawResult : (rawResult as any)?.text ?? JSON.stringify(rawResult);
 
     return (
       <div
@@ -46,47 +51,51 @@ export function CompareTemplate({
             paddingBottom: '6px',
           }}
         >
-          {label}
+          {label || 'Option'}
         </div>
 
         {/* Panel Code */}
-        <div
-          style={{
-            fontFamily: 'var(--font-mono, monospace)',
-            fontSize: '13px',
-            background: 'var(--bg1)',
-            border: '1px solid var(--border)',
-            borderRadius: '8px',
-            padding: '8px 10px',
-            color: 'var(--t1)',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-          }}
-        >
-          <RenderWithFaintSpaces text={panel.code} showSpaces={showSpaces} />
-        </div>
+        {code ? (
+          <div
+            style={{
+              fontFamily: 'var(--font-mono, monospace)',
+              fontSize: '13px',
+              background: 'var(--bg1)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              padding: '8px 10px',
+              color: 'var(--t1)',
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+            }}
+          >
+            <RenderWithFaintSpaces text={code} showSpaces={showSpaces} />
+          </div>
+        ) : null}
 
         {/* Panel Result */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            fontFamily: 'var(--font-mono, monospace)',
-            fontSize: '13px',
-            fontWeight: 600,
-            color: getToneTextColor(tone),
-            padding: '6px 8px',
-            borderRadius: '6px',
-            background: 'var(--bg1)',
-            border: '1px solid var(--border)',
-          }}
-        >
-          <span style={{ fontSize: '11px', color: 'var(--t2)', textTransform: 'uppercase' }}>
-            Result:
-          </span>
-          <RenderWithFaintSpaces text={panel.result} showSpaces={showSpaces} />
-        </div>
+        {result ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontFamily: 'var(--font-mono, monospace)',
+              fontSize: '13px',
+              fontWeight: 600,
+              color: getToneTextColor(tone),
+              padding: '6px 8px',
+              borderRadius: '6px',
+              background: 'var(--bg1)',
+              border: '1px solid var(--border)',
+            }}
+          >
+            <span style={{ fontSize: '11px', color: 'var(--t2)', textTransform: 'uppercase' }}>
+              Result:
+            </span>
+            <RenderWithFaintSpaces text={result} showSpaces={showSpaces} />
+          </div>
+        ) : null}
       </div>
     );
   };
@@ -104,8 +113,8 @@ export function CompareTemplate({
         padding: '12px 8px',
       }}
     >
-      {renderPanel(leftLabel, step.left)}
-      {renderPanel(rightLabel, step.right)}
+      {renderPanel(leftLabel || 'Left', step?.left)}
+      {renderPanel(rightLabel || 'Right', step?.right)}
     </div>
   );
 }

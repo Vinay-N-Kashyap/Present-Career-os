@@ -114,48 +114,66 @@
             "at": "say3",
             "caption": "An unused sign bit ensures that generated integer keys remain positive.",
             "rows": [
-              [
-                "Sign Bit",
-                "1 bit",
-                "Fixed 0",
-                "Guarantees standard signed integers stay positive"
-              ],
-              [
-                "Timestamp Offset",
-                "41 bits",
-                "69.7 years of milliseconds",
-                "Monotonically ordered millisecond counter"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Worker machine bits identify independent generator nodes across datacenters.",
             "rows": [
-              [
-                "Sign Bit",
-                "1 bit",
-                "Fixed 0",
-                "Guarantees standard signed integers stay positive"
-              ],
-              [
-                "Timestamp Offset",
-                "41 bits",
-                "69.7 years of milliseconds",
-                "Monotonically ordered millisecond counter"
-              ],
-              [
-                "Worker Node ID",
-                "10 bits",
-                "1,024 independent generator nodes",
-                "Identifies datacenter and physical instance"
-              ],
-              [
-                "Sequence Counter",
-                "12 bits",
-                "4,096 IDs per ms per node",
-                "Local counter resetting each millisecond"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -174,48 +192,66 @@
             "at": "say3",
             "caption": "An unused sign bit ensures that generated integer keys remain positive.",
             "rows": [
-              [
-                "Sign Bit",
-                "1 bit",
-                "Fixed 0",
-                "Guarantees standard signed integers stay positive"
-              ],
-              [
-                "Timestamp Offset",
-                "41 bits",
-                "69.7 years of milliseconds",
-                "Monotonically ordered millisecond counter"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Worker machine bits identify independent generator nodes across datacenters.",
             "rows": [
-              [
-                "Sign Bit",
-                "1 bit",
-                "Fixed 0",
-                "Guarantees standard signed integers stay positive"
-              ],
-              [
-                "Timestamp Offset",
-                "41 bits",
-                "69.7 years of milliseconds",
-                "Monotonically ordered millisecond counter"
-              ],
-              [
-                "Worker Node ID",
-                "10 bits",
-                "1,024 independent generator nodes",
-                "Identifies datacenter and physical instance"
-              ],
-              [
-                "Sequence Counter",
-                "12 bits",
-                "4,096 IDs per ms per node",
-                "Local counter resetting each millisecond"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

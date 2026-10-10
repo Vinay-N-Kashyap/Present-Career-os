@@ -240,6 +240,28 @@
             "activeBars": [
               "root",
               "auth"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -250,6 +272,28 @@
               "auth",
               "order",
               "db"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -286,6 +330,28 @@
             "activeBars": [
               "root",
               "auth"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -296,6 +362,28 @@
               "auth",
               "order",
               "db"
+            ],
+            "bars": [
+              {
+                "label": "Root: POST /checkout",
+                "value": 250,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: AuthService.validateToken",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Child: OrderService.createOrder",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Grandchild: SQL INSERT INTO orders",
+                "value": 65,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -440,7 +528,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "OpenTelemetry Semantic Attributes",
+        "rightLabel": "Span Status Lifecycle"
       },
       "filled": {
         "template": "compare",
@@ -476,7 +566,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "OpenTelemetry Semantic Attributes",
+        "rightLabel": "Span Status Lifecycle"
       }
     },
     {

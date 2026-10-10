@@ -22,42 +22,57 @@
             "at": "say3",
             "caption": "In-Flight Messages equals Throughput multiplied by Average End-to-End Latency.",
             "rows": [
-              [
-                "Baseline (50ms)",
-                "10000 msg/s",
-                "50 ms",
-                "500 msgs"
-              ],
-              [
-                "Latency Spike",
-                "10000 msg/s",
-                "100 ms",
-                "1000 msgs"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "When buffer holds 500 messages and latency hits 100ms, throughput drops.",
             "rows": [
-              [
-                "Baseline (50ms)",
-                "10000 msg/s",
-                "50 ms",
-                "500 msgs"
-              ],
-              [
-                "Latency Spike",
-                "10000 msg/s",
-                "100 ms",
-                "1000 msgs"
-              ],
-              [
-                "Fast Target (20ms)",
-                "25000 msg/s",
-                "20 ms",
-                "500 msgs"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -76,42 +91,57 @@
             "at": "say3",
             "caption": "In-Flight Messages equals Throughput multiplied by Average End-to-End Latency.",
             "rows": [
-              [
-                "Baseline (50ms)",
-                "10000 msg/s",
-                "50 ms",
-                "500 msgs"
-              ],
-              [
-                "Latency Spike",
-                "10000 msg/s",
-                "100 ms",
-                "1000 msgs"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "When buffer holds 500 messages and latency hits 100ms, throughput drops.",
             "rows": [
-              [
-                "Baseline (50ms)",
-                "10000 msg/s",
-                "50 ms",
-                "500 msgs"
-              ],
-              [
-                "Latency Spike",
-                "10000 msg/s",
-                "100 ms",
-                "1000 msgs"
-              ],
-              [
-                "Fast Target (20ms)",
-                "25000 msg/s",
-                "20 ms",
-                "500 msgs"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -366,30 +396,39 @@
             "at": "say6",
             "caption": "Increasing send and receive buffers to 8 MB unleashes multi-gigabit throughput.",
             "rows": [
-              [
-                "Replication Links",
-                "20",
-                "8 MB × 2",
-                "0.3 GB (Safe)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "High-capacity socket buffers are reserved for inter-broker replication links.",
             "rows": [
-              [
-                "Replication Links",
-                "20",
-                "8 MB × 2",
-                "0.3 GB (Safe)"
-              ],
-              [
-                "Edge Clients @ 8MB",
-                "5000",
-                "8 MB × 2",
-                "78.1 GB (Unsafe!)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -408,30 +447,39 @@
             "at": "say6",
             "caption": "Increasing send and receive buffers to 8 MB unleashes multi-gigabit throughput.",
             "rows": [
-              [
-                "Replication Links",
-                "20",
-                "8 MB × 2",
-                "0.3 GB (Safe)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "High-capacity socket buffers are reserved for inter-broker replication links.",
             "rows": [
-              [
-                "Replication Links",
-                "20",
-                "8 MB × 2",
-                "0.3 GB (Safe)"
-              ],
-              [
-                "Edge Clients @ 8MB",
-                "5000",
-                "8 MB × 2",
-                "78.1 GB (Unsafe!)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

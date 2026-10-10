@@ -184,7 +184,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Target Smaller",
+        "rightLabel": "Target Larger"
       },
       "filled": {
         "template": "compare",
@@ -244,7 +246,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Target Smaller",
+        "rightLabel": "Target Larger"
       }
     },
     {

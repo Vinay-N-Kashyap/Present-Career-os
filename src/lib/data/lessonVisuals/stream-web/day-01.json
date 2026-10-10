@@ -196,42 +196,57 @@
             "at": "say2",
             "caption": "The offset is assigned authoritatively by the broker when the record commits.",
             "rows": [
-              [
-                "analytics-group",
-                "0",
-                "15",
-                "14"
-              ],
-              [
-                "analytics-group",
-                "4",
-                "15",
-                "10"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Consumers use this offset as an exact bookmark pointer for processed records.",
             "rows": [
-              [
-                "analytics-group",
-                "0",
-                "15",
-                "14"
-              ],
-              [
-                "analytics-group",
-                "4",
-                "15",
-                "10"
-              ],
-              [
-                "analytics-group",
-                "9",
-                "15",
-                "5"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -250,42 +265,57 @@
             "at": "say2",
             "caption": "The offset is assigned authoritatively by the broker when the record commits.",
             "rows": [
-              [
-                "analytics-group",
-                "0",
-                "15",
-                "14"
-              ],
-              [
-                "analytics-group",
-                "4",
-                "15",
-                "10"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Consumers use this offset as an exact bookmark pointer for processed records.",
             "rows": [
-              [
-                "analytics-group",
-                "0",
-                "15",
-                "14"
-              ],
-              [
-                "analytics-group",
-                "4",
-                "15",
-                "10"
-              ],
-              [
-                "analytics-group",
-                "9",
-                "15",
-                "5"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

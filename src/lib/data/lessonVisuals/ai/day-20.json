@@ -450,7 +450,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive Packet Parsing",
+        "rightLabel": "Resilient Line Buffer"
       },
       "filled": {
         "template": "compare",
@@ -486,7 +488,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive Packet Parsing",
+        "rightLabel": "Resilient Line Buffer"
       }
     },
     {

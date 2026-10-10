@@ -378,48 +378,66 @@
             "at": "say4",
             "caption": "Clients solve leasing dilemmas using background heartbeat watchdog mechanisms.",
             "rows": [
-              [
-                "Initial Lease TTL",
-                "Max window resource remains locked on crash",
-                "30 seconds",
-                "Prevents permanent deadlocks on unhandled failures"
-              ],
-              [
-                "Heartbeat Interval",
-                "Periodic renewal frequency sent to coordinator",
-                "10 seconds (1/3 TTL)",
-                "Tolerates dropped heartbeat packet before expiration"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Healthy client processes ensure locks remain perpetually renewed.",
             "rows": [
-              [
-                "Initial Lease TTL",
-                "Max window resource remains locked on crash",
-                "30 seconds",
-                "Prevents permanent deadlocks on unhandled failures"
-              ],
-              [
-                "Heartbeat Interval",
-                "Periodic renewal frequency sent to coordinator",
-                "10 seconds (1/3 TTL)",
-                "Tolerates dropped heartbeat packet before expiration"
-              ],
-              [
-                "Crash Detection",
-                "Immediate cessation of renewal heartbeats",
-                "Active process lifecycle",
-                "Allows standby workers to acquire resource seamlessly"
-              ],
-              [
-                "Clock Skew Tolerance",
-                "Safety margin subtracted from lease duration",
-                "500 milliseconds",
-                "Guarantees client never executes past expiry window"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -438,48 +456,66 @@
             "at": "say4",
             "caption": "Clients solve leasing dilemmas using background heartbeat watchdog mechanisms.",
             "rows": [
-              [
-                "Initial Lease TTL",
-                "Max window resource remains locked on crash",
-                "30 seconds",
-                "Prevents permanent deadlocks on unhandled failures"
-              ],
-              [
-                "Heartbeat Interval",
-                "Periodic renewal frequency sent to coordinator",
-                "10 seconds (1/3 TTL)",
-                "Tolerates dropped heartbeat packet before expiration"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Healthy client processes ensure locks remain perpetually renewed.",
             "rows": [
-              [
-                "Initial Lease TTL",
-                "Max window resource remains locked on crash",
-                "30 seconds",
-                "Prevents permanent deadlocks on unhandled failures"
-              ],
-              [
-                "Heartbeat Interval",
-                "Periodic renewal frequency sent to coordinator",
-                "10 seconds (1/3 TTL)",
-                "Tolerates dropped heartbeat packet before expiration"
-              ],
-              [
-                "Crash Detection",
-                "Immediate cessation of renewal heartbeats",
-                "Active process lifecycle",
-                "Allows standby workers to acquire resource seamlessly"
-              ],
-              [
-                "Clock Skew Tolerance",
-                "Safety margin subtracted from lease duration",
-                "500 milliseconds",
-                "Guarantees client never executes past expiry window"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

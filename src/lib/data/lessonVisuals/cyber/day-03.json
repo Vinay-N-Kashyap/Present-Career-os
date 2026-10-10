@@ -404,7 +404,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Tainted Sources",
+        "rightLabel": "Dangerous Sinks"
       },
       "filled": {
         "template": "compare",
@@ -438,7 +440,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Tainted Sources",
+        "rightLabel": "Dangerous Sinks"
       }
     },
     {

@@ -436,15 +436,103 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions compute cache hit percentage, block percentage, and API expenses."
+            "caption": "Functions compute cache hit percentage, block percentage, and API expenses.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say4",
-            "caption": "Out of one thousand queries four hundred were served directly from cache."
+            "caption": "Out of one thousand queries four hundred were served directly from cache.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "The gateway slashed cloud expenses while maintaining premier user experience."
+            "caption": "The gateway slashed cloud expenses while maintaining premier user experience.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Cache Hits (400)",
+            "value": 40,
+            "tone": "ok"
+          },
+          {
+            "label": "Small Model (500)",
+            "value": 50,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier (50)",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Blocked Attacks (50)",
+            "value": 5,
+            "tone": "error"
           }
         ]
       },
@@ -476,15 +564,103 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions compute cache hit percentage, block percentage, and API expenses."
+            "caption": "Functions compute cache hit percentage, block percentage, and API expenses.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say4",
-            "caption": "Out of one thousand queries four hundred were served directly from cache."
+            "caption": "Out of one thousand queries four hundred were served directly from cache.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "The gateway slashed cloud expenses while maintaining premier user experience."
+            "caption": "The gateway slashed cloud expenses while maintaining premier user experience.",
+            "bars": [
+              {
+                "label": "Cache Hits (400)",
+                "value": 40,
+                "tone": "ok"
+              },
+              {
+                "label": "Small Model (500)",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier (50)",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Blocked Attacks (50)",
+                "value": 5,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Cache Hits (400)",
+            "value": 40,
+            "tone": "ok"
+          },
+          {
+            "label": "Small Model (500)",
+            "value": 50,
+            "tone": "data"
+          },
+          {
+            "label": "Frontier (50)",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Blocked Attacks (50)",
+            "value": 5,
+            "tone": "error"
           }
         ]
       }

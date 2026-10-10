@@ -190,84 +190,48 @@
             "at": "say3",
             "caption": "The Web ACL includes managed rule groups that block attack attempts.",
             "rows": [
-              [
-                {
-                  "text": "Ring 1: Outer Edge",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS WAF & Shield",
-                  "tone": "ok"
-                },
-                {
-                  "text": "SQLi/XSS Block & Rate Limit",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PCI-DSS Edge Defense",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Ring 2: Data Encryption",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS KMS Envelope",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Separate PII & Ledger CMKs",
-                  "tone": "ok"
-                },
-                {
-                  "text": "FIPS 140-2 Level 3 HSM",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Customer records are envelope encrypted using a dedicated key with rotation.",
             "rows": [
-              [
-                {
-                  "text": "Ring 3: Access Control",
-                  "tone": "data"
-                },
-                {
-                  "text": "IAM Zero-Trust",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Tightly Scoped Actions",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Least-Privilege Audit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Audit Logging",
-                  "tone": "data"
-                },
-                {
-                  "text": "CloudTrail & WAF Logs",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Tamper-Proof S3 Vault",
-                  "tone": "ok"
-                },
-                {
-                  "text": "SOC 2 Type II Certified",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -286,84 +250,48 @@
             "at": "say3",
             "caption": "The Web ACL includes managed rule groups that block attack attempts.",
             "rows": [
-              [
-                {
-                  "text": "Ring 1: Outer Edge",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS WAF & Shield",
-                  "tone": "ok"
-                },
-                {
-                  "text": "SQLi/XSS Block & Rate Limit",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PCI-DSS Edge Defense",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Ring 2: Data Encryption",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS KMS Envelope",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Separate PII & Ledger CMKs",
-                  "tone": "ok"
-                },
-                {
-                  "text": "FIPS 140-2 Level 3 HSM",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Customer records are envelope encrypted using a dedicated key with rotation.",
             "rows": [
-              [
-                {
-                  "text": "Ring 3: Access Control",
-                  "tone": "data"
-                },
-                {
-                  "text": "IAM Zero-Trust",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Tightly Scoped Actions",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Least-Privilege Audit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Audit Logging",
-                  "tone": "data"
-                },
-                {
-                  "text": "CloudTrail & WAF Logs",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Tamper-Proof S3 Vault",
-                  "tone": "ok"
-                },
-                {
-                  "text": "SOC 2 Type II Certified",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

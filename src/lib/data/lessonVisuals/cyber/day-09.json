@@ -208,7 +208,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Symmetric HS256 Signing",
+        "rightLabel": "Asymmetric RS256 Signing"
       },
       "filled": {
         "template": "compare",
@@ -242,7 +244,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Symmetric HS256 Signing",
+        "rightLabel": "Asymmetric RS256 Signing"
       }
     },
     {

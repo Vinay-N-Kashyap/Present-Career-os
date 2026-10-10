@@ -292,7 +292,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Detected Malicious Payload",
+        "rightLabel": "Sanitized Parameterized Query"
       },
       "filled": {
         "template": "compare",
@@ -326,7 +328,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Detected Malicious Payload",
+        "rightLabel": "Sanitized Parameterized Query"
       }
     },
     {

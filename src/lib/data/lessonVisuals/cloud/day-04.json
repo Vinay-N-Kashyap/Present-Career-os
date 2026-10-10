@@ -262,102 +262,57 @@
             "at": "say1",
             "caption": "NACL rules evaluate in strict ascending numerical order from lowest.",
             "rows": [
-              [
-                {
-                  "text": "Rule 100",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 200",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 80",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "First rule that matches packet immediately decides outcome.",
             "rows": [
-              [
-                {
-                  "text": "Rule 50",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "DENY (Malicious IP)",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 100",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule Asterisk",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "DENY",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -376,102 +331,57 @@
             "at": "say1",
             "caption": "NACL rules evaluate in strict ascending numerical order from lowest.",
             "rows": [
-              [
-                {
-                  "text": "Rule 100",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 200",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 80",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "First rule that matches packet immediately decides outcome.",
             "rows": [
-              [
-                {
-                  "text": "Rule 50",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "DENY (Malicious IP)",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Rule 100",
-                  "tone": "data"
-                },
-                {
-                  "text": "TCP",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Port 443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALLOW",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Rule Asterisk",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ALL",
-                  "tone": "idle"
-                },
-                {
-                  "text": "DENY",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

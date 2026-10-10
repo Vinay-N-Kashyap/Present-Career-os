@@ -38,17 +38,86 @@
           {
             "at": "say4",
             "caption": "Observability focuses on median and tail latency percentile metrics.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": {
+                  "text": "140"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": {
+                  "text": "800"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The P95 percentile isolates the slowest five percent of user experiences.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": {
+                  "text": "140"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": {
+                  "text": "800"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Tail latency is volatile due to cold starts and GPU queueing contention.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": {
+                  "text": "140"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": {
+                  "text": "800"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "error"
+              }
+            ]
           }
         ]
       },
@@ -76,17 +145,68 @@
           {
             "at": "say4",
             "caption": "Observability focuses on median and tail latency percentile metrics.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": 140,
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": 800,
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": 1500,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The P95 percentile isolates the slowest five percent of user experiences.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": 140,
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": 800,
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": 1500,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Tail latency is volatile due to cold starts and GPU queueing contention.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "P50 Median",
+                "value": 140,
+                "tone": "ok"
+              },
+              {
+                "label": "P95 Threshold",
+                "value": 800,
+                "tone": "data"
+              },
+              {
+                "label": "P99 Tail Latency",
+                "value": 1500,
+                "tone": "error"
+              }
+            ]
           }
         ]
       }
@@ -109,59 +229,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "DNS & TCP Handshake"
-                  },
-                  "Duration (ms)": {
-                    "text": "50"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Connection pooling and keepalive sockets"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "TTFT (Prefill)"
-                  },
-                  "Duration (ms)": {
-                    "text": "250"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Upstream queue wait time and matrix prefill"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Generation Decoding"
-                  },
-                  "Duration (ms)": {
-                    "text": "700"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Auto-regressive token emissions and verbosity"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Total End-to-End"
-                  },
-                  "Duration (ms)": {
-                    "text": "1000"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Cumulative round-trip user experience"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -172,59 +268,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "DNS & TCP Handshake"
-                  },
-                  "Duration (ms)": {
-                    "text": "50"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Connection pooling and keepalive sockets"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "TTFT (Prefill)"
-                  },
-                  "Duration (ms)": {
-                    "text": "250"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Upstream queue wait time and matrix prefill"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Generation Decoding"
-                  },
-                  "Duration (ms)": {
-                    "text": "700"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Auto-regressive token emissions and verbosity"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Total End-to-End"
-                  },
-                  "Duration (ms)": {
-                    "text": "1000"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Cumulative round-trip user experience"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -235,59 +307,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "DNS & TCP Handshake"
-                  },
-                  "Duration (ms)": {
-                    "text": "50"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Connection pooling and keepalive sockets"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "TTFT (Prefill)"
-                  },
-                  "Duration (ms)": {
-                    "text": "250"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Upstream queue wait time and matrix prefill"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Generation Decoding"
-                  },
-                  "Duration (ms)": {
-                    "text": "700"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Auto-regressive token emissions and verbosity"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": {
-                    "text": "Total End-to-End"
-                  },
-                  "Duration (ms)": {
-                    "text": "1000"
-                  },
-                  "Primary Root Cause": {
-                    "text": "Cumulative round-trip user experience"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -309,35 +357,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": "DNS & TCP Handshake",
-                  "Duration (ms)": "50",
-                  "Primary Root Cause": "Connection pooling and keepalive sockets"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "TTFT (Prefill)",
-                  "Duration (ms)": "250",
-                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Generation Decoding",
-                  "Duration (ms)": "700",
-                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Total End-to-End",
-                  "Duration (ms)": "1000",
-                  "Primary Root Cause": "Cumulative round-trip user experience"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -348,35 +396,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": "DNS & TCP Handshake",
-                  "Duration (ms)": "50",
-                  "Primary Root Cause": "Connection pooling and keepalive sockets"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "TTFT (Prefill)",
-                  "Duration (ms)": "250",
-                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Generation Decoding",
-                  "Duration (ms)": "700",
-                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Total End-to-End",
-                  "Duration (ms)": "1000",
-                  "Primary Root Cause": "Cumulative round-trip user experience"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -387,35 +435,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Pipeline Stage": "DNS & TCP Handshake",
-                  "Duration (ms)": "50",
-                  "Primary Root Cause": "Connection pooling and keepalive sockets"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "TTFT (Prefill)",
-                  "Duration (ms)": "250",
-                  "Primary Root Cause": "Upstream queue wait time and matrix prefill"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Generation Decoding",
-                  "Duration (ms)": "700",
-                  "Primary Root Cause": "Auto-regressive token emissions and verbosity"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Pipeline Stage": "Total End-to-End",
-                  "Duration (ms)": "1000",
-                  "Primary Root Cause": "Cumulative round-trip user experience"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

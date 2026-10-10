@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Raw LLM Text Generation",
+        "rightLabel": "Structured Schema Contracts"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Raw LLM Text Generation",
+        "rightLabel": "Structured Schema Contracts"
       }
     },
     {

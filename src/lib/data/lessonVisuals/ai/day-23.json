@@ -460,7 +460,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Branched Dynamic Adapter",
+        "rightLabel": "Fused Merged Single Matrix"
       },
       "filled": {
         "template": "compare",
@@ -496,7 +498,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Branched Dynamic Adapter",
+        "rightLabel": "Fused Merged Single Matrix"
       }
     },
     {
@@ -532,13 +536,67 @@
             "at": "say4",
             "caption": "The engine feeds domain inputs and updates only adapter weights via gradients.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Iteration One Loss",
+                "value": 142,
+                "tone": "data"
+              },
+              {
+                "label": "Iteration Two Loss",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Three Loss",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Four Loss",
+                "value": 12,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Five Loss",
+                "value": 8,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Merging the trained adapter weights yields a production-ready model artifact.",
             "activeBarIndex": 4,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Iteration One Loss",
+                "value": 142,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Two Loss",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Three Loss",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Four Loss",
+                "value": 12,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Five Loss",
+                "value": 8,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -572,13 +630,67 @@
             "at": "say4",
             "caption": "The engine feeds domain inputs and updates only adapter weights via gradients.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Iteration One Loss",
+                "value": 142,
+                "tone": "data"
+              },
+              {
+                "label": "Iteration Two Loss",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Three Loss",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Four Loss",
+                "value": 12,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Five Loss",
+                "value": 8,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Merging the trained adapter weights yields a production-ready model artifact.",
             "activeBarIndex": 4,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Iteration One Loss",
+                "value": 142,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Two Loss",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Three Loss",
+                "value": 34,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Four Loss",
+                "value": 12,
+                "tone": "idle"
+              },
+              {
+                "label": "Iteration Five Loss",
+                "value": 8,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

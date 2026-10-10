@@ -449,45 +449,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Limit"
-                  },
-                  "Sample Value": {
-                    "text": "60"
-                  },
-                  "Client Behavior": {
-                    "text": "Total requests permitted in window"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Remaining"
-                  },
-                  "Sample Value": {
-                    "text": "0"
-                  },
-                  "Client Behavior": {
-                    "text": "Immediate calls will be blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "Retry-After"
-                  },
-                  "Sample Value": {
-                    "text": "15"
-                  },
-                  "Client Behavior": {
-                    "text": "Seconds client must pause before retry"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -498,45 +480,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Limit"
-                  },
-                  "Sample Value": {
-                    "text": "60"
-                  },
-                  "Client Behavior": {
-                    "text": "Total requests permitted in window"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Remaining"
-                  },
-                  "Sample Value": {
-                    "text": "0"
-                  },
-                  "Client Behavior": {
-                    "text": "Immediate calls will be blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "Retry-After"
-                  },
-                  "Sample Value": {
-                    "text": "15"
-                  },
-                  "Client Behavior": {
-                    "text": "Seconds client must pause before retry"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -547,45 +511,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Limit"
-                  },
-                  "Sample Value": {
-                    "text": "60"
-                  },
-                  "Client Behavior": {
-                    "text": "Total requests permitted in window"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "X-RateLimit-Remaining"
-                  },
-                  "Sample Value": {
-                    "text": "0"
-                  },
-                  "Client Behavior": {
-                    "text": "Immediate calls will be blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": {
-                    "text": "Retry-After"
-                  },
-                  "Sample Value": {
-                    "text": "15"
-                  },
-                  "Client Behavior": {
-                    "text": "Seconds client must pause before retry"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -607,27 +553,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Limit",
-                  "Sample Value": "60",
-                  "Client Behavior": "Total requests permitted in window"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Remaining",
-                  "Sample Value": "0",
-                  "Client Behavior": "Immediate calls will be blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "Retry-After",
-                  "Sample Value": "15",
-                  "Client Behavior": "Seconds client must pause before retry"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -638,27 +584,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Limit",
-                  "Sample Value": "60",
-                  "Client Behavior": "Total requests permitted in window"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Remaining",
-                  "Sample Value": "0",
-                  "Client Behavior": "Immediate calls will be blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "Retry-After",
-                  "Sample Value": "15",
-                  "Client Behavior": "Seconds client must pause before retry"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -669,27 +615,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Limit",
-                  "Sample Value": "60",
-                  "Client Behavior": "Total requests permitted in window"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "X-RateLimit-Remaining",
-                  "Sample Value": "0",
-                  "Client Behavior": "Immediate calls will be blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Header Name": "Retry-After",
-                  "Sample Value": "15",
-                  "Client Behavior": "Seconds client must pause before retry"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

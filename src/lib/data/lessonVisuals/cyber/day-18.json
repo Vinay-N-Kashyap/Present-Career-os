@@ -374,7 +374,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unprotected Key Commit",
+        "rightLabel": "PEM Header Quarantine Scanner"
       },
       "filled": {
         "template": "compare",
@@ -408,7 +410,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unprotected Key Commit",
+        "rightLabel": "PEM Header Quarantine Scanner"
       }
     },
     {

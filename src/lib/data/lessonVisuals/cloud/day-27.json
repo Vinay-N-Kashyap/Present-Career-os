@@ -110,84 +110,48 @@
             "at": "say4",
             "caption": "When a rule detects patterns it immediately blocks the request.",
             "rows": [
-              [
-                {
-                  "text": "AWSManagedRulesSQLiRuleSet",
-                  "tone": "data"
-                },
-                {
-                  "text": "SQL Injection Patterns",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Query String & Body",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AWSManagedRulesCommonRuleSet",
-                  "tone": "data"
-                },
-                {
-                  "text": "Cross-Site Scripting (XSS)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Headers & URI Path",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "The detection rule group identifies script injection attempts in payloads.",
             "rows": [
-              [
-                {
-                  "text": "AWSManagedRulesKnownBadInputs",
-                  "tone": "data"
-                },
-                {
-                  "text": "Log4j & SSRF Exploits",
-                  "tone": "ok"
-                },
-                {
-                  "text": "All Request Fields",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AWSManagedRulesBotControl",
-                  "tone": "data"
-                },
-                {
-                  "text": "Scrapers & Credential Bots",
-                  "tone": "ok"
-                },
-                {
-                  "text": "User-Agent & Fingerprint",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Action: Challenge",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -206,84 +170,48 @@
             "at": "say4",
             "caption": "When a rule detects patterns it immediately blocks the request.",
             "rows": [
-              [
-                {
-                  "text": "AWSManagedRulesSQLiRuleSet",
-                  "tone": "data"
-                },
-                {
-                  "text": "SQL Injection Patterns",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Query String & Body",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AWSManagedRulesCommonRuleSet",
-                  "tone": "data"
-                },
-                {
-                  "text": "Cross-Site Scripting (XSS)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Headers & URI Path",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "The detection rule group identifies script injection attempts in payloads.",
             "rows": [
-              [
-                {
-                  "text": "AWSManagedRulesKnownBadInputs",
-                  "tone": "data"
-                },
-                {
-                  "text": "Log4j & SSRF Exploits",
-                  "tone": "ok"
-                },
-                {
-                  "text": "All Request Fields",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Action: Block",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AWSManagedRulesBotControl",
-                  "tone": "data"
-                },
-                {
-                  "text": "Scrapers & Credential Bots",
-                  "tone": "ok"
-                },
-                {
-                  "text": "User-Agent & Fingerprint",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Action: Challenge",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

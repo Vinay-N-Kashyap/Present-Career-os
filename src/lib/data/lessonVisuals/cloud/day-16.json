@@ -106,84 +106,48 @@
             "at": "say2",
             "caption": "A cache behavior routes incoming requests to specific origins.",
             "rows": [
-              [
-                {
-                  "text": "/images/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-Media-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "High Hit Ratio",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/api/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALB-Node-Backend",
-                  "tone": "idle"
-                },
-                {
-                  "text": "https-only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Bypass Cache",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Viewer protocol policy enforces https to guarantee encryption.",
             "rows": [
-              [
-                {
-                  "text": "/images/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-Media-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "High Hit Ratio",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-SPA-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Origin Fallback",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -202,84 +166,48 @@
             "at": "say2",
             "caption": "A cache behavior routes incoming requests to specific origins.",
             "rows": [
-              [
-                {
-                  "text": "/images/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-Media-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "High Hit Ratio",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/api/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "ALB-Node-Backend",
-                  "tone": "idle"
-                },
-                {
-                  "text": "https-only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Bypass Cache",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Viewer protocol policy enforces https to guarantee encryption.",
             "rows": [
-              [
-                {
-                  "text": "/images/*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-Media-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "High Hit Ratio",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "*",
-                  "tone": "data"
-                },
-                {
-                  "text": "S3-SPA-Bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "redirect-to-https",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Origin Fallback",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

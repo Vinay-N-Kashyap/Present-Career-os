@@ -266,84 +266,48 @@
             "at": "say2",
             "caption": "Geolocation routes traffic based on the geographic location of the query.",
             "rows": [
-              [
-                {
-                  "text": "Europe (EU)",
-                  "tone": "data"
-                },
-                {
-                  "text": "eu-west-1 (Ireland)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "GDPR Compliance",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Asia (AS)",
-                  "tone": "data"
-                },
-                {
-                  "text": "ap-northeast-1 (Tokyo)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Localized Content",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Geoproximity lets architects define bias values to expand region footprints.",
             "rows": [
-              [
-                {
-                  "text": "Europe (EU)",
-                  "tone": "data"
-                },
-                {
-                  "text": "eu-west-1 (Ireland)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "GDPR Compliance",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Default Global",
-                  "tone": "data"
-                },
-                {
-                  "text": "us-east-1 (Virginia)",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Catch-All Fallback",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Global Availability",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -362,84 +326,48 @@
             "at": "say2",
             "caption": "Geolocation routes traffic based on the geographic location of the query.",
             "rows": [
-              [
-                {
-                  "text": "Europe (EU)",
-                  "tone": "data"
-                },
-                {
-                  "text": "eu-west-1 (Ireland)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "GDPR Compliance",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Asia (AS)",
-                  "tone": "data"
-                },
-                {
-                  "text": "ap-northeast-1 (Tokyo)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Localized Content",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Geoproximity lets architects define bias values to expand region footprints.",
             "rows": [
-              [
-                {
-                  "text": "Europe (EU)",
-                  "tone": "data"
-                },
-                {
-                  "text": "eu-west-1 (Ireland)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Continent Origin",
-                  "tone": "ok"
-                },
-                {
-                  "text": "GDPR Compliance",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Default Global",
-                  "tone": "data"
-                },
-                {
-                  "text": "us-east-1 (Virginia)",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Catch-All Fallback",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Global Availability",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -360,36 +360,48 @@
             "at": "say3",
             "caption": "The broker withholds its response until enough data arrives for a batch.",
             "rows": [
-              [
-                "10ms",
-                "200",
-                "false",
-                "waiting for data or timeout"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "When maxWaitMs expires before the byte threshold, the broker returns records.",
             "rows": [
-              [
-                "10ms",
-                "200",
-                "false",
-                "waiting for data or timeout"
-              ],
-              [
-                "55ms",
-                "200",
-                "true",
-                "maxWaitMs timeout expired"
-              ],
-              [
-                "5ms",
-                "2048",
-                "true",
-                "minBytes threshold satisfied"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -408,36 +420,48 @@
             "at": "say3",
             "caption": "The broker withholds its response until enough data arrives for a batch.",
             "rows": [
-              [
-                "10ms",
-                "200",
-                "false",
-                "waiting for data or timeout"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "When maxWaitMs expires before the byte threshold, the broker returns records.",
             "rows": [
-              [
-                "10ms",
-                "200",
-                "false",
-                "waiting for data or timeout"
-              ],
-              [
-                "55ms",
-                "200",
-                "true",
-                "maxWaitMs timeout expired"
-              ],
-              [
-                "5ms",
-                "2048",
-                "true",
-                "minBytes threshold satisfied"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

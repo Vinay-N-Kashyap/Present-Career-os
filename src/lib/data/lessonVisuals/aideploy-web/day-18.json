@@ -23,59 +23,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "docId"
-                  },
-                  "Sample Value": {
-                    "text": "sla-spec-2024"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Canonical document identifier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "title"
-                  },
-                  "Sample Value": {
-                    "text": "Cluster SLA Specifications"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Human-readable source title"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "page"
-                  },
-                  "Sample Value": {
-                    "text": "14"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Exact page number for audit"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "chunkIndex"
-                  },
-                  "Sample Value": {
-                    "text": "3"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Deterministic chunk sequence"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -86,59 +62,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "docId"
-                  },
-                  "Sample Value": {
-                    "text": "sla-spec-2024"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Canonical document identifier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "title"
-                  },
-                  "Sample Value": {
-                    "text": "Cluster SLA Specifications"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Human-readable source title"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "page"
-                  },
-                  "Sample Value": {
-                    "text": "14"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Exact page number for audit"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "chunkIndex"
-                  },
-                  "Sample Value": {
-                    "text": "3"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Deterministic chunk sequence"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -149,59 +101,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "docId"
-                  },
-                  "Sample Value": {
-                    "text": "sla-spec-2024"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Canonical document identifier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "title"
-                  },
-                  "Sample Value": {
-                    "text": "Cluster SLA Specifications"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Human-readable source title"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "page"
-                  },
-                  "Sample Value": {
-                    "text": "14"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Exact page number for audit"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "chunkIndex"
-                  },
-                  "Sample Value": {
-                    "text": "3"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Deterministic chunk sequence"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -223,35 +151,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "docId",
-                  "Sample Value": "sla-spec-2024",
-                  "Grounding Purpose": "Canonical document identifier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "title",
-                  "Sample Value": "Cluster SLA Specifications",
-                  "Grounding Purpose": "Human-readable source title"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "page",
-                  "Sample Value": "14",
-                  "Grounding Purpose": "Exact page number for audit"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "chunkIndex",
-                  "Sample Value": "3",
-                  "Grounding Purpose": "Deterministic chunk sequence"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -262,35 +190,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "docId",
-                  "Sample Value": "sla-spec-2024",
-                  "Grounding Purpose": "Canonical document identifier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "title",
-                  "Sample Value": "Cluster SLA Specifications",
-                  "Grounding Purpose": "Human-readable source title"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "page",
-                  "Sample Value": "14",
-                  "Grounding Purpose": "Exact page number for audit"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "chunkIndex",
-                  "Sample Value": "3",
-                  "Grounding Purpose": "Deterministic chunk sequence"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -301,35 +229,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "docId",
-                  "Sample Value": "sla-spec-2024",
-                  "Grounding Purpose": "Canonical document identifier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "title",
-                  "Sample Value": "Cluster SLA Specifications",
-                  "Grounding Purpose": "Human-readable source title"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "page",
-                  "Sample Value": "14",
-                  "Grounding Purpose": "Exact page number for audit"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "chunkIndex",
-                  "Sample Value": "3",
-                  "Grounding Purpose": "Deterministic chunk sequence"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

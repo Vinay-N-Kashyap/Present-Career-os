@@ -22,30 +22,39 @@
             "at": "say4",
             "caption": "Sending one thousand individual messages executes one thousand round-trips.",
             "rows": [
-              [
-                "SINGLE_RECORD",
-                "1000",
-                "1000",
-                "54000"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "A single network packet holds dozens of records, amortizing TCP headers.",
             "rows": [
-              [
-                "SINGLE_RECORD",
-                "1000",
-                "1000",
-                "54000"
-              ],
-              [
-                "MICRO_BATCHED",
-                "20",
-                "20",
-                "1080"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -64,30 +73,39 @@
             "at": "say4",
             "caption": "Sending one thousand individual messages executes one thousand round-trips.",
             "rows": [
-              [
-                "SINGLE_RECORD",
-                "1000",
-                "1000",
-                "54000"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "A single network packet holds dozens of records, amortizing TCP headers.",
             "rows": [
-              [
-                "SINGLE_RECORD",
-                "1000",
-                "1000",
-                "54000"
-              ],
-              [
-                "MICRO_BATCHED",
-                "20",
-                "20",
-                "1080"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

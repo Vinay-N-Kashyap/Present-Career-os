@@ -23,45 +23,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Explicit Rating"
-                  },
-                  "Signal Type": {
-                    "text": "Thumbs Up / Down"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Direct binary satisfaction verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Implicit Dwell Time"
-                  },
-                  "Signal Type": {
-                    "text": "Observation Seconds"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Engagement and reading duration"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Clipboard Action"
-                  },
-                  "Signal Type": {
-                    "text": "Copy Event Boolean"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Utility and adoption confirmation"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -72,45 +54,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Explicit Rating"
-                  },
-                  "Signal Type": {
-                    "text": "Thumbs Up / Down"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Direct binary satisfaction verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Implicit Dwell Time"
-                  },
-                  "Signal Type": {
-                    "text": "Observation Seconds"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Engagement and reading duration"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Clipboard Action"
-                  },
-                  "Signal Type": {
-                    "text": "Copy Event Boolean"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Utility and adoption confirmation"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -121,45 +85,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Explicit Rating"
-                  },
-                  "Signal Type": {
-                    "text": "Thumbs Up / Down"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Direct binary satisfaction verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Implicit Dwell Time"
-                  },
-                  "Signal Type": {
-                    "text": "Observation Seconds"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Engagement and reading duration"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": {
-                    "text": "Clipboard Action"
-                  },
-                  "Signal Type": {
-                    "text": "Copy Event Boolean"
-                  },
-                  "Grounding Purpose": {
-                    "text": "Utility and adoption confirmation"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -181,27 +127,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": "Explicit Rating",
-                  "Signal Type": "Thumbs Up / Down",
-                  "Grounding Purpose": "Direct binary satisfaction verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Implicit Dwell Time",
-                  "Signal Type": "Observation Seconds",
-                  "Grounding Purpose": "Engagement and reading duration"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Clipboard Action",
-                  "Signal Type": "Copy Event Boolean",
-                  "Grounding Purpose": "Utility and adoption confirmation"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -212,27 +158,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": "Explicit Rating",
-                  "Signal Type": "Thumbs Up / Down",
-                  "Grounding Purpose": "Direct binary satisfaction verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Implicit Dwell Time",
-                  "Signal Type": "Observation Seconds",
-                  "Grounding Purpose": "Engagement and reading duration"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Clipboard Action",
-                  "Signal Type": "Copy Event Boolean",
-                  "Grounding Purpose": "Utility and adoption confirmation"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -243,27 +189,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Telemetry Channel": "Explicit Rating",
-                  "Signal Type": "Thumbs Up / Down",
-                  "Grounding Purpose": "Direct binary satisfaction verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Implicit Dwell Time",
-                  "Signal Type": "Observation Seconds",
-                  "Grounding Purpose": "Engagement and reading duration"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Telemetry Channel": "Clipboard Action",
-                  "Signal Type": "Copy Event Boolean",
-                  "Grounding Purpose": "Utility and adoption confirmation"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -297,15 +243,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions compute total ratings count satisfaction percentage and dwell time."
+            "caption": "Functions compute total ratings count satisfaction percentage and dwell time.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks."
+            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment."
+            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
           }
         ]
       },
@@ -332,15 +346,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions compute total ratings count satisfaction percentage and dwell time."
+            "caption": "Functions compute total ratings count satisfaction percentage and dwell time.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks."
+            "caption": "Prompt deployments dropping satisfaction below threshold trigger rollbacks.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment."
+            "caption": "Continuous feedback monitoring ensures teams maintain visibility into sentiment.",
+            "bars": [
+              {
+                "label": "Satisfaction Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Target SLA",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Disapproval Rate",
+                "value": 33.33,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Satisfaction Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Target SLA",
+            "value": 80,
+            "tone": "data"
+          },
+          {
+            "label": "Disapproval Rate",
+            "value": 33.33,
+            "tone": "error"
           }
         ]
       }

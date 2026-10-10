@@ -228,7 +228,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Pure Negative Prohibition",
+        "rightLabel": "Negative with Alternative"
       },
       "filled": {
         "template": "compare",
@@ -264,7 +266,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Pure Negative Prohibition",
+        "rightLabel": "Negative with Alternative"
       }
     },
     {

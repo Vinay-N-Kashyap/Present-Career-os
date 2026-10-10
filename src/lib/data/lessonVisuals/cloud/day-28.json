@@ -106,84 +106,48 @@
             "at": "say3",
             "caption": "Organizations enforce mandatory tag sets for cost allocation governance.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Cost Explorer Breakdown",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "CC-FINTECH-900",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Departmental Chargeback",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Chargeback models bill each department for their actual cloud consumption.",
             "rows": [
-              [
-                {
-                  "text": "Project",
-                  "tone": "data"
-                },
-                {
-                  "text": "global-banking-v2",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Cost Attribution",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Owner",
-                  "tone": "data"
-                },
-                {
-                  "text": "platform-team",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Accountability Audit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -202,84 +166,48 @@
             "at": "say3",
             "caption": "Organizations enforce mandatory tag sets for cost allocation governance.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Cost Explorer Breakdown",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "CC-FINTECH-900",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Departmental Chargeback",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Chargeback models bill each department for their actual cloud consumption.",
             "rows": [
-              [
-                {
-                  "text": "Project",
-                  "tone": "data"
-                },
-                {
-                  "text": "global-banking-v2",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Cost Attribution",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Owner",
-                  "tone": "data"
-                },
-                {
-                  "text": "platform-team",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active in Billing Console",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Accountability Audit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

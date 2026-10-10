@@ -190,7 +190,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "CLOSED Circuit State",
+        "rightLabel": "OPEN Circuit State"
       },
       "filled": {
         "template": "compare",
@@ -224,7 +226,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "CLOSED Circuit State",
+        "rightLabel": "OPEN Circuit State"
       }
     },
     {

@@ -192,7 +192,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "Sparse BM25 Keyword Matching"
       },
       "filled": {
         "template": "compare",
@@ -228,7 +230,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Dense Vector Retrieval",
+        "rightLabel": "Sparse BM25 Keyword Matching"
       }
     },
     {

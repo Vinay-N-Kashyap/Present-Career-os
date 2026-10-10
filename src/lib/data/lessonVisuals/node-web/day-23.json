@@ -12,48 +12,8 @@
         "template": "table",
         "title": "ACID transactional guarantees summary",
         "columns": [
-          {
-            "id": "property",
-            "label": "property"
-          },
-          {
-            "id": "definition",
-            "label": "definition"
-          }
-        ],
-        "rows": [
-          {
-            "property": {
-              "text": "Atomicity"
-            },
-            "definition": {
-              "text": "All or nothing execution"
-            }
-          },
-          {
-            "property": {
-              "text": "Consistency"
-            },
-            "definition": {
-              "text": "Constraint validation"
-            }
-          },
-          {
-            "property": {
-              "text": "Isolation"
-            },
-            "definition": {
-              "text": "Concurrent independence"
-            }
-          },
-          {
-            "property": {
-              "text": "Durability"
-            },
-            "definition": {
-              "text": "Persistent survival"
-            }
-          }
+          "property",
+          "definition"
         ],
         "steps": [
           {
@@ -61,36 +21,32 @@
             "caption": "Atomicity guarantees all or nothing execution across all modifications.",
             "rows": [
               {
-                "property": {
-                  "text": "Atomicity"
-                },
-                "definition": {
-                  "text": "All or nothing execution"
-                }
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": {
-                  "text": "Consistency"
-                },
-                "definition": {
-                  "text": "Constraint validation"
-                }
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Isolation"
-                },
-                "definition": {
-                  "text": "Concurrent independence"
-                }
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Durability"
-                },
-                "definition": {
-                  "text": "Persistent survival"
-                }
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -99,36 +55,32 @@
             "caption": "Isolation prevents concurrent transactions from interfering with each other.",
             "rows": [
               {
-                "property": {
-                  "text": "Atomicity"
-                },
-                "definition": {
-                  "text": "All or nothing execution"
-                }
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": {
-                  "text": "Consistency"
-                },
-                "definition": {
-                  "text": "Constraint validation"
-                }
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Isolation"
-                },
-                "definition": {
-                  "text": "Concurrent independence"
-                }
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Durability"
-                },
-                "definition": {
-                  "text": "Persistent survival"
-                }
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -137,36 +89,32 @@
             "caption": "Durability ensures committed writes survive power outages or server crashes.",
             "rows": [
               {
-                "property": {
-                  "text": "Atomicity"
-                },
-                "definition": {
-                  "text": "All or nothing execution"
-                }
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": {
-                  "text": "Consistency"
-                },
-                "definition": {
-                  "text": "Constraint validation"
-                }
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Isolation"
-                },
-                "definition": {
-                  "text": "Concurrent independence"
-                }
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": {
-                  "text": "Durability"
-                },
-                "definition": {
-                  "text": "Persistent survival"
-                }
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -176,32 +124,8 @@
         "template": "table",
         "title": "ACID transactional guarantees summary",
         "columns": [
-          {
-            "id": "property",
-            "label": "property"
-          },
-          {
-            "id": "definition",
-            "label": "definition"
-          }
-        ],
-        "rows": [
-          {
-            "property": "Atomicity",
-            "definition": "All or nothing execution"
-          },
-          {
-            "property": "Consistency",
-            "definition": "Constraint validation"
-          },
-          {
-            "property": "Isolation",
-            "definition": "Concurrent independence"
-          },
-          {
-            "property": "Durability",
-            "definition": "Persistent survival"
-          }
+          "property",
+          "definition"
         ],
         "steps": [
           {
@@ -209,20 +133,32 @@
             "caption": "Atomicity guarantees all or nothing execution across all modifications.",
             "rows": [
               {
-                "property": "Atomicity",
-                "definition": "All or nothing execution"
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": "Consistency",
-                "definition": "Constraint validation"
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Isolation",
-                "definition": "Concurrent independence"
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Durability",
-                "definition": "Persistent survival"
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -231,20 +167,32 @@
             "caption": "Isolation prevents concurrent transactions from interfering with each other.",
             "rows": [
               {
-                "property": "Atomicity",
-                "definition": "All or nothing execution"
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": "Consistency",
-                "definition": "Constraint validation"
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Isolation",
-                "definition": "Concurrent independence"
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Durability",
-                "definition": "Persistent survival"
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -253,20 +201,32 @@
             "caption": "Durability ensures committed writes survive power outages or server crashes.",
             "rows": [
               {
-                "property": "Atomicity",
-                "definition": "All or nothing execution"
+                "cells": [
+                  "Atomicity",
+                  "All or nothing execution"
+                ],
+                "tone": "data"
               },
               {
-                "property": "Consistency",
-                "definition": "Constraint validation"
+                "cells": [
+                  "Consistency",
+                  "Constraint validation"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Isolation",
-                "definition": "Concurrent independence"
+                "cells": [
+                  "Isolation",
+                  "Concurrent independence"
+                ],
+                "tone": "ok"
               },
               {
-                "property": "Durability",
-                "definition": "Persistent survival"
+                "cells": [
+                  "Durability",
+                  "Persistent survival"
+                ],
+                "tone": "ok"
               }
             ]
           }

@@ -33,13 +33,47 @@
             "at": "say3",
             "caption": "Concurrent requests represent items residing inside the system concurrently.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Nominal Concurrency 50ms",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Slowdown Concurrency 400ms",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Buffer Memory 400ms",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Downstream latency spikes surge in-flight concurrency tenfold in minutes.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Nominal Concurrency 50ms",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Slowdown Concurrency 400ms",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Buffer Memory 400ms",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -68,13 +102,47 @@
             "at": "say3",
             "caption": "Concurrent requests represent items residing inside the system concurrently.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Nominal Concurrency 50ms",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Slowdown Concurrency 400ms",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Buffer Memory 400ms",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Downstream latency spikes surge in-flight concurrency tenfold in minutes.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Nominal Concurrency 50ms",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Slowdown Concurrency 400ms",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Buffer Memory 400ms",
+                "value": 24,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }
@@ -107,13 +175,47 @@
             "at": "say3",
             "caption": "Request latency increases exponentially with resource utilization.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Wait at 50% Utilization",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 80% Utilization",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 95% Utilization",
+                "value": 380,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The utilization cliff causes queue wait times to skyrocket near saturation.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Wait at 50% Utilization",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 80% Utilization",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 95% Utilization",
+                "value": 380,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -142,13 +244,47 @@
             "at": "say3",
             "caption": "Request latency increases exponentially with resource utilization.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Wait at 50% Utilization",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 80% Utilization",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 95% Utilization",
+                "value": 380,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "The utilization cliff causes queue wait times to skyrocket near saturation.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Wait at 50% Utilization",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 80% Utilization",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Wait at 95% Utilization",
+                "value": 380,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }
@@ -190,7 +326,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Isolated Single Queue",
+        "rightLabel": "Pooled M/M/c Cluster Queue"
       },
       "filled": {
         "template": "compare",
@@ -226,7 +364,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Isolated Single Queue",
+        "rightLabel": "Pooled M/M/c Cluster Queue"
       }
     },
     {

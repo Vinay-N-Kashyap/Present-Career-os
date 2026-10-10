@@ -151,15 +151,57 @@ export function getVisual(
     return null;
   }
 
+  let visual: LessonVisual | null = null;
   if (entry.filled && typeof entry.filled === 'object') {
     if ('template' in entry.filled && typeof entry.filled.template === 'string') {
-      return entry.filled as unknown as LessonVisual;
+      visual = entry.filled as unknown as LessonVisual;
+    } else if ('visual' in entry.filled && entry.filled.visual) {
+      visual = entry.filled.visual as LessonVisual;
+    } else {
+      visual = entry.filled as unknown as LessonVisual;
     }
-    if ('visual' in entry.filled && entry.filled.visual) {
-      return entry.filled.visual as LessonVisual;
-    }
-    return entry.filled as unknown as LessonVisual;
+  } else if (entry.spec && typeof entry.spec === 'object' && 'template' in entry.spec && entry.spec.template !== 'none') {
+    visual = entry.spec as unknown as LessonVisual;
   }
 
-  return null;
+  if (!visual) {
+    return null;
+  }
+
+  // Normalization for robust student rendering:
+  // 1. Compare template: ensure leftLabel and rightLabel are defined
+  if (visual.template === 'compare') {
+    const cv = visual as any;
+    if (!cv.leftLabel) {
+      cv.leftLabel = cv.left?.title || cv.left?.label || 'Left';
+    }
+    if (!cv.rightLabel) {
+      cv.rightLabel = cv.right?.title || cv.right?.label || 'Right';
+    }
+  }
+
+  // 2. Bars template: ensure step.bars is populated if visual.bars or visual.items exists
+  if (visual.template === 'bars') {
+    const rawBars = Array.isArray((visual as any).bars)
+      ? (visual as any).bars
+      : Array.isArray((visual as any).items)
+      ? (visual as any).items
+      : [];
+    if (rawBars.length > 0 && Array.isArray(visual.steps)) {
+      for (const step of visual.steps) {
+        const s = step as any;
+        if (!Array.isArray(s.bars) || s.bars.length === 0) {
+          const activeIdx = s.activeBarIndex ?? -1;
+          const badge = s.statusBadge;
+          s.bars = rawBars.map((b: any, bIdx: number) => ({
+            label: b.label || `Item ${bIdx + 1}`,
+            value: b.value ?? 0,
+            tone: b.tone || (bIdx === activeIdx ? (badge === 'completed' ? 'ok' : 'data') : 'idle'),
+          }));
+        }
+      }
+    }
+  }
+
+  return visual;
 }

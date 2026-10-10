@@ -440,7 +440,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive URL Purging",
+        "rightLabel": "Surrogate Keys (Tags)"
       },
       "filled": {
         "template": "compare",
@@ -474,7 +476,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive URL Purging",
+        "rightLabel": "Surrogate Keys (Tags)"
       }
     },
     {

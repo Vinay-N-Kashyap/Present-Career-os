@@ -122,42 +122,57 @@
             "at": "say5",
             "caption": "Watermark(T) declares the engine assumes all events with eventTime <= T arrived.",
             "rows": [
-              [
-                "1000 ms",
-                "1000 ms",
-                "800 ms",
-                "Advanced (+800)"
-              ],
-              [
-                "1400 ms",
-                "1400 ms",
-                "1200 ms",
-                "Advanced (+400)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Watermarks are monotonically increasing, so time never flows backward at 1100ms.",
             "rows": [
-              [
-                "1000 ms",
-                "1000 ms",
-                "800 ms",
-                "Advanced (+800)"
-              ],
-              [
-                "1400 ms",
-                "1400 ms",
-                "1200 ms",
-                "Advanced (+400)"
-              ],
-              [
-                "1100 ms (Late)",
-                "1400 ms",
-                "1200 ms",
-                "Held at 1200 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -176,42 +191,57 @@
             "at": "say5",
             "caption": "Watermark(T) declares the engine assumes all events with eventTime <= T arrived.",
             "rows": [
-              [
-                "1000 ms",
-                "1000 ms",
-                "800 ms",
-                "Advanced (+800)"
-              ],
-              [
-                "1400 ms",
-                "1400 ms",
-                "1200 ms",
-                "Advanced (+400)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Watermarks are monotonically increasing, so time never flows backward at 1100ms.",
             "rows": [
-              [
-                "1000 ms",
-                "1000 ms",
-                "800 ms",
-                "Advanced (+800)"
-              ],
-              [
-                "1400 ms",
-                "1400 ms",
-                "1200 ms",
-                "Advanced (+400)"
-              ],
-              [
-                "1100 ms (Late)",
-                "1400 ms",
-                "1200 ms",
-                "Held at 1200 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -346,30 +376,39 @@
             "at": "say5",
             "caption": "An event is classified as LATE when its event timestamp (950) is < watermark.",
             "rows": [
-              [
-                "tx-2",
-                "950 ms",
-                "1000 ms",
-                "LATE (50ms delta)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If an event timestamp (1050) is >= the watermark (1000), it is ON_TIME.",
             "rows": [
-              [
-                "tx-2",
-                "950 ms",
-                "1000 ms",
-                "LATE (50ms delta)"
-              ],
-              [
-                "tx-1",
-                "1050 ms",
-                "1000 ms",
-                "ON_TIME (0ms delta)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -388,30 +427,39 @@
             "at": "say5",
             "caption": "An event is classified as LATE when its event timestamp (950) is < watermark.",
             "rows": [
-              [
-                "tx-2",
-                "950 ms",
-                "1000 ms",
-                "LATE (50ms delta)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If an event timestamp (1050) is >= the watermark (1000), it is ON_TIME.",
             "rows": [
-              [
-                "tx-2",
-                "950 ms",
-                "1000 ms",
-                "LATE (50ms delta)"
-              ],
-              [
-                "tx-1",
-                "1050 ms",
-                "1000 ms",
-                "ON_TIME (0ms delta)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

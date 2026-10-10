@@ -21,37 +21,52 @@
             "at": "say5",
             "caption": "The producer must be idempotent so network retries never create duplicates.",
             "rows": [
-              [
-                "PRODUCER",
-                "Idempotent Producer",
-                "PID & monotonic sequence numbers"
-              ],
-              [
-                "BROKER",
-                "Sequence Validator",
-                "Verifies sequence = lastSequence + 1"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The consumer must process messages and commit offsets atomically.",
             "rows": [
-              [
-                "PRODUCER",
-                "Idempotent Producer",
-                "PID & monotonic sequence numbers"
-              ],
-              [
-                "BROKER",
-                "Sequence Validator",
-                "Verifies sequence = lastSequence + 1"
-              ],
-              [
-                "CONSUMER",
-                "Transactional Outbox",
-                "Atomic offset & state mutation commit"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -69,37 +84,52 @@
             "at": "say5",
             "caption": "The producer must be idempotent so network retries never create duplicates.",
             "rows": [
-              [
-                "PRODUCER",
-                "Idempotent Producer",
-                "PID & monotonic sequence numbers"
-              ],
-              [
-                "BROKER",
-                "Sequence Validator",
-                "Verifies sequence = lastSequence + 1"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The consumer must process messages and commit offsets atomically.",
             "rows": [
-              [
-                "PRODUCER",
-                "Idempotent Producer",
-                "PID & monotonic sequence numbers"
-              ],
-              [
-                "BROKER",
-                "Sequence Validator",
-                "Verifies sequence = lastSequence + 1"
-              ],
-              [
-                "CONSUMER",
-                "Transactional Outbox",
-                "Atomic offset & state mutation commit"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

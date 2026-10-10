@@ -358,84 +358,48 @@
             "at": "say2",
             "caption": "In active active both regions serve live traffic with distributed routing.",
             "rows": [
-              [
-                {
-                  "text": "Backup & Restore",
-                  "tone": "data"
-                },
-                {
-                  "text": "2 to 24 Hours",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Hours to 1 Day",
-                  "tone": "idle"
-                },
-                {
-                  "text": "< 10% Production Cost",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Pilot Light",
-                  "tone": "data"
-                },
-                {
-                  "text": "10 to 30 Minutes",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Sub-Second DB Lag",
-                  "tone": "ok"
-                },
-                {
-                  "text": "10% to 25% Production Cost",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "Health checks detect outages and automatically stop routing traffic.",
             "rows": [
-              [
-                {
-                  "text": "Warm Standby",
-                  "tone": "data"
-                },
-                {
-                  "text": "1 to 5 Minutes",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Sub-Second DB Lag",
-                  "tone": "ok"
-                },
-                {
-                  "text": "25% to 50% Production Cost",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Active-Active",
-                  "tone": "data"
-                },
-                {
-                  "text": "Near-Zero (< 1 Min)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Zero (Global Tables)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "100% to 200% Cost",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -454,84 +418,48 @@
             "at": "say2",
             "caption": "In active active both regions serve live traffic with distributed routing.",
             "rows": [
-              [
-                {
-                  "text": "Backup & Restore",
-                  "tone": "data"
-                },
-                {
-                  "text": "2 to 24 Hours",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Hours to 1 Day",
-                  "tone": "idle"
-                },
-                {
-                  "text": "< 10% Production Cost",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Pilot Light",
-                  "tone": "data"
-                },
-                {
-                  "text": "10 to 30 Minutes",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Sub-Second DB Lag",
-                  "tone": "ok"
-                },
-                {
-                  "text": "10% to 25% Production Cost",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "Health checks detect outages and automatically stop routing traffic.",
             "rows": [
-              [
-                {
-                  "text": "Warm Standby",
-                  "tone": "data"
-                },
-                {
-                  "text": "1 to 5 Minutes",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Sub-Second DB Lag",
-                  "tone": "ok"
-                },
-                {
-                  "text": "25% to 50% Production Cost",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Active-Active",
-                  "tone": "data"
-                },
-                {
-                  "text": "Near-Zero (< 1 Min)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Zero (Global Tables)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "100% to 200% Cost",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

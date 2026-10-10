@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Lexical Overlap Metrics",
+        "rightLabel": "Semantic RAG Evaluation"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Lexical Overlap Metrics",
+        "rightLabel": "Semantic RAG Evaluation"
       }
     },
     {

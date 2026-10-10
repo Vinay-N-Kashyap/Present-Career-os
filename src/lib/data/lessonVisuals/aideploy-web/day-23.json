@@ -209,15 +209,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Functions evaluate candidate P95 latency against baseline production measures."
+            "caption": "Functions evaluate candidate P95 latency against baseline production measures.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
-            "caption": "In trial one latency increased well within thirty millisecond ceilings."
+            "caption": "In trial one latency increased well within thirty millisecond ceilings.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Integrating latency checks into CI ensures performance remains predictable."
+            "caption": "Integrating latency checks into CI ensures performance remains predictable.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
           }
         ]
       },
@@ -244,15 +312,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Functions evaluate candidate P95 latency against baseline production measures."
+            "caption": "Functions evaluate candidate P95 latency against baseline production measures.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say5",
-            "caption": "In trial one latency increased well within thirty millisecond ceilings."
+            "caption": "In trial one latency increased well within thirty millisecond ceilings.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Integrating latency checks into CI ensures performance remains predictable."
+            "caption": "Integrating latency checks into CI ensures performance remains predictable.",
+            "bars": [
+              {
+                "label": "Baseline P95",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Trial 1 (+15ms)",
+                "value": 215,
+                "tone": "ok"
+              },
+              {
+                "label": "Trial 2 (+60ms)",
+                "value": 260,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Baseline P95",
+            "value": 200,
+            "tone": "idle"
+          },
+          {
+            "label": "Trial 1 (+15ms)",
+            "value": 215,
+            "tone": "ok"
+          },
+          {
+            "label": "Trial 2 (+60ms)",
+            "value": 260,
+            "tone": "error"
           }
         ]
       }
@@ -276,54 +412,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Base Profile"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "350 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.50"
-                  },
-                  "Gate Verdict": {
-                    "text": "Baseline Approved"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 1 (Modest)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "380 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.55"
-                  },
-                  "Gate Verdict": {
-                    "text": "Within 1.25x Multiplier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 2 (Bloated)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "1200 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$1.80"
-                  },
-                  "Gate Verdict": {
-                    "text": "Blocked Cost Surge"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -334,54 +446,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Base Profile"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "350 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.50"
-                  },
-                  "Gate Verdict": {
-                    "text": "Baseline Approved"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 1 (Modest)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "380 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.55"
-                  },
-                  "Gate Verdict": {
-                    "text": "Within 1.25x Multiplier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 2 (Bloated)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "1200 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$1.80"
-                  },
-                  "Gate Verdict": {
-                    "text": "Blocked Cost Surge"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -392,54 +480,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Base Profile"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "350 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.50"
-                  },
-                  "Gate Verdict": {
-                    "text": "Baseline Approved"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 1 (Modest)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "380 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$0.55"
-                  },
-                  "Gate Verdict": {
-                    "text": "Within 1.25x Multiplier"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": {
-                    "text": "Candidate 2 (Bloated)"
-                  },
-                  "Avg Tokens / Query": {
-                    "text": "1200 tokens"
-                  },
-                  "Cost / 1k Queries": {
-                    "text": "$1.80"
-                  },
-                  "Gate Verdict": {
-                    "text": "Blocked Cost Surge"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -462,30 +526,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": "Base Profile",
-                  "Avg Tokens / Query": "350 tokens",
-                  "Cost / 1k Queries": "$0.50",
-                  "Gate Verdict": "Baseline Approved"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 1 (Modest)",
-                  "Avg Tokens / Query": "380 tokens",
-                  "Cost / 1k Queries": "$0.55",
-                  "Gate Verdict": "Within 1.25x Multiplier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 2 (Bloated)",
-                  "Avg Tokens / Query": "1200 tokens",
-                  "Cost / 1k Queries": "$1.80",
-                  "Gate Verdict": "Blocked Cost Surge"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -496,30 +560,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": "Base Profile",
-                  "Avg Tokens / Query": "350 tokens",
-                  "Cost / 1k Queries": "$0.50",
-                  "Gate Verdict": "Baseline Approved"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 1 (Modest)",
-                  "Avg Tokens / Query": "380 tokens",
-                  "Cost / 1k Queries": "$0.55",
-                  "Gate Verdict": "Within 1.25x Multiplier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 2 (Bloated)",
-                  "Avg Tokens / Query": "1200 tokens",
-                  "Cost / 1k Queries": "$1.80",
-                  "Gate Verdict": "Blocked Cost Surge"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -530,30 +594,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Candidate Profile": "Base Profile",
-                  "Avg Tokens / Query": "350 tokens",
-                  "Cost / 1k Queries": "$0.50",
-                  "Gate Verdict": "Baseline Approved"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 1 (Modest)",
-                  "Avg Tokens / Query": "380 tokens",
-                  "Cost / 1k Queries": "$0.55",
-                  "Gate Verdict": "Within 1.25x Multiplier"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Candidate Profile": "Candidate 2 (Bloated)",
-                  "Avg Tokens / Query": "1200 tokens",
-                  "Cost / 1k Queries": "$1.80",
-                  "Gate Verdict": "Blocked Cost Surge"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

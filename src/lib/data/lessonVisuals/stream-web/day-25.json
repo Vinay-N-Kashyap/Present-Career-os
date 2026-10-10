@@ -392,30 +392,39 @@
             "at": "say5",
             "caption": "Using idempotent message IDs ensures re-consumed records do not duplicate.",
             "rows": [
-              [
-                "Attempt 1",
-                "tx-771 ($150)",
-                "COMMITTED",
-                "acc-A: 350 | acc-B: 250"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Transactions are neither lost during crashes nor processed twice on replay.",
             "rows": [
-              [
-                "Attempt 1",
-                "tx-771 ($150)",
-                "COMMITTED",
-                "acc-A: 350 | acc-B: 250"
-              ],
-              [
-                "Attempt 2 (Retry)",
-                "tx-771 ($150)",
-                "DUPLICATE_IGNORED",
-                "acc-A: 350 | acc-B: 250"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -434,30 +443,39 @@
             "at": "say5",
             "caption": "Using idempotent message IDs ensures re-consumed records do not duplicate.",
             "rows": [
-              [
-                "Attempt 1",
-                "tx-771 ($150)",
-                "COMMITTED",
-                "acc-A: 350 | acc-B: 250"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Transactions are neither lost during crashes nor processed twice on replay.",
             "rows": [
-              [
-                "Attempt 1",
-                "tx-771 ($150)",
-                "COMMITTED",
-                "acc-A: 350 | acc-B: 250"
-              ],
-              [
-                "Attempt 2 (Retry)",
-                "tx-771 ($150)",
-                "DUPLICATE_IGNORED",
-                "acc-A: 350 | acc-B: 250"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

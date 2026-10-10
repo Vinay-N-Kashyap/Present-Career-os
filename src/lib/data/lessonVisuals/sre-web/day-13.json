@@ -246,6 +246,33 @@
               "att1",
               "att2",
               "att3"
+            ],
+            "bars": [
+              {
+                "label": "Attempt 1 (100ms)",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 2 (200ms)",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 3 (400ms)",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 4 (800ms)",
+                "value": 800,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 5 (1000ms Ceiling)",
+                "value": 1000,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -257,6 +284,33 @@
               "att3",
               "att4",
               "att5"
+            ],
+            "bars": [
+              {
+                "label": "Attempt 1 (100ms)",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 2 (200ms)",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 3 (400ms)",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 4 (800ms)",
+                "value": 800,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 5 (1000ms Ceiling)",
+                "value": 1000,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -299,6 +353,33 @@
               "att1",
               "att2",
               "att3"
+            ],
+            "bars": [
+              {
+                "label": "Attempt 1 (100ms)",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 2 (200ms)",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 3 (400ms)",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 4 (800ms)",
+                "value": 800,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 5 (1000ms Ceiling)",
+                "value": 1000,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -310,6 +391,33 @@
               "att3",
               "att4",
               "att5"
+            ],
+            "bars": [
+              {
+                "label": "Attempt 1 (100ms)",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 2 (200ms)",
+                "value": 200,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 3 (400ms)",
+                "value": 400,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 4 (800ms)",
+                "value": 800,
+                "tone": "idle"
+              },
+              {
+                "label": "Attempt 5 (1000ms Ceiling)",
+                "value": 1000,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -454,7 +562,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Equal Jitter Strategy",
+        "rightLabel": "Decorrelated Jitter Strategy"
       },
       "filled": {
         "template": "compare",
@@ -490,7 +600,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Equal Jitter Strategy",
+        "rightLabel": "Decorrelated Jitter Strategy"
       }
     },
     {

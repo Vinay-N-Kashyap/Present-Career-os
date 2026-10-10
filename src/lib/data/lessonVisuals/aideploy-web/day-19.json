@@ -336,54 +336,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "id"
-                  },
-                  "Declared Type": {
-                    "text": "string"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "number"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score (invalid)"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Rejected (wrongType)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -394,54 +370,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "id"
-                  },
-                  "Declared Type": {
-                    "text": "string"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "number"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score (invalid)"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Rejected (wrongType)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -452,54 +404,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "id"
-                  },
-                  "Declared Type": {
-                    "text": "string"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "number"
-                  },
-                  "Validation Verdict": {
-                    "text": "Valid Match"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": {
-                    "text": "score (invalid)"
-                  },
-                  "Declared Type": {
-                    "text": "number"
-                  },
-                  "Observed Type": {
-                    "text": "string"
-                  },
-                  "Validation Verdict": {
-                    "text": "Rejected (wrongType)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -522,30 +450,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Property Key": "id",
-                  "Declared Type": "string",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score",
-                  "Declared Type": "number",
-                  "Observed Type": "number",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score (invalid)",
-                  "Declared Type": "number",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Rejected (wrongType)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -556,30 +484,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Property Key": "id",
-                  "Declared Type": "string",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score",
-                  "Declared Type": "number",
-                  "Observed Type": "number",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score (invalid)",
-                  "Declared Type": "number",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Rejected (wrongType)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -590,30 +518,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Property Key": "id",
-                  "Declared Type": "string",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score",
-                  "Declared Type": "number",
-                  "Observed Type": "number",
-                  "Validation Verdict": "Valid Match"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Property Key": "score (invalid)",
-                  "Declared Type": "number",
-                  "Observed Type": "string",
-                  "Validation Verdict": "Rejected (wrongType)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

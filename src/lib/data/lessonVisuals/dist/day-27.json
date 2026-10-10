@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Strong Linearizability",
+        "rightLabel": "Eventual Consistency"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Strong Linearizability",
+        "rightLabel": "Eventual Consistency"
       }
     },
     {

@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Active-Passive Topology",
+        "rightLabel": "Active-Active Topology"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Active-Passive Topology",
+        "rightLabel": "Active-Active Topology"
       }
     },
     {
@@ -269,6 +273,18 @@
             "caption": "Distributed systems resolve conflicts using timestamp comparison rules.",
             "activeBars": [
               "recUs"
+            ],
+            "bars": [
+              {
+                "label": "US-East Version",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "EU-West Version",
+                "value": 4,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -277,6 +293,18 @@
             "activeBars": [
               "recUs",
               "recEu"
+            ],
+            "bars": [
+              {
+                "label": "US-East Version",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "EU-West Version",
+                "value": 4,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -302,6 +330,18 @@
             "caption": "Distributed systems resolve conflicts using timestamp comparison rules.",
             "activeBars": [
               "recUs"
+            ],
+            "bars": [
+              {
+                "label": "US-East Version",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "EU-West Version",
+                "value": 4,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -310,6 +350,18 @@
             "activeBars": [
               "recUs",
               "recEu"
+            ],
+            "bars": [
+              {
+                "label": "US-East Version",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "EU-West Version",
+                "value": 4,
+                "tone": "idle"
+              }
             ]
           }
         ]

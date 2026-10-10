@@ -216,30 +216,39 @@
             "at": "say4",
             "caption": "High arrival velocity fills capacity (3 records) and dispatches immediately.",
             "rows": [
-              [
-                "Batch 1",
-                "CAPACITY",
-                "3 (rec-1..rec-3)",
-                "158 B (from 450 B)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If lingerMs (20ms) expires first, pollTimeout closes the batch immediately.",
             "rows": [
-              [
-                "Batch 1",
-                "CAPACITY",
-                "3 (rec-1..rec-3)",
-                "158 B (from 450 B)"
-              ],
-              [
-                "Batch 2",
-                "LINGER",
-                "1 (rec-4)",
-                "53 B (from 150 B)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -258,30 +267,39 @@
             "at": "say4",
             "caption": "High arrival velocity fills capacity (3 records) and dispatches immediately.",
             "rows": [
-              [
-                "Batch 1",
-                "CAPACITY",
-                "3 (rec-1..rec-3)",
-                "158 B (from 450 B)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If lingerMs (20ms) expires first, pollTimeout closes the batch immediately.",
             "rows": [
-              [
-                "Batch 1",
-                "CAPACITY",
-                "3 (rec-1..rec-3)",
-                "158 B (from 450 B)"
-              ],
-              [
-                "Batch 2",
-                "LINGER",
-                "1 (rec-4)",
-                "53 B (from 150 B)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

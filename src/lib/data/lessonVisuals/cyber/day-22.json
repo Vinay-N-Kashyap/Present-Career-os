@@ -284,7 +284,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Deterministic Static Memory",
+        "rightLabel": "Randomized ASLR Memory"
       },
       "filled": {
         "template": "compare",
@@ -318,7 +320,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Deterministic Static Memory",
+        "rightLabel": "Randomized ASLR Memory"
       }
     },
     {

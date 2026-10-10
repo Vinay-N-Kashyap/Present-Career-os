@@ -188,8 +188,8 @@ export function VisualStage({
       case 'compare':
         return (
           <CompareTemplate
-            leftLabel={visual.leftLabel}
-            rightLabel={visual.rightLabel}
+            leftLabel={visual.leftLabel || (visual as any).left?.title || (visual as any).left?.label || 'Left'}
+            rightLabel={visual.rightLabel || (visual as any).right?.title || (visual as any).right?.label || 'Right'}
             step={visual.steps[safeStepIndex]}
             showSpaces={visual.showSpaces}
           />

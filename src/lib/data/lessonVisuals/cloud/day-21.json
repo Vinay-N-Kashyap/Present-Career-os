@@ -106,84 +106,48 @@
             "at": "say4",
             "caption": "The inventory rule matches order placed and order cancelled events.",
             "rows": [
-              [
-                {
-                  "text": "inventory-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "inventory-queue",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "payment-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "payment-queue",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The order fanout rule matches high value orders using numeric patterns.",
             "rows": [
-              [
-                {
-                  "text": "inventory-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "inventory-queue",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "vip-fanout-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "amount >= 500",
-                  "tone": "ok"
-                },
-                {
-                  "text": "vip-sns-topic",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -202,84 +166,48 @@
             "at": "say4",
             "caption": "The inventory rule matches order placed and order cancelled events.",
             "rows": [
-              [
-                {
-                  "text": "inventory-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "inventory-queue",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "payment-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "payment-queue",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The order fanout rule matches high value orders using numeric patterns.",
             "rows": [
-              [
-                {
-                  "text": "inventory-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "inventory-queue",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "vip-fanout-rule",
-                  "tone": "data"
-                },
-                {
-                  "text": "com.pinit.ecommerce",
-                  "tone": "ok"
-                },
-                {
-                  "text": "amount >= 500",
-                  "tone": "ok"
-                },
-                {
-                  "text": "vip-sns-topic",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

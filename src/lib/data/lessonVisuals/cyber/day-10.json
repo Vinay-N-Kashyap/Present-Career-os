@@ -284,7 +284,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Stateful HOTP Counter",
+        "rightLabel": "Stateless TOTP Time-Step"
       },
       "filled": {
         "template": "compare",
@@ -318,7 +320,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Stateful HOTP Counter",
+        "rightLabel": "Stateless TOTP Time-Step"
       }
     },
     {

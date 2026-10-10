@@ -393,82 +393,52 @@
             "at": "say3",
             "caption": "Resource tags provide metadata pairs affixed to cloud infrastructure.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deployment Tier",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "finance",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Budget Tracking",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Consolidated billing enables organizations to aggregate volume discounts.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deployment Tier",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "finance",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Budget Tracking",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Project",
-                  "tone": "data"
-                },
-                {
-                  "text": "auth-service",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Service Allocation",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -486,82 +456,52 @@
             "at": "say3",
             "caption": "Resource tags provide metadata pairs affixed to cloud infrastructure.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deployment Tier",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "finance",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Budget Tracking",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Consolidated billing enables organizations to aggregate volume discounts.",
             "rows": [
-              [
-                {
-                  "text": "Environment",
-                  "tone": "data"
-                },
-                {
-                  "text": "production",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deployment Tier",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "CostCenter",
-                  "tone": "data"
-                },
-                {
-                  "text": "finance",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Budget Tracking",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Project",
-                  "tone": "data"
-                },
-                {
-                  "text": "auth-service",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Service Allocation",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

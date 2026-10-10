@@ -251,82 +251,52 @@
             "at": "say4",
             "caption": "Objects are encrypted with unique keys using advanced encryption standard.",
             "rows": [
-              [
-                {
-                  "text": "SSE-S3",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS Managed Keys",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Implicit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-KMS",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer / AWS KMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Detailed Audit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "Every encryption event is logged in CloudTrail providing an audit trail.",
             "rows": [
-              [
-                {
-                  "text": "SSE-S3",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS Managed Keys",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Implicit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-KMS",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer / AWS KMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Detailed Audit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-C",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer Supplied",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Client Responsibility",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -344,82 +314,52 @@
             "at": "say4",
             "caption": "Objects are encrypted with unique keys using advanced encryption standard.",
             "rows": [
-              [
-                {
-                  "text": "SSE-S3",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS Managed Keys",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Implicit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-KMS",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer / AWS KMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Detailed Audit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "Every encryption event is logged in CloudTrail providing an audit trail.",
             "rows": [
-              [
-                {
-                  "text": "SSE-S3",
-                  "tone": "data"
-                },
-                {
-                  "text": "AWS Managed Keys",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Implicit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-KMS",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer / AWS KMS",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Detailed Audit",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "SSE-C",
-                  "tone": "data"
-                },
-                {
-                  "text": "Customer Supplied",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Client Responsibility",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -22,42 +22,57 @@
             "at": "say3",
             "caption": "At-Most-Once delivery may lose messages, but never delivers more than once.",
             "rows": [
-              [
-                "AT_MOST_ONCE",
-                "true",
-                "false",
-                "LOW"
-              ],
-              [
-                "AT_LEAST_ONCE",
-                "false",
-                "true",
-                "MEDIUM"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Exactly-Once delivery guarantees state updates with zero loss or duplicates.",
             "rows": [
-              [
-                "AT_MOST_ONCE",
-                "true",
-                "false",
-                "LOW"
-              ],
-              [
-                "AT_LEAST_ONCE",
-                "false",
-                "true",
-                "MEDIUM"
-              ],
-              [
-                "EXACTLY_ONCE",
-                "false",
-                "false",
-                "HIGH"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -76,42 +91,57 @@
             "at": "say3",
             "caption": "At-Most-Once delivery may lose messages, but never delivers more than once.",
             "rows": [
-              [
-                "AT_MOST_ONCE",
-                "true",
-                "false",
-                "LOW"
-              ],
-              [
-                "AT_LEAST_ONCE",
-                "false",
-                "true",
-                "MEDIUM"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Exactly-Once delivery guarantees state updates with zero loss or duplicates.",
             "rows": [
-              [
-                "AT_MOST_ONCE",
-                "true",
-                "false",
-                "LOW"
-              ],
-              [
-                "AT_LEAST_ONCE",
-                "false",
-                "true",
-                "MEDIUM"
-              ],
-              [
-                "EXACTLY_ONCE",
-                "false",
-                "false",
-                "HIGH"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

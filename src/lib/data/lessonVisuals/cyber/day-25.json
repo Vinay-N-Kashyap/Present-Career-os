@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Network Intrusion Detection (NIDS)",
+        "rightLabel": "Host Intrusion Detection (HIDS)"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Network Intrusion Detection (NIDS)",
+        "rightLabel": "Host Intrusion Detection (HIDS)"
       }
     },
     {
@@ -316,7 +320,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Signature-Based Pattern Matching",
+        "rightLabel": "Protocol Anomaly Detection"
       },
       "filled": {
         "template": "compare",
@@ -350,7 +356,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Signature-Based Pattern Matching",
+        "rightLabel": "Protocol Anomaly Detection"
       }
     },
     {

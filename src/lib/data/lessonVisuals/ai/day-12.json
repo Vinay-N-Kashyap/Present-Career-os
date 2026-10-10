@@ -30,13 +30,47 @@
             "at": "say3",
             "caption": "Placing facts at the prompt beginning achieves high recall accuracy.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Beginning Primacy Peak",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Middle Trough Dispersion",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Ending Recency Peak",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Placing facts in the middle of context causes performance to plummet.",
             "activeBarIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Beginning Primacy Peak",
+                "value": 94,
+                "tone": "idle"
+              },
+              {
+                "label": "Middle Trough Dispersion",
+                "value": 42,
+                "tone": "ok"
+              },
+              {
+                "label": "Ending Recency Peak",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -62,13 +96,47 @@
             "at": "say3",
             "caption": "Placing facts at the prompt beginning achieves high recall accuracy.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Beginning Primacy Peak",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Middle Trough Dispersion",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Ending Recency Peak",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Placing facts in the middle of context causes performance to plummet.",
             "activeBarIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Beginning Primacy Peak",
+                "value": 94,
+                "tone": "idle"
+              },
+              {
+                "label": "Middle Trough Dispersion",
+                "value": 42,
+                "tone": "ok"
+              },
+              {
+                "label": "Ending Recency Peak",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }
@@ -208,7 +276,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Abstractive Compression",
+        "rightLabel": "Extractive Sentence Pruning"
       },
       "filled": {
         "template": "compare",
@@ -244,7 +314,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Abstractive Compression",
+        "rightLabel": "Extractive Sentence Pruning"
       }
     },
     {

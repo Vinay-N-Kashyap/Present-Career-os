@@ -356,7 +356,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Synchronizer Token Pattern",
+        "rightLabel": "Double-Submit Cookie Pattern"
       },
       "filled": {
         "template": "compare",
@@ -390,7 +392,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Synchronizer Token Pattern",
+        "rightLabel": "Double-Submit Cookie Pattern"
       }
     },
     {

@@ -208,7 +208,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Quantitative Risk Formula",
+        "rightLabel": "Qualitative Severity Tiers"
       },
       "filled": {
         "template": "compare",
@@ -242,7 +244,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Quantitative Risk Formula",
+        "rightLabel": "Qualitative Severity Tiers"
       }
     },
     {

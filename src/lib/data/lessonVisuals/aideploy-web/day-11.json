@@ -24,54 +24,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "nano"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$0.15"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$0.60"
-                  },
-                  "Target Workload": {
-                    "text": "Classification & Extraction"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "balanced"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$2.50"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$10.00"
-                  },
-                  "Target Workload": {
-                    "text": "Coding & General Prose"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "frontier"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$15.00"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$60.00"
-                  },
-                  "Target Workload": {
-                    "text": "Multi-Step Complex Reasoning"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -82,54 +58,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "nano"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$0.15"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$0.60"
-                  },
-                  "Target Workload": {
-                    "text": "Classification & Extraction"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "balanced"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$2.50"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$10.00"
-                  },
-                  "Target Workload": {
-                    "text": "Coding & General Prose"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "frontier"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$15.00"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$60.00"
-                  },
-                  "Target Workload": {
-                    "text": "Multi-Step Complex Reasoning"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -140,54 +92,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "nano"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$0.15"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$0.60"
-                  },
-                  "Target Workload": {
-                    "text": "Classification & Extraction"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "balanced"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$2.50"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$10.00"
-                  },
-                  "Target Workload": {
-                    "text": "Coding & General Prose"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": {
-                    "text": "frontier"
-                  },
-                  "Input Cost / 1M": {
-                    "text": "$15.00"
-                  },
-                  "Output Cost / 1M": {
-                    "text": "$60.00"
-                  },
-                  "Target Workload": {
-                    "text": "Multi-Step Complex Reasoning"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -210,30 +138,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": "nano",
-                  "Input Cost / 1M": "$0.15",
-                  "Output Cost / 1M": "$0.60",
-                  "Target Workload": "Classification & Extraction"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "balanced",
-                  "Input Cost / 1M": "$2.50",
-                  "Output Cost / 1M": "$10.00",
-                  "Target Workload": "Coding & General Prose"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "frontier",
-                  "Input Cost / 1M": "$15.00",
-                  "Output Cost / 1M": "$60.00",
-                  "Target Workload": "Multi-Step Complex Reasoning"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -244,30 +172,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": "nano",
-                  "Input Cost / 1M": "$0.15",
-                  "Output Cost / 1M": "$0.60",
-                  "Target Workload": "Classification & Extraction"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "balanced",
-                  "Input Cost / 1M": "$2.50",
-                  "Output Cost / 1M": "$10.00",
-                  "Target Workload": "Coding & General Prose"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "frontier",
-                  "Input Cost / 1M": "$15.00",
-                  "Output Cost / 1M": "$60.00",
-                  "Target Workload": "Multi-Step Complex Reasoning"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -278,30 +206,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Model Tier": "nano",
-                  "Input Cost / 1M": "$0.15",
-                  "Output Cost / 1M": "$0.60",
-                  "Target Workload": "Classification & Extraction"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "balanced",
-                  "Input Cost / 1M": "$2.50",
-                  "Output Cost / 1M": "$10.00",
-                  "Target Workload": "Coding & General Prose"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Model Tier": "frontier",
-                  "Input Cost / 1M": "$15.00",
-                  "Output Cost / 1M": "$60.00",
-                  "Target Workload": "Multi-Step Complex Reasoning"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -518,17 +446,86 @@
           {
             "at": "say2",
             "caption": "Short prompts require minimal working memory and fit on nano models.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Routing document lookups to long-context balanced models preserves budgets.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Large deep contexts route to high-capacity engines based on token counts.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              }
+            ]
           }
         ]
       },
@@ -556,17 +553,68 @@
           {
             "at": "say2",
             "caption": "Short prompts require minimal working memory and fit on nano models.",
-            "highlightBar": 0
+            "highlightBar": 0,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "Routing document lookups to long-context balanced models preserves budgets.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Large deep contexts route to high-capacity engines based on token counts.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Nano Cap",
+                "value": 500,
+                "tone": "ok"
+              },
+              {
+                "label": "Balanced Cap",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Frontier Deep",
+                "value": 8000,
+                "tone": "data"
+              }
+            ]
           }
         ]
       }

@@ -270,84 +270,48 @@
             "at": "say2",
             "caption": "In short polling SQS queries a subset of servers and returns immediately.",
             "rows": [
-              [
-                {
-                  "text": "Short Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 0",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate Empty Return",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Request Cost",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Long Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 20",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Connection Held Open",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Low API Invocations",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Long polling drastically reduces empty responses and slashes request costs.",
             "rows": [
-              [
-                {
-                  "text": "Short Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 0",
-                  "tone": "idle"
-                },
-                {
-                  "text": "False Empty Responses",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Billing Overhead",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Long Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 20",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Immediate Delivery",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Optimal Efficiency",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -366,84 +330,48 @@
             "at": "say2",
             "caption": "In short polling SQS queries a subset of servers and returns immediately.",
             "rows": [
-              [
-                {
-                  "text": "Short Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 0",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate Empty Return",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Request Cost",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Long Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 20",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Connection Held Open",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Low API Invocations",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Long polling drastically reduces empty responses and slashes request costs.",
             "rows": [
-              [
-                {
-                  "text": "Short Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 0",
-                  "tone": "idle"
-                },
-                {
-                  "text": "False Empty Responses",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Billing Overhead",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Long Polling",
-                  "tone": "data"
-                },
-                {
-                  "text": "waitTimeSeconds: 20",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Immediate Delivery",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Optimal Efficiency",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

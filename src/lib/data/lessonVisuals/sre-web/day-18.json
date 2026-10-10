@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unstructured Plain Text",
+        "rightLabel": "Structured JSON Document"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unstructured Plain Text",
+        "rightLabel": "Structured JSON Document"
       }
     },
     {
@@ -577,6 +581,23 @@
             "activeBars": [
               "raw",
               "redacted"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -586,6 +607,23 @@
               "raw",
               "redacted",
               "clean"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -617,6 +655,23 @@
             "activeBars": [
               "raw",
               "redacted"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -626,6 +681,23 @@
               "raw",
               "redacted",
               "clean"
+            ],
+            "bars": [
+              {
+                "label": "Raw Unscrubbed Fields",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Sensitive Fields Redacted",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Safe Sanitized Output",
+                "value": 75,
+                "tone": "idle"
+              }
             ]
           }
         ]

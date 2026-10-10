@@ -221,59 +221,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "modelId"
-                  },
-                  "Observed Value": {
-                    "text": "gpt-4o-mini"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Identify deployed model version"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "promptTokens"
-                  },
-                  "Observed Value": {
-                    "text": "450 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Input context token count"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "completionTokens"
-                  },
-                  "Observed Value": {
-                    "text": "85 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Generated output length"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "cacheHit"
-                  },
-                  "Observed Value": {
-                    "text": "false"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Semantic cache lookup verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -284,59 +260,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "modelId"
-                  },
-                  "Observed Value": {
-                    "text": "gpt-4o-mini"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Identify deployed model version"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "promptTokens"
-                  },
-                  "Observed Value": {
-                    "text": "450 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Input context token count"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "completionTokens"
-                  },
-                  "Observed Value": {
-                    "text": "85 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Generated output length"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "cacheHit"
-                  },
-                  "Observed Value": {
-                    "text": "false"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Semantic cache lookup verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -347,59 +299,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "modelId"
-                  },
-                  "Observed Value": {
-                    "text": "gpt-4o-mini"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Identify deployed model version"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "promptTokens"
-                  },
-                  "Observed Value": {
-                    "text": "450 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Input context token count"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "completionTokens"
-                  },
-                  "Observed Value": {
-                    "text": "85 tokens"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Generated output length"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": {
-                    "text": "cacheHit"
-                  },
-                  "Observed Value": {
-                    "text": "false"
-                  },
-                  "Telemetry Purpose": {
-                    "text": "Semantic cache lookup verdict"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -421,35 +349,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "modelId",
-                  "Observed Value": "gpt-4o-mini",
-                  "Telemetry Purpose": "Identify deployed model version"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "promptTokens",
-                  "Observed Value": "450 tokens",
-                  "Telemetry Purpose": "Input context token count"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "completionTokens",
-                  "Observed Value": "85 tokens",
-                  "Telemetry Purpose": "Generated output length"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "cacheHit",
-                  "Observed Value": "false",
-                  "Telemetry Purpose": "Semantic cache lookup verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -460,35 +388,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "modelId",
-                  "Observed Value": "gpt-4o-mini",
-                  "Telemetry Purpose": "Identify deployed model version"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "promptTokens",
-                  "Observed Value": "450 tokens",
-                  "Telemetry Purpose": "Input context token count"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "completionTokens",
-                  "Observed Value": "85 tokens",
-                  "Telemetry Purpose": "Generated output length"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "cacheHit",
-                  "Observed Value": "false",
-                  "Telemetry Purpose": "Semantic cache lookup verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -499,35 +427,35 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Metadata Key": "modelId",
-                  "Observed Value": "gpt-4o-mini",
-                  "Telemetry Purpose": "Identify deployed model version"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "promptTokens",
-                  "Observed Value": "450 tokens",
-                  "Telemetry Purpose": "Input context token count"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "completionTokens",
-                  "Observed Value": "85 tokens",
-                  "Telemetry Purpose": "Generated output length"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Metadata Key": "cacheHit",
-                  "Observed Value": "false",
-                  "Telemetry Purpose": "Semantic cache lookup verdict"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -566,15 +494,103 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions iterate across spans computing duration and identifying bottlenecks."
+            "caption": "Functions iterate across spans computing duration and identifying bottlenecks.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "The llm_call stage consumed milliseconds representing latency shares."
+            "caption": "The llm_call stage consumed milliseconds representing latency shares.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Automated bottleneck analysis directs engineering effort toward top returns."
+            "caption": "Automated bottleneck analysis directs engineering effort toward top returns.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "LLM Call (700ms)",
+            "value": 70,
+            "tone": "error"
+          },
+          {
+            "label": "Output Repair (200ms)",
+            "value": 20,
+            "tone": "data"
+          },
+          {
+            "label": "Vector Search (80ms)",
+            "value": 8,
+            "tone": "ok"
+          },
+          {
+            "label": "Auth (20ms)",
+            "value": 2,
+            "tone": "idle"
           }
         ]
       },
@@ -606,15 +622,103 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions iterate across spans computing duration and identifying bottlenecks."
+            "caption": "Functions iterate across spans computing duration and identifying bottlenecks.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "The llm_call stage consumed milliseconds representing latency shares."
+            "caption": "The llm_call stage consumed milliseconds representing latency shares.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Automated bottleneck analysis directs engineering effort toward top returns."
+            "caption": "Automated bottleneck analysis directs engineering effort toward top returns.",
+            "bars": [
+              {
+                "label": "LLM Call (700ms)",
+                "value": 70,
+                "tone": "error"
+              },
+              {
+                "label": "Output Repair (200ms)",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector Search (80ms)",
+                "value": 8,
+                "tone": "ok"
+              },
+              {
+                "label": "Auth (20ms)",
+                "value": 2,
+                "tone": "idle"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "LLM Call (700ms)",
+            "value": 70,
+            "tone": "error"
+          },
+          {
+            "label": "Output Repair (200ms)",
+            "value": 20,
+            "tone": "data"
+          },
+          {
+            "label": "Vector Search (80ms)",
+            "value": 8,
+            "tone": "ok"
+          },
+          {
+            "label": "Auth (20ms)",
+            "value": 2,
+            "tone": "idle"
           }
         ]
       }

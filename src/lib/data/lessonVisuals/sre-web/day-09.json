@@ -131,6 +131,18 @@
             "caption": "Weighted routing distributes incoming traffic across assigned endpoints.",
             "activeBars": [
               "stable"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -139,6 +151,18 @@
             "activeBars": [
               "stable",
               "canary"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -164,6 +188,18 @@
             "caption": "Weighted routing distributes incoming traffic across assigned endpoints.",
             "activeBars": [
               "stable"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -172,6 +208,18 @@
             "activeBars": [
               "stable",
               "canary"
+            ],
+            "bars": [
+              {
+                "label": "Stable Fleet (90%)",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Fleet (10%)",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           }
         ]

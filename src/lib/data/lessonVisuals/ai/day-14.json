@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Direct Injection Attack",
+        "rightLabel": "Indirect Injection Attack"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Direct Injection Attack",
+        "rightLabel": "Indirect Injection Attack"
       }
     },
     {

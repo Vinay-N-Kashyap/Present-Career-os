@@ -198,84 +198,48 @@
             "at": "say2",
             "caption": "Query operations find items based on primary keys with rapid latency.",
             "rows": [
-              [
-                {
-                  "text": "Query Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Matching Partition Items",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Single-Digit ms",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Minimal RCUs",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Scan Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Entire Table Records",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Latency",
-                  "tone": "error"
-                },
-                {
-                  "text": "Massive Read Cost",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Scan operations examine every single item in the table consuming capacity.",
             "rows": [
-              [
-                {
-                  "text": "Query Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Matching Partition Items",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Single-Digit ms",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Minimal RCUs",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Scan Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Entire Table Records",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Latency",
-                  "tone": "error"
-                },
-                {
-                  "text": "Massive Read Cost",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -294,84 +258,48 @@
             "at": "say2",
             "caption": "Query operations find items based on primary keys with rapid latency.",
             "rows": [
-              [
-                {
-                  "text": "Query Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Matching Partition Items",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Single-Digit ms",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Minimal RCUs",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Scan Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Entire Table Records",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Latency",
-                  "tone": "error"
-                },
-                {
-                  "text": "Massive Read Cost",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Scan operations examine every single item in the table consuming capacity.",
             "rows": [
-              [
-                {
-                  "text": "Query Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Matching Partition Items",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Single-Digit ms",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Minimal RCUs",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Scan Operation",
-                  "tone": "data"
-                },
-                {
-                  "text": "Entire Table Records",
-                  "tone": "error"
-                },
-                {
-                  "text": "High Latency",
-                  "tone": "error"
-                },
-                {
-                  "text": "Massive Read Cost",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -458,102 +386,57 @@
             "at": "say2",
             "caption": "Single-table design stores multiple distinct entity types in one table.",
             "rows": [
-              [
-                {
-                  "text": "User Profile",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PROFILE",
-                  "tone": "idle"
-                },
-                {
-                  "text": "name, email",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "User Order",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ORDER#2026",
-                  "tone": "idle"
-                },
-                {
-                  "text": "total, items",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Overloading generic attributes satisfies complex access patterns in queries.",
             "rows": [
-              [
-                {
-                  "text": "User Profile",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PROFILE",
-                  "tone": "idle"
-                },
-                {
-                  "text": "name, email",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "User Order",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ORDER#2026",
-                  "tone": "idle"
-                },
-                {
-                  "text": "total, items",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Organization",
-                  "tone": "data"
-                },
-                {
-                  "text": "ORG#99",
-                  "tone": "ok"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "plan, quota",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -572,102 +455,57 @@
             "at": "say2",
             "caption": "Single-table design stores multiple distinct entity types in one table.",
             "rows": [
-              [
-                {
-                  "text": "User Profile",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PROFILE",
-                  "tone": "idle"
-                },
-                {
-                  "text": "name, email",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "User Order",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ORDER#2026",
-                  "tone": "idle"
-                },
-                {
-                  "text": "total, items",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Overloading generic attributes satisfies complex access patterns in queries.",
             "rows": [
-              [
-                {
-                  "text": "User Profile",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "PROFILE",
-                  "tone": "idle"
-                },
-                {
-                  "text": "name, email",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "User Order",
-                  "tone": "data"
-                },
-                {
-                  "text": "USER#101",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ORDER#2026",
-                  "tone": "idle"
-                },
-                {
-                  "text": "total, items",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Organization",
-                  "tone": "data"
-                },
-                {
-                  "text": "ORG#99",
-                  "tone": "ok"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "plan, quota",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

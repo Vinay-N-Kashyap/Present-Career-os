@@ -8,8 +8,15 @@ interface TableTemplateProps {
   showSpaces?: boolean;
 }
 
-export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps): React.ReactElement {
-  const colCount = Math.max(2, Math.min(5, columns.length || 2));
+export function TableTemplate({ columns = [], step, showSpaces }: TableTemplateProps): React.ReactElement {
+  const safeColumns = (columns || []).map((c: any) => {
+    if (typeof c === 'string') return c;
+    if (c && typeof c === 'object') {
+      return c.label ?? c.title ?? c.name ?? c.id ?? String(c);
+    }
+    return String(c ?? '');
+  });
+  const colCount = Math.max(2, Math.min(5, safeColumns.length || 2));
   const gridColumnsStyle =
     colCount === 2 ? 'minmax(0, 1.1fr) minmax(0, 1fr)' : `repeat(${colCount}, minmax(0, 1fr))`;
 
@@ -86,7 +93,7 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
 
       {/* Table Header for >= 480px */}
       <div className="visual-table-header" style={{ gridTemplateColumns: gridColumnsStyle }}>
-        {columns.map((col, idx) => (
+        {safeColumns.map((col, idx) => (
           <div key={idx} style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {col}
           </div>
@@ -95,9 +102,17 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
 
       {/* Table Rows (Cards under 480px) */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        {step.rows.map((row: { cells: string[]; tone: VisualTone }, idx: number) => {
-          const tone = row.tone || 'idle';
+        {(step?.rows || []).map((row: any, idx: number) => {
+          const tone: VisualTone = row?.tone || 'idle';
           const isIdle = tone === 'idle';
+          const rawCells = Array.isArray(row?.cells)
+            ? row.cells
+            : Array.isArray(row)
+            ? row
+            : row && typeof row === 'object'
+            ? Object.values(row).filter((v: any) => typeof v !== 'object' || v === null).map(String)
+            : [];
+          const cells = rawCells.map((c: any) => (typeof c === 'string' ? c : c == null ? '' : String(c)));
 
           return (
             <div
@@ -112,10 +127,10 @@ export function TableTemplate({ columns, step, showSpaces }: TableTemplateProps)
                 opacity: 1,
               }}
             >
-              {row.cells.map((cellText: string, cellIdx: number) => {
-                const isLast = cellIdx === row.cells.length - 1;
+              {cells.map((cellText: string, cellIdx: number) => {
+                const isLast = cellIdx === cells.length - 1;
                 const isHighlighted = (tone === 'ok' || tone === 'data') && isLast;
-                const colName = columns[cellIdx] ?? `Col ${cellIdx + 1}`;
+                const colName = safeColumns[cellIdx] ?? `Col ${cellIdx + 1}`;
 
                 return (
                   <div

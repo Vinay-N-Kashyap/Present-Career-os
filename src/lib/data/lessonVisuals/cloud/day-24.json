@@ -198,84 +198,48 @@
             "at": "say2",
             "caption": "The state file is a document that maps code declarations to resource IDs.",
             "rows": [
-              [
-                {
-                  "text": "aws_vpc.main",
-                  "tone": "data"
-                },
-                {
-                  "text": "vpc-0a8b9c1d2e3f",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "aws_subnet.public",
-                  "tone": "data"
-                },
-                {
-                  "text": "subnet-11223344",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Cached state attributes improve plan performance by avoiding API calls.",
             "rows": [
-              [
-                {
-                  "text": "aws_s3_bucket.data",
-                  "tone": "data"
-                },
-                {
-                  "text": "prod-storage-bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "aws_dynamodb_table.lock",
-                  "tone": "data"
-                },
-                {
-                  "text": "tf-lock-table",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "State Lock Target",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -294,84 +258,48 @@
             "at": "say2",
             "caption": "The state file is a document that maps code declarations to resource IDs.",
             "rows": [
-              [
-                {
-                  "text": "aws_vpc.main",
-                  "tone": "data"
-                },
-                {
-                  "text": "vpc-0a8b9c1d2e3f",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "aws_subnet.public",
-                  "tone": "data"
-                },
-                {
-                  "text": "subnet-11223344",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Cached state attributes improve plan performance by avoiding API calls.",
             "rows": [
-              [
-                {
-                  "text": "aws_s3_bucket.data",
-                  "tone": "data"
-                },
-                {
-                  "text": "prod-storage-bucket",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Managed In Sync",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "aws_dynamodb_table.lock",
-                  "tone": "data"
-                },
-                {
-                  "text": "tf-lock-table",
-                  "tone": "ok"
-                },
-                {
-                  "text": "hashicorp/aws",
-                  "tone": "ok"
-                },
-                {
-                  "text": "State Lock Target",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

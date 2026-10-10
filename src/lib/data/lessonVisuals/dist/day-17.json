@@ -432,7 +432,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "State-Based CvRDT",
+        "rightLabel": "Operation-Based CmRDT"
       },
       "filled": {
         "template": "compare",
@@ -466,7 +468,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "State-Based CvRDT",
+        "rightLabel": "Operation-Based CmRDT"
       }
     },
     {

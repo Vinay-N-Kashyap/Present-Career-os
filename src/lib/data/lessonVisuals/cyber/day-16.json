@@ -440,7 +440,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable IMDSv1 Architecture",
+        "rightLabel": "Hardened IMDSv2 Protocol"
       },
       "filled": {
         "template": "compare",
@@ -474,7 +476,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable IMDSv1 Architecture",
+        "rightLabel": "Hardened IMDSv2 Protocol"
       }
     },
     {

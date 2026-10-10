@@ -105,82 +105,52 @@
             "at": "say2",
             "caption": "Policy statement blocks evaluate access permissions formatted in JSON.",
             "rows": [
-              [
-                {
-                  "text": "Effect",
-                  "tone": "data"
-                },
-                {
-                  "text": "Allow",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permission Decision",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Action",
-                  "tone": "data"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permitted API Call",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Action defines specific operations permitted or forbidden across services.",
             "rows": [
-              [
-                {
-                  "text": "Effect",
-                  "tone": "data"
-                },
-                {
-                  "text": "Allow",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permission Decision",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Action",
-                  "tone": "data"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permitted API Call",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Resource",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:s3:::app/*",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Targeted Storage ARN",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -198,82 +168,52 @@
             "at": "say2",
             "caption": "Policy statement blocks evaluate access permissions formatted in JSON.",
             "rows": [
-              [
-                {
-                  "text": "Effect",
-                  "tone": "data"
-                },
-                {
-                  "text": "Allow",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permission Decision",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Action",
-                  "tone": "data"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permitted API Call",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Action defines specific operations permitted or forbidden across services.",
             "rows": [
-              [
-                {
-                  "text": "Effect",
-                  "tone": "data"
-                },
-                {
-                  "text": "Allow",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permission Decision",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Action",
-                  "tone": "data"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Permitted API Call",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Resource",
-                  "tone": "data"
-                },
-                {
-                  "text": "arn:aws:s3:::app/*",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Targeted Storage ARN",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

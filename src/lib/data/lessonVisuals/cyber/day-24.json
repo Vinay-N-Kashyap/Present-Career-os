@@ -654,7 +654,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vendor Proprietary Queries",
+        "rightLabel": "Generic Open Sigma Rules"
       },
       "filled": {
         "template": "compare",
@@ -688,7 +690,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vendor Proprietary Queries",
+        "rightLabel": "Generic Open Sigma Rules"
       }
     },
     {

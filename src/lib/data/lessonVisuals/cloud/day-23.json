@@ -106,84 +106,48 @@
             "at": "say4",
             "caption": "Task states represent a unit of work executed by an AWS service.",
             "rows": [
-              [
-                {
-                  "text": "InvokePayment",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Task",
-                  "tone": "ok"
-                },
-                {
-                  "text": "CheckPaymentStatus",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lambda Compute",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CheckPaymentStatus",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Choice",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ShipOrCompensate",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Boolean Branch",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Parallel states execute multiple independent branches concurrently.",
             "rows": [
-              [
-                {
-                  "text": "NotifyChannels",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Parallel",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderSucceeded",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Concurrent Fanout",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "OrderSucceeded",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Succeed",
-                  "tone": "ok"
-                },
-                {
-                  "text": "End: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Terminal Success",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -202,84 +166,48 @@
             "at": "say4",
             "caption": "Task states represent a unit of work executed by an AWS service.",
             "rows": [
-              [
-                {
-                  "text": "InvokePayment",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Task",
-                  "tone": "ok"
-                },
-                {
-                  "text": "CheckPaymentStatus",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lambda Compute",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CheckPaymentStatus",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Choice",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ShipOrCompensate",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Boolean Branch",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Parallel states execute multiple independent branches concurrently.",
             "rows": [
-              [
-                {
-                  "text": "NotifyChannels",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Parallel",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderSucceeded",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Concurrent Fanout",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "OrderSucceeded",
-                  "tone": "data"
-                },
-                {
-                  "text": "Type: Succeed",
-                  "tone": "ok"
-                },
-                {
-                  "text": "End: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Terminal Success",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -116,7 +116,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Transient Errors",
+        "rightLabel": "Fatal Errors"
       },
       "filled": {
         "template": "compare",
@@ -150,7 +152,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Transient Errors",
+        "rightLabel": "Fatal Errors"
       }
     },
     {

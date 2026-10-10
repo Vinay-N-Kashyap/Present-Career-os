@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Oversized Document Chunks",
+        "rightLabel": "Micro Chunks Fragility"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Oversized Document Chunks",
+        "rightLabel": "Micro Chunks Fragility"
       }
     },
     {

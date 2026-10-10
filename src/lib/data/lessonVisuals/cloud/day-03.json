@@ -21,82 +21,52 @@
             "at": "say1",
             "caption": "Virtual private clouds allocate isolated private networks to your account.",
             "rows": [
-              [
-                {
-                  "text": "/16 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "16 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "65536 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/24 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "8 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "256 Hosts",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Standard provisioning assigns slash sixteen blocks providing addresses.",
             "rows": [
-              [
-                {
-                  "text": "/16 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "16 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "65536 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/20 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "12 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "4096 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/24 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "8 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "256 Hosts",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -114,82 +84,52 @@
             "at": "say1",
             "caption": "Virtual private clouds allocate isolated private networks to your account.",
             "rows": [
-              [
-                {
-                  "text": "/16 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "16 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "65536 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/24 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "8 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "256 Hosts",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Standard provisioning assigns slash sixteen blocks providing addresses.",
             "rows": [
-              [
-                {
-                  "text": "/16 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "16 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "65536 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/20 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "12 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "4096 Hosts",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "/24 Prefix",
-                  "tone": "data"
-                },
-                {
-                  "text": "8 Bits",
-                  "tone": "idle"
-                },
-                {
-                  "text": "256 Hosts",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -211,82 +151,52 @@
             "at": "say2",
             "caption": "Every provisioned subnet reserves addresses for internal networking.",
             "rows": [
-              [
-                {
-                  "text": "Offset 0",
-                  "tone": "data"
-                },
-                {
-                  "text": "Network Address",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Routing Identification",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "VPC Router",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Default Gateway",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The third address is reserved to provide DNS resolution via Route resolver.",
             "rows": [
-              [
-                {
-                  "text": "Offset 0",
-                  "tone": "data"
-                },
-                {
-                  "text": "Network Address",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Routing Identification",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "VPC Router",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Default Gateway",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "DNS Server",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Amazon Route 53 Resolver",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -304,82 +214,52 @@
             "at": "say2",
             "caption": "Every provisioned subnet reserves addresses for internal networking.",
             "rows": [
-              [
-                {
-                  "text": "Offset 0",
-                  "tone": "data"
-                },
-                {
-                  "text": "Network Address",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Routing Identification",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "VPC Router",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Default Gateway",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The third address is reserved to provide DNS resolution via Route resolver.",
             "rows": [
-              [
-                {
-                  "text": "Offset 0",
-                  "tone": "data"
-                },
-                {
-                  "text": "Network Address",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Routing Identification",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 1",
-                  "tone": "data"
-                },
-                {
-                  "text": "VPC Router",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Default Gateway",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Offset 2",
-                  "tone": "data"
-                },
-                {
-                  "text": "DNS Server",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Amazon Route 53 Resolver",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

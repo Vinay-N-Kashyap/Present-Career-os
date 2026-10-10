@@ -408,42 +408,57 @@
             "at": "say4",
             "caption": "Followers overwrite conflicting uncommitted entries with leader records.",
             "rows": [
-              [
-                "Entry Index 1",
-                "Term 1: cmd=\"a\"",
-                "Term 1: cmd=\"a\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 2",
-                "Term 1: cmd=\"b\"",
-                "Term 1: cmd=\"b\"",
-                "Match confirmed: kept untouched"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The decremented search finds the latest index where logs match.",
             "rows": [
-              [
-                "Entry Index 1",
-                "Term 1: cmd=\"a\"",
-                "Term 1: cmd=\"a\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 2",
-                "Term 1: cmd=\"b\"",
-                "Term 1: cmd=\"b\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 3",
-                "Term 2: cmd=\"c\"",
-                "Term 1: cmd=\"d_stale\"",
-                "Mismatch detected: stale entry deleted & overwritten with Term 2"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -462,42 +477,57 @@
             "at": "say4",
             "caption": "Followers overwrite conflicting uncommitted entries with leader records.",
             "rows": [
-              [
-                "Entry Index 1",
-                "Term 1: cmd=\"a\"",
-                "Term 1: cmd=\"a\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 2",
-                "Term 1: cmd=\"b\"",
-                "Term 1: cmd=\"b\"",
-                "Match confirmed: kept untouched"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The decremented search finds the latest index where logs match.",
             "rows": [
-              [
-                "Entry Index 1",
-                "Term 1: cmd=\"a\"",
-                "Term 1: cmd=\"a\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 2",
-                "Term 1: cmd=\"b\"",
-                "Term 1: cmd=\"b\"",
-                "Match confirmed: kept untouched"
-              ],
-              [
-                "Entry Index 3",
-                "Term 2: cmd=\"c\"",
-                "Term 1: cmd=\"d_stale\"",
-                "Mismatch detected: stale entry deleted & overwritten with Term 2"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

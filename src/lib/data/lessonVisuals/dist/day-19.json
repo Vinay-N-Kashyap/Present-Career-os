@@ -190,7 +190,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Author User Session",
+        "rightLabel": "Passive Readers Pool"
       },
       "filled": {
         "template": "compare",
@@ -224,7 +226,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Author User Session",
+        "rightLabel": "Passive Readers Pool"
       }
     },
     {

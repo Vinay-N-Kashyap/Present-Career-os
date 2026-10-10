@@ -23,45 +23,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "PII Redaction"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Masking operational)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Rate Limiting"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Token bucket active)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Prometheus Alerts"
-                  },
-                  "Severity Class": {
-                    "text": "Non-Critical Advisory"
-                  },
-                  "Audit Verdict": {
-                    "text": "FAIL (Deferred to next sprint)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -72,45 +54,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "PII Redaction"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Masking operational)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Rate Limiting"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Token bucket active)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Prometheus Alerts"
-                  },
-                  "Severity Class": {
-                    "text": "Non-Critical Advisory"
-                  },
-                  "Audit Verdict": {
-                    "text": "FAIL (Deferred to next sprint)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -121,45 +85,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "PII Redaction"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Masking operational)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Rate Limiting"
-                  },
-                  "Severity Class": {
-                    "text": "Critical Blocker"
-                  },
-                  "Audit Verdict": {
-                    "text": "PASS (Token bucket active)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": {
-                    "text": "Prometheus Alerts"
-                  },
-                  "Severity Class": {
-                    "text": "Non-Critical Advisory"
-                  },
-                  "Audit Verdict": {
-                    "text": "FAIL (Deferred to next sprint)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -181,27 +127,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Check Name": "PII Redaction",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Masking operational)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Rate Limiting",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Token bucket active)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Prometheus Alerts",
-                  "Severity Class": "Non-Critical Advisory",
-                  "Audit Verdict": "FAIL (Deferred to next sprint)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -212,27 +158,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Check Name": "PII Redaction",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Masking operational)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Rate Limiting",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Token bucket active)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Prometheus Alerts",
-                  "Severity Class": "Non-Critical Advisory",
-                  "Audit Verdict": "FAIL (Deferred to next sprint)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -243,27 +189,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Check Name": "PII Redaction",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Masking operational)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Rate Limiting",
-                  "Severity Class": "Critical Blocker",
-                  "Audit Verdict": "PASS (Token bucket active)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Check Name": "Prometheus Alerts",
-                  "Severity Class": "Non-Critical Advisory",
-                  "Audit Verdict": "FAIL (Deferred to next sprint)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -457,15 +403,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Scoring functions start at a perfect baseline score of one hundred."
+            "caption": "Scoring functions start at a perfect baseline score of one hundred.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "High error rates and latency plummet scores triggering CRITICAL status."
+            "caption": "High error rates and latency plummet scores triggering CRITICAL status.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Health score tiers provide instant situational awareness during deployments."
+            "caption": "Health score tiers provide instant situational awareness during deployments.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
           }
         ]
       },
@@ -492,15 +506,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Scoring functions start at a perfect baseline score of one hundred."
+            "caption": "Scoring functions start at a perfect baseline score of one hundred.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "High error rates and latency plummet scores triggering CRITICAL status."
+            "caption": "High error rates and latency plummet scores triggering CRITICAL status.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Health score tiers provide instant situational awareness during deployments."
+            "caption": "Health score tiers provide instant situational awareness during deployments.",
+            "bars": [
+              {
+                "label": "Endpoint 1 (Healthy)",
+                "value": 100,
+                "tone": "ok"
+              },
+              {
+                "label": "Warning Threshold",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Endpoint 2 (Critical)",
+                "value": 20,
+                "tone": "error"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Endpoint 1 (Healthy)",
+            "value": 100,
+            "tone": "ok"
+          },
+          {
+            "label": "Warning Threshold",
+            "value": 50,
+            "tone": "idle"
+          },
+          {
+            "label": "Endpoint 2 (Critical)",
+            "value": 20,
+            "tone": "error"
           }
         ]
       }

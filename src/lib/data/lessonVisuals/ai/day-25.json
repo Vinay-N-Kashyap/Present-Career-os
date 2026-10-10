@@ -184,7 +184,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Static Batching Starvation",
+        "rightLabel": "Continuous Dynamic Batching"
       },
       "filled": {
         "template": "compare",
@@ -220,7 +222,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Static Batching Starvation",
+        "rightLabel": "Continuous Dynamic Batching"
       }
     },
     {

@@ -29,6 +29,18 @@
             "caption": "System availability is defined as the probability of correct operation.",
             "activeBars": [
               "uptime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -37,6 +49,18 @@
             "activeBars": [
               "uptime",
               "downtime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -62,6 +86,18 @@
             "caption": "System availability is defined as the probability of correct operation.",
             "activeBars": [
               "uptime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -70,6 +106,18 @@
             "activeBars": [
               "uptime",
               "downtime"
+            ],
+            "bars": [
+              {
+                "label": "Uptime Fraction",
+                "value": 99.9,
+                "tone": "idle"
+              },
+              {
+                "label": "Downtime Margin",
+                "value": 0.1,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -112,7 +160,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Serial System Pipeline",
+        "rightLabel": "Composite Product Rule"
       },
       "filled": {
         "template": "compare",
@@ -148,7 +198,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Serial System Pipeline",
+        "rightLabel": "Composite Product Rule"
       }
     },
     {

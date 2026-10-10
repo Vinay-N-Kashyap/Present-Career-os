@@ -114,7 +114,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Push Dissemination Model",
+        "rightLabel": "Pull Dissemination Model"
       },
       "filled": {
         "template": "compare",
@@ -148,7 +150,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Push Dissemination Model",
+        "rightLabel": "Pull Dissemination Model"
       }
     },
     {

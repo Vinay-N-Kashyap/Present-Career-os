@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Character Level Processing",
+        "rightLabel": "Sub-Word BPE Tokenization"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Character Level Processing",
+        "rightLabel": "Sub-Word BPE Tokenization"
       }
     },
     {
@@ -332,7 +336,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "English Token Efficiency",
+        "rightLabel": "Multilingual Byte Overhead"
       },
       "filled": {
         "template": "compare",
@@ -368,7 +374,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "English Token Efficiency",
+        "rightLabel": "Multilingual Byte Overhead"
       }
     },
     {

@@ -378,36 +378,48 @@
             "at": "say2",
             "caption": "The protocol divides commitment into intermediate verification phases.",
             "rows": [
-              [
-                "Two-Phase Commit (2PC)",
-                "Prepare -> Commit / Rollback",
-                "Synchronously blocking on coordinator crash",
-                "Guarantees atomic safety under partitions"
-              ],
-              [
-                "Three-Phase Commit (3PC)",
-                "CanCommit -> PreCommit -> DoCommit",
-                "Non-blocking under fail-stop assumptions",
-                "Vulnerable to split-brain under real network splits"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Removing ambiguous states prevents blocking under crash stop assumptions.",
             "rows": [
-              [
-                "Two-Phase Commit (2PC)",
-                "Prepare -> Commit / Rollback",
-                "Synchronously blocking on coordinator crash",
-                "Guarantees atomic safety under partitions"
-              ],
-              [
-                "Three-Phase Commit (3PC)",
-                "CanCommit -> PreCommit -> DoCommit",
-                "Non-blocking under fail-stop assumptions",
-                "Vulnerable to split-brain under real network splits"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -426,36 +438,48 @@
             "at": "say2",
             "caption": "The protocol divides commitment into intermediate verification phases.",
             "rows": [
-              [
-                "Two-Phase Commit (2PC)",
-                "Prepare -> Commit / Rollback",
-                "Synchronously blocking on coordinator crash",
-                "Guarantees atomic safety under partitions"
-              ],
-              [
-                "Three-Phase Commit (3PC)",
-                "CanCommit -> PreCommit -> DoCommit",
-                "Non-blocking under fail-stop assumptions",
-                "Vulnerable to split-brain under real network splits"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Removing ambiguous states prevents blocking under crash stop assumptions.",
             "rows": [
-              [
-                "Two-Phase Commit (2PC)",
-                "Prepare -> Commit / Rollback",
-                "Synchronously blocking on coordinator crash",
-                "Guarantees atomic safety under partitions"
-              ],
-              [
-                "Three-Phase Commit (3PC)",
-                "CanCommit -> PreCommit -> DoCommit",
-                "Non-blocking under fail-stop assumptions",
-                "Vulnerable to split-brain under real network splits"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

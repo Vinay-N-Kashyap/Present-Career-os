@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Static Wiki Documentation",
+        "rightLabel": "Executable Runbooks as Code"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Static Wiki Documentation",
+        "rightLabel": "Executable Runbooks as Code"
       }
     },
     {
@@ -506,13 +510,57 @@
             "at": "say3",
             "caption": "Runbook coverage measures the percentage of mapped incident types.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "db_failover Actions",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "disk_full Actions",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "oom_killed Actions",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "cert_expired Unmapped",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Automation depth evaluates how many runbooks feature automated actions.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "db_failover Actions",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "disk_full Actions",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "oom_killed Actions",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "cert_expired Unmapped",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -546,13 +594,57 @@
             "at": "say3",
             "caption": "Runbook coverage measures the percentage of mapped incident types.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "db_failover Actions",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "disk_full Actions",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "oom_killed Actions",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "cert_expired Unmapped",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say4",
             "caption": "Automation depth evaluates how many runbooks feature automated actions.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "db_failover Actions",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "disk_full Actions",
+                "value": 3,
+                "tone": "idle"
+              },
+              {
+                "label": "oom_killed Actions",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "cert_expired Unmapped",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

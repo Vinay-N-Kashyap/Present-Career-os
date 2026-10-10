@@ -208,7 +208,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Active Window History",
+        "rightLabel": "Evicted Pruned Context"
       },
       "filled": {
         "template": "compare",
@@ -244,7 +246,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Active Window History",
+        "rightLabel": "Evicted Pruned Context"
       }
     },
     {

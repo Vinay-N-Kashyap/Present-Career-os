@@ -182,7 +182,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Count-Based Window",
+        "rightLabel": "Time-Based Window"
       },
       "filled": {
         "template": "compare",
@@ -216,7 +218,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Count-Based Window",
+        "rightLabel": "Time-Based Window"
       }
     },
     {

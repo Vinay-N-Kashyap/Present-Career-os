@@ -570,7 +570,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Token Bucket Burst Allowance",
+        "rightLabel": "Sliding Window Log Precision"
       },
       "filled": {
         "template": "compare",
@@ -604,7 +606,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Token Bucket Burst Allowance",
+        "rightLabel": "Sliding Window Log Precision"
       }
     },
     {

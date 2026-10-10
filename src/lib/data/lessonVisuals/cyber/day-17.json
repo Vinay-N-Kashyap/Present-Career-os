@@ -226,7 +226,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unsafe Binary Serialization",
+        "rightLabel": "Declarative JSON Schema Validation"
       },
       "filled": {
         "template": "compare",
@@ -260,7 +262,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unsafe Binary Serialization",
+        "rightLabel": "Declarative JSON Schema Validation"
       }
     },
     {
@@ -502,7 +506,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Magic Methods",
+        "rightLabel": "Strict Allowed Classes Whitelist"
       },
       "filled": {
         "template": "compare",
@@ -536,7 +542,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Magic Methods",
+        "rightLabel": "Strict Allowed Classes Whitelist"
       }
     },
     {

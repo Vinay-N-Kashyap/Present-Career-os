@@ -493,6 +493,23 @@
             "activeBars": [
               "teamSupport",
               "teamAnalytics"
+            ],
+            "bars": [
+              {
+                "label": "Support Team",
+                "value": 45,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Team",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Growth Team",
+                "value": 105,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -500,6 +517,23 @@
             "caption": "Hard budget cap instantly locks tenant access upon exceeding allowance.",
             "activeBars": [
               "teamGrowth"
+            ],
+            "bars": [
+              {
+                "label": "Support Team",
+                "value": 45,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Team",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Growth Team",
+                "value": 105,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -531,6 +565,23 @@
             "activeBars": [
               "teamSupport",
               "teamAnalytics"
+            ],
+            "bars": [
+              {
+                "label": "Support Team",
+                "value": 45,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Team",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Growth Team",
+                "value": 105,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -538,6 +589,23 @@
             "caption": "Hard budget cap instantly locks tenant access upon exceeding allowance.",
             "activeBars": [
               "teamGrowth"
+            ],
+            "bars": [
+              {
+                "label": "Support Team",
+                "value": 45,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Team",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Growth Team",
+                "value": 105,
+                "tone": "idle"
+              }
             ]
           }
         ]

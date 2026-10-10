@@ -236,7 +236,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Artificially Idempotent"
       },
       "filled": {
         "template": "compare",
@@ -270,7 +272,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naturally Idempotent",
+        "rightLabel": "Artificially Idempotent"
       }
     },
     {

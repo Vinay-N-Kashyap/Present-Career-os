@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Manual Visual Inspection",
+        "rightLabel": "Automated Canary Analysis (ACA)"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Manual Visual Inspection",
+        "rightLabel": "Automated Canary Analysis (ACA)"
       }
     },
     {
@@ -246,13 +250,57 @@
             "at": "say3",
             "caption": "Automated canary analysis compiles a composite canary health score.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Scores above eighty points trigger promotion while low scores rollback.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -286,13 +334,57 @@
             "at": "say3",
             "caption": "Automated canary analysis compiles a composite canary health score.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Scores above eighty points trigger promotion while low scores rollback.",
             "highlightIndex": 1,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Error Rate Weight",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "p95 Latency Weight",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Resource Saturation Weight",
+                "value": 20,
+                "tone": "idle"
+              },
+              {
+                "label": "Business Conversion Weight",
+                "value": 10,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

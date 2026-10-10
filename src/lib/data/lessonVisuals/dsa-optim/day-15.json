@@ -66,7 +66,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Max-Heap Lower",
+        "rightLabel": "Min-Heap Upper"
       },
       "filled": {
         "template": "compare",
@@ -126,7 +128,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Max-Heap Lower",
+        "rightLabel": "Min-Heap Upper"
       }
     },
     {
@@ -310,7 +314,9 @@
               "tone": "error"
             }
           }
-        ]
+        ],
+        "leftLabel": "Valid Sizing Difference",
+        "rightLabel": "Rebalance Trigger"
       },
       "filled": {
         "template": "compare",
@@ -370,7 +376,9 @@
               "tone": "error"
             }
           }
-        ]
+        ],
+        "leftLabel": "Valid Sizing Difference",
+        "rightLabel": "Rebalance Trigger"
       }
     },
     {
@@ -594,7 +602,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Min-Heap Comparator",
+        "rightLabel": "Max-Heap Comparator"
       },
       "filled": {
         "template": "compare",
@@ -654,7 +664,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Min-Heap Comparator",
+        "rightLabel": "Max-Heap Comparator"
       }
     },
     {

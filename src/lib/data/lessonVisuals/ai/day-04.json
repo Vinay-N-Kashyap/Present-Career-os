@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Zero-Shot Prompting",
+        "rightLabel": "Few-Shot Exemplars"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Zero-Shot Prompting",
+        "rightLabel": "Few-Shot Exemplars"
       }
     },
     {
@@ -570,7 +574,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Decisive Majority Consensus",
+        "rightLabel": "Evenly Split Ambiguity"
       },
       "filled": {
         "template": "compare",
@@ -606,7 +612,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Decisive Majority Consensus",
+        "rightLabel": "Evenly Split Ambiguity"
       }
     }
   ]

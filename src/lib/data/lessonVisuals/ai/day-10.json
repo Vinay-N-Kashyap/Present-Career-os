@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Dense Vector Search",
+        "rightLabel": "Sparse BM25 Search"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Dense Vector Search",
+        "rightLabel": "Sparse BM25 Search"
       }
     },
     {

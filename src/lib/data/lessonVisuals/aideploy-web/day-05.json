@@ -431,59 +431,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Section": {
-                    "text": "System Persona"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "Behavior, tone, safety guardrails"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Context Block"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "RAG documents, DB results"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Few-Shot Turns"
-                  },
-                  "Role": {
-                    "text": "user/assistant"
-                  },
-                  "Purpose": {
-                    "text": "Exemplary reasoning patterns"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "User Query"
-                  },
-                  "Role": {
-                    "text": "user"
-                  },
-                  "Purpose": {
-                    "text": "Immediate instruction to evaluate"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -494,59 +470,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Section": {
-                    "text": "System Persona"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "Behavior, tone, safety guardrails"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Context Block"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "RAG documents, DB results"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Few-Shot Turns"
-                  },
-                  "Role": {
-                    "text": "user/assistant"
-                  },
-                  "Purpose": {
-                    "text": "Exemplary reasoning patterns"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "User Query"
-                  },
-                  "Role": {
-                    "text": "user"
-                  },
-                  "Purpose": {
-                    "text": "Immediate instruction to evaluate"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -557,59 +509,35 @@
             "highlightRow": 3,
             "rows": [
               {
-                "cells": {
-                  "Section": {
-                    "text": "System Persona"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "Behavior, tone, safety guardrails"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Context Block"
-                  },
-                  "Role": {
-                    "text": "system"
-                  },
-                  "Purpose": {
-                    "text": "RAG documents, DB results"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "Few-Shot Turns"
-                  },
-                  "Role": {
-                    "text": "user/assistant"
-                  },
-                  "Purpose": {
-                    "text": "Exemplary reasoning patterns"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": {
-                    "text": "User Query"
-                  },
-                  "Role": {
-                    "text": "user"
-                  },
-                  "Purpose": {
-                    "text": "Immediate instruction to evaluate"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -631,35 +559,35 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Section": "System Persona",
-                  "Role": "system",
-                  "Purpose": "Behavior, tone, safety guardrails"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Context Block",
-                  "Role": "system",
-                  "Purpose": "RAG documents, DB results"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Few-Shot Turns",
-                  "Role": "user/assistant",
-                  "Purpose": "Exemplary reasoning patterns"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "User Query",
-                  "Role": "user",
-                  "Purpose": "Immediate instruction to evaluate"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -670,35 +598,35 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Section": "System Persona",
-                  "Role": "system",
-                  "Purpose": "Behavior, tone, safety guardrails"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Context Block",
-                  "Role": "system",
-                  "Purpose": "RAG documents, DB results"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Few-Shot Turns",
-                  "Role": "user/assistant",
-                  "Purpose": "Exemplary reasoning patterns"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "User Query",
-                  "Role": "user",
-                  "Purpose": "Immediate instruction to evaluate"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -709,35 +637,35 @@
             "highlightRow": 3,
             "rows": [
               {
-                "cells": {
-                  "Section": "System Persona",
-                  "Role": "system",
-                  "Purpose": "Behavior, tone, safety guardrails"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Context Block",
-                  "Role": "system",
-                  "Purpose": "RAG documents, DB results"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "Few-Shot Turns",
-                  "Role": "user/assistant",
-                  "Purpose": "Exemplary reasoning patterns"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Section": "User Query",
-                  "Role": "user",
-                  "Purpose": "Immediate instruction to evaluate"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

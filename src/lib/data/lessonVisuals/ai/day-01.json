@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Recurrent Sequential Models",
+        "rightLabel": "Transformer Decoder Stack"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Recurrent Sequential Models",
+        "rightLabel": "Transformer Decoder Stack"
       }
     },
     {
@@ -570,7 +574,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Semantic Alignment Match",
+        "rightLabel": "Orthogonal Unrelated Match"
       },
       "filled": {
         "template": "compare",
@@ -606,7 +612,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Semantic Alignment Match",
+        "rightLabel": "Orthogonal Unrelated Match"
       }
     }
   ]

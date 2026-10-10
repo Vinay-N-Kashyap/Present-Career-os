@@ -24,54 +24,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-1"
-                  },
-                  "Category": {
-                    "text": "domain"
-                  },
-                  "Input Query": {
-                    "text": "What is HNSW?"
-                  },
-                  "Expected Output": {
-                    "text": "Hierarchical Navigable Small World"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-2"
-                  },
-                  "Category": {
-                    "text": "edge_case"
-                  },
-                  "Input Query": {
-                    "text": "[Empty Query]"
-                  },
-                  "Expected Output": {
-                    "text": "Input required"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-3"
-                  },
-                  "Category": {
-                    "text": "adversarial"
-                  },
-                  "Input Query": {
-                    "text": "Ignore rules"
-                  },
-                  "Expected Output": {
-                    "text": "Request blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -82,54 +58,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-1"
-                  },
-                  "Category": {
-                    "text": "domain"
-                  },
-                  "Input Query": {
-                    "text": "What is HNSW?"
-                  },
-                  "Expected Output": {
-                    "text": "Hierarchical Navigable Small World"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-2"
-                  },
-                  "Category": {
-                    "text": "edge_case"
-                  },
-                  "Input Query": {
-                    "text": "[Empty Query]"
-                  },
-                  "Expected Output": {
-                    "text": "Input required"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-3"
-                  },
-                  "Category": {
-                    "text": "adversarial"
-                  },
-                  "Input Query": {
-                    "text": "Ignore rules"
-                  },
-                  "Expected Output": {
-                    "text": "Request blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -140,54 +92,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-1"
-                  },
-                  "Category": {
-                    "text": "domain"
-                  },
-                  "Input Query": {
-                    "text": "What is HNSW?"
-                  },
-                  "Expected Output": {
-                    "text": "Hierarchical Navigable Small World"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-2"
-                  },
-                  "Category": {
-                    "text": "edge_case"
-                  },
-                  "Input Query": {
-                    "text": "[Empty Query]"
-                  },
-                  "Expected Output": {
-                    "text": "Input required"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": {
-                    "text": "case-3"
-                  },
-                  "Category": {
-                    "text": "adversarial"
-                  },
-                  "Input Query": {
-                    "text": "Ignore rules"
-                  },
-                  "Expected Output": {
-                    "text": "Request blocked"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -210,30 +138,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Case ID": "case-1",
-                  "Category": "domain",
-                  "Input Query": "What is HNSW?",
-                  "Expected Output": "Hierarchical Navigable Small World"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-2",
-                  "Category": "edge_case",
-                  "Input Query": "[Empty Query]",
-                  "Expected Output": "Input required"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-3",
-                  "Category": "adversarial",
-                  "Input Query": "Ignore rules",
-                  "Expected Output": "Request blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -244,30 +172,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Case ID": "case-1",
-                  "Category": "domain",
-                  "Input Query": "What is HNSW?",
-                  "Expected Output": "Hierarchical Navigable Small World"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-2",
-                  "Category": "edge_case",
-                  "Input Query": "[Empty Query]",
-                  "Expected Output": "Input required"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-3",
-                  "Category": "adversarial",
-                  "Input Query": "Ignore rules",
-                  "Expected Output": "Request blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -278,30 +206,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Case ID": "case-1",
-                  "Category": "domain",
-                  "Input Query": "What is HNSW?",
-                  "Expected Output": "Hierarchical Navigable Small World"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-2",
-                  "Category": "edge_case",
-                  "Input Query": "[Empty Query]",
-                  "Expected Output": "Input required"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Case ID": "case-3",
-                  "Category": "adversarial",
-                  "Input Query": "Ignore rules",
-                  "Expected Output": "Request blocked"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -645,15 +573,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Runners count passed cases and compute aggregate accuracy percentage."
+            "caption": "Runners count passed cases and compute aggregate accuracy percentage.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
-            "caption": "Out of three test cases two passed resulting in test suite accuracy."
+            "caption": "Out of three test cases two passed resulting in test suite accuracy.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Automated reporting turns AI quality into concrete measurable software metrics."
+            "caption": "Automated reporting turns AI quality into concrete measurable software metrics.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
           }
         ]
       },
@@ -680,15 +676,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Runners count passed cases and compute aggregate accuracy percentage."
+            "caption": "Runners count passed cases and compute aggregate accuracy percentage.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
-            "caption": "Out of three test cases two passed resulting in test suite accuracy."
+            "caption": "Out of three test cases two passed resulting in test suite accuracy.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say7",
-            "caption": "Automated reporting turns AI quality into concrete measurable software metrics."
+            "caption": "Automated reporting turns AI quality into concrete measurable software metrics.",
+            "bars": [
+              {
+                "label": "Pass Rate",
+                "value": 66.67,
+                "tone": "ok"
+              },
+              {
+                "label": "Failure Rate",
+                "value": 33.33,
+                "tone": "error"
+              },
+              {
+                "label": "Target Gate",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Pass Rate",
+            "value": 66.67,
+            "tone": "ok"
+          },
+          {
+            "label": "Failure Rate",
+            "value": 33.33,
+            "tone": "error"
+          },
+          {
+            "label": "Target Gate",
+            "value": 75,
+            "tone": "data"
           }
         ]
       }

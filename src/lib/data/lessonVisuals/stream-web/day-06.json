@@ -235,27 +235,36 @@
             "at": "say3",
             "caption": "The Range Assignor divides the topic partitions into contiguous segments.",
             "rows": [
-              [
-                "rangeAssign",
-                "[0, 1, 2]",
-                "[3, 4]"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The Round-Robin Assignor pools all partitions and distributes them cyclically.",
             "rows": [
-              [
-                "rangeAssign",
-                "[0, 1, 2]",
-                "[3, 4]"
-              ],
-              [
-                "roundRobinAssign",
-                "[0, 2, 4]",
-                "[1, 3]"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -273,27 +282,36 @@
             "at": "say3",
             "caption": "The Range Assignor divides the topic partitions into contiguous segments.",
             "rows": [
-              [
-                "rangeAssign",
-                "[0, 1, 2]",
-                "[3, 4]"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "The Round-Robin Assignor pools all partitions and distributes them cyclically.",
             "rows": [
-              [
-                "rangeAssign",
-                "[0, 1, 2]",
-                "[3, 4]"
-              ],
-              [
-                "roundRobinAssign",
-                "[0, 2, 4]",
-                "[1, 3]"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

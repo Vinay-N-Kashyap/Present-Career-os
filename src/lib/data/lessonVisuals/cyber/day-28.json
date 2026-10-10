@@ -476,7 +476,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Trust Policy",
+        "rightLabel": "Hardened Trust Policy"
       },
       "filled": {
         "template": "compare",
@@ -512,7 +514,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Trust Policy",
+        "rightLabel": "Hardened Trust Policy"
       }
     },
     {

@@ -42,7 +42,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Controlled Scientific Chaos",
+        "rightLabel": "Uncontrolled Unsafe Injection"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "left",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Controlled Scientific Chaos",
+        "rightLabel": "Uncontrolled Unsafe Injection"
       }
     },
     {
@@ -277,13 +281,47 @@
             "at": "say4",
             "caption": "Latency fault injection simulates slow networks and degraded gateways.",
             "highlightIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Latency injection proves whether circuit breakers trip properly.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -312,13 +350,47 @@
             "at": "say4",
             "caption": "Latency fault injection simulates slow networks and degraded gateways.",
             "highlightIndex": 1,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say8",
             "caption": "Latency injection proves whether circuit breakers trip properly.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Untargeted /health",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge Low Jitter",
+                "value": 365,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos /charge High Jitter",
+                "value": 415,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

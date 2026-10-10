@@ -30,13 +30,47 @@
             "at": "say4",
             "caption": "Small knowledge bases complete brute force searches under milliseconds.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "One Thousand Vectors",
+                "value": 2,
+                "tone": "data"
+              },
+              {
+                "label": "One Hundred Thousand",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Ten Million Vectors",
+                "value": 15300,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "A single search query requires operations causing multi-second latency.",
             "activeBarIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "One Thousand Vectors",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "One Hundred Thousand",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Ten Million Vectors",
+                "value": 15300,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -62,13 +96,47 @@
             "at": "say4",
             "caption": "Small knowledge bases complete brute force searches under milliseconds.",
             "activeBarIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "One Thousand Vectors",
+                "value": 2,
+                "tone": "data"
+              },
+              {
+                "label": "One Hundred Thousand",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Ten Million Vectors",
+                "value": 15300,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say6",
             "caption": "A single search query requires operations causing multi-second latency.",
             "activeBarIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "One Thousand Vectors",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "One Hundred Thousand",
+                "value": 180,
+                "tone": "idle"
+              },
+              {
+                "label": "Ten Million Vectors",
+                "value": 15300,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -386,7 +454,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive Post-Filtering",
+        "rightLabel": "Single-Stage Search"
       },
       "filled": {
         "template": "compare",
@@ -422,7 +492,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Naive Post-Filtering",
+        "rightLabel": "Single-Stage Search"
       }
     },
     {

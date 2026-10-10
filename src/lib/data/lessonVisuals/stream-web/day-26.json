@@ -220,30 +220,39 @@
             "at": "say6",
             "caption": "For backward compatibility, any new field added must have a default value.",
             "rows": [
-              [
-                "v1 -> v2Valid",
-                "email (string)",
-                "true",
-                "COMPATIBLE (true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "In FULL compatibility mode, schemas are both backward and forward compatible.",
             "rows": [
-              [
-                "v1 -> v2Valid",
-                "email (string)",
-                "true",
-                "COMPATIBLE (true)"
-              ],
-              [
-                "v1 -> v2Invalid",
-                "phone (string)",
-                "false",
-                "REJECTED (missing default)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -262,30 +271,39 @@
             "at": "say6",
             "caption": "For backward compatibility, any new field added must have a default value.",
             "rows": [
-              [
-                "v1 -> v2Valid",
-                "email (string)",
-                "true",
-                "COMPATIBLE (true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say9",
             "caption": "In FULL compatibility mode, schemas are both backward and forward compatible.",
             "rows": [
-              [
-                "v1 -> v2Valid",
-                "email (string)",
-                "true",
-                "COMPATIBLE (true)"
-              ],
-              [
-                "v1 -> v2Invalid",
-                "phone (string)",
-                "false",
-                "REJECTED (missing default)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -308,36 +326,48 @@
             "at": "say7",
             "caption": "The gatekeeper validates every outbound message payload against the schema.",
             "rows": [
-              [
-                "goodOrder (ord-1)",
-                "99.50 USD",
-                "true",
-                "ACCEPTED"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "If a message violates the schema, the producer rejects it at the client layer.",
             "rows": [
-              [
-                "goodOrder (ord-1)",
-                "99.50 USD",
-                "true",
-                "ACCEPTED"
-              ],
-              [
-                "poisonPill1 (ord-2)",
-                "-15 USD",
-                "false",
-                "Field 'amount' must be positive"
-              ],
-              [
-                "poisonPill2 (\"\")",
-                "100 EUR",
-                "false",
-                "Field 'orderId' is required"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -356,36 +386,48 @@
             "at": "say7",
             "caption": "The gatekeeper validates every outbound message payload against the schema.",
             "rows": [
-              [
-                "goodOrder (ord-1)",
-                "99.50 USD",
-                "true",
-                "ACCEPTED"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "If a message violates the schema, the producer rejects it at the client layer.",
             "rows": [
-              [
-                "goodOrder (ord-1)",
-                "99.50 USD",
-                "true",
-                "ACCEPTED"
-              ],
-              [
-                "poisonPill1 (ord-2)",
-                "-15 USD",
-                "false",
-                "Field 'amount' must be positive"
-              ],
-              [
-                "poisonPill2 (\"\")",
-                "100 EUR",
-                "false",
-                "Field 'orderId' is required"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

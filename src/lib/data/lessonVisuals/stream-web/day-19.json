@@ -154,30 +154,39 @@
             "at": "say3",
             "caption": "Events arriving within gapMs (200ms) extend the current session end boundary.",
             "rows": [
-              [
-                "Session 1",
-                "100",
-                "210",
-                "110ms (3 events)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "When elapsed time (390ms at 600ms) exceeds gapMs (200ms), Session 1 terminates.",
             "rows": [
-              [
-                "Session 1",
-                "100",
-                "210",
-                "110ms (3 events)"
-              ],
-              [
-                "Session 2",
-                "600",
-                "650",
-                "50ms (2 events)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -196,30 +205,39 @@
             "at": "say3",
             "caption": "Events arriving within gapMs (200ms) extend the current session end boundary.",
             "rows": [
-              [
-                "Session 1",
-                "100",
-                "210",
-                "110ms (3 events)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say4",
             "caption": "When elapsed time (390ms at 600ms) exceeds gapMs (200ms), Session 1 terminates.",
             "rows": [
-              [
-                "Session 1",
-                "100",
-                "210",
-                "110ms (3 events)"
-              ],
-              [
-                "Session 2",
-                "600",
-                "650",
-                "50ms (2 events)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -408,30 +426,39 @@
             "at": "say6",
             "caption": "If true, the sessions overlap or bridge: we extend the span to [10, 60].",
             "rows": [
-              [
-                "[10, 30] + [40, 60]",
-                "40 <= 30 + 15 (true)",
-                "[10, 60]",
-                "50 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If false, the inactivity gap was not bridged: the working session is finalized.",
             "rows": [
-              [
-                "[10, 30] + [40, 60]",
-                "40 <= 30 + 15 (true)",
-                "[10, 60]",
-                "50 ms"
-              ],
-              [
-                "[100, 120]",
-                "100 <= 60 + 15 (false)",
-                "[100, 120]",
-                "20 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -450,30 +477,39 @@
             "at": "say6",
             "caption": "If true, the sessions overlap or bridge: we extend the span to [10, 60].",
             "rows": [
-              [
-                "[10, 30] + [40, 60]",
-                "40 <= 30 + 15 (true)",
-                "[10, 60]",
-                "50 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "If false, the inactivity gap was not bridged: the working session is finalized.",
             "rows": [
-              [
-                "[10, 30] + [40, 60]",
-                "40 <= 30 + 15 (true)",
-                "[10, 60]",
-                "50 ms"
-              ],
-              [
-                "[100, 120]",
-                "100 <= 60 + 15 (false)",
-                "[100, 120]",
-                "20 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

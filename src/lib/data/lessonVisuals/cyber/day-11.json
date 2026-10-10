@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Authentication Identity",
+        "rightLabel": "Authorization Access"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Authentication Identity",
+        "rightLabel": "Authorization Access"
       }
     },
     {
@@ -496,7 +500,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vertical Privilege Escalation",
+        "rightLabel": "Horizontal Privilege Escalation"
       },
       "filled": {
         "template": "compare",
@@ -530,7 +536,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vertical Privilege Escalation",
+        "rightLabel": "Horizontal Privilege Escalation"
       }
     },
     {

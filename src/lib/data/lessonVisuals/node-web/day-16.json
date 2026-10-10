@@ -12,32 +12,8 @@
         "template": "table",
         "title": "Hash algorithm password benchmark comparison",
         "columns": [
-          {
-            "id": "algorithm",
-            "label": "algorithm"
-          },
-          {
-            "id": "category",
-            "label": "category"
-          }
-        ],
-        "rows": [
-          {
-            "algorithm": {
-              "text": "SHA-256"
-            },
-            "category": {
-              "text": "Fast / Unsafe for Passwords"
-            }
-          },
-          {
-            "algorithm": {
-              "text": "Argon2id"
-            },
-            "category": {
-              "text": "Slow KDF / Safe for Passwords"
-            }
-          }
+          "algorithm",
+          "category"
         ],
         "steps": [
           {
@@ -45,20 +21,18 @@
             "caption": "Fast hashes create a catastrophic vulnerability for password storage.",
             "rows": [
               {
-                "algorithm": {
-                  "text": "SHA-256"
-                },
-                "category": {
-                  "text": "Fast / Unsafe for Passwords"
-                }
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": {
-                  "text": "Argon2id"
-                },
-                "category": {
-                  "text": "Slow KDF / Safe for Passwords"
-                }
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -67,20 +41,18 @@
             "caption": "GPU clusters execute brute force dictionary attacks testing passwords.",
             "rows": [
               {
-                "algorithm": {
-                  "text": "SHA-256"
-                },
-                "category": {
-                  "text": "Fast / Unsafe for Passwords"
-                }
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": {
-                  "text": "Argon2id"
-                },
-                "category": {
-                  "text": "Slow KDF / Safe for Passwords"
-                }
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -89,20 +61,18 @@
             "caption": "Slow algorithms make mass cracking attacks economically impossible.",
             "rows": [
               {
-                "algorithm": {
-                  "text": "SHA-256"
-                },
-                "category": {
-                  "text": "Fast / Unsafe for Passwords"
-                }
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": {
-                  "text": "Argon2id"
-                },
-                "category": {
-                  "text": "Slow KDF / Safe for Passwords"
-                }
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -112,24 +82,8 @@
         "template": "table",
         "title": "Hash algorithm password benchmark comparison",
         "columns": [
-          {
-            "id": "algorithm",
-            "label": "algorithm"
-          },
-          {
-            "id": "category",
-            "label": "category"
-          }
-        ],
-        "rows": [
-          {
-            "algorithm": "SHA-256",
-            "category": "Fast / Unsafe for Passwords"
-          },
-          {
-            "algorithm": "Argon2id",
-            "category": "Slow KDF / Safe for Passwords"
-          }
+          "algorithm",
+          "category"
         ],
         "steps": [
           {
@@ -137,12 +91,18 @@
             "caption": "Fast hashes create a catastrophic vulnerability for password storage.",
             "rows": [
               {
-                "algorithm": "SHA-256",
-                "category": "Fast / Unsafe for Passwords"
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": "Argon2id",
-                "category": "Slow KDF / Safe for Passwords"
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -151,12 +111,18 @@
             "caption": "GPU clusters execute brute force dictionary attacks testing passwords.",
             "rows": [
               {
-                "algorithm": "SHA-256",
-                "category": "Fast / Unsafe for Passwords"
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": "Argon2id",
-                "category": "Slow KDF / Safe for Passwords"
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -165,12 +131,18 @@
             "caption": "Slow algorithms make mass cracking attacks economically impossible.",
             "rows": [
               {
-                "algorithm": "SHA-256",
-                "category": "Fast / Unsafe for Passwords"
+                "cells": [
+                  "SHA-256",
+                  "Fast / Unsafe for Passwords"
+                ],
+                "tone": "data"
               },
               {
-                "algorithm": "Argon2id",
-                "category": "Slow KDF / Safe for Passwords"
+                "cells": [
+                  "Argon2id",
+                  "Slow KDF / Safe for Passwords"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -424,32 +396,8 @@
         "template": "table",
         "title": "Bcrypt work factor rounds and computation cost",
         "columns": [
-          {
-            "id": "costFactor",
-            "label": "costFactor"
-          },
-          {
-            "id": "computedRounds",
-            "label": "computedRounds"
-          }
-        ],
-        "rows": [
-          {
-            "costFactor": {
-              "text": "10"
-            },
-            "computedRounds": {
-              "text": "computedRounds"
-            }
-          },
-          {
-            "costFactor": {
-              "text": "12"
-            },
-            "computedRounds": {
-              "text": "computedRounds"
-            }
-          }
+          "costFactor",
+          "computedRounds"
         ],
         "steps": [
           {
@@ -457,20 +405,18 @@
             "caption": "Modern hashing algorithms incorporate key stretching with work factors.",
             "rows": [
               {
-                "costFactor": {
-                  "text": "10"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": {
-                  "text": "12"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -479,20 +425,18 @@
             "caption": "Increasing the cost factor doubles the required computation time.",
             "rows": [
               {
-                "costFactor": {
-                  "text": "10"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": {
-                  "text": "12"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -501,20 +445,18 @@
             "caption": "Memory hardness throttles parallel attacks from specialized cracking clusters.",
             "rows": [
               {
-                "costFactor": {
-                  "text": "10"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": {
-                  "text": "12"
-                },
-                "computedRounds": {
-                  "text": "computedRounds"
-                }
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -524,24 +466,8 @@
         "template": "table",
         "title": "Bcrypt work factor rounds and computation cost",
         "columns": [
-          {
-            "id": "costFactor",
-            "label": "costFactor"
-          },
-          {
-            "id": "computedRounds",
-            "label": "computedRounds"
-          }
-        ],
-        "rows": [
-          {
-            "costFactor": "10",
-            "computedRounds": "computedRounds"
-          },
-          {
-            "costFactor": "12",
-            "computedRounds": "computedRounds"
-          }
+          "costFactor",
+          "computedRounds"
         ],
         "steps": [
           {
@@ -549,12 +475,18 @@
             "caption": "Modern hashing algorithms incorporate key stretching with work factors.",
             "rows": [
               {
-                "costFactor": "10",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": "12",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -563,12 +495,18 @@
             "caption": "Increasing the cost factor doubles the required computation time.",
             "rows": [
               {
-                "costFactor": "10",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": "12",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -577,12 +515,18 @@
             "caption": "Memory hardness throttles parallel attacks from specialized cracking clusters.",
             "rows": [
               {
-                "costFactor": "10",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "10",
+                  "computedRounds"
+                ],
+                "tone": "data"
               },
               {
-                "costFactor": "12",
-                "computedRounds": "computedRounds"
+                "cells": [
+                  "12",
+                  "computedRounds"
+                ],
+                "tone": "ok"
               }
             ]
           }

@@ -338,102 +338,57 @@
             "at": "say2",
             "caption": "Flow logs capture telemetry metadata regarding network interface traffic.",
             "rows": [
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "198.51.100.24",
-                  "tone": "idle"
-                },
-                {
-                  "text": "443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "203.0.113.88",
-                  "tone": "idle"
-                },
-                {
-                  "text": "22",
-                  "tone": "idle"
-                },
-                {
-                  "text": "REJECT",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Each log record documents whether traffic was permitted or rejected.",
             "rows": [
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "198.51.100.24",
-                  "tone": "idle"
-                },
-                {
-                  "text": "443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "203.0.113.88",
-                  "tone": "idle"
-                },
-                {
-                  "text": "22",
-                  "tone": "idle"
-                },
-                {
-                  "text": "REJECT",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0e4f5a6b",
-                  "tone": "data"
-                },
-                {
-                  "text": "10.0.1.15",
-                  "tone": "idle"
-                },
-                {
-                  "text": "5432",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -452,102 +407,57 @@
             "at": "say2",
             "caption": "Flow logs capture telemetry metadata regarding network interface traffic.",
             "rows": [
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "198.51.100.24",
-                  "tone": "idle"
-                },
-                {
-                  "text": "443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "203.0.113.88",
-                  "tone": "idle"
-                },
-                {
-                  "text": "22",
-                  "tone": "idle"
-                },
-                {
-                  "text": "REJECT",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Each log record documents whether traffic was permitted or rejected.",
             "rows": [
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "198.51.100.24",
-                  "tone": "idle"
-                },
-                {
-                  "text": "443",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0a1b2c3d",
-                  "tone": "data"
-                },
-                {
-                  "text": "203.0.113.88",
-                  "tone": "idle"
-                },
-                {
-                  "text": "22",
-                  "tone": "idle"
-                },
-                {
-                  "text": "REJECT",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "eni-0e4f5a6b",
-                  "tone": "data"
-                },
-                {
-                  "text": "10.0.1.15",
-                  "tone": "idle"
-                },
-                {
-                  "text": "5432",
-                  "tone": "idle"
-                },
-                {
-                  "text": "ACCEPT",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

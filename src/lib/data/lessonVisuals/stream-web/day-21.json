@@ -122,42 +122,57 @@
             "at": "say5",
             "caption": "Point lookups (get) and mutations (put) execute via direct pointer access.",
             "rows": [
-              [
-                "cust-101",
-                "put / get",
-                "balance: 450, tier: gold",
-                "Hit ({balance:450})"
-              ],
-              [
-                "cust-102",
-                "put",
-                "balance: 120, tier: silver",
-                "Stored (size: 2)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Hybrid memory-disk tiering manages state per node with predictable results.",
             "rows": [
-              [
-                "cust-101",
-                "put / get",
-                "balance: 450, tier: gold",
-                "Hit ({balance:450})"
-              ],
-              [
-                "cust-102",
-                "put",
-                "balance: 120, tier: silver",
-                "Stored (size: 2)"
-              ],
-              [
-                "cust-999",
-                "get (missing)",
-                "none",
-                "null"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -176,42 +191,57 @@
             "at": "say5",
             "caption": "Point lookups (get) and mutations (put) execute via direct pointer access.",
             "rows": [
-              [
-                "cust-101",
-                "put / get",
-                "balance: 450, tier: gold",
-                "Hit ({balance:450})"
-              ],
-              [
-                "cust-102",
-                "put",
-                "balance: 120, tier: silver",
-                "Stored (size: 2)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Hybrid memory-disk tiering manages state per node with predictable results.",
             "rows": [
-              [
-                "cust-101",
-                "put / get",
-                "balance: 450, tier: gold",
-                "Hit ({balance:450})"
-              ],
-              [
-                "cust-102",
-                "put",
-                "balance: 120, tier: silver",
-                "Stored (size: 2)"
-              ],
-              [
-                "cust-999",
-                "get (missing)",
-                "none",
-                "null"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -434,42 +464,57 @@
             "at": "say6",
             "caption": "The worker replays mutations, updating keys and deleting on tombstones.",
             "rows": [
-              [
-                "0..2",
-                "user-1",
-                "Profile V2 (Updated)",
-                "user-1: Profile V2"
-              ],
-              [
-                "1..3",
-                "user-2",
-                "null (Tombstone)",
-                "Deleted (false)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Replaying the changelog in causal order reconstructs the exact state snapshot.",
             "rows": [
-              [
-                "0..2",
-                "user-1",
-                "Profile V2 (Updated)",
-                "user-1: Profile V2"
-              ],
-              [
-                "1..3",
-                "user-2",
-                "null (Tombstone)",
-                "Deleted (false)"
-              ],
-              [
-                "4",
-                "user-3",
-                "Profile V1",
-                "user-3: Profile V1 (2 keys)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -488,42 +533,57 @@
             "at": "say6",
             "caption": "The worker replays mutations, updating keys and deleting on tombstones.",
             "rows": [
-              [
-                "0..2",
-                "user-1",
-                "Profile V2 (Updated)",
-                "user-1: Profile V2"
-              ],
-              [
-                "1..3",
-                "user-2",
-                "null (Tombstone)",
-                "Deleted (false)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Replaying the changelog in causal order reconstructs the exact state snapshot.",
             "rows": [
-              [
-                "0..2",
-                "user-1",
-                "Profile V2 (Updated)",
-                "user-1: Profile V2"
-              ],
-              [
-                "1..3",
-                "user-2",
-                "null (Tombstone)",
-                "Deleted (false)"
-              ],
-              [
-                "4",
-                "user-3",
-                "Profile V1",
-                "user-3: Profile V1 (2 keys)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

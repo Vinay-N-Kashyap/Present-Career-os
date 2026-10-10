@@ -258,84 +258,48 @@
             "at": "say3",
             "caption": "Logs insights uses query syntax that allows querying log data in seconds.",
             "rows": [
-              [
-                {
-                  "text": "fields",
-                  "tone": "data"
-                },
-                {
-                  "text": "Column Selection",
-                  "tone": "ok"
-                },
-                {
-                  "text": "@timestamp, @message",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Structured Records",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "filter",
-                  "tone": "data"
-                },
-                {
-                  "text": "Boolean Predicate",
-                  "tone": "ok"
-                },
-                {
-                  "text": "statusCode >= 500",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Filtered Results",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The stats command calculates aggregations over grouped fields.",
             "rows": [
-              [
-                {
-                  "text": "stats",
-                  "tone": "data"
-                },
-                {
-                  "text": "Aggregation Metric",
-                  "tone": "ok"
-                },
-                {
-                  "text": "count(*) by bin(5m)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Time Series Buckets",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "sort / limit",
-                  "tone": "data"
-                },
-                {
-                  "text": "Order & Boundary",
-                  "tone": "idle"
-                },
-                {
-                  "text": "sort @timestamp desc",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Bounded Top N",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -354,84 +318,48 @@
             "at": "say3",
             "caption": "Logs insights uses query syntax that allows querying log data in seconds.",
             "rows": [
-              [
-                {
-                  "text": "fields",
-                  "tone": "data"
-                },
-                {
-                  "text": "Column Selection",
-                  "tone": "ok"
-                },
-                {
-                  "text": "@timestamp, @message",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Structured Records",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "filter",
-                  "tone": "data"
-                },
-                {
-                  "text": "Boolean Predicate",
-                  "tone": "ok"
-                },
-                {
-                  "text": "statusCode >= 500",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Filtered Results",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "The stats command calculates aggregations over grouped fields.",
             "rows": [
-              [
-                {
-                  "text": "stats",
-                  "tone": "data"
-                },
-                {
-                  "text": "Aggregation Metric",
-                  "tone": "ok"
-                },
-                {
-                  "text": "count(*) by bin(5m)",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Time Series Buckets",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "sort / limit",
-                  "tone": "data"
-                },
-                {
-                  "text": "Order & Boundary",
-                  "tone": "idle"
-                },
-                {
-                  "text": "sort @timestamp desc",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Bounded Top N",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

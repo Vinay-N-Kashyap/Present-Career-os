@@ -420,42 +420,57 @@
             "at": "say5",
             "caption": "When the buffer is full, the producer delays using non-blocking wait queues.",
             "rows": [
-              [
-                "1",
-                "10 ms",
-                "10 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "2",
-                "20 ms",
-                "30 ms",
-                "Wait (isBufferFull: true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "When the buffer does not drain within the ceiling, the producer rejects.",
             "rows": [
-              [
-                "1",
-                "10 ms",
-                "10 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "2",
-                "20 ms",
-                "30 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "3",
-                "40 ms",
-                "70 ms",
-                "accepted: false (Rejected)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -474,42 +489,57 @@
             "at": "say5",
             "caption": "When the buffer is full, the producer delays using non-blocking wait queues.",
             "rows": [
-              [
-                "1",
-                "10 ms",
-                "10 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "2",
-                "20 ms",
-                "30 ms",
-                "Wait (isBufferFull: true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "When the buffer does not drain within the ceiling, the producer rejects.",
             "rows": [
-              [
-                "1",
-                "10 ms",
-                "10 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "2",
-                "20 ms",
-                "30 ms",
-                "Wait (isBufferFull: true)"
-              ],
-              [
-                "3",
-                "40 ms",
-                "70 ms",
-                "accepted: false (Rejected)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

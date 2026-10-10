@@ -160,7 +160,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Sequential Numeric Identifiers",
+        "rightLabel": "Cryptographic UUID Identifiers"
       },
       "filled": {
         "template": "compare",
@@ -194,7 +196,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Sequential Numeric Identifiers",
+        "rightLabel": "Cryptographic UUID Identifiers"
       }
     },
     {

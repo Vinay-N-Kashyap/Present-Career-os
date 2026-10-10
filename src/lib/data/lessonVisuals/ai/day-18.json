@@ -488,7 +488,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "First Pass Review Critique",
+        "rightLabel": "Repaired Approved Artifact"
       },
       "filled": {
         "template": "compare",
@@ -524,7 +526,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "First Pass Review Critique",
+        "rightLabel": "Repaired Approved Artifact"
       }
     },
     {

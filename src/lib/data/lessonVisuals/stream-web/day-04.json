@@ -110,48 +110,66 @@
             "at": "say2",
             "caption": "Events within the same partition are ordered without cross-partition guarantees.",
             "rows": [
-              [
-                "P1",
-                "#0",
-                "user-B",
-                "102"
-              ],
-              [
-                "P0",
-                "#0",
-                "user-A",
-                "100"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Physical wall-clock timestamps are unreliable due to distributed clock skew.",
             "rows": [
-              [
-                "P1",
-                "#0",
-                "user-B",
-                "102"
-              ],
-              [
-                "P0",
-                "#0",
-                "user-A",
-                "100"
-              ],
-              [
-                "P1",
-                "#1",
-                "user-B",
-                "104"
-              ],
-              [
-                "P0",
-                "#1",
-                "user-A",
-                "105"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -170,48 +188,66 @@
             "at": "say2",
             "caption": "Events within the same partition are ordered without cross-partition guarantees.",
             "rows": [
-              [
-                "P1",
-                "#0",
-                "user-B",
-                "102"
-              ],
-              [
-                "P0",
-                "#0",
-                "user-A",
-                "100"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Physical wall-clock timestamps are unreliable due to distributed clock skew.",
             "rows": [
-              [
-                "P1",
-                "#0",
-                "user-B",
-                "102"
-              ],
-              [
-                "P0",
-                "#0",
-                "user-A",
-                "100"
-              ],
-              [
-                "P1",
-                "#1",
-                "user-B",
-                "104"
-              ],
-              [
-                "P0",
-                "#1",
-                "user-A",
-                "105"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

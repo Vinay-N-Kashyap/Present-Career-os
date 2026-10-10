@@ -176,7 +176,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Lomuto Scheme",
+        "rightLabel": "Hoare Scheme"
       },
       "filled": {
         "template": "compare",
@@ -236,7 +238,9 @@
               "tone": "ok"
             }
           }
-        ]
+        ],
+        "leftLabel": "Lomuto Scheme",
+        "rightLabel": "Hoare Scheme"
       }
     },
     {

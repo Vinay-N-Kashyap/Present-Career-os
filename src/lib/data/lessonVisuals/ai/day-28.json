@@ -565,6 +565,18 @@
             "caption": "Client transmits feedback score alongside generation trace identifier.",
             "activeBars": [
               "positive"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -572,6 +584,18 @@
             "caption": "Engineers inspect exact prompt and model output causing dissatisfaction.",
             "activeBars": [
               "negative"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -597,6 +621,18 @@
             "caption": "Client transmits feedback score alongside generation trace identifier.",
             "activeBars": [
               "positive"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -604,6 +640,18 @@
             "caption": "Engineers inspect exact prompt and model output causing dissatisfaction.",
             "activeBars": [
               "negative"
+            ],
+            "bars": [
+              {
+                "label": "Positive Feedback",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Negative Feedback",
+                "value": 33,
+                "tone": "idle"
+              }
             ]
           }
         ]

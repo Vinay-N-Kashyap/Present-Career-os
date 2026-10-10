@@ -21,42 +21,60 @@
             "at": "say3",
             "caption": "Deutsch formalized common erroneous assumptions regarding network reliability.",
             "rows": [
-              [
-                "The network is reliable",
-                "Packets drop, routers crash, connections reset",
-                "Timeouts, retries with backoff, circuit breakers"
-              ],
-              [
-                "Latency is zero",
-                "Fiber transit adds millisecond delay",
-                "Local caching, async queues, connection pooling"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Leaving remote communication vulnerable requires strict security protocols.",
             "rows": [
-              [
-                "The network is reliable",
-                "Packets drop, routers crash, connections reset",
-                "Timeouts, retries with backoff, circuit breakers"
-              ],
-              [
-                "Latency is zero",
-                "Fiber transit adds millisecond delay",
-                "Local caching, async queues, connection pooling"
-              ],
-              [
-                "Bandwidth is infinite",
-                "Links saturate under peak throughput",
-                "Binary protobuf serialization, batching, compression"
-              ],
-              [
-                "The network is secure",
-                "Eavesdropping and interception risks",
-                "Mutual TLS encryption, identity tokens, mTLS auth"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -74,42 +92,60 @@
             "at": "say3",
             "caption": "Deutsch formalized common erroneous assumptions regarding network reliability.",
             "rows": [
-              [
-                "The network is reliable",
-                "Packets drop, routers crash, connections reset",
-                "Timeouts, retries with backoff, circuit breakers"
-              ],
-              [
-                "Latency is zero",
-                "Fiber transit adds millisecond delay",
-                "Local caching, async queues, connection pooling"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Leaving remote communication vulnerable requires strict security protocols.",
             "rows": [
-              [
-                "The network is reliable",
-                "Packets drop, routers crash, connections reset",
-                "Timeouts, retries with backoff, circuit breakers"
-              ],
-              [
-                "Latency is zero",
-                "Fiber transit adds millisecond delay",
-                "Local caching, async queues, connection pooling"
-              ],
-              [
-                "Bandwidth is infinite",
-                "Links saturate under peak throughput",
-                "Binary protobuf serialization, batching, compression"
-              ],
-              [
-                "The network is secure",
-                "Eavesdropping and interception risks",
-                "Mutual TLS encryption, identity tokens, mTLS auth"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -462,7 +498,7 @@
           },
           {
             "at": "say8",
-            "caption": "Modern distributed systems achieve effective deduplication through sequence tracking.",
+            "caption": "Modern systems achieve effective sequence deduplication.",
             "left": {
               "code": "duplicatePossible: true",
               "result": {

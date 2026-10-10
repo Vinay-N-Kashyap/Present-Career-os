@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Concatenation",
+        "rightLabel": "Parameterized Statement"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Vulnerable Concatenation",
+        "rightLabel": "Parameterized Statement"
       }
     },
     {

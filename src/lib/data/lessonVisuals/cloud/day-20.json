@@ -114,84 +114,48 @@
             "at": "say4",
             "caption": "Custom event buses are created by your team to receive application events.",
             "rows": [
-              [
-                {
-                  "text": "source",
-                  "tone": "data"
-                },
-                {
-                  "text": "Service Identifier",
-                  "tone": "ok"
-                },
-                {
-                  "text": "com.pinit.orders",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Rule Matching",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "detail-type",
-                  "tone": "data"
-                },
-                {
-                  "text": "Event Name Label",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Rule Matching",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The custom payload of your event sits inside the detail object.",
             "rows": [
-              [
-                {
-                  "text": "detail",
-                  "tone": "data"
-                },
-                {
-                  "text": "Domain Business Payload",
-                  "tone": "ok"
-                },
-                {
-                  "text": "{\"orderId\":\"ord_99\"}",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deep Content Filter",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "time",
-                  "tone": "data"
-                },
-                {
-                  "text": "ISO Timestamp",
-                  "tone": "idle"
-                },
-                {
-                  "text": "2026-10-09T12:00:00Z",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Audit Logging",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -210,84 +174,48 @@
             "at": "say4",
             "caption": "Custom event buses are created by your team to receive application events.",
             "rows": [
-              [
-                {
-                  "text": "source",
-                  "tone": "data"
-                },
-                {
-                  "text": "Service Identifier",
-                  "tone": "ok"
-                },
-                {
-                  "text": "com.pinit.orders",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Rule Matching",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "detail-type",
-                  "tone": "data"
-                },
-                {
-                  "text": "Event Name Label",
-                  "tone": "ok"
-                },
-                {
-                  "text": "OrderPlaced",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Rule Matching",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The custom payload of your event sits inside the detail object.",
             "rows": [
-              [
-                {
-                  "text": "detail",
-                  "tone": "data"
-                },
-                {
-                  "text": "Domain Business Payload",
-                  "tone": "ok"
-                },
-                {
-                  "text": "{\"orderId\":\"ord_99\"}",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Deep Content Filter",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "time",
-                  "tone": "data"
-                },
-                {
-                  "text": "ISO Timestamp",
-                  "tone": "idle"
-                },
-                {
-                  "text": "2026-10-09T12:00:00Z",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Audit Logging",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

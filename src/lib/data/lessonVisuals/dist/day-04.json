@@ -378,42 +378,57 @@
             "at": "say5",
             "caption": "Only a small fraction of keys migrate while existing keys remain undisturbed.",
             "rows": [
-              [
-                "Add Node to 4-Node Cluster",
-                "80.0% of total keys remapped",
-                "20.0% of total keys migrated",
-                "Low impact migration"
-              ],
-              [
-                "Add Node to 10-Node Cluster",
-                "90.9% of total keys remapped",
-                "9.1% of total keys migrated",
-                "Negligible rebalancing"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Cache hit ratios remain high during autoscaling events instead of collapsing.",
             "rows": [
-              [
-                "Add Node to 4-Node Cluster",
-                "80.0% of total keys remapped",
-                "20.0% of total keys migrated",
-                "Low impact migration"
-              ],
-              [
-                "Add Node to 10-Node Cluster",
-                "90.9% of total keys remapped",
-                "9.1% of total keys migrated",
-                "Negligible rebalancing"
-              ],
-              [
-                "Evict Failed Node from 10 Nodes",
-                "90.0% churn across cluster",
-                "10.0% assigned to neighbor",
-                "Controlled local repair"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -432,42 +447,57 @@
             "at": "say5",
             "caption": "Only a small fraction of keys migrate while existing keys remain undisturbed.",
             "rows": [
-              [
-                "Add Node to 4-Node Cluster",
-                "80.0% of total keys remapped",
-                "20.0% of total keys migrated",
-                "Low impact migration"
-              ],
-              [
-                "Add Node to 10-Node Cluster",
-                "90.9% of total keys remapped",
-                "9.1% of total keys migrated",
-                "Negligible rebalancing"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Cache hit ratios remain high during autoscaling events instead of collapsing.",
             "rows": [
-              [
-                "Add Node to 4-Node Cluster",
-                "80.0% of total keys remapped",
-                "20.0% of total keys migrated",
-                "Low impact migration"
-              ],
-              [
-                "Add Node to 10-Node Cluster",
-                "90.9% of total keys remapped",
-                "9.1% of total keys migrated",
-                "Negligible rebalancing"
-              ],
-              [
-                "Evict Failed Node from 10 Nodes",
-                "90.0% churn across cluster",
-                "10.0% assigned to neighbor",
-                "Controlled local repair"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

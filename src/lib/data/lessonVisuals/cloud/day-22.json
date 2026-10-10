@@ -262,84 +262,48 @@
             "at": "say5",
             "caption": "The task execution role grants permissions to pull container images.",
             "rows": [
-              [
-                {
-                  "text": "executionRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "ECS Container Agent",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ecr:BatchGetImage",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Infrastructure Boot",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "taskRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "Application Container",
-                  "tone": "ok"
-                },
-                {
-                  "text": "dynamodb:GetItem",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Data",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The task role grants permissions for application business logic.",
             "rows": [
-              [
-                {
-                  "text": "executionRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "ECS Container Agent",
-                  "tone": "ok"
-                },
-                {
-                  "text": "logs:PutLogEvents",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Infrastructure Boot",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "taskRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "Application Container",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Data",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -358,84 +322,48 @@
             "at": "say5",
             "caption": "The task execution role grants permissions to pull container images.",
             "rows": [
-              [
-                {
-                  "text": "executionRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "ECS Container Agent",
-                  "tone": "ok"
-                },
-                {
-                  "text": "ecr:BatchGetImage",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Infrastructure Boot",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "taskRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "Application Container",
-                  "tone": "ok"
-                },
-                {
-                  "text": "dynamodb:GetItem",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Data",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "The task role grants permissions for application business logic.",
             "rows": [
-              [
-                {
-                  "text": "executionRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "ECS Container Agent",
-                  "tone": "ok"
-                },
-                {
-                  "text": "logs:PutLogEvents",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Infrastructure Boot",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "taskRoleArn",
-                  "tone": "data"
-                },
-                {
-                  "text": "Application Container",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3:GetObject",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Application Data",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -354,54 +354,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "1"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 1"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "2"
-                  },
-                  "Status": {
-                    "text": "Failed"
-                  },
-                  "Payload / Reason": {
-                    "text": "ContextExceeded"
-                  },
-                  "Action Taken": {
-                    "text": "Reject caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "3"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 3"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -412,54 +388,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "1"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 1"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "2"
-                  },
-                  "Status": {
-                    "text": "Failed"
-                  },
-                  "Payload / Reason": {
-                    "text": "ContextExceeded"
-                  },
-                  "Action Taken": {
-                    "text": "Reject caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "3"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 3"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -470,54 +422,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "1"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 1"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "2"
-                  },
-                  "Status": {
-                    "text": "Failed"
-                  },
-                  "Payload / Reason": {
-                    "text": "ContextExceeded"
-                  },
-                  "Action Taken": {
-                    "text": "Reject caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": {
-                    "text": "3"
-                  },
-                  "Status": {
-                    "text": "Success"
-                  },
-                  "Payload / Reason": {
-                    "text": "OK 3"
-                  },
-                  "Action Taken": {
-                    "text": "Resolve caller promise"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -540,30 +468,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Item ID": "1",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 1",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "2",
-                  "Status": "Failed",
-                  "Payload / Reason": "ContextExceeded",
-                  "Action Taken": "Reject caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "3",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 3",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -574,30 +502,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Item ID": "1",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 1",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "2",
-                  "Status": "Failed",
-                  "Payload / Reason": "ContextExceeded",
-                  "Action Taken": "Reject caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "3",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 3",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -608,30 +536,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Item ID": "1",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 1",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "2",
-                  "Status": "Failed",
-                  "Payload / Reason": "ContextExceeded",
-                  "Action Taken": "Reject caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Item ID": "3",
-                  "Status": "Success",
-                  "Payload / Reason": "OK 3",
-                  "Action Taken": "Resolve caller promise"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

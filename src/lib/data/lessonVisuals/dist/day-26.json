@@ -522,7 +522,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Head-Based Sampling",
+        "rightLabel": "Tail-Based Sampling"
       },
       "filled": {
         "template": "compare",
@@ -556,7 +558,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Head-Based Sampling",
+        "rightLabel": "Tail-Based Sampling"
       }
     },
     {

@@ -22,42 +22,57 @@
             "at": "say3",
             "caption": "Cache aside queries the cache before requesting from database.",
             "rows": [
-              [
-                "Cache-Aside (Lazy)",
-                "App queries cache -> Miss queries DB -> Populates cache",
-                "App writes directly to DB -> Evicts or updates cache",
-                "Eventual consistency, zero stale writes on miss"
-              ],
-              [
-                "Write-Through",
-                "App queries cache -> Cache loads from DB on miss",
-                "App writes to cache -> Cache synchronously writes to DB",
-                "Strong consistency, higher write latency"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Write through ensures cache and database remain in sync.",
             "rows": [
-              [
-                "Cache-Aside (Lazy)",
-                "App queries cache -> Miss queries DB -> Populates cache",
-                "App writes directly to DB -> Evicts or updates cache",
-                "Eventual consistency, zero stale writes on miss"
-              ],
-              [
-                "Write-Through",
-                "App queries cache -> Cache loads from DB on miss",
-                "App writes to cache -> Cache synchronously writes to DB",
-                "Strong consistency, higher write latency"
-              ],
-              [
-                "Write-Back (Write-Behind)",
-                "App reads exclusively from cache",
-                "App writes to cache -> Cache async flushes batches to DB",
-                "Ultimate write throughput, data loss risk on crash"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -76,42 +91,57 @@
             "at": "say3",
             "caption": "Cache aside queries the cache before requesting from database.",
             "rows": [
-              [
-                "Cache-Aside (Lazy)",
-                "App queries cache -> Miss queries DB -> Populates cache",
-                "App writes directly to DB -> Evicts or updates cache",
-                "Eventual consistency, zero stale writes on miss"
-              ],
-              [
-                "Write-Through",
-                "App queries cache -> Cache loads from DB on miss",
-                "App writes to cache -> Cache synchronously writes to DB",
-                "Strong consistency, higher write latency"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Write through ensures cache and database remain in sync.",
             "rows": [
-              [
-                "Cache-Aside (Lazy)",
-                "App queries cache -> Miss queries DB -> Populates cache",
-                "App writes directly to DB -> Evicts or updates cache",
-                "Eventual consistency, zero stale writes on miss"
-              ],
-              [
-                "Write-Through",
-                "App queries cache -> Cache loads from DB on miss",
-                "App writes to cache -> Cache synchronously writes to DB",
-                "Strong consistency, higher write latency"
-              ],
-              [
-                "Write-Back (Write-Behind)",
-                "App reads exclusively from cache",
-                "App writes to cache -> Cache async flushes batches to DB",
-                "Ultimate write throughput, data loss risk on crash"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

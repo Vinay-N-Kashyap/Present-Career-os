@@ -132,30 +132,39 @@
             "at": "say2",
             "caption": "A KStream interprets every incoming record as an independent insert statement.",
             "rows": [
-              [
-                "KStream",
-                "Append-Only Facts",
-                "4 records",
-                "All 4 historical events"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "In a KTable, a null value acts as a delete operation, removing usr-2.",
             "rows": [
-              [
-                "KStream",
-                "Append-Only Facts",
-                "4 records",
-                "All 4 historical events"
-              ],
-              [
-                "KTable",
-                "Primary-Key Upsert",
-                "1 active key",
-                "usr-1: Premium | usr-2: deleted"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -174,30 +183,39 @@
             "at": "say2",
             "caption": "A KStream interprets every incoming record as an independent insert statement.",
             "rows": [
-              [
-                "KStream",
-                "Append-Only Facts",
-                "4 records",
-                "All 4 historical events"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "In a KTable, a null value acts as a delete operation, removing usr-2.",
             "rows": [
-              [
-                "KStream",
-                "Append-Only Facts",
-                "4 records",
-                "All 4 historical events"
-              ],
-              [
-                "KTable",
-                "Primary-Key Upsert",
-                "1 active key",
-                "usr-1: Premium | usr-2: deleted"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -444,7 +444,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard Process Listing",
+        "rightLabel": "Hidden Rootkit Processes"
       },
       "filled": {
         "template": "compare",
@@ -480,7 +482,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard Process Listing",
+        "rightLabel": "Hidden Rootkit Processes"
       }
     },
     {

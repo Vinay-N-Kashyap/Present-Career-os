@@ -29,6 +29,18 @@
             "caption": "Guidelines mandate engineers spend time on engineering work rather than toil.",
             "activeBars": [
               "engineeringWork"
+            ],
+            "bars": [
+              {
+                "label": "Engineering Work",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operational Toil",
+                "value": 30,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -37,6 +49,18 @@
             "activeBars": [
               "engineeringWork",
               "operationalToil"
+            ],
+            "bars": [
+              {
+                "label": "Engineering Work",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operational Toil",
+                "value": 30,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -62,6 +86,18 @@
             "caption": "Guidelines mandate engineers spend time on engineering work rather than toil.",
             "activeBars": [
               "engineeringWork"
+            ],
+            "bars": [
+              {
+                "label": "Engineering Work",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operational Toil",
+                "value": 30,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -70,6 +106,18 @@
             "activeBars": [
               "engineeringWork",
               "operationalToil"
+            ],
+            "bars": [
+              {
+                "label": "Engineering Work",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operational Toil",
+                "value": 30,
+                "tone": "idle"
+              }
             ]
           }
         ]

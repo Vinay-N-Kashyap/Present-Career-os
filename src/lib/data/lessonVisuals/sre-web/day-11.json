@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Layer 4 Transport Balancer",
+        "rightLabel": "Layer 7 Application Balancer"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Layer 4 Transport Balancer",
+        "rightLabel": "Layer 7 Application Balancer"
       }
     },
     {
@@ -212,6 +216,23 @@
             "caption": "Each backend server is assigned a weight corresponding to processing capacity.",
             "activeBars": [
               "nodeA"
+            ],
+            "bars": [
+              {
+                "label": "large-node-A (32 Core)",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "medium-node-C (16 Core)",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "small-node-B (8 Core)",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -221,6 +242,23 @@
               "nodeA",
               "nodeC",
               "nodeB"
+            ],
+            "bars": [
+              {
+                "label": "large-node-A (32 Core)",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "medium-node-C (16 Core)",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "small-node-B (8 Core)",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -251,6 +289,23 @@
             "caption": "Each backend server is assigned a weight corresponding to processing capacity.",
             "activeBars": [
               "nodeA"
+            ],
+            "bars": [
+              {
+                "label": "large-node-A (32 Core)",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "medium-node-C (16 Core)",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "small-node-B (8 Core)",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -260,6 +315,23 @@
               "nodeA",
               "nodeC",
               "nodeB"
+            ],
+            "bars": [
+              {
+                "label": "large-node-A (32 Core)",
+                "value": 4,
+                "tone": "idle"
+              },
+              {
+                "label": "medium-node-C (16 Core)",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "small-node-B (8 Core)",
+                "value": 1,
+                "tone": "idle"
+              }
             ]
           }
         ]

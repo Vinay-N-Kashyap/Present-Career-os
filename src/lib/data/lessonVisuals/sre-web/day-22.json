@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Blaming Culture",
+        "rightLabel": "Blameless Practice"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Blaming Culture",
+        "rightLabel": "Blameless Practice"
       }
     },
     {
@@ -585,13 +589,47 @@
             "at": "say3",
             "caption": "SRE teams enforce strict completion deadlines based on item priority.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "P0 Blocker SLA",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "P1 Critical SLA",
+                "value": 14,
+                "tone": "idle"
+              },
+              {
+                "label": "P2 Normal SLA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Overdue blocker items trigger an immediate freeze on feature deployments.",
             "highlightIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "P0 Blocker SLA",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "P1 Critical SLA",
+                "value": 14,
+                "tone": "idle"
+              },
+              {
+                "label": "P2 Normal SLA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -620,13 +658,47 @@
             "at": "say3",
             "caption": "SRE teams enforce strict completion deadlines based on item priority.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "P0 Blocker SLA",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "P1 Critical SLA",
+                "value": 14,
+                "tone": "idle"
+              },
+              {
+                "label": "P2 Normal SLA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Overdue blocker items trigger an immediate freeze on feature deployments.",
             "highlightIndex": 0,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "P0 Blocker SLA",
+                "value": 2,
+                "tone": "idle"
+              },
+              {
+                "label": "P1 Critical SLA",
+                "value": 14,
+                "tone": "idle"
+              },
+              {
+                "label": "P2 Normal SLA",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

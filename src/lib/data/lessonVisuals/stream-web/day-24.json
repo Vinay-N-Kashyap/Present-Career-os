@@ -22,30 +22,39 @@
             "at": "say6",
             "caption": "A stream-stream join is bounded by a temporal correlation window (500ms).",
             "rows": [
-              [
-                "user-101",
-                "1000ms / 1150ms",
-                "150 ms",
-                "MATCHED ($85)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Two events with matching keys join only if their timestamps differ <= 500ms.",
             "rows": [
-              [
-                "user-101",
-                "1000ms / 1150ms",
-                "150 ms",
-                "MATCHED ($85)"
-              ],
-              [
-                "user-102",
-                "1200ms / 2500ms",
-                "1300 ms",
-                "EXPIRED (> 500ms)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -64,30 +73,39 @@
             "at": "say6",
             "caption": "A stream-stream join is bounded by a temporal correlation window (500ms).",
             "rows": [
-              [
-                "user-101",
-                "1000ms / 1150ms",
-                "150 ms",
-                "MATCHED ($85)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Two events with matching keys join only if their timestamps differ <= 500ms.",
             "rows": [
-              [
-                "user-101",
-                "1000ms / 1150ms",
-                "150 ms",
-                "MATCHED ($85)"
-              ],
-              [
-                "user-102",
-                "1200ms / 2500ms",
-                "1300 ms",
-                "EXPIRED (> 500ms)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -110,30 +128,39 @@
             "at": "say5",
             "caption": "Both topics must have the exact same number of partitions (16 partitions).",
             "rows": [
-              [
-                "ad-impressions + purchases",
-                "16 == 16",
-                "murmur3 == murmur3",
-                "CO_PARTITIONED (true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Mismatched partition counts (16 vs 32) fail with PARTITION_COUNT_MISMATCH.",
             "rows": [
-              [
-                "ad-impressions + purchases",
-                "16 == 16",
-                "murmur3 == murmur3",
-                "CO_PARTITIONED (true)"
-              ],
-              [
-                "ad-impressions + purchases-v2",
-                "16 != 32",
-                "murmur3 == murmur3",
-                "PARTITION_COUNT_MISMATCH"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -152,30 +179,39 @@
             "at": "say5",
             "caption": "Both topics must have the exact same number of partitions (16 partitions).",
             "rows": [
-              [
-                "ad-impressions + purchases",
-                "16 == 16",
-                "murmur3 == murmur3",
-                "CO_PARTITIONED (true)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Mismatched partition counts (16 vs 32) fail with PARTITION_COUNT_MISMATCH.",
             "rows": [
-              [
-                "ad-impressions + purchases",
-                "16 == 16",
-                "murmur3 == murmur3",
-                "CO_PARTITIONED (true)"
-              ],
-              [
-                "ad-impressions + purchases-v2",
-                "16 != 32",
-                "murmur3 == murmur3",
-                "PARTITION_COUNT_MISMATCH"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

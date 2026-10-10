@@ -336,6 +336,23 @@
             "caption": "Gauges reflect real time conditions essential for detecting saturation.",
             "activeBars": [
               "normal"
+            ],
+            "bars": [
+              {
+                "label": "Initial Acquires",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "High Concurrency Saturated",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Post Release Stabilized",
+                "value": 70,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -345,6 +362,23 @@
               "normal",
               "saturated",
               "released"
+            ],
+            "bars": [
+              {
+                "label": "Initial Acquires",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "High Concurrency Saturated",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Post Release Stabilized",
+                "value": 70,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -375,6 +409,23 @@
             "caption": "Gauges reflect real time conditions essential for detecting saturation.",
             "activeBars": [
               "normal"
+            ],
+            "bars": [
+              {
+                "label": "Initial Acquires",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "High Concurrency Saturated",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Post Release Stabilized",
+                "value": 70,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -384,6 +435,23 @@
               "normal",
               "saturated",
               "released"
+            ],
+            "bars": [
+              {
+                "label": "Initial Acquires",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "High Concurrency Saturated",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Post Release Stabilized",
+                "value": 70,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -580,7 +648,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Linear Bucket Generator",
+        "rightLabel": "Exponential Bucket Generator"
       },
       "filled": {
         "template": "compare",
@@ -616,7 +686,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Linear Bucket Generator",
+        "rightLabel": "Exponential Bucket Generator"
       }
     },
     {

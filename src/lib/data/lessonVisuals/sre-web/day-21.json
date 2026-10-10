@@ -512,7 +512,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Mean Time to Detect (MTTD)",
+        "rightLabel": "Mean Time to Acknowledge (MTTA)"
       },
       "filled": {
         "template": "compare",
@@ -548,7 +550,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Mean Time to Detect (MTTD)",
+        "rightLabel": "Mean Time to Acknowledge (MTTA)"
       }
     },
     {
@@ -579,13 +583,47 @@
             "at": "say3",
             "caption": "Lowering recovery duration maximizes service availability across incidents.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Availability equals uptime interval divided by total operational duration.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -614,13 +652,47 @@
             "at": "say3",
             "caption": "Lowering recovery duration maximizes service availability across incidents.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Availability equals uptime interval divided by total operational duration.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "MTTR Fast Recovery",
+                "value": 15,
+                "tone": "idle"
+              },
+              {
+                "label": "MTTR Slow Outage",
+                "value": 720,
+                "tone": "idle"
+              },
+              {
+                "label": "MTBF Monthly Uptime",
+                "value": 719,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

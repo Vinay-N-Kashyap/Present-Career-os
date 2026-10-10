@@ -236,7 +236,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard SYN Backlog Queue",
+        "rightLabel": "Cryptographic SYN Cookie Defense"
       },
       "filled": {
         "template": "compare",
@@ -270,7 +272,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard SYN Backlog Queue",
+        "rightLabel": "Cryptographic SYN Cookie Defense"
       }
     },
     {
@@ -512,7 +516,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Stateless Packet Filtering",
+        "rightLabel": "Stateful Packet Inspection"
       },
       "filled": {
         "template": "compare",
@@ -546,7 +552,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Stateless Packet Filtering",
+        "rightLabel": "Stateful Packet Inspection"
       }
     },
     {

@@ -12,32 +12,8 @@
         "template": "table",
         "title": "API attack vectors and defensive countermeasures",
         "columns": [
-          {
-            "id": "attackType",
-            "label": "attackType"
-          },
-          {
-            "id": "countermeasure",
-            "label": "countermeasure"
-          }
-        ],
-        "rows": [
-          {
-            "attackType": {
-              "text": "Credential Stuffing"
-            },
-            "countermeasure": {
-              "text": "IP Rate Limiting + Captcha"
-            }
-          },
-          {
-            "attackType": {
-              "text": "DoS Flood"
-            },
-            "countermeasure": {
-              "text": "Sliding Window Throttling"
-            }
-          }
+          "attackType",
+          "countermeasure"
         ],
         "steps": [
           {
@@ -45,20 +21,18 @@
             "caption": "Attackers submit automated scripts attempting brute force attacks.",
             "rows": [
               {
-                "attackType": {
-                  "text": "Credential Stuffing"
-                },
-                "countermeasure": {
-                  "text": "IP Rate Limiting + Captcha"
-                }
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": {
-                  "text": "DoS Flood"
-                },
-                "countermeasure": {
-                  "text": "Sliding Window Throttling"
-                }
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -67,20 +41,18 @@
             "caption": "Without rate limiting server databases spike causing severe outages.",
             "rows": [
               {
-                "attackType": {
-                  "text": "Credential Stuffing"
-                },
-                "countermeasure": {
-                  "text": "IP Rate Limiting + Captcha"
-                }
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": {
-                  "text": "DoS Flood"
-                },
-                "countermeasure": {
-                  "text": "Sliding Window Throttling"
-                }
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -89,20 +61,18 @@
             "caption": "Defense in depth implements multiple protection layers across API boundaries.",
             "rows": [
               {
-                "attackType": {
-                  "text": "Credential Stuffing"
-                },
-                "countermeasure": {
-                  "text": "IP Rate Limiting + Captcha"
-                }
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": {
-                  "text": "DoS Flood"
-                },
-                "countermeasure": {
-                  "text": "Sliding Window Throttling"
-                }
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -112,24 +82,8 @@
         "template": "table",
         "title": "API attack vectors and defensive countermeasures",
         "columns": [
-          {
-            "id": "attackType",
-            "label": "attackType"
-          },
-          {
-            "id": "countermeasure",
-            "label": "countermeasure"
-          }
-        ],
-        "rows": [
-          {
-            "attackType": "Credential Stuffing",
-            "countermeasure": "IP Rate Limiting + Captcha"
-          },
-          {
-            "attackType": "DoS Flood",
-            "countermeasure": "Sliding Window Throttling"
-          }
+          "attackType",
+          "countermeasure"
         ],
         "steps": [
           {
@@ -137,12 +91,18 @@
             "caption": "Attackers submit automated scripts attempting brute force attacks.",
             "rows": [
               {
-                "attackType": "Credential Stuffing",
-                "countermeasure": "IP Rate Limiting + Captcha"
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": "DoS Flood",
-                "countermeasure": "Sliding Window Throttling"
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -151,12 +111,18 @@
             "caption": "Without rate limiting server databases spike causing severe outages.",
             "rows": [
               {
-                "attackType": "Credential Stuffing",
-                "countermeasure": "IP Rate Limiting + Captcha"
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": "DoS Flood",
-                "countermeasure": "Sliding Window Throttling"
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -165,12 +131,18 @@
             "caption": "Defense in depth implements multiple protection layers across API boundaries.",
             "rows": [
               {
-                "attackType": "Credential Stuffing",
-                "countermeasure": "IP Rate Limiting + Captcha"
+                "cells": [
+                  "Credential Stuffing",
+                  "IP Rate Limiting + Captcha"
+                ],
+                "tone": "data"
               },
               {
-                "attackType": "DoS Flood",
-                "countermeasure": "Sliding Window Throttling"
+                "cells": [
+                  "DoS Flood",
+                  "Sliding Window Throttling"
+                ],
+                "tone": "ok"
               }
             ]
           }

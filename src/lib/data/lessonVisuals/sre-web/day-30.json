@@ -160,7 +160,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Compliant Service (order-api)",
+        "rightLabel": "Depleted Service (legacy-db)"
       },
       "filled": {
         "template": "compare",
@@ -196,7 +198,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Compliant Service (order-api)",
+        "rightLabel": "Depleted Service (legacy-db)"
       }
     },
     {
@@ -484,13 +488,57 @@
             "at": "say2",
             "caption": "The engine sums scores across adherence, chaos resilience, and canary.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Numerical scores map directly to executive letter grades for reporting.",
             "highlightIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -524,13 +572,57 @@
             "at": "say2",
             "caption": "The engine sums scores across adherence, chaos resilience, and canary.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Numerical scores map directly to executive letter grades for reporting.",
             "highlightIndex": 3,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "SLO Adherence Pillar",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Chaos Resilience Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Canary Safety Pillar",
+                "value": 30,
+                "tone": "idle"
+              },
+              {
+                "label": "Composite Grade A",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

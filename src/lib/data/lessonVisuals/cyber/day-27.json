@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Castle and Moat Perimeter",
+        "rightLabel": "Zero Trust Architecture"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Castle and Moat Perimeter",
+        "rightLabel": "Zero Trust Architecture"
       }
     },
     {

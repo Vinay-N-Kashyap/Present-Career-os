@@ -188,48 +188,66 @@
             "at": "say3",
             "caption": "Varints correspond to integers and boolean primitive fields.",
             "rows": [
-              [
-                "Type 0",
-                "Varint",
-                "int32, int64, uint32, bool, enum",
-                "Variable 1 to 10 bytes with MSB flags"
-              ],
-              [
-                "Type 1",
-                "64-bit Fixed",
-                "fixed64, sfixed64, double",
-                "Always 8 bytes little-endian"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Architectural design enables backward and forward schema evolution.",
             "rows": [
-              [
-                "Type 0",
-                "Varint",
-                "int32, int64, uint32, bool, enum",
-                "Variable 1 to 10 bytes with MSB flags"
-              ],
-              [
-                "Type 1",
-                "64-bit Fixed",
-                "fixed64, sfixed64, double",
-                "Always 8 bytes little-endian"
-              ],
-              [
-                "Type 2",
-                "Length-Delimited",
-                "string, bytes, embedded message, repeated",
-                "Varint length prefix followed by data payload"
-              ],
-              [
-                "Type 5",
-                "32-bit Fixed",
-                "fixed32, sfixed32, float",
-                "Always 4 bytes little-endian"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -248,48 +266,66 @@
             "at": "say3",
             "caption": "Varints correspond to integers and boolean primitive fields.",
             "rows": [
-              [
-                "Type 0",
-                "Varint",
-                "int32, int64, uint32, bool, enum",
-                "Variable 1 to 10 bytes with MSB flags"
-              ],
-              [
-                "Type 1",
-                "64-bit Fixed",
-                "fixed64, sfixed64, double",
-                "Always 8 bytes little-endian"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Architectural design enables backward and forward schema evolution.",
             "rows": [
-              [
-                "Type 0",
-                "Varint",
-                "int32, int64, uint32, bool, enum",
-                "Variable 1 to 10 bytes with MSB flags"
-              ],
-              [
-                "Type 1",
-                "64-bit Fixed",
-                "fixed64, sfixed64, double",
-                "Always 8 bytes little-endian"
-              ],
-              [
-                "Type 2",
-                "Length-Delimited",
-                "string, bytes, embedded message, repeated",
-                "Varint length prefix followed by data payload"
-              ],
-              [
-                "Type 5",
-                "32-bit Fixed",
-                "fixed32, sfixed32, float",
-                "Always 4 bytes little-endian"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

@@ -178,17 +178,86 @@
           {
             "at": "say2",
             "caption": "Static weights and driver overhead reserve base GPU physical memory.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Remaining memory is available for active Key-Value context streams.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Admitting streams beyond physical limits triggers GPU memory crashes.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": {
+                  "text": "24"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": {
+                  "text": "8"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": {
+                  "text": "16"
+                },
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -216,17 +285,68 @@
           {
             "at": "say2",
             "caption": "Static weights and driver overhead reserve base GPU physical memory.",
-            "highlightBar": 1
+            "highlightBar": 1,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Remaining memory is available for active Key-Value context streams.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
           },
           {
             "at": "say7",
             "caption": "Admitting streams beyond physical limits triggers GPU memory crashes.",
-            "highlightBar": 2
+            "highlightBar": 2,
+            "bars": [
+              {
+                "label": "Total VRAM",
+                "value": 24,
+                "tone": "data"
+              },
+              {
+                "label": "Weights & CUDA",
+                "value": 8,
+                "tone": "data"
+              },
+              {
+                "label": "Available KV Pool",
+                "value": 16,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -313,45 +433,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Aggregate Demand"
-                  },
-                  "Raw Baseline": {
-                    "text": "2,000 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "2,000 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Single Node Output"
-                  },
-                  "Raw Baseline": {
-                    "text": "500 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "500 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Required GPU Replicas"
-                  },
-                  "Raw Baseline": {
-                    "text": "4 GPUs (100% load)"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "5 GPUs (Safety buffer)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -362,45 +464,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Aggregate Demand"
-                  },
-                  "Raw Baseline": {
-                    "text": "2,000 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "2,000 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Single Node Output"
-                  },
-                  "Raw Baseline": {
-                    "text": "500 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "500 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Required GPU Replicas"
-                  },
-                  "Raw Baseline": {
-                    "text": "4 GPUs (100% load)"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "5 GPUs (Safety buffer)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -411,45 +495,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Aggregate Demand"
-                  },
-                  "Raw Baseline": {
-                    "text": "2,000 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "2,000 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Single Node Output"
-                  },
-                  "Raw Baseline": {
-                    "text": "500 tok/s"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "500 tok/s"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": {
-                    "text": "Required GPU Replicas"
-                  },
-                  "Raw Baseline": {
-                    "text": "4 GPUs (100% load)"
-                  },
-                  "Budgeted (+25% Headroom)": {
-                    "text": "5 GPUs (Safety buffer)"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -471,27 +537,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": "Aggregate Demand",
-                  "Raw Baseline": "2,000 tok/s",
-                  "Budgeted (+25% Headroom)": "2,000 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Single Node Output",
-                  "Raw Baseline": "500 tok/s",
-                  "Budgeted (+25% Headroom)": "500 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Required GPU Replicas",
-                  "Raw Baseline": "4 GPUs (100% load)",
-                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -502,27 +568,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": "Aggregate Demand",
-                  "Raw Baseline": "2,000 tok/s",
-                  "Budgeted (+25% Headroom)": "2,000 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Single Node Output",
-                  "Raw Baseline": "500 tok/s",
-                  "Budgeted (+25% Headroom)": "500 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Required GPU Replicas",
-                  "Raw Baseline": "4 GPUs (100% load)",
-                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -533,27 +599,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Cluster Metric": "Aggregate Demand",
-                  "Raw Baseline": "2,000 tok/s",
-                  "Budgeted (+25% Headroom)": "2,000 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Single Node Output",
-                  "Raw Baseline": "500 tok/s",
-                  "Budgeted (+25% Headroom)": "500 tok/s"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Cluster Metric": "Required GPU Replicas",
-                  "Raw Baseline": "4 GPUs (100% load)",
-                  "Budgeted (+25% Headroom)": "5 GPUs (Safety buffer)"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

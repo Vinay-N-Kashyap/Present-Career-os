@@ -337,68 +337,44 @@
             "at": "say2",
             "caption": "Custom Lambda authorizers implement tailored verification logic for APIs.",
             "rows": [
-              [
-                {
-                  "text": "Simple Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "isAuthorized: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Basic Boolean",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "IAM Policy Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "policyDocument",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Role-Based Access",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "A token authorizer inspects bearer tokens passed in the authorization header.",
             "rows": [
-              [
-                {
-                  "text": "Simple Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "isAuthorized: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Basic Boolean",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Context Metadata",
-                  "tone": "data"
-                },
-                {
-                  "text": "context: { userId }",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Downstream Injected",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -416,68 +392,44 @@
             "at": "say2",
             "caption": "Custom Lambda authorizers implement tailored verification logic for APIs.",
             "rows": [
-              [
-                {
-                  "text": "Simple Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "isAuthorized: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Basic Boolean",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "IAM Policy Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "policyDocument",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Role-Based Access",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "A token authorizer inspects bearer tokens passed in the authorization header.",
             "rows": [
-              [
-                {
-                  "text": "Simple Format",
-                  "tone": "data"
-                },
-                {
-                  "text": "isAuthorized: true",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Basic Boolean",
-                  "tone": "idle"
-                }
-              ],
-              [
-                {
-                  "text": "Context Metadata",
-                  "tone": "data"
-                },
-                {
-                  "text": "context: { userId }",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Downstream Injected",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

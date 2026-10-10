@@ -338,7 +338,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Full Word Match",
+        "rightLabel": "Prefix Substring Only"
       },
       "filled": {
         "template": "compare",
@@ -398,7 +400,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Full Word Match",
+        "rightLabel": "Prefix Substring Only"
       }
     },
     {

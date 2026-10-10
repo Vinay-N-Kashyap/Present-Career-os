@@ -325,15 +325,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions calculate percentage conversion rates for both test cohorts."
+            "caption": "Functions calculate percentage conversion rates for both test cohorts.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Extraordinary relative lift represents meaningful gains in engagement."
+            "caption": "Extraordinary relative lift represents meaningful gains in engagement.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Lift metrics eliminate opinion and guesswork from management decisions."
+            "caption": "Lift metrics eliminate opinion and guesswork from management decisions.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
           }
         ]
       },
@@ -360,15 +428,83 @@
         "steps": [
           {
             "at": "say3",
-            "caption": "Functions calculate percentage conversion rates for both test cohorts."
+            "caption": "Functions calculate percentage conversion rates for both test cohorts.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Extraordinary relative lift represents meaningful gains in engagement."
+            "caption": "Extraordinary relative lift represents meaningful gains in engagement.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Lift metrics eliminate opinion and guesswork from management decisions."
+            "caption": "Lift metrics eliminate opinion and guesswork from management decisions.",
+            "bars": [
+              {
+                "label": "Control Rate",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Treatment Rate",
+                "value": 7.5,
+                "tone": "ok"
+              },
+              {
+                "label": "Relative Lift",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Control Rate",
+            "value": 5,
+            "tone": "idle"
+          },
+          {
+            "label": "Treatment Rate",
+            "value": 7.5,
+            "tone": "ok"
+          },
+          {
+            "label": "Relative Lift",
+            "value": 50,
+            "tone": "data"
           }
         ]
       }

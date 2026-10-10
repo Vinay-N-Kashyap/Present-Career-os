@@ -285,27 +285,36 @@
             "at": "say2",
             "caption": "Cooperative rebalancing uses incremental migration without revoking everything.",
             "rows": [
-              [
-                "Migrated to w3",
-                "[2, 5]",
-                "30 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Other consumers continue polling and processing their partitions at full speed.",
             "rows": [
-              [
-                "Migrated to w3",
-                "[2, 5]",
-                "30 ms"
-              ],
-              [
-                "Unaffected (w1 & w2)",
-                "[0, 1, 3, 4]",
-                "0 ms (Zero Pause)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -323,27 +332,36 @@
             "at": "say2",
             "caption": "Cooperative rebalancing uses incremental migration without revoking everything.",
             "rows": [
-              [
-                "Migrated to w3",
-                "[2, 5]",
-                "30 ms"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Other consumers continue polling and processing their partitions at full speed.",
             "rows": [
-              [
-                "Migrated to w3",
-                "[2, 5]",
-                "30 ms"
-              ],
-              [
-                "Unaffected (w1 & w2)",
-                "[0, 1, 3, 4]",
-                "0 ms (Zero Pause)"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

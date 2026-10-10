@@ -124,48 +124,66 @@
             "at": "say3",
             "caption": "Window start is calculated as timestamp minus timestamp modulo windowSize.",
             "rows": [
-              [
-                "e1",
-                "1000",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e2",
-                "1450",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ]
+              {
+                "cells": [
+                  "e1",
+                  "1000",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "e2",
+                  "1450",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Timestamp 1999 falls inside win_1000_2000, whereas 2000 starts win_2000_3000.",
             "rows": [
-              [
-                "e1",
-                "1000",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e2",
-                "1450",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e3",
-                "1999",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e4",
-                "2000",
-                "win_2000_3000",
-                "[2000, 3000)"
-              ]
+              {
+                "cells": [
+                  "e1",
+                  "1000",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "e2",
+                  "1450",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "e3",
+                  "1999",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "e4",
+                  "2000",
+                  "win_2000_3000",
+                  "[2000, 3000)"
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -184,48 +202,66 @@
             "at": "say3",
             "caption": "Window start is calculated as timestamp minus timestamp modulo windowSize.",
             "rows": [
-              [
-                "e1",
-                "1000",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e2",
-                "1450",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ]
+              {
+                "cells": [
+                  "e1",
+                  "1000",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "e2",
+                  "1450",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Timestamp 1999 falls inside win_1000_2000, whereas 2000 starts win_2000_3000.",
             "rows": [
-              [
-                "e1",
-                "1000",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e2",
-                "1450",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e3",
-                "1999",
-                "win_1000_2000",
-                "[1000, 2000)"
-              ],
-              [
-                "e4",
-                "2000",
-                "win_2000_3000",
-                "[2000, 3000)"
-              ]
+              {
+                "cells": [
+                  "e1",
+                  "1000",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "e2",
+                  "1450",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "e3",
+                  "1999",
+                  "win_1000_2000",
+                  "[1000, 2000)"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "e4",
+                  "2000",
+                  "win_2000_3000",
+                  "[2000, 3000)"
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -248,30 +284,39 @@
             "at": "say5",
             "caption": "An online accumulator maintains count, running sum, running min, and max.",
             "rows": [
-              [
-                "1000-2000",
-                "3",
-                "60",
-                "Avg:20 | Min:10 | Max:30"
-              ]
+              {
+                "cells": [
+                  "1000-2000",
+                  "3",
+                  "60",
+                  "Avg:20 | Min:10 | Max:30"
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
-            "caption": "Online accumulation achieves O(1) constant memory per active window.",
+            "caption": "Online accumulation achieves constant memory usage per active window.",
             "rows": [
-              [
-                "1000-2000",
-                "3",
-                "60",
-                "Avg:20 | Min:10 | Max:30"
-              ],
-              [
-                "2000-3000",
-                "1",
-                "100",
-                "Avg:100 | Min:100 | Max:100"
-              ]
+              {
+                "cells": [
+                  "1000-2000",
+                  "3",
+                  "60",
+                  "Avg:20 | Min:10 | Max:30"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2000-3000",
+                  "1",
+                  "100",
+                  "Avg:100 | Min:100 | Max:100"
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -290,30 +335,39 @@
             "at": "say5",
             "caption": "An online accumulator maintains count, running sum, running min, and max.",
             "rows": [
-              [
-                "1000-2000",
-                "3",
-                "60",
-                "Avg:20 | Min:10 | Max:30"
-              ]
+              {
+                "cells": [
+                  "1000-2000",
+                  "3",
+                  "60",
+                  "Avg:20 | Min:10 | Max:30"
+                ],
+                "tone": "data"
+              }
             ]
           },
           {
             "at": "say7",
-            "caption": "Online accumulation achieves O(1) constant memory per active window.",
+            "caption": "Online accumulation achieves constant memory usage per active window.",
             "rows": [
-              [
-                "1000-2000",
-                "3",
-                "60",
-                "Avg:20 | Min:10 | Max:30"
-              ],
-              [
-                "2000-3000",
-                "1",
-                "100",
-                "Avg:100 | Min:100 | Max:100"
-              ]
+              {
+                "cells": [
+                  "1000-2000",
+                  "3",
+                  "60",
+                  "Avg:20 | Min:10 | Max:30"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "2000-3000",
+                  "1",
+                  "100",
+                  "Avg:100 | Min:100 | Max:100"
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

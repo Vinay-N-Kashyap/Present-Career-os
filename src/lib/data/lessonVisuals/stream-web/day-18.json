@@ -226,42 +226,57 @@
             "at": "say4",
             "caption": "When an event arrives, the processor updates all active window accumulators.",
             "rows": [
-              [
-                "0 ms",
-                "[0, 20)",
-                "3 (ts: 5, 12, 18)",
-                "180"
-              ],
-              [
-                "10 ms",
-                "[10, 30)",
-                "3 (ts: 12, 18, 25)",
-                "150"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Each accumulator tracks running metrics such as event count and running sum.",
             "rows": [
-              [
-                "0 ms",
-                "[0, 20)",
-                "3 (ts: 5, 12, 18)",
-                "180"
-              ],
-              [
-                "10 ms",
-                "[10, 30)",
-                "3 (ts: 12, 18, 25)",
-                "150"
-              ],
-              [
-                "20 ms",
-                "[20, 40)",
-                "1 (ts: 25)",
-                "70"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -280,42 +295,57 @@
             "at": "say4",
             "caption": "When an event arrives, the processor updates all active window accumulators.",
             "rows": [
-              [
-                "0 ms",
-                "[0, 20)",
-                "3 (ts: 5, 12, 18)",
-                "180"
-              ],
-              [
-                "10 ms",
-                "[10, 30)",
-                "3 (ts: 12, 18, 25)",
-                "150"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Each accumulator tracks running metrics such as event count and running sum.",
             "rows": [
-              [
-                "0 ms",
-                "[0, 20)",
-                "3 (ts: 5, 12, 18)",
-                "180"
-              ],
-              [
-                "10 ms",
-                "[10, 30)",
-                "3 (ts: 12, 18, 25)",
-                "150"
-              ],
-              [
-                "20 ms",
-                "[20, 40)",
-                "1 (ts: 25)",
-                "70"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -338,42 +368,57 @@
             "at": "say3",
             "caption": "Rolling maximums identify severe transient spikes such as value 80 at 120ms.",
             "rows": [
-              [
-                "[0, 200)",
-                "3",
-                "80",
-                "46.67"
-              ],
-              [
-                "[100, 300)",
-                "3",
-                "80",
-                "43.33"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
             "rows": [
-              [
-                "[0, 200)",
-                "3",
-                "80",
-                "46.67"
-              ],
-              [
-                "[100, 300)",
-                "3",
-                "80",
-                "43.33"
-              ],
-              [
-                "[200, 400)",
-                "1",
-                "10",
-                "10"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -392,42 +437,57 @@
             "at": "say3",
             "caption": "Rolling maximums identify severe transient spikes such as value 80 at 120ms.",
             "rows": [
-              [
-                "[0, 200)",
-                "3",
-                "80",
-                "46.67"
-              ],
-              [
-                "[100, 300)",
-                "3",
-                "80",
-                "43.33"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "When value 80 leaves expired windows, the second-highest value becomes max.",
             "rows": [
-              [
-                "[0, 200)",
-                "3",
-                "80",
-                "46.67"
-              ],
-              [
-                "[100, 300)",
-                "3",
-                "80",
-                "43.33"
-              ],
-              [
-                "[200, 400)",
-                "1",
-                "10",
-                "10"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

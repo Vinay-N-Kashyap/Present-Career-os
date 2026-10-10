@@ -132,7 +132,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Conversational Response",
+        "rightLabel": "Tool Call Emission"
       },
       "filled": {
         "template": "compare",
@@ -166,7 +168,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Conversational Response",
+        "rightLabel": "Tool Call Emission"
       }
     },
     {

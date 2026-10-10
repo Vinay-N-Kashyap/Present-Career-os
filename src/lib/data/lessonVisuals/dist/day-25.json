@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Monolithic API Gateway",
+        "rightLabel": "Backend-For-Frontend (BFF)"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Monolithic API Gateway",
+        "rightLabel": "Backend-For-Frontend (BFF)"
       }
     },
     {

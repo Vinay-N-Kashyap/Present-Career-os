@@ -24,54 +24,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Priority": {
-                    "text": "1"
-                  },
-                  "Provider ID": {
-                    "text": "openai"
-                  },
-                  "Provider Name": {
-                    "text": "OpenAI Primary"
-                  },
-                  "Failover Role": {
-                    "text": "Active primary provider"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "2"
-                  },
-                  "Provider ID": {
-                    "text": "anthropic"
-                  },
-                  "Provider Name": {
-                    "text": "Anthropic Secondary"
-                  },
-                  "Failover Role": {
-                    "text": "Automatic secondary failover"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "3"
-                  },
-                  "Provider ID": {
-                    "text": "gemini"
-                  },
-                  "Provider Name": {
-                    "text": "Google Tertiary"
-                  },
-                  "Failover Role": {
-                    "text": "Emergency tertiary fallback"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -82,54 +58,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Priority": {
-                    "text": "1"
-                  },
-                  "Provider ID": {
-                    "text": "openai"
-                  },
-                  "Provider Name": {
-                    "text": "OpenAI Primary"
-                  },
-                  "Failover Role": {
-                    "text": "Active primary provider"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "2"
-                  },
-                  "Provider ID": {
-                    "text": "anthropic"
-                  },
-                  "Provider Name": {
-                    "text": "Anthropic Secondary"
-                  },
-                  "Failover Role": {
-                    "text": "Automatic secondary failover"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "3"
-                  },
-                  "Provider ID": {
-                    "text": "gemini"
-                  },
-                  "Provider Name": {
-                    "text": "Google Tertiary"
-                  },
-                  "Failover Role": {
-                    "text": "Emergency tertiary fallback"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -140,54 +92,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Priority": {
-                    "text": "1"
-                  },
-                  "Provider ID": {
-                    "text": "openai"
-                  },
-                  "Provider Name": {
-                    "text": "OpenAI Primary"
-                  },
-                  "Failover Role": {
-                    "text": "Active primary provider"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "2"
-                  },
-                  "Provider ID": {
-                    "text": "anthropic"
-                  },
-                  "Provider Name": {
-                    "text": "Anthropic Secondary"
-                  },
-                  "Failover Role": {
-                    "text": "Automatic secondary failover"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": {
-                    "text": "3"
-                  },
-                  "Provider ID": {
-                    "text": "gemini"
-                  },
-                  "Provider Name": {
-                    "text": "Google Tertiary"
-                  },
-                  "Failover Role": {
-                    "text": "Emergency tertiary fallback"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -210,30 +138,30 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Priority": "1",
-                  "Provider ID": "openai",
-                  "Provider Name": "OpenAI Primary",
-                  "Failover Role": "Active primary provider"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "2",
-                  "Provider ID": "anthropic",
-                  "Provider Name": "Anthropic Secondary",
-                  "Failover Role": "Automatic secondary failover"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "3",
-                  "Provider ID": "gemini",
-                  "Provider Name": "Google Tertiary",
-                  "Failover Role": "Emergency tertiary fallback"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -244,30 +172,30 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Priority": "1",
-                  "Provider ID": "openai",
-                  "Provider Name": "OpenAI Primary",
-                  "Failover Role": "Active primary provider"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "2",
-                  "Provider ID": "anthropic",
-                  "Provider Name": "Anthropic Secondary",
-                  "Failover Role": "Automatic secondary failover"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "3",
-                  "Provider ID": "gemini",
-                  "Provider Name": "Google Tertiary",
-                  "Failover Role": "Emergency tertiary fallback"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -278,30 +206,30 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Priority": "1",
-                  "Provider ID": "openai",
-                  "Provider Name": "OpenAI Primary",
-                  "Failover Role": "Active primary provider"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "2",
-                  "Provider ID": "anthropic",
-                  "Provider Name": "Anthropic Secondary",
-                  "Failover Role": "Automatic secondary failover"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Priority": "3",
-                  "Provider ID": "gemini",
-                  "Provider Name": "Google Tertiary",
-                  "Failover Role": "Emergency tertiary fallback"
-                },
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]

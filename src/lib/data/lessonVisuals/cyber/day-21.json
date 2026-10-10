@@ -470,7 +470,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unprotected Git Commit",
+        "rightLabel": "Shift-Left Entropy Hook"
       },
       "filled": {
         "template": "compare",
@@ -504,7 +506,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unprotected Git Commit",
+        "rightLabel": "Shift-Left Entropy Hook"
       }
     },
     {

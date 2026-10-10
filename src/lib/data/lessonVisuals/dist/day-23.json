@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Layer 4 Transport Balancer",
+        "rightLabel": "Layer 7 Application Balancer"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Layer 4 Transport Balancer",
+        "rightLabel": "Layer 7 Application Balancer"
       }
     },
     {

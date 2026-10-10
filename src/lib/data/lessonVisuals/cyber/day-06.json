@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Symmetric Encryption (AES)",
+        "rightLabel": "Asymmetric Cryptography (RSA/ECC)"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Symmetric Encryption (AES)",
+        "rightLabel": "Asymmetric Cryptography (RSA/ECC)"
       }
     },
     {

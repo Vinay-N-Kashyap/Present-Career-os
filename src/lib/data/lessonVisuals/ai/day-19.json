@@ -450,7 +450,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Defective Source Code",
+        "rightLabel": "Self-Corrected Patch"
       },
       "filled": {
         "template": "compare",
@@ -486,7 +488,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Defective Source Code",
+        "rightLabel": "Self-Corrected Patch"
       }
     },
     {

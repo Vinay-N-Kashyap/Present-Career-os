@@ -124,48 +124,66 @@
             "at": "say3",
             "caption": "Snappy and LZ4 are speed-optimized codecs with fast decompression speeds.",
             "rows": [
-              [
-                "LZ4",
-                "750",
-                "3200",
-                "52%"
-              ],
-              [
-                "SNAPPY",
-                "500",
-                "1800",
-                "50%"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Zstandard exceeds Gzip compression ratio while matching fast decompression.",
             "rows": [
-              [
-                "LZ4",
-                "750",
-                "3200",
-                "52%"
-              ],
-              [
-                "SNAPPY",
-                "500",
-                "1800",
-                "50%"
-              ],
-              [
-                "GZIP",
-                "80",
-                "350",
-                "72%"
-              ],
-              [
-                "ZSTD",
-                "300",
-                "1500",
-                "74%"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -184,48 +202,66 @@
             "at": "say3",
             "caption": "Snappy and LZ4 are speed-optimized codecs with fast decompression speeds.",
             "rows": [
-              [
-                "LZ4",
-                "750",
-                "3200",
-                "52%"
-              ],
-              [
-                "SNAPPY",
-                "500",
-                "1800",
-                "50%"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Zstandard exceeds Gzip compression ratio while matching fast decompression.",
             "rows": [
-              [
-                "LZ4",
-                "750",
-                "3200",
-                "52%"
-              ],
-              [
-                "SNAPPY",
-                "500",
-                "1800",
-                "50%"
-              ],
-              [
-                "GZIP",
-                "80",
-                "350",
-                "72%"
-              ],
-              [
-                "ZSTD",
-                "300",
-                "1500",
-                "74%"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

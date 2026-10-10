@@ -30,6 +30,18 @@
             "activeBars": [
               "checkout",
               "analytics"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -37,6 +49,18 @@
             "caption": "Core checkout operations retain untouched capacity and function unimpeded.",
             "activeBars": [
               "checkout"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -63,6 +87,18 @@
             "activeBars": [
               "checkout",
               "analytics"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -70,6 +106,18 @@
             "caption": "Core checkout operations retain untouched capacity and function unimpeded.",
             "activeBars": [
               "checkout"
+            ],
+            "bars": [
+              {
+                "label": "Checkout Core Pool",
+                "value": 90,
+                "tone": "idle"
+              },
+              {
+                "label": "Analytics Isolated Pool",
+                "value": 10,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -112,7 +160,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Semaphore Bulkhead",
+        "rightLabel": "Thread Queue Bulkhead"
       },
       "filled": {
         "template": "compare",
@@ -148,7 +198,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Semaphore Bulkhead",
+        "rightLabel": "Thread Queue Bulkhead"
       }
     },
     {

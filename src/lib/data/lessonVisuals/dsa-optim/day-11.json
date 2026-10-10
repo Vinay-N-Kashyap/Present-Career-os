@@ -66,7 +66,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Base Case Stop",
+        "rightLabel": "Recursive Step"
       },
       "filled": {
         "template": "compare",
@@ -126,7 +128,9 @@
               "tone": "data"
             }
           }
-        ]
+        ],
+        "leftLabel": "Base Case Stop",
+        "rightLabel": "Recursive Step"
       }
     },
     {
@@ -448,7 +452,9 @@
               "tone": "error"
             }
           }
-        ]
+        ],
+        "leftLabel": "Feasible Branch",
+        "rightLabel": "Pruned Branch"
       },
       "filled": {
         "template": "compare",
@@ -508,7 +514,9 @@
               "tone": "error"
             }
           }
-        ]
+        ],
+        "leftLabel": "Feasible Branch",
+        "rightLabel": "Pruned Branch"
       }
     },
     {

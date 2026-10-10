@@ -298,7 +298,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Saga Choreography",
+        "rightLabel": "Saga Orchestration"
       },
       "filled": {
         "template": "compare",
@@ -332,7 +334,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Saga Choreography",
+        "rightLabel": "Saga Orchestration"
       }
     },
     {

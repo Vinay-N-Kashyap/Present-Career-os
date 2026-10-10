@@ -327,45 +327,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-01"
-                  },
-                  "Blocked Signature": {
-                    "text": "dan mode"
-                  },
-                  "Runtime Action": {
-                    "text": "Instant Quarantine Intercept"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-02"
-                  },
-                  "Blocked Signature": {
-                    "text": "ignore guidelines"
-                  },
-                  "Runtime Action": {
-                    "text": "Security Violation Block"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-03"
-                  },
-                  "Blocked Signature": {
-                    "text": "base64 wrapper"
-                  },
-                  "Runtime Action": {
-                    "text": "Decoder Inspection Reject"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -376,45 +358,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-01"
-                  },
-                  "Blocked Signature": {
-                    "text": "dan mode"
-                  },
-                  "Runtime Action": {
-                    "text": "Instant Quarantine Intercept"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-02"
-                  },
-                  "Blocked Signature": {
-                    "text": "ignore guidelines"
-                  },
-                  "Runtime Action": {
-                    "text": "Security Violation Block"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-03"
-                  },
-                  "Blocked Signature": {
-                    "text": "base64 wrapper"
-                  },
-                  "Runtime Action": {
-                    "text": "Decoder Inspection Reject"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -425,45 +389,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-01"
-                  },
-                  "Blocked Signature": {
-                    "text": "dan mode"
-                  },
-                  "Runtime Action": {
-                    "text": "Instant Quarantine Intercept"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-02"
-                  },
-                  "Blocked Signature": {
-                    "text": "ignore guidelines"
-                  },
-                  "Runtime Action": {
-                    "text": "Security Violation Block"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": {
-                    "text": "FW-03"
-                  },
-                  "Blocked Signature": {
-                    "text": "base64 wrapper"
-                  },
-                  "Runtime Action": {
-                    "text": "Decoder Inspection Reject"
-                  }
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -485,27 +431,27 @@
             "highlightRow": 0,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": "FW-01",
-                  "Blocked Signature": "dan mode",
-                  "Runtime Action": "Instant Quarantine Intercept"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-02",
-                  "Blocked Signature": "ignore guidelines",
-                  "Runtime Action": "Security Violation Block"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-03",
-                  "Blocked Signature": "base64 wrapper",
-                  "Runtime Action": "Decoder Inspection Reject"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -516,27 +462,27 @@
             "highlightRow": 1,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": "FW-01",
-                  "Blocked Signature": "dan mode",
-                  "Runtime Action": "Instant Quarantine Intercept"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-02",
-                  "Blocked Signature": "ignore guidelines",
-                  "Runtime Action": "Security Violation Block"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-03",
-                  "Blocked Signature": "base64 wrapper",
-                  "Runtime Action": "Decoder Inspection Reject"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -547,27 +493,27 @@
             "highlightRow": 2,
             "rows": [
               {
-                "cells": {
-                  "Rule Identifier": "FW-01",
-                  "Blocked Signature": "dan mode",
-                  "Runtime Action": "Instant Quarantine Intercept"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-02",
-                  "Blocked Signature": "ignore guidelines",
-                  "Runtime Action": "Security Violation Block"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               },
               {
-                "cells": {
-                  "Rule Identifier": "FW-03",
-                  "Blocked Signature": "base64 wrapper",
-                  "Runtime Action": "Decoder Inspection Reject"
-                },
+                "cells": [
+                  "",
+                  "",
+                  ""
+                ],
                 "tone": "data"
               }
             ]
@@ -601,15 +547,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons."
+            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Records correlate with OpenTelemetry trace spans to review system states."
+            "caption": "Records correlate with OpenTelemetry trace spans to review system states.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis."
+            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Allowed Queries",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Quarantined Attacks",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Forensic Audit Spans",
+            "value": 100,
+            "tone": "data"
           }
         ]
       },
@@ -636,15 +650,83 @@
         "steps": [
           {
             "at": "say4",
-            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons."
+            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say6",
-            "caption": "Records correlate with OpenTelemetry trace spans to review system states."
+            "caption": "Records correlate with OpenTelemetry trace spans to review system states.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say8",
-            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis."
+            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis.",
+            "bars": [
+              {
+                "label": "Allowed Queries",
+                "value": 50,
+                "tone": "ok"
+              },
+              {
+                "label": "Quarantined Attacks",
+                "value": 50,
+                "tone": "error"
+              },
+              {
+                "label": "Forensic Audit Spans",
+                "value": 100,
+                "tone": "data"
+              }
+            ]
+          }
+        ],
+        "bars": [
+          {
+            "label": "Allowed Queries",
+            "value": 50,
+            "tone": "ok"
+          },
+          {
+            "label": "Quarantined Attacks",
+            "value": 50,
+            "tone": "error"
+          },
+          {
+            "label": "Forensic Audit Spans",
+            "value": 100,
+            "tone": "data"
           }
         ]
       }

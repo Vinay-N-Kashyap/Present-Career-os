@@ -266,7 +266,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard Fast Hash Verification",
+        "rightLabel": "Argon2id Constant-Time Guard"
       },
       "filled": {
         "template": "compare",
@@ -300,7 +302,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Standard Fast Hash Verification",
+        "rightLabel": "Argon2id Constant-Time Guard"
       }
     },
     {

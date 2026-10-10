@@ -42,7 +42,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Cause-Based Noisy Alarms",
+        "rightLabel": "Symptom-Based Actionable Alerts"
       },
       "filled": {
         "template": "compare",
@@ -78,7 +80,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Cause-Based Noisy Alarms",
+        "rightLabel": "Symptom-Based Actionable Alerts"
       }
     },
     {
@@ -477,6 +481,23 @@
             "activeBars": [
               "raw",
               "suppressed"
+            ],
+            "bars": [
+              {
+                "label": "Raw Ingested Alerts",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Deduplicated Pings",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Unique Incidents Paged",
+                "value": 20,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -486,6 +507,23 @@
               "raw",
               "suppressed",
               "pages"
+            ],
+            "bars": [
+              {
+                "label": "Raw Ingested Alerts",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Deduplicated Pings",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Unique Incidents Paged",
+                "value": 20,
+                "tone": "idle"
+              }
             ]
           }
         ]
@@ -517,6 +555,23 @@
             "activeBars": [
               "raw",
               "suppressed"
+            ],
+            "bars": [
+              {
+                "label": "Raw Ingested Alerts",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Deduplicated Pings",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Unique Incidents Paged",
+                "value": 20,
+                "tone": "idle"
+              }
             ]
           },
           {
@@ -526,6 +581,23 @@
               "raw",
               "suppressed",
               "pages"
+            ],
+            "bars": [
+              {
+                "label": "Raw Ingested Alerts",
+                "value": 100,
+                "tone": "idle"
+              },
+              {
+                "label": "Deduplicated Pings",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Unique Incidents Paged",
+                "value": 20,
+                "tone": "idle"
+              }
             ]
           }
         ]

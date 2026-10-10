@@ -132,40 +132,8 @@
         "template": "table",
         "title": "Role-based permission scopes mapping",
         "columns": [
-          {
-            "id": "role",
-            "label": "role"
-          },
-          {
-            "id": "permissions",
-            "label": "permissions"
-          }
-        ],
-        "rows": [
-          {
-            "role": {
-              "text": "viewer"
-            },
-            "permissions": {
-              "text": "jobs:read"
-            }
-          },
-          {
-            "role": {
-              "text": "editor"
-            },
-            "permissions": {
-              "text": "jobs:create"
-            }
-          },
-          {
-            "role": {
-              "text": "admin"
-            },
-            "permissions": {
-              "text": "jobs:delete"
-            }
-          }
+          "role",
+          "permissions"
         ],
         "steps": [
           {
@@ -173,28 +141,25 @@
             "caption": "Assigning permissions directly to users creates unmaintainable overhead.",
             "rows": [
               {
-                "role": {
-                  "text": "viewer"
-                },
-                "permissions": {
-                  "text": "jobs:read"
-                }
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": {
-                  "text": "editor"
-                },
-                "permissions": {
-                  "text": "jobs:create"
-                }
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": {
-                  "text": "admin"
-                },
-                "permissions": {
-                  "text": "jobs:delete"
-                }
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -203,28 +168,25 @@
             "caption": "Permissions follow fine grained resource action patterns.",
             "rows": [
               {
-                "role": {
-                  "text": "viewer"
-                },
-                "permissions": {
-                  "text": "jobs:read"
-                }
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": {
-                  "text": "editor"
-                },
-                "permissions": {
-                  "text": "jobs:create"
-                }
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": {
-                  "text": "admin"
-                },
-                "permissions": {
-                  "text": "jobs:delete"
-                }
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -233,28 +195,25 @@
             "caption": "Updating role definitions grants new capabilities across all team members.",
             "rows": [
               {
-                "role": {
-                  "text": "viewer"
-                },
-                "permissions": {
-                  "text": "jobs:read"
-                }
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": {
-                  "text": "editor"
-                },
-                "permissions": {
-                  "text": "jobs:create"
-                }
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": {
-                  "text": "admin"
-                },
-                "permissions": {
-                  "text": "jobs:delete"
-                }
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -264,28 +223,8 @@
         "template": "table",
         "title": "Role-based permission scopes mapping",
         "columns": [
-          {
-            "id": "role",
-            "label": "role"
-          },
-          {
-            "id": "permissions",
-            "label": "permissions"
-          }
-        ],
-        "rows": [
-          {
-            "role": "viewer",
-            "permissions": "jobs:read"
-          },
-          {
-            "role": "editor",
-            "permissions": "jobs:create"
-          },
-          {
-            "role": "admin",
-            "permissions": "jobs:delete"
-          }
+          "role",
+          "permissions"
         ],
         "steps": [
           {
@@ -293,16 +232,25 @@
             "caption": "Assigning permissions directly to users creates unmaintainable overhead.",
             "rows": [
               {
-                "role": "viewer",
-                "permissions": "jobs:read"
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": "editor",
-                "permissions": "jobs:create"
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": "admin",
-                "permissions": "jobs:delete"
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -311,16 +259,25 @@
             "caption": "Permissions follow fine grained resource action patterns.",
             "rows": [
               {
-                "role": "viewer",
-                "permissions": "jobs:read"
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": "editor",
-                "permissions": "jobs:create"
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": "admin",
-                "permissions": "jobs:delete"
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -329,16 +286,25 @@
             "caption": "Updating role definitions grants new capabilities across all team members.",
             "rows": [
               {
-                "role": "viewer",
-                "permissions": "jobs:read"
+                "cells": [
+                  "viewer",
+                  "jobs:read"
+                ],
+                "tone": "data"
               },
               {
-                "role": "editor",
-                "permissions": "jobs:create"
+                "cells": [
+                  "editor",
+                  "jobs:create"
+                ],
+                "tone": "ok"
               },
               {
-                "role": "admin",
-                "permissions": "jobs:delete"
+                "cells": [
+                  "admin",
+                  "jobs:delete"
+                ],
+                "tone": "ok"
               }
             ]
           }

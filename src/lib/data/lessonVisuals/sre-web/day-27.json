@@ -330,7 +330,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "maxSurge Parameter",
+        "rightLabel": "maxUnavailable Parameter"
       },
       "filled": {
         "template": "compare",
@@ -366,7 +368,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "maxSurge Parameter",
+        "rightLabel": "maxUnavailable Parameter"
       }
     },
     {
@@ -402,13 +406,57 @@
             "at": "say3",
             "caption": "Canary deployments route a small controlled fraction of live traffic.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Stage 1 Canary Weight",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 2 Canary Weight",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 3 Canary Weight",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 4 Full Promotion",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Each stage pauses for a configurable soak duration to gather telemetry.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Stage 1 Canary Weight",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 2 Canary Weight",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 3 Canary Weight",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 4 Full Promotion",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       },
@@ -442,13 +490,57 @@
             "at": "say3",
             "caption": "Canary deployments route a small controlled fraction of live traffic.",
             "highlightIndex": 0,
-            "statusBadge": "active"
+            "statusBadge": "active",
+            "bars": [
+              {
+                "label": "Stage 1 Canary Weight",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 2 Canary Weight",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 3 Canary Weight",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 4 Full Promotion",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Each stage pauses for a configurable soak duration to gather telemetry.",
             "highlightIndex": 2,
-            "statusBadge": "completed"
+            "statusBadge": "completed",
+            "bars": [
+              {
+                "label": "Stage 1 Canary Weight",
+                "value": 1,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 2 Canary Weight",
+                "value": 5,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 3 Canary Weight",
+                "value": 25,
+                "tone": "idle"
+              },
+              {
+                "label": "Stage 4 Full Promotion",
+                "value": 100,
+                "tone": "idle"
+              }
+            ]
           }
         ]
       }

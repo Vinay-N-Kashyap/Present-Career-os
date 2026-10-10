@@ -40,7 +40,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Spatial Safety Violations",
+        "rightLabel": "Temporal Safety Violations"
       },
       "filled": {
         "template": "compare",
@@ -74,7 +76,9 @@
             "highlightSide": "right",
             "statusBadge": "failed"
           }
-        ]
+        ],
+        "leftLabel": "Spatial Safety Violations",
+        "rightLabel": "Temporal Safety Violations"
       }
     },
     {
@@ -392,7 +396,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unmanaged Manual Pointers",
+        "rightLabel": "Rust Compile-Time Ownership"
       },
       "filled": {
         "template": "compare",
@@ -426,7 +432,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unmanaged Manual Pointers",
+        "rightLabel": "Rust Compile-Time Ownership"
       }
     },
     {

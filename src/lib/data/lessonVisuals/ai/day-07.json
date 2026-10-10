@@ -448,7 +448,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Raw Vector Cosine Similarity",
+        "rightLabel": "Unit Normalized Dot Product"
       },
       "filled": {
         "template": "compare",
@@ -484,7 +486,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Raw Vector Cosine Similarity",
+        "rightLabel": "Unit Normalized Dot Product"
       }
     },
     {

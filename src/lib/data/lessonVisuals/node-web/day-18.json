@@ -132,40 +132,8 @@
         "template": "table",
         "title": "Standard registered claims dictionary",
         "columns": [
-          {
-            "id": "claim",
-            "label": "claim"
-          },
-          {
-            "id": "value",
-            "label": "value"
-          }
-        ],
-        "rows": [
-          {
-            "claim": {
-              "text": "iss"
-            },
-            "value": {
-              "text": "https://auth.pin.it"
-            }
-          },
-          {
-            "claim": {
-              "text": "sub"
-            },
-            "value": {
-              "text": "usr_9902"
-            }
-          },
-          {
-            "claim": {
-              "text": "exp"
-            },
-            "value": {
-              "text": "1700003600"
-            }
-          }
+          "claim",
+          "value"
         ],
         "steps": [
           {
@@ -173,28 +141,25 @@
             "caption": "The iss claim identifies the principal authority that issued the token.",
             "rows": [
               {
-                "claim": {
-                  "text": "iss"
-                },
-                "value": {
-                  "text": "https://auth.pin.it"
-                }
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": {
-                  "text": "sub"
-                },
-                "value": {
-                  "text": "usr_9902"
-                }
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": {
-                  "text": "exp"
-                },
-                "value": {
-                  "text": "1700003600"
-                }
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -203,28 +168,25 @@
             "caption": "The aud claim verifies intended recipients to prevent cross service reuse.",
             "rows": [
               {
-                "claim": {
-                  "text": "iss"
-                },
-                "value": {
-                  "text": "https://auth.pin.it"
-                }
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": {
-                  "text": "sub"
-                },
-                "value": {
-                  "text": "usr_9902"
-                }
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": {
-                  "text": "exp"
-                },
-                "value": {
-                  "text": "1700003600"
-                }
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -233,28 +195,25 @@
             "caption": "The exp claim defines the timestamp after which tokens must be rejected.",
             "rows": [
               {
-                "claim": {
-                  "text": "iss"
-                },
-                "value": {
-                  "text": "https://auth.pin.it"
-                }
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": {
-                  "text": "sub"
-                },
-                "value": {
-                  "text": "usr_9902"
-                }
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": {
-                  "text": "exp"
-                },
-                "value": {
-                  "text": "1700003600"
-                }
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -264,28 +223,8 @@
         "template": "table",
         "title": "Standard registered claims dictionary",
         "columns": [
-          {
-            "id": "claim",
-            "label": "claim"
-          },
-          {
-            "id": "value",
-            "label": "value"
-          }
-        ],
-        "rows": [
-          {
-            "claim": "iss",
-            "value": "https://auth.pin.it"
-          },
-          {
-            "claim": "sub",
-            "value": "usr_9902"
-          },
-          {
-            "claim": "exp",
-            "value": "1700003600"
-          }
+          "claim",
+          "value"
         ],
         "steps": [
           {
@@ -293,16 +232,25 @@
             "caption": "The iss claim identifies the principal authority that issued the token.",
             "rows": [
               {
-                "claim": "iss",
-                "value": "https://auth.pin.it"
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": "sub",
-                "value": "usr_9902"
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": "exp",
-                "value": "1700003600"
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -311,16 +259,25 @@
             "caption": "The aud claim verifies intended recipients to prevent cross service reuse.",
             "rows": [
               {
-                "claim": "iss",
-                "value": "https://auth.pin.it"
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": "sub",
-                "value": "usr_9902"
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": "exp",
-                "value": "1700003600"
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -329,16 +286,25 @@
             "caption": "The exp claim defines the timestamp after which tokens must be rejected.",
             "rows": [
               {
-                "claim": "iss",
-                "value": "https://auth.pin.it"
+                "cells": [
+                  "iss",
+                  "https://auth.pin.it"
+                ],
+                "tone": "data"
               },
               {
-                "claim": "sub",
-                "value": "usr_9902"
+                "cells": [
+                  "sub",
+                  "usr_9902"
+                ],
+                "tone": "ok"
               },
               {
-                "claim": "exp",
-                "value": "1700003600"
+                "cells": [
+                  "exp",
+                  "1700003600"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -472,32 +438,8 @@
         "template": "table",
         "title": "Symmetric and asymmetric signing schemes",
         "columns": [
-          {
-            "id": "scheme",
-            "label": "scheme"
-          },
-          {
-            "id": "keys",
-            "label": "keys"
-          }
-        ],
-        "rows": [
-          {
-            "scheme": {
-              "text": "HS256 (Symmetric)"
-            },
-            "keys": {
-              "text": "Single Shared Secret"
-            }
-          },
-          {
-            "scheme": {
-              "text": "RS256 (Asymmetric)"
-            },
-            "keys": {
-              "text": "Private Key + Public Key"
-            }
-          }
+          "scheme",
+          "keys"
         ],
         "steps": [
           {
@@ -505,20 +447,18 @@
             "caption": "Symmetric signing uses a single shared secret key for signing and verification.",
             "rows": [
               {
-                "scheme": {
-                  "text": "HS256 (Symmetric)"
-                },
-                "keys": {
-                  "text": "Single Shared Secret"
-                }
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": {
-                  "text": "RS256 (Asymmetric)"
-                },
-                "keys": {
-                  "text": "Private Key + Public Key"
-                }
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -527,20 +467,18 @@
             "caption": "Asymmetric signing uses private keys to sign and public keys to verify.",
             "rows": [
               {
-                "scheme": {
-                  "text": "HS256 (Symmetric)"
-                },
-                "keys": {
-                  "text": "Single Shared Secret"
-                }
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": {
-                  "text": "RS256 (Asymmetric)"
-                },
-                "keys": {
-                  "text": "Private Key + Public Key"
-                }
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -549,20 +487,18 @@
             "caption": "Verification recalculates expected signatures against provided tokens.",
             "rows": [
               {
-                "scheme": {
-                  "text": "HS256 (Symmetric)"
-                },
-                "keys": {
-                  "text": "Single Shared Secret"
-                }
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": {
-                  "text": "RS256 (Asymmetric)"
-                },
-                "keys": {
-                  "text": "Private Key + Public Key"
-                }
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -572,24 +508,8 @@
         "template": "table",
         "title": "Symmetric and asymmetric signing schemes",
         "columns": [
-          {
-            "id": "scheme",
-            "label": "scheme"
-          },
-          {
-            "id": "keys",
-            "label": "keys"
-          }
-        ],
-        "rows": [
-          {
-            "scheme": "HS256 (Symmetric)",
-            "keys": "Single Shared Secret"
-          },
-          {
-            "scheme": "RS256 (Asymmetric)",
-            "keys": "Private Key + Public Key"
-          }
+          "scheme",
+          "keys"
         ],
         "steps": [
           {
@@ -597,12 +517,18 @@
             "caption": "Symmetric signing uses a single shared secret key for signing and verification.",
             "rows": [
               {
-                "scheme": "HS256 (Symmetric)",
-                "keys": "Single Shared Secret"
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": "RS256 (Asymmetric)",
-                "keys": "Private Key + Public Key"
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -611,12 +537,18 @@
             "caption": "Asymmetric signing uses private keys to sign and public keys to verify.",
             "rows": [
               {
-                "scheme": "HS256 (Symmetric)",
-                "keys": "Single Shared Secret"
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": "RS256 (Asymmetric)",
-                "keys": "Private Key + Public Key"
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -625,12 +557,18 @@
             "caption": "Verification recalculates expected signatures against provided tokens.",
             "rows": [
               {
-                "scheme": "HS256 (Symmetric)",
-                "keys": "Single Shared Secret"
+                "cells": [
+                  "HS256 (Symmetric)",
+                  "Single Shared Secret"
+                ],
+                "tone": "data"
               },
               {
-                "scheme": "RS256 (Asymmetric)",
-                "keys": "Private Key + Public Key"
+                "cells": [
+                  "RS256 (Asymmetric)",
+                  "Private Key + Public Key"
+                ],
+                "tone": "ok"
               }
             ]
           }

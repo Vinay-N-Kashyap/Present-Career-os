@@ -338,84 +338,48 @@
             "at": "say2",
             "caption": "We define a videometadata table with a designated partition key.",
             "rows": [
-              [
-                {
-                  "text": "VID#2026_01",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "PROCESSING",
-                  "tone": "idle"
-                },
-                {
-                  "text": "s3://out/vid_01",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "VID#2026_02",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "PENDING",
-                  "tone": "idle"
-                },
-                {
-                  "text": "s3://out/vid_02",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Transcoding succeeded and output attributes are saved upon completion.",
             "rows": [
-              [
-                {
-                  "text": "VID#2026_01",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "COMPLETED",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3://out/vid_01",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "VID#2026_02",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "COMPLETED",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3://out/vid_02",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -434,84 +398,48 @@
             "at": "say2",
             "caption": "We define a videometadata table with a designated partition key.",
             "rows": [
-              [
-                {
-                  "text": "VID#2026_01",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "PROCESSING",
-                  "tone": "idle"
-                },
-                {
-                  "text": "s3://out/vid_01",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "VID#2026_02",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "PENDING",
-                  "tone": "idle"
-                },
-                {
-                  "text": "s3://out/vid_02",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Transcoding succeeded and output attributes are saved upon completion.",
             "rows": [
-              [
-                {
-                  "text": "VID#2026_01",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "COMPLETED",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3://out/vid_01",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "VID#2026_02",
-                  "tone": "data"
-                },
-                {
-                  "text": "METADATA",
-                  "tone": "idle"
-                },
-                {
-                  "text": "COMPLETED",
-                  "tone": "ok"
-                },
-                {
-                  "text": "s3://out/vid_02",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

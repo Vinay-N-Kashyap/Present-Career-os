@@ -12,32 +12,8 @@
         "template": "table",
         "title": "Stateful sessions vs stateless tokens paradigm trade-offs",
         "columns": [
-          {
-            "id": "paradigm",
-            "label": "paradigm"
-          },
-          {
-            "id": "serverStorage",
-            "label": "serverStorage"
-          }
-        ],
-        "rows": [
-          {
-            "paradigm": {
-              "text": "Stateful Session"
-            },
-            "serverStorage": {
-              "text": "Required (Redis / DB)"
-            }
-          },
-          {
-            "paradigm": {
-              "text": "Stateless Token"
-            },
-            "serverStorage": {
-              "text": "None (cryptographic verify)"
-            }
-          }
+          "paradigm",
+          "serverStorage"
         ],
         "steps": [
           {
@@ -45,20 +21,18 @@
             "caption": "In stateful authentication the server maintains authoritative session state.",
             "rows": [
               {
-                "paradigm": {
-                  "text": "Stateful Session"
-                },
-                "serverStorage": {
-                  "text": "Required (Redis / DB)"
-                }
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": {
-                  "text": "Stateless Token"
-                },
-                "serverStorage": {
-                  "text": "None (cryptographic verify)"
-                }
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -67,20 +41,18 @@
             "caption": "In stateless authentication the client attaches a signed token to each request.",
             "rows": [
               {
-                "paradigm": {
-                  "text": "Stateful Session"
-                },
-                "serverStorage": {
-                  "text": "Required (Redis / DB)"
-                }
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": {
-                  "text": "Stateless Token"
-                },
-                "serverStorage": {
-                  "text": "None (cryptographic verify)"
-                }
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -89,20 +61,18 @@
             "caption": "Each model offers trade offs for server memory scalability and revocation.",
             "rows": [
               {
-                "paradigm": {
-                  "text": "Stateful Session"
-                },
-                "serverStorage": {
-                  "text": "Required (Redis / DB)"
-                }
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": {
-                  "text": "Stateless Token"
-                },
-                "serverStorage": {
-                  "text": "None (cryptographic verify)"
-                }
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           }
@@ -112,24 +82,8 @@
         "template": "table",
         "title": "Stateful sessions vs stateless tokens paradigm trade-offs",
         "columns": [
-          {
-            "id": "paradigm",
-            "label": "paradigm"
-          },
-          {
-            "id": "serverStorage",
-            "label": "serverStorage"
-          }
-        ],
-        "rows": [
-          {
-            "paradigm": "Stateful Session",
-            "serverStorage": "Required (Redis / DB)"
-          },
-          {
-            "paradigm": "Stateless Token",
-            "serverStorage": "None (cryptographic verify)"
-          }
+          "paradigm",
+          "serverStorage"
         ],
         "steps": [
           {
@@ -137,12 +91,18 @@
             "caption": "In stateful authentication the server maintains authoritative session state.",
             "rows": [
               {
-                "paradigm": "Stateful Session",
-                "serverStorage": "Required (Redis / DB)"
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": "Stateless Token",
-                "serverStorage": "None (cryptographic verify)"
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -151,12 +111,18 @@
             "caption": "In stateless authentication the client attaches a signed token to each request.",
             "rows": [
               {
-                "paradigm": "Stateful Session",
-                "serverStorage": "Required (Redis / DB)"
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": "Stateless Token",
-                "serverStorage": "None (cryptographic verify)"
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           },
@@ -165,12 +131,18 @@
             "caption": "Each model offers trade offs for server memory scalability and revocation.",
             "rows": [
               {
-                "paradigm": "Stateful Session",
-                "serverStorage": "Required (Redis / DB)"
+                "cells": [
+                  "Stateful Session",
+                  "Required (Redis / DB)"
+                ],
+                "tone": "data"
               },
               {
-                "paradigm": "Stateless Token",
-                "serverStorage": "None (cryptographic verify)"
+                "cells": [
+                  "Stateless Token",
+                  "None (cryptographic verify)"
+                ],
+                "tone": "ok"
               }
             ]
           }

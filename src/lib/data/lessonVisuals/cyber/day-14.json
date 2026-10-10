@@ -450,7 +450,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Permissive MIME Sniffing",
+        "rightLabel": "Strict Nosniff Directive"
       },
       "filled": {
         "template": "compare",
@@ -484,7 +486,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Permissive MIME Sniffing",
+        "rightLabel": "Strict Nosniff Directive"
       }
     },
     {

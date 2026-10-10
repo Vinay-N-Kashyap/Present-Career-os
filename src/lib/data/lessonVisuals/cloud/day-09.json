@@ -106,102 +106,57 @@
             "at": "say2",
             "caption": "Standard storage provides low latency for frequently accessed data.",
             "rows": [
-              [
-                {
-                  "text": "S3 Standard",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active Baseline",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Standard-IA",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lower Storage Fee",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Per-GB Charge",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Glacier delivers low cost archival storage for compliance records.",
             "rows": [
-              [
-                {
-                  "text": "S3 Standard",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active Baseline",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Standard-IA",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lower Storage Fee",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Per-GB Charge",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Glacier Flexible",
-                  "tone": "data"
-                },
-                {
-                  "text": "Minutes/Hours",
-                  "tone": "error"
-                },
-                {
-                  "text": "Deep Savings",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Archival Vault",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -220,102 +175,57 @@
             "at": "say2",
             "caption": "Standard storage provides low latency for frequently accessed data.",
             "rows": [
-              [
-                {
-                  "text": "S3 Standard",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active Baseline",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Standard-IA",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lower Storage Fee",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Per-GB Charge",
-                  "tone": "error"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say6",
             "caption": "Glacier delivers low cost archival storage for compliance records.",
             "rows": [
-              [
-                {
-                  "text": "S3 Standard",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Active Baseline",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Immediate",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "Standard-IA",
-                  "tone": "data"
-                },
-                {
-                  "text": "Milliseconds",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Lower Storage Fee",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Per-GB Charge",
-                  "tone": "error"
-                }
-              ],
-              [
-                {
-                  "text": "Glacier Flexible",
-                  "tone": "data"
-                },
-                {
-                  "text": "Minutes/Hours",
-                  "tone": "error"
-                },
-                {
-                  "text": "Deep Savings",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Archival Vault",
-                  "tone": "idle"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

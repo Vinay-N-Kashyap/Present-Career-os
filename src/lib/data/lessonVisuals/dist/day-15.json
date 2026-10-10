@@ -520,7 +520,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Business Failures",
+        "rightLabel": "Poison Pill Failures"
       },
       "filled": {
         "template": "compare",
@@ -554,7 +556,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Business Failures",
+        "rightLabel": "Poison Pill Failures"
       }
     },
     {

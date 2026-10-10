@@ -86,84 +86,48 @@
             "at": "say2",
             "caption": "The key policy document takes precedence over standard policies.",
             "rows": [
-              [
-                {
-                  "text": "IngestionServiceRole",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:GenerateDataKey",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Write Encryption Only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "No Decrypt Allowed",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AnalyticsWorkerRole",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:Decrypt",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Read Decryption Only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "No Encrypt Allowed",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Separation of encryption and decryption privileges protects data.",
             "rows": [
-              [
-                {
-                  "text": "RootAccountAdmin",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:* Admin Policy",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Key Management Root",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Audit Governed",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CrossAccountGrant",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:CreateGrant",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Temporary Scoped Access",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Zero Key Policy Edit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -182,84 +146,48 @@
             "at": "say2",
             "caption": "The key policy document takes precedence over standard policies.",
             "rows": [
-              [
-                {
-                  "text": "IngestionServiceRole",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:GenerateDataKey",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Write Encryption Only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "No Decrypt Allowed",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "AnalyticsWorkerRole",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:Decrypt",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Read Decryption Only",
-                  "tone": "ok"
-                },
-                {
-                  "text": "No Encrypt Allowed",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say5",
             "caption": "Separation of encryption and decryption privileges protects data.",
             "rows": [
-              [
-                {
-                  "text": "RootAccountAdmin",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:* Admin Policy",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Key Management Root",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Audit Governed",
-                  "tone": "ok"
-                }
-              ],
-              [
-                {
-                  "text": "CrossAccountGrant",
-                  "tone": "data"
-                },
-                {
-                  "text": "kms:CreateGrant",
-                  "tone": "ok"
-                },
-                {
-                  "text": "Temporary Scoped Access",
-                  "tone": "idle"
-                },
-                {
-                  "text": "Zero Key Policy Edit",
-                  "tone": "ok"
-                }
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]

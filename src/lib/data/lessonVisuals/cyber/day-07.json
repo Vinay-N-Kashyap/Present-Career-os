@@ -244,7 +244,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unsalted Hash Vulnerability",
+        "rightLabel": "Salted Credential Protection"
       },
       "filled": {
         "template": "compare",
@@ -278,7 +280,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Unsalted Hash Vulnerability",
+        "rightLabel": "Salted Credential Protection"
       }
     },
     {
@@ -392,7 +396,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Argon2d Variant",
+        "rightLabel": "Argon2id Hybrid"
       },
       "filled": {
         "template": "compare",
@@ -426,7 +432,9 @@
             "highlightSide": "right",
             "statusBadge": "completed"
           }
-        ]
+        ],
+        "leftLabel": "Argon2d Variant",
+        "rightLabel": "Argon2id Hybrid"
       }
     },
     {

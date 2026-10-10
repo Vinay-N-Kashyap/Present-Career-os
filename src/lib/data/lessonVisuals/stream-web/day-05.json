@@ -378,42 +378,57 @@
             "at": "say3",
             "caption": "When a consumer registers, the broker tracks its current offset cursor.",
             "rows": [
-              [
-                "analytics-grp",
-                "orders",
-                "0",
-                "15"
-              ],
-              [
-                "analytics-grp",
-                "orders",
-                "1",
-                "22"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Committing the offset advances the consumer group persistent cursor.",
             "rows": [
-              [
-                "analytics-grp",
-                "orders",
-                "0",
-                "15"
-              ],
-              [
-                "analytics-grp",
-                "orders",
-                "1",
-                "22"
-              ],
-              [
-                "email-service",
-                "orders",
-                "0",
-                "8"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -432,42 +447,57 @@
             "at": "say3",
             "caption": "When a consumer registers, the broker tracks its current offset cursor.",
             "rows": [
-              [
-                "analytics-grp",
-                "orders",
-                "0",
-                "15"
-              ],
-              [
-                "analytics-grp",
-                "orders",
-                "1",
-                "22"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           },
           {
             "at": "say7",
             "caption": "Committing the offset advances the consumer group persistent cursor.",
             "rows": [
-              [
-                "analytics-grp",
-                "orders",
-                "0",
-                "15"
-              ],
-              [
-                "analytics-grp",
-                "orders",
-                "1",
-                "22"
-              ],
-              [
-                "email-service",
-                "orders",
-                "0",
-                "8"
-              ]
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "tone": "ok"
+              }
             ]
           }
         ]
