@@ -33,6 +33,22 @@ interface ClusterDef {
   courseIds: string[];
 }
 
+interface AuditRecord {
+  num: number;
+  id: string;
+  title: string;
+  prefix: string;
+  curriculumType: string;
+  hasVisuals: boolean;
+  visualPrefix: string;
+  visualCount: number;
+  avgSpokenMin: number;
+  avgActivityMin: number;
+  avgTotalMin: number;
+  inSweetSpot: boolean;
+  status: string;
+}
+
 const CLUSTERS: ClusterDef[] = [
   {
     clusterNum: 1,
@@ -152,7 +168,7 @@ interface CourseMetadata {
 
 const COURSE_METAS: Record<string, CourseMetadata> = {
   'course-java-logic': {
-    prefix: 'java-logic',
+    prefix: 'java-basics',
     theme: 'JVM Architecture, Primitive Typing, OOP Invariants & Enterprise Modularity',
     pedagogy: 'Illustrate JVM Stack frame pushes/pops, heap reference allocations, and variable mutations during loops. Visuals clarify value vs reference semantics.',
     allowedTemplates: ['boxes', 'flow', 'table', 'cells', 'stack-queue', 'compare'],
@@ -227,7 +243,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Enterprise Automated GitOps Pipeline: Multi-stage Docker containerization pipeline with automated GitHub Actions testing, security vulnerability scanning, and Kubernetes deployment.'
   },
   'course-design-systems': {
-    prefix: 'design-systems',
+    prefix: 'design',
     theme: 'Atomic Component Architectures, Design Tokens & Accessible Web Layouts',
     pedagogy: 'Draw CSS box-model margins/borders/padding, Flexbox/Grid spatial coordinates, and accessibility contrast verification ratios across light and dark modes.',
     allowedTemplates: ['wireframe', 'component-tree', 'compare', 'boxes', 'bars'],
@@ -257,7 +273,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'High-Performance Algorithmic Optimization Suite: Benchmark-validated implementations of cache-conscious searching, graph pathfinding, and dynamic programming schedulers.'
   },
   'course-mobile-dev': {
-    prefix: 'mobile-dev',
+    prefix: 'mobile',
     theme: 'Cross-Platform React Native, JSI Runtime, Native Modules & Offline SQLite',
     pedagogy: 'Illustrate JavaScript-to-Native bridge execution, Yoga Flexbox layout reflows, and touch gesture responder state transitions.',
     allowedTemplates: ['wireframe', 'component-tree', 'flow', 'sequence', 'states'],
@@ -287,7 +303,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Zero-Trust Secure Authentication Gateway: End-to-end hardened authentication microservice with Argon2id password hashing, rotating JWT signing keys, and brute-force rate limiting.'
   },
   'course-database-eng': {
-    prefix: 'database-eng',
+    prefix: 'sql-mastery',
     theme: 'Relational Theory, B+ Tree Indexes, Transaction Isolation & WAL Logging',
     pedagogy: 'Illustrate B+ Tree node splits, Write-Ahead Log (WAL) sequential flushes, and query execution plans comparing sequential table scans with index lookups.',
     allowedTemplates: ['table', 'tree-graph', 'flow', 'compare', 'bars'],
@@ -347,7 +363,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Real-Time Collaborative Workspace: Full-stack application with live multi-user WebSocket editing, Prisma database synchronization, and optimistic UI transitions.'
   },
   'course-iot-embedded': {
-    prefix: 'iot-embedded',
+    prefix: 'iot_emb',
     theme: 'Hardware Registers, Memory-Mapped I/O, Interrupts & FreeRTOS Schedulers',
     pedagogy: 'Diagram microcontroller memory-mapped registers, bitwise mask operations, interrupt vector dispatching, and FreeRTOS task priority preemption.',
     allowedTemplates: ['flow', 'states', 'cells', 'boxes', 'sequence', 'register-bits'],
@@ -362,7 +378,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Embedded Industrial Telemetry Controller: FreeRTOS firmware implementing multi-channel ADC sensor acquisition, lock-free ring buffers, and I2C peripheral telemetry.'
   },
   'course-3d-graphics': {
-    prefix: '3d-graphics',
+    prefix: 'g3d',
     theme: 'Vector Math, WebGL Render Pipeline, Shaders, Scene Graphs & Skeletal Rigging',
     pedagogy: 'Visualize the 3D Model-View-Projection (MVP) matrix transformation pipeline, shader rasterization stages, and hierarchical skeletal bone transforms.',
     allowedTemplates: ['tree-graph', 'boxes', 'flow', 'compare', 'bars'],
@@ -377,7 +393,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Interactive 3D Avatar Animation Studio: WebGL-accelerated 3D viewport featuring custom PBR lighting shaders, skeletal bone transforms, and interactive orbital controls.'
   },
   'course-blockchain-web3': {
-    prefix: 'blockchain-web3',
+    prefix: 'blockchain',
     theme: 'Cryptographic Hashing, Merkle Trees, EVM Gas Mechanics & Smart Contracts',
     pedagogy: 'Show Merkle tree cryptographic proof verification, EVM memory/stack gas consumption charts, and reentrancy attack state transition barriers.',
     allowedTemplates: ['tree-graph', 'stack-queue', 'flow', 'sequence', 'compare', 'states'],
@@ -392,7 +408,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Decentralized Escrow Protocol & dApp: Production Solidity smart contract with multi-signature release conditions, reentrancy guards, and reactive Web3 frontend.'
   },
   'course-iot-network': {
-    prefix: 'iot-network',
+    prefix: 'iot_net',
     theme: 'Wireless RF Topologies, BLE GATT Profiles, LoRaWAN Chirps & MQTT Brokers',
     pedagogy: 'Map BLE GATT Service/Characteristic hierarchies, LoRaWAN chirp spread spectrum uplinks, and MQTT publish/subscribe broker message routing.',
     allowedTemplates: ['flow', 'sequence', 'states', 'table', 'compare'],
@@ -407,7 +423,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Low-Power LoRaWAN Environmental Gateway: Edge mesh network firmware routing environmental sensor telemetry through encrypted LoRaWAN packets to an MQTT cloud broker.'
   },
   'course-iot-edge-ai': {
-    prefix: 'iot-edge-ai',
+    prefix: 'iot_edge',
     theme: 'Digital Signal Processing, Feature Extraction, INT8 Quantization & TinyML',
     pedagogy: 'Show sliding window sensor buffers, Fast Fourier Transform (FFT) spectrograms, and INT8 quantized weight matrices mapped to MCU memory arenas.',
     allowedTemplates: ['flow', 'bars', 'cells', 'table', 'compare'],
@@ -422,7 +438,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Edge TinyML Gesture Recognition Engine: Microcontroller-deployed model classifying continuous IMU sensor streams in real-time under a 32 KB SRAM memory constraint.'
   },
   'course-iot-security': {
-    prefix: 'iot-security',
+    prefix: 'iot_sec',
     theme: 'Hardware Root of Trust, Secure Boot, Mutual TLS & Secure OTA Lifecycles',
     pedagogy: 'Diagram secure boot cryptographic signature verification chains, mTLS certificate exchanges, and dual-bank OTA firmware flash memory rollback safety.',
     allowedTemplates: ['flow', 'sequence', 'states', 'compare', 'table'],
@@ -437,7 +453,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Hardened Industrial Edge Controller: Secure boot-verified firmware implementing mutual TLS cloud authentication and failsafe dual-bank OTA update recovery.'
   },
   'course-python-backend': {
-    prefix: 'python-backend',
+    prefix: 'python',
     theme: 'Python Asynchronous Systems, FastAPI, Pydantic & Distributed Task Queues',
     pedagogy: 'Illustrate asyncio event loop coroutine yields, Pydantic JSON schema validations, and Celery asynchronous task distribution across Redis workers.',
     allowedTemplates: ['flow', 'sequence', 'boxes', 'table', 'states', 'compare'],
@@ -467,7 +483,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Microsecond Limit Order Book Matching Engine: High-frequency order matching engine simulating sub-millisecond price-time priority execution and real-time PnL tracking.'
   },
   'course-digital-accounting': {
-    prefix: 'digital-accounting',
+    prefix: 'bcom-accounting',
     theme: 'Double-Entry Invariants, Ledger Balancing, GST Taxation & ERP Compliance',
     pedagogy: 'Draw double-entry debit/credit ledger columns maintaining balancing equality, 3-way invoice matching flows, and GST tax credit cascading waterfalls.',
     allowedTemplates: ['table', 'flow', 'compare', 'bars', 'ledger-sheet'],
@@ -482,7 +498,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Automated Corporate Accounting & GST Audit Engine: End-to-end digital accounting ledger with automated journal entries, balancing trial balances, and GST compliance validation.'
   },
   'course-finance-investment': {
-    prefix: 'finance-investment',
+    prefix: 'bcom-finance',
     theme: 'Time Value of Money, DCF Valuation, WACC Capital Structures & Portfolio Risk',
     pedagogy: 'Visualize Discounted Cash Flow (DCF) timelines, DuPont 3-stage ROE breakdowns, and debt vs equity cost weights in WACC capital structure models.',
     allowedTemplates: ['table', 'bars', 'flow', 'compare'],
@@ -497,7 +513,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Corporate Financial Valuation & Investment Model: Comprehensive DCF valuation model with dynamic WACC sensitivity matrices, scenario planning, and working capital forecasts.'
   },
   'course-business-analytics': {
-    prefix: 'business-analytics',
+    prefix: 'bcom_ana',
     theme: 'Statistical Distributions, Pareto ABC Analysis, Regression & Executive KPIs',
     pedagogy: 'Show descriptive distribution curves, Pareto 80/20 ABC classification breakdowns, and linear regression trendlines against executive scorecard KPIs.',
     allowedTemplates: ['bars', 'table', 'flow', 'compare'],
@@ -512,7 +528,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Executive Business Intelligence & Decision Dashboard: End-to-end analytics report synthesizing customer segmentation, revenue regression forecasts, and automated KPI alert metrics.'
   },
   'course-marketing-branding': {
-    prefix: 'marketing-branding',
+    prefix: 'bcom-marketing',
     theme: 'Strategic Frameworks, Consumer Psychology, Brand Equity & PLC Lifecycles',
     pedagogy: 'Map customer journey stages, Keller brand equity pyramid levels, BCG growth-share matrix quadrants, and omnichannel campaign ROI bar charts.',
     allowedTemplates: ['flow', 'compare', 'table', 'bars'],
@@ -527,7 +543,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Comprehensive Brand Strategy & Go-To-Market Blueprint: Multi-channel brand positioning framework complete with customer persona journeys, messaging matrices, and ROI forecasts.'
   },
   'course-digital-marketing': {
-    prefix: 'digital-marketing',
+    prefix: 'bcom_dmkt',
     theme: 'Acquisition Funnels, Ad Auction Rankings, SEO Architectures & CAC/LTV Unit Economics',
     pedagogy: 'Diagram conversion funnel drop-off waterfalls, ad auction rank bid vs quality score calculations, and CAC payback period bar comparisons.',
     allowedTemplates: ['flow', 'bars', 'table', 'compare', 'funnel'],
@@ -542,7 +558,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Growth Marketing & Performance Campaign Architecture: Complete multi-channel digital acquisition campaign with SEO keyword architecture, ad auction bidding models, and CAC/LTV funnels.'
   },
   'course-ecommerce-digital-biz': {
-    prefix: 'ecommerce-digital-biz',
+    prefix: 'bcom_ecom',
     theme: 'SKU Variant Matrices, Volumetric Logistics, Checkout Gateways & Marketplace Scaling',
     pedagogy: 'Illustrate e-commerce checkout conversion funnels, payment gateway authorization handshakes, and dimensional weight shipping cost calculations.',
     allowedTemplates: ['flow', 'table', 'sequence', 'bars', 'compare', 'funnel'],
@@ -557,7 +573,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Scalable E-Commerce Operations Blueprint: Full operational framework for high-volume digital commerce, including SKU catalog architecture, checkout conversion funnels, and logistics routing.'
   },
   'course-entrepreneurship-biz-mgmt': {
-    prefix: 'entrepreneurship-biz-mgmt',
+    prefix: 'bcom_ent',
     theme: 'Business Model Canvas, TAM/SAM/SOM Sizing, Cap Table Dilution & Runway Dynamics',
     pedagogy: 'Show Business Model Canvas component linkages, bottom-up TAM/SAM/SOM concentric circles, equity dilution round-by-round cap tables, and monthly burn rate runway curves.',
     allowedTemplates: ['flow', 'table', 'compare', 'bars'],
@@ -572,7 +588,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Venture Creation & Investor-Ready Business Plan: Comprehensive startup plan featuring validated Business Model Canvas, bottom-up market sizing, unit economics, and 5-year pro forma financials.'
   },
   'course-sales-crm-success': {
-    prefix: 'sales-crm-success',
+    prefix: 'bcom_scrm',
     theme: 'BANT/MEDDIC Qualification, Sales Velocity, CRM Workflows & Customer Retention',
     pedagogy: 'Diagram sales velocity formula components, MEDDIC qualification scorecards, lead-to-opportunity state progression, and customer health score distributions.',
     allowedTemplates: ['flow', 'table', 'states', 'bars', 'compare', 'funnel'],
@@ -587,7 +603,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Enterprise B2B Sales & CRM Operational Playbook: Configured CRM pipeline architecture with automated MEDDIC qualification scoring, sales velocity tracking, and retention playbooks.'
   },
   'course-operations-supplychain-compliance': {
-    prefix: 'operations-supplychain-compliance',
+    prefix: 'bcom_ops',
     theme: 'SIPOC Value Stream Mapping, EOQ Inventory Models, Kraljic Matrices & Quality Control',
     pedagogy: 'Draw SIPOC value stream process flows, Economic Order Quantity (EOQ) cost trade-off curves, Kraljic matrix supplier quadrants, and Six Sigma defect distributions.',
     allowedTemplates: ['flow', 'table', 'bars', 'compare'],
@@ -602,7 +618,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'End-to-End Supply Chain Optimization Plan: Operations master plan featuring value stream mapping, automated EOQ inventory replenishment models, and supplier quality audits.'
   },
   'course-ai-digital-transformation': {
-    prefix: 'ai-digital-transformation',
+    prefix: 'bcom_ait',
     theme: 'Enterprise AI Value Equations, Robotic Process Automation & AI Governance',
     pedagogy: 'Illustrate enterprise AI value creation frameworks, RPA bot automation process flows, AI governance risk-level classifications, and digital maturity phase roadmaps.',
     allowedTemplates: ['workflow', 'flow', 'table', 'compare', 'bars'],
@@ -617,7 +633,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Enterprise AI Transformation Roadmap & Governance Charter: Multi-year digital transformation strategic roadmap with departmental RPA automation blueprints and ethical AI policies.'
   },
   'course-computer-fundamentals': {
-    prefix: 'computer-fundamentals',
+    prefix: 'comp_fund',
     theme: 'Von Neumann Architecture, POSIX File Permissions, CLI Pipelines & TCP/IP Networking',
     pedagogy: 'Diagram Input-Process-Output CPU bus flows, Unix command pipe data streams, file system inode permission trees, and TCP/IP 4-layer packet traversals.',
     allowedTemplates: ['flow', 'boxes', 'tree-graph', 'table', 'compare'],
@@ -632,7 +648,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Systems Administration & Networking Verification Suite: Practical command-line and systems automation project demonstrating process monitoring, shell scripting, and network diagnostics.'
   },
   'course-ai-prompt-literacy': {
-    prefix: 'ai-prompt-literacy',
+    prefix: 'ai_prompt',
     theme: 'Prompt Engineering Frameworks, Chain-of-Thought Reasoning & Fact Verification',
     pedagogy: 'Show prompt before/after optimization comparisons, Chain-of-Thought reasoning step paths, temperature sampling spaces, and fact-checking verification scorecards.',
     allowedTemplates: ['flow', 'compare', 'boxes', 'table', 'bars'],
@@ -647,7 +663,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Master Prompt Engineering Playbook: Production-grade collection of verified, structured prompt templates for workplace research, communication, data analysis, and validation.'
   },
   'course-excel-data-viz': {
-    prefix: 'excel-data-viz',
+    prefix: 'excel_viz',
     theme: '2D Coordinate Grids, Logical Evaluation, XLOOKUP Intersections & Executive Pivot Dashboards',
     pedagogy: 'Illustrate 2D grid cell referencing, XLOOKUP array search traversals, Pivot Table multidimensional aggregations, and executive waterfall chart components.',
     allowedTemplates: ['table', 'cells', 'bars', 'compare', 'flow'],
@@ -662,7 +678,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Executive Financial & Operational Excel Model: Fully automated corporate spreadsheet workbook featuring dynamic XLOOKUP models, Pivot Table aggregations, and executive visual dashboards.'
   },
   'course-git-version-control': {
-    prefix: 'git-version-control',
+    prefix: 'git_vcs',
     theme: 'Directed Acyclic Graphs, 3-Tier Git Areas, 3-Way Merges & Collaborative PRs',
     pedagogy: 'Draw 3-tier Git architecture (Working directory -> Staging -> Repository), Directed Acyclic Graph (DAG) commit trees, and 3-way merge conflict marker resolutions.',
     allowedTemplates: ['tree-graph', 'flow', 'states', 'compare', 'boxes'],
@@ -677,7 +693,7 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
     milestoneProject: 'Multi-Branch Collaborative Repository Simulation: Realistic engineering project demonstrating trunk-based branching, clean rebase histories, resolved merge conflicts, and peer-reviewed PRs.'
   },
   'course-softskills-communication': {
-    prefix: 'softskills-communication',
+    prefix: 'soft-skills',
     theme: 'Minto Pyramid Structured Messaging, Active Listening, STAR Method & Tech Interviews',
     pedagogy: 'Diagram Minto Pyramid top-down communication hierarchies, STAR method (Situation, Task, Action, Result) storytelling flows, and email tone before/after comparison tables.',
     allowedTemplates: ['flow', 'compare', 'table', 'states'],
@@ -709,26 +725,31 @@ const COURSE_METAS: Record<string, CourseMetadata> = {
 };
 
 async function main() {
-  console.log('=== PINIT 36+ INDIVIDUAL COURSES VISUALS PLAN COMPILER ===\n');
+  console.log('=== PINIT 36+ COURSES PLAN & DURATION COMPILER ===\n');
 
   const summaryPath = path.resolve(process.cwd(), 'scripts/course-curriculum-summary.json');
-  if (!fs.existsSync(summaryPath)) {
-    throw new Error(`Curriculum summary not found at: ${summaryPath}`);
+  const auditPath = path.resolve(process.cwd(), 'docs/visuals/PINIT_36_COURSES_CATEGORIZED_AUDIT.json');
+  
+  if (!fs.existsSync(summaryPath) || !fs.existsSync(auditPath)) {
+    throw new Error('Required audit or summary data missing');
   }
 
   const rawCourses: CourseItem[] = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
-  console.log(`Loaded ${rawCourses.length} courses from curriculum summary.`);
+  const auditData = JSON.parse(fs.readFileSync(auditPath, 'utf8'));
+  const allAudits: AuditRecord[] = auditData.all;
+
+  console.log(`Loaded ${rawCourses.length} courses and ${allAudits.length} audit records.`);
 
   // 1. Generate Markdown Document
   console.log('Generating docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.md...');
-  const mdContent = buildMarkdown(rawCourses);
+  const mdContent = buildMarkdown(rawCourses, allAudits, auditData);
   const mdOutPath = path.resolve(process.cwd(), 'docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.md');
   fs.writeFileSync(mdOutPath, mdContent, 'utf8');
   console.log(`Successfully wrote Markdown to: ${mdOutPath} (${mdContent.length} bytes)`);
 
   // 2. Generate HTML & Compile PDF
   console.log('Generating publication-quality HTML & PDF with Playwright...');
-  const htmlContent = buildHtml(rawCourses);
+  const htmlContent = buildHtml(rawCourses, allAudits, auditData);
   const pdfOutPath = path.resolve(process.cwd(), 'docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf');
   const artifactDir = path.resolve('C:/Users/Admin/.gemini/antigravity/brain/c7b35c15-f056-4dc6-888b-f56621a809c1');
   const artifactPdfPath = path.join(artifactDir, 'PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf');
@@ -749,13 +770,13 @@ async function main() {
     displayHeaderFooter: true,
     headerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 8pt; color: #64748b; width: 100%; padding: 0 16mm; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px;">
-        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 36+ Individual 1-Month Courses Master Visuals Architecture</span>
-        <span>Production Standard v2.0</span>
+        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 36+ Courses Visuals & Duration Master Plan</span>
+        <span>Honest Audit &amp; Implementation Standard v3.0</span>
       </div>
     `,
     footerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 8pt; color: #64748b; width: 100%; padding: 0 16mm; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 4px;">
-        <span>Zero-Hallucination Gate v2 Enforced &nbsp;•&nbsp; 37 Master Courses (1,110 Days / 6,660 Parts)</span>
+        <span>Zero-Hallucination &bull; 18–25 Min Duration Standard &bull; 37 Master Courses (1,110 Days)</span>
         <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
       </div>
     `,
@@ -769,66 +790,102 @@ async function main() {
   if (fs.existsSync(artifactDir)) {
     fs.copyFileSync(pdfOutPath, artifactPdfPath);
     console.log(`Successfully copied PDF to artifact path: ${artifactPdfPath}`);
-  } else {
-    console.log(`Artifact directory not found at: ${artifactDir}, skipping copy.`);
   }
 
-  console.log('\nCompilation completed with 100% success.');
+  console.log('\nCompilation completed successfully.');
 }
 
-function buildMarkdown(courses: CourseItem[]): string {
+function buildMarkdown(courses: CourseItem[], audits: AuditRecord[], auditData: any): string {
   let md = '';
 
-  md += `# PinIT Career OS — 36+ Individual 1-Month Courses Master Visuals Architecture & Implementation Plan\n\n`;
+  md += `# PinIT Career OS — 36+ Individual 1-Month Courses Master Visuals & Lesson Duration Architecture Plan\n\n`;
   md += `**Document:** \`PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN\`  \n`;
-  md += `**Version:** 2.0 (Production Masterclass Edition)  \n`;
+  md += `**Version:** 3.0 (Zero-Hallucination Production Standard & Lesson Duration Audit)  \n`;
   md += `**Date:** 10 October 2026  \n`;
-  md += `**System:** PinIT Career OS Visual Learning Engine (\`VisualStage.tsx\`, \`/api/visuals\`, Gate v2)  \n`;
-  md += `**Scope:** All 37 Individual 1-Month Certificate Courses across 6 Distinct Domain Clusters  \n`;
-  md += `**Total Volume:** 37 Courses &times; 6 Blocks &times; 5 Days = **1,110 Lesson Days** &times; 6 Parts = **6,660 Interactive Lesson Parts**  \n`;
-  md += `**Compilation Output:** \`docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf\`  \n\n`;
+  md += `**System:** PinIT Career OS Learning Engine (\`VisualStage.tsx\`, \`longLessons.ts\`, \`curriculumEnricher.ts\`, Gate v2)  \n`;
+  md += `**Total Volume:** 37 Master Courses &times; 6 Blocks &times; 5 Days = **1,110 Lesson Days** &times; 6 Parts = **6,660 Interactive Lesson Parts**  \n`;
+  md += `**Primary Standard:** **18–25 Minutes Lesson Duration** + **100% Gate v2 Deterministic Visual Bindings**  \n`;
+  md += `**Compiled PDF Location:** \`docs/visuals/PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN.pdf\`  \n\n`;
 
   md += `---\n\n`;
 
-  md += `## 📋 Executive Architecture & Metadata Matrix\n\n`;
-  md += `| Attribute | Specification Details |\n`;
-  md += `| :--- | :--- |\n`;
-  md += `| **Master Course Count** | **37 Courses** (36+ 1-Month Professional Certifications) |\n`;
-  md += `| **Domain Clusters** | 6 Distinct Clusters (Software Engineering, Systems/Mobile/Data, Hardware/Web3/Quant, Commerce/Finance, Operations/Digital Biz, Universal Foundations) |\n`;
-  md += `| **Duration per Course** | **4 Weeks / 30 Curriculum Days** structured into 6 contiguous 5-day blocks |\n`;
-  md += `| **Total Lesson Days** | **1,110 Days** across all 37 courses |\n`;
-  md += `| **Total Lesson Parts** | **6,660 Interactive Parts** (6 parts per lesson day) |\n`;
-  md += `| **Interactive Visual Quests** | **> 4,500 active diagram specifications** (with strict minimum &ge; 3 visuals per day per Gate v2 R10) |\n`;
-  md += `| **Supported Templates** | **17 Production Templates** (Flow, Boxes, Table, Letters, Compare, Cells, Stack-Queue, Tree-Graph, Bars, Sequence, States, Workflow, Component-Tree, Wireframe, Register-Bits, Ledger-Sheet, Funnel) |\n`;
-  md += `| **Quality Standard** | **Technical Gate v2 (Rules R1–R14)**: 100% deterministic AST & code output bindings, 0 hallucinated values, strictly monotonically increasing steps |\n`;
-  md += `| **Batch Verification Protocol**| **5-Day Contiguous Batch Loop**: PDF Ground Truth &rarr; Gate Audit &rarr; In-Situ Remediation &rarr; Runtime Test &rarr; Atomic Git Checkpoint |\n\n`;
+  md += `## 🎯 1. Honest Reality Audit: Already Built vs. To Be Built\n\n`;
+  md += `A rigorous, line-by-line programmatic audit of the codebase reveals that the 37 individual courses fall into **4 distinct architectural categories**:\n\n`;
+
+  md += `| Category | Description | Course Count | Visual Status | Duration (Target: 18–25m) |\n`;
+  md += `| :--- | :--- | :---: | :---: | :---: |\n`;
+  md += `| **Category A: Ready to Ship** | Fully built 30/30 visuals (from Python & Web tracks) + 6-part LongLessons | **12 Courses** | ✅ 30/30 Complete | 🎯 **21.2–24.4 min** (PERFECT) |\n`;
+  md += `| **Category B: Tuning Required** | Visuals 30/30 built (\`sql-mastery\`), but duration slightly over 25m | **1 Course** | ✅ 30/30 Complete | ⚠️ **26.1 min** (Needs minor trim) |\n`;
+  md += `| **Category C: Visuals Needed** | Duration perfect (22.5 min via LongLessons), but visuals need generation | **1 Course** | ⏳ 0/30 Needed | 🎯 **22.5 min** (PERFECT) |\n`;
+  md += `| **Category D: Standalone Expansion** | New Standalone courses currently in short pilot format (~6m); needs LongLessons + Visuals | **23 Courses** | ⏳ 0/30 Needed | ⚠️ **6.0–6.5 min** (Expansion needed) |\n`;
+  md += `| **TOTAL** | **All Catalog Courses** | **37 Courses** | **13 Built / 24 Needed** | **13 Compliant / 24 Needed** |\n\n`;
+
+  md += `### Breakdown of Already Built Visuals (13 Courses)\n`;
+  md += `Because these courses were built during the flagship Python Full-Stack and Web Full-Stack certification tracks, their visuals are **already 100% complete, Gate v2 compliant, and tested on disk**:\n`;
+  md += `1. **React Web** (\`react-basics\`): 30/30 days on disk.\n`;
+  md += `2. **Node.js Backend** (\`node-web\`): 30/30 days on disk.\n`;
+  md += `3. **Cloud Native AWS** (\`cloud\` / \`cloud-py\`): 30/30 days on disk.\n`;
+  md += `4. **DevOps CI/CD** (\`devops\`): 30/30 days on disk.\n`;
+  md += `5. **DSA & Optimization** (\`dsa-optim\` / \`dsa-py\`): 30/30 days on disk.\n`;
+  md += `6. **Cybersecurity** (\`cyber\` / \`cyber-py\`): 30/30 days on disk.\n`;
+  md += `7. **Database Engineering** (\`sql-mastery\`): 30/30 days on disk.\n`;
+  md += `8. **Distributed Systems** (\`dist\` / \`dist-py\`): 30/30 days on disk.\n`;
+  md += `9. **AI Engineering & LLMs** (\`ai\` / \`ai-py\`): 30/30 days on disk.\n`;
+  md += `10. **Python Backend Systems** (\`python\`): 30/30 days on disk.\n`;
+  md += `11. **Quantitative Systems** (\`quant-py\`): 30/30 days on disk.\n`;
+  md += `12. **AI Prompt Literacy** (\`prompt-py\`): 30/30 days on disk.\n`;
+  md += `13. **Natural Language Processing** (\`nlp-py\`): 30/30 days on disk.\n\n`;
 
   md += `---\n\n`;
 
-  md += `## 🏛️ Domain Cluster Taxonomy (All 37 Courses)\n\n`;
-  md += `The 37 individual 1-month courses in PinIT Career OS are partitioned across **6 Domain Clusters** reflecting real-world career disciplines:\n\n`;
+  md += `## ⏱️ 2. The 18–25 Minute Pedagogical Duration Standard\n\n`;
+  md += `In PinIT Career OS, a lesson is neither a brief video snippet nor a multi-hour lecture. It is calibrated strictly to the **18–25 minute cognitive retention window**:\n\n`;
 
-  CLUSTERS.forEach(cluster => {
-    md += `### ${cluster.tag}: ${cluster.title}\n\n`;
-    md += `| # | Course ID | Canonical Title | Level | Quests | Allowed Visual Templates |\n`;
-    md += `| :---: | :--- | :--- | :---: | :---: | :--- |\n`;
+  md += `$$\\text{Total Lesson Duration} = \\text{Spoken Audio Time} + \\text{Hands-On Interactive Activity Time}$$\n\n`;
 
-    cluster.courseIds.forEach(id => {
-      const c = courses.find(item => item.id === id);
-      const meta = COURSE_METAS[id];
-      if (c && meta) {
-        md += `| **${c.num.toString().padStart(2, '0')}** | \`${c.id}\` | ${c.title} | ${c.difficulty || 'Intermediate'} | ${c.totalQuests || 96} | \`${meta.allowedTemplates.join('`, `')}\` |\n`;
-      }
-    });
-    md += `\n`;
+  md += `### Formula Implementation (from \`src/lib/data/longLessons.ts\`):\n`;
+  md += `1. **Spoken Narration Time (\`estimateSpokenMinutes\`):**\n`;
+  md += `   - Spoken words from the instructor's \`say\` lines, concept explanations, and quiz rationales.\n`;
+  md += `   - Calculated at a deliberate teaching pace of **120 words per minute** ($\\text{words} / 120$).\n`;
+  md += `   - Target word count per day: **1,200 to 1,500 words** &rarr; **10 to 12.5 minutes of spoken teaching**.\n`;
+  md += `2. **Hands-On Interactive Time (\`estimateActivityMinutes\`):**\n`;
+  md += `   - Reading and executing code examples: **0.5 min per part**.\n`;
+  md += `   - Solving the active \`tryIt\` coding challenge: **1.0 min per part**.\n`;
+  md += `   - Diagnostic concept check quiz question: **0.5 min per part**.\n`;
+  md += `   - Total per part: **2.0 minutes** &times; 6 parts = **12.0 minutes of active student engagement**.\n`;
+  md += `3. **Combined Experience:**\n`;
+  md += `   - **10–12.5 min spoken** + **12 min hands-on activity** = **22 to 24.5 minutes**.\n`;
+  md += `   - **Result:** Perfectly centered inside the 18–25 minute window!\n\n`;
+
+  md += `---\n\n`;
+
+  md += `## 📊 3. Master Course-by-Course Duration & Visuals Audit Table (All 37 Courses)\n\n`;
+  md += `Below is the complete, course-by-course audit of all 37 individual courses, reporting exact measured times and current visual status:\n\n`;
+
+  md += `| # | Course ID | Canonical Title | Spoken Min | Activity Min | Total Min | Duration Status | Visuals Status | Action Required |\n`;
+  md += `| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |\n`;
+
+  audits.forEach(a => {
+    const durTag = a.inSweetSpot ? `✅ **${a.avgTotalMin}m**` : (a.avgTotalMin < 18 ? `⚠️ ${a.avgTotalMin}m (Short)` : `⚠️ ${a.avgTotalMin}m (Long)`);
+    const visTag = a.hasVisuals ? `✅ Complete (30/30)` : `⏳ Needed (0/30)`;
+    let action = '';
+    if (a.hasVisuals && a.inSweetSpot) {
+      action = 'Ready to ship; link existing visuals';
+    } else if (a.hasVisuals && !a.inSweetSpot) {
+      action = 'Trim lesson text slightly to hit &le;25m';
+    } else if (!a.hasVisuals && a.inSweetSpot) {
+      action = 'Generate 30-day visual suite (Gate v2)';
+    } else {
+      action = 'Expand to 6-part LongLesson (18-25m) + Generate Visuals';
+    }
+
+    md += `| **${a.num.toString().padStart(2, '0')}** | \`${a.id}\` | ${a.title} | ${a.avgSpokenMin}m | ${a.avgActivityMin}m | ${durTag} | ${a.inSweetSpot ? 'PASS' : 'REMEDIATE'} | ${visTag} | ${action} |\n`;
   });
 
-  md += `---\n\n`;
+  md += `\n---\n\n`;
 
-  md += `## 🎨 Master Visual Templates Catalog (17 Interactive Diagram Engines)\n\n`;
-  md += `Every diagram displayed to a student in PinIT Career OS is rendered by one of 17 specialized visual engines. No diagram is a static image; each is an interactive, stateful SVG/Canvas/DOM component that steps in sync with the instructor's spoken sentence:\n\n`;
-
-  md += `| Template Key | Engine Name | Primary Domain | Visual Representation & Pedagogical Function |\n`;
+  md += `## 🏛️ 4. Master Visual Templates Catalog (17 Interactive Diagram Engines)\n\n`;
+  md += `| Template Key | Engine Name | Primary Domain | Interactive Function & Pedagogical Role |\n`;
   md += `| :--- | :--- | :--- | :--- |\n`;
   Object.entries(TEMPLATES_INFO).forEach(([key, info]) => {
     md += `| \`${key}\` | **${info.label}** | ${info.domain} | ${info.desc} |\n`;
@@ -843,99 +900,66 @@ function buildMarkdown(courses: CourseItem[]): string {
 
   md += `---\n\n`;
 
-  md += `## 🛡️ Technical Gate v2: 14 Strict Non-Negotiable Rules\n\n`;
-  md += `Every daily visual specification file (\`day-{NN}.json\`) must strictly pass all 14 rules of Gate v2 without warnings or exceptions:\n\n`;
-
-  md += `* **R1 (AST Linkage):** The day file has exactly 6 entries, and each entry's \`partTitle\` matches the real lesson AST.\n`;
-  md += `* **R2 (Allowed Template):** The template is \`none\` or is on the course's allowed template list. Arbitrary templates are rejected.\n`;
-  md += `* **R3 (Shape Limits):** Between 2 and 5 steps; at most 6 shapes per step. Tables have 2–5 columns and &le; 6 rows.\n`;
-  md += `* **R4 (Monotonic Progression):** \`at\` values are valid (\`sayN\` only if part has &ge; N say lines) and strictly monotonically increasing.\n`;
-  md += `* **R5 (Caption Typography):** Each caption is a single sentence of at most 80 characters, ending in a period, containing zero emojis.\n`;
-  md += `* **R6 (Deterministic Runtime Bindings):** Every value is a valid binding (\`var\`, \`out\`, \`table\`, \`http\`, \`dom\`, \`error\`, \`text\`). Filling the spec from a fresh code run reproduces \`filled\` exactly.\n`;
-  md += `* **R7 (Number Grounding):** Every number in a caption appears in the bound values or in the part's code.\n`;
-  md += `* **R8 (Word Grounding):** Every tappable word/label appears as a whole word in the lesson text or code.\n`;
-  md += `* **R9 (Design Token Palette):** Visual tones are strictly restricted to the 4 design tokens: \`data\`, \`ok\`, \`error\`, \`idle\`.\n`;
-  md += `* **R10 (Visual Density):** At least 3 of the 6 parts in a day have a picture; otherwise the day is flagged \`needs-review\`.\n`;
-  md += `* **R11 (Manifest Synchronization):** The manifest status matches the day file: \`passed\`, \`none\`, or \`needs-review\`.\n`;
-  md += `* **R12 (Conceptual Overlap):** On-concept check: Each caption shares at least one 4+ letter word with the attached lesson text.\n`;
-  md += `* **R13 (Freshness Cryptography):** Each entry's \`codeHash\` equals the SHA-256 of the part's current code.\n`;
-  md += `* **R14 (Runtime Stability):** No binding points to an unstable variable that differs across runs.\n\n`;
-
-  md += `---\n\n`;
-
-  md += `## 🔬 Deep Course-by-Course Blueprint (All 37 Individual Courses)\n\n`;
-  md += `Below is the complete, unabridged architectural specification for each of the 37 individual 1-month courses. Each course details the pedagogical mental model, allowed templates, the complete 6-Block breakdown across all 30 days grounded in the actual curriculum, and the capstone milestone project:\n\n`;
+  md += `## 🔬 5. Deep Course-by-Course Blueprint & Roadmap (All 37 Courses)\n\n`;
 
   courses.forEach(c => {
     const meta = COURSE_METAS[c.id];
-    if (!meta) return;
+    const audit = audits.find(a => a.id === c.id);
+    if (!meta || !audit) return;
 
     md += `### Course ${c.num.toString().padStart(2, '0')}: [${c.id}] ${c.title}\n\n`;
-    md += `* **Catalog ID:** \`${c.id}\`  \n`;
-    md += `* **Prefix / Directory:** \`src/lib/data/lessonVisuals/${meta.prefix}/\`  \n`;
-    md += `* **Difficulty:** ${c.difficulty || 'All Levels'} | **Duration:** 4 Weeks / 30 Curriculum Days | **Quests:** ${c.totalQuests || 96} quests  \n`;
-    md += `* **Core Architectural Theme:** ${meta.theme}  \n`;
+    md += `* **Domain Cluster:** ${c.difficulty || 'All Levels'} | **Duration:** 4 Weeks / 30 Days | **Total Quests:** ${c.totalQuests || 96} quests  \n`;
+    md += `* **Prefix Mapping:** \`${audit.prefix}\` (Visuals Dir: \`${audit.visualPrefix}\`)  \n`;
+    md += `* **Visual Suite Status:** ${audit.hasVisuals ? `✅ **30/30 Days Complete** (Built in Cert Track)` : `⏳ **0/30 Days Needed** (New Generation Required)`}  \n`;
+    md += `* **Measured Lesson Time:** Spoken: **${audit.avgSpokenMin} min** + Interactive: **${audit.avgActivityMin} min** = **Total: ${audit.avgTotalMin} min** (${audit.inSweetSpot ? '🎯 PERFECT (18–25 min)' : '⚠️ EXPANSION TO 18-25 MIN REQUIRED'})  \n`;
     md += `* **Allowed Visual Templates:** \`${meta.allowedTemplates.join('`, `')}\`  \n\n`;
 
     md += `#### Pedagogical Whiteboard Mental Model\n`;
     md += `> ${meta.pedagogy}\n\n`;
 
     md += `#### 6-Block Detailed Curriculum & Visual Architecture (Days 1–30)\n\n`;
-    md += `| Block | Day Range | Real Curriculum Focus & Sample Topics | Primary Visual Architecture & Step Bindings |\n`;
+    md += `| Block | Day Range | Real Curriculum Focus | Visual Engine Architecture & Bindings |\n`;
     md += `| :---: | :---: | :--- | :--- |\n`;
 
     c.blocks.forEach((b, bIdx) => {
       const startDay = b.days[0]?.day || (bIdx * 5 + 1);
       const endDay = b.days[b.days.length - 1]?.day || (bIdx * 5 + 5);
-      const sampleTopic = b.days[0]?.title || `Block ${bIdx + 1} Foundations`;
       const focus = meta.blockFocus[bIdx] || `Core Block ${bIdx + 1} Mastery`;
       const template = meta.allowedTemplates[bIdx % meta.allowedTemplates.length];
 
-      md += `| **Block ${b.blockNum}** | Days ${startDay}–${endDay} | **${focus}**<br>_Sample: "${sampleTopic.replace(/\|/g, '-')}"_ | Template \`${template}\`: Step-by-step state animation with \`data\`, \`ok\`, \`idle\` token highlighting. |\n`;
+      md += `| **Block ${b.blockNum}** | Days ${startDay}–${endDay} | **${focus}** | Template \`${template}\`: Animated step-by-step state progression with deterministic tokens. |\n`;
     });
 
     md += `\n`;
-    md += `#### Capstone Milestone Project\n`;
-    md += `* **Milestone Deliverable:** ${meta.milestoneProject}\n\n`;
+    md += `#### Capstone Milestone Deliverable\n`;
+    md += `* **Milestone Project:** ${meta.milestoneProject}\n\n`;
     md += `---\n\n`;
   });
 
-  md += `## 🚀 Execution & Phased Implementation Roadmap\n\n`;
-  md += `The generation and verification of all 37 individual courses proceeds in structured, atomic phases:\n\n`;
+  md += `## 🚀 6. Phased Implementation Plan for the 24 Standalone Courses\n\n`;
+  md += `To elevate all 24 standalone courses to the **18–25 minute standard** and equip them with **100% Gate v2 compliant visual suites**, execution proceeds in structured phases:\n\n`;
 
-  md += `### Phase 0: Pre-Flight Safety, Scope Guard & Protected Files\n`;
-  md += `* Lock down test suites, security guards, and protected directories.\n`;
-  md += `* Run Gitleaks secret scanning and verify clean working tree on \`main-dis3ku\`.\n`;
-  md += `* Initialize course directories under \`src/lib/data/lessonVisuals/\` for all ungenerated courses.\n\n`;
+  md += `### Phase 1: LongLesson Curriculum Expansion (Days 1–30)\n`;
+  md += `* Author 6-part LongLessons for the 23 legacy pilot courses, expanding each day's content to **1,200–1,500 words** across \`title\`, \`say\`, \`example\`, \`code\`, \`tryIt\`, and \`check\`.\n`;
+  md += `* Enforce that every expanded day verifies at **18.0 to 24.5 minutes** using \`estimateLessonMinutes\`.\n\n`;
 
-  md += `### Phase 1: Visual Engine Extensions & Domain Template Adaptations\n`;
-  md += `* Register extended templates: \`register-bits\` for Embedded IoT, \`ledger-sheet\` for Digital Accounting, and \`funnel\` for Digital Marketing & Sales.\n`;
-  md += `* Extend runtime binding evaluators for financial balances and hardware registers.\n`;
-  md += `* Update \`COURSE_ALLOWED_TEMPLATES\` in \`src/lib/visuals/gate.ts\` to reflect all 37 courses.\n\n`;
+  md += `### Phase 2: Visual Suite Generation in 5-Day Atomic Blocks\n`;
+  md += `* Generate visual suites for the 24 courses across 144 blocks (24 courses &times; 6 blocks = 720 days).\n`;
+  md += `* Every 5-day block undergoes Gate v2 audit (R1–R14) with immediate in-situ remediation until \`PASS 5/6\` or \`PASS 6/6\`.\n\n`;
 
-  md += `### Phase 2: 5-Day Atomic Generation & In-Situ Verification Sprints\n`;
-  md += `* Total Workload: **222 atomic 5-day blocks** (37 courses &times; 6 blocks).\n`;
-  md += `* Each 5-day block follows the Zero-Hallucination 5-Step Loop:\n`;
-  md += `  1. Align day and part titles with the Master Curriculum.\n`;
-  md += `  2. Run \`npm run visuals:check -- --course {prefix} --block {N}\`.\n`;
-  md += `  3. Remediate any non-compliant entries in place immediately until 100% PASS.\n`;
-  md += `  4. Validate runtime payload via \`/api/visuals?prefix={prefix}&day={day}\`.\n`;
-  md += `  5. Stage and commit the verified block to git repository.\n\n`;
-
-  md += `### Phase 3: Global Matrix Simulation & Quality Sign-Off\n`;
-  md += `* Execute \`simulate-student-view.mts\` across all 1,110 days and 6,660 lesson parts.\n`;
-  md += `* Enforce **0 fatal errors, 0 broken bindings, and 100% matrix pass rate**.\n`;
-  md += `* Final owner sign-off and milestone release.\n\n`;
+  md += `### Phase 3: Runtime Verification & Full Matrix Release\n`;
+  md += `* Run \`simulate-student-view.mts\` across all 1,110 days.\n`;
+  md += `* Ensure 0 broken bindings, 0 render crashes, and full release in \`enabledCourses.ts\`.\n\n`;
 
   return md;
 }
 
-function buildHtml(courses: CourseItem[]): string {
+function buildHtml(courses: CourseItem[], audits: AuditRecord[], auditData: any): string {
   let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PinIT Career OS — 36+ Individual 1-Month Courses Master Visuals Plan</title>
+  <title>PinIT Career OS — 36+ Courses Master Visuals & Duration Plan</title>
   <style>
     @page {
       size: A4;
@@ -945,7 +969,7 @@ function buildHtml(courses: CourseItem[]): string {
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 9.5pt;
-      line-height: 1.48;
+      line-height: 1.45;
       color: #1e293b;
       margin: 0;
       padding: 0;
@@ -958,48 +982,41 @@ function buildHtml(courses: CourseItem[]): string {
     }
 
     h1 {
-      font-size: 18pt;
+      font-size: 17pt;
       line-height: 1.25;
       margin-top: 0;
-      margin-bottom: 6pt;
+      margin-bottom: 5pt;
       border-bottom: 2.5px solid #2563eb;
-      padding-bottom: 6pt;
+      padding-bottom: 5pt;
     }
 
     h2 {
-      font-size: 13pt;
-      margin-top: 16pt;
-      margin-bottom: 6pt;
+      font-size: 12.5pt;
+      margin-top: 14pt;
+      margin-bottom: 5pt;
       border-bottom: 1.5px solid #cbd5e1;
-      padding-bottom: 4pt;
+      padding-bottom: 3pt;
       page-break-after: avoid;
     }
 
     h3 {
-      font-size: 11pt;
-      margin-top: 13pt;
-      margin-bottom: 4pt;
-      page-break-after: avoid;
-    }
-
-    h4 {
-      font-size: 9.5pt;
-      margin-top: 8pt;
+      font-size: 10.5pt;
+      margin-top: 12pt;
       margin-bottom: 3pt;
-      color: #334155;
+      page-break-after: avoid;
     }
 
     p {
       margin-top: 0;
-      margin-bottom: 6pt;
+      margin-bottom: 5pt;
     }
 
     .header-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 4px solid #2563eb;
-      padding: 10pt 14pt;
-      margin-bottom: 14pt;
+      padding: 8pt 12pt;
+      margin-bottom: 12pt;
       border-radius: 4pt;
     }
 
@@ -1010,8 +1027,8 @@ function buildHtml(courses: CourseItem[]): string {
     }
 
     .header-box td {
-      padding: 2.5pt 6pt;
-      font-size: 8.8pt;
+      padding: 2pt 5pt;
+      font-size: 8.5pt;
       vertical-align: top;
       border: none;
     }
@@ -1029,9 +1046,9 @@ function buildHtml(courses: CourseItem[]): string {
     table.data-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 6pt;
-      margin-bottom: 10pt;
-      font-size: 8.5pt;
+      margin-top: 5pt;
+      margin-bottom: 8pt;
+      font-size: 8.2pt;
       page-break-inside: auto;
     }
 
@@ -1042,7 +1059,7 @@ function buildHtml(courses: CourseItem[]): string {
 
     table.data-table th, table.data-table td {
       border: 1px solid #cbd5e1;
-      padding: 4pt 6pt;
+      padding: 3.5pt 5pt;
       text-align: left;
       vertical-align: top;
     }
@@ -1057,45 +1074,59 @@ function buildHtml(courses: CourseItem[]): string {
       background-color: #f8fafc;
     }
 
-    .cluster-badge {
-      display: inline-block;
-      padding: 2px 6px;
-      font-size: 7.5pt;
+    .category-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 4pt;
+      padding: 6pt 8pt;
+      margin-bottom: 8pt;
+      background: #ffffff;
+      font-size: 8.3pt;
+    }
+
+    .badge-ok {
+      background: #dcfce7;
+      color: #15803d;
       font-weight: 700;
+      padding: 1px 4px;
       border-radius: 3px;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin-bottom: 4pt;
+    }
+
+    .badge-warn {
+      background: #fef3c7;
+      color: #b45309;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
     }
 
     .course-card {
       border: 1px solid #e2e8f0;
       border-radius: 4pt;
-      padding: 8pt 10pt;
-      margin-bottom: 12pt;
+      padding: 7pt 9pt;
+      margin-bottom: 10pt;
       background: #ffffff;
       page-break-inside: avoid;
     }
 
     .course-card-header {
       border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 4pt;
-      margin-bottom: 6pt;
+      padding-bottom: 3pt;
+      margin-bottom: 5pt;
     }
 
     .quote-box {
       background: #eff6ff;
       border-left: 3px solid #3b82f6;
-      padding: 5pt 8pt;
-      margin: 4pt 0 6pt 0;
-      font-size: 8.5pt;
+      padding: 4pt 7pt;
+      margin: 4pt 0 5pt 0;
+      font-size: 8.3pt;
       color: #1e3a8a;
       font-style: italic;
     }
 
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 8pt;
+      font-size: 7.8pt;
       background-color: #f1f5f9;
       padding: 1px 3px;
       border-radius: 2px;
@@ -1110,92 +1141,129 @@ function buildHtml(courses: CourseItem[]): string {
 </head>
 <body>
 
-  <h1>PinIT Career OS — 36+ Individual 1-Month Courses Master Visuals Architecture</h1>
+  <h1>PinIT Career OS — 36+ Courses Master Visuals & Duration Architecture</h1>
   
   <div class="header-box">
     <table>
       <tr>
         <td class="label">Document Identifier</td>
-        <td class="val"><strong>PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN</strong> (Claude Style Publication Edition)</td>
+        <td class="val"><strong>PINIT_36_INDIVIDUAL_COURSES_VISUALS_PLAN</strong> (v3.0 Zero-Hallucination & Duration Audit)</td>
       </tr>
       <tr>
         <td class="label">Total Courses & Volume</td>
-        <td class="val"><strong>37 Courses</strong> &nbsp;•&nbsp; <strong>1,110 Lesson Days</strong> &nbsp;•&nbsp; <strong>6,660 Interactive Lesson Parts</strong></td>
+        <td class="val"><strong>37 Master Courses</strong> &bull; <strong>1,110 Lesson Days</strong> &bull; <strong>6,660 Interactive Lesson Parts</strong></td>
       </tr>
       <tr>
-        <td class="label">Curriculum Domain Clusters</td>
-        <td class="val">6 Distinct Clusters (Software Eng, Systems/Security, Hardware/Web3, Commerce, Operations, Foundations)</td>
+        <td class="label">Pedagogical Standard</td>
+        <td class="val"><strong>18–25 Minutes Lesson Duration</strong> &bull; <strong>Deterministic Gate v2 Visual Bindings</strong></td>
       </tr>
       <tr>
-        <td class="label">Quality & Testing Standard</td>
-        <td class="val"><strong>Technical Gate v2 (Rules R1–R14)</strong> with 5-Day Atomic Verification Cycles & Zero Hallucination</td>
-      </tr>
-      <tr>
-        <td class="label">Engine & API Stack</td>
-        <td class="val">Next.js 14, TypeScript, React <code>VisualStage.tsx</code>, <code>/api/visuals</code>, Playwright Headless Chromium</td>
+        <td class="label">Actual Measured Reality</td>
+        <td class="val"><strong>13 Courses Already Built (30/30)</strong> &bull; <strong>24 Courses Standalone (Expansion + Visuals Needed)</strong></td>
       </tr>
     </table>
   </div>
 
-  <h2>1. Executive Summary & The Golden Triad</h2>
+  <h2>1. Honest Reality Audit: Already Built vs. To Be Built</h2>
   <p>
-    The PinIT Career OS learning platform delivers high-retention technical and vocational education by pairing every lesson part with an interactive visual mental model. Across all <strong>37 individual 1-month certification courses</strong>, abstract code, business logic, hardware registers, and algorithmic structures are materialized on the left of the student's lesson player.
+    An audit of the codebase confirms that some courses already have 30-day visual suites built from the Python and Web certification tracks. The 37 courses are structured into 4 reality categories:
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Count</th>
+        <th>Visuals Status</th>
+        <th>Lesson Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Category A: Ready to Ship</strong></td>
+        <td>Already built in cert tracks + LongLessons format</td>
+        <td><strong>12 Courses</strong></td>
+        <td><span class="badge-ok">✅ 30/30 Built</span></td>
+        <td><span class="badge-ok">🎯 21.2–24.4m (PERFECT)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Category B: Minor Trim Needed</strong></td>
+        <td>Visuals 30/30 built (<code>sql-mastery</code>), duration slightly high</td>
+        <td><strong>1 Course</strong></td>
+        <td><span class="badge-ok">✅ 30/30 Built</span></td>
+        <td><span class="badge-warn">⚠️ 26.1m (Trim to 23m)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Category C: Visuals Needed</strong></td>
+        <td>Duration perfect (<code>design</code>), but visuals need authoring</td>
+        <td><strong>1 Course</strong></td>
+        <td><span class="badge-warn">⏳ 0/30 Needed</span></td>
+        <td><span class="badge-ok">🎯 22.5m (PERFECT)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Category D: Standalone Courses</strong></td>
+        <td>Standalone courses in short format (~6m); needs expansion & visuals</td>
+        <td><strong>23 Courses</strong></td>
+        <td><span class="badge-warn">⏳ 0/30 Needed</span></td>
+        <td><span class="badge-warn">⚠️ 6.0m (Expand to 18-25m)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. The 18–25 Minute Pedagogical Duration Standard</h2>
+  <p>
+    In PinIT Career OS, lesson duration is calculated using the platform's official formula in <code>src/lib/data/longLessons.ts</code>:
   </p>
   <div class="quote-box">
-    <strong>The Golden Triad:</strong> <em>Content &harr; Output &harr; Visuals.</em> Visuals move in lockstep with the instructor's spoken voice (<code>say</code> lines). Visual values are <strong>strictly bound to runtime compiler output</strong>, never hallucinated by an AI. When students edit code and click <em>Run</em>, diagrams smoothly re-animate using their live values.
+    <strong>Total Duration</strong> = <strong>Spoken Time</strong> (words &divide; 120 wpm) + <strong>Hands-on Activity Time</strong> (6 parts &times; 2.0 min per tryIt & check).<br>
+    <em>Target:</em> 1,200–1,500 words of spoken lecture (10–12.5m) + interactive coding changes and diagnostic checks (11–12m) = <strong>21.0 to 24.5 minutes</strong>.
   </div>
 
-  <h2>2. Master Domain Cluster Taxonomy (37 Courses)</h2>
-`;
+  <h2>3. Master Course-by-Course Duration & Visuals Audit (All 37 Courses)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 5%;">#</th>
+        <th style="width: 22%;">Course Identifier</th>
+        <th style="width: 33%;">Title</th>
+        <th style="width: 10%;">Spoken</th>
+        <th style="width: 10%;">Activity</th>
+        <th style="width: 10%;">Total</th>
+        <th style="width: 10%;">Visuals</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
 
-  CLUSTERS.forEach(cluster => {
-    html += `
-    <div style="margin-top: 10pt;">
-      <span class="cluster-badge" style="background-color: ${cluster.color};">${cluster.tag}</span>
-      <h3 style="margin-top: 2pt;">${cluster.title}</h3>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th style="width: 5%;">#</th>
-            <th style="width: 25%;">Course Identifier</th>
-            <th style="width: 35%;">Canonical Title</th>
-            <th style="width: 15%;">Level</th>
-            <th style="width: 20%;">Allowed Templates</th>
-          </tr>
-        </thead>
-        <tbody>
-    `;
-
-    cluster.courseIds.forEach(id => {
-      const c = courses.find(item => item.id === id);
-      const meta = COURSE_METAS[id];
-      if (c && meta) {
-        html += `
-          <tr>
-            <td style="font-weight: 700; text-align: center;">${c.num.toString().padStart(2, '0')}</td>
-            <td><code>${c.id}</code></td>
-            <td><strong>${c.title}</strong></td>
-            <td>${c.difficulty || 'Intermediate'}</td>
-            <td><code>${meta.allowedTemplates.join(', ')}</code></td>
-          </tr>
-        `;
-      }
-    });
+  audits.forEach(a => {
+    const durBadge = a.inSweetSpot 
+      ? `<span class="badge-ok">${a.avgTotalMin}m</span>` 
+      : `<span class="badge-warn">${a.avgTotalMin}m</span>`;
+    const visBadge = a.hasVisuals 
+      ? `<span class="badge-ok">30/30</span>` 
+      : `<span class="badge-warn">0/30</span>`;
 
     html += `
-        </tbody>
-      </table>
-    </div>
+      <tr>
+        <td style="text-align: center; font-weight: 700;">${a.num.toString().padStart(2, '0')}</td>
+        <td><code>${a.id}</code></td>
+        <td><strong>${a.title}</strong></td>
+        <td>${a.avgSpokenMin}m</td>
+        <td>${a.avgActivityMin}m</td>
+        <td>${durBadge}</td>
+        <td>${visBadge}</td>
+      </tr>
     `;
   });
 
   html += `
+    </tbody>
+  </table>
+
   <div class="page-break"></div>
 
-  <h2>3. Master Visual Templates Catalog (17 Interactive Diagram Engines)</h2>
-  <p>
-    The visual platform provides 17 dedicated diagram engines. Each engine complies with the 4 core design tokens (<code>data</code>, <code>ok</code>, <code>error</code>, <code>idle</code>) and supports animated step transitions:
-  </p>
+  <h2>4. Master Visual Templates Catalog (17 Interactive Diagram Engines)</h2>
   <table class="data-table">
     <thead>
       <tr>
@@ -1223,72 +1291,42 @@ function buildHtml(courses: CourseItem[]): string {
     </tbody>
   </table>
 
-  <h2>4. Technical Gate v2 Enforcement Standard (Rules R1–R14)</h2>
-  <p>
-    To guarantee <strong>zero AI hallucinations</strong> and production resilience, every generated JSON visual file must pass all 14 rules of the Gate v2 programmatic validator:
-  </p>
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th style="width: 8%;">Rule</th>
-        <th style="width: 27%;">Rule Name</th>
-        <th style="width: 65%;">Validation Criterion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>R1</strong></td><td>AST Linkage</td><td>Day file has exactly 6 entries matching real lesson AST part titles.</td></tr>
-      <tr><td><strong>R2</strong></td><td>Template Whitelist</td><td>Template is <code>none</code> or on the course's allowed list.</td></tr>
-      <tr><td><strong>R3</strong></td><td>Shape & Step Limits</td><td>2 to 5 steps; &le; 6 shapes per step; tables have 2–5 cols and &le; 6 rows.</td></tr>
-      <tr><td><strong>R4</strong></td><td>Monotonic Stepping</td><td>Step <code>at</code> points strictly increase and match real lecture sentence indices.</td></tr>
-      <tr><td><strong>R5</strong></td><td>Caption Typography</td><td>Single sentence &le; 80 characters, ending in a period, zero emojis.</td></tr>
-      <tr><td><strong>R6</strong></td><td>Deterministic Bindings</td><td>Every displayed value maps to a compiler runtime binding (<code>var</code>, <code>out</code>, etc.).</td></tr>
-      <tr><td><strong>R7</strong></td><td>Numeric Grounding</td><td>Every number in a caption appears verbatim in code or runtime output.</td></tr>
-      <tr><td><strong>R8</strong></td><td>Lexical Grounding</td><td>Every tapped label exists as a whole word in lesson text or code.</td></tr>
-      <tr><td><strong>R9</strong></td><td>Design Token Palette</td><td>Tones restricted strictly to <code>data</code>, <code>ok</code>, <code>error</code>, <code>idle</code>.</td></tr>
-      <tr><td><strong>R10</strong></td><td>Visual Density</td><td>At least 3 of 6 parts per day have diagrams (otherwise flagged review).</td></tr>
-      <tr><td><strong>R11</strong></td><td>Manifest Sync</td><td>Manifest status reflects true file state (<code>passed</code>, <code>none</code>, <code>needs-review</code>).</td></tr>
-      <tr><td><strong>R12</strong></td><td>Concept Overlap</td><td>Captions share 4+ letter keywords with attached lesson explanation.</td></tr>
-      <tr><td><strong>R13</strong></td><td>Code Freshness</td><td><code>codeHash</code> matches SHA-256 hash of current lesson snippet.</td></tr>
-      <tr><td><strong>R14</strong></td><td>Runtime Stability</td><td>Bindings point only to stable variables that never fluctuate across runs.</td></tr>
-    </tbody>
-  </table>
-
   <div class="page-break"></div>
 
-  <h2>5. Exhaustive Course-by-Course Blueprint (All 37 Courses)</h2>
+  <h2>5. Detailed Blueprint & Action Plan (All 37 Courses, One by One)</h2>
   <p>
-    Below are the complete architectural blueprints for all 37 individual 1-month courses. Each course specifies its domain cluster, allowed templates, pedagogical mental model, 6-block curriculum breakdown (Days 1–30), and capstone project:
+    Below is the exhaustive architectural specification for every single course, specifying existing assets, measured times, allowed templates, and curriculum blocks:
   </p>
   `;
 
   courses.forEach(c => {
     const meta = COURSE_METAS[c.id];
-    if (!meta) return;
+    const audit = audits.find(a => a.id === c.id);
+    if (!meta || !audit) return;
 
     html += `
     <div class="course-card">
       <div class="course-card-header">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <h3 style="margin: 0; color: #1e293b;">Course ${c.num.toString().padStart(2, '0')}: ${c.title}</h3>
-          <span style="font-size: 8pt; color: #64748b; font-weight: 600;">Catalog: <code>${c.id}</code></span>
+          <span style="font-size: 8pt; color: #64748b; font-weight: 600;"><code>${c.id}</code></span>
         </div>
-        <p style="margin: 2pt 0; font-size: 8.5pt; color: #475569;">
-          <strong>Difficulty:</strong> ${c.difficulty || 'All Levels'} &nbsp;|&nbsp; 
-          <strong>Duration:</strong> 4 Weeks (30 Days / 6 Blocks) &nbsp;|&nbsp; 
-          <strong>Quests:</strong> ${c.totalQuests || 96} quests &nbsp;|&nbsp;
+        <p style="margin: 2pt 0; font-size: 8.3pt; color: #475569;">
+          <strong>Visuals:</strong> ${audit.hasVisuals ? '<span class="badge-ok">✅ Built (30/30)</span>' : '<span class="badge-warn">⏳ Needed (0/30)</span>'} &nbsp;|&nbsp;
+          <strong>Duration:</strong> ${audit.inSweetSpot ? '<span class="badge-ok">🎯 ' + audit.avgTotalMin + ' min (18-25m Standard)</span>' : '<span class="badge-warn">⚠️ ' + audit.avgTotalMin + ' min (Expansion to 18-25m Needed)</span>'} &nbsp;|&nbsp;
           <strong>Allowed:</strong> <code>${meta.allowedTemplates.join(', ')}</code>
         </p>
       </div>
 
-      <p style="font-size: 8.5pt; margin-bottom: 4pt;">
+      <p style="font-size: 8.2pt; margin-bottom: 3pt;">
         <strong>Architectural Theme:</strong> ${meta.theme}
       </p>
 
-      <div class="quote-box" style="margin: 4pt 0 6pt 0;">
+      <div class="quote-box">
         <strong>Pedagogical Whiteboard Model:</strong> ${meta.pedagogy}
       </div>
 
-      <table class="data-table" style="margin-top: 4pt; margin-bottom: 4pt; font-size: 8pt;">
+      <table class="data-table" style="margin-top: 3pt; margin-bottom: 3pt; font-size: 7.8pt;">
         <thead>
           <tr>
             <th style="width: 12%;">Block</th>
@@ -1311,7 +1349,7 @@ function buildHtml(courses: CourseItem[]): string {
             <td style="font-weight: 600;">Block ${b.blockNum}</td>
             <td>Days ${startDay}–${endDay}</td>
             <td><strong>${focus}</strong></td>
-            <td>Template <code>${template}</code>: Animated state progression</td>
+            <td>Template <code>${template}</code>: Animated step-by-step state progression</td>
           </tr>
       `;
     });
@@ -1320,7 +1358,7 @@ function buildHtml(courses: CourseItem[]): string {
         </tbody>
       </table>
 
-      <p style="font-size: 8.2pt; margin: 4pt 0 0 0; color: #0f172a;">
+      <p style="font-size: 8pt; margin: 3pt 0 0 0; color: #0f172a;">
         <strong>Capstone Milestone:</strong> ${meta.milestoneProject}
       </p>
     </div>
@@ -1330,11 +1368,7 @@ function buildHtml(courses: CourseItem[]): string {
   html += `
   <div class="page-break"></div>
 
-  <h2>6. Execution & Phased Implementation Roadmap</h2>
-  <p>
-    The generation and verification of visual assets across all 37 individual 1-month courses follows an atomic, verifiable protocol:
-  </p>
-
+  <h2>6. Phased Implementation Roadmap for the 24 Standalone Courses</h2>
   <table class="data-table">
     <thead>
       <tr>
@@ -1345,35 +1379,25 @@ function buildHtml(courses: CourseItem[]): string {
     </thead>
     <tbody>
       <tr>
-        <td><strong>Phase 0: Safety & Scope</strong></td>
-        <td>Protected file locks, Gitleaks secret verification, course directory initialization across all 37 prefixes.</td>
-        <td>Pre-flight checks pass; zero uncommitted modifications; clean working directory.</td>
+        <td><strong>Phase 1: Curriculum Expansion</strong></td>
+        <td>Expand 23 legacy pilot courses into 6-part LongLessons (1,200–1,500 words per day) to hit the 18–25 min standard.</td>
+        <td><code>estimateLessonMinutes</code> outputs 18.0 to 24.5 min across all 30 days.</td>
       </tr>
       <tr>
-        <td><strong>Phase 1: Engine Buildout</strong></td>
-        <td>Register 3 extended templates (<code>register-bits</code>, <code>ledger-sheet</code>, <code>funnel</code>); wire financial ledger and bitwise binding adapters.</td>
-        <td>All 17 templates compile in <code>VisualStage.tsx</code>; TypeScript typechecks clean.</td>
-      </tr>
-      <tr>
-        <td><strong>Phase 2: 5-Day Sprints</strong></td>
-        <td>Generate 222 atomic 5-day blocks across the 37 courses using the 5-Step Loop.</td>
-        <td>Every block outputs <code>PASS 5/6</code> or <code>PASS 6/6</code> on Gate v2 before atomic git commit.</td>
+        <td><strong>Phase 2: Visual Suite Generation</strong></td>
+        <td>Author visual specifications for the 24 courses across 144 blocks (720 days) using the 5-Step Loop.</td>
+        <td>Gate v2 (Rules R1–R14) outputs 100% PASS with deterministic AST bindings.</td>
       </tr>
       <tr>
         <td><strong>Phase 3: Student Simulation</strong></td>
-        <td>Full-matrix runtime audit across all 1,110 lesson days and 6,660 parts using <code>simulate-student-view.mts</code>.</td>
-        <td><strong>100% matrix pass rate (0 fatal errors, 0 broken bindings, 0 layout crashes).</strong></td>
-      </tr>
-      <tr>
-        <td><strong>Phase 4: Owner Sign-Off</strong></td>
-        <td>Sample inspection of 3 lessons per cluster on mobile (390px) and desktop (1440px) viewports in light and dark modes.</td>
-        <td>Official release switches flipped in <code>enabledCourses.ts</code>.</td>
+        <td>Run <code>simulate-student-view.mts</code> across all 1,110 days and 6,660 lesson parts.</td>
+        <td>0 broken bindings, 0 render crashes, 100% clean full-matrix simulation.</td>
       </tr>
     </tbody>
   </table>
 
-  <div style="margin-top: 24pt; border-top: 1px solid #cbd5e1; padding-top: 10pt; text-align: center; color: #64748b; font-size: 8pt;">
-    PinIT Career OS &nbsp;•&nbsp; Publication-Grade Visuals Master Architecture &nbsp;•&nbsp; 37 Courses &nbsp;•&nbsp; 100% Gate v2 Compliant
+  <div style="margin-top: 20pt; border-top: 1px solid #cbd5e1; padding-top: 8pt; text-align: center; color: #64748b; font-size: 7.8pt;">
+    PinIT Career OS &bull; Publication Standard v3.0 &bull; 37 Courses Audited One-by-One &bull; 18–25 Min Duration Standard Enforced
   </div>
 
 </body>
