@@ -1,7 +1,7 @@
 # PinIT Career OS — 36+ Courses Masterclass SRS & Pedagogical Architecture Blueprint
 
 **Document Identifier:** `PINIT_36_COURSES_MASTERCLASS_SRS_500P`  
-**Document Version:** 4.0 (Masterclass Production Standard with Vector Visuals & Domain Failure Modes)  
+**Document Version:** 5.0 (Ultimate LMS Masterclass Standard with 4-Stage Scaffolding & Telemetry Simulation)  
 **Volume Scope:** 37 Master Courses &bull; 222 Five-Day Blocks &bull; 1,110 Lesson Days &bull; 6,660 Interactive Lesson Parts  
 **Pedagogical Objective:** Industry-grade technical hireability via the 30-minute masterclass loop (28–31 min)  
 **Quality Standard:** Gate v2 (Rules R1–R14), Zero Hallucination, Deterministic Runtime Bindings  
@@ -21,7 +21,16 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ---
 
-## 2. The 18 Execution Plans Breakdown
+## 2. The 4-Stage Cognitive Scaffolding Ladder (From Zero to Senior)
+
+1. **Stage 1: Mental Model Grounding (Days 1–5):** High teacher guidance, syntax with underlying memory costs, input validation.
+2. **Stage 2: Defensive Fluency (Days 6–12):** State mutation boundaries, encapsulation, memory leaks, null dereferences.
+3. **Stage 3: Systems Stress-Testing (Days 13–22):** Concurrency, race conditions, cache alignment, 3 AM production outages.
+4. **Stage 4: Architectural Autonomy (Days 23–30):** Distributed scalability, quorum consensus, zero-downtime cutovers, incident post-mortems.
+
+---
+
+## 3. The 18 Execution Plans Breakdown
 
 ### [PLAN-01] The 30-Minute Cognitive Learning Loop Architecture
 * **Division:** Division I: Cognitive Architecture & Pedagogical Standards  
@@ -166,7 +175,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ---
 
-## 3. The 37 Master Courses Curriculum Matrix
+## 4. The 37 Master Courses Curriculum Matrix
 
 ### Course 01: [course-java-logic] Java Fundamentals & Core Logic
 * **Difficulty:** Beginner | **Duration:** 4 Weeks (30 Days) | **Quests:** 96  

@@ -43,10 +43,65 @@ interface PlanDefinition {
   }[];
 }
 
-console.log('=== PINIT 500+ PAGE MASTERCLASS SRS & ARCHITECTURE COMPILER (v4.0) ===\n');
+interface StageInfo {
+  stageNum: number;
+  stageName: string;
+  badgeColor: string;
+  badgeBg: string;
+  pedagogicalRole: string;
+  failureScope: string;
+  interviewTier: string;
+}
+
+console.log('=== PINIT 500+ PAGE MASTERCLASS SRS & ARCHITECTURE COMPILER (v5.0 Ultimate LMS) ===\n');
 
 const summaryPath = path.resolve(process.cwd(), 'scripts/course-curriculum-summary.json');
 const courses: CourseItem[] = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+
+// The 4-Stage Cognitive Scaffolding Ladder
+function getCognitiveStage(day: number): StageInfo {
+  if (day <= 5) {
+    return {
+      stageNum: 1,
+      stageName: 'Stage 1: Mental Model Grounding',
+      badgeColor: '#0369a1',
+      badgeBg: '#e0f2fe',
+      pedagogicalRole: 'High Guidance (Syntax with Memory Costs & Clean Mental Models)',
+      failureScope: 'Input validation, boundary edge cases, type coercion pitfalls',
+      interviewTier: 'L3 / Technical Screener (Karat / LeetCode Easy-Medium)'
+    };
+  } else if (day <= 12) {
+    return {
+      stageNum: 2,
+      stageName: 'Stage 2: Defensive Fluency',
+      badgeColor: '#15803d',
+      badgeBg: '#dcfce7',
+      pedagogicalRole: 'Balanced Friction (State Mutation & Memory Lifecycles)',
+      failureScope: 'Memory leaks, unhandled null pointers, resource cleanup omissions',
+      interviewTier: 'L4 / Core Domain Coding (Meta / Bloomberg / Stripe)'
+    };
+  } else if (day <= 22) {
+    return {
+      stageNum: 3,
+      stageName: 'Stage 3: Systems Stress-Testing',
+      badgeColor: '#b45309',
+      badgeBg: '#fef3c7',
+      pedagogicalRole: 'High Cognitive Friction (Concurrency, Cache Locality & 3 AM Outages)',
+      failureScope: 'Deadlocks, thread pool exhaustion, torn writes, L1 cache misses',
+      interviewTier: 'L4/L5 / Bug-Squash & High-Concurrency Systems (Stripe / Datadog)'
+    };
+  } else {
+    return {
+      stageNum: 4,
+      stageName: 'Stage 4: Architectural Autonomy',
+      badgeColor: '#6b21a8',
+      badgeBg: '#f3e8ff',
+      pedagogicalRole: 'Zero Support (Distributed Scalability & Incident Post-Mortems)',
+      failureScope: 'Split-brain partitions, quorum loss, cascading SLA violations',
+      interviewTier: 'L5/L6 / System Design & Bar Raiser Capstone (Google / AWS)'
+    };
+  }
+}
 
 // The 18 Execution Plans structured into 7 Strategic Divisions
 const PLANS: PlanDefinition[] = [
@@ -539,9 +594,9 @@ const PLANS: PlanDefinition[] = [
 interface DomainMetadata {
   domainName: string;
   defaultEngine: string;
-  invariantPattern: (cleanTitle: string, desc?: string) => string;
+  invariantPattern: (cleanTitle: string, day: number) => string;
   failurePattern: (cleanTitle: string, day: number) => string;
-  puzzlePattern: (cleanTitle: string) => string;
+  puzzlePattern: (cleanTitle: string, day: number) => string;
 }
 
 function getCourseDomainMeta(courseId: string): DomainMetadata {
@@ -550,9 +605,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'JVM & Enterprise Systems',
       defaultEngine: 'boxes',
-      invariantPattern: (title) => `Enforces strict JVM stack frame allocation, ClassLoader isolation, and immutable reference boundaries for ${title}.`,
-      failurePattern: (title) => `Metaspace leak from dynamic bytecode proxies; unhandled synchronized deadlock locks worker thread pool during burst traffic.`,
-      puzzlePattern: (title) => `JVM telemetry shows GC pause times spike to 4,200ms with 98% old-gen occupancy while executing ${title}. Which memory tuning flag or reference refactor restores sub-20ms p99 SLA?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces strict JVM stack frame variable typing and primitive vs reference allocation for ${title}.`;
+        if (day <= 12) return `Preserves object encapsulation, heap reference lifecycles, and exception boundary contracts in ${title}.`;
+        if (day <= 22) return `Guarantees thread-safe memory barriers, volatile read/write visibility, and non-blocking worker pools in ${title}.`;
+        return `Maintains ClassLoader isolation, Metaspace garbage collection, and enterprise distributed transaction boundaries in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Type-mismatch casting error or integer overflow when parsing unvalidated user input strings.`;
+        if (day <= 12) return `Unclosed Database Connection or Socket leak accumulating in the JVM heap, degrading young-gen GC latency.`;
+        if (day <= 22) return `Thread deadlocks under peak traffic due to inconsistent lock ordering across synchronized service singletons.`;
+        return `Metaspace leak from dynamic bytecode proxies; unhandled synchronized deadlock locks worker thread pool during burst traffic.`;
+      },
+      puzzlePattern: (title, day) => `JVM telemetry shows GC pause times spike to 4,200ms with 98% old-gen occupancy while executing ${title}. Which memory tuning flag or reference refactor restores sub-20ms p99 SLA?`
     };
   }
 
@@ -561,9 +626,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Reactive UI & DOM Engine',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Guarantees unidirectional data flow, reconciliation idempotency, and frame-budget budget invariant (<16ms) in ${title}.`,
-      failurePattern: (title) => `Stale state closure inside asynchronous hook causes uncontrolled cascade re-renders across 1,200 DOM elements, freezing user input.`,
-      puzzlePattern: (title) => `Browser profiler reveals long tasks exceeding 140ms and frame rate collapsing to 12 FPS during ${title}. Which memoization boundary or concurrent transition resolves the jank?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Guarantees pure component rendering, immutable props pass-through, and valid virtual DOM nodes in ${title}.`;
+        if (day <= 12) return `Enforces hook dependency completeness, cleanup function execution on unmount, and stable callback references in ${title}.`;
+        if (day <= 22) return `Maintains 60 FPS frame-rate budget (<16.6ms) and prevents layout thrashing waterfalls in ${title}.`;
+        return `Preserves Server-Side Rendering (SSR) hydration boundary parity and optimistic UI mutation rollback consistency in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Direct state mutation bypassing setState, causing React reconciliation to miss UI updates.`;
+        if (day <= 12) return `Stale closure inside asynchronous hook capturing obsolete prop references and dropping user submissions.`;
+        if (day <= 22) return `Unmemoized parent state selector triggering cascade re-renders across 1,200 DOM elements, freezing user input.`;
+        return `SSR hydration mismatch throwing client-side error and triggering a full client re-render, flashing white screens on mobile.`;
+      },
+      puzzlePattern: (title, day) => `Browser profiler reveals long tasks exceeding 140ms and frame rate collapsing to 12 FPS during ${title}. Which memoization boundary or concurrent transition resolves the jank?`
     };
   }
 
@@ -572,9 +647,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'V8 Runtime & Asynchronous I/O',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Maintains libuv non-blocking event loop throughput and strict streaming backpressure limits for ${title}.`,
-      failurePattern: (title) => `Synchronous JSON parsing on a 40MB payload starves the event loop, causing keep-alive HTTP socket timeouts across all connected clients.`,
-      puzzlePattern: (title) => `Node.js cluster workers crash with OOM errors every 4 hours under sustained traffic in ${title}. How do you profile the heap snapshot to isolate uncollected event listener closures?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Maintains asynchronous callback event queue ordering and non-blocking execution flow in ${title}.`;
+        if (day <= 12) return `Preserves stream backpressure bounds and pipe error event handling across file/network streams in ${title}.`;
+        if (day <= 22) return `Guarantees cluster worker pool distribution and prevents event loop microtask starvation in ${title}.`;
+        return `Enforces distributed session idempotency, CSRF security barriers, and zero-downtime cluster restarts in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Unhandled promise rejection crashing the Node.js process on unexpected null payload.`;
+        if (day <= 12) return `Missing stream backpressure check causing unbuffered 100MB chunk to saturate memory and trigger OOM.`;
+        if (day <= 22) return `Synchronous CPU-intensive regex or JSON parse on a 40MB payload starving the event loop for 1.8 seconds.`;
+        return `WebSocket connection leak retaining orphaned socket descriptors in global cache, running out of file descriptors.`;
+      },
+      puzzlePattern: (title, day) => `Node.js cluster workers crash with OOM errors every 4 hours under sustained traffic in ${title}. How do you profile the heap snapshot to isolate uncollected event listener closures?`
     };
   }
 
@@ -583,9 +668,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Relational Storage Engine & ACID',
       defaultEngine: 'table',
-      invariantPattern: (title) => `Preserves ACID serializability, WAL disk flush durability, and B+ tree node occupancy ratio (>= 50%) for ${title}.`,
-      failurePattern: (title) => `Unindexed filter predicate forces full table scan across 18M rows; shared read lock contention cascades into total connection pool starvation.`,
-      puzzlePattern: (title) => `Production alerts show write latency spiking from 3ms to 650ms after a bulk import during ${title}. Which composite index or WAL group commit strategy restores throughput?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces relational table schema constraints, primary key uniqueness, and strict data typing in ${title}.`;
+        if (day <= 12) return `Preserves referential foreign key integrity, index lookup selectivity, and projection pruning in ${title}.`;
+        if (day <= 22) return `Guarantees ACID serializability isolation, B+ tree leaf node balance (>= 50%), and WAL flush durability in ${title}.`;
+        return `Maintains distributed 2-Phase Commit (2PC) atomic consensus, horizontal sharding keys, and replica read consistency in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Unsanitized user query string vulnerable to SQL injection and syntax parser crashes.`;
+        if (day <= 12) return `N+1 query waterfall firing 400 separate SELECT statements inside an application loop, bottlenecking network I/O.`;
+        if (day <= 22) return `Missing composite index forcing full table scan across 18M rows; shared read lock contention causes connection exhaustion.`;
+        return `Distributed deadlocks across sharded partitions during concurrent balance transfers, forcing cascade transaction rollbacks.`;
+      },
+      puzzlePattern: (title, day) => `Production alerts show write latency spiking from 3ms to 650ms after a bulk import during ${title}. Which composite index or WAL group commit strategy restores throughput?`
     };
   }
 
@@ -594,9 +689,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'POSIX Kernel & Systems Memory',
       defaultEngine: 'boxes',
-      invariantPattern: (title) => `Enforces RAII deterministic destruction, cache-line alignment (64-byte), and zero-cost abstraction semantics in ${title}.`,
-      failurePattern: (title) => `Dangling pointer access post-vector reallocation corrupts adjacent heap metadata, yielding non-deterministic SIGSEGV crashes at high throughput.`,
-      puzzlePattern: (title) => `Valgrind reports 4MB/hour memory leak and cache-miss penalty jumps to 32% in ${title}. Which custom arena allocator or move-semantic transfer eliminates cache thrashing?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces pointer arithmetic bounds, stack frame variable scopes, and explicit memory size limits in ${title}.`;
+        if (day <= 12) return `Guarantees RAII deterministic resource cleanup, move semantics without allocation, and rule-of-5 compliance in ${title}.`;
+        if (day <= 22) return `Preserves CPU cache-line alignment (64 bytes), false-sharing prevention, and lockless atomic CAS loops in ${title}.`;
+        return `Maintains POSIX signal safety, epoll edge-triggered file descriptor multiplexing, and zero-copy kernel transfers in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Array index out-of-bounds writing to adjacent stack memory, producing silent variable corruption.`;
+        if (day <= 12) return `Dangling pointer access post-vector reallocation yielding non-deterministic SIGSEGV crashes.`;
+        if (day <= 22) return `Cache line false sharing across multi-threaded counters causing 14x performance degradation on 32-core servers.`;
+        return `File descriptor exhaustion in epoll worker loop due to unclosed non-blocking client sockets under port scan flood.`;
+      },
+      puzzlePattern: (title, day) => `Valgrind reports 4MB/hour memory leak and cache-miss penalty jumps to 32% in ${title}. Which custom arena allocator or move-semantic transfer eliminates cache thrashing?`
     };
   }
 
@@ -605,9 +710,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Computational Complexity & Optimization',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Guarantees strict worst-case complexity bounds and topological order invariants across recursive call trees in ${title}.`,
-      failurePattern: (title) => `Degenerate binary search tree collapses into O(N) linked-list traversal under sorted inputs, triggering stack overflow recursion depth limits.`,
-      puzzlePattern: (title) => `An online coding benchmark fails with Time Limit Exceeded (TLE) on 10^6 input size for ${title}. Which amortized data structure or bitmask memoization guarantees sub-second execution?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Guarantees strict Big-O time and space complexity boundaries on array/list operations in ${title}.`;
+        if (day <= 12) return `Preserves invariant ordering in recursive trees and heap structural properties in ${title}.`;
+        if (day <= 22) return `Enforces optimal amortized complexity bounds, branch prediction friendliness, and minimal cache misses in ${title}.`;
+        return `Maintains dynamic programming optimal substructure and state-space compression invariants in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Accidental quadratic O(N^2) nested loop inside search function causing benchmark timeout on 10,000 items.`;
+        if (day <= 12) return `Degenerate binary search tree collapsing into O(N) linked list under pre-sorted inputs, exceeding recursion depth.`;
+        if (day <= 22) return `Hash table collision clustering degrading O(1) lookups to O(N) linear probe walks during denial-of-service traffic.`;
+        return `Memoization table size explosion causing JVM OutOfMemoryError during 3D state transition matrix evaluations.`;
+      },
+      puzzlePattern: (title, day) => `An online coding benchmark fails with Time Limit Exceeded (TLE) on 10^6 input size for ${title}. Which amortized data structure or bitmask memoization guarantees sub-second execution?`
     };
   }
 
@@ -616,9 +731,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Distributed Consensus & Fault Tolerance',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Preserves Raft quorum linearizability, idempotent deduplication, and bounded network partition convergence in ${title}.`,
-      failurePattern: (title) => `Split-brain dual-leader condition allows conflicting state mutations before heartbeats time out, causing silent ledger drift across regions.`,
-      puzzlePattern: (title) => `A cross-region network partition drops 30% of sync packets during ${title}. Which vector-clock reconciliation or circuit-breaker fallback guarantees zero double-spend mutations?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Maintains client RPC idempotency keys and network timeout retry budgets in ${title}.`;
+        if (day <= 12) return `Preserves consistent hashing ring node distribution and minimal key remapping on churn in ${title}.`;
+        if (day <= 22) return `Guarantees Raft consensus linearizability, log index matching, and bounded leader heartbeats in ${title}.`;
+        return `Enforces zero-data-loss cross-datacenter replication and bounded partition recovery in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Non-idempotent payment POST request retried on timeout, causing double charges to customer credit cards.`;
+        if (day <= 12) return `Thundering herd problem: 50,000 workers query MySQL simultaneously when a single Redis cache key expires.`;
+        if (day <= 22) return `Split-brain dual-leader condition allowing conflicting state mutations before heartbeats time out.`;
+        return `Network partition dropping 30% of consensus packets, leading to unrecoverable log divergence across regions.`;
+      },
+      puzzlePattern: (title, day) => `A cross-region network partition drops 30% of sync packets during ${title}. Which vector-clock reconciliation or circuit-breaker fallback guarantees zero double-spend mutations?`
     };
   }
 
@@ -627,9 +752,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Bare-Metal Hardware & RTOS Firmware',
       defaultEngine: 'register-bits',
-      invariantPattern: (title) => `Guarantees atomic memory-mapped register bitmasking and deterministic interrupt service routine (ISR) latency in ${title}.`,
-      failurePattern: (title) => `Non-reentrant ISR accesses shared ring buffer without critical section mask, corrupting packet headers and locking the hardware watchdog.`,
-      puzzlePattern: (title) => `Microcontroller freezes randomly after 18 hours of telemetry logging in ${title}. Oscilloscope shows brownout reset pins triggered. How do you rewrite register sleep modes to stay below 45mA?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces bitwise logic boundaries and memory-mapped hardware peripheral base address offsets in ${title}.`;
+        if (day <= 12) return `Preserves atomic GPIO set/reset register bitmasking and eliminates read-modify-write race conditions in ${title}.`;
+        if (day <= 22) return `Guarantees deterministic Interrupt Service Routine (ISR) execution (<5μs) and FreeRTOS task priority ceilings in ${title}.`;
+        return `Maintains hardware Secure Element cryptographic signature verification and tamper-resistant flash protection in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Bitwise shift overflow corrupting adjacent control bits in configuration register.`;
+        if (day <= 12) return `Read-modify-write race on GPIO port overwriting pin state toggled by concurrent hardware timer.`;
+        if (day <= 22) return `Non-reentrant ISR accessing shared ring buffer without critical section mask, corrupting packet headers.`;
+        return `Oscilloscope shows brownout reset triggered; priority inversion without mutex ceiling locks the hardware watchdog.`;
+      },
+      puzzlePattern: (title, day) => `Microcontroller freezes randomly after 18 hours of telemetry logging in ${title}. Oscilloscope shows brownout reset pins triggered. How do you rewrite register sleep modes to stay below 45mA?`
     };
   }
 
@@ -638,9 +773,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Machine Learning & Neural Inference',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Enforces INT8 tensor quantization range bounds, gradient stability, and vector similarity metric invariants in ${title}.`,
-      failurePattern: (title) => `Quantization scale factor drift causes integer overflow in tensor convolution; model outputs saturated zero confidence across live camera feeds.`,
-      puzzlePattern: (title) => `Embedding retrieval for RAG pipeline in ${title} returns irrelevant document context due to cosine distance distortion on unnormalized vectors. Which normalization or re-ranking layer fixes accuracy?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces tensor dimension compatibility, matrix multiplication shape matching, and floating-point validity in ${title}.`;
+        if (day <= 12) return `Preserves INT8 quantization scale factors and prevents activation clipping saturation in ${title}.`;
+        if (day <= 22) return `Guarantees model execution within 32 KB SRAM budgets on microcontrollers and sub-50ms inference latency in ${title}.`;
+        return `Maintains vector database embedding normalization, cosine similarity bounds, and context window bounds in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Matrix multiplication shape mismatch ([B, D] x [D, M]) throwing runtime tensor exception.`;
+        if (day <= 12) return `Quantization scale factor drift causing integer overflow in tensor convolution; model outputs zero confidence.`;
+        if (day <= 22) return `Dynamic memory allocation during real-time DSP audio loop exhausting microcontroller 32KB SRAM.`;
+        return `Embedding retrieval for RAG pipeline returning irrelevant document context due to unnormalized vector distance distortion.`;
+      },
+      puzzlePattern: (title, day) => `Embedding retrieval for RAG pipeline in ${title} returns irrelevant document context due to cosine distance distortion on unnormalized vectors. Which normalization or re-ranking layer fixes accuracy?`
     };
   }
 
@@ -649,9 +794,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Market Microstructure & Low-Latency Math',
       defaultEngine: 'table',
-      invariantPattern: (title) => `Preserves Limit Order Book price-time priority, double-precision float invariants, and sub-microsecond queue ordering in ${title}.`,
-      failurePattern: (title) => `Unaligned order struct layout incurs L1 cache-miss penalty during market open, causing a 45-microsecond tick-to-trade delay that loses queue priority.`,
-      puzzlePattern: (title) => `Backtest reports 18% Sharpe ratio, but live execution incurs 8.4 bps slippage during ${title}. How do you restructure order book matching to eliminate kernel context-switch overhead?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces fixed-point currency precision and prevents floating-point rounding errors in ${title}.`;
+        if (day <= 12) return `Preserves Limit Order Book price-time priority queues and bidirectional matching invariants in ${title}.`;
+        if (day <= 22) return `Guarantees sub-microsecond tick-to-trade execution, zero kernel context-switch latency, and cache alignment in ${title}.`;
+        return `Maintains risk management capital margin boundaries and portfolio Value-at-Risk (VaR) invariants under volatility in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Double-precision float rounding causing $0.0001 discrepancy per share, compounding to large audit balance errors.`;
+        if (day <= 12) return `Order cancellation race condition matching cancelled limit order against incoming aggressive market buy.`;
+        if (day <= 22) return `Unaligned order struct layout incurring L1 cache-miss penalty, causing a 45-microsecond tick-to-trade queue delay.`;
+        return `Backtest reports 18% Sharpe ratio, but live execution incurs 8.4 bps slippage during market open order book desync.`;
+      },
+      puzzlePattern: (title, day) => `Backtest reports 18% Sharpe ratio, but live execution incurs 8.4 bps slippage during ${title}. How do you restructure order book matching to eliminate kernel context-switch overhead?`
     };
   }
 
@@ -660,9 +815,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Compute Shaders & Cryptographic Ledgers',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Maintains Model-View-Projection matrix orthogonality or Merkle Patricia Trie cryptographic root verification in ${title}.`,
-      failurePattern: (title) => `Smart contract reentrancy vulnerability allows state drain before internal balances update; shader memory bandwidth saturation caps frame rate at 15 FPS.`,
-      puzzlePattern: (title) => `Gas estimation fails during high-congestion block minting for ${title}. Which storage packing optimization reduces contract execution gas below the 21,000 threshold?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces 3D vector normalization, coordinate space transformations, and valid color buffer clamps in ${title}.`;
+        if (day <= 12) return `Preserves Model-View-Projection matrix orthogonality and depth buffer z-sorting precision in ${title}.`;
+        if (day <= 22) return `Guarantees GPU shader thread occupancy (>85%), zero texture pipeline stalls, and EVM gas budget constraints in ${title}.`;
+        return `Maintains Merkle Patricia Trie cryptographic root verification and reentrancy attack immunity in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Unnormalized normal vector causing lighting calculation to blow out to pure white screen.`;
+        if (day <= 12) return `Matrix transposition order bug causing 3D geometry to render inverted inside-out.`;
+        if (day <= 22) return `Smart contract reentrancy vulnerability allowing state drain before internal balances update.`;
+        return `Shader memory bandwidth saturation capping frame rate at 15 FPS; EVM gas estimation failures during minting spikes.`;
+      },
+      puzzlePattern: (title, day) => `Gas estimation fails during high-congestion block minting for ${title}. Which storage packing optimization reduces contract execution gas below the 21,000 threshold?`
     };
   }
 
@@ -671,9 +836,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Corporate Ledgers & Financial Engineering',
       defaultEngine: 'ledger-sheet',
-      invariantPattern: (title) => `Enforces the fundamental accounting equation (Assets = Liabilities + Equity) and strict GST Input Tax Credit ledger reconciliation in ${title}.`,
-      failurePattern: (title) => `Cumulative decimal rounding discrepancy across 50,000 multi-tier invoices creates a $12,400 balance sheet variance, failing external statutory audit.`,
-      puzzlePattern: (title) => `A corporate balance sheet reconciliation fails with an unallocated debit variance of $84,500 after an M&A asset restructuring in ${title}. Which contra-asset or accrual entry restores equilibrium?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces fundamental accounting duality: Total Debit entries must strictly equal Total Credit entries in ${title}.`;
+        if (day <= 12) return `Preserves accrual matching principle, contra-asset depreciation balances, and statutory invoice formatting in ${title}.`;
+        if (day <= 22) return `Guarantees GST Input Tax Credit (ITC) reconciliation and prevents cascading tax liability leakage in ${title}.`;
+        return `Maintains Discounted Cash Flow (DCF) terminal value sensitivities and Basel III capital adequacy ratios in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `One-sided journal entry leaving ledger out of balance by $450, failing fundamental trial balance check.`;
+        if (day <= 12) return `Misclassifying operational expense as capital asset, distorting EBITDA and triggering audit restatement.`;
+        if (day <= 22) return `Cumulative decimal rounding discrepancy across 50,000 multi-tier invoices creates a $12,400 balance sheet variance.`;
+        return `Balance sheet reconciliation fails with unallocated debit variance of $84,500 after corporate asset restructuring.`;
+      },
+      puzzlePattern: (title, day) => `A corporate balance sheet reconciliation fails with an unallocated debit variance of $84,500 after an M&A asset restructuring in ${title}. Which contra-asset or accrual entry restores equilibrium?`
     };
   }
 
@@ -682,9 +857,19 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
     return {
       domainName: 'Operations Research & Digital Commerce',
       defaultEngine: 'flow',
-      invariantPattern: (title) => `Maintains supply chain inventory conservation, multi-touch attribution fairness, and funnel conversion tracking invariants in ${title}.`,
-      failurePattern: (title) => `Flash-sale concurrent checkout allows negative SKU inventory commits; cart checkout drops 40% due to payment gateway webhook race conditions.`,
-      puzzlePattern: (title) => `Bullwhip effect causes a 300% stockout buffer oscillation at regional distribution centers in ${title}. Which Economic Order Quantity (EOQ) formula adjustment stabilizes supplier lead times?`
+      invariantPattern: (title, day) => {
+        if (day <= 5) return `Enforces SKU inventory conservation (Stock = Opening + Received - Sold) in ${title}.`;
+        if (day <= 12) return `Preserves multi-touch attribution fairness, conversion funnel tracking, and customer cohort invariants in ${title}.`;
+        if (day <= 22) return `Guarantees payment gateway webhook idempotency and atomic checkout inventory reservation under flash sales in ${title}.`;
+        return `Maintains supply chain Economic Order Quantity (EOQ) carrying cost trade-offs and Bullwhip oscillation dampening in ${title}.`;
+      },
+      failurePattern: (title, day) => {
+        if (day <= 5) return `Negative inventory commit allowing 12 customers to buy the final out-of-stock warehouse item.`;
+        if (day <= 12) return `Cookie expiration breaking multi-touch attribution, assigning 100% of organic sales to last-click paid ads.`;
+        if (day <= 22) return `Flash-sale concurrent checkout race condition dropping 40% of orders due to payment gateway timeout.`;
+        return `Bullwhip effect causes a 300% stockout buffer oscillation at regional distribution centers.`;
+      },
+      puzzlePattern: (title, day) => `Bullwhip effect causes a 300% stockout buffer oscillation at regional distribution centers in ${title}. Which Economic Order Quantity (EOQ) formula adjustment stabilizes supplier lead times?`
     };
   }
 
@@ -692,14 +877,24 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
   return {
     domainName: 'Universal Systems Foundations',
     defaultEngine: 'table',
-    invariantPattern: (title) => `Enforces deterministic DAG commit ancestry, POSIX pipeline stream flow, and formula dependency tree evaluation in ${title}.`,
-    failurePattern: (title) => `Unsynchronized git force-push obliterates 24 commits on upstream staging; circular spreadsheet formula stalls recalculation thread for 45 seconds.`,
-    puzzlePattern: (title) => `A complex financial spreadsheet model freezes for 18 seconds on every cell input during ${title}. Which dynamic array restructure replaces volatile OFFSET/INDIRECT formulas?`
+    invariantPattern: (title, day) => {
+      if (day <= 5) return `Enforces POSIX file permission modes, shell command exit code verification, and cell reference syntax in ${title}.`;
+      if (day <= 12) return `Preserves Git DAG commit ancestry, branch pointer references, and spreadsheet formula dependency trees in ${title}.`;
+      if (day <= 22) return `Guarantees 3-way merge conflict resolution correctness and non-volatile Excel calculation engine speed in ${title}.`;
+      return `Maintains production deployment trunk stability and automated rollback script invariants in ${title}.`;
+    },
+    failurePattern: (title, day) => {
+      if (day <= 5) return `Unquoted variable in shell script causing accidental file deletion during directory traversal.`;
+      if (day <= 12) return `Detached HEAD commit in Git silently lost after switching branches without creating a tracking ref.`;
+      if (day <= 22) return `Unsynchronized git force-push obliterates 24 commits on upstream staging; circular spreadsheet formula stalls recalculation.`;
+      return `Production release pipeline stalls when upstream rebase introduces silent regression into staging branch.`;
+    },
+    puzzlePattern: (title, day) => `A complex financial spreadsheet model freezes for 18 seconds on every cell input during ${title}. Which dynamic array restructure replaces volatile OFFSET/INDIRECT formulas?`
   };
 }
 
 async function generateMasterSrsPdf() {
-  console.log('Building Masterclass SRS Document (Target: 500+ Pages, v4.0 Standard)...');
+  console.log('Building Masterclass SRS Document (Target: 500+ Pages, v5.0 Ultimate LMS Standard)...');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -728,7 +923,7 @@ async function generateMasterSrsPdf() {
     }
 
     h1 {
-      font-size: 16pt;
+      font-size: 15.5pt;
       line-height: 1.25;
       margin-top: 0;
       margin-bottom: 5pt;
@@ -737,8 +932,8 @@ async function generateMasterSrsPdf() {
     }
 
     h2 {
-      font-size: 12pt;
-      margin-top: 14pt;
+      font-size: 11.5pt;
+      margin-top: 13pt;
       margin-bottom: 4pt;
       border-bottom: 1.5px solid #cbd5e1;
       padding-bottom: 3pt;
@@ -746,8 +941,8 @@ async function generateMasterSrsPdf() {
     }
 
     h3 {
-      font-size: 10pt;
-      margin-top: 10pt;
+      font-size: 9.8pt;
+      margin-top: 9pt;
       margin-bottom: 3pt;
       page-break-after: avoid;
     }
@@ -768,7 +963,7 @@ async function generateMasterSrsPdf() {
     }
 
     .cover-title {
-      font-size: 26pt;
+      font-size: 25pt;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.2;
@@ -776,16 +971,16 @@ async function generateMasterSrsPdf() {
     }
 
     .cover-subtitle {
-      font-size: 13pt;
+      font-size: 12.5pt;
       color: #2563eb;
       font-weight: 600;
       margin-bottom: 24pt;
     }
 
     .cover-meta {
-      font-size: 10pt;
+      font-size: 9.5pt;
       color: #64748b;
-      margin-top: 30pt;
+      margin-top: 26pt;
       line-height: 1.6;
     }
 
@@ -793,8 +988,8 @@ async function generateMasterSrsPdf() {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 4px solid #2563eb;
-      padding: 8pt 12pt;
-      margin-bottom: 10pt;
+      padding: 7pt 10pt;
+      margin-bottom: 8pt;
       border-radius: 4pt;
     }
 
@@ -805,8 +1000,8 @@ async function generateMasterSrsPdf() {
     }
 
     .header-box td {
-      padding: 2pt 5pt;
-      font-size: 8.2pt;
+      padding: 2pt 4pt;
+      font-size: 8pt;
       vertical-align: top;
       border: none;
     }
@@ -826,7 +1021,7 @@ async function generateMasterSrsPdf() {
       border-collapse: collapse;
       margin-top: 4pt;
       margin-bottom: 8pt;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       page-break-inside: auto;
     }
 
@@ -837,7 +1032,7 @@ async function generateMasterSrsPdf() {
 
     table.data-table th, table.data-table td {
       border: 1px solid #cbd5e1;
-      padding: 3pt 4.5pt;
+      padding: 3pt 4pt;
       text-align: left;
       vertical-align: top;
     }
@@ -855,9 +1050,9 @@ async function generateMasterSrsPdf() {
     .quote-box {
       background: #eff6ff;
       border-left: 3px solid #3b82f6;
-      padding: 5pt 8pt;
-      margin: 5pt 0 6pt 0;
-      font-size: 8.2pt;
+      padding: 5pt 7pt;
+      margin: 4pt 0 5pt 0;
+      font-size: 8pt;
       color: #1e3a8a;
       border-radius: 2px;
     }
@@ -885,51 +1080,38 @@ async function generateMasterSrsPdf() {
       display: inline-block;
       background: #e0f2fe;
       color: #0369a1;
-      font-size: 7pt;
+      font-size: 6.8pt;
       font-weight: 700;
       padding: 1px 4px;
       border-radius: 2px;
       margin-right: 4pt;
     }
 
-    .badge-ok {
-      background: #dcfce7;
-      color: #15803d;
+    .stage-pill {
+      display: inline-block;
+      font-size: 6.8pt;
       font-weight: 700;
-      padding: 1px 4px;
+      padding: 1px 5px;
       border-radius: 3px;
-    }
-
-    .badge-warn {
-      background: #fef3c7;
-      color: #b45309;
-      font-weight: 700;
-      padding: 1px 4px;
-      border-radius: 3px;
+      margin-left: 5pt;
     }
 
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 7.5pt;
+      font-size: 7.4pt;
       background-color: #f1f5f9;
       padding: 1px 3px;
       border-radius: 2px;
       color: #0f172a;
     }
 
-    pre code {
-      background: none;
-      padding: 0;
-      color: inherit;
-    }
-
     .code-block {
       background: #0f172a;
       color: #f8fafc;
-      padding: 6pt 8pt;
+      padding: 5pt 7pt;
       border-radius: 4pt;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 7.2pt;
+      font-size: 7pt;
       line-height: 1.35;
       margin: 4pt 0;
       overflow-x: hidden;
@@ -943,8 +1125,8 @@ async function generateMasterSrsPdf() {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 4pt;
-      padding: 6pt;
-      margin: 6pt 0;
+      padding: 5pt;
+      margin: 5pt 0;
       text-align: center;
     }
   </style>
@@ -953,32 +1135,32 @@ async function generateMasterSrsPdf() {
 
   <!-- COVER PAGE -->
   <div class="cover-page">
-    <div style="font-size: 14pt; font-weight: 700; color: #64748b; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8pt;">
+    <div style="font-size: 13pt; font-weight: 700; color: #64748b; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8pt;">
       PinIT Career OS &bull; Technical Architecture Blueprint
     </div>
     <div class="cover-title">
       36+ Individual Courses Masterclass SRS &amp; Visual Systems Specification
     </div>
     <div class="cover-subtitle">
-      The 28–31 Minute Cognitive Loop &bull; Zero-Hallucination Visual Engines &bull; Production Failure Modes &bull; Big Tech Hiring Rubrics
+      The 28–31 Minute Cognitive Loop &bull; 4-Stage Scaffolding Ladder &bull; Observability Simulation &bull; Big Tech Rubrics
     </div>
-    <div style="width: 120px; height: 3px; background: #2563eb; margin: 0 auto 20pt auto;"></div>
+    <div style="width: 120px; height: 3px; background: #2563eb; margin: 0 auto 18pt auto;"></div>
     
-    <div style="max-width: 650px; margin: 0 auto; text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6pt; padding: 16pt;">
-      <div style="font-weight: 700; color: #0f172a; margin-bottom: 6pt; font-size: 10pt;">System-Wide Volume Metrics:</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; font-size: 8.5pt;">
+    <div style="max-width: 650px; margin: 0 auto; text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6pt; padding: 14pt;">
+      <div style="font-weight: 700; color: #0f172a; margin-bottom: 6pt; font-size: 9.5pt;">System-Wide Volume &amp; Pedagogical Metrics:</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7pt; font-size: 8.2pt;">
         <div>&bull; <strong>Master Courses:</strong> 37 Registered Curricula</div>
         <div>&bull; <strong>Curriculum Blocks:</strong> 222 Five-Day Blocks</div>
         <div>&bull; <strong>Daily Blueprints:</strong> 1,110 Lesson Days</div>
         <div>&bull; <strong>Interactive Parts:</strong> 6,660 Standard Parts</div>
         <div>&bull; <strong>Lesson Duration:</strong> 28.0–31.5 Min / Day</div>
-        <div>&bull; <strong>Execution Plans:</strong> 18 Plans across 7 Divisions</div>
+        <div>&bull; <strong>Scaffolding Stages:</strong> 4 Cognitive Tiers (Days 1–30)</div>
       </div>
     </div>
 
     <div class="cover-meta">
-      <strong>Author:</strong> Principal Systems Architect &amp; Curriculum Directorate<br>
-      <strong>Release Standard:</strong> Gate v2 Verification &bull; Rules R1–R14 Enforced &bull; Production v4.0<br>
+      <strong>Author:</strong> Principal Systems Architect &amp; Chief Learning Officer Directorate<br>
+      <strong>Release Standard:</strong> Gate v2 Verification &bull; Rules R1–R14 Enforced &bull; Production v5.0 Ultimate LMS<br>
       <strong>Target Publication Volume:</strong> 500+ Dense Technical Specification Pages
     </div>
   </div>
@@ -1013,10 +1195,10 @@ async function generateMasterSrsPdf() {
       Mainstream online tutorials exhibit high student drop-off rates and fail to prepare students for real technical interviews. A critical analysis reveals four fatal pedagogical flaws in traditional courses:
     </p>
     <div class="quote-box">
-      <strong>1. The Syntax-in-a-Vacuum Trap:</strong> Teaching syntax (loops, classes, functions) without connecting them to CPU registers, OS threads, database connection pools, or business ledger invariants.<br>
-      <strong>2. The Happy-Path Delusion:</strong> Showing only toy code that succeeds. Real senior engineers spend 80% of their careers debugging production failure modes (memory leaks, deadlocks, race conditions, N+1 queries, unhandled exceptions).<br>
-      <strong>3. Rote Multiple-Choice Quizzes:</strong> Trivial questions ("What keyword creates an object?") that measure superficial recall instead of situational engineering judgment.<br>
-      <strong>4. The "More Code" Fallacy:</strong> Overwhelming students with long, unannotated walls of boilerplate. Superior teaching is surgical, efficient, and highlights the precise invariant lines that govern system behavior.
+      <strong>1. The Syntax-in-a-Vacuum Trap:</strong> Teaching syntax without connecting it to CPU registers, OS threads, database connection pools, or ledger invariants.<br>
+      <strong>2. The Happy-Path Delusion:</strong> Showing only toy code that succeeds. Real senior engineers spend 80% of their careers debugging production failure modes.<br>
+      <strong>3. Rote Multiple-Choice Quizzes:</strong> Trivial questions that measure superficial recall instead of situational engineering judgment.<br>
+      <strong>4. The "More Code" Fallacy:</strong> Overwhelming students with long, unannotated walls of boilerplate. Superior teaching is surgical, efficient, and highlights the precise invariant lines.
     </div>
 
     <h2>1.2 The Recalibrated 30-Minute Masterclass Rhythm</h2>
@@ -1116,183 +1298,196 @@ async function generateMasterSrsPdf() {
 
     <!-- Visual Engines Preview Grid -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 6pt;">
-      
       <!-- FlowTemplate SVG -->
       <div class="svg-container" style="margin: 0;">
         <div style="font-weight: 700; font-size: 8.5pt; color: #0f172a; margin-bottom: 3pt;">FlowTemplate (Pipelines &amp; Distributed DAGs)</div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="100%" height="95">
-          <rect x="10" y="30" width="70" height="40" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
-          <text x="45" y="54" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#0369a1" text-anchor="middle">Ingress [data]</text>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 95" width="100%" height="90">
+          <rect x="10" y="25" width="70" height="40" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="45" y="49" font-family="sans-serif" font-size="8" font-weight="700" fill="#0369a1" text-anchor="middle">Ingress [data]</text>
           
-          <line x1="80" y1="50" x2="115" y2="50" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)"/>
-          <polygon points="115,50 108,46 108,54" fill="#0284c7"/>
+          <line x1="80" y1="45" x2="115" y2="45" stroke="#0284c7" stroke-width="2"/>
+          <polygon points="115,45 108,41 108,49" fill="#0284c7"/>
 
-          <rect x="120" y="30" width="80" height="40" rx="3" fill="#dcfce7" stroke="#10b981" stroke-width="1.5"/>
-          <text x="160" y="54" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#15803d" text-anchor="middle">RateLimit [ok]</text>
+          <rect x="120" y="25" width="80" height="40" rx="3" fill="#dcfce7" stroke="#10b981" stroke-width="1.5"/>
+          <text x="160" y="49" font-family="sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">RateLimit [ok]</text>
 
-          <line x1="200" y1="50" x2="235" y2="50" stroke="#0284c7" stroke-width="2"/>
-          <polygon points="235,50 228,46 228,54" fill="#0284c7"/>
+          <line x1="200" y1="45" x2="235" y2="45" stroke="#0284c7" stroke-width="2"/>
+          <polygon points="235,45 228,41 228,49" fill="#0284c7"/>
 
-          <rect x="240" y="30" width="95" height="40" rx="3" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="287" y="54" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#b91c1c" text-anchor="middle">Worker [retry]</text>
+          <rect x="240" y="25" width="95" height="40" rx="3" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="287" y="49" font-family="sans-serif" font-size="8" font-weight="700" fill="#b91c1c" text-anchor="middle">Worker [retry]</text>
         </svg>
       </div>
 
       <!-- BoxesTemplate SVG -->
       <div class="svg-container" style="margin: 0;">
         <div style="font-weight: 700; font-size: 8.5pt; color: #0f172a; margin-bottom: 3pt;">BoxesTemplate (Stack Frame &amp; Heap Memory)</div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="100%" height="95">
-          <!-- Stack Frame -->
-          <rect x="10" y="15" width="110" height="70" rx="3" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
-          <text x="65" y="30" font-family="sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">Stack: main()</text>
-          <rect x="18" y="38" width="94" height="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
-          <text x="65" y="51" font-family="monospace" font-size="7.5" fill="#0369a1" text-anchor="middle">ptr: 0x7fa90</text>
-          <rect x="18" y="60" width="94" height="18" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-          <text x="65" y="73" font-family="monospace" font-size="7.5" fill="#475569" text-anchor="middle">local: int 42</text>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 95" width="100%" height="90">
+          <rect x="10" y="15" width="110" height="68" rx="3" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+          <text x="65" y="29" font-family="sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">Stack: main()</text>
+          <rect x="18" y="36" width="94" height="17" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+          <text x="65" y="48" font-family="monospace" font-size="7.2" fill="#0369a1" text-anchor="middle">ptr: 0x7fa90</text>
+          <rect x="18" y="57" width="94" height="17" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+          <text x="65" y="69" font-family="monospace" font-size="7.2" fill="#475569" text-anchor="middle">local: int 42</text>
 
-          <!-- Pointer arrow -->
-          <line x1="112" y1="47" x2="165" y2="47" stroke="#0284c7" stroke-width="2"/>
-          <polygon points="165,47 158,43 158,51" fill="#0284c7"/>
+          <line x1="112" y1="44" x2="165" y2="44" stroke="#0284c7" stroke-width="2"/>
+          <polygon points="165,44 158,40 158,48" fill="#0284c7"/>
 
-          <!-- Heap Object -->
-          <rect x="170" y="15" width="165" height="70" rx="3" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
-          <text x="252" y="30" font-family="sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">Heap Object: OrderRecord [ok]</text>
-          <text x="180" y="50" font-family="monospace" font-size="7.5" fill="#0f172a">addr: 0x7fa90</text>
-          <text x="180" y="66" font-family="monospace" font-size="7.5" fill="#0f172a">payload: { id: 1042, val: 250.0 }</text>
+          <rect x="170" y="15" width="165" height="68" rx="3" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+          <text x="252" y="29" font-family="sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">Heap Object: OrderRecord [ok]</text>
+          <text x="180" y="48" font-family="monospace" font-size="7.2" fill="#0f172a">addr: 0x7fa90</text>
+          <text x="180" y="64" font-family="monospace" font-size="7.2" fill="#0f172a">payload: { id: 1042, val: 250.0 }</text>
         </svg>
       </div>
-
-      <!-- RegisterBitsTemplate SVG -->
-      <div class="svg-container" style="margin: 0;">
-        <div style="font-weight: 700; font-size: 8.5pt; color: #0f172a; margin-bottom: 3pt;">RegisterBitsTemplate (32-Bit Microcontroller Bits)</div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="100%" height="95">
-          <text x="15" y="22" font-family="monospace" font-size="8" font-weight="700" fill="#0f172a">GPIOA_BSRR (0x48000018)</text>
-          <!-- Bit boxes -->
-          <g transform="translate(10, 30)">
-            <!-- Bits 7-0 -->
-            <rect x="0" y="0" width="38" height="28" fill="#dcfce7" stroke="#10b981" stroke-width="1.5"/>
-            <text x="19" y="14" font-family="monospace" font-size="7.5" fill="#15803d" text-anchor="middle">BS5: 1</text>
-            <text x="19" y="24" font-family="sans-serif" font-size="6" fill="#475569" text-anchor="middle">PIN5 SET</text>
-
-            <rect x="42" y="0" width="38" height="28" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-            <text x="61" y="14" font-family="monospace" font-size="7.5" fill="#64748b" text-anchor="middle">BS4: 0</text>
-            <text x="61" y="24" font-family="sans-serif" font-size="6" fill="#94a3b8" text-anchor="middle">IDLE</text>
-
-            <rect x="84" y="0" width="38" height="28" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-            <text x="103" y="14" font-family="monospace" font-size="7.5" fill="#b91c1c" text-anchor="middle">BR5: 0</text>
-            <text x="103" y="24" font-family="sans-serif" font-size="6" fill="#ef4444" text-anchor="middle">ATOMIC</text>
-
-            <rect x="126" y="0" width="195" height="28" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-            <text x="223" y="18" font-family="sans-serif" font-size="7.5" fill="#64748b" text-anchor="middle">Bits 31–8 Reserved Standby [idle]</text>
-          </g>
-          <text x="15" y="80" font-family="sans-serif" font-size="7.5" fill="#0369a1">Atomic Set/Reset register guarantees zero race conditions without mutex overhead.</text>
-        </svg>
-      </div>
-
-      <!-- LedgerSheetTemplate SVG -->
-      <div class="svg-container" style="margin: 0;">
-        <div style="font-weight: 700; font-size: 8.5pt; color: #0f172a; margin-bottom: 3pt;">LedgerSheetTemplate (Double-Entry Financial T-Account)</div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="100%" height="95">
-          <!-- T-Account Line -->
-          <line x1="10" y1="20" x2="340" y2="20" stroke="#0f172a" stroke-width="1.5"/>
-          <line x1="175" y1="20" x2="175" y2="85" stroke="#0f172a" stroke-width="1.5"/>
-          
-          <text x="85" y="15" font-family="sans-serif" font-size="8" font-weight="700" fill="#0369a1" text-anchor="middle">DEBIT (Dr.) [data]</text>
-          <text x="260" y="15" font-family="sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">CREDIT (Cr.) [ok]</text>
-
-          <text x="20" y="35" font-family="monospace" font-size="7.5" fill="#0f172a">Bank Account:  $150,000</text>
-          <text x="20" y="50" font-family="monospace" font-size="7.5" fill="#0f172a">Inventory:     $ 45,000</text>
-          <text x="20" y="70" font-family="monospace" font-size="7.5" font-weight="700" fill="#0369a1">Total Dr:      $195,000</text>
-
-          <text x="185" y="35" font-family="monospace" font-size="7.5" fill="#0f172a">Accounts Payable: $ 75,000</text>
-          <text x="185" y="50" font-family="monospace" font-size="7.5" fill="#0f172a">Retained Equity:  $120,000</text>
-          <text x="185" y="70" font-family="monospace" font-size="7.5" font-weight="700" fill="#15803d">Total Cr:         $195,000</text>
-
-          <rect x="90" y="76" width="170" height="18" rx="2" fill="#dcfce7" stroke="#10b981" stroke-width="1"/>
-          <text x="175" y="88" font-family="sans-serif" font-size="7" font-weight="700" fill="#15803d" text-anchor="middle">Double-Entry Balanced: Δ = $0.00 [ok]</text>
-        </svg>
-      </div>
-
     </div>
 
-    <h2>1.5 The Big Tech &amp; FAANG Hiring Evaluation Rubrics</h2>
+    <h2>1.5 The 4-Stage Cognitive Scaffolding Ladder (From Zero to Senior)</h2>
     <p>
-      PinIT Career OS explicitly maps curriculum progress directly to Big Tech hiring standards. Completing each 5-day Block qualifies candidates against specific engineering interview rubrics:
+      To prevent cognitive paralysis and ensure novices comfortably transition into Big Tech hireability, every 30-day course implements an explicit 4-stage pedagogical scaffolding progression:
     </p>
 
     <table class="data-table">
       <thead>
         <tr>
-          <th style="width: 15%;">Curriculum Block</th>
-          <th style="width: 25%;">Target Proficiency Tier</th>
-          <th style="width: 30%;">Real-World Interview Evaluation Round</th>
-          <th style="width: 30%;">Masterclass Verification Standard</th>
+          <th style="width: 14%;">Curriculum Tier</th>
+          <th style="width: 12%;">Lesson Days</th>
+          <th style="width: 20%;">Pedagogical Focus</th>
+          <th style="width: 27%;">Failure Mode &amp; Boundary Complexity</th>
+          <th style="width: 27%;">Interview Benchmark</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Block 1 (Days 1–5)</strong></td>
-          <td>Junior Engineer (L3 / Associate)</td>
-          <td>Technical Screening / Karat / LeetCode Medium</td>
-          <td>Clean syntax, defensive input validation, boundary checking, O(N) space-time consciousness.</td>
+          <td><strong>Stage 1: Mental Model Grounding</strong></td>
+          <td><strong>Days 1–5</strong></td>
+          <td>High Guidance: Syntax with underlying memory costs and step-by-step mental models.</td>
+          <td>Input validation, primitive type overflow, off-by-one boundary conditions.</td>
+          <td>Karat / LeetCode Easy-Medium screening rounds.</td>
         </tr>
         <tr>
-          <td><strong>Block 2 (Days 6–10)</strong></td>
-          <td>Core Software Engineer (L4)</td>
-          <td>Domain Coding Round (Stripe / Meta / Bloomberg)</td>
-          <td>Memory lifecycle safety, state mutation boundaries, asynchronous stream handling, zero leaks.</td>
+          <td><strong>Stage 2: Defensive Fluency</strong></td>
+          <td><strong>Days 6–12</strong></td>
+          <td>Balanced Friction: State mutation boundaries, encapsulation, and error handlers.</td>
+          <td>Memory leaks, unhandled null pointers, unclosed network/disk connections.</td>
+          <td>Core domain coding rounds (Meta / Bloomberg / Stripe).</td>
         </tr>
         <tr>
-          <td><strong>Block 3 (Days 11–15)</strong></td>
-          <td>Mid-Level Engineer (L4 / L5)</td>
-          <td>Bug-Squash &amp; Production Incident Triage</td>
-          <td>Root-cause analysis under production outages, thread-safety, race condition isolation, error cascades.</td>
+          <td><strong>Stage 3: Systems Stress-Testing</strong></td>
+          <td><strong>Days 13–22</strong></td>
+          <td>High Cognitive Friction: Concurrency, race conditions, cache line optimization.</td>
+          <td>Thread pool exhaustion, deadlocks, torn page writes, 3 AM production crashes.</td>
+          <td>Bug-Squash &amp; Incident Triage (Stripe / Datadog).</td>
         </tr>
         <tr>
-          <td><strong>Block 4 (Days 16–20)</strong></td>
-          <td>Senior Systems Engineer (L5)</td>
-          <td>Concurrency &amp; High-Throughput Systems</td>
-          <td>Non-blocking I/O, lockless ring buffers, thread-pool tuning, cache-line false sharing defense.</td>
-        </tr>
-        <tr>
-          <td><strong>Block 5 (Days 21–25)</strong></td>
-          <td>Staff / Principal Architect (L6)</td>
-          <td>System Design &amp; Distributed Scalability</td>
-          <td>CAP theorem trade-offs, consensus (Raft/Paxos), WAL durability, zero-downtime database sharding.</td>
-        </tr>
-        <tr>
-          <td><strong>Block 6 (Days 26–30)</strong></td>
-          <td>Lead Architect / Bar Raiser</td>
-          <td>Production Capstone &amp; Post-Mortem Defense</td>
-          <td>Full end-to-end production deployment, automated SLA/SLO defense, chaos engineering recovery.</td>
+          <td><strong>Stage 4: Architectural Autonomy</strong></td>
+          <td><strong>Days 23–30</strong></td>
+          <td>Zero Support: Distributed scaling, high availability, zero-downtime cutovers.</td>
+          <td>Distributed split-brain, consensus partition, cascading microservice collapse.</td>
+          <td>System Design &amp; Bar Raiser Capstones (Google / AWS).</td>
         </tr>
       </tbody>
     </table>
 
-    <h2>1.6 The 4 Banned Anti-Pedagogical Traps</h2>
+    <h2>1.6 Production Observability &amp; Telemetry Simulation Engine</h2>
     <p>
-      To prevent low-quality, superficial teaching, all lesson content in PinIT Career OS is governed by 4 strict negative constraints:
+      Real senior engineers debug production systems using live observability dashboards, not textbook snippets. The visual engine simulates real-time production telemetry:
     </p>
+
+    <div class="svg-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 135" width="100%" height="135">
+        <!-- Telemetry Metrics Graph -->
+        <g transform="translate(10, 10)">
+          <rect width="360" height="115" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+          <text x="15" y="22" font-family="sans-serif" font-size="9" font-weight="700" fill="#38bdf8">SIMULATED TELEMETRY: p99 Latency &amp; Throughput</text>
+          
+          <!-- Axis lines -->
+          <line x1="25" y1="95" x2="340" y2="95" stroke="#475569" stroke-width="1"/>
+          <line x1="25" y1="35" x2="25" y2="95" stroke="#475569" stroke-width="1"/>
+          
+          <!-- Latency sparkline with spike -->
+          <path d="M 25 80 L 80 82 L 140 78 L 190 85 L 220 38 L 260 42 L 300 83 L 340 80" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+          <circle cx="220" cy="38" r="4" fill="#ef4444"/>
+          <text x="230" y="35" font-family="monospace" font-size="8" font-weight="700" fill="#f87171">p99 SPIKE: 680ms [INCIDENT]</text>
+
+          <text x="25" y="108" font-family="monospace" font-size="7" fill="#94a3b8">03:00</text>
+          <text x="180" y="108" font-family="monospace" font-size="7" fill="#94a3b8">03:15 (Lock Contention)</text>
+          <text x="315" y="108" font-family="monospace" font-size="7" fill="#94a3b8">03:30</text>
+        </g>
+
+        <!-- Simulated JSON Structured Log Stream -->
+        <g transform="translate(385, 10)">
+          <rect width="365" height="115" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+          <text x="15" y="22" font-family="sans-serif" font-size="9" font-weight="700" fill="#4ade80">SIMULATED PRODUCTION LOG STREAM</text>
+          
+          <text x="15" y="42" font-family="monospace" font-size="7.2" fill="#94a3b8">{"ts":"03:14:02Z","lvl":"INFO","svc":"worker-01","msg":"batch processed"}</text>
+          <text x="15" y="58" font-family="monospace" font-size="7.2" fill="#facc15">{"ts":"03:14:15Z","lvl":"WARN","svc":"pool-tx","msg":"queue depth &gt; 800"}</text>
+          <text x="15" y="74" font-family="monospace" font-size="7.2" fill="#f87171" font-weight="700">{"ts":"03:14:22Z","lvl":"FATAL","svc":"sql-engine","err":"DeadlockGraphExhausted"}</text>
+          <text x="15" y="90" font-family="monospace" font-size="7.2" fill="#ef4444">{"ts":"03:14:25Z","lvl":"ERROR","svc":"gateway","code":504,"timeout":"upstream"}</text>
+          <text x="15" y="106" font-family="sans-serif" font-size="7.2" fill="#38bdf8">Observability Engine links student code changes directly to log outputs.</text>
+        </g>
+      </svg>
+    </div>
+
+    <h2>1.7 The 3-Tier Sandbox Test Harness &amp; Automated Code Reviewer</h2>
+    <p>
+      Student coding challenges are evaluated through a rigorous 3-tier automated test harness coupled with programmatic senior engineering code review feedback:
+    </p>
+
+    <div class="svg-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 90" width="100%" height="90">
+        <!-- Tier 1 -->
+        <g transform="translate(10, 15)">
+          <rect width="170" height="60" rx="3" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="85" y="28" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#0369a1" text-anchor="middle">Tier 1: Functional Tests</text>
+          <text x="85" y="45" font-family="sans-serif" font-size="7.2" fill="#334155" text-anchor="middle">Unit assertions, baseline correctness</text>
+        </g>
+        <line x1="180" y1="45" x2="200" y2="45" stroke="#0284c7" stroke-width="2"/>
+        <polygon points="200,45 194,41 194,49" fill="#0284c7"/>
+
+        <!-- Tier 2 -->
+        <g transform="translate(200, 15)">
+          <rect width="170" height="60" rx="3" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+          <text x="85" y="28" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#b45309" text-anchor="middle">Tier 2: Boundary Fuzzing</text>
+          <text x="85" y="45" font-family="sans-serif" font-size="7.2" fill="#78350f" text-anchor="middle">Nulls, overflows, empty arrays</text>
+        </g>
+        <line x1="370" y1="45" x2="390" y2="45" stroke="#b45309" stroke-width="2"/>
+        <polygon points="390,45 384,41 384,49" fill="#b45309"/>
+
+        <!-- Tier 3 -->
+        <g transform="translate(390, 15)">
+          <rect width="170" height="60" rx="3" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+          <text x="85" y="28" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#15803d" text-anchor="middle">Tier 3: Allocation Benchmark</text>
+          <text x="85" y="45" font-family="sans-serif" font-size="7.2" fill="#14532d" text-anchor="middle">Zero-allocation inner loop verification</text>
+        </g>
+        <line x1="560" y1="45" x2="580" y2="45" stroke="#10b981" stroke-width="2"/>
+        <polygon points="580,45 574,41 574,49" fill="#10b981"/>
+
+        <!-- Senior Review Bot -->
+        <g transform="translate(580, 15)">
+          <rect width="170" height="60" rx="3" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+          <text x="85" y="28" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#9333ea" text-anchor="middle">FAANG Senior Code Review</text>
+          <text x="85" y="45" font-family="sans-serif" font-size="7.2" fill="#581c87" text-anchor="middle">Automated L5/L6 architectural feedback</text>
+        </g>
+      </svg>
+    </div>
+
+    <h2>1.8 The 4 Banned Anti-Pedagogical Traps</h2>
     <div class="quote-box">
-      <strong>1. BANNED: The "Syntax-Without-Cost" Trap:</strong> Never introduce a language feature (e.g. closures, streams, list comprehensions) without documenting its runtime cost in heap allocations, stack frames, and CPU cycles.<br>
+      <strong>1. BANNED: The "Syntax-Without-Cost" Trap:</strong> Never introduce a language feature without documenting its runtime cost in heap allocations, stack frames, and CPU cycles.<br>
       <strong>2. BANNED: The "Toy Animal" Trap:</strong> No trivial examples (<code>class Dog extends Animal</code>). All object models must model production systems (e.g. <code>OrderStateMachine</code>, <code>SensorRingBuffer</code>, <code>LedgerJournalEntry</code>).<br>
-      <strong>3. BANNED: The "Happy-Path Only" Trap:</strong> Naive textbook patterns are strictly prohibited. At least 40% of code walkthroughs must dissect the specific failure mode that breaks the pattern under heavy load.<br>
-      <strong>4. BANNED: The "Trivia Quiz" Trap:</strong> Rote memory questions asking for keyword definitions are forbidden. Every assessment must be a 4-option situational outage puzzle requiring architectural decision-making.
+      <strong>3. BANNED: The "Happy-Path Only" Trap:</strong> At least 40% of code walkthroughs must dissect the specific failure mode that breaks the pattern under heavy load.<br>
+      <strong>4. BANNED: The "Trivia Quiz" Trap:</strong> Every assessment must be a 4-option situational outage puzzle requiring architectural decision-making.
     </div>
 
   </div>
 
-  <!-- PART II.B: VERBATIM GOLD STANDARD EXEMPLAR LESSON -->
+  <!-- PART I.B: VERBATIM GOLD STANDARD EXEMPLAR LESSON -->
   <div class="page-break">
     <h1>Part I.B: The Verbatim Gold Standard Exemplar Lesson</h1>
     <div style="background: #0f172a; color: #ffffff; padding: 6pt 10pt; border-radius: 4pt; margin-bottom: 8pt;">
       <strong style="font-size: 10pt;">Course 07: SQL Mastery &bull; Block 3 (Day 14) &bull; Target Duration: 30.5 Minutes</strong><br>
-      <span style="font-size: 8pt; color: #94a3b8;">Lesson Topic: B+ Tree Node Splitting, Disk Page Allocation &amp; Write-Ahead Log (WAL) Durability</span>
+      <span style="font-size: 8pt; color: #94a3b8;">Lesson Topic: B+ Tree Node Splitting, Disk Page Allocation &amp; Write-Ahead Log (WAL) Durability &bull; <strong style="color: #fde047;">Stage 3: Systems Stress-Testing</strong></span>
     </div>
-
-    <p style="font-size: 8.2pt;">
-      Below is the verbatim pedagogical standard enforced across all 1,110 lesson days in PinIT Career OS. Every authoring pipeline must mirror this depth:
-    </p>
 
     <!-- Part 1 -->
     <div style="border: 1px solid #cbd5e1; border-radius: 4pt; padding: 6pt; margin-bottom: 6pt; background: #ffffff;">
@@ -1462,7 +1657,7 @@ async function generateMasterSrsPdf() {
   <div class="page-break">
     <h1>Part III: Exhaustive Course-by-Course Day-by-Day Master Blueprints</h1>
     <p>
-      Below is the definitive, publication-grade architectural specification for every single day of all 37 courses (Days 1 to 30 = 1,110 daily blueprints). Every card is dynamically bound to its technical domain, incorporating authentic 3 AM production failure modes, architectural invariants, and high-cognitive-load diagnostic puzzles:
+      Below is the definitive, publication-grade architectural specification for every single day of all 37 courses (Days 1 to 30 = 1,110 daily blueprints). Every card is dynamically bound to its technical domain and its <strong>Cognitive Scaffolding Stage</strong>:
     </p>
   `;
 
@@ -1495,9 +1690,10 @@ async function generateMasterSrsPdf() {
 
         const shouldBreak = dayCounterInCourse % 2 === 0 && dayCounterInCourse < 30;
 
-        const invariantText = domainMeta.invariantPattern(cleanTitle, d.desc);
+        const stage = getCognitiveStage(d.day);
+        const invariantText = domainMeta.invariantPattern(cleanTitle, d.day);
         const failureText = domainMeta.failurePattern(cleanTitle, d.day);
-        const puzzleText = domainMeta.puzzlePattern(cleanTitle);
+        const puzzleText = domainMeta.puzzlePattern(cleanTitle, d.day);
 
         html += `
         <div class="daily-card" style="margin-bottom: 12pt;">
@@ -1505,17 +1701,19 @@ async function generateMasterSrsPdf() {
             <div>
               <span style="background: #2563eb; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${d.day}</span>
               <strong style="margin-left: 6pt; font-size: 9pt; color: #0f172a;">${cleanTitle}</strong>
+              <span class="stage-pill" style="background: ${stage.badgeBg}; color: ${stage.badgeColor};">${stage.stageName}</span>
             </div>
-            <span style="font-size: 7.5pt; color: #64748b;">Block ${b.blockNum} &bull; Target Duration: <strong>29.5 min</strong></span>
+            <span style="font-size: 7.2pt; color: #64748b;">Block ${b.blockNum} &bull; <strong>29.5 min</strong></span>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6pt; margin-bottom: 5pt;">
-            <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0; font-size: 7.4pt;">
-              <strong>🎯 Architectural Invariant &amp; Motivation:</strong><br>
+            <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0; font-size: 7.3pt;">
+              <strong>🎯 Pedagogical Role &amp; Invariant:</strong><br>
+              <span style="color: #0369a1; font-weight: 600;">[${stage.pedagogicalRole.slice(0, 35)}...]</span><br>
               ${invariantText}
             </div>
-            <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; font-size: 7.4pt; color: #991b1b;">
-              <strong>⚠️ Production Failure Mode (3 AM War Story):</strong><br>
+            <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; font-size: 7.3pt; color: #991b1b;">
+              <strong>⚠️ Outage Failure Mode (Stage ${stage.stageNum}):</strong><br>
               ${failureText}
             </div>
           </div>
@@ -1523,31 +1721,31 @@ async function generateMasterSrsPdf() {
           <div style="margin-top: 5pt;">
             <div style="font-weight: 700; font-size: 7.8pt; color: #334155; margin-bottom: 3pt;">The 6-Part 30-Minute Masterclass Execution:</div>
             
-            <div style="font-size: 7.4pt; line-height: 1.38;">
+            <div style="font-size: 7.3pt; line-height: 1.38;">
               <div style="margin-bottom: 2.5pt;">
-                <span class="part-pill">Part 1</span><strong>Conceptual Invariant (2.2m):</strong> Spoken lecture grounding why this system component exists in industry and how CPU/memory/OS handles it.
+                <span class="part-pill">Part 1</span><strong>Conceptual Invariant (2.2m):</strong> Spoken lecture grounding why this component exists and its underlying memory/OS cost.
               </div>
               <div style="margin-bottom: 2.5pt;">
                 <span class="part-pill">Part 2</span><strong>Production Pattern (0.9m):</strong> Surgical code pattern annotated with line notes detailing boundary conditions and error handlers.
               </div>
               <div style="margin-bottom: 2.5pt;">
-                <span class="part-pill">Part 3</span><strong>Anti-Pattern Defense (0.9m):</strong> Analyzing the naive failure mode and showing why standard textbook solutions break in distributed scale.
+                <span class="part-pill">Part 3</span><strong>Anti-Pattern Defense (0.9m):</strong> Analyzing the naive failure mode and showing why standard textbook solutions break in production.
               </div>
               <div style="margin-bottom: 2.5pt;">
-                <span class="part-pill">Part 4</span><strong>Student tryIt Friction (1.1m):</strong> Live coding change challenging student to introduce an edge case or mutate input to verify invariant assertions.
+                <span class="part-pill">Part 4</span><strong>Student tryIt Friction (1.1m):</strong> Live coding change with deliberate bug: <em>${stage.failureScope}</em>.
               </div>
               <div style="margin-bottom: 2.5pt;">
                 <span class="part-pill">Part 5</span><strong>Performance &amp; Scale (0.8m):</strong> Space-time complexity, cache locality implications, and resource leak prevention.
               </div>
               <div style="margin-bottom: 2.5pt;">
-                <span class="part-pill">Part 6</span><strong>Situational Puzzle (1.5m):</strong> Real-world interview scenario: <em>"${puzzleText}"</em>
+                <span class="part-pill">Part 6</span><strong>Situational Puzzle (1.5m):</strong> Interview Scenario [${stage.interviewTier}]: <em>"${puzzleText}"</em>
               </div>
             </div>
           </div>
 
           <div style="margin-top: 5pt; padding-top: 4pt; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; font-size: 7.2pt; color: #64748b;">
             <span><strong>Visual Engine:</strong> <code>${domainMeta.defaultEngine}</code> &bull; Tokens: <code>data</code>, <code>ok</code>, <code>error</code></span>
-            <span><strong>Timing Calculus:</strong> Spoken: 13.0m &bull; Code: 5.0m &bull; tryIt: 6.0m &bull; Puzzle: 6.0m = <strong>30.0 min</strong></span>
+            <span><strong>Target Benchmark:</strong> ${stage.interviewTier} = <strong>30.0 min</strong></span>
           </div>
         </div>
         ${shouldBreak ? '<div class="page-break"></div>' : ''}
@@ -1614,7 +1812,7 @@ async function generateMasterSrsPdf() {
   const artifactDir = path.resolve('C:/Users/Admin/.gemini/antigravity/brain/c7b35c15-f056-4dc6-888b-f56621a809c1');
   const artifactPdfPath = path.join(artifactDir, 'PINIT_36_COURSES_MASTERCLASS_SRS_500P.pdf');
 
-  console.log('Launching Playwright Chromium to compile 500+ Page PDF...');
+  console.log('Launching Playwright Chromium to compile 500+ Page PDF (v5.0)...');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   
@@ -1633,13 +1831,13 @@ async function generateMasterSrsPdf() {
     displayHeaderFooter: true,
     headerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 7.5pt; color: #64748b; width: 100%; padding: 0 14mm; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;">
-        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 36+ Courses Masterclass SRS &amp; Architecture (500+ Page Standard)</span>
-        <span>Confidential &bull; Production v4.0</span>
+        <span style="font-weight: 600; color: #0f172a;">PinIT Career OS — 36+ Courses Masterclass SRS &amp; Architecture (v5.0 Ultimate LMS Standard)</span>
+        <span>Confidential &bull; Production v5.0</span>
       </div>
     `,
     footerTemplate: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 7.5pt; color: #64748b; width: 100%; padding: 0 14mm; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
-        <span>Zero-Hallucination Enforced &bull; 28–31 Min Lesson Standard &bull; 37 Courses (1,110 Days / 6,660 Parts)</span>
+        <span>Zero-Hallucination Enforced &bull; 4-Stage Scaffolding &bull; 37 Courses (1,110 Days / 6,660 Parts)</span>
         <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
       </div>
     `,
@@ -1666,7 +1864,7 @@ function buildMasterMarkdown(courses: CourseItem[], plans: PlanDefinition[]): st
 
   md += `# PinIT Career OS — 36+ Courses Masterclass SRS & Pedagogical Architecture Blueprint\n\n`;
   md += `**Document Identifier:** \`PINIT_36_COURSES_MASTERCLASS_SRS_500P\`  \n`;
-  md += `**Document Version:** 4.0 (Masterclass Production Standard with Vector Visuals & Domain Failure Modes)  \n`;
+  md += `**Document Version:** 5.0 (Ultimate LMS Masterclass Standard with 4-Stage Scaffolding & Telemetry Simulation)  \n`;
   md += `**Volume Scope:** 37 Master Courses &bull; 222 Five-Day Blocks &bull; 1,110 Lesson Days &bull; 6,660 Interactive Lesson Parts  \n`;
   md += `**Pedagogical Objective:** Industry-grade technical hireability via the 30-minute masterclass loop (28–31 min)  \n`;
   md += `**Quality Standard:** Gate v2 (Rules R1–R14), Zero Hallucination, Deterministic Runtime Bindings  \n`;
@@ -1684,7 +1882,15 @@ function buildMasterMarkdown(courses: CourseItem[], plans: PlanDefinition[]): st
 
   md += `---\n\n`;
 
-  md += `## 2. The 18 Execution Plans Breakdown\n\n`;
+  md += `## 2. The 4-Stage Cognitive Scaffolding Ladder (From Zero to Senior)\n\n`;
+  md += `1. **Stage 1: Mental Model Grounding (Days 1–5):** High teacher guidance, syntax with underlying memory costs, input validation.\n`;
+  md += `2. **Stage 2: Defensive Fluency (Days 6–12):** State mutation boundaries, encapsulation, memory leaks, null dereferences.\n`;
+  md += `3. **Stage 3: Systems Stress-Testing (Days 13–22):** Concurrency, race conditions, cache alignment, 3 AM production outages.\n`;
+  md += `4. **Stage 4: Architectural Autonomy (Days 23–30):** Distributed scalability, quorum consensus, zero-downtime cutovers, incident post-mortems.\n\n`;
+
+  md += `---\n\n`;
+
+  md += `## 3. The 18 Execution Plans Breakdown\n\n`;
   plans.forEach(p => {
     md += `### [${p.id}] ${p.title}\n`;
     md += `* **Division:** ${p.division}  \n`;
@@ -1700,7 +1906,7 @@ function buildMasterMarkdown(courses: CourseItem[], plans: PlanDefinition[]): st
 
   md += `---\n\n`;
 
-  md += `## 3. The 37 Master Courses Curriculum Matrix\n\n`;
+  md += `## 4. The 37 Master Courses Curriculum Matrix\n\n`;
   courses.forEach(c => {
     md += `### Course ${c.num.toString().padStart(2, '0')}: [${c.id}] ${c.title}\n`;
     md += `* **Difficulty:** ${c.difficulty || 'All Levels'} | **Duration:** 4 Weeks (30 Days) | **Quests:** ${c.totalQuests || 96}  \n`;
