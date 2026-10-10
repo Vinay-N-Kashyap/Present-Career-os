@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 17,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Anatomy of Tumbling Windows & Discrete Interval Slicing",
+      "codeHash": "eb2fad54afe98c4fc34932cdfa0f9c4854bbf2e2eb439923e9098fd5d524d2c1",
+      "spec": {
+        "template": "cells",
+        "title": "getTumblingWindowDescriptor non-overlapping 60000ms tumbling window slices",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A Tumbling Window slices time into contiguous, non-overlapping fixed chunks.",
+            "items": [
+              {
+                "text": "Win1 [+120s..+180s)"
+              },
+              {
+                "text": "Win2 [+180s..+240s)"
+              },
+              {
+                "text": "Win5 [+300s..+360s)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "t1:125s",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Tumbling windows never overlap, so t1, t2, and t3 map to separate windows.",
+            "items": [
+              {
+                "text": "Win1 (t1:125s)"
+              },
+              {
+                "text": "Win2 (t2:180s)"
+              },
+              {
+                "text": "Win5 (t3:350s)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "t2:180s",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "t3:350s",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "getTumblingWindowDescriptor non-overlapping 60000ms tumbling window slices",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A Tumbling Window slices time into contiguous, non-overlapping fixed chunks.",
+            "items": [
+              "Win1 [+120s..+180s)",
+              "Win2 [+180s..+240s)",
+              "Win5 [+300s..+360s)"
+            ],
+            "pointers": [
+              {
+                "name": "t1:125s",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Tumbling windows never overlap, so t1, t2, and t3 map to separate windows.",
+            "items": [
+              "Win1 (t1:125s)",
+              "Win2 (t2:180s)",
+              "Win5 (t3:350s)"
+            ],
+            "pointers": [
+              {
+                "name": "t2:180s",
+                "index": 1,
+                "tone": "data"
+              },
+              {
+                "name": "t3:350s",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Epoch Timestamp Bucketing Math & Boundary Alignment",
+      "codeHash": "08e0d7fc7a09392e10b51359a6aa5502dcce2cb98e207ae66db354ddd997523d",
+      "spec": {
+        "template": "table",
+        "title": "EpochBucketer.assignBucket half-open [start, end) alignment at 1000ms windowSize",
+        "columns": [
+          "Event ID",
+          "Timestamp",
+          "Bucket ID",
+          "Interval [start, end)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Window start is calculated as timestamp minus timestamp modulo windowSize.",
+            "rows": [
+              [
+                "e1",
+                "1000",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e2",
+                "1450",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Timestamp 1999 falls inside win_1000_2000, whereas 2000 starts win_2000_3000.",
+            "rows": [
+              [
+                "e1",
+                "1000",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e2",
+                "1450",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e3",
+                "1999",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e4",
+                "2000",
+                "win_2000_3000",
+                "[2000, 3000)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EpochBucketer.assignBucket half-open [start, end) alignment at 1000ms windowSize",
+        "columns": [
+          "Event ID",
+          "Timestamp",
+          "Bucket ID",
+          "Interval [start, end)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Window start is calculated as timestamp minus timestamp modulo windowSize.",
+            "rows": [
+              [
+                "e1",
+                "1000",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e2",
+                "1450",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Timestamp 1999 falls inside win_1000_2000, whereas 2000 starts win_2000_3000.",
+            "rows": [
+              [
+                "e1",
+                "1000",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e2",
+                "1450",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e3",
+                "1999",
+                "win_1000_2000",
+                "[1000, 2000)"
+              ],
+              [
+                "e4",
+                "2000",
+                "win_2000_3000",
+                "[2000, 3000)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State Accumulation: Count, Sum, Min, Max & Online Averages",
+      "codeHash": "3aaa3521c834b7a1e3de8b750d206ba4bbe1d23477bdf4854ad392e881c5a265",
+      "spec": {
+        "template": "table",
+        "title": "TumblingAggregator O(1) online summary statistics across 1000-2000 and 2000-3000",
+        "columns": [
+          "Window",
+          "Count",
+          "Sum",
+          "Avg / Min / Max"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An online accumulator maintains count, running sum, running min, and max.",
+            "rows": [
+              [
+                "1000-2000",
+                "3",
+                "60",
+                "Avg:20 | Min:10 | Max:30"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Online accumulation achieves O(1) constant memory per active window.",
+            "rows": [
+              [
+                "1000-2000",
+                "3",
+                "60",
+                "Avg:20 | Min:10 | Max:30"
+              ],
+              [
+                "2000-3000",
+                "1",
+                "100",
+                "Avg:100 | Min:100 | Max:100"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "TumblingAggregator O(1) online summary statistics across 1000-2000 and 2000-3000",
+        "columns": [
+          "Window",
+          "Count",
+          "Sum",
+          "Avg / Min / Max"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "An online accumulator maintains count, running sum, running min, and max.",
+            "rows": [
+              [
+                "1000-2000",
+                "3",
+                "60",
+                "Avg:20 | Min:10 | Max:30"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Online accumulation achieves O(1) constant memory per active window.",
+            "rows": [
+              [
+                "1000-2000",
+                "3",
+                "60",
+                "Avg:20 | Min:10 | Max:30"
+              ],
+              [
+                "2000-3000",
+                "1",
+                "100",
+                "Avg:100 | Min:100 | Max:100"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keyed Tumbling Windows: Partitioned Multi-Entity Bucketing",
+      "codeHash": "d88962128d9169b48b0cfce7c6c41948db53fd059a3128b53fe96ee8a3d8bb4a",
+      "spec": {
+        "template": "bars",
+        "title": "KeyedTumblingWindowEngine composite ticker:windowStart totalShares buckets",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each unique key-window combination maintains its own isolated accumulator.",
+            "bars": [
+              {
+                "label": "AAPL:100 (2 trades)",
+                "value": {
+                  "text": "150"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "MSFT:100 (1 trade)",
+                "value": {
+                  "text": "30"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When AAPL at 210ms arrives, it opens a new AAPL:200 window accumulator.",
+            "bars": [
+              {
+                "label": "AAPL:100 (2 trades)",
+                "value": {
+                  "text": "150"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "MSFT:100 (1 trade)",
+                "value": {
+                  "text": "30"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "AAPL:200 (1 trade)",
+                "value": {
+                  "text": "25"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "KeyedTumblingWindowEngine composite ticker:windowStart totalShares buckets",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Each unique key-window combination maintains its own isolated accumulator.",
+            "bars": [
+              {
+                "label": "AAPL:100 (2 trades)",
+                "value": 150,
+                "tone": "ok"
+              },
+              {
+                "label": "MSFT:100 (1 trade)",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When AAPL at 210ms arrives, it opens a new AAPL:200 window accumulator.",
+            "bars": [
+              {
+                "label": "AAPL:100 (2 trades)",
+                "value": 150,
+                "tone": "ok"
+              },
+              {
+                "label": "MSFT:100 (1 trade)",
+                "value": 30,
+                "tone": "data"
+              },
+              {
+                "label": "AAPL:200 (1 trade)",
+                "value": 25,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Window Closing, Triggering & Downstream Emission",
+      "codeHash": "76d852f58a385596164401afb3dd78567c8f4bae6be87f058158271526b0bfaf",
+      "spec": {
+        "template": "sequence",
+        "title": "WindowEmissionManager triggerEmissions watermark closure at 2000ms and 3500ms",
+        "actors": [
+          {
+            "id": "clock",
+            "label": "Watermark Clock"
+          },
+          {
+            "id": "manager",
+            "label": "WindowEmissionManager"
+          },
+          {
+            "id": "sink",
+            "label": "Downstream Sink"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "At watermark 2000ms, Window [1000, 2000) closes and emits Vol: 40.",
+            "messages": [
+              {
+                "from": "clock",
+                "to": "manager",
+                "label": "triggerEmissions(2000)"
+              },
+              {
+                "from": "manager",
+                "to": "sink",
+                "label": "EMIT [1000, 2000) -> Count: 2, Vol: 40"
+              }
+            ],
+            "activeActorId": "manager"
+          },
+          {
+            "at": "say8",
+            "caption": "In event-time streaming, emission is coordinated by watermarks at 3500ms.",
+            "messages": [
+              {
+                "from": "clock",
+                "to": "manager",
+                "label": "triggerEmissions(3500)"
+              },
+              {
+                "from": "manager",
+                "to": "sink",
+                "label": "EMIT [2000, 3000) -> Count: 1, Vol: 80"
+              }
+            ],
+            "activeActorId": "sink"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "WindowEmissionManager triggerEmissions watermark closure at 2000ms and 3500ms",
+        "actors": [
+          {
+            "id": "clock",
+            "label": "Watermark Clock"
+          },
+          {
+            "id": "manager",
+            "label": "WindowEmissionManager"
+          },
+          {
+            "id": "sink",
+            "label": "Downstream Sink"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "At watermark 2000ms, Window [1000, 2000) closes and emits Vol: 40.",
+            "messages": [
+              {
+                "from": "clock",
+                "to": "manager",
+                "label": "triggerEmissions(2000)"
+              },
+              {
+                "from": "manager",
+                "to": "sink",
+                "label": "EMIT [1000, 2000) -> Count: 2, Vol: 40"
+              }
+            ],
+            "activeActorId": "manager"
+          },
+          {
+            "at": "say8",
+            "caption": "In event-time streaming, emission is coordinated by watermarks at 3500ms.",
+            "messages": [
+              {
+                "from": "clock",
+                "to": "manager",
+                "label": "triggerEmissions(3500)"
+              },
+              {
+                "from": "manager",
+                "to": "sink",
+                "label": "EMIT [2000, 3000) -> Count: 1, Vol: 80"
+              }
+            ],
+            "activeActorId": "sink"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Window Aggregator & Memory Lifecycle Management",
+      "codeHash": "8d67111f0c58bbe6e5cb2069a211ec567d50e78a0bcb8ebbe003d08ad4a24e40",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
