@@ -47,7 +47,7 @@
                     "text": "probability"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -67,7 +67,7 @@
                     "text": "probability"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -81,7 +81,7 @@
                     "text": "probability"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -114,7 +114,7 @@
                   "score",
                   "probability"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -128,7 +128,7 @@
                   "score",
                   "probability"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -136,7 +136,7 @@
                   "score",
                   "probability"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -185,7 +185,7 @@
                     "text": "cloudy"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -205,7 +205,7 @@
                     "text": "cloudy"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -252,7 +252,7 @@
                   "sunny",
                   "cloudy"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -266,7 +266,7 @@
                   "sunny",
                   "cloudy"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -323,7 +323,7 @@
                     "text": "kept"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -343,7 +343,7 @@
                     "text": "kept"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -390,7 +390,7 @@
                   "prob",
                   "kept"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -404,7 +404,7 @@
                   "prob",
                   "kept"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -461,7 +461,7 @@
                     "text": "adjusted"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -481,7 +481,7 @@
                     "text": "adjusted"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -528,7 +528,7 @@
                   "scores",
                   "adjusted"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -542,7 +542,7 @@
                   "scores",
                   "adjusted"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [

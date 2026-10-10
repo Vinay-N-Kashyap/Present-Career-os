@@ -47,7 +47,7 @@
                     "text": "average"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -67,7 +67,7 @@
                     "text": "average"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -114,7 +114,7 @@
                   "values",
                   "average"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -128,7 +128,7 @@
                   "values",
                   "average"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -185,7 +185,7 @@
                     "text": "spec"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -205,7 +205,7 @@
                     "text": "spec"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -252,7 +252,7 @@
                   "prompt",
                   "spec"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -266,7 +266,7 @@
                   "prompt",
                   "spec"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -323,7 +323,7 @@
                     "text": "cases"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -343,7 +343,7 @@
                     "text": "cases"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -390,7 +390,7 @@
                   "name",
                   "cases"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -404,7 +404,7 @@
                   "name",
                   "cases"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -461,7 +461,7 @@
                     "text": "source"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -481,7 +481,7 @@
                     "text": "source"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -528,7 +528,7 @@
                   "node",
                   "source"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -542,7 +542,7 @@
                   "node",
                   "source"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [

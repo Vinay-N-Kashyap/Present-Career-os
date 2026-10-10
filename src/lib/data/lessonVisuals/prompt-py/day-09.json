@@ -33,7 +33,7 @@
                     "text": "grounded"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -47,7 +47,7 @@
                     "text": "grounded"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -67,7 +67,7 @@
                     "text": "grounded"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -106,7 +106,7 @@
                   "ungrounded",
                   "grounded"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -114,7 +114,7 @@
                   "ungrounded",
                   "grounded"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -128,7 +128,7 @@
                   "ungrounded",
                   "grounded"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -185,7 +185,7 @@
                     "text": "chunks"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -205,7 +205,7 @@
                     "text": "chunks"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -252,7 +252,7 @@
                   "text",
                   "chunks"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -266,7 +266,7 @@
                   "text",
                   "chunks"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -323,7 +323,7 @@
                     "text": "scores"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -343,7 +343,7 @@
                     "text": "scores"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -390,7 +390,7 @@
                   "words",
                   "scores"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -404,7 +404,7 @@
                   "words",
                   "scores"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -461,7 +461,7 @@
                     "text": "question"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -481,7 +481,7 @@
                     "text": "question"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -528,7 +528,7 @@
                   "sources",
                   "question"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -542,7 +542,7 @@
                   "sources",
                   "question"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [

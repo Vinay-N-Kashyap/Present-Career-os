@@ -47,7 +47,7 @@
                     "text": "workflow"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -67,7 +67,7 @@
                     "text": "workflow"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -114,7 +114,7 @@
                   "step",
                   "workflow"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -128,7 +128,7 @@
                   "step",
                   "workflow"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -185,7 +185,7 @@
                     "text": "risk"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -205,7 +205,7 @@
                     "text": "risk"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -252,7 +252,7 @@
                   "clean",
                   "risk"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -266,7 +266,7 @@
                   "clean",
                   "risk"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -323,7 +323,7 @@
                     "text": "short_hash"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -343,7 +343,7 @@
                     "text": "short_hash"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -390,7 +390,7 @@
                   "uid",
                   "short_hash"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -404,7 +404,7 @@
                   "uid",
                   "short_hash"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -461,7 +461,7 @@
                     "text": "suggest"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -481,7 +481,7 @@
                     "text": "suggest"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -528,7 +528,7 @@
                   "task",
                   "suggest"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -542,7 +542,7 @@
                   "task",
                   "suggest"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [

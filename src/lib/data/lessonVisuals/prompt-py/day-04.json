@@ -309,7 +309,7 @@
                     "text": "found"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -386,7 +386,7 @@
                   "line",
                   "found"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -723,7 +723,7 @@
                     "text": "score"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -800,7 +800,7 @@
                   "3000",
                   "score"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }

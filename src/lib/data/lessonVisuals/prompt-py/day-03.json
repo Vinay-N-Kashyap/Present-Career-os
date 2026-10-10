@@ -264,7 +264,7 @@
                     "text": "FEW_SHOT"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -334,7 +334,7 @@
                   "n_examples",
                   "FEW_SHOT"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

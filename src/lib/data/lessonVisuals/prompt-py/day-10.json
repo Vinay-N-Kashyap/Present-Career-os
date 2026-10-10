@@ -47,7 +47,7 @@
                     "text": "source"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -67,7 +67,7 @@
                     "text": "source"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -114,7 +114,7 @@
                   "step",
                   "source"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -128,7 +128,7 @@
                   "step",
                   "source"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -185,7 +185,7 @@
                     "text": "cites"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -205,7 +205,7 @@
                     "text": "cites"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -252,7 +252,7 @@
                   "author",
                   "cites"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -266,7 +266,7 @@
                   "author",
                   "cites"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -323,7 +323,7 @@
                     "text": "support"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -343,7 +343,7 @@
                     "text": "support"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -390,7 +390,7 @@
                   "claims",
                   "support"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -404,7 +404,7 @@
                   "claims",
                   "support"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -447,7 +447,7 @@
                     "text": "rate"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -461,7 +461,7 @@
                     "text": "rate"
                   }
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -481,7 +481,7 @@
                     "text": "rate"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [
@@ -520,7 +520,7 @@
                   "reality",
                   "rate"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               },
               {
                 "cells": [
@@ -528,7 +528,7 @@
                   "reality",
                   "rate"
                 ],
-                "tone": "info"
+                "tone": "data"
               }
             ]
           },
@@ -542,7 +542,7 @@
                   "reality",
                   "rate"
                 ],
-                "tone": "accent"
+                "tone": "data"
               },
               {
                 "cells": [

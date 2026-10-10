@@ -775,7 +775,7 @@
                     "text": "saved"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -852,7 +852,7 @@
                   "after",
                   "saved"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }

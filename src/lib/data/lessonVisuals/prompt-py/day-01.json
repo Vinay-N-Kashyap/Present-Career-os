@@ -115,7 +115,7 @@
                     "text": "a plausible-sounding guess"
                   }
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -192,7 +192,7 @@
                   "not found",
                   "a plausible-sounding guess"
                 ],
-                "tone": "warn"
+                "tone": "idle"
               }
             ]
           }
@@ -309,7 +309,7 @@
                     "text": "sentence"
                   }
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
@@ -386,7 +386,7 @@
                   "following",
                   "sentence"
                 ],
-                "tone": "accent"
+                "tone": "data"
               }
             ]
           }
