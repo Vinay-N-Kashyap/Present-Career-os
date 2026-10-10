@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 16,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stateless Stream Semantics & Pure Functional Transformations",
+      "codeHash": "433280aa71678a818ae1b11e91daad89c63b0f397c9fa6d3e37ff0a300a8cf09",
+      "spec": {
+        "template": "flow",
+        "title": "processStateless isolated evaluation from RawClickEvent to SanitizedClickEvent",
+        "nodes": [
+          {
+            "id": "rawClick",
+            "label": "RawClickEvent (url, statusCode)",
+            "tappable": false
+          },
+          {
+            "id": "pureFn",
+            "label": "processStateless(event)",
+            "tappable": false
+          },
+          {
+            "id": "sanitized",
+            "label": "SanitizedClickEvent (path, isError)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawClick",
+            "to": "pureFn",
+            "label": "ev-1 (200), ev-2 (500)"
+          },
+          {
+            "from": "pureFn",
+            "to": "sanitized",
+            "label": "statusCode >= 400"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stateless logic evaluates each incoming event in isolation from other events.",
+            "activeNodes": [
+              "rawClick",
+              "pureFn"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Because each calculation depends only on the current event, it is deterministic.",
+            "activeNodes": [
+              "pureFn",
+              "sanitized"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "processStateless isolated evaluation from RawClickEvent to SanitizedClickEvent",
+        "nodes": [
+          {
+            "id": "rawClick",
+            "label": "RawClickEvent (url, statusCode)",
+            "tappable": false
+          },
+          {
+            "id": "pureFn",
+            "label": "processStateless(event)",
+            "tappable": false
+          },
+          {
+            "id": "sanitized",
+            "label": "SanitizedClickEvent (path, isError)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawClick",
+            "to": "pureFn",
+            "label": "ev-1 (200), ev-2 (500)"
+          },
+          {
+            "from": "pureFn",
+            "to": "sanitized",
+            "label": "statusCode >= 400"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Stateless logic evaluates each incoming event in isolation from other events.",
+            "activeNodes": [
+              "rawClick",
+              "pureFn"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "Because each calculation depends only on the current event, it is deterministic.",
+            "activeNodes": [
+              "pureFn",
+              "sanitized"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Map Operator: Schema Projection & Value Normalization",
+      "codeHash": "c21f1a8c30b78b0441e19bc3e4c5cd02949eb5c5e393f0d876fa337331d4b31d",
+      "spec": {
+        "template": "table",
+        "title": "One-to-one mapPriceTick schema projection from FinancialTick to NormalizedPriceTick",
+        "columns": [
+          "Raw Symbol",
+          "Raw Cents",
+          "Normalized Ticker",
+          "Normalized Price (USD)"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The map operator projects fields, normalizes strings, and divides cents by 100.",
+            "rows": [
+              [
+                "\"  aapl \"",
+                "18250",
+                "AAPL",
+                "$182.50"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Because mapping is one-to-one, the output stream preserves exact record count.",
+            "rows": [
+              [
+                "\"  aapl \"",
+                "18250",
+                "AAPL",
+                "$182.50"
+              ],
+              [
+                "\"msft\"",
+                "41520",
+                "MSFT",
+                "$415.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "One-to-one mapPriceTick schema projection from FinancialTick to NormalizedPriceTick",
+        "columns": [
+          "Raw Symbol",
+          "Raw Cents",
+          "Normalized Ticker",
+          "Normalized Price (USD)"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The map operator projects fields, normalizes strings, and divides cents by 100.",
+            "rows": [
+              [
+                "\"  aapl \"",
+                "18250",
+                "AAPL",
+                "$182.50"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Because mapping is one-to-one, the output stream preserves exact record count.",
+            "rows": [
+              [
+                "\"  aapl \"",
+                "18250",
+                "AAPL",
+                "$182.50"
+              ],
+              [
+                "\"msft\"",
+                "41520",
+                "MSFT",
+                "$415.20"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Filter Operator: Predicate-Based Event Sampling & Discard",
+      "codeHash": "232bb5b20e0f93e04062079c27036e0c2bbb167f269cdcb5561e59c03d98d9f0",
+      "spec": {
+        "template": "cells",
+        "title": "StreamFilter predicate evaluation discarding DEBUG/INFO and retaining payment alerts",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Records matching ERROR or WARN proceed downstream while others are discarded.",
+            "items": [
+              {
+                "text": "1:DEBUG(auth)"
+              },
+              {
+                "text": "2:ERROR(payment)"
+              },
+              {
+                "text": "3:INFO(auth)"
+              },
+              {
+                "text": "4:WARN(payment)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "drop",
+                "index": 0,
+                "tone": "muted"
+              },
+              {
+                "name": "keep",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Filtering early reduces downstream record volume from 4 logs to 2 payment logs.",
+            "items": [
+              {
+                "text": "2:ERROR(payment)"
+              },
+              {
+                "text": "4:WARN(payment)"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "StreamFilter predicate evaluation discarding DEBUG/INFO and retaining payment alerts",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Records matching ERROR or WARN proceed downstream while others are discarded.",
+            "items": [
+              "1:DEBUG(auth)",
+              "2:ERROR(payment)",
+              "3:INFO(auth)",
+              "4:WARN(payment)"
+            ],
+            "pointers": [
+              {
+                "name": "drop",
+                "index": 0,
+                "tone": "muted"
+              },
+              {
+                "name": "keep",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Filtering early reduces downstream record volume from 4 logs to 2 payment logs.",
+            "items": [
+              "2:ERROR(payment)",
+              "4:WARN(payment)"
+            ],
+            "pointers": [
+              {
+                "name": "retained:2",
+                "index": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FlatMap Operator: One-to-Many Fan-Out & Event Expansion",
+      "codeHash": "bcacb1735a24bb2939f2d4430234518d7d370d2cfdd85872f18138bfa46ff0c0",
+      "spec": {
+        "template": "table",
+        "title": "flatMapOrderToDispatches expanding 2 OrderInvoices into 3 InventoryDispatchEvents",
+        "columns": [
+          "Order ID",
+          "SKU",
+          "Quantity",
+          "Total Cost"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "flatMap maps ord-101 into 2 individual item records and flattens the array.",
+            "rows": [
+              [
+                "ord-101",
+                "KEYBOARD-01",
+                "2",
+                "$150"
+              ],
+              [
+                "ord-101",
+                "MOUSE-02",
+                "1",
+                "$45"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expanding nested item arrays turns 2 input orders into 3 dispatch events.",
+            "rows": [
+              [
+                "ord-101",
+                "KEYBOARD-01",
+                "2",
+                "$150"
+              ],
+              [
+                "ord-101",
+                "MOUSE-02",
+                "1",
+                "$45"
+              ],
+              [
+                "ord-102",
+                "MONITOR-4K",
+                "1",
+                "$350"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "flatMapOrderToDispatches expanding 2 OrderInvoices into 3 InventoryDispatchEvents",
+        "columns": [
+          "Order ID",
+          "SKU",
+          "Quantity",
+          "Total Cost"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "flatMap maps ord-101 into 2 individual item records and flattens the array.",
+            "rows": [
+              [
+                "ord-101",
+                "KEYBOARD-01",
+                "2",
+                "$150"
+              ],
+              [
+                "ord-101",
+                "MOUSE-02",
+                "1",
+                "$45"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Expanding nested item arrays turns 2 input orders into 3 dispatch events.",
+            "rows": [
+              [
+                "ord-101",
+                "KEYBOARD-01",
+                "2",
+                "$150"
+              ],
+              [
+                "ord-101",
+                "MOUSE-02",
+                "1",
+                "$45"
+              ],
+              [
+                "ord-102",
+                "MONITOR-4K",
+                "1",
+                "$350"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream Branching & Dynamic Topic Routing",
+      "codeHash": "97f44f77b80983a198ff856bc44a5c060fd52b1e84d3d9c6469669a4b7ca6fad",
+      "spec": {
+        "template": "bars",
+        "title": "branchTelemetry routing 4 sensor readings across critical (>=90), warning (>=70), and normal",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stream branching evaluates each sensor reading against ordered thresholds.",
+            "bars": [
+              {
+                "label": "temp-1 (95 >= 90)",
+                "value": {
+                  "text": "95"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "temp-2 (42 < 70)",
+                "value": {
+                  "text": "42"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Branching partitions 4 readings into 2 critical, 1 warning, and 1 normal.",
+            "bars": [
+              {
+                "label": "Critical Alerts (>=90)",
+                "value": {
+                  "text": "2"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Warning Alerts (>=70)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Normal Telemetry (<70)",
+                "value": {
+                  "text": "1"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "branchTelemetry routing 4 sensor readings across critical (>=90), warning (>=70), and normal",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Stream branching evaluates each sensor reading against ordered thresholds.",
+            "bars": [
+              {
+                "label": "temp-1 (95 >= 90)",
+                "value": 95,
+                "tone": "error"
+              },
+              {
+                "label": "temp-2 (42 < 70)",
+                "value": 42,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Branching partitions 4 readings into 2 critical, 1 warning, and 1 normal.",
+            "bars": [
+              {
+                "label": "Critical Alerts (>=90)",
+                "value": 2,
+                "tone": "error"
+              },
+              {
+                "label": "Warning Alerts (>=70)",
+                "value": 1,
+                "tone": "data"
+              },
+              {
+                "label": "Normal Telemetry (<70)",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composed Functional Pipeline & End-to-End Processing",
+      "codeHash": "71f85f00ae9644770dfa56a68089155196391c7846c55d5f8131584f8018f7c1",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
