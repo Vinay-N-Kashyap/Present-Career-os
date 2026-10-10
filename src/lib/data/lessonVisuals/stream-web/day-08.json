@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 8,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Offset Commit Contract & Data Consistency Guarantees",
+      "codeHash": "8d97adb3f088c3c38f8256ff968932bdec32bf0d18e77bdbb9761bd300aa46fc",
+      "spec": {
+        "template": "cells",
+        "title": "OffsetLedger committed coordinate (104) and recovery resume pointer (105)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The committed offset asserts that all records up to this offset processed.",
+            "items": [
+              {
+                "text": "103: ACK"
+              },
+              {
+                "text": "104: COMMITTED"
+              },
+              {
+                "text": "105: NEXT"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "committed",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The streaming cluster uses the committed offset to decide where recovery starts.",
+            "items": [
+              {
+                "text": "103: ACK"
+              },
+              {
+                "text": "104: COMMITTED"
+              },
+              {
+                "text": "105: RESUME"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "committed",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "resume",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "OffsetLedger committed coordinate (104) and recovery resume pointer (105)",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The committed offset asserts that all records up to this offset processed.",
+            "items": [
+              "103: ACK",
+              "104: COMMITTED",
+              "105: NEXT"
+            ],
+            "pointers": [
+              {
+                "name": "committed",
+                "index": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The streaming cluster uses the committed offset to decide where recovery starts.",
+            "items": [
+              "103: ACK",
+              "104: COMMITTED",
+              "105: RESUME"
+            ],
+            "pointers": [
+              {
+                "name": "committed",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "resume",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Dangers of Periodic Auto-Commit (enable.auto.commit)",
+      "codeHash": "1a890837a5a4a0c250c5688bb8a7195351c65649506ae644f1e0bf3450bd799e",
+      "spec": {
+        "template": "bars",
+        "title": "AutoCommitHazardSimulator silent data loss on mid-batch worker crash",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The client library automatically commits the highest offset on a fixed timer.",
+            "bars": [
+              {
+                "label": "Batch Fetched",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Auto-Committed Offset",
+                "value": {
+                  "text": "9"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Unprocessed messages in the batch are permanently skipped and silently lost.",
+            "bars": [
+              {
+                "label": "Actually Processed",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Silently Lost",
+                "value": {
+                  "text": "6"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "AutoCommitHazardSimulator silent data loss on mid-batch worker crash",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The client library automatically commits the highest offset on a fixed timer.",
+            "bars": [
+              {
+                "label": "Batch Fetched",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "Auto-Committed Offset",
+                "value": 9,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Unprocessed messages in the batch are permanently skipped and silently lost.",
+            "bars": [
+              {
+                "label": "Actually Processed",
+                "value": 4,
+                "tone": "ok"
+              },
+              {
+                "label": "Silently Lost",
+                "value": 6,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synchronous Commits (commitSync) & Latency Trade-Offs",
+      "codeHash": "a43feac4b6c6b2b89d96cb65275457c11dcecad0353573690440d85ff7d8bc1e",
+      "spec": {
+        "template": "sequence",
+        "title": "SynchronousCommitter blocking commitSync network round-trip (15ms)",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "Consumer Thread"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Coordinator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The commitSync method blocks the thread until the broker acknowledges commit.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "broker",
+                "label": "commitSync(offset: 100) [Thread Blocked]"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say8",
+            "caption": "Synchronous blocking forces the consumer thread to sit idle waiting on network.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "ACK Offset 100 (simulatedRttMs: 15ms)"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "SynchronousCommitter blocking commitSync network round-trip (15ms)",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "Consumer Thread"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Coordinator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The commitSync method blocks the thread until the broker acknowledges commit.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "broker",
+                "label": "commitSync(offset: 100) [Thread Blocked]"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say8",
+            "caption": "Synchronous blocking forces the consumer thread to sit idle waiting on network.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "ACK Offset 100 (simulatedRttMs: 15ms)"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Commits (commitAsync) & Callback Handling",
+      "codeHash": "3d8392be34b02c634b7a4b860c564bae5d945a80424eda0e23c7da2f06ea60e7",
+      "spec": {
+        "template": "states",
+        "title": "AsyncCommitManager monotonic guard rejecting retrograde offset 75",
+        "states": [
+          {
+            "id": "commit50",
+            "label": "commitAsync(50) ACKED"
+          },
+          {
+            "id": "commit100",
+            "label": "commitAsync(100) ACKED"
+          },
+          {
+            "id": "retrograde75",
+            "label": "commitAsync(75) Dropped (75 <= 100)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When calling commitAsync, the client dispatches the request and returns fast.",
+            "activeState": "commit100",
+            "transition": {
+              "from": "commit50",
+              "to": "commit100",
+              "label": "brokerOffset = 100"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Client libraries discard retrograde responses in asynchronous callback handlers.",
+            "activeState": "retrograde75",
+            "transition": {
+              "from": "commit100",
+              "to": "retrograde75",
+              "label": "Retrograde Dropped"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "AsyncCommitManager monotonic guard rejecting retrograde offset 75",
+        "states": [
+          {
+            "id": "commit50",
+            "label": "commitAsync(50) ACKED"
+          },
+          {
+            "id": "commit100",
+            "label": "commitAsync(100) ACKED"
+          },
+          {
+            "id": "retrograde75",
+            "label": "commitAsync(75) Dropped (75 <= 100)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When calling commitAsync, the client dispatches the request and returns fast.",
+            "activeState": "commit100",
+            "transition": {
+              "from": "commit50",
+              "to": "commit100",
+              "label": "brokerOffset = 100"
+            }
+          },
+          {
+            "at": "say9",
+            "caption": "Client libraries discard retrograde responses in asynchronous callback handlers.",
+            "activeState": "retrograde75",
+            "transition": {
+              "from": "commit100",
+              "to": "retrograde75",
+              "label": "Retrograde Dropped"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Batched Commit Cadence & Minimized Network RTT",
+      "codeHash": "225ca2aeca3c4a1d7c8f545fa68cac781d61ec51213741a8b90824c307659c6c",
+      "spec": {
+        "template": "table",
+        "title": "CadenceCommitter dual count (3 records) and time (100ms) commit triggers",
+        "columns": [
+          "Record Offset",
+          "Timestamp",
+          "Commit Triggered",
+          "Trigger Condition"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The consumer accumulates processed offsets in a local high-water mark register.",
+            "rows": [
+              [
+                "0",
+                "t=10",
+                "false",
+                "pending: 1"
+              ],
+              [
+                "1",
+                "t=20",
+                "false",
+                "pending: 2"
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Offsets commit only when the configured record count or time threshold triggers.",
+            "rows": [
+              [
+                "0",
+                "t=10",
+                "false",
+                "pending: 1"
+              ],
+              [
+                "1",
+                "t=20",
+                "false",
+                "pending: 2"
+              ],
+              [
+                "2",
+                "t=30",
+                "true",
+                "Count Trigger (3 >= 3)"
+              ],
+              [
+                "3",
+                "t=150",
+                "true",
+                "Time Trigger (120ms >= 100ms)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "CadenceCommitter dual count (3 records) and time (100ms) commit triggers",
+        "columns": [
+          "Record Offset",
+          "Timestamp",
+          "Commit Triggered",
+          "Trigger Condition"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The consumer accumulates processed offsets in a local high-water mark register.",
+            "rows": [
+              [
+                "0",
+                "t=10",
+                "false",
+                "pending: 1"
+              ],
+              [
+                "1",
+                "t=20",
+                "false",
+                "pending: 2"
+              ]
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Offsets commit only when the configured record count or time threshold triggers.",
+            "rows": [
+              [
+                "0",
+                "t=10",
+                "false",
+                "pending: 1"
+              ],
+              [
+                "1",
+                "t=20",
+                "false",
+                "pending: 2"
+              ],
+              [
+                "2",
+                "t=30",
+                "true",
+                "Count Trigger (3 >= 3)"
+              ],
+              [
+                "3",
+                "t=150",
+                "true",
+                "Time Trigger (120ms >= 100ms)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Adaptive Offset Committer with Failure Fallback",
+      "codeHash": "53418ab2ace5ed2d2267a6254471a19cb47dfb21b8a9e5cc501b23d83a659205",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
