@@ -12809,6 +12809,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-sre-web-D01",
+      "title": "sre-web day 1: SLIs, SLOs & the Service Level Contract Hierarchy visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 1,
+      "keys": [
+        "sre-web:1:0",
+        "sre-web:1:1",
+        "sre-web:1:2",
+        "sre-web:1:3",
+        "sre-web:1:4",
+        "sre-web:1:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D02",
+      "title": "sre-web day 2: Error Budgets, Burn Rates & Reliability Trade-offs visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 2,
+      "keys": [
+        "sre-web:2:0",
+        "sre-web:2:1",
+        "sre-web:2:2",
+        "sre-web:2:3",
+        "sre-web:2:4",
+        "sre-web:2:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D03",
+      "title": "sre-web day 3: Availability Math: Serial, Parallel & Composite Systems visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 3,
+      "keys": [
+        "sre-web:3:0",
+        "sre-web:3:1",
+        "sre-web:3:2",
+        "sre-web:3:3",
+        "sre-web:3:4",
+        "sre-web:3:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D04",
+      "title": "sre-web day 4: Uptime Windows, Downtime Budgets & Nines Conversion visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 4,
+      "keys": [
+        "sre-web:4:0",
+        "sre-web:4:1",
+        "sre-web:4:2",
+        "sre-web:4:3",
+        "sre-web:4:4",
+        "sre-web:4:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D05",
+      "title": "sre-web day 5: ⭐ MILESTONE 1: SRE Reliability Calculator (SLI/SLO/Error Budget Engine) visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 5,
+      "keys": [
+        "sre-web:5:0",
+        "sre-web:5:1",
+        "sre-web:5:2",
+        "sre-web:5:3",
+        "sre-web:5:4",
+        "sre-web:5:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-1-5",
+      "title": "Checkpoint sre-web days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-sre-web-D06",
+      "title": "sre-web day 6: Infrastructure as Data: Resource Maps, Plan & Diff visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 6,
+      "keys": [
+        "sre-web:6:0",
+        "sre-web:6:1",
+        "sre-web:6:2",
+        "sre-web:6:3",
+        "sre-web:6:4",
+        "sre-web:6:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D07",
+      "title": "sre-web day 7: Drift Detection & Configuration Reconciliation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 7,
+      "keys": [
+        "sre-web:7:0",
+        "sre-web:7:1",
+        "sre-web:7:2",
+        "sre-web:7:3",
+        "sre-web:7:4",
+        "sre-web:7:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D08",
+      "title": "sre-web day 8: Multi-Region Architecture & Failover Planning visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 8,
+      "keys": [
+        "sre-web:8:0",
+        "sre-web:8:1",
+        "sre-web:8:2",
+        "sre-web:8:3",
+        "sre-web:8:4",
+        "sre-web:8:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D09",
+      "title": "sre-web day 9: DNS-Based Traffic Management & Geographic Routing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 9,
+      "keys": [
+        "sre-web:9:0",
+        "sre-web:9:1",
+        "sre-web:9:2",
+        "sre-web:9:3",
+        "sre-web:9:4",
+        "sre-web:9:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D10",
+      "title": "sre-web day 10: ⭐ MILESTONE 2: Multi-Region Failover Simulator visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 10,
+      "keys": [
+        "sre-web:10:0",
+        "sre-web:10:1",
+        "sre-web:10:2",
+        "sre-web:10:3",
+        "sre-web:10:4",
+        "sre-web:10:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-6-10",
+      "title": "Checkpoint sre-web days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-sre-web-D11",
+      "title": "sre-web day 11: Load Balancing Algorithms: Round-Robin, Weighted & Least-Connections visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 11,
+      "keys": [
+        "sre-web:11:0",
+        "sre-web:11:1",
+        "sre-web:11:2",
+        "sre-web:11:3",
+        "sre-web:11:4",
+        "sre-web:11:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D12",
+      "title": "sre-web day 12: Health Checks: Liveness, Readiness & Startup Probes visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 12,
+      "keys": [
+        "sre-web:12:0",
+        "sre-web:12:1",
+        "sre-web:12:2",
+        "sre-web:12:3",
+        "sre-web:12:4",
+        "sre-web:12:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D13",
+      "title": "sre-web day 13: Retries with Exponential Backoff & Jitter visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 13,
+      "keys": [
+        "sre-web:13:0",
+        "sre-web:13:1",
+        "sre-web:13:2",
+        "sre-web:13:3",
+        "sre-web:13:4",
+        "sre-web:13:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D14",
+      "title": "sre-web day 14: Circuit Breakers: Closed, Open & Half-Open States visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 14,
+      "keys": [
+        "sre-web:14:0",
+        "sre-web:14:1",
+        "sre-web:14:2",
+        "sre-web:14:3",
+        "sre-web:14:4",
+        "sre-web:14:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D15",
+      "title": "sre-web day 15: Bulkheads, Timeouts & Isolation Patterns visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 15,
+      "keys": [
+        "sre-web:15:0",
+        "sre-web:15:1",
+        "sre-web:15:2",
+        "sre-web:15:3",
+        "sre-web:15:4",
+        "sre-web:15:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-11-15",
+      "title": "Checkpoint sre-web days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-sre-web-D16",
+      "title": "sre-web day 16: Metrics Collection: Counters, Gauges & Histograms visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 16,
+      "keys": [
+        "sre-web:16:0",
+        "sre-web:16:1",
+        "sre-web:16:2",
+        "sre-web:16:3",
+        "sre-web:16:4",
+        "sre-web:16:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D17",
+      "title": "sre-web day 17: Percentile Math: p50, p95, p99 & Latency Analysis visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 17,
+      "keys": [
+        "sre-web:17:0",
+        "sre-web:17:1",
+        "sre-web:17:2",
+        "sre-web:17:3",
+        "sre-web:17:4",
+        "sre-web:17:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D18",
+      "title": "sre-web day 18: Structured Logging, Log Parsing & Correlation IDs visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 18,
+      "keys": [
+        "sre-web:18:0",
+        "sre-web:18:1",
+        "sre-web:18:2",
+        "sre-web:18:3",
+        "sre-web:18:4",
+        "sre-web:18:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D19",
+      "title": "sre-web day 19: Distributed Traces: Spans, Context Propagation & Waterfall Analysis visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 19,
+      "keys": [
+        "sre-web:19:0",
+        "sre-web:19:1",
+        "sre-web:19:2",
+        "sre-web:19:3",
+        "sre-web:19:4",
+        "sre-web:19:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D20",
+      "title": "sre-web day 20: Alert Rules, Burn-Rate Alerting & Noise Reduction visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 20,
+      "keys": [
+        "sre-web:20:0",
+        "sre-web:20:1",
+        "sre-web:20:2",
+        "sre-web:20:3",
+        "sre-web:20:4",
+        "sre-web:20:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-16-20",
+      "title": "Checkpoint sre-web days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-sre-web-D21",
+      "title": "sre-web day 21: Incident Response: Severity Levels, Timelines & MTTD/MTTR visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 21,
+      "keys": [
+        "sre-web:21:0",
+        "sre-web:21:1",
+        "sre-web:21:2",
+        "sre-web:21:3",
+        "sre-web:21:4",
+        "sre-web:21:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D22",
+      "title": "sre-web day 22: Blameless Postmortems: Root Cause Analysis & Action Items visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 22,
+      "keys": [
+        "sre-web:22:0",
+        "sre-web:22:1",
+        "sre-web:22:2",
+        "sre-web:22:3",
+        "sre-web:22:4",
+        "sre-web:22:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D23",
+      "title": "sre-web day 23: Capacity Planning: Queuing Theory & Little's Law visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 23,
+      "keys": [
+        "sre-web:23:0",
+        "sre-web:23:1",
+        "sre-web:23:2",
+        "sre-web:23:3",
+        "sre-web:23:4",
+        "sre-web:23:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D24",
+      "title": "sre-web day 24: Cloud Cost Modeling: Reserved, On-Demand & Spot Pricing visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 24,
+      "keys": [
+        "sre-web:24:0",
+        "sre-web:24:1",
+        "sre-web:24:2",
+        "sre-web:24:3",
+        "sre-web:24:4",
+        "sre-web:24:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D25",
+      "title": "sre-web day 25: ⭐ MILESTONE 3: Observability & Incident Management Platform visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 25,
+      "keys": [
+        "sre-web:25:0",
+        "sre-web:25:1",
+        "sre-web:25:2",
+        "sre-web:25:3",
+        "sre-web:25:4",
+        "sre-web:25:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-21-25",
+      "title": "Checkpoint sre-web days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-sre-web-D26",
+      "title": "sre-web day 26: Chaos Engineering: Failure Injection & Steady-State Hypothesis visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 26,
+      "keys": [
+        "sre-web:26:0",
+        "sre-web:26:1",
+        "sre-web:26:2",
+        "sre-web:26:3",
+        "sre-web:26:4",
+        "sre-web:26:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D27",
+      "title": "sre-web day 27: Deployment Strategies: Blue/Green, Canary & Rolling Updates visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 27,
+      "keys": [
+        "sre-web:27:0",
+        "sre-web:27:1",
+        "sre-web:27:2",
+        "sre-web:27:3",
+        "sre-web:27:4",
+        "sre-web:27:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D28",
+      "title": "sre-web day 28: Canary Analysis: Statistical Comparison & Auto-Promotion visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 28,
+      "keys": [
+        "sre-web:28:0",
+        "sre-web:28:1",
+        "sre-web:28:2",
+        "sre-web:28:3",
+        "sre-web:28:4",
+        "sre-web:28:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D29",
+      "title": "sre-web day 29: Runbooks as Code: Decision Trees & Automation Playbooks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 29,
+      "keys": [
+        "sre-web:29:0",
+        "sre-web:29:1",
+        "sre-web:29:2",
+        "sre-web:29:3",
+        "sre-web:29:4",
+        "sre-web:29:5"
+      ]
+    },
+    {
+      "id": "C-sre-web-D30",
+      "title": "sre-web day 30: 🏆 FINAL CAPSTONE: Multi-Cloud Reliability Scorecard with SLO Compliance, Chaos Validation & Deployment Safety visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/sre-web/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "sre-web",
+      "day": 30,
+      "keys": [
+        "sre-web:30:0",
+        "sre-web:30:1",
+        "sre-web:30:2",
+        "sre-web:30:3",
+        "sre-web:30:4",
+        "sre-web:30:5"
+      ]
+    },
+    {
+      "id": "R-sre-web-26-30",
+      "title": "Checkpoint sre-web days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-sre-web",
+      "title": "Release visuals for sre-web",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
