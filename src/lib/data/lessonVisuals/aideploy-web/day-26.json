@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 26,
+  "promptSha": "c9bb12a64f65a8dc89cff66e1d80336a0d74b63f0c611d54046664f847273432",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "OpenTelemetry Span Lifecycle & In-Memory Collector",
+      "codeHash": "c9bb12a64f65a8dc89cff66e1d80336a0d74b63f0c611d54046664f847273432",
+      "spec": {
+        "template": "states",
+        "title": "OpenTelemetry Span Lifecycle States",
+        "states": [
+          { "id": "created", "label": "Span Initialized" },
+          { "id": "active", "label": "Timing In-Progress" },
+          { "id": "ended", "label": "Duration Computed" },
+          { "id": "flushed", "label": "Flushed to Buffer" }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Collector classes model the core lifecycle of OpenTelemetry spans.",
+            "current": "created",
+            "visited": ["created"]
+          },
+          {
+            "at": "say7",
+            "caption": "Starting spans records timestamps and returns unique span identifiers.",
+            "current": "active",
+            "visited": ["created", "active"]
+          },
+          {
+            "at": "say8",
+            "caption": "Ending spans calculates elapsed duration and flushes spans to audit buffers.",
+            "current": "flushed",
+            "visited": ["created", "active", "ended", "flushed"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "OpenTelemetry Span Lifecycle States",
+        "states": [
+          { "id": "created", "label": "Span Initialized" },
+          { "id": "active", "label": "Timing In-Progress" },
+          { "id": "ended", "label": "Duration Computed" },
+          { "id": "flushed", "label": "Flushed to Buffer" }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "Collector classes model the core lifecycle of OpenTelemetry spans.",
+            "current": "created",
+            "visited": ["created"]
+          },
+          {
+            "at": "say7",
+            "caption": "Starting spans records timestamps and returns unique span identifiers.",
+            "current": "active",
+            "visited": ["created", "active"]
+          },
+          {
+            "at": "say8",
+            "caption": "Ending spans calculates elapsed duration and flushes spans to audit buffers.",
+            "current": "flushed",
+            "visited": ["created", "active", "ended", "flushed"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Nested Trace Spans for Pipeline Stages (Auth -> Retrieval -> LLM -> Repair)",
+      "codeHash": "0290c663c46d4d4156fda51845796482f9ce19739cef2df1d2adfe8bb7e4e3b3",
+      "spec": {
+        "template": "workflow",
+        "title": "Nested Pipeline Trace Waterfall Stages",
+        "stages": [
+          { "id": "auth", "name": "Authentication", "subtext": "15ms client verification" },
+          { "id": "retrieval", "name": "Vector Retrieval", "subtext": "75ms top-k search" },
+          { "id": "llm", "name": "LLM Inference", "subtext": "450ms model generation" },
+          { "id": "repair", "name": "Output Repair", "subtext": "25ms JSON sanitizer" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gateways execute stages: authentication, vector retrieval, and output repair.",
+            "activeStageId": "auth"
+          },
+          {
+            "at": "say5",
+            "caption": "Authentication and vector search took milliseconds across pipeline stages.",
+            "activeStageId": "retrieval"
+          },
+          {
+            "at": "say7",
+            "caption": "Structured telemetry allows observability dashboards to visualize waterfalls.",
+            "activeStageId": "llm"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Nested Pipeline Trace Waterfall Stages",
+        "stages": [
+          { "id": "auth", "name": "Authentication", "subtext": "15ms client verification" },
+          { "id": "retrieval", "name": "Vector Retrieval", "subtext": "75ms top-k search" },
+          { "id": "llm", "name": "LLM Inference", "subtext": "450ms model generation" },
+          { "id": "repair", "name": "Output Repair", "subtext": "25ms JSON sanitizer" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Gateways execute stages: authentication, vector retrieval, and output repair.",
+            "activeStageId": "auth"
+          },
+          {
+            "at": "say5",
+            "caption": "Authentication and vector search took milliseconds across pipeline stages.",
+            "activeStageId": "retrieval"
+          },
+          {
+            "at": "say7",
+            "caption": "Structured telemetry allows observability dashboards to visualize waterfalls.",
+            "activeStageId": "llm"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Metadata Enrichment on Traces (Model ID, Tokens, Cache Status)",
+      "codeHash": "0b57763af84af8012e8a880142d7cb411fc2d3c7c14ddf906f8cc599119ef1cf",
+      "spec": {
+        "template": "table",
+        "title": "Inference Span Metadata Enrichment Schema",
+        "columns": ["Metadata Key", "Observed Value", "Telemetry Purpose"],
+        "rows": [
+          { "Metadata Key": { "text": "modelId" }, "Observed Value": { "text": "gpt-4o-mini" }, "Telemetry Purpose": { "text": "Identify deployed model version" } },
+          { "Metadata Key": { "text": "promptTokens" }, "Observed Value": { "text": "450 tokens" }, "Telemetry Purpose": { "text": "Input context token count" } },
+          { "Metadata Key": { "text": "completionTokens" }, "Observed Value": { "text": "85 tokens" }, "Telemetry Purpose": { "text": "Generated output length" } },
+          { "Metadata Key": { "text": "cacheHit" }, "Observed Value": { "text": "false" }, "Telemetry Purpose": { "text": "Semantic cache lookup verdict" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Interfaces tag inference spans with model ID, token counts, and cache status.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Spans record model names prompt tokens and completion tokens.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Enriching spans with metadata allows teams to filter traces in dashboards.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Inference Span Metadata Enrichment Schema",
+        "columns": ["Metadata Key", "Observed Value", "Telemetry Purpose"],
+        "rows": [
+          { "Metadata Key": "modelId", "Observed Value": "gpt-4o-mini", "Telemetry Purpose": "Identify deployed model version" },
+          { "Metadata Key": "promptTokens", "Observed Value": "450 tokens", "Telemetry Purpose": "Input context token count" },
+          { "Metadata Key": "completionTokens", "Observed Value": "85 tokens", "Telemetry Purpose": "Generated output length" },
+          { "Metadata Key": "cacheHit", "Observed Value": "false", "Telemetry Purpose": "Semantic cache lookup verdict" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Interfaces tag inference spans with model ID, token counts, and cache status.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Spans record model names prompt tokens and completion tokens.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Enriching spans with metadata allows teams to filter traces in dashboards.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bottleneck Identification & Percent Share Analysis",
+      "codeHash": "fba95e803ba8415a293dbf8505580c7eedf7ace3ad11a982becae4eca8e69232",
+      "spec": {
+        "template": "bars",
+        "title": "Pipeline Latency Share by Stage",
+        "items": [
+          { "label": "LLM Call (700ms)", "value": 70.0, "tone": "error" },
+          { "label": "Output Repair (200ms)", "value": 20.0, "tone": "data" },
+          { "label": "Vector Search (80ms)", "value": 8.0, "tone": "ok" },
+          { "label": "Auth (20ms)", "value": 2.0, "tone": "idle" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions iterate across spans computing duration and identifying bottlenecks."
+          },
+          {
+            "at": "say6",
+            "caption": "The llm_call stage consumed milliseconds representing latency shares."
+          },
+          {
+            "at": "say8",
+            "caption": "Automated bottleneck analysis directs engineering effort toward top returns."
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Pipeline Latency Share by Stage",
+        "items": [
+          { "label": "LLM Call (700ms)", "value": 70.0, "tone": "error" },
+          { "label": "Output Repair (200ms)", "value": 20.0, "tone": "data" },
+          { "label": "Vector Search (80ms)", "value": 8.0, "tone": "ok" },
+          { "label": "Auth (20ms)", "value": 2.0, "tone": "idle" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions iterate across spans computing duration and identifying bottlenecks."
+          },
+          {
+            "at": "say6",
+            "caption": "The llm_call stage consumed milliseconds representing latency shares."
+          },
+          {
+            "at": "say8",
+            "caption": "Automated bottleneck analysis directs engineering effort toward top returns."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exporting Spans to OpenTelemetry Collector Payloads",
+      "codeHash": "b23d7b5c7f719b77b140f14547b677016aa6f5b8a5464c65bc38a9337bc2aaa4",
+      "spec": {
+        "template": "compare",
+        "title": "Internal Span vs OTLP Wire Payload",
+        "leftLabel": "Internal Memory Span",
+        "rightLabel": "OTLP Wire Envelope",
+        "leftItems": [
+          "Native TypeScript objects",
+          "Millisecond duration resolution",
+          "Local process memory scope"
+        ],
+        "rightItems": [
+          "Standard OTLP JSON wire format",
+          "Nanosecond duration resolution",
+          "Vendor-neutral collector export"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OpenTelemetry defines vendor-neutral schemas supported by industry tools.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Functions construct compliant OTLP JSON payloads with resourceSpans.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Open standards prevent vendor lock-in allowing platforms to switch backends.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Internal Span vs OTLP Wire Payload",
+        "leftLabel": "Internal Memory Span",
+        "rightLabel": "OTLP Wire Envelope",
+        "leftItems": [
+          "Native TypeScript objects",
+          "Millisecond duration resolution",
+          "Local process memory scope"
+        ],
+        "rightItems": [
+          "Standard OTLP JSON wire format",
+          "Nanosecond duration resolution",
+          "Vendor-neutral collector export"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "OpenTelemetry defines vendor-neutral schemas supported by industry tools.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Functions construct compliant OTLP JSON payloads with resourceSpans.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Open standards prevent vendor lock-in allowing platforms to switch backends.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complete End-to-End Traced AI Pipeline Middleware",
+      "codeHash": "fd7e1a894624dc1418cd03986f379d10020db2b00d6bc767a7b32ee9d4d5c473",
+      "spec": {
+        "template": "none",
+        "reason": "Complete End-to-End Traced AI Pipeline Middleware capstone synthesizing OpenTelemetry spans, nested stages, metadata enrichment, bottleneck analysis, and OTLP JSON export"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Complete End-to-End Traced AI Pipeline Middleware capstone synthesizing OpenTelemetry spans, nested stages, metadata enrichment, bottleneck analysis, and OTLP JSON export"
+      }
+    }
+  ]
+}
