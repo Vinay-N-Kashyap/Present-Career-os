@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { chromium } from '@playwright/test';
 import { JAVA_MONTH_1_SPECS, JAVA_MONTH_2_SPECS } from './java-masterclass-spec';
+import { MOBILE_MONTH_1_SPECS, MOBILE_MONTH_2_SPECS } from './mobile-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -902,6 +903,67 @@ function getCourseDomainMeta(courseId: string): DomainMetadata {
 }
 
 
+
+function renderMobileDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #10b981; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.5pt;">
+        <div>
+          <div style="font-weight: 700; color: #0f172a; margin-bottom: 1px;">Spoken Lecture &amp; Mental Model (28-31 min)</div>
+          <div style="color: #334155;">${day.spokenGoal}</div>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: #1e293b; margin-bottom: 1px;">Concept Invariant &amp; Guardrail</div>
+          <div style="color: #475569;"><code>${day.conceptInvariant}</code></div>
+        </div>
+      </div>
+
+      <div style="background: #fef2f2; border-left: 3px solid #ef4444; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.2pt; color: #991b1b;">
+        <strong>Failure Mode:</strong> ${day.failureMode}
+      </div>
+
+      <div style="background: #f0fdf4; border-left: 3px solid #22c55e; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.2pt; color: #166534;">
+        <strong>TryIt Friction Challenge:</strong> ${day.tryItFriction}
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <div style="font-weight: 700; color: #475569; margin-bottom: 2px;">3-Tier Socratic Hint Ladder:</div>
+        <div style="color: #64748b;">1. <em>Nudge:</em> ${day.socraticHints[0]}</div>
+        <div style="color: #64748b;">2. <em>Visual Memory:</em> ${day.socraticHints[1]}</div>
+        <div style="color: #64748b;">3. <em>Surgical Line Fix:</em> ${day.socraticHints[2]}</div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 2px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <div style="font-weight: 700; color: #1e40af; margin-bottom: 2px;">Situational Production Puzzle (FAANG / Staff Screen):</div>
+        <div style="color: #1e3a8a; margin-bottom: 2px;"><strong>Scenario:</strong> ${day.situationalPuzzle.scenario}</div>
+        <div style="color: #15803d;"><strong>Correct Answer:</strong> Option ${day.situationalPuzzle.answerIdx + 1} &mdash; ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]}</div>
+        <div style="color: #475569; margin-top: 1px;"><em>Debrief:</em> ${day.situationalPuzzle.debrief}</div>
+      </div>
+
+      <div style="border-top: 1px solid #f1f5f9; padding-top: 3pt; font-size: 7.0pt;">
+        <div style="font-weight: 700; color: #334155; margin-bottom: 2px;">The 4 Continuous Daily Quests:</div>
+        ${questsHtml}
+      </div>
+    </div>
+  `;
+}
+
 function renderJavaDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -958,7 +1020,7 @@ function renderJavaDayCard(day: any): string {
   `;
 }
 
-function buildJavaHtml(): string {
+function buildDeepMasterclassesHtml(): string {
   let h = `
   <!-- PART V: DEEP MASTERCLASS BLUEPRINT — JAVA CORE & ENTERPRISE SYSTEMS (DAYS 1–60 / 222 QUESTS) -->
   <div class="page-break">
@@ -1025,6 +1087,90 @@ function buildJavaHtml(): string {
       </tbody>
     </table>
   </div>
+  `;
+
+  
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PART VI: DEEP MASTERCLASS BLUEPRINT — MOBILE APPLICATION DEVELOPMENT (DAYS 1–60 / 240 QUESTS)
+  // ─────────────────────────────────────────────────────────────────────────────
+  h += `
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VI: Deep Masterclass Blueprint — Mobile Application Development</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-mobile-dev</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #10b981; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>6.1 Pedagogical Philosophy &amp; Mobile Invariants: Why Month 1 Has Zero Native Modules</h2>
+    <p>
+      The fatal failure of traditional mobile bootcamps is throwing beginners into custom C++ TurboModules, Native Swift/Kotlin bridges, and Fastlane code signing before they master basic mobile layout math, safe area notch insets, and touch event responders. In PinIT Career OS, <strong>Month 1 is strictly Cross-Platform Mobile UI Foundations, Device Mechanics &amp; SQLite Persistence</strong>:
+    </p>
+    <div class="quote-box" style="border-left-color: #10b981;">
+      &bull; <strong>Month 1 (Days 1–30 / 120 Quests):</strong> The 3-Thread Architecture (Hermes JS, Yoga C++, UI Main), Native View Primitives, Safe Area Insets, React Navigation Mesh, High-Performance Virtualized Lists (Shopify FlashList), MMKV &amp; SQLite Persistence, Hardware Permissions, Biometrics (FaceID/TouchID), and Month 1 Capstone (<code>PocketWallet</code>).<br>
+      &bull; <strong>Month 2 (Days 31–60 / 120 Quests):</strong> Reanimated 3 UI-Thread Worklets (120 FPS), Gesture Handler 2 physics, The New Architecture (Fabric C++ Concurrent Renderer &amp; TurboModules C++ JSI), Deep Linking &amp; Universal Links, APNs/FCM Push Notifications, Hardware Keystore Encryption, WatermelonDB, Xcode Instruments &amp; Android Profiler, Fastlane CI/CD, and Month 2 Master Capstone (<code>PulseMobile</code> High-Frequency Trading Terminal).
+    </div>
+
+    <h2>6.2 Mobile Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  MOBILE_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderMobileDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VI: Mobile Month 2 — Native Systems, Fabric &amp; TurboModules</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-mobile-dev</code> &bull; Days 31–60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #10b981; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Staff Mobile Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>6.3 Mobile Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  MOBILE_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderMobileDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>6.4 Mobile Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Responsive Mobile Design System</td><td>Tokenized design system with strict safe-area insets and 48dp accessible touch bounds.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Banking Navigation Mesh</td><td>Multi-tier navigation mesh with type-safe params, modal layers, and post-logout history reset.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>60 FPS Infinite Ledger Feed</td><td>Shopify FlashList cell recycling, sticky date headers, and zero-jank pagination under fast flings.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Offline-First Expense Tracker</td><td>Local SQLite relational database, MMKV synchronous cache, and outbox sync queue in airplane mode.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Biometric Hardware Media Vault</td><td>FaceID/Biometric authenticated receipt vault with auto-lock on app backgrounding.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>PocketWallet Mobile Ledger:</strong> Full offline personal finance app defended before senior board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>120 FPS Gesture Trading Chart</td><td>Reanimated 3 UI-thread worklet chart with Gesture.Pan() scrub crosshairs and draggable bottom sheet.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>C++ Crypto TurboModule Engine</td><td>Cross-platform C++ JSI TurboModule executing SHA-256 and zstd compression in &lt;10μs.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Real-Time Event Dispatcher</td><td>Universal Link routing coordinator with APNs/FCM background push sync and cold-start queue.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Offline-First Delta Sync Engine</td><td>WatermelonDB / SQLite JSI delta synchronizer with hardware Keychain storage and SSL pinning.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Zero-Leak Verified Test Harness</td><td>Automated Maestro E2E test suite running on headless simulators in GitHub Actions CI.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>PulseMobile Trading Terminal:</strong> High-frequency trading client (120 FPS, 1,000 ticks/sec, JSI) + live viva defense.</td></tr>
+    </tbody>
+  </table>
   `;
 
   return h;
@@ -2057,6 +2203,8 @@ async function generateMasterSrsPdf() {
       PinIT Career OS &bull; 36+ Courses Masterclass SRS Directorate &bull; 100% Gate v2 Verified &bull; Zero Hallucination Enforced
     </div>
   </div>
+
+  ${buildDeepMasterclassesHtml()}
 
 </body>
 </html>`;
