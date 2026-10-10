@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 14,
+  "promptSha": "edd03e24059eeb14ac63e92649301105051021d47c144c77df7d22290fbf2549",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Prompt Injection Threat Model: Direct vs Indirect Attacks",
+      "codeHash": "523699e63ad5d5ab139ebb4946235912197652f48cb0730c6bbdd97a7967b3d9",
+      "spec": {
+        "template": "compare",
+        "title": "Direct user prompt injection attacks versus indirect document injection",
+        "left": {
+          "title": "Direct Injection Attack",
+          "items": [
+            "Attacker submits malicious user chat",
+            "Attempts to override system instructions",
+            "Requests internal system prompt leakage",
+            "Blocked easily by input regex firewall"
+          ]
+        },
+        "right": {
+          "title": "Indirect Injection Attack",
+          "items": [
+            "Malicious payload hidden in public doc",
+            "Ingested via vector RAG retrieval",
+            "Model executes third party instructions",
+            "Exploits lack of data instruction separation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Direct prompt injection occurs when malicious users type direct commands.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "When pipelines retrieve documents models ingest attacker commands.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Direct user prompt injection attacks versus indirect document injection",
+        "left": {
+          "title": "Direct Injection Attack",
+          "items": [
+            "Attacker submits malicious user chat",
+            "Attempts to override system instructions",
+            "Requests internal system prompt leakage",
+            "Blocked easily by input regex firewall"
+          ]
+        },
+        "right": {
+          "title": "Indirect Injection Attack",
+          "items": [
+            "Malicious payload hidden in public doc",
+            "Ingested via vector RAG retrieval",
+            "Model executes third party instructions",
+            "Exploits lack of data instruction separation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Direct prompt injection occurs when malicious users type direct commands.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "When pipelines retrieve documents models ingest attacker commands.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heuristic Pattern Matching: The First Line of Defense",
+      "codeHash": "2fdffc7f97f2974eab35f7b5e034a291b9cea6d7a416c1a9348eeeb9b5c75290",
+      "spec": {
+        "template": "flow",
+        "title": "Heuristic pattern matching regex firewall and threat interception",
+        "nodes": [
+          {
+            "id": "incomingMsg",
+            "label": "Incoming User Query",
+            "tappable": false
+          },
+          {
+            "id": "regexFirewall",
+            "label": "Heuristic Regex Scanner",
+            "tappable": false
+          },
+          {
+            "id": "blockedEvent",
+            "label": "Security Audit Alert",
+            "tappable": false
+          },
+          {
+            "id": "cleanStream",
+            "label": "Sanitized Inference Flow",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "incomingMsg",
+            "to": "regexFirewall",
+            "label": "Inspect Query Tokens"
+          },
+          {
+            "from": "regexFirewall",
+            "to": "blockedEvent",
+            "label": "Match Jailbreak Signature"
+          },
+          {
+            "from": "regexFirewall",
+            "to": "cleanStream",
+            "label": "Pass Clean Non-Threat Query"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A heuristic scanner scans incoming queries against known signatures.",
+            "activeNodes": [
+              "incomingMsg",
+              "regexFirewall"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "When signatures are detected requests are blocked and logged for review.",
+            "activeNodes": [
+              "regexFirewall",
+              "blockedEvent"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Heuristic pattern matching regex firewall and threat interception",
+        "nodes": [
+          {
+            "id": "incomingMsg",
+            "label": "Incoming User Query",
+            "tappable": false
+          },
+          {
+            "id": "regexFirewall",
+            "label": "Heuristic Regex Scanner",
+            "tappable": false
+          },
+          {
+            "id": "blockedEvent",
+            "label": "Security Audit Alert",
+            "tappable": false
+          },
+          {
+            "id": "cleanStream",
+            "label": "Sanitized Inference Flow",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "incomingMsg",
+            "to": "regexFirewall",
+            "label": "Inspect Query Tokens"
+          },
+          {
+            "from": "regexFirewall",
+            "to": "blockedEvent",
+            "label": "Match Jailbreak Signature"
+          },
+          {
+            "from": "regexFirewall",
+            "to": "cleanStream",
+            "label": "Pass Clean Non-Threat Query"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "A heuristic scanner scans incoming queries against known signatures.",
+            "activeNodes": [
+              "incomingMsg",
+              "regexFirewall"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "When signatures are detected requests are blocked and logged for review.",
+            "activeNodes": [
+              "regexFirewall",
+              "blockedEvent"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Delimiters & Structural XML Boundary Isolation",
+      "codeHash": "cce73c0c52f18e6dc6acfa4de816ca09a6c87c2d176c53b16751c0e0f45bc5ce",
+      "spec": {
+        "template": "boxes",
+        "title": "Structural XML delimiter boundary encapsulation and character sanitization",
+        "boxes": [
+          {
+            "id": "xmlTags",
+            "title": "Structural XML Delimiters",
+            "items": [
+              "Explicit untrusted context tags",
+              "Inert reference data directives",
+              "Clear semantic instruction boundary"
+            ]
+          },
+          {
+            "id": "delimiterEscape",
+            "title": "Sanitization Escaper",
+            "items": [
+              "Escapes closing XML brackets",
+              "Neutralizes tag breakout attempts",
+              "Deterministic string sanitization"
+            ]
+          },
+          {
+            "id": "attentionIsolation",
+            "title": "Attention Separation",
+            "items": [
+              "Preserves system instruction primacy",
+              "Ignores embedded payload commands",
+              "Defends against indirect injection"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "System prompts instruct models to treat enclosed content as reference facts.",
+            "activeBoxId": "xmlTags",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "We sanitize inputs and documents by escaping brackets to prevent breakouts.",
+            "activeBoxId": "delimiterEscape",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Structural XML delimiter boundary encapsulation and character sanitization",
+        "boxes": [
+          {
+            "id": "xmlTags",
+            "title": "Structural XML Delimiters",
+            "items": [
+              "Explicit untrusted context tags",
+              "Inert reference data directives",
+              "Clear semantic instruction boundary"
+            ]
+          },
+          {
+            "id": "delimiterEscape",
+            "title": "Sanitization Escaper",
+            "items": [
+              "Escapes closing XML brackets",
+              "Neutralizes tag breakout attempts",
+              "Deterministic string sanitization"
+            ]
+          },
+          {
+            "id": "attentionIsolation",
+            "title": "Attention Separation",
+            "items": [
+              "Preserves system instruction primacy",
+              "Ignores embedded payload commands",
+              "Defends against indirect injection"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "System prompts instruct models to treat enclosed content as reference facts.",
+            "activeBoxId": "xmlTags",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "We sanitize inputs and documents by escaping brackets to prevent breakouts.",
+            "activeBoxId": "delimiterEscape",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Canary Tokens: Real-Time Detection of System Prompt Leakage",
+      "codeHash": "a9d695bffa6df37c2587db872511482bea5f55025de2a056a2037b70651a4a4b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Dual-LLM Architecture: The Executive & Guardrail Judge Pattern",
+      "codeHash": "22ebab16aa83e4d1882c9f2991368c6d825fb9d5a3c4015ed02b4d5619706359",
+      "spec": {
+        "template": "table",
+        "title": "Dual-LLM guardrail architecture operational roles and privilege bounds",
+        "columns": [
+          "Architecture Role",
+          "Model Assignment",
+          "Tool Privileges",
+          "Operational Responsibility"
+        ],
+        "rows": [
+          [
+            "Executive Agent",
+            "Frontier LLM (GPT-4 / Claude)",
+            "Database Tools and APIs",
+            "Drafts Complex Workflows"
+          ],
+          [
+            "Guardrail Judge",
+            "Sandboxed Auditing Model",
+            "Zero Tools and Zero Network",
+            "Policy Violation Check"
+          ],
+          [
+            "Security Broker",
+            "Deterministic Middleware",
+            "Execution Gatekeeper",
+            "Aborts Flagged Actions"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The executive model executes reasoning calls tools and prepares answers.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The judge model evaluates proposed actions for security policy violations.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dual-LLM guardrail architecture operational roles and privilege bounds",
+        "columns": [
+          "Architecture Role",
+          "Model Assignment",
+          "Tool Privileges",
+          "Operational Responsibility"
+        ],
+        "rows": [
+          [
+            "Executive Agent",
+            "Frontier LLM (GPT-4 / Claude)",
+            "Database Tools and APIs",
+            "Drafts Complex Workflows"
+          ],
+          [
+            "Guardrail Judge",
+            "Sandboxed Auditing Model",
+            "Zero Tools and Zero Network",
+            "Policy Violation Check"
+          ],
+          [
+            "Security Broker",
+            "Deterministic Middleware",
+            "Execution Gatekeeper",
+            "Aborts Flagged Actions"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The executive model executes reasoning calls tools and prepares answers.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The judge model evaluates proposed actions for security policy violations.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Enterprise AI Security Gateway",
+      "codeHash": "9fa2db5476aa995269220c84ca4a1e9326a72f5811ee01134099d15c44bc7cd5",
+      "spec": {
+        "template": "sequence",
+        "title": "Enterprise AI security gateway multi-layered attack mitigation",
+        "actors": [
+          {
+            "id": "clientUser",
+            "label": "Test Query Ingress"
+          },
+          {
+            "id": "secGateway",
+            "label": "Enterprise Security Gateway"
+          },
+          {
+            "id": "modelInference",
+            "label": "Sandboxed LLM Service"
+          },
+          {
+            "id": "canarySentinel",
+            "label": "Leakage Egress Scanner"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientUser",
+            "to": "secGateway",
+            "label": "Submit Injection and Breakout Probes",
+            "tone": "data"
+          },
+          {
+            "from": "secGateway",
+            "to": "secGateway",
+            "label": "Run Heuristic Scanner and Delimiter Sanitizer",
+            "tone": "data"
+          },
+          {
+            "from": "secGateway",
+            "to": "modelInference",
+            "label": "Forward Sanitized Prompt with Canary Token",
+            "tone": "data"
+          },
+          {
+            "from": "modelInference",
+            "to": "canarySentinel",
+            "label": "Inspect Completion Payload for Leaked Token",
+            "tone": "data"
+          },
+          {
+            "from": "canarySentinel",
+            "to": "clientUser",
+            "label": "Drop Leaked Responses and Return Safe Fallback",
+            "tone": "danger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our gateway provides protection including heuristic scanning and monitoring.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "We verify that the security gateway intercepts and neutralizes attacks.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Enterprise AI security gateway multi-layered attack mitigation",
+        "actors": [
+          {
+            "id": "clientUser",
+            "label": "Test Query Ingress"
+          },
+          {
+            "id": "secGateway",
+            "label": "Enterprise Security Gateway"
+          },
+          {
+            "id": "modelInference",
+            "label": "Sandboxed LLM Service"
+          },
+          {
+            "id": "canarySentinel",
+            "label": "Leakage Egress Scanner"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientUser",
+            "to": "secGateway",
+            "label": "Submit Injection and Breakout Probes",
+            "tone": "data"
+          },
+          {
+            "from": "secGateway",
+            "to": "secGateway",
+            "label": "Run Heuristic Scanner and Delimiter Sanitizer",
+            "tone": "data"
+          },
+          {
+            "from": "secGateway",
+            "to": "modelInference",
+            "label": "Forward Sanitized Prompt with Canary Token",
+            "tone": "data"
+          },
+          {
+            "from": "modelInference",
+            "to": "canarySentinel",
+            "label": "Inspect Completion Payload for Leaked Token",
+            "tone": "data"
+          },
+          {
+            "from": "canarySentinel",
+            "to": "clientUser",
+            "label": "Drop Leaked Responses and Return Safe Fallback",
+            "tone": "danger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our gateway provides protection including heuristic scanning and monitoring.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "We verify that the security gateway intercepts and neutralizes attacks.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
