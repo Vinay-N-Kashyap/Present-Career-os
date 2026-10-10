@@ -14061,6 +14061,632 @@
         "src/lib/visuals/enabledCourses.ts"
       ],
       "kind": "release"
+    },
+    {
+      "id": "C-aideploy-web-D01",
+      "title": "aideploy-web day 1: Resilient Model API Clients: Deadlines, AbortControllers & Exponential Backoff visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-01.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 1,
+      "keys": [
+        "aideploy-web:1:0",
+        "aideploy-web:1:1",
+        "aideploy-web:1:2",
+        "aideploy-web:1:3",
+        "aideploy-web:1:4",
+        "aideploy-web:1:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D02",
+      "title": "aideploy-web day 2: Typed Responses & Strict Schema Parsing with Type Guards visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-02.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 2,
+      "keys": [
+        "aideploy-web:2:0",
+        "aideploy-web:2:1",
+        "aideploy-web:2:2",
+        "aideploy-web:2:3",
+        "aideploy-web:2:4",
+        "aideploy-web:2:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D03",
+      "title": "aideploy-web day 3: BPE Token Counting Mechanics & Context Window Budgeting visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-03.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 3,
+      "keys": [
+        "aideploy-web:3:0",
+        "aideploy-web:3:1",
+        "aideploy-web:3:2",
+        "aideploy-web:3:3",
+        "aideploy-web:3:4",
+        "aideploy-web:3:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D04",
+      "title": "aideploy-web day 4: Multi-Model Pricing Models, Cost Estimation & Token Accounting visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-04.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 4,
+      "keys": [
+        "aideploy-web:4:0",
+        "aideploy-web:4:1",
+        "aideploy-web:4:2",
+        "aideploy-web:4:3",
+        "aideploy-web:4:4",
+        "aideploy-web:4:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D05",
+      "title": "aideploy-web day 5: ⭐ MILESTONE 1: Type-Safe Dynamic Prompt Template Engine visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-05.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 5,
+      "keys": [
+        "aideploy-web:5:0",
+        "aideploy-web:5:1",
+        "aideploy-web:5:2",
+        "aideploy-web:5:3",
+        "aideploy-web:5:4",
+        "aideploy-web:5:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-1-5",
+      "title": "Checkpoint aideploy-web days 1-5",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-aideploy-web-D06",
+      "title": "aideploy-web day 6: Server-Sent Events (SSE) Streaming & Chunk Assembly visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-06.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 6,
+      "keys": [
+        "aideploy-web:6:0",
+        "aideploy-web:6:1",
+        "aideploy-web:6:2",
+        "aideploy-web:6:3",
+        "aideploy-web:6:4",
+        "aideploy-web:6:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D07",
+      "title": "aideploy-web day 7: Micro-Batching Invocations for High-Throughput Background Workloads visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-07.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 7,
+      "keys": [
+        "aideploy-web:7:0",
+        "aideploy-web:7:1",
+        "aideploy-web:7:2",
+        "aideploy-web:7:3",
+        "aideploy-web:7:4",
+        "aideploy-web:7:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D08",
+      "title": "aideploy-web day 8: Vector Embeddings & Cosine Similarity Distance Functions visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-08.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 8,
+      "keys": [
+        "aideploy-web:8:0",
+        "aideploy-web:8:1",
+        "aideploy-web:8:2",
+        "aideploy-web:8:3",
+        "aideploy-web:8:4",
+        "aideploy-web:8:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D09",
+      "title": "aideploy-web day 9: Semantic In-Memory Caching with Similarity Thresholds visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-09.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 9,
+      "keys": [
+        "aideploy-web:9:0",
+        "aideploy-web:9:1",
+        "aideploy-web:9:2",
+        "aideploy-web:9:3",
+        "aideploy-web:9:4",
+        "aideploy-web:9:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D10",
+      "title": "aideploy-web day 10: Token Bucket & Sliding Window Rate Limiting per User visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-10.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 10,
+      "keys": [
+        "aideploy-web:10:0",
+        "aideploy-web:10:1",
+        "aideploy-web:10:2",
+        "aideploy-web:10:3",
+        "aideploy-web:10:4",
+        "aideploy-web:10:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-6-10",
+      "title": "Checkpoint aideploy-web days 6-10",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-aideploy-web-D11",
+      "title": "aideploy-web day 11: Dynamic Model Routing: Complexity Scoring & Tier Selection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-11.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 11,
+      "keys": [
+        "aideploy-web:11:0",
+        "aideploy-web:11:1",
+        "aideploy-web:11:2",
+        "aideploy-web:11:3",
+        "aideploy-web:11:4",
+        "aideploy-web:11:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D12",
+      "title": "aideploy-web day 12: Automated Fallbacks & Circuit Breaking for Provider Outages visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-12.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 12,
+      "keys": [
+        "aideploy-web:12:0",
+        "aideploy-web:12:1",
+        "aideploy-web:12:2",
+        "aideploy-web:12:3",
+        "aideploy-web:12:4",
+        "aideploy-web:12:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D13",
+      "title": "aideploy-web day 13: Latency Budgets, P50/P95/P99 Percentiles & SLA Enforcement visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-13.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 13,
+      "keys": [
+        "aideploy-web:13:0",
+        "aideploy-web:13:1",
+        "aideploy-web:13:2",
+        "aideploy-web:13:3",
+        "aideploy-web:13:4",
+        "aideploy-web:13:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D14",
+      "title": "aideploy-web day 14: Model Quantization & Memory Footprint Calculations visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-14.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 14,
+      "keys": [
+        "aideploy-web:14:0",
+        "aideploy-web:14:1",
+        "aideploy-web:14:2",
+        "aideploy-web:14:3",
+        "aideploy-web:14:4",
+        "aideploy-web:14:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D15",
+      "title": "aideploy-web day 15: ⭐ MILESTONE 2: GPU/CPU Inference Capacity & Throughput Planner visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-15.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 15,
+      "keys": [
+        "aideploy-web:15:0",
+        "aideploy-web:15:1",
+        "aideploy-web:15:2",
+        "aideploy-web:15:3",
+        "aideploy-web:15:4",
+        "aideploy-web:15:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-11-15",
+      "title": "Checkpoint aideploy-web days 11-15",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-aideploy-web-D16",
+      "title": "aideploy-web day 16: Text Chunking Strategies: Fixed-Size, Overlap & Semantic Markdown visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-16.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 16,
+      "keys": [
+        "aideploy-web:16:0",
+        "aideploy-web:16:1",
+        "aideploy-web:16:2",
+        "aideploy-web:16:3",
+        "aideploy-web:16:4",
+        "aideploy-web:16:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D17",
+      "title": "aideploy-web day 17: Top-K Vector Retrieval, Reciprocal Rank Fusion (RRF) & Merging visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-17.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 17,
+      "keys": [
+        "aideploy-web:17:0",
+        "aideploy-web:17:1",
+        "aideploy-web:17:2",
+        "aideploy-web:17:3",
+        "aideploy-web:17:4",
+        "aideploy-web:17:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D18",
+      "title": "aideploy-web day 18: Citation Tracking & Grounded Attribution Envelopes visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-18.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 18,
+      "keys": [
+        "aideploy-web:18:0",
+        "aideploy-web:18:1",
+        "aideploy-web:18:2",
+        "aideploy-web:18:3",
+        "aideploy-web:18:4",
+        "aideploy-web:18:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D19",
+      "title": "aideploy-web day 19: Structured JSON Output Validation & Repair Pipelines visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-19.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 19,
+      "keys": [
+        "aideploy-web:19:0",
+        "aideploy-web:19:1",
+        "aideploy-web:19:2",
+        "aideploy-web:19:3",
+        "aideploy-web:19:4",
+        "aideploy-web:19:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D20",
+      "title": "aideploy-web day 20: Safety Guardrails: Prompt Injection Detection & PII Masking visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-20.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 20,
+      "keys": [
+        "aideploy-web:20:0",
+        "aideploy-web:20:1",
+        "aideploy-web:20:2",
+        "aideploy-web:20:3",
+        "aideploy-web:20:4",
+        "aideploy-web:20:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-16-20",
+      "title": "Checkpoint aideploy-web days 16-20",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-aideploy-web-D21",
+      "title": "aideploy-web day 21: Offline Evaluation Harnesses: Golden Dataset Benchmark Runner visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-21.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 21,
+      "keys": [
+        "aideploy-web:21:0",
+        "aideploy-web:21:1",
+        "aideploy-web:21:2",
+        "aideploy-web:21:3",
+        "aideploy-web:21:4",
+        "aideploy-web:21:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D22",
+      "title": "aideploy-web day 22: LLM-as-a-Judge: Automated Scoring with Rubrics visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-22.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 22,
+      "keys": [
+        "aideploy-web:22:0",
+        "aideploy-web:22:1",
+        "aideploy-web:22:2",
+        "aideploy-web:22:3",
+        "aideploy-web:22:4",
+        "aideploy-web:22:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D23",
+      "title": "aideploy-web day 23: CI/CD Regression Gates for Prompts & Model Upgrades visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-23.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 23,
+      "keys": [
+        "aideploy-web:23:0",
+        "aideploy-web:23:1",
+        "aideploy-web:23:2",
+        "aideploy-web:23:3",
+        "aideploy-web:23:4",
+        "aideploy-web:23:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D24",
+      "title": "aideploy-web day 24: Traffic Splitting & A/B Prompt Experimentation visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-24.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 24,
+      "keys": [
+        "aideploy-web:24:0",
+        "aideploy-web:24:1",
+        "aideploy-web:24:2",
+        "aideploy-web:24:3",
+        "aideploy-web:24:4",
+        "aideploy-web:24:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D25",
+      "title": "aideploy-web day 25: User Feedback Logging & Embedding Drift Detection visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-25.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 25,
+      "keys": [
+        "aideploy-web:25:0",
+        "aideploy-web:25:1",
+        "aideploy-web:25:2",
+        "aideploy-web:25:3",
+        "aideploy-web:25:4",
+        "aideploy-web:25:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-21-25",
+      "title": "Checkpoint aideploy-web days 21-25",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "C-aideploy-web-D26",
+      "title": "aideploy-web day 26: AI Observability: OpenTelemetry Tracing for Multi-Step LLM Chains visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-26.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 26,
+      "keys": [
+        "aideploy-web:26:0",
+        "aideploy-web:26:1",
+        "aideploy-web:26:2",
+        "aideploy-web:26:3",
+        "aideploy-web:26:4",
+        "aideploy-web:26:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D27",
+      "title": "aideploy-web day 27: FinOps Cost Dashboards: Per-User, Per-Model & Per-Feature Attribution visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-27.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 27,
+      "keys": [
+        "aideploy-web:27:0",
+        "aideploy-web:27:1",
+        "aideploy-web:27:2",
+        "aideploy-web:27:3",
+        "aideploy-web:27:4",
+        "aideploy-web:27:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D28",
+      "title": "aideploy-web day 28: Incident Handling: Fallback Toggles & Prompt Injection Runbooks visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-28.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 28,
+      "keys": [
+        "aideploy-web:28:0",
+        "aideploy-web:28:1",
+        "aideploy-web:28:2",
+        "aideploy-web:28:3",
+        "aideploy-web:28:4",
+        "aideploy-web:28:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D29",
+      "title": "aideploy-web day 29: Production Deployment Checklist & Go-Live Readiness Audit visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-29.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 29,
+      "keys": [
+        "aideploy-web:29:0",
+        "aideploy-web:29:1",
+        "aideploy-web:29:2",
+        "aideploy-web:29:3",
+        "aideploy-web:29:4",
+        "aideploy-web:29:5"
+      ]
+    },
+    {
+      "id": "C-aideploy-web-D30",
+      "title": "aideploy-web day 30: 🏆 FINAL CAPSTONE: Enterprise Production AI Gateway & Guarded Endpoint visuals",
+      "allowedFiles": [
+        "src/lib/data/lessonVisuals/aideploy-web/day-30.json",
+        "docs/visuals/py_cert_manifest.json"
+      ],
+      "kind": "content",
+      "course": "aideploy-web",
+      "day": 30,
+      "keys": [
+        "aideploy-web:30:0",
+        "aideploy-web:30:1",
+        "aideploy-web:30:2",
+        "aideploy-web:30:3",
+        "aideploy-web:30:4",
+        "aideploy-web:30:5"
+      ]
+    },
+    {
+      "id": "R-aideploy-web-26-30",
+      "title": "Checkpoint aideploy-web days 26-30",
+      "allowedFiles": [
+        "docs/visuals/shot_keys.txt"
+      ],
+      "kind": "checkpoint"
+    },
+    {
+      "id": "L-aideploy-web",
+      "title": "Release visuals for aideploy-web",
+      "allowedFiles": [
+        "src/lib/visuals/enabledCourses.ts"
+      ],
+      "kind": "release"
     }
   ]
 }
