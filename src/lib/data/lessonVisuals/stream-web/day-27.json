@@ -24,25 +24,51 @@
             "at": "say6",
             "caption": "Poison pill triggers Head-of-Line blocking and halts partition progress.",
             "items": [
-              { "text": "DONE (ok)" },
-              { "text": "DONE (ok)" },
-              { "text": "THROW! Infinite Retry" },
-              { "text": "Waiting..." },
-              { "text": "Waiting..." }
+              {
+                "text": "DONE (ok)"
+              },
+              {
+                "text": "DONE (ok)"
+              },
+              {
+                "text": "THROW! Infinite Retry"
+              },
+              {
+                "text": "Waiting..."
+              },
+              {
+                "text": "Waiting..."
+              }
             ],
-            "highlights": [2]
+            "highlights": [
+              2
+            ]
           },
           {
             "at": "say7",
             "caption": "One stuck message stalls the entire partition as valid events accumulate lag.",
             "items": [
-              { "text": "Committed" },
-              { "text": "Committed" },
-              { "text": "STUCK at 102" },
-              { "text": "Stalled (Lag)" },
-              { "text": "Stalled (Lag)" }
+              {
+                "text": "Committed"
+              },
+              {
+                "text": "Committed"
+              },
+              {
+                "text": "STUCK at 102"
+              },
+              {
+                "text": "Stalled (Lag)"
+              },
+              {
+                "text": "Stalled (Lag)"
+              }
             ],
-            "highlights": [2, 3, 4]
+            "highlights": [
+              2,
+              3,
+              4
+            ]
           }
         ]
       },
@@ -68,7 +94,9 @@
               "Waiting...",
               "Waiting..."
             ],
-            "highlights": [2]
+            "highlights": [
+              2
+            ]
           },
           {
             "at": "say7",
@@ -80,7 +108,11 @@
               "Stalled (Lag)",
               "Stalled (Lag)"
             ],
-            "highlights": [2, 3, 4]
+            "highlights": [
+              2,
+              3,
+              4
+            ]
           }
         ]
       }
@@ -93,27 +125,67 @@
         "title": "Non-Blocking Dead-Letter Queue Routing",
         "subtitle": "Quarantine poison pill at offset 1 and continue to offset 2",
         "nodes": [
-          { "id": "n1", "label": "Main Partition", "sublabel": "Offsets 0, 1, 2", "tappable": false },
-          { "id": "n2", "label": "Consumer Try/Catch", "sublabel": "ResilientDlqConsumer", "tappable": false },
-          { "id": "n3", "label": "DLQ Topic", "sublabel": "Quarantined offset 1", "tappable": false },
-          { "id": "n4", "label": "Commit & Advance", "sublabel": "Processed offsets 0 & 2", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Main Partition",
+            "sublabel": "Offsets 0, 1, 2",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Consumer Try/Catch",
+            "sublabel": "ResilientDlqConsumer",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "DLQ Topic",
+            "sublabel": "Quarantined offset 1",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Commit & Advance",
+            "sublabel": "Processed offsets 0 & 2",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "poll" },
-          { "from": "n2", "to": "n3", "label": "on error" },
-          { "from": "n2", "to": "n4", "label": "commit offset" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "poll"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "on error"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "commit offset"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Consumer packages the corrupt event and publishes it to the DLQ topic.",
-            "activeNodes": ["n1", "n2", "n3"],
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say5",
             "caption": "After publishing to DLQ, the consumer commits the partition offset and advances.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -123,27 +195,67 @@
         "title": "Non-Blocking Dead-Letter Queue Routing",
         "subtitle": "Quarantine poison pill at offset 1 and continue to offset 2",
         "nodes": [
-          { "id": "n1", "label": "Main Partition", "sublabel": "Offsets 0, 1, 2", "tappable": false },
-          { "id": "n2", "label": "Consumer Try/Catch", "sublabel": "ResilientDlqConsumer", "tappable": false },
-          { "id": "n3", "label": "DLQ Topic", "sublabel": "Quarantined offset 1", "tappable": false },
-          { "id": "n4", "label": "Commit & Advance", "sublabel": "Processed offsets 0 & 2", "tappable": false }
+          {
+            "id": "n1",
+            "label": "Main Partition",
+            "sublabel": "Offsets 0, 1, 2",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Consumer Try/Catch",
+            "sublabel": "ResilientDlqConsumer",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "DLQ Topic",
+            "sublabel": "Quarantined offset 1",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Commit & Advance",
+            "sublabel": "Processed offsets 0 & 2",
+            "tappable": false
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2", "label": "poll" },
-          { "from": "n2", "to": "n3", "label": "on error" },
-          { "from": "n2", "to": "n4", "label": "commit offset" }
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "poll"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "on error"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "commit offset"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Consumer packages the corrupt event and publishes it to the DLQ topic.",
-            "activeNodes": ["n1", "n2", "n3"],
+            "activeNodes": [
+              "n1",
+              "n2",
+              "n3"
+            ],
             "statusBadge": "active"
           },
           {
             "at": "say5",
             "caption": "After publishing to DLQ, the consumer commits the partition offset and advances.",
-            "activeNodes": ["n2", "n3", "n4"],
+            "activeNodes": [
+              "n2",
+              "n3",
+              "n4"
+            ],
             "statusBadge": "completed"
           }
         ]
@@ -156,23 +268,97 @@
         "template": "table",
         "title": "DLQ Diagnostic Metadata Envelope (dlq-rec-104)",
         "subtitle": "Wrapping raw payload with forensic provenance and error context",
-        "columns": ["Attribute", "Captured Value", "Forensic Purpose"],
-        "rows": [
-          ["originalTopic / partition", "payment-transactions [p2]", "Pinpoint exact source stream"],
-          ["originalOffset", "8941", "Locate exact log position"],
-          ["exceptionClass", "CurrencyValidationException", "Classify failure category"],
-          ["errorMessage", "Invalid currency code", "Root-cause triage & replay filter"]
+        "columns": [
+          "Attribute",
+          "Captured Value",
+          "Forensic Purpose"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Diagnostic envelope wraps the original raw payload with operational telemetry.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "originalTopic / partition",
+                  "payment-transactions [p2]",
+                  "Pinpoint exact source stream"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "originalOffset",
+                  "8941",
+                  "Locate exact log position"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "exceptionClass",
+                  "CurrencyValidationException",
+                  "Classify failure category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "errorMessage",
+                  "Invalid currency code",
+                  "Root-cause triage & replay filter"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Envelope attributes record originalTopic, partition, offset, and errorMessage.",
-            "highlightRows": [0, 1, 2, 3]
+            "highlightRows": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "originalTopic / partition",
+                  "payment-transactions [p2]",
+                  "Pinpoint exact source stream"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "originalOffset",
+                  "8941",
+                  "Locate exact log position"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "exceptionClass",
+                  "CurrencyValidationException",
+                  "Classify failure category"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "errorMessage",
+                  "Invalid currency code",
+                  "Root-cause triage & replay filter"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       },
@@ -180,23 +366,97 @@
         "template": "table",
         "title": "DLQ Diagnostic Metadata Envelope (dlq-rec-104)",
         "subtitle": "Wrapping raw payload with forensic provenance and error context",
-        "columns": ["Attribute", "Captured Value", "Forensic Purpose"],
-        "rows": [
-          ["originalTopic / partition", "payment-transactions [p2]", "Pinpoint exact source stream"],
-          ["originalOffset", "8941", "Locate exact log position"],
-          ["exceptionClass", "CurrencyValidationException", "Classify failure category"],
-          ["errorMessage", "Invalid currency code", "Root-cause triage & replay filter"]
+        "columns": [
+          "Attribute",
+          "Captured Value",
+          "Forensic Purpose"
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Diagnostic envelope wraps the original raw payload with operational telemetry.",
-            "highlightRows": [0, 1]
+            "highlightRows": [
+              0,
+              1
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "originalTopic / partition",
+                  "payment-transactions [p2]",
+                  "Pinpoint exact source stream"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "originalOffset",
+                  "8941",
+                  "Locate exact log position"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "exceptionClass",
+                  "CurrencyValidationException",
+                  "Classify failure category"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "errorMessage",
+                  "Invalid currency code",
+                  "Root-cause triage & replay filter"
+                ],
+                "tone": "data"
+              }
+            ]
           },
           {
             "at": "say5",
             "caption": "Envelope attributes record originalTopic, partition, offset, and errorMessage.",
-            "highlightRows": [0, 1, 2, 3]
+            "highlightRows": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "originalTopic / partition",
+                  "payment-transactions [p2]",
+                  "Pinpoint exact source stream"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "originalOffset",
+                  "8941",
+                  "Locate exact log position"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "exceptionClass",
+                  "CurrencyValidationException",
+                  "Classify failure category"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "errorMessage",
+                  "Invalid currency code",
+                  "Root-cause triage & replay filter"
+                ],
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -209,28 +469,58 @@
         "title": "Tiered Retry Topic Escalation Ladder",
         "subtitle": "Routing transient failures across delayed retry topics (maxRetries = 3)",
         "states": [
-          { "id": "s1", "label": "main-topic (attempt 0)" },
-          { "id": "s2", "label": "retry-step-1 (attempt 1)" },
-          { "id": "s3", "label": "retry-step-3 (attempt 3)" },
-          { "id": "s4", "label": "dead-letter-queue (exhausted)" }
+          {
+            "id": "s1",
+            "label": "main-topic (attempt 0)"
+          },
+          {
+            "id": "s2",
+            "label": "retry-step-1 (attempt 1)"
+          },
+          {
+            "id": "s3",
+            "label": "retry-step-3 (attempt 3)"
+          },
+          {
+            "id": "s4",
+            "label": "dead-letter-queue (exhausted)"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "fail #1" },
-          { "from": "s2", "to": "s3", "label": "escalate" },
-          { "from": "s3", "to": "s4", "label": "attempts >= 3" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "fail #1"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "escalate"
+          },
+          {
+            "from": "s3",
+            "to": "s4",
+            "label": "attempts >= 3"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Dedicated retry topics route failed events through tiered backoff stages.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say8",
             "caption": "When tiered retry steps are exhausted, the message enters Dead-Letter Queue.",
             "current": "s4",
-            "visited": ["s1", "s2", "s3"]
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
           }
         ]
       },
@@ -239,28 +529,58 @@
         "title": "Tiered Retry Topic Escalation Ladder",
         "subtitle": "Routing transient failures across delayed retry topics (maxRetries = 3)",
         "states": [
-          { "id": "s1", "label": "main-topic (attempt 0)" },
-          { "id": "s2", "label": "retry-step-1 (attempt 1)" },
-          { "id": "s3", "label": "retry-step-3 (attempt 3)" },
-          { "id": "s4", "label": "dead-letter-queue (exhausted)" }
+          {
+            "id": "s1",
+            "label": "main-topic (attempt 0)"
+          },
+          {
+            "id": "s2",
+            "label": "retry-step-1 (attempt 1)"
+          },
+          {
+            "id": "s3",
+            "label": "retry-step-3 (attempt 3)"
+          },
+          {
+            "id": "s4",
+            "label": "dead-letter-queue (exhausted)"
+          }
         ],
         "transitions": [
-          { "from": "s1", "to": "s2", "label": "fail #1" },
-          { "from": "s2", "to": "s3", "label": "escalate" },
-          { "from": "s3", "to": "s4", "label": "attempts >= 3" }
+          {
+            "from": "s1",
+            "to": "s2",
+            "label": "fail #1"
+          },
+          {
+            "from": "s2",
+            "to": "s3",
+            "label": "escalate"
+          },
+          {
+            "from": "s3",
+            "to": "s4",
+            "label": "attempts >= 3"
+          }
         ],
         "steps": [
           {
             "at": "say4",
             "caption": "Dedicated retry topics route failed events through tiered backoff stages.",
             "current": "s2",
-            "visited": ["s1"]
+            "visited": [
+              "s1"
+            ]
           },
           {
             "at": "say8",
             "caption": "When tiered retry steps are exhausted, the message enters Dead-Letter Queue.",
             "current": "s4",
-            "visited": ["s1", "s2", "s3"]
+            "visited": [
+              "s1",
+              "s2",
+              "s3"
+            ]
           }
         ]
       }
@@ -279,22 +599,82 @@
             "at": "say5",
             "caption": "Exponential back-off scales the retry delay with each successive attempt.",
             "bars": [
-              { "label": "Attempt 1 (Pure)", "value": { "text": "1000" }, "tone": "data" },
-              { "label": "Attempt 2 (Pure)", "value": { "text": "2000" }, "tone": "data" },
-              { "label": "Attempt 3 (Pure)", "value": { "text": "4000" }, "tone": "data" },
-              { "label": "Attempt 4 (Pure)", "value": { "text": "8000" }, "tone": "data" },
-              { "label": "Attempt 5 (Pure)", "value": { "text": "16000" }, "tone": "error" }
+              {
+                "label": "Attempt 1 (Pure)",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 2 (Pure)",
+                "value": {
+                  "text": "2000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 3 (Pure)",
+                "value": {
+                  "text": "4000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 4 (Pure)",
+                "value": {
+                  "text": "8000"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 5 (Pure)",
+                "value": {
+                  "text": "16000"
+                },
+                "tone": "error"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Jitter smooths retry traffic spikes so downstream servers recover smoothly.",
             "bars": [
-              { "label": "Attempt 1 (Jitter)", "value": { "text": "750" }, "tone": "ok" },
-              { "label": "Attempt 2 (Jitter)", "value": { "text": "1500" }, "tone": "ok" },
-              { "label": "Attempt 3 (Jitter)", "value": { "text": "3000" }, "tone": "ok" },
-              { "label": "Attempt 4 (Jitter)", "value": { "text": "6000" }, "tone": "ok" },
-              { "label": "Attempt 5 (Jitter)", "value": { "text": "12000" }, "tone": "ok" }
+              {
+                "label": "Attempt 1 (Jitter)",
+                "value": {
+                  "text": "750"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 2 (Jitter)",
+                "value": {
+                  "text": "1500"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 3 (Jitter)",
+                "value": {
+                  "text": "3000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 4 (Jitter)",
+                "value": {
+                  "text": "6000"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 5 (Jitter)",
+                "value": {
+                  "text": "12000"
+                },
+                "tone": "ok"
+              }
             ]
           }
         ]
@@ -310,22 +690,62 @@
             "at": "say5",
             "caption": "Exponential back-off scales the retry delay with each successive attempt.",
             "bars": [
-              { "label": "Attempt 1 (Pure)", "value": 1000, "tone": "data" },
-              { "label": "Attempt 2 (Pure)", "value": 2000, "tone": "data" },
-              { "label": "Attempt 3 (Pure)", "value": 4000, "tone": "data" },
-              { "label": "Attempt 4 (Pure)", "value": 8000, "tone": "data" },
-              { "label": "Attempt 5 (Pure)", "value": 16000, "tone": "error" }
+              {
+                "label": "Attempt 1 (Pure)",
+                "value": 1000,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 2 (Pure)",
+                "value": 2000,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 3 (Pure)",
+                "value": 4000,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 4 (Pure)",
+                "value": 8000,
+                "tone": "data"
+              },
+              {
+                "label": "Attempt 5 (Pure)",
+                "value": 16000,
+                "tone": "error"
+              }
             ]
           },
           {
             "at": "say8",
             "caption": "Jitter smooths retry traffic spikes so downstream servers recover smoothly.",
             "bars": [
-              { "label": "Attempt 1 (Jitter)", "value": 750, "tone": "ok" },
-              { "label": "Attempt 2 (Jitter)", "value": 1500, "tone": "ok" },
-              { "label": "Attempt 3 (Jitter)", "value": 3000, "tone": "ok" },
-              { "label": "Attempt 4 (Jitter)", "value": 6000, "tone": "ok" },
-              { "label": "Attempt 5 (Jitter)", "value": 12000, "tone": "ok" }
+              {
+                "label": "Attempt 1 (Jitter)",
+                "value": 750,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 2 (Jitter)",
+                "value": 1500,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 3 (Jitter)",
+                "value": 3000,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 4 (Jitter)",
+                "value": 6000,
+                "tone": "ok"
+              },
+              {
+                "label": "Attempt 5 (Jitter)",
+                "value": 12000,
+                "tone": "ok"
+              }
             ]
           }
         ]
