@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 4,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Per-Partition Total Ordering: The Foundation of Stream Correctness",
+      "codeHash": "2ae569932c196c8433976c9b04cb1b07d24f64963636d69fbf505a5271432cf4",
+      "spec": {
+        "template": "cells",
+        "title": "Strict per-partition FIFO sequence for Order ord-1 lifecycle events",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An individual partition log provides a strict mathematical total FIFO order.",
+            "items": [
+              {
+                "text": "Seq 1: CREATED"
+              },
+              {
+                "text": "Seq 2: PAID"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "fifo",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Because offsets increment monotonically, physical sequence dictates causality.",
+            "items": [
+              {
+                "text": "Seq 1: CREATED"
+              },
+              {
+                "text": "Seq 2: PAID"
+              },
+              {
+                "text": "Seq 3: SHIPPED"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "verified",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Strict per-partition FIFO sequence for Order ord-1 lifecycle events",
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "An individual partition log provides a strict mathematical total FIFO order.",
+            "items": [
+              "Seq 1: CREATED",
+              "Seq 2: PAID"
+            ],
+            "pointers": [
+              {
+                "name": "fifo",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Because offsets increment monotonically, physical sequence dictates causality.",
+            "items": [
+              "Seq 1: CREATED",
+              "Seq 2: PAID",
+              "Seq 3: SHIPPED"
+            ],
+            "pointers": [
+              {
+                "name": "verified",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Partition Partial Ordering & The Illusion of Global Clock",
+      "codeHash": "bbbb0009a5c3278e68e33f74113240c4acc8efc19654d77d00e87b96911f3c07",
+      "spec": {
+        "template": "table",
+        "title": "Observed multi-partition interleaving across concurrent consumer threads",
+        "columns": [
+          "Partition",
+          "Offset",
+          "Entity ID",
+          "Timestamp"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Events within the same partition are ordered without cross-partition guarantees.",
+            "rows": [
+              [
+                "P1",
+                "#0",
+                "user-B",
+                "102"
+              ],
+              [
+                "P0",
+                "#0",
+                "user-A",
+                "100"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Physical wall-clock timestamps are unreliable due to distributed clock skew.",
+            "rows": [
+              [
+                "P1",
+                "#0",
+                "user-B",
+                "102"
+              ],
+              [
+                "P0",
+                "#0",
+                "user-A",
+                "100"
+              ],
+              [
+                "P1",
+                "#1",
+                "user-B",
+                "104"
+              ],
+              [
+                "P0",
+                "#1",
+                "user-A",
+                "105"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Observed multi-partition interleaving across concurrent consumer threads",
+        "columns": [
+          "Partition",
+          "Offset",
+          "Entity ID",
+          "Timestamp"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Events within the same partition are ordered without cross-partition guarantees.",
+            "rows": [
+              [
+                "P1",
+                "#0",
+                "user-B",
+                "102"
+              ],
+              [
+                "P0",
+                "#0",
+                "user-A",
+                "100"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Physical wall-clock timestamps are unreliable due to distributed clock skew.",
+            "rows": [
+              [
+                "P1",
+                "#0",
+                "user-B",
+                "102"
+              ],
+              [
+                "P0",
+                "#0",
+                "user-A",
+                "100"
+              ],
+              [
+                "P1",
+                "#1",
+                "user-B",
+                "104"
+              ],
+              [
+                "P0",
+                "#1",
+                "user-A",
+                "105"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Entity Colocation via Semantic Partition Keys (orderId, userId)",
+      "codeHash": "182a67a080a0acfeb6b04a990fd1e6faf8412ba3f5137c2bc0e1944650e83b4d",
+      "spec": {
+        "template": "flow",
+        "title": "Semantic entity key routing colocating order-101 events on a single partition",
+        "nodes": [
+          {
+            "id": "aggregateKey",
+            "label": "Aggregate Root (order-101)",
+            "tappable": false
+          },
+          {
+            "id": "routerHash",
+            "label": "ColocatedRouter (4 Partitions)",
+            "tappable": false
+          },
+          {
+            "id": "singlePartition",
+            "label": "Identical Target Partition",
+            "tappable": false
+          },
+          {
+            "id": "orderedLifecycle",
+            "label": "CREATED -> AUTHORIZED -> FULFILLED",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "aggregateKey",
+            "to": "routerHash",
+            "label": "entityId"
+          },
+          {
+            "from": "routerHash",
+            "to": "singlePartition",
+            "label": "Colocated"
+          },
+          {
+            "from": "singlePartition",
+            "to": "orderedLifecycle",
+            "label": "Total FIFO"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Setting the message key to the aggregate root hashes events to one partition.",
+            "activeNodes": [
+              "aggregateKey",
+              "routerHash",
+              "singlePartition"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Per-partition total FIFO ordering guarantees the correct lifecycle sequence.",
+            "activeNodes": [
+              "singlePartition",
+              "orderedLifecycle"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Semantic entity key routing colocating order-101 events on a single partition",
+        "nodes": [
+          {
+            "id": "aggregateKey",
+            "label": "Aggregate Root (order-101)",
+            "tappable": false
+          },
+          {
+            "id": "routerHash",
+            "label": "ColocatedRouter (4 Partitions)",
+            "tappable": false
+          },
+          {
+            "id": "singlePartition",
+            "label": "Identical Target Partition",
+            "tappable": false
+          },
+          {
+            "id": "orderedLifecycle",
+            "label": "CREATED -> AUTHORIZED -> FULFILLED",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "aggregateKey",
+            "to": "routerHash",
+            "label": "entityId"
+          },
+          {
+            "from": "routerHash",
+            "to": "singlePartition",
+            "label": "Colocated"
+          },
+          {
+            "from": "singlePartition",
+            "to": "orderedLifecycle",
+            "label": "Total FIFO"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Setting the message key to the aggregate root hashes events to one partition.",
+            "activeNodes": [
+              "aggregateKey",
+              "routerHash",
+              "singlePartition"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Per-partition total FIFO ordering guarantees the correct lifecycle sequence.",
+            "activeNodes": [
+              "singlePartition",
+              "orderedLifecycle"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Out-of-Order Delivery Risks: Retries, Max-In-Flight Requests, and Pipeline Hazards",
+      "codeHash": "0c13396c0e482266ae94852027bb330073098704a5933093de18b9b997c68c3e",
+      "spec": {
+        "template": "sequence",
+        "title": "In-flight batch retry reordering when Batch 1 drops and Batch 2 commits first",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "In-Flight Producer"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Partition Log"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A transient network glitch causes the first batch to fail on the wire.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Send Batch 1 ['msg-1', 'msg-2'] -> DROPPED"
+              },
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Send Batch 2 ['msg-3', 'msg-4'] -> COMMITTED First"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say7",
+            "caption": "When the producer retries the failed batch, the broker inverts message order.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Retry Batch 1 (attempt 2) -> Appended After Batch 2"
+              }
+            ],
+            "activeActorId": "broker"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "In-flight batch retry reordering when Batch 1 drops and Batch 2 commits first",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "In-Flight Producer"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Partition Log"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "A transient network glitch causes the first batch to fail on the wire.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Send Batch 1 ['msg-1', 'msg-2'] -> DROPPED"
+              },
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Send Batch 2 ['msg-3', 'msg-4'] -> COMMITTED First"
+              }
+            ],
+            "activeActorId": "broker"
+          },
+          {
+            "at": "say7",
+            "caption": "When the producer retries the failed batch, the broker inverts message order.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Retry Batch 1 (attempt 2) -> Appended After Batch 2"
+              }
+            ],
+            "activeActorId": "broker"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting Sequence Gaps and Out-of-Order Anomalies in Consumers",
+      "codeHash": "1c670fee099064e60a834b9a0fbb0c1017c94db63e04cb145393083654c3f4a6",
+      "spec": {
+        "template": "states",
+        "title": "Consumer sequence gap detection and resequencing buffer drain",
+        "states": [
+          {
+            "id": "seqProcessed",
+            "label": "PROCESSED (seq: 1)"
+          },
+          {
+            "id": "bufferedGap",
+            "label": "BUFFERED_GAP (seq: 3 > 2)"
+          },
+          {
+            "id": "gapFilled",
+            "label": "Gap Filled (seq: 2 Arrives)"
+          },
+          {
+            "id": "drainedReady",
+            "label": "Ready ['step-2', 'step-3']"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When incoming sequence exceeds expected, the consumer detects a missing gap.",
+            "activeState": "bufferedGap",
+            "transition": {
+              "from": "seqProcessed",
+              "to": "bufferedGap",
+              "label": "seq 3 > expected 2"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Resequencing queues hold future events until the prerequisite event arrives.",
+            "activeState": "drainedReady",
+            "transition": {
+              "from": "gapFilled",
+              "to": "drainedReady",
+              "label": "Drain ['step-2', 'step-3']"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Consumer sequence gap detection and resequencing buffer drain",
+        "states": [
+          {
+            "id": "seqProcessed",
+            "label": "PROCESSED (seq: 1)"
+          },
+          {
+            "id": "bufferedGap",
+            "label": "BUFFERED_GAP (seq: 3 > 2)"
+          },
+          {
+            "id": "gapFilled",
+            "label": "Gap Filled (seq: 2 Arrives)"
+          },
+          {
+            "id": "drainedReady",
+            "label": "Ready ['step-2', 'step-3']"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When incoming sequence exceeds expected, the consumer detects a missing gap.",
+            "activeState": "bufferedGap",
+            "transition": {
+              "from": "seqProcessed",
+              "to": "bufferedGap",
+              "label": "seq 3 > expected 2"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "Resequencing queues hold future events until the prerequisite event arrives.",
+            "activeState": "drainedReady",
+            "transition": {
+              "from": "gapFilled",
+              "to": "drainedReady",
+              "label": "Drain ['step-2', 'step-3']"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Partitioned Order Verification and Gap Detector",
+      "codeHash": "90c4589656185f808f17d21c100460761dd086f7ebcf43ef830dd5413b480fba",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
