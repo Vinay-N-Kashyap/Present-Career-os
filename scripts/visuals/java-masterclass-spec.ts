@@ -1339,49 +1339,49 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
     day: 38,
     month: 2,
     blockNum: 8,
-    title: 'Abstract Classes, Template Method Pattern & Partial Implementation',
+    title: 'The Universal Object Contract: equals(), hashCode(), and Reference Identity (==)',
     stageName: 'Stage 2: Defensive Fluency',
     stageNum: 2,
-    pedagogicalRole: 'Balanced Friction (Abstract Base Classes & Template Pattern)',
-    spokenGoal: 'Master abstract classes: classes that cannot be instantiated directly with "new", containing abstract method contracts for subclasses.',
-    conceptInvariant: 'An abstract class can provide concrete shared implementation while forcing subclasses to implement abstract methods.',
-    failureMode: 'Attempting to instantiate an abstract class directly (e.g. new BaseAccount()) triggers compile error "cannot be instantiated".',
-    tryItFriction: 'Implement all inherited abstract methods in a concrete subclass to resolve compile errors.',
+    pedagogicalRole: 'Balanced Friction (Object Identity vs Logical Equivalence & Hash Invariants)',
+    spokenGoal: 'Master java.lang.Object core methods. Understand why overriding equals() requires overriding hashCode(), and the catastrophic consequences of breaking this contract.',
+    conceptInvariant: 'If two objects are equal according to equals(Object), calling hashCode() on each must produce the exact same integer value. == compares memory addresses; equals() compares field values.',
+    failureMode: 'Failing to override hashCode() when overriding equals() causes HashSet and HashMap to duplicate keys or return null on lookups of mathematically identical objects.',
+    tryItFriction: 'Override both equals() and hashCode() on an AccountKey class so that set.contains(new AccountKey("ACC-101")) correctly evaluates to true.',
     socraticHints: [
-      'Why is javac failing with "CryptoAccount is not abstract and does not override abstract method calculateFee()"?',
-      'Because the parent class declared calculateFee() as abstract, every concrete child MUST provide a body.',
-      'Implement "public double calculateFee() { return ...; }".'
+      'Why does set.contains(new AccountKey("ACC-101")) return false even though an AccountKey with "ACC-101" was already added?',
+      'Because without overriding hashCode(), Java uses System.identityHashCode (memory address). The two instances land in completely different hash buckets!',
+      'Implement consistent equals() and Objects.hash(id) to ensure identical keys map to the exact same bucket.'
     ],
     situationalPuzzle: {
-      scenario: 'A software architect wants to define a PaymentWorkflow where the steps (validate, execute, audit) run in a fixed order, but execute() varies by payment type (CreditCard, Crypto, Wire). What design pattern is optimal?',
+      scenario: 'An engineer creates a class CurrencyPair { String base; String quote; } and overrides equals() but forgets hashCode(). They add 10,000 rates to a HashMap<CurrencyPair, Double>. What happens when they query map.get(new CurrencyPair("USD", "EUR"))?',
       options: [
-        'A single massive switch statement.',
-        'The Template Method Pattern in an abstract class: a concrete final process() method calling abstract execute().',
-        'Multiple static methods in a utility class.',
-        'An empty interface.'
+        'It works with 100% reliability.',
+        'It returns null almost every time because the lookup checks the wrong bucket based on memory address instead of fields.',
+        'The JVM throws an IllegalStateException.',
+        'HashMap automatically generates a hashCode.'
       ],
       answerIdx: 1,
-      debrief: 'The Template Method pattern defines the algorithm skeleton in an abstract class, delegating specific sub-steps to concrete subclasses while preserving workflow order.'
+      debrief: 'The HashMap uses hashCode() to locate the bucket array index. If hashCode() is not overridden, two logically identical objects produce different hash codes and land in different buckets, making retrieval impossible.'
     },
     quests: [
-      { id: 'java-m2-d38-q1', name: 'Template Method Pattern Architecture', type: 'concept', desc: 'Trace final template workflow calling abstract hook methods.' },
-      { id: 'java-m2-d38-q2', name: 'Detective Lab: The Incomplete Subclass Implementation', type: 'detective', desc: 'Complete missing abstract methods in an enterprise document exporter.' },
-      { id: 'java-m2-d38-q3', name: 'Mastery Assignment: Abstract Financial Instrument Base Model', type: 'assignment', desc: 'Build BaseInstrument with concrete logging and abstract calculateMaturityYield().' },
-      { id: 'java-m2-d38-q4', name: 'Production Incident Lab: Incomplete Template Method Audit', type: 'detective', desc: "Enforce non-overridable final template methods with abstract hook execution." }
+      { id: 'java-m2-d38-q1', name: 'The equals() and hashCode() Mathematical Contract', type: 'concept', desc: 'Trace hash bucket routing and proof of why equal objects must produce identical hash codes.' },
+      { id: 'java-m2-d38-q2', name: 'Detective Lab: The Phantom Key in the HashMap', type: 'detective', desc: 'Diagnose and fix a broken equals/hashCode implementation causing lost lookups in a cache.' },
+      { id: 'java-m2-d38-q3', name: 'Mastery Assignment: Bulletproof Domain Entity Identity', type: 'assignment', desc: 'Implement consistent equals(), hashCode(), and toString() with defensive null handling on AccountId.' },
+      { id: 'java-m2-d38-q4', name: 'Production Incident Lab: Memory Address Hash Code Outage', type: 'detective', desc: "Resolve a critical billing duplicate-payment bug caused by default identityHashCode in hash sets." }
     ]
   },
   {
     day: 39,
     month: 2,
     blockNum: 8,
-    title: 'Interfaces (interface, implements), Multiple Interface Composition & Default Methods',
+    title: 'Abstract Classes vs Interfaces & Default Method Contract Evolution',
     stageName: 'Stage 2: Defensive Fluency',
     stageNum: 2,
-    pedagogicalRole: 'Balanced Friction (Decoupled Contracts & Multiple Inheritance of Type)',
-    spokenGoal: 'Master interfaces: 100% decoupled contracts. Understand multiple interface implementation and default methods.',
-    conceptInvariant: 'A class can extend only ONE superclass, but can implement MULTIPLE interfaces. Interfaces decouple what code does from how it is done.',
+    pedagogicalRole: 'Balanced Friction (Decoupled Contracts & Abstract Template Methods)',
+    spokenGoal: 'Master the architectural distinction between abstract classes (partial state & template workflows) and interfaces (pure behavioral contracts & default methods).',
+    conceptInvariant: 'A class can extend only ONE abstract superclass (sharing state/vtable), but can implement MULTIPLE interfaces (multiple typing). Interfaces decouple what code does from how it is done.',
     failureMode: 'A class implementing an interface failing to declare implemented methods as "public" triggers "cannot reduce visibility".',
-    tryItFriction: 'Add the public access modifier to methods implementing an interface contract.',
+    tryItFriction: 'Add the public access modifier to methods implementing an interface contract and resolve diamond default method conflicts.',
     socraticHints: [
       'All methods in an interface are implicitly public. What happens if your class implements them as package-private (without public)?',
       'Java forbids reducing the visibility of an inherited method!',
@@ -1402,7 +1402,7 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
       { id: 'java-m2-d39-q1', name: 'Interface Decoupling & Loose Coupling', type: 'concept', desc: 'Understand why programming to interfaces (List vs ArrayList) creates maintainable architectures.' },
       { id: 'java-m2-d39-q2', name: 'Detective Lab: The Reduced Visibility Violation', type: 'detective', desc: 'Fix access modifier compilation errors in an interface implementation.' },
       { id: 'java-m2-d39-q3', name: 'Mastery Assignment: Multi-Interface Auditable Entity', type: 'assignment', desc: 'Implement Auditable, Validatable, and Persistable across order domain objects.' },
-      { id: 'java-m2-d39-q4', name: 'Production Incident Lab: Visibility Downgrade Compilation Gate', type: 'detective', desc: "Enforce public interface method visibility across enterprise service layers." }
+      { id: 'java-m2-d39-q4', name: 'Production Incident Lab: Diamond Default Method Resolution', type: 'detective', desc: "Resolve conflicting default methods across dual interfaces using explicit super-syntax." }
     ]
   },
   {
@@ -1516,18 +1516,18 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
     day: 43,
     month: 2,
     blockNum: 9,
-    title: 'Custom Business Exceptions & Checked vs Unchecked Exception Design Rules',
+    title: 'Resource Lifecycles: AutoCloseable, try-with-resources & Custom Fault Taxonomies',
     stageName: 'Stage 3: Systems Stress-Testing',
     stageNum: 3,
-    pedagogicalRole: 'High Cognitive Friction (Exception Design & Structured Metadata)',
-    spokenGoal: 'Author production custom exceptions carrying rich metadata (errorCode, accountId, timestamp) rather than generic string messages.',
-    conceptInvariant: 'Custom exceptions must inherit from Exception (for expected business outcomes) or RuntimeException (for programmer errors).',
-    failureMode: 'Throwing generic Exception("Error") forces callers to parse string messages to understand what went wrong.',
-    tryItFriction: 'Create InsufficientFundsException carrying double deficit and double currentBalance as strongly-typed getter fields.',
+    pedagogicalRole: 'High Cognitive Friction (Resource Leak Prevention & Domain Exceptions)',
+    spokenGoal: 'Master deterministic resource teardown using AutoCloseable and try-with-resources, alongside strongly-typed custom business exception hierarchies.',
+    conceptInvariant: 'Any resource opened in try(Resource r = ...) is guaranteed to close even if an exception is thrown. Domain exceptions must carry actionable context (errorCode, entityId).',
+    failureMode: 'Swallowing exceptions or failing to close OS file descriptors and socket handles causes process resource exhaustion (Too many open files).',
+    tryItFriction: 'Refactor a fragile manual stream close in finally into a try-with-resources block with custom InsufficientFundsException handling.',
     socraticHints: [
-      'If you throw new Exception("Need $50 more"), how can the UI display a localized message or offer an overdraft loan?',
-      'It has to do fragile string parsing on the message!',
-      'Store deficit as a field: public double getDeficit() { return deficit; }.'
+      'What happens if reader.close() in a finally block throws an IOException? Does writer.close() on the next line ever execute?',
+      'No! The exception on line 1 aborts the finally block, leaking the writer file descriptor!',
+      'Use try (Reader r = ...; Writer w = ...) { ... } so the JVM closes both safely and suppresses secondary errors.'
     ],
     situationalPuzzle: {
       scenario: 'A payment API returns HTTP 500 on invalid credit card numbers because the service throws raw RuntimeException("bad card"). How does a senior team refactor this?',
@@ -1541,45 +1541,45 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
       debrief: 'Strongly-typed custom exceptions allow higher layers (API controllers) to cleanly map domain failures to client status codes (HTTP 400 vs 500).'
     },
     quests: [
-      { id: 'java-m2-d43-q1', name: 'Domain Exception Modeling', type: 'concept', desc: 'Design exception classes that preserve structural failure evidence.' },
-      { id: 'java-m2-d43-q2', name: 'Detective Lab: The Fragile String Message Parser', type: 'detective', desc: 'Refactor fragile string error parsing into strongly-typed exception getters.' },
+      { id: 'java-m2-d43-q1', name: 'Domain Exception Modeling & AutoCloseable', type: 'concept', desc: 'Design exception classes that preserve structural evidence and implement deterministic cleanup.' },
+      { id: 'java-m2-d43-q2', name: 'Detective Lab: The Leaking OS File Descriptor Outage', type: 'detective', desc: 'Refactor a legacy manual finally close into a bulletproof try-with-resources statement.' },
       { id: 'java-m2-d43-q3', name: 'Mastery Assignment: Complete Financial Error Hierarchy', type: 'assignment', desc: 'Build InvalidCurrencyException, LimitExceededException, and AccountSuspendedException.' },
-      { id: 'java-m2-d43-q4', name: 'Production Incident Lab: Generic Exception Fragility Refactoring', type: 'detective', desc: "Replace fragile string message parsing with structured custom exception fields." }
+      { id: 'java-m2-d43-q4', name: 'Production Incident Lab: Suppressed Exception Telemetry', type: 'detective', desc: "Extract suppressed exceptions from try-with-resources to capture root-cause telemetry." }
     ]
   },
   {
     day: 44,
     month: 2,
     blockNum: 9,
-    title: 'Automatic Resource Management: AutoCloseable & Try-with-Resources',
+    title: 'JVM Garbage Collection Anatomy & Diagnosing Real Memory Leaks',
     stageName: 'Stage 3: Systems Stress-Testing',
     stageNum: 3,
-    pedagogicalRole: 'High Cognitive Friction (Resource Leak Prevention & OS File Descriptors)',
-    spokenGoal: 'Master Java 7+ try-with-resources: automatic deterministic closing of streams, sockets, and connections implementing AutoCloseable.',
-    conceptInvariant: 'Any resource declared inside try(Resource r = new Resource()) is guaranteed to have r.close() invoked when the block exits.',
-    failureMode: 'Manually closing resources in finally blocks requires nested try-catch blocks and leaks file descriptors if close() throws.',
-    tryItFriction: 'Refactor a legacy manual scanner.close() in finally into a clean try-with-resources statement.',
+    pedagogicalRole: 'High Cognitive Friction (Generational GC, GC Roots & Heap Dump Analysis)',
+    spokenGoal: 'Master JVM Garbage Collection: the generational hypothesis (Eden, Survivor S0/S1, Old Gen), GC Roots, stop-the-world pauses, and how Java leaks memory via unclosed roots.',
+    conceptInvariant: 'Objects are eligible for GC when they are unreachable from any GC Root (thread stack frames, static variables, active JNI handles). Static collections never die and cause real memory leaks.',
+    failureMode: 'Appending objects into a static collection (e.g. static List<UserSession>) without removal prevents GC collection and triggers java.lang.OutOfMemoryError: Java heap space.',
+    tryItFriction: 'Identify and fix a memory leak where an unclosed listener or static cache continually retains uncollectible heap objects.',
     socraticHints: [
-      'What happens if reader.close() in a finally block throws an IOException? Does writer.close() on the next line ever execute?',
-      'No! The exception on line 1 aborts the finally block, leaking the writer file descriptor!',
-      'Use try (Reader r = ...; Writer w = ...) { ... } so the JVM closes both safely.'
+      'If Java has automatic garbage collection, how did the application run out of memory (java.lang.OutOfMemoryError)?',
+      'Because the GC only reclaims UNREACHABLE objects! If a static List holds a pointer to an object, that object is permanently reachable.',
+      'Clear the static reference or use a bounded cache with eviction (e.g. WeakHashMap or LRU) to let the GC reclaim memory.'
     ],
     situationalPuzzle: {
-      scenario: 'A microservice crashes with "IOException: Too many open files" after processing 1,024 user reports. Telemetry shows file handles were never released because an exception bypassed manual close(). What prevents this?',
+      scenario: 'A production financial microservice experiences 4-second latency freezes every 10 minutes. A heap dump reveals 95% of the heap is full of old-generation session objects. What is occurring?',
       options: [
-        'Increase OS ulimit to infinity.',
-        'Use Java try-with-resources, which guarantees deterministic cleanup of AutoCloseable resources even on abnormal termination.',
-        'Rely on finalizers to clean up files.',
-        'Restart the server every hour.'
+        'The CPU clock is drifting.',
+        'A Full GC (Stop-The-World pause) is struggling to collect lingering reachable objects in the Tenured Old Gen, freezing all application worker threads.',
+        'Java bytecodes are corrupt.',
+        'Network cables are disconnected.'
       ],
       answerIdx: 1,
-      debrief: 'Operating systems have finite file descriptor pools. Try-with-resources guarantees that close() is invoked under all circumstances, eliminating descriptor leaks.'
+      debrief: 'Full GC pauses freeze all application threads while traversing the old-generation object graph. Memory leaks that promote dead objects to old generation cause catastrophic latency spikes.'
     },
     quests: [
-      { id: 'java-m2-d44-q1', name: 'AutoCloseable Interface Architecture', type: 'concept', desc: 'Trace compiler-generated suppressed exception handling in try-with-resources.' },
-      { id: 'java-m2-d44-q2', name: 'Detective Lab: The File Descriptor Exhaustion Leak', type: 'detective', desc: 'Fix a file processing method leaking file handles under network timeouts.' },
-      { id: 'java-m2-d44-q3', name: 'Mastery Assignment: Custom AutoCloseable Audit Session', type: 'assignment', desc: 'Implement DatabaseTransactionSession implementing AutoCloseable with auto-rollback.' },
-      { id: 'java-m2-d44-q4', name: 'Production Incident Lab: File Descriptor Exhaustion Incident', type: 'detective', desc: "Resolve Too many open files outage using try-with-resources refactoring." }
+      { id: 'java-m2-d44-q1', name: 'Generational GC Mechanics & GC Roots', type: 'concept', desc: 'Trace Eden space allocation, minor GC promotions, and mark-sweep-compact in the Tenured generation.' },
+      { id: 'java-m2-d44-q2', name: 'Detective Lab: The Static Collection Leak Outage', type: 'detective', desc: 'Locate a static map holding disconnected socket sessions and apply eviction cleanup.' },
+      { id: 'java-m2-d44-q3', name: 'Mastery Assignment: Heap Dump Inspection & Memory Profiling', type: 'assignment', desc: 'Simulate high memory churn and verify clean garbage collection using runtime memory telemetry.' },
+      { id: 'java-m2-d44-q4', name: 'Production Incident Lab: The Stop-The-World Full GC Freeze', type: 'detective', desc: "Diagnose an enterprise JVM latency incident using GC log flags (-Xlog:gc) and fix root cause." }
     ]
   },
   {
@@ -2041,7 +2041,42 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
     day: 58,
     month: 2,
     blockNum: 12,
-    title: 'Modern Java Functional Streams: stream(), map(), filter(), reduce() & Parallel Pipelines',
+    title: 'Enterprise Database Connectivity: JDBC, Connection Pooling (HikariCP) & Transactions',
+    stageName: 'Stage 4: Architectural Autonomy',
+    stageNum: 4,
+    pedagogicalRole: 'Zero Support (Relational Persistence, Connection Pooling & ACID Boundaries)',
+    spokenGoal: 'Connect Java to enterprise SQL databases. Master raw JDBC, PreparedStatement injection prevention, HikariCP connection pooling, and programmatic transaction management.',
+    conceptInvariant: 'Opening a raw database TCP connection per request destroys latency. Connection pools maintain warm pre-authenticated sockets. Transactions require setAutoCommit(false) and explicit commit/rollback.',
+    failureMode: 'Concatenating user input into raw SQL strings triggers SQL injection vulnerabilities; forgetting to close a connection leaks pool sockets, deadlocking all subsequent queries.',
+    tryItFriction: 'Refactor a vulnerable raw Statement into a PreparedStatement with try-with-resources and programmatic transaction commit/rollback.',
+    socraticHints: [
+      'Why is "SELECT * FROM users WHERE id = " + userId an extreme security violation?',
+      'An attacker can pass "1 OR 1=1" and dump the entire database! Always use PreparedStatement with "?" placeholders.',
+      'Wrap Connection, PreparedStatement, and ResultSet in try-with-resources to ensure sockets return to the HikariCP pool.'
+    ],
+    situationalPuzzle: {
+      scenario: 'A banking service transfers $500: it deducts from Account A, encounters an error writing the credit to Account B, and throws an exception. Account A is debited, but Account B never receives funds. Why?',
+      options: [
+        'The database was offline.',
+        'AutoCommit was enabled (default true), so the debit committed immediately without an enclosing atomic transaction rollback.',
+        'Java ints overflowed.',
+        'HikariCP failed.'
+      ],
+      answerIdx: 1,
+      debrief: 'By default, JDBC auto-commits every single statement immediately. Multi-statement financial transfers MUST call connection.setAutoCommit(false), execute both updates, and call connection.commit() (or rollback() in catch).'
+    },
+    quests: [
+      { id: 'java-m2-d58-q1', name: 'JDBC Lifecycle & HikariCP Architecture', type: 'concept', desc: 'Trace how connection pools eliminate TCP handshake and authentication overhead.' },
+      { id: 'java-m2-d58-q2', name: 'Detective Lab: The Connection Pool Starvation Leak', type: 'detective', desc: 'Find an unclosed database connection in an exception block that exhausted the pool.' },
+      { id: 'java-m2-d58-q3', name: 'Mastery Assignment: Atomic Multi-Account Transfer Service', type: 'assignment', desc: 'Implement transferFunds() with explicit transaction isolation, commit, and rollback.' },
+      { id: 'java-m2-d58-q4', name: 'Production Incident Lab: SQL Injection Remediation Gate', type: 'detective', desc: "Replace dynamic SQL concatenation with parameterized PreparedStatement contracts." }
+    ]
+  },
+  {
+    day: 59,
+    month: 2,
+    blockNum: 12,
+    title: 'High-Throughput Streams, Lambdas & Modern Functional Processing Pipelines',
     stageName: 'Stage 4: Architectural Autonomy',
     stageNum: 4,
     pedagogicalRole: 'Zero Support (Declarative Stream Pipelines & ForkJoinPool Parallelism)',
@@ -2055,7 +2090,7 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
       'Obtain a fresh stream from the collection for each query: list.stream()...'
     ],
     situationalPuzzle: {
-      scenario: 'A developer uses parallelStream() to calculate total sales across 10,000 orders. Inside the map(), they mutate an external "total += order.getAmount();". Final total is inconsistent every run. Why?',
+      scenario: 'A developer uses parallelStream() to calculate total sales across 10,000 orders. Inside the map(), they mutate an external total variable. Final total is inconsistent every run. Why?',
       options: [
         'parallelStream() is broken.',
         'Mutating shared external state inside a parallel stream causes race conditions. They must use the reduce() operation or collect to a thread-safe reducer.',
@@ -2068,75 +2103,43 @@ export const JAVA_MONTH_2_SPECS: MasterclassDaySpec[] = [
     quests: [
       { id: 'java-m2-d58-q1', name: 'Stream Pipeline Laziness & Fusion', type: 'concept', desc: 'Trace how the JVM fuses multiple filter and map operations into a single pass.' },
       { id: 'java-m2-d58-q2', name: 'Detective Lab: The Stateful Parallel Stream Corruption', type: 'detective', desc: 'Refactor a stateful parallel stream with race conditions into a pure reduce().' },
-      { id: 'java-m2-d58-q3', name: 'Mastery Assignment: Enterprise Financial Portfolio Analytics', type: 'assignment', desc: 'Compute groupingBy sector, average returns, and top-5 performers with streams.' }
-    ]
-  },
-  {
-    day: 59,
-    month: 2,
-    blockNum: 12,
-    title: 'Java NIO File Channels, Serialization & Fast Memory-Mapped File Ingestion',
-    stageName: 'Stage 4: Architectural Autonomy',
-    stageNum: 4,
-    pedagogicalRole: 'Zero Support (Zero-Copy Kernel I/O, FileChannel & Memory-Mapped Buffers)',
-    spokenGoal: 'Master Java NIO: FileChannel, ByteBuffer, zero-copy kernel transfers (transferTo), and memory-mapped files (MappedByteBuffer).',
-    conceptInvariant: 'NIO Memory-Mapped files map physical disk files directly into the process address space, bypassing user-space buffer copies.',
-    failureMode: 'Forgetting to call buffer.flip() before reading from a ByteBuffer reads unwritten garbage bytes or returns an empty read.',
-    tryItFriction: 'Insert buffer.flip() after writing data to a ByteBuffer before transmitting over a FileChannel.',
-    socraticHints: [
-      'Why did buffer.get() read nothing after you filled it with buffer.put()?',
-      'Because the buffer position is at the END of the data you just wrote! You must flip() the buffer to set limit=position and reset position=0.',
-      'Call "buffer.flip();" before reading.'
-    ],
-    situationalPuzzle: {
-      scenario: 'A financial exchange logs 50,000,000 tick quotes per second to disk. Standard FileOutputStream maxes out at 40 MB/s and drops data. Which Java NIO feature provides 1,200 MB/s disk write throughput?',
-      options: [
-        'A bigger while loop.',
-        'FileChannel.map() with MappedByteBuffer, which maps the disk file directly into the virtual memory page cache with zero-copy hardware writes.',
-        'Using System.out.println.',
-        'Running on 32-bit Java.'
-      ],
-      answerIdx: 1,
-      debrief: 'Memory-mapped files (MappedByteBuffer) bypass user/kernel context switches. The OS page cache automatically manages flushes directly to NVMe SSD at hardware bus speeds.'
-    },
-    quests: [
-      { id: 'java-m2-d59-q1', name: 'Zero-Copy Architecture & Direct ByteBuffers', type: 'concept', desc: 'Compare standard heap buffers (JVM copy) vs direct native memory buffers (DMA transfer).' },
-      { id: 'java-m2-d59-q2', name: 'Detective Lab: The Missing Buffer Flip Hazard', type: 'detective', desc: 'Fix an NIO socket channel sending zero bytes due to an un-flipped buffer.' },
-      { id: 'java-m2-d59-q3', name: 'Mastery Assignment: Ultra-Fast Binary Ledger Ingestion', type: 'assignment', desc: 'Parse 1,000,000 binary records using MappedByteBuffer in under 500 milliseconds.' }
+      { id: 'java-m2-d58-q3', name: 'Mastery Assignment: Financial Trade Aggregator Pipeline', type: 'assignment', desc: 'Group 100,000 trades by currency and calculate volume-weighted average price (VWAP) using Collectors.groupingBy.' },
+      { id: 'java-m2-d58-q4', name: 'Production Incident Lab: ForkJoinPool CommonPool Starvation', type: 'detective', desc: "Isolate a blocking I/O call inside a parallel stream that froze the entire application thread pool." }
     ]
   },
   {
     day: 60,
     month: 2,
     blockNum: 12,
-    title: '🏆 Month 2 Master Capstone Gate: Audited Enterprise Financial Transaction Settlement Engine & Concurrent Order Book with Live Architecture Viva',
+    title: '🏆 Month 2 Master Capstone Gate: LedgerCore Enterprise Settlement Engine & Live Architecture Viva',
     stageName: 'Stage 4: Architectural Autonomy',
     stageNum: 4,
-    pedagogicalRole: 'Zero Support (Master Capstone Gate, Live Viva Defense & Production Deployment)',
-    spokenGoal: 'Defend your complete 60-Day Java Enterprise Architecture before the Senior Board. Deploy and verify the full Settlement Engine.',
-    conceptInvariant: 'Production-ready Java is correct, concurrent, thread-safe, resilient, memory-efficient, and mathematically auditable.',
-    failureMode: 'Submitting code with race conditions, deadlocks under load, unclosed NIO channels, or unhandled checked exceptions.',
-    tryItFriction: 'Execute the master 100,000 concurrent trade stress test and defend memory and concurrency decisions before the Viva board.',
+    pedagogicalRole: 'Zero Support (Master Capstone Integration & Code Defense)',
+    spokenGoal: 'Architect, benchmark, and defend LedgerCore: A production multi-threaded financial transaction settlement engine with thread-safe balances, HikariCP JDBC persistence, and live telemetry.',
+    conceptInvariant: 'LedgerCore guarantees zero race conditions, zero balance discrepancies, and atomic persistence under 10,000 concurrent transfers per second.',
+    failureMode: 'A single unhandled concurrency race or uncommitted transaction corrupts the ledger audit balance, resulting in immediate capstone failure.',
+    tryItFriction: 'Execute an adversarial fuzz test with 50 concurrent threads executing 100,000 balance transfers; assert total system balance remains 100.000% invariant.',
     socraticHints: [
-      'How does your engine prevent deadlocks when Account A transfers to Account B while Account B transfers to Account A simultaneously?',
-      'Did you enforce strict lock ordering (e.g. acquire lock on the lower accountId first)?',
-      'Defend why your thread pool uses CallerRunsPolicy instead of AbortPolicy during traffic surges.'
+      'Why did the total balance across all accounts decrease by $250 after the stress test?',
+      'A race condition occurred during simultaneous reciprocal transfers (A->B and B->A)!',
+      'Enforce strict lock-ordering by accountId to eliminate deadlocks and use AtomicLong or synchronized critical sections.'
     ],
     situationalPuzzle: {
-      scenario: 'The Final Viva Panel asks: "Explain why you chose an AtomicReference state machine over coarse synchronized blocks for the settlement engine\'s core ledger." What is the senior response?',
+      scenario: 'You are presenting LedgerCore to a panel of Principal Architects. They ask: "How does your engine prevent deadlocks when Thread 1 transfers A -> B and Thread 2 transfers B -> A simultaneously?" How do you answer?',
       options: [
-        'Because synchronized is not supported in Java.',
-        'To eliminate OS thread context switching and thread suspension overhead, allowing non-blocking hardware CAS execution that sustains 100,000 TPS under extreme concurrency without thread starvation.',
-        'Because AtomicReference uses less memory than an int.',
-        'AtomicReference prevents all bugs.'
+        'By catching DeadlockException.',
+        'By enforcing global lock-ordering: always acquiring locks in ascending order of Account ID (min(A, B) first, then max(A, B)), mathematically eliminating circular wait conditions.',
+        'By running on a single thread.',
+        'By using sleep(10).'
       ],
       answerIdx: 1,
-      debrief: 'A master engineer defends trade-offs: synchronized puts threads to sleep via OS mutexes, incurring heavy 1-2 microsecond context switch penalties. Lock-free CAS loops execute in sub-nanoseconds directly on CPU cores.'
+      debrief: 'Resource ordering (locking the lower account ID first) breaks Coffman condition #4 (Circular Wait), mathematically guaranteeing deadlocks are impossible regardless of concurrency volume.'
     },
     quests: [
-      { id: 'java-m2-d60-q1', name: 'The Master Capstone Architecture Viva Defense', type: 'viva', desc: 'Defend 10 senior architecture prompts before the AI Principal Architect Panel.' },
-      { id: 'java-m2-d60-q2', name: 'Detective Lab: The 100k Concurrent Stress Test Fuzzing', type: 'detective', desc: 'Pass 100,000 simultaneous concurrent transfers with zero lost pennies.' },
-      { id: 'java-m2-d60-q3', name: 'Mastery Assignment: Production GitHub Release of LedgerCore', type: 'assignment', desc: 'Publish audited, documented, production-grade LedgerCore repository on GitHub.' }
+      { id: 'java-m2-d60-q1', name: 'LedgerCore Architectural Blueprint & Threat Model', type: 'concept', desc: 'Design the thread-safety, persistence, and audit logging layers of an enterprise financial settlement engine.' },
+      { id: 'java-m2-d60-q2', name: 'Adversarial Stress Test: The 100,000 Transaction Race Audit', type: 'detective', desc: 'Execute multi-threaded stress tests and eliminate race conditions using lock-ordering and CAS primitives.' },
+      { id: 'java-m2-d60-q3', name: 'Mastery Capstone: Production LedgerCore Settlement Deployment', type: 'assignment', desc: 'Deploy LedgerCore with HikariCP connection pooling, PreparedStatement audit logging, and p99 latency telemetry.' },
+      { id: 'java-m2-d60-cap', name: '🏆 Live Architecture Viva & Senior Code Defense', type: 'milestone', desc: 'Defend LedgerCore concurrency invariants, GC footprint, and failure modes against senior engineering review.' }
     ]
   }
 ];
