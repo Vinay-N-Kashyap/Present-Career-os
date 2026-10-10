@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 22,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Blameless Postmortem Culture & Psychological Safety",
+      "codeHash": "c15bcf35aeadf26347a3e119c501a60d87c742785be29f05ff51706972c20087",
+      "spec": {
+        "template": "compare",
+        "title": "Blaming Culture versus Blameless Postmortem Practice",
+        "left": {
+          "title": "Blaming Culture",
+          "items": [
+            "Attributes failure to personal human error",
+            "Creates fear of punishment and embarrassment",
+            "Causes teams to conceal defects and near-misses",
+            "Leaves systemic architectural holes unaddressed"
+          ]
+        },
+        "right": {
+          "title": "Blameless Practice",
+          "items": [
+            "Assumes good faith with current information",
+            "Fosters psychological safety and transparency",
+            "Treats incidents as valuable learning investments",
+            "Builds automated systemic guardrails and linting"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The blameless postmortem culture eliminates personal fault and witch hunts.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Psychological safety encourages engineers to speak openly about edge cases.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Blaming Culture versus Blameless Postmortem Practice",
+        "left": {
+          "title": "Blaming Culture",
+          "items": [
+            "Attributes failure to personal human error",
+            "Creates fear of punishment and embarrassment",
+            "Causes teams to conceal defects and near-misses",
+            "Leaves systemic architectural holes unaddressed"
+          ]
+        },
+        "right": {
+          "title": "Blameless Practice",
+          "items": [
+            "Assumes good faith with current information",
+            "Fosters psychological safety and transparency",
+            "Treats incidents as valuable learning investments",
+            "Builds automated systemic guardrails and linting"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The blameless postmortem culture eliminates personal fault and witch hunts.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Psychological safety encourages engineers to speak openly about edge cases.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Five Whys Root Cause Analysis Technique",
+      "codeHash": "6385f7b51f54697d3f869b457d41e415f0d20eb13172c37416c213599a855db7",
+      "spec": {
+        "template": "workflow",
+        "title": "Five Whys Iterative Root Cause Diagnostic Chain",
+        "nodes": [
+          {
+            "id": "why1",
+            "label": "Why 1: Connections",
+            "description": "Database pool ran out of sockets"
+          },
+          {
+            "id": "why2",
+            "label": "Why 2: Query Lock",
+            "description": "Heavy unindexed query locked table"
+          },
+          {
+            "id": "why3",
+            "label": "Why 3: Schema Deploy",
+            "description": "New feature lacked database indexing"
+          },
+          {
+            "id": "why4",
+            "label": "Why 4: CI Missing Lint",
+            "description": "Pipeline lacked migration lint check"
+          },
+          {
+            "id": "why5",
+            "label": "Why 5: Manual Review",
+            "description": "Schema reviews handled manually"
+          }
+        ],
+        "edges": [
+          {
+            "from": "why1",
+            "to": "why2",
+            "label": "Deeper"
+          },
+          {
+            "from": "why2",
+            "to": "why3",
+            "label": "Deeper"
+          },
+          {
+            "from": "why3",
+            "to": "why4",
+            "label": "Deeper"
+          },
+          {
+            "from": "why4",
+            "to": "why5",
+            "label": "Root"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Iteratively asking why drills through symptom layers to unearth vulnerabilities.",
+            "activeNode": "why1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Systemic remedies address root causes invisible at initial diagnostic levels.",
+            "activeNode": "why5",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Five Whys Iterative Root Cause Diagnostic Chain",
+        "nodes": [
+          {
+            "id": "why1",
+            "label": "Why 1: Connections",
+            "description": "Database pool ran out of sockets"
+          },
+          {
+            "id": "why2",
+            "label": "Why 2: Query Lock",
+            "description": "Heavy unindexed query locked table"
+          },
+          {
+            "id": "why3",
+            "label": "Why 3: Schema Deploy",
+            "description": "New feature lacked database indexing"
+          },
+          {
+            "id": "why4",
+            "label": "Why 4: CI Missing Lint",
+            "description": "Pipeline lacked migration lint check"
+          },
+          {
+            "id": "why5",
+            "label": "Why 5: Manual Review",
+            "description": "Schema reviews handled manually"
+          }
+        ],
+        "edges": [
+          {
+            "from": "why1",
+            "to": "why2",
+            "label": "Deeper"
+          },
+          {
+            "from": "why2",
+            "to": "why3",
+            "label": "Deeper"
+          },
+          {
+            "from": "why3",
+            "to": "why4",
+            "label": "Deeper"
+          },
+          {
+            "from": "why4",
+            "to": "why5",
+            "label": "Root"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Iteratively asking why drills through symptom layers to unearth vulnerabilities.",
+            "activeNode": "why1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Systemic remedies address root causes invisible at initial diagnostic levels.",
+            "activeNode": "why5",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Contributing Factors & The Swiss Cheese Model",
+      "codeHash": "306fae1da64e5c232387db2abf9b44ddd1753a89f50b37f01944f85a86712d6b",
+      "spec": {
+        "template": "sequence",
+        "title": "Swiss Cheese Model Defense Penetration Flow",
+        "actors": [
+          {
+            "id": "precommit",
+            "label": "Pre-Commit Lint"
+          },
+          {
+            "id": "cicd",
+            "label": "CI Canary Gate"
+          },
+          {
+            "id": "runtime",
+            "label": "Circuit Breaker"
+          },
+          {
+            "id": "observability",
+            "label": "SLO Burn Alert"
+          }
+        ],
+        "messages": [
+          {
+            "from": "precommit",
+            "to": "cicd",
+            "label": "Uncaught defect passes"
+          },
+          {
+            "from": "cicd",
+            "to": "runtime",
+            "label": "Canary hole aligns"
+          },
+          {
+            "from": "runtime",
+            "to": "observability",
+            "label": "Threshold bypassed"
+          },
+          {
+            "from": "observability",
+            "to": "runtime",
+            "label": "Emergency alert fires"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Every defense mechanism acts like a slice of cheese with latent holes.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "An outage occurs only when holes in every single defense layer align.",
+            "highlightMessage": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Swiss Cheese Model Defense Penetration Flow",
+        "actors": [
+          {
+            "id": "precommit",
+            "label": "Pre-Commit Lint"
+          },
+          {
+            "id": "cicd",
+            "label": "CI Canary Gate"
+          },
+          {
+            "id": "runtime",
+            "label": "Circuit Breaker"
+          },
+          {
+            "id": "observability",
+            "label": "SLO Burn Alert"
+          }
+        ],
+        "messages": [
+          {
+            "from": "precommit",
+            "to": "cicd",
+            "label": "Uncaught defect passes"
+          },
+          {
+            "from": "cicd",
+            "to": "runtime",
+            "label": "Canary hole aligns"
+          },
+          {
+            "from": "runtime",
+            "to": "observability",
+            "label": "Threshold bypassed"
+          },
+          {
+            "from": "observability",
+            "to": "runtime",
+            "label": "Emergency alert fires"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Every defense mechanism acts like a slice of cheese with latent holes.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "An outage occurs only when holes in every single defense layer align.",
+            "highlightMessage": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SMART Action Items: Transforming Outages into Code",
+      "codeHash": "bf21facebb784bb3d54f56a4b54141693e758e2471408d1d2d9876a1cdfb8084",
+      "spec": {
+        "template": "table",
+        "title": "SMART Framework for Resilient Action Items",
+        "headers": [
+          "Attribute",
+          "SMART Meaning",
+          "Enforcement Rule"
+        ],
+        "rows": [
+          [
+            "Specific",
+            "Precise code or test deliverable",
+            "No vague descriptions"
+          ],
+          [
+            "Measurable",
+            "Verifiable quantitative criteria",
+            "Metric thresholds defined"
+          ],
+          [
+            "Achievable",
+            "Realistic engineering scope",
+            "Single named individual owner"
+          ],
+          [
+            "Relevant",
+            "Directly targets root cause",
+            "Linked to five whys discovery"
+          ],
+          [
+            "Time-Bound",
+            "Strict completion deadline",
+            "Enforced by priority SLA"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every postmortem action item must adhere strictly to the SMART framework.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Achievable items have realistic scope and a single named accountable owner.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "SMART Framework for Resilient Action Items",
+        "headers": [
+          "Attribute",
+          "SMART Meaning",
+          "Enforcement Rule"
+        ],
+        "rows": [
+          [
+            "Specific",
+            "Precise code or test deliverable",
+            "No vague descriptions"
+          ],
+          [
+            "Measurable",
+            "Verifiable quantitative criteria",
+            "Metric thresholds defined"
+          ],
+          [
+            "Achievable",
+            "Realistic engineering scope",
+            "Single named individual owner"
+          ],
+          [
+            "Relevant",
+            "Directly targets root cause",
+            "Linked to five whys discovery"
+          ],
+          [
+            "Time-Bound",
+            "Strict completion deadline",
+            "Enforced by priority SLA"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every postmortem action item must adhere strictly to the SMART framework.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Achievable items have realistic scope and a single named accountable owner.",
+            "highlightRow": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Action Item Lifecycle: Tracking, SLAs & Drift Prevention",
+      "codeHash": "e6541ed95d6c9f9548f6a535b79876393ab27b5e46eab2fb2c0d87df79272448",
+      "spec": {
+        "template": "bars",
+        "title": "Action Item Priority SLAs for Drift Prevention",
+        "bars": [
+          {
+            "label": "P0 Blocker SLA",
+            "value": 2,
+            "unit": "days"
+          },
+          {
+            "label": "P1 Critical SLA",
+            "value": 14,
+            "unit": "days"
+          },
+          {
+            "label": "P2 Normal SLA",
+            "value": 30,
+            "unit": "days"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "SRE teams enforce strict completion deadlines based on item priority.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Overdue blocker items trigger an immediate freeze on feature deployments.",
+            "highlightIndex": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Action Item Priority SLAs for Drift Prevention",
+        "bars": [
+          {
+            "label": "P0 Blocker SLA",
+            "value": 2,
+            "unit": "days"
+          },
+          {
+            "label": "P1 Critical SLA",
+            "value": 14,
+            "unit": "days"
+          },
+          {
+            "label": "P2 Normal SLA",
+            "value": 30,
+            "unit": "days"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "SRE teams enforce strict completion deadlines based on item priority.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Overdue blocker items trigger an immediate freeze on feature deployments.",
+            "highlightIndex": 0,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Automated Postmortem Generator",
+      "codeHash": "39f499a01f9ae293575d2d384ed05d43d903f7e37faa9892750c66bf3d3fda06",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
