@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 25,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 3 Architecture: The Observability & Incident Triad",
+      "codeHash": "7f1d3365f342444bdc80ef5ae5812ee3ccaba17df549ab313a55c4580b555020",
+      "spec": {
+        "template": "workflow",
+        "title": "Unified Observability and Incident Management Architecture",
+        "nodes": [
+          {
+            "id": "telemetry",
+            "label": "Telemetry Pipeline",
+            "description": "Monotonic counters, gauges, and percentiles"
+          },
+          {
+            "id": "correlation",
+            "label": "Correlation Bus",
+            "description": "Links logs with trace and span IDs"
+          },
+          {
+            "id": "alerting",
+            "label": "Burn-Rate Alerting",
+            "description": "Multi-window error budget evaluator"
+          },
+          {
+            "id": "incident",
+            "label": "Incident Orchestrator",
+            "description": "Lifecycle milestones and postmortem synthesis"
+          }
+        ],
+        "edges": [
+          {
+            "from": "telemetry",
+            "to": "correlation",
+            "label": "Metrics & Logs"
+          },
+          {
+            "from": "correlation",
+            "to": "alerting",
+            "label": "Context Spans"
+          },
+          {
+            "from": "alerting",
+            "to": "incident",
+            "label": "SEV Paging"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Observability unites metrics, logs, and distributed traces with incident flow.",
+            "activeNode": "telemetry",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The architecture consists of four tightly integrated operational layers.",
+            "activeNode": "incident",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Unified Observability and Incident Management Architecture",
+        "nodes": [
+          {
+            "id": "telemetry",
+            "label": "Telemetry Pipeline",
+            "description": "Monotonic counters, gauges, and percentiles"
+          },
+          {
+            "id": "correlation",
+            "label": "Correlation Bus",
+            "description": "Links logs with trace and span IDs"
+          },
+          {
+            "id": "alerting",
+            "label": "Burn-Rate Alerting",
+            "description": "Multi-window error budget evaluator"
+          },
+          {
+            "id": "incident",
+            "label": "Incident Orchestrator",
+            "description": "Lifecycle milestones and postmortem synthesis"
+          }
+        ],
+        "edges": [
+          {
+            "from": "telemetry",
+            "to": "correlation",
+            "label": "Metrics & Logs"
+          },
+          {
+            "from": "correlation",
+            "to": "alerting",
+            "label": "Context Spans"
+          },
+          {
+            "from": "alerting",
+            "to": "incident",
+            "label": "SEV Paging"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Observability unites metrics, logs, and distributed traces with incident flow.",
+            "activeNode": "telemetry",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "The architecture consists of four tightly integrated operational layers.",
+            "activeNode": "incident",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Metrics & Percentile Telemetry Engine",
+      "codeHash": "499d3736a18113d81dec0095a161c7353f3dfdf0754df7f9d2d0eefcb6a97e8f",
+      "spec": {
+        "template": "bars",
+        "title": "Percentile Latency Telemetry and Connection Pool Saturation",
+        "bars": [
+          {
+            "label": "Median Latency p50",
+            "value": 35,
+            "unit": "ms"
+          },
+          {
+            "label": "Tail Latency p95",
+            "value": 480,
+            "unit": "ms"
+          },
+          {
+            "label": "Worst Tail p99",
+            "value": 850,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monotonic counters maintain live traffic rates and error fractions.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Cumulative histogram buckets derive median and worst-case tail percentiles.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Percentile Latency Telemetry and Connection Pool Saturation",
+        "bars": [
+          {
+            "label": "Median Latency p50",
+            "value": 35,
+            "unit": "ms"
+          },
+          {
+            "label": "Tail Latency p95",
+            "value": 480,
+            "unit": "ms"
+          },
+          {
+            "label": "Worst Tail p99",
+            "value": 850,
+            "unit": "ms"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Monotonic counters maintain live traffic rates and error fractions.",
+            "highlightIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Cumulative histogram buckets derive median and worst-case tail percentiles.",
+            "highlightIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Telemetry Trace & Structured Log Correlation Engine",
+      "codeHash": "f58600c5235481886a62627c06259a614db88725423e2ee53a8f6f53bffda7d0",
+      "spec": {
+        "template": "sequence",
+        "title": "Cross-Telemetry Correlation: Traces Propagated to Structured Logs",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Ingress"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway"
+          },
+          {
+            "id": "payment",
+            "label": "Payment Service"
+          },
+          {
+            "id": "bus",
+            "label": "Correlation Bus"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "POST /checkout (Inject Trace)"
+          },
+          {
+            "from": "gateway",
+            "to": "payment",
+            "label": "ChargeCard (Propagate Trace)"
+          },
+          {
+            "from": "payment",
+            "to": "bus",
+            "label": "Emit error log with Trace ID"
+          },
+          {
+            "from": "bus",
+            "to": "gateway",
+            "label": "Correlated trace trail returned"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The correlation bus connects metrics to traces and structured JSON logs.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Clicking a single trace ID retrieves distributed waterfalls and log streams.",
+            "highlightMessage": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Cross-Telemetry Correlation: Traces Propagated to Structured Logs",
+        "actors": [
+          {
+            "id": "client",
+            "label": "Client Ingress"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway"
+          },
+          {
+            "id": "payment",
+            "label": "Payment Service"
+          },
+          {
+            "id": "bus",
+            "label": "Correlation Bus"
+          }
+        ],
+        "messages": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "POST /checkout (Inject Trace)"
+          },
+          {
+            "from": "gateway",
+            "to": "payment",
+            "label": "ChargeCard (Propagate Trace)"
+          },
+          {
+            "from": "payment",
+            "to": "bus",
+            "label": "Emit error log with Trace ID"
+          },
+          {
+            "from": "bus",
+            "to": "gateway",
+            "label": "Correlated trace trail returned"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The correlation bus connects metrics to traces and structured JSON logs.",
+            "highlightMessage": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Clicking a single trace ID retrieves distributed waterfalls and log streams.",
+            "highlightMessage": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Window SLO Burn Rate & Inhibition Alerting Pipeline",
+      "codeHash": "6f4875fcfe87e8fae9aacd73de7f04ec00afe393e144e9d1c3173b515bfdf603",
+      "spec": {
+        "template": "compare",
+        "title": "Multi-Window Burn Alerting versus Upstream Alert Inhibition",
+        "left": {
+          "title": "Multi-Window Burn Alerting",
+          "items": [
+            "Evaluates short window alongside long window",
+            "14.4x burn rate triggers immediate emergency page",
+            "Eliminates false alarms from momentary spikes",
+            "Catches rapid 2% error budget depletion accurately"
+          ]
+        },
+        "right": {
+          "title": "Upstream Alert Inhibition",
+          "items": [
+            "Registers root cause when primary database fails",
+            "Suppresses 50+ cascading downstream timeout alerts",
+            "Prevents notification storms and paging fatigue",
+            "Keeps on-call focus on single root-cause system"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "High burn rates across dual observation windows trigger critical pages.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Alert inhibition mutes cascading downstream alerts during database failures.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multi-Window Burn Alerting versus Upstream Alert Inhibition",
+        "left": {
+          "title": "Multi-Window Burn Alerting",
+          "items": [
+            "Evaluates short window alongside long window",
+            "14.4x burn rate triggers immediate emergency page",
+            "Eliminates false alarms from momentary spikes",
+            "Catches rapid 2% error budget depletion accurately"
+          ]
+        },
+        "right": {
+          "title": "Upstream Alert Inhibition",
+          "items": [
+            "Registers root cause when primary database fails",
+            "Suppresses 50+ cascading downstream timeout alerts",
+            "Prevents notification storms and paging fatigue",
+            "Keeps on-call focus on single root-cause system"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "High burn rates across dual observation windows trigger critical pages.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Alert inhibition mutes cascading downstream alerts during database failures.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Incident Command & Operational Lifecycle Manager",
+      "codeHash": "b3fb27ab8d169c837b64ddb341dd260cb78523e5a1bbc285f44c77e466e28c9f",
+      "spec": {
+        "template": "table",
+        "title": "Chronological Milestones in Automated Incident Lifecycle",
+        "headers": [
+          "Milestone",
+          "Elapsed Time",
+          "Operational Action",
+          "Metric Tracked"
+        ],
+        "rows": [
+          [
+            "START",
+            "0 min",
+            "Customer degradation begins",
+            "Outage Start"
+          ],
+          [
+            "DETECT",
+            "2 min",
+            "Multi-window burn alert triggers",
+            "MTTD (2 min)"
+          ],
+          [
+            "ACK",
+            "5 min",
+            "On-call assumes incident command",
+            "MTTA (3 min)"
+          ],
+          [
+            "MITIGATE",
+            "17 min",
+            "Failover to healthy read replica",
+            "MTTR (17 min)"
+          ],
+          [
+            "RESOLVE",
+            "40 min",
+            "Connection pool drained and stable",
+            "Total Outage"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Operational milestones log to an immutable chronological timeline.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Separating customer mitigation from resolution ensures accurate recovery.",
+            "highlightRow": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Chronological Milestones in Automated Incident Lifecycle",
+        "headers": [
+          "Milestone",
+          "Elapsed Time",
+          "Operational Action",
+          "Metric Tracked"
+        ],
+        "rows": [
+          [
+            "START",
+            "0 min",
+            "Customer degradation begins",
+            "Outage Start"
+          ],
+          [
+            "DETECT",
+            "2 min",
+            "Multi-window burn alert triggers",
+            "MTTD (2 min)"
+          ],
+          [
+            "ACK",
+            "5 min",
+            "On-call assumes incident command",
+            "MTTA (3 min)"
+          ],
+          [
+            "MITIGATE",
+            "17 min",
+            "Failover to healthy read replica",
+            "MTTR (17 min)"
+          ],
+          [
+            "RESOLVE",
+            "40 min",
+            "Connection pool drained and stable",
+            "Total Outage"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Operational milestones log to an immutable chronological timeline.",
+            "highlightRow": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Separating customer mitigation from resolution ensures accurate recovery.",
+            "highlightRow": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Milestone 3 Simulator & Postmortem Synthesis Dashboard",
+      "codeHash": "e9fb53fa9c4d89933deb2bd5ec7e66adfe7f21c0e08664bc7c049e1bcd0fa086",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
