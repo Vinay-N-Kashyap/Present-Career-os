@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 12,
+  "promptSha": "ad0c4458828334b32010acc817196acb5d785e29190924d26e55ece8875d1373",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The 'Lost in the Middle' Phenomenon: Understanding U-Shaped Attention",
+      "codeHash": "ec74a985d19139c10ec15031701e18a18cf86298f34383fc608ad910af82c7d8",
+      "spec": {
+        "template": "bars",
+        "title": "Transformer context position accuracy degradation and U-shaped curve",
+        "bars": [
+          {
+            "label": "Beginning Primacy Peak",
+            "value": 94
+          },
+          {
+            "label": "Middle Trough Dispersion",
+            "value": 42
+          },
+          {
+            "label": "Ending Recency Peak",
+            "value": 88
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Placing facts at the prompt beginning achieves high recall accuracy.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Placing facts in the middle of context causes performance to plummet.",
+            "activeBarIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Transformer context position accuracy degradation and U-shaped curve",
+        "bars": [
+          {
+            "label": "Beginning Primacy Peak",
+            "value": 94
+          },
+          {
+            "label": "Middle Trough Dispersion",
+            "value": 42
+          },
+          {
+            "label": "Ending Recency Peak",
+            "value": 88
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Placing facts at the prompt beginning achieves high recall accuracy.",
+            "activeBarIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "Placing facts in the middle of context causes performance to plummet.",
+            "activeBarIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Strategic Re-ordering: The U-Shaped Context Arrangement Algorithm",
+      "codeHash": "2090e4f1afa138c1c35a1d7779639da12d2b26b66a2d5d5457ec65ae484c60f9",
+      "spec": {
+        "template": "boxes",
+        "title": "Strategic U-shaped context arrangement boundaries and middle trough distribution",
+        "boxes": [
+          {
+            "id": "primacySlot",
+            "title": "Primacy Zone (Start)",
+            "items": [
+              "Rank one authoritative document",
+              "Maximum attention focus",
+              "First tokens in context window"
+            ]
+          },
+          {
+            "id": "middleTrough",
+            "title": "Trough Zone (Middle)",
+            "items": [
+              "Lower ranked auxiliary documents",
+              "Absorbs attention degradation",
+              "Safest placement for secondary facts"
+            ]
+          },
+          {
+            "id": "recencySlot",
+            "title": "Recency Zone (End)",
+            "items": [
+              "Rank two crucial document",
+              "Immediate prompt query adjacency",
+              "High recency attention peak"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We implement strategic re-ordering to prevent information drowning.",
+            "activeBoxId": "primacySlot",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Lower ranked chunks are pushed into the middle where degradation harms least.",
+            "activeBoxId": "middleTrough",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Strategic U-shaped context arrangement boundaries and middle trough distribution",
+        "boxes": [
+          {
+            "id": "primacySlot",
+            "title": "Primacy Zone (Start)",
+            "items": [
+              "Rank one authoritative document",
+              "Maximum attention focus",
+              "First tokens in context window"
+            ]
+          },
+          {
+            "id": "middleTrough",
+            "title": "Trough Zone (Middle)",
+            "items": [
+              "Lower ranked auxiliary documents",
+              "Absorbs attention degradation",
+              "Safest placement for secondary facts"
+            ]
+          },
+          {
+            "id": "recencySlot",
+            "title": "Recency Zone (End)",
+            "items": [
+              "Rank two crucial document",
+              "Immediate prompt query adjacency",
+              "High recency attention peak"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "We implement strategic re-ordering to prevent information drowning.",
+            "activeBoxId": "primacySlot",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Lower ranked chunks are pushed into the middle where degradation harms least.",
+            "activeBoxId": "middleTrough",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Compression: Extractive Summarization & Sentence Pruning",
+      "codeHash": "3e5d5efe54d43757b279484526eb2ace32b6d45ec6e17d3f2817db4c891b35a3",
+      "spec": {
+        "template": "compare",
+        "title": "Abstractive LLM summarization versus extractive sentence pruning compression",
+        "left": {
+          "title": "Abstractive Compression",
+          "items": [
+            "Prompts auxiliary summarizer LLM",
+            "Adds high inference latency",
+            "Carries factual hallucination risk",
+            "Costly secondary API call"
+          ]
+        },
+        "right": {
+          "title": "Extractive Sentence Pruning",
+          "items": [
+            "Evaluates sentence semantic overlap",
+            "Preserves verbatim factual claims",
+            "Reduces token consumption significantly",
+            "Fast deterministic sentence filter"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Abstractive compression prompts auxiliary models and adds latency.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Extractive compression reduces context token consumption significantly.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Abstractive LLM summarization versus extractive sentence pruning compression",
+        "left": {
+          "title": "Abstractive Compression",
+          "items": [
+            "Prompts auxiliary summarizer LLM",
+            "Adds high inference latency",
+            "Carries factual hallucination risk",
+            "Costly secondary API call"
+          ]
+        },
+        "right": {
+          "title": "Extractive Sentence Pruning",
+          "items": [
+            "Evaluates sentence semantic overlap",
+            "Preserves verbatim factual claims",
+            "Reduces token consumption significantly",
+            "Fast deterministic sentence filter"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Abstractive compression prompts auxiliary models and adds latency.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Extractive compression reduces context token consumption significantly.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Entropy & Selective Information Density",
+      "codeHash": "5762e21167a5d5ac4c40787f7a2288180ec1165b3d7825e0676fa28e737b8f98",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Context Window Budgeting: Guarding Against Truncation Disasters",
+      "codeHash": "9e893d498ce32d416969c240cebaf336494f608c9b03e98cf1fc44b305d4736d",
+      "spec": {
+        "template": "flow",
+        "title": "Dynamic context window budgeting and completion buffer reservation",
+        "nodes": [
+          {
+            "id": "totalWindow",
+            "label": "Total Model Context Window",
+            "tappable": false
+          },
+          {
+            "id": "fixedBudgets",
+            "label": "System and History Tokens",
+            "tappable": false
+          },
+          {
+            "id": "outputReserve",
+            "label": "Completion Token Buffer",
+            "tappable": false
+          },
+          {
+            "id": "admittedContext",
+            "label": "Admitted Retrieved Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "totalWindow",
+            "to": "fixedBudgets",
+            "label": "Allocate Fixed Prompts"
+          },
+          {
+            "from": "totalWindow",
+            "to": "outputReserve",
+            "label": "Reserve Generation Space"
+          },
+          {
+            "from": "fixedBudgets",
+            "to": "admittedContext",
+            "label": "Admit Chunks Within Headroom"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Applications must reserve a completion buffer for model generated output.",
+            "activeNodes": [
+              "totalWindow",
+              "outputReserve"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The budget manager admits candidate chunks until token headroom exhausts.",
+            "activeNodes": [
+              "fixedBudgets",
+              "admittedContext"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Dynamic context window budgeting and completion buffer reservation",
+        "nodes": [
+          {
+            "id": "totalWindow",
+            "label": "Total Model Context Window",
+            "tappable": false
+          },
+          {
+            "id": "fixedBudgets",
+            "label": "System and History Tokens",
+            "tappable": false
+          },
+          {
+            "id": "outputReserve",
+            "label": "Completion Token Buffer",
+            "tappable": false
+          },
+          {
+            "id": "admittedContext",
+            "label": "Admitted Retrieved Context",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "totalWindow",
+            "to": "fixedBudgets",
+            "label": "Allocate Fixed Prompts"
+          },
+          {
+            "from": "totalWindow",
+            "to": "outputReserve",
+            "label": "Reserve Generation Space"
+          },
+          {
+            "from": "fixedBudgets",
+            "to": "admittedContext",
+            "label": "Admit Chunks Within Headroom"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Applications must reserve a completion buffer for model generated output.",
+            "activeNodes": [
+              "totalWindow",
+              "outputReserve"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The budget manager admits candidate chunks until token headroom exhausts.",
+            "activeNodes": [
+              "fixedBudgets",
+              "admittedContext"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete U-Shaped Context Optimization Engine",
+      "codeHash": "2ef7725e04857c1c86016f9053be69fedacee58eb638f7f5f504f381a24fafad",
+      "spec": {
+        "template": "sequence",
+        "title": "Complete U-shaped context compression and prompt assembly pipeline",
+        "actors": [
+          {
+            "id": "retriever",
+            "label": "Retrieval Source"
+          },
+          {
+            "id": "compressor",
+            "label": "Sentence Extractive Pruner"
+          },
+          {
+            "id": "uShaper",
+            "label": "U-Shaped Reorder Engine"
+          },
+          {
+            "id": "promptCore",
+            "label": "Final Context Assembly"
+          }
+        ],
+        "messages": [
+          {
+            "from": "retriever",
+            "to": "compressor",
+            "label": "Send Four Raw Candidate Chunks",
+            "tone": "data"
+          },
+          {
+            "from": "compressor",
+            "to": "compressor",
+            "label": "Prune Irrelevant Sentence Boilerplate",
+            "tone": "data"
+          },
+          {
+            "from": "compressor",
+            "to": "uShaper",
+            "label": "Submit Compact Factual Sentences",
+            "tone": "data"
+          },
+          {
+            "from": "uShaper",
+            "to": "promptCore",
+            "label": "Distribute Peak Documents to Boundaries",
+            "tone": "success"
+          },
+          {
+            "from": "promptCore",
+            "to": "retriever",
+            "label": "Complete High Density Context Construction",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine ingests candidate documents and applies sentence compression.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "We verify that assembled context achieves maximum factual density.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Complete U-shaped context compression and prompt assembly pipeline",
+        "actors": [
+          {
+            "id": "retriever",
+            "label": "Retrieval Source"
+          },
+          {
+            "id": "compressor",
+            "label": "Sentence Extractive Pruner"
+          },
+          {
+            "id": "uShaper",
+            "label": "U-Shaped Reorder Engine"
+          },
+          {
+            "id": "promptCore",
+            "label": "Final Context Assembly"
+          }
+        ],
+        "messages": [
+          {
+            "from": "retriever",
+            "to": "compressor",
+            "label": "Send Four Raw Candidate Chunks",
+            "tone": "data"
+          },
+          {
+            "from": "compressor",
+            "to": "compressor",
+            "label": "Prune Irrelevant Sentence Boilerplate",
+            "tone": "data"
+          },
+          {
+            "from": "compressor",
+            "to": "uShaper",
+            "label": "Submit Compact Factual Sentences",
+            "tone": "data"
+          },
+          {
+            "from": "uShaper",
+            "to": "promptCore",
+            "label": "Distribute Peak Documents to Boundaries",
+            "tone": "success"
+          },
+          {
+            "from": "promptCore",
+            "to": "retriever",
+            "label": "Complete High Density Context Construction",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Our engine ingests candidate documents and applies sentence compression.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "We verify that assembled context achieves maximum factual density.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
