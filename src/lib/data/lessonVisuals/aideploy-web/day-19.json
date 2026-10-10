@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 19,
+  "promptSha": "0c1926533c7195c4dbbd7227a9e186362c5eb01edb3e6eb1d8e930464520e01d",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Raw LLM JSON Output Extraction & Markdown Fence Stripping",
+      "codeHash": "0c1926533c7195c4dbbd7227a9e186362c5eb01edb3e6eb1d8e930464520e01d",
+      "spec": {
+        "template": "compare",
+        "title": "Raw Output with Markdown Fences vs Stripped Clean JSON",
+        "leftLabel": "Raw LLM Output (With Fences)",
+        "rightLabel": "Clean Stripped JSON Payload",
+        "leftItems": [
+          "Wrapped in ```json code fences",
+          "Includes conversational markdown text",
+          "Throws immediate JSON.parse SyntaxError",
+          "Breaks automated backend services"
+        ],
+        "rightItems": [
+          "Extracted inner JSON body payload",
+          "Strips leading and trailing backticks",
+          "Parses cleanly into typed object",
+          "Preserves status and response codes"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Models frequently wrap outputs in Markdown code fences despite prompts.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say9",
+            "caption": "Stripping Markdown fences ensures parsers receive pure JSON text.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Raw Output with Markdown Fences vs Stripped Clean JSON",
+        "leftLabel": "Raw LLM Output (With Fences)",
+        "rightLabel": "Clean Stripped JSON Payload",
+        "leftItems": [
+          "Wrapped in ```json code fences",
+          "Includes conversational markdown text",
+          "Throws immediate JSON.parse SyntaxError",
+          "Breaks automated backend services"
+        ],
+        "rightItems": [
+          "Extracted inner JSON body payload",
+          "Strips leading and trailing backticks",
+          "Parses cleanly into typed object",
+          "Preserves status and response codes"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Models frequently wrap outputs in Markdown code fences despite prompts.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say9",
+            "caption": "Stripping Markdown fences ensures parsers receive pure JSON text.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Repairing Common Syntax Malformations (Trailing Commas & Quotes)",
+      "codeHash": "5b88b4729b98f08df92ed9c15be4e59e77c93499cc35b671028d92b3194dde14",
+      "spec": {
+        "template": "flow",
+        "title": "Regex Trailing Comma Repair Pipeline",
+        "nodes": [
+          { "id": "malformed", "label": "Malformed JSON (,\n})", "tappable": false },
+          { "id": "regex", "label": "Regex Match (,\\s*[}\\]])", "tappable": false },
+          { "id": "erase", "label": "Erase Trailing Comma", "tappable": false },
+          { "id": "parse", "label": "Successful JSON.parse", "tappable": false }
+        ],
+        "edges": [
+          { "from": "malformed", "to": "regex" },
+          { "from": "regex", "to": "erase" },
+          { "from": "erase", "to": "parse" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Models insert illegal trailing commas influenced by language syntax.",
+            "activeNodes": ["malformed"],
+            "statusBadge": "malformed"
+          },
+          {
+            "at": "say4",
+            "caption": "Regex targets commas followed by closing delimiters to erase them.",
+            "activeNodes": ["malformed", "regex"],
+            "statusBadge": "repairing"
+          },
+          {
+            "at": "say7",
+            "caption": "Cleaned strings parse smoothly into valid JavaScript objects.",
+            "activeNodes": ["erase", "parse"],
+            "statusBadge": "parsed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Regex Trailing Comma Repair Pipeline",
+        "nodes": [
+          { "id": "malformed", "label": "Malformed JSON (,\n})", "tappable": false },
+          { "id": "regex", "label": "Regex Match (,\\s*[}\\]])", "tappable": false },
+          { "id": "erase", "label": "Erase Trailing Comma", "tappable": false },
+          { "id": "parse", "label": "Successful JSON.parse", "tappable": false }
+        ],
+        "edges": [
+          { "from": "malformed", "to": "regex" },
+          { "from": "regex", "to": "erase" },
+          { "from": "erase", "to": "parse" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Models insert illegal trailing commas influenced by language syntax.",
+            "activeNodes": ["malformed"],
+            "statusBadge": "malformed"
+          },
+          {
+            "at": "say4",
+            "caption": "Regex targets commas followed by closing delimiters to erase them.",
+            "activeNodes": ["malformed", "regex"],
+            "statusBadge": "repairing"
+          },
+          {
+            "at": "say7",
+            "caption": "Cleaned strings parse smoothly into valid JavaScript objects.",
+            "activeNodes": ["erase", "parse"],
+            "statusBadge": "parsed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automatic Bracket & Brace Completion for Truncated Outputs",
+      "codeHash": "08581c23490ffbbb0c6186c838cd0ca13de59b8ad284fb7bc6b9bd2c3377defc",
+      "spec": {
+        "template": "states",
+        "title": "Truncated JSON Delimiter Balancing States",
+        "states": [
+          { "id": "trunc", "label": "Truncated String Detected" },
+          { "id": "scan", "label": "Open Braces/Brackets Counted" },
+          { "id": "counted", "label": "Unclosed Delimiters Identified" },
+          { "id": "appended", "label": "Missing Delimiters Appended" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Exhausting token limits cuts off generation without closing delimiters.",
+            "current": "trunc",
+            "visited": ["trunc"]
+          },
+          {
+            "at": "say4",
+            "caption": "Functions iterate raw strings tracking unclosed braces and brackets.",
+            "current": "scan",
+            "visited": ["trunc", "scan"]
+          },
+          {
+            "at": "say8",
+            "caption": "Calling JSON parse on balanced strings succeeds retrieving data.",
+            "current": "appended",
+            "visited": ["trunc", "scan", "counted", "appended"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Truncated JSON Delimiter Balancing States",
+        "states": [
+          { "id": "trunc", "label": "Truncated String Detected" },
+          { "id": "scan", "label": "Open Braces/Brackets Counted" },
+          { "id": "counted", "label": "Unclosed Delimiters Identified" },
+          { "id": "appended", "label": "Missing Delimiters Appended" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Exhausting token limits cuts off generation without closing delimiters.",
+            "current": "trunc",
+            "visited": ["trunc"]
+          },
+          {
+            "at": "say4",
+            "caption": "Functions iterate raw strings tracking unclosed braces and brackets.",
+            "current": "scan",
+            "visited": ["trunc", "scan"]
+          },
+          {
+            "at": "say8",
+            "caption": "Calling JSON parse on balanced strings succeeds retrieving data.",
+            "current": "appended",
+            "visited": ["trunc", "scan", "counted", "appended"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lightweight Runtime Schema Type Validation",
+      "codeHash": "d781a6367009e4eb403bc39e85b5b70d50d7e1a3bd9b34ec17e27ab1ed990c05",
+      "spec": {
+        "template": "table",
+        "title": "Runtime Schema Type Verification Matrix",
+        "columns": ["Property Key", "Declared Type", "Observed Type", "Validation Verdict"],
+        "rows": [
+          { "Property Key": { "text": "id" }, "Declared Type": { "text": "string" }, "Observed Type": { "text": "string" }, "Validation Verdict": { "text": "Valid Match" } },
+          { "Property Key": { "text": "score" }, "Declared Type": { "text": "number" }, "Observed Type": { "text": "number" }, "Validation Verdict": { "text": "Valid Match" } },
+          { "Property Key": { "text": "score (invalid)" }, "Declared Type": { "text": "number" }, "Observed Type": { "text": "string" }, "Validation Verdict": { "text": "Rejected (wrongType)" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Validation functions verify required properties exist on objects.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Validators check that property types strictly match declared schemas.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "Validators record wrongType arrays providing exact error diagnostics.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Runtime Schema Type Verification Matrix",
+        "columns": ["Property Key", "Declared Type", "Observed Type", "Validation Verdict"],
+        "rows": [
+          { "Property Key": "id", "Declared Type": "string", "Observed Type": "string", "Validation Verdict": "Valid Match" },
+          { "Property Key": "score", "Declared Type": "number", "Observed Type": "number", "Validation Verdict": "Valid Match" },
+          { "Property Key": "score (invalid)", "Declared Type": "number", "Observed Type": "string", "Validation Verdict": "Rejected (wrongType)" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Validation functions verify required properties exist on objects.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Validators check that property types strictly match declared schemas.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "Validators record wrongType arrays providing exact error diagnostics.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generating Actionable Re-Prompt Diagnostic Payloads",
+      "codeHash": "1696e91e4164634e0df554a472bd0fed02c8f428f3948a5007ea10c352ea0665",
+      "spec": {
+        "template": "workflow",
+        "title": "Automated Re-Prompt Self-Correction Workflow",
+        "stages": [
+          { "id": "fail", "name": "Parse Failure", "subtext": "Local repair exhausted" },
+          { "id": "diag", "name": "Diagnostic Payload", "subtext": "Compile exact errors" },
+          { "id": "reprompt", "name": "RFC 8259 Directive", "subtext": "Demand strict JSON format" },
+          { "id": "correct", "name": "Self-Correction", "subtext": "Model repairs own syntax" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When malformed JSON cannot be repaired locally systems prompt the model.",
+            "activeStageId": "fail",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Prompts detail exact errors encountered such as missing fields.",
+            "activeStageId": "diag",
+            "statusBadge": "diagnosing"
+          },
+          {
+            "at": "say8",
+            "caption": "Self-healing loops turn errors into smooth transparent retries.",
+            "activeStageId": "correct",
+            "statusBadge": "repaired"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Automated Re-Prompt Self-Correction Workflow",
+        "stages": [
+          { "id": "fail", "name": "Parse Failure", "subtext": "Local repair exhausted" },
+          { "id": "diag", "name": "Diagnostic Payload", "subtext": "Compile exact errors" },
+          { "id": "reprompt", "name": "RFC 8259 Directive", "subtext": "Demand strict JSON format" },
+          { "id": "correct", "name": "Self-Correction", "subtext": "Model repairs own syntax" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "When malformed JSON cannot be repaired locally systems prompt the model.",
+            "activeStageId": "fail",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Prompts detail exact errors encountered such as missing fields.",
+            "activeStageId": "diag",
+            "statusBadge": "diagnosing"
+          },
+          {
+            "at": "say8",
+            "caption": "Self-healing loops turn errors into smooth transparent retries.",
+            "activeStageId": "correct",
+            "statusBadge": "repaired"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient JSON Ingestion Pipeline with Repair Fallback",
+      "codeHash": "577634949d05acae2b2145a56206e407638dad15fc153966cea19a07ca611fdf",
+      "spec": {
+        "template": "none",
+        "reason": "Resilient JSON Ingestion Pipeline capstone synthesizing direct parsing, fence stripping, comma repair, bracket balancing, and schema validation"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Resilient JSON Ingestion Pipeline capstone synthesizing direct parsing, fence stripping, comma repair, bracket balancing, and schema validation"
+      }
+    }
+  ]
+}
