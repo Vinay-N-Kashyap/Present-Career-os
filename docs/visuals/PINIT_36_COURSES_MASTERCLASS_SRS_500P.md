@@ -1,9 +1,9 @@
 # PinIT Career OS — 36+ Courses Masterclass SRS & Pedagogical Architecture Blueprint
 
 **Document Identifier:** `PINIT_36_COURSES_MASTERCLASS_SRS_500P`  
-**Document Version:** 3.0 (Masterclass Production Standard)  
+**Document Version:** 4.0 (Masterclass Production Standard with Vector Visuals & Domain Failure Modes)  
 **Volume Scope:** 37 Master Courses &bull; 222 Five-Day Blocks &bull; 1,110 Lesson Days &bull; 6,660 Interactive Lesson Parts  
-**Pedagogical Objective:** Industry-grade technical hireability via the 30-minute masterclass loop (18–31 min)  
+**Pedagogical Objective:** Industry-grade technical hireability via the 30-minute masterclass loop (28–31 min)  
 **Quality Standard:** Gate v2 (Rules R1–R14), Zero Hallucination, Deterministic Runtime Bindings  
 **Generated PDF Location:** `docs/visuals/PINIT_36_COURSES_MASTERCLASS_SRS_500P.pdf`  
 
@@ -35,7 +35,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 
 ### [PLAN-02] The Job-Ready Engineering Standard: From Syntax to Production Architecture
 * **Division:** Division I: Cognitive Architecture & Pedagogical Standards  
-* **Objective:** Elevate educational depth beyond generic Udemy/GeeksforGeeks tutorials by integrating real-world production failure modes, architectural invariants, and memory models.  
+* **Objective:** Elevate educational depth beyond generic tutorials by integrating real-world production failure modes, architectural invariants, and memory models.  
 
 #### Failure Mode & War Story Integration
 * **TASK-P02-G1-T1: Author 3 AM Production Failure Scenarios** (Systemic): Each lesson part documents real outages: memory leaks, race conditions, N+1 queries, buffer overflows. _[Verification: Every part contrasts naive code against the production-hardened pattern.]_
@@ -69,7 +69,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 * **Objective:** Teach algorithmic trade-offs (cache lines, B+ tree node splits, WAL flushing, Raft consensus) at Big Tech scale.  
 
 #### Systems Engineering Hardening
-* **TASK-P06-G1-T1: Trim sql-mastery Duration to &le;25 Minutes** (30 Days): Refine database engineering lesson text to bring average duration from 26.1m to 23.5m. _[Verification: estimateLessonMinutes confirms &le;25m.]_
+* **TASK-P06-G1-T1: Calibrate sql-mastery Duration in 28–31 Minute Range** (30 Days): Refine database engineering lesson text with deep WAL, indexing, and lock graph mechanics. _[Verification: estimateLessonMinutes confirms 28–31m range.]_
 * **TASK-P06-G1-T2: Audit dsa-optim & dist Visual Lifecycles** (60 Days): Maintain 100% Gate v2 compliance across memory buffers and consistent hashing rings. _[Verification: Gate v2 validator passes 60/60 days.]_
 
 ### [PLAN-07] Microcontroller Firmware, Wireless Networks & Industrial IoT Security (Courses 14, 17, 19)
@@ -101,7 +101,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 * **Objective:** Teach institutional market microstructure, Limit Order Book matching queues, VWAP volume slicing, and low-latency C++/Python kernel bypass.  
 
 #### Quant Systems Validation
-* **TASK-P10-G1-T1: Audit quant-py Existing Visual Suites & Lesson Timing** (30 Days): 30-day visual suite verified against LOB order queues and portfolio risk metrics. _[Verification: Current duration at 21.4m maintained in 18–25m sweet spot.]_
+* **TASK-P10-G1-T1: Expand quant-py Existing Visual Suites & Lesson Timing to 30 Min** (30 Days): 30-day visual suite verified against LOB order queues and portfolio risk metrics. _[Verification: Calibrated into 28–31m masterclass duration.]_
 
 ### [PLAN-11] Applied AI Engineering, RAG Systems & Cognitive Prompting (Courses 12, 33)
 * **Division:** Division IV: Quantitative Systems & Applied AI Engineering  
@@ -115,7 +115,7 @@ Current online platforms fail because they present syntax in isolation, ignore f
 * **Objective:** Teach Unicode text preprocessing, TF-IDF vectors, Word2Vec geometry, and Transformer Self-Attention matrix multiplication.  
 
 #### NLP Curriculum Validation
-* **TASK-P12-G1-T1: Verify nlp-py Visual Assets & Lesson Duration** (30 Days): 30-day visual suite with letter token scanning and self-attention matrix bars. _[Verification: Gate v2 100% clean; duration 21.5 minutes.]_
+* **TASK-P12-G1-T1: Verify nlp-py Visual Assets & Lesson Duration** (30 Days): 30-day visual suite with letter token scanning and self-attention matrix bars. _[Verification: Gate v2 100% clean; duration 28–30 minutes.]_
 
 ### [PLAN-13] Digital Accounting, Taxation & Corporate Financial Valuation (Courses 22, 23)
 * **Division:** Division V: Digital Commerce, Corporate Finance & Operations  
@@ -148,13 +148,13 @@ Current online platforms fail because they present syntax in isolation, ignore f
 * **TASK-P16-G1-T1: Expand comp_fund, excel_viz & git_vcs to 30-Minute Lessons** (90 Days): 540 lesson parts with bash piping, spreadsheet formulas ($A$1 locks), and merge conflict resolutions. _[Verification: Measured lesson duration reaches 28–30 minutes.]_
 * **TASK-P16-G1-T2: Author 90 Visual Day Files for Foundational Courses** (90 Days): Interactive tree-graph directory trees, 2D spreadsheet grids, and Git branching diagrams. _[Verification: Gate v2 pass rate 100%.]_
 
-### [PLAN-17] Executive Tech Communication, UI/UX Design & Mobile Engineering (Courses 06, 08, 36)
+### [PLAN-17] Advanced Algorithms, Mobile Systems & Executive Communication (Courses 36 + Supplementary)
 * **Division:** Division VI: Universal Digital Foundations & High-Impact Tools  
-* **Objective:** Prepare students for real workplace execution: Minto Pyramid structured thinking, STAR behavioral interview storytelling, and mobile touch responders.  
+* **Objective:** Equip students with senior algorithmic problem solving (graph cuts, max flow) and crisp engineering communication.  
 
-#### Communication & Frontend Expansion
-* **TASK-P17-G1-T1: Expand soft-skills & mobile to 30-Minute Lessons** (60 Days): 360 lesson parts featuring technical presentation scripts, standup templates, and React Native components. _[Verification: Duration verified at 29 minutes.]_
-* **TASK-P17-G1-T2: Generate Visual Suites for design, mobile, and soft-skills** (90 Days): Wireframe box models, component hierarchies, and communication pyramids. _[Verification: Gate v2 100% clean.]_
+#### Advanced Topics Expansion
+* **TASK-P17-G1-T1: Expand algo-advanced & mobile to 30-Minute Lessons** (60 Days): 360 lesson parts featuring dynamic programming tables, mobile lifecycles, and standup templates. _[Verification: Duration verified at 29 minutes.]_
+* **TASK-P17-G1-T2: Generate Visual Suites for algo-advanced & mobile** (60 Days): Residual flow networks, memoization matrices, and component hierarchies. _[Verification: Gate v2 100% clean.]_
 
 ### [PLAN-18] The Zero-Hallucination 5-Day Atomic Authoring & Verification Pipeline
 * **Division:** Division VII: Quality Assurance, Gate v2 & Zero-Hallucination Delivery  
