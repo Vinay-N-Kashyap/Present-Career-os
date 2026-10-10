@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 16,
+  "promptSha": "27d3b50528d6d97290fb89cca587855e072adcf204cb48b47063e896d1dc2c0c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Fixed-Window Character Chunking & Step Offsets",
+      "codeHash": "27d3b50528d6d97290fb89cca587855e072adcf204cb48b47063e896d1dc2c0c",
+      "spec": {
+        "template": "table",
+        "title": "Fixed-Window Character Slicing Dissection",
+        "columns": ["Chunk ID", "Start Offset", "Slice Text", "Semantic Risk"],
+        "rows": [
+          { "Chunk ID": { "text": "Chunk 1" }, "Start Offset": { "text": "0" }, "Slice Text": { "text": "The quick brown" }, "Semantic Risk": { "text": "Clean start" } },
+          { "Chunk ID": { "text": "Chunk 2" }, "Start Offset": { "text": "15" }, "Slice Text": { "text": " fox jumps over" }, "Semantic Risk": { "text": "Leading whitespace" } },
+          { "Chunk ID": { "text": "Chunk 3" }, "Start Offset": { "text": "30" }, "Slice Text": { "text": " the lazy dog" }, "Semantic Risk": { "text": "Mid-phrase truncation" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Fixed-window chunking steps across documents in constant increments.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Notice where phrase breaks occur across fixed character windows.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Naive slices degrade the semantic similarity of embedding vectors.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Fixed-Window Character Slicing Dissection",
+        "columns": ["Chunk ID", "Start Offset", "Slice Text", "Semantic Risk"],
+        "rows": [
+          { "Chunk ID": "Chunk 1", "Start Offset": "0", "Slice Text": "The quick brown", "Semantic Risk": "Clean start" },
+          { "Chunk ID": "Chunk 2", "Start Offset": "15", "Slice Text": " fox jumps over", "Semantic Risk": "Leading whitespace" },
+          { "Chunk ID": "Chunk 3", "Start Offset": "30", "Slice Text": " the lazy dog", "Semantic Risk": "Mid-phrase truncation" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Fixed-window chunking steps across documents in constant increments.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say6",
+            "caption": "Notice where phrase breaks occur across fixed character windows.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Naive slices degrade the semantic similarity of embedding vectors.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Overlap Buffer & Cross-Chunk Continuity",
+      "codeHash": "31b02f0795925cf3403141aeb199745d9f4c15f992114072e0f39d93815daba4",
+      "spec": {
+        "template": "flow",
+        "title": "Sliding Window Overlap Stride Mechanism",
+        "nodes": [
+          { "id": "doc", "label": "Document Text", "tappable": false },
+          { "id": "stride", "label": "Step Size (chunkSize - overlap)", "tappable": false },
+          { "id": "overlap", "label": "Shared Semantic Buffer", "tappable": false },
+          { "id": "passage", "label": "Continuous Emitted Passage", "tappable": false }
+        ],
+        "edges": [
+          { "from": "doc", "to": "stride" },
+          { "from": "stride", "to": "overlap" },
+          { "from": "overlap", "to": "passage" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Step size is defined as chunk size minus designated overlap size.",
+            "activeNodes": ["doc", "stride"],
+            "statusBadge": "calculating"
+          },
+          {
+            "at": "say5",
+            "caption": "Shared semantic buffers ensure entities near borders are preserved.",
+            "activeNodes": ["stride", "overlap"],
+            "statusBadge": "buffered"
+          },
+          {
+            "at": "say9",
+            "caption": "Maintaining an exact stride preserves semantic transitions.",
+            "activeNodes": ["overlap", "passage"],
+            "statusBadge": "complete"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Sliding Window Overlap Stride Mechanism",
+        "nodes": [
+          { "id": "doc", "label": "Document Text", "tappable": false },
+          { "id": "stride", "label": "Step Size (chunkSize - overlap)", "tappable": false },
+          { "id": "overlap", "label": "Shared Semantic Buffer", "tappable": false },
+          { "id": "passage", "label": "Continuous Emitted Passage", "tappable": false }
+        ],
+        "edges": [
+          { "from": "doc", "to": "stride" },
+          { "from": "stride", "to": "overlap" },
+          { "from": "overlap", "to": "passage" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Step size is defined as chunk size minus designated overlap size.",
+            "activeNodes": ["doc", "stride"],
+            "statusBadge": "calculating"
+          },
+          {
+            "at": "say5",
+            "caption": "Shared semantic buffers ensure entities near borders are preserved.",
+            "activeNodes": ["stride", "overlap"],
+            "statusBadge": "buffered"
+          },
+          {
+            "at": "say9",
+            "caption": "Maintaining an exact stride preserves semantic transitions.",
+            "activeNodes": ["overlap", "passage"],
+            "statusBadge": "complete"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structural Markdown Heading Splitter",
+      "codeHash": "9a06e026bbbb7a320ad8d766bd5b1f7a3d090f5e7a4b93ef17133198b8240754",
+      "spec": {
+        "template": "workflow",
+        "title": "Markdown Structural Section Parsing",
+        "stages": [
+          { "id": "ingest", "name": "Line Scanner", "subtext": "Stream lines sequentially" },
+          { "id": "detect", "name": "Heading Match", "subtext": "Regex # to ######" },
+          { "id": "flush", "name": "Flush Buffer", "subtext": "Record preceding body" },
+          { "id": "output", "name": "Metadata Tagging", "subtext": "Store heading & level" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions scan line by line for standard Markdown heading patterns.",
+            "activeStageId": "ingest",
+            "statusBadge": "scanning"
+          },
+          {
+            "at": "say5",
+            "caption": "Matching octothorpe sequences flush current section buffers.",
+            "activeStageId": "detect",
+            "statusBadge": "detected"
+          },
+          {
+            "at": "say8",
+            "caption": "Each section retains its parent heading as rich metadata.",
+            "activeStageId": "output",
+            "statusBadge": "metadata"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Markdown Structural Section Parsing",
+        "stages": [
+          { "id": "ingest", "name": "Line Scanner", "subtext": "Stream lines sequentially" },
+          { "id": "detect", "name": "Heading Match", "subtext": "Regex # to ######" },
+          { "id": "flush", "name": "Flush Buffer", "subtext": "Record preceding body" },
+          { "id": "output", "name": "Metadata Tagging", "subtext": "Store heading & level" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions scan line by line for standard Markdown heading patterns.",
+            "activeStageId": "ingest",
+            "statusBadge": "scanning"
+          },
+          {
+            "at": "say5",
+            "caption": "Matching octothorpe sequences flush current section buffers.",
+            "activeStageId": "detect",
+            "statusBadge": "detected"
+          },
+          {
+            "at": "say8",
+            "caption": "Each section retains its parent heading as rich metadata.",
+            "activeStageId": "output",
+            "statusBadge": "metadata"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Paragraph Boundary Preservation & Token Estimation",
+      "codeHash": "9c7d8136c71b50256dd7eb1dc0666c191307764264d10667ac0b717747d5d313",
+      "spec": {
+        "template": "compare",
+        "title": "Naive Character Slicing vs Paragraph Preservation",
+        "leftLabel": "Naive Character Slicing",
+        "rightLabel": "Paragraph-Aware Grouping",
+        "leftItems": [
+          "Arbitrary cuts in the middle of words",
+          "Breaks syntactic sentences in half",
+          "Mutilates reasoning in RAG retrieval",
+          "Ignores authorial concept structure"
+        ],
+        "rightItems": [
+          "Splits along double newline boundaries",
+          "Treats complete thoughts as atomic units",
+          "Groups paragraphs up to maximum budget",
+          "Preserves narrative context for embeddings"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Treating paragraphs as atomic blocks avoids jagged sentence cuts.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say9",
+            "caption": "Accumulating adjacent paragraphs prevents arbitrary mid-sentence cuts.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Naive Character Slicing vs Paragraph Preservation",
+        "leftLabel": "Naive Character Slicing",
+        "rightLabel": "Paragraph-Aware Grouping",
+        "leftItems": [
+          "Arbitrary cuts in the middle of words",
+          "Breaks syntactic sentences in half",
+          "Mutilates reasoning in RAG retrieval",
+          "Ignores authorial concept structure"
+        ],
+        "rightItems": [
+          "Splits along double newline boundaries",
+          "Treats complete thoughts as atomic units",
+          "Groups paragraphs up to maximum budget",
+          "Preserves narrative context for embeddings"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Treating paragraphs as atomic blocks avoids jagged sentence cuts.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say9",
+            "caption": "Accumulating adjacent paragraphs prevents arbitrary mid-sentence cuts.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling Code Blocks & Semantic Delimiters",
+      "codeHash": "14b000b0d75f1c8b885fb4e626b4118eafcfa962fbede459df6626e9d49a632e",
+      "spec": {
+        "template": "states",
+        "title": "Code Block Delimiter Parsing States",
+        "states": [
+          { "id": "scan", "label": "Document Scanning" },
+          { "id": "fence", "label": "Triple Backtick Fence" },
+          { "id": "code", "label": "Code Segment Preserved" },
+          { "id": "prose", "label": "Prose Segment Tagged" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Parsers inspect fenced code blocks delimited by triple backticks.",
+            "current": "scan",
+            "visited": ["scan"]
+          },
+          {
+            "at": "say6",
+            "caption": "Segments wrap into block objects tagged with explicit content types.",
+            "current": "fence",
+            "visited": ["scan", "fence"]
+          },
+          {
+            "at": "say9",
+            "caption": "Separating code blocks from prose prevents semantic confusion.",
+            "current": "prose",
+            "visited": ["scan", "fence", "code", "prose"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Code Block Delimiter Parsing States",
+        "states": [
+          { "id": "scan", "label": "Document Scanning" },
+          { "id": "fence", "label": "Triple Backtick Fence" },
+          { "id": "code", "label": "Code Segment Preserved" },
+          { "id": "prose", "label": "Prose Segment Tagged" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Parsers inspect fenced code blocks delimited by triple backticks.",
+            "current": "scan",
+            "visited": ["scan"]
+          },
+          {
+            "at": "say6",
+            "caption": "Segments wrap into block objects tagged with explicit content types.",
+            "current": "fence",
+            "visited": ["scan", "fence"]
+          },
+          {
+            "at": "say9",
+            "caption": "Separating code blocks from prose prevents semantic confusion.",
+            "current": "prose",
+            "visited": ["scan", "fence", "code", "prose"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Recursive Text Splitter Pipeline",
+      "codeHash": "86f9a0fa2e21cd0e3d793e7af13c075bba1725f67dbdb9395a37ff2d0393a20b",
+      "spec": {
+        "template": "none",
+        "reason": "Production Recursive Text Splitter Pipeline capstone synthesizing fixed windows, sliding overlaps, markdown sections, and code delimiters"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Recursive Text Splitter Pipeline capstone synthesizing fixed windows, sliding overlaps, markdown sections, and code delimiters"
+      }
+    }
+  ]
+}
