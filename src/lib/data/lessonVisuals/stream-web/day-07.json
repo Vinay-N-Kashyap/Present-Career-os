@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 7,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Group Coordinator & Heartbeat Health Probes",
+      "codeHash": "5f0c5f62455d5f45e9fa3c1161519cd563f91864690bcc4c93a5ab39cdf62083",
+      "spec": {
+        "template": "sequence",
+        "title": "GroupCoordinator heartbeat probes and sessionTimeoutMs=50 eviction",
+        "actors": [
+          {
+            "id": "worker1",
+            "label": "worker-1 (Healthy)"
+          },
+          {
+            "id": "worker2",
+            "label": "worker-2 (Crashed)"
+          },
+          {
+            "id": "coordinator",
+            "label": "GroupCoordinator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the coordinator receives heartbeats, it considers the consumer healthy.",
+            "messages": [
+              {
+                "from": "worker1",
+                "to": "coordinator",
+                "label": "sendHeartbeat('worker-1', 130)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          },
+          {
+            "at": "say8",
+            "caption": "Once the session timeout expires, the coordinator evicts the failed consumer.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "worker2",
+                "label": "checkLiveness(160): Evict 'worker-2' (160 - 100 > 50)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "GroupCoordinator heartbeat probes and sessionTimeoutMs=50 eviction",
+        "actors": [
+          {
+            "id": "worker1",
+            "label": "worker-1 (Healthy)"
+          },
+          {
+            "id": "worker2",
+            "label": "worker-2 (Crashed)"
+          },
+          {
+            "id": "coordinator",
+            "label": "GroupCoordinator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the coordinator receives heartbeats, it considers the consumer healthy.",
+            "messages": [
+              {
+                "from": "worker1",
+                "to": "coordinator",
+                "label": "sendHeartbeat('worker-1', 130)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          },
+          {
+            "at": "say8",
+            "caption": "Once the session timeout expires, the coordinator evicts the failed consumer.",
+            "messages": [
+              {
+                "from": "coordinator",
+                "to": "worker2",
+                "label": "checkLiveness(160): Evict 'worker-2' (160 - 100 > 50)"
+              }
+            ],
+            "activeActorId": "coordinator"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Session Timeouts vs Max Poll Interval Timeouts",
+      "codeHash": "3047f781cde36a0ba67b93cdeb461f4cc7bb2d9db3d73699bbe3eb8178226136",
+      "spec": {
+        "template": "states",
+        "title": "ConsumerHealthWatchdog detecting processing thread starvation at t=350",
+        "states": [
+          {
+            "id": "healthyPoll",
+            "label": "recordPoll(100) Healthy"
+          },
+          {
+            "id": "bgHeartbeat",
+            "label": "Background Heartbeat (t=250)"
+          },
+          {
+            "id": "pollStarved",
+            "label": "Processing Starved (350 - 100 > 200)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A worker process can keep sending heartbeats when its business loop deadlocks.",
+            "activeState": "bgHeartbeat",
+            "transition": {
+              "from": "healthyPoll",
+              "to": "bgHeartbeat",
+              "label": "recordBackgroundHeartbeat(250)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "When time between poll invocations exceeds the interval, starvation is detected.",
+            "activeState": "pollStarved",
+            "transition": {
+              "from": "bgHeartbeat",
+              "to": "pollStarved",
+              "label": "exceeded max.poll.interval"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "ConsumerHealthWatchdog detecting processing thread starvation at t=350",
+        "states": [
+          {
+            "id": "healthyPoll",
+            "label": "recordPoll(100) Healthy"
+          },
+          {
+            "id": "bgHeartbeat",
+            "label": "Background Heartbeat (t=250)"
+          },
+          {
+            "id": "pollStarved",
+            "label": "Processing Starved (350 - 100 > 200)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A worker process can keep sending heartbeats when its business loop deadlocks.",
+            "activeState": "bgHeartbeat",
+            "transition": {
+              "from": "healthyPoll",
+              "to": "bgHeartbeat",
+              "label": "recordBackgroundHeartbeat(250)"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "When time between poll invocations exceeds the interval, starvation is detected.",
+            "activeState": "pollStarved",
+            "transition": {
+              "from": "bgHeartbeat",
+              "to": "pollStarved",
+              "label": "exceeded max.poll.interval"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cost of Eager \"Stop-the-World\" Rebalance Storms",
+      "codeHash": "5b4d9a029570e88e7f3890e3743d817910e211088a3d030e198d86176397ed78",
+      "spec": {
+        "template": "bars",
+        "title": "Eager rebalance storm metrics across 3 rolling node restarts",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every consumer in the group revokes all assigned partitions and rejoins.",
+            "bars": [
+              {
+                "label": "Single Pause (ms)",
+                "value": {
+                  "text": "450"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "Total Partitions",
+                "value": {
+                  "text": "12"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When containers restart in a rolling deployment, eager rebalances cascade.",
+            "bars": [
+              {
+                "label": "Total Revocations",
+                "value": {
+                  "text": "36"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Downtime Ratio (%)",
+                "value": {
+                  "text": "27"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Eager rebalance storm metrics across 3 rolling node restarts",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Every consumer in the group revokes all assigned partitions and rejoins.",
+            "bars": [
+              {
+                "label": "Single Pause (ms)",
+                "value": 450,
+                "tone": "data"
+              },
+              {
+                "label": "Total Partitions",
+                "value": 12,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "When containers restart in a rolling deployment, eager rebalances cascade.",
+            "bars": [
+              {
+                "label": "Total Revocations",
+                "value": 36,
+                "tone": "error"
+              },
+              {
+                "label": "Downtime Ratio (%)",
+                "value": 27,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cooperative Sticky Rebalancing & Incremental Migration",
+      "codeHash": "540f63d6ff181ff24f4a33716a867809f6b40584593f0fa73898cac74fb8c2eb",
+      "spec": {
+        "template": "table",
+        "title": "Cooperative sticky incremental migration when worker w3 joins w1 and w2",
+        "columns": [
+          "Partition Group",
+          "Partitions",
+          "Handoff Latency"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cooperative rebalancing uses incremental migration without revoking everything.",
+            "rows": [
+              [
+                "Migrated to w3",
+                "[2, 5]",
+                "30 ms"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Other consumers continue polling and processing their partitions at full speed.",
+            "rows": [
+              [
+                "Migrated to w3",
+                "[2, 5]",
+                "30 ms"
+              ],
+              [
+                "Unaffected (w1 & w2)",
+                "[0, 1, 3, 4]",
+                "0 ms (Zero Pause)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cooperative sticky incremental migration when worker w3 joins w1 and w2",
+        "columns": [
+          "Partition Group",
+          "Partitions",
+          "Handoff Latency"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Cooperative rebalancing uses incremental migration without revoking everything.",
+            "rows": [
+              [
+                "Migrated to w3",
+                "[2, 5]",
+                "30 ms"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Other consumers continue polling and processing their partitions at full speed.",
+            "rows": [
+              [
+                "Migrated to w3",
+                "[2, 5]",
+                "30 ms"
+              ],
+              [
+                "Unaffected (w1 & w2)",
+                "[0, 1, 3, 4]",
+                "0 ms (Zero Pause)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Revocation Callbacks & In-Flight State Flushing",
+      "codeHash": "2d81721b7dda9f23b111a4d8c70a8d04949785f26aaeb322ffa420be48d9fa03",
+      "spec": {
+        "template": "flow",
+        "title": "ResilientConsumer onPartitionsRevoked in-flight buffer flush and offset commit",
+        "nodes": [
+          {
+            "id": "revokeHook",
+            "label": "onPartitionsRevoked([1])",
+            "tappable": false
+          },
+          {
+            "id": "filterBuffer",
+            "label": "Filter In-Flight Partition 1",
+            "tappable": false
+          },
+          {
+            "id": "commitOffset",
+            "label": "Commit Offset 45 (order-B)",
+            "tappable": false
+          },
+          {
+            "id": "yieldPartition",
+            "label": "Relinquish Partition Ownership",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "revokeHook",
+            "to": "filterBuffer",
+            "label": "Intercept"
+          },
+          {
+            "from": "filterBuffer",
+            "to": "commitOffset",
+            "label": "Flush State"
+          },
+          {
+            "from": "commitOffset",
+            "to": "yieldPartition",
+            "label": "Clean Handoff"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The onPartitionsRevoked hook is invoked before the consumer yields ownership.",
+            "activeNodes": [
+              "revokeHook",
+              "filterBuffer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Inside this hook, the application flushes caches and commits offsets.",
+            "activeNodes": [
+              "commitOffset",
+              "yieldPartition"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ResilientConsumer onPartitionsRevoked in-flight buffer flush and offset commit",
+        "nodes": [
+          {
+            "id": "revokeHook",
+            "label": "onPartitionsRevoked([1])",
+            "tappable": false
+          },
+          {
+            "id": "filterBuffer",
+            "label": "Filter In-Flight Partition 1",
+            "tappable": false
+          },
+          {
+            "id": "commitOffset",
+            "label": "Commit Offset 45 (order-B)",
+            "tappable": false
+          },
+          {
+            "id": "yieldPartition",
+            "label": "Relinquish Partition Ownership",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "revokeHook",
+            "to": "filterBuffer",
+            "label": "Intercept"
+          },
+          {
+            "from": "filterBuffer",
+            "to": "commitOffset",
+            "label": "Flush State"
+          },
+          {
+            "from": "commitOffset",
+            "to": "yieldPartition",
+            "label": "Clean Handoff"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "The onPartitionsRevoked hook is invoked before the consumer yields ownership.",
+            "activeNodes": [
+              "revokeHook",
+              "filterBuffer"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Inside this hook, the application flushes caches and commits offsets.",
+            "activeNodes": [
+              "commitOffset",
+              "yieldPartition"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Cooperative Sticky Rebalancing Coordinator",
+      "codeHash": "1c301aa8c585b79ea458067fa806acb2078b9194c6ecb8713b7eeaa40856b638",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
