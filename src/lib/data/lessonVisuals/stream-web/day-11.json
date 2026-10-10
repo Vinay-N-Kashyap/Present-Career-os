@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 11,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Hazard of Unbounded Ingest Queues & Memory Exhaustion",
+      "codeHash": "f193c47917c06ce681be066e047698745c3f2d66681abc7fa86595cdcca76cd9",
+      "spec": {
+        "template": "bars",
+        "title": "UnboundedQueueFailureSimulator queue depth growth during downstream stall",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When downstream processing slows, incoming events accumulate in the buffer.",
+            "bars": [
+              {
+                "label": "Steady State Depth",
+                "value": {
+                  "text": "400"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Medium Threshold",
+                "value": {
+                  "text": "500"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Eventually V8 runs out of heap memory completely and triggers a fatal crash.",
+            "bars": [
+              {
+                "label": "Steady State Depth",
+                "value": {
+                  "text": "400"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Critical Threshold",
+                "value": {
+                  "text": "1000"
+                },
+                "tone": "accent"
+              },
+              {
+                "label": "Stall Audit Depth",
+                "value": {
+                  "text": "1200"
+                },
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "UnboundedQueueFailureSimulator queue depth growth during downstream stall",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "When downstream processing slows, incoming events accumulate in the buffer.",
+            "bars": [
+              {
+                "label": "Steady State Depth",
+                "value": 400,
+                "tone": "ok"
+              },
+              {
+                "label": "Medium Threshold",
+                "value": 500,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Eventually V8 runs out of heap memory completely and triggers a fatal crash.",
+            "bars": [
+              {
+                "label": "Steady State Depth",
+                "value": 400,
+                "tone": "ok"
+              },
+              {
+                "label": "Critical Threshold",
+                "value": 1000,
+                "tone": "accent"
+              },
+              {
+                "label": "Stall Audit Depth",
+                "value": 1200,
+                "tone": "error"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High and Low Watermark Flow Control Dynamics",
+      "codeHash": "05c4efcb93db30f17fb8ecac13f70c7effd3e86a8073f49137608f3ed175135a",
+      "spec": {
+        "template": "states",
+        "title": "WatermarkFlowController hysteresis between highWatermark (8/10) and lowWatermark (4/10)",
+        "states": [
+          {
+            "id": "freeFlow",
+            "label": "Active Ingestion (< 8/10)"
+          },
+          {
+            "id": "highPaused",
+            "label": "Paused at High Mark (8/10)"
+          },
+          {
+            "id": "hysteresisHold",
+            "label": "Hysteresis Hold (7/10 Still Paused)"
+          },
+          {
+            "id": "lowResumed",
+            "label": "Resumed Below Low Mark (3/10 <= 4)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When queue depth reaches High Watermark, the buffer pauses new messages.",
+            "activeState": "highPaused",
+            "transition": {
+              "from": "freeFlow",
+              "to": "highPaused",
+              "label": "occupancyRatio: 8/10"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "The system remains paused until queue depth drains to the Low Watermark.",
+            "activeState": "lowResumed",
+            "transition": {
+              "from": "hysteresisHold",
+              "to": "lowResumed",
+              "label": "occupancyRatio: 3/10"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "WatermarkFlowController hysteresis between highWatermark (8/10) and lowWatermark (4/10)",
+        "states": [
+          {
+            "id": "freeFlow",
+            "label": "Active Ingestion (< 8/10)"
+          },
+          {
+            "id": "highPaused",
+            "label": "Paused at High Mark (8/10)"
+          },
+          {
+            "id": "hysteresisHold",
+            "label": "Hysteresis Hold (7/10 Still Paused)"
+          },
+          {
+            "id": "lowResumed",
+            "label": "Resumed Below Low Mark (3/10 <= 4)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When queue depth reaches High Watermark, the buffer pauses new messages.",
+            "activeState": "highPaused",
+            "transition": {
+              "from": "freeFlow",
+              "to": "highPaused",
+              "label": "occupancyRatio: 8/10"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "The system remains paused until queue depth drains to the Low Watermark.",
+            "activeState": "lowResumed",
+            "transition": {
+              "from": "hysteresisHold",
+              "to": "lowResumed",
+              "label": "occupancyRatio: 3/10"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bounded Ring Buffer Architecture in Pure TypeScript",
+      "codeHash": "d4fd4663c8420ce79f06d6eb7e4891382e3bd9fdb5a9342f73cb82a8d2728648",
+      "spec": {
+        "template": "cells",
+        "title": "BoundedRingBuffer (capacity: 3) circular head and tail modulo wrap-around",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A Bounded Ring Buffer pre-allocates an array of fixed size once and reuses it.",
+            "items": [
+              {
+                "text": "alpha"
+              },
+              {
+                "text": "beta"
+              },
+              {
+                "text": "gamma"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "tail:0",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "full",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Both pointers increment continuously and wrap around using modulo arithmetic.",
+            "items": [
+              {
+                "text": "delta"
+              },
+              {
+                "text": "beta"
+              },
+              {
+                "text": "gamma"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "head%3:0",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail:1",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "BoundedRingBuffer (capacity: 3) circular head and tail modulo wrap-around",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A Bounded Ring Buffer pre-allocates an array of fixed size once and reuses it.",
+            "items": [
+              "alpha",
+              "beta",
+              "gamma"
+            ],
+            "pointers": [
+              {
+                "name": "tail:0",
+                "index": 0,
+                "tone": "data"
+              },
+              {
+                "name": "full",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Both pointers increment continuously and wrap around using modulo arithmetic.",
+            "items": [
+              "delta",
+              "beta",
+              "gamma"
+            ],
+            "pointers": [
+              {
+                "name": "head%3:0",
+                "index": 0,
+                "tone": "ok"
+              },
+              {
+                "name": "tail:1",
+                "index": 1,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reactive Pull-Based Streaming via Async Iterators",
+      "codeHash": "e6a7e6cb8aab1c2658055728e3116c69d4b633193d096586be7ba79994ddbd5b",
+      "spec": {
+        "template": "sequence",
+        "title": "for-await-of pull consumer driving AsyncGenerator streamProducer",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "runPullConsumer (for await)"
+          },
+          {
+            "id": "generator",
+            "label": "streamProducer Generator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The consumer initiates consumption by requesting the next value in the loop.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "generator",
+                "label": "stream.next() Request"
+              }
+            ],
+            "activeActorId": "generator"
+          },
+          {
+            "at": "say5",
+            "caption": "The producer only generates the next record when the consumer requests it.",
+            "messages": [
+              {
+                "from": "generator",
+                "to": "consumer",
+                "label": "yield { seq: 0, timestamp: 1700000000000 }"
+              },
+              {
+                "from": "consumer",
+                "to": "generator",
+                "label": "Process Seq #0 -> Pull Next"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "for-await-of pull consumer driving AsyncGenerator streamProducer",
+        "actors": [
+          {
+            "id": "consumer",
+            "label": "runPullConsumer (for await)"
+          },
+          {
+            "id": "generator",
+            "label": "streamProducer Generator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The consumer initiates consumption by requesting the next value in the loop.",
+            "messages": [
+              {
+                "from": "consumer",
+                "to": "generator",
+                "label": "stream.next() Request"
+              }
+            ],
+            "activeActorId": "generator"
+          },
+          {
+            "at": "say5",
+            "caption": "The producer only generates the next record when the consumer requests it.",
+            "messages": [
+              {
+                "from": "generator",
+                "to": "consumer",
+                "label": "yield { seq: 0, timestamp: 1700000000000 }"
+              },
+              {
+                "from": "consumer",
+                "to": "generator",
+                "label": "Process Seq #0 -> Pull Next"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Producer Throttling & Non-Blocking Back-off Algorithms",
+      "codeHash": "ab410eacc3f5209d51167b29a846ce735420189c65c2210b393a7ed2001ac76e",
+      "spec": {
+        "template": "table",
+        "title": "NonBlockingThrottler exponential back-off schedule when buffer is full",
+        "columns": [
+          "Attempt",
+          "Back-off Delay",
+          "Cumulative Wait",
+          "Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the buffer is full, the producer delays using non-blocking wait queues.",
+            "rows": [
+              [
+                "1",
+                "10 ms",
+                "10 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "2",
+                "20 ms",
+                "30 ms",
+                "Wait (isBufferFull: true)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When the buffer does not drain within the ceiling, the producer rejects.",
+            "rows": [
+              [
+                "1",
+                "10 ms",
+                "10 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "2",
+                "20 ms",
+                "30 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "3",
+                "40 ms",
+                "70 ms",
+                "accepted: false (Rejected)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "NonBlockingThrottler exponential back-off schedule when buffer is full",
+        "columns": [
+          "Attempt",
+          "Back-off Delay",
+          "Cumulative Wait",
+          "Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When the buffer is full, the producer delays using non-blocking wait queues.",
+            "rows": [
+              [
+                "1",
+                "10 ms",
+                "10 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "2",
+                "20 ms",
+                "30 ms",
+                "Wait (isBufferFull: true)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "When the buffer does not drain within the ceiling, the producer rejects.",
+            "rows": [
+              [
+                "1",
+                "10 ms",
+                "10 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "2",
+                "20 ms",
+                "30 ms",
+                "Wait (isBufferFull: true)"
+              ],
+              [
+                "3",
+                "40 ms",
+                "70 ms",
+                "accepted: false (Rejected)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Backpressure-Protected Event Ingestion Buffer",
+      "codeHash": "1c4e622784be5770b146d72d60e41ea37fe809a09b8db7fba4cb344dd1505951",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
