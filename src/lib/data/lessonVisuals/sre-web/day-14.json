@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 14,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cascading Failures & The Circuit Breaker Philosophy",
+      "codeHash": "64b29e38c5b02984fe8713cbcd37d1f9a853922eb269a8366e837a82fce61f92",
+      "spec": {
+        "template": "workflow",
+        "title": "Upstream request failure cascading and circuit breaker isolation",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Client Ingress"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway"
+          },
+          {
+            "id": "breaker",
+            "label": "Circuit Breaker Wrap"
+          },
+          {
+            "id": "service",
+            "label": "Downstream Microservice"
+          },
+          {
+            "id": "database",
+            "label": "Failing Database"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "User traffic"
+          },
+          {
+            "from": "gateway",
+            "to": "breaker",
+            "label": "Forward request"
+          },
+          {
+            "from": "breaker",
+            "to": "service",
+            "label": "Protected invoke"
+          },
+          {
+            "from": "service",
+            "to": "database",
+            "label": "Database query"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Cascading failures turn localized database outages into enterprise crises.",
+            "activeNodes": [
+              "service",
+              "database"
+            ],
+            "activeEdges": [
+              "service->database"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Tripped breakers reject subsequent calls immediately protecting resources.",
+            "activeNodes": [
+              "gateway",
+              "breaker"
+            ],
+            "activeEdges": [
+              "gateway->breaker"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Upstream request failure cascading and circuit breaker isolation",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Client Ingress"
+          },
+          {
+            "id": "gateway",
+            "label": "API Gateway"
+          },
+          {
+            "id": "breaker",
+            "label": "Circuit Breaker Wrap"
+          },
+          {
+            "id": "service",
+            "label": "Downstream Microservice"
+          },
+          {
+            "id": "database",
+            "label": "Failing Database"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "User traffic"
+          },
+          {
+            "from": "gateway",
+            "to": "breaker",
+            "label": "Forward request"
+          },
+          {
+            "from": "breaker",
+            "to": "service",
+            "label": "Protected invoke"
+          },
+          {
+            "from": "service",
+            "to": "database",
+            "label": "Database query"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Cascading failures turn localized database outages into enterprise crises.",
+            "activeNodes": [
+              "service",
+              "database"
+            ],
+            "activeEdges": [
+              "service->database"
+            ]
+          },
+          {
+            "at": "say9",
+            "caption": "Tripped breakers reject subsequent calls immediately protecting resources.",
+            "activeNodes": [
+              "gateway",
+              "breaker"
+            ],
+            "activeEdges": [
+              "gateway->breaker"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Closed State: Sliding Failure Windows & Trip Thresholds",
+      "codeHash": "6a9ecca6b940d3247dae9c7c4afb97c0e91346e6aaf06aca56e9124317a09de6",
+      "spec": {
+        "template": "bars",
+        "title": "Consecutive failure count progression toward trip threshold",
+        "bars": [
+          {
+            "id": "f1",
+            "label": "Error 1 Streak",
+            "value": 1
+          },
+          {
+            "id": "f2",
+            "label": "Error 2 Streak",
+            "value": 2
+          },
+          {
+            "id": "f3",
+            "label": "Error 3 Trip Threshold",
+            "value": 3
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circuit breakers avoid tripping on isolated transient errors.",
+            "activeBars": [
+              "f1"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Exceeding configured failure thresholds trips the circuit breaker to Open.",
+            "activeBars": [
+              "f1",
+              "f2",
+              "f3"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Consecutive failure count progression toward trip threshold",
+        "bars": [
+          {
+            "id": "f1",
+            "label": "Error 1 Streak",
+            "value": 1
+          },
+          {
+            "id": "f2",
+            "label": "Error 2 Streak",
+            "value": 2
+          },
+          {
+            "id": "f3",
+            "label": "Error 3 Trip Threshold",
+            "value": 3
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circuit breakers avoid tripping on isolated transient errors.",
+            "activeBars": [
+              "f1"
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Exceeding configured failure thresholds trips the circuit breaker to Open.",
+            "activeBars": [
+              "f1",
+              "f2",
+              "f3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Open State: Fast-Fails, Fallback Responses & Sleep Timers",
+      "codeHash": "407c15217f96b22ee6fbae4e835205ccdcdea03a3127131abda358a4acb02db5",
+      "spec": {
+        "template": "sequence",
+        "title": "Open state microsecond fast fail and graceful fallback response",
+        "actors": [
+          "Client App",
+          "Circuit Guard",
+          "Downstream Service"
+        ],
+        "messages": [
+          {
+            "from": "Client App",
+            "to": "Circuit Guard",
+            "label": "Incoming user request"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Circuit Guard",
+            "label": "Verify OPEN sleep window"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Client App",
+            "label": "Return cached fallback"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Downstream Service",
+            "label": "Network calls suppressed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Fast failing rejects incoming requests in microseconds without network calls.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Resilient systems execute graceful fallback handlers instead of raw errors.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Open state microsecond fast fail and graceful fallback response",
+        "actors": [
+          "Client App",
+          "Circuit Guard",
+          "Downstream Service"
+        ],
+        "messages": [
+          {
+            "from": "Client App",
+            "to": "Circuit Guard",
+            "label": "Incoming user request"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Circuit Guard",
+            "label": "Verify OPEN sleep window"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Client App",
+            "label": "Return cached fallback"
+          },
+          {
+            "from": "Circuit Guard",
+            "to": "Downstream Service",
+            "label": "Network calls suppressed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Fast failing rejects incoming requests in microseconds without network calls.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Resilient systems execute graceful fallback handlers instead of raw errors.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Half-Open State: Canary Probing & Self-Healing Transitions",
+      "codeHash": "319e1d2d857224d3531e09154b9634973aa786aefd45d2e127ce7580cfcd48cd",
+      "spec": {
+        "template": "states",
+        "title": "Circuit breaker self healing state machine transitions",
+        "states": [
+          {
+            "id": "closed",
+            "label": "CLOSED Normal Traffic"
+          },
+          {
+            "id": "open",
+            "label": "OPEN Fast Fail Protection"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN Canary Probing"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The half open state permits limited trial canary requests to pass through.",
+            "activeStateId": "half_open",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Canary success restores the breaker back to Closed normal traffic flow.",
+            "activeStateId": "closed",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Circuit breaker self healing state machine transitions",
+        "states": [
+          {
+            "id": "closed",
+            "label": "CLOSED Normal Traffic"
+          },
+          {
+            "id": "open",
+            "label": "OPEN Fast Fail Protection"
+          },
+          {
+            "id": "half_open",
+            "label": "HALF_OPEN Canary Probing"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The half open state permits limited trial canary requests to pass through.",
+            "activeStateId": "half_open",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say9",
+            "caption": "Canary success restores the breaker back to Closed normal traffic flow.",
+            "activeStateId": "closed",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Count vs Error Rate Percentage Thresholds",
+      "codeHash": "83f450e85199ac172ddbf8b36c7654fdec3a8b8a38e2df44aa55764b3f6813b6",
+      "spec": {
+        "template": "compare",
+        "title": "Consecutive failure counting versus rolling error rate percentages",
+        "left": {
+          "title": "Consecutive Failure Count",
+          "items": [
+            "Resets count on single success",
+            "Blind to high percentage error rates",
+            "Trips unfairly in low-volume traffic",
+            "Simple discrete counter logic"
+          ]
+        },
+        "right": {
+          "title": "Rolling Error Percentage",
+          "items": [
+            "Evaluates rolling sliding window",
+            "Enforces minimum volume threshold",
+            "Detects distributed partial outages",
+            "Statistically rigorous resilience"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A single success continuously resets discrete consecutive failure counters.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Exceeding error percentage thresholds trips the breaker to Open state.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Consecutive failure counting versus rolling error rate percentages",
+        "left": {
+          "title": "Consecutive Failure Count",
+          "items": [
+            "Resets count on single success",
+            "Blind to high percentage error rates",
+            "Trips unfairly in low-volume traffic",
+            "Simple discrete counter logic"
+          ]
+        },
+        "right": {
+          "title": "Rolling Error Percentage",
+          "items": [
+            "Evaluates rolling sliding window",
+            "Enforces minimum volume threshold",
+            "Detects distributed partial outages",
+            "Statistically rigorous resilience"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A single success continuously resets discrete consecutive failure counters.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Exceeding error percentage thresholds trips the breaker to Open state.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production-Grade TypeScript Circuit Breaker State Machine",
+      "codeHash": "abd3b17c203d642955b43d5dbf7c40cc5a085dcd7774b80daac7128b65cc866b",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
