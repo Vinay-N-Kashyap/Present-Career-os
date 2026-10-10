@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 21,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 3 Architecture: Multi-Agent Specialization & Shared State",
+      "codeHash": "20483170dcf855a6872dedaa876be2f11227e545049759cdd5559ece59d8afbd",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to multi-agent specialization architecture"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to multi-agent specialization architecture"
+      }
+    },
+    {
+      "partTitle": "Search & Retrieval Subagent with Citation Extraction",
+      "codeHash": "7c4f2bb12e58f6faa3c82899ff9ae3979ebd94b6622d34311b39a68906473a91",
+      "spec": {
+        "template": "table",
+        "title": "Authoritative research citation extraction and deduplication metadata",
+        "columns": [
+          "Citation Tag",
+          "Authoritative Source",
+          "Snippet Extraction",
+          "Verification Status"
+        ],
+        "rows": [
+          [
+            "CIT-1",
+            "Advanced Energy Materials 2024",
+            "Solid-state cell density reaches 480 Wh/kg",
+            "Verified Primary Source"
+          ],
+          [
+            "CIT-2",
+            "Automotive Engineering Review",
+            "Pack mass reduction averages 116 kg",
+            "Verified Industry Benchmark"
+          ],
+          [
+            "CIT-3",
+            "Global Battery Supply Index",
+            "Pilot line volume starts Q4 2026",
+            "Verified Market Analysis"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The subagent discovers authoritative information and extracts citations.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Source deduplication ensures context windows avoid redundant articles.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Authoritative research citation extraction and deduplication metadata",
+        "columns": [
+          "Citation Tag",
+          "Authoritative Source",
+          "Snippet Extraction",
+          "Verification Status"
+        ],
+        "rows": [
+          [
+            "CIT-1",
+            "Advanced Energy Materials 2024",
+            "Solid-state cell density reaches 480 Wh/kg",
+            "Verified Primary Source"
+          ],
+          [
+            "CIT-2",
+            "Automotive Engineering Review",
+            "Pack mass reduction averages 116 kg",
+            "Verified Industry Benchmark"
+          ],
+          [
+            "CIT-3",
+            "Global Battery Supply Index",
+            "Pilot line volume starts Q4 2026",
+            "Verified Market Analysis"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The subagent discovers authoritative information and extracts citations.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Source deduplication ensures context windows avoid redundant articles.",
+            "activeRowIndex": 2,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sandboxed Code Execution Subagent for Deterministic Math",
+      "codeHash": "4c8caf79c1bf6ac7e586c06f802d9231be54740c38b881ffda92dd8946442c39",
+      "spec": {
+        "template": "boxes",
+        "title": "Sandboxed programmatic code execution for deterministic math calculations",
+        "boxes": [
+          {
+            "id": "scriptBox",
+            "title": "Programmatic Script",
+            "items": [
+              "Statistical aggregation logic",
+              "Compound percentage growth",
+              "Exact formula evaluation"
+            ]
+          },
+          {
+            "id": "sandboxBox",
+            "title": "Isolated Sandbox",
+            "items": [
+              "GVisor secure container",
+              "Hard CPU memory quotas",
+              "Captures standard output"
+            ]
+          },
+          {
+            "id": "findingsBox",
+            "title": "Quantitative Store",
+            "items": [
+              "Certified numerical metrics",
+              "Zero math hallucinations",
+              "Immutable report data"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The subagent offloads calculations to a deterministic sandboxed environment.",
+            "activeBoxId": "sandboxBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Eliminating math hallucinations provides mathematically certified data points.",
+            "activeBoxId": "findingsBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Sandboxed programmatic code execution for deterministic math calculations",
+        "boxes": [
+          {
+            "id": "scriptBox",
+            "title": "Programmatic Script",
+            "items": [
+              "Statistical aggregation logic",
+              "Compound percentage growth",
+              "Exact formula evaluation"
+            ]
+          },
+          {
+            "id": "sandboxBox",
+            "title": "Isolated Sandbox",
+            "items": [
+              "GVisor secure container",
+              "Hard CPU memory quotas",
+              "Captures standard output"
+            ]
+          },
+          {
+            "id": "findingsBox",
+            "title": "Quantitative Store",
+            "items": [
+              "Certified numerical metrics",
+              "Zero math hallucinations",
+              "Immutable report data"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The subagent offloads calculations to a deterministic sandboxed environment.",
+            "activeBoxId": "sandboxBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Eliminating math hallucinations provides mathematically certified data points.",
+            "activeBoxId": "findingsBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adversarial Critic Subagent & Factual Faithfulness Scoring",
+      "codeHash": "a74ab989719cd1bd67080c80e6393df099f65a410173c2869844b6154ebca525",
+      "spec": {
+        "template": "compare",
+        "title": "Ungrounded hallucinated draft versus certified factually faithful report",
+        "left": {
+          "title": "Ungrounded Draft",
+          "items": [
+            "Missing citation references",
+            "Unsupported factual claims",
+            "Low faithfulness score",
+            "Rejected by critic subagent"
+          ]
+        },
+        "right": {
+          "title": "Certified Grounded Report",
+          "items": [
+            "100% citation backing",
+            "Cross-verified claim snippets",
+            "High faithfulness threshold",
+            "Approved for publication"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The critic treats draft reports with skepticism until claims are proved.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "When scores fall below threshold the critic rejects the draft with notes.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ungrounded hallucinated draft versus certified factually faithful report",
+        "left": {
+          "title": "Ungrounded Draft",
+          "items": [
+            "Missing citation references",
+            "Unsupported factual claims",
+            "Low faithfulness score",
+            "Rejected by critic subagent"
+          ]
+        },
+        "right": {
+          "title": "Certified Grounded Report",
+          "items": [
+            "100% citation backing",
+            "Cross-verified claim snippets",
+            "High faithfulness threshold",
+            "Approved for publication"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "The critic treats draft reports with skepticism until claims are proved.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "When scores fall below threshold the critic rejects the draft with notes.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Supervisor Orchestrator & State Machine Routing",
+      "codeHash": "6a345ced2b6f2a2f7d6c3b48fb54fe054497da3d30654c20c2dc15004cf77e3d",
+      "spec": {
+        "template": "flow",
+        "title": "Supervisor finite state machine autonomous workflow progression",
+        "nodes": [
+          {
+            "id": "planning",
+            "label": "Planning State",
+            "tappable": false
+          },
+          {
+            "id": "search",
+            "label": "Search Stage",
+            "tappable": false
+          },
+          {
+            "id": "math",
+            "label": "Code Math Execution",
+            "tappable": false
+          },
+          {
+            "id": "synthesis",
+            "label": "Synthesis Drafter",
+            "tappable": false
+          },
+          {
+            "id": "critique",
+            "label": "Critique Verification",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "planning",
+            "to": "search",
+            "label": "Initialize Queries"
+          },
+          {
+            "from": "search",
+            "to": "math",
+            "label": "Extract Quantitative Data"
+          },
+          {
+            "from": "math",
+            "to": "synthesis",
+            "label": "Deliver Certified Metrics"
+          },
+          {
+            "from": "synthesis",
+            "to": "critique",
+            "label": "Submit Draft for Audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "State transitions follow a logical progression across milestone stages.",
+            "activeNodes": [
+              "planning",
+              "search"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "To prevent runaway loops the supervisor enforces maximum iteration guards.",
+            "activeNodes": [
+              "synthesis",
+              "critique"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Supervisor finite state machine autonomous workflow progression",
+        "nodes": [
+          {
+            "id": "planning",
+            "label": "Planning State",
+            "tappable": false
+          },
+          {
+            "id": "search",
+            "label": "Search Stage",
+            "tappable": false
+          },
+          {
+            "id": "math",
+            "label": "Code Math Execution",
+            "tappable": false
+          },
+          {
+            "id": "synthesis",
+            "label": "Synthesis Drafter",
+            "tappable": false
+          },
+          {
+            "id": "critique",
+            "label": "Critique Verification",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "planning",
+            "to": "search",
+            "label": "Initialize Queries"
+          },
+          {
+            "from": "search",
+            "to": "math",
+            "label": "Extract Quantitative Data"
+          },
+          {
+            "from": "math",
+            "to": "synthesis",
+            "label": "Deliver Certified Metrics"
+          },
+          {
+            "from": "synthesis",
+            "to": "critique",
+            "label": "Submit Draft for Audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "State transitions follow a logical progression across milestone stages.",
+            "activeNodes": [
+              "planning",
+              "search"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say5",
+            "caption": "To prevent runaway loops the supervisor enforces maximum iteration guards.",
+            "activeNodes": [
+              "synthesis",
+              "critique"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 3 Capstone: Autonomous Research Report Generator",
+      "codeHash": "088e8628e63ec73692f50c7b92c81db78bc024aa27775009cbb5655aefef6354",
+      "spec": {
+        "template": "sequence",
+        "title": "Milestone 3 autonomous multi-agent research assistant execution transaction",
+        "actors": [
+          {
+            "id": "director",
+            "label": "Research Director"
+          },
+          {
+            "id": "supervisor",
+            "label": "Supervisor Orchestrator"
+          },
+          {
+            "id": "searchSub",
+            "label": "Search Subagent"
+          },
+          {
+            "id": "codeSub",
+            "label": "Code Execution Sandbox"
+          }
+        ],
+        "messages": [
+          {
+            "from": "director",
+            "to": "supervisor",
+            "label": "Dispatch Solid-State Battery Research",
+            "tone": "data"
+          },
+          {
+            "from": "supervisor",
+            "to": "searchSub",
+            "label": "Retrieve Authoritative Technical Papers",
+            "tone": "data"
+          },
+          {
+            "from": "searchSub",
+            "to": "codeSub",
+            "label": "Pass Raw Metrics for Mathematical Audit",
+            "tone": "data"
+          },
+          {
+            "from": "codeSub",
+            "to": "supervisor",
+            "label": "Return Mathematically Certified Metrics",
+            "tone": "ok"
+          },
+          {
+            "from": "supervisor",
+            "to": "director",
+            "label": "Emit Certified Publication-Ready Report",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The workflow initiates as the search subagent extracts technical papers.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The supervisor confirms criteria and outputs the certified research report.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Milestone 3 autonomous multi-agent research assistant execution transaction",
+        "actors": [
+          {
+            "id": "director",
+            "label": "Research Director"
+          },
+          {
+            "id": "supervisor",
+            "label": "Supervisor Orchestrator"
+          },
+          {
+            "id": "searchSub",
+            "label": "Search Subagent"
+          },
+          {
+            "id": "codeSub",
+            "label": "Code Execution Sandbox"
+          }
+        ],
+        "messages": [
+          {
+            "from": "director",
+            "to": "supervisor",
+            "label": "Dispatch Solid-State Battery Research",
+            "tone": "data"
+          },
+          {
+            "from": "supervisor",
+            "to": "searchSub",
+            "label": "Retrieve Authoritative Technical Papers",
+            "tone": "data"
+          },
+          {
+            "from": "searchSub",
+            "to": "codeSub",
+            "label": "Pass Raw Metrics for Mathematical Audit",
+            "tone": "data"
+          },
+          {
+            "from": "codeSub",
+            "to": "supervisor",
+            "label": "Return Mathematically Certified Metrics",
+            "tone": "ok"
+          },
+          {
+            "from": "supervisor",
+            "to": "director",
+            "label": "Emit Certified Publication-Ready Report",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The workflow initiates as the search subagent extracts technical papers.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "The supervisor confirms criteria and outputs the certified research report.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
