@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 6,
+  "promptSha": "34568c29ad1493d0d0b183f4c61f2527b2e9beec86ef0efe72682087d3d777d4",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Tool Declaration Schemas: Teaching LLMs About External Functions",
+      "codeHash": "362746102922197fb8885c453bdb917fc4317d0eb996c095269ef71f7053f4c4",
+      "spec": {
+        "template": "boxes",
+        "title": "Tool declaration schema properties and parameter typing constraints",
+        "boxes": [
+          {
+            "id": "fnIdent",
+            "title": "Function Identity",
+            "items": [
+              "Unique identifier name",
+              "Operational role description"
+            ]
+          },
+          {
+            "id": "paramSchema",
+            "title": "Parameters Schema",
+            "items": [
+              "Argument object type",
+              "Primitive types specification"
+            ]
+          },
+          {
+            "id": "reqFields",
+            "title": "Required Attributes",
+            "items": [
+              "Mandatory parameter list",
+              "Schema validation constraints"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A tool declaration describes functional intent and parameter constraints.",
+            "activeBoxId": "fnIdent",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The declaration includes required arrays specifying mandatory arguments.",
+            "activeBoxId": "reqFields",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Tool declaration schema properties and parameter typing constraints",
+        "boxes": [
+          {
+            "id": "fnIdent",
+            "title": "Function Identity",
+            "items": [
+              "Unique identifier name",
+              "Operational role description"
+            ]
+          },
+          {
+            "id": "paramSchema",
+            "title": "Parameters Schema",
+            "items": [
+              "Argument object type",
+              "Primitive types specification"
+            ]
+          },
+          {
+            "id": "reqFields",
+            "title": "Required Attributes",
+            "items": [
+              "Mandatory parameter list",
+              "Schema validation constraints"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "A tool declaration describes functional intent and parameter constraints.",
+            "activeBoxId": "fnIdent",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The declaration includes required arrays specifying mandatory arguments.",
+            "activeBoxId": "reqFields",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Model Decision Making: Emitting Structured Tool Calls",
+      "codeHash": "baf5cb7eb494a5ad4b41fdd212a145d7484e1c9bed67298c3e431327b2767112",
+      "spec": {
+        "template": "compare",
+        "title": "Direct conversational text responses versus structured tool call emissions",
+        "left": {
+          "title": "Conversational Response",
+          "items": [
+            "Direct text response payload",
+            "Generated from model weights",
+            "No external systems invoked"
+          ]
+        },
+        "right": {
+          "title": "Tool Call Emission",
+          "items": [
+            "Emits structured tool calls array",
+            "Unique call identifier string",
+            "Serialized function arguments"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The model answers directly from internal pre-trained weights.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The completion payload contains dedicated tool call arrays.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Direct conversational text responses versus structured tool call emissions",
+        "left": {
+          "title": "Conversational Response",
+          "items": [
+            "Direct text response payload",
+            "Generated from model weights",
+            "No external systems invoked"
+          ]
+        },
+        "right": {
+          "title": "Tool Call Emission",
+          "items": [
+            "Emits structured tool calls array",
+            "Unique call identifier string",
+            "Serialized function arguments"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The model answers directly from internal pre-trained weights.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say4",
+            "caption": "The completion payload contains dedicated tool call arrays.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Execution Dispatcher: Safely Routing and Invoking Handlers",
+      "codeHash": "27ba3e4b9f89e12dd5ca34110696305a04c695c2e0c1a60958228bf6499727be",
+      "spec": {
+        "template": "flow",
+        "title": "Client dispatcher execution routing and defensive argument validation",
+        "nodes": [
+          {
+            "id": "toolCall",
+            "label": "Incoming Tool Call",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Dispatcher Registry",
+            "tappable": false
+          },
+          {
+            "id": "handler",
+            "label": "Local Function Handler",
+            "tappable": false
+          },
+          {
+            "id": "payload",
+            "label": "Serialized JSON Output",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "toolCall",
+            "to": "registry",
+            "label": "Validate Function Name"
+          },
+          {
+            "from": "registry",
+            "to": "handler",
+            "label": "Pass Parsed Arguments"
+          },
+          {
+            "from": "handler",
+            "to": "payload",
+            "label": "Format Return Object"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A tool dispatcher maintains a registry mapping names to handlers.",
+            "activeNodes": [
+              "toolCall",
+              "registry"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Each handler executes domain logic like querying databases.",
+            "activeNodes": [
+              "handler",
+              "payload"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Client dispatcher execution routing and defensive argument validation",
+        "nodes": [
+          {
+            "id": "toolCall",
+            "label": "Incoming Tool Call",
+            "tappable": false
+          },
+          {
+            "id": "registry",
+            "label": "Dispatcher Registry",
+            "tappable": false
+          },
+          {
+            "id": "handler",
+            "label": "Local Function Handler",
+            "tappable": false
+          },
+          {
+            "id": "payload",
+            "label": "Serialized JSON Output",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "toolCall",
+            "to": "registry",
+            "label": "Validate Function Name"
+          },
+          {
+            "from": "registry",
+            "to": "handler",
+            "label": "Pass Parsed Arguments"
+          },
+          {
+            "from": "handler",
+            "to": "payload",
+            "label": "Format Return Object"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "A tool dispatcher maintains a registry mapping names to handlers.",
+            "activeNodes": [
+              "toolCall",
+              "registry"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Each handler executes domain logic like querying databases.",
+            "activeNodes": [
+              "handler",
+              "payload"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Closing the Multi-Turn Loop: Returning Tool Results to the LLM",
+      "codeHash": "2d32dcb77404c07de4e16712b0ddf463e27d8744838c1517df5612353367b5fc",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Parallel Tool Calling: Concurrency and Multi-Function Invocations",
+      "codeHash": "697ebe656f36cb822711173d0a85498ecbae5a7ac48c94e2a646a3949d3ab7e1",
+      "spec": {
+        "template": "table",
+        "title": "Serial tool execution latency versus parallel concurrent dispatch",
+        "columns": [
+          "Execution Mode",
+          "Invocation Pattern",
+          "Latency Impact",
+          "Payload Structure"
+        ],
+        "rows": [
+          [
+            "Serial Calling",
+            "Sequential Synchronous",
+            "High Cumulative Latency",
+            "Chained Tool Turns"
+          ],
+          [
+            "Parallel Calling",
+            "Batch Concurrent Calls",
+            "Minimal Wall Clock Delay",
+            "Multi Tool Message Array"
+          ],
+          [
+            "Async Polling",
+            "Non Blocking Handlers",
+            "Event Loop Efficient",
+            "Streamed Tool Responses"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Serial execution multiplies latency by chaining external queries.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Executing tools in parallel reduces latency to the single slowest request.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Serial tool execution latency versus parallel concurrent dispatch",
+        "columns": [
+          "Execution Mode",
+          "Invocation Pattern",
+          "Latency Impact",
+          "Payload Structure"
+        ],
+        "rows": [
+          [
+            "Serial Calling",
+            "Sequential Synchronous",
+            "High Cumulative Latency",
+            "Chained Tool Turns"
+          ],
+          [
+            "Parallel Calling",
+            "Batch Concurrent Calls",
+            "Minimal Wall Clock Delay",
+            "Multi Tool Message Array"
+          ],
+          [
+            "Async Polling",
+            "Non Blocking Handlers",
+            "Event Loop Efficient",
+            "Streamed Tool Responses"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Serial execution multiplies latency by chaining external queries.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "Executing tools in parallel reduces latency to the single slowest request.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Autonomous Tool Execution Pipeline",
+      "codeHash": "43071c9bad42992042b0323df9273565ddff7890879c6a538afe0528999f1b6e",
+      "spec": {
+        "template": "sequence",
+        "title": "Autonomous tool orchestration engine parallel dispatch and multi-turn loop",
+        "actors": [
+          {
+            "id": "orchestrator",
+            "label": "Tool Orchestration Engine"
+          },
+          {
+            "id": "pricingTool",
+            "label": "Equity Pricing Handler"
+          },
+          {
+            "id": "fxTool",
+            "label": "Currency Converter Handler"
+          },
+          {
+            "id": "llmSession",
+            "label": "LLM Conversation State"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orchestrator",
+            "to": "pricingTool",
+            "label": "Execute Stock Price Lookup",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "fxTool",
+            "label": "Convert Currency to Euros",
+            "tone": "data"
+          },
+          {
+            "from": "pricingTool",
+            "to": "orchestrator",
+            "label": "Return Share Price Quote",
+            "tone": "success"
+          },
+          {
+            "from": "fxTool",
+            "to": "orchestrator",
+            "label": "Return Converted Valuation",
+            "tone": "success"
+          },
+          {
+            "from": "orchestrator",
+            "to": "llmSession",
+            "label": "Submit Completed Tool Turns",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine validates incoming arguments and dispatches handlers.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The engine orchestrates parallel invocations and gathers results.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Autonomous tool orchestration engine parallel dispatch and multi-turn loop",
+        "actors": [
+          {
+            "id": "orchestrator",
+            "label": "Tool Orchestration Engine"
+          },
+          {
+            "id": "pricingTool",
+            "label": "Equity Pricing Handler"
+          },
+          {
+            "id": "fxTool",
+            "label": "Currency Converter Handler"
+          },
+          {
+            "id": "llmSession",
+            "label": "LLM Conversation State"
+          }
+        ],
+        "messages": [
+          {
+            "from": "orchestrator",
+            "to": "pricingTool",
+            "label": "Execute Stock Price Lookup",
+            "tone": "data"
+          },
+          {
+            "from": "orchestrator",
+            "to": "fxTool",
+            "label": "Convert Currency to Euros",
+            "tone": "data"
+          },
+          {
+            "from": "pricingTool",
+            "to": "orchestrator",
+            "label": "Return Share Price Quote",
+            "tone": "success"
+          },
+          {
+            "from": "fxTool",
+            "to": "orchestrator",
+            "label": "Return Converted Valuation",
+            "tone": "success"
+          },
+          {
+            "from": "orchestrator",
+            "to": "llmSession",
+            "label": "Submit Completed Tool Turns",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine validates incoming arguments and dispatches handlers.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "The engine orchestrates parallel invocations and gathers results.",
+            "activeMessageIndex": 4,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
