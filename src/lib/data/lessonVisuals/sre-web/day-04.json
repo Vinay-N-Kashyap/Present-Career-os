@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 4,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The True Meaning of The Nines",
+      "codeHash": "ac3bc77fe5278f308df3afbdf2735bfbaf7b571619be2b9949e4be6007c1d55d",
+      "spec": {
+        "template": "bars",
+        "title": "System availability percentage progression across nines",
+        "bars": [
+          {
+            "id": "nine2",
+            "label": "2 Nines (99%)",
+            "value": 99.0
+          },
+          {
+            "id": "nine3",
+            "label": "3 Nines (99.9%)",
+            "value": 99.9
+          },
+          {
+            "id": "nine4",
+            "label": "4 Nines (99.99%)",
+            "value": 99.99
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Availability is universally discussed in terms of nines of reliability.",
+            "activeBars": [
+              "nine2"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each additional nine represents a reduction in allowed downtime.",
+            "activeBars": [
+              "nine2",
+              "nine3",
+              "nine4"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "System availability percentage progression across nines",
+        "bars": [
+          {
+            "id": "nine2",
+            "label": "2 Nines (99%)",
+            "value": 99.0
+          },
+          {
+            "id": "nine3",
+            "label": "3 Nines (99.9%)",
+            "value": 99.9
+          },
+          {
+            "id": "nine4",
+            "label": "4 Nines (99.99%)",
+            "value": 99.99
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Availability is universally discussed in terms of nines of reliability.",
+            "activeBars": [
+              "nine2"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Each additional nine represents a reduction in allowed downtime.",
+            "activeBars": [
+              "nine2",
+              "nine3",
+              "nine4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Translating Percentage Uptime to Minutes and Seconds",
+      "codeHash": "c83302516cd7e9ed0d9d442eeb9cd8c726b807d73a8ef9e201440a0ba73a80cb",
+      "spec": {
+        "template": "table",
+        "title": "Availability SLO conversion to allowed downtime durations",
+        "columns": [
+          "SLO Target",
+          "30-Day Allowance",
+          "Allowed Breakdown",
+          "Automation Rule"
+        ],
+        "rows": [
+          [
+            "99.0%",
+            "432 Minutes",
+            "7h 12m",
+            "Standard Monitoring"
+          ],
+          [
+            "99.9%",
+            "43.2 Minutes",
+            "43m 12s",
+            "Automated Alerting"
+          ],
+          [
+            "99.99%",
+            "4.32 Minutes",
+            "4m 19s",
+            "Instant Self-Healing"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incident commanders monitor remaining downtime seconds on live dashboards.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "At four nines total downtime budget shrinks to mere minutes.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Availability SLO conversion to allowed downtime durations",
+        "columns": [
+          "SLO Target",
+          "30-Day Allowance",
+          "Allowed Breakdown",
+          "Automation Rule"
+        ],
+        "rows": [
+          [
+            "99.0%",
+            "432 Minutes",
+            "7h 12m",
+            "Standard Monitoring"
+          ],
+          [
+            "99.9%",
+            "43.2 Minutes",
+            "43m 12s",
+            "Automated Alerting"
+          ],
+          [
+            "99.99%",
+            "4.32 Minutes",
+            "4m 19s",
+            "Instant Self-Healing"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Incident commanders monitor remaining downtime seconds on live dashboards.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "At four nines total downtime budget shrinks to mere minutes.",
+            "highlightCells": [
+              {
+                "row": 2,
+                "col": 0
+              },
+              {
+                "row": 2,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Exponential Financial Cost Curve of Each Additional Nine",
+      "codeHash": "a10566d54aebd23e01b4bfdea986e5bbee83e68ce9767d91a35f9fde9d0d599c",
+      "spec": {
+        "template": "bars",
+        "title": "Monthly infrastructure cost comparison per reliability nine tier",
+        "bars": [
+          {
+            "id": "cost2",
+            "label": "2 Nines Tier",
+            "value": 5000
+          },
+          {
+            "id": "cost3",
+            "label": "3 Nines Tier",
+            "value": 22500
+          },
+          {
+            "id": "cost4",
+            "label": "4 Nines Tier",
+            "value": 101250
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Moving between nines requires automated restarts and load balancers.",
+            "activeBars": [
+              "cost2"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The financial cost of achieving additional nines increases exponentially.",
+            "activeBars": [
+              "cost2",
+              "cost3",
+              "cost4"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Monthly infrastructure cost comparison per reliability nine tier",
+        "bars": [
+          {
+            "id": "cost2",
+            "label": "2 Nines Tier",
+            "value": 5000
+          },
+          {
+            "id": "cost3",
+            "label": "3 Nines Tier",
+            "value": 22500
+          },
+          {
+            "id": "cost4",
+            "label": "4 Nines Tier",
+            "value": 101250
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Moving between nines requires automated restarts and load balancers.",
+            "activeBars": [
+              "cost2"
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "The financial cost of achieving additional nines increases exponentially.",
+            "activeBars": [
+              "cost2",
+              "cost3",
+              "cost4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measurement Windows: Calendar Month vs Rolling 30 Days",
+      "codeHash": "87a8654b079e3ce5eb9b571408d8c8ba07c1a06279fcce9134ac9421f0173056",
+      "spec": {
+        "template": "compare",
+        "title": "Calendar month measurement boundaries versus rolling windows",
+        "left": {
+          "title": "Calendar Month Window",
+          "items": [
+            "Arbitrary reset on first of month",
+            "Perverse deployment incentives",
+            "Late month outage resets instantly",
+            "Fails to reflect user experience"
+          ]
+        },
+        "right": {
+          "title": "Rolling 30-Day Window",
+          "items": [
+            "Continuous 720 hour sliding window",
+            "Eliminates artificial boundaries",
+            "Past outages slide smoothly away",
+            "Reflects true current reliability"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Measuring availability over a calendar month creates arbitrary resets.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Modern engineering mandates rolling thirty day measurement windows.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Calendar month measurement boundaries versus rolling windows",
+        "left": {
+          "title": "Calendar Month Window",
+          "items": [
+            "Arbitrary reset on first of month",
+            "Perverse deployment incentives",
+            "Late month outage resets instantly",
+            "Fails to reflect user experience"
+          ]
+        },
+        "right": {
+          "title": "Rolling 30-Day Window",
+          "items": [
+            "Continuous 720 hour sliding window",
+            "Eliminates artificial boundaries",
+            "Past outages slide smoothly away",
+            "Reflects true current reliability"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Measuring availability over a calendar month creates arbitrary resets.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Modern engineering mandates rolling thirty day measurement windows.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Planned Maintenance vs Unplanned Downtime",
+      "codeHash": "f1e75692ce0fa7257777592297d71e5c495adf4b04ec78ac5a6ed3b6e6e1a80a",
+      "spec": {
+        "template": "states",
+        "title": "Operational downtime classifications and error budget impact",
+        "states": [
+          {
+            "id": "unplanned",
+            "label": "Unplanned Incident State"
+          },
+          {
+            "id": "planned",
+            "label": "Planned Maintenance State"
+          },
+          {
+            "id": "zero_downtime",
+            "label": "Zero Downtime Deployments"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "From the perspective of an end user downtime is downtime.",
+            "activeStateId": "unplanned",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Users experience all downtime equally so planned downtime consumes budget.",
+            "activeStateId": "zero_downtime",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Operational downtime classifications and error budget impact",
+        "states": [
+          {
+            "id": "unplanned",
+            "label": "Unplanned Incident State"
+          },
+          {
+            "id": "planned",
+            "label": "Planned Maintenance State"
+          },
+          {
+            "id": "zero_downtime",
+            "label": "Zero Downtime Deployments"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "From the perspective of an end user downtime is downtime.",
+            "activeStateId": "unplanned",
+            "statusBadge": "failed"
+          },
+          {
+            "at": "say5",
+            "caption": "Users experience all downtime equally so planned downtime consumes budget.",
+            "activeStateId": "zero_downtime",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Pragmatic Target: Engineering for Three and Four Nines",
+      "codeHash": "e50387cf07a3d160968d6fb7f44f2bc89e90ea3870c80989a3f0771e0d7143f1",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
