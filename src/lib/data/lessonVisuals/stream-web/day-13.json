@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 13,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Data Compression in High-Throughput Distributed Streaming",
+      "codeHash": "9011a2c5e66c1b126dc3e609bf3a68e0ae9004d29bf37c2d867c98f76f214079",
+      "spec": {
+        "template": "sequence",
+        "title": "End-to-end producer compression, zero-decompression broker storage, and consumer decode",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Streaming Producer"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Disk Segments"
+          },
+          {
+            "id": "consumer",
+            "label": "Consumer Worker"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "By applying data compression, producers shrink payloads before transmission.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Transmit Compressed Batch (65% Byte Reduction)"
+              }
+            ],
+            "activeActorId": "producer"
+          },
+          {
+            "at": "say7",
+            "caption": "The broker writes compressed bytes directly to disk without decompressing.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "broker",
+                "label": "Append Compressed Bytes Directly to Disk"
+              },
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "Deliver Compressed Batch -> Decompress in RAM"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "End-to-end producer compression, zero-decompression broker storage, and consumer decode",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Streaming Producer"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Disk Segments"
+          },
+          {
+            "id": "consumer",
+            "label": "Consumer Worker"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "By applying data compression, producers shrink payloads before transmission.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "broker",
+                "label": "Transmit Compressed Batch (65% Byte Reduction)"
+              }
+            ],
+            "activeActorId": "producer"
+          },
+          {
+            "at": "say7",
+            "caption": "The broker writes compressed bytes directly to disk without decompressing.",
+            "messages": [
+              {
+                "from": "broker",
+                "to": "broker",
+                "label": "Append Compressed Bytes Directly to Disk"
+              },
+              {
+                "from": "broker",
+                "to": "consumer",
+                "label": "Deliver Compressed Batch -> Decompress in RAM"
+              }
+            ],
+            "activeActorId": "consumer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithm Comparison: Snappy & LZ4 vs Gzip & Zstandard",
+      "codeHash": "a1a9631e27f10122d442cbb2adf159dd988bc9c24140a889cbd6ff89d3a2212a",
+      "spec": {
+        "template": "table",
+        "title": "Streaming compression codec benchmark matrix across speed and ratio",
+        "columns": [
+          "Codec",
+          "Compress (MB/s)",
+          "Decompress (MB/s)",
+          "Ratio (%)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Snappy and LZ4 are speed-optimized codecs with fast decompression speeds.",
+            "rows": [
+              [
+                "LZ4",
+                "750",
+                "3200",
+                "52%"
+              ],
+              [
+                "SNAPPY",
+                "500",
+                "1800",
+                "50%"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Zstandard exceeds Gzip compression ratio while matching fast decompression.",
+            "rows": [
+              [
+                "LZ4",
+                "750",
+                "3200",
+                "52%"
+              ],
+              [
+                "SNAPPY",
+                "500",
+                "1800",
+                "50%"
+              ],
+              [
+                "GZIP",
+                "80",
+                "350",
+                "72%"
+              ],
+              [
+                "ZSTD",
+                "300",
+                "1500",
+                "74%"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Streaming compression codec benchmark matrix across speed and ratio",
+        "columns": [
+          "Codec",
+          "Compress (MB/s)",
+          "Decompress (MB/s)",
+          "Ratio (%)"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Snappy and LZ4 are speed-optimized codecs with fast decompression speeds.",
+            "rows": [
+              [
+                "LZ4",
+                "750",
+                "3200",
+                "52%"
+              ],
+              [
+                "SNAPPY",
+                "500",
+                "1800",
+                "50%"
+              ]
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Zstandard exceeds Gzip compression ratio while matching fast decompression.",
+            "rows": [
+              [
+                "LZ4",
+                "750",
+                "3200",
+                "52%"
+              ],
+              [
+                "SNAPPY",
+                "500",
+                "1800",
+                "50%"
+              ],
+              [
+                "GZIP",
+                "80",
+                "350",
+                "72%"
+              ],
+              [
+                "ZSTD",
+                "300",
+                "1500",
+                "74%"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Batch-Level Compression vs Record-Level Compression",
+      "codeHash": "b2f9bc1fd1d770bb832d7ec6a71470701351aa785354e06fa8c6da853fc5eb3f",
+      "spec": {
+        "template": "cells",
+        "title": "Per-record cold dictionary (8.0% savings) versus warm batch dictionary (65.0% savings)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When a producer compresses each message individually, the dictionary resets.",
+            "items": [
+              {
+                "text": "Rec 1 (Cold Dict)"
+              },
+              {
+                "text": "Rec 2 (Cold Dict)"
+              },
+              {
+                "text": "3680B / 4000B"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "PER_RECORD:8.0%",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Streaming platforms bundle dozens of messages together before compression.",
+            "items": [
+              {
+                "text": "20 Recs Bundled"
+              },
+              {
+                "text": "Shared JSON Keys"
+              },
+              {
+                "text": "1400B / 4000B"
+              }
+            ],
+            "pointers": [
+              {
+                "name": "BATCH_LEVEL:65.0%",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Per-record cold dictionary (8.0% savings) versus warm batch dictionary (65.0% savings)",
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When a producer compresses each message individually, the dictionary resets.",
+            "items": [
+              "Rec 1 (Cold Dict)",
+              "Rec 2 (Cold Dict)",
+              "3680B / 4000B"
+            ],
+            "pointers": [
+              {
+                "name": "PER_RECORD:8.0%",
+                "index": 2,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "Streaming platforms bundle dozens of messages together before compression.",
+            "items": [
+              "20 Recs Bundled",
+              "Shared JSON Keys",
+              "1400B / 4000B"
+            ],
+            "pointers": [
+              {
+                "name": "BATCH_LEVEL:65.0%",
+                "index": 2,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU Cycles vs Network Bandwidth Trade-off Analysis",
+      "codeHash": "2a7efa36a9eaedc8e32eb3441cc1309509713a8ba81e4092aa367cf041fde776",
+      "spec": {
+        "template": "bars",
+        "title": "Bandwidth saved (Gbps) and CPU overhead (cores) on a 10 Gbps 4-core node",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Enabling LZ4 or Zstandard frees network capacity, doubling cluster throughput.",
+            "bars": [
+              {
+                "label": "LZ4 Saved (Gbps)",
+                "value": {
+                  "text": "5"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "GZIP Saved (Gbps)",
+                "value": {
+                  "text": "7.5"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lightweight codecs like LZ4 and Snappy deliver byte savings with low CPU cost.",
+            "bars": [
+              {
+                "label": "LZ4 CPU Cores",
+                "value": {
+                  "text": "0.25"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "GZIP_LEVEL_9 Cores",
+                "value": {
+                  "text": "3.8"
+                },
+                "tone": "error"
+              },
+              {
+                "label": "Available Cores",
+                "value": {
+                  "text": "4"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Bandwidth saved (Gbps) and CPU overhead (cores) on a 10 Gbps 4-core node",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Enabling LZ4 or Zstandard frees network capacity, doubling cluster throughput.",
+            "bars": [
+              {
+                "label": "LZ4 Saved (Gbps)",
+                "value": 5,
+                "tone": "ok"
+              },
+              {
+                "label": "GZIP Saved (Gbps)",
+                "value": 7.5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Lightweight codecs like LZ4 and Snappy deliver byte savings with low CPU cost.",
+            "bars": [
+              {
+                "label": "LZ4 CPU Cores",
+                "value": 0.25,
+                "tone": "ok"
+              },
+              {
+                "label": "GZIP_LEVEL_9 Cores",
+                "value": 3.8,
+                "tone": "error"
+              },
+              {
+                "label": "Available Cores",
+                "value": 4,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cloud Egress Cost Optimization & Cross-AZ Economics",
+      "codeHash": "706f986b0661e208cca0c62891df1db0aa70bfa8ad8a5d0d3f9ee34da8b954bb",
+      "spec": {
+        "template": "flow",
+        "title": "Cross-AZ replication egress savings on 500 TB/mo stream (65% compression)",
+        "nodes": [
+          {
+            "id": "rawStream",
+            "label": "Uncompressed (500,000 GB/mo)",
+            "tappable": false
+          },
+          {
+            "id": "codecStage",
+            "label": "65% Stream Compression",
+            "tappable": false
+          },
+          {
+            "id": "crossAz",
+            "label": "Cross-AZ Egress (175,000 GB/mo)",
+            "tappable": false
+          },
+          {
+            "id": "roiSavings",
+            "label": "Annual Savings ($78,000/yr)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawStream",
+            "to": "codecStage",
+            "label": "0.5 PB"
+          },
+          {
+            "from": "codecStage",
+            "to": "crossAz",
+            "label": "Save 325,000 GB"
+          },
+          {
+            "from": "crossAz",
+            "to": "roiSavings",
+            "label": "$0.02/GB"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Follower replicas in other zones continuously replicate partition data.",
+            "activeNodes": [
+              "rawStream",
+              "codecStage"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Enabling compression reduces total gigabytes traversing network boundaries.",
+            "activeNodes": [
+              "crossAz",
+              "roiSavings"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Cross-AZ replication egress savings on 500 TB/mo stream (65% compression)",
+        "nodes": [
+          {
+            "id": "rawStream",
+            "label": "Uncompressed (500,000 GB/mo)",
+            "tappable": false
+          },
+          {
+            "id": "codecStage",
+            "label": "65% Stream Compression",
+            "tappable": false
+          },
+          {
+            "id": "crossAz",
+            "label": "Cross-AZ Egress (175,000 GB/mo)",
+            "tappable": false
+          },
+          {
+            "id": "roiSavings",
+            "label": "Annual Savings ($78,000/yr)",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "rawStream",
+            "to": "codecStage",
+            "label": "0.5 PB"
+          },
+          {
+            "from": "codecStage",
+            "to": "crossAz",
+            "label": "Save 325,000 GB"
+          },
+          {
+            "from": "crossAz",
+            "to": "roiSavings",
+            "label": "$0.02/GB"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Follower replicas in other zones continuously replicate partition data.",
+            "activeNodes": [
+              "rawStream",
+              "codecStage"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Enabling compression reduces total gigabytes traversing network boundaries.",
+            "activeNodes": [
+              "crossAz",
+              "roiSavings"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Batch Compression Benchmark & Estimator",
+      "codeHash": "a64f3c0d58001f92801912febc485def7b4521aacede661a9a59a556da80413c",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
