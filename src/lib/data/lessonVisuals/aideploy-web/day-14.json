@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 14,
+  "promptSha": "8a083f30550e6772db57b56a33890d27d4ab20c8588112460982da139a0baea9",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Floating-Point Precision: FP32, FP16, BF16 & INT8/INT4",
+      "codeHash": "8a083f30550e6772db57b56a33890d27d4ab20c8588112460982da139a0baea9",
+      "spec": {
+        "template": "table",
+        "title": "Numerical Precision Formats and Memory Sizing",
+        "columns": ["Precision Format", "Bits / Param", "Bytes / Param", "70B Weight Memory"],
+        "rows": [
+          { "Precision Format": { "text": "FP32 (Single)" }, "Bits / Param": { "text": "32 bits" }, "Bytes / Param": { "text": "4.0 bytes" }, "70B Weight Memory": { "text": "280 GB (Exceeds single node)" } },
+          { "Precision Format": { "text": "FP16 / BF16 (Half)" }, "Bits / Param": { "text": "16 bits" }, "Bytes / Param": { "text": "2.0 bytes" }, "70B Weight Memory": { "text": "140 GB (Requires 2x 80GB GPUs)" } },
+          { "Precision Format": { "text": "INT8 (Quantized)" }, "Bits / Param": { "text": "8 bits" }, "Bytes / Param": { "text": "1.0 byte" }, "70B Weight Memory": { "text": "70 GB (Fits 1x 80GB GPU)" } },
+          { "Precision Format": { "text": "INT4 (Compressed)" }, "Bits / Param": { "text": "4 bits" }, "Bytes / Param": { "text": "0.5 bytes" }, "70B Weight Memory": { "text": "35 GB (Fits comfortably)" } }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Single precision FP32 consumes four bytes for every model parameter.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Modern inference uses FP16 reducing memory consumption to two bytes.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say5",
+            "caption": "Quantization compresses weights to one byte in INT8 and half byte in INT4.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Numerical Precision Formats and Memory Sizing",
+        "columns": ["Precision Format", "Bits / Param", "Bytes / Param", "70B Weight Memory"],
+        "rows": [
+          { "Precision Format": "FP32 (Single)", "Bits / Param": "32 bits", "Bytes / Param": "4.0 bytes", "70B Weight Memory": "280 GB (Exceeds single node)" },
+          { "Precision Format": "FP16 / BF16 (Half)", "Bits / Param": "16 bits", "Bytes / Param": "2.0 bytes", "70B Weight Memory": "140 GB (Requires 2x 80GB GPUs)" },
+          { "Precision Format": "INT8 (Quantized)", "Bits / Param": "8 bits", "Bytes / Param": "1.0 byte", "70B Weight Memory": "70 GB (Fits 1x 80GB GPU)" },
+          { "Precision Format": "INT4 (Compressed)", "Bits / Param": "4 bits", "Bytes / Param": "0.5 bytes", "70B Weight Memory": "35 GB (Fits comfortably)" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Single precision FP32 consumes four bytes for every model parameter.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Modern inference uses FP16 reducing memory consumption to two bytes.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say5",
+            "caption": "Quantization compresses weights to one byte in INT8 and half byte in INT4.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Model Weight VRAM Formula: Parameter Sizing",
+      "codeHash": "62a14f1782117f8f3a258935b2058a12622d46a5ce9592016a39a3fd7b0f8d7b",
+      "spec": {
+        "template": "bars",
+        "title": "Model Weight VRAM Footprint with Overhead (GB)",
+        "bars": [
+          { "label": "7B Model (FP16)", "value": { "text": "16" }, "tone": "data" },
+          { "label": "7B Model (INT4)", "value": { "text": "4" }, "tone": "ok" },
+          { "label": "70B Model (INT4)", "value": { "text": "39" }, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Weight memory equals parameter count multiplied by bytes per parameter.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Sizing models apply a twenty percent multiplier for framework runtime buffers.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say7",
+            "caption": "With INT4 quantization massive 70B models compress into modest weight VRAM.",
+            "highlightBar": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Model Weight VRAM Footprint with Overhead (GB)",
+        "bars": [
+          { "label": "7B Model (FP16)", "value": 16, "tone": "data" },
+          { "label": "7B Model (INT4)", "value": 4, "tone": "ok" },
+          { "label": "70B Model (INT4)", "value": 39, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Weight memory equals parameter count multiplied by bytes per parameter.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Sizing models apply a twenty percent multiplier for framework runtime buffers.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say7",
+            "caption": "With INT4 quantization massive 70B models compress into modest weight VRAM.",
+            "highlightBar": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "KV-Cache Attention Memory Scaling",
+      "codeHash": "925624f20e22ea776033c8876832423870ed32d2be5c2122faa1e0f9aa3f2a95",
+      "spec": {
+        "template": "flow",
+        "title": "Dynamic KV-Cache Memory Expansion Architecture",
+        "nodes": [
+          { "id": "attention", "label": "Transformer Attention", "tappable": false },
+          { "id": "cache", "label": "Key & Value Cache", "tappable": false },
+          { "id": "scaling", "label": "Layers * Dim * Context", "tappable": false },
+          { "id": "concurrency", "label": "Batch Concurrency (16x)", "tappable": false },
+          { "id": "vram", "label": "KV VRAM (32 GB Demand)", "tappable": false }
+        ],
+        "edges": [
+          { "from": "attention", "to": "cache" },
+          { "from": "cache", "to": "scaling" },
+          { "from": "scaling", "to": "concurrency" },
+          { "from": "concurrency", "to": "vram" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The dynamic Key-Value cache often consumes more VRAM than static weights.",
+            "activeNodes": ["attention", "cache"],
+            "statusBadge": "caching"
+          },
+          {
+            "at": "say5",
+            "caption": "KV cache memory scales with layers, dimension, context length, and batch size.",
+            "activeNodes": ["cache", "scaling", "concurrency"],
+            "statusBadge": "scaling"
+          },
+          {
+            "at": "say9",
+            "caption": "Failing to model cache growth causes GPU Out-Of-Memory crashes during spikes.",
+            "activeNodes": ["concurrency", "vram"],
+            "statusBadge": "monitoring"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Dynamic KV-Cache Memory Expansion Architecture",
+        "nodes": [
+          { "id": "attention", "label": "Transformer Attention", "tappable": false },
+          { "id": "cache", "label": "Key & Value Cache", "tappable": false },
+          { "id": "scaling", "label": "Layers * Dim * Context", "tappable": false },
+          { "id": "concurrency", "label": "Batch Concurrency (16x)", "tappable": false },
+          { "id": "vram", "label": "KV VRAM (32 GB Demand)", "tappable": false }
+        ],
+        "edges": [
+          { "from": "attention", "to": "cache" },
+          { "from": "cache", "to": "scaling" },
+          { "from": "scaling", "to": "concurrency" },
+          { "from": "concurrency", "to": "vram" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The dynamic Key-Value cache often consumes more VRAM than static weights.",
+            "activeNodes": ["attention", "cache"],
+            "statusBadge": "caching"
+          },
+          {
+            "at": "say5",
+            "caption": "KV cache memory scales with layers, dimension, context length, and batch size.",
+            "activeNodes": ["cache", "scaling", "concurrency"],
+            "statusBadge": "scaling"
+          },
+          {
+            "at": "say9",
+            "caption": "Failing to model cache growth causes GPU Out-Of-Memory crashes during spikes.",
+            "activeNodes": ["concurrency", "vram"],
+            "statusBadge": "monitoring"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Activation Memory & CUDA Context Overhead",
+      "codeHash": "a6ccd81f4dfa43879c6bc9e6b8a9e4dcb18b526c680a847311ee452bed5e7b6f",
+      "spec": {
+        "template": "workflow",
+        "title": "Total GPU VRAM Allocation Pipeline",
+        "stages": [
+          { "id": "weight", "name": "Static Weights", "subtext": "Quantized model parameters" },
+          { "id": "kv", "name": "Dynamic KV Cache", "subtext": "Context attention tensors" },
+          { "id": "cuda", "name": "CUDA Runtime", "subtext": "Driver context (~1.5 GB)" },
+          { "id": "act", "name": "Activation Buffers", "subtext": "Forward pass tensor memory" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Initializing the CUDA runtime allocates base driver VRAM overhead.",
+            "activeStageId": "cuda",
+            "statusBadge": "allocated"
+          },
+          {
+            "at": "say5",
+            "caption": "Total VRAM demand sums weights, cache, CUDA context, and activations.",
+            "activeStageId": "act",
+            "statusBadge": "summing"
+          },
+          {
+            "at": "say6",
+            "caption": "Hardware evaluators check whether total demands fit standard GPU sizes.",
+            "activeStageId": "act",
+            "statusBadge": "evaluated"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Total GPU VRAM Allocation Pipeline",
+        "stages": [
+          { "id": "weight", "name": "Static Weights", "subtext": "Quantized model parameters" },
+          { "id": "kv", "name": "Dynamic KV Cache", "subtext": "Context attention tensors" },
+          { "id": "cuda", "name": "CUDA Runtime", "subtext": "Driver context (~1.5 GB)" },
+          { "id": "act", "name": "Activation Buffers", "subtext": "Forward pass tensor memory" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Initializing the CUDA runtime allocates base driver VRAM overhead.",
+            "activeStageId": "cuda",
+            "statusBadge": "allocated"
+          },
+          {
+            "at": "say5",
+            "caption": "Total VRAM demand sums weights, cache, CUDA context, and activations.",
+            "activeStageId": "act",
+            "statusBadge": "summing"
+          },
+          {
+            "at": "say6",
+            "caption": "Hardware evaluators check whether total demands fit standard GPU sizes.",
+            "activeStageId": "act",
+            "statusBadge": "evaluated"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantization Perplexity Trade-Offs & Accuracy Bounds",
+      "codeHash": "f74aadd02c5ba456ce7fd2caca832c921a9893d55fe806bddb198f0c3342e287",
+      "spec": {
+        "template": "compare",
+        "title": "Small Models vs Large Frontier Models Quantization",
+        "leftLabel": "Small Models (< 10B Parameters)",
+        "rightLabel": "Large Frontier Models (70B+)",
+        "leftItems": [
+          "Fewer redundant parameters in network",
+          "Aggressive INT4 harms reasoning accuracy",
+          "Noticeable degradation on coding tasks",
+          "Recommend FP16 or high-bit INT8"
+        ],
+        "rightItems": [
+          "High parameter redundancy in dense layers",
+          "Tolerates INT4 with <0.5% perplexity loss",
+          "Preserves reasoning and MMLU benchmarks",
+          "INT4 is standard production deployment"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Large models tolerate aggressive quantization far better than small models.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Small models have fewer redundant parameters and degrade on four-bit formats.",
+            "highlightSide": "left"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Small Models vs Large Frontier Models Quantization",
+        "leftLabel": "Small Models (< 10B Parameters)",
+        "rightLabel": "Large Frontier Models (70B+)",
+        "leftItems": [
+          "Fewer redundant parameters in network",
+          "Aggressive INT4 harms reasoning accuracy",
+          "Noticeable degradation on coding tasks",
+          "Recommend FP16 or high-bit INT8"
+        ],
+        "rightItems": [
+          "High parameter redundancy in dense layers",
+          "Tolerates INT4 with <0.5% perplexity loss",
+          "Preserves reasoning and MMLU benchmarks",
+          "INT4 is standard production deployment"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Large models tolerate aggressive quantization far better than small models.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say6",
+            "caption": "Small models have fewer redundant parameters and degrade on four-bit formats.",
+            "highlightSide": "left"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production GPU Hardware Sizing Engine",
+      "codeHash": "171c3383bc62a9166cb0fc78e0b86b5beecb47835efa210be85be851e1c47e90",
+      "spec": {
+        "template": "none",
+        "reason": "Production GPU Hardware Sizing Engine capstone synthesizing precision lookups, weight formulas, KV cache scaling, and node mapping"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production GPU Hardware Sizing Engine capstone synthesizing precision lookups, weight formulas, KV cache scaling, and node mapping"
+      }
+    }
+  ]
+}
