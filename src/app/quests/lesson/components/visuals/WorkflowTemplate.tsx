@@ -40,12 +40,13 @@ export function WorkflowTemplate({
   onShapeTap,
   showSpaces,
 }: WorkflowTemplateProps): React.ReactElement {
-  const effectiveStages = (step.stages && step.stages.length > 0) ? step.stages : (stages.length > 0 ? stages : [
+  const fallbackStages: WorkflowStageNode[] = [
     { id: 'client', name: 'Browser Client', subtext: 'HTTP / WS', tone: 'idle' },
     { id: 'ingress', name: 'API Gateway', subtext: 'Reverse Proxy', tone: 'data' },
     { id: 'service', name: 'App Service', subtext: 'Worker Pods', tone: 'ok' },
     { id: 'db', name: 'Database', subtext: 'Postgres / Redis', tone: 'idle' },
-  ]);
+  ];
+  const effectiveStages: WorkflowStageNode[] = (step.stages && step.stages.length > 0) ? step.stages : (stages.length > 0 ? stages : fallbackStages);
 
   const activeId = step.activeStageId || effectiveStages[1]?.id;
 

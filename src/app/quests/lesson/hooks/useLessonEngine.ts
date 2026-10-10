@@ -16,7 +16,7 @@ import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRe
 import { LessonState } from './useLessonState';
 import { compileTs } from '@/lib/code/ts/compileTs';
 import { getVisual, loadDayFile, fetchAndCacheDayFile } from '@/lib/visuals/loadVisuals';
-import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/runPythonTrace';
+import { PYTHON_TRACER_SOURCE } from '@/lib/visuals/trace/pythonTracer';
 import { TEMPLATE_REGISTRY } from '@/lib/visuals/registry';
 import type { VisualAt, LessonVisual } from '@/lib/types/lessonVisual';
 
@@ -95,17 +95,16 @@ export function refillVisualFromTrace(
 
     // 2. Identify variables required by the visual
     const requiredVars = new Set<string>();
-    if ((defaultVisual as any).boxes && Array.isArray((defaultVisual as any).boxes)) {
       for (const step of defaultVisual.steps) {
-        if (step.values) {
-          for (const [boxId, val] of Object.entries(step.values)) {
+        const stepValues = (step as any).values;
+        if (stepValues) {
+          for (const [boxId, val] of Object.entries(stepValues)) {
             if (val !== '' && val !== undefined) {
               requiredVars.add(boxId);
             }
           }
         }
       }
-    }
 
     if (Array.isArray(spec.steps)) {
       for (const s of spec.steps) {
@@ -578,7 +577,7 @@ export function useLessonEngine({
           const dayFile = loadDayFile(parsedId.prefix, parsedId.dayNum);
           const entry = dayFile?.entries?.[slideIdx];
           if (entry && entry.spec && entry.spec.template !== 'none') {
-            const defaultVisual = (entry.filled as LessonVisual) || slides[slideIdx].visual;
+            const defaultVisual = (entry.filled as unknown as LessonVisual) || slides[slideIdx].visual;
             const refilled = refillVisualFromTrace(
               entry.spec,
               defaultVisual,

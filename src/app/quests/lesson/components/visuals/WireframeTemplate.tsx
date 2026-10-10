@@ -42,11 +42,12 @@ export function WireframeTemplate({
   onShapeTap,
   showSpaces,
 }: WireframeTemplateProps): React.ReactElement {
-  const effectiveBoxes = (step.boxes && step.boxes.length > 0) ? step.boxes : (boxes.length > 0 ? boxes : [
+  const fallbackBoxes: WireframeBox[] = [
     { id: 'header', label: '<header>', flex: '1', tone: 'idle' },
     { id: 'sidebar', label: '<aside>', flex: '1', tone: 'data' },
     { id: 'content', label: '<main>', flex: '2', tone: 'ok' },
-  ]);
+  ];
+  const effectiveBoxes: WireframeBox[] = (step.boxes && step.boxes.length > 0) ? step.boxes : (boxes.length > 0 ? boxes : fallbackBoxes);
 
   const activeId = step.activeBoxId || effectiveBoxes[1]?.id;
   const isBoxModel = step.layoutMode === 'box-model';

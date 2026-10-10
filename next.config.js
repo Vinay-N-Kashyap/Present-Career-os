@@ -94,7 +94,7 @@ const nextConfig = {
   },
 
   experimental: {
-    serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node'],
+    serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node', 'pyodide'],
   },
 
   webpack: (config, { isServer }) => {
@@ -109,6 +109,7 @@ const nextConfig = {
         'sharp$':             false,
         'onnxruntime-node$':  false,
         'esbuild$':           false,
+        'pyodide$':           false,
         fs: false,
         path: false,
         child_process: false,

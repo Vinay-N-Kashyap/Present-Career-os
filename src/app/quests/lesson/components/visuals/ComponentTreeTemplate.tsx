@@ -42,12 +42,13 @@ export function ComponentTreeTemplate({
   onShapeTap,
   showSpaces,
 }: ComponentTreeTemplateProps): React.ReactElement {
-  const effectiveNodes = (step.nodes && step.nodes.length > 0) ? step.nodes : (nodes.length > 0 ? nodes : [
+  const fallbackNodes: ComponentTreeNode[] = [
     { id: 'App', name: '<App />', tone: 'idle' },
     { id: 'Header', name: '<Header />', tone: 'idle' },
     { id: 'Feed', name: '<Feed />', tone: 'data' },
     { id: 'PostItem', name: '<PostItem />', tone: 'ok' },
-  ]);
+  ];
+  const effectiveNodes: ComponentTreeNode[] = (step.nodes && step.nodes.length > 0) ? step.nodes : (nodes.length > 0 ? nodes : fallbackNodes);
 
   const activeId = step.activeId || effectiveNodes[0]?.id;
   const reRendering = new Set(step.reRenderingIds || []);
