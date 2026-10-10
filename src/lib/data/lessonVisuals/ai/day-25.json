@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 25,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Inference Bottlenecks: Memory-Bound Decoding & KV Cache Bloat",
+      "codeHash": "76499b0f121bf0ef3e6a2ec19c69ba0e8e03ab23d038a9a56c366077789b75c2",
+      "spec": {
+        "template": "none",
+        "reason": "Conceptual introduction to autoregressive decoding bottlenecks and memory scaling"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Conceptual introduction to autoregressive decoding bottlenecks and memory scaling"
+      }
+    },
+    {
+      "partTitle": "PagedAttention Architecture: Virtual Memory for KV Caches",
+      "codeHash": "1e98ac4babb71144f3c9196b83722e02451d12c2722099a840a02131b0616ad5",
+      "spec": {
+        "template": "flow",
+        "title": "PagedAttention virtual memory mapping and non-contiguous physical allocation",
+        "nodes": [
+          {
+            "id": "logicalTokens",
+            "label": "Logical Token Stream",
+            "tappable": false
+          },
+          {
+            "id": "blockTable",
+            "label": "Virtual Block Table",
+            "tappable": false
+          },
+          {
+            "id": "physicalPool",
+            "label": "Physical Memory Pool",
+            "tappable": false
+          },
+          {
+            "id": "pagedKernel",
+            "label": "PagedAttention Kernel",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "logicalTokens",
+            "to": "blockTable",
+            "label": "Partition Fixed Size Blocks"
+          },
+          {
+            "from": "blockTable",
+            "to": "physicalPool",
+            "label": "Map Non-Contiguous Pages"
+          },
+          {
+            "from": "physicalPool",
+            "to": "pagedKernel",
+            "label": "Gather Attention Vectors"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The cache partitions into discrete physical blocks holding token slots.",
+            "activeNodes": [
+              "logicalTokens",
+              "blockTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "This eliminates external fragmentation and yields high throughput improvements.",
+            "activeNodes": [
+              "physicalPool",
+              "pagedKernel"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "PagedAttention virtual memory mapping and non-contiguous physical allocation",
+        "nodes": [
+          {
+            "id": "logicalTokens",
+            "label": "Logical Token Stream",
+            "tappable": false
+          },
+          {
+            "id": "blockTable",
+            "label": "Virtual Block Table",
+            "tappable": false
+          },
+          {
+            "id": "physicalPool",
+            "label": "Physical Memory Pool",
+            "tappable": false
+          },
+          {
+            "id": "pagedKernel",
+            "label": "PagedAttention Kernel",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "logicalTokens",
+            "to": "blockTable",
+            "label": "Partition Fixed Size Blocks"
+          },
+          {
+            "from": "blockTable",
+            "to": "physicalPool",
+            "label": "Map Non-Contiguous Pages"
+          },
+          {
+            "from": "physicalPool",
+            "to": "pagedKernel",
+            "label": "Gather Attention Vectors"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The cache partitions into discrete physical blocks holding token slots.",
+            "activeNodes": [
+              "logicalTokens",
+              "blockTable"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "This eliminates external fragmentation and yields high throughput improvements.",
+            "activeNodes": [
+              "physicalPool",
+              "pagedKernel"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling)",
+      "codeHash": "d706885456fcd1049deeff4038766d16339dd418bc7e497b117f293fdfbcdab9",
+      "spec": {
+        "template": "compare",
+        "title": "Static batching compute starvation versus continuous iteration scheduling",
+        "left": {
+          "title": "Static Batching Starvation",
+          "items": [
+            "Waits for slowest request",
+            "Short queries stay trapped",
+            "High idle compute waste",
+            "Poor hardware utilization"
+          ]
+        },
+        "right": {
+          "title": "Continuous Dynamic Batching",
+          "items": [
+            "Iteration-level scheduling",
+            "Evicts completed sequences",
+            "Slots new requests instantly",
+            "Near 100% GPU utilization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Short queries remain trapped for seconds leaving GPU compute idle.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In that exact iteration newly arrived requests slot into the active batch.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Static batching compute starvation versus continuous iteration scheduling",
+        "left": {
+          "title": "Static Batching Starvation",
+          "items": [
+            "Waits for slowest request",
+            "Short queries stay trapped",
+            "High idle compute waste",
+            "Poor hardware utilization"
+          ]
+        },
+        "right": {
+          "title": "Continuous Dynamic Batching",
+          "items": [
+            "Iteration-level scheduling",
+            "Evicts completed sequences",
+            "Slots new requests instantly",
+            "Near 100% GPU utilization"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Short queries remain trapped for seconds leaving GPU compute idle.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "In that exact iteration newly arrived requests slot into the active batch.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Model Quantization Formats: GGUF, AWQ, and GPTQ",
+      "codeHash": "d90141d650f10d197afb720b08e3c7d2e361715f05d543fff232fbe7b90f4d4a",
+      "spec": {
+        "template": "table",
+        "title": "Production open-source quantization formats and hardware targets",
+        "columns": [
+          "Format Standard",
+          "Quantization Algorithm",
+          "Hardware Target",
+          "Production Fit"
+        ],
+        "rows": [
+          [
+            "GGUF Binary",
+            "Block-wise k-quant integer",
+            "CPU and Apple Silicon Metal",
+            "Local Desktop and Edge"
+          ],
+          [
+            "AWQ Format",
+            "Activation-aware salient weights",
+            "Nvidia CUDA Tensor Cores",
+            "High-Throughput Cloud vLLM"
+          ],
+          [
+            "GPTQ Format",
+            "Second-order Taylor optimization",
+            "Nvidia GPU GEMM Kernels",
+            "Dedicated GPU Microservices"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "GGUF is designed by llama.cpp for CPU and local desktop execution.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "AWQ optimizes for Nvidia GPUs by protecting salient weights from loss.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Production open-source quantization formats and hardware targets",
+        "columns": [
+          "Format Standard",
+          "Quantization Algorithm",
+          "Hardware Target",
+          "Production Fit"
+        ],
+        "rows": [
+          [
+            "GGUF Binary",
+            "Block-wise k-quant integer",
+            "CPU and Apple Silicon Metal",
+            "Local Desktop and Edge"
+          ],
+          [
+            "AWQ Format",
+            "Activation-aware salient weights",
+            "Nvidia CUDA Tensor Cores",
+            "High-Throughput Cloud vLLM"
+          ],
+          [
+            "GPTQ Format",
+            "Second-order Taylor optimization",
+            "Nvidia GPU GEMM Kernels",
+            "Dedicated GPU Microservices"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "GGUF is designed by llama.cpp for CPU and local desktop execution.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "AWQ optimizes for Nvidia GPUs by protecting salient weights from loss.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Local Model Serving with Ollama: Modelfiles & API Client",
+      "codeHash": "781e979e25c8e381d08a015919a791b7ff1a3b2063ed0da3d1f7df4a9acdb6f4",
+      "spec": {
+        "template": "boxes",
+        "title": "Local open-source model packaging with declarative Modelfile and Ollama",
+        "boxes": [
+          {
+            "id": "modelfileBox",
+            "title": "Declarative Modelfile",
+            "items": [
+              "FROM base GGUF model",
+              "SYSTEM persona directives",
+              "PARAMETER temperature 0.2"
+            ]
+          },
+          {
+            "id": "runtimeBox",
+            "title": "Ollama Serving Runtime",
+            "items": [
+              "Llama.cpp backend engine",
+              "Metal and CUDA acceleration",
+              "Local context caching"
+            ]
+          },
+          {
+            "id": "apiBox",
+            "title": "OpenAI Compatible API",
+            "items": [
+              "Standard port 11434 endpoint",
+              "Real-time token streaming",
+              "Zero cloud API key costs"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Ollama uses a container-like abstraction defined by a declarative Modelfile.",
+            "activeBoxId": "modelfileBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Client applications send requests with full real-time token streaming support.",
+            "activeBoxId": "apiBox",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Local open-source model packaging with declarative Modelfile and Ollama",
+        "boxes": [
+          {
+            "id": "modelfileBox",
+            "title": "Declarative Modelfile",
+            "items": [
+              "FROM base GGUF model",
+              "SYSTEM persona directives",
+              "PARAMETER temperature 0.2"
+            ]
+          },
+          {
+            "id": "runtimeBox",
+            "title": "Ollama Serving Runtime",
+            "items": [
+              "Llama.cpp backend engine",
+              "Metal and CUDA acceleration",
+              "Local context caching"
+            ]
+          },
+          {
+            "id": "apiBox",
+            "title": "OpenAI Compatible API",
+            "items": [
+              "Standard port 11434 endpoint",
+              "Real-time token streaming",
+              "Zero cloud API key costs"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Ollama uses a container-like abstraction defined by a declarative Modelfile.",
+            "activeBoxId": "modelfileBox",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Client applications send requests with full real-time token streaming support.",
+            "activeBoxId": "apiBox",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput vLLM Serving Benchmark Simulator",
+      "codeHash": "5a4c4958fc3e8ed5a062acda9a5fb50a34258c87ae0e46e01644298845a35180",
+      "spec": {
+        "template": "sequence",
+        "title": "High-throughput vLLM continuous batching and PagedAttention benchmark",
+        "actors": [
+          {
+            "id": "clientRequests",
+            "label": "Concurrent Client Traffic"
+          },
+          {
+            "id": "scheduler",
+            "label": "Iteration Scheduler"
+          },
+          {
+            "id": "pageManager",
+            "label": "PagedAttention Memory Pool"
+          },
+          {
+            "id": "gpuEngine",
+            "label": "Inference Execution Tensor"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientRequests",
+            "to": "scheduler",
+            "label": "Enqueue Inbound Prompt Sequences",
+            "tone": "data"
+          },
+          {
+            "from": "scheduler",
+            "to": "pageManager",
+            "label": "Allocate Non-Contiguous Physical Blocks",
+            "tone": "data"
+          },
+          {
+            "from": "pageManager",
+            "to": "gpuEngine",
+            "label": "Stream Logical Pages for Forward Pass",
+            "tone": "data"
+          },
+          {
+            "from": "gpuEngine",
+            "to": "clientRequests",
+            "label": "Emit Streamed Tokens at High Throughput",
+            "tone": "ok"
+          },
+          {
+            "from": "gpuEngine",
+            "to": "scheduler",
+            "label": "Signal Finished Token and Reclaim Blocks",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The engine allocates virtual pages and reclaims physical blocks in real-time.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The benchmark reports high efficiency with zero idle compute waste.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "High-throughput vLLM continuous batching and PagedAttention benchmark",
+        "actors": [
+          {
+            "id": "clientRequests",
+            "label": "Concurrent Client Traffic"
+          },
+          {
+            "id": "scheduler",
+            "label": "Iteration Scheduler"
+          },
+          {
+            "id": "pageManager",
+            "label": "PagedAttention Memory Pool"
+          },
+          {
+            "id": "gpuEngine",
+            "label": "Inference Execution Tensor"
+          }
+        ],
+        "messages": [
+          {
+            "from": "clientRequests",
+            "to": "scheduler",
+            "label": "Enqueue Inbound Prompt Sequences",
+            "tone": "data"
+          },
+          {
+            "from": "scheduler",
+            "to": "pageManager",
+            "label": "Allocate Non-Contiguous Physical Blocks",
+            "tone": "data"
+          },
+          {
+            "from": "pageManager",
+            "to": "gpuEngine",
+            "label": "Stream Logical Pages for Forward Pass",
+            "tone": "data"
+          },
+          {
+            "from": "gpuEngine",
+            "to": "clientRequests",
+            "label": "Emit Streamed Tokens at High Throughput",
+            "tone": "ok"
+          },
+          {
+            "from": "gpuEngine",
+            "to": "scheduler",
+            "label": "Signal Finished Token and Reclaim Blocks",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The engine allocates virtual pages and reclaims physical blocks in real-time.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The benchmark reports high efficiency with zero idle compute waste.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
