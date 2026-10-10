@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "prefix": "ai",
+  "day": 11,
+  "promptSha": "ced8ea7ab1333315b81d44b3f04d4fb5309b98931ee599313eeaa9d150eed65c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Bi-Encoder vs Cross-Encoder: The Architectural Divide",
+      "codeHash": "23cd58329357fd974a32618f6c4baa4e941b6f5d491eab5778fd8bcd559a5af5",
+      "spec": {
+        "template": "compare",
+        "title": "Bi-encoder independent vector embeddings versus cross-encoder joint attention",
+        "left": {
+          "title": "Bi-Encoder Architecture",
+          "items": [
+            "Independent vector forward passes",
+            "Calculates pre computed embeddings",
+            "Fast HNSW vector index search",
+            "Lacks cross token attention interplay"
+          ]
+        },
+        "right": {
+          "title": "Cross-Encoder Architecture",
+          "items": [
+            "Concatenates query and document",
+            "Joint transformer self-attention",
+            "All-to-all token attention interplay",
+            "Outputs calibrated relevance probability"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bi-encoders process queries and document chunks independently in passes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The cross-encoder feeds joint sequences through transformer layers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Bi-encoder independent vector embeddings versus cross-encoder joint attention",
+        "left": {
+          "title": "Bi-Encoder Architecture",
+          "items": [
+            "Independent vector forward passes",
+            "Calculates pre computed embeddings",
+            "Fast HNSW vector index search",
+            "Lacks cross token attention interplay"
+          ]
+        },
+        "right": {
+          "title": "Cross-Encoder Architecture",
+          "items": [
+            "Concatenates query and document",
+            "Joint transformer self-attention",
+            "All-to-all token attention interplay",
+            "Outputs calibrated relevance probability"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Bi-encoders process queries and document chunks independently in passes.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The cross-encoder feeds joint sequences through transformer layers.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Two-Stage Retrieval Pattern: Funneling from 10,000 to Top 5",
+      "codeHash": "1d36cfd9e90c8233da5cd69088a1638932248f22f47f4b77a6519a82d75f52b8",
+      "spec": {
+        "template": "flow",
+        "title": "Two-stage retrieval funnel from candidate generation to neural reranking",
+        "nodes": [
+          {
+            "id": "corpusStore",
+            "label": "Corpus Document Pool",
+            "tappable": false
+          },
+          {
+            "id": "stageOne",
+            "label": "Stage One Bi-Encoder Funnel",
+            "tappable": false
+          },
+          {
+            "id": "stageTwo",
+            "label": "Stage Two Neural Reranker",
+            "tappable": false
+          },
+          {
+            "id": "certifiedDocs",
+            "label": "Top Certified Chunks",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "corpusStore",
+            "to": "stageOne",
+            "label": "High Recall Fast Retrieval"
+          },
+          {
+            "from": "stageOne",
+            "to": "stageTwo",
+            "label": "Top Candidate Pool"
+          },
+          {
+            "from": "stageTwo",
+            "to": "certifiedDocs",
+            "label": "High Precision Joint Scoring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Fast bi-encoder search rapidly scans documents to retrieve candidates.",
+            "activeNodes": [
+              "corpusStore",
+              "stageOne"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Neural rerankers re-order candidates in strict relevance order.",
+            "activeNodes": [
+              "stageTwo",
+              "certifiedDocs"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Two-stage retrieval funnel from candidate generation to neural reranking",
+        "nodes": [
+          {
+            "id": "corpusStore",
+            "label": "Corpus Document Pool",
+            "tappable": false
+          },
+          {
+            "id": "stageOne",
+            "label": "Stage One Bi-Encoder Funnel",
+            "tappable": false
+          },
+          {
+            "id": "stageTwo",
+            "label": "Stage Two Neural Reranker",
+            "tappable": false
+          },
+          {
+            "id": "certifiedDocs",
+            "label": "Top Certified Chunks",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "corpusStore",
+            "to": "stageOne",
+            "label": "High Recall Fast Retrieval"
+          },
+          {
+            "from": "stageOne",
+            "to": "stageTwo",
+            "label": "Top Candidate Pool"
+          },
+          {
+            "from": "stageTwo",
+            "to": "certifiedDocs",
+            "label": "High Precision Joint Scoring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Fast bi-encoder search rapidly scans documents to retrieve candidates.",
+            "activeNodes": [
+              "corpusStore",
+              "stageOne"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Neural rerankers re-order candidates in strict relevance order.",
+            "activeNodes": [
+              "stageTwo",
+              "certifiedDocs"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Encoder Relevance Scoring Function",
+      "codeHash": "9674cd410005629852fb016813226b31aec4f99d4f47001f91158549027f05c9",
+      "spec": {
+        "template": "boxes",
+        "title": "Cross-encoder relevance scoring logit projection and sigmoid calibration",
+        "boxes": [
+          {
+            "id": "jointConcat",
+            "title": "Joint Sequence Input",
+            "items": [
+              "Prefix classification token",
+              "Concatenated query and chunk",
+              "Special delimiter separators"
+            ]
+          },
+          {
+            "id": "clsProjection",
+            "title": "CLS Logit Projection",
+            "items": [
+              "Final layer token representation",
+              "Linear classification matrix",
+              "Scalar attention logit output"
+            ]
+          },
+          {
+            "id": "sigmoidCalib",
+            "title": "Sigmoid Probability",
+            "items": [
+              "Non-linear sigmoid activation",
+              "Zero to one probability scale",
+              "Calibrated confidence threshold"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The classification token vector aggregates overall relationship context.",
+            "activeBoxId": "clsProjection",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers apply an absolute relevance threshold to filter weak chunks.",
+            "activeBoxId": "sigmoidCalib",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Cross-encoder relevance scoring logit projection and sigmoid calibration",
+        "boxes": [
+          {
+            "id": "jointConcat",
+            "title": "Joint Sequence Input",
+            "items": [
+              "Prefix classification token",
+              "Concatenated query and chunk",
+              "Special delimiter separators"
+            ]
+          },
+          {
+            "id": "clsProjection",
+            "title": "CLS Logit Projection",
+            "items": [
+              "Final layer token representation",
+              "Linear classification matrix",
+              "Scalar attention logit output"
+            ]
+          },
+          {
+            "id": "sigmoidCalib",
+            "title": "Sigmoid Probability",
+            "items": [
+              "Non-linear sigmoid activation",
+              "Zero to one probability scale",
+              "Calibrated confidence threshold"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "The classification token vector aggregates overall relationship context.",
+            "activeBoxId": "clsProjection",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Engineers apply an absolute relevance threshold to filter weak chunks.",
+            "activeBoxId": "sigmoidCalib",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring Context Precision: Quantifying Retrieval Signal-to-Noise",
+      "codeHash": "404c94776195eee31eedf6083b7e2db7ea89fd6415f6d4212ae6e10d56179ed8",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    },
+    {
+      "partTitle": "Reranker Token Budgeting & Truncation Guardrails",
+      "codeHash": "5efa6d1056a960bc137e90749cf52b0506ebc27d85e4dccfd3457d92cc326c30",
+      "spec": {
+        "template": "table",
+        "title": "Reranker candidate pool sizing latency trade-offs and cloud cost budgets",
+        "columns": [
+          "Reranker Strategy",
+          "Candidate Pool Size",
+          "Latency Overhead",
+          "Cost Efficiency"
+        ],
+        "rows": [
+          [
+            "Excessive Reranking",
+            "One Hundred Chunks",
+            "High Latency Spike",
+            "Expensive Cloud Cost"
+          ],
+          [
+            "Optimal Two-Stage",
+            "Twenty-Five Chunks",
+            "Sub Twenty Milliseconds",
+            "Balanced Budget Cost"
+          ],
+          [
+            "Minimal Funnel",
+            "Five Chunks",
+            "Ultra Fast Response",
+            "Risk of Missed Recall"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Exceeding maximum limits causes implementations to truncate documents.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Reranking optimal chunks strikes the ideal balance for cloud efficiency.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Reranker candidate pool sizing latency trade-offs and cloud cost budgets",
+        "columns": [
+          "Reranker Strategy",
+          "Candidate Pool Size",
+          "Latency Overhead",
+          "Cost Efficiency"
+        ],
+        "rows": [
+          [
+            "Excessive Reranking",
+            "One Hundred Chunks",
+            "High Latency Spike",
+            "Expensive Cloud Cost"
+          ],
+          [
+            "Optimal Two-Stage",
+            "Twenty-Five Chunks",
+            "Sub Twenty Milliseconds",
+            "Balanced Budget Cost"
+          ],
+          [
+            "Minimal Funnel",
+            "Five Chunks",
+            "Ultra Fast Response",
+            "Risk of Missed Recall"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Exceeding maximum limits causes implementations to truncate documents.",
+            "activeRowIndex": 0,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Reranking optimal chunks strikes the ideal balance for cloud efficiency.",
+            "activeRowIndex": 1,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hands-On Lab: Complete Two-Stage RAG Reranking Engine",
+      "codeHash": "371aa13c5ae150a26dc061b6ce7560f1d4b6877de8b8dd27d52921a6b33a2611",
+      "spec": {
+        "template": "sequence",
+        "title": "Two-stage RAG reranking pipeline candidate promotion execution",
+        "actors": [
+          {
+            "id": "userQuery",
+            "label": "Incident Query"
+          },
+          {
+            "id": "stageOneRetriever",
+            "label": "Bi-Encoder Retriever"
+          },
+          {
+            "id": "cohereReranker",
+            "label": "Neural Cross-Encoder"
+          },
+          {
+            "id": "responseGenerator",
+            "label": "Prompt Assembler"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userQuery",
+            "to": "stageOneRetriever",
+            "label": "Submit Database Recovery Question",
+            "tone": "data"
+          },
+          {
+            "from": "stageOneRetriever",
+            "to": "cohereReranker",
+            "label": "Emit Four Lexical Candidates",
+            "tone": "data"
+          },
+          {
+            "from": "cohereReranker",
+            "to": "cohereReranker",
+            "label": "Execute Joint Attention Self-Attention",
+            "tone": "data"
+          },
+          {
+            "from": "cohereReranker",
+            "to": "responseGenerator",
+            "label": "Promote Point-In-Time Guide to Rank One",
+            "tone": "success"
+          },
+          {
+            "from": "responseGenerator",
+            "to": "userQuery",
+            "label": "Deliver Certified High Precision Context",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Initial retrieval returns candidate documents based on vector similarity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The specific point-in-time recovery guide surges directly to rank one.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Two-stage RAG reranking pipeline candidate promotion execution",
+        "actors": [
+          {
+            "id": "userQuery",
+            "label": "Incident Query"
+          },
+          {
+            "id": "stageOneRetriever",
+            "label": "Bi-Encoder Retriever"
+          },
+          {
+            "id": "cohereReranker",
+            "label": "Neural Cross-Encoder"
+          },
+          {
+            "id": "responseGenerator",
+            "label": "Prompt Assembler"
+          }
+        ],
+        "messages": [
+          {
+            "from": "userQuery",
+            "to": "stageOneRetriever",
+            "label": "Submit Database Recovery Question",
+            "tone": "data"
+          },
+          {
+            "from": "stageOneRetriever",
+            "to": "cohereReranker",
+            "label": "Emit Four Lexical Candidates",
+            "tone": "data"
+          },
+          {
+            "from": "cohereReranker",
+            "to": "cohereReranker",
+            "label": "Execute Joint Attention Self-Attention",
+            "tone": "data"
+          },
+          {
+            "from": "cohereReranker",
+            "to": "responseGenerator",
+            "label": "Promote Point-In-Time Guide to Rank One",
+            "tone": "success"
+          },
+          {
+            "from": "responseGenerator",
+            "to": "userQuery",
+            "label": "Deliver Certified High Precision Context",
+            "tone": "success"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Initial retrieval returns candidate documents based on vector similarity.",
+            "activeMessageIndex": 1,
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "The specific point-in-time recovery guide surges directly to rank one.",
+            "activeMessageIndex": 3,
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}
