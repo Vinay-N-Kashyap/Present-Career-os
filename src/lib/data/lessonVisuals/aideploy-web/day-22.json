@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 22,
+  "promptSha": "4f0297d3cba4e2913e8bf02ad203392c3fea1fb5d142d187a44648abb0d87a0f",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Multi-Dimensional Evaluator Rubric Dimensions",
+      "codeHash": "4f0297d3cba4e2913e8bf02ad203392c3fea1fb5d142d187a44648abb0d87a0f",
+      "spec": {
+        "template": "table",
+        "title": "Evaluator Rubric Dimension Allocation",
+        "columns": ["Dimension Name", "Weight Allocation", "Evaluation Focus"],
+        "rows": [
+          { "Dimension Name": { "text": "Faithfulness" }, "Weight Allocation": { "text": "0.5 (50%)" }, "Evaluation Focus": { "text": "Factual grounding in reference context" } },
+          { "Dimension Name": { "text": "Relevance" }, "Weight Allocation": { "text": "0.3 (30%)" }, "Evaluation Focus": { "text": "Directly addressing user intent" } },
+          { "Dimension Name": { "text": "Coherence" }, "Weight Allocation": { "text": "0.2 (20%)" }, "Evaluation Focus": { "text": "Logical structural flow and fluency" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rubrics prevent arbitrary scoring by dividing quality into dimensions.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say7",
+            "caption": "Faithfulness ensures grounding while Relevance ensures answering queries.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "Rubric definitions transform impressions into repeatable benchmarks.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Evaluator Rubric Dimension Allocation",
+        "columns": ["Dimension Name", "Weight Allocation", "Evaluation Focus"],
+        "rows": [
+          { "Dimension Name": "Faithfulness", "Weight Allocation": "0.5 (50%)", "Evaluation Focus": "Factual grounding in reference context" },
+          { "Dimension Name": "Relevance", "Weight Allocation": "0.3 (30%)", "Evaluation Focus": "Directly addressing user intent" },
+          { "Dimension Name": "Coherence", "Weight Allocation": "0.2 (20%)", "Evaluation Focus": "Logical structural flow and fluency" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Rubrics prevent arbitrary scoring by dividing quality into dimensions.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say7",
+            "caption": "Faithfulness ensures grounding while Relevance ensures answering queries.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say8",
+            "caption": "Rubric definitions transform impressions into repeatable benchmarks.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted Rubric Score Normalization",
+      "codeHash": "04c302dcc28aadef47e0c578100968a045bb6255f2800a38fd4ca80faffdd890",
+      "spec": {
+        "template": "bars",
+        "title": "Weighted Rubric Dimension Contributions",
+        "items": [
+          { "label": "Faithfulness", "value": 50.0, "tone": "ok" },
+          { "label": "Relevance", "value": 24.0, "tone": "data" },
+          { "label": "Coherence", "value": 12.0, "tone": "idle" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions multiply each score by its respective dimension weight."
+          },
+          {
+            "at": "say6",
+            "caption": "Weighted scores yield normalized scores out of five for pipeline thresholds."
+          },
+          {
+            "at": "say8",
+            "caption": "Calculations provide single high-fidelity health scores for responses."
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Weighted Rubric Dimension Contributions",
+        "items": [
+          { "label": "Faithfulness", "value": 50.0, "tone": "ok" },
+          { "label": "Relevance", "value": 24.0, "tone": "data" },
+          { "label": "Coherence", "value": 12.0, "tone": "idle" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions multiply each score by its respective dimension weight."
+          },
+          {
+            "at": "say6",
+            "caption": "Weighted scores yield normalized scores out of five for pipeline thresholds."
+          },
+          {
+            "at": "say8",
+            "caption": "Calculations provide single high-fidelity health scores for responses."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Faithfulness vs Relevance Scoring Distinction",
+      "codeHash": "22b315a8cab861fbae50b0d4520c2d9e076e408627c09b97ad35b9242b8a7fbc",
+      "spec": {
+        "template": "compare",
+        "title": "Context Faithfulness vs Query Relevance",
+        "leftLabel": "Context Faithfulness",
+        "rightLabel": "Query Relevance",
+        "leftItems": [
+          "Grounded in retrieved text",
+          "Zero hallucinations allowed",
+          "Verifies factual provenance"
+        ],
+        "rightItems": [
+          "Directly answers user intent",
+          "Excludes off-topic fluff",
+          "Measures prompt alignment"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Completions can be faithful to source documents while failing queries.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Answers can be relevant to queries while hallucinating ungrounded facts.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Unfaithful answers are dangerous while irrelevant answers are unhelpful.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Context Faithfulness vs Query Relevance",
+        "leftLabel": "Context Faithfulness",
+        "rightLabel": "Query Relevance",
+        "leftItems": [
+          "Grounded in retrieved text",
+          "Zero hallucinations allowed",
+          "Verifies factual provenance"
+        ],
+        "rightItems": [
+          "Directly answers user intent",
+          "Excludes off-topic fluff",
+          "Measures prompt alignment"
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Completions can be faithful to source documents while failing queries.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say3",
+            "caption": "Answers can be relevant to queries while hallucinating ungrounded facts.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say7",
+            "caption": "Unfaithful answers are dangerous while irrelevant answers are unhelpful.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detecting Evaluator Position Bias via Candidate Swapping",
+      "codeHash": "74be6753d54d5839c01194c30e6e18185ce72e4fa3feec151717a234e23789cd",
+      "spec": {
+        "template": "states",
+        "title": "Position Bias Detection Pipeline",
+        "states": [
+          { "id": "normal", "label": "Trial (A vs B)" },
+          { "id": "swapped", "label": "Trial (B vs A)" },
+          { "id": "delta", "label": "Position Delta Calc" },
+          { "id": "verdict", "label": "Impartial Verdict" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pairwise evaluations execute in both directions to detect position bias.",
+            "current": "normal",
+            "visited": ["normal"]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions calculate the average score awarded to the first position.",
+            "current": "swapped",
+            "visited": ["normal", "swapped"]
+          },
+          {
+            "at": "say11",
+            "caption": "Order swapping is essential for impartial benchmark integrity.",
+            "current": "verdict",
+            "visited": ["normal", "swapped", "delta", "verdict"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Position Bias Detection Pipeline",
+        "states": [
+          { "id": "normal", "label": "Trial (A vs B)" },
+          { "id": "swapped", "label": "Trial (B vs A)" },
+          { "id": "delta", "label": "Position Delta Calc" },
+          { "id": "verdict", "label": "Impartial Verdict" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Pairwise evaluations execute in both directions to detect position bias.",
+            "current": "normal",
+            "visited": ["normal"]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions calculate the average score awarded to the first position.",
+            "current": "swapped",
+            "visited": ["normal", "swapped"]
+          },
+          {
+            "at": "say11",
+            "caption": "Order swapping is essential for impartial benchmark integrity.",
+            "current": "verdict",
+            "visited": ["normal", "swapped", "delta", "verdict"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mitigating Verbosity and Self-Enhancement Biases",
+      "codeHash": "b4e9309dcdb26fee881018744452cac60dcae5aba99cab9e0f21004821b187b9",
+      "spec": {
+        "template": "flow",
+        "title": "Verbosity Penalty Normalization Flow",
+        "nodes": [
+          { "id": "raw", "label": "Raw Score", "tappable": false },
+          { "id": "length", "label": "Char Budget Check", "tappable": false },
+          { "id": "penalty", "label": "Verbosity Penalty", "tappable": false },
+          { "id": "calibrated", "label": "Normalized Score", "tappable": false }
+        ],
+        "edges": [
+          { "from": "raw", "to": "length" },
+          { "from": "length", "to": "penalty" },
+          { "from": "penalty", "to": "calibrated" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mitigating verbosity bias introduces length normalization penalties.",
+            "activeNodes": ["raw"]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions check if an answer exceeds ideal length limits for tasks.",
+            "activeNodes": ["length", "penalty"]
+          },
+          {
+            "at": "say8",
+            "caption": "Penalties ensure models are rewarded for efficiency rather than padding.",
+            "activeNodes": ["calibrated"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Verbosity Penalty Normalization Flow",
+        "nodes": [
+          { "id": "raw", "label": "Raw Score", "tappable": false },
+          { "id": "length", "label": "Char Budget Check", "tappable": false },
+          { "id": "penalty", "label": "Verbosity Penalty", "tappable": false },
+          { "id": "calibrated", "label": "Normalized Score", "tappable": false }
+        ],
+        "edges": [
+          { "from": "raw", "to": "length" },
+          { "from": "length", "to": "penalty" },
+          { "from": "penalty", "to": "calibrated" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Mitigating verbosity bias introduces length normalization penalties.",
+            "activeNodes": ["raw"]
+          },
+          {
+            "at": "say5",
+            "caption": "Functions check if an answer exceeds ideal length limits for tasks.",
+            "activeNodes": ["length", "penalty"]
+          },
+          {
+            "at": "say8",
+            "caption": "Penalties ensure models are rewarded for efficiency rather than padding.",
+            "activeNodes": ["calibrated"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production LLM-as-a-Judge Evaluation Pipeline",
+      "codeHash": "8f616af9b79a1fa246759b7595f7e7ca56d802393cf3f746c296f55c79a0d053",
+      "spec": {
+        "template": "none",
+        "reason": "Production LLM-as-a-Judge Evaluation Pipeline capstone synthesizing multi-dimensional rubrics, position bias mitigation, and conciseness normalization"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production LLM-as-a-Judge Evaluation Pipeline capstone synthesizing multi-dimensional rubrics, position bias mitigation, and conciseness normalization"
+      }
+    }
+  ]
+}
