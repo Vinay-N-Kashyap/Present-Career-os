@@ -8,6 +8,9 @@ import { NODE_MONTH_1_SPECS, NODE_MONTH_2_SPECS } from './node-masterclass-spec'
 import { CLOUD_MONTH_1_SPECS, CLOUD_MONTH_2_SPECS } from './cloud-masterclass-spec';
 import { DEVOPS_MONTH_1_SPECS, DEVOPS_MONTH_2_SPECS } from './devops-masterclass-spec';
 import { DESIGN_SYSTEMS_MONTH_1_SPECS, DESIGN_SYSTEMS_MONTH_2_SPECS } from './design-systems-masterclass-spec';
+import { DSA_MONTH_1_SPECS, DSA_MONTH_2_SPECS } from './dsa-masterclass-spec';
+import { CYBERSECURITY_MONTH_1_SPECS, CYBERSECURITY_MONTH_2_SPECS } from './cybersecurity-masterclass-spec';
+import { DATABASE_MONTH_1_SPECS, DATABASE_MONTH_2_SPECS } from './database-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -1249,6 +1252,174 @@ function renderDesignSystemsDayCard(day: any): string {
   `;
 }
 
+function renderDsaDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #059669;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #d1fae5; color: #047857;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #059669; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDatabaseDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0284c7;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0284c7; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCybersecurityDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #dc2626;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #fee2e2; color: #991b1b;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #dc2626; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderJavaDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -1866,6 +2037,253 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Living Documentation Portal &amp; Cross-Framework Wrappers</td><td>Interactive documentation portal with auto-generated AST props tables, live sandboxes, and typed React/Vue 3 wrappers.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Automated Enterprise Governance &amp; Analytics Platform</td><td>Monorepo Turborepo setup, Changeset release automation, AST migration codemods (<code>jscodeshift</code>), and adoption metrics scanner.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>NexusDesign GlobalDS Enterprise Multi-Brand Design System:</strong> Autonomous design token sync, multi-theme white-labeling, high-performance Data Grid, Storybook portal, visual regression gates, and live oral architectural defense.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART XII: DEEP MASTERCLASS BLUEPRINT - DATA STRUCTURES & ALGORITHMIC OPTIMIZATIONS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XII: Deep Masterclass Blueprint — Data Structures &amp; Algorithmic Optimizations</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-dsa-optim</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>12.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In high-scale software engineering, algorithmic problem solving is not about rote memorization of LeetCode patterns. It is about understanding mathematical bounds, memory hierarchies (L1/L2/L3 cache lines), amortized potential analysis, and deterministic data structures under heavy concurrent load.
+      <strong>Course 07 (Catalog Track 7): Data Structures &amp; Algorithmic Optimizations</strong> takes students from asymptotic complexity foundations to Staff-level low-latency systems engineering across 60 days:
+    </p>
+    <div class="quote-box" style="border-left-color: #059669;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Core Algorithmic Foundations, Pointer Traversal, Trees &amp; Graph Engines:</strong><br>
+      Asymptotic Complexity &amp; The Potential Method, Geometric Dynamic Arrays (1.5x growth), Sentinel Node Linked List Reversals, Floyd's Cycle Detection (D = nC - K), Cache-Conscious Contiguous Memory vs Pointer Chasing, Shunting-Yard Expression Parsing, Monotonic Stacks (O(N) Next Greater Element &amp; Histogram Area), Lock-Free Ring Buffers with Modulo Arithmetic, Monotonic Sliding Window Maximum Deque, Strict O(1) LRU Cache (Doubly Linked List + HashMap), Avalanche Effect Hash Functions, Robin Hood Hashing (Distance-from-Initial-Hash &amp; Variance Minimization), Two Pointers (Trapping Rain Water), Sliding Window Frequency Arrays (Minimum Window Substring), Strict O(1) LFU Cache (Frequency Buckets + Linked Lists), Binary Search Invariants (Overflow Prevention &amp; Rotated Arrays), Binary Search on Solution Space (O(log(min(M, N))) Median of Two Sorted Arrays), Call Stack Allocation &amp; Recursive Induction, Zero-Allocation Backtracking Subsets/Permutations, Constraint Satisfaction &amp; Sudoku MRV Heuristic, Binary Tree Traversals &amp; O(1) Space Morris Traversal, BST Invariants &amp; Successor Splicing, Complete Binary Tree Array Heaps &amp; Bottom-Up O(N) Heapify, Dual-Heap Streaming Median &amp; Top-K, Disjoint Set Union with Path Compression &amp; Union by Rank (O(&alpha;(N)) Inverse Ackermann), Graph Representation Trade-offs &amp; Enqueue-Time Visited Marking, Topological Sort (Kahn's BFS &amp; 3-Color DFS Cycle Detection), Dijkstra's Algorithm with Stale-Entry Skip Optimization, 1D Dynamic Programming &amp; State Space Compression, and the <strong>AlgoCore In-Memory Routing &amp; Index Engine Capstone Viva</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): Advanced Graph Algorithms, Tree Indexes, Dynamic Programming, Probabilistic Structures &amp; Low-Latency Optimization:</strong><br>
+      Minimum Spanning Trees (Kruskal's DSU vs Prim's Fibonacci Heap), Negative-Weight Shortest Paths (Bellman-Ford, SPFA &amp; Currency Arbitrage via -ln(rate)), All-Pairs Shortest Paths (Floyd-Warshall O(V^3) DP with Outer-Loop k Invariant &amp; Path Reconstruction), Strongly Connected Components (Tarjan's Low-Link Value Algorithm &amp; OnStack Guardrails), Eulerian Circuits (Hierholzer's Algorithm) &amp; Maximum Bipartite Matching (Hopcroft-Karp in O(E &radic;V)), Self-Balancing AVL Trees (LL/RR/LR/RL Rotations &amp; Balance Factor &le; 1), Red-Black Trees (5 Color Invariants &amp; Black-Height Equality), Segment Trees (Canonical 4N Array Bounds &amp; Range Minimum Queries in O(log N)), Segment Trees with Lazy Propagation (Deferred PushDown/PushUp Intervals), Fenwick Trees (Binary Indexed Tree / BIT via Two's Complement <code>i &amp; -i</code> and 1-based indexing), Tries &amp; Compressed Radix Trees (Patricia Tries), Knuth-Morris-Pratt (KMP) Substring Matcher &amp; LPS Array Construction, Rabin-Karp Rolling Polynomial Hash &amp; Multi-Pattern Sets, Aho-Corasick Multi-Pattern Automaton (Trie + BFS Failure Links for Snort/Firewall Inspection), Suffix Arrays &amp; Kasai's LCP Theorem (O(N) Longest Repeated Substring), 2D Dynamic Programming (LCS, Levenshtein Edit Distance, 0/1 Knapsack &amp; Hirschberg's Space-Optimized Reconstruction), Bitmask DP (Held-Karp Traveling Salesperson in O(N^2 2^N) &amp; Submask Enumeration <code>(sub - 1) &amp; mask</code>), Tree DP &amp; Binary Lifting (O(log N) Lowest Common Ancestor via 2^k Ancestors), Spatial Indexing with QuadTrees &amp; K-D Trees (Sphere-Box Hyperplane Pruning), Convex Hull Trick (CHT) &amp; Monotonic Queue Optimizations in DP (O(N^2) &rarr; O(N)), Probabilistic Bloom Filters (Optimal Math m = -n ln p / (ln 2)^2 &amp; Counting Bloom Filters), Streaming Cardinality via HyperLogLog (Harmonic Mean &amp; Leading Zeros) &amp; Count-Min Sketch, Probabilistic Search via Skip Lists (Geometric P=0.5 Towers &amp; Redis ZSET Architecture), Cache-Conscious B+ Trees (16 KB Page Sizing, Fanout M &asymp; 1000, and 3-Level 1-Billion-Row Lookups), Low-Latency Mechanical Sympathy (Branchless Bitwise Coding, SIMD Vectorization, and Zero-GC Arena Allocators), Algorithmic Denial of Service (Hash Flooding Attacks, SipHash-2-4 Defenses, ReDoS Catastrophic Backtracking Mitigation), Algorithmic SRE 3 AM War Rooms (Recursion Call Stack Exhaustion, Retained Root References in Cyclic Graphs, Integer Arithmetic Wraparounds), High-Throughput Lock-Free Concurrent Structures (Michael-Scott Lock-Free Queue, CAS Loops &amp; Tagged-Pointer ABA Solutions), Staff Algorithmic RFC Authoring &amp; Architectural Review Board Defense, and the <strong>TitanEngine Ultra-Low-Latency In-Memory Matching &amp; Algorithmic Index Engine Master Capstone Viva</strong>.
+    </div>
+
+    <h2>12.2 DSA Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DSA_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDsaDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #064e3b; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XII: DSA Month 2 — Advanced Graphs, Range Trees, Probabilistic Structures &amp; Low-Latency</h1>
+        <span style="font-size: 8.2pt; color: #a7f3d0;">Course ID: <code>course-dsa-optim</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #059669; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #6ee7b7;">Staff Low-Latency Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>12.3 DSA Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DSA_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDsaDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>12.4 DSA Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Cache-Conscious Contiguous Array Engine</td><td>Custom resizable array with 1.5x growth factor, L1 cache line prefetching benchmarks, and memory fragmentation analysis.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 15</td><td>Staff-Grade Double-Linked LFU Frequency Bucket Cache</td><td>Strict O(1) LFU cache implementing frequency buckets, doubly linked node lists, and zero hash map rehashing jitter.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 20</td><td>Zero-Allocation Backtracking Constraint Solver</td><td>Sudoku / N-Queens constraint solver using bitmasks, MRV heuristics, and in-place state rollback without heap reallocations.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 25</td><td>Streaming Top-K &amp; Disjoint Set Union Engine</td><td>High-throughput streaming median calculator using dual binary heaps, paired with rank-compressed DSU for dynamic graph connectivity.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 29</td><td>Optimized Dijkstra Routing &amp; 1D Compressed DP</td><td>Dijkstra shortest-path engine with stale-entry skip flags, coupled with space-compressed dynamic programming state transitions.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>AlgoCore In-Memory Routing &amp; Index Engine:</strong> High-performance graph traversal and in-memory indexing platform defended live before senior algorithmic staff engineers.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Distributed Graph Topology &amp; Matching Engine</td><td>Bellman-Ford arbitrage detector, Tarjan low-link SCC decomposition, and Hopcroft-Karp maximum bipartite matching engine.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Staff Range Query &amp; Lazy Segment Tree Engine</td><td>Segment tree with deferred lazy propagation intervals, binary indexed tree (BIT), and 2D range query optimization.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>High-Scale Multi-Pattern Text Indexing Engine</td><td>Aho-Corasick multi-pattern automaton with BFS failure transitions, KMP search, and Kasai suffix array LCP table.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>2D Dynamic Programming &amp; Spatial Tree Index</td><td>Hirschberg linear-space LCS/Edit Distance, Bitmask TSP DP, and QuadTree / K-D Tree spatial geometric indexing.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Low-Latency Systems &amp; Probabilistic Architecture</td><td>Bloom filter false-positive math, HyperLogLog cardinality, Skip List skip towers, and SIMD/branchless bitwise low-latency algorithms.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>TitanEngine Ultra-Low-Latency In-Memory Matching &amp; Algorithmic Index Engine:</strong> High-frequency order matching engine, lock-free Michael-Scott queues, SipHash DoS mitigation, B+ tree index, and live oral architectural defense before Staff Algorithmic Review Board.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART XIII: DEEP MASTERCLASS BLUEPRINT - CYBERSECURITY PRINCIPLES & SECURE SYSTEMS (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #450a0a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIII: Deep Masterclass Blueprint — Cybersecurity Principles &amp; Secure Systems</h1>
+        <span style="font-size: 8.2pt; color: #fecaca;">Course ID: <code>course-cybersecurity</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #fca5a5;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>13.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In contemporary enterprise and sovereign infrastructure, cybersecurity is not an afterthought or an isolated annual compliance checklist. It is a rigorous, multi-layered discipline spanning compiler flags, memory architectures, cryptographic primitives, network transport invariants, workload attestation, and real-time kernel observability.
+      <strong>Course 09: Cybersecurity Principles &amp; Secure Systems</strong> elevates students from foundational threat modeling and web vulnerabilities into Staff Security Engineering across 60 days:
+    </p>
+    <div class="quote-box" style="border-left-color: #dc2626;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Threat Modeling, OWASP Top 10, Cryptographic Vaults, Identity &amp; Host Hardening:</strong><br>
+      STRIDE &amp; DREAD Threat Modeling, Trust Boundaries &amp; Data Flow Diagrams (DFD), SQL Injection AST Compiler Mechanics &amp; Parameterized Statements, Command Injection &amp; Path Canonicalization, Server-Side Template Injection (SSTI) &amp; RCE, WAF AST Filter Pipeline, Cross-Site Scripting (XSS) &amp; Context-Aware Escaping, Content Security Policy (CSP Level 3) Nonces &amp; Strict-Dynamic, Anti-CSRF Synchronizer Tokens &amp; Signed Double-Submit Cookies, Server-Side Request Forgery (SSRF) &amp; DNS Rebinding Mitigation, Cryptographic Randomness (CSPRNG) &amp; Entropy Pools, AES-256-GCM AEAD Envelope Encryption, Asymmetric Cryptography (RSA-OAEP vs Ed25519 ECC), Argon2id Memory-Hard Password Hashing, X.509 PKI Trust Chains &amp; Certificate Transparency, TLS 1.3 1-RTT Handshake &amp; Perfect Forward Secrecy (PFS), JWT Security (Alg none, RS256 vs HS256 Confusion, JWKS, Revocation), OAuth 2.1 &amp; OIDC with PKCE (RFC 7636), Broken Object Level Authorization (BOLA/IDOR) &amp; ABAC Database Ownership, Session Lifecycles &amp; Session Fixation Defenses, RFC 6238 TOTP MFA &amp; FIDO2 WebAuthn, Linux OS Hardening (PAM, Capabilities, nftables), Mass Assignment DTO Whitelisting, Atomic Distributed Rate Limiting in Redis, Tamper-Evident SHA-256 Audit Logging, DevSecOps SAST/DAST CI Gates, and the <strong>CyberShield Enterprise Defense Gateway Capstone Viva</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): Binary Exploitation, Zero-Trust Architecture, Supply Chain, SIEM/eBPF &amp; Sovereign Defense:</strong><br>
+      x86-64 Stack Smashing &amp; Buffer Overflows, Compiler Mitigations (Stack Canaries, NX/DEP, ASLR, PIE), Return-Oriented Programming (ROP) Gadget Chaining &amp; ret2libc, Heap Exploitation (Use-After-Free, Double Free, Tcache Grooming), Memory-Safe Systems Engineering with Rust FFI, Low-Level Network Attacks (ARP Poisoning, TCP SYN Cookies, BGP Hijacking &amp; RPKI), DNSSEC Cryptographic Chains &amp; Kaminsky Attack Defense, Zero-Trust Network Architecture (ZTNA / BeyondCorp), Service-to-Service SPIFFE/SPIRE Workload Attestation &amp; Strict mTLS, Cloud IAM Privilege Escalation &amp; IMDSv2 Hardening, Container &amp; Kubernetes Breakouts (hostPID, SYS_ADMIN, nsenter), Supply Chain Security (Dependency Confusion, Typosquatting, SLSA Level 4), Sigstore Cosign Keyless Signing &amp; Rekor Transparency Logs, Enterprise SIEM Ingestion &amp; Sigma Correlation Rules, Linux eBPF Kernel Tracing (Tetragon/Tracee) &amp; Anomaly Detection, MITRE ATT&amp;CK Threat Hunting &amp; Living-off-the-Land (LotL) Detection, Automated SOAR Incident Response Playbooks &amp; RAM Snapshots, FIPS 140-3 Hardware Security Modules (HSM) &amp; Key Zeroization, Compliance as Code (SOC 2 Type II, ISO 27001, OpenSCAP), Red Team Adversary Emulation (Atomic Red Team &amp; C2 Frameworks), SRE 3 AM Ransomware Incident War Rooms, Constant-Time Cryptographic Comparison (<code>timingSafeEqual</code>), NIST Post-Quantum Cryptography (ML-KEM/Kyber &amp; ML-DSA/Dilithium), Staff Security RFC Authoring, Coverage-Guided Fuzzing (AFL++/LibFuzzer) &amp; Security Chaos Engineering, and the <strong>ApexDefense GlobalSOC Sovereign Security Operations Platform Master Capstone Viva</strong>.
+    </div>
+
+    <h2>13.2 Cybersecurity Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  CYBERSECURITY_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderCybersecurityDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #450a0a; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIII: Cybersecurity Month 2 — Binary Exploitation, Zero-Trust, eBPF &amp; SRE War Rooms</h1>
+        <span style="font-size: 8.2pt; color: #fecaca;">Course ID: <code>course-cybersecurity</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #dc2626; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #fca5a5;">Staff Security Architect Target</span>
+      </div>
+    </div>
+
+    <h2>13.3 Cybersecurity Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  CYBERSECURITY_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderCybersecurityDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>13.4 Cybersecurity Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Web Application Firewall (WAF) AST Filter Engine</td><td>Production input normalization pipeline detecting and defusing SQLi, command injection, and traversal attacks.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Client-Side Armor: Zero-Trust CSP &amp; Anti-CSRF Gateway</td><td>Per-request CSP nonce generator with strict-dynamic, double-submit HMAC CSRF engine, and origin validation.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Enterprise Cryptographic Envelope Vault (AES-GCM + Argon2id)</td><td>KMS envelope encryption engine deriving KEKs via Argon2id, generating ephemeral DEKs, and encrypting with AES-256-GCM AEAD.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Enterprise Identity Provider &amp; Token Gateway (OAuth 2.1 + PKCE)</td><td>OAuth 2.1 / OIDC identity gateway enforcing PKCE, dynamic JWKS rotation, algorithm pinning, and audience validation.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Zero-Trust Session &amp; Multi-Factor Access Proxy</td><td>Reverse-proxy evaluating session state machines, RFC 6238 TOTP drift windows, and ABAC database ownership gates.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>CyberShield Enterprise Defense Gateway:</strong> Hardened reverse proxy uniting WAF, TLS 1.3, OAuth 2.1, AES-GCM envelope vault, TOTP MFA, and tamper-evident logging defended live before Staff Security Architects.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Memory Safety Hardening &amp; Exploit Mitigation Engine</td><td>Memory-hardened Rust FFI module replacing unsafe C primitives, verified via AddressSanitizer (ASan) and compiler mitigations.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Zero-Trust Microsegmentation &amp; SPIFFE/SPIRE mTLS Gateway</td><td>High-throughput service proxy enforcing strict mTLS, ephemeral X.509 SVID rotation, and application-level microsegmentation.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Hermetic Supply Chain &amp; Cosign / Rekor Admission Enforcer</td><td>Automated CI/CD security gate generating CycloneDX SBOMs, signing container images with Cosign, and enforcing K8s admission.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Automated SOC Detection Pipeline (Sigma + eBPF Kernel Probes)</td><td>Streaming pipeline ingesting Linux eBPF kernel syscall events, matching Sigma rules, and triggering SOAR quarantine under 100ms.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Enterprise SOC War Room &amp; Incident Forensics Platform</td><td>Incident response platform orchestrating automated containment, memory acquisition, immutable WORM backup verification, and crisis comms.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexDefense GlobalSOC Sovereign Security Platform:</strong> Complete sovereign security operations platform uniting eBPF kernel detection, SPIFFE mTLS mesh, post-quantum hybrid KEM, Cosign admission, SOAR containment, and live oral architectural defense before CISO and Staff Security Review Board.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  h += `
+  <!-- PART XIV: DEEP MASTERCLASS BLUEPRINT - DATABASE ENGINEERING & QUERY PERFORMANCE (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIV: Deep Masterclass Blueprint — Database Engineering &amp; Query Performance</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-database-eng</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>14.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      Databases are the core nervous system of enterprise architecture, yet most engineers treat them as opaque black boxes. In PinIT Career OS, <strong>Course 10: Database Engineering &amp; Query Performance</strong> demystifies database internals down to disk bytes, latch synchronization, optimizer cost math, distributed consensus, and columnar SIMD vector pipelines across 60 intensive days:
+    </p>
+    <div class="quote-box" style="border-left-color: #0284c7;">
+      &bull; <strong>Month 1 (Days 1–30 &bull; 120 Quests): Relational Internals, SQL Optimization, Indexes &amp; Transactions:</strong><br>
+      Codd's Relational Algebra &amp; Physical Independence, 8KB Slotted Page Anatomy &amp; Line Pointers, Clock Sweep Buffer Pool Eviction &amp; Pinning, ARIES Redo/Undo WAL Protocols, <strong>Milestone 1: Slotted Page Storage Engine</strong>, B+ Tree Node Splitting &amp; High Fan-Out Geometry, Clustered (InnoDB) vs Heap (Postgres) &amp; Heap-Only Tuple (HOT) Updates, Composite Indexes &amp; Leftmost Prefix Rule, Specialized Indexes (Hash, GIN JSONB, GiST, BRIN Block Ranges), <strong>Milestone 2: Composite B+ Tree Index Engine</strong>, SQL Lexer Tokens &amp; AST Parser Rewriters, Cost-Based Optimizer (CBO) Disk vs CPU Cost Math &amp; Histograms, Join Algorithms (Nested Loop, Grace Hash Join, Sort-Merge), EXPLAIN ANALYZE BUFFERS Diagnostics &amp; Row Skew, <strong>Milestone 3: Cost-Based Query Optimizer Simulator</strong>, ACID Invariants &amp; fsync WAL Durability, MVCC Tuple Visibility (xmin, xmax, read views), ANSI Isolation Levels vs Reality (Dirty Reads, Phantoms, Lost Updates), Snapshot Isolation Anomalies (Write Skew, SSI Graph Cycle Detection), <strong>Milestone 4: MVCC Snapshot Isolation Engine</strong>, Multiple-Granularity Locking Hierarchies (S/X, IS/IX), Row Locking (SELECT FOR UPDATE, SKIP LOCKED, NOWAIT), Deadlock Wait-For Graphs &amp; Cycle Detection, Autovacuum Internals, Free Space Map (FSM) &amp; pg_repack Bloat Remediation, <strong>Milestone 5: Lock-Free Distributed Job Queue Engine</strong>, Advanced Window Framing (ROWS vs RANGE) &amp; Analytical SQL, Recursive CTEs &amp; Hierarchical Graph Traversal, Process-Per-Connection vs Threading &amp; PgBouncer Pooling, Zero-Downtime Expand-Contract Schema Migrations, and the <strong>DataCore Enterprise Relational Database Engine Capstone Viva Gate</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31–60 &bull; 120 Quests): Distributed Storage Engines, Sharding, Consensus &amp; LSM Trees:</strong><br>
+      Write-Optimized Storage &amp; LSM-Tree Architecture (MemTable, WAL, Immutable MemTable, SSTable), SSTable Binary Format (4KB Data Blocks, Delta Encoding, Index Blocks), Compaction Strategies (Size-Tiered vs Leveled RocksDB Compaction, Space vs Write Amplification), Bloom Filters &amp; Amplification Metrics (WA, RA, SA), <strong>Milestone 6: Production LSM-Tree Storage Engine</strong>, Physical Streaming vs Logical Replication (WAL Sender/Receiver &amp; CDC), Asynchronous Lag vs Synchronous Commit Modes &amp; Read-Your-Own-Writes, High Availability, Split-Brain Fencing (STONITH) &amp; Patroni Architecture, Raft Consensus State Machine (Leader Election, Log Matching, Term Quorums), <strong>Milestone 7: Raft-Replicated Distributed Key-Value Cluster</strong>, Horizontal Sharding Topologies (Range vs Hash vs Consistent Hashing Ring with VNodes), Distributed Query Routing (Single-Shard vs Scatter-Gather Joins &amp; Aggregations), Two-Phase Commit (2PC) Protocol &amp; Coordinator Blocking Limits, Eventual Consistency, Saga Pattern &amp; Transactional Outbox with Debezium, <strong>Milestone 8: Sharded Database Router &amp; Outbox Engine</strong>, Columnar OLAP Architectures (ClickHouse, Parquet, DuckDB), Columnar Encoding (RLE, Dictionary, Bit-Packing, Frame of Reference), Vectorized Query Execution (Volcano vs SIMD Vector Processing with 1024-tuple batches), Time-Series Hypertables &amp; Chunk Partitioning, <strong>Milestone 9: Vectorized Columnar Analytics Engine</strong>, Disaster Recovery Architecture &amp; Point-in-Time Recovery (PITR), Database Observability (pg_stat_statements, Wait Events &amp; P99 Latency), 3 AM SRE War Room: Connection Pool Starvation &amp; Cascading Failures, 3 AM SRE War Room: Transaction ID (XID) Wraparound Catastrophe &amp; Single-User Vacuum Freeze, <strong>Milestone 10: Autonomous Database SRE Watchdog Engine</strong>, Distributed Consistency Models (CAP, PACELC, Linearizability vs Strict Serializability), Google Spanner TrueTime API (GPS/Atomic Clocks, Uncertainty Bound &epsilon;, Commit Wait), Polyglot Persistence &amp; Staff Database RFC Design, Database Chaos Engineering (Jepsen Fault Injection), and the <strong>TitanDB Globally Distributed Sovereign Database Engine Master Capstone Viva Gate</strong>.
+    </div>
+
+    <h2>14.2 Database Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DATABASE_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDatabaseDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XIV: Database Month 2 — Distributed Consensus, Sharding, LSM Trees &amp; TitanDB Master Capstone</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-database-eng</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Storage Level</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Principal Database Architect Target</span>
+      </div>
+    </div>
+
+    <h2>14.3 Database Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DATABASE_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDatabaseDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>14.4 Database Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Slotted Page Storage Engine &amp; Buffer Pool Manager</td><td>8KB slotted page binary allocator with line pointers, pin tracking, and Clock Sweep second-chance buffer eviction.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Composite B+ Tree Index Engine</td><td>Multi-column B+ tree supporting high fan-out page alignment, node splitting, and leftmost prefix matching.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Cost-Based Query Optimizer Simulator &amp; Join Plan Evaluator</td><td>System R style CBO estimating disk/CPU costs using catalog histograms and selecting optimal join access paths.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>MVCC Snapshot Isolation Engine</td><td>Multi-version concurrency control storage engine with xmin/xmax visibility filtering and write-write conflict resolution.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>High-Throughput Lock-Free Distributed Job Queue Engine</td><td>Pessimistic row locking queue using SELECT FOR UPDATE SKIP LOCKED with zero worker lock contention.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>DataCore Enterprise Relational Engine:</strong> Complete TypeScript relational database integrating BufferPool, B+ Tree, CBO, and MVCC defended live before Staff Database Architects.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Production LSM-Tree Storage Engine</td><td>Write-optimized storage engine uniting SkipList MemTable, SSTables, Bloom filters, and background Leveled Compaction.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Raft-Replicated Distributed Key-Value Cluster</td><td>Distributed key-value store with Raft consensus leader election, log replication, and automated failover.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Sharded Database Router &amp; Distributed Outbox Engine</td><td>Consistent hashing router with virtual nodes, scatter-gather query coordinator, and transactional CDC outbox.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Vectorized Columnar Analytics Engine</td><td>Column-oriented engine with Dictionary/RLE compression, 1024-tuple SIMD batches, and selection vector filtering.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Autonomous Database SRE Watchdog Engine</td><td>Real-time telemetry monitor identifying lock dependency trees, killing root blockers, and preventing XID wraparound.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>TitanDB Globally Distributed Sovereign Database Engine:</strong> Complete sovereign distributed database engine uniting LSM storage, Raft consensus, consistent hashing, columnar SIMD execution, TrueTime commit wait, and oral defense before Faculty Review Board.</td></tr>
     </tbody>
   </table>
   `;
