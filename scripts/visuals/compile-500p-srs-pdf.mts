@@ -3,6 +3,11 @@ import * as path from 'path';
 import { chromium } from '@playwright/test';
 import { JAVA_MONTH_1_SPECS, JAVA_MONTH_2_SPECS } from './java-masterclass-spec';
 import { MOBILE_MONTH_1_SPECS, MOBILE_MONTH_2_SPECS } from './mobile-masterclass-spec';
+import { REACT_MONTH_1_SPECS, REACT_MONTH_2_SPECS } from './react-masterclass-spec';
+import { NODE_MONTH_1_SPECS, NODE_MONTH_2_SPECS } from './node-masterclass-spec';
+import { CLOUD_MONTH_1_SPECS, CLOUD_MONTH_2_SPECS } from './cloud-masterclass-spec';
+import { DEVOPS_MONTH_1_SPECS, DEVOPS_MONTH_2_SPECS } from './devops-masterclass-spec';
+import { DESIGN_SYSTEMS_MONTH_1_SPECS, DESIGN_SYSTEMS_MONTH_2_SPECS } from './design-systems-masterclass-spec';
 
 interface DayItem {
   day: number;
@@ -964,6 +969,286 @@ function renderMobileDayCard(day: any): string {
   `;
 }
 
+function renderReactDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0284c7;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0369a1; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #15803d; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">💡 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderNodeDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #16a34a;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #16a34a; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #dcfce7; color: #15803d;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #15803d; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">💡 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCloudDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #ea580c; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #ea580c; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDevopsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #0284c7;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #e0f2fe; color: #0369a1;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #0284c7; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #0369a1; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDesignSystemsDayCard(day: any): string {
+  const questsHtml = day.quests.map((q: any) => `
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #f1f5f9; padding: 1px 3px; border-radius: 2px;">${q.id}</span>
+      <strong>${q.name}</strong> <em>(${q.type})</em>: <span style="color: #475569;">${q.desc}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #7c3aed;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #7c3aed; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day ${day.day}</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #0f172a;">${day.title}</strong>
+          <span class="stage-pill" style="background: #f3e8ff; color: #6b21a8;">${day.stageName}</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month ${day.month} &bull; Block ${day.blockNum} &bull; <strong>${day.quests.length} Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #f8fafc; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #7c3aed; font-weight: 600;">Goal:</span> ${day.spokenGoal}<br>
+          <span style="color: #6b21a8; font-weight: 600;">Invariant:</span> <code>${day.conceptInvariant}</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> ${day.failureMode}<br>
+          <strong>tryIt Friction:</strong> ${day.tryItFriction}
+        </div>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #1e40af;">🪜 3-Tier Socratic Hint Ladder:</strong>
+        <span style="color: #0369a1;">[1. Nudge: "${day.socraticHints[0]}"]</span> &rarr;
+        <span style="color: #b45309;">[2. Memory: "${day.socraticHints[1]}"]</span> &rarr;
+        <span style="color: #15803d;">[3. Fix: "${day.socraticHints[2]}"]</span>
+      </div>
+
+      <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #86198f;">🧩 Situational Diagnostic Puzzle:</strong>
+        <em>"${day.situationalPuzzle.scenario}"</em><br>
+        <strong>Correct:</strong> Option ${String.fromCharCode(65 + day.situationalPuzzle.answerIdx)}) ${day.situationalPuzzle.options[day.situationalPuzzle.answerIdx]} &bull;
+        <span style="color: #701a75;"><strong>Debrief:</strong> ${day.situationalPuzzle.debrief}</span>
+      </div>
+
+      <div style="border-top: 1px dashed #cbd5e1; padding-top: 3pt; font-size: 7.1pt;">
+        <strong style="color: #334155;">Quests Scheduled for Day ${day.day} (${day.quests.length} Quests):</strong>
+        <div style="margin-top: 2pt;">
+          ${questsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderJavaDayCard(day: any): string {
   const questsHtml = day.quests.map((q: any) => `
     <div style="margin-bottom: 2px;">
@@ -1169,6 +1454,418 @@ function buildDeepMasterclassesHtml(): string {
       <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Offline-First Delta Sync Engine</td><td>WatermelonDB / SQLite JSI delta synchronizer with hardware Keychain storage and SSL pinning.</td></tr>
       <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Zero-Leak Verified Test Harness</td><td>Automated Maestro E2E test suite running on headless simulators in GitHub Actions CI.</td></tr>
       <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>PulseMobile Trading Terminal:</strong> High-frequency trading client (120 FPS, 1,000 ticks/sec, JSI) + live viva defense.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PART VII: DEEP MASTERCLASS BLUEPRINT — FULL-STACK REACT WEB DEVELOPMENT (DAYS 1–60 / 240 QUESTS)
+  // ─────────────────────────────────────────────────────────────────────────────
+  h += `
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VII: Deep Masterclass Blueprint — Full-Stack React Web Development</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-react-web</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #38bdf8;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>7.1 Pedagogical Philosophy &amp; Frontend Invariants: Why Month 1 Has Zero Fiber Internals &amp; Zero RSC</h2>
+    <p>
+      Traditional coding bootcamps overwhelm beginners by jumping into Next.js App Router, React Server Components, and concurrent memoization before a student understands how a single state update triggers re-renders or why index keys destroy input state. In PinIT Career OS, <strong>Month 1 is strictly Modern React UI Engineering, State Mechanics &amp; Client Architecture</strong>:
+    </p>
+    <div class="quote-box" style="border-left-color: #0284c7;">
+      &bull; <strong>Month 1 (Days 1–30 / 120 Quests):</strong> Browser DOM Cost Models, React Element Tree Descriptors, Functional Component Purity, useState Dispatching &amp; Auto-Batching, Key Reconciliation Invariants, Controlled vs Uncontrolled Forms, useEffect Synchronization &amp; Stale Closures, AbortController Request Cancellation, Custom Hook Composition, Context API Splitting, Error Boundaries, Code Splitting with Suspense, LocalStorage Tab Sync, and Month 1 Capstone (<code>JobPilot</code> Production Job Hunting OS).<br>
+      &bull; <strong>Month 2 (Days 31–60 / 120 Quests):</strong> React Fiber Linked-List Engine (child/sibling/return), Double Buffering (current vs workInProgress), Cooperative MessageChannel Scheduling (16.6ms budget), 31-Bit Bitmask Priority Lanes, useTransition &amp; useDeferredValue, State Tearing &amp; useSyncExternalStore, Zustand Micro-Stores, TanStack Query (SWR &amp; Structural Sharing), Optimistic Rollback Queues, React Server Components (RSC Wire Protocol), Streaming SSR (renderToPipeableStream), DOM Virtualization (100,000 rows), Heap Profiling &amp; Detached DOM Nodes, Web Workers, Module Federation, Core Web Vitals (INP/LCP/CLS), OpenTelemetry Tracing, and Month 2 Master Capstone (<code>NexusCloud</code> Real-Time Collaborative Workspace).
+    </div>
+
+    <h2>7.2 React Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  REACT_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderReactDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VII: React Month 2 — Fiber Internals, Concurrent Mode &amp; Server Components</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-react-web</code> &bull; Days 31–60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #38bdf8;">Staff Frontend Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>7.3 React Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  REACT_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderReactDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>7.4 React Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Interactive Multi-Counter State Machine</td><td>Encapsulated component state with boundary invariants [0, 100], history stack, and pure state updaters.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Dynamic Multi-Step Form Engine</td><td>Schema-driven form wizard with dirty field checking, regex validation, and auto-focusing invalid inputs via refs.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Search-as-You-Type Ingestion Engine</td><td>High-frequency search with 300ms debounce, in-flight AbortController cancellation, and LRU cache.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Fault-Tolerant E-Commerce Cart Engine</td><td>Dual context architecture (State vs Dispatch), useReducer action invariants, and Error Boundary isolation.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>High-Performance Analytics Dashboard</td><td>Lazy-loaded route chunks with Suspense skeletons, URL time-range sync, and memoized metrics grids.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>JobPilot Production Job Hunting OS:</strong> Full client-side application with Kanban pipeline, search, and cross-tab sync.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Custom Mini-Fiber Reconciler Engine</td><td>Standalone TypeScript fiber engine with cooperative time-sliced work loop, useState, and commitRoot.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>10,000-Node Visual Graph Filter</td><td>Dual-priority concurrent rendering using useTransition and useDeferredValue maintaining 60 FPS slider tracking.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Collaborative Task Board with Zustand</td><td>Zustand micro-store slices, TanStack Query SWR cache, and optimistic drag-and-drop with automated rollback.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Full-Stack Streaming RSC Publishing Engine</td><td>Zero-bundle markdown rendering on server, Server Actions with progressive enhancement, and selective hydration.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>High-Frequency Financial Matrix (10,000 Rows)</td><td>DOM virtualization windowing (100k items), Web Worker multi-column sorting, and rAF telemetry throttling.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>NexusCloud Collaborative Workspace:</strong> Real-time multi-user workspace (WebSockets, RSC, virtual grids, OTel tracing) + live viva defense.</td></tr>
+    </tbody>
+  </table>
+  `;
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PART VIII: DEEP MASTERCLASS BLUEPRINT — NODE.JS & TYPESCRIPT BACKEND ENGINEERING (DAYS 1–60 / 240 QUESTS)
+  // ─────────────────────────────────────────────────────────────────────────────
+  h += `
+  <div class="page-break">
+    <div style="background: #052e16; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VIII: Deep Masterclass Blueprint — Node.js &amp; TypeScript Backend Engineering</h1>
+        <span style="font-size: 8.2pt; color: #bbf7d0;">Course ID: <code>course-node-web</code> &bull; 60-Day Full Curriculum (Days 1–60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #16a34a; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #4ade80;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>8.1 Pedagogical Philosophy &amp; Backend Invariants: Why Month 1 Has Zero Native Addons &amp; Zero Distributed Sagas</h2>
+    <p>
+      The greatest crime of traditional backend tutorials is throwing novices into Kafka clusters, distributed microservices, and N-API C++ addons before they understand how the libuv event loop schedules I/O or why unhandled stream backpressure crashes a production process with Out-of-Memory. In PinIT Career OS, <strong>Month 1 is strictly Runtime Primitives, Libuv Event Loop, Streams, Fastify &amp; PostgreSQL ACID Transactions</strong>:
+    </p>
+    <div class="quote-box" style="border-left-color: #16a34a;">
+      &bull; <strong>Month 1 (Days 1–30 / 120 Quests):</strong> V8 &amp; Libuv Non-Blocking I/O, Event Loop Phase Invariants (Timers, Poll, Check), Microtask Starvation, Memory Buffers, Asynchronous Atomic Filesystems, Stream Types (Readable/Writable/Transform), Stream Backpressure Signaling (drain), stream.pipeline Error Traps, Raw TCP Sockets, Chunked HTTP Encoding, Fastify Schema Compilers, REST Idempotence, PostgreSQL Parameterized SQL, Connection Pool Management, ACID Transactions with Row Locking (FOR UPDATE), Schema Migrations, Cryptography (scrypt &amp; constant-time equality), RS256 JWTs, Redis Sessions, Web Security (CORS &amp; Helmet), Supertest Integration Suites, Graceful Shutdowns, Multi-Stage Docker, and Month 1 Capstone (<code>Gatekeeper</code> Production Auth &amp; Gateway OS).<br>
+      &bull; <strong>Month 2 (Days 31–60 / 120 Quests):</strong> V8 Heap Anatomy (New Space, Old Space, Mark-Sweep), Memory Leak Profiling (v8 Heap Dumps &amp; Retainer Trees), C++ Native Addons via Node-API (N-API), Zero-Copy Kernel sendfile, Process Clustering (Master-Worker IPC), Multi-Threaded JavaScript (worker_threads &amp; WorkerPools), SharedArrayBuffer &amp; Lock-Free Atomics, Child Process Pipes, Redis In-Memory Architecture &amp; ZSETs, Cache Stampede Mitigation (XFetch Algorithm), Distributed Locks with Fencing Tokens (Redlock), BullMQ Resilient Queues &amp; DLQs, Binary WebSockets, HTTP/2 Multiplexing, gRPC Protocol Buffers &amp; Bidirectional Streams, GraphQL Federation &amp; DataLoader Batching, Pino Structured Logging &amp; Correlation IDs, OpenTelemetry Distributed Tracing, Prometheus p99 Metrics &amp; Error Budgets, Chaos Engineering &amp; Circuit Breakers, Service Discovery (Consul/etcd), Transactional Outbox &amp; Debezium CDC, Distributed Sagas with Compensations, Production Incident Post-Mortems (Exit Code 137 OOM Kills), and Month 2 Master Capstone (<code>HyperStream</code> Distributed Real-Time Event Broker).
+    </div>
+
+    <h2>8.2 Node.js Month 1 Day-by-Day Masterclass Specifications (Days 1–30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  NODE_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderNodeDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #052e16; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part VIII: Node.js Month 2 — Engine Internals, Concurrency, Redis &amp; Distributed Scale</h1>
+        <span style="font-size: 8.2pt; color: #bbf7d0;">Course ID: <code>course-node-web</code> &bull; Days 31–60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #16a34a; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #4ade80;">Staff Backend Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>8.3 Node.js Month 2 Day-by-Day Masterclass Specifications (Days 31–60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  NODE_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderNodeDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>8.4 Node.js Milestone &amp; Capstone Viva Gates (Milestones 1–10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Event Loop Phase Telemetry Monitor</td><td>High-resolution latency sampler measuring event loop delay histograms, V8 heap spaces, and libuv handle counts.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 10</td><td>Multi-Gigabyte CSV Stream Processing Engine</td><td>Chunked stream pipeline processing 10M rows with backpressure guarantees and memory capped under 50MB RAM.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 15</td><td>Enterprise REST Gateway with Zod</td><td>High-performance API Gateway with sliding-window rate limiting, RFC 7807 problem details, and request ID tracing.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 20</td><td>Financial Double-Entry Ledger API</td><td>PostgreSQL banking ledger with strict row-level locking (SELECT FOR UPDATE) and atomic balance invariant proofs.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 25</td><td>Zero-Trust Auth &amp; RBAC Microservice</td><td>RS256 asymmetric token issuance, Redis session storage, and Refresh Token Rotation with reuse detection.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>Gatekeeper Production Gateway OS:</strong> Full microservice auth, gateway, and ledger defended before senior board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Native Binary Telemetry Parser (N-API)</td><td>Custom C++ addon compiled via Node-API parsing 500k binary packets/sec with zero allocations.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>8-Core Parallel Matrix Multiplier</td><td>Multi-core computing engine using worker_threads, SharedArrayBuffer, and Atomics lock-free latches.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Fault-Tolerant Distributed Job Queue</td><td>BullMQ &amp; Redis Streams worker fleet with rate limiters, stalled job recovery, and Dead-Letter Queue redrives.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>50k msgs/sec gRPC-to-WebSocket Gateway</td><td>Real-time telemetry gateway multiplexing gRPC streams into binary WebSocket broadcasts with slow client shedding.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Autonomous Resilience &amp; Telemetry Engine</td><td>Self-healing microservice stack with Prometheus metrics, Jaeger tracing, circuit breakers, and chaos tests.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>HyperStream Distributed Event Broker:</strong> Enterprise event broker (50k events/sec, Worker Threads, Redis Streams, gRPC, PostgreSQL) + live viva defense.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART IX: DEEP MASTERCLASS BLUEPRINT - CLOUD NATIVE ARCHITECTURES (AWS) (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #431407; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part IX: Deep Masterclass Blueprint — Cloud Native Architectures (AWS)</h1>
+        <span style="font-size: 8.2pt; color: #fed7aa;">Course ID: <code>course-cloud-native</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #ea580c; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #fdba74;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>9.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In modern enterprise software, code does not run in a vacuum; it executes inside complex software-defined cloud fabrics. 
+      <strong>Course 04: Cloud Native Architectures (AWS)</strong> transforms novices into Staff Cloud Native Architects and Site Reliability Engineers through an uncompromised 60-day dual-curriculum ladder:
+    </p>
+    <div class="quote-box" style="border-left-color: #ea580c;">
+      &bull; <strong>Month 1 (Days 1-30 &bull; 120 Quests): Foundation Infrastructure, Network Isolation, Compute &amp; Serverless Resiliency:</strong><br>
+      Physical Datacenter Boundaries, Shared Responsibility Model, VPC CIDR Subnetting Math, Stateful Security Groups vs Stateless NACLs, SSH Bastions, Least-Privilege IAM Roles &amp; STS Tokens, EC2 Spot Fleets &amp; Auto Scaling, Application Load Balancers with Deep Health Probes, S3 Object Immutability &amp; Intelligent Tiering, Serverless Lambda Firecracker Execution Lifecycles, API Gateway Lambda Authorizers, DynamoDB Partition Hashing, RDS Multi-AZ Failover, CloudFront Global Edge Caching, Route 53 DNS Failover Policies, SQS FIFO Queues &amp; Visibility Timeouts, SNS Fanout Topologies, EventBridge Schema Governance, ECS Fargate Container Isolation, Step Functions Distributed Sagas, Terraform Remote State Locking with DynamoDB, CloudWatch Metric Math Error Rates, KMS Envelope Encryption, WAF Rate-Based Bot Defense, Cloud FinOps Savings Plans, and the <strong>CloudFortress Multi-Tier Resilient Banking Capstone</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31-60 &bull; 120 Quests): Kubernetes on AWS (EKS), Zero-Trust Meshes, High-Throughput Streaming &amp; Multi-Region Active-Active:</strong><br>
+      EKS Managed Control Planes &amp; VPC CNI Custom Subnetting, Karpenter Dynamic JIT Node Provisioning, AWS Load Balancer Controller IP Target Mode, Istio Service Mesh with Strict mTLS Zero Trust, Firecracker MicroVM Jailer Sandboxing &amp; SnapStart CRaC Hooks, Amazon Kinesis Enhanced Fan-Out (EFO) &amp; Shard Splitting, Amazon MSK (Kafka) ISR Topologies &amp; SASL/SCRAM, AppSync Real-Time GraphQL WebSockets, 1M msg/sec Telemetry Ingestion (Kinesis + MSK + Flink), AWS Organizations Landing Zones &amp; SCP Guardrails, IAM Attribute-Based Access Control (ABAC) &amp; GitHub Actions OIDC Federation, CloudHSM FIPS 140-2 Level 3 &amp; Cryptographic Erasure, Transit Gateway Hub-and-Spoke with Centralized Egress Inspection, PCI-DSS Level 1 CDE Segmentation, DRY Terragrunt Module Composition &amp; State Migration, GitOps Progressive Delivery on EKS with ArgoCD &amp; Argo Rollouts, AWS CDK TypeScript L3 Construct Trees, AWS Fault Injection Simulator (FIS) Chaos Engineering &amp; AZ Evacuation, Ephemeral Pull-Request Environments, DynamoDB Single-Table Design Mastery (Overloaded Keys &amp; Adjacency Lists), ElastiCache Redis Cluster Hash Slots &amp; XFetch Stampede Mitigation, Aurora Serverless v2 Distributed Storage &amp; Global Databases, Apache Iceberg Lakehouses on S3, Route 53 ARC 5-Region Quorum Traffic Steering &amp; Zonal Shift, DynamoDB Global Tables CRDTs, SRE 3 AM Outage War Rooms (BGP Flapping &amp; Split-Brain), Cloud Unit Economics, and the <strong>OmniCloud GlobalCore 99.999% SLA Financial Clearinghouse Master Capstone Viva</strong>.
+    </div>
+
+    <h2>9.2 Cloud Native Month 1 Day-by-Day Masterclass Specifications (Days 1-30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  CLOUD_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderCloudDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #431407; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part IX: Cloud Native Month 2 — EKS, Zero-Trust Meshes, Streaming &amp; Active-Active Scale</h1>
+        <span style="font-size: 8.2pt; color: #fed7aa;">Course ID: <code>course-cloud-native</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #ea580c; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #fdba74;">Staff Cloud Architect Target</span>
+      </div>
+    </div>
+
+    <h2>9.3 Cloud Native Month 2 Day-by-Day Masterclass Specifications (Days 31-60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  CLOUD_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderCloudDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>9.4 Cloud Native Milestone &amp; Capstone Viva Gates (Milestones 1-10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>High-Availability Multi-AZ VPC Network Topology &amp; Bastion Host</td><td>Dual-tier VPC across 2 AZs with public DMZ, private app subnets, NAT Gateways, and hardened SSH Bastion Host.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 15</td><td>Serverless Event-Driven Video Processing Engine</td><td>Decoupled video ingestion pipeline triggering Lambda transcoders from S3 events, writing metadata to DynamoDB.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 21</td><td>High-Scale E-Commerce Microservices Event Bus</td><td>Asynchronous order routing engine combining SNS Topics, SQS FIFO queues, and EventBridge rules with DLQs.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 25</td><td>Enterprise CloudWatch Observability Suite</td><td>High-cardinality telemetry monitor with CloudWatch Metric Math error rates, composite alarms, and Log Insights.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 29</td><td>Cross-Region Automated Warm Standby DR Architecture</td><td>Automated cross-region replication with Aurora Global Database and standby ECS capacity meeting 5-min RTO.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>CloudFortress Resilient Banking Architecture:</strong> Multi-tier banking platform (VPC, ALB, Fargate, Aurora) defended before senior board.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Enterprise EKS Platform with Karpenter &amp; mTLS</td><td>Production Kubernetes platform with VPC CNI, Karpenter Spot auto-provisioning, ALB IP-mode ingress, and Istio mTLS.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>1,000,000 Event/Sec Real-Time Telemetry Pipeline</td><td>Massive streaming ingestion engine using Kinesis EFO, MSK Kafka brokers, and Apache Flink sliding-window analytics.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Multi-Account PCI-DSS Regulated Zero-Trust VPC Mesh</td><td>Enterprise security topology with AWS Control Tower, SCPs, Transit Gateway inspection VPC, and PrivateLink.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>GitOps Ephemeral Pull-Request Preview Environments</td><td>Automated developer platform provisioning isolated multi-tier stacks on PR open and reaping them upon merge.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Sub-10ms Global E-Commerce Polyglot Data Tier</td><td>High-scale data tier combining Redis cluster caching, DynamoDB Single-Table Design, and Aurora Global Database.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>OmniCloud GlobalCore 99.999% SLA Financial Engine:</strong> Active-Active multi-region financial clearinghouse with Route 53 ARC and CRDTs + live viva defense.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART X: DEEP MASTERCLASS BLUEPRINT - DEVOPS & CI/CD PIPELINE AUTOMATION (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part X: Deep Masterclass Blueprint — DevOps &amp; CI/CD Pipeline Automation</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-devops-cicd</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>10.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In contemporary cloud infrastructure, deploying reliable distributed software requires rigorous operational automation, hermetic build pipelines, policy enforcement, and declarative git-driven reconcilers.
+      <strong>Course 06: DevOps &amp; CI/CD Pipeline Automation</strong> takes students from fundamental Linux process isolation to Staff Platform Engineering through a comprehensive 60-day curriculum:
+    </p>
+    <div class="quote-box" style="border-left-color: #0284c7;">
+      &bull; <strong>Month 1 (Days 1-30 &bull; 120 Quests): Linux Kernels, Containers, Deterministic CI/CD &amp; GitOps Production Delivery:</strong><br>
+      Linux POSIX Process Hierarchies, Signals (SIGTERM vs SIGKILL), Linux Namespaces &amp; cgroups v2, Distroless Multi-Stage Container Builds, Docker Compose Microservice Topologies, iptables NAT Packet Traversal, Non-Root Capabilities Hardening, Memory Ceilings &amp; OOM Killer Scores, GitHub Actions Syntax &amp; Dependency Caching Trees, Parallel Matrix Sharding, SemVer 2.0.0 &amp; Conventional Commits, Multi-Arch Buildx &amp; Trivy Vulnerability Gates, Immutable Artifact Promotion across Staging/Production, Post-Deployment Synthetic Smoke Testing, Automated Self-Healing Rollbacks, Kubernetes Control Plane Internals (etcd, apiserver, scheduler, kubelet), ClusterIP &amp; CoreDNS Service Discovery, Ingress Controllers &amp; Automated ACME TLS, ConfigMaps &amp; External Secrets Operator (ESO), Tri-Probe Health Monitoring (Startup/Liveness/Readiness), HPA Elastic Autoscaling &amp; PodDisruptionBudgets, Helm 3 Chart Templating, ArgoCD Declarative GitOps Reconciliation Loops, Prometheus TSDB Scraping &amp; PromQL Alerting Rules, Grafana RED Dashboards &amp; Distributed Tracing, Fluent Bit DaemonSet Log Aggregation, Flagger Automated Canary Releases, DevSecOps SAST/DAST &amp; Syft SBOMs, Database Zero-Downtime Expand-Contract Migrations, and the <strong>DevOpsShield Multi-Cluster GitOps Platform Capstone Viva</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31-60 &bull; 120 Quests): Kubernetes Operators, eBPF Cilium Networking, SLSA Level 3 Supply Chain, Multi-Cluster Fleet Orchestration &amp; 99.999% Reliability:</strong><br>
+      Kube-Apiserver Dynamic Admission Controllers (Mutating/Validating Webhooks), Operator SDK &amp; Idempotent Reconciler Loops with Informer Caches, Pod Security Standards (PSS) &amp; Kyverno Policy as Code, Kernel-Level Cloud Networking with eBPF &amp; Cilium CNI, Ephemeral Kubernetes Pod Runners &amp; Actions Runner Controller (ARC), BuildKit Distributed Remote Registry Caching, Flagger Advanced Canary Analysis with Linkerd/Istio &amp; Latency SLAs, Cross-Plane Infrastructure Orchestration with Cluster API (CAPI) &amp; Karmada, Syft CycloneDX SBOMs &amp; Dependency Vulnerability Graphs, Keyless Cryptographic Container Signing with Sigstore Cosign &amp; Rekor Transparency Logs, SLSA Level 3 Hermetic Builds &amp; in-toto Provenance Attestations, HashiCorp Vault Dynamic Ephemeral Database Credentials &amp; Lease Renewals, Google SRE SLOs, Error Budgets &amp; Multiwindow Multi-Burn-Rate Alerts, OpenTelemetry Collector Tail-Based Sampling Pipelines, VictoriaMetrics &amp; Grafana Loki Log Streams, Kubernetes Chaos Engineering with Chaos Mesh, ArgoCD ApplicationSet Multi-Cluster Fleet Orchestration, Velero Automated Cross-Region Disaster Recovery &amp; CSI Volume Snapshots, Zero-Downtime Stateful Workloads with StatefulSets &amp; Rook-Ceph, Kubecost/OpenCost Kubernetes FinOps Allocation &amp; VPA Rightsizing, SRE 3 AM Outage War Rooms (Kernel Panics, Conntrack Table Exhaustion, Cascading OOM Storms), Event-Driven Automated Remediation Runbooks with Robusta, SOC2 Type II Immutable Audit Logging &amp; GPG Git Signatures, Google SRE Production Readiness Reviews (PRRs), and the <strong>ApexDevOps GlobalGrid 99.999% SLA Multi-Cluster Sovereign Cloud Platform Master Capstone Viva</strong>.
+    </div>
+
+    <h2>10.2 DevOps Month 1 Day-by-Day Masterclass Specifications (Days 1-30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DEVOPS_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDevopsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #082f49; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part X: DevOps Month 2 — Kubernetes Operators, eBPF Cilium, SLSA 3 &amp; SRE War Rooms</h1>
+        <span style="font-size: 8.2pt; color: #bae6fd;">Course ID: <code>course-devops-cicd</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #7dd3fc;">Staff Platform Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>10.3 DevOps Month 2 Day-by-Day Masterclass Specifications (Days 31-60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DEVOPS_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDevopsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>10.4 DevOps Milestone &amp; Capstone Viva Gates (Milestones 1-10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Production Multi-Stage Container Topology</td><td>Hardened Distroless containers orchestrated with Docker Compose, health checks, and isolated networks.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 15</td><td>Self-Healing GitHub Actions CD Pipeline</td><td>Automated CI/CD pipeline with matrix caching, Trivy security gates, and post-deploy smoke tests with rollbacks.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 20</td><td>Resilient Production Kubernetes Cluster Stack</td><td>High-availability K8s manifests with External Secrets, CoreDNS discovery, and HPA auto-scaling under load.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 25</td><td>Automated GitOps Continuous Delivery with ArgoCD</td><td>ArgoCD declarative application reconcilers with automated drift detection, self-healing, and Slack webhooks.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 29</td><td>Full-Stack Observability &amp; Flagger Canary Engine</td><td>Prometheus PromQL alerting, Grafana RED dashboards, and automated Flagger progressive canary rollouts.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>DevOpsShield Multi-Cluster GitOps Platform:</strong> End-to-end resilient container platform defended live before senior staff engineers.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Production K8s Operator &amp; Cilium eBPF Mesh</td><td>Custom Controller runtime reconciler with Informer caches, Kyverno admission policies, and Cilium eBPF zero-trust networking.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Self-Hosted Autoscaling CI Runner Farm with Flagger</td><td>Actions Runner Controller (ARC) ephemeral pod runners with BuildKit caching and Flagger mesh canaries.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>SLSA Level 3 Cryptographically Signed Supply Chain</td><td>Hermetic GitHub Actions build pipeline with Syft SBOMs, Cosign keyless Sigstore signatures, and Vault ephemeral secrets.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Automated Chaos Engineering &amp; Distributed Tracing</td><td>Google SRE Multi-Burn-Rate alerting, OpenTelemetry tail-based sampling, and Chaos Mesh automated pod disruption tests.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Multi-Region Active-Active GitOps Fleet with Velero DR</td><td>ArgoCD ApplicationSet fleet orchestration across multi-region clusters with Velero RPO&lt;1m cross-region disaster recovery.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>ApexDevOps GlobalGrid 99.999% SLA Sovereign Platform:</strong> Multi-region sovereign platform with Robusta self-healing runbooks, SOC2 audit logging, and SRE PRR oral defense.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART XI: DEEP MASTERCLASS BLUEPRINT - UI/UX DESIGN SYSTEMS & VISUAL FRONTEND (DAYS 1-60 / 240 QUESTS) -->
+  <div class="page-break">
+    <div style="background: #3b0764; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XI: Deep Masterclass Blueprint — UI/UX Design Systems &amp; Visual Frontend</h1>
+        <span style="font-size: 8.2pt; color: #e9d5ff;">Course ID: <code>course-design-systems</code> &bull; 60-Day Full Curriculum (Days 1-60) &bull; <strong>240 Total Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #9333ea; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">True 9.8 Standard</span><br>
+        <span style="font-size: 7.5pt; color: #d8b4fe;">Month 1 (120 Quests) &bull; Month 2 (120 Quests)</span>
+      </div>
+    </div>
+
+    <h2>11.1 Course Architectural Overview &amp; 4-Stage Pedagogical Progression</h2>
+    <p>
+      In contemporary enterprise applications, frontend interfaces cannot be maintained as ad-hoc collections of arbitrary CSS classes and divergent components.
+      <strong>Course 06: UI/UX Design Systems &amp; Visual Frontend</strong> elevates students from basic visual styling into Staff Design System Engineering through a comprehensive 60-day dual-curriculum track:
+    </p>
+    <div class="quote-box" style="border-left-color: #9333ea;">
+      &bull; <strong>Month 1 (Days 1-30 &bull; 120 Quests): Design Tokens, Color Science, Headless Primitives &amp; Accessible Component Architecture:</strong><br>
+      W3C DTCG Token Specification, 3-Tier Token Hierarchy (Global, Semantic, Component), Perceptual Color Spaces (OKLCH, LCH, Display-P3 vs sRGB), WCAG 2.2 AA/AAA Contrast Math, Modular Typography Scales &amp; Zero-CLS Web Font Overrides (<code>size-adjust</code>), Fluid Spacing &amp; CSS <code>clamp()</code> Linear Slopes, Atmospheric Shadow Physics &amp; Concentric Radii Geometry (R_outer = R_inner + P), Flexbox Layout Engine Internals (<code>min-width: 0</code>), CSS Grid 2.0 Subgrid Alignments, Container Queries (<code>@container</code>, <code>cqw</code>), CSS Cascade Layers (<code>@layer</code>), Zero-FOUC Dark Mode System Invariants, WAI-ARIA 1.2 Core Specifications &amp; AccName 1.2 Resolution, Keyboard Navigation (Roving <code>tabindex</code> vs <code>aria-activedescendant</code>), Focus Rings &amp; Focus Traps (<code>:focus-visible</code>), Screen Reader Live Regions (<code>aria-live="polite"</code>), Motor Accessibility Target Sizes (24x24px / 44x44px), Polymorphic Buttons (<code>asChild</code> Slots), Accessible Form Controls (<code>htmlFor</code>, <code>aria-describedby</code>, <code>aria-invalid</code>), Tri-State Checkboxes (<code>indeterminate</code>), Floating UI Collision Detection &amp; Portals, Compound Tabs &amp; Accordions, Modal Dialogs with HTML <code>inert</code> &amp; Scroll Locking, Dropdown Menus &amp; Popovers, Accessible Toast Notification Queues, Headless Finite State Machines (FSMs), Storybook 8 CSF 3.0 &amp; <code>@storybook/addon-a11y</code>, Zero-Runtime CSS Performance Cost Models (Tailwind v4 vs Emotion), Tree-Shakeable Iconography Pipelines (SVGO), Modern Dual ESM/CJS Packaging (<code>exports</code> map), Playwright Visual Regression Testing, and the <strong>PrismUI Accessible Enterprise Component Library Capstone Viva</strong>.<br><br>
+      &bull; <strong>Month 2 (Days 31-60 &bull; 120 Quests): Multi-Brand Tokens, Virtualized Data Grids, Motion Physics &amp; Enterprise Governance:</strong><br>
+      Multi-Brand &amp; Multi-Platform Architecture, Style Dictionary 4.0 Compilers (CSS, Swift, Jetpack Compose), Automated Figma Variables Sync via REST API &amp; Webhooks, Nested Dynamic Theming Inversions, Automated AST Token Linters (ESLint/Stylelint), 2D Virtualization &amp; Overscan Math (O(1) DOM nodes), The Ultimate Combobox with <code>aria-activedescendant</code> &amp; Async Fuzzy Filtering, Two-Dimensional Accessible Date Range Picker Grid, Enterprise Data Grid with Virtual Scrolling, Pinned Sticky Columns, Drag Column Resizing, Multi-Column Sorting &amp; Web Worker Computation, Physics of UI Motion &amp; Spring Curves, 60/120 FPS FLIP Animation Engine, Framer Motion &amp; Motion One Layout Projections (<code>layoutId</code>, <code>AnimatePresence</code>), Micro-Interactions &amp; CSS <code>linear()</code> Spring Easing, Automated <code>prefers-reduced-motion</code> Downgrade Engine, Accessible Drag-and-Drop Gestures (Pointer Events &amp; Single-Pointer Alternatives), Web Components Standard (Custom Elements v1, Shadow DOM, <code>&lt;slot&gt;</code>), Shadow DOM Styling (<code>:host</code>, <code>::part()</code>, Variable Piercing), Cross-Framework Typed Wrappers (React, Vue 3, Angular), Micro-Frontend Design System Sharing with Module Federation Singletons, Living Documentation Portal with AST Props Tables (<code>react-docgen-typescript</code>), Turborepo Monorepo Architecture &amp; Dependency DAGs, Release Automation with Changesets &amp; SemVer 2.0.0, Graceful Deprecation Lifecycle &amp; Telemetry, Automated Code Migrations via <code>jscodeshift</code> AST Codemods, Organizational Adoption Analytics Scanners, 3 AM Production War Rooms (FOUC, Specificity Collapses, Hydration Mismatches), Browser Memory Leak Forensics (Detached DOM Nodes &amp; ResizeObservers), Distributed Playwright Visual CI Sharding, Staff Architectural RFC Authoring, and the <strong>NexusDesign GlobalDS Enterprise Multi-Brand Design System Master Capstone Viva</strong>.
+    </div>
+
+    <h2>11.2 Design Systems Month 1 Day-by-Day Masterclass Specifications (Days 1-30 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DESIGN_SYSTEMS_MONTH_1_SPECS.forEach((day: any) => {
+    h += renderDesignSystemsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break">
+    <div style="background: #3b0764; color: #ffffff; padding: 8pt 12pt; border-radius: 4pt; margin-bottom: 8pt; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 14pt; border: none; padding: 0;">Part XI: Design Systems Month 2 — Multi-Brand Tokens, Data Grids, Motion &amp; Governance</h1>
+        <span style="font-size: 8.2pt; color: #e9d5ff;">Course ID: <code>course-design-systems</code> &bull; Days 31-60 &bull; <strong>120 Advanced Quests</strong></span>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #9333ea; color: #ffffff; font-size: 7.5pt; font-weight: 700; padding: 2px 6px; border-radius: 2px;">Advanced Systems Level</span><br>
+        <span style="font-size: 7.5pt; color: #d8b4fe;">Staff Design System Engineer Target</span>
+      </div>
+    </div>
+
+    <h2>11.3 Design Systems Month 2 Day-by-Day Masterclass Specifications (Days 31-60 / 120 Quests)</h2>
+  </div>
+  `;
+
+  DESIGN_SYSTEMS_MONTH_2_SPECS.forEach((day: any) => {
+    h += renderDesignSystemsDayCard(day);
+  });
+
+  h += `
+  <div class="page-break"></div>
+  <h2>11.4 Design Systems Milestone &amp; Capstone Viva Gates (Milestones 1-10 + Capstone Viva)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Milestone</th>
+        <th style="width: 10%;">Day</th>
+        <th style="width: 28%;">Milestone Gate Title</th>
+        <th style="width: 50%;">Architectural Deliverable &amp; Invariant Defense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Milestone 1</strong></td><td>Day 05</td><td>Multi-Scale Token Engine &amp; Color Palette Generator</td><td>Validated W3C DTCG token engine exporting OKLCH colors, fluid clamp scales, and ambient occlusion shadows.</td></tr>
+      <tr><td><strong>Milestone 2</strong></td><td>Day 15</td><td>Automated WCAG 2.2 A11y Audit Engine</td><td>Playwright test harness with Axe-core testing contrast, accessible names, focus rings, and 44x44px target sizes.</td></tr>
+      <tr><td><strong>Milestone 3</strong></td><td>Day 20</td><td>Accessible Compound Primitive Component Suite</td><td>Suite of Polymorphic Button, TextInput, Selection Controls, and compound Tabs/Accordion with full APG keyboard compliance.</td></tr>
+      <tr><td><strong>Milestone 4</strong></td><td>Day 25</td><td>Storybook 8 Enterprise Component Testing Suite</td><td>Storybook 8 suite with 100% CSF 3.0 coverage, automated play interaction tests, and zero accessibility violations.</td></tr>
+      <tr><td><strong>Milestone 5</strong></td><td>Day 29</td><td>Zero-Runtime Bundling &amp; Visual Regression Pipeline</td><td>Subpath package distribution (<code>exports</code>) with zero-runtime CSS, SVGO icon pipelines, and Playwright screenshot baselines.</td></tr>
+      <tr><td><strong>Capstone 1</strong></td><td>Day 30</td><td><strong>Month 1 Capstone Viva Gate</strong></td><td><strong>PrismUI Accessible Enterprise Component Library:</strong> Complete accessible component library defended live before senior staff engineers.</td></tr>
+      <tr><td><strong>Milestone 6</strong></td><td>Day 35</td><td>Multi-Brand Token Engine &amp; Automated Governance Gate</td><td>Multi-brand Style Dictionary compiler with automated Figma REST sync and pre-commit AST token linting gates.</td></tr>
+      <tr><td><strong>Milestone 7</strong></td><td>Day 40</td><td>Enterprise Staff-Grade DataGrid Architecture</td><td>High-density DataGrid handling 50k rows with 2D virtualization, pinned columns, column resizing, and Web Worker sorting.</td></tr>
+      <tr><td><strong>Milestone 8</strong></td><td>Day 45</td><td>Unified Motion Design System &amp; Gesture Suite</td><td>Motion design tokens, FLIP layout animations, and accessible drag-and-drop sortable lists with reduced-motion fallbacks.</td></tr>
+      <tr><td><strong>Milestone 9</strong></td><td>Day 50</td><td>Living Documentation Portal &amp; Cross-Framework Wrappers</td><td>Interactive documentation portal with auto-generated AST props tables, live sandboxes, and typed React/Vue 3 wrappers.</td></tr>
+      <tr><td><strong>Milestone 10</strong></td><td>Day 55</td><td>Automated Enterprise Governance &amp; Analytics Platform</td><td>Monorepo Turborepo setup, Changeset release automation, AST migration codemods (<code>jscodeshift</code>), and adoption metrics scanner.</td></tr>
+      <tr><td><strong>Master Capstone</strong></td><td>Day 60</td><td><strong>Month 2 Master Capstone Viva</strong></td><td><strong>NexusDesign GlobalDS Enterprise Multi-Brand Design System:</strong> Autonomous design token sync, multi-theme white-labeling, high-performance Data Grid, Storybook portal, visual regression gates, and live oral architectural defense.</td></tr>
     </tbody>
   </table>
   `;
@@ -2218,6 +2915,9 @@ async function generateMasterSrsPdf() {
   const artifactDir = path.resolve('C:/Users/Admin/.gemini/antigravity/brain/c7b35c15-f056-4dc6-888b-f56621a809c1');
   const artifactPdfPath = path.join(artifactDir, 'PINIT_36_COURSES_MASTERCLASS_SRS_500P.pdf');
 
+  console.log(`Total HTML Characters: ${html.length}`);
+  fs.writeFileSync(path.resolve(process.cwd(), 'docs/visuals/PINIT_MASTER_DEBUG.html'), html, 'utf8');
+  console.log('Successfully wrote debug HTML to docs/visuals/PINIT_MASTER_DEBUG.html');
   console.log('Launching Playwright Chromium to compile 500+ Page PDF (v6.0 True 9.8 Standard)...');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
