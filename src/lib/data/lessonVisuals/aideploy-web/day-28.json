@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 28,
+  "promptSha": "342cf350a75817de55dddb0ab5ba72c8157dd92f00984535002c68f84911c15a",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Incident State Machine (NORMAL, DEGRADED, KILL_SWITCH)",
+      "codeHash": "342cf350a75817de55dddb0ab5ba72c8157dd92f00984535002c68f84911c15a",
+      "spec": {
+        "template": "states",
+        "title": "Incident Operating Mode Controller States",
+        "states": [
+          { "id": "normal", "label": "NORMAL Mode (1.0x)" },
+          { "id": "degraded", "label": "DEGRADED Mode (0.5x)" },
+          { "id": "kill_switch", "label": "KILL_SWITCH Fallback" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Controllers manage distinct modes: NORMAL, DEGRADED, and KILL_SWITCH.",
+            "current": "normal",
+            "visited": ["normal"]
+          },
+          {
+            "at": "say7",
+            "caption": "In DEGRADED mode, expensive frontier models are disabled to relieve pressure.",
+            "current": "degraded",
+            "visited": ["normal", "degraded"]
+          },
+          {
+            "at": "say8",
+            "caption": "In KILL_SWITCH mode live invocations halt in favor of deterministic replies.",
+            "current": "kill_switch",
+            "visited": ["normal", "degraded", "kill_switch"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Incident Operating Mode Controller States",
+        "states": [
+          { "id": "normal", "label": "NORMAL Mode (1.0x)" },
+          { "id": "degraded", "label": "DEGRADED Mode (0.5x)" },
+          { "id": "kill_switch", "label": "KILL_SWITCH Fallback" }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Controllers manage distinct modes: NORMAL, DEGRADED, and KILL_SWITCH.",
+            "current": "normal",
+            "visited": ["normal"]
+          },
+          {
+            "at": "say7",
+            "caption": "In DEGRADED mode, expensive frontier models are disabled to relieve pressure.",
+            "current": "degraded",
+            "visited": ["normal", "degraded"]
+          },
+          {
+            "at": "say8",
+            "caption": "In KILL_SWITCH mode live invocations halt in favor of deterministic replies.",
+            "current": "kill_switch",
+            "visited": ["normal", "degraded", "kill_switch"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Feature-Level Circuit Breakers & Static Canned Responses",
+      "codeHash": "161fd86d64b9a83c34049ad3ad48db280cbb2f8e5bd18c1a2a50682a42c8abfd",
+      "spec": {
+        "template": "compare",
+        "title": "Online Circuit vs Tripped Circuit Fallback",
+        "leftLabel": "Online Circuit (Closed)",
+        "rightLabel": "Tripped Circuit (Open)",
+        "leftItems": [
+          "Service available: true",
+          "Dispatches to live model",
+          "Returns generated dynamic text"
+        ],
+        "rightItems": [
+          "Service available: false",
+          "Intercepts upstream calls",
+          "Returns polite canned message"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circuit breakers trip to open states intercepting traffic with static replies.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "When offline circuit breakers serve polite canned maintenance messages.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Graceful degradation is the hallmark of enterprise software engineering.",
+            "highlightSide": "both"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Online Circuit vs Tripped Circuit Fallback",
+        "leftLabel": "Online Circuit (Closed)",
+        "rightLabel": "Tripped Circuit (Open)",
+        "leftItems": [
+          "Service available: true",
+          "Dispatches to live model",
+          "Returns generated dynamic text"
+        ],
+        "rightItems": [
+          "Service available: false",
+          "Intercepts upstream calls",
+          "Returns polite canned message"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Circuit breakers trip to open states intercepting traffic with static replies.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "When offline circuit breakers serve polite canned maintenance messages.",
+            "highlightSide": "right"
+          },
+          {
+            "at": "say8",
+            "caption": "Graceful degradation is the hallmark of enterprise software engineering.",
+            "highlightSide": "both"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Quarantine Filter for Suspicious Prompts",
+      "codeHash": "c783ad5d3abcae56624e085a7c3ea8b7d2393b1f48bf766c46e157fdc724d507",
+      "spec": {
+        "template": "flow",
+        "title": "Suspicious Request Quarantine Architecture",
+        "nodes": [
+          { "id": "ingress", "label": "Inbound Request Batch", "tappable": false },
+          { "id": "scorer", "label": "Risk Score Evaluator", "tappable": false },
+          { "id": "allowed", "label": "Allowed Execution Queue", "tappable": false },
+          { "id": "quarantined", "label": "Quarantined Threat Queue", "tappable": false }
+        ],
+        "edges": [
+          { "from": "ingress", "to": "scorer" },
+          { "from": "scorer", "to": "allowed" },
+          { "from": "scorer", "to": "quarantined" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions screen batches of requests using evaluated risk scores.",
+            "activeNodes": ["ingress", "scorer"]
+          },
+          {
+            "at": "say4",
+            "caption": "Requests with high risk scores are shunted into quarantinedIds queues.",
+            "activeNodes": ["scorer", "quarantined"]
+          },
+          {
+            "at": "say7",
+            "caption": "Quarantined requests are blocked at perimeters without consuming tokens.",
+            "activeNodes": ["allowed", "quarantined"]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Suspicious Request Quarantine Architecture",
+        "nodes": [
+          { "id": "ingress", "label": "Inbound Request Batch", "tappable": false },
+          { "id": "scorer", "label": "Risk Score Evaluator", "tappable": false },
+          { "id": "allowed", "label": "Allowed Execution Queue", "tappable": false },
+          { "id": "quarantined", "label": "Quarantined Threat Queue", "tappable": false }
+        ],
+        "edges": [
+          { "from": "ingress", "to": "scorer" },
+          { "from": "scorer", "to": "allowed" },
+          { "from": "scorer", "to": "quarantined" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Functions screen batches of requests using evaluated risk scores.",
+            "activeNodes": ["ingress", "scorer"]
+          },
+          {
+            "at": "say4",
+            "caption": "Requests with high risk scores are shunted into quarantinedIds queues.",
+            "activeNodes": ["scorer", "quarantined"]
+          },
+          {
+            "at": "say7",
+            "caption": "Quarantined requests are blocked at perimeters without consuming tokens.",
+            "activeNodes": ["allowed", "quarantined"]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mitigating Active Jailbreak Campaigns (Regex Quarantine Updates)",
+      "codeHash": "be286a8078adbb119f7c8aca195718b9ccd27ef8bbf70f847fe2565295e5f8e3",
+      "spec": {
+        "template": "table",
+        "title": "Dynamic Jailbreak Firewall Rule Registry",
+        "columns": ["Rule Identifier", "Blocked Signature", "Runtime Action"],
+        "rows": [
+          { "Rule Identifier": { "text": "FW-01" }, "Blocked Signature": { "text": "dan mode" }, "Runtime Action": { "text": "Instant Quarantine Intercept" } },
+          { "Rule Identifier": { "text": "FW-02" }, "Blocked Signature": { "text": "ignore guidelines" }, "Runtime Action": { "text": "Security Violation Block" } },
+          { "Rule Identifier": { "text": "FW-03" }, "Blocked Signature": { "text": "base64 wrapper" }, "Runtime Action": { "text": "Decoder Inspection Reject" } }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Firewalls allow security teams to register new signatures dynamically.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Registering dan mode immediately catches and neutralizes attack queries.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Dynamic signature updates empower security teams to neutralize threats.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dynamic Jailbreak Firewall Rule Registry",
+        "columns": ["Rule Identifier", "Blocked Signature", "Runtime Action"],
+        "rows": [
+          { "Rule Identifier": "FW-01", "Blocked Signature": "dan mode", "Runtime Action": "Instant Quarantine Intercept" },
+          { "Rule Identifier": "FW-02", "Blocked Signature": "ignore guidelines", "Runtime Action": "Security Violation Block" },
+          { "Rule Identifier": "FW-03", "Blocked Signature": "base64 wrapper", "Runtime Action": "Decoder Inspection Reject" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Firewalls allow security teams to register new signatures dynamically.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Registering dan mode immediately catches and neutralizes attack queries.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Dynamic signature updates empower security teams to neutralize threats.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Postmortem Telemetry Correlation (Trace Spans + User Feedback)",
+      "codeHash": "f79c90b6dd9e8939339c9a411d5eb3085254b3745fdda5d8c9ab320c2409ddad",
+      "spec": {
+        "template": "bars",
+        "title": "Incident Request Quarantine Breakdown",
+        "items": [
+          { "label": "Allowed Queries", "value": 50.0, "tone": "ok" },
+          { "label": "Quarantined Attacks", "value": 50.0, "tone": "error" },
+          { "label": "Forensic Audit Spans", "value": 100.0, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons."
+          },
+          {
+            "at": "say6",
+            "caption": "Records correlate with OpenTelemetry trace spans to review system states."
+          },
+          {
+            "at": "say8",
+            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis."
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Incident Request Quarantine Breakdown",
+        "items": [
+          { "label": "Allowed Queries", "value": 50.0, "tone": "ok" },
+          { "label": "Quarantined Attacks", "value": 50.0, "tone": "error" },
+          { "label": "Forensic Audit Spans", "value": 100.0, "tone": "data" }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Functions capture unique request IDs, timestamps, and trigger reasons."
+          },
+          {
+            "at": "say6",
+            "caption": "Records correlate with OpenTelemetry trace spans to review system states."
+          },
+          {
+            "at": "say8",
+            "caption": "Correlating trace logs and security alerts accelerates postmortem analysis."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Incident Mode Controller & Fallback Middleware",
+      "codeHash": "397084cd952b3b89a832a5122c37ad29246769f3efeccfa715d9b58d6e5e9b7f",
+      "spec": {
+        "template": "none",
+        "reason": "Production Incident Mode Controller & Fallback Middleware capstone synthesizing incident state machines, circuit breaker fallbacks, dynamic jailbreak firewalls, and forensic correlation"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Incident Mode Controller & Fallback Middleware capstone synthesizing incident state machines, circuit breaker fallbacks, dynamic jailbreak firewalls, and forensic correlation"
+      }
+    }
+  ]
+}
