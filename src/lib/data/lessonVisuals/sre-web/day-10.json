@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 10,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 2 Architecture: The Failover Simulator Engine",
+      "codeHash": "aa7c597339a6436ae44b42a05ed925a327a8786b9c3fabba8db30de8a99b778f",
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 2 multi-region failover simulator architecture pipeline",
+        "stages": [
+          {
+            "id": "telemetry",
+            "name": "Telemetry Ingestion",
+            "subtext": "Latency & Errors"
+          },
+          {
+            "id": "scoring",
+            "name": "Health Evaluator",
+            "subtext": "0-100 Score"
+          },
+          {
+            "id": "controller",
+            "name": "Failover Controller",
+            "subtext": "Evacuation Logic"
+          },
+          {
+            "id": "fencing",
+            "name": "Fencing Tokens",
+            "subtext": "Epoch Verification"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine ingests streaming regional health telemetry and saturation.",
+            "activeStageId": "telemetry",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "It triggers an automated failover sequence promoting the standby database.",
+            "activeStageId": "controller",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Milestone 2 multi-region failover simulator architecture pipeline",
+        "stages": [
+          {
+            "id": "telemetry",
+            "name": "Telemetry Ingestion",
+            "subtext": "Latency & Errors"
+          },
+          {
+            "id": "scoring",
+            "name": "Health Evaluator",
+            "subtext": "0-100 Score"
+          },
+          {
+            "id": "controller",
+            "name": "Failover Controller",
+            "subtext": "Evacuation Logic"
+          },
+          {
+            "id": "fencing",
+            "name": "Fencing Tokens",
+            "subtext": "Epoch Verification"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The engine ingests streaming regional health telemetry and saturation.",
+            "activeStageId": "telemetry",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "It triggers an automated failover sequence promoting the standby database.",
+            "activeStageId": "controller",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Streaming Multi-Metric Region Health Scoring Engine",
+      "codeHash": "ba4b579c318a8208ef6a4ecda7220655e0a28935c909c8548add17c4569d3354",
+      "spec": {
+        "template": "bars",
+        "title": "Streaming multi-metric regional health pillar weighting distribution",
+        "bars": [
+          {
+            "id": "error",
+            "label": "Error Rate Weight",
+            "value": 40
+          },
+          {
+            "id": "latency",
+            "label": "Latency Weight",
+            "value": 35
+          },
+          {
+            "id": "saturation",
+            "label": "Saturation Weight",
+            "value": 25
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "System saturation contributes to the composite evaluation.",
+            "activeBars": [
+              "saturation"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The engine applies weights for error rate latency and saturation.",
+            "activeBars": [
+              "error",
+              "latency",
+              "saturation"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Streaming multi-metric regional health pillar weighting distribution",
+        "bars": [
+          {
+            "id": "error",
+            "label": "Error Rate Weight",
+            "value": 40
+          },
+          {
+            "id": "latency",
+            "label": "Latency Weight",
+            "value": 35
+          },
+          {
+            "id": "saturation",
+            "label": "Saturation Weight",
+            "value": 25
+          }
+        ],
+        "steps": [
+          {
+            "at": "say6",
+            "caption": "System saturation contributes to the composite evaluation.",
+            "activeBars": [
+              "saturation"
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "The engine applies weights for error rate latency and saturation.",
+            "activeBars": [
+              "error",
+              "latency",
+              "saturation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Failover Controller & Automated Traffic Evacuation",
+      "codeHash": "d4d30deabef7ce76e9f0c03391ec6720d0904a112e9be1a6beeda45c7c057a68",
+      "spec": {
+        "template": "states",
+        "title": "Automated failover controller states and traffic evacuation lifecycle",
+        "states": [
+          {
+            "id": "normal",
+            "label": "NORMAL Baseline"
+          },
+          {
+            "id": "evacuating",
+            "label": "EVACUATING Shift"
+          },
+          {
+            "id": "failed_over",
+            "label": "FAILED_OVER Standby Leader"
+          },
+          {
+            "id": "cooling_down",
+            "label": "COOLING_DOWN Stabilization"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The controller transitions to EVACUATING and triggers traffic migration.",
+            "activeStateId": "evacuating",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "It marks the secondary region as active leader and initiates cooldown.",
+            "activeStateId": "failed_over",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Automated failover controller states and traffic evacuation lifecycle",
+        "states": [
+          {
+            "id": "normal",
+            "label": "NORMAL Baseline"
+          },
+          {
+            "id": "evacuating",
+            "label": "EVACUATING Shift"
+          },
+          {
+            "id": "failed_over",
+            "label": "FAILED_OVER Standby Leader"
+          },
+          {
+            "id": "cooling_down",
+            "label": "COOLING_DOWN Stabilization"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "The controller transitions to EVACUATING and triggers traffic migration.",
+            "activeStateId": "evacuating",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say7",
+            "caption": "It marks the secondary region as active leader and initiates cooldown.",
+            "activeStateId": "failed_over",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Split-Brain Prevention: Fencing Tokens & Epoch Verification",
+      "codeHash": "16b111cd4d5dfe2464c948696452a98bbf3b5b333498ffe894e6135fefa0eeb8",
+      "spec": {
+        "template": "sequence",
+        "title": "Epoch-based fencing token validation and split-brain prevention sequence",
+        "actors": [
+          "Application Client",
+          "Fencing Coordinator",
+          "Regional Storage"
+        ],
+        "messages": [
+          {
+            "from": "Application Client",
+            "to": "Fencing Coordinator",
+            "label": "Request active leadership token"
+          },
+          {
+            "from": "Fencing Coordinator",
+            "to": "Application Client",
+            "label": "Issue Token with Epoch 2"
+          },
+          {
+            "from": "Application Client",
+            "to": "Regional Storage",
+            "label": "Execute write with Epoch 2"
+          },
+          {
+            "from": "Regional Storage",
+            "to": "Application Client",
+            "label": "Write confirmed under active epoch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The controller promotes a secondary region and increments the leadership epoch.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Storage engines verify tokens rejecting writes with an outdated epoch.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Epoch-based fencing token validation and split-brain prevention sequence",
+        "actors": [
+          "Application Client",
+          "Fencing Coordinator",
+          "Regional Storage"
+        ],
+        "messages": [
+          {
+            "from": "Application Client",
+            "to": "Fencing Coordinator",
+            "label": "Request active leadership token"
+          },
+          {
+            "from": "Fencing Coordinator",
+            "to": "Application Client",
+            "label": "Issue Token with Epoch 2"
+          },
+          {
+            "from": "Application Client",
+            "to": "Regional Storage",
+            "label": "Execute write with Epoch 2"
+          },
+          {
+            "from": "Regional Storage",
+            "to": "Application Client",
+            "label": "Write confirmed under active epoch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "The controller promotes a secondary region and increments the leadership epoch.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Storage engines verify tokens rejecting writes with an outdated epoch.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RTO / RPO Validation & SLA Compliance Auditing",
+      "codeHash": "63e736224708ee4444dfa33124612a8fbb5e9521d05d6e27cc906a985f01f52e",
+      "spec": {
+        "template": "table",
+        "title": "Disaster recovery RTO and RPO SLA compliance scorecard",
+        "columns": [
+          "Metric",
+          "Achieved Value",
+          "Contractual Target",
+          "Compliance"
+        ],
+        "rows": [
+          [
+            "RTO Recovery Time",
+            "42 Seconds",
+            "60 Seconds",
+            "Pass (Compliant)"
+          ],
+          [
+            "RPO Data Loss",
+            "4.2 Seconds",
+            "15 Seconds",
+            "Pass (Compliant)"
+          ],
+          [
+            "Overall SLA Audit",
+            "Full Success",
+            "Zero Breach",
+            "Pass (Compliant)"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recovery Time Objective measures the duration until full traffic recovery.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "It calculates actual achieved recovery time and contrasts it with the target.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Disaster recovery RTO and RPO SLA compliance scorecard",
+        "columns": [
+          "Metric",
+          "Achieved Value",
+          "Contractual Target",
+          "Compliance"
+        ],
+        "rows": [
+          [
+            "RTO Recovery Time",
+            "42 Seconds",
+            "60 Seconds",
+            "Pass (Compliant)"
+          ],
+          [
+            "RPO Data Loss",
+            "4.2 Seconds",
+            "15 Seconds",
+            "Pass (Compliant)"
+          ],
+          [
+            "Overall SLA Audit",
+            "Full Success",
+            "Zero Breach",
+            "Pass (Compliant)"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Recovery Time Objective measures the duration until full traffic recovery.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          },
+          {
+            "at": "say6",
+            "caption": "It calculates actual achieved recovery time and contrasts it with the target.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Multi-Region Chaos & Recovery Simulation",
+      "codeHash": "dc2d273e1c4fec7653f0ff26b211a48f8fcdef06313ef1041c3ca92775755156",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
