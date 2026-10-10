@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "prefix": "aideploy-web",
+  "day": 8,
+  "promptSha": "5764b24f4a66726e2eb7e79ac4a041342a5dd2c70041aa630453eb2d6d52fe58",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Dense Semantic Embeddings in Latent Space",
+      "codeHash": "5764b24f4a66726e2eb7e79ac4a041342a5dd2c70041aa630453eb2d6d52fe58",
+      "spec": {
+        "template": "table",
+        "title": "Keyword Search vs Dense Latent Embeddings",
+        "columns": ["Dimension", "Lexical Keyword Matching", "Dense Vector Representation"],
+        "rows": [
+          { "Dimension": { "text": "Representation" }, "Lexical Keyword Matching": { "text": "Sparse vocabulary tokens" }, "Dense Vector Representation": { "text": "Continuous 768-3072 floats" } },
+          { "Dimension": { "text": "Synonyms" }, "Lexical Keyword Matching": { "text": "Exact character match only" }, "Dense Vector Representation": { "text": "Puppy and dog share cluster" } },
+          { "Dimension": { "text": "Geometry" }, "Lexical Keyword Matching": { "text": "Inverted index posting lists" }, "Dense Vector Representation": { "text": "Euclidean length in latent space" } }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Dense vector embeddings capture semantic meaning rather than exact characters.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Different sentences occupy near identical coordinates in latent space.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Analyzing vectors begins by computing Euclidean magnitude using geometry.",
+            "highlightRow": 2
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Keyword Search vs Dense Latent Embeddings",
+        "columns": ["Dimension", "Lexical Keyword Matching", "Dense Vector Representation"],
+        "rows": [
+          { "Dimension": "Representation", "Lexical Keyword Matching": "Sparse vocabulary tokens", "Dense Vector Representation": "Continuous 768-3072 floats" },
+          { "Dimension": "Synonyms", "Lexical Keyword Matching": "Exact character match only", "Dense Vector Representation": "Puppy and dog share cluster" },
+          { "Dimension": "Geometry", "Lexical Keyword Matching": "Inverted index posting lists", "Dense Vector Representation": "Euclidean length in latent space" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Dense vector embeddings capture semantic meaning rather than exact characters.",
+            "highlightRow": 0
+          },
+          {
+            "at": "say4",
+            "caption": "Different sentences occupy near identical coordinates in latent space.",
+            "highlightRow": 1
+          },
+          {
+            "at": "say7",
+            "caption": "Analyzing vectors begins by computing Euclidean magnitude using geometry.",
+            "highlightRow": 2
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector Normalization & Euclidean Norm (L2)",
+      "codeHash": "9ef47f20f9ef8ee5ced2b403f5d05a6e2ef8108eb8c6e94a399314ae57236d65",
+      "spec": {
+        "template": "flow",
+        "title": "L2 Vector Normalization Pipeline",
+        "nodes": [
+          { "id": "raw", "label": "Raw Vector [3, 4]", "tappable": false },
+          { "id": "mag", "label": "Magnitude ||v|| = 5", "tappable": false },
+          { "id": "div", "label": "Divide by Mag", "tappable": false },
+          { "id": "unit", "label": "Unit Vector [0.6, 0.8]", "tappable": false }
+        ],
+        "edges": [
+          { "from": "raw", "to": "mag" },
+          { "from": "mag", "to": "div" },
+          { "from": "div", "to": "unit" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector systems normalize vectors to unit length using the L2 Euclidean norm.",
+            "activeNodes": ["raw", "mag"],
+            "statusBadge": "unnormalized"
+          },
+          {
+            "at": "say5",
+            "caption": "Normalization divides dimension components by overall vector magnitude.",
+            "activeNodes": ["mag", "div"],
+            "statusBadge": "scaling"
+          },
+          {
+            "at": "say7",
+            "caption": "On normalized vectors cosine similarity simplifies to a pure dot product.",
+            "activeNodes": ["div", "unit"],
+            "statusBadge": "normalized"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "L2 Vector Normalization Pipeline",
+        "nodes": [
+          { "id": "raw", "label": "Raw Vector [3, 4]", "tappable": false },
+          { "id": "mag", "label": "Magnitude ||v|| = 5", "tappable": false },
+          { "id": "div", "label": "Divide by Mag", "tappable": false },
+          { "id": "unit", "label": "Unit Vector [0.6, 0.8]", "tappable": false }
+        ],
+        "edges": [
+          { "from": "raw", "to": "mag" },
+          { "from": "mag", "to": "div" },
+          { "from": "div", "to": "unit" }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Vector systems normalize vectors to unit length using the L2 Euclidean norm.",
+            "activeNodes": ["raw", "mag"],
+            "statusBadge": "unnormalized"
+          },
+          {
+            "at": "say5",
+            "caption": "Normalization divides dimension components by overall vector magnitude.",
+            "activeNodes": ["mag", "div"],
+            "statusBadge": "scaling"
+          },
+          {
+            "at": "say7",
+            "caption": "On normalized vectors cosine similarity simplifies to a pure dot product.",
+            "activeNodes": ["div", "unit"],
+            "statusBadge": "normalized"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dot Product & Cosine Similarity Math",
+      "codeHash": "2d6ceb12a6fe49d7f5b630cfaca61609af9b0f1682bcfcffafa5375ef65b1fd8",
+      "spec": {
+        "template": "bars",
+        "title": "Cosine Similarity Scores vs Threshold",
+        "bars": [
+          { "label": "Semantic Match", "value": { "text": "95" }, "tone": "ok" },
+          { "label": "Relevance Cutoff", "value": { "text": "85" }, "tone": "data" },
+          { "label": "Unrelated Document", "value": { "text": "0" }, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity evaluates semantic resemblance between text embeddings.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Cosine similarity produces bounded scores between minus one and plus one.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say8",
+            "caption": "Scores above threshold indicate strong conceptual relevance between topics.",
+            "highlightBar": 1
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cosine Similarity Scores vs Threshold",
+        "bars": [
+          { "label": "Semantic Match", "value": 95, "tone": "ok" },
+          { "label": "Relevance Cutoff", "value": 85, "tone": "data" },
+          { "label": "Unrelated Document", "value": 0, "tone": "error" }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cosine similarity evaluates semantic resemblance between text embeddings.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say5",
+            "caption": "Cosine similarity produces bounded scores between minus one and plus one.",
+            "highlightBar": 0
+          },
+          {
+            "at": "say8",
+            "caption": "Scores above threshold indicate strong conceptual relevance between topics.",
+            "highlightBar": 1
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Euclidean Distance vs Cosine Proximity",
+      "codeHash": "680363ddaa6abd8b4ff4d3490625a38c14c68c92dc9795735f176c57c90357fe",
+      "spec": {
+        "template": "compare",
+        "title": "Cosine Similarity vs Euclidean Distance",
+        "leftLabel": "Cosine Similarity Metric",
+        "rightLabel": "Euclidean L2 Distance Metric",
+        "leftItems": [
+          "Measures angular orientation between vectors",
+          "Bounded range from -1.0 to +1.0",
+          "Higher score indicates closer resemblance",
+          "Equivalent to dot product when normalized"
+        ],
+        "rightItems": [
+          "Measures straight-line distance in space",
+          "Values range from 0.0 to infinity",
+          "Lower value indicates closer proximity",
+          "Dist squared equals 2 * (1 - CosSim) on unit sphere"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Higher cosine scores show resemblance while lower Euclidean distance is closer.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "On unit vectors Euclidean distance squared equals two times one minus cosine.",
+            "highlightSide": "right"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Cosine Similarity vs Euclidean Distance",
+        "leftLabel": "Cosine Similarity Metric",
+        "rightLabel": "Euclidean L2 Distance Metric",
+        "leftItems": [
+          "Measures angular orientation between vectors",
+          "Bounded range from -1.0 to +1.0",
+          "Higher score indicates closer resemblance",
+          "Equivalent to dot product when normalized"
+        ],
+        "rightItems": [
+          "Measures straight-line distance in space",
+          "Values range from 0.0 to infinity",
+          "Lower value indicates closer proximity",
+          "Dist squared equals 2 * (1 - CosSim) on unit sphere"
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "Higher cosine scores show resemblance while lower Euclidean distance is closer.",
+            "highlightSide": "left"
+          },
+          {
+            "at": "say6",
+            "caption": "On unit vectors Euclidean distance squared equals two times one minus cosine.",
+            "highlightSide": "right"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vector Ranking & Top-K Nearest Neighbors",
+      "codeHash": "1b354f6b97133a33081a90f593447f42ebc353039b93d991ae25c2837248b867",
+      "spec": {
+        "template": "workflow",
+        "title": "Top-K Nearest Neighbor Ranking Pipeline",
+        "stages": [
+          { "id": "query", "name": "Query Vector", "subtext": "Embedded user question" },
+          { "id": "similarity", "name": "Similarity Scoring", "subtext": "Dot product vs corpus" },
+          { "id": "sort", "name": "Descending Sort", "subtext": "Highest relevance first" },
+          { "id": "slice", "name": "Top-K Slicing", "subtext": "Extract top K documents" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Nearest neighbor search scores similarity against candidates and sorts scores.",
+            "activeStageId": "similarity",
+            "statusBadge": "scoring"
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate arrays sort in descending score order so relevant documents lead.",
+            "activeStageId": "sort",
+            "statusBadge": "sorting"
+          },
+          {
+            "at": "say6",
+            "caption": "The engine slices top K elements and discards low-scoring candidates.",
+            "activeStageId": "slice",
+            "statusBadge": "selected"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Top-K Nearest Neighbor Ranking Pipeline",
+        "stages": [
+          { "id": "query", "name": "Query Vector", "subtext": "Embedded user question" },
+          { "id": "similarity", "name": "Similarity Scoring", "subtext": "Dot product vs corpus" },
+          { "id": "sort", "name": "Descending Sort", "subtext": "Highest relevance first" },
+          { "id": "slice", "name": "Top-K Slicing", "subtext": "Extract top K documents" }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Nearest neighbor search scores similarity against candidates and sorts scores.",
+            "activeStageId": "similarity",
+            "statusBadge": "scoring"
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate arrays sort in descending score order so relevant documents lead.",
+            "activeStageId": "sort",
+            "statusBadge": "sorting"
+          },
+          {
+            "at": "say6",
+            "caption": "The engine slices top K elements and discards low-scoring candidates.",
+            "activeStageId": "slice",
+            "statusBadge": "selected"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Vector Math & Retrieval Engine",
+      "codeHash": "37faf293d1781a08d8d246b7e769655a84cd9923e2becf140f58f32d1c8a36f4",
+      "spec": {
+        "template": "none",
+        "reason": "Production Vector Math & Retrieval Engine capstone synthesizing indexing, cosine similarity, score threshold gating, and Top-K ranking"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Production Vector Math & Retrieval Engine capstone synthesizing indexing, cosine similarity, score threshold gating, and Top-K ranking"
+      }
+    }
+  ]
+}
