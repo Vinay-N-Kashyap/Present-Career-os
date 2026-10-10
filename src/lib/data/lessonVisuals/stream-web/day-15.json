@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "prefix": "stream-web",
+  "day": 15,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 3 Overview: Enterprise Ingestion Engine Architecture",
+      "codeHash": "128c2a15507a031518316b1f36a2b7b93341c96bb1ed9743700fce04bb3fb8b3",
+      "spec": {
+        "template": "flow",
+        "title": "Milestone 3 enterprise ingestion engine uniting ring pool, batcher, and telemetry",
+        "nodes": [
+          {
+            "id": "ingestPool",
+            "label": "Bounded Ingest Pool",
+            "tappable": false
+          },
+          {
+            "id": "batchDispatcher",
+            "label": "Adaptive Batch Dispatcher",
+            "tappable": false
+          },
+          {
+            "id": "telemEngine",
+            "label": "Telemetry & Sizing Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingestPool",
+            "to": "batchDispatcher",
+            "label": "80%/40% watermarks"
+          },
+          {
+            "from": "batchDispatcher",
+            "to": "telemEngine",
+            "label": "> 90% wire efficiency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Messages pass through an ingestion ring buffer with watermark flow-control.",
+            "activeNodes": [
+              "ingestPool",
+              "batchDispatcher"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Telemetry monitors track throughput rates, queue saturation, and latency.",
+            "activeNodes": [
+              "batchDispatcher",
+              "telemEngine"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Milestone 3 enterprise ingestion engine uniting ring pool, batcher, and telemetry",
+        "nodes": [
+          {
+            "id": "ingestPool",
+            "label": "Bounded Ingest Pool",
+            "tappable": false
+          },
+          {
+            "id": "batchDispatcher",
+            "label": "Adaptive Batch Dispatcher",
+            "tappable": false
+          },
+          {
+            "id": "telemEngine",
+            "label": "Telemetry & Sizing Engine",
+            "tappable": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingestPool",
+            "to": "batchDispatcher",
+            "label": "80%/40% watermarks"
+          },
+          {
+            "from": "batchDispatcher",
+            "to": "telemEngine",
+            "label": "> 90% wire efficiency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "Messages pass through an ingestion ring buffer with watermark flow-control.",
+            "activeNodes": [
+              "ingestPool",
+              "batchDispatcher"
+            ],
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "Telemetry monitors track throughput rates, queue saturation, and latency.",
+            "activeNodes": [
+              "batchDispatcher",
+              "telemEngine"
+            ],
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bounded Ring Buffer Ingestion Pool with Watermark Signatures",
+      "codeHash": "36a46576e2611e24bd0fbcd46e17edd3fb53466cb79600b623596742b81edab2",
+      "spec": {
+        "template": "states",
+        "title": "IngestionRingPool (capacity: 10) hysteresis between 0.8 High Mark and 0.4 Low Mark",
+        "states": [
+          {
+            "id": "normalFlow",
+            "label": "Normal Ingestion (throttled: false)"
+          },
+          {
+            "id": "highThrottled",
+            "label": "Throttled at High Mark (8/10)"
+          },
+          {
+            "id": "lowCleared",
+            "label": "Cleared Below Low Mark (3/10 <= 4)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "At 0.8 High Watermark (8 items), the pool trips its throttled state.",
+            "activeState": "highThrottled",
+            "transition": {
+              "from": "normalFlow",
+              "to": "highThrottled",
+              "label": "count: 8 >= highMark"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "After 5 dequeues drop occupancy to 3 (<= 0.4 Low Mark), throttling clears.",
+            "activeState": "lowCleared",
+            "transition": {
+              "from": "highThrottled",
+              "to": "lowCleared",
+              "label": "count: 3 <= lowMark"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "IngestionRingPool (capacity: 10) hysteresis between 0.8 High Mark and 0.4 Low Mark",
+        "states": [
+          {
+            "id": "normalFlow",
+            "label": "Normal Ingestion (throttled: false)"
+          },
+          {
+            "id": "highThrottled",
+            "label": "Throttled at High Mark (8/10)"
+          },
+          {
+            "id": "lowCleared",
+            "label": "Cleared Below Low Mark (3/10 <= 4)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "At 0.8 High Watermark (8 items), the pool trips its throttled state.",
+            "activeState": "highThrottled",
+            "transition": {
+              "from": "normalFlow",
+              "to": "highThrottled",
+              "label": "count: 8 >= highMark"
+            }
+          },
+          {
+            "at": "say8",
+            "caption": "After 5 dequeues drop occupancy to 3 (<= 0.4 Low Mark), throttling clears.",
+            "activeState": "lowCleared",
+            "transition": {
+              "from": "highThrottled",
+              "to": "lowCleared",
+              "label": "count: 3 <= lowMark"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adaptive Batch Accumulator with Dynamic Linger Timeouts",
+      "codeHash": "5232de61584744424acb2f1e548dfd636ad8edb0f5f9a085e9c34f9e6019b442",
+      "spec": {
+        "template": "table",
+        "title": "AdaptiveBatchAccumulator dispatches across CAPACITY (3 items) and LINGER (20ms)",
+        "columns": [
+          "Batch ID",
+          "Trigger",
+          "Records",
+          "Compressed Bytes"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "High arrival velocity fills capacity (3 records) and dispatches immediately.",
+            "rows": [
+              [
+                "Batch 1",
+                "CAPACITY",
+                "3 (rec-1..rec-3)",
+                "158 B (from 450 B)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If lingerMs (20ms) expires first, pollTimeout closes the batch immediately.",
+            "rows": [
+              [
+                "Batch 1",
+                "CAPACITY",
+                "3 (rec-1..rec-3)",
+                "158 B (from 450 B)"
+              ],
+              [
+                "Batch 2",
+                "LINGER",
+                "1 (rec-4)",
+                "53 B (from 150 B)"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "AdaptiveBatchAccumulator dispatches across CAPACITY (3 items) and LINGER (20ms)",
+        "columns": [
+          "Batch ID",
+          "Trigger",
+          "Records",
+          "Compressed Bytes"
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "High arrival velocity fills capacity (3 records) and dispatches immediately.",
+            "rows": [
+              [
+                "Batch 1",
+                "CAPACITY",
+                "3 (rec-1..rec-3)",
+                "158 B (from 450 B)"
+              ]
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "If lingerMs (20ms) expires first, pollTimeout closes the batch immediately.",
+            "rows": [
+              [
+                "Batch 1",
+                "CAPACITY",
+                "3 (rec-1..rec-3)",
+                "158 B (from 450 B)"
+              ],
+              [
+                "Batch 2",
+                "LINGER",
+                "1 (rec-4)",
+                "53 B (from 150 B)"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backpressure Throttling Engine with Feedback Signals",
+      "codeHash": "1a658121051229c8ae776949e505aaf130b1d41107e65ca18ad07f70fa88743e",
+      "spec": {
+        "template": "sequence",
+        "title": "BackpressureCoordinator closed-loop THROTTLED_RETRY and COMMITTED flow signals",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer SDK"
+          },
+          {
+            "id": "coord",
+            "label": "BackpressureCoordinator"
+          },
+          {
+            "id": "buffer",
+            "label": "Ring Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When throttled, the coordinator returns THROTTLED_RETRY with backoffMs: 20.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-1', 'tx-1') -> COMMITTED"
+              },
+              {
+                "from": "buffer",
+                "to": "coord",
+                "label": "setThrottled(true)"
+              },
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-2', 'tx-2') -> THROTTLED_RETRY (20ms)"
+              }
+            ],
+            "activeActorId": "coord"
+          },
+          {
+            "at": "say8",
+            "caption": "Once drained below Low Watermark, setThrottled(false) resumes publishing.",
+            "messages": [
+              {
+                "from": "buffer",
+                "to": "coord",
+                "label": "setThrottled(false)"
+              },
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-3', 'tx-3') -> COMMITTED"
+              }
+            ],
+            "activeActorId": "producer"
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "BackpressureCoordinator closed-loop THROTTLED_RETRY and COMMITTED flow signals",
+        "actors": [
+          {
+            "id": "producer",
+            "label": "Producer SDK"
+          },
+          {
+            "id": "coord",
+            "label": "BackpressureCoordinator"
+          },
+          {
+            "id": "buffer",
+            "label": "Ring Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say5",
+            "caption": "When throttled, the coordinator returns THROTTLED_RETRY with backoffMs: 20.",
+            "messages": [
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-1', 'tx-1') -> COMMITTED"
+              },
+              {
+                "from": "buffer",
+                "to": "coord",
+                "label": "setThrottled(true)"
+              },
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-2', 'tx-2') -> THROTTLED_RETRY (20ms)"
+              }
+            ],
+            "activeActorId": "coord"
+          },
+          {
+            "at": "say8",
+            "caption": "Once drained below Low Watermark, setThrottled(false) resumes publishing.",
+            "messages": [
+              {
+                "from": "buffer",
+                "to": "coord",
+                "label": "setThrottled(false)"
+              },
+              {
+                "from": "producer",
+                "to": "coord",
+                "label": "handlePublish('user-3', 'tx-3') -> COMMITTED"
+              }
+            ],
+            "activeActorId": "producer"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Telemetry: Throughput, Queue Saturation & p95 Latency",
+      "codeHash": "0d8f0cd360637996c2a782279b823aaa4a9ff3fb9003656109fbed9c6a9510f3",
+      "spec": {
+        "template": "bars",
+        "title": "PipelineTelemetryMonitor metrics for 20 events over 2 seconds at 4/10 queue depth",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Queue Saturation is calculated as currentQueueDepth (4) over maxCapacity (10).",
+            "bars": [
+              {
+                "label": "Throughput (msg/sec)",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Saturation (%)",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Correlating queue saturation with p95 latency (14ms) pinpoints bottlenecks.",
+            "bars": [
+              {
+                "label": "Throughput (msg/sec)",
+                "value": {
+                  "text": "10"
+                },
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Saturation (%)",
+                "value": {
+                  "text": "40"
+                },
+                "tone": "data"
+              },
+              {
+                "label": "p95 Latency (ms)",
+                "value": {
+                  "text": "14"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "PipelineTelemetryMonitor metrics for 20 events over 2 seconds at 4/10 queue depth",
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Queue Saturation is calculated as currentQueueDepth (4) over maxCapacity (10).",
+            "bars": [
+              {
+                "label": "Throughput (msg/sec)",
+                "value": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Saturation (%)",
+                "value": 40,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say8",
+            "caption": "Correlating queue saturation with p95 latency (14ms) pinpoints bottlenecks.",
+            "bars": [
+              {
+                "label": "Throughput (msg/sec)",
+                "value": 10,
+                "tone": "ok"
+              },
+              {
+                "label": "Queue Saturation (%)",
+                "value": 40,
+                "tone": "data"
+              },
+              {
+                "label": "p95 Latency (ms)",
+                "value": 14,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Milestone 3 Verification: High-Throughput Stress Pipeline",
+      "codeHash": "71826097a239beb0541213729a0f36e560f1825ad40ec3bd9c899db46a79cdbe",
+      "spec": {
+        "template": "none"
+      },
+      "filled": {
+        "template": "none"
+      }
+    }
+  ]
+}
