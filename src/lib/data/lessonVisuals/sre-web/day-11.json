@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "prefix": "sre-web",
+  "day": 11,
+  "promptSha": "51d4e63ffe460a40d7aa8cdf76a03b9994a53fc6cec20d645e173af6c34ac49c",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Layer 4 vs Layer 7 Load Balancing Architecture",
+      "codeHash": "e11351028b85d0bb04deb8beaf89a28f0cf6cf6b76d8a4dec6c1ced87728cb18",
+      "spec": {
+        "template": "compare",
+        "title": "Layer 4 transport balancing versus layer 7 application proxy routing",
+        "left": {
+          "title": "Layer 4 Transport Balancer",
+          "items": [
+            "Operates at TCP and UDP layer",
+            "Routes strictly by IP and port",
+            "Ultra-low packet transit latency",
+            "Does not decrypt TLS payloads"
+          ]
+        },
+        "right": {
+          "title": "Layer 7 Application Balancer",
+          "items": [
+            "Terminates HTTP and HTTPS connections",
+            "Inspects headers, paths, cookies",
+            "Enables canary and JWT routing",
+            "Higher CPU cycles for decryption"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Transport layer balancing operates without inspecting payload contents.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Application layer balancing inspects headers and terminating connections.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Layer 4 transport balancing versus layer 7 application proxy routing",
+        "left": {
+          "title": "Layer 4 Transport Balancer",
+          "items": [
+            "Operates at TCP and UDP layer",
+            "Routes strictly by IP and port",
+            "Ultra-low packet transit latency",
+            "Does not decrypt TLS payloads"
+          ]
+        },
+        "right": {
+          "title": "Layer 7 Application Balancer",
+          "items": [
+            "Terminates HTTP and HTTPS connections",
+            "Inspects headers, paths, cookies",
+            "Enables canary and JWT routing",
+            "Higher CPU cycles for decryption"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Transport layer balancing operates without inspecting payload contents.",
+            "highlightSide": "left",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say6",
+            "caption": "Application layer balancing inspects headers and terminating connections.",
+            "highlightSide": "right",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Round-Robin Load Balancing Mechanics",
+      "codeHash": "b6c4eefc5f7be699f0045232d6861ae0d194c25f538c2d5882afdc9b8a8f4ac8",
+      "spec": {
+        "template": "sequence",
+        "title": "Round robin pointer rotation and sequential backend request dispatch",
+        "actors": [
+          "Client Ingress",
+          "Round Robin Balancer",
+          "Server Cluster"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "Round Robin Balancer",
+            "label": "Incoming request stream"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-a.prod"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-b.prod"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-c.prod"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When requests arrive the balancer assigns servers and increments the pointer.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Round Robin guarantees an exact uniform distribution across server instances.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Round robin pointer rotation and sequential backend request dispatch",
+        "actors": [
+          "Client Ingress",
+          "Round Robin Balancer",
+          "Server Cluster"
+        ],
+        "messages": [
+          {
+            "from": "Client Ingress",
+            "to": "Round Robin Balancer",
+            "label": "Incoming request stream"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-a.prod"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-b.prod"
+          },
+          {
+            "from": "Round Robin Balancer",
+            "to": "Server Cluster",
+            "label": "Dispatch to srv-c.prod"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say3",
+            "caption": "When requests arrive the balancer assigns servers and increments the pointer.",
+            "activeMessages": [
+              0,
+              1
+            ]
+          },
+          {
+            "at": "say5",
+            "caption": "Round Robin guarantees an exact uniform distribution across server instances.",
+            "activeMessages": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted Round-Robin Capacity Routing",
+      "codeHash": "203635095c4aa3e40a1097ab9daa14448d340b93d3705e1f109e0d3353696e06",
+      "spec": {
+        "template": "bars",
+        "title": "Weighted round robin server node capacity weight ratios",
+        "bars": [
+          {
+            "id": "nodeA",
+            "label": "large-node-A (32 Core)",
+            "value": 4
+          },
+          {
+            "id": "nodeC",
+            "label": "medium-node-C (16 Core)",
+            "value": 2
+          },
+          {
+            "id": "nodeB",
+            "label": "small-node-B (8 Core)",
+            "value": 1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each backend server is assigned a weight corresponding to processing capacity.",
+            "activeBars": [
+              "nodeA"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Over an allocation cycle servers receive requests matching their capacity.",
+            "activeBars": [
+              "nodeA",
+              "nodeC",
+              "nodeB"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Weighted round robin server node capacity weight ratios",
+        "bars": [
+          {
+            "id": "nodeA",
+            "label": "large-node-A (32 Core)",
+            "value": 4
+          },
+          {
+            "id": "nodeC",
+            "label": "medium-node-C (16 Core)",
+            "value": 2
+          },
+          {
+            "id": "nodeB",
+            "label": "small-node-B (8 Core)",
+            "value": 1
+          }
+        ],
+        "steps": [
+          {
+            "at": "say2",
+            "caption": "Each backend server is assigned a weight corresponding to processing capacity.",
+            "activeBars": [
+              "nodeA"
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Over an allocation cycle servers receive requests matching their capacity.",
+            "activeBars": [
+              "nodeA",
+              "nodeC",
+              "nodeB"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Least-Connections Load Balancing",
+      "codeHash": "16ac7442791025eb157d4cc90f0078a6bd4121ef4f0f656f80e4db333bcbb4cf",
+      "spec": {
+        "template": "table",
+        "title": "Least connections dynamic backend load evaluation matrix",
+        "columns": [
+          "Backend ID",
+          "Capacity Weight",
+          "Active Connections",
+          "Normalized Load"
+        ],
+        "rows": [
+          [
+            "srv-1",
+            "1 Weight",
+            "2 Connections",
+            "2.0 Load"
+          ],
+          [
+            "srv-2",
+            "2 Weight",
+            "1 Connection",
+            "0.5 Load (Best)"
+          ],
+          [
+            "srv-3",
+            "2 Weight",
+            "3 Connections",
+            "1.5 Load"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Least Connections dynamically tracks active concurrent server connections.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Weighted selection divides active connections by configured capacity weight.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Least connections dynamic backend load evaluation matrix",
+        "columns": [
+          "Backend ID",
+          "Capacity Weight",
+          "Active Connections",
+          "Normalized Load"
+        ],
+        "rows": [
+          [
+            "srv-1",
+            "1 Weight",
+            "2 Connections",
+            "2.0 Load"
+          ],
+          [
+            "srv-2",
+            "2 Weight",
+            "1 Connection",
+            "0.5 Load (Best)"
+          ],
+          [
+            "srv-3",
+            "2 Weight",
+            "3 Connections",
+            "1.5 Load"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "say4",
+            "caption": "Least Connections dynamically tracks active concurrent server connections.",
+            "highlightCells": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 2
+              }
+            ]
+          },
+          {
+            "at": "say7",
+            "caption": "Weighted selection divides active connections by configured capacity weight.",
+            "highlightCells": [
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 1,
+                "col": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Hashing & Session Stickiness Trade-offs",
+      "codeHash": "fde8cc28c5069b803d1747b815299d3fb4dfdcc17a19d626b6596ccc9471dea6",
+      "spec": {
+        "template": "workflow",
+        "title": "Consistent hashing circular ring routing and minimal eviction flow",
+        "stages": [
+          {
+            "id": "keyHash",
+            "name": "Key Hashing",
+            "subtext": "SHA-256 / Murmur"
+          },
+          {
+            "id": "ringLoc",
+            "name": "Circular Ring",
+            "subtext": "2^32 Hash Slots"
+          },
+          {
+            "id": "nodeAssign",
+            "name": "Clockwise Walk",
+            "subtext": "Nearest Virtual Node"
+          },
+          {
+            "id": "relocate",
+            "name": "Minimal Eviction",
+            "subtext": "Segment Boundary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Consistent Hashing arranges servers and keys along a circular virtual ring.",
+            "activeStageId": "ringLoc",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When servers are added only keys on adjacent segments are relocated.",
+            "activeStageId": "relocate",
+            "statusBadge": "completed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Consistent hashing circular ring routing and minimal eviction flow",
+        "stages": [
+          {
+            "id": "keyHash",
+            "name": "Key Hashing",
+            "subtext": "SHA-256 / Murmur"
+          },
+          {
+            "id": "ringLoc",
+            "name": "Circular Ring",
+            "subtext": "2^32 Hash Slots"
+          },
+          {
+            "id": "nodeAssign",
+            "name": "Clockwise Walk",
+            "subtext": "Nearest Virtual Node"
+          },
+          {
+            "id": "relocate",
+            "name": "Minimal Eviction",
+            "subtext": "Segment Boundary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say7",
+            "caption": "Consistent Hashing arranges servers and keys along a circular virtual ring.",
+            "activeStageId": "ringLoc",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say8",
+            "caption": "When servers are added only keys on adjacent segments are relocated.",
+            "activeStageId": "relocate",
+            "statusBadge": "completed"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Algorithm Load Balancer",
+      "codeHash": "ff121b6f5f3867b1f74eef249aec792dcec32441b0b97a8ed77edcf0f74b54ab",
+      "spec": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      },
+      "filled": {
+        "template": "none",
+        "reason": "Cap visual complexity and allow student focus on full production integration"
+      }
+    }
+  ]
+}
